@@ -9,5 +9,3 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Full Restoration of AppCoreShared Business Logic**
-  *Link: [./tracks/appcoreshared_restoration_20260307/](./tracks/appcoreshared_restoration_20260307/)*
