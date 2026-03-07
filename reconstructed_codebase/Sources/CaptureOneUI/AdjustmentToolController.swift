@@ -45,6 +45,9 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var structureAmount: Float = 0.0
     @Published public var clarityMethod: Int = 0 // 0: Classic, 1: Punch, 2: Neutral, 3: Natural
     
+    // Advanced Color Editor
+    @Published public var colorCorrections: [IC_ColorCorrection] = []
+    
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
@@ -76,7 +79,8 @@ public class AdjustmentToolController: ObservableObject {
             $activePredicate.map { _ in }.eraseToAnyPublisher(),
             $clarityAmount.map { _ in }.eraseToAnyPublisher(),
             $structureAmount.map { _ in }.eraseToAnyPublisher(),
-            $clarityMethod.map { _ in }.eraseToAnyPublisher()
+            $clarityMethod.map { _ in }.eraseToAnyPublisher(),
+            $colorCorrections.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -147,6 +151,13 @@ public class AdjustmentToolController: ObservableObject {
             self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
         }
         
+        if let data = mc.objectForKey("ZCOLOR_CORRECTIONS") as? Data,
+           let decoded = try? JSONDecoder().decode([IC_ColorCorrection].self, from: data) {
+            self.colorCorrections = decoded
+        } else {
+            self.colorCorrections = []
+        }
+        
         self.rating = (mc.objectForKey("ZRATING") as? Int) ?? 0
         self.colorTag = VariantBase.ColorTag(rawValue: (mc.objectForKey("ZCOLOR_TAG") as? Int) ?? 0) ?? .none
         
@@ -190,6 +201,11 @@ public class AdjustmentToolController: ObservableObject {
         mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
         mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
         mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
+        
+        if let encoded = try? JSONEncoder().encode(colorCorrections) {
+            mc.setObject(encoded, forKey: "ZCOLOR_CORRECTIONS")
+        }
+        
         mc.setObject(rating, forKey: "ZRATING")
         mc.setObject(colorTag.rawValue, forKey: "ZCOLOR_TAG")
         
@@ -218,6 +234,13 @@ public class AdjustmentToolController: ObservableObject {
         settings.clarity.amount = clarityAmount
         settings.clarity.structureAmount = structureAmount
         settings.clarity.clarityMethod = Int32(clarityMethod)
+        
+        settings.colorCorrectionList.count = UInt32(colorCorrections.count)
+        for (index, cc) in colorCorrections.enumerated() {
+            if index < 35 {
+                settings.colorCorrectionList.corrections[index] = cc
+            }
+        }
         
         // 4. Map Local Adjustments (Layers)
         for layer in variant.layers where layer.type != .background {

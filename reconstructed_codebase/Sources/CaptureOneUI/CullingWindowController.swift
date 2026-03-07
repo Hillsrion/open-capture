@@ -184,6 +184,7 @@ public struct CullingView: View {
                                     kelvin: $adjustmentController.kelvin,
                                     tint: $adjustmentController.tint
                                 )
+                                AdvancedColorEditorView(controller: adjustmentController)
                             } else {
                                 Text("Other Tools").foregroundColor(.gray).padding()
                             }

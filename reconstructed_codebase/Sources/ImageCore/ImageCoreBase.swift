@@ -53,7 +53,7 @@ public struct IC_ClaritySettings {
     }
 }
 
-public struct IC_ColorCorrection {
+public struct IC_ColorCorrection: Codable {
     public var hueRotation: Float
     public var saturationChange: Float
     public var lightnessChange: Float
