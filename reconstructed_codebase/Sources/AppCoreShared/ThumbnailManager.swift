@@ -28,7 +28,7 @@ public class ThumbnailManager {
         let request = QLThumbnailGenerator.Request(fileAt: url, size: size, scale: 1.0, representationTypes: .thumbnail)
         
         QLThumbnailGenerator.shared.generateRepresentations(for: request) { (representation, type, error) in
-            if let thumbnail = representation?.thumbnail {
+            if let thumbnail = representation?.nsImage {
                 // Store in cache
                 if let tiffData = thumbnail.tiffRepresentation {
                     self.cache.setThumbnail(NSData(data: tiffData), for: identifier)

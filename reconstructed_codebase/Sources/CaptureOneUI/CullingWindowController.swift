@@ -50,7 +50,6 @@ public struct CullingView: View {
     
     public init(browser: CImageBrowser) {
         self.browserWrapper = BrowserWrapper(browser: browser)
-        // Auto-select first image if available
         self._selectedImage = State(initialValue: browser.dataSource.first)
     }
     
@@ -78,16 +77,16 @@ public struct CullingView: View {
                 .padding()
                 .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
                 
-                HSplitView {
-                    // Left: Viewer
-                    ImageViewerView(image: selectedImage)
+                HStack(spacing: 1) {
+                    // Left: COViewerView (High Fidelity)
+                    COViewerView(image: selectedImage)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                     
-                    // Right: Browser Grid
-                    ImageBrowserView(images: browserWrapper.browser.dataSource, onSelect: { image in
+                    // Right: COImageBrowserView (High Fidelity)
+                    COImageBrowserView(images: browserWrapper.browser.dataSource, onSelect: { image in
                         self.selectedImage = image
                     })
-                    .frame(width: 300)
+                    .frame(width: 350)
                 }
                 
                 // Footer
@@ -102,15 +101,5 @@ class BrowserWrapper: ObservableObject {
     @Published var browser: CImageBrowser
     init(browser: CImageBrowser) {
         self.browser = browser
-    }
-}
-
-/// Helper to allow AppKit-like SplitView in SwiftUI for the workspace layout
-struct HSplitView<Content: View>: View {
-    @ViewBuilder var content: Content
-    var body: some View {
-        HStack(spacing: 1) {
-            content
-        }
     }
 }

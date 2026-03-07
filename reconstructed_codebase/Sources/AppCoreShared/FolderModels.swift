@@ -34,13 +34,13 @@ public class MOFolderCollection: MOCollection {
         let supportedExtensions = ["iiq", "phaseone", "cr2", "cr3", "nef", "arw", "dng", "jpg", "jpeg", "tif", "tiff"]
         
         do {
-            let fileURLs = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: .skippingHiddenFiles)
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: .skipsHiddenFiles)
             
-            self.images = fileURLs.compactMap { fileURL in
+            self.images = fileURLs.compactMap { (fileURL: URL) -> ImageBase? in
                 guard supportedExtensions.contains(fileURL.pathExtension.lowercased()) else { return nil }
                 
                 // Create a reconstructed ImageBase for each file
-                return ImageBase(imageUUID: UUID().uuidString, path: fileURL.path, context: managedObjectContext)
+                return ImageBase(imageUUID: UUID().uuidString, path: fileURL.path, context: self.managedObjectContext)
             }
             
             print("[System] Scanned \(images.count) images in \(path)")
