@@ -10,7 +10,7 @@
 - **User Interface:**
     - **AppKit, SwiftUI & QuickLook:** Hybrid architecture for window management, performant thumbnail extraction, and modern tool views.
 - **Image Processing:**
-    - **Accelerate, Metal & CoreML:** Used for high-performance SIMD processing, GPU acceleration, and local AI segmentation.
+    - **Accelerate, Metal & CoreML:** Used for high-performance SIMD processing (especially vDSP for lens kernels), GPU acceleration, and local AI segmentation.
     - **Custom Frameworks:** `ImageCore`, `ImageProcessing`.
 
 ## Data & Infrastructure

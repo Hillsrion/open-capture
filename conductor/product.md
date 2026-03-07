@@ -32,6 +32,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** SQLite schema mapped and persistence layer (Catalogs/Sessions/Sidecars) reconstructed for `DataCore`.
 - **Status:** Presentation layer (Themes, Custom Controls, Windowing, Tool Views) reconstructed for `CaptureOneUI`.
 - **Status:** High-speed image browsing (folder scan, thumbnail caching) and high-fidelity viewer integrated across all core frameworks.
+- **Status:** Lens Correction (Distortion, CA, Light Falloff) and LCC (Lens Cast Calibration) engine reconstructed and integrated into the ImageCore pipeline.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.
