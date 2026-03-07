@@ -9,8 +9,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Full Restoration of ImageCore Processing Logic**
-  *Link: [./tracks/imagecore_restoration_20260307/](./tracks/imagecore_restoration_20260307/)*
 
 ---
 
