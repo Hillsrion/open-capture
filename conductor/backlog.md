@@ -28,7 +28,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | :--- | :--- | :--- | :--- | :--- |
 | ENG-001 | **Bipolar Adjustments** (Exposure, Contrast kernels) | High | Low | ✅ Done |
 | ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ✅ Done |
-| ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ⏳ Pending |
+| ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ✅ Done |
 | ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ⏳ Pending |
 | ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ⏳ Pending |
 | ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ⏳ Pending |
@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-003** (Clarity & Structure) within the `clarity_structure_restoration` track.
+Currently working on **ENG-004** (Advanced Color Editor) within the `advanced_color_editor_restoration` track.

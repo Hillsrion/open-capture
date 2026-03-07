@@ -53,6 +53,57 @@ public struct IC_ClaritySettings {
     }
 }
 
+public struct IC_ColorCorrection {
+    public var hueRotation: Float
+    public var saturationChange: Float
+    public var lightnessChange: Float
+    
+    // Target device RGB
+    public var red: Float
+    public var green: Float
+    public var blue: Float
+    
+    // Wedge bounds
+    public var lowHue: Float
+    public var lowSaturation: Float
+    public var highHue: Float
+    public var highSaturation: Float
+    public var smoothness: Float
+    
+    // Homogeneity (Skin tone uniformity)
+    public var homogeneityHue: Float
+    public var homogeneitySaturation: Float
+    public var homogeneityLightness: Float
+    
+    public var pieType: Int32
+    public var isLocal: Bool
+    public var isInverted: Bool
+    
+    public init() {
+        hueRotation = 0.0
+        saturationChange = 0.0
+        lightnessChange = 0.0
+        red = 0.0; green = 0.0; blue = 0.0
+        lowHue = 0.0; lowSaturation = 0.0
+        highHue = 0.0; highSaturation = 0.0
+        smoothness = 0.0
+        homogeneityHue = 0.0; homogeneitySaturation = 0.0; homogeneityLightness = 0.0
+        pieType = 0
+        isLocal = false
+        isInverted = false
+    }
+}
+
+public struct IC_ColorCorrectionList {
+    public var count: UInt32
+    public var corrections: [IC_ColorCorrection] // Up to 35 based on binary dump
+    
+    public init() {
+        self.count = 0
+        self.corrections = Array(repeating: IC_ColorCorrection(), count: 35)
+    }
+}
+
 public struct IC_LocalAdjustmentSettings {
     public var opacity: Float
     public var exposure: Float
@@ -99,6 +150,9 @@ public struct IC_ProcessSettings {
     // Clarity & Structure (ENG-003)
     public var clarity: IC_ClaritySettings
     
+    // Advanced Color Editor (ENG-004)
+    public var colorCorrectionList: IC_ColorCorrectionList
+    
     // Local Adjustments (Layers)
     public var localAdjustments: [IC_LocalAdjustmentSettings]
 
@@ -121,6 +175,7 @@ public struct IC_ProcessSettings {
         self.levelsTargetHighlight = 1.0
         self.gradationCurves = ICGradationCurves()
         self.clarity = IC_ClaritySettings()
+        self.colorCorrectionList = IC_ColorCorrectionList()
         self.localAdjustments = []
         self.cropRect = .zero
         self.rotation = 0.0

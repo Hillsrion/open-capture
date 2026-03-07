@@ -59,8 +59,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Clarity & Structure (Classic, Punch, Natural, Neutral)**
+- [x] **Track: Restoration of Clarity & Structure (Classic, Punch, Natural, Neutral)**
   *Link: [./tracks/clarity_structure_restoration_20260307/](./tracks/clarity_structure_restoration_20260307/)*
+
+---
+
+- [ ] **Track: Restoration of Advanced Color Editor (Hue/Sat Masking)**
+  *Link: [./tracks/advanced_color_editor_restoration_20260307/](./tracks/advanced_color_editor_restoration_20260307/)*
 
 ---
 
