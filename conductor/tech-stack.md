@@ -16,7 +16,7 @@
 
 ## Data & Infrastructure
 - **Persistence:**
-    - **SQLite:** Used for catalog management and data storage.
+    - **SQLite3:** Core database engine for Catalog and Session management.
     - **Custom Frameworks:** `DataCore`, `ModelCore`.
 - **Communication:**
     - **XPC Services:** Used for process isolation in plugin hosting.
