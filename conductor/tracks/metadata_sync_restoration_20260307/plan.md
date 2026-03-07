@@ -16,9 +16,9 @@
 - [x] Task: Commit Phase 3: EXIF Extraction.
 
 ## Phase 4: Metadata Inspector UI (CaptureOneUI)
-- [ ] Task: Reconstruct the `MetadataInspectorView`.
-- [ ] Task: Bind metadata fields to current selection.
-- [ ] Task: Commit Phase 4: Metadata UI.
+- [x] Task: Reconstruct the `MetadataInspectorView`.
+- [x] Task: Bind metadata fields to current selection.
+- [x] Task: Commit Phase 4: Metadata UI.
 
 ## Phase 5: Validation
 - [ ] Task: Verify end-to-end sync between UI and XMP sidecars.

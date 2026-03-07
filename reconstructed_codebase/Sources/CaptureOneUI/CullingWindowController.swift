@@ -161,21 +161,7 @@ public struct CullingView: View {
                                         points: $adjustmentController.curvesPoints
                                     )
                                     
-                                    COToolSection("Metadata") {
-                                        VStack(alignment: .leading, spacing: 8) {
-                                            HStack {
-                                                Text("Rating").font(.system(size: 11)).foregroundColor(.gray)
-                                                Spacer()
-                                                PORatingControl(rating: $adjustmentController.rating)
-                                            }
-                                            HStack {
-                                                Text("Color Tag").font(.system(size: 11)).foregroundColor(.gray)
-                                                Spacer()
-                                                POColorTagPicker(selectedTag: $adjustmentController.colorTag)
-                                            }
-                                        }
-                                        .padding(.vertical, 4)
-                                    }
+                                    MetadataInspectorView(image: selectedImage)
                                 }
                             } else if selectedToolTab == "LIBRARY" {
                                 FilterToolView(predicate: $adjustmentController.activePredicate)
