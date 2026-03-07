@@ -3,7 +3,7 @@ import Foundation
 /// Reconstructed Base class for Session/Catalog entities in AppCoreShared.
 /// Represents the primary database and project management container.
 /// Based on version 16.5.9.7 metadata.
-public class SessionBase: NSObject {
+public class SessionBase: BaseObject {
     
     // MARK: - Properties (Core Identity)
     public let documentUUID: String
@@ -33,12 +33,12 @@ public class SessionBase: NSObject {
     // public var captureCollection: MOCollection?
     
     // MARK: - Initialization
-    public init(documentUUID: String, type: Int16) {
+    public init(documentUUID: String, type: Int16, context: ObjectContext?) {
         self.documentUUID = documentUUID
         self.documentType = type
         self.isDirty = false
         self.readOnly = false
-        super.init()
+        super.init(managedObjectContext: context)
     }
     
     // MARK: - Methods (Stubs)
