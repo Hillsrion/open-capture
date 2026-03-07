@@ -1,1 +1,4 @@
-build/\n.DS_Store
+.DS_Store
+.build/
+.swiftpm/
+*.log
