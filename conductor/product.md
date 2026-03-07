@@ -31,6 +31,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Processing pipeline, Metal GPU dispatching, and Masking engine (LumaRange/Local AI) reconstructed for `ImageCore`.
 - **Status:** SQLite schema mapped and persistence layer (Catalogs/Sessions/Sidecars) reconstructed for `DataCore`.
 - **Status:** Presentation layer (Themes, Custom Controls, Windowing, Tool Views) reconstructed for `CaptureOneUI`.
+- **Status:** High-speed image browsing (folder scan, thumbnail caching) and high-fidelity viewer integrated across all core frameworks.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.

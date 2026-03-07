@@ -8,7 +8,7 @@
 
 ## Frameworks & UI
 - **User Interface:**
-    - **AppKit & SwiftUI:** Hybrid architecture for window management, custom cells, and modern tool views.
+    - **AppKit, SwiftUI & QuickLook:** Hybrid architecture for window management, performant thumbnail extraction, and modern tool views.
 - **Image Processing:**
     - **Accelerate, Metal & CoreML:** Used for high-performance SIMD processing, GPU acceleration, and local AI segmentation.
     - **Custom Frameworks:** `ImageCore`, `ImageProcessing`.
