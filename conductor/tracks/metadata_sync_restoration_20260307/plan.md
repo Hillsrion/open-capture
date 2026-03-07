@@ -11,9 +11,9 @@
 - [x] Task: Commit Phase 2: XMP I/O Logic.
 
 ## Phase 3: EXIF Extraction (ImageCore)
-- [ ] Task: Add basic EXIF extraction (ISO, Aperture, Shutter) to `RawImageRep`.
-- [ ] Task: Map extracted EXIF to `ImageBase` properties.
-- [ ] Task: Commit Phase 3: EXIF Extraction.
+- [x] Task: Add basic EXIF extraction (ISO, Aperture, Shutter) to `RawImageRep`.
+- [x] Task: Map extracted EXIF to `ImageBase` properties.
+- [x] Task: Commit Phase 3: EXIF Extraction.
 
 ## Phase 4: Metadata Inspector UI (CaptureOneUI)
 - [ ] Task: Reconstruct the `MetadataInspectorView`.

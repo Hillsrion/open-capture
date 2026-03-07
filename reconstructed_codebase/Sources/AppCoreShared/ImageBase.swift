@@ -27,6 +27,12 @@ public class ImageBase: BaseObject {
     public var isCloud: Bool
     public var isCloudOnly: Bool
     
+    // EXIF Properties (mapped from ZIMAGE or ZMETADATA)
+    public var iso: Int { (mcImage?.objectForKey("ZISO") as? Int) ?? 0 }
+    public var aperture: Double { (mcImage?.objectForKey("ZAPERTURE") as? Double) ?? 0.0 }
+    public var shutter: Double { (mcImage?.objectForKey("ZSHUTTER") as? Double) ?? 0.0 }
+    public var focalLength: Int { (mcImage?.objectForKey("ZFOCALLENGTH") as? Int) ?? 0 }
+    
     // MARK: - Relationships
     public var mcImage: MCImage?
     public var variants: [VariantBase] = []
