@@ -8,6 +8,7 @@ This track initiates the systematic "Full Restoration" of the `AppCoreShared` fr
 - **Logic Recovery:** Systematically analyze disassembly to reconstruct the internal implementation of all methods within the framework.
 - **State & Notification:** Reconstruct the complete state management system, including property observers, notification dispatchers, and synchronization primitives.
 - **Full Swift Port:** Translate all legacy Objective-C patterns into idiomatic modern Swift while maintaining binary-equivalent behavior where necessary for inter-framework compatibility.
+- **Licensing & Connectivity Neutralization:** Systematically identify and remove all license verification logic, activation checks, and server-side pings (telemetry/analytics). Reconstruct these modules to always return a "License Valid / Pro Status" state to ensure free and unrestricted local usage.
 
 ## Non-Functional Requirements
 - **High Fidelity:** The reconstructed logic must match the original assembly flow.
