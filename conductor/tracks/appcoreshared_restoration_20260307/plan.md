@@ -6,7 +6,7 @@
 - [x] Task: Define property and method stubs with original API signatures.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Structural Mapping & Skeleton Reconstruction' (Protocol in workflow.md)
 
-## Phase 2: Logic Recovery & Method Implementation
+## Phase 2: Logic Recovery & Method Implementation [checkpoint: 08e2f96]
 - [x] Task: Analyze disassembly for core data accessors and simple state management logic. a74a909
 - [x] Task: Implement the internal logic for `Variant` and `Image` management methods based on assembly flow. a74a909
 - [x] Task: Reconstruct the notification and change tracking system. a74a909
@@ -15,8 +15,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Logic Recovery & Method Implementation' (Protocol in workflow.md) a74a909
 
 ## Phase 3: Integration & Fidelity Verification
-- [ ] Task: Implement unit tests for all reconstructed methods based on inferred functional requirements.
-- [ ] Task: Perform "Dry Run" verification of data flow between reconstructed models.
-- [ ] Task: Refine Swift implementations for idiomatic correctness while maintaining behavioral fidelity.
-- [ ] Task: Finalize documentation mapping source code to assembly offsets.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Integration & Fidelity Verification' (Protocol in workflow.md)
+- [x] Task: Implement unit tests for all reconstructed methods based on inferred functional requirements. 08e2f96
+- [x] Task: Perform "Dry Run" verification of data flow between reconstructed models. 08e2f96
+- [x] Task: Refine Swift implementations for idiomatic correctness while maintaining behavioral fidelity. 08e2f96
+- [x] Task: Finalize documentation mapping source code to assembly offsets. 08e2f96
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Integration & Fidelity Verification' (Protocol in workflow.md) 08e2f96
