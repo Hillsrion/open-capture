@@ -1,7 +1,23 @@
 import XCTest
+import DataCore
 @testable import AppCoreShared
 
 class ImportTests: XCTestCase {
+    
+    var dbURL: URL!
+    
+    override func setUp() {
+        super.setUp()
+        dbURL = FileManager.default.temporaryDirectory.appendingPathComponent("test_import.cocatalogdb")
+        try? DataCoreManager.shared.openDatabase(at: dbURL)
+        try? DataCoreManager.shared.execute(query: DatabaseSchema.createTablesQuery)
+    }
+    
+    override func tearDown() {
+        DataCoreManager.shared.closeDatabase()
+        try? FileManager.default.removeItem(at: dbURL)
+        super.tearDown()
+    }
     
     func testImportSettingsInitialization() {
         let settings = ImportSettings()
@@ -34,5 +50,64 @@ class ImportTests: XCTestCase {
         
         XCTAssertEqual(metadata.jobName, "Test Job")
         XCTAssertEqual(metadata.copyright, "2026 Team")
+    }
+    
+    func testImportSourceScanner() {
+        let scanner = ImportSourceScanner()
+        let tmpDir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try? FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: tmpDir) }
+        
+        let file1 = tmpDir.appendingPathComponent("image1.ARW")
+        let file2 = tmpDir.appendingPathComponent("image2.jpg")
+        let file3 = tmpDir.appendingPathComponent("notes.txt")
+        
+        try? "test".write(to: file1, atomically: true, encoding: .utf8)
+        try? "test".write(to: file2, atomically: true, encoding: .utf8)
+        try? "test".write(to: file3, atomically: true, encoding: .utf8)
+        
+        let results = scanner.scan(url: tmpDir, includeSubfolders: true)
+        
+        XCTAssertEqual(results.count, 2)
+        XCTAssertTrue(results.contains { $0.lastPathComponent == "image1.ARW" })
+        XCTAssertTrue(results.contains { $0.lastPathComponent == "image2.jpg" })
+        XCTAssertFalse(results.contains { $0.lastPathComponent == "notes.txt" })
+    }
+    
+    func testPOImporterFullFlow() {
+        let importer = POImporter()
+        let tmpDir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try? FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: tmpDir) }
+        
+        let file1 = tmpDir.appendingPathComponent("test.jpg")
+        try? "test".write(to: file1, atomically: true, encoding: .utf8)
+        
+        let expectation = XCTestExpectation(description: "Import completion")
+        
+        importer.scanSource(url: tmpDir)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            XCTAssertEqual(importer.discoveredURLs.count, 1)
+            importer.pickedState.setPicked(true, for: file1)
+            
+            importer.startImport()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                if case .completed(let count) = importer.status {
+                    XCTAssertEqual(count, 1)
+                    
+                    // Verify database registration
+                    let reader = DataCoreManager.shared.reader()
+                    let dbCount = reader.countEntities(in: "ZIMAGE")
+                    XCTAssertEqual(dbCount, 1)
+                } else {
+                    XCTFail("Import status should be completed, was \(importer.status)")
+                }
+                expectation.fulfill()
+            }
+        }
+        
+        wait(for: [expectation], timeout: 3.0)
     }
 }

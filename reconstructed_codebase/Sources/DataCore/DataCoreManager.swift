@@ -33,6 +33,14 @@ public class DataCoreManager {
         db = nil
     }
     
+    public func reader() -> DatabaseReader {
+        return DatabaseReader(database: db)
+    }
+    
+    public func writer() -> DatabaseWriter {
+        return DatabaseWriter(database: db)
+    }
+    
     // MARK: - Query Wrappers
     
     public func execute(query: String) throws {
