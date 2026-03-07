@@ -43,10 +43,30 @@ public class ImageCoreGPU {
     }
     
     private func getPipelineState(for kernelName: String) -> MTLComputePipelineState? {
-        // Implementation logic: 
-        // 1. Check cache
-        // 2. Load from default library if missing
-        return pipelineCache[kernelName]
+        if let cached = pipelineCache[kernelName] {
+            return cached
+        }
+        
+        guard let device = device else { return nil }
+        
+        // 1. Load default library
+        let library = device.makeDefaultLibrary()
+        
+        // 2. Load function
+        guard let function = library?.makeFunction(name: kernelName) else {
+            print("[ImageCoreGPU] Failed to find kernel: \(kernelName)")
+            return nil
+        }
+        
+        // 3. Create pipeline state
+        do {
+            let pipeline = try device.makeComputePipelineState(function: function)
+            pipelineCache[kernelName] = pipeline
+            return pipeline
+        } catch {
+            print("[ImageCoreGPU] Failed to create pipeline state for \(kernelName): \(error)")
+            return nil
+        }
     }
 }
 

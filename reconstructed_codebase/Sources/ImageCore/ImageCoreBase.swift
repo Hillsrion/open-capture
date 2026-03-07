@@ -157,6 +157,32 @@ public struct IC_ExportSettings {
     }
 }
 
+public struct IC_GeometryAdjustments {
+    public var cropRect: CGRect
+    public var rotation: Double
+    public var keystoneX: Double
+    public var keystoneY: Double
+    
+    public init() {
+        self.cropRect = .zero
+        self.rotation = 0.0
+        self.keystoneX = 0.0
+        self.keystoneY = 0.0
+    }
+}
+
+public struct IC_VignettingAdjustments {
+    public var amount: Double
+    public var midpoint: Double
+    public var roundness: Double
+    
+    public init() {
+        self.amount = 0.0
+        self.midpoint = 50.0
+        self.roundness = 0.0
+    }
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32
@@ -193,9 +219,11 @@ public struct IC_ProcessSettings {
     // Lens Correction (ENG-006)
     public var lensCorrection: IC_LensCorrectionSettings
 
-    // Geometry
-    public var cropRect: CGRect
-    public var rotation: Double
+    // Geometry (Inferred from ConvertToFromGeometryAdjustments)
+    public var geometry: IC_GeometryAdjustments
+    
+    // Vignetting (Inferred from ConvertToFromVignettingAdjustments)
+    public var vignetting: IC_VignettingAdjustments
 
     public init(version: Int32 = 1600) {
         self.engineVersion = version
@@ -215,8 +243,8 @@ public struct IC_ProcessSettings {
         self.colorCorrectionList = IC_ColorCorrectionList()
         self.localAdjustments = []
         self.lensCorrection = IC_LensCorrectionSettings()
-        self.cropRect = .zero
-        self.rotation = 0.0
+        self.geometry = IC_GeometryAdjustments()
+        self.vignetting = IC_VignettingAdjustments()
     }
 }
 /// Base protocol for all image processing operations.

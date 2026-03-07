@@ -58,13 +58,30 @@ public struct COViewerView: View {
             
             // Simulation: Apply basic CI adjustments to the thumbnail
             let ciImage = CIImage(data: thumb.tiffRepresentation!)!
-            let filtered = ciImage
+            var filtered = ciImage
                 .applyingFilter("CIExposureAdjust", parameters: ["inputEV": controller.exposure])
                 .applyingFilter("CIColorControls", parameters: [
                     "inputContrast": 1.0 + controller.contrast / 100.0,
                     "inputBrightness": controller.brightness / 100.0,
                     "inputSaturation": 1.0 + controller.saturation / 100.0
                 ])
+            
+            // --- Lens Correction Simulation (ENG-006) ---
+            if controller.lensDistortion != 0 {
+                let radius = max(ciImage.extent.width, ciImage.extent.height)
+                filtered = filtered.applyingFilter("CIBumpDistortion", parameters: [
+                    "inputCenter": CIVector(x: ciImage.extent.midX, y: ciImage.extent.midY),
+                    "inputRadius": radius,
+                    "inputScale": controller.lensDistortion / 100.0
+                ])
+            }
+            
+            if controller.lensLightFalloff != 0 {
+                filtered = filtered.applyingFilter("CIVignette", parameters: [
+                    "inputIntensity": controller.lensLightFalloff / 100.0,
+                    "inputRadius": 1.0
+                ])
+            }
             
             let rep = NSCIImageRep(ciImage: filtered)
             let finalImage = NSImage(size: rep.size)

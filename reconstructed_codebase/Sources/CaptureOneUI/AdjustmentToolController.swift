@@ -286,6 +286,9 @@ public class AdjustmentToolController: ObservableObject {
         settings.lensCorrection.diffraction = diffraction
         settings.lensCorrection.lccProfileUUID = lccProfileUUID
         
+        settings.geometry.cropRect = .zero // Inferred: logic for mapping variant crop to IC_GeometryAdjustments
+        settings.geometry.rotation = 0.0
+        
         settings.levelsShadow = levelsBlackPoint
         settings.levelsHighlight = levelsWhitePoint
         settings.levelsMidtone = levelsMidtone
