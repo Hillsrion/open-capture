@@ -49,4 +49,30 @@ public class DatabaseReader {
         sqlite3_finalize(statement)
         return count
     }
+    
+    /// Reconstructed logic for fetching variants based on a predicate.
+    /// Used by Smart Albums and Browser filtering.
+    public func fetchVariants(with predicate: FilterPredicate) throws -> [String] {
+        let whereClause = predicate.toSQL()
+        let query = """
+        SELECT ZVARIANTUUID FROM ZVARIANT 
+        JOIN ZIMAGE ON ZVARIANT.ZIMAGE = ZIMAGE.Z_PK
+        WHERE \(whereClause);
+        """
+        
+        var statement: OpaquePointer?
+        var results: [String] = []
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            while sqlite3_step(statement) == SQLITE_ROW {
+                if let uuid = sqlite3_column_text(statement, 0) {
+                    results.append(String(cString: uuid))
+                }
+            }
+        }
+        sqlite3_finalize(statement)
+        return results
+    }
 }

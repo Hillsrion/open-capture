@@ -39,8 +39,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Rating & Color Tagging (Stars, Colors, Shortcuts)**
+- [x] **Track: Restoration of Rating & Color Tagging (Stars, Colors, Shortcuts)**
   *Link: [./tracks/rating_tagging_restoration_20260307/](./tracks/rating_tagging_restoration_20260307/)*
+
+---
+
+- [ ] **Track: Restoration of Smart Albums & Advanced Filtering (SQL Predicates)**
+  *Link: [./tracks/smart_albums_restoration_20260307/](./tracks/smart_albums_restoration_20260307/)*
 
 ---
 
