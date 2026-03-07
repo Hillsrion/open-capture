@@ -34,7 +34,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ⏳ Pending |
 | ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ⏳ Pending |
 | ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ⏳ Pending |
-| ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ⏳ Pending |
+| ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ✅ Done |
 | ENG-010 | **HDR Merge & Panorama Stitch** (32-bit DNG generation) | Low | Very High | ⏳ Pending |
 | ENG-011 | **Soft Proofing Engine** (ICC profile simulation for print/web) | Med | High | ⏳ Pending |
 
@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-009** (Export Engine) within the `export_engine_restoration` track.
+Currently working on **ENG-006** (Lens Correction) within the `lens_correction_restoration` track.
