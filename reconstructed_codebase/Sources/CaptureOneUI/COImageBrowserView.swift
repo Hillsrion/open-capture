@@ -1,23 +1,24 @@
 import SwiftUI
 import AppCoreShared
+import DataCore
 
 /// Reconstructed Image Browser for Capture One.
 /// Based on _TtC10CaptureOne32ImageBrowserSettingsWithGrouping and related metadata.
 public struct COImageBrowserView: View {
-    
+
     @State var images: [ImageBase] = []
-    @Binding var predicate: FilterPredicate
+    @Binding var predicate: COFilterPredicate
     public var onSelect: ((ImageBase) -> Void)?
-    
+
     // MARK: - Browser Settings (Reconstructed from metadata)
     @State private var thumbnailSize: CGFloat = 120
     @State private var sortOrder: String = "filename" // ZSORTORDER
-    
+
     let columns = [
         GridItem(.adaptive(minimum: 100))
     ]
-    
-    public init(images: [ImageBase] = [], predicate: Binding<FilterPredicate>, onSelect: ((ImageBase) -> Void)? = nil) {
+
+    public init(images: [ImageBase] = [], predicate: Binding<COFilterPredicate>, onSelect: ((ImageBase) -> Void)? = nil) {
         self._images = State(initialValue: images)
         self._predicate = predicate
         self.onSelect = onSelect

@@ -7,7 +7,7 @@ import DataCore
 
 public class SmartAlbum: CollectionBase {
     
-    public var predicate: FilterPredicate?
+    public var predicate: COFilterPredicate?
     
     public override init(uuid: String, context: ObjectContext?) {
         super.init(uuid: uuid, context: context)

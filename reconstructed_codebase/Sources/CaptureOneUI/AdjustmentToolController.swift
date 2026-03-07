@@ -1,6 +1,7 @@
 import SwiftUI
 import AppCoreShared
 import ImageCore
+import DataCore
 import Combine
 
 /// Reconstructed controller for managing adjustment tool states.
@@ -40,7 +41,7 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var colorTag: VariantBase.ColorTag = .none
     
     // Filtering State
-    @Published public var activePredicate: FilterPredicate = FilterPredicate()
+    @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
     public init() {
         setupChangeObservers()

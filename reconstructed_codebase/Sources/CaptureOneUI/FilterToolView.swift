@@ -6,9 +6,9 @@ import DataCore
 /// Based on _TtC10CaptureOne14FilterToolView metadata.
 
 public struct FilterToolView: View {
-    @Binding var predicate: FilterPredicate
+    @Binding var predicate: COFilterPredicate
     
-    public init(predicate: Binding<FilterPredicate>) {
+    public init(predicate: Binding<COFilterPredicate>) {
         self._predicate = predicate
     }
     

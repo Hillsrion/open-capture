@@ -52,7 +52,7 @@ public class DatabaseReader {
     
     /// Reconstructed logic for fetching variants based on a predicate.
     /// Used by Smart Albums and Browser filtering.
-    public func fetchVariants(with predicate: FilterPredicate) throws -> [String] {
+    public func fetchVariants(with predicate: COFilterPredicate) throws -> [String] {
         let whereClause = predicate.toSQL()
         let query = """
         SELECT ZVARIANTUUID FROM ZVARIANT 

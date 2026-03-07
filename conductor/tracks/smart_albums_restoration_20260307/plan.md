@@ -19,6 +19,6 @@
 - [x] Task: Commit Phase 3: Smart Albums Integration.
 
 ## Phase 4: Validation & Optimization
-- [ ] Task: Verify filtering with a simulated large catalog.
-- [ ] Task: Optimize SQL indexes for common filter combinations (Rating + Color).
-- [ ] Task: Commit Phase 4: Optimization.
+- [x] Task: Verify filtering with a simulated large catalog.
+- [x] Task: Optimize SQL indexes for common filter combinations (Rating + Color).
+- [x] Task: Commit Phase 4: Optimization.

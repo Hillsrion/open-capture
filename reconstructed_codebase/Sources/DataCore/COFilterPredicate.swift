@@ -3,7 +3,7 @@ import Foundation
 /// Reconstructed Filter Predicate model for building dynamic queries.
 /// Based on _TtC8DataCore15FilterPredicate metadata.
 
-public struct FilterPredicate: Codable {
+public struct COFilterPredicate: Codable {
     public var minRating: Int?
     public var maxRating: Int?
     public var colorTags: [Int]?
