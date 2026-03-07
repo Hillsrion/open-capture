@@ -1,51 +1,51 @@
-import AppCoreShared
 import Foundation
-import Metal
-import CoreML
+import Accelerate
 
-/// Reconstructed Masking Engine for ImageCore.
-/// Handles Luma Range, Parametric Masking, and Local AI Segmentation.
+/// Reconstructed Mask representation for ImageCore.
+/// Based on disassembly of CImgOpApplyMask.
 
-public struct IC_MaskRangeParametersLuma {
-    public var lumaMin: Float
-    public var lumaMax: Float
-    public var radius: Float
-    public var sensitivity: Float
+public class ICMask {
+    public let uuid: String
+    public let size: CGSize
+    public var buffer: UnsafeMutablePointer<UInt8>
     
-    public init() {
-        self.lumaMin = 0.0
-        self.lumaMax = 1.0
-        self.radius = 0.0
-        self.sensitivity = 0.5
+    public init(uuid: String, size: CGSize) {
+        self.uuid = uuid
+        self.size = size
+        let count = Int(size.width * size.height)
+        self.buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
+        self.buffer.initialize(repeating: 0, count: count)
+    }
+    
+    deinit {
+        buffer.deallocate()
+    }
+    
+    /// Reconstructed logic for clearing a mask.
+    public func clear() {
+        let count = Int(size.width * size.height)
+        memset(buffer, 0, count)
+    }
+    
+    /// Reconstructed logic for filling a mask (100% opacity).
+    public func fill() {
+        let count = Int(size.width * size.height)
+        memset(buffer, 255, count)
     }
 }
 
-public class ImageCoreMasking {
+public struct MaskingKernels {
     
-    /// Reconstructed Luma Range masking logic.
-    /// Based on disassembly of ComputeMaskFromLuma_SIMD.
-    public func computeLumaMask(source: CImageBuffer, destination: CImageBuffer, parameters: IC_MaskRangeParametersLuma) {
-        // Logic recovery:
-        // 1. Extract Luma values from RGB source using SIMD (Accelerate).
-        // 2. Apply thresholding based on parameters.lumaMin and lumaMax.
-        // 3. Optional: Apply smoothing/radius using a Gaussian kernel on GPU.
-    }
-}
-
-/// Reconstructed AI Segmentation Bridge (Confirmed Local via CoreML symbols).
-public class AISegmentationEngine {
-    
-    private var faceModel: MLModel?
-    private var subjectModel: MLModel?
-    
-    public init() {
-        // Implementation logic: Load FaceMaskingModel and subjectMaskingFP16 from bundle.
-    }
-    
-    public func detectSubject(in buffer: CImageBuffer, completion: @escaping (Any?) -> Void) {
-        // Logic recovery: 
-        // 1. Convert CImageBuffer to CVPixelBuffer.
-        // 2. Run prediction using subjectModel.
-        // 3. Generate bitmask for the subject.
+    /// Reconstructed alpha-blending kernel.
+    /// Blends source into destination using mask and layer opacity.
+    public static func blend(source: UnsafePointer<Float>, 
+                             destination: UnsafeMutablePointer<Float>, 
+                             mask: UnsafePointer<UInt8>, 
+                             opacity: Float, 
+                             count: Int) {
+        for i in 0..<count {
+            let alpha = (Float(mask[i]) / 255.0) * opacity
+            destination[i] = source[i] * alpha + destination[i] * (1.0 - alpha)
+        }
     }
 }

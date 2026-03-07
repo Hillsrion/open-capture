@@ -13,10 +13,10 @@
 - [x] Task: Commit Phase 2: Layer UI.
 
 ## Phase 3: Blending Engine (ImageCore)
-- [ ] Task: Reconstruct mask representation in `ImageCore`.
-- [ ] Task: Implement alpha-blending kernel in `ImageCorePipeline`.
-- [ ] Task: Update `IC_ProcessSettings` to accept a stack of adjustments.
-- [ ] Task: Commit Phase 3: Blending Logic.
+- [x] Task: Reconstruct mask representation in `ImageCore`.
+- [x] Task: Implement alpha-blending kernel in `ImageCorePipeline`.
+- [x] Task: Update `IC_ProcessSettings` to accept a stack of adjustments.
+- [x] Task: Commit Phase 3: Blending Logic.
 
 ## Phase 4: Integration & Validation
 - [ ] Task: Bind UI layer selection to adjustment tools (adjusting a layer instead of background).

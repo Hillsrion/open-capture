@@ -34,9 +34,17 @@ public class ImageCorePipeline {
         // Using Accelerate framework to mimic low-level instructions like ld4.16b/st3.16b.
         
         // Example: Apply gain table/matrix for RAW conversion
-        let matrix = input.getMatrix(for: settings)
+        let _ = input.getMatrix(for: settings)
         
         // vImage or custom SIMD kernels would be called here.
+        
+        // --- Layer Blending Simulation (ENG-005) ---
+        for localAdj in settings.localAdjustments {
+            print("[ImageCore] Blending local layer with exposure: \(localAdj.exposure), opacity: \(localAdj.opacity)")
+            // 1. Create temporary buffer for layer adjustments
+            // 2. Apply adjustments to temp buffer
+            // 3. Blend temp buffer into output using mask and opacity
+        }
     }
 }
 

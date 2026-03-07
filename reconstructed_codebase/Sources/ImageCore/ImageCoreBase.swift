@@ -41,6 +41,23 @@ public struct ICGradationCurves {
     }
 }
 
+public struct IC_LocalAdjustmentSettings {
+    public var opacity: Float
+    public var exposure: Float
+    public var contrast: Float
+    public var brightness: Float
+    public var saturation: Float
+    public var maskUUID: String?
+    
+    public init() {
+        self.opacity = 1.0
+        self.exposure = 0.0
+        self.contrast = 0.0
+        self.brightness = 0.0
+        self.saturation = 0.0
+    }
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32
@@ -64,6 +81,9 @@ public struct IC_ProcessSettings {
 
     // Gradation Curves (High-Fidelity)
     public var gradationCurves: ICGradationCurves
+    
+    // Local Adjustments (Layers)
+    public var localAdjustments: [IC_LocalAdjustmentSettings]
 
     // Geometry
     public var cropRect: CGRect
@@ -83,6 +103,7 @@ public struct IC_ProcessSettings {
         self.levelsTargetShadow = 0.0
         self.levelsTargetHighlight = 1.0
         self.gradationCurves = ICGradationCurves()
+        self.localAdjustments = []
         self.cropRect = .zero
         self.rotation = 0.0
     }
