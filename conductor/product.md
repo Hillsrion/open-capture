@@ -27,6 +27,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - Map module-level interactions and data flows.
 - Track reconstruction progress against the original `.app` bundle.
 - **Status:** Disassembly and metadata extraction pipeline established using LLVM 17+ tools.
+- **Status:** Core data models (Image, Variant, Collection, Session) and logic coordination (ObjectContext) reconstructed for `AppCoreShared`. License checks and telemetry neutralized.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.

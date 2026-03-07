@@ -26,3 +26,4 @@
 - **Networking:** `CocoaAsyncSocket`, `CocoaHTTPServer`.
 - **Serialization:** `SwiftProtobuf`.
 - **Analytics:** `AnalyticsFrameworkObjC`.
+- **Testing:** `XCTest` for logic verification and regression testing.
