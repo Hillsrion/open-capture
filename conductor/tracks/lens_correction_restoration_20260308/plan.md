@@ -7,10 +7,10 @@
 - [x] Task: Commit Phase 1. f2a610d
 
 ## Phase 2: Mathematical Kernels (ImageCore)
-- [ ] Task: Implement `ICL_DistortionCorrection` kernel for geometric correction.
-- [ ] Task: Implement `ICL_ChromaticAberration` analysis and correction logic.
-- [ ] Task: Implement `ICL_LightFalloff` compensation kernel.
-- [ ] Task: Commit Phase 2.
+- [x] Task: Implement `ICL_DistortionCorrection` kernel for geometric correction. c21efc1
+- [x] Task: Implement `ICL_ChromaticAberration` analysis and correction logic. c21efc1
+- [x] Task: Implement `ICL_LightFalloff` compensation kernel. c21efc1
+- [x] Task: Commit Phase 2. c21efc1
 
 ## Phase 3: LCC Logic & Integration (ImageCore)
 - [ ] Task: Implement `IC_CreateLCCProfile` logic based on Analyze and Create LCC.
