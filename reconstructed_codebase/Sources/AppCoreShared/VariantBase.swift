@@ -25,6 +25,37 @@ public class VariantBase: BaseObject {
     public var image: ImageBase?
     public var mcVariant: MCVariant?
     
+    // MARK: - Rating & Color Tag (CORE-009)
+    public var rating: Int {
+        get { return (mcVariant?.objectForKey("ZRATING") as? Int) ?? 0 }
+        set {
+            mcVariant?.setObject(newValue, forKey: "ZRATING")
+            isModified = true
+        }
+    }
+    
+    public enum ColorTag: Int {
+        case none = 0
+        case red = 1
+        case orange = 2
+        case yellow = 3
+        case green = 4
+        case blue = 5
+        case purple = 6
+        case pink = 7
+    }
+    
+    public var colorTag: ColorTag {
+        get {
+            let val = (mcVariant?.objectForKey("ZCOLOR_TAG") as? Int) ?? 0
+            return ColorTag(rawValue: val) ?? .none
+        }
+        set {
+            mcVariant?.setObject(newValue.rawValue, forKey: "ZCOLOR_TAG")
+            isModified = true
+        }
+    }
+    
     // MARK: - Initialization
     public init(variantUUID: String, image: ImageBase?, context: ObjectContext?) {
         self.variantUUID = variantUUID

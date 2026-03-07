@@ -27,7 +27,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | ENG-001 | **Bipolar Adjustments** (Exposure, Contrast kernels) | High | Low | ✅ Done |
-| ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ⏳ Pending |
+| ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ✅ Done |
 | ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ⏳ Pending |
 | ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ⏳ Pending |
 | ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ⏳ Pending |
@@ -69,7 +69,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | UI-001 | **High-Fidelity Sliders** (Thin track, bipolar mode) | High | Low | ✅ Done |
-| UI-002 | **Curves Interactive Widget** (Bezier point editor) | High | High | ⏳ Pending |
+| UI-002 | **Curves Interactive Widget** (Bezier point editor) | High | High | ✅ Done |
 | UI-003 | **Color Wheels UI** (360° color picker interface) | Med | High | ⏳ Pending |
 | UI-004 | **Layer Inspector** (Layer stack, opacity, visibility) | High | Med | ⏳ Pending |
 | UI-005 | **Grid View Browser** (Lazy loading, resizable thumbnails, list view) | High | High | ⏳ Pending |
