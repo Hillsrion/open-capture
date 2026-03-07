@@ -11,7 +11,7 @@
     - **AppKit:** For the main windowing and legacy UI components.
     - **SwiftUI:** For modern, modular UI elements.
 - **Image Processing:**
-    - **Accelerate & Metal:** Likely used by the processing engine for performance.
+    - **Accelerate, Metal & CoreML:** Used for high-performance SIMD processing, GPU acceleration, and local AI segmentation.
     - **Custom Frameworks:** `ImageCore`, `ImageProcessing`.
 
 ## Data & Infrastructure
