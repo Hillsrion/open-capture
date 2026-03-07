@@ -138,6 +138,10 @@ public struct CullingView: View {
                             
                             if selectedToolTab == "ADJUST" {
                                 VStack(spacing: 0) {
+                                    if let variant = selectedImage?.primaryVariant {
+                                        LayerInspectorView(variant: variant)
+                                    }
+                                    
                                     ExposureToolView(
                                         exposure: $adjustmentController.exposure,
                                         contrast: $adjustmentController.contrast,

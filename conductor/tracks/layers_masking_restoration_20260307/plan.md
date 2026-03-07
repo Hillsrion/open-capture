@@ -7,10 +7,10 @@
 - [x] Task: Commit Phase 1: Layer Data Model.
 
 ## Phase 2: UI Components (CaptureOneUI)
-- [ ] Task: Reconstruct `LayerInspectorView` (stack of layers with icons).
-- [ ] Task: Implement layer selection and property editing (opacity, visibility).
-- [ ] Task: Add "Add Adjustment Layer" functionality.
-- [ ] Task: Commit Phase 2: Layer UI.
+- [x] Task: Reconstruct `LayerInspectorView` (stack of layers with icons).
+- [x] Task: Implement layer selection and property editing (opacity, visibility).
+- [x] Task: Add "Add Adjustment Layer" functionality.
+- [x] Task: Commit Phase 2: Layer UI.
 
 ## Phase 3: Blending Engine (ImageCore)
 - [ ] Task: Reconstruct mask representation in `ImageCore`.
