@@ -1,3 +1,4 @@
+import ImageCore
 import XCTest
 // Note: Verification tests for ImageCore logic.
 

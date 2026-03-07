@@ -1,3 +1,4 @@
+import AppCoreShared
 import XCTest
 // Note: In a real environment, we would import the reconstructed module.
 // For this verification, we are testing the logic of the reconstructed classes.

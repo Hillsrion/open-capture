@@ -2,7 +2,7 @@ import Foundation
 
 /// Reconstructed central coordination context for AppCoreShared.
 /// Acts similarly to NSManagedObjectContext, managing object lifecycle and persistence.
-public class ObjectContext: NSObject {
+public class ObjectContext: NSObject { public override init() { super.init() } 
     
     private let modelQueue = DispatchQueue(label: "com.captureone.ObjectContext.modelQueue")
     private let cacheQueue = DispatchQueue(label: "com.captureone.ObjectContext.cacheQueue")

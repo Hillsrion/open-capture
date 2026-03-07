@@ -27,14 +27,14 @@ decision = "deny"
 priority = 200
 description = "Block piping network content directly to a shell"
 
-# Global Allow for Shell (Priority 150)
-# This rule is simplified to allow most dev commands including redirections
+# Allow shell commands with redirection to project files (Priority 175)
+# Matches commands containing > or >> followed by a non-absolute path
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = ".*"
+commandRegex = ".*(>|>>)\\s*(?!\\/)\\S+.*"
 decision = "allow"
-priority = 150
-description = "Allow all shell commands except those explicitly denied above"
+priority = 175
+description = "Allow redirection to project files (relative paths)"
 
 # Global Allow for all other tools (Priority 100)
 [[rule]]

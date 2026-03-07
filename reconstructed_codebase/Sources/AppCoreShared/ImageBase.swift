@@ -14,7 +14,7 @@ public class ImageBase: BaseObject {
     internal var row: Any?
     
     // MARK: - State Flags
-    @objc public dynamic var isTrashed: Bool {
+    @objc public var isTrashed: Bool {
         willSet { willChangeValue(forKey: "isTrashed") }
         didSet { didChangeValue(forKey: "isTrashed") }
     }

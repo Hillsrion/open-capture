@@ -7,7 +7,7 @@ public class DataCoreManager {
     
     public static let shared = DataCoreManager()
     
-    private var db: OpaquePointer?
+    public var db: OpaquePointer?
     
     private init() {}
     
@@ -35,7 +35,7 @@ public class DataCoreManager {
     
     // MARK: - Query Wrappers
     
-    internal func execute(query: String) throws {
+    public func execute(query: String) throws {
         guard let db = db else { return }
         if sqlite3_exec(db, query, nil, nil, nil) != SQLITE_OK {
             let error = String(cString: sqlite3_errmsg(db))

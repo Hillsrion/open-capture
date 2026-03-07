@@ -12,7 +12,7 @@ public class VariantBase: BaseObject {
     internal var row: Any?
     
     // MARK: - State Flags
-    @objc public dynamic var isModified: Bool {
+    @objc public var isModified: Bool {
         willSet { willChangeValue(forKey: "isModified") }
         didSet { didChangeValue(forKey: "isModified") }
     }

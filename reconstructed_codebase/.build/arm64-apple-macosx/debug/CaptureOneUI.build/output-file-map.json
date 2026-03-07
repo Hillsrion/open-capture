@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/master.swiftdeps"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/CaptureOneTheme.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CaptureOneTheme.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CaptureOneTheme.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CaptureOneTheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CaptureOneTheme.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CaptureOneTheme.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/CullingWindowController.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CullingWindowController.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CullingWindowController.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CullingWindowController~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CullingWindowController.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CullingWindowController.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/CustomControls.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CustomControls.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CustomControls.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CustomControls~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CustomControls.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/CustomControls.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/HistogramToolView.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/HistogramToolView.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/HistogramToolView.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/HistogramToolView~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/HistogramToolView.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneUI.build/HistogramToolView.dia"
+  }
+}

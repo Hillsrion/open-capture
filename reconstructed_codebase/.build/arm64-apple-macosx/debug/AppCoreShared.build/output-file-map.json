@@ -1,0 +1,75 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/master.swiftdeps"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/BaseObject.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/BaseObject.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/BaseObject.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/BaseObject~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/BaseObject.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/BaseObject.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/CollectionBase.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/CollectionBase.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/CollectionBase.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/CollectionBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/CollectionBase.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/CollectionBase.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/FolderModels.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/FolderModels.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/FolderModels.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/FolderModels~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/FolderModels.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/FolderModels.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/IdentityNeutralizer.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/IdentityNeutralizer.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/IdentityNeutralizer.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/IdentityNeutralizer~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/IdentityNeutralizer.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/IdentityNeutralizer.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/ImageBase.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ImageBase.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ImageBase.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ImageBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ImageBase.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ImageBase.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/LicenseNeutralizer.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/LicenseNeutralizer.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/LicenseNeutralizer.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/LicenseNeutralizer~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/LicenseNeutralizer.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/LicenseNeutralizer.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/ModelCore.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ModelCore.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ModelCore.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ModelCore~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ModelCore.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ModelCore.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/ObjectContext.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ObjectContext.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ObjectContext.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ObjectContext~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ObjectContext.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/ObjectContext.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/SessionBase.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/SessionBase.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/SessionBase.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/SessionBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/SessionBase.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/SessionBase.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/AppCoreShared/VariantBase.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/VariantBase.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/VariantBase.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/VariantBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/VariantBase.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/AppCoreShared.build/VariantBase.dia"
+  }
+}

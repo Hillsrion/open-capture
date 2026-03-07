@@ -39,7 +39,7 @@ public class DatabaseCatalogManager {
     public func getCatalogStatistics(at url: URL) throws -> [String: Int] {
         let manager = DataCoreManager.shared
         try manager.openDatabase(at: url)
-        let reader = DatabaseReader(database: nil) // Mocked reader
+        let reader = DatabaseReader(database: manager.db)
         
         let stats = [
             "images": reader.countEntities(in: "ZIMAGE"),
