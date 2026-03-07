@@ -10,6 +10,7 @@ public struct CaptureOneTheme {
         public static let applicationBackground = Color(red: 0.11, green: 0.11, blue: 0.11) // Very dark gray
         public static let toolbarBackground = Color(red: 0.15, green: 0.15, blue: 0.15)
         public static let panelBackground = Color(red: 0.13, green: 0.13, blue: 0.13)
+        public static let browserBackground = Color(red: 0.18, green: 0.18, blue: 0.18)
         public static let histogramBackground = Color(red: 0.08, green: 0.08, blue: 0.08)
         
         // Aliases for compatibility
