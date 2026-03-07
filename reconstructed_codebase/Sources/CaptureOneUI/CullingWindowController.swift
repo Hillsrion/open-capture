@@ -1,3 +1,6 @@
+import AppCoreShared
+import ImageCore
+import DataCore
 import SwiftUI
 import AppKit
 

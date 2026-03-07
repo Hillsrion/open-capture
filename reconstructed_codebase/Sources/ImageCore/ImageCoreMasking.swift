@@ -1,3 +1,4 @@
+import AppCoreShared
 import Foundation
 import Metal
 import CoreML

@@ -1,3 +1,6 @@
+import AppCoreShared
+import ImageCore
+import DataCore
 import SwiftUI
 
 /// Reconstructed Histogram and Metadata tool view.

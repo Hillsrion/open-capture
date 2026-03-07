@@ -8,6 +8,7 @@ This track focuses on integrating the reconstructed modules (`AppCoreShared`, `I
 - **Dependency Resolution:** Correctly map and resolve internal dependencies (e.g., UI depending on Engine and Persistence).
 - **Source Reorganization:** Move all reconstructed source and test files into the SPM-compliant `Sources/` and `Tests/` directory structure.
 - **Successful Compilation:** Achieve a zero-error build using the `swift build` command.
+- **Account & Identity Neutralization:** Ensure all account login flows, sign-in prompts, and identity management checks are bypassed. Reconstruct identity-related controllers to always report a "Local Authenticated User" status.
 - **Cross-Framework Interop:** Ensure that classes and protocols are correctly accessible across target boundaries (using `public` access modifiers).
 
 ## Non-Functional Requirements
