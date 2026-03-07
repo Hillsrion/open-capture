@@ -160,6 +160,22 @@ public struct CullingView: View {
                                     POCurvesControl(
                                         points: $adjustmentController.curvesPoints
                                     )
+                                    
+                                    COToolSection("Metadata") {
+                                        VStack(alignment: .leading, spacing: 8) {
+                                            HStack {
+                                                Text("Rating").font(.system(size: 11)).foregroundColor(.gray)
+                                                Spacer()
+                                                PORatingControl(rating: $adjustmentController.rating)
+                                            }
+                                            HStack {
+                                                Text("Color Tag").font(.system(size: 11)).foregroundColor(.gray)
+                                                Spacer()
+                                                POColorTagPicker(selectedTag: $adjustmentController.colorTag)
+                                            }
+                                        }
+                                        .padding(.vertical, 4)
+                                    }
                                 }
                             } else if selectedToolTab == "COLOR" {
                                 WhiteBalanceToolView(

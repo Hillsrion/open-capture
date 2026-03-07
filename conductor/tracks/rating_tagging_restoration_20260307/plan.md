@@ -6,10 +6,10 @@
 - [x] Task: Commit Phase 1: Data Model.
 
 ## Phase 2: UI Components (CaptureOneUI)
-- [ ] Task: Reconstruct `PORatingControl` (interactive star component).
-- [ ] Task: Reconstruct `POColorTagPicker` (color swatch component).
-- [ ] Task: Integrate controls into the Metadata section or a new Culling tool.
-- [ ] Task: Commit Phase 2: UI Components.
+- [x] Task: Reconstruct `PORatingControl` (interactive star component).
+- [x] Task: Reconstruct `POColorTagPicker` (color swatch component).
+- [x] Task: Integrate controls into the Metadata section or a new Culling tool.
+- [x] Task: Commit Phase 2: UI Components.
 
 ## Phase 3: Browser Overlays & Shortcuts
 - [ ] Task: Update `COImageBrowserView` to show rating/color tag overlays on thumbnails.

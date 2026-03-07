@@ -35,6 +35,10 @@ public class AdjustmentToolController: ObservableObject {
     // Curves State
     @Published public var curvesPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
     
+    // Rating & Color Tag
+    @Published public var rating: Int = 0
+    @Published public var colorTag: VariantBase.ColorTag = .none
+    
     public init() {
         setupChangeObservers()
     }
@@ -57,7 +61,9 @@ public class AdjustmentToolController: ObservableObject {
             $levelsMidtone.map { _ in }.eraseToAnyPublisher(),
             $levelsTargetBlack.map { _ in }.eraseToAnyPublisher(),
             $levelsTargetWhite.map { _ in }.eraseToAnyPublisher(),
-            $curvesPoints.map { _ in }.eraseToAnyPublisher()
+            $curvesPoints.map { _ in }.eraseToAnyPublisher(),
+            $rating.map { _ in }.eraseToAnyPublisher(),
+            $colorTag.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -103,6 +109,9 @@ public class AdjustmentToolController: ObservableObject {
             self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
         }
         
+        self.rating = (mc.objectForKey("ZRATING") as? Int) ?? 0
+        self.colorTag = VariantBase.ColorTag(rawValue: (mc.objectForKey("ZCOLOR_TAG") as? Int) ?? 0) ?? .none
+        
         self.isUpdatingFromModel = false
     }
     
@@ -130,6 +139,9 @@ public class AdjustmentToolController: ObservableObject {
         mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
         mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
         mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
+        
+        mc.setObject(rating, forKey: "ZRATING")
+        mc.setObject(colorTag.rawValue, forKey: "ZCOLOR_TAG")
         
         // 2. Map to ImageCore settings
         var settings = IC_ProcessSettings()
