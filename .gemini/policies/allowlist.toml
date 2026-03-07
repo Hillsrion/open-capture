@@ -1,0 +1,12 @@
+[[rule]]
+toolName = "*"
+decision = "allow"
+priority = 100
+description = "Allow all tools in this project to streamline reconstruction"
+
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*"
+decision = "allow"
+priority = 100
+description = "Allow all shell commands in this project"
