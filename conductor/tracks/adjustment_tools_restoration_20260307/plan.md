@@ -1,11 +1,11 @@
 # Implementation Plan: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)
 
 ## Phase 1: Mathematical Logic & ImageCore Restoration
-- [ ] Task: Analyze disassembly for basic adjustment kernels (`Exposure`, `Contrast`).
-- [ ] Task: Reconstruct the mathematical formulas for `Saturation` and `Brightness` in Swift.
-- [ ] Task: Reconstruct the WB mapping logic (Kelvin/Tint to RAW coefficients).
-- [ ] Task: Implement the HDR recovery algorithm (Highlight/Shadow) in `ImageCore`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Mathematical Logic & ImageCore Restoration' (Protocol in workflow.md)
+- [x] Task: Analyze disassembly for basic adjustment kernels (`Exposure`, `Contrast`). f726c22
+- [x] Task: Reconstruct the mathematical formulas for `Saturation` and `Brightness` in Swift. f726c22
+- [x] Task: Reconstruct the WB mapping logic (Kelvin/Tint to RAW coefficients). f726c22
+- [x] Task: Implement the HDR recovery algorithm (Highlight/Shadow) in `ImageCore`. f726c22
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Mathematical Logic & ImageCore Restoration' (Protocol in workflow.md) f726c22
 
 ## Phase 2: UI Components & Tool Controllers
 - [ ] Task: Reconstruct the `ExposureInspectorTool` and its specialized slider logic.

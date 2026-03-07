@@ -29,7 +29,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)**
+- [~] **Track: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)**
   *Link: [./tracks/adjustment_tools_restoration_20260307/](./tracks/adjustment_tools_restoration_20260307/)*
 
 ---
