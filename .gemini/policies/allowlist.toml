@@ -48,10 +48,10 @@ description = "Ask for redirection to absolute paths"
 # Allow safe common commands for project files (Priority 180)
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = "^(cat|find|ls|grep|mkdir|touch) (?!/|\\.git|\\.ssh|\\.aws|\\.env)\\S*.*$"
+commandRegex = "^(cat|find|ls|grep|mkdir|touch|cd|swift) (?!/|\\.git|\\.ssh|\\.aws|\\.env)\\S*.*$"
 decision = "allow"
 priority = 180
-description = "Allow cat, find, ls, grep, mkdir, and touch for project files and directories"
+description = "Allow cat, find, ls, grep, mkdir, touch, cd, and swift for project files and directories"
 
 # Global Allow for all other tools (Priority 100)
 [[rule]]
