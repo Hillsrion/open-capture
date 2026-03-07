@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "46425b524d6e",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-07T23:27:59.020755Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "conductor/tracks/lens_correction_restoration_20260308/plan.md",
+    "conductor/tracks/lens_correction_restoration_20260308/plan.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "45f91ff1e2c7",
+  "token_usage": {
+    "input_tokens": 947597,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 863886,
+    "output_tokens": 4926,
+    "api_call_count": 39
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-07T23:27:58.968725Z",
+    "agent_lines": 46,
+    "human_added": 0,
+    "human_modified": 2,
+    "human_removed": 0,
+    "total_committed": 48,
+    "agent_percentage": 95.83333333333334
+  }
+}
