@@ -25,6 +25,16 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var whites: Float = 0.0
     @Published public var blacks: Float = 0.0
     
+    // Levels State
+    @Published public var levelsBlackPoint: Float = 0.0
+    @Published public var levelsWhitePoint: Float = 1.0
+    @Published public var levelsMidtone: Float = 1.0
+    @Published public var levelsTargetBlack: Float = 0.0
+    @Published public var levelsTargetWhite: Float = 1.0
+    
+    // Curves State
+    @Published public var curvesPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    
     public init() {
         setupChangeObservers()
     }
@@ -41,7 +51,13 @@ public class AdjustmentToolController: ObservableObject {
             $highlights.map { _ in }.eraseToAnyPublisher(),
             $shadows.map { _ in }.eraseToAnyPublisher(),
             $whites.map { _ in }.eraseToAnyPublisher(),
-            $blacks.map { _ in }.eraseToAnyPublisher()
+            $blacks.map { _ in }.eraseToAnyPublisher(),
+            $levelsBlackPoint.map { _ in }.eraseToAnyPublisher(),
+            $levelsWhitePoint.map { _ in }.eraseToAnyPublisher(),
+            $levelsMidtone.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetBlack.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetWhite.map { _ in }.eraseToAnyPublisher(),
+            $curvesPoints.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -74,6 +90,19 @@ public class AdjustmentToolController: ObservableObject {
         self.whites = (mc.objectForKey("ZWHITES") as? Float) ?? 0.0
         self.blacks = (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0
         
+        self.levelsBlackPoint = (mc.objectForKey("ZLEVELS_BLACK") as? Float) ?? 0.0
+        self.levelsWhitePoint = (mc.objectForKey("ZLEVELS_WHITE") as? Float) ?? 1.0
+        self.levelsMidtone = (mc.objectForKey("ZLEVELS_MIDTONE") as? Float) ?? 1.0
+        self.levelsTargetBlack = (mc.objectForKey("ZLEVELS_TARGET_BLACK") as? Float) ?? 0.0
+        self.levelsTargetWhite = (mc.objectForKey("ZLEVELS_TARGET_WHITE") as? Float) ?? 1.0
+        
+        // Reconstruct curves from array or string if needed. Simplifying here.
+        if let curvePts = mc.objectForKey("ZCURVE_POINTS") as? [CGPoint] {
+            self.curvesPoints = curvePts
+        } else {
+            self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        }
+        
         self.isUpdatingFromModel = false
     }
     
@@ -95,6 +124,13 @@ public class AdjustmentToolController: ObservableObject {
         mc.setObject(whites, forKey: "ZWHITES")
         mc.setObject(blacks, forKey: "ZBLACKS")
         
+        mc.setObject(levelsBlackPoint, forKey: "ZLEVELS_BLACK")
+        mc.setObject(levelsWhitePoint, forKey: "ZLEVELS_WHITE")
+        mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
+        mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
+        mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
+        mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
+        
         // 2. Map to ImageCore settings
         var settings = IC_ProcessSettings()
         settings.exposure = Double(exposure)
@@ -103,6 +139,15 @@ public class AdjustmentToolController: ObservableObject {
         settings.saturation = Double(saturation)
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
+        
+        // Levels & Curves bindings
+        settings.levelsBlackPoint = Double(levelsBlackPoint)
+        settings.levelsWhitePoint = Double(levelsWhitePoint)
+        settings.levelsMidtone = Double(levelsMidtone)
+        settings.levelsTargetBlack = Double(levelsTargetBlack)
+        settings.levelsTargetWhite = Double(levelsTargetWhite)
+        
+        settings.curvesPoints = curvesPoints.map { CurvePoint(x: Float($0.x), y: Float($0.y)) }
         
         // 3. Trigger pipeline execution (Simulation for now)
         _ = ImageCorePipeline(mode: .cpu_simd)

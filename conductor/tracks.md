@@ -34,7 +34,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Levels and Curves Tools (Interpolation, Splines, Histogram)**
+- [x] **Track: Restoration of Levels and Curves Tools (Interpolation, Splines, Histogram)**
   *Link: [./tracks/levels_curves_restoration_20260307/](./tracks/levels_curves_restoration_20260307/)*
 
 ---

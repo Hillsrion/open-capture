@@ -15,6 +15,16 @@ public struct IC_ProcessSettings {
     public var whiteBalanceTemperature: Double
     public var whiteBalanceTint: Double
     
+    // Levels
+    public var levelsBlackPoint: Double
+    public var levelsWhitePoint: Double
+    public var levelsMidtone: Double
+    public var levelsTargetBlack: Double
+    public var levelsTargetWhite: Double
+    
+    // Curves
+    public var curvesPoints: [CurvePoint]
+    
     // Geometry
     public var cropRect: CGRect
     public var rotation: Double
@@ -27,6 +37,12 @@ public struct IC_ProcessSettings {
         self.brightness = 0.0
         self.whiteBalanceTemperature = 5000.0
         self.whiteBalanceTint = 0.0
+        self.levelsBlackPoint = 0.0
+        self.levelsWhitePoint = 1.0
+        self.levelsMidtone = 1.0
+        self.levelsTargetBlack = 0.0
+        self.levelsTargetWhite = 1.0
+        self.curvesPoints = []
         self.cropRect = .zero
         self.rotation = 0.0
     }

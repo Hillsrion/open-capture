@@ -150,6 +150,16 @@ public struct CullingView: View {
                                         whites: $adjustmentController.whites,
                                         blacks: $adjustmentController.blacks
                                     )
+                                    POLevelsControl(
+                                        blackPoint: $adjustmentController.levelsBlackPoint,
+                                        whitePoint: $adjustmentController.levelsWhitePoint,
+                                        midtone: $adjustmentController.levelsMidtone,
+                                        targetBlack: $adjustmentController.levelsTargetBlack,
+                                        targetWhite: $adjustmentController.levelsTargetWhite
+                                    )
+                                    POCurvesControl(
+                                        points: $adjustmentController.curvesPoints
+                                    )
                                 }
                             } else if selectedToolTab == "COLOR" {
                                 WhiteBalanceToolView(
