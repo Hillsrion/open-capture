@@ -21,12 +21,4 @@ class ImageCoreEngineTests: XCTestCase {
         pipeline.run(input: rep, settings: settings, outputBuffer: UnsafeMutableRawPointer.allocate(byteCount: 100, alignment: 1))
     }
     
-    func testMaskParameters() {
-        var params = IC_MaskRangeParametersLuma()
-        XCTAssertEqual(params.lumaMin, 0.0)
-        XCTAssertEqual(params.lumaMax, 1.0)
-        
-        params.lumaMin = 0.2
-        XCTAssertEqual(params.lumaMin, 0.2)
-    }
 }

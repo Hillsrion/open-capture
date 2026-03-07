@@ -64,7 +64,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Advanced Color Editor (Hue/Sat Masking)**
+- [x] **Track: Restoration of Advanced Color Editor (Hue/Sat Masking)**
   *Link: [./tracks/advanced_color_editor_restoration_20260307/](./tracks/advanced_color_editor_restoration_20260307/)*
 
 ---
