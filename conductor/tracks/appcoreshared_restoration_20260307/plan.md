@@ -1,10 +1,10 @@
 # Implementation Plan: Full Restoration of AppCoreShared Business Logic
 
 ## Phase 1: Structural Mapping & Skeleton Reconstruction
-- [ ] Task: Map the complete class hierarchy of `AppCoreShared` from `ObjC_Structure.txt` and `Swift_Symbols.txt`.
-- [ ] Task: Generate Swift skeleton files for all identified core entities (`Variant`, `Image`, `Collection`, `Session`).
-- [ ] Task: Define property and method stubs with original API signatures.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Structural Mapping & Skeleton Reconstruction' (Protocol in workflow.md)
+- [x] Task: Map the complete class hierarchy of `AppCoreShared` from `ObjC_Structure.txt` and `Swift_Symbols.txt`.
+- [x] Task: Generate Swift skeleton files for all identified core entities (`Variant`, `Image`, `Collection`, `Session`).
+- [x] Task: Define property and method stubs with original API signatures.
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Structural Mapping & Skeleton Reconstruction' (Protocol in workflow.md)
 
 ## Phase 2: Logic Recovery & Method Implementation
 - [ ] Task: Analyze disassembly for core data accessors and simple state management logic.
