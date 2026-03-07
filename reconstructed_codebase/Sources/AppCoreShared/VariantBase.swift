@@ -25,6 +25,15 @@ public class VariantBase: BaseObject {
     public var image: ImageBase?
     public var mcVariant: MCVariant?
     
+    // MARK: - Layers (ENG-005)
+    public var layers: [LayerBase] = []
+    public var activeLayerIndex: Int = 0
+    
+    public var activeLayer: LayerBase? {
+        guard activeLayerIndex < layers.count else { return nil }
+        return layers[activeLayerIndex]
+    }
+    
     // MARK: - Rating & Color Tag (CORE-009)
     public var rating: Int {
         get { return (mcVariant?.objectForKey("ZRATING") as? Int) ?? 0 }
@@ -65,6 +74,10 @@ public class VariantBase: BaseObject {
         self.isProxyReady = false
         self.isAlive = true
         super.init(managedObjectContext: context)
+        
+        // Add default background layer
+        let bgLayer = LayerBase(uuid: UUID().uuidString, name: "Background", type: .background, context: context)
+        self.layers = [bgLayer]
     }
     
     // MARK: - Methods

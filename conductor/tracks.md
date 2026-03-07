@@ -54,3 +54,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+- [ ] **Track: Restoration of Layers & Masking Engine (Alpha Blending, Opacity)**
+  *Link: [./tracks/layers_masking_restoration_20260307/](./tracks/layers_masking_restoration_20260307/)*
+
+---
+

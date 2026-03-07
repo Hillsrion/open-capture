@@ -15,11 +15,33 @@ public class MCImage: NSObject {
     }
 }
 
+/// Reconstructed Base class for Adjustment Layers in ModelCore.
+public class MCAdjLayer: NSObject {
+    public var properties: [String: Any] = [:]
+    
+    public init(dictionary: [String: Any]) {
+        self.properties = dictionary
+        super.init()
+    }
+    
+    public func objectForKey(_ key: String) -> Any? {
+        return properties[key]
+    }
+    
+    public func setObject(_ object: Any?, forKey key: String) {
+        if let object = object {
+            properties[key] = object
+        } else {
+            properties.removeValue(forKey: key)
+        }
+    }
+}
+
 /// Reconstructed Base class for Variant settings in ModelCore.
 /// Handles the layer stack, styles, and non-destructive adjustments.
 public class MCVariant: NSObject {
     public var properties: [String: Any] = [:]
-    public var layers: [Any] = []
+    public var layers: [MCAdjLayer] = []
     
     public init(dictionary: [String: Any]) {
         self.properties = dictionary

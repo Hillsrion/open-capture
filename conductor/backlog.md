@@ -10,14 +10,14 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | CORE-001 | **Smart Albums & Advanced Filters** (SQL for ratings, tags, EXIF) | High | Med | ✅ Done |
-| CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ⏳ Pending |
+| CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ✅ Done |
 | CORE-003 | **Variant Cloning** (Logic for creating new variants) | High | Low | ✅ Done |
 | CORE-004 | **Session/Catalog Switching** (Hot-swapping databases) | High | Med | ✅ Done |
 | CORE-005 | **Hierarchical Keywords** (Taxonomy tree management) | Med | High | ⏳ Pending |
 | CORE-006 | **EIP Packaging** (Zipping RAW + adjustments into .eip) | Low | Med | ⏳ Pending |
 | CORE-007 | **Import Engine** (Card ingest, renaming, backup, apply styles) | High | High | ⏳ Pending |
 | CORE-008 | **Session Folders Logic** (Capture, Selects, Output, Trash routing) | High | Low | ⏳ Pending |
-| CORE-009 | **Rating & Color Tagging** (Stars and Color labels data models) | High | Low | ⏳ Pending |
+| CORE-009 | **Rating & Color Tagging** (Stars and Color labels data models) | High | Low | ✅ Done |
 
 ---
 
@@ -76,7 +76,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | UI-006 | **Heal / Clone Brush Tools** (Source point selection UI) | Med | High | ⏳ Pending |
 | UI-007 | **Annotations View** (Drawing layer on top of viewer) | Low | Med | ⏳ Pending |
 | UI-008 | **Import Dialog** (Source selection, naming format, backup) | High | Med | ⏳ Pending |
-| UI-009 | **Rating & Tagging Overlays** (Stars/Colors on thumbnails) | High | Low | ⏳ Pending |
+| UI-009 | **Rating & Tagging Overlays** (Stars/Colors on thumbnails) | High | Low | ✅ Done |
 | UI-010 | **Styles & Presets Browser** (Live preview on hover, brush styles) | High | Med | ⏳ Pending |
 | UI-011 | **Dynamic Tokens System** (Drag-and-drop naming tags) | High | High | ⏳ Pending |
 | UI-012 | **Print Layout Window** (Margins, multi-image grids) | Low | High | ⏳ Pending |
@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-002** (Curves Math) and **UI-002** (Curves Widget) within the `adjustment_tools_restoration` track.
+Currently working on **ENG-005** (Layer Blending) and **UI-004** (Layer Inspector) within the `layers_masking_restoration` track.
