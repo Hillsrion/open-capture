@@ -22,7 +22,7 @@ public class BatchJob: BaseObject, Identifiable {
         self.variant = variant
         self.recipe = recipe
         self.destinationPath = destinationPath
-        super.init()
+        super.init(managedObjectContext: context)
     }
 }
 

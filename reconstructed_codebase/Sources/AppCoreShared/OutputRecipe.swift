@@ -25,12 +25,12 @@ public class OutputRecipe: BaseObject {
     
     public init(name: String, recipe: MCRecipe, context: ObjectContext) {
         self.mcRecipe = recipe
-        super.init()
+        super.init(managedObjectContext: context)
         self.name = name
     }
     
     public var name: String = "Untitled Recipe" {
-        didSet { didChange() }
+        didSet { notifyChange() }
     }
     
     public var format: FileFormat {
@@ -40,7 +40,7 @@ public class OutputRecipe: BaseObject {
         }
         set {
             mcRecipe.setObject(newValue.rawValue, forKey: "MCRecipeKeyFileFormat")
-            didChange()
+            notifyChange()
         }
     }
     
@@ -48,7 +48,7 @@ public class OutputRecipe: BaseObject {
         get { return mcRecipe.objectForKey("MCRecipeKeyJpegQuality") as? Int ?? 80 }
         set {
             mcRecipe.setObject(newValue, forKey: "MCRecipeKeyJpegQuality")
-            didChange()
+            notifyChange()
         }
     }
     
@@ -56,7 +56,7 @@ public class OutputRecipe: BaseObject {
         get { return mcRecipe.objectForKey("MCRecipeKeyICCOutputProfile") as? String ?? "Adobe RGB (1998)" }
         set {
             mcRecipe.setObject(newValue, forKey: "MCRecipeKeyICCOutputProfile")
-            didChange()
+            notifyChange()
         }
     }
     
@@ -67,19 +67,19 @@ public class OutputRecipe: BaseObject {
         }
         set {
             mcRecipe.setObject(newValue.rawValue, forKey: "MCRecipeKeyScaleType")
-            didChange()
+            notifyChange()
         }
     }
     
     public var isEnabled: Bool = true {
-        didSet { didChange() }
+        didSet { notifyChange() }
     }
     
     public var outputFolder: String? {
         get { return mcRecipe.objectForKey("MCRecipeKeyDestinationRootFolder") as? String }
         set {
             mcRecipe.setObject(newValue, forKey: "MCRecipeKeyDestinationRootFolder")
-            didChange()
+            notifyChange()
         }
     }
     
@@ -87,7 +87,7 @@ public class OutputRecipe: BaseObject {
         get { return mcRecipe.objectForKey("MCRecipeKeyNamingFormat") as? String ?? "[Image Name]" }
         set {
             mcRecipe.setObject(newValue, forKey: "MCRecipeKeyNamingFormat")
-            didChange()
+            notifyChange()
         }
     }
 }

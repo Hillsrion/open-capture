@@ -22,4 +22,8 @@ public class BaseObject: NSObject, ObservableObject {
         // Notify context of modification
         managedObjectContext?.addToModified(self)
     }
+    
+    public func notifyChange() {
+        self.didChangeValue(forKey: "isModified")
+    }
 }

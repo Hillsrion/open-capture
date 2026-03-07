@@ -18,6 +18,8 @@ public class CullingWindowController: NSWindowController {
     public var cullingCollection: MOFolderCollection?
     public var browser = CImageBrowser()
     public var adjustmentController = AdjustmentToolController()
+    public var recipeManager = OutputRecipeManager.defaultManager()
+    public var batchQueue = BatchQueue()
     
     public override init(window: NSWindow?) {
         super.init(window: window)
@@ -38,6 +40,9 @@ public class CullingWindowController: NSWindowController {
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
         
+        // Add a default recipe
+        recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: context))
+        
         let picturesPath = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.path ?? "/"
         cullingCollection?.updateWithFolderPath(picturesPath, clear: true, synchronizeFS: true)
         
@@ -45,7 +50,12 @@ public class CullingWindowController: NSWindowController {
             browser.dataSource = images
         }
         
-        let contentView = CullingView(browser: browser, adjustmentController: adjustmentController)
+        let contentView = CullingView(
+            browser: browser,
+            adjustmentController: adjustmentController,
+            recipeManager: recipeManager,
+            batchQueue: batchQueue
+        )
         window?.contentView = NSHostingView(rootView: contentView)
     }
 }
@@ -55,12 +65,17 @@ public struct CullingView: View {
     
     @ObservedObject var browserWrapper: BrowserWrapper
     @ObservedObject var adjustmentController: AdjustmentToolController
+    @ObservedObject var recipeManager: OutputRecipeManager
+    @ObservedObject var batchQueue: BatchQueue
+    
     @State private var selectedImage: ImageBase?
     @State private var selectedToolTab: String = "ADJUST"
     
-    public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController) {
+    public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue) {
         self.browserWrapper = BrowserWrapper(browser: browser)
         self.adjustmentController = adjustmentController
+        self.recipeManager = recipeManager
+        self.batchQueue = batchQueue
         self._selectedImage = State(initialValue: browser.dataSource.first)
     }
     
@@ -123,6 +138,7 @@ public struct CullingView: View {
                         VToolTab(icon: "skew", label: "SHAPE", isSelected: selectedToolTab == "SHAPE") { selectedToolTab = "SHAPE" }
                         VToolTab(icon: "slider.horizontal.3", label: "ADJUST", isSelected: selectedToolTab == "ADJUST") { selectedToolTab = "ADJUST" }
                         VToolTab(icon: "circle.recircle", label: "COLOR", isSelected: selectedToolTab == "COLOR") { selectedToolTab = "COLOR" }
+                        VToolTab(icon: "arrow.up.doc", label: "EXPORT", isSelected: selectedToolTab == "EXPORT") { selectedToolTab = "EXPORT" }
                     }
                     .frame(height: 50)
                     .background(Color.black.opacity(0.4))
@@ -185,6 +201,12 @@ public struct CullingView: View {
                                     tint: $adjustmentController.tint
                                 )
                                 AdvancedColorEditorView(controller: adjustmentController)
+                            } else if selectedToolTab == "EXPORT" {
+                                ExportView(
+                                    recipeManager: recipeManager,
+                                    batchQueue: batchQueue,
+                                    selectedVariant: selectedImage?.primaryVariant
+                                )
                             } else {
                                 Text("Other Tools").foregroundColor(.gray).padding()
                             }

@@ -27,12 +27,12 @@ let package = Package(
         ),
         .target(
             name: "AppCoreShared",
-            dependencies: ["DataCore"],
+            dependencies: ["DataCore", "ImageCore"],
             path: "Sources/AppCoreShared"
         ),
         .target(
             name: "ImageCore",
-            dependencies: ["AppCoreShared"],
+            dependencies: [],
             path: "Sources/ImageCore"
         ),
         .target(

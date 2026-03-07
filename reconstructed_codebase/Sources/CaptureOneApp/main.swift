@@ -34,8 +34,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 4. Setup Browser Data Source and Adjustment Controller
         let browser = CImageBrowser()
         let adjustmentController = AdjustmentToolController()
+        let recipeManager = OutputRecipeManager.defaultManager()
+        let batchQueue = BatchQueue()
         
-        let contentView = CullingView(browser: browser, adjustmentController: adjustmentController)
+        let contentView = CullingView(
+            browser: browser,
+            adjustmentController: adjustmentController,
+            recipeManager: recipeManager,
+            batchQueue: batchQueue
+        )
         window.contentView = NSHostingView(rootView: contentView)
         
         window.makeKeyAndOrderFront(nil)
