@@ -36,6 +36,15 @@ decision = "allow"
 priority = 175
 description = "Allow redirection to project files (relative paths)"
 
+# Ask user for redirection to absolute paths (Priority 170)
+# Matches commands containing > or >> followed by /
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*(>|>>)\\s*/.*"
+decision = "ask_user"
+priority = 170
+description = "Ask for redirection to absolute paths"
+
 # Global Allow for all other tools (Priority 100)
 [[rule]]
 toolName = "*"

@@ -6,14 +6,15 @@ import AppCoreShared
 public struct ImageBrowserView: View {
     
     @State var images: [ImageBase] = []
-    @State private var thumbnailSize: CGFloat = 150
+    public var onSelect: ((ImageBase) -> Void)?
     
     let columns = [
         GridItem(.adaptive(minimum: 100))
     ]
     
-    public init(images: [ImageBase] = []) {
+    public init(images: [ImageBase] = [], onSelect: ((ImageBase) -> Void)? = nil) {
         self._images = State(initialValue: images)
+        self.onSelect = onSelect
     }
     
     public var body: some View {
@@ -21,6 +22,9 @@ public struct ImageBrowserView: View {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(images, id: \.imageUUID) { image in
                     ThumbnailCell(image: image)
+                        .onTapGesture {
+                            onSelect?(image)
+                        }
                 }
             }
             .padding()
@@ -37,7 +41,6 @@ struct ThumbnailCell: View {
     var body: some View {
         VStack {
             ZStack(alignment: .bottomTrailing) {
-                // MARK: - Thumbnail Image
                 if let thumb = thumbnail {
                     Image(nsImage: thumb)
                         .resizable()
@@ -50,7 +53,6 @@ struct ThumbnailCell: View {
                         .overlay(ProgressView().scaleEffect(0.5))
                 }
                 
-                // MARK: - Metadata Overlay (Rating/Tag)
                 HStack(spacing: 2) {
                     if image.isOffline {
                         Image(systemName: "bolt.horizontal.circle.fill")
@@ -61,8 +63,11 @@ struct ThumbnailCell: View {
                 .padding(2)
             }
             .cornerRadius(2)
+            .overlay(
+                RoundedRectangle(cornerRadius: 2)
+                    .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
+            )
             
-            // MARK: - Filename
             Text(image.displayName)
                 .font(.system(size: 9))
                 .foregroundColor(.white)

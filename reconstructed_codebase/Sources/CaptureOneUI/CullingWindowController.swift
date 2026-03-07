@@ -6,20 +6,11 @@ import AppKit
 
 /// Reconstructed CullingWindowController for Capture One.
 /// Manages the high-speed image culling interface.
-/// Based on version 16.5.9.7 metadata.
 public class CullingWindowController: NSWindowController {
     
-    // MARK: - UI Outlets (Reconstructed from properties)
-    public var doneButton: NSButton?
-    public var browserWarningText: NSTextField?
-    public var shortcutHelpLabel: NSTextField?
-    
-    // MARK: - Data Bindings
     public var cullingCollection: MOFolderCollection?
     public var browser = CImageBrowser()
-    public var hasBrowser: Bool = true
     
-    // MARK: - Initialization
     public override init(window: NSWindow?) {
         super.init(window: window)
     }
@@ -28,7 +19,6 @@ public class CullingWindowController: NSWindowController {
         super.init(coder: coder)
     }
     
-    // MARK: - Lifecycle
     public override func windowDidLoad() {
         super.windowDidLoad()
         setupUI()
@@ -37,11 +27,9 @@ public class CullingWindowController: NSWindowController {
     private func setupUI() {
         window?.backgroundColor = NSColor.coApplicationBackground
         
-        // Setup initial folder scan for testing (inferred logic)
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
         
-        // For demonstration, we'll point to the Pictures folder
         let picturesPath = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.path ?? "/"
         cullingCollection?.updateWithFolderPath(picturesPath, clear: true, synchronizeFS: true)
         
@@ -52,20 +40,18 @@ public class CullingWindowController: NSWindowController {
         let contentView = CullingView(browser: browser)
         window?.contentView = NSHostingView(rootView: contentView)
     }
-    
-    // MARK: - Actions
-    @objc public func doneAction(_ sender: Any) {
-        self.close()
-    }
 }
 
-/// SwiftUI Wrapper for Culling interface
+/// SwiftUI Wrapper for Culling interface with selection support
 public struct CullingView: View {
     
     @ObservedObject var browserWrapper: BrowserWrapper
+    @State private var selectedImage: ImageBase?
     
     public init(browser: CImageBrowser) {
         self.browserWrapper = BrowserWrapper(browser: browser)
+        // Auto-select first image if available
+        self._selectedImage = State(initialValue: browser.dataSource.first)
     }
     
     public var body: some View {
@@ -92,21 +78,39 @@ public struct CullingView: View {
                 .padding()
                 .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
                 
-                // Browser Grid
-                ImageBrowserView(images: browserWrapper.browser.dataSource)
+                HSplitView {
+                    // Left: Viewer
+                    ImageViewerView(image: selectedImage)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    // Right: Browser Grid
+                    ImageBrowserView(images: browserWrapper.browser.dataSource, onSelect: { image in
+                        self.selectedImage = image
+                    })
+                    .frame(width: 300)
+                }
                 
                 // Footer
                 HistogramToolView()
-                    .frame(height: 200)
+                    .frame(height: 150)
             }
         }
     }
 }
 
-/// Observable wrapper for CImageBrowser to trigger SwiftUI updates
 class BrowserWrapper: ObservableObject {
     @Published var browser: CImageBrowser
     init(browser: CImageBrowser) {
         self.browser = browser
+    }
+}
+
+/// Helper to allow AppKit-like SplitView in SwiftUI for the workspace layout
+struct HSplitView<Content: View>: View {
+    @ViewBuilder var content: Content
+    var body: some View {
+        HStack(spacing: 1) {
+            content
+        }
     }
 }
