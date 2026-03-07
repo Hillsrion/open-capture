@@ -6,7 +6,7 @@
 - [x] Task: Identify and define the data-to-database mapping models (Table/Column schemas).
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Database Architecture & Mapping' (Protocol in workflow.md)
 
-## Phase 2: Query Engine & Project Management
+## Phase 2: Query Engine & Project Management [checkpoint: 897cf8c]
 - [x] Task: Reconstruct the SQL query generation and execution logic. 733f7a1
 - [x] Task: Implement the Catalog and Session creation and opening logic. 733f7a1
 - [x] Task: Reconstruct the metadata synchronization system (database <-> sidecar files). 733f7a1
@@ -14,8 +14,8 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Query Engine & Project Management' (Protocol in workflow.md) 733f7a1
 
 ## Phase 3: Validation & Data Integrity
-- [ ] Task: Implement unit tests for database CRUD operations on reconstructed schemas.
-- [ ] Task: Verify the integrity of a simulated Catalog opening and data retrieval.
-- [ ] Task: Refine Swift implementations for performance and thread safety.
-- [ ] Task: Finalize documentation of the reconstructed database schema.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Validation & Data Integrity' (Protocol in workflow.md)
+- [x] Task: Implement unit tests for database CRUD operations on reconstructed schemas. 897cf8c
+- [x] Task: Verify the integrity of a simulated Catalog opening and data retrieval. 897cf8c
+- [x] Task: Refine Swift implementations for performance and thread safety. 897cf8c
+- [x] Task: Finalize documentation of the reconstructed database schema. 897cf8c
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Validation & Data Integrity' (Protocol in workflow.md) 897cf8c
