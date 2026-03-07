@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "3ca853a91565",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "reconstructed_codebase/Sources/ImageCore/ImageCoreBase.swift",
+    "reconstructed_codebase/Sources/ImageCore/LCCManager.swift",
+    "reconstructed_codebase/Tests/ImageCoreTests/EngineTests.swift",
+    "reconstructed_codebase/Tests/ImageCoreTests/LCCTests.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/3c/a853a91565/0/metadata.json",
+      "transcript": "/3c/a853a91565/0/full.jsonl",
+      "content_hash": "/3c/a853a91565/0/content_hash.txt",
+      "prompt": "/3c/a853a91565/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1173443,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1069602,
+    "output_tokens": 7987,
+    "api_call_count": 20
+  }
+}
