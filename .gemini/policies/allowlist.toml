@@ -27,76 +27,18 @@ decision = "deny"
 priority = 200
 description = "Block piping network content directly to a shell"
 
-# Allow specific development and RE tools (Priority 150)
+# Global Allow for Shell (Priority 150)
+# This rule is simplified to allow most dev commands including redirections
 [[rule]]
 toolName = "run_shell_command"
-commandRegex = ".*objdump.*"
+commandRegex = ".*"
 decision = "allow"
 priority = 150
+description = "Allow all shell commands except those explicitly denied above"
 
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*nm.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*otool.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*awk.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*grep.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*ls.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*cat.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*mkdir.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*git.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*ruby.*"
-decision = "allow"
-priority = 150
-
-[[rule]]
-toolName = "run_shell_command"
-commandRegex = ".*plutil.*"
-decision = "allow"
-priority = 150
-
-# Allow everything else (Priority 100)
+# Global Allow for all other tools (Priority 100)
 [[rule]]
 toolName = "*"
 decision = "allow"
 priority = 100
-description = "Allow all tools in this project to streamline reconstruction"
+description = "Allow all tools in this project"
