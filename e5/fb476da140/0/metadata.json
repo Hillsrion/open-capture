@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "e5fb476da140",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-07T23:37:07.943281Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "conductor/tracks/lens_correction_restoration_20260308/plan.md",
+    "reconstructed_codebase/Package.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/LensCorrection.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LensCorrectionView.swift",
+    "reconstructed_codebase/Sources/ImageCore/ImageCoreBase.swift",
+    "reconstructed_codebase/Tests/AppCoreSharedTests/LensCorrectionTests.swift",
+    "reconstructed_codebase/Tests/CaptureOneUITests/LensCorrectionUITests.swift"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "b7f3ad53767c",
+  "token_usage": {
+    "input_tokens": 6878223,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 6206796,
+    "output_tokens": 40204,
+    "api_call_count": 121
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-07T23:37:07.75855Z",
+    "agent_lines": 200,
+    "human_added": 96,
+    "human_modified": 51,
+    "human_removed": 0,
+    "total_committed": 347,
+    "agent_percentage": 57.636887608069166
+  }
+}
