@@ -2,9 +2,9 @@
 
 ## Phase 1: Data Models (AppCoreShared / ModelCore)
 - [x] Task: Reconstruct `MCLensCorrectionSettings` (distortion, light falloff, sharpness falloff). f2a610d
-- [ ] Task: Reconstruct `MCLCCSettings` and `MCLCCProfile` data models.
-- [ ] Task: Implement `LensCorrectionManager` to handle profile lookups and active settings.
-- [ ] Task: Commit Phase 1.
+- [x] Task: Reconstruct `MCLCCSettings` and `MCLCCProfile` data models. f2a610d
+- [x] Task: Implement `LensCorrectionManager` to handle profile lookups and active settings. f2a610d
+- [x] Task: Commit Phase 1. f2a610d
 
 ## Phase 2: Mathematical Kernels (ImageCore)
 - [ ] Task: Implement `ICL_DistortionCorrection` kernel for geometric correction.

@@ -74,7 +74,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Lens Correction (Distortion, LCC, CA)**
+- [~] **Track: Restoration of Lens Correction (Distortion, LCC, CA)**
   *Link: [./tracks/lens_correction_restoration_20260308/](./tracks/lens_correction_restoration_20260308/)*
 
 ---
