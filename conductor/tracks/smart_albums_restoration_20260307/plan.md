@@ -13,10 +13,10 @@
 - [x] Task: Commit Phase 2: Filter Tool.
 
 ## Phase 3: Smart Albums (AppCoreShared / DataCore)
-- [ ] Task: Implement `SmartAlbum` subclass of `CollectionBase`.
-- [ ] Task: Add "Create Smart Album" dialog and persistence logic.
-- [ ] Task: Connect Smart Albums to the filtering engine.
-- [ ] Task: Commit Phase 3: Smart Albums Integration.
+- [x] Task: Implement `SmartAlbum` subclass of `CollectionBase`.
+- [x] Task: Add "Create Smart Album" dialog and persistence logic.
+- [x] Task: Connect Smart Albums to the filtering engine.
+- [x] Task: Commit Phase 3: Smart Albums Integration.
 
 ## Phase 4: Validation & Optimization
 - [ ] Task: Verify filtering with a simulated large catalog.
