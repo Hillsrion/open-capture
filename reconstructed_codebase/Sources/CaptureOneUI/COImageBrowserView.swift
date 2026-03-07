@@ -6,6 +6,7 @@ import AppCoreShared
 public struct COImageBrowserView: View {
     
     @State var images: [ImageBase] = []
+    @Binding var predicate: FilterPredicate
     public var onSelect: ((ImageBase) -> Void)?
     
     // MARK: - Browser Settings (Reconstructed from metadata)
@@ -16,9 +17,32 @@ public struct COImageBrowserView: View {
         GridItem(.adaptive(minimum: 100))
     ]
     
-    public init(images: [ImageBase] = [], onSelect: ((ImageBase) -> Void)? = nil) {
+    public init(images: [ImageBase] = [], predicate: Binding<FilterPredicate>, onSelect: ((ImageBase) -> Void)? = nil) {
         self._images = State(initialValue: images)
+        self._predicate = predicate
         self.onSelect = onSelect
+    }
+    
+    private var filteredImages: [ImageBase] {
+        return images.filter { image in
+            guard let variant = image.primaryVariant else { return true }
+            
+            // Rating Filter
+            if let min = predicate.minRating, variant.rating < min { return false }
+            if let max = predicate.maxRating, variant.rating > max { return false }
+            
+            // Color Tag Filter
+            if let tags = predicate.colorTags, !tags.isEmpty {
+                if !tags.contains(variant.colorTag.rawValue) { return false }
+            }
+            
+            // Text Search
+            if let text = predicate.searchText, !text.isEmpty {
+                if !image.displayName.localizedCaseInsensitiveContains(text) { return false }
+            }
+            
+            return true
+        }
     }
     
     public var body: some View {
@@ -44,7 +68,7 @@ public struct COImageBrowserView: View {
             // MARK: - thumbnailCollectionView
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(images, id: \.imageUUID) { image in
+                    ForEach(filteredImages, id: \.imageUUID) { image in
                         COThumbnailCell(image: image)
                             .onTapGesture {
                                 onSelect?(image)

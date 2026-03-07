@@ -39,6 +39,9 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var rating: Int = 0
     @Published public var colorTag: VariantBase.ColorTag = .none
     
+    // Filtering State
+    @Published public var activePredicate: FilterPredicate = FilterPredicate()
+    
     public init() {
         setupChangeObservers()
     }
@@ -63,7 +66,8 @@ public class AdjustmentToolController: ObservableObject {
             $levelsTargetWhite.map { _ in }.eraseToAnyPublisher(),
             $curvesPoints.map { _ in }.eraseToAnyPublisher(),
             $rating.map { _ in }.eraseToAnyPublisher(),
-            $colorTag.map { _ in }.eraseToAnyPublisher()
+            $colorTag.map { _ in }.eraseToAnyPublisher(),
+            $activePredicate.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)

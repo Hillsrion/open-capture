@@ -177,6 +177,8 @@ public struct CullingView: View {
                                         .padding(.vertical, 4)
                                     }
                                 }
+                            } else if selectedToolTab == "LIBRARY" {
+                                FilterToolView(predicate: $adjustmentController.activePredicate)
                             } else if selectedToolTab == "COLOR" {
                                 WhiteBalanceToolView(
                                     kelvin: $adjustmentController.kelvin,
@@ -213,7 +215,7 @@ public struct CullingView: View {
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
                     
-                    COImageBrowserView(images: browserWrapper.browser.dataSource, onSelect: { image in
+                    COImageBrowserView(images: browserWrapper.browser.dataSource, predicate: $adjustmentController.activePredicate, onSelect: { image in
                         self.selectedImage = image
                         self.adjustmentController.bind(to: image.primaryVariant)
                     })

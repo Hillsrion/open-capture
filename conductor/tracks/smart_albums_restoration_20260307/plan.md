@@ -7,10 +7,10 @@
 - [x] Task: Commit Phase 1: Filtering Logic.
 
 ## Phase 2: Sidebar Filter Tool (CaptureOneUI)
-- [ ] Task: Reconstruct the `FilterToolView` in the sidebar.
-- [ ] Task: Add a multi-select Rating filter and Color Tag filter to the tool.
-- [ ] Task: Implement a text-based search field.
-- [ ] Task: Commit Phase 2: Filter Tool.
+- [x] Task: Reconstruct the `FilterToolView` in the sidebar.
+- [x] Task: Add a multi-select Rating filter and Color Tag filter to the tool.
+- [x] Task: Implement a text-based search field.
+- [x] Task: Commit Phase 2: Filter Tool.
 
 ## Phase 3: Smart Albums (AppCoreShared / DataCore)
 - [ ] Task: Implement `SmartAlbum` subclass of `CollectionBase`.
