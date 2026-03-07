@@ -1,3 +1,33 @@
+# Deny dangerous commands (Priority 200)
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*sudo .*"
+decision = "deny"
+priority = 200
+description = "Block sudo commands for safety"
+
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*rm -rf (\\/|~|\\$HOME|\\$ROOT).*"
+decision = "deny"
+priority = 200
+description = "Block recursive deletion of root or home directories"
+
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*(cat|grep|ls) .*(\\.ssh|\\.aws|\\.env|\\.git/config).*"
+decision = "deny"
+priority = 200
+description = "Block access to sensitive credential or config files"
+
+[[rule]]
+toolName = "run_shell_command"
+commandRegex = ".*(curl|wget) .* \\| (bash|sh|zsh).*"
+decision = "deny"
+priority = 200
+description = "Block piping network content directly to a shell"
+
+# Allow everything else (Priority 100)
 [[rule]]
 toolName = "*"
 decision = "allow"
@@ -9,4 +39,4 @@ toolName = "run_shell_command"
 commandRegex = ".*"
 decision = "allow"
 priority = 100
-description = "Allow all shell commands in this project"
+description = "Allow general shell commands in this project"
