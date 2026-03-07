@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "46425b524d6e",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "conductor/tracks/lens_correction_restoration_20260308/plan.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/46/425b524d6e/0/metadata.json",
+      "transcript": "/46/425b524d6e/0/full.jsonl",
+      "content_hash": "/46/425b524d6e/0/content_hash.txt",
+      "prompt": "/46/425b524d6e/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 947597,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 863886,
+    "output_tokens": 4926,
+    "api_call_count": 39
+  }
+}
