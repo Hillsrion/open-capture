@@ -1,13 +1,13 @@
 # Implementation Plan: Full Restoration of DataCore Persistence Logic
 
-## Phase 1: Database Architecture & Mapping
+## Phase 1: Database Architecture & Mapping [checkpoint: 12e90fe]
 - [x] Task: Map the SQLite table structures and relationships from `DataCore` metadata and SQL query strings.
 - [x] Task: Reconstruct the `DataCoreManager` base class and initialization logic.
 - [x] Task: Identify and define the data-to-database mapping models (Table/Column schemas).
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Database Architecture & Mapping' (Protocol in workflow.md)
 
 ## Phase 2: Query Engine & Project Management
-- [ ] Task: Reconstruct the SQL query generation and execution logic.
+- [~] Task: Reconstruct the SQL query generation and execution logic.
 - [ ] Task: Implement the Catalog and Session creation and opening logic.
 - [ ] Task: Reconstruct the metadata synchronization system (database <-> sidecar files).
 - [ ] Task: Neutralize any cloud-sync or remote validation logic within the persistence layer.
