@@ -7,9 +7,6 @@ import Foundation
 public class MOCollection: CollectionBase {
     
     public func deleteFromManagedObjectContext(keepImageSettings: Bool) {
-        // Logic recovery:
-        // 1. Mark for deletion in context
-        // 2. Decide whether to purge sidecars
         managedObjectContext?.addToDeleted(self)
     }
 }
@@ -17,29 +14,46 @@ public class MOCollection: CollectionBase {
 public class MOFolderCollection: MOCollection {
     
     public var folderPath: String?
+    public private(set) var images: [ImageBase] = []
     
     // MARK: - File System Synchronization
     
     public func startObservingFS() {
-        // Logic recovery: Setup FSEvents or DispatchSource for folder path
+        // Setup local FSEvents or DispatchSource for the folder path
     }
     
     public func stopObservingFS() {
-        // Stop file system monitoring
+        // Stop monitoring
     }
     
+    /// Logic recovery: Perform a local-only scan of the folder.
     public func syncWithFSContents() {
-        // Logic recovery:
-        // 1. Scan folder for images (using NSFileManager)
-        // 2. Create MOImage objects for new files
-        // 3. Update existing images
-        // 4. Handle missing files (mark as offline)
+        guard let path = folderPath else { return }
+        let url = URL(fileURLWithPath: path)
+        
+        let supportedExtensions = ["iiq", "phaseone", "cr2", "cr3", "nef", "arw", "dng", "jpg", "jpeg", "tif", "tiff"]
+        
+        do {
+            let fileURLs = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: .skippingHiddenFiles)
+            
+            self.images = fileURLs.compactMap { fileURL in
+                guard supportedExtensions.contains(fileURL.pathExtension.lowercased()) else { return nil }
+                
+                // Create a reconstructed ImageBase for each file
+                return ImageBase(imageUUID: UUID().uuidString, path: fileURL.path, context: managedObjectContext)
+            }
+            
+            print("[System] Scanned \(images.count) images in \(path)")
+            
+        } catch {
+            print("[System] Folder scanning error: \(error.localizedDescription)")
+        }
     }
     
     public func updateWithFolderPath(_ path: String, clear: Bool, synchronizeFS: Bool) {
         self.folderPath = path
         if clear {
-            // Remove existing links
+            self.images = []
         }
         if synchronizeFS {
             syncWithFSContents()
@@ -48,7 +62,7 @@ public class MOFolderCollection: MOCollection {
     }
 }
 
-/// Reconstructed singleton for coordinating folder sync across the app.
+/// Reconstructed singleton for coordinating folder sync.
 public class FolderCollectionSync: NSObject {
     public static let sharedInstance = FolderCollectionSync()
     

@@ -24,7 +24,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: High-Speed Image Browsing and Rendering Integration**
+- [~] **Track: High-Speed Image Browsing and Rendering Integration**
   *Link: [./tracks/image_browsing_20260307/](./tracks/image_browsing_20260307/)*
 
 ---
