@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Aperture Bibliothek importieren</string>
+	<key>14.title</key>
+	<string>Abbrechen</string>
+	<key>28.title</key>
+	<string>Beim Import einer Bibliothek von Aperture werden folgende Eigenschaften in Capture One übernommen:</string>
+	<key>4.title</key>
+	<string>Nicht mehr anzeigen</string>
+	<key>51.title</key>
+	<string>Projekte, Ordner, Alben
+Ausschnitt oder Geraderichten, Spiegeln
+Belichtung, Helligkeit, Lichter &amp; Tiefen, Definition, Sättigung, Schwarz und Weiß
+Metadaten (IPTC, Bewertung, Farbmarkierung, Schlüsselwörter)</string>
+	<key>57.title</key>
+	<string>Farbanpassungen sind lediglich Näherungswerte.
+
+Wenn Sie intelligente Sammlungen einbeziehen möchten, müssen diese vorher in normale Sammlungen konvertiert werden.</string>
+	<key>8.title</key>
+	<string>Fortfahren</string>
+</dict>
+</plist>

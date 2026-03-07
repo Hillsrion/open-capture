@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>Dominante de color</string>
+	<key>1495.title</key>
+	<string>Activar Luz Uniforme</string>
+	<key>1606.title</key>
+	<string>Eliminación de polvo</string>
+	<key>1699.title</key>
+	<string>Nombre del perfil LCC</string>
+	<key>1700.title</key>
+	<string>Perfil</string>
+	<key>1720.title</key>
+	<string>Crear LCC</string>
+	<key>1785.title</key>
+	<string>Aplicar opciones LCC</string>
+	<key>1792.title</key>
+	<string>Cancelar</string>
+	<key>1793.title</key>
+	<string>Aceptar</string>
+	<key>1795.title</key>
+	<string>Luz uniforme</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>kelvin</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luz uniforme</string>
+</dict>
+</plist>

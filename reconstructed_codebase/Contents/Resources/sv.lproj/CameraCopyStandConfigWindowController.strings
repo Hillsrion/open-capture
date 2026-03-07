@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0d0-8R-tLw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Låg</string>
+	<key>6Sd-kz-UIh.title</key>
+	<string>Distansenheter</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Konfigurera</string>
+	<key>Fzy-PA-eLs.title</key>
+	<string>Upp</string>
+	<key>GwY-gy-ciJ.title</key>
+	<string>Faktiska exponeringssteg</string>
+	<key>H8r-FG-Kr3.title</key>
+	<string>Centimeter</string>
+	<key>LKh-K1-Y6N.title</key>
+	<string>Sänk</string>
+	<key>N8e-Em-hgs.title</key>
+	<string>Tum</string>
+	<key>NrY-xR-emd.title</key>
+	<string>PPI</string>
+	<key>OIm-4a-xHW.title</key>
+	<string>Position</string>
+	<key>Q9f-5E-WvF.title</key>
+	<string>Positiv riktning</string>
+	<key>UHt-zv-9SR.title</key>
+	<string>Ställ in</string>
+	<key>Xjf-k5-hQK.title</key>
+	<string>Definera nuvarande position</string>
+	<key>b1o-xe-f2L.title</key>
+	<string>Box</string>
+	<key>dmz-Zi-K8p.title</key>
+	<string>Positionsinställningar</string>
+	<key>dpt-fL-j8i.title</key>
+	<string>Position</string>
+	<key>gf5-bG-nhb.title</key>
+	<string>Klart</string>
+	<key>kXp-pb-vUY.title</key>
+	<string>Definera nuvarande position</string>
+	<key>knt-jR-igh.title</key>
+	<string>Hastighetsinställningar</string>
+	<key>mo9-ag-5qk.title</key>
+	<string>Millimeter</string>
+	<key>r6Q-Yq-qbn.title</key>
+	<string>Upplösningsinställningar</string>
+	<key>t88-sx-mlj.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Hög</string>
+	<key>wha-sd-g2k.title</key>
+	<string>Box</string>
+	<key>x71-Fc-ePv.title</key>
+	<string>Övre</string>
+	<key>yDQ-Al-p0h.title</key>
+	<string>Virtuella exponeringssteg</string>
+	<key>yOk-jx-9Zz.title</key>
+	<string>Ner</string>
+</dict>
+</plist>

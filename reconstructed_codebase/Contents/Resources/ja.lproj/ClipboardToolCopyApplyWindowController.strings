@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5ws-qz-AUV.title</key>
+	<string>このダイアログを非表示にするには：Option キーを押しながらコピーするか、Shift キーを押してコピーして適用します</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>調整クリップボード</string>
+	<key>a5v-SA-4aX.title</key>
+	<string>コピー</string>
+	<key>dXt-VV-iUD.title</key>
+	<string>タイトル</string>
+	<key>pwS-pN-OgU.title</key>
+	<string>適用</string>
+	<key>wEg-nR-fZO.title</key>
+	<string>テキストセル</string>
+	<key>wYo-A4-YMk.title</key>
+	<string>キャンセル</string>
+</dict>
+</plist>

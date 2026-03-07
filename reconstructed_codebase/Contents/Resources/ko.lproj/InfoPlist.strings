@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One 향상된 이미지 패키지</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One에서는 때때로 그 안에서 실행되는 스크립트에 대해 다른 응용 프로그램을 간접적으로 제어해야합니다.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One은 귀하의 캘린더에 액세스 할 필요가 없습니다. 이 경고는 라이브러리 폴더에 액세스 할 때 발생합니다.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One은 연락처에 액세스 할 필요가 없습니다. 이 경고는 라이브러리 폴더에 액세스 할 때 발생합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One은 사진 라이브러리에 액세스 할 필요가 없습니다. 이 경고는 라이브러리 폴더에 액세스 할 때 발생합니다.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One은 미리 알림에 액세스 할 필요가 없습니다. 이 경고는 라이브러리 폴더에 액세스 할 때 발생합니다.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>테더링 기능을 지원하려면 Capture One에 이동식 볼륨 액세스가 필요합니다. 이 설정을 적용하려면 Capture One을 다시 시작해야 할 수도 있습니다.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW 이미지</string>
+</dict>
+</plist>

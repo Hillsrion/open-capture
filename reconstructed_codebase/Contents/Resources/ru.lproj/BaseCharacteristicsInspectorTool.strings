@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>Обработчик</string>
+	<key>355.title</key>
+	<string>Неизвестный обработчик</string>
+	<key>358.title</key>
+	<string>Обновить</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>Стандартная пленка</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>Низкоконтрастная пленка</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Режим</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>Высокий контраст</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>Негатив пленки</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Кривая</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>Фотография</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Профиль ICC</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>Film Positive</string>
+</dict>
+</plist>

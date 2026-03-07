@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Asegúrese de que los valores en la herramienta de corrección de lente sean correctos antes de crear un LCC.</string>
+	<key>1.title</key>
+	<string>Crear opciones LCC</string>
+	<key>10.title</key>
+	<string>Incluir información de eliminación de polvo</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Creando progreso LCC</string>
+	<key>22.title</key>
+	<string>Creando LCC</string>
+	<key>27.title</key>
+	<string>Creando LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Crear siempre con este perfil. Podrá ser restaurado desde herramienta LCC.</string>
+	<key>37.title</key>
+	<string>No mostrar de nuevo</string>
+	<key>46.title</key>
+	<string>Ventana</string>
+	<key>5.title</key>
+	<string>Crear</string>
+	<key>51.title</key>
+	<string>Hubo avisos al crear LCC. ¿Desea comprobarlo en el Registro de Eventos?</string>
+	<key>54.title</key>
+	<string>Mostrar Registro de Eventos</string>
+	<key>55.title</key>
+	<string>Cerrar</string>
+	<key>6.title</key>
+	<string>Cancelar</string>
+	<key>65.title</key>
+	<string>Cancelar</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Incluir correcciones para cámara técnica con lente angular.</string>
+	<key>8.title</key>
+	<string>Incluye datos de corrección de lente gran angular</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Incluir información de eliminación de polvo. La creación del perfil LCC puede tardar unos minutos.</string>
+</dict>
+</plist>

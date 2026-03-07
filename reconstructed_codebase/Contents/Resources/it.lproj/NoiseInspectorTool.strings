@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BQe-ch-zT5.ibExternalAccessibilityDescription</key>
+	<string>superficie</string>
+	<key>BQe-ch-zT5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Superficie</string>
+	<key>ZRc-KI-4KK.ibExternalAccessibilityDescription</key>
+	<string>luminanza</string>
+	<key>ZRc-KI-4KK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminanza</string>
+	<key>Zuk-OM-RR8.ibExternalAccessibilityDescription</key>
+	<string>colore</string>
+	<key>Zuk-OM-RR8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Colore</string>
+	<key>hL8-wU-SQL.ibExternalAccessibilityDescription</key>
+	<string>pixel singolo</string>
+	<key>hL8-wU-SQL.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pixel Singolo</string>
+	<key>zlR-yp-kOa.ibExternalAccessibilityDescription</key>
+	<string>dettagli</string>
+	<key>zlR-yp-kOa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Dettagli</string>
+</dict>
+</plist>

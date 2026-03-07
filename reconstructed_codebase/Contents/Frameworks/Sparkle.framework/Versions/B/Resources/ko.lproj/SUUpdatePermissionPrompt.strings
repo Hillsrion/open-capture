@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>익명으로 보내지는 시스템 정보로 차후 프로그램 개발에 도움이 될 수 있습니다. 질문이 있으시면 연락 주십시오.
+
+아래 정보가 전송될 것입니다.</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>자동으로 확인</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>취소</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>자동으로 업데이트 확인할까요?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>익명 시스템 정보 포함</string>
+</dict>
+</plist>

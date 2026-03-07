@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>引擎</string>
+	<key>355.title</key>
+	<string>未知引擎</string>
+	<key>358.title</key>
+	<string>升级</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>菲林標準</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>菲林增強</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>模式</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>高對比度</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>菲林負片</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>曲線</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>攝影</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC 色彩特性文件</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>菲林正片</string>
+</dict>
+</plist>

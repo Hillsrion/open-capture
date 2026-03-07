@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Raz dziennie</string>
+	<key>105.title</key>
+	<string>Auto</string>
+	<key>106.title</key>
+	<string>Nigdy</string>
+	<key>107.title</key>
+	<string>Lokalizacja:</string>
+	<key>108.title</key>
+	<string>Przypomnij przy zamykaniu programu:</string>
+	<key>112.title</key>
+	<string>Nigdy</string>
+	<key>113.title</key>
+	<string>Auto</string>
+	<key>115.title</key>
+	<string>Akceleracja sprzętowa</string>
+	<key>116.title</key>
+	<string>Kopia zapasowa katalogu</string>
+	<key>126.title</key>
+	<string>Zawsze nadpisuj metadane</string>
+	<key>127.title</key>
+	<string>Nigdy nie nadpisuj metadanych</string>
+	<key>128.title</key>
+	<string>Pytaj o nadpisywanie metadanych</string>
+	<key>131.title</key>
+	<string>Utwórz nowy album lub wybierz folder</string>
+	<key>132.title</key>
+	<string>Utwórz lub wykorzystaj ponownie pasujące albumy</string>
+	<key>133.title</key>
+	<string>Pytaj przy synchronizacji zestawów katalogowania</string>
+	<key>134.title</key>
+	<string>Informacje o metadanych i zestawach katalogowania otrzymane z Expression Media można wykorzystać do aktualizacji obrazów i albumów w programie Capture One. Wybierz zachowanie dla każdego typu informacji.</string>
+	<key>137.title</key>
+	<string>Pytaj o uwzględnianie podfolderów przy dodawaniu</string>
+	<key>138.title</key>
+	<string>Zawsze zaznaczaj "Tak” przy opcji dialogowej "Uwzględnij podfoldery”.</string>
+	<key>139.title</key>
+	<string>Zawsze zaznaczaj "Nie” przy opcji dialogowej "Uwzględnij podfoldery”.</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Wartości domyślne</string>
+	<key>142.title</key>
+	<string>Przybliż kółkiem przewijania</string>
+	<key>143.title</key>
+	<string>Podgląd</string>
+	<key>150.title</key>
+	<string>Po ponad 5 minutach braku aktywności</string>
+	<key>151.title</key>
+	<string>Po ponad 10 minutach braku aktywności</string>
+	<key>152.title</key>
+	<string>Po ponad 30 minutach braku aktywności</string>
+	<key>153.title</key>
+	<string>Po ponad godzinie braku aktywności</string>
+	<key>154.title</key>
+	<string>Po ponad 2 godzinach braku aktywności</string>
+	<key>155.title</key>
+	<string>Po ponad 4 godzinach braku aktywności</string>
+	<key>156.title</key>
+	<string>Przy pierwszym przechwytywaniu danego dnia</string>
+	<key>157.title</key>
+	<string>Utwórz:</string>
+	<key>158.title</key>
+	<string>Kolekcja ostatnich przechwytywań</string>
+	<key>160.title</key>
+	<string>Otwórz okno importu w przypadku wykrycia karty pamięci</string>
+	<key>161.title</key>
+	<string>Importowanie</string>
+	<key>162.title</key>
+	<string>Działania w tle</string>
+	<key>163.title</key>
+	<string>Automatycznie pokaż okno</string>
+	<key>167.title</key>
+	<string>Ulubione</string>
+	<key>170.title</key>
+	<string>Pytaj, czy dodawać poprzedni folder sesji do Ulubionych</string>
+	<key>171.title</key>
+	<string>Zawsze dodawaj poprzedni folder sesji do Ulubionych</string>
+	<key>172.title</key>
+	<string>Nigdy nie dodawaj poprzedniego folderu sesji do Ulubionych</string>
+	<key>176.title</key>
+	<string>Katalog i sesja</string>
+	<key>177.title</key>
+	<string>Otwórz w nowym oknie</string>
+	<key>59.title</key>
+	<string>Katalog i sesje</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Katalog i sesje</string>
+	<key>60.title</key>
+	<string>Ulubione</string>
+	<key>66.title</key>
+	<string>Format spakowanego pliku</string>
+	<key>67.title</key>
+	<string>Kolekcja ostatnich przechwytywań</string>
+	<key>72.title</key>
+	<string>Pole</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Status:</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>Zawsze</string>
+	<key>97.title</key>
+	<string>Raz w miesiącu</string>
+	<key>98.title</key>
+	<string>Nigdy</string>
+	<key>99.title</key>
+	<string>Raz w tygodniu</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>Kółko przewijania zmienia wartość suwaka</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Karty narzędzi</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Włącz obsługę urządzeń Tangent</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + kółko przewijania przewija kartę narzędzi</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Pokaż przy starcie</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Integracja z urządzeniami Tangent</string>
+</dict>
+</plist>

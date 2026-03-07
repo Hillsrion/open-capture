@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>تم تنزيل %1$@ %2$@ وهو جاهز للاستخدام، هل ترغب بتثبيت التحديث وإعادة تشغيل %1$@ الآن؟</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>الإصدار %2$@ هو أحدث إصدار متوفر حاليًا لتطبيق %1$@</string>
+	<key>%@ downloaded</key>
+	<string>تم تنزيل %@</string>
+	<key>%@ of %@</key>
+	<string>%1$@ من %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>يتوفر إصدار جديد من تطبيق %@</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>الإصدار الجديد من تطبيق %@ جاهز للتثبيت</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>حال خطأ دون الحصول على معلومات حول التحديث، الرجاء المحاولة لاحقًا.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>حدث خطأ أثناء تنزيل التحديث، الرجاء المحاولة لاحقًا.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>حدث خطأ أثناء استخراج الأرشيف، الرجاء المحاولة لاحقًا.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>حدث خطأ أثناء تحليل المعلومات المزوّدَة حول التحديث.</string>
+	<key>Cancel</key>
+	<string>إلغاء</string>
+	<key>Cancel Update</key>
+	<string>إلغاء التحديث</string>
+	<key>Install and Relaunch</key>
+	<string>تثبيت وإعادة تشغيل التطبيق</string>
+	<key>OK</key>
+	<string>موافق</string>
+	<key>Ready to Install</key>
+	<string>جاهز للتثبيت</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>هل ترغب في أن يتحقق %1$@ من وجود تحديثات تلقائيًا؟ يمكنك التحقق من وجود تحديثات يدويًا في أي وقت من قائمة %1$@.</string>
+	<key>Update Error!</key>
+	<string>حدث خطأ أثناء التحديث</string>
+	<key>Updating %@</key>
+	<string>تحديث %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>انقل %1$@ إلى مجلد التطبيقات وأعد تشغيله من هناك ثم حاول مجددًا.</string>
+</dict>
+</plist>

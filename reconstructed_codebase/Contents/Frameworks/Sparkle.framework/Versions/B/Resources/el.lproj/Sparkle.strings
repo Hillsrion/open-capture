@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>Το %1$@ %2$@ κατέβηκε. Είναι έτοιμο προς εγκατάσταση! Θέλετε να εγκαταστήσετε και να επανεκκινήσετε το %1$@ τώρα;</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Το %1$@ δεν μπορεί να ενημερωθεί όσο τρέχει από έναν δίσκο ανάγνωσης-μόνο ή έναν οπτικό δίσκο.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>Το %1$@ %2$@ είναι η τελευταία διαθέσιμη έκδοση.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>Το %1$@ %2$@ είναι η τελευταία διαθέσιμη έκδοση.
+(Η παρούσα εκδοσή σας είναι η %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>Το %1$@ %2$@ είναι η νέα έκδοση--έχετε την %3$@. Θέλετε να την κατεβάσετε τώρα;</string>
+	<key>%@ downloaded</key>
+	<string>%@ λήφθησαν</string>
+	<key>%@ of %@</key>
+	<string>%1$@ από %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Μία νέα έκδοση του %@ είναι διαθέσιμη!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Μία νέα έκδοση του %@ είναι έτοιμη για εγκατάσταση!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Υπήρξε ένα σφάλμα κατά την ανάκτηση των πληροφοριών ενημέρωσης. Παρακαλώ δοκιμάστε αργότερα.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Υπήρξε ένα σφάλμα κατά την λήψη της ενημέρωσης. Παρακαλώ δοκιμάστε αργότερα.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Υπήρξε ένα σφάλμα κατά την εξαγωγή του αρχείου. Παρακαλώ δοκιμάστε αργότερα.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Υπήρξε ένα σφάλμα κατά την ανάλυση του feed ενημερώσεων.</string>
+	<key>Cancel</key>
+	<string>Ακύρωση</string>
+	<key>Cancel Update</key>
+	<string>Ακύρωση Ενημέρωσης</string>
+	<key>Checking for updates…</key>
+	<string>Έλεγχος για ενημερώσεις…</string>
+	<key>Downloading update…</key>
+	<string>Λήψη ενημέρωσης…</string>
+	<key>Extracting update…</key>
+	<string>Εξαγωγή ενημέρωσης…</string>
+	<key>Install and Relaunch</key>
+	<string>Εγκατάσταση και Επανεκκίνηση</string>
+	<key>Installing update…</key>
+	<string>Εγκατάσταση ενημέρωσης…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Έτοιμο προς Εγκατάσταση</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Θέλετε το %1$@ να ελέγχει αυτόματα για ενημερώσεις; Μπορείτε να ελέγχετε πάντα για επιθυμητές ενημερώσεις από το μενού %1$@.</string>
+	<key>Update Error!</key>
+	<string>Σφάλμα Ενημέρωσης!</string>
+	<key>Updating %@</key>
+	<string>Ενημέρωση %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Αντιγράψτε το %1$@ στον φάκελο εφαρμογών συστήματος, επανεκκινήστε το από εκεί και ξαναδοκιμάστε.</string>
+	<key>You’re up to date!</key>
+	<string>Είστε ενημερωμένοι!</string>
+</dict>
+</plist>

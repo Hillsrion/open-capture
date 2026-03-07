@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>しきい値:</string>
+	<key>14.title</key>
+	<string>フォーカス マスク</string>
+	<key>17.title</key>
+	<string>カラー:</string>
+	<key>30.title</key>
+	<string>不透明度:</string>
+	<key>6.title</key>
+	<string>デフォルト</string>
+</dict>
+</plist>

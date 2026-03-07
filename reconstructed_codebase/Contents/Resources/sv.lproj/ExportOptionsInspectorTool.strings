@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.ibShadowedToolTip</key>
+	<string>Ta med justeringar vid export</string>
+	<key>41.title</key>
+	<string>Ta med justeringar</string>
+	<key>42.ibShadowedToolTip</key>
+	<string>Meddela när export slutförts</string>
+	<key>43.title</key>
+	<string>Meddela när det är klart</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Lägg till exportmapp till sessionsfavoriter</string>
+	<key>45.title</key>
+	<string>Lägg till mapp i sessions favoriter</string>
+	<key>48.ibShadowedToolTip</key>
+	<string>Ta med filmer i exporten</string>
+	<key>49.title</key>
+	<string>Ta med filmer</string>
+	<key>6Ot-LC-POj.ibShadowedToolTip</key>
+	<string>Packa råfilen som EIP</string>
+	<key>7QU-HS-eh7.title</key>
+	<string>Pack som EIP</string>
+</dict>
+</plist>

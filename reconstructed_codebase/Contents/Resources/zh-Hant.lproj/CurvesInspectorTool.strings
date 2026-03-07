@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.ibExternalAccessibilityDescription</key>
+	<string>curvesInputField</string>
+	<key>260.ibExternalAccessibilityDescription</key>
+	<string>curvesOutputField</string>
+	<key>285.placeholderString</key>
+	<string>0</string>
+	<key>286.title</key>
+	<string>輸入：</string>
+	<key>287.placeholderString</key>
+	<string>0</string>
+	<key>288.title</key>
+	<string>輸出：</string>
+	<key>316.ibShadowedLabels[0]</key>
+	<string>RGB</string>
+	<key>316.ibShadowedLabels[1]</key>
+	<string>亮度</string>
+	<key>316.ibShadowedLabels[2]</key>
+	<string>紅色</string>
+	<key>316.ibShadowedLabels[3]</key>
+	<string>綠色</string>
+	<key>316.ibShadowedLabels[4]</key>
+	<string>藍色</string>
+</dict>
+</plist>

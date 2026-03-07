@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>225.title</key>
+	<string>Kombinera</string>
+	<key>227.title</key>
+	<string>av dessa regler</string>
+	<key>234.title</key>
+	<string>Vilken som</string>
+	<key>235.title</key>
+	<string>Alla</string>
+	<key>4.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

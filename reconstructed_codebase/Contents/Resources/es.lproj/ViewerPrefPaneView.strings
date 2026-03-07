@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>Valores predeterminados</string>
+	<key>258.title</key>
+	<string>Patrón:</string>
+	<key>260.title</key>
+	<string>Color:</string>
+	<key>262.title</key>
+	<string>Margen:</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>Visor</string>
+	<key>266.title</key>
+	<string>Visor y navegador</string>
+	<key>269.title</key>
+	<string>Margen de prueba:</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>Máscara de color:</string>
+	<key>289.title</key>
+	<string>Capas</string>
+	<key>293.title</key>
+	<string>Margen de Prueba</string>
+	<key>295.title</key>
+	<string>Ajustes locales</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>Variante de Color seleccionada:</string>
+	<key>drf-G9-VYV.title</key>
+	<string>Comparar Variante de Color:</string>
+</dict>
+</plist>

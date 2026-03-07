@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>09H-LY-aNy.ibShadowedToolTip</key>
+	<string>Changer Vue Simple/Multi</string>
+	<key>0v4-ek-mqo.title</key>
+	<string>Contraste et Luminosité</string>
+	<key>1088.ibShadowedToolTip</key>
+	<string>Copier Réglages de la Variante Principale</string>
+	<key>1089.ibShadowedToolTip</key>
+	<string>Appliquer Réglages aux Variantes sélectionnées</string>
+	<key>1168.ibShadowedToolTip</key>
+	<string>Déplacer variantes dans le Dossier de Sélection</string>
+	<key>1171.ibShadowedToolTip</key>
+	<string>Nouvelle Variante</string>
+	<key>1172.ibShadowedToolTip</key>
+	<string>Sélectionner Variante</string>
+	<key>1337.title</key>
+	<string>Cellule texte</string>
+	<key>1339.title</key>
+	<string>Cellule texte</string>
+	<key>1340.title</key>
+	<string>Cellule texte</string>
+	<key>1341.title</key>
+	<string>Cellule texte</string>
+	<key>1342.title</key>
+	<string>Cellule texte</string>
+	<key>1343.title</key>
+	<string>Cellule texte</string>
+	<key>1570.headerCell.title</key>
+	<string>Etat</string>
+	<key>1813.title</key>
+	<string>Ajuster</string>
+	<key>1814.title</key>
+	<string>LLL</string>
+	<key>1815.title</key>
+	<string>BBB</string>
+	<key>1816.title</key>
+	<string>GGG</string>
+	<key>1817.title</key>
+	<string>RRR</string>
+	<key>1820.title</key>
+	<string>Aucune sélection</string>
+	<key>1821.title</key>
+	<string>Aucune sélection</string>
+	<key>1824.title</key>
+	<string>Bouton</string>
+	<key>1825.title</key>
+	<string>Bouton</string>
+	<key>1829.title</key>
+	<string>Bouton</string>
+	<key>1830.title</key>
+	<string>Bouton</string>
+	<key>1831.title</key>
+	<string>Bouton</string>
+	<key>1833.title</key>
+	<string>Bouton</string>
+	<key>1834.title</key>
+	<string>Bouton</string>
+	<key>1836.title</key>
+	<string>Bouton</string>
+	<key>1841.title</key>
+	<string>Cellule texte</string>
+	<key>1842.title</key>
+	<string>Cellule texte</string>
+	<key>1851.ibShadowedToolTip</key>
+	<string>Trier</string>
+	<key>1871.title</key>
+	<string>1 sur 100</string>
+	<key>2217.ibShadowedToolTip</key>
+	<string>Capturer une image à l'aide de l'appareil connecté</string>
+	<key>2218.title</key>
+	<string>Bouton</string>
+	<key>2410.title</key>
+	<string>Bouton</string>
+	<key>2415.title</key>
+	<string>Box</string>
+	<key>2460.headerCell.title</key>
+	<string>Historique</string>
+	<key>2500.title</key>
+	<string>NR</string>
+	<key>2501.title</key>
+	<string>YYY</string>
+	<key>2502.title</key>
+	<string>MMM</string>
+	<key>2503.title</key>
+	<string>CCC</string>
+	<key>2609.title</key>
+	<string>Texte</string>
+	<key>2623.title</key>
+	<string>GRA</string>
+	<key>2653.ibShadowedToolTip</key>
+	<string>Marges</string>
+	<key>2731.title</key>
+	<string>Bouton</string>
+	<key>2835.ibShadowedToolTip</key>
+	<string>Classer direction</string>
+	<key>2958.ibShadowedToolTip</key>
+	<string>Calques de Réglages</string>
+	<key>2962.title</key>
+	<string>Calque</string>
+	<key>297.headerCell.title</key>
+	<string>Nom</string>
+	<key>2998.title</key>
+	<string>Aucune sélection</string>
+	<key>3003.title</key>
+	<string>Personnaliser les Réglages Auto</string>
+	<key>3004.title</key>
+	<string>Correction Perspective</string>
+	<key>3005.title</key>
+	<string>Rotation</string>
+	<key>3006.title</key>
+	<string>Niveaux</string>
+	<key>3007.title</key>
+	<string>Haute plage dynamique</string>
+	<key>3008.title</key>
+	<string>Exposition</string>
+	<key>3009.title</key>
+	<string>Balance des blancs</string>
+	<key>3044.title</key>
+	<string>nouveau nom de collection</string>
+	<key>3051.title</key>
+	<string>Nouveau nom de Collection :</string>
+	<key>3052.title</key>
+	<string>OK</string>
+	<key>3059.ibShadowedToolTip</key>
+	<string>Exporter Variantes</string>
+	<key>3060.title</key>
+	<string>Bouton</string>
+	<key>3063.ibShadowedToolTip</key>
+	<string>Capturer une image à l'aide de l'appareil connecté</string>
+	<key>3064.title</key>
+	<string>Bouton</string>
+	<key>3085.title</key>
+	<string>Annuler</string>
+	<key>3097.ibShadowedToolTip</key>
+	<string>Personnaliser la Barre d'Outils</string>
+	<key>3101.ibShadowedToolTip</key>
+	<string>Définir les Préférences Capture One</string>
+	<key>3102.title</key>
+	<string>Bouton</string>
+	<key>3152.ibShadowedToolTip</key>
+	<string>Afficher le Diaporama</string>
+	<key>3237.title</key>
+	<string>synchronisation de dossier</string>
+	<key>3244.title</key>
+	<string>Synchroniser</string>
+	<key>3245.title</key>
+	<string>nouveau nom de la collection:</string>
+	<key>3247.title</key>
+	<string>Annuler</string>
+	<key>3255.title</key>
+	<string>Importer les nouvelles images</string>
+	<key>3257.title</key>
+	<string>Supprimer les images manquantes</string>
+	<key>3276.title</key>
+	<string>Afficher Importateur</string>
+	<key>3282.title</key>
+	<string>Montrer les images manquantes</string>
+	<key>3290.title</key>
+	<string>Aussi inclure les Originaux de référence</string>
+	<key>3297.title</key>
+	<string>Inclure les sous dossiers connus</string>
+	<key>3302.title</key>
+	<string>Inclure les sous dossiers</string>
+	<key>46A-69-Nqd.title</key>
+	<string>Curseur Vue Séparée</string>
+	<key>4hC-Nj-5MJ.headerCell.title</key>
+	<string>ID de séquence</string>
+	<key>5.title</key>
+	<string>Fenêtre Visionneuse</string>
+	<key>5Qx-vh-xgO.title</key>
+	<string>Nouveau Calque Vierge</string>
+	<key>883.ibShadowedToolTip</key>
+	<string>Rétablir</string>
+	<key>889.ibShadowedToolTip</key>
+	<string>Pivoter vers la Droite</string>
+	<key>893.ibShadowedToolTip</key>
+	<string>Sélectionner Précédente
+Alt-clique pour sélectionner le groupe précédent</string>
+	<key>894.ibShadowedToolTip</key>
+	<string>Sélectionner Suivante
+Alt-clique pour sélectionner le groupe suivant</string>
+	<key>908.ibShadowedToolTip</key>
+	<string>Annuler</string>
+	<key>993.headerCell.title</key>
+	<string>Note</string>
+	<key>994.headerCell.title</key>
+	<string>Variante</string>
+	<key>995.headerCell.title</key>
+	<string>Vitesse ISO</string>
+	<key>996.headerCell.title</key>
+	<string>Ouverture</string>
+	<key>997.headerCell.title</key>
+	<string>Vitesse d'obturation</string>
+	<key>998.headerCell.title</key>
+	<string>Focale</string>
+	<key>999.headerCell.title</key>
+	<string>Date de l'image</string>
+	<key>DRr-D1-csk.title</key>
+	<string>Importer les Images...</string>
+	<key>DaL-Ea-zEX.title</key>
+	<string>Bouton</string>
+	<key>EiS-hX-M0T.ibShadowedToolTip</key>
+	<string>Conseils</string>
+	<key>OLF-gr-xkN.ibShadowedToolTip</key>
+	<string>Nouveau Calque</string>
+	<key>UZE-NT-qce.title</key>
+	<string>Nouveau Calque de Duplication</string>
+	<key>YkD-v3-VfH.title</key>
+	<string>Nouveau Calque de Correction</string>
+	<key>axa-pb-3sd.title</key>
+	<string>Nouveau Calque Rempli</string>
+	<key>bdF-40-gYt.title</key>
+	<string>Sélectionner après création</string>
+	<key>fH6-6w-qg3.title</key>
+	<string>Ajouter les images sélectionner après création</string>
+	<key>glS-uC-beD.title</key>
+	<string>LABB</string>
+	<key>hew-LV-0p3.ibShadowedToolTip</key>
+	<string>Etat de la Batterie</string>
+	<key>iZI-Rn-Ulo.title</key>
+	<string>LABA</string>
+	<key>m2J-7q-yMC.title</key>
+	<string>Cellule texte</string>
+	<key>rkL-D2-fDQ.title</key>
+	<string>LABL</string>
+	<key>x6g-PB-hlq.title</key>
+	<string>Vue Complète</string>
+</dict>
+</plist>

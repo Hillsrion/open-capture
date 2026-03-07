@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>ライセンスコードをクリップボードからペーストできます</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>ライセンスコードをクリップボードからペーストできます</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>ライセンスコードをクリップボードからペーストできます</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>ライセンスコードとは?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Capture Oneのプロファイルについて詳しい説明を読む</string>
+	<key>1348.title</key>
+	<string>閉じる</string>
+	<key>1349.title</key>
+	<string>ボタン</string>
+	<key>1350.title</key>
+	<string>ヘルプ</string>
+	<key>1356.title</key>
+	<string>Capture One 認証</string>
+	<key>1357.title</key>
+	<string>下の欄に記入してください。</string>
+	<key>1362.title</key>
+	<string>Eメール:</string>
+	<key>1363.title</key>
+	<string>名:</string>
+	<key>1364.title</key>
+	<string>姓:</string>
+	<key>1365.title</key>
+	<string>国:</string>
+	<key>1366.title</key>
+	<string>登録確認</string>
+	<key>1367.title</key>
+	<string>小さいシステム フォント テキスト</string>
+	<key>1369.title</key>
+	<string>システムフォントテキスト
+2 行</string>
+	<key>1371.title</key>
+	<string>プロダクトキー:</string>
+	<key>1376.title</key>
+	<string>(ライセンスコード)</string>
+	<key>1377.title</key>
+	<string>ペースト</string>
+	<key>1378.title</key>
+	<string>Capture One 認証</string>
+	<key>1379.title</key>
+	<string>お客様の新しいプロファイルが作成されます。 情報を確認し、新しいプロファイルのパスワードを作成してください。</string>
+	<key>1380.title</key>
+	<string>Eメール</string>
+	<key>1381.title</key>
+	<string>名</string>
+	<key>1382.title</key>
+	<string>姓</string>
+	<key>1383.title</key>
+	<string>国</string>
+	<key>1384.title</key>
+	<string>Eメール:</string>
+	<key>1385.title</key>
+	<string>名:</string>
+	<key>1386.title</key>
+	<string>姓:</string>
+	<key>1387.title</key>
+	<string>国:</string>
+	<key>1388.placeholderString</key>
+	<string>6文字以上</string>
+	<key>1389.placeholderString</key>
+	<string>6文字以上</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>なぜパスワードが必要なのですか?</string>
+	<key>1391.title</key>
+	<string>確認:</string>
+	<key>1392.title</key>
+	<string>パスワード:</string>
+	<key>1393.title</key>
+	<string>認証ありがとうございます。</string>
+	<key>1394.title</key>
+	<string>このバージョンのCapture Oneは認証されました。</string>
+	<key>1395.title</key>
+	<string>ソフトウェア ライセンス契約を表示</string>
+	<key>1396.title</key>
+	<string>Capture Oneライセンス</string>
+	<key>1397.title</key>
+	<string>このバージョンのCapture Oneは認証済みです。</string>
+	<key>1398.title</key>
+	<string>ライセンスコード:</string>
+	<key>1399.title</key>
+	<string>登録先:</string>
+	<key>1400.title</key>
+	<string>無料アップグレード数:</string>
+	<key>1401.title</key>
+	<string>認証残数:</string>
+	<key>1404.title</key>
+	<string>(ライセンスの種類の文字列)</string>
+	<key>1406.title</key>
+	<string>(ライセンス)</string>
+	<key>1407.title</key>
+	<string>(ライセンスコード)</string>
+	<key>1408.title</key>
+	<string>はい、このコンピューターのライセンスを無効にします。</string>
+	<key>1409.title</key>
+	<string>Capture Oneを停止する</string>
+	<key>1410.title</key>
+	<string>ライセンスを無効にすると、Capture One は終了します。 次回 Capture One 起動時にはライセンスコードの再入力が必要です。</string>
+	<key>1413.title</key>
+	<string>OK</string>
+	<key>1414.title</key>
+	<string>キャンセル</string>
+	<key>1415.title</key>
+	<string>パスワードをメールに送信</string>
+	<key>1416.title</key>
+	<string>パスワード入力:</string>
+	<key>1418.title</key>
+	<string>ペースト</string>
+	<key>1426.title</key>
+	<string>1 April 1976</string>
+	<key>1427.title</key>
+	<string>テキスト セル</string>
+	<key>1428.title</key>
+	<string>テキスト セル</string>
+	<key>1436.title</key>
+	<string>ライセンスはアップグレードできない</string>
+	<key>1443.title</key>
+	<string>このバージョンのCapture Oneに有効なライセンスコードではありません。
+
+続けてCapture Oneを使用するには、有効なコードで認証するか、Capture Oneオンラインストア(ウェブブラウザを起動)で有効なライセンスを購入してください。</string>
+	<key>1445.title</key>
+	<string>オンライン ストアにアクセス...</string>
+	<key>1446.title</key>
+	<string>OK</string>
+	<key>16.label</key>
+	<string>認証</string>
+	<key>18.label</key>
+	<string>パスワード</string>
+	<key>24.label</key>
+	<string>停止</string>
+	<key>281.title</key>
+	<string>パスワードを入力</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>ライセンスコードをクリップボードからペーストできます</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>d MMMM y</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>無料アップグレードおよび無料認証とは何ですか?</string>
+	<key>5.title</key>
+	<string>ライセンス</string>
+	<key>540.title</key>
+	<string>新規プロファイル</string>
+	<key>546.title</key>
+	<string>新規パスワード</string>
+	<key>559.title</key>
+	<string>タイトル</string>
+	<key>565.title</key>
+	<string>ライセンス</string>
+	<key>570.title</key>
+	<string>認証履歴</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>オンライン認証</string>
+	<key>78.headerCell.title</key>
+	<string>日付</string>
+	<key>79.headerCell.title</key>
+	<string>コンピュータID</string>
+	<key>80.headerCell.title</key>
+	<string>認証タイプ</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>認証キーは無効です</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>マニュアル認証</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(ハードウェア ID)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>下記の登録キーはオンラインwebフォームに入力する必要があります。これはwww.captureone.comのあなたのプロファイルでログインすると確認できます。</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>Eメールの確認:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>認証キー:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>ウェブサイトに戻った認証キーを入力し、'認証'ボタンを押してください。</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>製品キー:</string>
+</dict>
+</plist>

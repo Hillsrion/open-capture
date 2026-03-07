@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Allowed applications</key>
+	<string>允許的應用</string>
+	<key>Filter applications</key>
+	<string>篩選應用</string>
+	<key>No bundle at the specified path</key>
+	<string>指定路徑上沒有捆綁包</string>
+	<key>Unable to launch the requested application</key>
+	<string>無法啟動請求的應用程序</string>
+	<key>Unable to open the specified files</key>
+	<string>無法打開指定文件</string>
+</dict>
+</plist>

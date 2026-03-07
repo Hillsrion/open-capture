@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>OK</string>
+	<key>116.title</key>
+	<string>Avbryt</string>
+	<key>117.title</key>
+	<string>Namn</string>
+	<key>118.title</key>
+	<string>Förhållande</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Klart</string>
+	<key>124.title</key>
+	<string>Ta bort</string>
+	<key>6.title</key>
+	<string>Ny proportion</string>
+	<key>66.title</key>
+	<string>Organisera proportioner</string>
+</dict>
+</plist>

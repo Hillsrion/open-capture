@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>173.title</key>
+	<string>Wyszukaj...</string>
+	<key>176.title</key>
+	<string>Otwórz</string>
+	<key>183.headerCell.title</key>
+	<string>Ostatnie sesje</string>
+	<key>186.title</key>
+	<string>Komórka tekstowa</string>
+	<key>208.title</key>
+	<string>Brak ostatnich katalogów lub sesji</string>
+	<key>219.title</key>
+	<string>Ostatnie</string>
+	<key>221.ibShadowedToolTip</key>
+	<string>Katalog jest najlepszym miejscem do przechowywania i organizowania całej biblioteki obrazów. Aby móc pracować z obrazami w katalogu, katalog musi je zaimportować. Zalecane dla większości fotografów.</string>
+	<key>222.title</key>
+	<string>Nowy katalog...</string>
+	<key>37.ibShadowedToolTip</key>
+	<string>Sesja to szybki i łatwy sposób na pracę z ograniczoną liczbą obrazów w ramach jednego zadania lub zdarzenia. Obrazy można edytować, wyszukując ich lokalizację na dysku lub importując je do sesji.</string>
+	<key>54.title</key>
+	<string>Anuluj</string>
+	<key>55.title</key>
+	<string>Nowa sesja....</string>
+</dict>
+</plist>

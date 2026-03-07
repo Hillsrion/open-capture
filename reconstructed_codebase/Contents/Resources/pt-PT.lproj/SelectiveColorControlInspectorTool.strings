@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0vp-Kx-FHd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>2031.title</key>
+	<string>Box</string>
+	<key>3060.label</key>
+	<string>Tom de pele</string>
+	<key>3178.title</key>
+	<string>Box</string>
+	<key>3180.ibShadowedToolTip</key>
+	<string>Para cobrir a gama de saturação completa</string>
+	<key>352.headerCell.title</key>
+	<string>∆L</string>
+	<key>353.headerCell.title</key>
+	<string>∆S</string>
+	<key>354.headerCell.title</key>
+	<string>∆H</string>
+	<key>357.title</key>
+	<string>123.5</string>
+	<key>359.title</key>
+	<string>123.5</string>
+	<key>361.title</key>
+	<string>123.5</string>
+	<key>363.title</key>
+	<string>Célula do Texto</string>
+	<key>3774.title</key>
+	<string>Exibir faixa de cor selecionada</string>
+	<key>3820.title</key>
+	<string>Exibir faixa de cor selecionada</string>
+	<key>3844.ibShadowedLabels[0]</key>
+	<string>Básico</string>
+	<key>3844.ibShadowedLabels[1]</key>
+	<string>Avançado</string>
+	<key>3844.ibShadowedLabels[2]</key>
+	<string>Tom de pele</string>
+	<key>628.label</key>
+	<string>Avançado</string>
+	<key>630.label</key>
+	<string>Básico</string>
+	<key>6aV-yX-U5u.ibShadowedToolTip</key>
+	<string>Opções da ferramenta cursor</string>
+	<key>7NC-Ij-t7t.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>Am6-fU-DiK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>Cgr-sZ-I5Z.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>EVP-VL-Yjl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidade</string>
+	<key>H8b-hH-diC.title</key>
+	<string>Uniformidade</string>
+	<key>Hxa-eC-810.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidade</string>
+	<key>Rtj-aW-pbn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Suavidade</string>
+	<key>ePg-3Z-cxt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidade</string>
+	<key>gKT-4w-rzy.title</key>
+	<string>Quantidade</string>
+	<key>hcB-Tf-YVV.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>nm6-Wj-rzB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>oet-kp-YCb.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Suavidade</string>
+	<key>paI-fK-pg5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>tZF-2c-Xyl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>xHN-h1-U6H.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidade</string>
+</dict>
+</plist>

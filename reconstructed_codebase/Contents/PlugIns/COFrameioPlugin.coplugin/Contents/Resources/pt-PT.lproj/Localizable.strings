@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disconnect from Frame.io</key>
+	<string>Desligar do Frame.io</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>Para obter ajuda, entre em contato com o serviço de atendimento ao cliente do Capture One através do https://support.captureone.com.</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>Para obter ajuda, entre em contato com o serviço de atendimemto ao cliente do Capture One através do https://support.captureone.com. Inclua a sequência de texto abaixo em sua solicitação de atendimento:
+
+%@</string>
+	<key>Frame.io settings</key>
+	<string>Definições do Frame.io</string>
+	<key>Free version limit reached</key>
+	<string>Atingido o limite da versão gratuita</string>
+	<key>Not implemented</key>
+	<string>Não implementado</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>A preparar %1$i de %2$i ativos para carregamento…</string>
+	<key>Server Error</key>
+	<string>Erro desconhecido</string>
+	<key>Something went wrong, please try again.</key>
+	<string>Ocorreu um erro. Tente novamente mais tarde.</string>
+	<key>The free version of the Frame.io plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>Está a utilizar a versão gratuita do plug-in Frame.io, que não permite a publicação ou importação de tantos ficheiros em simultâneo. Para fazer a atualização, aceda a https://integrations.captureone.com/upgrade/</string>
+	<key>This method is not yet implemented.</key>
+	<string>Este método ainda não está implementado.</string>
+	<key>Unknown Error</key>
+	<string>Erro desconhecido</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>A carregar %1$@ (%2$i de %3$i)…</string>
+	<key>Work with stakeholders, clients, and collaborators like never before with easy-to-use review and approval tools, lightning-fast unbreakable file transfers, and the fastest growing Camera to Cloud ecosystem in the market. For more details please read more details [here](https://frame.io/).</key>
+	<string>Trabalhe com acionistas, clientes e colaboradores como nunca antes, com ferramentas de revisão e aprovação fáceis de usar, transferências de ficheiros invioláveis e extremamente rápidas, bem como o ecossistema Câmara para nuvem com crescimento mais rápido do mercado. Para mais informações, leia mais detalhes [aqui](https://frame.io/).</string>
+</dict>
+</plist>

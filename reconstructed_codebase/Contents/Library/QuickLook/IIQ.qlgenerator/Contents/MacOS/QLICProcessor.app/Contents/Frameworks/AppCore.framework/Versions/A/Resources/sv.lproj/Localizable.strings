@@ -1,0 +1,2321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>- Ny standard bildinställning skapad.</string>
+	<key>%.1f MB</key>
+	<string>%.1f MB</string>
+	<key>%.2f GB</key>
+	<string>%.2f GB</string>
+	<key>%.2f TB</key>
+	<string>%.2f TB</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>%ld av dessa varianter har en LCC profil pålagd. Ändrar du LCC profil på denna variant, kan befintlig profil tas bort. En LCC profil kan bara återskapas med ursprunglig LCC testbild eller läggas på igen om den sparats som förinställning.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>%1$lu av %2$lu varianter saknar metadata. Verifiera och Reparera databasen kan lösa problemet genom att ta bort dessa varianter.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>%1$lu av %2$lu varianter saknar metadata. Verifiera och Reparera databasen kan lösa problemet genom att ta bort dessa varianter. Överväg att spara den lista med bilder som visas i Aktiviteter, så att dessa kan importeras på nytt senare.</string>
+	<key>%u KB</key>
+	<string>%u kB</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Fel 1) Profil stöds ej: Profilen stöds ej eller är felaktig</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Fel 10) Profilen har en begränsande kurva: mörka och mättade färger kan ge stora variationer.</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Fel 11) Anpassad vitbalans är inte angiven eller felaktig (använder media vit).</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Fel 12) Anpassad vitbalans är inte angiven eller felaktig (använder D50).</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Fel 13) Media vit saknas - förutsätter D50.</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Fel 14) Tvetydig PCS vitpunkt - ljussättningen är inte D50 som krävs enligt specifikationen.</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Fel 15) Tvetydig PCS vitpunkt - (255-255-255) har ett färgstick.</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Fel 2) Färgrymden stöds ej - endast RGB profiler stöds.</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Fel 3) Profile Connection Space (referensfärgrymden) stöds ej- profilen är inte XYZ.</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Fel 4) Klassen stöds ej - profilen måste skärmprofil, utprofil eller färgrymd.</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Fel 5) LUT profiler stöds ej.</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Fel 6) Kurv fel (deformerad profil).</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Fel 7) Tolkningen av profilen beror på användningen.</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Fel 8) Omräkningen baseras på V4 specifikationen; V2 omräkning ignoreras.</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Fel 9) Profilen kan inte visa svart korrekt. Svartpunktskompensationen kan skapa stora variationer.</string>
+	<key>(Locked: Read Only)</key>
+	<string>(Locked: Read Only)</string>
+	<key>(Missing path)</key>
+	<string>(Sökväg saknas)</string>
+	<key>(No City)</key>
+	<string>(Stad saknas)</string>
+	<key>(No Country)</key>
+	<string>(Land saknas)</string>
+	<key>(No Keywords)</key>
+	<string>(Inga nyckelord)</string>
+	<key>(No Location)</key>
+	<string>(Plats saknas)</string>
+	<key>(No State)</key>
+	<string>(Region saknas)</string>
+	<key>(No Values)</key>
+	<string>(Inget värde)</string>
+	<key>-- bytes</key>
+	<string>-- byte</string>
+	<key>1 Digit Counter</key>
+	<string>1 siffrig räknare</string>
+	<key>1 shot</key>
+	<string>enbild</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 mm</string>
+	<key>2 Digit Counter</key>
+	<string>2 siffrig räknare</string>
+	<key>3 Digit Counter</key>
+	<string>3 siffrig räknare</string>
+	<key>4 Digit Counter</key>
+	<string>4 siffrig räknare</string>
+	<key>5 Digit Counter</key>
+	<string>5 siffrig räknare</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6 siffrig räkanre</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;okänt&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>En receptfil hittades i stället för en mapp.</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>Det gick inte att skapa en receptmapp.</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>Databaskorruption har upptäckts och katalogen "%@" måste stängas.</string>
+	<key>A newer Capture One engine is required</key>
+	<string>En nyare Capture One motor behövs</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>Det gick inte att skapa en sessionsundermapp med namnet "%@".
+
+Sessionsmappen används i stället.</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>AI focus</string>
+	<key>AI servo</key>
+	<string>AI servo</string>
+	<key>About %d hours left</key>
+	<string>Cirka %d timmar kvar</string>
+	<key>About %d minutes left</key>
+	<string>Cirka %d minuter kvar</string>
+	<key>About 10 seconds left</key>
+	<string>Cirka 10 sekunder kvar</string>
+	<key>About 30 seconds left</key>
+	<string>Cirka 30 sekunder kvar</string>
+	<key>About 5 seconds left</key>
+	<string>Cirka 5 sekunder kvar</string>
+	<key>About a minute left</key>
+	<string>Cirka 1 minut kvar</string>
+	<key>About an hour left</key>
+	<string>Cirka 1 timma kvar</string>
+	<key>Action</key>
+	<string>Åtgärd</string>
+	<key>Action (High speed)</key>
+	<string>Action (High speed)</string>
+	<key>Add Layer</key>
+	<string>Lägg till lager</string>
+	<key>Add Selected Images to %@</key>
+	<string>Lägg till valda bilder till %@</string>
+	<key>Add Selected Warning</key>
+	<string>Lägg till vald varning</string>
+	<key>Address</key>
+	<string>Adress</string>
+	<key>Adjusted</key>
+	<string>Justerad</string>
+	<key>Adjusting</key>
+	<string>Justera</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>Alla bilder</string>
+	<key>Altitude</key>
+	<string>Höjd</string>
+	<key>Amount</key>
+	<string>Mängd</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>ICC profilen kan inte hittas.</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>LCC profilen kan inte hittas.</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>En justeringsmask saknas för bilden. Den saknade masken har ersatts av en tom mask.</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>Ett fel uppstod och katalogen "%@" måste stängas.</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>Ett fel uppstod och sessionen "%@" måste stängas.</string>
+	<key>An error occurred during processing.</key>
+	<string>Ett fel uppstod under framkallningen.</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>Ett fel uppsod när metadata informationen skulle läsas från några varianter.</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>Ett fel inträffade när ett lager skulle appliceras</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>Ett fel uppstod när du försökte kopiera nuvarande receptmapp. Standardrecept kommer att användas istället.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>Ett fel uppstod när du försökte kopiera befintlig receptmapp. Framkallningsrecept(en) kunde inte läsas in.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>Ett fel uppstod när du försökte kopiera nuvarande receptmapp. Nuvarande sökväg pekar på en fil och inte en mapp. Standardrecept kommer att användas i stället.</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>Ett fel uppstod när receptfilen '%@' skulle läsas in. Receptet har inte lästs in.</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>Ett fel uppstod när receptlistan skulle läsas in. Standardreceptet kommer att användas i stället.</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>Ett fel uppstod när en receptmappen skulle öppnas.</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>Ett fel uppstod vid skrivning av ICC profil till hårddisken. %@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>Ett fel uppstod vid skrivning av ICC profil till hårddisken. %@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>Ett okänt fel uppstod när vattenmärke skulle skapas.</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>Ett oåterkalleligt fel uppstod under arbetet med katalogens databas.
+
+%@
+
+Katalogen stängs nu.</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>Ett oåterkalleligt fel uppstod under arbetet med katalogen. Katalogen kommer nu att stängas.</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>Ett oåterkalleligt fel uppstod under arbetet med ksessionens databas.
+
+%@
+
+Sessionen stängs nu.</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>Ett oåterkalleligt fel uppstod under arbetet med sessionen. Sessionen stängs nu.</string>
+	<key>Annotated</key>
+	<string>Antecknad</string>
+	<key>Annotations</key>
+	<string>Anteckningar</string>
+	<key>Any</key>
+	<string>Vilken som</string>
+	<key>Aper.</key>
+	<string>Aper.</string>
+	<key>Aperture</key>
+	<string>Bländare</string>
+	<key>Aperture priority</key>
+	<string>Bländarförval</string>
+	<key>Aperture-priority AE</key>
+	<string>Bländarförval AE</string>
+	<key>Apply</key>
+	<string>Lägg på</string>
+	<key>Apply Adjustments</key>
+	<string>Lägg på justeringarna</string>
+	<key>Apply LCC</key>
+	<string>Lägg på LCC</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>Lägg på LCC på föregående varianter?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>Lägg på LCC på efterföljande varianter?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>Lägg på alla valda varinter</string>
+	<key>Applying Adjustments</key>
+	<string>Applicerar justeringar</string>
+	<key>Applying Adjustments to %@</key>
+	<string>Applicerar justeringar på %@</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>Är du säker på att du vill ändra filändelse “%1$@” till “%2$@”?</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>Auto Adjust</key>
+	<string>Autojustering</string>
+	<key>Auto Exposure</key>
+	<string>Auto exponering</string>
+	<key>Auto HDR</key>
+	<string>Auto HDR</string>
+	<key>Auto Keystone</key>
+	<string>Auto perspektiv</string>
+	<key>Auto Levels</key>
+	<string>Auto nivåer</string>
+	<key>Auto Rotation</key>
+	<string>Auto rotation</string>
+	<key>Auto White Balance</key>
+	<string>Auto vitbalans</string>
+	<key>Auto bracket</key>
+	<string>Auto gaffling</string>
+	<key>Auto, Did not fire</key>
+	<string>Auto, utlöste inte</string>
+	<key>Auto, Fired</key>
+	<string>Auto, utlöste</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>Auto, utlöste, röda ögon reducering</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>Auto, utlöste, röda ögon reducering, returljus</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>Auto, utlöste, röda ögon reducering, inget returljus</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>Auto, utlöste, returljus</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>Auto, utlöste, inget returljus</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>Ladda in automatiskt %1$d av%2$d sets av metadata</string>
+	<key>Average</key>
+	<string>Genomsnitt</string>
+	<key>Avg.</key>
+	<string>Allm.</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>S&amp;&amp;V Blå</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>S&amp;&amp;V Cyan</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>S&amp;&amp;V Split-tone Mörk nyans</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>S&amp;&amp;V Split-tone Mörk mättnad</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>S&amp;&amp;V aktiverad</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>S&amp;&amp;V Grön</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>S&amp;&amp;V Split-tone Ljus nyans</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>S&amp;&amp;V Split-tone Ljus mättnad</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>S&amp;&amp;V Magenta</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>S&amp;&amp;V Röd</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>S&amp;&amp;V Gul</string>
+	<key>Barcode</key>
+	<string>Streckkod</string>
+	<key>Base Characteristics</key>
+	<string>Grundegenskaper</string>
+	<key>Basic</key>
+	<string>Grund</string>
+	<key>Black &amp; White</key>
+	<string>Svart/Vitt</string>
+	<key>Black Recovery</key>
+	<string>Svartåterhämtning</string>
+	<key>Blue</key>
+	<string>Blå</string>
+	<key>Blue Curve</key>
+	<string>Blå kurva</string>
+	<key>Blue Gradation Curve</key>
+	<string>Blå övertoningskurva</string>
+	<key>Brack.</key>
+	<string>Gaff.</string>
+	<key>Bracket</key>
+	<string>Gaffling</string>
+	<key>Bracketing</key>
+	<string>Gaffling</string>
+	<key>Bracketing: Aperture</key>
+	<string>Bracketing: Bländare</string>
+	<key>Bracketing: ISO</key>
+	<string>Bracketing: ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>Bracketing: Slutartid</string>
+	<key>Brightness</key>
+	<string>Ljusstyrka</string>
+	<key>Burst</key>
+	<string>Burst</string>
+	<key>CWA</key>
+	<string>CWA</string>
+	<key>Camera Counter</key>
+	<string>Kameraräknare</string>
+	<key>Camera Firmware</key>
+	<string>Kamerans firmware</string>
+	<key>Camera Lens</key>
+	<string>Objektiv</string>
+	<key>Camera Make</key>
+	<string>Kameramärke</string>
+	<key>Camera Model</key>
+	<string>Kameramodell</string>
+	<key>Camera Owner</key>
+	<string>Ägare till kameran</string>
+	<key>Camera Profile</key>
+	<string>Kameraprofil</string>
+	<key>Camera Serial</key>
+	<string>Serienr för kamera</string>
+	<key>Camera Software</key>
+	<string>Kamerans mjukvara</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>Kameras standardinställningar innehåller en ICC provile som inte kunde läsas. Detta kan bero på att orginalfile saknas eller är korrupt.</string>
+	<key>Cancel</key>
+	<string>Avbryt</string>
+	<key>Cannot contain characters %@</key>
+	<string>Kan inte innehålla tecken %@</string>
+	<key>Cannot save catalog</key>
+	<string>Kan inte spara katalogen</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>Kan inte spara katalogens sökväg: %@
+
+Katalogen ligger i papperskorgen. Återställ den till orginalplatsen.</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>Kan inte spara katalogen till sökvägen: %@
+
+Katalogen är skrivskyddad. Försök att ändra filens rättigheter.</string>
+	<key>Cannot save session</key>
+	<string>Kan inte spara sessionen</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>Kan inte spara sessionen till sökvägen: %@
+
+Sessionen ligger i papperskorgen. Flytta den till orginalplatsen.</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>Kan inte spara sessionen till sökvägen: %@
+
+Sessionen är skrivskyddad. Försök att ändra rättigheterna.</string>
+	<key>Caption</key>
+	<string>Bildtext</string>
+	<key>Capture Folder</key>
+	<string>Råfilsmapp</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>Capture One kunde inte skapa önskat vattenmärke nu.</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One har inte tillräckligt med ledigt minne för att skapa den specificerade referensbilden.</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>Capture One har inte tillräckligt med minnesutrymme för att skapa önskat vattenmärke.</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Capture One skyddas av åtminstone US Patent 8,854,482 och 8,619,146 liksom sökta patent.</string>
+	<key>Catalog Export</key>
+	<string>Katalog export</string>
+	<key>Catalog Save</key>
+	<string>Spara katalog</string>
+	<key>Catalog Sets Import</key>
+	<string>Importera kataloguppsättningar</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>Katalogbilder utan förhandsvisning kan inte visas och arbetas med om de är offline.</string>
+	<key>Category</key>
+	<string>Kategori</string>
+	<key>Center weighted average</key>
+	<string>Centervägd mätning</string>
+	<key>Center-weighted average</key>
+	<string>Centrumvägd mätning</string>
+	<key>Change</key>
+	<string>Ändra</string>
+	<key>Change the LCC Profile?</key>
+	<string>Ändra LCC profil?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Om du ändrar LCC profil på denna variant kan befintlig profil raderas. Denna LCC profil kan endast återskapas med orginal LCC test bild eller läggas på igen om den sparats som en förinställning.</string>
+	<key>Chroma Fringing</key>
+	<string>Chroma överstrålning</string>
+	<key>Chromatic Aberration</key>
+	<string>Kromatisk aberration</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>Kromatisk aberration aktiverad</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>Ursprung för kromatisk aberration</string>
+	<key>City</key>
+	<string>Stad</string>
+	<key>Clarity</key>
+	<string>Klarhet</string>
+	<key>Clarity Amount</key>
+	<string>Mängd klarhet</string>
+	<key>Clarity Method</key>
+	<string>Klarhet - metod</string>
+	<key>Clarity Structure</key>
+	<string>Klarhet - struktur</string>
+	<key>Clean Single Pixel</key>
+	<string>Rensa singel pixel</string>
+	<key>Clear Mask</key>
+	<string>Rensa mask</string>
+	<key>Clipboard Contents</key>
+	<string>Urklippbordets innehåll</string>
+	<key>Clone Variant</key>
+	<string>Klona variant</string>
+	<key>Close</key>
+	<string>Stäng</string>
+	<key>Close catalog</key>
+	<string>Stäng katalog</string>
+	<key>Close session</key>
+	<string>Stäng session</string>
+	<key>Close view</key>
+	<string>Närbild</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>Stänga av med oframkallade bilder?</string>
+	<key>Code</key>
+	<string>Kod</string>
+	<key>Collapse Stack</key>
+	<string>Pack ihop högen</string>
+	<key>Collection Choice</key>
+	<string>Val för kollektion</string>
+	<key>Collection Name</key>
+	<string>Kollektionens namn</string>
+	<key>Color</key>
+	<string>Färg</string>
+	<key>Color Adjustments</key>
+	<string>Färgjusteringar</string>
+	<key>Color Balance</key>
+	<string>Färgbalans</string>
+	<key>Color Balance Highlight</key>
+	<string>Färgbalansera högdagrar</string>
+	<key>Color Balance Midtone</key>
+	<string>Färgbalansera mellantoner</string>
+	<key>Color Balance Shadow</key>
+	<string>Färgbalansera skuggorna</string>
+	<key>Color Cast</key>
+	<string>Färgstick</string>
+	<key>Color Correction limit reached</key>
+	<string>Färgkorrigeringsgräns uppnådd</string>
+	<key>Color Editor - Advanced</key>
+	<string>Färgredigerare - Avancerat</string>
+	<key>Color Editor - Basic</key>
+	<string>Färgredigerare - Grund</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>Färgredigerare - Hudton</string>
+	<key>Color Noise Reduction</key>
+	<string>Reducering av färgbrus</string>
+	<key>Color Sensitivity</key>
+	<string>Färgkänslighet</string>
+	<key>Color Space</key>
+	<string>Färgrymd</string>
+	<key>Color Tag</key>
+	<string>Färgmärkning</string>
+	<key>Color space</key>
+	<string>Färgrymd</string>
+	<key>Complete</key>
+	<string>Klar</string>
+	<key>Composition</key>
+	<string>Komposition</string>
+	<key>Confirm</key>
+	<string>Bekräfta</string>
+	<key>Cont.</key>
+	<string>Cont.</string>
+	<key>Cont.high</key>
+	<string>Cont.high</string>
+	<key>Cont.low</key>
+	<string>Cont.low</string>
+	<key>Contact Address</key>
+	<string>Kontakt adress</string>
+	<key>Contact City</key>
+	<string>Kontakt stad</string>
+	<key>Contact Country</key>
+	<string>Kontakt land</string>
+	<key>Contact Emails</key>
+	<string>Kontakt E-post</string>
+	<key>Contact Phones</key>
+	<string>Kontakt Telefonnummer</string>
+	<key>Contact Postal Code</key>
+	<string>Kontakt postnummer</string>
+	<key>Contact State</key>
+	<string>Kontakt - Region</string>
+	<key>Contact State/Province</key>
+	<string>Kontakt region</string>
+	<key>Contact Websites</key>
+	<string>Kontakt ULR för copyrightinformation</string>
+	<key>Content Category</key>
+	<string>Innehållsskategori</string>
+	<key>Content Description</key>
+	<string>Dokument beskrivning</string>
+	<key>Content Description Writer</key>
+	<string>Dokument beskrivning författare</string>
+	<key>Content Headline</key>
+	<string>Dokument namn</string>
+	<key>Content Subject Code</key>
+	<string>Innehåll ämneskod</string>
+	<key>Continue</key>
+	<string>Fortsätt</string>
+	<key>Continuous</key>
+	<string>Continuous</string>
+	<key>Continuous High</key>
+	<string>Continuous High</string>
+	<key>Continuous Low</key>
+	<string>Continuous Low</string>
+	<key>Continuous high</key>
+	<string>Continuous high</string>
+	<key>Continuous low</key>
+	<string>Continuous low</string>
+	<key>Contrast</key>
+	<string>Kontrast</string>
+	<key>Copenhagen</key>
+	<string>Göteborg</string>
+	<key>Copy</key>
+	<string>Kopiera</string>
+	<key>Copy Images</key>
+	<string>Kopiera bilder</string>
+	<key>Copying %d images</key>
+	<string>Kopierar %d bilder</string>
+	<key>Copying %d out of %d images</key>
+	<string>Kopierar %1$d utav%2$d bilder</string>
+	<key>Copyright</key>
+	<string>Copyright</string>
+	<key>Copyright Notice</key>
+	<string>Copyrightmeddelande</string>
+	<key>Corresponding Points</key>
+	<string>Motsvarande punkter</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>Kunde inte få tillgång till Application Support mappen</string>
+	<key>Could not activate a Catalog.</key>
+	<string>Kunde inte aktivera en katalog.</string>
+	<key>Could not add metadata for variant.</key>
+	<string>Kunde inte lägga till metadata för variant.</string>
+	<key>Could not apply layer</key>
+	<string>Kunde inte applicera lager</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>Kunde inte kopiera filen %1$@ till %2$@</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>Kunde inte kopiera receptmappen.</string>
+	<key>Could not create a new Catalog.</key>
+	<string>Kunde inte skapa en ny katalog.</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>Kunde inte skapa metadatasökväg för variant.</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>Det gick inte att hitta ICC-profilen för framkallningsreceptet.</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>Det gick inte att hitta ICC-profilen för framkallningsreceptet. 'Bädda in kameraprofil' används i stället.</string>
+	<key>Could not generate print image</key>
+	<string>Kunde inte skapa utskriftsbild</string>
+	<key>Could not generate processed image</key>
+	<string>Kunde inte generera den bearbetade bilden</string>
+	<key>Could not load ICC profile.</key>
+	<string>Kunde inte läsa in ICC profil.</string>
+	<key>Could not load LCC profile.</key>
+	<string>Kunde inte läsa in ICC profil.</string>
+	<key>Could not load a Recipe file.</key>
+	<string>Det gick inte att läsa in en receptfil.</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>Kunde inte finna sessionsdatabasen på %1$@: %2$@</string>
+	<key>Could not load the Recipes file.</key>
+	<string>Det gick inte att läsa in receptfilen.</string>
+	<key>Could not process file.</key>
+	<string>Kunde inte framkalla filen.</string>
+	<key>Could not process xmp file.</key>
+	<string>Kunde inte skapa xmp fil.</string>
+	<key>Could not read catalog data.</key>
+	<string>Kunde inte läsa katalogdata.</string>
+	<key>Could not read document data.</key>
+	<string>Kunde inte läsa dokument data.</string>
+	<key>Could not read session data.</key>
+	<string>Kunde inte läsa sessions data.</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>Kunde inte ta bort ICC från packad fil.</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>Kunde inte avlägsna LCC från EIP paket.</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>Kunde inteta bort Mask-filen från packad fil.</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>Kunde inte hämta information om paketfil. Filen kan vara skadad</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>Kunde inte hämta infomation om EIP paket. Filen stöds ej eller är skadad.</string>
+	<key>Could not understand file data.</key>
+	<string>Kunde inte tolka fildata.</string>
+	<key>Could not understand file to open.</key>
+	<string>Kunde inte tolka fil att öppna.</string>
+	<key>Could not write ICC profile.</key>
+	<string>Kunde inte skriva ICC profil.</string>
+	<key>Could not write LCC profile.</key>
+	<string>Kunde inte skriva ICC profil.</string>
+	<key>Couldn't read image settings</key>
+	<string>Kunde inte läsa bildinställningarna</string>
+	<key>Counter</key>
+	<string>Räknare</string>
+	<key>Country</key>
+	<string>Land</string>
+	<key>Creat.</key>
+	<string>Kreat.</string>
+	<key>Create LCC</key>
+	<string>Skapa LCC</string>
+	<key>Creative</key>
+	<string>Kreativ</string>
+	<key>Creative (Slow speed)</key>
+	<string>Creative (Slow speed)</string>
+	<key>Creator</key>
+	<string>Författare</string>
+	<key>Creator's Job Title</key>
+	<string>Författartitel</string>
+	<key>Creator's Title</key>
+	<string>Författartitel</string>
+	<key>Crop</key>
+	<string>Beskärning</string>
+	<key>Crop Outside Image</key>
+	<string>Beskär utanför bild</string>
+	<key>Cropped</key>
+	<string>Beskuren</string>
+	<key>Cubic Grain</key>
+	<string>Kubiskt korn</string>
+	<key>Current Date</key>
+	<string>Dagens datum</string>
+	<key>Current Date (%@)</key>
+	<string>Dagens datum (%@)</string>
+	<key>Current Day of Month</key>
+	<string>Nuvarande månad</string>
+	<key>Current Day of Month (%@)</key>
+	<string>Nuvarande dag i månaden (%@)</string>
+	<key>Current Day of Week</key>
+	<string>Nuvarande vecka</string>
+	<key>Current Day of Week (%@)</key>
+	<string>Nuvarande vecka (%@)</string>
+	<key>Current Month</key>
+	<string>Nuvarande månad</string>
+	<key>Current Month (%@)</key>
+	<string>Nuvarande månad (%@)</string>
+	<key>Current Time</key>
+	<string>Nuvarande tid</string>
+	<key>Current Time (%@)</key>
+	<string>Nuvarande tid (%@)</string>
+	<key>Current Year</key>
+	<string>Nuvarande år</string>
+	<key>Current Year (%@)</key>
+	<string>Nuvarande år (%@)</string>
+	<key>Curve</key>
+	<string>Kurvor</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>Egen kromatisk aberration</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>Eget namn på kromatisk aberration</string>
+	<key>Cyan</key>
+	<string>Cyan</string>
+	<key>DK</key>
+	<string>S</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>DNG Standard</string>
+	<key>Date</key>
+	<string>Datum</string>
+	<key>Date - Month in Year</key>
+	<string>Datum - Månad i år</string>
+	<key>Date - Year</key>
+	<string>Datum - År</string>
+	<key>Date Created</key>
+	<string>Tillkomstdatum</string>
+	<key>Daylight</key>
+	<string>Dagsljus</string>
+	<key>Default Chromatic Aberration</key>
+	<string>Kromatisk aberration – standard</string>
+	<key>Demote Variant</key>
+	<string>Nedgradera varianten</string>
+	<key>Demote Variants</key>
+	<string>Nedgradera varianter</string>
+	<key>Denmark</key>
+	<string>Danmark</string>
+	<key>Description</key>
+	<string>Beskrivning</string>
+	<key>Description Writer</key>
+	<string>Beskrivningsförfattare</string>
+	<key>Destination Folder Name</key>
+	<string>Namn på målmapp</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>Målmappen finns ej och kunde inte skapas. Du kanske inte har tillräckliga rättigheter.</string>
+	<key>Details</key>
+	<string>Detaljer</string>
+	<key>Details Noise Reduction</key>
+	<string>Detaljer i brusredusering</string>
+	<key>Diffraction Correction</key>
+	<string>Diffraktion korrigering</string>
+	<key>Dimensions</key>
+	<string>Dimensioner</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>Stäng av Svart &amp;&amp; Vitt</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>Stäng av korrektion av kromatisk aberration</string>
+	<key>Disable Crop Outside Image</key>
+	<string>Stäng av beskärning utanför bild</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>Stäng av dolda förvrängda kanter</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>Stäng av korrektion av LCC färgstick</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>Stäng av LCC damm borttagning</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>Stäng av LCC Uniform Light</string>
+	<key>Disable Layer</key>
+	<string>Avaktivera lager</string>
+	<key>Disable Optic Center</key>
+	<string>Stäng av optikcenter</string>
+	<key>Display Name</key>
+	<string>Visningsnamn</string>
+	<key>Distant</key>
+	<string>Fjärr</string>
+	<key>Distant view</key>
+	<string>Fjärrvy</string>
+	<key>Distortion</key>
+	<string>Förvrängning</string>
+	<key>Distortion Amount</key>
+	<string>Förvrängningsmängd</string>
+	<key>Do Not Close</key>
+	<string>Stäng inte</string>
+	<key>Do Not Overwrite</key>
+	<string>Skriv inte över</string>
+	<key>Do Not Quit</key>
+	<string>Avsluta inte</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>Vill du autojustera de här %d varianterna?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>Vill du återställa stilar och förval för dessa %d varianter?</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>Vill du rotera de här %d varianterna åt vänster?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>Vill du rotera de här %d varianterna åt höger?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>Vill du rotera och fästa de här %d varianterna?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>Vill du stänga av pågående aktiviteter för detta dokument?</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>Vill du stänga av pågående aktiviteter?</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>Vill du stänga av pågående aktiviteter för detta dokument?</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>Vill du stänga av pågående aktiviteter?</string>
+	<key>Document Name</key>
+	<string>Dokumentnamn</string>
+	<key>Document migration failed.</key>
+	<string>Sammanslagning av dokument misslyckades.</string>
+	<key>Domain</key>
+	<string>Domän</string>
+	<key>Don't show this message again</key>
+	<string>Visa inte detta meddelande igen</string>
+	<key>Drag Variant</key>
+	<string>Dra variant</string>
+	<key>Drag Variants</key>
+	<string>Dra varianter</string>
+	<key>Drive Mode</key>
+	<string>Frammatningsläge</string>
+	<key>Drive mode/self timer</key>
+	<string>Enhetsläge/självutlösare</string>
+	<key>Dust</key>
+	<string>Damm</string>
+	<key>Dust Removal</key>
+	<string>Damm borttagning</string>
+	<key>E-Mail(s)</key>
+	<string>E-post</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF - Kamera</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF - Exponering</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF - GPS</string>
+	<key>Emails</key>
+	<string>E-post</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>Aktivera Svart &amp;&amp; Vitt</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>Aktivera korrektion av kromatisk aberration</string>
+	<key>Enable Crop Outside Image</key>
+	<string>Aktivera beskärning utanför bild</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>Aktivera dolda förvrängda kanter</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>Aktivera korrektion av LCC färgstick</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>Aktivera LCC damm borttagning</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>Aktivera LCC Uniform Light</string>
+	<key>Enable Layer</key>
+	<string>Aktivera lager</string>
+	<key>Enable Optic Center</key>
+	<string>Aktivera optikcenter</string>
+	<key>Enabled</key>
+	<string>Aktiverad</string>
+	<key>Error loading adjustment mask.</key>
+	<string>Fel vid laddning av justeringsmask.</string>
+	<key>Error packing an image.</key>
+	<string>Error när bild packades</string>
+	<key>Estimating time remaining…</key>
+	<string>Beräknar återstående tid...</string>
+	<key>Event</key>
+	<string>Händelse</string>
+	<key>Expand Stack</key>
+	<string>Packa upp hög</string>
+	<key>Export</key>
+	<string>Exportera</string>
+	<key>Export %d Originals</key>
+	<string>Exportera %d original</string>
+	<key>Export 1 Original</key>
+	<string>Exportera 1 orginal</string>
+	<key>Export Anyway</key>
+	<string>Exportera i alla fall</string>
+	<key>Export Date</key>
+	<string>Export datum</string>
+	<key>Export Date (%@)</key>
+	<string>Export datum (%@)</string>
+	<key>Export to Catalog</key>
+	<string>Exportera till katalog</string>
+	<key>Exposure</key>
+	<string>Exponering</string>
+	<key>Exposure Compensation</key>
+	<string>Exoneringskompensation</string>
+	<key>Exposure Mode</key>
+	<string>Exponeringsläge</string>
+	<key>Exposure Program</key>
+	<string>Exponeringsprogram</string>
+	<key>Exposure White Balance</key>
+	<string>Exponeringens vitbalans</string>
+	<key>Exposure compensation</key>
+	<string>Exponeringskompensation</string>
+	<key>Exposure mode</key>
+	<string>Exponeringsläge</string>
+	<key>Exposure program</key>
+	<string>Exponeringsprogram</string>
+	<key>Extension</key>
+	<string>Filtillägg</string>
+	<key>Failed to create %@ database.</key>
+	<string>Kunde inte skapa %@ databasen.</string>
+	<key>Fashion</key>
+	<string>Mode</string>
+	<key>File</key>
+	<string>Arkiv</string>
+	<key>File Size</key>
+	<string>Filstorlek</string>
+	<key>File conversion warning</key>
+	<string>Varning om filkonvertering</string>
+	<key>File name</key>
+	<string>Filnamn</string>
+	<key>File size</key>
+	<string>Filstorlek</string>
+	<key>File type version not supported.</key>
+	<string>Filtypen stöds ej.</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>Filversionen stöds ej av denna version av Capture One.</string>
+	<key>Files will be moved to a new location.</key>
+	<string>Filer kommer att flyttas till en ny plats.</string>
+	<key>Fill Mask</key>
+	<string>Fyll mask</string>
+	<key>Film Curve</key>
+	<string>Filmkurva</string>
+	<key>Film Extra Shadow</key>
+	<string>Film extra lågdager</string>
+	<key>Film Grain Amount</key>
+	<string>Mängd filmkorn</string>
+	<key>Film Grain Density</key>
+	<string>Korndensitet</string>
+	<key>Film Grain Granularity</key>
+	<string>Korngrovlek</string>
+	<key>Film Grain Type</key>
+	<string>Typ av filmkorn</string>
+	<key>Film High Contrast</key>
+	<string>Film hög kontrast</string>
+	<key>Film Standard</key>
+	<string>Film standard</string>
+	<key>Fine Grain</key>
+	<string>Fint korn</string>
+	<key>Fired</key>
+	<string>Utlöste</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>Utlöste, röda ögon reducering</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>Utlöste, röda ögon reducering, returljus</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>Utlöste, röda ögon reducering, inget returljus</string>
+	<key>Fired, Return detected</key>
+	<string>Utlöste, röda ögon reducering, inget returljus</string>
+	<key>Fired, Return not detected</key>
+	<string>Utlöste, inget returljus</string>
+	<key>Fired, auto</key>
+	<string>Autoblixt</string>
+	<key>Fired, auto, no return light</key>
+	<string>Blixt, autoläge, ingen retur av ljus</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>Blixt, autoläge, ingen retur av ljus, röda-ögon</string>
+	<key>Fired, auto, red-eye</key>
+	<string>Blixt, auto, röda-ögon</string>
+	<key>Fired, auto, return light</key>
+	<string>Blixt, autoläge, retur av ljus</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>Blixt, autoläge, retur av ljus, röda-ögon</string>
+	<key>Fired, compulsory</key>
+	<string>Blixt, tvingad</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>Blixt, tvingad, ingen retur av ljus</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>Blixt, tvingad, röda-ögon, ingen retur av ljus</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>Blixt, tvingad, röda-ögon, retur av ljus</string>
+	<key>Fired, compulsory, return light</key>
+	<string>Blixt, tvingad, retur av ljus</string>
+	<key>Fired, red-eye</key>
+	<string>Blixt, röda-ögon</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>Blixt, röda-ögon, ingen retur av ljus</string>
+	<key>Fired, red-eye, return light</key>
+	<string>Blixt, röda-ögon, retur av ljus</string>
+	<key>Firmware</key>
+	<string>Firmware</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>Fast</string>
+	<key>Flash Compensation</key>
+	<string>Blixtkompensation</string>
+	<key>Flash Mode</key>
+	<string>Blixtläge</string>
+	<key>Flash compensation</key>
+	<string>Blixtkompensation</string>
+	<key>Flash did not fire</key>
+	<string>Ingen blixt utlöstes</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>Ingen blixt utlöstes, autoläge</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>Ingen blixt utlöstes, tvingat blixtläge</string>
+	<key>Flash fired</key>
+	<string>Blixt</string>
+	<key>Flash fired, auto mode</key>
+	<string>Blixt, autoläge</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>Blixt, autoläge, röda-ögon-reducering</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>Blixt, autoläge, retur av ljus detekterad</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>Blixt, autoläge, retur av ljus detekterad, röda-ögon</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>Blixt, autoläge, ingen retur av ljus detekterad</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>Blixt, autoläge, ingen retur av ljus detekterad, röda-ögon</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>Blixt, tvingat blixtläge</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>Blixt, tvingat blixtläge, röda-ögon-reducering</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>Blixt, tvingat blixtläge, röda-ögon, retur av ljus detekterad</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>Blixt, tvingat blixtläge, röda-ögon, ingen retur av ljus</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>Blixt, tvingat blixtläge, retur av ljus detekterad</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>Blixt, tvingat blixtläge, ingetn retur av ljus detekterad</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>Blixt, röda-ögon-reducering</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>Blixt, röda-ögon, retur av ljus detekterad</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>Blixt, röda-ögon, ingen retur av ljus detekterad</string>
+	<key>Flash mode</key>
+	<string>Blixtläge</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>Blixt avstängd, utlöste ej, reflekterande ljus upptäcktes ej</string>
+	<key>Flash off, no flash function</key>
+	<string>Blixt avstängd, ingen blixt funktion</string>
+	<key>Flash on, did not fire</key>
+	<string>Blixt på, utlöste inte</string>
+	<key>Flip</key>
+	<string>Spegelvänd</string>
+	<key>Focal Length</key>
+	<string>Brännvidd</string>
+	<key>Focal length</key>
+	<string>Brännvidd</string>
+	<key>Focus Stacking</key>
+	<string>Focus Stacking</string>
+	<key>Format</key>
+	<string>Format</string>
+	<key>Fringing</key>
+	<string>Överstrålning</string>
+	<key>Generated %d out of %d previews</key>
+	<string>Skapat %1$d av %2$d förhandsvisningar</string>
+	<key>Generating %d previews</key>
+	<string>Skapar %d förhandsvisningar</string>
+	<key>Generating previews</key>
+	<string>Skapar förhandsvisningar</string>
+	<key>Genre</key>
+	<string>Genre</string>
+	<key>Geotagged</key>
+	<string>Geotagged</string>
+	<key>Getting Folders for %d images</key>
+	<string>Hämtar mappar för %d bilder</string>
+	<key>Getty Images</key>
+	<string>Getty Images</string>
+	<key>Getty Images Original Filename</key>
+	<string>Getty Images Original filnamn</string>
+	<key>Getty Images Parent MEID</key>
+	<string>Getty Images överordnande MEID</string>
+	<key>Getty Images Personality</key>
+	<string>Getty Images personlighet</string>
+	<key>Gradation Curve</key>
+	<string>Övertoningskurva</string>
+	<key>Grain</key>
+	<string>Korn</string>
+	<key>Grain Amount</key>
+	<string>Kornmängd</string>
+	<key>Grain Density </key>
+	<string>Korndensitet</string>
+	<key>Grain Granularity</key>
+	<string>Korngrovlek</string>
+	<key>Grain Type</key>
+	<string>Korntyp</string>
+	<key>Green</key>
+	<string>Grön</string>
+	<key>Green Curve</key>
+	<string>Grön kurva</string>
+	<key>Green Gradation Curve</key>
+	<string>Grön övertoningskurva</string>
+	<key>HDR</key>
+	<string>HDR</string>
+	<key>HH</key>
+	<string>TT</string>
+	<key>HH-mm</key>
+	<string>TT-mm</string>
+	<key>HH-mm-ss</key>
+	<string>TT-mm-ss</string>
+	<key>Halo Control</key>
+	<string>Halo kontroll</string>
+	<key>Harsh Grain</key>
+	<string>Hårt korn</string>
+	<key>Headline</key>
+	<string>Rubrik</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>Reparations- och klonlager kan inte kopieras mellan varianter som har olika dimensioner</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>Reparations och klonlager kräver en nyare motor. Motorn kan uppgradera på “grundegenskaper” verktyget</string>
+	<key>Height</key>
+	<string>Höjd</string>
+	<key>Hide Distorted Areas</key>
+	<string>Göm förvrängda kanter</string>
+	<key>Highlight Recovery</key>
+	<string>Återställning av högdagrar</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>Perspektivkorrektion liggande</string>
+	<key>Hyperfocal</key>
+	<string>Hyperfokal</string>
+	<key>ICC Profile</key>
+	<string>ICC-profil</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>ICC [ %@ ] sökväg eller profilnamn är för långt (max 1024 bytes)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC - Kontakt</string>
+	<key>IPTC - Content</key>
+	<string>IPTC - Beskrivning</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC - Getty</string>
+	<key>IPTC - Image</key>
+	<string>IPTC - scen</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC - Nyckelord</string>
+	<key>IPTC - Status</key>
+	<string>IPTC - Status</string>
+	<key>IPTC Scene</key>
+	<string>IPTC Scen</string>
+	<key>IPTC scene</key>
+	<string>IPTC scen</string>
+	<key>IPTC subject code</key>
+	<string>IPTC - motivkod</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>ISO</string>
+	<key>ISO Country Code</key>
+	<string>ISO landskod</string>
+	<key>ISO speed rating</key>
+	<string>ISO-värde</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>Om dokumentet var skapat i en tidigare Windows version av Capture One, öppna det igen i en Capture One version 7 eller senare.
+Försök sedan att öppna det i Capture One för Mac igen.</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>Om du gör denna förändring, kan du kanske inte öppna filen i Capture One.</string>
+	<key>Image City</key>
+	<string>Stad</string>
+	<key>Image Country</key>
+	<string>Bild - land</string>
+	<key>Image Date</key>
+	<string>Bilddatum</string>
+	<key>Image Date (%@)</key>
+	<string>Bilddatum (%@)</string>
+	<key>Image Day of Month</key>
+	<string>Bild månad</string>
+	<key>Image Day of Month (%@)</key>
+	<string>Bildens dag i månaden (%@)</string>
+	<key>Image Day of Week</key>
+	<string>Bild vecka</string>
+	<key>Image Day of Week (%@)</key>
+	<string>Bild vecka (%@)</string>
+	<key>Image Folder</key>
+	<string>Bildmapp</string>
+	<key>Image Folder Name</key>
+	<string>Namn på bildmapp</string>
+	<key>Image Location</key>
+	<string>Bild plats</string>
+	<key>Image Month</key>
+	<string>Bild månad</string>
+	<key>Image Month (%@)</key>
+	<string>Bild månad (%@)</string>
+	<key>Image Name</key>
+	<string>Bild namn</string>
+	<key>Image State</key>
+	<string>Region</string>
+	<key>Image Time</key>
+	<string>Bild tid</string>
+	<key>Image Time (%@)</key>
+	<string>Bild tid (%@)</string>
+	<key>Image Year</key>
+	<string>Bild år</string>
+	<key>Image Year (%@)</key>
+	<string>Bild år (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Bildens sökväg finns inte eller är för lång (max 1024 bytes)</string>
+	<key>Import Date</key>
+	<string>Import datum</string>
+	<key>Import Date (%@)</key>
+	<string>Import datum (%@)</string>
+	<key>In Catalog</key>
+	<string>I katalog</string>
+	<key>Instructions</key>
+	<string>Instruktioner</string>
+	<key>Int.</key>
+	<string>Int.</string>
+	<key>Intellectual Genre</key>
+	<string>Intellektuell gengre</string>
+	<key>Intellectual genre</key>
+	<string>Genre</string>
+	<key>Interval</key>
+	<string>Intervall</string>
+	<key>Invalid</key>
+	<string>Ogiltig</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>Ogiltig JPEG-kvalitet (mindre än 0 eller mer än 100).</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>Ogiltig TIFF-komprimering (ska vara LZW, Zip eller Ingen).</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>Ogiltigt antal bitar per sampling (ska vara 8 eller 16).</string>
+	<key>Invalid file format</key>
+	<string>Ogiltigt filformat</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>Ogiltig upplösning (ska vara mer än 10 och mindre än 10000).</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>Ogiltig skalning (ska vara mer än 0 och mindre än 5).</string>
+	<key>Invalid selection!</key>
+	<string>Ogiltigt val!</string>
+	<key>Invalid token name '%@'</key>
+	<string>Ogiltigt val av etikett '%@'</string>
+	<key>Invert Mask</key>
+	<string>Invertera mask</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 2048px för webben</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG - Full storlek, högsta kvalité</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - Instagram optimerad</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (förhandsvisningsstorlek)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG 1280 Pixlar lång kant (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>JPEG-kvalitet %d</string>
+	<key>JPEG file</key>
+	<string>JPEG fil</string>
+	<key>Job Identifier</key>
+	<string>Jobb-ID</string>
+	<key>Job Name</key>
+	<string>Jobbnamn</string>
+	<key>Keep Capture One Values</key>
+	<string>Behåll Capture One värden</string>
+	<key>Keystone Amount</key>
+	<string>Perspektiv värde</string>
+	<key>Keystone Aspect</key>
+	<string>Perspektiv vinkel</string>
+	<key>Keystone Focal Length</key>
+	<string>Perspektiv brännvidd</string>
+	<key>Keystone Points</key>
+	<string>Perspektiv punkter</string>
+	<key>Keywords</key>
+	<string>Nyckelord</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>LCC sökväg [ %@ ] för lång (max 1024 bytes)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>LCC profil kunde inte skapas undertiden bilden fortfarande laddades. Försök igen.</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>LLC:er är placerade på ett felaktigt sätt. Se till att LCC testbilden är placerad före eller efter variant.</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>Etikett</string>
+	<key>Land.</key>
+	<string>Land.</string>
+	<key>Landscape</key>
+	<string>Liggande</string>
+	<key>Latitude</key>
+	<string>Latitud</string>
+	<key>Layer Selection Point</key>
+	<string>Lagerval punkter</string>
+	<key>Layers</key>
+	<string>Lager</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>Lager kan inte appliceras på den variant som dom kopieras ifrån</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>Lager kommer inte applicera på %@</string>
+	<key>Lens</key>
+	<string>Objektiv</string>
+	<key>Lens Correction</key>
+	<string>Objektivkorrigering</string>
+	<key>Lens Effects</key>
+	<string>Objektiveffekt</string>
+	<key>Lens Profile</key>
+	<string>Objektivprofil</string>
+	<key>Lens Purple Fringing</key>
+	<string>Objektivets lila överstrålning</string>
+	<key>Lens Revision</key>
+	<string>Obejktiv revision</string>
+	<key>Lens Selection</key>
+	<string>Objektivval</string>
+	<key>Less than a minute left</key>
+	<string>Mindre än en minut kvar</string>
+	<key>Levels</key>
+	<string>Nivåer</string>
+	<key>Levels &amp; Curve</key>
+	<string>Nivåer och kurva</string>
+	<key>Levels Highlight</key>
+	<string>Nivåer för högdagrar</string>
+	<key>Levels Midtone</key>
+	<string>Nivåer för mellantoner</string>
+	<key>Levels Shadow</key>
+	<string>Nivåer för lågdager</string>
+	<key>Levels Target Highlight</key>
+	<string>Nivåresultat för högdagrar</string>
+	<key>Levels Target Shadow</key>
+	<string>Nivåresultat för lågdager</string>
+	<key>Light Falloff</key>
+	<string>Ljusbortfall</string>
+	<key>Light Falloff Amount</key>
+	<string>Mängd ljusbortfall</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>Linjärt samband</string>
+	<key>Load error</key>
+	<string>Inläsningsfel</string>
+	<key>Locate File</key>
+	<string>Hitta fil</string>
+	<key>Location</key>
+	<string>Plats</string>
+	<key>Long Edge</key>
+	<string>Långsida</string>
+	<key>Longitude</key>
+	<string>Longitud</string>
+	<key>Luma Curve</key>
+	<string>Lumakurva</string>
+	<key>Luma Gradation Curve</key>
+	<string>Luma gradationskurva</string>
+	<key>Luminance Noise Reduction</key>
+	<string>Reducering av luminansbrus</string>
+	<key>M</key>
+	<string>M</string>
+	<key>M.spot</key>
+	<string>M.spot</string>
+	<key>MM</key>
+	<string>MM</string>
+	<key>MMM</key>
+	<string>MMM</string>
+	<key>MMM dd yyyy</key>
+	<string>mmm dd yyyy</string>
+	<key>MMMM</key>
+	<string>MMMM</string>
+	<key>MMMMM</key>
+	<string>MMMMM</string>
+	<key>Macro</key>
+	<string>Makro</string>
+	<key>Magenta</key>
+	<string>Magenta</string>
+	<key>Make</key>
+	<string>Märke</string>
+	<key>Man.</key>
+	<string>Man.</string>
+	<key>Manual</key>
+	<string>Manuellt</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>Maskfilens sökväg är för lång (max 1024 bytes)</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>Maximalt antal lager har överskridits</string>
+	<key>Metadata</key>
+	<string>Metadata</string>
+	<key>Metadata Import</key>
+	<string>Import av metadata</string>
+	<key>Metadata Synchronization</key>
+	<string>Metadata synkronisering</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>Metadata synkroniseringsvarning</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>Meta data konflikt har upptäckts på en variant av bilden '%@'. Vill du ersätta metadatavärden du ställt in i Capture One med nedladdad metadata eller spara Capture One värden?</string>
+	<key>Metering Mode</key>
+	<string>Mätmetod</string>
+	<key>Metering mode</key>
+	<string>Mätläge</string>
+	<key>Method not implemented.</key>
+	<string>Metonden är inte implementerad.</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Sammanslagning av Capture One dokument misslyckades.</string>
+	<key>Minimum Viewing Distance</key>
+	<string>Minsta betraktningsavstånd</string>
+	<key>Mir.up</key>
+	<string>Sp.upp</string>
+	<key>Mirror Up</key>
+	<string>Spegeluppfällning</string>
+	<key>Mirror up</key>
+	<string>Spegeluppfällning</string>
+	<key>Missing ICC Profile.</key>
+	<string>ICC profil saknas.</string>
+	<key>Missing LCC Profile.</key>
+	<string>LCC profil saknas.</string>
+	<key>Missing Preview</key>
+	<string>Förhandsvisning saknas</string>
+	<key>Mode</key>
+	<string>Läge</string>
+	<key>Model</key>
+	<string>Modell</string>
+	<key>Moire</key>
+	<string>Moiré</string>
+	<key>Moire Amount</key>
+	<string>Moiré mängd</string>
+	<key>Moire Pattern</key>
+	<string>Moirémönster</string>
+	<key>Moire Radius</key>
+	<string>Moiréradie</string>
+	<key>Move Files</key>
+	<string>Flytta filer</string>
+	<key>Move Image</key>
+	<string>Flytta bilden</string>
+	<key>Move Images</key>
+	<string>Flytta bilder</string>
+	<key>Moving %d images</key>
+	<string>Flyttar %d bilder</string>
+	<key>Moving %d out of %d images</key>
+	<string>Flyttar %1$d utav %2$d bilder</string>
+	<key>Multi spot</key>
+	<string>Multi spot</string>
+	<key>Multi-spot</key>
+	<string>Multi-spot</string>
+	<key>NO</key>
+	<string>NO</string>
+	<key>NY</key>
+	<string>Västra Götaland</string>
+	<key>Name</key>
+	<string>Namn</string>
+	<key>Nature</key>
+	<string>Natur</string>
+	<key>New LCC Profile</key>
+	<string>Ny LCC-profil</string>
+	<key>New Session</key>
+	<string>Ny session</string>
+	<key>New Variant</key>
+	<string>Ny variant</string>
+	<key>No</key>
+	<string>Nej</string>
+	<key>No Flash</key>
+	<string>Ingen blixt</string>
+	<key>No LCC to apply</key>
+	<string>Ingen LCC att lägga på</string>
+	<key>No collection has been selected</key>
+	<string>Ingen samling vald</string>
+	<key>No flash function</key>
+	<string>Ingen blixt funktion</string>
+	<key>No function</key>
+	<string>Ingen funktion</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>Inga fler än %@ färgkorrigeringar är tillåtna</string>
+	<key>No strobe return light</key>
+	<string>Inget blixtreturljus</string>
+	<key>No variants to apply LCC</key>
+	<string>Inga varianter att lägga på LCC</string>
+	<key>None</key>
+	<string>Ingen</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>Ingen av de %d valda varianterna kan autojusteras</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>Ingen av de %d valda varianterna kan roteras åt vänster</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>Ingen av de %d valda varianterna kan roteras åt höger</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>Ingen av de %d valda varianterna kan roteras och fästas</string>
+	<key>Norm.</key>
+	<string>Norm.</string>
+	<key>Normal</key>
+	<string>Normal</string>
+	<key>Not Defined</key>
+	<string>Inte definierad</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>Inte tillräckligt med diskutrymme för att framkalla filen. framkallningskön har pausats.</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>Inte tillräckligt med ledigt utrymme på målvolymen.</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>Det finns inte tillräckligt ledigt minne att allokera för referensbilden.</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>Inte tillräckligt med minne att tilldela bildens vattenstämpel.</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>Inte tillräckligt minne för textvattenmärket.</string>
+	<key>Not fired</key>
+	<string>Ingen blixt</string>
+	<key>Not fired, auto</key>
+	<string>Ingen blixt, auto</string>
+	<key>Not fired, compulsory</key>
+	<string>Ingen blixt, tvingat</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Off</key>
+	<string>Av</string>
+	<key>Off, Did not fire</key>
+	<string>Av, utlöste inte</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>Av, utlöste inte, inget returljus</string>
+	<key>Off, No flash function</key>
+	<string>Av, ingen blixtfunktion</string>
+	<key>Offline images will be skipped</key>
+	<string>Bilder som ligger offline tas inte med</string>
+	<key>On, Did not fire</key>
+	<string>På, utlöste inte</string>
+	<key>On, Fired</key>
+	<string>På, utlöste</string>
+	<key>On, Red-eye reduction</key>
+	<string>På, röda ögon reducering</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>På, röda ögon reducering, returljus</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>På, röda ögon reducering, inget returljus</string>
+	<key>On, Return detected</key>
+	<string>På, returljus</string>
+	<key>On, Return not detected</key>
+	<string>På, inget returljus</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>En av dessa varianter har redan en LLC profil pålagd. Byter du LCC profil på denna variant, så kan den ursprungliga profilen tas bort. En LCC profil kan bara återskapas från orginal LCC testbild eller läggas på igen om den är sparad som förinställning.</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>En eller flera filer kommer inte att packas på grund av att de inte är packbara eller att de redan är packade. Packade %1$i av %2$i valda filer.</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>En eller flera filer packades inte upp på grund av att de inte är packade filer eller att de redan är konverterade. Packade upp %1$i av %2$i valda filer.</string>
+	<key>One shot</key>
+	<string>One shot</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>Endast %1$d av de %2$d valda varianterna kan autojusteras</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>Endast %1$d av de %2$d valda varianterna kan roteras</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>Endast %1$d av de %2$d valda varianterna kan roteras åt höger</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>Endast %1$d av de %2$d valda varianterna kan roteras och fästas</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>Endast redigerbara varianter kan autojusteras. Välj varianter som kan redigeras</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>Endast redigerbara varianter kan roteras åt vänster. Välj varianter som kan redigeras</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>Endast redigerbara varianter kan roteras åt höger. Välj varianter som kan redigeras</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>Endast redigerbara varianter kan roteras och fästas. Välj varianter som kan redigeras</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>Endast valda varianter kommer att läggas till %@.</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>Bara vald variant kommer at synkroniseras.</string>
+	<key>Opacity</key>
+	<string>Opacitet</string>
+	<key>Open failed</key>
+	<string>Kunde inte öppna</string>
+	<key>Optic Center</key>
+	<string>Optiskt centrum</string>
+	<key>Optic Center Enabled</key>
+	<string>Optiskt centrum aktiverat</string>
+	<key>Orange</key>
+	<string>Orange</string>
+	<key>Orientation</key>
+	<string>Orientering</string>
+	<key>Original</key>
+	<string>Original</string>
+	<key>Original Filename</key>
+	<string>Orignal filnamn</string>
+	<key>Output</key>
+	<string>Bildstorlek</string>
+	<key>Output Folder</key>
+	<string>Bearbetningsmapp</string>
+	<key>Overwrite</key>
+	<string>Skriv över</string>
+	<key>Owner</key>
+	<string>Ägare</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>PNG fil</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-bit)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>Paketnamn är för långt (max 1024 bytes)</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Paketsökväg finns inte eller är för lång (max 1024 bytes)</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>Packat %1$d utav %2$d bilder som EIP</string>
+	<key>Packing %d images as EIP</key>
+	<string>Packar %d bilder som EIP</string>
+	<key>Parent MEID</key>
+	<string>Överordnande MEID</string>
+	<key>Part.</key>
+	<string>Part.</string>
+	<key>Partial</key>
+	<string>Delvis</string>
+	<key>Patt.</key>
+	<string>Mönst.</string>
+	<key>Pattern</key>
+	<string>Mönster</string>
+	<key>People</key>
+	<string>Person som visas</string>
+	<key>Personality</key>
+	<string>Personlighet</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>Telefon</string>
+	<key>Phone(s)</key>
+	<string>Telefon</string>
+	<key>Phones</key>
+	<string>Telefon</string>
+	<key>Pick Variant</key>
+	<string>Välj variant</string>
+	<key>Pink</key>
+	<string>Rosa</string>
+	<key>Pixels</key>
+	<string>Pixlar</string>
+	<key>Place</key>
+	<string>Plats</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>Vill du lägga bilder i album som matchar angivna kataloguppsättningar?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>Referera till L*a*b* värdenas dokumentation för detaljer.</string>
+	<key>Please select a collection in the library tool</key>
+	<string>Välj en samling i biblioteksverktyget</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>Ställ in Urvalsmappen till en godkänd, skrivbar mapp.</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>Frigör utrymme på målvolymen.</string>
+	<key>Port.</key>
+	<string>Port.</string>
+	<key>Portrait</key>
+	<string>Porträtt</string>
+	<key>Postal Code</key>
+	<string>Postnummer</string>
+	<key>Postal code</key>
+	<string>Postnummer</string>
+	<key>Preparing Catalog Import…</key>
+	<string>Förbereder en katalog import…</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>Förhandsvisning skapas för bilderna i katalogen. Vill du avsluta denna process?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>Har tidigare bytt namn genom tillägget .error</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>Har tidigare bytt namn genom tillägget .invalid</string>
+	<key>Previous will be overwritten</key>
+	<string>Tidigare kommer att skrivas över</string>
+	<key>Processing Method</key>
+	<string>Framkallningsmetod</string>
+	<key>Profile</key>
+	<string>Profil</string>
+	<key>Profile could not be written.</key>
+	<string>Kunde inte spara profilen.</string>
+	<key>Program</key>
+	<string>Program</string>
+	<key>Program AE</key>
+	<string>Program AE</string>
+	<key>Promote Variant</key>
+	<string>Uppgradera varianten</string>
+	<key>Promote Variants</key>
+	<string>Uppgradera varianter</string>
+	<key>Provider</key>
+	<string>Leverantör</string>
+	<key>Proxy Creation Failed</key>
+	<string>Skapande av proxy misslyckades</string>
+	<key>Public</key>
+	<string>Allmän</string>
+	<key>Purple</key>
+	<string>Lila</string>
+	<key>Quit Capture One</key>
+	<string>Avsluta Capture One</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>RAW fil</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>RGB kurva</string>
+	<key>Radius</key>
+	<string>Radie</string>
+	<key>Rasterize Mask</key>
+	<string>Rastrera masken</string>
+	<key>Rating</key>
+	<string>Märkning</string>
+	<key>Reason</key>
+	<string>Anledning</string>
+	<key>Recent Captures</key>
+	<string>Senaste bilder</string>
+	<key>Recent Imports</key>
+	<string>Senaste importer</string>
+	<key>Recipe</key>
+	<string>Recept</string>
+	<key>Recipe Format</key>
+	<string>Receptformat</string>
+	<key>Recipe Name</key>
+	<string>Receptnamn</string>
+	<key>Recovery</key>
+	<string>Återställning</string>
+	<key>Red</key>
+	<string>Röd</string>
+	<key>Red Curve</key>
+	<string>Röd kurva</string>
+	<key>Red Gradation Curve</key>
+	<string>Röd övertoningskurva</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>Se filsektionen för en lista med påverkade filer.</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>Läste in igen %1$d av %2$d set av metadata</string>
+	<key>Remove Layer</key>
+	<string>Ta bort lager</string>
+	<key>Rename Image</key>
+	<string>Döp om bild</string>
+	<key>Rename Layer</key>
+	<string>Döp om lager</string>
+	<key>Reorder Layer</key>
+	<string>Ändra ordning på lager</string>
+	<key>Replace</key>
+	<string>Ersätt</string>
+	<key>Reset Adjustments</key>
+	<string>Återställ justeringar</string>
+	<key>Reset Styles and Preset</key>
+	<string>Återställ stilar och förinställningar</string>
+	<key>Reset Styles and Presets</key>
+	<string>Återställ stilar och förinställningar</string>
+	<key>Resetting</key>
+	<string>Återställer</string>
+	<key>Rights Usage Terms</key>
+	<string>Användarvillkor</string>
+	<key>Rights usage terms</key>
+	<string>Villkor för copyrightskydd</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>Rotera åt vänster</string>
+	<key>Rotate Right</key>
+	<string>Rotera åt höger</string>
+	<key>Rotate Snap</key>
+	<string>Rotera och fäst</string>
+	<key>Rotating</key>
+	<string>Rotera</string>
+	<key>Rotation</key>
+	<string>Rotering</string>
+	<key>Running a background activity</key>
+	<string>Aktivitet körs i bakgrunden</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>Mättnad</string>
+	<key>Saving Document</key>
+	<string>Sparar dokument</string>
+	<key>Saving Document step %d of %d</key>
+	<string>Spara dokument, stg %1$d av %2$d</string>
+	<key>Scene</key>
+	<string>Scen</string>
+	<key>Select Layer</key>
+	<string>Välj lager</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>Valda filmfiler kommer inte att synkroniseras.</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>Valda varianter måste åtminstone innehålla en LCC bild</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>Valda varianter måste innehålla minst en icke-LCC bild</string>
+	<key>Selection</key>
+	<string>Markering</string>
+	<key>Selects Folder</key>
+	<string>Urvalsmapp</string>
+	<key>Self Timer</key>
+	<string>Självutlösare</string>
+	<key>Self timer</key>
+	<string>Självutlösare</string>
+	<key>Sequence Count</key>
+	<string>Sekvensiell räknare</string>
+	<key>Sequence ID</key>
+	<string>Sekvens ID</string>
+	<key>Sequence Info</key>
+	<string>Sekvens info</string>
+	<key>Sequence Total</key>
+	<string>Sekvens total</string>
+	<key>Sequence Type</key>
+	<string>Sekvens typ</string>
+	<key>Serial</key>
+	<string>Serienr</string>
+	<key>Servo</key>
+	<string>Servo</string>
+	<key>Session Save</key>
+	<string>Spara session</string>
+	<key>Session Sub Path</key>
+	<string>Sessionens underliggande sökväg</string>
+	<key>Session Sub Path (Long)</key>
+	<string>Sessionens långa underliggande sökväg</string>
+	<key>Session data migration</key>
+	<string>Migration av sessionsdata</string>
+	<key>Session load</key>
+	<string>Läser in Session</string>
+	<key>Set Mask</key>
+	<string>Ställ in mask</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>Inställningarnas sökväg är för lång (max 1024 bytes)</string>
+	<key>Shadow Recovery</key>
+	<string>Återställning av lågdagrar</string>
+	<key>Sharpening Amount</key>
+	<string>Skärpemängd</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>Skärpning - Halo reducering</string>
+	<key>Sharpening Method</key>
+	<string>Skärpningsmetod</string>
+	<key>Sharpening Radius</key>
+	<string>Skärperadie</string>
+	<key>Sharpening Threshold</key>
+	<string>Skärpetröskel</string>
+	<key>Sharpness Falloff</key>
+	<string>Skärpebortfall</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>Mängd skärpebortfall</string>
+	<key>Shift</key>
+	<string>Förskjutning</string>
+	<key>Shift Direction</key>
+	<string>Förskjutningsriktning</string>
+	<key>Shift XY</key>
+	<string>Växla XY</string>
+	<key>Short Edge</key>
+	<string>Kortsida</string>
+	<key>Shut.</key>
+	<string>Tidsf.</string>
+	<key>Shutter Speed</key>
+	<string>Slutartid</string>
+	<key>Shutter priority</key>
+	<string>Tidsförval</string>
+	<key>Shutter speed</key>
+	<string>Slutartid</string>
+	<key>Shutter speed priority AE</key>
+	<string>Slutartidsautomatik AE</string>
+	<key>Silver Rich</key>
+	<string>Silverrikt</string>
+	<key>Sing.</key>
+	<string>Sing.</string>
+	<key>Single</key>
+	<string>Singel</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>Singel pixel brusredusering</string>
+	<key>Single Shot</key>
+	<string>En exponering</string>
+	<key>Single shot</key>
+	<string>Single shot</string>
+	<key>Skip</key>
+	<string>Hoppa över</string>
+	<key>Soft Grain</key>
+	<string>Mjukt korn</string>
+	<key>Software</key>
+	<string>Program</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>Vissa av lagerjusteringarna kräver en ny motor. Motorn kommer att uppgraderas permanent för %@ och du kommer inte att kunna nergradera senare.</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>Vissa av lagerjusteringarna kräver en ny motor. Motorn kommer att uppgraderas permanent för %lu varianter och du kommer inte att kunna nergradera senare.</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>Vissa av de valda varianterna kunde inte justeras automatiskt.</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>Några av de valda varianterna är ej skrivbara.</string>
+	<key>Some variants are missing metadata</key>
+	<string>Några varianter saknar metadata</string>
+	<key>Sort Order</key>
+	<string>Sorteringsordning</string>
+	<key>Source</key>
+	<string>Källa</string>
+	<key>Source image is missing</key>
+	<string>Källfilen saknas</string>
+	<key>Split Tones</key>
+	<string>Delade toner</string>
+	<key>Spot</key>
+	<string>Prick</string>
+	<key>Spots</key>
+	<string>Prickar</string>
+	<key>Square</key>
+	<string>Kvadrat</string>
+	<key>State/Province</key>
+	<string>Region</string>
+	<key>Status</key>
+	<string>Status</string>
+	<key>Stop</key>
+	<string>Stoppa</string>
+	<key>Strobe return light</key>
+	<string>Blixtreturljus</string>
+	<key>Strobe return light detected</key>
+	<string>Returljus från blixt upptäckt</string>
+	<key>Strobe return light not detected</key>
+	<string>Inget returljus från blixt upptäckt</string>
+	<key>Structure</key>
+	<string>Struktur</string>
+	<key>Style</key>
+	<string>Stil</string>
+	<key>Styles</key>
+	<string>Stilar</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>Stilar och förinställningar kunde bara återställas för %1$d av %2$d valda varianter</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>Stilar och förinställningar kunde bara återställas för redigeringsbara varianter. Välj varianter som är redigeringsbara</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>Stilar och förinställningar kunde inte återställas för några av %d valda varianter</string>
+	<key>Sub Name</key>
+	<string>Undernamn</string>
+	<key>Subject Code</key>
+	<string>Ämneskod</string>
+	<key>Summer</key>
+	<string>Sommar</string>
+	<key>Supplemental Categories</key>
+	<string>Kompletterande kategorier</string>
+	<key>Surface Smoothness</key>
+	<string>Ytjämnhet</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>Synkroniserat %1$d utav %2$d set av metadata</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d-bit) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF - A3 Print (300 dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF - Adobe RGB (1998) (8bit)</string>
+	<key>TIFF file</key>
+	<string>TIFF fil</string>
+	<key>Tabular Grain</key>
+	<string>Platt korn</string>
+	<key>Target Levels</key>
+	<string>Målnivåer</string>
+	<key>Temperature</key>
+	<string>Temperatur</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>Avsluta aktiviteter och stäng fönstret</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>Avsluta aktiviteter och stäng ner programmet</string>
+	<key>Terminate and Close Window</key>
+	<string>Avsluta och stäng fönstret</string>
+	<key>Terminate and Quit Application</key>
+	<string>Avsluta och stäng programmet</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>LLC profilen, med ett ärvt format, kan inte öppnas.</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>Programmet misslyckades med att skapa en databas för den nya %@.</string>
+	<key>The catalog could not be saved.</key>
+	<string>Katalogen kunde inte sparas.</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>Katalogfilen ligger i papperskorgen.</string>
+	<key>The catalog file is not writable.</key>
+	<string>Katalogfilen är skrivskyddad.</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>Katalogen sparades med %@ och kan inte läsas av denna version.</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>Katalogen är sparad med en nyare version av Capture One.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>De nuvarande varianterna innehåller inga valda varianter. Bara valda varianter kan läggas till.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>Nuvarande val av varianter innehåller inga valda bilder. Endast valda varianter kan synkroniseras.</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>Dokumentets innehåll stöds ej. Det var sparat med en version av Capture One som inte stödjs.</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>Dokmentet är sparat med %@ och kan inte läsas av denna version.</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>Dokumentet är sparat med en nyare version av Capture One.</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>Befintliga metadata för vissa varianter kommer att skrivas över.</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>Åberopad metod är inte implementerad.</string>
+	<key>The output folder could not be created.</key>
+	<string>Bearbetningsmappen kunde inte skapas.</string>
+	<key>The output folder is not writable.</key>
+	<string>Det går inte att skriva i bearbetningsmappen.</string>
+	<key>The output location is not a folder.</key>
+	<string>Bearbetningssökvägen är inte någon mapp.</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>Den packade filen måste döpas om innan den packas upp. Namnändring misslyckades.</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>Råfilen för vissa bilder kan inte hittas. Du kan välja att exportera utan de saknade filerna eller avsluta exporten.</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>Den valda filen  "%1$@" har ett anant namn än orginalfilen "%2$@".
+
+Vill du använda valda fil andå?</string>
+	<key>The session appears corrupt.</key>
+	<string>Sessionen verkar korrupt.</string>
+	<key>The session could not be saved.</key>
+	<string>Sessione kunde inte sparas.</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>Sessionsfilen bytte namn vid migration av sessionsdata. Öppna "%@" igen.</string>
+	<key>The session file does not exist.</key>
+	<string>Sessionsfilen finns ej.</string>
+	<key>The session file is empty.</key>
+	<string>Sessionsfilen är tom.</string>
+	<key>The session file is in the Trash.</key>
+	<string>Sessionsfilen ligger i papperskorgen.</string>
+	<key>The session file is not writable.</key>
+	<string>Sessionsfilen är skrivskyddad.</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>Sessionen är sparad med %@ och kan inte öppnas med denna version.</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>Sessionen är sparad med en nyare version av Capture One.</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>Sessionen har sparats med en äldre version av Capture One som inte stöds.</string>
+	<key>There are no images to export.</key>
+	<string>Det finns inga bilder att exportera.</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>Det finns inga bilder att exportera.
+ Ta med undermappar vid behov.</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>Fel vid framkallning av filen.</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>Ett fel uppstod när xmp filen skulle processas.</string>
+	<key>There was an error loading the mask.</key>
+	<string>Ett fel uppstod när masken skulle laddas.</string>
+	<key>Threshold</key>
+	<string>Tröskelvärde</string>
+	<key>Tilt</key>
+	<string>Lutning</string>
+	<key>Tilt Direction</key>
+	<string>Lutningsriktning</string>
+	<key>Time Lapse</key>
+	<string>Time Lapse</string>
+	<key>Time-lapse</key>
+	<string>Time-lapse</string>
+	<key>Timer</key>
+	<string>Timer</string>
+	<key>Tint</key>
+	<string>Ton</string>
+	<key>Title</key>
+	<string>Titel</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>För att fortsätta använda databasen måste den repareras.</string>
+	<key>Trash</key>
+	<string>Papperskorg</string>
+	<key>Trash Folder</key>
+	<string>Papperskorg</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>Kan inte konvertera bildfil till paket</string>
+	<key>Unable to convert package to image file</key>
+	<string>Kan inte konvertera paket till bildfil</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>Kunde inte skapa proxy. Bildfilen kan vara skadad eller på annat sätt omöjlig att ladda upp.</string>
+	<key>Unable to load LCC profile.</key>
+	<string>Kunde inte ladda in LCC profil.</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>Kunda inte ladda metadata från bilder som är offline. De kommer att ignoreras.</string>
+	<key>Unable to read package file.</key>
+	<string>Kan inte läsa EIP paket filen.</string>
+	<key>Uncalib.</key>
+	<string>Okalibr.</string>
+	<key>Uncalibrated</key>
+	<string>Okalibrerad</string>
+	<key>Uncataloged</key>
+	<string>Ej katalogiserad</string>
+	<key>Unconstrained</key>
+	<string>Inga restriktioner</string>
+	<key>Undef.</key>
+	<string>Odef.</string>
+	<key>Undefined</key>
+	<string>Odefinierad</string>
+	<key>Uniform Light</key>
+	<string>Uniform Light</string>
+	<key>Uniform Light Amount</key>
+	<string>Uniform Light mängd</string>
+	<key>Unknown</key>
+	<string>Okänt</string>
+	<key>Unknown Font</key>
+	<string>Okänt typsnitt</string>
+	<key>Unknown Group</key>
+	<string>Okänd Grupp</string>
+	<key>Unknown Processing Engine</key>
+	<string>Okänd bearbetningsmotor</string>
+	<key>Unknown Scale</key>
+	<string>Okänd skala</string>
+	<key>Unknown Setting</key>
+	<string>Okänd inställning</string>
+	<key>Unknown reason.</key>
+	<string>Okänd orsak.</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>Packat upp %1$d utav %2$d EIP bilder</string>
+	<key>Unpacking %d EIP files</key>
+	<string>Packar upp %d EIP filer</string>
+	<key>Unpacking EIP Failed</key>
+	<string>Uppackning av EIP misslyckades</string>
+	<key>Unrated</key>
+	<string>Ej märkt</string>
+	<key>Unsupported catalog version.</key>
+	<string>Denna katalogversion stöds ej.</string>
+	<key>Unsupported document version.</key>
+	<string>Denna dokumentversion stöds ej.</string>
+	<key>Unsupported session version.</key>
+	<string>Denna sessionsversion stöds ej.</string>
+	<key>Untitled Album</key>
+	<string>Album utan namn</string>
+	<key>Untitled Recipe</key>
+	<string>Namnlöst recept</string>
+	<key>Update Images</key>
+	<string>Uppdatera bilder</string>
+	<key>Updating</key>
+	<string>Uppdaterar</string>
+	<key>Upgrade Engine</key>
+	<string>Uppgradera motor</string>
+	<key>Upgrade Processing Engine</key>
+	<string>Uppgradera bearbetningsmotor</string>
+	<key>Urgency</key>
+	<string>Bråskande</string>
+	<key>Usage Terms</key>
+	<string>Behandlingsformuleringar</string>
+	<key>Variant Position</key>
+	<string>Variantens position</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>Varianter kan inte ha fler än %1$lu lager. Om du hoppar över kommer inga justeringar att appliceras på %2$@</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>Varianter kan inte ha fler än %1$lu lager. Om du hoppar över kommer inga justeringar att appliceras på %2$lu varianter.</string>
+	<key>Vendor Specific</key>
+	<string>Kameraspecifik</string>
+	<key>Vendor White Balance</key>
+	<string>Kamerans vitbalans</string>
+	<key>Vertical Keystone Correction</key>
+	<string>Perspektivkorrektion stående</string>
+	<key>Video</key>
+	<string>Video</string>
+	<key>Vignetting</key>
+	<string>Vinjettering</string>
+	<key>Vignetting Amount</key>
+	<string>Vinjetteringsmängd</string>
+	<key>Vignetting Disabled</key>
+	<string>Vinjettering avstängd</string>
+	<key>Vignetting Enabled</key>
+	<string>Vinjettering aktiverad</string>
+	<key>Vignetting Method</key>
+	<string>Vinjetteringsmetod</string>
+	<key>Vignetting Method Circular</key>
+	<string>Vinjetteringsmetod rund</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>Vinjetteringsmetod rund på beskärningen</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>Vinjetteringsmetod elliptisk på beskärning</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>Varning: LCC kalibrering innehåller klippt information. Färgstick kan uppstå.</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>Varning: LCC exponering är dålig. Resultatet kan bli fel.</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>Vissa delar i din LCC kanske bara delvis är korrigerade.</string>
+	<key>Website(s)</key>
+	<string>Webbsida</string>
+	<key>Websites</key>
+	<string>Hemsidor</string>
+	<key>White Balance</key>
+	<string>Vitbalans</string>
+	<key>White Recovery</key>
+	<string>Vitåterhämtning</string>
+	<key>White balance</key>
+	<string>Vitbalans</string>
+	<key>Width</key>
+	<string>Bredd</string>
+	<key>Width x Height</key>
+	<string>Bredd x höjd</string>
+	<key>Writer</key>
+	<string>Författare</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>Kunde inte skriva inställningar till paketfil. Filen kan vara skadad</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>Skrivning av inställningar till paketet misslyckades. Du kanske inte har skivrättigheter eller så är filen korrupt</string>
+	<key>YES</key>
+	<string>YES</string>
+	<key>Yellow</key>
+	<string>Gul</string>
+	<key>Yes</key>
+	<string>Ja</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>Ditt val innehåller flera LCC testbilder. LCC kommer att läggas på bilden/bilderna som ligger före testbilden. (D.v.s alla filer som ligger till vänster om en LCC testbild, kommer att få den profilen pålagd).</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>Ditt val innehåller flera LCC testbilder. LCC kommer att läggas på bilden/bilderna som ligger efter testbilden. (D.v.s alla filer som ligger till höger om en LCC testbild, kommer att få den profilen pålagd).</string>
+	<key>Zip</key>
+	<string>ZIP</string>
+	<key>Zoom: %.f%%</key>
+	<string>Zoom: %.f%%</string>
+	<key>auto</key>
+	<string>auto</string>
+	<key>begins with</key>
+	<string>startar med</string>
+	<key>camera custom</key>
+	<string>egen vitbalans</string>
+	<key>cloudy</key>
+	<string>molnigt</string>
+	<key>contains</key>
+	<string>innehåller</string>
+	<key>cool white fluorescent</key>
+	<string>kallt, vitt fluorescerande</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>dag, färg fluorescerande</string>
+	<key>day white fluorescent</key>
+	<string>dag, vitt fluorescerande</string>
+	<key>daylight</key>
+	<string>dagsljus</string>
+	<key>daylight fluorescent</key>
+	<string>dagsljus, fluorescerande</string>
+	<key>dd</key>
+	<string>dd</string>
+	<key>dd-MM-yy</key>
+	<string>dd-mm-åå</string>
+	<key>direct sunlight</key>
+	<string>direkt solljus</string>
+	<key>does not contain</key>
+	<string>innehåller inte</string>
+	<key>ends with</key>
+	<string>slutar med</string>
+	<key>equals</key>
+	<string>Lika med</string>
+	<key>error</key>
+	<string>fel</string>
+	<key>fine weather</key>
+	<string>fint väder</string>
+	<key>fine weather with shade</key>
+	<string>fint väder med lågdager</string>
+	<key>flash</key>
+	<string>blixt</string>
+	<key>fluorescent</key>
+	<string>fluorescerande</string>
+	<key>fluorescent d</key>
+	<string>fluorescerande d</string>
+	<key>fluorescent h</key>
+	<string>fluorescerande h</string>
+	<key>fluorescent n</key>
+	<string>fluorescerande n</string>
+	<key>fluorescent w</key>
+	<string>fluorescerande w</string>
+	<key>h</key>
+	<string>t</string>
+	<key>h-mm a</key>
+	<string>t-mm a</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>högtemperaturs kvicksilverlampa</string>
+	<key>hmi</key>
+	<string>hmi</string>
+	<key>incandescent</key>
+	<string>glödlampa</string>
+	<key>is</key>
+	<string>är</string>
+	<key>is after</key>
+	<string>är efter</string>
+	<key>is before</key>
+	<string>är före</string>
+	<key>is false</key>
+	<string>är falskt</string>
+	<key>is faster than</key>
+	<string>är snabbare än</string>
+	<key>is faster than or equal to</key>
+	<string>är snabbare eller lika med</string>
+	<key>is greater than</key>
+	<string>är större än</string>
+	<key>is greater than or equal to</key>
+	<string>är större eller lika med</string>
+	<key>is less than</key>
+	<string>är mindre än</string>
+	<key>is less than or equal to</key>
+	<string>är mindre eller lika med</string>
+	<key>is narrower than</key>
+	<string>är smalare än</string>
+	<key>is narrower than or equal to</key>
+	<string>är smalare eller lika med</string>
+	<key>is not</key>
+	<string>är inte</string>
+	<key>is not equal to</key>
+	<string>är inte lika med</string>
+	<key>is not on</key>
+	<string>är inte på</string>
+	<key>is on</key>
+	<string>är på</string>
+	<key>is slower than</key>
+	<string>är långsammare än</string>
+	<key>is slower than or equal to</key>
+	<string>är långsammare eller lika med</string>
+	<key>is true</key>
+	<string>är sant</string>
+	<key>is wider than</key>
+	<string>är bredare än</string>
+	<key>is wider than or equal to</key>
+	<string>är bredare eller lika med</string>
+	<key>iso studio tungsten</key>
+	<string>iso studio konstljus</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>spara .%@</string>
+	<key>kelvin</key>
+	<string>kelvin</string>
+	<key>manual</key>
+	<string>manuellt</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>min</string>
+	<key>mm</key>
+	<string>mm</string>
+	<key>neutral white fluorescent</key>
+	<string>neutralt vitt fluorescerande</string>
+	<key>normal</key>
+	<string>normalt</string>
+	<key>s</key>
+	<string>s</string>
+	<key>shade</key>
+	<string>lågdager</string>
+	<key>shadow</key>
+	<string>lågdager</string>
+	<key>shot</key>
+	<string>som fotograferad</string>
+	<key>sodium-vapor lamp</key>
+	<string>natriumlampa</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>standardljus a</string>
+	<key>standard light b</key>
+	<string>standardljus b</string>
+	<key>standard light c</key>
+	<string>standardljus c</string>
+	<key>star</key>
+	<string>stjärna</string>
+	<key>stars</key>
+	<string>stjärnor</string>
+	<key>sunny</key>
+	<string>soligt</string>
+	<key>tungsten</key>
+	<string>konstljus</string>
+	<key>underwater</key>
+	<string>under vatten</string>
+	<key>unknown</key>
+	<string>okänt</string>
+	<key>use .%@</key>
+	<string>använd .%@</string>
+	<key>warm white fluorescent</key>
+	<string>varmt vitt fluorescerande</string>
+	<key>white fluorescent</key>
+	<string>vitt fluorescerande</string>
+	<key>yy</key>
+	<string>åå</string>
+	<key>yy-MM-dd</key>
+	<string>åå-mm-dd</string>
+	<key>yyyy</key>
+	<string>åååå</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>åååå-mm-dd tt.mm.ss</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>テキスト セル</string>
+	<key>491.title</key>
+	<string>Table View Cell</string>
+	<key>499.title</key>
+	<string>セルをグループフィルター表示</string>
+	<key>572.title</key>
+	<string>フィルター条件を追加</string>
+	<key>579.title</key>
+	<string>OK</string>
+	<key>580.title</key>
+	<string>フィルター条件を追加:</string>
+	<key>582.title</key>
+	<string>キャンセル</string>
+	<key>604.placeholderString</key>
+	<string>フォーマット: \”国 &gt; 州 &gt; 市 &gt; 場所\”</string>
+</dict>
+</plist>

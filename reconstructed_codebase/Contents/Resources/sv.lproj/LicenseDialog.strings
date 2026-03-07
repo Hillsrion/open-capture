@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>Du kan klistra in licenskoden från Urklipp</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>Du kan klistra in licenskoden från Urklipp</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>Du kan klistra in licenskoden från Urklipp</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>Vad är en licenskod?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Läs mer om profiler i Capture One</string>
+	<key>1348.title</key>
+	<string>Stäng</string>
+	<key>1349.title</key>
+	<string>Knapp</string>
+	<key>1350.title</key>
+	<string>Hjälp</string>
+	<key>1356.title</key>
+	<string>Aktivera Capture One.</string>
+	<key>1357.title</key>
+	<string>Fyll i fälten nedan.</string>
+	<key>1362.title</key>
+	<string>E-post:</string>
+	<key>1363.title</key>
+	<string>Förnamn:</string>
+	<key>1364.title</key>
+	<string>Efternamn:</string>
+	<key>1365.title</key>
+	<string>Land:</string>
+	<key>1366.title</key>
+	<string>Min profil</string>
+	<key>1367.title</key>
+	<string>Liten systemtext</string>
+	<key>1369.title</key>
+	<string>System typsnitt text
+2 rader</string>
+	<key>1371.title</key>
+	<string>Licenskod:</string>
+	<key>1376.title</key>
+	<string>(Licenskod)</string>
+	<key>1377.title</key>
+	<string>Klistra in</string>
+	<key>1378.title</key>
+	<string>Aktivera Capture One.</string>
+	<key>1379.title</key>
+	<string>En ny profil skapas för dig. Verifiera informationen och skapa ett lösenord för din nya profil.</string>
+	<key>1380.title</key>
+	<string>E-post</string>
+	<key>1381.title</key>
+	<string>Förnamn</string>
+	<key>1382.title</key>
+	<string>Efternamn</string>
+	<key>1383.title</key>
+	<string>Land</string>
+	<key>1384.title</key>
+	<string>E-post:</string>
+	<key>1385.title</key>
+	<string>Förnamn:</string>
+	<key>1386.title</key>
+	<string>Efternamn:</string>
+	<key>1387.title</key>
+	<string>Land:</string>
+	<key>1388.placeholderString</key>
+	<string>Minst 6 tecken</string>
+	<key>1389.placeholderString</key>
+	<string>Minst 6 tecken</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>Varför behöver jag ett lösenord?</string>
+	<key>1391.title</key>
+	<string>Bekräfta:</string>
+	<key>1392.title</key>
+	<string>Lösenord:</string>
+	<key>1393.title</key>
+	<string>Tack för att du aktiverat produkten!</string>
+	<key>1394.title</key>
+	<string>Den här versionen av Capture One har nu aktiverats.</string>
+	<key>1395.title</key>
+	<string>Visa programlicensavtalet</string>
+	<key>1396.title</key>
+	<string>Licens till Capture One.</string>
+	<key>1397.title</key>
+	<string>Den här versionen av Capture One har aktiverats.</string>
+	<key>1398.title</key>
+	<string>Licenskod:</string>
+	<key>1399.title</key>
+	<string>Registrerad på:</string>
+	<key>1400.title</key>
+	<string>Antal gratis uppgraderingar kvar:</string>
+	<key>1401.title</key>
+	<string>Antal aktiveringar kvar:</string>
+	<key>1402.title</key>
+	<string>-</string>
+	<key>1403.title</key>
+	<string>-</string>
+	<key>1404.title</key>
+	<string>(Licenstypsträng)</string>
+	<key>1406.title</key>
+	<string>(Licensinnehavare)</string>
+	<key>1407.title</key>
+	<string>(Licenskod)</string>
+	<key>1408.title</key>
+	<string>Ja, jag vill avaktivera min licens på denna dator.</string>
+	<key>1409.title</key>
+	<string>Avaktivera Capture One.</string>
+	<key>1410.title</key>
+	<string>Capture One commer att stänga när du avaktiverar licensen. Du kommer att bli ombedd att ange en licenskod igen nästa gång du öppnar Capture One på denna dator.</string>
+	<key>1413.title</key>
+	<string>OK</string>
+	<key>1414.title</key>
+	<string>Avbryt</string>
+	<key>1415.title</key>
+	<string>Skicka mitt lösenord med e-post</string>
+	<key>1416.title</key>
+	<string>Profillösenord:</string>
+	<key>1418.title</key>
+	<string>Klistra in</string>
+	<key>1426.title</key>
+	<string>1 April 1976</string>
+	<key>1427.title</key>
+	<string>Textruta</string>
+	<key>1428.title</key>
+	<string>Textruta</string>
+	<key>1436.title</key>
+	<string>Licensen är inte uppgraderingsbar</string>
+	<key>1443.title</key>
+	<string>Denna licenskod gäller inte för denna version av Capture One.
+
+För att fortsätta använda Capture One behöver du aktivera med giltig licenskod eller besök Capture One Online Store (startar web läsaren) för att köpa en giltig licens.</string>
+	<key>1445.title</key>
+	<string>Besök Online butiken...</string>
+	<key>1446.title</key>
+	<string>OK</string>
+	<key>16.label</key>
+	<string>Aktivering</string>
+	<key>18.label</key>
+	<string>Lösenord</string>
+	<key>20.label</key>
+	<string>ThankYou</string>
+	<key>22.label</key>
+	<string>ActivationInfo</string>
+	<key>24.label</key>
+	<string>Avaktivering</string>
+	<key>281.title</key>
+	<string>Ange lösenord</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Du kan klistra in licenskoden från Urklipp</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>d MMMM y</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>Vad innebär gratis uppgraderingar och aktiveringar?</string>
+	<key>5.title</key>
+	<string>Licens</string>
+	<key>540.title</key>
+	<string>Ny profil</string>
+	<key>546.title</key>
+	<string>Nytt lösenord</string>
+	<key>559.title</key>
+	<string>Titel</string>
+	<key>565.title</key>
+	<string>Licens</string>
+	<key>570.title</key>
+	<string>Aktiveringshistorik</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>Online aktivering</string>
+	<key>78.headerCell.title</key>
+	<string>Datum</string>
+	<key>786.label</key>
+	<string>EntryFields</string>
+	<key>787.label</key>
+	<string>DisplayField</string>
+	<key>79.headerCell.title</key>
+	<string>Dator-ID</string>
+	<key>80.headerCell.title</key>
+	<string>Aktiveringstyp</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>Aktiveringskod är ogiltig</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>Manuell aktivering</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(Hardware ID)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>Registreringskoden nedanför måste skrivas in i online webb formuläret. Du hittar den genom att logga in på din profil på www.captureone.com</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>Bekräfta e-post:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>Aktiveringskod:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>Skriv in aktiveringskoden som du fick på hemsidan och tryck på knappen ”Aktivera”.</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>Aktiveringskod:</string>
+</dict>
+</plist>

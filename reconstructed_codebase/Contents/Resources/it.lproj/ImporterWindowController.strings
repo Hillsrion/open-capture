@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>Ordina</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>Importa tutto</string>
+	<key>255.title</key>
+	<string>Cancella</string>
+	<key>256.title</key>
+	<string>Cancella immagini Dopo averle Copiate</string>
+	<key>257.title</key>
+	<string>Rimuovi scheda</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>Non Aprire Mai la Raccolta Importazione</string>
+	<key>369.title</key>
+	<string>Notifica al Termine dell’Operazione</string>
+	<key>370.title</key>
+	<string>Apri la Raccolta all’Avvio dell’Importazione</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>Importa Collezione</string>
+	<key>5.title</key>
+	<string>Finestra</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>Nessuna Immagine nella Cartella</string>
+</dict>
+</plist>

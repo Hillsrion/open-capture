@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>154.ibExternalAccessibilityDescription</key>
+	<string>CropShowMaskPopup</string>
+	<key>156.title</key>
+	<string>OtherViews</string>
+	<key>157.title</key>
+	<string>30초</string>
+	<key>158.title</key>
+	<string>1분</string>
+	<key>161.title</key>
+	<string>2분</string>
+	<key>162.title</key>
+	<string>5분</string>
+	<key>163.title</key>
+	<string>10분</string>
+	<key>164.title</key>
+	<string>20분</string>
+	<key>174.title</key>
+	<string>확장자:</string>
+	<key>176.title</key>
+	<string>기본값</string>
+	<key>182.title</key>
+	<string>라이브 프리뷰</string>
+	<key>183.title</key>
+	<string>Phase One 설정</string>
+	<key>185.title</key>
+	<string>일시 정지 후:</string>
+	<key>226.title</key>
+	<string>제공자</string>
+	<key>234.title</key>
+	<string>Canon</string>
+	<key>237.title</key>
+	<string>Nikon</string>
+	<key>2Yl-km-wBI.title</key>
+	<string>Phase One</string>
+	<key>32.ibExternalAccessibilityDescription</key>
+	<string>CropShowMaskPopup</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>TIF</string>
+	<key>35.title</key>
+	<string>IIQ</string>
+	<key>55.ibExternalAccessibilityDescription</key>
+	<string>CropResetButton</string>
+	<key>Gjs-2G-7hO.title</key>
+	<string>Sony</string>
+	<key>Lgf-eS-J2Q.title</key>
+	<string>Fujifilm</string>
+</dict>
+</plist>

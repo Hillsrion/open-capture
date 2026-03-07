@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>65.ibShadowedToolTip</key>
+	<string>自动调整导入的图像</string>
+	<key>66.title</key>
+	<string>自动调整</string>
+	<key>72.ibShadowedToolTip</key>
+	<string>包含现有调整项</string>
+	<key>73.title</key>
+	<string>包含现有调整项</string>
+	<key>SWB-m8-0GG.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>样式</string>
+</dict>
+</plist>

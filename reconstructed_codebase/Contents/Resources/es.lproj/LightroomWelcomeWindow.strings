@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1QD-EF-Ywu.title</key>
+	<string>Cancelar</string>
+	<key>5EK-j8-ODd.title</key>
+	<string>Más información...</string>
+	<key>7GG-dw-LUz.title</key>
+	<string>Su Catálogo e imágenes estan seguras.</string>
+	<key>7Ph-T5-rPl.title</key>
+	<string>Más información</string>
+	<key>BsR-81-gfg.title</key>
+	<string>Importador de Catálogos Lightroom</string>
+	<key>BtN-DU-luM.title</key>
+	<string>Puede tardar un poco</string>
+	<key>HAZ-Nj-moR.title</key>
+	<string>Importar</string>
+	<key>Kcg-Fm-v0w.title</key>
+	<string>Seleccionar Catálogo…</string>
+	<key>NhM-y8-EG2.title</key>
+	<string>&lt;&lt; summary placeholder - do not localize &gt;&gt;</string>
+	<key>SZv-e8-CDZ.title</key>
+	<string>Obtenga todos los detalles del proceso de importación antes de continuar.</string>
+	<key>XAe-Xn-OX8.title</key>
+	<string>Su catálogo está listo para importar</string>
+	<key>XEl-l0-UXf.title</key>
+	<string>Lo siguiente será importado</string>
+	<key>Ybc-1K-cno.title</key>
+	<string>Importar su catálogo está libre de riesgos: su catálogo original y sus archivos de imagen no se verán afectados.</string>
+	<key>aNb-I8-rkE.title</key>
+	<string>Más información...</string>
+	<key>bCc-dM-ZpV.title</key>
+	<string>Siga estos sencillos pasos para importar sus fotos desde Lightroom a Capture One.</string>
+	<key>fb6-Qp-o7J.title</key>
+	<string>Importador de Catálogos de Lightroom</string>
+	<key>nfn-Hm-UIh.title</key>
+	<string>&lt;&lt; path placeholder - do not localize &gt;&gt;</string>
+	<key>o4X-mv-IK0.title</key>
+	<string>Se importarán todos los metadatos de sus imágenes y ajustes básicos (recorte, rotación, balance de blancos, exposición, contraste y saturación). Para transferir colecciones inteligentes, conviértalas primero en una colección regular.</string>
+	<key>peZ-gq-vBV.title</key>
+	<string>Dependiendo del tamaño de su catálogo, esto podría llevar algún tiempo. Mantenga su ordenador encendida y Capture One abierto durante la importación.</string>
+	<key>sKJ-Sa-lTo.title</key>
+	<string>Importe su Catálogo de Lightroom</string>
+	<key>t1E-dm-e2p.title</key>
+	<string>Cancelar</string>
+	<key>yp2-z7-JP2.title</key>
+	<string>Catálogo seleccionado</string>
+</dict>
+</plist>

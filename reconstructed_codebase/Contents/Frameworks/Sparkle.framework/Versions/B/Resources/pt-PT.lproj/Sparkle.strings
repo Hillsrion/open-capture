@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>O %1$@ %2$@ foi transferido e está pronto a instalar! Gostaria de o fazer agora e reiniciar o %1$@ posteriormente?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>O %1$@ não pode ser actualizado quando estiver a ser executado a partir de um volume apenas de leitura como uma imagem de disco ou disco óptico.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>O %1$@ %2$@ é neste momento a versão mais recente disponível.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>O %1$@ %2$@ é neste momento a versão mais recente disponível.
+(Neste momento está na versão %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>O %1$@ %2$@ está agora disponível e tem a versão %3$@. Gostaria de o transferir agora?</string>
+	<key>%@ downloaded</key>
+	<string>%@ transferido</string>
+	<key>%@ of %@</key>
+	<string>%1$@ de %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Uma nova versão do %@ está dísponível!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Uma nova versão do %@ está pronta a instalar!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Ocorreu um erro ao recolher informação sobre as actualizações disponíveis. Por favor tente novamente mais tarde.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Ocorreu um erro ao transferir a actualização. Por favor novamente tente mais tarde.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Ocorreu um erro ao extrair o arquivo. Por favor novamente tente mais tarde.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Ocorrer um erro ao processar o feed de actualização.</string>
+	<key>Cancel</key>
+	<string>Cancelar</string>
+	<key>Cancel Update</key>
+	<string>Cancelar actualização</string>
+	<key>Checking for updates…</key>
+	<string>A procurar actualizações…</string>
+	<key>Downloading update…</key>
+	<string>A transferir actualização…</string>
+	<key>Extracting update…</key>
+	<string>A extrair actualização…</string>
+	<key>Install and Relaunch</key>
+	<string>Instalar e reiniciar</string>
+	<key>Installing update…</key>
+	<string>A instalar actualização…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Pronto para instalar</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Deverá o %1$@ procurar por actualizações automaticamente? Pode sempre procurar actualizações manualmente a partir do menu do %1$@.</string>
+	<key>Update Error!</key>
+	<string>Erro na actualização!</string>
+	<key>Updating %@</key>
+	<string>A actualizar o %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Use o Finder para copiar o %1$@ para a sua pasta Aplicações, reinicie-o aí e tente novamente.</string>
+	<key>You’re up to date!</key>
+	<string>Está actualizado!</string>
+</dict>
+</plist>

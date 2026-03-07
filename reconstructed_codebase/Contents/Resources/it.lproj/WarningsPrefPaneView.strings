@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Avvisami quando Sposta nel Cestino interessa varianti non selezionate</string>
+	<key>18v-en-xAd.title</key>
+	<string>Avvisami prima di applicare uno style con un LCC non valido</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Avvisami prima di resettare le Correzioni Colore Base</string>
+	<key>482.title</key>
+	<string>Predefinito</string>
+	<key>694.title</key>
+	<string>Avvisami prima di spostare le immagini e le cartelle nel Catalogo</string>
+	<key>697.title</key>
+	<string>Files e Cartelle</string>
+	<key>701.title</key>
+	<string>Avvisami prima di eliminare le immagini dal disco</string>
+	<key>703.title</key>
+	<string>Avvisami prima di spostare le immagini nel Cestino di Sessione da un un drive differente</string>
+	<key>707.title</key>
+	<string>Regolazioni</string>
+	<key>708.title</key>
+	<string>Avvisami prima di resettare le regolazioni su più varianti</string>
+	<key>734.title</key>
+	<string>Output</string>
+	<key>789.title</key>
+	<string>Se Modifica Tutte le Varianti Selezionate è disattivato e sono selezionate più varianti:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Avvisami prima di elaborare più varianti se Modifica Tutte le Varianti Selezionate è disattivato</string>
+	<key>793.title</key>
+	<string>Avvisami prima di elaborare</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Avvisami prima di stampare più varianti se Modifica Tutte le Varianti Selezionate è disattivato</string>
+	<key>796.title</key>
+	<string>Avvisami prima di stampare</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Avvisami prima di creare un provino contatto per web con più varianti se Modifica Tutte le Varianti Selezionate è disattivato</string>
+	<key>799.title</key>
+	<string>Avvisami prima di creare un provino contatto per web</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Avvisami prima di creare un provino contatto per web con più varianti se Modifica Tutte le Varianti Selezionate è disattivato</string>
+	<key>805.title</key>
+	<string>Avvisami prima di esportare</string>
+	<key>811.title</key>
+	<string>Avvisami prima di resettare l’archiviazione manuale</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Avvisami quando si cambia o elimina il profilo LCC applicato.</string>
+	<key>816.title</key>
+	<string>Avvisami quando si cambia il profilo LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Avvisami durante la creazione di un profilo LCC a più varianti se Modifica Tutte le Varianti Selezionate è disattivato.</string>
+	<key>820.title</key>
+	<string>Avvisami durante la creazione del profilo LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Avvisami quando viene applicato un profilo LCC su più varainti se Modifica Tutte le Varianti è disabilitato.</string>
+	<key>823.title</key>
+	<string>Avvisami quando viene applicato un profilo LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Avvisami quando si cambia o elimina il profilo LCC applicato.</string>
+	<key>829.title</key>
+	<string>Avvisami quando aggiorno Motore</string>
+	<key>834.title</key>
+	<string>Avvisami prima di resettare le regolazioni su un livello di regolazione</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Avvisami quando, analizzando l’Aberrazione Cromatica con più varianti, Modifica Tutte le Varianti Selezionate è disabilitato.</string>
+	<key>847.title</key>
+	<string>Avvisami quando si analizza l’Aberrazione Cromatica</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Avvisa prima di rasterizzare una maschera parametrica</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Avvisa prima di applicare i lvelli alla variante da cui sono stati copiati</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Avvisami prima di applicare uno style con un ICC non valido</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Avvisami prima di applicare uno style parzialmente</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Avvisami quando viene applicato un profilo LCC a più varianti se Modifica Tutte le Varianti Selezionate è disattivato.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Avvisami quando vengono selezionate le opzioni di creazione LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Avvisami quando vengono copiate regolazioni non supportate</string>
+</dict>
+</plist>

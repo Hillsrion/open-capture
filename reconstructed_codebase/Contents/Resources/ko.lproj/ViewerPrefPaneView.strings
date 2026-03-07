@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>기본값</string>
+	<key>258.title</key>
+	<string>패턴:</string>
+	<key>260.title</key>
+	<string>컬러:</string>
+	<key>262.title</key>
+	<string>여백:</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>뷰어</string>
+	<key>266.title</key>
+	<string>뷰어와 브라우저</string>
+	<key>268.title</key>
+	<string>100</string>
+	<key>269.title</key>
+	<string>여백 확인:</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>마스크 컬러:</string>
+	<key>289.title</key>
+	<string>레이어</string>
+	<key>293.title</key>
+	<string>여백 확인</string>
+	<key>295.title</key>
+	<string>부분 조정</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>선택한 변형 컬러:</string>
+	<key>drf-G9-VYV.title</key>
+	<string>비교 변형 컬러:</string>
+</dict>
+</plist>

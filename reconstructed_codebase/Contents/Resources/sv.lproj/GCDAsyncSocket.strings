@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>Anslutningen stängdes av fjärrdatorn</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>Försöket att ansluta till värden tog för lång tid</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>Försöket att skapa socket från socket FD misslyckades. getpeername() misslyckades</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>Inläsningen nådde maximal längd</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>Inläsningen tog för lång tid</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>Skrivningen tog för lång tid</string>
+</dict>
+</plist>

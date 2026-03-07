@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Una vez al día</string>
+	<key>105.title</key>
+	<string>Automático</string>
+	<key>106.title</key>
+	<string>Nunca</string>
+	<key>107.title</key>
+	<string>Ubicación:</string>
+	<key>108.title</key>
+	<string>Avisar al cerrar:</string>
+	<key>112.title</key>
+	<string>Nunca</string>
+	<key>113.title</key>
+	<string>Automático</string>
+	<key>115.title</key>
+	<string>Aceleración por hardware</string>
+	<key>116.title</key>
+	<string>Copia de seguridad de catálogo</string>
+	<key>126.title</key>
+	<string>Siempre sobreescribir metadatos</string>
+	<key>127.title</key>
+	<string>no sobreescribir metadatos nunca</string>
+	<key>128.title</key>
+	<string>Preguntar sobre sobreescribir metadatos</string>
+	<key>131.title</key>
+	<string>Crear nuevo Álbum o Carpeta de Seleccionadas</string>
+	<key>132.title</key>
+	<string>Crear o volver a usar álbumes coincidentes</string>
+	<key>133.title</key>
+	<string>Preguntar cuando se sincronicen los ajustes del catálogo</string>
+	<key>134.title</key>
+	<string>Catalogo y Metadata. Información recibida de Expression Media puede ser usada para actualizar las imágenes y los álbumes de Capture One. Seleccione el comportamiento para cada tipo de información.</string>
+	<key>137.title</key>
+	<string>Preguntar sobre Incluir subcarpetas al añadir</string>
+	<key>138.title</key>
+	<string>Responder siempre Sí incluir en diálogo de subcarpetas</string>
+	<key>139.title</key>
+	<string>Responder siempre No incluir en diálogo de subcarpetas</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Valores predeterminados</string>
+	<key>142.title</key>
+	<string>Zoom con la rueda de desplazamiento</string>
+	<key>143.title</key>
+	<string>Visor</string>
+	<key>150.title</key>
+	<string>Después de más de 5 minutos de inactividad</string>
+	<key>151.title</key>
+	<string>Después de más de 10 minutos de inactividad</string>
+	<key>152.title</key>
+	<string>Después de más de 30 minutos de inactividad</string>
+	<key>153.title</key>
+	<string>Después de más de 1 hora de inactividad</string>
+	<key>154.title</key>
+	<string>Después de más de 2 horas de inactividad</string>
+	<key>155.title</key>
+	<string>Después de más de 4 horas de inactividad</string>
+	<key>156.title</key>
+	<string>En la primera captura del día</string>
+	<key>157.title</key>
+	<string>Crear:</string>
+	<key>158.title</key>
+	<string>Reciente colección de capturas</string>
+	<key>160.title</key>
+	<string>Abrir importador cuando se detecte una tarjeta de una cámara digital</string>
+	<key>161.title</key>
+	<string>Importando</string>
+	<key>162.title</key>
+	<string>Actividades</string>
+	<key>163.title</key>
+	<string>Mostrar ventana automáticamente</string>
+	<key>167.title</key>
+	<string>Favoritos</string>
+	<key>170.title</key>
+	<string>Preguntar sobre añadir la carpeta de la sesión previa a favoritos</string>
+	<key>171.title</key>
+	<string>Añadir siempre la carpeta de sesión anterior a favoritos</string>
+	<key>172.title</key>
+	<string>No añadir nunca la carpeta de sesión previa a favoritos</string>
+	<key>176.title</key>
+	<string>Catálogo y Sesión</string>
+	<key>177.title</key>
+	<string>Abrir en una nueva ventana</string>
+	<key>59.title</key>
+	<string>Catálogo y Sesiones</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Catálogo y Sesión</string>
+	<key>60.title</key>
+	<string>Favoritos</string>
+	<key>66.title</key>
+	<string>Formato de archivo empaquetado</string>
+	<key>67.title</key>
+	<string>Reciente colección de capturas</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Estado:</string>
+	<key>93.title</key>
+	<string>~/Biblioteca/Soporte de Aplicación/Capture One/Copias de Seguridad</string>
+	<key>96.title</key>
+	<string>Siempre</string>
+	<key>97.title</key>
+	<string>Una vez al mes</string>
+	<key>98.title</key>
+	<string>Nunca</string>
+	<key>99.title</key>
+	<string>Una vez a la semana</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>La rueda cambia el valor del cursor deslizante</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Pestañas de herramientas</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Habilitar dispositivo Tangent</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + rueda desplaza la pestaña de la herramienta</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Mostrar en el Inicio</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Preferencias de Tangent</string>
+</dict>
+</plist>

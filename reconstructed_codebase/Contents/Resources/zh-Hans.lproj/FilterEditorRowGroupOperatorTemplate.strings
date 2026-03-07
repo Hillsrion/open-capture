@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>225.title</key>
+	<string>匹配</string>
+	<key>227.title</key>
+	<string>这些规则</string>
+	<key>234.title</key>
+	<string>任意</string>
+	<key>235.title</key>
+	<string>全部</string>
+</dict>
+</plist>

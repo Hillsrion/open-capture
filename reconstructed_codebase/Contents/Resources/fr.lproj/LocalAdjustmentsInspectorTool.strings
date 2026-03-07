@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Supprimer Calque de Réglages</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Nouveau Calque</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Option du pointeur</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Réglages Visibilité Masque</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Box</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>opacité de calque</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacité</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Plage Luma…</string>
+</dict>
+</plist>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>デフォルト</string>
+	<key>486.title</key>
+	<string>キャッシュ</string>
+	<key>526.title</key>
+	<string>EIPに圧縮(セッションのみ)</string>
+	<key>557.title</key>
+	<string>プレビューサイズ (px):</string>
+	<key>559.title</key>
+	<string>キャッシュ</string>
+	<key>563.title</key>
+	<string>埋め込まれたIPTCより埋め込まれたXMPを優先</string>
+	<key>565.title</key>
+	<string>埋め込まれたメタデータよりXMPサイドカーを優先</string>
+	<key>568.title</key>
+	<string>メタデータ</string>
+	<key>586.title</key>
+	<string>パッケージされたファイル形式</string>
+	<key>590.title</key>
+	<string>インポート時にEIPに圧縮</string>
+	<key>591.title</key>
+	<string>撮影時にEIPに圧縮</string>
+	<key>592.title</key>
+	<string>JPEG、TIFFファイルはEIPに圧縮できません。</string>
+	<key>601.title</key>
+	<string>編集</string>
+	<key>602.title</key>
+	<string>TIFF編集を有効にする</string>
+	<key>603.title</key>
+	<string>JPEG編集を有効にする</string>
+	<key>621.title</key>
+	<string>すべて同期</string>
+	<key>622.title</key>
+	<string>読込む</string>
+	<key>623.title</key>
+	<string>なし</string>
+	<key>626.title</key>
+	<string>XMPサイドカー自動同期:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>新規ファイル（インポート中に作成されたキャプチャーまたはEIP）はファイル所有者だけではなく、すべての人に書き込みが許可されます。</string>
+	<key>629.title</key>
+	<string>すべての人に新しいファイルを書き込み可能する</string>
+	<key>635.title</key>
+	<string>PNG編集を有効にする</string>
+	<key>667.title</key>
+	<string>デフォルト現像エンジン:</string>
+</dict>
+</plist>

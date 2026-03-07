@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>将裁切垂直移动多远。</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>取消</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>单位</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>为裁切添加多少宽度。</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>视窗</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ 位置</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>修改裁切：</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ 尺寸</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>为裁切添加多少高度。</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>修改</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>将裁切水平移动多远。</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>修改裁切尺寸时，当前裁切应固定不动的位置。</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>单位</string>
+</dict>
+</plist>

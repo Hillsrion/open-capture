@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>다시 묻지 않음</string>
+	<key>3.title</key>
+	<string>메타데이터</string>
+	<key>6.title</key>
+	<string>덮어쓰지 않기</string>
+	<key>8.title</key>
+	<string>덮어쓰기</string>
+</dict>
+</plist>

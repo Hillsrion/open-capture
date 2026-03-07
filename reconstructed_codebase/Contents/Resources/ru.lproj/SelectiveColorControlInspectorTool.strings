@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0vp-Kx-FHd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>2031.title</key>
+	<string>Box</string>
+	<key>3060.label</key>
+	<string>Тон кожи</string>
+	<key>3178.title</key>
+	<string>Box</string>
+	<key>3180.ibShadowedToolTip</key>
+	<string>Задействовать весь диапазон насыщенности</string>
+	<key>352.headerCell.title</key>
+	<string>∆L</string>
+	<key>353.headerCell.title</key>
+	<string>∆S</string>
+	<key>354.headerCell.title</key>
+	<string>∆H</string>
+	<key>363.title</key>
+	<string>Текстовая ячейка</string>
+	<key>3774.title</key>
+	<string>Показать выбранный цветовой диапазон</string>
+	<key>3820.title</key>
+	<string>Показать выбранный цветовой диапазон</string>
+	<key>3844.ibShadowedLabels[0]</key>
+	<string>Базовый</string>
+	<key>3844.ibShadowedLabels[1]</key>
+	<string>Расширенный</string>
+	<key>3844.ibShadowedLabels[2]</key>
+	<string>Тон кожи</string>
+	<key>628.label</key>
+	<string>Расширенный</string>
+	<key>630.label</key>
+	<string>Базовый</string>
+	<key>6aV-yX-U5u.ibShadowedToolTip</key>
+	<string>Параметры инструментов курсора</string>
+	<key>7NC-Ij-t7t.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>Am6-fU-DiK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>Cgr-sZ-I5Z.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>EVP-VL-Yjl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Яркость</string>
+	<key>H8b-hH-diC.title</key>
+	<string>Однородность</string>
+	<key>Hxa-eC-810.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Яркость</string>
+	<key>Rtj-aW-pbn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Сглаживание</string>
+	<key>ePg-3Z-cxt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Яркость</string>
+	<key>gKT-4w-rzy.title</key>
+	<string>Количество</string>
+	<key>hcB-Tf-YVV.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>nm6-Wj-rzB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>oet-kp-YCb.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Сглаживание</string>
+	<key>paI-fK-pg5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>tZF-2c-Xyl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>xHN-h1-U6H.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Яркость</string>
+</dict>
+</plist>

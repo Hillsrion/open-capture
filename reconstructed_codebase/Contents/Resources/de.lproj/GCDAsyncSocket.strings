@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>Socket closed by remote peer</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>Verbindungsversuch zum Host - Zeitlimit überschritten</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>Attempt to create socket from socket FD failed. getpeername() failed</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>Lesevorgang hat die vorgegebene Maximallänge erreicht</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>Lesevorgang - Zeitlimit erreicht</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>Schreibvorgang - Zeitlimit erreicht</string>
+</dict>
+</plist>

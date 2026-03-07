@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>更新事項：</string>
+	<key>171.title</key>
+	<string>暫緩提醒</string>
+	<key>172.title</key>
+	<string>跳過此版本</string>
+	<key>173.title</key>
+	<string>安裝更新項目</string>
+	<key>175.title</key>
+	<string>自動下載並安裝未來的更新項目</string>
+	<key>5.title</key>
+	<string>軟體更新</string>
+</dict>
+</plist>

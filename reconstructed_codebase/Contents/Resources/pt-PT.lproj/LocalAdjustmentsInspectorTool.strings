@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Excluir Camada de Ajustes</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Nova Camada</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Opções de ferramentas do cursor</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Configurações de visibilidade da máscara</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Box</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>Opacidade da camada</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacidade</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Gama Luma…</string>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Följ beskärning</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>referensbildens transparens</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacitet</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>referensbildens skala</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Skala</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Fil</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Stående referensbild</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Lodrät</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>Liggande referensbild</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Vågrät</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Visa</string>
+</dict>
+</plist>

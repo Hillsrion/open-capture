@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>Vous pouvez coller votre code de licence depuis le presse-papier</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>Vous pouvez coller votre code de licence depuis le presse-papier</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>Vous pouvez coller votre code de licence depuis le presse-papier</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>Qu'est-ce qu'un code de licence ?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>En savoir plus sur les profils Capture One</string>
+	<key>1348.title</key>
+	<string>Fermer</string>
+	<key>1349.title</key>
+	<string>Bouton</string>
+	<key>1350.title</key>
+	<string>Aide</string>
+	<key>1356.title</key>
+	<string>Activer Capture One.</string>
+	<key>1357.title</key>
+	<string>S'il vous plaît remplissez les champs ci-dessous.</string>
+	<key>1362.title</key>
+	<string>E-mail:</string>
+	<key>1363.title</key>
+	<string>Prénom :</string>
+	<key>1364.title</key>
+	<string>Nom :</string>
+	<key>1365.title</key>
+	<string>Pays :</string>
+	<key>1366.title</key>
+	<string>Obtenir un Profil</string>
+	<key>1367.title</key>
+	<string>Texte en police système de petite taille</string>
+	<key>1369.title</key>
+	<string>Police d’écriture système
+2 lignes</string>
+	<key>1371.title</key>
+	<string>Code licence :</string>
+	<key>1376.title</key>
+	<string>(Code licence)</string>
+	<key>1377.title</key>
+	<string>Coller</string>
+	<key>1378.title</key>
+	<string>Activer Capture One.</string>
+	<key>1379.title</key>
+	<string>Un nouveau profil sera créé pour vous. S'il vous plaît vérifiez les informations et créer un mot de passe pour votre nouveau profil.</string>
+	<key>1380.title</key>
+	<string>E-mail</string>
+	<key>1381.title</key>
+	<string>Prénom</string>
+	<key>1382.title</key>
+	<string>Nom</string>
+	<key>1383.title</key>
+	<string>Pays</string>
+	<key>1384.title</key>
+	<string>E-mail:</string>
+	<key>1385.title</key>
+	<string>Prénom :</string>
+	<key>1386.title</key>
+	<string>Nom :</string>
+	<key>1387.title</key>
+	<string>Pays :</string>
+	<key>1388.placeholderString</key>
+	<string>Minimum 6 caractères</string>
+	<key>1389.placeholderString</key>
+	<string>Minimum 6 caractères</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>Pourquoi ai-je besoin d'un mot de passe ?</string>
+	<key>1391.title</key>
+	<string>Confirmer :</string>
+	<key>1392.title</key>
+	<string>Mot de Passe :</string>
+	<key>1393.title</key>
+	<string>Merci pour l'activation !</string>
+	<key>1394.title</key>
+	<string>Cette version de Capture One est maintenant activée.</string>
+	<key>1395.title</key>
+	<string>Afficher le contrat de licence du logiciel</string>
+	<key>1396.title</key>
+	<string>Licence de Capture One</string>
+	<key>1397.title</key>
+	<string>Cette version de Capture One a été activée.</string>
+	<key>1398.title</key>
+	<string>Code de licence :</string>
+	<key>1399.title</key>
+	<string>Enregisté pour :</string>
+	<key>1400.title</key>
+	<string>Mises à jour gratuites restantes:</string>
+	<key>1401.title</key>
+	<string>Activations restantes:</string>
+	<key>1404.title</key>
+	<string>Licence</string>
+	<key>1406.title</key>
+	<string>(Licencié)</string>
+	<key>1407.title</key>
+	<string>(Code licence)</string>
+	<key>1408.title</key>
+	<string>Oui, je souhaite désactiver la licence de cet ordinateur.</string>
+	<key>1409.title</key>
+	<string>Capture One désactivé.</string>
+	<key>1410.title</key>
+	<string>Capture One se fermera après la désactivation de la licence. Il vous sera demandé de saisir le code de licence à nouveau lors de la prochaine ouverture de Capture One sur cet ordinateur.</string>
+	<key>1413.title</key>
+	<string>OK</string>
+	<key>1414.title</key>
+	<string>Annuler</string>
+	<key>1415.title</key>
+	<string>Envoyer mon mot de passe par E-mail</string>
+	<key>1416.title</key>
+	<string>Mot de passe du Profil :</string>
+	<key>1418.title</key>
+	<string>Coller</string>
+	<key>1426.title</key>
+	<string>1 Avril 1976</string>
+	<key>1427.title</key>
+	<string>Cellule texte</string>
+	<key>1428.title</key>
+	<string>Cellule texte</string>
+	<key>1436.title</key>
+	<string>La licence ne peut être mise à jour</string>
+	<key>1443.title</key>
+	<string>Le code de licence fourni n'est pas valide avec cette version de Capture One.
+
+Pour continuer d'utiliser Capture One, activer à l'aide d'un code valide ou visiter la boutique en ligne de Capture One (lancer un navigateur web) pour acheter une licence valide.</string>
+	<key>1445.title</key>
+	<string>Visiter la boutique en ligne...</string>
+	<key>1446.title</key>
+	<string>OK</string>
+	<key>16.label</key>
+	<string>Activation</string>
+	<key>18.label</key>
+	<string>Mot de passe</string>
+	<key>24.label</key>
+	<string>Désactivation</string>
+	<key>281.title</key>
+	<string>Saisir le mot de passe</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Vous pouvez coller votre code de licence depuis le presse-papier</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>j MMMM a</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>Quelles sont les mises à niveau gratuites et les activations ?</string>
+	<key>5.title</key>
+	<string>Licence</string>
+	<key>540.title</key>
+	<string>Nouveau profil</string>
+	<key>546.title</key>
+	<string>Nouveau mot de passe</string>
+	<key>559.title</key>
+	<string>Titre</string>
+	<key>565.title</key>
+	<string>Licence</string>
+	<key>570.title</key>
+	<string>Historique d'activation</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>Activation en ligne</string>
+	<key>78.headerCell.title</key>
+	<string>Date</string>
+	<key>79.headerCell.title</key>
+	<string>ID ordinateur</string>
+	<key>80.headerCell.title</key>
+	<string>Type d'activation</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>La clé d’activation n’est pas valide</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>Activation manuelle</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(ID matériel)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>La Clé d’Enregistrement ci-dessous doit être entrée dans le formulaire en ligne. Ce dernier peut être trouvé en se connectant à votre profil sur www.captureone.com</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>Vérification Email:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>Clé d’Activation:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>Entrer la Clé d’Activation indiquée sur le site web puis presser le bouton 'Activer'</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>Clé d’Activation:</string>
+</dict>
+</plist>

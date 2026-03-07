@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3q5-Qh-upk.ibShadowedToolTip</key>
+	<string>Profundidad de Campo</string>
+	<key>546.ibShadowedToolTip</key>
+	<string>Profundidad de campo</string>
+	<key>547.title</key>
+	<string>PDC</string>
+	<key>86u-ew-JY8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientación</string>
+	<key>IRF-4f-LhB.ibExternalAccessibilityDescription</key>
+	<string>claridad</string>
+	<key>IRF-4f-LhB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidad</string>
+	<key>j1P-cW-C07.title</key>
+	<string>Valor predeterminado</string>
+	<key>k4U-4f-oTq.ibExternalAccessibilityDescription</key>
+	<string>claridad</string>
+	<key>k4U-4f-oTq.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Calidad</string>
+</dict>
+</plist>

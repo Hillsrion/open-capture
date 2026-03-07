@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>エンジン</string>
+	<key>355.title</key>
+	<string>不明なエンジン</string>
+	<key>358.title</key>
+	<string>アップグレード</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>フィルム標準</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>フィルムエクストラ</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>モード</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>ハイコントラスト</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>ネガ フィルム</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>カーブ</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>フォトグラフィ</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>プロファイル</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>ポジ フィルム</string>
+</dict>
+</plist>

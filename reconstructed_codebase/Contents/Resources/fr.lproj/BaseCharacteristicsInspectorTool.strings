@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>Moteur</string>
+	<key>355.title</key>
+	<string>Moteur Inconnu</string>
+	<key>358.title</key>
+	<string>Mise à Niveau</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>Film standard</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>Film extra</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Mode</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>Haut contraste</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>Film Negative</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Courbe</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>Photographie</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil ICC</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>Film Positive</string>
+</dict>
+</plist>

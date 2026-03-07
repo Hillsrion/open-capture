@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>从主变体复制变体</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>从上一张拍摄复制调整项。</string>
+	<key>1xt-dV-kug.title</key>
+	<string>从上一张复制</string>
+	<key>250.title</key>
+	<string>菜单</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>自动调整拍摄图像</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>从上一张复制变体</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方向</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>从上一张拍摄复制调整项。</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>从上一张复制</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>从上一张复制变体</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>从上一张复制指定项…</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>从主变体复制指定项…</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>从主变体复制调整项</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>从主变体复制</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>从上一张复制指定项…</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>使用默认调整项</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>默认设置</string>
+	<key>JgD-8n-qns.title</key>
+	<string>从主变体复制变体</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>样式</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>从剪贴板复制</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>从主变体复制调整项</string>
+	<key>RWO-hh-M69.title</key>
+	<string>从主变体复制</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>从剪贴板复制</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>使用默认调整项</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>默认设置</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>为相机使用默认 ICC 色彩特性文件</string>
+	<key>abE-6a-zrB.title</key>
+	<string>默认设置</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>使用相机默认的构图方向</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>默认设置</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>从最后一张拍摄图像复制 ICC 色彩特性文件。</string>
+	<key>gij-EA-zK2.title</key>
+	<string>从上一张复制</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>元数据</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>从主变体复制指定项…</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>其他</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>从主变体复制 ICC 色彩特性文件</string>
+	<key>s07-eL-TTi.title</key>
+	<string>从主变体复制</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC 色彩特性文件</string>
+</dict>
+</plist>

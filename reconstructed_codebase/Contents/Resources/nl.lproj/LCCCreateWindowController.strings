@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Zorg ervoor dat de waardes in de Lens Correctie tool juist zijn voordat u een LCC aanmaakt.</string>
+	<key>1.title</key>
+	<string>Maak LCC-opties aan</string>
+	<key>10.title</key>
+	<string>Voeg informatie Stofverwijdering bij</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>LCC-voortgang aanmaken</string>
+	<key>22.title</key>
+	<string>LCC aanmaken</string>
+	<key>27.title</key>
+	<string>LCC aanmaken</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Altijd aanmaken met deze instellingen Instelling kan ongedaan worden gemaakt vanaf LCC tool.</string>
+	<key>37.title</key>
+	<string>Toon niet meer</string>
+	<key>46.title</key>
+	<string>Venster</string>
+	<key>5.title</key>
+	<string>Aanmaken</string>
+	<key>51.title</key>
+	<string>Waarschuwingen opgetreden bij aanmaken LCC's. Wilt u het Logboek bekijken?</string>
+	<key>54.title</key>
+	<string>Toon Logboek</string>
+	<key>55.title</key>
+	<string>Sluiten</string>
+	<key>6.title</key>
+	<string>Annuleer</string>
+	<key>65.title</key>
+	<string>Annuleer</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Correcties voor technische camera met groothoeklens meenemen.</string>
+	<key>8.title</key>
+	<string>Voeg Groothoeklens Correctiegegevens bij</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Voeg informatie Stofverwijdering bij. Het aanmaken van het LCC-profiel zal iets langzamer zijn.</string>
+</dict>
+</plist>

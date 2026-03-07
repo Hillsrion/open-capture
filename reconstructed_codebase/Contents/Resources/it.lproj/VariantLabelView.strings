@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>90.title</key>
+	<string>Nome</string>
+	<key>91.title</key>
+	<string>Iso</string>
+	<key>94.title</key>
+	<string>Otturatore</string>
+	<key>95.title</key>
+	<string>Diaframma</string>
+	<key>96.title</key>
+	<string>Focale</string>
+</dict>
+</plist>

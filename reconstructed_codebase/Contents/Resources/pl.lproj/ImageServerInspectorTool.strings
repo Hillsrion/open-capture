@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>Dodawanie tagów koloru</string>
+	<key>125.title</key>
+	<string>Zmienianie dopasowań</string>
+	<key>131.title</key>
+	<string>Przechwytywanie obrazów</string>
+	<key>136.title</key>
+	<string>Uprawnienia</string>
+	<key>157.label</key>
+	<string>Internet</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>Rozpowszechnij w internecie</string>
+	<key>166.title</key>
+	<string>Przeglądarka internetowa</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>Rozpowszechnij w internecie</string>
+	<key>171.title</key>
+	<string>Urządzenie mobilne</string>
+	<key>203.title</key>
+	<string>Ocenianie obrazów</string>
+	<key>212.title</key>
+	<string>Uprawnienia</string>
+	<key>213.title</key>
+	<string>Ocenianie obrazów</string>
+	<key>214.title</key>
+	<string>Dodawanie tagów koloru</string>
+	<key>243.title</key>
+	<string>Numer portu</string>
+	<key>254.title</key>
+	<string>&lt;lokalny adres IP&gt;</string>
+	<key>27.title</key>
+	<string>Hasło</string>
+	<key>291.title</key>
+	<string>&lt;lokalny adres IP&gt;</string>
+	<key>306.title</key>
+	<string>Lokalny IP</string>
+	<key>308.title</key>
+	<string>Lokalny IP</string>
+	<key>43.title</key>
+	<string>Nazwa serwera</string>
+	<key>53.label</key>
+	<string>Podstawowe</string>
+	<key>54.label</key>
+	<string>Mobilne</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>Podstawowe</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>Mobilne</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>Internet</string>
+	<key>63.title</key>
+	<string>Numer portu</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opublikuj w</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>Mobilne i internetowe</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>Urządzenie mobilne</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>Przeglądarka internetowa</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Folder</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Układ</string>
+</dict>
+</plist>

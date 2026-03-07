@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Opombe ob izdaji:</string>
+	<key>171.title</key>
+	<string>Spomni me kasneje</string>
+	<key>172.title</key>
+	<string>Preskoči to verzijo</string>
+	<key>173.title</key>
+	<string>Namesti posodobitev</string>
+	<key>175.title</key>
+	<string>V prihodnje samodejno nameščaj posodobitve</string>
+	<key>5.title</key>
+	<string>Posodabljanje programske opreme</string>
+</dict>
+</plist>

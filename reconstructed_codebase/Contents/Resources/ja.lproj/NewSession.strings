@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>新規セッション</string>
+	<key>100.title</key>
+	<string>セレクトフォルダ:</string>
+	<key>104.title</key>
+	<string>ゴミ箱フォルダ:</string>
+	<key>147.title</key>
+	<string>新規ウィンドウで開く</string>
+	<key>151.title</key>
+	<string>ファイル名:</string>
+	<key>46.title</key>
+	<string>テンプレート:</string>
+	<key>47.title</key>
+	<string>場所:</string>
+	<key>48.title</key>
+	<string>名前:</string>
+	<key>54.title</key>
+	<string>キャンセル</string>
+	<key>55.title</key>
+	<string>OK</string>
+	<key>91.title</key>
+	<string>撮影フォルダ:</string>
+	<key>96.title</key>
+	<string>現像フォルダ:</string>
+</dict>
+</plist>

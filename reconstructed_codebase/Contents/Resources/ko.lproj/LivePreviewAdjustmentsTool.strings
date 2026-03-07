@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3q5-Qh-upk.ibShadowedToolTip</key>
+	<string>피사계 심도</string>
+	<key>546.ibShadowedToolTip</key>
+	<string>피사계 심도</string>
+	<key>547.title</key>
+	<string>DOF</string>
+	<key>86u-ew-JY8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>방향설정</string>
+	<key>IRF-4f-LhB.ibExternalAccessibilityDescription</key>
+	<string>선명도</string>
+	<key>IRF-4f-LhB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>명도</string>
+	<key>j1P-cW-C07.title</key>
+	<string>기본값</string>
+	<key>k4U-4f-oTq.ibExternalAccessibilityDescription</key>
+	<string>선명도</string>
+	<key>k4U-4f-oTq.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>품질</string>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>Wybarwienia koloru</string>
+	<key>1495.title</key>
+	<string>Włącz wyrównywanie światła</string>
+	<key>1606.title</key>
+	<string>Usuwanie kurzu</string>
+	<key>1699.title</key>
+	<string>Nazwa profilu LCC</string>
+	<key>1700.title</key>
+	<string>Profil</string>
+	<key>1720.title</key>
+	<string>Utwórz LCC</string>
+	<key>1785.title</key>
+	<string>Opcje zastosowania LCC</string>
+	<key>1792.title</key>
+	<string>Anuluj</string>
+	<key>1793.title</key>
+	<string>OK</string>
+	<key>1795.title</key>
+	<string>Równaj światło</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>kelwinów</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Równaj światło</string>
+</dict>
+</plist>

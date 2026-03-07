@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>144.title</key>
+	<string>OtherViews</string>
+	<key>145.title</key>
+	<string>Упорядочить...</string>
+	<key>146.title</key>
+	<string>Создать...</string>
+	<key>147.title</key>
+	<string>Без пропорции</string>
+	<key>149.title</key>
+	<string>Вывод</string>
+	<key>152.title</key>
+	<string>1x1</string>
+	<key>153.title</key>
+	<string>2x3</string>
+	<key>155.ibShadowedToolTip</key>
+	<string>Настройка варианта: размер изображения, полученного после обработки варианта.</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Единица размера.</string>
+	<key>158.title</key>
+	<string>OtherViews</string>
+	<key>159.title</key>
+	<string>пкс</string>
+	<key>160.title</key>
+	<string>дюйм</string>
+	<key>161.title</key>
+	<string>см</string>
+	<key>162.title</key>
+	<string>мм</string>
+	<key>326.title</key>
+	<string>Соотношение</string>
+	<key>327.title</key>
+	<string>Размер</string>
+	<key>331.title</key>
+	<string>x</string>
+	<key>334.title</key>
+	<string>Кадрировать вне рамки</string>
+	<key>IUp-Ub-TaZ.title</key>
+	<string>Показывать сетку во время обрезки</string>
+</dict>
+</plist>

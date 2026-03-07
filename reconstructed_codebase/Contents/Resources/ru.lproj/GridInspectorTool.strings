@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3fy-wT-w0f.title</key>
+	<string>Учитывать кадрирование</string>
+	<key>4UC-Bs-1RC.title</key>
+	<string>Показать</string>
+	<key>9Wv-Ma-FZX.title</key>
+	<string>Золотое сечение</string>
+	<key>JxO-Fy-Cxn.title</key>
+	<string>Отразить зеркально</string>
+	<key>PJO-d3-1pb.title</key>
+	<string>Спираль Фибоначчи</string>
+	<key>Qb1-Us-3KQ.title</key>
+	<string>Короткая сторона</string>
+	<key>QnI-nk-lDL.title</key>
+	<string>По часовой стрелке</string>
+	<key>b9P-fk-n4H.title</key>
+	<string>Длинная сторона</string>
+	<key>c4c-3a-31D.title</key>
+	<string>Прямоугольная</string>
+	<key>w5L-CQ-ge0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тип</string>
+</dict>
+</plist>

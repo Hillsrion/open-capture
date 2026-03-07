@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>116.title</key>
+	<string>取消</string>
+	<key>148.title</key>
+	<string>用当前的图像创建相册</string>
+	<key>171.title</key>
+	<string>保存</string>
+	<key>172.title</key>
+	<string>取消</string>
+	<key>173.title</key>
+	<string>智能相册名称：</string>
+	<key>188.title</key>
+	<string>帮助</string>
+	<key>48.title</key>
+	<string>创建智能相册</string>
+</dict>
+</plist>

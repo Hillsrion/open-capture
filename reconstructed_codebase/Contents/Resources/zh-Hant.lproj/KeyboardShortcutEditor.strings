@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>編輯鍵盤快捷鍵</string>
+	<key>13.title</key>
+	<string>關閉</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>51.title</key>
+	<string>視窗</string>
+	<key>59.title</key>
+	<string>好</string>
+	<key>60.title</key>
+	<string>取消</string>
+	<key>61.title</key>
+	<string>為鍵盤快捷鍵群組輸入一個名稱：</string>
+	<key>62.title</key>
+	<string>錯誤（以編程方式設定）</string>
+	<key>75.title</key>
+	<string>幫助</string>
+</dict>
+</plist>

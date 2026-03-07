@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Release Notes:</string>
+	<key>171.title</key>
+	<string>เตือนในภายหลัง</string>
+	<key>172.title</key>
+	<string>ข้ามเวอร์ชั่นนี้</string>
+	<key>173.title</key>
+	<string>ติดตั้งอัพเดท</string>
+	<key>175.title</key>
+	<string>ดาวน์โหลดและติดตั้งอัพเดทโดยอัตโนมัติในอนาคต</string>
+	<key>5.title</key>
+	<string>อัพเดทซอฟต์แวร์</string>
+</dict>
+</plist>

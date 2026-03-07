@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>518.title</key>
+	<string>字體</string>
+	<key>519.ibShadowedToolTip</key>
+	<string>說明文字字體名稱與大小</string>
+	<key>520.title</key>
+	<string>黑體</string>
+	<key>529.ibExternalAccessibilityDescription</key>
+	<string>batchQueueStopStartButton</string>
+	<key>529.ibShadowedToolTip</key>
+	<string>修改說明文字字體</string>
+	<key>530.title</key>
+	<string>...</string>
+	<key>fQl-5q-wXK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>類型</string>
+</dict>
+</plist>

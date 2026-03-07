@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFX-Rv-WlM.title</key>
+	<string>Cellule texte</string>
+	<key>FCS-rC-GL7.alternateTitle</key>
+	<string>Arrêter</string>
+	<key>FCS-rC-GL7.title</key>
+	<string>Déplacer</string>
+	<key>HF8-NW-edb.headerCell.title</key>
+	<string>Cible</string>
+	<key>HhO-fK-78I.title</key>
+	<string>Annuler Calibration</string>
+	<key>cpM-bI-tVi.headerCell.title</key>
+	<string>Actuel</string>
+	<key>d8V-sn-JhX.title</key>
+	<string>Calibrer</string>
+	<key>ke6-ru-9Tg.title</key>
+	<string>Le statif doit être calibré.
+
+Merci de vous assurer que les câbles sont assez long et qu’il n’y a aucun objet gênant afin que l’appareil photo puisse se déplacer librement.</string>
+	<key>pqI-lM-bV8.title</key>
+	<string>Pas de statif compatible trouvé.</string>
+	<key>sPX-gm-Kga.title</key>
+	<string>Cellule texte</string>
+</dict>
+</plist>

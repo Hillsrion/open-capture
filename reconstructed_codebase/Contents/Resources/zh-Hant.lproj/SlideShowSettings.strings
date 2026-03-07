@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>幻燈片設定</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>淡出淡入</string>
+	<key>35.title</key>
+	<string>移入</string>
+	<key>36.title</key>
+	<string>過渡</string>
+	<key>40.title</key>
+	<string>推動</string>
+	<key>41.title</key>
+	<string>露出</string>
+	<key>42.title</key>
+	<string>溶解</string>
+	<key>43.title</key>
+	<string>旋轉圓孔</string>
+	<key>44.title</key>
+	<string>滑動</string>
+	<key>56.title</key>
+	<string>幻燈片長度</string>
+	<key>59.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>69.title</key>
+	<string>循環</string>
+	<key>73.title</key>
+	<string>默認設定</string>
+	<key>90.title</key>
+	<string>分解</string>
+	<key>91.title</key>
+	<string>頁面捲曲</string>
+	<key>92.title</key>
+	<string>波紋</string>
+</dict>
+</plist>

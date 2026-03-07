@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>已经保存了 %{value2}@ 个批量处理工作中的 %{value1}@ 个</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>已经保存了 %{value2}@ 个批量处理工作中的 %{value1}@ 个</string>
+	<key>30.title</key>
+	<string>退出</string>
+	<key>31.title</key>
+	<string>正在保存 N 个批量处理工作中的第 x 个</string>
+	<key>5.title</key>
+	<string>正在保存批量处理工作文件</string>
+</dict>
+</plist>

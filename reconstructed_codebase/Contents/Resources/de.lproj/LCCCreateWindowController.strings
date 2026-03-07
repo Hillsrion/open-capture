@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Stellen Sie vor dem Erstellen einer LCC sicher, dass die Werte im Werkzeug "Objektivkorrektur" korrekt sind.</string>
+	<key>1.title</key>
+	<string>LCC-Optionen erstellen</string>
+	<key>10.title</key>
+	<string>Staubentfernung einbeziehen</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Fortschritt LCC erstellen</string>
+	<key>22.title</key>
+	<string>LCC erstellen</string>
+	<key>27.title</key>
+	<string>LCC erstellen</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Immer mit diesen Einstellungen erstellen. Kann innerhalb des LCC-Werkzeugs geändert werden.</string>
+	<key>37.title</key>
+	<string>Nicht noch einmal zeigen</string>
+	<key>46.title</key>
+	<string>Fenster</string>
+	<key>5.title</key>
+	<string>Erstelle</string>
+	<key>51.title</key>
+	<string>Beim Erstellen der LCC-Korrektur gab es Warnmeldungen. Möchten Sie das Ereignisprotokoll öffnen?</string>
+	<key>54.title</key>
+	<string>Ereignisprotokoll anzeigen</string>
+	<key>55.title</key>
+	<string>Schließen</string>
+	<key>6.title</key>
+	<string>Abbrechen</string>
+	<key>65.title</key>
+	<string>Abbrechen</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Korrekturen für technische Kameras mit Weitwinkelobjektiv einbeziehen.</string>
+	<key>8.title</key>
+	<string>Korrekturdaten des Weitwinkelobjketivs einbeziehen</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Staubentfernung einbeziehen. Erstellen der LCC-Korrektur dauert etwas länger.</string>
+</dict>
+</plist>

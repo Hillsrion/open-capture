@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>优先单元格大小</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>行数</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>行数</string>
+	<key>443.title</key>
+	<string>行</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>列数</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>列数</string>
+	<key>452.title</key>
+	<string>列</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>列间距</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>列间距</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>行间距</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>行间距</string>
+	<key>499.title</key>
+	<string>行间距</string>
+	<key>503.title</key>
+	<string>列间距</string>
+	<key>531.title</key>
+	<string>英寸</string>
+	<key>533.title</key>
+	<string>英寸</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>列间距</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>行间距</string>
+	<key>558.title</key>
+	<string>英寸</string>
+	<key>559.title</key>
+	<string>英寸</string>
+	<key>562.title</key>
+	<string>单元格高度</string>
+	<key>566.title</key>
+	<string>单元格宽度</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>列间距</string>
+	<key>600.title</key>
+	<string>英寸</string>
+	<key>603.title</key>
+	<string>单元格边框</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>调整大小</string>
+	<key>maT-3O-DaK.title</key>
+	<string>优先间距</string>
+</dict>
+</plist>

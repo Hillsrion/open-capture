@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2KX-yW-Y8Z.title</key>
+	<string>Appliquer</string>
+	<key>3jn-o8-abc.title</key>
+	<string>Annuler</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Améliorer Masque</string>
+	<key>Vmk-QE-bDz.title</key>
+	<string>Afficher Masque</string>
+	<key>fLd-KN-RDQ.ibExternalAccessibilityDescription</key>
+	<string>Valeur Contour Progressif</string>
+	<key>fLd-KN-RDQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rayon</string>
+</dict>
+</plist>

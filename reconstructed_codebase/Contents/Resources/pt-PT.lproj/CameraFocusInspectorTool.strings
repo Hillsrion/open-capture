@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Dimensão da altura máxima para dimensionamento da imagem final.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Ampliação</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Resolução</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Dimensão da largura máxima para dimensionamento da imagem final.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Distância</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Atual</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Distância</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Parar</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Iniciar</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Ampliação</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Distância</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Ampliação</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Dimensione a imagem original de acordo com o valor determinado para obter a imagem final.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Dimensão da altura máxima para dimensionamento da imagem final.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Perto</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Campo de visão</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Campo de visão</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Resolução [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Resolução</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Distante</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>O método usado para ajustar a claridade.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Dimensione a imagem original de acordo com o valor determinado para obter a imagem final.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Alvo</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Campo de visão</string>
+</dict>
+</plist>

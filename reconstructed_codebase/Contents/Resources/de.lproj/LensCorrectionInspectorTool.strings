@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Chromatische Aberration</string>
+	<key>1555.title</key>
+	<string>Verzerrung verbergen</string>
+	<key>1700.label</key>
+	<string>Register</string>
+	<key>1701.label</key>
+	<string>Ansicht</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Objektiv</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Verschiebung</string>
+	<key>1741.title</key>
+	<string>Chromatische Aberration</string>
+	<key>1742.title</key>
+	<string>Standard</string>
+	<key>1743.title</key>
+	<string>Analysieren</string>
+	<key>1745.title</key>
+	<string>Benutzerdefiniert</string>
+	<key>1757.title</key>
+	<string>Brennweite</string>
+	<key>1760.title</key>
+	<string>Blende</string>
+	<key>1823.title</key>
+	<string>x Verschiebung</string>
+	<key>1832.title</key>
+	<string>y Verschiebung</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil</string>
+	<key>893.title</key>
+	<string>Richtung</string>
+	<key>894.title</key>
+	<string>Verschiebung</string>
+	<key>897.title</key>
+	<string>Richtung</string>
+	<key>898.title</key>
+	<string>Verschwenken</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>Lichtabfall</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Helligkeitsabfall</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Beugungskorrektur</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>Schärfeabfall</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Schärfeabfall</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>Verzeichnung</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Verzeichnung</string>
+</dict>
+</plist>

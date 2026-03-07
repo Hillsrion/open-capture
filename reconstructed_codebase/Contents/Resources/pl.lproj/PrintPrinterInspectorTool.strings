@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rozdzielczość</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Nazwa drukarki</string>
+	<key>469.title</key>
+	<string>Drukarka Canon model xxx</string>
+	<key>489.title</key>
+	<string>Papier</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Percepcyjna</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Rozmiar papieru</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Otwórz panel Ustawienia strony</string>
+	<key>509.title</key>
+	<string>Ustawienia strony...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Otwórz panel Ustawienia druku</string>
+	<key>514.title</key>
+	<string>Ustawienia druku...</string>
+	<key>544.title</key>
+	<string>Wyostrzanie</string>
+	<key>556.title</key>
+	<string>Kompensacja punktu czerni</string>
+	<key>558.title</key>
+	<string>tekst zarządzania kolorami tekst zarządzania kolorami tekst zarządzania kolorami tekst zarządzania kolorami tekst zarządzania kolorami</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Wyostrzanie</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Wyostrzanie</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil kolorów</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metoda konw.</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Absolutna kolorymetryczna</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Relatywna kolorymetryczna</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Nasycenie</string>
+</dict>
+</plist>

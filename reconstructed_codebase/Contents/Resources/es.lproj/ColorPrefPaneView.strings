@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>121.title</key>
+	<string>Colorimétrico relativo</string>
+	<key>122.title</key>
+	<string>Perceptual</string>
+	<key>152.title</key>
+	<string>Saturación</string>
+	<key>153.title</key>
+	<string>Colorimétrico absoluto</string>
+	<key>157.title</key>
+	<string>Valores predeterminados</string>
+	<key>158.title</key>
+	<string>Representación de color:</string>
+	<key>U5h-5o-7Bi.title</key>
+	<string>Estándar</string>
+	<key>ezE-kB-AL7.title</key>
+	<string>Vectorscopio</string>
+	<key>tT2-rk-Tsn.title</key>
+	<string>Transformar</string>
+	<key>y0A-7I-fJB.title</key>
+	<string>Disposición de ruedas de color</string>
+</dict>
+</plist>

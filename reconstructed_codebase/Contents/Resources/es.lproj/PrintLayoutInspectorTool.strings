@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>Dar prioridad al tamaño de celda</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>Número de filas</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>Número de filas</string>
+	<key>443.title</key>
+	<string>Filas</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>Número de columnas</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>Número de columnas</string>
+	<key>452.title</key>
+	<string>Columnas</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>Espacio entrecolumnas</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>Espacio entrecolumnas</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>Espacio entre filas</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>Espacio entre filas</string>
+	<key>499.title</key>
+	<string>Espaciado de filas</string>
+	<key>503.title</key>
+	<string>Col. Espaciado</string>
+	<key>531.title</key>
+	<string>pulg.</string>
+	<key>533.title</key>
+	<string>pulg.</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>Espacio entrecolumnas</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>Espacio entre filas</string>
+	<key>558.title</key>
+	<string>pulg.</string>
+	<key>559.title</key>
+	<string>pulg.</string>
+	<key>562.title</key>
+	<string>Altura de celda</string>
+	<key>566.title</key>
+	<string>Anchura de celda</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>Espacio entrecolumnas</string>
+	<key>600.title</key>
+	<string>pulg.</string>
+	<key>603.title</key>
+	<string>Borde de celda</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Re-dimensionar</string>
+	<key>maT-3O-DaK.title</key>
+	<string>Dar prioridad al espaciado</string>
+</dict>
+</plist>

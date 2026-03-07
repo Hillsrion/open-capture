@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Restaurer</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Emplacement de sauvegarde:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Réessayer</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Suivant</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Restaurer le Catalogue</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Cellule texte</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Une erreur s’est produite. Réessayer?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Copie des fichiers…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Aucune sauvegarde trouvée</string>
+	<key>W74-ST-qV9.title</key>
+	<string>chemin</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Annuler</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Afficher dans Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Cela remplacera la base de donnée existante et ne peut pas être annulé.
+Merci de ne pas quitter ou éteindre l’ordinateur durant la restauration.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Restauration réussie avec succès.</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>erreur</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Ouvrir un Catalogue</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Annuler</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>En-tête</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Précédent</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Nom Catalogue</string>
+</dict>
+</plist>

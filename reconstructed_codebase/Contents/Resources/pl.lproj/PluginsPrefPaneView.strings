@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>Nie można załadować ustawień wtyczki</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>Wtyczka jest wyłączona</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>Pole</string>
+	<key>AQe-BF-01j.title</key>
+	<string>Pobierz więcej wtyczek</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>Wtyczka nie może zostać wyłączona</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>Nie wybrano wtyczki</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>Wtyczka nie ma żadnych ustawień</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>Komórka tekstowa</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>Spróbuj ponownie</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>Nazwa wtyczki</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>Włączone</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>Funkcje</string>
+</dict>
+</plist>

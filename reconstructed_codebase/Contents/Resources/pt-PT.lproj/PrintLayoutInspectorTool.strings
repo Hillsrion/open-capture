@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>Priorizar tamanho de célula</string>
+	<key>438.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>Número de fileiras</string>
+	<key>440.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>Número de fileiras</string>
+	<key>443.title</key>
+	<string>Fileiras</string>
+	<key>447.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>Número de colunas</string>
+	<key>449.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>Número de colunas</string>
+	<key>452.title</key>
+	<string>Colunas</string>
+	<key>488.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>Espaçamento entre colunas</string>
+	<key>490.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>Espaçamento entre colunas</string>
+	<key>491.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>Espaçamento entre as fileiras</string>
+	<key>493.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>Espaçamento entre as fileiras</string>
+	<key>499.title</key>
+	<string>Espaçamento de linha</string>
+	<key>503.title</key>
+	<string>Espaçamento de col.</string>
+	<key>531.title</key>
+	<string>pol.</string>
+	<key>533.title</key>
+	<string>pol.</string>
+	<key>550.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>552.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>Espaçamento entre colunas</string>
+	<key>553.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>555.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>Espaçamento entre as fileiras</string>
+	<key>558.title</key>
+	<string>pol.</string>
+	<key>559.title</key>
+	<string>pol.</string>
+	<key>562.title</key>
+	<string>Altura da célula</string>
+	<key>566.title</key>
+	<string>Largura da célula</string>
+	<key>596.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>598.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>Espaçamento entre colunas</string>
+	<key>600.title</key>
+	<string>pol.</string>
+	<key>603.title</key>
+	<string>Borda da célula</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Redimensionar</string>
+	<key>maT-3O-DaK.title</key>
+	<string>Priorizar espaçamento</string>
+</dict>
+</plist>

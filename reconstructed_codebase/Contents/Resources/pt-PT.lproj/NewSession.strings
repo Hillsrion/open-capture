@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Nova sessão</string>
+	<key>100.title</key>
+	<string>Subpasta de seleções:</string>
+	<key>104.title</key>
+	<string>Subpasta de lixeira:</string>
+	<key>147.title</key>
+	<string>Abrir em uma nova janela</string>
+	<key>151.title</key>
+	<string>Nome da captura:</string>
+	<key>167.title</key>
+	<string>...</string>
+	<key>39.ibExternalAccessibilityDescription</key>
+	<string>processRecipeScaleMethodPopup</string>
+	<key>46.title</key>
+	<string>Modelo:</string>
+	<key>47.title</key>
+	<string>Local:</string>
+	<key>48.title</key>
+	<string>Nome:</string>
+	<key>51.title</key>
+	<string>OtherViews</string>
+	<key>52.title</key>
+	<string>????</string>
+	<key>54.title</key>
+	<string>Cancelar</string>
+	<key>55.title</key>
+	<string>OK</string>
+	<key>91.title</key>
+	<string>Subpasta de captura:</string>
+	<key>96.title</key>
+	<string>Subpasta de saída:</string>
+</dict>
+</plist>

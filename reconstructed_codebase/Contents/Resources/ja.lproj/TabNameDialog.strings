@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>新規カスタムツールタブ</string>
+	<key>10.title</key>
+	<string>キャンセル</string>
+	<key>19.title</key>
+	<string>タブ名を指定:</string>
+	<key>27.title</key>
+	<string>アイテム 1</string>
+	<key>28.title</key>
+	<string>アイテム 2</string>
+	<key>29.title</key>
+	<string>アイテム 3</string>
+	<key>33.title</key>
+	<string>アイコン:</string>
+	<key>8.title</key>
+	<string>タブを追加</string>
+</dict>
+</plist>

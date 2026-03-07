@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFX-Rv-WlM.title</key>
+	<string>文字儲存格</string>
+	<key>FCS-rC-GL7.alternateTitle</key>
+	<string>停止</string>
+	<key>FCS-rC-GL7.title</key>
+	<string>移動</string>
+	<key>HF8-NW-edb.headerCell.title</key>
+	<string>目標</string>
+	<key>HhO-fK-78I.title</key>
+	<string>中止校準</string>
+	<key>cpM-bI-tVi.headerCell.title</key>
+	<string>當前</string>
+	<key>d8V-sn-JhX.title</key>
+	<string>校準</string>
+	<key>ke6-ru-9Tg.title</key>
+	<string>翻拍臺需要校準。
+
+請確保電纜足夠長，中間沒有任何物體阻礙，以便相機任意移動。</string>
+	<key>pqI-lM-bV8.title</key>
+	<string>未找到相容的翻拍臺。</string>
+	<key>sPX-gm-Kga.title</key>
+	<string>文字儲存格</string>
+</dict>
+</plist>

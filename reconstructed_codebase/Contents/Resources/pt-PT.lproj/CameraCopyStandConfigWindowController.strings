@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0d0-8R-tLw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Baixo</string>
+	<key>6Sd-kz-UIh.title</key>
+	<string>Unidade de distância</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Configurar</string>
+	<key>Fzy-PA-eLs.title</key>
+	<string>Acima</string>
+	<key>GwY-gy-ciJ.title</key>
+	<string>Paradas difíceis</string>
+	<key>H8r-FG-Kr3.title</key>
+	<string>Centímetro</string>
+	<key>LKh-K1-Y6N.title</key>
+	<string>Mais baixo</string>
+	<key>N8e-Em-hgs.title</key>
+	<string>Polegada</string>
+	<key>NrY-xR-emd.title</key>
+	<string>PPI</string>
+	<key>OIm-4a-xHW.title</key>
+	<string>Posição</string>
+	<key>Q9f-5E-WvF.title</key>
+	<string>Direção Positiva</string>
+	<key>UHt-zv-9SR.title</key>
+	<string>Definir</string>
+	<key>Xjf-k5-hQK.title</key>
+	<string>Definir posição atual</string>
+	<key>b1o-xe-f2L.title</key>
+	<string>Box</string>
+	<key>dmz-Zi-K8p.title</key>
+	<string>Configurações de posição</string>
+	<key>dpt-fL-j8i.title</key>
+	<string>Posição</string>
+	<key>gf5-bG-nhb.title</key>
+	<string>Concluído</string>
+	<key>kXp-pb-vUY.title</key>
+	<string>Definir posição atual</string>
+	<key>knt-jR-igh.title</key>
+	<string>Ajustes de velocidade</string>
+	<key>mo9-ag-5qk.title</key>
+	<string>Milímetros</string>
+	<key>r6Q-Yq-qbn.title</key>
+	<string>Configurações de resolução</string>
+	<key>t88-sx-mlj.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Alto</string>
+	<key>wha-sd-g2k.title</key>
+	<string>Box</string>
+	<key>x71-Fc-ePv.title</key>
+	<string>Superior</string>
+	<key>yDQ-Al-p0h.title</key>
+	<string>Paradas virtuais</string>
+	<key>yOk-jx-9Zz.title</key>
+	<string>Baixa</string>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>Sortera</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>Importera alla</string>
+	<key>255.title</key>
+	<string>Avbryt</string>
+	<key>256.title</key>
+	<string>Radera bilder efter kopiering</string>
+	<key>257.title</key>
+	<string>Mata ut kort</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>Öppna aldrig import kollektion</string>
+	<key>369.title</key>
+	<string>Meddela när klart</string>
+	<key>370.title</key>
+	<string>Öppna kollektion när import startar</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>Importera kollektion</string>
+	<key>5.title</key>
+	<string>Fönster</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>Inga bilder i mappen</string>
+</dict>
+</plist>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Varje dag</string>
+	<key>104.title</key>
+	<string>OtherViews</string>
+	<key>105.title</key>
+	<string>Auto</string>
+	<key>106.title</key>
+	<string>Aldrig</string>
+	<key>107.title</key>
+	<string>Plats:</string>
+	<key>108.title</key>
+	<string>Påminnelse vid avstängning:</string>
+	<key>111.title</key>
+	<string>OtherViews</string>
+	<key>112.title</key>
+	<string>Aldrig</string>
+	<key>113.title</key>
+	<string>Auto</string>
+	<key>115.title</key>
+	<string>Hårdvaruacceleration</string>
+	<key>116.title</key>
+	<string>Katalog säkerhetskopia</string>
+	<key>125.title</key>
+	<string>OtherViews</string>
+	<key>126.title</key>
+	<string>Skriv alltid över metadata</string>
+	<key>127.title</key>
+	<string>Skriv aldrig över metadata</string>
+	<key>128.title</key>
+	<string>Fråga vid överskrivning av metadata</string>
+	<key>130.title</key>
+	<string>OtherViews</string>
+	<key>131.title</key>
+	<string>Skapa nytt album eller välj mapp</string>
+	<key>132.title</key>
+	<string>Skapa eller återanvänd matchande album</string>
+	<key>133.title</key>
+	<string>Fråga vid synkronsering av kataloguppsättningar</string>
+	<key>134.title</key>
+	<string>Metadata och katalog information som kommer från Expression Media kan användas för att uppdatera bilder och album i Capture One. Välj hur för varje typ av information.</string>
+	<key>136.title</key>
+	<string>OtherViews</string>
+	<key>137.title</key>
+	<string>Fråga om undermapp skall läggas till</string>
+	<key>138.title</key>
+	<string>Svara alltid ja till att infoga undermappsfönster</string>
+	<key>139.title</key>
+	<string>Svara alltid nej till att infoga undermappsfönster</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Standard</string>
+	<key>142.title</key>
+	<string>Zooma med skrollhjul</string>
+	<key>143.title</key>
+	<string>Bildvisare</string>
+	<key>149.title</key>
+	<string>OtherViews</string>
+	<key>150.title</key>
+	<string>Efter 5 minuters inaktivitet</string>
+	<key>151.title</key>
+	<string>Efter mer än 10 minuters inaktivitet</string>
+	<key>152.title</key>
+	<string>Efter mer än 30 minuters inaktivitet</string>
+	<key>153.title</key>
+	<string>Efter mer än 1 timmas inaktivitet</string>
+	<key>154.title</key>
+	<string>Efter mer än 2 timmas inaktivitet</string>
+	<key>155.title</key>
+	<string>Efter mer än 4 timmas inaktivitet</string>
+	<key>156.title</key>
+	<string>På dagens första bild</string>
+	<key>157.title</key>
+	<string>Skapa:</string>
+	<key>158.title</key>
+	<string>Senaste råfils kollektion</string>
+	<key>159.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>160.title</key>
+	<string>Importfönstret öppnas när ett minneskort sätts i läsaren</string>
+	<key>161.title</key>
+	<string>Importerar</string>
+	<key>162.title</key>
+	<string>Aktiviteter</string>
+	<key>163.title</key>
+	<string>Visa fönster automatiskt</string>
+	<key>167.title</key>
+	<string>Favoriter</string>
+	<key>169.title</key>
+	<string>OtherViews</string>
+	<key>170.title</key>
+	<string>Fråga om att lägga till föregående sessionsmapp till favoriter</string>
+	<key>171.title</key>
+	<string>Lägg alltid till föregående session till favoriter</string>
+	<key>172.title</key>
+	<string>Lägg aldrig till föregående session till favoriter</string>
+	<key>173.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>176.title</key>
+	<string>Katalog och session</string>
+	<key>177.title</key>
+	<string>Öppna i nytt fönster</string>
+	<key>59.title</key>
+	<string>Katalog och sessioner</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Titel</string>
+	<key>60.title</key>
+	<string>Favoriter</string>
+	<key>61.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>66.title</key>
+	<string>Packat filformat</string>
+	<key>67.title</key>
+	<string>Senaste råfils kollektion</string>
+	<key>70.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Status:</string>
+	<key>92.title</key>
+	<string>…</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>95.title</key>
+	<string>OtherViews</string>
+	<key>96.title</key>
+	<string>Alltid</string>
+	<key>97.title</key>
+	<string>Varje månad</string>
+	<key>98.title</key>
+	<string>Aldrig</string>
+	<key>99.title</key>
+	<string>Varje vecka</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>Skrollhjul ändrar värdet på reglagen</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Verktygsflikar</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Aktivera support för Tangent produkter</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + Skrollhjul skrollar verktygsfliken</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Visa vid uppstart</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Integration av Tangent</string>
+</dict>
+</plist>

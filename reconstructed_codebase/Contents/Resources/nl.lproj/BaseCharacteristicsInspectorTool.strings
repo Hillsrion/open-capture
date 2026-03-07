@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>Engine</string>
+	<key>355.title</key>
+	<string>Onbekende Engine</string>
+	<key>358.title</key>
+	<string>Upgrade</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>Film standaard</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>Film extra</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Modus</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>Hoog contrast</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>Negatieffilm</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Curve</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>Fotografie</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC-profiel</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>Diafilm</string>
+</dict>
+</plist>

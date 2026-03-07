@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ van %{value2}@ batchopdrachten opgeslagen</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ van %{value2}@ batchopdrachten opgeslagen</string>
+	<key>30.title</key>
+	<string>Afsluiten</string>
+	<key>31.title</key>
+	<string>opslaan van x van N batchopdrachten</string>
+	<key>5.title</key>
+	<string>Opslaan batchopdrachtbestanden</string>
+</dict>
+</plist>

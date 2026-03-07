@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ 已下載並可供使用！此爲重要更新，是否立即安裝並重新啓動 %1$@？</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ 已下載並可供使用！是否立即安裝並重新啓動 %1$@？</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@ 現已可供下載，但你嘅 macOS 版本過新以致無法安裝。此更新僅支援至 macOS %3$@。</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@ 現已可供下載，但你嘅 macOS 版本過舊以致無法安裝。最低版本需求爲 macOS %3$@。</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>如果從下載位置運行 %1$@，則無法進行更新。</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>無法更新 %1$@，因爲佢運行於一個只讀或臨時位置。</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ 已係目前最新版本。</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ 已係目前最新版本。
+（你正在運行版本係 %3$@。）</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>%1$@ %2$@ 現已可供下載，你目前版本係 %3$@。此爲重要更新，是否立即下載？</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ 現已可供下載，你目前版本係 %3$@。是否立即下載？</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ 現已可供下載，你目前版本係 %3$@。要毋要去網站度瞭解更多關於此更新嘅資訊？</string>
+	<key>%@ downloaded</key>
+	<string>%@ 已下載</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>%1$@ 已更新至版本 %2$@！</string>
+	<key>%@ is now updated!</key>
+	<string>%@ 已完成更新！</string>
+	<key>%@ of %@</key>
+	<string>%1$@ / %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>新版本 %@ 已可供下載！</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>新版本 %@ 已可供安裝！</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>擷取更新資訊時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>連線到安裝程式時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>下載更新時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>解壓縮時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>啓動安裝程式時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>剖析更新摘要時發生錯誤。</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>執行更新程式時發生錯誤。請稍後再試。</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>啓動安裝程式時發生錯誤。請稍後再試。</string>
+	<key>An important update to %@ is ready to install</key>
+	<string> %@ 重要更新已可供安裝</string>
+	<key>Cancel</key>
+	<string>取消</string>
+	<key>Cancel Update</key>
+	<string>取消更新</string>
+	<key>Checking for updates…</key>
+	<string>檢查緊更新⋯</string>
+	<key>Downloading update…</key>
+	<string>下載緊更新⋯</string>
+	<key>Extracting update…</key>
+	<string>解壓緊更新⋯</string>
+	<key>Failed to resume installing update.</key>
+	<string>嘗試繼續安裝更新失敗。</string>
+	<key>Install and Relaunch</key>
+	<string>安裝並重新啓動</string>
+	<key>Install on Quit</key>
+	<string>結束時安裝</string>
+	<key>Installing update…</key>
+	<string>安裝緊更新⋯</string>
+	<key>Learn More…</key>
+	<string>瞭解更多⋯</string>
+	<key>OK</key>
+	<string>好</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>請結束 %1$@ 並將其移至「應用程式」檔案夾，從該處重新啓動後再試。</string>
+	<key>Ready to Install</key>
+	<string>已可供安裝</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>%1$@ 是否應自動檢查更新？你可隨時從 %1$@ 選單手動檢查更新。</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>更新檢查程式未能正確啓動。你應聯絡軟體開發者以回報此問題並驗證你是否已有最新版本。</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>此更新並未正確簽署且無法驗證。請稍後再試或聯絡軟體開發者。</string>
+	<key>Unable to Check For Updates</key>
+	<string>無法檢查更新</string>
+	<key>Update Error!</key>
+	<string>更新發生錯誤！</string>
+	<key>Update Installed</key>
+	<string>已安裝更新</string>
+	<key>Updating %@</key>
+	<string>更新緊 %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>請將 %1$@ 複製至「應用程式」檔案夾，從該處重新啓動後再試。</string>
+	<key>Version History</key>
+	<string>版本歷史</string>
+	<key>Your macOS version is too new</key>
+	<string>你 macOS 版本過新</string>
+	<key>Your macOS version is too old</key>
+	<string>你 macOS 版本過舊</string>
+	<key>You’re up to date!</key>
+	<string>你用緊最新版本！</string>
+</dict>
+</plist>

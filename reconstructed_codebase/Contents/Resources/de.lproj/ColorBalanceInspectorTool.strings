@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5lG-eN-fCI.label</key>
+	<string>Master</string>
+	<key>Bs3-jA-dvw.label</key>
+	<string>Mittelton</string>
+	<key>EHx-YA-rBt.label</key>
+	<string>Dreiwege</string>
+	<key>MoH-21-5NK.label</key>
+	<string>Tiefen</string>
+	<key>wRH-TE-Zs0.ibShadowedLabels[0]</key>
+	<string>Master</string>
+	<key>wRH-TE-Zs0.ibShadowedLabels[1]</key>
+	<string>Dreiwege</string>
+	<key>wRH-TE-Zs0.ibShadowedLabels[2]</key>
+	<string>Tiefen</string>
+	<key>wRH-TE-Zs0.ibShadowedLabels[3]</key>
+	<string>Mittelton</string>
+	<key>wRH-TE-Zs0.ibShadowedLabels[4]</key>
+	<string>Lichter</string>
+	<key>z8d-ju-ndv.label</key>
+	<string>Lichter</string>
+</dict>
+</plist>

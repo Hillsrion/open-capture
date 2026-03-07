@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>Priorità Dimensione Cella</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>Numero di righe</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>Numero di righe</string>
+	<key>443.title</key>
+	<string>Righe</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>Numero di colonne</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>Numero di colonne</string>
+	<key>452.title</key>
+	<string>Colonne</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>Spazio tra le colonne</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>Spazio tra le colonne</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>Spazio tra le righe</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>Spazio tra le righe</string>
+	<key>499.title</key>
+	<string>Spazio riga</string>
+	<key>503.title</key>
+	<string>Spazio colonna</string>
+	<key>531.title</key>
+	<string>in</string>
+	<key>533.title</key>
+	<string>in</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>Spazio tra le colonne</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>Spazio tra le righe</string>
+	<key>558.title</key>
+	<string>in</string>
+	<key>559.title</key>
+	<string>in</string>
+	<key>562.title</key>
+	<string>Altezza Cella</string>
+	<key>566.title</key>
+	<string>Larghezza Cella</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>Spazio tra le colonne</string>
+	<key>600.title</key>
+	<string>in</string>
+	<key>603.title</key>
+	<string>Bordo Cella</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ridimensionamento</string>
+	<key>maT-3O-DaK.title</key>
+	<string>Priorità Spaziatura</string>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kd-Me-j9L.title</key>
+	<string>Pole</string>
+	<key>5g4-db-4VZ.title</key>
+	<string>Zapisz CCD...</string>
+	<key>6.title</key>
+	<string>Edytor krzywej filmu</string>
+	<key>BK1-2w-5lD.title</key>
+	<string>Krzywa odpowiedzi</string>
+	<key>CVb-vV-i6f.title</key>
+	<string>Z pliku</string>
+	<key>Rts-E6-n2i.title</key>
+	<string>Negatyw</string>
+	<key>TBm-vJ-Pyc.title</key>
+	<string>Legenda</string>
+	<key>VT0-X5-JQY.title</key>
+	<string>Krzywa CCD</string>
+	<key>acb-et-6NQ.title</key>
+	<string>Naukowa</string>
+	<key>aug-sl-lwg.title</key>
+	<string>Wczytaj odpowiedź...</string>
+	<key>bz5-cK-Z1M.title</key>
+	<string>Nazwa aparatu</string>
+	<key>ceZ-qo-Uqe.title</key>
+	<string>Zapisz odpowiedź...</string>
+	<key>etm-wu-HvW.title</key>
+	<string>Wczytaj CCD...</string>
+	<key>kxg-jo-5b4.title</key>
+	<string>Pole</string>
+	<key>ltb-w6-cuP.title</key>
+	<string>Pole</string>
+	<key>rgI-5u-aUJ.title</key>
+	<string>Finalna krzywa</string>
+	<key>tj2-4L-igh.title</key>
+	<string>Zapisz krzywą filmu...</string>
+	<key>tkZ-Jz-4b0.title</key>
+	<string>Wczytaj krzywą filmu...</string>
+	<key>uNF-sJ-VDP.title</key>
+	<string>Auto</string>
+	<key>xaf-OC-EEW.title</key>
+	<string>Nazwa krzywej</string>
+</dict>
+</plist>

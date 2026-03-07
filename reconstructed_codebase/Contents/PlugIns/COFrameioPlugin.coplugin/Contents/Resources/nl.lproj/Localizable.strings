@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disconnect from Frame.io</key>
+	<string>Loskoppelen van Frame.io</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>Neem voor hulp contact op met Capture One Support op https://support.captureone.com.</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>Neem voor hulp contact op met Capture One Support op https://support.captureone.com. INeem de onderstaande tekst op in uw ondersteuningsverzoek:
+
+%@</string>
+	<key>Frame.io settings</key>
+	<string>Frame.io-instellingen</string>
+	<key>Free version limit reached</key>
+	<string>Limiet voor gratis versie bereikt</string>
+	<key>Not implemented</key>
+	<string>Niet geïmplementeerd</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>Voorbereiden %1$i van %2$i assets voor upload…</string>
+	<key>Server Error</key>
+	<string>Server Error</string>
+	<key>Something went wrong, please try again.</key>
+	<string>Er is iets misgegaan; probeert u het later nogmaals.</string>
+	<key>The free version of the Frame.io plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>U gebruikt de gratis versie van de Frame.io plugin, die het tegelijkertijd publiceren of importeren van zoveel bestanden niet toestaat. Ga voor een upgrade naar https://integrations.captureone.com/upgrade/</string>
+	<key>This method is not yet implemented.</key>
+	<string>Deze methode is nog niet geïmplementeerd.</string>
+	<key>Unknown Error</key>
+	<string>Onbekende fout</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>Bezig met het uploaden %1$@ (%2$i van %3$i)…</string>
+	<key>Work with stakeholders, clients, and collaborators like never before with easy-to-use review and approval tools, lightning-fast unbreakable file transfers, and the fastest growing Camera to Cloud ecosystem in the market. For more details please read more details [here](https://frame.io/).</key>
+	<string>Werk meer dan ooit samen met stakeholders, klanten en partners met gebruiksvriendelijke beoordelings- en goedkeuringstools, razendsnelle, onbreekbare bestandsoverdrachten en het snelst groeiende Camera to Cloud-ecosysteem op de markt. Voor meer informatie leest u [hier](https://frame.io/).</string>
+</dict>
+</plist>

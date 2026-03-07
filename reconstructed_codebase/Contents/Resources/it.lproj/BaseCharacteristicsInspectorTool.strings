@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>321.title</key>
+	<string>Motore</string>
+	<key>355.title</key>
+	<string>Motore Sconosciuto</string>
+	<key>358.title</key>
+	<string>Aggiornamento</string>
+	<key>6Cc-gc-5Td.title</key>
+	<string>Pellicola standard</string>
+	<key>Cym-nH-sbI.title</key>
+	<string>Pellicola extra</string>
+	<key>JXX-6t-YLp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Modalità</string>
+	<key>Mt4-VK-OqZ.title</key>
+	<string>Contrasto elevato</string>
+	<key>bCT-IR-qYU.title</key>
+	<string>Pellicola Negativa</string>
+	<key>cBE-47-99v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Curva</string>
+	<key>hEe-Q6-QoS.title</key>
+	<string>Fotografia</string>
+	<key>hkV-Eq-Yzd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profilo ICC</string>
+	<key>v8y-5n-0vA.title</key>
+	<string>Pellicola Positiva</string>
+</dict>
+</plist>

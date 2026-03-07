@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8lq-h0-SFd.title</key>
+	<string>마스크 표시</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>루마 범위</string>
+	<key>FbV-P7-eqk.title</key>
+	<string>적용</string>
+	<key>YfH-dk-BXr.title</key>
+	<string>반전 범위</string>
+	<key>a54-hW-ls3.title</key>
+	<string>범위</string>
+	<key>aF3-Qm-EPZ.title</key>
+	<string>제거</string>
+	<key>aMi-BY-toh.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>반경</string>
+	<key>fCE-1I-KP5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>감광도</string>
+	<key>gVr-xe-Lwg.title</key>
+	<string>폴오프</string>
+	<key>qeQ-TA-Q4r.title</key>
+	<string>취소</string>
+</dict>
+</plist>

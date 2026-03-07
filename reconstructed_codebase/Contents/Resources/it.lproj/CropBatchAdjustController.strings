@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Fino a dove spostare verticalmente il ritaglio.</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Cancella</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>unità</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Quanto aggiungere per l’ampiezza del ritaglio.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Finestra</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ Posizione</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Modifica Ritaglio:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ Dimensione</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Quanto aggiungere per l’altezza del ritaglio.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Modifica</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Fino a dove spostare orizzontalmente il ritaglio.</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>Dove dovrebbe essere ancorato il ritaglio attuale qualora se ne modificasse la dimensione.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>unità</string>
+</dict>
+</plist>

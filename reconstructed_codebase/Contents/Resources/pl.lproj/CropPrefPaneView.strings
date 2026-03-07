@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Zawsze</string>
+	<key>35.title</key>
+	<string>Nigdy</string>
+	<key>36.title</key>
+	<string>Zawsze oprócz przeciągania</string>
+	<key>43.title</key>
+	<string>Gdy nie ma maski</string>
+	<key>44.title</key>
+	<string>Zawsze</string>
+	<key>449.title</key>
+	<string>Pokazuj:</string>
+	<key>450.title</key>
+	<string>Pokaż ramkę:</string>
+	<key>451.title</key>
+	<string>Pokaż etykiety:</string>
+	<key>453.title</key>
+	<string>Krycie:</string>
+	<key>455.title</key>
+	<string>Jasność:</string>
+	<key>459.title</key>
+	<string>Wartości domyślne</string>
+	<key>52.title</key>
+	<string>Zawsze</string>
+	<key>53.title</key>
+	<string>Nigdy</string>
+	<key>54.title</key>
+	<string>Tylko podczas ustalania kadru</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>Zawsze oprócz przeciągania</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Zawsze</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Maska kadrowania</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Pokaż znaczniki:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Nigdy</string>
+</dict>
+</plist>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>解像度</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>プリンタ名</string>
+	<key>469.title</key>
+	<string>プリンタモデルxxxは使用できません</string>
+	<key>489.title</key>
+	<string>用紙</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>知覚</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>用紙サイズ</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>ページ設定パネルを開く</string>
+	<key>509.title</key>
+	<string>ページ設定...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>プリント設定パネルを開く</string>
+	<key>514.title</key>
+	<string>プリント 設定...</string>
+	<key>544.title</key>
+	<string>シャープニング</string>
+	<key>556.title</key>
+	<string>ブラック ポイント補正</string>
+	<key>558.title</key>
+	<string>color management text color management text color management text color management text color management text</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>シャープニング</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>シャープニング</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>プロファイル</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>マッチング方法</string>
+	<key>HNV-gP-la6.title</key>
+	<string>絶対的な色域を維持</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>相対的な色域を維持</string>
+	<key>vIk-s2-hue.title</key>
+	<string>彩度</string>
+</dict>
+</plist>

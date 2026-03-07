@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Anonymný profil systému nám umožní zlepšiť plánovanie budúceho vývoja aplikácie. Ak máte ohľadom tohto akékoľvek otázky, neváhajte a kontaktujte nás.
+
+Odosielané budú nasledujúce informácie:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Kontrolovať automaticky</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Nekontrolovať</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Kontrolovať aktualizácie automaticky?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Zahrnúť anonymný profil systému</string>
+</dict>
+</plist>

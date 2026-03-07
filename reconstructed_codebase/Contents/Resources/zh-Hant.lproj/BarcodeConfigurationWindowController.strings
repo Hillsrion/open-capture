@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1xe-Um-CIL.title</key>
+	<string>列印代碼</string>
+	<key>8DD-xd-Xz5.title</key>
+	<string>掃描器已設定並準備就緒。</string>
+	<key>BW0-mv-EQA.title</key>
+	<string>請重試</string>
+	<key>F0m-fq-GYU.title</key>
+	<string>取消</string>
+	<key>FQJ-9d-y3h.title</key>
+	<string>請掃描條碼以進行掃描器配置。</string>
+	<key>Ipa-tx-QXw.title</key>
+	<string>如果您需要使用其他掃描器，您可在 … 選單裏進行新設備配置</string>
+	<key>WZn-5g-bos.title</key>
+	<string>取消</string>
+	<key>ab6-x1-HFX.title</key>
+	<string>好</string>
+	<key>iQE-CB-bxP.title</key>
+	<string>配置掃描器</string>
+	<key>ifD-R2-JOJ.title</key>
+	<string>設定掃描器時發生錯誤。</string>
+</dict>
+</plist>

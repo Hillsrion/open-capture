@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One Enhanced Image Package</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One a veces requiere el control de otras aplicaciones indirectamente para los scripts que ejecuta.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One no necesita acceso a tu Calendario. Esta alerta aparece por acceder tu carpeta Biblioteca.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One no necesita acceso a tus Contactos. Esta alerta aparece por acceder tu carpeta Biblioteca.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One no necesita acceso a tu Biblioteca de Fotos. Esta alerta aparece por acceder tu carpeta Biblioteca.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One no necesita acceso a tus Recordatorios. Esta alerta aparece por acceder tu carpeta Biblioteca.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One requiere acceso del disco extraíble para la funcionalidad de control remoto. Es posible que deba reiniciar Capture One para que esta configuración surta efecto.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW image</string>
+</dict>
+</plist>

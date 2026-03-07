@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8lq-h0-SFd.title</key>
+	<string>顯示遮罩</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>亮度範圍</string>
+	<key>FbV-P7-eqk.title</key>
+	<string>應用</string>
+	<key>YfH-dk-BXr.title</key>
+	<string>反轉範圍</string>
+	<key>a54-hW-ls3.title</key>
+	<string>範圍</string>
+	<key>aF3-Qm-EPZ.title</key>
+	<string>移除</string>
+	<key>aMi-BY-toh.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>半徑</string>
+	<key>fCE-1I-KP5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>靈敏度</string>
+	<key>gVr-xe-Lwg.title</key>
+	<string>衰減</string>
+	<key>qeQ-TA-Q4r.title</key>
+	<string>取消</string>
+</dict>
+</plist>

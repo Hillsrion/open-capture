@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Resolução</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Nome da impressora</string>
+	<key>469.title</key>
+	<string>Modelo de impressora Canon xxx</string>
+	<key>489.title</key>
+	<string>Papel</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Perceptivo</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Tamanho do papel</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Abrir painel de configuração de página</string>
+	<key>509.title</key>
+	<string>Configuração de página...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Abrir painel de configurações de impressão</string>
+	<key>514.title</key>
+	<string>Configurações de impressão...</string>
+	<key>544.title</key>
+	<string>Nitidez</string>
+	<key>556.title</key>
+	<string>Compensação de ponto preto</string>
+	<key>558.title</key>
+	<string>gerenciamento de cor gerenciamento de cor de texto gerenciamento de cor de texto gerenciamento de cor de texto gerenciamento de cor de texto texto</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Nitidez</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Nitidez</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Perfil de cor</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rend. Tentativa</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Colorimétrico absoluto</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Colorimétrico relativo</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Saturação</string>
+</dict>
+</plist>

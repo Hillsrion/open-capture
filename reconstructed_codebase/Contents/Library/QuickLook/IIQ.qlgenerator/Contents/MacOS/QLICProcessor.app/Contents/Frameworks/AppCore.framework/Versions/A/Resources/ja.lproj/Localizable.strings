@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>- 新しいデフォルトイメージ設定が作成されました。</string>
+	<key>%.1f MB</key>
+	<string>%.1f MB</string>
+	<key>%.2f GB</key>
+	<string>%.2f GB</string>
+	<key>%.2f TB</key>
+	<string>%.2f TB</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>これらのバリアントの%ld はLCCプロファイルが適用されています。このバリアントのLCCプロファイルを変更すると既存のプロファイルが削除される可能性があります。 プリセットに保存されている場合、LCCプロファイルは元のLCC撮影データまたは再適用で作成できます。</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>%2$lu バリアントの内 %1$lu バリアントのメタデータが見つかりません。検証と修復でこれらのバリアントを削除して問題を解決できます。</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>%2$lu バリアントの内 %1$lu バリアントのメタデータが見つかりません。検証と修復では、これらのバリアントを削除して問題を解決できます。イベントログに表示されているイメージのリストを保存しておくと、後でそれらを再度インポートすることができます。</string>
+	<key>%u KB</key>
+	<string>%u KB</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Error 1)サポートされていないプロファイル：サポートされていないか、無効なプロファイルです。</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Error 10) スロープ制限プロファイル：暗く飽和した色は大きく変わることがあります。</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Error 11) ホワイト ポイント適用は詳細不明または無効です（中間ホワイトを使用）。</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Error 12) ホワイト ポイント適用は詳細不明または無効です（D50を使用）。</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Error 13)中間ホワイトは不明です：D50と仮定</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Error 14) 曖昧なPCSホワイトポイント：光源は必要な仕様のD50ではありません。</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Error 15) 曖昧なPCSホワイトポイント: (255,255,255) は色合いがついている。</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Error 2) データ カラー スペースはサポートされていません: RGBプロファイルのみサポートされています。</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Error 3) プロファイルコネクションスペースはサポートされていません: プロファイルはXYZではありません。</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Error 4) クラスがサポートされていない: プロファイルはクラス表示、出力、あるいはカラースペースを持っている必要があります。</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Error 5) LUT-ベースのプロファイルはサポートされていません。</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Error 6) カーブがミスマッチです (不正な形式のプロファイル)。</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Error 7) プロファイルの解釈は意図によって異なります。</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Error 8) V4 仕様に基づいた変換; V2 変換は無視。</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Error 9) プロファイルはブラックを表現できません。ブラックポイントの補正は大きな変化が起こる可能性があります。</string>
+	<key>(Locked: Read Only)</key>
+	<string>(ロック: 読み出しのみ)</string>
+	<key>(Missing path)</key>
+	<string>(不明のパス)</string>
+	<key>(No City)</key>
+	<string>(市なし)</string>
+	<key>(No Country)</key>
+	<string>(国なし)</string>
+	<key>(No Keywords)</key>
+	<string>(キーワードなし)</string>
+	<key>(No Location)</key>
+	<string>(場所なし）</string>
+	<key>(No State)</key>
+	<string>(国なし)</string>
+	<key>(No Values)</key>
+	<string>(なし)</string>
+	<key>-- bytes</key>
+	<string>-- バイト</string>
+	<key>1 Digit Counter</key>
+	<string>1桁カウンター</string>
+	<key>1 shot</key>
+	<string>1ショット</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 mm</string>
+	<key>2 Digit Counter</key>
+	<string>2桁カウンター</string>
+	<key>3 Digit Counter</key>
+	<string>3桁カウンター</string>
+	<key>4 Digit Counter</key>
+	<string>4桁カウンター</string>
+	<key>5 Digit Counter</key>
+	<string>5桁カウンター</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6桁カウンター</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;不明&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>フォルダの代わりにレシピファイルが見つかりました。</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>レシピフォルダを作成できませんでした。</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>データベースの破損が検出されました。カタログ "%@" を閉じる必要があります。</string>
+	<key>A newer Capture One engine is required</key>
+	<string>新しい Capture One エンジンが必要です</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>"%@"という名前のセッションサブフォルダを作成できませんでした。
+
+代わりにセッションフォルダが使用されます。</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>AIフォーカス</string>
+	<key>AI servo</key>
+	<string>AIサーボ</string>
+	<key>About %d hours left</key>
+	<string>残り約%d時間</string>
+	<key>About %d minutes left</key>
+	<string>残り約%d 分</string>
+	<key>About 10 seconds left</key>
+	<string>残り約10秒</string>
+	<key>About 30 seconds left</key>
+	<string>残り約30秒</string>
+	<key>About 5 seconds left</key>
+	<string>残り約5秒</string>
+	<key>About a minute left</key>
+	<string>残り約1秒</string>
+	<key>About an hour left</key>
+	<string>残り約1時間</string>
+	<key>Action</key>
+	<string>アクション</string>
+	<key>Action (High speed)</key>
+	<string>アクション (高速)</string>
+	<key>Add Layer</key>
+	<string>レイヤーを追加</string>
+	<key>Add Selected Images to %@</key>
+	<string>選択されたイメージを%@に追加</string>
+	<key>Add Selected Warning</key>
+	<string>選択された警告を追加</string>
+	<key>Address</key>
+	<string>住所</string>
+	<key>Adjusted</key>
+	<string>調整済み</string>
+	<key>Adjusting</key>
+	<string>調整</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>すべてのイメージ</string>
+	<key>Altitude</key>
+	<string>高度</string>
+	<key>Amount</key>
+	<string>適用量</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>ICCプロファイルが見つかりません。</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>LCCプロファイルが見つかりません。</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>イメージの調整マスクがありません。エラーマスクは空のマスクに置き換えられます。</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>エラーが発生、カタログ "%@" を閉じる必要があります。</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>エラーが発生、セッション "%@" を閉じる必要があります。</string>
+	<key>An error occurred during processing.</key>
+	<string>現像中にエラーが発生しました。</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>いくつかのバリアントのメタデータ情報の読み込み中にエラーが発生しました。</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>レイヤーを適用時にエラーが発生しました</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>現在のレシピ フォルダにコピー中にエラーが発生しました。デフォルトのレシピ フォルダを代わりに使用します。</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>レシピ フォルダのコピー時にエラーが発生しました。レシピを読み込めませんでした。</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>現在のレシピ フォルダにコピー中にエラーが発生しました。現在のパスはファイルを参照しフォルダではありません。デフォルトのレシピ フォルダを代わりに使用します。</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>レシピファイル'%@'のロード中にエラーが発生しました。レシピはロードされませんでした。</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>レシピリストのロード中にエラーが発生しました。その代わりとしてデフォルトのレシピリストが使用されます。</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>レシピフォルダを開いている間にエラーが発生しました。</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>lCCプロファイルをディスクに書き込み中にエラーが発生しました。%@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>LCCプロファイルをディスクに書き込み中にエラーが発生しました。%@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>不明なエラーはウォーターマーク作成時に発生しました。</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>カタログデータベース操作中に回復できないエラーが発生しました。
+
+%@
+
+カタログを閉じます。</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>カタログ操作中に回復できないエラーが発生しました。カタログを閉じます。</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>セッションデータベース操作中に回復できないエラーが発生しました。
+
+%@
+
+セッションを閉じます。</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>セッションデータベース操作中に回復できないエラーが発生しました。セッションを閉じます。</string>
+	<key>Annotated</key>
+	<string>注釈付き</string>
+	<key>Annotations</key>
+	<string>注釈</string>
+	<key>Any</key>
+	<string>いずれか</string>
+	<key>Aper.</key>
+	<string>Aper.</string>
+	<key>Aperture</key>
+	<string>絞り</string>
+	<key>Aperture priority</key>
+	<string>絞り優先</string>
+	<key>Aperture-priority AE</key>
+	<string>絞り優先AE</string>
+	<key>Apply</key>
+	<string>適用</string>
+	<key>Apply Adjustments</key>
+	<string>調整を適用</string>
+	<key>Apply LCC</key>
+	<string>LCCを適用</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>LCCを前のバリアントに適用しますか?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>LCCを後のバリアントに適用しますか?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>選択されたすべてのバリアントへ適用</string>
+	<key>Applying Adjustments</key>
+	<string>調整を適用</string>
+	<key>Applying Adjustments to %@</key>
+	<string>%@ に調整を適用</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>“%1$@” から “%2$@”に拡張子を変更しますか?</string>
+	<key>Auto</key>
+	<string>オート</string>
+	<key>Auto Adjust</key>
+	<string>オート調整</string>
+	<key>Auto Exposure</key>
+	<string>露出オート</string>
+	<key>Auto HDR</key>
+	<string>オート HDR</string>
+	<key>Auto Keystone</key>
+	<string>オート キーストーン</string>
+	<key>Auto Levels</key>
+	<string>オートレベル</string>
+	<key>Auto Rotation</key>
+	<string>自動回転</string>
+	<key>Auto White Balance</key>
+	<string>オート ホワイトバランス</string>
+	<key>Auto bracket</key>
+	<string>オート ブラケット</string>
+	<key>Auto, Did not fire</key>
+	<string>オート、 発光せず</string>
+	<key>Auto, Fired</key>
+	<string>オート、発光</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>オート、発光、赤目軽減</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>オート、発光、赤目軽減、リターン検出</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>オート、発光、赤目軽減、リターン検出なし</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>オート、発光、リターン検出</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>オート、発光、リターン検出なし</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>%2$dセットのメタデータから%1$dを自動読み込みしました。</string>
+	<key>Average</key>
+	<string>平均</string>
+	<key>Avg.</key>
+	<string>Avg.</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>B&amp;&amp;W ブルー</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>B&amp;&amp;W シアン</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>B&amp;&amp;W ダーク スプリットトーン 色相</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>B&amp;&amp;W ダーク スプリットトーン 彩度</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>B&amp;&amp;W 有効</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>B&amp;&amp;W グリーン</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>B&amp;&amp;W ライト スプリットトーン 色相</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>B&amp;&amp;W ライト スプリットトーン 彩度</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>B&amp;&amp;W マゼンタ</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>B&amp;&amp;W 赤</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>B&amp;&amp;W イエロー</string>
+	<key>Barcode</key>
+	<string>バーコード</string>
+	<key>Base Characteristics</key>
+	<string>基本特性</string>
+	<key>Basic</key>
+	<string>基本</string>
+	<key>Black &amp; White</key>
+	<string>ブラック &amp; ホワイト</string>
+	<key>Black Recovery</key>
+	<string>ブラックリカバリー</string>
+	<key>Blue</key>
+	<string>ブルー</string>
+	<key>Blue Curve</key>
+	<string>ブルーカーブ</string>
+	<key>Blue Gradation Curve</key>
+	<string>ブルーグラデーションカーブ</string>
+	<key>Brack.</key>
+	<string>Brack.</string>
+	<key>Bracket</key>
+	<string>ブラケット</string>
+	<key>Bracketing</key>
+	<string>ブラケッティング</string>
+	<key>Bracketing: Aperture</key>
+	<string>ブラケティング: 絞り</string>
+	<key>Bracketing: ISO</key>
+	<string>ブラケティング: ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>ブラケティング: シャッタースピード</string>
+	<key>Brightness</key>
+	<string>明るさ</string>
+	<key>Burst</key>
+	<string>バースト</string>
+	<key>CWA</key>
+	<string>CWA</string>
+	<key>Camera Counter</key>
+	<string>カメラ カウンター</string>
+	<key>Camera Firmware</key>
+	<string>カメラ ファームウェア</string>
+	<key>Camera Lens</key>
+	<string>カメラレンズ</string>
+	<key>Camera Make</key>
+	<string>カメラメーカー</string>
+	<key>Camera Model</key>
+	<string>カメラモデル</string>
+	<key>Camera Owner</key>
+	<string>カメラの所有者</string>
+	<key>Camera Profile</key>
+	<string>カメラプロファイル</string>
+	<key>Camera Serial</key>
+	<string>カメラのシリアル番号</string>
+	<key>Camera Software</key>
+	<string>カメラ ソフトウェア</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>カメラのデフォルトには読み込めなかったICCプロファイルが含まれています。オリジナル ファイルが見つからないか、破損している可能性があります。</string>
+	<key>Cancel</key>
+	<string>キャンセル</string>
+	<key>Cannot contain characters %@</key>
+	<string>%@文字を含めることはできません</string>
+	<key>Cannot save catalog</key>
+	<string>カタログを保存できません</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>カタログを次のパスに保存できません: %@
+
+カタログファイルはゴミ箱にあります。元の場所に戻してください。</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>カタログを次のパスに保存できません: %@
+
+カタログは書き込みできません。ファイルにアクセス権を許可してください。</string>
+	<key>Cannot save session</key>
+	<string>セッションを保存できません</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>セッションを次のパスに保存できません: %@
+
+セッションはゴミ箱にあります。元の場所に戻してください。</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>セッションを次のパスに保存できません: %@
+
+セッションファイルは書き込みできません。ファイルにアクセス権を許可してください。</string>
+	<key>Caption</key>
+	<string>説明</string>
+	<key>Capture Folder</key>
+	<string>撮影フォルダ</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>このときCapture Oneは規定のウォーターマークを作成できませんでした。</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One には指定されたオーバーレイを作成するのに十分なメモリがありません。</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>Capture Oneは規定のウォーターマークを作成する十分なメモリがありません。</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Capture OneはUS Patent 8,854,482および8,619,146によって保護されており、申請中の特許権によっても保護されています。</string>
+	<key>Catalog Export</key>
+	<string>カタログをエクスポート</string>
+	<key>Catalog Save</key>
+	<string>カタログ保存</string>
+	<key>Catalog Sets Import</key>
+	<string>カタログセットのインポート</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>オフラインになったプレビューがないカタログイメージは表示や作業できません。</string>
+	<key>Category</key>
+	<string>カテゴリー</string>
+	<key>Center weighted average</key>
+	<string>中央部重点平均測光</string>
+	<key>Center-weighted average</key>
+	<string>中央部重点平均</string>
+	<key>Change</key>
+	<string>変更</string>
+	<key>Change the LCC Profile?</key>
+	<string>LCCプロファイルを変更しますか?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>バリアントのLCCプロファイルを変更すると既存のプロファイルが削除される可能性があります。 プリセットに保存されている場合、LCCプロファイルは元のLCC撮影データまたは再適用で作成できます。</string>
+	<key>Chroma Fringing</key>
+	<string>クロマフリンジ</string>
+	<key>Chromatic Aberration</key>
+	<string>色収差</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>色収差を有効にする</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>色収差の原因</string>
+	<key>City</key>
+	<string>市</string>
+	<key>Clarity</key>
+	<string>クラリティー</string>
+	<key>Clarity Amount</key>
+	<string>クラリティー量</string>
+	<key>Clarity Method</key>
+	<string>クラリティー モード</string>
+	<key>Clarity Structure</key>
+	<string>クラリティー ストラクチャ</string>
+	<key>Clean Single Pixel</key>
+	<string>シングルピクセルをクリア</string>
+	<key>Clear Mask</key>
+	<string>マスクをクリア</string>
+	<key>Clipboard Contents</key>
+	<string>クリップボード コンテンツ</string>
+	<key>Clone Variant</key>
+	<string>バリアントを複製</string>
+	<key>Close</key>
+	<string>閉じる</string>
+	<key>Close catalog</key>
+	<string>カタログを閉じる</string>
+	<key>Close session</key>
+	<string>セッションを閉じる</string>
+	<key>Close view</key>
+	<string>近景</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>未現像のイメージを閉じますか?</string>
+	<key>Code</key>
+	<string>コード</string>
+	<key>Collapse Stack</key>
+	<string>スタックを折り畳む</string>
+	<key>Collection Choice</key>
+	<string>コレクションの選択</string>
+	<key>Collection Name</key>
+	<string>コレクション名</string>
+	<key>Color</key>
+	<string>カラー</string>
+	<key>Color Adjustments</key>
+	<string>色調整</string>
+	<key>Color Balance</key>
+	<string>カラーバランス</string>
+	<key>Color Balance Highlight</key>
+	<string>カラー バランス ハイライト</string>
+	<key>Color Balance Midtone</key>
+	<string>カラー バランス 中間調</string>
+	<key>Color Balance Shadow</key>
+	<string>カラー バランス シャドウ</string>
+	<key>Color Cast</key>
+	<string>カラーキャスト</string>
+	<key>Color Correction limit reached</key>
+	<string>カラー補正の限界に達しました</string>
+	<key>Color Editor - Advanced</key>
+	<string>カラーエディター - 詳細</string>
+	<key>Color Editor - Basic</key>
+	<string>カラーエディター - 基本</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>カラーエディター - スキントーン</string>
+	<key>Color Noise Reduction</key>
+	<string>カラーのノイズ除去</string>
+	<key>Color Sensitivity</key>
+	<string>感色性</string>
+	<key>Color Space</key>
+	<string>カラー スペース</string>
+	<key>Color Tag</key>
+	<string>カラータグ</string>
+	<key>Color space</key>
+	<string>カラースペース</string>
+	<key>Complete</key>
+	<string>完了</string>
+	<key>Composition</key>
+	<string>構成</string>
+	<key>Confirm</key>
+	<string>確認</string>
+	<key>Cont.</key>
+	<string>Cont.</string>
+	<key>Cont.high</key>
+	<string>Cont.high</string>
+	<key>Cont.low</key>
+	<string>Cont.low</string>
+	<key>Contact Address</key>
+	<string>連絡先</string>
+	<key>Contact City</key>
+	<string>連絡先市</string>
+	<key>Contact Country</key>
+	<string>連絡先国</string>
+	<key>Contact Emails</key>
+	<string>連絡先メール</string>
+	<key>Contact Phones</key>
+	<string>連絡先電話</string>
+	<key>Contact Postal Code</key>
+	<string>連絡先郵便番号</string>
+	<key>Contact State</key>
+	<string>コンタクトシート</string>
+	<key>Contact State/Province</key>
+	<string>連絡先国／州</string>
+	<key>Contact Websites</key>
+	<string>連絡先Webサイト</string>
+	<key>Content Category</key>
+	<string>コンテンツ カテゴリー</string>
+	<key>Content Description</key>
+	<string>連絡先解説</string>
+	<key>Content Description Writer</key>
+	<string>連絡先著者記述</string>
+	<key>Content Headline</key>
+	<string>連絡先タイトル</string>
+	<key>Content Subject Code</key>
+	<string>連絡先サブジェクトコード</string>
+	<key>Continue</key>
+	<string>続行</string>
+	<key>Continuous</key>
+	<string>連続</string>
+	<key>Continuous High</key>
+	<string>コンティニュアス 高速</string>
+	<key>Continuous Low</key>
+	<string>コンティニュアス 低速</string>
+	<key>Continuous high</key>
+	<string>コンテニュアス High</string>
+	<key>Continuous low</key>
+	<string>コンテニュアス Low</string>
+	<key>Contrast</key>
+	<string>コントラスト</string>
+	<key>Copenhagen</key>
+	<string>コペンハーゲン</string>
+	<key>Copy</key>
+	<string>コピー</string>
+	<key>Copy Images</key>
+	<string>イメージをコピー</string>
+	<key>Copying %d images</key>
+	<string>%d イメージをコピー</string>
+	<key>Copying %d out of %d images</key>
+	<string>%2$d イメージの内、 %1$d イメージをコピーしています</string>
+	<key>Copyright</key>
+	<string>コピーライト</string>
+	<key>Copyright Notice</key>
+	<string>コピーライト情報</string>
+	<key>Corresponding Points</key>
+	<string>対応点</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>アプリケーション サポート フォルダにアクセスできません。</string>
+	<key>Could not activate a Catalog.</key>
+	<string>カタログパスを有効にできませんでした。</string>
+	<key>Could not add metadata for variant.</key>
+	<string>バリアントのメタデータを追加できませんでした。</string>
+	<key>Could not apply layer</key>
+	<string>レイヤーを適用できませんでした</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>ファイル%1$@を%2$@へコピーできませんでした</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>レシピ フォルダをコピーできませんでした。</string>
+	<key>Could not create a new Catalog.</key>
+	<string>新しいカタログを作成できませんでした。</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>バリアントのメタデータパスを作成できませんでした。</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>現像設定についてICCプロファイルが見つかりませんでした。</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>現像設定のICCプロファイルが見つかりませんでした。その代わりに[カメラプロファイルを組み込む]を使用します。</string>
+	<key>Could not generate print image</key>
+	<string>プリント イメージを生成できません</string>
+	<key>Could not generate processed image</key>
+	<string>現像イメージを生成できませんでした</string>
+	<key>Could not load ICC profile.</key>
+	<string>lCCプロファイルが読み出せません</string>
+	<key>Could not load LCC profile.</key>
+	<string>LCCプロファイルが読み出せません</string>
+	<key>Could not load a Recipe file.</key>
+	<string>レシピファイルをロードできませんでした。</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>%1$@: %2$@にセッションデータベースがロードできませんでした。</string>
+	<key>Could not load the Recipes file.</key>
+	<string>レシピファイルをロードできませんでした。</string>
+	<key>Could not process file.</key>
+	<string>ファイルを現像できませんでした。</string>
+	<key>Could not process xmp file.</key>
+	<string>xmpファイルを現像できませんでした。</string>
+	<key>Could not read catalog data.</key>
+	<string>カタログデータが読めません。</string>
+	<key>Could not read document data.</key>
+	<string>ドキュメントデータが読めません。</string>
+	<key>Could not read session data.</key>
+	<string>セッションデータが読めません。</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>パッケージファイルからICCプロファイルを取除けませんでした。</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>パッケージファイルからLCCを取外すことができません</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>パッケージ ファイルからマスク ファイルを削除できませんでした。</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>パッケージファイルの情報を取得できませんでした。ファイルは破損している可能性があります。</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>パッケージファイル情報を検索できませんでした。ファイルはサポートしていないか壊れているかもしれません。</string>
+	<key>Could not understand file data.</key>
+	<string>ファイルデータを理解できませんでした。</string>
+	<key>Could not understand file to open.</key>
+	<string>開くファイルを理解できませんでした。</string>
+	<key>Could not write ICC profile.</key>
+	<string>lCCプロファイルが書き込みできません</string>
+	<key>Could not write LCC profile.</key>
+	<string>LCCプロファイルが書き込みできません</string>
+	<key>Couldn't read image settings</key>
+	<string>イメージ設定を読み込めませんでした</string>
+	<key>Counter</key>
+	<string>カウンター</string>
+	<key>Country</key>
+	<string>国</string>
+	<key>Creat.</key>
+	<string>Creat.</string>
+	<key>Create LCC</key>
+	<string>LCCを作成</string>
+	<key>Creative</key>
+	<string>クリエイティブ</string>
+	<key>Creative (Slow speed)</key>
+	<string>クリエイティブ (低速)</string>
+	<key>Creator</key>
+	<string>作成者</string>
+	<key>Creator's Job Title</key>
+	<string>作成者役職</string>
+	<key>Creator's Title</key>
+	<string>クリエイター タイトル</string>
+	<key>Crop</key>
+	<string>クロップ</string>
+	<key>Crop Outside Image</key>
+	<string>イメージの外をクロップ</string>
+	<key>Cropped</key>
+	<string>クロップ</string>
+	<key>Cubic Grain</key>
+	<string>Cubic Grain</string>
+	<key>Current Date</key>
+	<string>現在の日付</string>
+	<key>Current Date (%@)</key>
+	<string>現在の日付 (%@)</string>
+	<key>Current Day of Month</key>
+	<string>現在の月日</string>
+	<key>Current Day of Month (%@)</key>
+	<string>現在の日(%@)</string>
+	<key>Current Day of Week</key>
+	<string>現在の曜日</string>
+	<key>Current Day of Week (%@)</key>
+	<string>現在の曜日 (%@)</string>
+	<key>Current Month</key>
+	<string>現在の月</string>
+	<key>Current Month (%@)</key>
+	<string>現在の月 (%@)</string>
+	<key>Current Time</key>
+	<string>現在の時間</string>
+	<key>Current Time (%@)</key>
+	<string>現在の時間 (%@)</string>
+	<key>Current Year</key>
+	<string>現在の年</string>
+	<key>Current Year (%@)</key>
+	<string>現在の年 (%@)</string>
+	<key>Curve</key>
+	<string>カーブ</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>カスタム色収差</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>カスタム色収差の名前</string>
+	<key>Cyan</key>
+	<string>シアン</string>
+	<key>DK</key>
+	<string>DK</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>DNG スタンダード</string>
+	<key>Date</key>
+	<string>日付</string>
+	<key>Date - Month in Year</key>
+	<string>日付 - 月年</string>
+	<key>Date - Year</key>
+	<string>日付 - 年</string>
+	<key>Date Created</key>
+	<string>作成日</string>
+	<key>Daylight</key>
+	<string>太陽光</string>
+	<key>Default Chromatic Aberration</key>
+	<string>デフォルトの色収差</string>
+	<key>Demote Variant</key>
+	<string>バリアントを降格</string>
+	<key>Demote Variants</key>
+	<string>バリアントを降格</string>
+	<key>Denmark</key>
+	<string>デンマーク</string>
+	<key>Description</key>
+	<string>説明</string>
+	<key>Description Writer</key>
+	<string>キャプション／作成者</string>
+	<key>Destination Folder Name</key>
+	<string>転送先フォルダ名</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>保存フォルダが無く、作成できませんでした。必要なアクセス権がないかもしれません。</string>
+	<key>Details</key>
+	<string>ディテール</string>
+	<key>Details Noise Reduction</key>
+	<string>詳細ノイズ除去</string>
+	<key>Diffraction Correction</key>
+	<string>回折補正</string>
+	<key>Dimensions</key>
+	<string>大きさ</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>ブラック &amp;&amp; ホワイトを無効</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>色収差補正を無効</string>
+	<key>Disable Crop Outside Image</key>
+	<string>イメージの外をクロップを無効</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>ディストーション エリアを隠すを無効</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>LCCカラーキャスト補正を無効</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>LCCゴミ除去を無効</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>LCCユニフォームライトを無効</string>
+	<key>Disable Layer</key>
+	<string>無効なレイヤー</string>
+	<key>Disable Optic Center</key>
+	<string>光心を無効</string>
+	<key>Display Name</key>
+	<string>表示名</string>
+	<key>Distant</key>
+	<string>遠距離</string>
+	<key>Distant view</key>
+	<string>遠距離ビュー</string>
+	<key>Distortion</key>
+	<string>ディストーション</string>
+	<key>Distortion Amount</key>
+	<string>ディストーション量</string>
+	<key>Do Not Close</key>
+	<string>閉じない</string>
+	<key>Do Not Overwrite</key>
+	<string>上書きしない</string>
+	<key>Do Not Quit</key>
+	<string>終了しない</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>これらの%dバリアントをオート調整しますか?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>これら%dのバリアントのスタイルとプリセットをリセットしますか？</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>これらの%dバリアントを左に回転しますか?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>これらの%dバリアントを右に回転しますか?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>これらの%dバリアントを回転してスナップしますか?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>このドキュメントの実行中のアクティビティーを終了してもよろしいですか？</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>実行中のアクティビティーを終了してもよろしいですか？</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>このドキュメントの実行中のアクティビティーを終了してもよろしいですか？</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>実行中のアクティビティーを終了してもよろしいですか？</string>
+	<key>Document Name</key>
+	<string>ドキュメント名</string>
+	<key>Document migration failed.</key>
+	<string>ドキュメントの移行に失敗</string>
+	<key>Domain</key>
+	<string>ドメイン</string>
+	<key>Don't show this message again</key>
+	<string>このメッセージを再度表示しない</string>
+	<key>Drag Variant</key>
+	<string>バリアントをドラッグ</string>
+	<key>Drag Variants</key>
+	<string>複数のバリアントをドラッグ</string>
+	<key>Drive Mode</key>
+	<string>ドライブ モード</string>
+	<key>Drive mode/self timer</key>
+	<string>ドライブ モード/セルフタイマー</string>
+	<key>Dust</key>
+	<string>ダスト</string>
+	<key>Dust Removal</key>
+	<string>ゴミ除去</string>
+	<key>E-Mail(s)</key>
+	<string>E-Mail(s)</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF - カメラ</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF - 露出</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF - GPS</string>
+	<key>Emails</key>
+	<string>Eメール</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>ブラック &amp;&amp; ホワイトを有効</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>色収差補正を有効</string>
+	<key>Enable Crop Outside Image</key>
+	<string>イメージの外をクロップを有効</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>ディストーション エリアを隠すを有効</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>LCCカラーキャスト補正を有効</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>LCCゴミ除去を有効</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>LCCユニフォームライトを有効</string>
+	<key>Enable Layer</key>
+	<string>レイヤーを有効にする</string>
+	<key>Enable Optic Center</key>
+	<string>光心を有効</string>
+	<key>Enabled</key>
+	<string>ブラック &amp; ホワイトを有効にする</string>
+	<key>Error loading adjustment mask.</key>
+	<string>調整マスクの読み込みエラー</string>
+	<key>Error packing an image.</key>
+	<string>イメージのパッキング中にエラーが発生しました。</string>
+	<key>Estimating time remaining…</key>
+	<string>リネームの予定時間…</string>
+	<key>Event</key>
+	<string>イベント</string>
+	<key>Expand Stack</key>
+	<string>スタックを拡張</string>
+	<key>Export</key>
+	<string>エクスポート</string>
+	<key>Export %d Originals</key>
+	<string>%d オリジナルをエクスポート</string>
+	<key>Export 1 Original</key>
+	<string>1オリジナルをエクスポート</string>
+	<key>Export Anyway</key>
+	<string>とにかくエクスポート</string>
+	<key>Export Date</key>
+	<string>エクスポート日</string>
+	<key>Export Date (%@)</key>
+	<string>エクスポート日 (%@)</string>
+	<key>Export to Catalog</key>
+	<string>カタログにエクスポート</string>
+	<key>Exposure</key>
+	<string>露出</string>
+	<key>Exposure Compensation</key>
+	<string>露出補正</string>
+	<key>Exposure Mode</key>
+	<string>露出モード</string>
+	<key>Exposure Program</key>
+	<string>露出プログラム</string>
+	<key>Exposure White Balance</key>
+	<string>露出ホワイトバランス</string>
+	<key>Exposure compensation</key>
+	<string>露出補正</string>
+	<key>Exposure mode</key>
+	<string>露出モード</string>
+	<key>Exposure program</key>
+	<string>露出プログラム</string>
+	<key>Extension</key>
+	<string>拡張子</string>
+	<key>Failed to create %@ database.</key>
+	<string>%@データベースの作成に失敗。</string>
+	<key>Fashion</key>
+	<string>ファッション</string>
+	<key>File</key>
+	<string>ファイル</string>
+	<key>File Size</key>
+	<string>ファイルサイズ</string>
+	<key>File conversion warning</key>
+	<string>ファイル変換警告</string>
+	<key>File name</key>
+	<string>ファイル名</string>
+	<key>File size</key>
+	<string>ファイルサイズ</string>
+	<key>File type version not supported.</key>
+	<string>ファイルタイプバージョンはサポートされていません</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>ファイルバージョンはこのCapture Oneのバージョンではサポートされていません</string>
+	<key>Files will be moved to a new location.</key>
+	<string>ファイルが新しい場所に移動します。</string>
+	<key>Fill Mask</key>
+	<string>マスクで塗りつぶす</string>
+	<key>Film Curve</key>
+	<string>フィルムカーブ</string>
+	<key>Film Extra Shadow</key>
+	<string>Film Extra Shadow</string>
+	<key>Film Grain Amount</key>
+	<string>フイルム粒子の量</string>
+	<key>Film Grain Density</key>
+	<string>フイルム粒子の密度</string>
+	<key>Film Grain Granularity</key>
+	<string>フイルム粒子の細かさ</string>
+	<key>Film Grain Type</key>
+	<string>フイルム粒子のタイプ</string>
+	<key>Film High Contrast</key>
+	<string>Film High Contrast</string>
+	<key>Film Standard</key>
+	<string>Film Standard</string>
+	<key>Fine Grain</key>
+	<string>Fine Grain</string>
+	<key>Fired</key>
+	<string>発光</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>発光、赤目軽減</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>発光、赤目軽減、リターン検出</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>発光、赤目軽減、リターン検出なし</string>
+	<key>Fired, Return detected</key>
+	<string>発光、リターン検出</string>
+	<key>Fired, Return not detected</key>
+	<string>発光、リターン検出なし</string>
+	<key>Fired, auto</key>
+	<string>発光、オート</string>
+	<key>Fired, auto, no return light</key>
+	<string>発光、オート、反射光なし</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>発光、オート、反射光なし、赤目</string>
+	<key>Fired, auto, red-eye</key>
+	<string>発光、オート、赤目</string>
+	<key>Fired, auto, return light</key>
+	<string>発光、オート、反射光</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>発光、オート、反射光、赤目</string>
+	<key>Fired, compulsory</key>
+	<string>発光、強制</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>発光、強制、反射光なし</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>発光、強制、赤目、反射光なし</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>発光、強制、赤目、反射光</string>
+	<key>Fired, compulsory, return light</key>
+	<string>発光、強制、反射光</string>
+	<key>Fired, red-eye</key>
+	<string>発光、赤目</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>発光、赤目、反射光なし</string>
+	<key>Fired, red-eye, return light</key>
+	<string>発光、赤目、反射光</string>
+	<key>Firmware</key>
+	<string>ファームウェア</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>固定</string>
+	<key>Flash Compensation</key>
+	<string>フラッシュ補正</string>
+	<key>Flash Mode</key>
+	<string>フラッシュ</string>
+	<key>Flash compensation</key>
+	<string>フラッシュ補正</string>
+	<key>Flash did not fire</key>
+	<string>フラッシュ未使用</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>フラッシュ未使用、オートモード</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>フラッシュ未使用、フラッシュモード</string>
+	<key>Flash fired</key>
+	<string>フラッシュ発光</string>
+	<key>Flash fired, auto mode</key>
+	<string>フラッシュ発光、オートモード</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>フラッシュ発光、オートモード、赤目削減モード</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>フラッシュ発光、オートモード、反射光検出</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>フラッシュ発光、オートモード、反射光検出、赤目削減モード</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>フラッシュ発光、オートモード、反射光の検出なし</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>フラッシュ発光、オートモード、反射光の検出なし、赤目削減モード</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>フラッシュ発光、強制フラッシュモード</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>フラッシュ発光、強制フラッシュモード、赤目削減モード</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>フラッシュ発光、強制フラッシュモード、赤目削減モード、反射光検出</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>フラッシュ発光、強制フラッシュモード、赤目削減モード、反射光の検出なし</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>フラッシュ発光、強制フラッシュモード、反射光検出</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>フラッシュ発光、強制フラッシュモード、反射光検出なし</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>フラッシュ発光、赤目削減モード</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>フラッシュ発光、赤目削減モード、反射光検出</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>フラッシュ発光、赤目削減モード、反射光の検出なし</string>
+	<key>Flash mode</key>
+	<string>フラッシュ</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>フラッシュオフ、発光せず、リターン検出されず</string>
+	<key>Flash off, no flash function</key>
+	<string>フラッシュオフ、フラッシュ機能なし</string>
+	<key>Flash on, did not fire</key>
+	<string>フラッシュ ON、未発光</string>
+	<key>Flip</key>
+	<string>反転</string>
+	<key>Focal Length</key>
+	<string>焦点距離</string>
+	<key>Focal length</key>
+	<string>焦点距離</string>
+	<key>Focus Stacking</key>
+	<string>フォーカス スタッキング</string>
+	<key>Format</key>
+	<string>フォーマット</string>
+	<key>Fringing</key>
+	<string>フリンジ</string>
+	<key>Generated %d out of %d previews</key>
+	<string>生成された%2$dの中の%1$dプレビュー</string>
+	<key>Generating %d previews</key>
+	<string>%dプレビューを生成</string>
+	<key>Generating previews</key>
+	<string>プレビューを生成</string>
+	<key>Genre</key>
+	<string>ジャンル</string>
+	<key>Geotagged</key>
+	<string>ジオタグ</string>
+	<key>Getting Folders for %d images</key>
+	<string>%d イメージのフォルダを取得</string>
+	<key>Getty Images</key>
+	<string>Getty Images</string>
+	<key>Getty Images Original Filename</key>
+	<string>Getty Imagesのオリジナル ファイル名</string>
+	<key>Getty Images Parent MEID</key>
+	<string>Getty ImagesのペアレントMEID</string>
+	<key>Getty Images Personality</key>
+	<string>Getty Images パーソナリティー</string>
+	<key>Gradation Curve</key>
+	<string>グラデーションカーブ</string>
+	<key>Grain</key>
+	<string>粒子</string>
+	<key>Grain Amount</key>
+	<string>粒子の量</string>
+	<key>Grain Density </key>
+	<string>粒子の密度</string>
+	<key>Grain Granularity</key>
+	<string>粒子の細かさ</string>
+	<key>Grain Type</key>
+	<string>粒子のタイプ</string>
+	<key>Green</key>
+	<string>グリーン</string>
+	<key>Green Curve</key>
+	<string>グリーンカーブ</string>
+	<key>Green Gradation Curve</key>
+	<string>グリーン グラデーションカーブ</string>
+	<key>HDR</key>
+	<string>HDR</string>
+	<key>HH</key>
+	<string>HH</string>
+	<key>HH-mm</key>
+	<string>HH-mm</string>
+	<key>HH-mm-ss</key>
+	<string>HH-mm-ss</string>
+	<key>Halo Control</key>
+	<string>ハロ コントロール</string>
+	<key>Harsh Grain</key>
+	<string>Harsh Grain</string>
+	<key>Headline</key>
+	<string>見出し</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>異なるサイズのバリアント間では修復レイヤーとクローンレイヤーはコピーできません</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>修復レイヤーとクローンレイヤ0には、より新しいエンジンが必要です。エンジンは基本特性ツールからアップグレードできます。</string>
+	<key>Height</key>
+	<string>高さ</string>
+	<key>Hide Distorted Areas</key>
+	<string>ディストーション エリアを隠す</string>
+	<key>Highlight Recovery</key>
+	<string>ハイダイナミックレンジ - ハイライト</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>キーストーン - 水平</string>
+	<key>Hyperfocal</key>
+	<string>ハイパーフォーカル</string>
+	<key>ICC Profile</key>
+	<string>プロファイル</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>ICC [ %@ ] はパス、またはファイル名が長すぎます (最大 1024 バイト)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC - コンタクト</string>
+	<key>IPTC - Content</key>
+	<string>IPTC - コメント</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC - Getty</string>
+	<key>IPTC - Image</key>
+	<string>IPTC - イメージ</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC - キーワード</string>
+	<key>IPTC - Status</key>
+	<string>IPTC - ステータス</string>
+	<key>IPTC Scene</key>
+	<string>IPTC シーン</string>
+	<key>IPTC scene</key>
+	<string>IPTCシーン</string>
+	<key>IPTC subject code</key>
+	<string>IPTC サブジェクトコード</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>ISO</string>
+	<key>ISO Country Code</key>
+	<string>ISO国コード</string>
+	<key>ISO speed rating</key>
+	<string>ISO感度レーティング</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>ドキュメントをCapture OneのWindowsで作成された場合、WindowsのCapture One バージョン7以降で開き、Capture OneのMacでこのドキュメントを開き直してください。</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>この変更を行うと、ドキュメントはCapture Oneで開かないかもしれません。</string>
+	<key>Image City</key>
+	<string>イメージの地名</string>
+	<key>Image Country</key>
+	<string>イメージの国</string>
+	<key>Image Date</key>
+	<string>イメージの日付</string>
+	<key>Image Date (%@)</key>
+	<string>イメージの日付 (%@)</string>
+	<key>Image Day of Month</key>
+	<string>イメージの月日</string>
+	<key>Image Day of Month (%@)</key>
+	<string>イメージの日(%@)</string>
+	<key>Image Day of Week</key>
+	<string>イメージの週</string>
+	<key>Image Day of Week (%@)</key>
+	<string>イメージの週 (%@)</string>
+	<key>Image Folder</key>
+	<string>イメージフォルダ</string>
+	<key>Image Folder Name</key>
+	<string>イメージ フォルダ名</string>
+	<key>Image Location</key>
+	<string>イメージのロケーション</string>
+	<key>Image Month</key>
+	<string>イメージの月</string>
+	<key>Image Month (%@)</key>
+	<string>イメージの月 (%@)</string>
+	<key>Image Name</key>
+	<string>イメージ名</string>
+	<key>Image State</key>
+	<string>イメージの州／都道府県</string>
+	<key>Image Time</key>
+	<string>イメージの時間</string>
+	<key>Image Time (%@)</key>
+	<string>イメージの時間 (%@)</string>
+	<key>Image Year</key>
+	<string>イメージの年</string>
+	<key>Image Year (%@)</key>
+	<string>イメージの年 (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>イメージパスが存在しないか、長すぎます（最大1024バイト）</string>
+	<key>Import Date</key>
+	<string>インポート日</string>
+	<key>Import Date (%@)</key>
+	<string>インポート日(%@)</string>
+	<key>In Catalog</key>
+	<string>カタログ内</string>
+	<key>Instructions</key>
+	<string>指示</string>
+	<key>Int.</key>
+	<string>Int.</string>
+	<key>Intellectual Genre</key>
+	<string>ジャンル</string>
+	<key>Intellectual genre</key>
+	<string>ジャンル</string>
+	<key>Interval</key>
+	<string>間隔</string>
+	<key>Invalid</key>
+	<string>無効</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>JPEGクオリティが無効です(0未満または100を超えています)</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>TIFF圧縮が無効です(LZW、ZipまたはNoneでなければなりません)。</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>サンプルあたりのビット数が無効です(8または16でなければなりません)</string>
+	<key>Invalid file format</key>
+	<string>ファイルの形式が無効</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>解像度が無効です(10～10000の範囲でなければなりません)。</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>縮尺が無効です(0～5の範囲でなければなりません)。</string>
+	<key>Invalid selection!</key>
+	<string>無効な選択!</string>
+	<key>Invalid token name '%@'</key>
+	<string>‘%@‘は無効なトークン名です</string>
+	<key>Invert Mask</key>
+	<string>マスクを反転</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 2048px web 用</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG - フルサイズ、最高画質</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - Instagram 最適化</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (プレビューサイズ)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG 長辺 1280ピクセル (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>JPEG クオリティ %d</string>
+	<key>JPEG file</key>
+	<string>JPEGファイル</string>
+	<key>Job Identifier</key>
+	<string>ジョブ番号</string>
+	<key>Job Name</key>
+	<string>ジョブ名</string>
+	<key>Keep Capture One Values</key>
+	<string>Capture Oneの値を保持する</string>
+	<key>Keystone Amount</key>
+	<string>キーストーン - 量</string>
+	<key>Keystone Aspect</key>
+	<string>キーストーン - アスペクト</string>
+	<key>Keystone Focal Length</key>
+	<string>キーストーン 焦点距離</string>
+	<key>Keystone Points</key>
+	<string>キーストーン ポイント</string>
+	<key>Keywords</key>
+	<string>キーワード</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>LCC パス [ %@ ] が長すぎます (最大 1024 バイト)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>LCCプロファイルイメージのロード中に生成できませんでした。  もう一度試みてください。</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>LCCが適用されるバリアントが定義されていません。LCCが前または後のバリアントに適用されていることを確認してください。</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>ラベル</string>
+	<key>Land.</key>
+	<string>Land.</string>
+	<key>Landscape</key>
+	<string>横位置</string>
+	<key>Latitude</key>
+	<string>緯度</string>
+	<key>Layer Selection Point</key>
+	<string>レイヤーセレクトポイント</string>
+	<key>Layers</key>
+	<string>レイヤー</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>レイヤーは、コピー元のバリアントに適用できません</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>レイヤーは %@ には適用されません</string>
+	<key>Lens</key>
+	<string>レンズ</string>
+	<key>Lens Correction</key>
+	<string>レンズ補正</string>
+	<key>Lens Effects</key>
+	<string>レンズ エフェクト</string>
+	<key>Lens Profile</key>
+	<string>レンズ プロファイル</string>
+	<key>Lens Purple Fringing</key>
+	<string>レンズ パープルフリンジ</string>
+	<key>Lens Revision</key>
+	<string>レンズ リビジョン</string>
+	<key>Lens Selection</key>
+	<string>レンズの選択</string>
+	<key>Less than a minute left</key>
+	<string>残り1分未満</string>
+	<key>Levels</key>
+	<string>レベル</string>
+	<key>Levels &amp; Curve</key>
+	<string>レベルとカーブ</string>
+	<key>Levels Highlight</key>
+	<string>ハイライトのレベル</string>
+	<key>Levels Midtone</key>
+	<string>中間 レベル</string>
+	<key>Levels Shadow</key>
+	<string>シャドウのレベル</string>
+	<key>Levels Target Highlight</key>
+	<string>ターゲットのハイライトのレベル</string>
+	<key>Levels Target Shadow</key>
+	<string>ターゲットのシャドウのレベル</string>
+	<key>Light Falloff</key>
+	<string>光量低下</string>
+	<key>Light Falloff Amount</key>
+	<string>光量低下量</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>Linear Response</string>
+	<key>Load error</key>
+	<string>読み込みエラー</string>
+	<key>Locate File</key>
+	<string>位置ファイル</string>
+	<key>Location</key>
+	<string>場所</string>
+	<key>Long Edge</key>
+	<string>長辺</string>
+	<key>Longitude</key>
+	<string>経度</string>
+	<key>Luma Curve</key>
+	<string>輝度 カーブ</string>
+	<key>Luma Gradation Curve</key>
+	<string>輝度 グラデーション カーブ</string>
+	<key>Luminance Noise Reduction</key>
+	<string>ルミナンスのノイズ除去</string>
+	<key>M</key>
+	<string>M</string>
+	<key>M.spot</key>
+	<string>Mスポット</string>
+	<key>MM</key>
+	<string>MM</string>
+	<key>MMM</key>
+	<string>MMM</string>
+	<key>MMM dd yyyy</key>
+	<string>MMM dd yyyy</string>
+	<key>MMMM</key>
+	<string>MMMM</string>
+	<key>MMMMM</key>
+	<string>MMMMM</string>
+	<key>Macro</key>
+	<string>マクロ</string>
+	<key>Magenta</key>
+	<string>マゼンタ</string>
+	<key>Make</key>
+	<string>メーカー</string>
+	<key>Man.</key>
+	<string>Man.</string>
+	<key>Manual</key>
+	<string>マニュアル</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>マスクファイルのパスが長すぎます（最大1024バイト）</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>レイヤーの最大数を超えました</string>
+	<key>Metadata</key>
+	<string>メタデータ</string>
+	<key>Metadata Import</key>
+	<string>メタデータのインポート</string>
+	<key>Metadata Synchronization</key>
+	<string>メタデータの同期</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>メタデータ同期警告</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>メタデータの不一致が’%@‘イメージのバリアントで見つかりました。メタデータの値をCapture Oneで再読み込みしたメタデータに変更、またはCapture Oneの値に保存し直しますか？</string>
+	<key>Metering Mode</key>
+	<string>測光モード</string>
+	<key>Metering mode</key>
+	<string>測光モード</string>
+	<key>Method not implemented.</key>
+	<string>メソッドは実行されていません。</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Capture Oneドキュメンテーションの移行に失敗しました。</string>
+	<key>Minimum Viewing Distance</key>
+	<string>最小視距離</string>
+	<key>Mir.up</key>
+	<string>Mir.up</string>
+	<key>Mirror Up</key>
+	<string>ミラー アップ</string>
+	<key>Mirror up</key>
+	<string>ミラーアップ</string>
+	<key>Missing ICC Profile.</key>
+	<string>ICCプロファイルがありません。</string>
+	<key>Missing LCC Profile.</key>
+	<string>LCCプロファイルがありません。</string>
+	<key>Missing Preview</key>
+	<string>プレビューに失敗</string>
+	<key>Mode</key>
+	<string>モード</string>
+	<key>Model</key>
+	<string>機種</string>
+	<key>Moire</key>
+	<string>モアレ</string>
+	<key>Moire Amount</key>
+	<string>モアレ - 量</string>
+	<key>Moire Pattern</key>
+	<string>モアレ - パターン</string>
+	<key>Moire Radius</key>
+	<string>モアレ半径</string>
+	<key>Move Files</key>
+	<string>ファイルを移動</string>
+	<key>Move Image</key>
+	<string>イメージの移動</string>
+	<key>Move Images</key>
+	<string>イメージの移動</string>
+	<key>Moving %d images</key>
+	<string>%d イメージを移動</string>
+	<key>Moving %d out of %d images</key>
+	<string>%2$d イメージの内の %1$d イメージを移動する</string>
+	<key>Multi spot</key>
+	<string>Multi spot</string>
+	<key>Multi-spot</key>
+	<string>マルチ スポット</string>
+	<key>NO</key>
+	<string>NO</string>
+	<key>NY</key>
+	<string>NY</string>
+	<key>Name</key>
+	<string>名前</string>
+	<key>Nature</key>
+	<string>ネイチャー</string>
+	<key>New LCC Profile</key>
+	<string>新規LCCプロファイル</string>
+	<key>New Session</key>
+	<string>新規セッション</string>
+	<key>New Variant</key>
+	<string>新規バリアント</string>
+	<key>No</key>
+	<string>いいえ</string>
+	<key>No Flash</key>
+	<string>発光なし</string>
+	<key>No LCC to apply</key>
+	<string>LCC適用なし</string>
+	<key>No collection has been selected</key>
+	<string>コレクションが選択されていません</string>
+	<key>No flash function</key>
+	<string>フラッシュ機能なし</string>
+	<key>No function</key>
+	<string>フラッシュ機能なし</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>カラー補正は %@ まで許可されています</string>
+	<key>No strobe return light</key>
+	<string>ストロボのリターン検出機能なし</string>
+	<key>No variants to apply LCC</key>
+	<string>バリアントにLCCが適用されていません</string>
+	<key>None</key>
+	<string>なし</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>%d選択されたバリアントの中にオート調整できるものがありません</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>%d選択されたバリアントの中に左に回転できるものがありません</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>%d選択されたバリアントの中に右に回転できるものがありません</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>%d選択されたバリアントの中に90°に回転できるものがありません</string>
+	<key>Norm.</key>
+	<string>Norm.</string>
+	<key>Normal</key>
+	<string>ノーマル</string>
+	<key>Not Defined</key>
+	<string>未定義</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>ディスクスペースが足りないため、ファイルを現像できません。現像キューが停止されました。</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>転送先ボリューム上に十分なスペースがありません。</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>オーバーレイイメージを割り当てるメモリが不足しています。</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>イメージ ウォーターマークを配置する十分なメモリがありません。</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>テキストウォーターマーを配置する十分なメモリがありません。</string>
+	<key>Not fired</key>
+	<string>発光せず</string>
+	<key>Not fired, auto</key>
+	<string>オート、発光せず</string>
+	<key>Not fired, compulsory</key>
+	<string>強制発光せず</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Off</key>
+	<string>オフ</string>
+	<key>Off, Did not fire</key>
+	<string>オフ、発光せず</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>オフ、発光せず、リターン検出なし</string>
+	<key>Off, No flash function</key>
+	<string>オフ、フラッシュ機能なし</string>
+	<key>Offline images will be skipped</key>
+	<string>オフライン イメージはスキップされます</string>
+	<key>On, Did not fire</key>
+	<string>オン、発光せず</string>
+	<key>On, Fired</key>
+	<string>オン、発光</string>
+	<key>On, Red-eye reduction</key>
+	<string>オン、赤目軽減</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>オン、赤目軽減、リターン検出</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>オン、赤目軽減、リターン検出なし</string>
+	<key>On, Return detected</key>
+	<string>オン、リターン検出</string>
+	<key>On, Return not detected</key>
+	<string>オン、リターン検出なし</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>これらのバリアントはすでにLCCプロファイルが適用されています。このバリアントのLCCプロファイルを変更すると既存のプロファイルが削除される可能性があります。プリセットに保存されている場合、LCCプロファイルは元のLCC撮影データまたは再適用で作成できます。</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>１つ以上のファイルは圧縮されていないでしょう。圧縮可能なイメージでないか、既に変換されています。%2$iからパッケージ%1$iファイルを選択しました。</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>１つ以上のファイルは展開されないでしょう。それらはパッケージ可能なファイルでないか、すでに変換されています。展開する%2$iから%1$iファイルを選択しました。</string>
+	<key>One shot</key>
+	<string>ワンショット</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>%2$d選択されたバリアントの中の%1$dだけがオート調整可能です</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>%2$d選択されたバリアントの中の%1$dだけが回転可能です</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>%2$d選択されたバリアントの中の%1$dだけが右に回転できます</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>%2$d選択されたバリアントの中の%1$dだけが90°に回転できます</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>編集可能なバリアントだけがオート調整可能です。 編集可能なバリアントを選択してください</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>編集可能なバリアントだけが左に回転できます。 編集可能なバリアントを選択してください</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>編集可能なバリアントだけが右に回転できます。 編集可能なバリアントを選択してください</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>編集可能なバリアントだけが90°に回転できます。 編集可能なバリアントを選択してください</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>厳選したバリアントだけに%@が追加されます。</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>選択されたバリアントのみ同期します。</string>
+	<key>Opacity</key>
+	<string>不透明度</string>
+	<key>Open failed</key>
+	<string>開けませんでした</string>
+	<key>Optic Center</key>
+	<string>光学的中心</string>
+	<key>Optic Center Enabled</key>
+	<string>光学的中心が有効</string>
+	<key>Orange</key>
+	<string>オレンジ</string>
+	<key>Orientation</key>
+	<string>回転方向</string>
+	<key>Original</key>
+	<string>オリジナル</string>
+	<key>Original Filename</key>
+	<string>オリジナル ファイル名</string>
+	<key>Output</key>
+	<string>現像</string>
+	<key>Output Folder</key>
+	<string>現像フォルダ</string>
+	<key>Overwrite</key>
+	<string>上書き</string>
+	<key>Owner</key>
+	<string>所有者</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>PNG ファイル</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-bit)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>パッケージ名が長すぎます（最大260バイト）</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>パッケージパスが存在しないか、長すぎます（最大1024バイト）</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>%2$dから%1$dのイメージをEIPに圧縮</string>
+	<key>Packing %d images as EIP</key>
+	<string>%dイメージをEIPに圧縮</string>
+	<key>Parent MEID</key>
+	<string>ペアレント MEID</string>
+	<key>Part.</key>
+	<string>Part.</string>
+	<key>Partial</key>
+	<string>部分</string>
+	<key>Patt.</key>
+	<string>Patt.</string>
+	<key>Pattern</key>
+	<string>パターン</string>
+	<key>People</key>
+	<string>ユーザ</string>
+	<key>Personality</key>
+	<string>パーソナリティー</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>電話番号</string>
+	<key>Phone(s)</key>
+	<string>電話番号</string>
+	<key>Phones</key>
+	<string>電話</string>
+	<key>Pick Variant</key>
+	<string>バリアントを選択</string>
+	<key>Pink</key>
+	<string>ピンク</string>
+	<key>Pixels</key>
+	<string>ピクセル</string>
+	<key>Place</key>
+	<string>場所</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>指定されたカタログセットに一致するアルバムにイメージを配置しますか?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>詳細については、L * a * b *の説明を参照してください。</string>
+	<key>Please select a collection in the library tool</key>
+	<string>ライブラリツールの中のコレクションを選択してください</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>書き込み可能なフォルダにセレクトフォルダを設定してください。</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>転送先ボリューム上のスペースを解放してください。</string>
+	<key>Port.</key>
+	<string>Port.</string>
+	<key>Portrait</key>
+	<string>ポートレート</string>
+	<key>Postal Code</key>
+	<string>郵便番号</string>
+	<key>Postal code</key>
+	<string>郵便番号</string>
+	<key>Preparing Catalog Import…</key>
+	<string>カタログ インポートを準備中…</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>カタログ内のイメージのプレビューを作成しています。プレビューの生成を終了しますか?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>元の名前に.errorが付加されています</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>元の名前に.invalidが付加されています</string>
+	<key>Previous will be overwritten</key>
+	<string>元のファイルが上書きされます</string>
+	<key>Processing Method</key>
+	<string>現像方法</string>
+	<key>Profile</key>
+	<string>プロファイル</string>
+	<key>Profile could not be written.</key>
+	<string>プロファイルを書き込めませんでした。</string>
+	<key>Program</key>
+	<string>プログラム</string>
+	<key>Program AE</key>
+	<string>プログラム AE</string>
+	<key>Promote Variant</key>
+	<string>バリアントを昇格</string>
+	<key>Promote Variants</key>
+	<string>バリアントを昇格</string>
+	<key>Provider</key>
+	<string>テザーサポート</string>
+	<key>Proxy Creation Failed</key>
+	<string>プロキシ クリエイションに失敗</string>
+	<key>Public</key>
+	<string>パブリック</string>
+	<key>Purple</key>
+	<string>パープル</string>
+	<key>Quit Capture One</key>
+	<string>Capture One を終了</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>RAWファイル</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>RGBカーブ</string>
+	<key>Radius</key>
+	<string>半径</string>
+	<key>Rasterize Mask</key>
+	<string>マスクをラスタライズ</string>
+	<key>Rating</key>
+	<string>レーティング</string>
+	<key>Reason</key>
+	<string>原因</string>
+	<key>Recent Captures</key>
+	<string>最近のキャプチャー</string>
+	<key>Recent Imports</key>
+	<string>最近のインポート</string>
+	<key>Recipe</key>
+	<string>レシピ</string>
+	<key>Recipe Format</key>
+	<string>レシピ フォーマット</string>
+	<key>Recipe Name</key>
+	<string>レシピ名</string>
+	<key>Recovery</key>
+	<string>リカバリー</string>
+	<key>Red</key>
+	<string>レッド</string>
+	<key>Red Curve</key>
+	<string>レッドカーブ</string>
+	<key>Red Gradation Curve</key>
+	<string>レッドグラデーションカーブ</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>影響を受けるイメージのリストは、ファイルセクションを参照してください。</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>%2$d内の%1$dセットのメタデータを再ロードしました。</string>
+	<key>Remove Layer</key>
+	<string>レイヤーを削除</string>
+	<key>Rename Image</key>
+	<string>イメージのリネーム</string>
+	<key>Rename Layer</key>
+	<string>レイヤーをリネーム</string>
+	<key>Reorder Layer</key>
+	<string>レイヤーを再設定</string>
+	<key>Replace</key>
+	<string>置換</string>
+	<key>Reset Adjustments</key>
+	<string>調整をリセット</string>
+	<key>Reset Styles and Preset</key>
+	<string>スタイルとプリセットをリセット</string>
+	<key>Reset Styles and Presets</key>
+	<string>スタイルとプリセットをリセット</string>
+	<key>Resetting</key>
+	<string>再設定</string>
+	<key>Rights Usage Terms</key>
+	<string>著作使用条件</string>
+	<key>Rights usage terms</key>
+	<string>権利使用期間</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>左回転</string>
+	<key>Rotate Right</key>
+	<string>右回転</string>
+	<key>Rotate Snap</key>
+	<string>スナップ回転</string>
+	<key>Rotating</key>
+	<string>回転</string>
+	<key>Rotation</key>
+	<string>回転</string>
+	<key>Running a background activity</key>
+	<string>バックグランド アクティビティーが起動中</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>彩度</string>
+	<key>Saving Document</key>
+	<string>ドキュメントを保存</string>
+	<key>Saving Document step %d of %d</key>
+	<string>ドキュメントステップ%2$dの%1$dを保存</string>
+	<key>Scene</key>
+	<string>シーン</string>
+	<key>Select Layer</key>
+	<string>レイヤーを選択</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>選択された移動ファイルは同期されません。</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>選択されたバリアントは少なくとも１つ以上のLCC写真が必要です</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>選択されたバリアントは少なくとも１つ以上のLCC写真以外のイメージが必要です</string>
+	<key>Selection</key>
+	<string>選択</string>
+	<key>Selects Folder</key>
+	<string>セレクトフォルダ</string>
+	<key>Self Timer</key>
+	<string>セルフタイマー</string>
+	<key>Self timer</key>
+	<string>セルフタイマー</string>
+	<key>Sequence Count</key>
+	<string>シーケンス カウント</string>
+	<key>Sequence ID</key>
+	<string>シーケンスID</string>
+	<key>Sequence Info</key>
+	<string>シーケンス情報</string>
+	<key>Sequence Total</key>
+	<string>シーケンス トータル</string>
+	<key>Sequence Type</key>
+	<string>シーケンス タイプ</string>
+	<key>Serial</key>
+	<string>シリアル</string>
+	<key>Servo</key>
+	<string>サーボ</string>
+	<key>Session Save</key>
+	<string>セッションを保存</string>
+	<key>Session Sub Path</key>
+	<string>セッション サブ パス</string>
+	<key>Session Sub Path (Long)</key>
+	<string>セッション サブ パス (Long)</string>
+	<key>Session data migration</key>
+	<string>セッションデータの移行</string>
+	<key>Session load</key>
+	<string>セッションの読み出し</string>
+	<key>Set Mask</key>
+	<string>マスクを設定</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>設定パスが長すぎます（最大1024バイト）</string>
+	<key>Shadow Recovery</key>
+	<string>ハイダイナミックレンジ - シャドウ</string>
+	<key>Sharpening Amount</key>
+	<string>シャープニング量</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>シャープニング ハロ抑制</string>
+	<key>Sharpening Method</key>
+	<string>シャープニング量</string>
+	<key>Sharpening Radius</key>
+	<string>シャープニング半径</string>
+	<key>Sharpening Threshold</key>
+	<string>シャープニングしきい値</string>
+	<key>Sharpness Falloff</key>
+	<string>鮮明度</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>鮮明度の量</string>
+	<key>Shift</key>
+	<string>シフト</string>
+	<key>Shift Direction</key>
+	<string>シフト方向</string>
+	<key>Shift XY</key>
+	<string>シフト XY</string>
+	<key>Short Edge</key>
+	<string>短辺</string>
+	<key>Shut.</key>
+	<string>Shut.</string>
+	<key>Shutter Speed</key>
+	<string>シャッタースピード</string>
+	<key>Shutter priority</key>
+	<string>シャッター優先</string>
+	<key>Shutter speed</key>
+	<string>シャッター スピード</string>
+	<key>Shutter speed priority AE</key>
+	<string>シャッタースピード優先AE</string>
+	<key>Silver Rich</key>
+	<string>Silver Rich</string>
+	<key>Sing.</key>
+	<string>Sing.</string>
+	<key>Single</key>
+	<string>シングル</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>ピクセル ノイズ除去</string>
+	<key>Single Shot</key>
+	<string>シングル ショット</string>
+	<key>Single shot</key>
+	<string>シングル ショット</string>
+	<key>Skip</key>
+	<string>スキップ</string>
+	<key>Soft Grain</key>
+	<string>Soft Grain</string>
+	<key>Software</key>
+	<string>ソフトウェア</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>一部のレイヤー調整には、より新しいエンジンが必要です。 %@ のエンジンはアップグレードされると、ダウングレードすることはできません。</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>一部のレイヤー調整には、より新しいエンジンが必要です。  %lu バリアントのエンジンがアップグレードされると、ダウングレードすることはできません。</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>選択されたいくつかのバリアントはオート調整できませんでした。</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>いくつかの選択されたバリアントは読み出しのみです。</string>
+	<key>Some variants are missing metadata</key>
+	<string>いくつかのバリアントはメタデータが見つかりません</string>
+	<key>Sort Order</key>
+	<string>ソート順</string>
+	<key>Source</key>
+	<string>ソース</string>
+	<key>Source image is missing</key>
+	<string>ソースイメージが見つかりません</string>
+	<key>Split Tones</key>
+	<string>スプリット トーン</string>
+	<key>Spot</key>
+	<string>スポット</string>
+	<key>Spots</key>
+	<string>スポット</string>
+	<key>Square</key>
+	<string>スクエア</string>
+	<key>State/Province</key>
+	<string>州／都道府県</string>
+	<key>Status</key>
+	<string>状況</string>
+	<key>Stop</key>
+	<string>停止</string>
+	<key>Strobe return light</key>
+	<string>ストロボのリターン機能</string>
+	<key>Strobe return light detected</key>
+	<string>ストロボのリターン検出</string>
+	<key>Strobe return light not detected</key>
+	<string>ストロボのリターン検出されず</string>
+	<key>Structure</key>
+	<string>ストラクチャ</string>
+	<key>Style</key>
+	<string>スタイル</string>
+	<key>Styles</key>
+	<string>スタイル</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>%2$dの選択されたバリアントの %1$dのスタイルとプリセットをリセットできるだけです。</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>編集可能なバリアントのスタイルとプリセットのリセットできるだけです。編集できるバリアントを選択してください。</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>%dの選択されたバリアントのスタイルとプリセットはリセットできません。</string>
+	<key>Sub Name</key>
+	<string>サブ名</string>
+	<key>Subject Code</key>
+	<string>サブジェクトコード</string>
+	<key>Summer</key>
+	<string>夏</string>
+	<key>Supplemental Categories</key>
+	<string>追加カテゴリー</string>
+	<key>Surface Smoothness</key>
+	<string>サーフェス</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>%2$dのセットのメタデータ%1$dを同期しました。</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d-ビット) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF - A3 プリント (300 dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF - Adobe RGB (1998) (8bit)</string>
+	<key>TIFF file</key>
+	<string>TIFFファイル</string>
+	<key>Tabular Grain</key>
+	<string>Tabular Grain</string>
+	<key>Target Levels</key>
+	<string>ターゲットレベル</string>
+	<key>Temperature</key>
+	<string>温度</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>アクティビティーを終了しウィンドウを閉じる</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>処理を終了しアプリケーションを終了</string>
+	<key>Terminate and Close Window</key>
+	<string>終了しウィンドウを閉じる</string>
+	<key>Terminate and Quit Application</key>
+	<string>終了しアプリケーションを終了</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>LCCプロファイルはレガシーフォーマットのため開く事ができません。</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>アプリケーションは新規%@のデータベース作成に失敗しました。</string>
+	<key>The catalog could not be saved.</key>
+	<string>カタログを保存できませんでした。</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>カタログファイルはゴミ箱にあります。</string>
+	<key>The catalog file is not writable.</key>
+	<string>カタログファイルは書き込みできません。</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>カタログは %@ で保存され、このバージョンでは読み込めません。</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>カタログは新しいバージョンのCapture One で保存されました。</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>現在選択されたバリアントはいくつかの厳選したバリアントを含みません。厳選したバリアントのみ追加可能です。</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>現在選択したバリアントはいくつかの選択したバリアントを含んでいません。選択したバリアントのみ同期できす。</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>ドキュメント コンテンツはサポートしていません。サポートしていないCapture Oneのバージョンで保存されています。</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>ドキュメントは %@ で保存されているため、このバージョンでは読み込めません。</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>ドキュメントは新しいバージョンの Capture One で保存されました。</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>一部のバリアントの既存メタデータは上書きされます。</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>呼び出したメソッドは実行されていません。</string>
+	<key>The output folder could not be created.</key>
+	<string>現像フォルダを作成できませんでした。</string>
+	<key>The output folder is not writable.</key>
+	<string>現像フォルダは書き込み可能でありません。</string>
+	<key>The output location is not a folder.</key>
+	<string>現像場所がフォルダではありません。</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>パッケージファイルは展開する前にリネームの必要があります。リネームは失敗しました。</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>いくつかのRAWファイルは見つけることができません。不明なイメージを除きエクスポートまたはエクスポートをキャンセルできます。</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>選択したファイル "%1$@" はオリジナル ファイル"%2$@"と異なる名前が付いています。
+
+選択したファイルを使用しますか？</string>
+	<key>The session appears corrupt.</key>
+	<string>セッションは破損してるように見えます。</string>
+	<key>The session could not be saved.</key>
+	<string>セッションは保存できませんでした。</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>名前が変更されたセッションファイルでセッションデータの移行が発生しました。"%@"をもう一度開いてください。</string>
+	<key>The session file does not exist.</key>
+	<string>セッション ファイルは存在しません。</string>
+	<key>The session file is empty.</key>
+	<string>セッションファイルは空です。</string>
+	<key>The session file is in the Trash.</key>
+	<string>セッションはゴミ箱にあります。</string>
+	<key>The session file is not writable.</key>
+	<string>セッションファイルは書き込みできません。</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>セッションファイルは %@ で保存されているため、このバージョンでは読み込めません。</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>セッションは新しいバージョンの Capture One で保存されました。</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>セッションはCapture Oneの古い、サポートされていないバージョンで保存されました。</string>
+	<key>There are no images to export.</key>
+	<string>エクスポートするイメージがありません。</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>エクスポートするイメージがありません。
+必要に応じてサブフォルダも含めてください。</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>現像ファイルの処理中にエラーが発生しました。</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>xmpファイル処理中にエラーがありました。</string>
+	<key>There was an error loading the mask.</key>
+	<string>マスクの読み込み中にエラーが発生しました。</string>
+	<key>Threshold</key>
+	<string>しきい値</string>
+	<key>Tilt</key>
+	<string>傾斜</string>
+	<key>Tilt Direction</key>
+	<string>傾斜方向</string>
+	<key>Time Lapse</key>
+	<string>タイムラプス</string>
+	<key>Time-lapse</key>
+	<string>タイムラプス</string>
+	<key>Timer</key>
+	<string>タイマー</string>
+	<key>Tint</key>
+	<string>色合い</string>
+	<key>Title</key>
+	<string>タイトル</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>データベースを引き続き使用するには、確認と修復を実行してください。</string>
+	<key>Trash</key>
+	<string>ゴミ箱</string>
+	<key>Trash Folder</key>
+	<string>ゴミ箱フォルダ</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>イメージファイルをパッケージに変換できません</string>
+	<key>Unable to convert package to image file</key>
+	<string>パッケージをイメージファイルに変換できません</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>プロキシを作成できません。イメージファイルは損傷しているか、読み込みできません。</string>
+	<key>Unable to load LCC profile.</key>
+	<string>LCCプロファイルを読み込めません</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>オフラインイメージからメタデータを読み込むことができないので、スキップされます。</string>
+	<key>Unable to read package file.</key>
+	<string>パッケージファイルを読み出せません。</string>
+	<key>Uncalib.</key>
+	<string>Uncalib.</string>
+	<key>Uncalibrated</key>
+	<string>未校正</string>
+	<key>Uncataloged</key>
+	<string>カタログから除去</string>
+	<key>Unconstrained</key>
+	<string>制限なし</string>
+	<key>Undef.</key>
+	<string>Undef.</string>
+	<key>Undefined</key>
+	<string>未定義</string>
+	<key>Uniform Light</key>
+	<string>ユニフォームライト</string>
+	<key>Uniform Light Amount</key>
+	<string>ユニフォームライトの量</string>
+	<key>Unknown</key>
+	<string>不明</string>
+	<key>Unknown Font</key>
+	<string>不明なフォント</string>
+	<key>Unknown Group</key>
+	<string>不明なグループ</string>
+	<key>Unknown Processing Engine</key>
+	<string>不明な現像エンジン</string>
+	<key>Unknown Scale</key>
+	<string>不明なスケール</string>
+	<key>Unknown Setting</key>
+	<string>不明な設定</string>
+	<key>Unknown reason.</key>
+	<string>不明な原因。</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>%2$d EIPイメージのうち%1$dを展開</string>
+	<key>Unpacking %d EIP files</key>
+	<string>%d EIPファイルの展開</string>
+	<key>Unpacking EIP Failed</key>
+	<string>EIPの展開に失敗</string>
+	<key>Unrated</key>
+	<string>レーティング なし</string>
+	<key>Unsupported catalog version.</key>
+	<string>サポートされていないカタログのバージョンです。</string>
+	<key>Unsupported document version.</key>
+	<string>サポートされていないドキュメントのバージョンです。</string>
+	<key>Unsupported session version.</key>
+	<string>サポートされていないセッションのバージョンです。</string>
+	<key>Untitled Album</key>
+	<string>名称未設定アルバム</string>
+	<key>Untitled Recipe</key>
+	<string>名称未設定レシピ</string>
+	<key>Update Images</key>
+	<string>イメージをアップデート</string>
+	<key>Updating</key>
+	<string>アップデート中です</string>
+	<key>Upgrade Engine</key>
+	<string>エンジンをアップグレード</string>
+	<key>Upgrade Processing Engine</key>
+	<string>現像エンジンをアップグレード</string>
+	<key>Urgency</key>
+	<string>ラベル</string>
+	<key>Usage Terms</key>
+	<string>使用条件</string>
+	<key>Variant Position</key>
+	<string>バリアント ポジション</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>バリアントには %1$lu 以上のレイヤーを含めることができません。スキップすると %2$@ に調整は適用されません</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>バリアントには %1$lu 以上のレイヤーを含めることができません。スキップすると %2$lu バリアントには調整は適用されません。</string>
+	<key>Vendor Specific</key>
+	<string>メーカー仕様</string>
+	<key>Vendor White Balance</key>
+	<string>ベンダー ホワイトバランス</string>
+	<key>Vertical Keystone Correction</key>
+	<string>キーストーン - 垂直</string>
+	<key>Video</key>
+	<string>ビデオ</string>
+	<key>Vignetting</key>
+	<string>ビネット</string>
+	<key>Vignetting Amount</key>
+	<string>ビネット量</string>
+	<key>Vignetting Disabled</key>
+	<string>ビネッティングが機能しない</string>
+	<key>Vignetting Enabled</key>
+	<string>ビネットを有効にする</string>
+	<key>Vignetting Method</key>
+	<string>ビネッティング方式</string>
+	<key>Vignetting Method Circular</key>
+	<string>ビネット モード 円形</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>ビネット モード  円形 - クロップ範囲内</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>ビネット モード 楕円 - クロップ範囲内</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>警告:レンズキャストキャリブレーションはクリップデータを含みます。悪いカラーキャストが発生するかもしれません。</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>警告: レンズキャストキャリブレーションの露出はよくないです。不適確な結果になる可能性があります。</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>警告:レンズキャストキャリブレーションの不鮮明なスポットは部分的にしか補正できないかもしてません。</string>
+	<key>Website(s)</key>
+	<string>Webサイト</string>
+	<key>Websites</key>
+	<string>Webサイト</string>
+	<key>White Balance</key>
+	<string>ホワイトバランス</string>
+	<key>White Recovery</key>
+	<string>ホワイトリカバリー</string>
+	<key>White balance</key>
+	<string>ホワイトバランス</string>
+	<key>Width</key>
+	<string>幅</string>
+	<key>Width x Height</key>
+	<string>幅 x 高さ</string>
+	<key>Writer</key>
+	<string>作家</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>パッケージへの設定の書き込みが失敗しました。ファイルが破損している可能性があります。</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>設定を圧縮ファイルに書き込み失敗しました。アクセス権の問題か、破損している可能性があります。</string>
+	<key>YES</key>
+	<string>YES</string>
+	<key>Yellow</key>
+	<string>イエロー</string>
+	<key>Yes</key>
+	<string>はい</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>あなたの選択に複数のLCCが含まれています。LCCは前のバリアントに適用されます（LCCの左に表示されるすべてのファイルにそのプロファイルが適用されます）。</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>あなたの選択に複数のLCCが含まれています。LCCは後のバリアントに適用されます（LCCの左に表示されるすべてのファイルにそのプロファイルが適用されます）。</string>
+	<key>Zip</key>
+	<string>Zip</string>
+	<key>Zoom: %.f%%</key>
+	<string>ズーム: %.f%%</string>
+	<key>auto</key>
+	<string>オート</string>
+	<key>begins with</key>
+	<string>で始まる</string>
+	<key>camera custom</key>
+	<string>カメラカスタム</string>
+	<key>cloudy</key>
+	<string>曇</string>
+	<key>contains</key>
+	<string>含む</string>
+	<key>cool white fluorescent</key>
+	<string>蛍光灯クールホワイト</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>日光色 蛍光灯</string>
+	<key>day white fluorescent</key>
+	<string>昼白色 蛍光灯</string>
+	<key>daylight</key>
+	<string>デイライト</string>
+	<key>daylight fluorescent</key>
+	<string>昼光色 蛍光灯</string>
+	<key>dd</key>
+	<string>dd</string>
+	<key>dd-MM-yy</key>
+	<string>dd-MM-yy</string>
+	<key>direct sunlight</key>
+	<string>直射日光</string>
+	<key>does not contain</key>
+	<string>含まない</string>
+	<key>ends with</key>
+	<string>で終わる</string>
+	<key>equals</key>
+	<string>等しい</string>
+	<key>error</key>
+	<string>エラー</string>
+	<key>fine weather</key>
+	<string>晴天</string>
+	<key>fine weather with shade</key>
+	<string>快晴の日陰</string>
+	<key>flash</key>
+	<string>フラッシュ</string>
+	<key>fluorescent</key>
+	<string>蛍光灯</string>
+	<key>fluorescent d</key>
+	<string>蛍光灯d</string>
+	<key>fluorescent h</key>
+	<string>蛍光灯h</string>
+	<key>fluorescent n</key>
+	<string>蛍光灯n</string>
+	<key>fluorescent w</key>
+	<string>蛍光灯w</string>
+	<key>h</key>
+	<string>h</string>
+	<key>h-mm a</key>
+	<string>h-mm a</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>高温の水銀蒸気ランプ</string>
+	<key>hmi</key>
+	<string>hmi</string>
+	<key>incandescent</key>
+	<string>白熱灯</string>
+	<key>is</key>
+	<string>等しい</string>
+	<key>is after</key>
+	<string>以後</string>
+	<key>is before</key>
+	<string>以前</string>
+	<key>is false</key>
+	<string>なし</string>
+	<key>is faster than</key>
+	<string>より高速</string>
+	<key>is faster than or equal to</key>
+	<string>等しいまたはより高速</string>
+	<key>is greater than</key>
+	<string>以上</string>
+	<key>is greater than or equal to</key>
+	<string>等しいまたはそれ以上</string>
+	<key>is less than</key>
+	<string>以下</string>
+	<key>is less than or equal to</key>
+	<string>等しいまたはそれ以下</string>
+	<key>is narrower than</key>
+	<string>より絞った</string>
+	<key>is narrower than or equal to</key>
+	<string>等しいまたはより絞った</string>
+	<key>is not</key>
+	<string>等しくない</string>
+	<key>is not equal to</key>
+	<string>等しくない</string>
+	<key>is not on</key>
+	<string>等しくない</string>
+	<key>is on</key>
+	<string>等しい</string>
+	<key>is slower than</key>
+	<string>より低速</string>
+	<key>is slower than or equal to</key>
+	<string>等しいまたはより低速</string>
+	<key>is true</key>
+	<string>あり</string>
+	<key>is wider than</key>
+	<string>より開いた</string>
+	<key>is wider than or equal to</key>
+	<string>等しいまたはより開いた</string>
+	<key>iso studio tungsten</key>
+	<string>isoスタジオ タングステン</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>.%@ キープ</string>
+	<key>kelvin</key>
+	<string>ケルビン</string>
+	<key>manual</key>
+	<string>手動</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>分</string>
+	<key>mm</key>
+	<string>mm</string>
+	<key>neutral white fluorescent</key>
+	<string>自然白色蛍光灯</string>
+	<key>normal</key>
+	<string>標準</string>
+	<key>s</key>
+	<string>s</string>
+	<key>shade</key>
+	<string>日陰</string>
+	<key>shadow</key>
+	<string>シャドウ</string>
+	<key>shot</key>
+	<string>ショット</string>
+	<key>sodium-vapor lamp</key>
+	<string>ナトリウム蒸気ランプ</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>標準光a</string>
+	<key>standard light b</key>
+	<string>標準光b</string>
+	<key>standard light c</key>
+	<string>標準光c</string>
+	<key>star</key>
+	<string>星</string>
+	<key>stars</key>
+	<string>星</string>
+	<key>sunny</key>
+	<string>晴天</string>
+	<key>tungsten</key>
+	<string>タングステン</string>
+	<key>underwater</key>
+	<string>水中</string>
+	<key>unknown</key>
+	<string>不明</string>
+	<key>use .%@</key>
+	<string>使用 .%@</string>
+	<key>warm white fluorescent</key>
+	<string>暖白色蛍光灯</string>
+	<key>white fluorescent</key>
+	<string>白色蛍光灯</string>
+	<key>yy</key>
+	<string>yy</string>
+	<key>yy-MM-dd</key>
+	<string>yy-MM-dd</string>
+	<key>yyyy</key>
+	<string>yyyy</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>yyyy-MM-dd HH.mm.ss</string>
+</dict>
+</plist>

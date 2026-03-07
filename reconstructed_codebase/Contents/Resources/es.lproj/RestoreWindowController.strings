@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Restaurar</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Ubicación de Copia de Seguridad:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Volver a intentar</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Siguiente</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Restaurar Catalogo</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Area de texto</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Se ha producido un error. ¿Desea inténtarlo de nuevo?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Copiando archivos…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>No se encontraron copias de seguridad</string>
+	<key>W74-ST-qV9.title</key>
+	<string>Ruta</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Cancelar</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Mostrar en Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Esto reemplazará la base de datos existente y no se puede deshacer.
+No fuerce la salida o el apague el ordenador durante la restauración.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Copia de seguridad restaurada con éxito</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>error</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Abrir Catálogo</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Cancelar</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Titular</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Anterior</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Nombre del Catálogo</string>
+</dict>
+</plist>

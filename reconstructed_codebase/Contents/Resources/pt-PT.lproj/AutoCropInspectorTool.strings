@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Roll Film - tamanho fixo</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Limite Material - tamanho fixo</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Níveis automáticos no corte interior</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Corte automático</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Em corte</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Auto cortar automaticamente ao capturar uma nova imagem</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Borda Superior</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pré-Passe</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Nenhum</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Tamanho de preenchimento aplicado ao cortar automaticamente.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Enchimento</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Borda Inferior</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Bordas Superior Direita</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Baixo Contraste do fundo do objeto</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Endireitar</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Nenhum</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Material solto</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Método</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Média</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Borda Esquerda</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Limite Material</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Tamanho de preenchimento aplicado ao cortar automaticamente.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Material solto - tamanho fixo</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Otimização</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Tamanho de preenchimento aplicado ao cortar automaticamente.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Nenhum</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Borda Direita</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Em captura</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Borda Inferior Esquerda</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Gatilhos</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Borda Superior Esquerda</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Médio Contraste do fundo do Objeto</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Borda Inferior Direita</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Auto cortar automaticamente ao criar um novo corte.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Definir corte mestre</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Super Baixo Contraste de fundo do objeto</string>
+</dict>
+</plist>

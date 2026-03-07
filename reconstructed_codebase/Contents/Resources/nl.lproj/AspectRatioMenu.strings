@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>OK</string>
+	<key>116.title</key>
+	<string>Annuleer</string>
+	<key>117.title</key>
+	<string>Naam</string>
+	<key>118.title</key>
+	<string>Verhouding</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Gereed</string>
+	<key>124.title</key>
+	<string>Verwijderen</string>
+	<key>6.title</key>
+	<string>Nieuwe verhouding</string>
+	<key>66.title</key>
+	<string>Organiseer beeldverhoudingen</string>
+</dict>
+</plist>

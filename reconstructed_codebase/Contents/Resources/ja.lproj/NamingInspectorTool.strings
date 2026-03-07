@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>185.title</key>
+	<string>タイトル</string>
+	<key>25a-h5-zmc.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>プリセット</string>
+	<key>396.title</key>
+	<string>Macintosh HD/Users/jfr/Pictures/Two of Each 3.7.6</string>
+	<key>397.title</key>
+	<string>場所</string>
+	<key>399.title</key>
+	<string>ストレージ内、20MB使用可能</string>
+	<key>400.title</key>
+	<string>空き容量</string>
+	<key>401.title</key>
+	<string>サンプル</string>
+	<key>402.title</key>
+	<string>My Great Safari.TIF</string>
+	<key>404.title</key>
+	<string>ジョブ名</string>
+	<key>405.title</key>
+	<string>My Great Safari</string>
+	<key>408.title</key>
+	<string>キャンセル</string>
+	<key>409.title</key>
+	<string>リネーム</string>
+	<key>419.title</key>
+	<string>フォーマット</string>
+	<key>Blt-Ql-npf.title</key>
+	<string>検索と置換</string>
+	<key>IGF-8H-wTJ.title</key>
+	<string>イメージ名</string>
+	<key>RmK-jn-2V2.title</key>
+	<string>ジョブとイメージ名</string>
+	<key>YZM-cp-W0o.title</key>
+	<string>ジョブ名とカウンター</string>
+	<key>aAZ-NK-Xjh.title</key>
+	<string>検索</string>
+	<key>jdM-ZY-EwL.title</key>
+	<string>置換</string>
+	<key>qma-yp-kDJ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方法</string>
+	<key>y3Z-8k-G7y.title</key>
+	<string>イメージとジョブ名</string>
+	<key>znA-BM-BP2.title</key>
+	<string>テキストとトークン</string>
+</dict>
+</plist>

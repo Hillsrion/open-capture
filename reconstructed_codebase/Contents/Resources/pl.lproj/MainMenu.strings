@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01C-Il-VMP.title</key>
+	<string>Adnotacje</string>
+	<key>0H0-Jc-t3x.title</key>
+	<string>Warianty...</string>
+	<key>0Ps-7b-sBQ.title</key>
+	<string>Licznik zmiany nazw</string>
+	<key>0Q0-M5-LmI.title</key>
+	<string>M</string>
+	<key>0UZ-1K-nR1.title</key>
+	<string>Warstwa</string>
+	<key>0ih-RM-Js7.title</key>
+	<string>Widok</string>
+	<key>14z-pL-mA5.ibShadowedToolTip</key>
+	<string>Zresetuj dopasowania dla wariantów</string>
+	<key>14z-pL-mA5.title</key>
+	<string>Usuń wybraną warstwę</string>
+	<key>1LQ-Jh-EPo.title</key>
+	<string>Aktualizuj silnik</string>
+	<key>1Lv-YA-qve.title</key>
+	<string>Wybierz</string>
+	<key>1Nd-JK-zNO.title</key>
+	<string>Sklep...</string>
+	<key>1gq-zE-mEg.title</key>
+	<string>Pasek narzędzi</string>
+	<key>1rs-DA-1do.title</key>
+	<string>Synchronizuj metadane</string>
+	<key>224-6K-J3h.title</key>
+	<string>Zawsze ukrywaj pliki PNG</string>
+	<key>24q-pt-xtA.title</key>
+	<string>Pisownia</string>
+	<key>25l-uy-u1U.title</key>
+	<string>Przenieś wariant niżej</string>
+	<key>28d-GR-VH6.title</key>
+	<string>Przetwórz wybrane</string>
+	<key>29.title</key>
+	<string>MainMenu</string>
+	<key>2BO-O0-qsH.title</key>
+	<string>Poziomy</string>
+	<key>2Gr-gy-fxz.title</key>
+	<string>Wybierz folder Hot...</string>
+	<key>2KV-Ld-vZd.title</key>
+	<string>Dodaj do Ulubionych</string>
+	<key>2XR-PQ-i11.title</key>
+	<string>Pomoc</string>
+	<key>2pa-ft-UHr.title</key>
+	<string>Włącz/wyłącz warstwę</string>
+	<key>3028.title</key>
+	<string>Utwórz nowe okno</string>
+	<key>36O-pG-qIh.title</key>
+	<string>Ustaw licznik…</string>
+	<key>38I-f2-Ssj.title</key>
+	<string>Auto</string>
+	<key>3T1-Cx-ywj.title</key>
+	<string>Wytnij</string>
+	<key>3To-a4-pSf.ibShadowedToolTip</key>
+	<string>Przywróć kopię zapasową tego katalogu</string>
+	<key>3To-a4-pSf.title</key>
+	<string>Przywróć katalog...</string>
+	<key>3Ui-ok-lzu.title</key>
+	<string>Zweryfikuj bazę danych przy otwarciu</string>
+	<key>3Z4-fg-SOV.title</key>
+	<string>Menu</string>
+	<key>3ep-eN-uVW.title</key>
+	<string>Pasek narzędzi Podglądu</string>
+	<key>3gr-b2-izd.title</key>
+	<string>Utwórz album według:</string>
+	<key>3lw-Wa-6il.title</key>
+	<string>Wybór</string>
+	<key>3rd-Dg-1hZ.title</key>
+	<string>Orientacja</string>
+	<key>40o-AJ-xoM.title</key>
+	<string>Edytuj za pomocą</string>
+	<key>44D-aG-E83.title</key>
+	<string>Odczyt w Lab</string>
+	<key>4F7-S3-7wH.title</key>
+	<string>Ta sama ocena</string>
+	<key>4MD-pK-52t.title</key>
+	<string>Menu</string>
+	<key>4tc-Vp-Tn2.title</key>
+	<string>Licznik eksportu</string>
+	<key>500-CP-quJ.title</key>
+	<string>Doprecyzuj maskę...</string>
+	<key>5Kn-v3-3J9.title</key>
+	<string>Linie pomocnicze</string>
+	<key>5Qh-XJ-7lV.title</key>
+	<string>Zresetuj linie pomocnicze</string>
+	<key>5Td-ii-gu5.title</key>
+	<string>Capture One</string>
+	<key>5eA-Cd-e2H.title</key>
+	<string>Ustaw jako folder Wybrane</string>
+	<key>5qY-K4-hhW.title</key>
+	<string>Widok maski</string>
+	<key>5xI-ot-kZZ.title</key>
+	<string>ID sekwencji</string>
+	<key>65L-HG-c0K.title</key>
+	<string>Zresetuj licznik</string>
+	<key>6Jb-3H-48Z.title</key>
+	<string>Dodaj narzędzie typu inspektor do wybranej karty</string>
+	<key>6Pw-sw-mKP.title</key>
+	<string>Edytuj wszystkie wybrane warianty</string>
+	<key>6RB-Ks-Q9Y.title</key>
+	<string>Ustaw lub zmień PIN...</string>
+	<key>6Ve-3u-FtW.title</key>
+	<string>Przejdź do następnego, gdy</string>
+	<key>6WK-Rn-IDM.title</key>
+	<string>Zastosuj dopasowania z</string>
+	<key>6dD-vu-ayz.title</key>
+	<string>Dopasuj automatycznie</string>
+	<key>6fd-wm-DqL.ibShadowedToolTip</key>
+	<string>Zarejestruj obraz za pomocą podłączonego aparatu</string>
+	<key>6fd-wm-DqL.title</key>
+	<string>Menedżer sieci aparatów...</string>
+	<key>6nI-5Q-bF1.title</key>
+	<string>Następny zestaw</string>
+	<key>6sQ-je-30n.title</key>
+	<string>Licznik wywoływania</string>
+	<key>75o-KI-t8D.title</key>
+	<string>Licznik importu</string>
+	<key>7MX-Bb-VSm.title</key>
+	<string>Opublikuj</string>
+	<key>7Ow-LL-dv0.title</key>
+	<string>Poprzednia kolekcja</string>
+	<key>7zw-gL-Wno.title</key>
+	<string>Nowy wariant</string>
+	<key>8I6-nm-Uiw.title</key>
+	<string>Nowa kolekcja</string>
+	<key>8R2-c5-XAq.title</key>
+	<string>Kopiuj dopasowania</string>
+	<key>8du-uT-ICL.title</key>
+	<string>Wyjdź z kolekcji</string>
+	<key>92E-j9-FEm.title</key>
+	<string>Ta sama pozycja wariantu</string>
+	<key>94T-HJ-feh.title</key>
+	<string>Wybierz według:</string>
+	<key>9Aa-c4-9VI.title</key>
+	<string>Zwiń wybrane</string>
+	<key>9Hl-bF-YXx.title</key>
+	<string>Dziennik zdarzeń</string>
+	<key>9NL-eQ-T1Q.title</key>
+	<string>Pomoc</string>
+	<key>9b8-5C-GLZ.title</key>
+	<string>Eksportuj jako katalog...</string>
+	<key>9bM-jw-56t.title</key>
+	<string>Odznacz wszystkie</string>
+	<key>9g2-Zq-Mgh.title</key>
+	<string>Awaria Capture One</string>
+	<key>9iB-p5-gRZ.title</key>
+	<string>Licznik malejący</string>
+	<key>9k8-L5-lSq.title</key>
+	<string>Obraz</string>
+	<key>9lE-sW-NkR.title</key>
+	<string>Synchronizuj folder…</string>
+	<key>9pG-rx-dax.title</key>
+	<string>Usuń</string>
+	<key>9tG-Te-CEV.title</key>
+	<string>Pokaz slajdów</string>
+	<key>9wF-vo-1tW.title</key>
+	<string>Kontrast i jasność</string>
+	<key>ACe-cT-qRq.title</key>
+	<string>Importuj sesję…</string>
+	<key>AHw-Yv-ZV0.title</key>
+	<string>Nowy album...</string>
+	<key>APq-Ot-xfY.title</key>
+	<string>Ustaw licznik…</string>
+	<key>ARA-Qg-wH6.title</key>
+	<string>Edytuj</string>
+	<key>AVP-cL-jr5.title</key>
+	<string>Wyzwól w kolejce</string>
+	<key>AiG-bi-lBS.title</key>
+	<string>Ustaw przyrost...</string>
+	<key>Avm-Xr-hJI.title</key>
+	<string>Oryginały…</string>
+	<key>B6A-Bd-wdt.title</key>
+	<string>Warstwa</string>
+	<key>BBe-mx-5MA.title</key>
+	<string>Odczyty koloru</string>
+	<key>BKI-Ak-E3C.title</key>
+	<string>Awaria OpenCore</string>
+	<key>BMq-UG-ndQ.title</key>
+	<string>Licznik wywoływania</string>
+	<key>BPz-o1-8u8.title</key>
+	<string>Otwórz ostatnie</string>
+	<key>BlO-8u-bjW.title</key>
+	<string>Wybierz kartę narzędzi</string>
+	<key>C8i-Ie-mV3.title</key>
+	<string>Zgłoś błąd...</string>
+	<key>CTk-NV-A7b.title</key>
+	<string>Licencja...</string>
+	<key>Cbk-cE-Rnc.title</key>
+	<string>Wyświetl punkty wyboru</string>
+	<key>Ce0-Be-8UJ.title</key>
+	<string>Wyłączona</string>
+	<key>Cyj-ce-0Gd.title</key>
+	<string>Plik</string>
+	<key>DSv-Kq-hdb.title</key>
+	<string>Sprawdź aktualizacje...</string>
+	<key>Dbr-g2-CoE.title</key>
+	<string>Usługi</string>
+	<key>DiO-W0-c4G.title</key>
+	<string>Tryb Przed/Po</string>
+	<key>Dsw-hn-IZg.title</key>
+	<string>Preferencje...</string>
+	<key>E5j-Qh-yw9.title</key>
+	<string>Edytuj skróty klawiaturowe...</string>
+	<key>EY1-4F-yTL.title</key>
+	<string>dodasz tag koloru</string>
+	<key>Eb6-Sk-NMb.title</key>
+	<string>Wczytaj metadane</string>
+	<key>Ej6-Xy-Scx.title</key>
+	<string>Wybierz takie same</string>
+	<key>Ez2-nJ-UxV.title</key>
+	<string>Utwórz LCC...</string>
+	<key>F65-Hg-uD7.title</key>
+	<string>Ustaw przyrost...</string>
+	<key>FIM-SV-caT.title</key>
+	<string>Zresetuj licznik</string>
+	<key>FTn-px-TXb.title</key>
+	<string>Zawsze ukrywaj pliki wideo</string>
+	<key>Fbl-im-0JF.title</key>
+	<string>Przenieś wariant wyżej</string>
+	<key>Few-hi-dlj.title</key>
+	<string>Następny</string>
+	<key>Fk8-fZ-Nge.title</key>
+	<string>Nakładka</string>
+	<key>Ft0-2F-qcY.title</key>
+	<string>Ustaw przyrost...</string>
+	<key>FyO-gf-P7P.title</key>
+	<string>Podgląd</string>
+	<key>Gea-NJ-sMI.title</key>
+	<string>XL</string>
+	<key>HgY-Ir-gjR.title</key>
+	<string>Ukryj pozostałe programy</string>
+	<key>I3p-9w-NiJ.title</key>
+	<string>Suwaki ImageCore</string>
+	<key>I5C-mb-Ph9.title</key>
+	<string>Podgląd</string>
+	<key>I8M-pI-mei.title</key>
+	<string>Filtry globalne</string>
+	<key>IEm-f0-wfu.title</key>
+	<string>Narzędzia</string>
+	<key>IID-Ve-jGb.title</key>
+	<string>Etykiety</string>
+	<key>IPe-NI-yoh.title</key>
+	<string>Plik</string>
+	<key>IQ8-iC-ffv.title</key>
+	<string>Pauza automatyczna</string>
+	<key>Ibb-8a-gRZ.title</key>
+	<string>L</string>
+	<key>Ic4-HZ-M7K.title</key>
+	<string>Przejdź do następnego, gdy...</string>
+	<key>Ik1-xy-Hdk.title</key>
+	<string>Ten sam tag koloru</string>
+	<key>Ikz-mO-9ZA.title</key>
+	<string>Zastosuj LCC</string>
+	<key>IqL-nF-pTb.title</key>
+	<string>Nigdy nie wyświetlaj maski</string>
+	<key>Izf-b8-5gq.title</key>
+	<string>Usługi</string>
+	<key>J2g-T4-9jM.title</key>
+	<string>Konfiguruj dopasowania automatyczne</string>
+	<key>J6f-2w-feE.title</key>
+	<string>Licznik przechwytywania</string>
+	<key>JO3-mT-am1.title</key>
+	<string>To samo ID sekwencji</string>
+	<key>JRI-NB-DJ3.title</key>
+	<string>Historia przetwarzania</string>
+	<key>JsD-gv-ZcN.title</key>
+	<string>Ocena</string>
+	<key>JzF-cB-jf5.title</key>
+	<string>Paski postępu</string>
+	<key>K2L-UQ-r8u.title</key>
+	<string>Awaria OpenCore</string>
+	<key>K4L-nU-bL0.title</key>
+	<string>Zresetuj licznik</string>
+	<key>KZr-yz-eOe.title</key>
+	<string>Otwórz ostatnie</string>
+	<key>KkK-Dm-Fyt.title</key>
+	<string>Zmniejsz wielkość miniatur</string>
+	<key>Kw9-6p-baP.title</key>
+	<string>Oddal</string>
+	<key>Kx8-Sf-MtA.title</key>
+	<string>Balans bieli</string>
+	<key>L2W-qr-fDh.title</key>
+	<string>Obrót</string>
+	<key>L6s-MY-kNd.title</key>
+	<string>Tag koloru</string>
+	<key>LBI-uj-64k.title</key>
+	<string>Nowy inteligentny album...</string>
+	<key>LBc-ql-cwY.title</key>
+	<string>Wybierz takie same</string>
+	<key>LTF-ps-Dul.title</key>
+	<string>Kopiuj i zastosuj dopasowania</string>
+	<key>LbY-8O-xu0.title</key>
+	<string>Dostosuj narzędzia</string>
+	<key>LcB-eX-4qN.title</key>
+	<string>Usuń</string>
+	<key>LeW-a9-a1n.title</key>
+	<string>Widok</string>
+	<key>LpJ-ak-5G4.title</key>
+	<string>90° w prawo</string>
+	<key>MFE-ll-7eO.title</key>
+	<string>Importuj katalog</string>
+	<key>MKh-xe-MEd.title</key>
+	<string>Paski postępu</string>
+	<key>MOG-uN-KrB.ibShadowedToolTip</key>
+	<string>Zarejestruj obraz za pomocą podłączonego aparatu</string>
+	<key>MOG-uN-KrB.title</key>
+	<string>Przechwytywanie</string>
+	<key>Mb9-kH-qyp.title</key>
+	<string>Otwórz za pomocą</string>
+	<key>Mfd-my-DKN.title</key>
+	<string>Przed/Po</string>
+	<key>My6-4Y-UBl.title</key>
+	<string>Rozwiń wszystkie</string>
+	<key>N5o-dv-1Be.title</key>
+	<string>Cofnij:</string>
+	<key>N9h-Al-5XE.title</key>
+	<string>Przenieś do kosza</string>
+	<key>Nhu-fQ-zjN.title</key>
+	<string>Zweryfikuj katalog lub sesję...</string>
+	<key>NyM-Zt-y88.title</key>
+	<string>Edytor krzywej filmu</string>
+	<key>O2C-D1-hn3.title</key>
+	<string>Tryb automatycznego ukrywania</string>
+	<key>O4t-ch-OFC.title</key>
+	<string>Kopiuj</string>
+	<key>O9F-Mo-6cG.title</key>
+	<string>Wskazówki</string>
+	<key>OCP-rg-Tmg.title</key>
+	<string>Menu</string>
+	<key>OQY-AD-asc.title</key>
+	<string>Orientacja</string>
+	<key>OVh-i7-5mp.title</key>
+	<string>Wyzwól asercję</string>
+	<key>OqC-NS-Eok.title</key>
+	<string>Bar Sample 02</string>
+	<key>PCm-vK-OGx.title</key>
+	<string>Nigdy nie resetuj automatycznie przestrzeni roboczej</string>
+	<key>PMu-nW-YC5.title</key>
+	<string>Wejdź do kolekcji</string>
+	<key>PQW-J0-1bK.title</key>
+	<string>Awaria CaptureCoreService</string>
+	<key>PRu-fp-fdO.title</key>
+	<string>Wybierz</string>
+	<key>PX7-Iq-9N2.title</key>
+	<string>Zobacz umowę licencyjną</string>
+	<key>Q9f-h8-bu5.title</key>
+	<string>Wybierz według:</string>
+	<key>QHc-R7-m41.title</key>
+	<string>Drukuj...</string>
+	<key>QSu-Ii-lqh.title</key>
+	<string>Ustaw przyrost...</string>
+	<key>Qhq-5B-fYE.title</key>
+	<string>Obrót</string>
+	<key>QjW-ua-tSX.title</key>
+	<string>Awaria Capture One</string>
+	<key>Qkh-Pd-T00.title</key>
+	<string>Pokaż wszystkie</string>
+	<key>Qu7-Iw-dyX.title</key>
+	<string>Ocena</string>
+	<key>Qx0-Bi-x6R.title</key>
+	<string>Skrypty</string>
+	<key>R3f-rv-RWH.title</key>
+	<string>Utwórz narzędzie pływające</string>
+	<key>RIv-U7-9vT.title</key>
+	<string>Konfiguruj dopasowania automatyczne</string>
+	<key>RkY-nO-oYQ.title</key>
+	<string>Widoczne - edytowalne</string>
+	<key>RuA-0Y-GGt.title</key>
+	<string>Wyczyść maskę</string>
+	<key>S4K-SB-UBy.title</key>
+	<string>O programie Capture One</string>
+	<key>SGm-xv-97r.title</key>
+	<string>Usuń kartę narzędzi</string>
+	<key>SJc-VY-oqD.title</key>
+	<string>Zmień nazwę obrazu</string>
+	<key>SXk-bE-jzi.ibShadowedToolTip</key>
+	<string>Opróżnij kosz sesji. Obrazy są trwale usuwane</string>
+	<key>SXk-bE-jzi.title</key>
+	<string>Opróżnij kosz</string>
+	<key>SiW-gP-wbL.title</key>
+	<string>Odwróć wybór</string>
+	<key>SlN-5G-v1Q.title</key>
+	<string>Kolor siatki</string>
+	<key>Ss4-ms-B6z.title</key>
+	<string>Zakres lumy...</string>
+	<key>TB3-MG-NqE.title</key>
+	<string>Wyszukiwanie zaawansowane...</string>
+	<key>TFk-vt-N7X.title</key>
+	<string>Usuń błąd</string>
+	<key>TWx-jo-Xie.title</key>
+	<string>Pisownia</string>
+	<key>TXq-Kk-7Ru.title</key>
+	<string>Zamknij program Capture One</string>
+	<key>Tao-sN-xcm.title</key>
+	<string>Awaria ImageCore</string>
+	<key>Tek-Pl-oY3.title</key>
+	<string>Wybierz tylko podstawowy</string>
+	<key>TfA-cx-Mvh.title</key>
+	<string>Maska ostrości</string>
+	<key>Tsz-Zr-wOo.title</key>
+	<string>Ostatni</string>
+	<key>Txa-r9-MeZ.title</key>
+	<string>Dodaj nową warstwę klonowania</string>
+	<key>U3J-Q4-APW.title</key>
+	<string>Skrypty</string>
+	<key>U5C-ej-t0I.title</key>
+	<string>Wybrany zakres koloru</string>
+	<key>UJa-BM-gkL.title</key>
+	<string>Edytuj</string>
+	<key>UOb-cc-i4u.title</key>
+	<string>Usuń z dysku...</string>
+	<key>UPZ-4r-LIP.title</key>
+	<string>Tryb automatycznego ukrywania</string>
+	<key>Umj-4D-Ft5.title</key>
+	<string>90° w lewo</string>
+	<key>Ums-2C-jGe.title</key>
+	<string>Obrót</string>
+	<key>VAN-jC-sVf.title</key>
+	<string>Ustaw licznik…</string>
+	<key>VIk-sI-Rak.title</key>
+	<string>Spinner Sample 01</string>
+	<key>VNo-j5-BoM.title</key>
+	<string>Następna kolekcja</string>
+	<key>VRZ-08-28a.title</key>
+	<string>Tag koloru</string>
+	<key>VYd-aa-ISY.title</key>
+	<string>Instrukcja użytkownika online</string>
+	<key>Vd2-sw-pUm.title</key>
+	<string>Ocena</string>
+	<key>W1O-Uk-8Al.title</key>
+	<string>Wyczyść wariant porównawczy</string>
+	<key>W8g-vz-Nkq.title</key>
+	<string>Siatka</string>
+	<key>WI5-uh-qyi.title</key>
+	<string>Zapisz dopasowania jako styl...</string>
+	<key>WZj-vq-3hp.ibShadowedToolTip</key>
+	<string>Sesja to szybki i łatwy sposób na pracę z ograniczoną liczbą obrazów w ramach jednego zadania lub zdarzenia. Obrazy można edytować, wyszukując ich lokalizację na dysku lub importując je do sesji.</string>
+	<key>WZj-vq-3hp.title</key>
+	<string>Nowa sesja...</string>
+	<key>WtP-ch-1PG.title</key>
+	<string>Capture One</string>
+	<key>XE8-eP-hGS.title</key>
+	<string>Korekcja zbieżności</string>
+	<key>XEz-MA-wNM.title</key>
+	<string>Ustaw licznik…</string>
+	<key>XJN-4m-xYh.title</key>
+	<string>Dodaj pionową linię pomocniczą</string>
+	<key>Xq1-cS-s6N.title</key>
+	<string>Dostosuj linie pomocnicze</string>
+	<key>Xu6-Jy-27Q.title</key>
+	<string>Utwórz zrzut dla przetwarzania/drukowania/stykówki internetowej/eksportu</string>
+	<key>Xve-bi-pm5.ibShadowedToolTip</key>
+	<string>Obróć warianty w prawo</string>
+	<key>Xve-bi-pm5.title</key>
+	<string>Obróć w prawo</string>
+	<key>Ya0-fP-PFT.title</key>
+	<string>Wyświetl maskę w skali szarości</string>
+	<key>Yhj-Cn-eCP.title</key>
+	<string>Tryb Przed/Po</string>
+	<key>Yhl-QQ-SNi.title</key>
+	<string>Ostrzeżenie o prześwietleniach</string>
+	<key>YjW-6L-mGx.title</key>
+	<string>Ustaw jako folder przechwytywania</string>
+	<key>YvP-eg-VLO.title</key>
+	<string>Przełącz położenie przeglądarki</string>
+	<key>Yzh-ba-11T.title</key>
+	<string>Licznik eksportu</string>
+	<key>Z12-Ur-vG5.title</key>
+	<string>Aparat</string>
+	<key>Z5p-mB-i3n.title</key>
+	<string>Kopiuj maskę z</string>
+	<key>ZEv-jN-yCz.title</key>
+	<string>Suwak podziału widoku</string>
+	<key>ZK1-Br-nPC.title</key>
+	<string>Eksportuj obrazy</string>
+	<key>ZSx-8D-9oe.title</key>
+	<string>Proofing formuły</string>
+	<key>ZkQ-kr-rOT.title</key>
+	<string>Rasteryzuj maskę</string>
+	<key>ZtV-H5-odX.title</key>
+	<string>Ustaw jako wariant porównawczy</string>
+	<key>a5o-KL-LMv.title</key>
+	<string>Działania w tle</string>
+	<key>a6a-6k-MaI.title</key>
+	<string>Wyzwól awarię...</string>
+	<key>aFc-UB-Ojr.title</key>
+	<string>Nowa grupa...</string>
+	<key>aWi-dq-WP7.title</key>
+	<string>Klonuj wariant</string>
+	<key>aeU-x2-HKG.title</key>
+	<string>Rozwiń wybrane</string>
+	<key>aoS-PQ-Fke.title</key>
+	<string>Następny</string>
+	<key>apZ-Xi-bTS.title</key>
+	<string>Wyczyść menu</string>
+	<key>bC2-8p-Sbj.title</key>
+	<string>Sprawdź pisownię</string>
+	<key>bQz-bN-0Pr.title</key>
+	<string>Utwórz album według:</string>
+	<key>bUF-hO-mho.title</key>
+	<string>HDR (szeroki zakres dynamiki)</string>
+	<key>bd0-6X-m18.title</key>
+	<string>Ocena</string>
+	<key>bdc-xp-MXX.title</key>
+	<string>Przenieś do folderu Wybrane</string>
+	<key>cIQ-0c-HMd.title</key>
+	<string>Ustaw jako folder wyjściowy</string>
+	<key>cJ0-5a-BtU.title</key>
+	<string>Zawsze wyświetlaj maskę</string>
+	<key>cNu-MK-hYx.title</key>
+	<string>Natychmiast</string>
+	<key>caw-2R-l90.title</key>
+	<string>Utwórz zrzut IC_ProcessSettings/IC_FileDestination</string>
+	<key>cb9-dY-odx.title</key>
+	<string>Testy wydajności</string>
+	<key>cjc-7e-hFl.title</key>
+	<string>Usuń narzędzie z wybranej karty</string>
+	<key>ckf-EW-xkf.title</key>
+	<string>Pokaż w programie Finder</string>
+	<key>d0L-pY-VgO.title</key>
+	<string>Testy wydajności</string>
+	<key>d50-fq-gSn.title</key>
+	<string>Ustaw licznik…</string>
+	<key>dAq-ug-Eha.title</key>
+	<string>Automatycznie wyświetl ostatni przechwycony obraz</string>
+	<key>dVS-br-Kwq.title</key>
+	<string>Dostosuj przeglądarkę</string>
+	<key>dVb-ZR-YFh.title</key>
+	<string>Okno</string>
+	<key>dk9-he-9dx.title</key>
+	<string>Wygeneruj ponownie podglądy</string>
+	<key>eAW-D0-ka1.title</key>
+	<string>Wyświetlaj strzałki korygowania i klonowania</string>
+	<key>emU-ls-KLQ.title</key>
+	<string>Menu</string>
+	<key>eqn-m3-Cil.title</key>
+	<string>Pasek narzędzi przeglądarki</string>
+	<key>exd-CD-8be.title</key>
+	<string>Zwiększ wielkość miniatur</string>
+	<key>fEO-V4-a9n.title</key>
+	<string>Bez oceny</string>
+	<key>fQW-x2-JHm.title</key>
+	<string>Widoczne - zablokowane</string>
+	<key>fai-sG-oed.title</key>
+	<string>Profil proofu</string>
+	<key>fgT-gu-xT9.title</key>
+	<string>Dodaj nową wypełnioną warstwę dopasowania</string>
+	<key>fs8-sW-tR1.ibShadowedToolTip</key>
+	<string>Obróć warianty w lewo</string>
+	<key>fs8-sW-tR1.title</key>
+	<string>Obróć w lewo</string>
+	<key>fse-N2-CBu.title</key>
+	<string>Zawsze ukrywaj pliki RAW</string>
+	<key>fwA-3y-i2C.title</key>
+	<string>Zresetuj licznik</string>
+	<key>fzw-GX-3Oz.title</key>
+	<string>dodasz ocenę</string>
+	<key>ga9-IJ-ciS.title</key>
+	<string>Ekspozycja</string>
+	<key>gac-ce-4hS.title</key>
+	<string>Szybkość wyszukiwania</string>
+	<key>gaw-q6-ZQt.title</key>
+	<string>Zawsze ukrywaj przetworzone pliki TIFF</string>
+	<key>hIg-Rd-5ek.title</key>
+	<string>Zastosuj dopasowania</string>
+	<key>hKJ-lB-Wyx.title</key>
+	<string>Dostosuj pasek narzędzi...</string>
+	<key>hNh-b3-9pp.title</key>
+	<string>Sortuj</string>
+	<key>hOL-XU-Zdy.title</key>
+	<string>Zarządzaj blokadami...</string>
+	<key>hRi-QW-I0r.title</key>
+	<string>Awaria ModelCore</string>
+	<key>hap-CP-2Kr.title</key>
+	<string>Ustaw przyrost...</string>
+	<key>hm3-R0-nnH.title</key>
+	<string>Zablokuj/odblokuj katalog</string>
+	<key>hyx-xU-vkz.title</key>
+	<string>Profil proofu</string>
+	<key>i53-f7-yoL.title</key>
+	<string>Przełącz położenie narzędzi</string>
+	<key>i5p-Um-m9T.title</key>
+	<string>Dopasowania</string>
+	<key>iTf-JB-Jml.title</key>
+	<string>Podgląd na żywo</string>
+	<key>ij0-Ig-v5x.title</key>
+	<string>Przybliż okno</string>
+	<key>itC-UE-2gw.title</key>
+	<string>Poprzedni</string>
+	<key>ivw-bE-Tp8.ibShadowedToolTip</key>
+	<string>Wykonaj kopię zapasową bieżącego katalogu</string>
+	<key>ivw-bE-Tp8.title</key>
+	<string>Zrób kopię zapasową katalogu...</string>
+	<key>iz4-l5-u4d.title</key>
+	<string>Historia przetwarzania</string>
+	<key>j9C-bw-Eqf.title</key>
+	<string>Przesuń wszystkie na wierzch</string>
+	<key>jFB-IF-a18.title</key>
+	<string>Pierwszy</string>
+	<key>jFU-cx-apQ.title</key>
+	<string>Etykiety</string>
+	<key>jTl-o5-QoF.title</key>
+	<string>Poprzedni zestaw</string>
+	<key>jha-Dh-6bI.title</key>
+	<string>Wypełnij maskę</string>
+	<key>jlv-C4-OK4.title</key>
+	<string>Eksportuj stykówkę internetową...</string>
+	<key>jmQ-Po-VKd.title</key>
+	<string>Wybierz wszystkie</string>
+	<key>k11-QY-wHF.title</key>
+	<string>Awaria ImageCore</string>
+	<key>kEw-1G-rHn.title</key>
+	<string>Ustaw jako folder Kosz</string>
+	<key>kJo-XM-aj7.title</key>
+	<string>XS</string>
+	<key>kLD-Ih-bSU.title</key>
+	<string>Utwórz zrzut dla podglądu wydruku/Podglądu</string>
+	<key>kVA-By-ceo.title</key>
+	<string>Kolor tła</string>
+	<key>kaS-cR-Itb.title</key>
+	<string>Pełen widok</string>
+	<key>ks9-Py-p2q.title</key>
+	<string>Tag koloru</string>
+	<key>kzM-Qh-gJR.ibShadowedToolTip</key>
+	<string>Wykonaj kopię zapasową bieżącego dokumentu jako szablon</string>
+	<key>kzM-Qh-gJR.title</key>
+	<string>Zapisz jako szablon...</string>
+	<key>l6v-uQ-6vA.title</key>
+	<string>Odznacz podstawowy</string>
+	<key>lsR-Cd-YTB.title</key>
+	<string>Dodaj nową warstwę korygowania</string>
+	<key>lsz-dg-BvX.title</key>
+	<string>Importuj katalog</string>
+	<key>lto-Al-Lic.title</key>
+	<string>Zamknij okno</string>
+	<key>m53-KV-wAJ.title</key>
+	<string>Obraz</string>
+	<key>mGQ-hW-7fj.title</key>
+	<string>Seryjnie zmień nazwy obrazów…</string>
+	<key>mGw-IN-30M.title</key>
+	<string>Tryb pełnoekranowy</string>
+	<key>mNh-zS-LXg.title</key>
+	<string>Tag koloru</string>
+	<key>mTR-t7-bfn.title</key>
+	<string>Ukryj Capture One</string>
+	<key>mU3-yj-odu.title</key>
+	<string>Katalog Capture One…</string>
+	<key>mWf-jA-GRT.title</key>
+	<string>Ocena</string>
+	<key>mb2-5a-je9.title</key>
+	<string>Licznik zmiany nazw</string>
+	<key>mz6-FE-px4.title</key>
+	<string>Nowa kolekcja</string>
+	<key>n5l-Fl-Ng8.title</key>
+	<string>Resource Hub…</string>
+	<key>n5r-O7-blt.title</key>
+	<string>Zwiń wszystkie</string>
+	<key>nE7-nm-cUN.title</key>
+	<string>Pokaż w narzędziu Biblioteka</string>
+	<key>nTn-id-iRz.title</key>
+	<string>Nowy projekt...</string>
+	<key>naw-rG-vWD.title</key>
+	<string>Ustaw wariant jako najwyższy</string>
+	<key>nbk-yq-Chp.title</key>
+	<string>Dostosuj Podgląd</string>
+	<key>ndC-o5-Nrj.title</key>
+	<string>Tag koloru</string>
+	<key>nry-zy-vLA.title</key>
+	<string>Gdy gotowy</string>
+	<key>oHh-wm-VLQ.title</key>
+	<string>Usuń narzędzie typu inspektor z wybranej karty</string>
+	<key>oLn-zi-kJP.title</key>
+	<string>Wtop maskę...</string>
+	<key>oNa-cq-UaH.title</key>
+	<string>Dodaj kartę narzędzi</string>
+	<key>oVF-Zi-Ly1.title</key>
+	<string>Style</string>
+	<key>oaD-9h-WhZ.title</key>
+	<string>Importuj obrazy...</string>
+	<key>pay-HP-uXe.title</key>
+	<string>Zawsze ukrywaj pliki JPEG</string>
+	<key>pos-6t-mez.title</key>
+	<string>Wyłączona</string>
+	<key>pqK-xL-L7m.title</key>
+	<string>Przestrzeń robocza</string>
+	<key>pw5-ef-Yde.title</key>
+	<string>Spinner Sample 02</string>
+	<key>qPD-iq-16K.title</key>
+	<string>Odwróć maskę</string>
+	<key>qfi-c8-Lj9.title</key>
+	<string>Nigdy</string>
+	<key>qzd-K0-SRD.title</key>
+	<string>Wypakuj EIP</string>
+	<key>r0M-bo-Ctx.title</key>
+	<string>Lista nazw plików…</string>
+	<key>rIx-ZF-zzR.title</key>
+	<string>Przeglądarka</string>
+	<key>rJ7-tj-Zjx.title</key>
+	<string>Dodaj narzędzie do wybranej karty</string>
+	<key>rKQ-8S-jJJ.title</key>
+	<string>Wykonaj ponownie</string>
+	<key>rg8-xW-C7E.title</key>
+	<string>Spakuj jako EIP</string>
+	<key>rlO-p5-pah.title</key>
+	<string>Okno</string>
+	<key>rwS-sM-J09.title</key>
+	<string>Zlokalizuj obraz...</string>
+	<key>sAJ-PN-NNm.title</key>
+	<string>S</string>
+	<key>sNP-5H-3KI.title</key>
+	<string>Wsparcie dla programu Capture One</string>
+	<key>sWb-mO-EDh.title</key>
+	<string>Etykiety</string>
+	<key>sZU-Ld-R58.title</key>
+	<string>Dodaj poziomą linię pomocniczą</string>
+	<key>sam-MH-Lvx.title</key>
+	<string>Dopasowane</string>
+	<key>smy-v7-f4P.title</key>
+	<string>Usuń błąd</string>
+	<key>stE-xv-Kcp.title</key>
+	<string>Sprawdzaj pisownię w trakcie pisania</string>
+	<key>t0Z-l1-Abr.title</key>
+	<string>Odczyt w Lab</string>
+	<key>t64-BB-MkS.title</key>
+	<string>Kolor tła</string>
+	<key>tFf-SU-Is4.title</key>
+	<string>Karty narzędzi</string>
+	<key>tPe-DZ-2kg.title</key>
+	<string>Eksportuj obrazy</string>
+	<key>tQv-C3-vCk.title</key>
+	<string>Otwórz...</string>
+	<key>tRq-qe-j3c.title</key>
+	<string>Przestrzeń robocza</string>
+	<key>uIl-Sc-fHK.title</key>
+	<string>Licznik przechwytywania</string>
+	<key>uMu-4A-XMk.title</key>
+	<string>Pisownia...</string>
+	<key>um6-7R-op7.title</key>
+	<string>Licznik importu</string>
+	<key>vKK-zV-QgI.title</key>
+	<string>Poprzedni</string>
+	<key>vN0-4W-ouU.title</key>
+	<string>Dostosuj linie pomocnicze</string>
+	<key>vNl-rw-7XV.title</key>
+	<string>Aparat</string>
+	<key>vPJ-Xt-IuB.title</key>
+	<string>Otwórz za pomocą</string>
+	<key>vXq-3w-y0D.title</key>
+	<string>Kolor linii pomocniczych</string>
+	<key>vek-MX-hli.title</key>
+	<string>Zresetuj licznik</string>
+	<key>w0t-zA-XqW.title</key>
+	<string>Margines proofu</string>
+	<key>w1y-hX-jq1.title</key>
+	<string>Dostosuj przeglądarkę</string>
+	<key>w49-QV-zqJ.title</key>
+	<string>Dodaj nową pustą warstwę dopasowania</string>
+	<key>wBf-ws-A5Q.ibShadowedToolTip</key>
+	<string>Katalog jest najlepszym miejscem do przechowywania i organizowania całej biblioteki obrazów. Aby móc pracować z obrazami w katalogu, katalog musi je zaimportować. Zalecane dla większości fotografów.</string>
+	<key>wBf-ws-A5Q.title</key>
+	<string>Nowy katalog...</string>
+	<key>wFu-j6-T7B.title</key>
+	<string>Folder Hot włączony</string>
+	<key>wr6-Ak-7xy.title</key>
+	<string>Bar Sample 01</string>
+	<key>wxi-Vv-EBx.title</key>
+	<string>Wyzwól asercję</string>
+	<key>wzo-cb-mif.title</key>
+	<string>Opublikuj</string>
+	<key>x0t-84-S7U.title</key>
+	<string>Zaznacz obszar kadrowania</string>
+	<key>xC8-Jz-x6n.title</key>
+	<string>Sortuj</string>
+	<key>xGv-Lk-p4S.title</key>
+	<string>Tryb kompozycji</string>
+	<key>xLy-q0-0Cq.title</key>
+	<string>Dopasowania</string>
+	<key>xdM-fB-QmX.title</key>
+	<string>Utwórz zrzut IC_ProcessSettings/IC_FileDestination</string>
+	<key>xiu-HR-Fv3.title</key>
+	<string>Zlokalizuj folder...</string>
+	<key>xj1-AI-B7a.title</key>
+	<string>Widok wybranych</string>
+	<key>xoa-r4-m7R.title</key>
+	<string>Wklej</string>
+	<key>y8j-67-b0w.title</key>
+	<string>Minimalizuj</string>
+	<key>yJf-h4-0Nf.title</key>
+	<string>Automatycznie wyświetl ostatni przechwycony obraz</string>
+	<key>yLh-tq-tGA.title</key>
+	<string>Filtry globalne</string>
+	<key>zIN-U6-GWH.title</key>
+	<string>Przybliż</string>
+	<key>zd3-KN-4Md.ibShadowedToolTip</key>
+	<string>Zresetuj dopasowania dla wariantów</string>
+	<key>zd3-KN-4Md.title</key>
+	<string>Zresetuj</string>
+	<key>zdr-UD-UZn.title</key>
+	<string>Wyświetlaj maskę tylko podczas rysowania</string>
+	<key>zoC-BT-olu.ibShadowedToolTip</key>
+	<string>Obróć wariant podstawowy, aby ustawić w orientacji poziomej lub pionowej. Wciśnij klawisz Shift, aby obrócić wszystkie wybrane warianty</string>
+	<key>zoC-BT-olu.title</key>
+	<string>Wyrównaj do pionu/poziomu</string>
+	<key>zoo-YX-3kR.title</key>
+	<string>Zastosuj dopasowania z</string>
+</dict>
+</plist>

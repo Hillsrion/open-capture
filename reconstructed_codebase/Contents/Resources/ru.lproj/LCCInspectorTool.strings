@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>Цветовое искажение</string>
+	<key>1495.title</key>
+	<string>Включить однородный свет</string>
+	<key>1606.title</key>
+	<string>Удаление пыли</string>
+	<key>1699.title</key>
+	<string>Имя профиля LCC</string>
+	<key>1700.title</key>
+	<string>Профиль</string>
+	<key>1720.title</key>
+	<string>Создать LCC</string>
+	<key>1785.title</key>
+	<string>Применить параметры LCC</string>
+	<key>1792.title</key>
+	<string>Отмена</string>
+	<key>1793.title</key>
+	<string>ОК</string>
+	<key>1795.title</key>
+	<string>Однородный свет</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>кельвин</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Однородный свет</string>
+</dict>
+</plist>

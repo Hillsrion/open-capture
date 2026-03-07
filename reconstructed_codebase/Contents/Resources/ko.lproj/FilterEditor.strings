@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>102.title</key>
+	<string>OtherViews</string>
+	<key>116.title</key>
+	<string>취소</string>
+	<key>148.title</key>
+	<string>현재 이미지로 앨범 만들기</string>
+	<key>171.title</key>
+	<string>저장</string>
+	<key>172.title</key>
+	<string>취소</string>
+	<key>173.title</key>
+	<string>스마트 앨범 이름:</string>
+	<key>188.title</key>
+	<string>도움말</string>
+	<key>48.title</key>
+	<string>스마트 앨범 만들기</string>
+</dict>
+</plist>

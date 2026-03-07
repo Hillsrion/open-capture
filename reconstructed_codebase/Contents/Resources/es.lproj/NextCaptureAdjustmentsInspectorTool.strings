@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Copiar variantes de la principal</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Copia los ajustes de la última captura.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Copiar de la última</string>
+	<key>250.title</key>
+	<string>Menú</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Ajustar automáticamente las imágenes capturadas</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Copiar variantes de la última</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientación</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Copia los ajustes de la última captura.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Copiar de la última</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Copiar variantes de la última</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Copia específica de la Última...</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Copia específica de la Principal...</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Copiar los ajustes de la variante principal</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Copiar de la principal</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Copia específica de la Última...</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Utilizar los ajustes predeterminados</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Valores predeterminados</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Copiar variantes de la principal</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Estilos</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Copiar del portapapeles</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Copiar los ajustes de la variante principal</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Copiar de la principal</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Copiar del portapapeles</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Utilizar los ajustes predeterminados</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Valores predeterminados</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Utilizar el perfil ICC predeterminado para la cámara</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Valor predeterminado</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Utilice la orientación predeterminada de la cámara</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Valor predeterminado</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>Copiar el perfil ICC desde la última imagen capturada.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Copiar de la última</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadatos</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Copia específica de la Principal...</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Otro</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>Copiar el perfil ICC desde la variante principal</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Copiar de la principal</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Perfil ICC</string>
+</dict>
+</plist>

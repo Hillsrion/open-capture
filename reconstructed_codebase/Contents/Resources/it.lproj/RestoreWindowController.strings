@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Ripristina</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Posizione backup:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Riprova</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Successivo</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Ripristina Catalogo</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Cella Testo</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Si è verificato un errore. Riprovare?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Copia file…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Nessun backup trovato</string>
+	<key>W74-ST-qV9.title</key>
+	<string>Percorso</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Cancella</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Mostra nel Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Questo sostituirà il database esistente e non può essere annullato.
+Ti preghiamo di non forzare la chiusura o spegnere il computer durante il ripristino.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Backup ripristinato con successo</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>errore</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Apri Catalogo</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Cancella</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Titolo</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Precedente</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Nome Catalogo</string>
+</dict>
+</plist>

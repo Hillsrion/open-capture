@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>32.ibExternalAccessibilityDescription</key>
+	<string>CropShowMaskPopup</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>항상</string>
+	<key>35.title</key>
+	<string>안 함</string>
+	<key>36.title</key>
+	<string>드래그 중 제외</string>
+	<key>38.ibExternalAccessibilityDescription</key>
+	<string>CropOpacitySlider</string>
+	<key>40.ibExternalAccessibilityDescription</key>
+	<string>CropBrightnessSlider</string>
+	<key>41.ibExternalAccessibilityDescription</key>
+	<string>CropShowFramePopup</string>
+	<key>42.title</key>
+	<string>OtherViews</string>
+	<key>43.title</key>
+	<string>마스크가 없는 경우</string>
+	<key>44.title</key>
+	<string>항상</string>
+	<key>449.title</key>
+	<string>표시:</string>
+	<key>450.title</key>
+	<string>프레임 표시:</string>
+	<key>451.title</key>
+	<string>라벨 표시:</string>
+	<key>453.title</key>
+	<string>불투명도:</string>
+	<key>455.title</key>
+	<string>밝기:</string>
+	<key>459.title</key>
+	<string>기본값</string>
+	<key>50.ibExternalAccessibilityDescription</key>
+	<string>CropShowLabelsPopup</string>
+	<key>51.title</key>
+	<string>OtherViews</string>
+	<key>52.title</key>
+	<string>항상</string>
+	<key>53.title</key>
+	<string>안 함</string>
+	<key>54.title</key>
+	<string>드래그 도중에만</string>
+	<key>55.ibExternalAccessibilityDescription</key>
+	<string>CropResetButton</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>드래그 중 제외</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>항상</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>마스크</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>핸들 표시</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>안함</string>
+</dict>
+</plist>

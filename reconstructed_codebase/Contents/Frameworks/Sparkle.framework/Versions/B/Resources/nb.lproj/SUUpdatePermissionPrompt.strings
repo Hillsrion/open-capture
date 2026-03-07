@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Den anonyme systemprofilen hjelper oss med å planlegge fremtidig utviklingsarbeid. Ta gjerne kontakt med oss hvis du har spørsmål om dette. 
+Følgende innhold vil bli sendt:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Last ned og installer automatisk</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Søk automatisk</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Ikke søk</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Søk etter oppdateringer automatisk?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Inkluder anonym systemprofil</string>
+</dict>
+</plist>

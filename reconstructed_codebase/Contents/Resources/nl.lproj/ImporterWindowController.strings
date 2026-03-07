@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>233.ibShadowedToolTip</key>
+	<string>Sorteren</string>
+	<key>254.title</key>
+	<string>Importeer alles</string>
+	<key>255.title</key>
+	<string>Annuleer</string>
+	<key>256.title</key>
+	<string>Wis afbeeldingen na kopiëren</string>
+	<key>257.title</key>
+	<string>Werp kaart uit</string>
+	<key>368.title</key>
+	<string>Importverzameling nooit openen</string>
+	<key>369.title</key>
+	<string>Meld wanneer gereed</string>
+	<key>370.title</key>
+	<string>Verzameling openen bij start importeren</string>
+	<key>378.title</key>
+	<string>Verzameling importeren</string>
+	<key>5.title</key>
+	<string>Venster</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>Geen afbeeldingen in map</string>
+</dict>
+</plist>

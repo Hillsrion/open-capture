@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Aperture 라이브러리 가져오기</string>
+	<key>14.title</key>
+	<string>취소</string>
+	<key>28.title</key>
+	<string>Aperture에서 라이브러리를 가져올 때, 아래 속성들은 Capture One으로 이전될 것입니다.:</string>
+	<key>4.title</key>
+	<string>이것을 다시 보지 않습니다.</string>
+	<key>51.title</key>
+	<string>프로젝트, 폴더, 앨범
+ 크롭 OR  교정, 회전, 파일
+노출, 밝기, 하이라이트, 쉐도우, 선명도, 채도, B &amp; W
+메타정보 (IPTC, 등급, 컬러 라벨, 키워드)</string>
+	<key>57.title</key>
+	<string>컬러 조정은 근사치일 뿐입니다./n/n 포함하고 싶은 스마트 앨범이 있으면, 가져오기 전에 이것을 일반 앨범으로 변환해야 합니다.</string>
+	<key>8.title</key>
+	<string>계속</string>
+</dict>
+</plist>

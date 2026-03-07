@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5ws-qz-AUV.title</key>
+	<string>이 대화상자를 숨기려면 : 옵션 누른채 복사 또는 시프트 누른채 복사 및 적용</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>조정 클립 보드</string>
+	<key>a5v-SA-4aX.title</key>
+	<string>복제</string>
+	<key>dXt-VV-iUD.title</key>
+	<string>제목</string>
+	<key>pwS-pN-OgU.title</key>
+	<string>적용</string>
+	<key>wEg-nR-fZO.title</key>
+	<string>텍스트 셀</string>
+	<key>wYo-A4-YMk.title</key>
+	<string>취소</string>
+</dict>
+</plist>

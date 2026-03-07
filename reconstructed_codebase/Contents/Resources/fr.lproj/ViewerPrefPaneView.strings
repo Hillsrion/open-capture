@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>Défaut</string>
+	<key>258.title</key>
+	<string>Motif :</string>
+	<key>260.title</key>
+	<string>Couleur :</string>
+	<key>262.title</key>
+	<string>Marge :</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>Visionneuse</string>
+	<key>266.title</key>
+	<string>Aperçu et navigateur</string>
+	<key>269.title</key>
+	<string>Marge visuelle :</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>Couleur du masque:</string>
+	<key>289.title</key>
+	<string>Calques</string>
+	<key>293.title</key>
+	<string>Marges</string>
+	<key>295.title</key>
+	<string>Réglages locaux</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>Couleur Variante sélectionnée</string>
+	<key>drf-G9-VYV.title</key>
+	<string>Comparer Couleur Variante</string>
+</dict>
+</plist>

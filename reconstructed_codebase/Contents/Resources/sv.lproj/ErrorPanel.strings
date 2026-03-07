@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.headerCell.title</key>
+	<string>Datum</string>
+	<key>5.title</key>
+	<string>Händelser</string>
+	<key>67.title</key>
+	<string>Rensa</string>
+	<key>68.title</key>
+	<string>Visa alla</string>
+	<key>69.title</key>
+	<string>Visa panel för nya händelser</string>
+	<key>70.title</key>
+	<string>Stäng</string>
+	<key>72.title</key>
+	<string>Textruta</string>
+	<key>73.title</key>
+	<string>Textruta</string>
+	<key>9.headerCell.title</key>
+	<string>Beskrivning</string>
+</dict>
+</plist>

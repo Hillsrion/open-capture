@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>No se pudieron recuperar los ajustes del plugin</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>El plugin está deshabilitado</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>Box</string>
+	<key>AQe-BF-01j.title</key>
+	<string>Consigue más plugins</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>Este plugin no se puede desactivar</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>Ningún plugin seleccionado</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>Este plugin no tiene ajustes para personalizar</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>Area de texto</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>Reintentar</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>Título del plugin</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>Habilitado</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>Herramientas</string>
+</dict>
+</plist>

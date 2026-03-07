@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>命名格式</string>
+	<key>13.title</key>
+	<string>取消</string>
+	<key>14.title</key>
+	<string>好</string>
+	<key>59L-oO-NTp.title</key>
+	<string>最近使用</string>
+	<key>74.title</key>
+	<string>预设</string>
+	<key>77.title</key>
+	<string>图像与工作名称</string>
+	<key>78.title</key>
+	<string>工作名称与计数器</string>
+	<key>79.title</key>
+	<string>工作与图像名称</string>
+	<key>80.title</key>
+	<string>图像名称</string>
+	<key>84.title</key>
+	<string>您可以根据个人需求编辑以上文字。从下方群组中选择所需元素，再用拖动或双击的方式将其添加至编辑格式中。</string>
+	<key>89.title</key>
+	<string>保存用户预设…</string>
+	<key>94.title</key>
+	<string>格式</string>
+	<key>96.title</key>
+	<string>代号</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>元数据 - EXIF - 相机</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>元数据 - IPTC - Getty 图像</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>日期与时间</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>元数据 - 基本</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>元数据 - EXIF - 曝光</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>文本单元格</string>
+	<key>XqK-3b-mox.title</key>
+	<string>常规</string>
+	<key>f2N-un-vTh.title</key>
+	<string>元数据 - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>元数据 - 生产商提供</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>排除的代号（排错）</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>元数据 - IPTC - 联系方式</string>
+	<key>im4-Sx-noG.title</key>
+	<string>全部</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>元数据 - IPTC - 内容</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>群组</string>
+	<key>pQh-ye-usp.title</key>
+	<string>元数据 - IPTC - 图像</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>元数据 - IPTC - 状态</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>样例</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>词条样例放置在此</string>
+</dict>
+</plist>

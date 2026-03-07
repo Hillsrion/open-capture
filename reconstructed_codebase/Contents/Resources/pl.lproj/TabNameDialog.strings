@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Nowa spersonalizowana karta narzędzi</string>
+	<key>10.title</key>
+	<string>Anuluj</string>
+	<key>19.title</key>
+	<string>Podaj nazwę karty:</string>
+	<key>26.title</key>
+	<string>OtherViews</string>
+	<key>27.title</key>
+	<string>Element 1</string>
+	<key>28.title</key>
+	<string>Element 2</string>
+	<key>29.title</key>
+	<string>Element 3</string>
+	<key>33.title</key>
+	<string>Ikona:</string>
+	<key>8.title</key>
+	<string>Dodaj kartę</string>
+</dict>
+</plist>

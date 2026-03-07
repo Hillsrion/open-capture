@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>해상도</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>프린터명</string>
+	<key>469.title</key>
+	<string>Canon 프린터 모델 xxx</string>
+	<key>489.title</key>
+	<string>용지</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>지각</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>용지 크기</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>페이지 설정 패널 열기</string>
+	<key>509.title</key>
+	<string>페이지 설정...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>출력 설정 패널 열기</string>
+	<key>514.title</key>
+	<string>출력 설정...</string>
+	<key>544.title</key>
+	<string>샤프닝</string>
+	<key>556.title</key>
+	<string>검은점 보정</string>
+	<key>558.title</key>
+	<string>색상관리 텍스트 색상관리 텍스트 색상관리 텍스트 색상관리 텍스트 색상관리 텍스트</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>샤프닝</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>샤프닝</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>컬러 프로파일</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>렌더링 방법</string>
+	<key>HNV-gP-la6.title</key>
+	<string>절대 색체계</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>상대 색체계</string>
+	<key>vIk-s2-hue.title</key>
+	<string>채도</string>
+</dict>
+</plist>

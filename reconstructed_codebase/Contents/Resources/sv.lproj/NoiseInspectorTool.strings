@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BQe-ch-zT5.ibExternalAccessibilityDescription</key>
+	<string>yta</string>
+	<key>BQe-ch-zT5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Yta</string>
+	<key>ZRc-KI-4KK.ibExternalAccessibilityDescription</key>
+	<string>ljushet</string>
+	<key>ZRc-KI-4KK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminans</string>
+	<key>Zuk-OM-RR8.ibExternalAccessibilityDescription</key>
+	<string>färg</string>
+	<key>Zuk-OM-RR8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Färg</string>
+	<key>hL8-wU-SQL.ibExternalAccessibilityDescription</key>
+	<string>single pixel</string>
+	<key>hL8-wU-SQL.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Enkel pixel</string>
+	<key>zlR-yp-kOa.ibExternalAccessibilityDescription</key>
+	<string>detaljer</string>
+	<key>zlR-yp-kOa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Detaljinfo</string>
+</dict>
+</plist>

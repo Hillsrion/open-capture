@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>645-F9-nRt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>色相</string>
+	<key>7sk-7W-MYa.title</key>
+	<string>直接色彩编辑器设置</string>
+	<key>CsU-40-n2D.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>敏感度</string>
+	<key>DgY-Rv-4cU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>亮度</string>
+	<key>bG3-MB-sba.title</key>
+	<string>该面板也能在选中直接色彩编辑器光标并右键点击查看器时出现。</string>
+	<key>veB-Rz-2X3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>饱和度</string>
+</dict>
+</plist>

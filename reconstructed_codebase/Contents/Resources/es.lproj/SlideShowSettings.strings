@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Ajustes de pase de diapositivas</string>
+	<key>34.title</key>
+	<string>Apagarse</string>
+	<key>35.title</key>
+	<string>Mover</string>
+	<key>36.title</key>
+	<string>Transición</string>
+	<key>40.title</key>
+	<string>Empujar</string>
+	<key>41.title</key>
+	<string>revelar</string>
+	<key>42.title</key>
+	<string>Disolver</string>
+	<key>43.title</key>
+	<string>Mod</string>
+	<key>44.title</key>
+	<string>Golpe</string>
+	<key>56.title</key>
+	<string>Duración del pase</string>
+	<key>69.title</key>
+	<string>Loop</string>
+	<key>73.title</key>
+	<string>Valores predeterminados</string>
+	<key>90.title</key>
+	<string>Desintegrar</string>
+	<key>91.title</key>
+	<string>Rizo de página</string>
+	<key>92.title</key>
+	<string>Rizarse</string>
+</dict>
+</plist>

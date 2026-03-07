@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Восстановить</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Расположение для резервного копирования:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Попробуйте еще раз</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Далее</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Восстановить каталог</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Текстовая ячейка</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Произошла ошибка. Попробовать еще раз?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Копирование файлов..</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Не найдено резервных копий</string>
+	<key>W74-ST-qV9.title</key>
+	<string>путь</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Отмена</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Показать в Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Это действие заменит существующую базу данных и оно не может быть отменено.
+Пожалуйста, не пытайтесь принудительно завершить работу программы или выключить компьютер во время восстановления.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Резервное копирование успешно восстановлено</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>ошибка</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Открыть каталог</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Отмена</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Заголовок</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Назад</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Имя каталога</string>
+</dict>
+</plist>

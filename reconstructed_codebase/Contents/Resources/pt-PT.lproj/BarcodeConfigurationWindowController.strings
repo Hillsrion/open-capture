@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1xe-Um-CIL.title</key>
+	<string>Código de impressão</string>
+	<key>8DD-xd-Xz5.title</key>
+	<string>O scanner está pronto e configurado</string>
+	<key>BW0-mv-EQA.title</key>
+	<string>Tente novamente</string>
+	<key>F0m-fq-GYU.title</key>
+	<string>Cancelar</string>
+	<key>FQJ-9d-y3h.title</key>
+	<string>Digitalize o código de barras para configurar o scanner.</string>
+	<key>Ipa-tx-QXw.title</key>
+	<string>Se você precisar usar um scanner diferente, poderá configurar um novo no menu…</string>
+	<key>WZn-5g-bos.title</key>
+	<string>Cancelar</string>
+	<key>ab6-x1-HFX.title</key>
+	<string>Ok</string>
+	<key>iQE-CB-bxP.title</key>
+	<string>Configurar Scanner</string>
+	<key>ifD-R2-JOJ.title</key>
+	<string>Ocorreu um erro durante a configuração do scanner.</string>
+</dict>
+</plist>

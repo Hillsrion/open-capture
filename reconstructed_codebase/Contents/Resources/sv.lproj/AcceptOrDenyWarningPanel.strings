@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>Fråga inte igen</string>
+	<key>3.title</key>
+	<string>Metadata</string>
+	<key>6.title</key>
+	<string>Skriv inte över</string>
+	<key>8.title</key>
+	<string>Skriv över</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>작업공간 삭제</string>
+	<key>12.title</key>
+	<string>삭제</string>
+	<key>14.title</key>
+	<string>취소</string>
+	<key>32.title</key>
+	<string>OtherViews</string>
+	<key>33.title</key>
+	<string>아이템 1</string>
+	<key>34.title</key>
+	<string>아이템 2</string>
+	<key>35.title</key>
+	<string>아이템 3</string>
+	<key>6.title</key>
+	<string>작업공간:</string>
+</dict>
+</plist>

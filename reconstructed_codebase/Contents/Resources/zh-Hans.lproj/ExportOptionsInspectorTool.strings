@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.ibShadowedToolTip</key>
+	<string>导出时包含调整项</string>
+	<key>41.title</key>
+	<string>包含调整项</string>
+	<key>42.ibShadowedToolTip</key>
+	<string>导出完成时通知</string>
+	<key>43.title</key>
+	<string>完成时通知</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>将导出文件夹添加至会话收藏</string>
+	<key>45.title</key>
+	<string>将文件夹添加至会话收藏</string>
+	<key>48.ibShadowedToolTip</key>
+	<string>导出时包含视频</string>
+	<key>49.title</key>
+	<string>包含视频</string>
+	<key>6Ot-LC-POj.ibShadowedToolTip</key>
+	<string>将 RAW 图像打包为 EIP</string>
+	<key>7QU-HS-eh7.title</key>
+	<string>打包为 EIP</string>
+</dict>
+</plist>

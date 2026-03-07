@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Diashow Einstellungen</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>Fade</string>
+	<key>35.title</key>
+	<string>Bewegen in</string>
+	<key>36.title</key>
+	<string>Übergang</string>
+	<key>40.title</key>
+	<string>Push</string>
+	<key>41.title</key>
+	<string>Zeigen</string>
+	<key>42.title</key>
+	<string>Auflösen</string>
+	<key>43.title</key>
+	<string>Mod</string>
+	<key>44.title</key>
+	<string>Swipe</string>
+	<key>56.title</key>
+	<string>Länge pro Bild</string>
+	<key>59.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>69.title</key>
+	<string>Loop</string>
+	<key>73.title</key>
+	<string>Voreinstellung</string>
+	<key>90.title</key>
+	<string>Auflösen</string>
+	<key>91.title</key>
+	<string>Page Curl</string>
+	<key>92.title</key>
+	<string>Ripple</string>
+</dict>
+</plist>

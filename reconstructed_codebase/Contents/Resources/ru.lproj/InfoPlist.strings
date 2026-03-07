@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One Enhanced Image Package</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One иногда требуется контроль над другими приложениями для работы скриптов, которые вы выполняете в нем.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One не требует доступа к вашему Календарю. Это предупреждение вызвано доступом к папке «Библиотека».</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One не требует доступа к вашим контактам. Это предупреждение вызвано доступом к папке «Библиотека».</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One не требует доступа к вашей фотобиблиотеке. Это предупреждение вызвано доступом к папке «Библиотека».</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One не требует доступа к вашим напоминаниям. Это предупреждение вызвано доступом к папке «Библиотека».</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Для поддержки функции захвата Capture One требуется доступ к съемным томам. Для того чтобы эта настройка вступила в силу, может потребоваться перезапуск Capture One.</string>
+	<key>Phase One RAW image</key>
+	<string>Изображение RAW Phase One</string>
+</dict>
+</plist>

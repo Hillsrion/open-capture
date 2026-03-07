@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Återställ</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Plats för säkerhetskopia:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Försök igen</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Nästa</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Återställ Katalog</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Textruta</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Ett fel har inträffat. Försök igen?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Kopierar filer...</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Inga säkerhetskopior hittades</string>
+	<key>W74-ST-qV9.title</key>
+	<string>Sökväg</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Avbryt</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Visa i Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Detta kommer att ersätta nuvarande databas och kan inte ångras.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Återställning av säkerhetskopia lyckades</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>fel</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Öppna katalog</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Avbryt</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Rubrik</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Föregående</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Katalog namn</string>
+</dict>
+</plist>

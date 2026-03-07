@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Importera Aperture Katalog</string>
+	<key>14.title</key>
+	<string>Avbryt</string>
+	<key>28.title</key>
+	<string>När du importerar ett bibliotek från Aperture, kommer följande att överföras till Capture One:</string>
+	<key>4.title</key>
+	<string>Visa inte detta igen</string>
+	<key>51.title</key>
+	<string>Projekt, mappar, album
+beskär ELLER räta upp, rotering, spegelvänd
+exponering, ljushet, högdager &amp; lågdager, definition, mättnad, svart/vitt
+metadata (IPTC, märkning, färgmärkning, nyckelord)</string>
+	<key>57.title</key>
+	<string>Färgjusteringar är enbart ungefärliga.
+
+om du vill ta mede smarta album, måste du konvertera dem till vanliga album före importen.</string>
+	<key>8.title</key>
+	<string>Fortsätt</string>
+</dict>
+</plist>

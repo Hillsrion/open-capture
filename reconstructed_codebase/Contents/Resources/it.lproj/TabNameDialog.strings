@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Nuova Scheda Strumenti Personalizzato</string>
+	<key>10.title</key>
+	<string>Cancella</string>
+	<key>19.title</key>
+	<string>Specificare nome scheda:</string>
+	<key>26.title</key>
+	<string>OtherViews</string>
+	<key>27.title</key>
+	<string>Elemento 1</string>
+	<key>28.title</key>
+	<string>Elemento 2</string>
+	<key>29.title</key>
+	<string>Elemento 3</string>
+	<key>33.title</key>
+	<string>Icona:</string>
+	<key>8.title</key>
+	<string>Aggiungi Scheda</string>
+</dict>
+</plist>

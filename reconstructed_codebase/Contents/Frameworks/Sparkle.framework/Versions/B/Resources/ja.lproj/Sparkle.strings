@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@がダウンロードされました! これは重要なアップデートです。今すぐ%1$@をインストールして再起動しますか?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@がダウンロードされました! 今すぐ%1$@をインストールして再起動しますか?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@が入手可能ですが、インストールするにはmacOSのバージョンが新しすぎます。このアップデートはmacOS %3$@までしか対応していません。</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@が入手可能ですが、インストールするにはmacOSのバージョンが古すぎます。macOS %3$@以降が必要です。</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>この場所ではダウンロードされたアップデートを%1$@に適用できません。</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@は読み出し専用または一時的な場所で開かれているためアップデートできません。</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@は現在入手できる最新バージョンです。</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@は現在入手できる最新バージョンです。
+（現在使用中のバージョンは%3$@です。）</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>%1$@ %2$@が入手できます（使用中のバージョンは%3$@です）。これは重要なアップデートです。今すぐダウンロードしますか?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@が入手できます（使用中のバージョンは%3$@です）。今すぐダウンロードしますか?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@が入手できます（使用中のバージョンは%3$@です）。このアップデートの詳しい情報をWebで確認しますか?</string>
+	<key>%@ downloaded</key>
+	<string>%@ダウンロード済み</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>%@はバージョン%@にアップデートされました!</string>
+	<key>%@ is now updated!</key>
+	<string>%@はアップデートされました!</string>
+	<key>%@ of %@</key>
+	<string>%1$@/%2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>新しいバージョンの%@が入手できます!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>新しいバージョンの%@が今すぐインストールできます!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>アップデート情報の取得中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>インストーラに接続中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>アップデートをダウンロード中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>アーカイブの展開中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>インストーラを起動中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>アップデートフィードを解析中にエラーが発生しました。</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>アップデータを実行中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>インストーラを始動中にエラーが発生しました。あとでやり直してください。</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>%@の重要なアップデートがインストールできます。</string>
+	<key>Cancel</key>
+	<string>キャンセル</string>
+	<key>Cancel Update</key>
+	<string>アップデートを中止</string>
+	<key>Checking for updates…</key>
+	<string>アップデートを確認しています…</string>
+	<key>Downloading update…</key>
+	<string>アップデートをダウンロードしています…</string>
+	<key>Extracting update…</key>
+	<string>アップデートを展開しています…</string>
+	<key>Failed to resume installing update.</key>
+	<string>アップデートのインストール再開に失敗しました。</string>
+	<key>Install and Relaunch</key>
+	<string>インストールして再起動</string>
+	<key>Install on Quit</key>
+	<string>終了時にインストール</string>
+	<key>Installing update…</key>
+	<string>アップデートをインストールしています…</string>
+	<key>Learn More…</key>
+	<string>詳しい情報…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>%1$@を終了させ、アプリケーションフォルダに移動の上再度お試しください。</string>
+	<key>Ready to Install</key>
+	<string>インストールできます</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string> %1$@のアップデートを自動で確認しますか? アップデートは%1$@メニューから手動でいつでも確認することができます。</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>アップデートチェッカーが正しくスタートできませんでした。アプリケーション開発者に連絡をしてこの不具合を報告し、最新バージョンであることを確認してください。</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>アップデートの署名が不適切で認証できませんでした。あとでやり直すかアプリケーション開発者に連絡してください。</string>
+	<key>Unable to Check For Updates</key>
+	<string>アップデートを確認できませんでした</string>
+	<key>Update Error!</key>
+	<string>アップデートエラー!</string>
+	<key>Update Installed</key>
+	<string>アップデートがインストールされました</string>
+	<key>Updating %@</key>
+	<string>%@をアップデート中</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>%1$@をアプリケーションフォルダに移動し、そこから再起動したあとやり直してください。</string>
+	<key>Version History</key>
+	<string>バージョン履歴</string>
+	<key>Your macOS version is too new</key>
+	<string>このmacOSのバージョンは新しすぎます</string>
+	<key>Your macOS version is too old</key>
+	<string>このmacOSのバージョンは古すぎます</string>
+	<key>You’re up to date!</key>
+	<string>最新版を使用しています!</string>
+</dict>
+</plist>

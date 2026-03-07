@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>144.title</key>
+	<string>OtherViews</string>
+	<key>145.title</key>
+	<string>Organisera…</string>
+	<key>146.title</key>
+	<string>Ny…</string>
+	<key>147.title</key>
+	<string>Inga restriktioner</string>
+	<key>149.title</key>
+	<string>Bildstorlek</string>
+	<key>152.title</key>
+	<string>1x1</string>
+	<key>153.title</key>
+	<string>2x3</string>
+	<key>155.ibShadowedToolTip</key>
+	<string>Variantinställning: Storleken på resultatbilden när varianten framkallas.</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Storleksenhet.</string>
+	<key>158.title</key>
+	<string>OtherViews</string>
+	<key>159.title</key>
+	<string>px</string>
+	<key>160.title</key>
+	<string>tum</string>
+	<key>161.title</key>
+	<string>cm</string>
+	<key>162.title</key>
+	<string>mm</string>
+	<key>326.title</key>
+	<string>Förhållande</string>
+	<key>327.title</key>
+	<string>Storlek</string>
+	<key>331.title</key>
+	<string>x</string>
+	<key>334.title</key>
+	<string>Beskär utanför bild</string>
+	<key>IUp-Ub-TaZ.title</key>
+	<string>Visa rutnät vid beskärning</string>
+</dict>
+</plist>

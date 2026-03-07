@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>45u-oY-7a0.ibExternalAccessibilityDescription</key>
+	<string>亮度</string>
+	<key>45u-oY-7a0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>颗粒度</string>
+	<key>gX2-sJ-VmO.ibExternalAccessibilityDescription</key>
+	<string>冲击力</string>
+	<key>gX2-sJ-VmO.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>冲击力</string>
+	<key>rVu-m5-KCC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>类型</string>
+</dict>
+</plist>

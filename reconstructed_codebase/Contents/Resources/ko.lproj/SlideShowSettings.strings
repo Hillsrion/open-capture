@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>슬라이드쇼 설정</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>사라짐</string>
+	<key>35.title</key>
+	<string>이동</string>
+	<key>36.title</key>
+	<string>변환</string>
+	<key>40.title</key>
+	<string>푸쉬</string>
+	<key>41.title</key>
+	<string>리빌</string>
+	<key>42.title</key>
+	<string>디졸브</string>
+	<key>43.title</key>
+	<string>모드</string>
+	<key>44.title</key>
+	<string>스와이프</string>
+	<key>56.title</key>
+	<string>슬라이드 지속시간</string>
+	<key>59.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>69.title</key>
+	<string>순환</string>
+	<key>73.title</key>
+	<string>기본값</string>
+	<key>90.title</key>
+	<string>분해</string>
+	<key>91.title</key>
+	<string>페이지 말림</string>
+	<key>92.title</key>
+	<string>잔물결</string>
+</dict>
+</plist>

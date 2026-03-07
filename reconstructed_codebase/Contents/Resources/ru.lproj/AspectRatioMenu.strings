@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>ОК</string>
+	<key>116.title</key>
+	<string>Отмена</string>
+	<key>117.title</key>
+	<string>Имя</string>
+	<key>118.title</key>
+	<string>Соотношение</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Готово</string>
+	<key>124.title</key>
+	<string>Удалить</string>
+	<key>6.title</key>
+	<string>Новое соотношение сторон</string>
+	<key>66.title</key>
+	<string>Управлять соотношением сторон</string>
+</dict>
+</plist>

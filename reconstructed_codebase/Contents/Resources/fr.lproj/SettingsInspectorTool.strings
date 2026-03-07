@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>258.ibShadowedToolTip</key>
+	<string>Copier les réglages de la variante principale.</string>
+	<key>281.headerCell.title</key>
+	<string>Depuis</string>
+	<key>433.alternateTitle</key>
+	<string>Appliquer</string>
+	<key>433.title</key>
+	<string>Appliquer</string>
+	<key>434.alternateTitle</key>
+	<string>Copier</string>
+	<key>434.title</key>
+	<string>Copier</string>
+	<key>Eee-YC-nvV.title</key>
+	<string>titre</string>
+</dict>
+</plist>

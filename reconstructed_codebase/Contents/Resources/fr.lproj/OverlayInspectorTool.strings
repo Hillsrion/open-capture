@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Suivre Cadrage</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>opacité superposition</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacité</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>échelle superposition</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Echelle</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Fichier</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Placement vertical superposition</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Vertical</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>Placement horizontal superposition</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Horizontal</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Afficher</string>
+</dict>
+</plist>

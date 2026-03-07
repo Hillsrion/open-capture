@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>209.title</key>
+	<string>このパネルは、ブラシや消しゴム カーソルが選択されていれば、ビューア上で右クリックしても表示できます。</string>
+	<key>rnX-Cy-M0S.title</key>
+	<string>矢印を表示</string>
+</dict>
+</plist>

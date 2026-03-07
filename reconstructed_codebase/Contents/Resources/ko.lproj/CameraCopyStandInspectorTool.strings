@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFX-Rv-WlM.title</key>
+	<string>텍스트 셀</string>
+	<key>FCS-rC-GL7.alternateTitle</key>
+	<string>중지</string>
+	<key>FCS-rC-GL7.title</key>
+	<string>이동</string>
+	<key>HF8-NW-edb.headerCell.title</key>
+	<string>타겟</string>
+	<key>HhO-fK-78I.title</key>
+	<string>캘리브레이션 중단</string>
+	<key>cpM-bI-tVi.headerCell.title</key>
+	<string>현재</string>
+	<key>d8V-sn-JhX.title</key>
+	<string>캘리브레이션</string>
+	<key>ke6-ru-9Tg.title</key>
+	<string>카피 스탠드의 캘리브레이션이 필요합니다. 
+
+카메라를 임의적인 위치로 이동하기 위하여, 케이블 길이가 충분한지, 방해가 되는 물건은 없는지 확인하십시오.</string>
+	<key>pqI-lM-bV8.title</key>
+	<string>호환 가능한 카피 스탠드를 찾을 수 없음</string>
+	<key>sPX-gm-Kga.title</key>
+	<string>텍스트 셀</string>
+</dict>
+</plist>

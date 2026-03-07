@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>Zellengröße priorisieren</string>
+	<key>438.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>Anzahl der Zeilen</string>
+	<key>440.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>Anzahl der Zeilen</string>
+	<key>443.title</key>
+	<string>Zeilen</string>
+	<key>447.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>Anzahl der Spalten</string>
+	<key>449.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>Anzahl der Spalten</string>
+	<key>452.title</key>
+	<string>Spalten</string>
+	<key>488.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Spalten</string>
+	<key>490.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Spalten</string>
+	<key>491.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Zeilen</string>
+	<key>493.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Zeilen</string>
+	<key>499.title</key>
+	<string>Zeilenabstand</string>
+	<key>503.title</key>
+	<string>Spaltenabst.</string>
+	<key>531.title</key>
+	<string>Zoll</string>
+	<key>533.title</key>
+	<string>Zoll</string>
+	<key>550.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>552.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Spalten</string>
+	<key>553.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>555.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Zeilen</string>
+	<key>558.title</key>
+	<string>Zoll</string>
+	<key>559.title</key>
+	<string>Zoll</string>
+	<key>562.title</key>
+	<string>Zellenhöhe</string>
+	<key>566.title</key>
+	<string>Zellenbreite</string>
+	<key>596.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>598.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>Abstand zwischen den Spalten</string>
+	<key>600.title</key>
+	<string>Zoll</string>
+	<key>603.title</key>
+	<string>Rand der Zelle</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Größe anpassen</string>
+	<key>maT-3O-DaK.title</key>
+	<string>Abstand priorisieren</string>
+</dict>
+</plist>

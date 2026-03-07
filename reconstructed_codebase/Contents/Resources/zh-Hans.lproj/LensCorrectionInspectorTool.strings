@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>色像差</string>
+	<key>1555.title</key>
+	<string>隐藏畸变区域</string>
+	<key>1700.label</key>
+	<string>栏</string>
+	<key>1701.label</key>
+	<string>视图</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>镜头</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>移动</string>
+	<key>1741.title</key>
+	<string>色像差</string>
+	<key>1742.title</key>
+	<string>默认设置</string>
+	<key>1743.title</key>
+	<string>分析</string>
+	<key>1745.title</key>
+	<string>自定义</string>
+	<key>1757.title</key>
+	<string>焦距</string>
+	<key>1760.title</key>
+	<string>光圈（f）</string>
+	<key>1823.title</key>
+	<string>平移 x</string>
+	<key>1832.title</key>
+	<string>平移 y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>配置文件</string>
+	<key>893.title</key>
+	<string>方向</string>
+	<key>894.title</key>
+	<string>平移</string>
+	<key>897.title</key>
+	<string>方向</string>
+	<key>898.title</key>
+	<string>倾斜</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>光衰减</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>衍射校正</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>锐度衰减</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>锐度衰减</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>畸变</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>畸变</string>
+</dict>
+</plist>

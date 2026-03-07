@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ is gedownload en klaar om te installeren! Dit is een belangrijke update. Wil je deze nu installeren en %1$@ herstarten?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ is gedownload en klaar om te installeren! Wil je deze nu installeren en %1$@ herstarten?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@ is beschikbaar, maar je versie van macOS is te nieuw voor deze update. De update kan alleen worden gebruikt tot macOS %3$@.</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@ is beschikbaar, maar je versie van macOS is te oud om deze te installeren. Ten minste macOS %3$@ is vereist.</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>%1$@ kan niet worden bijgewerkt als het is geopend vanuit de downloadlocatie.</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ kan niet worden bijgewerkt, omdat het vanuit een alleen-lezen- of tijdelijke locatie is geopend.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ is momenteel de nieuwste versie.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ is momenteel de nieuwste versie.
+(Je gebruikt op dit moment versie %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>%1$@ %2$@ is nu beschikbaar – je hebt %3$@. Dit is een belangrijke update. Wil je deze nu downloaden?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ is nu beschikbaar – je hebt %3$@. Wil je de update nu downloaden?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ is nu beschikbaar – je hebt %3$@. Wil je een webpagina openen met meer informatie?</string>
+	<key>%@ downloaded</key>
+	<string>%@ gedownload</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>%@ is nu bijgewerkt naar versie %@!</string>
+	<key>%@ is now updated!</key>
+	<string>%@ is nu bijgewerkt!</string>
+	<key>%@ of %@</key>
+	<string>%1$@ van %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Een nieuwe versie van %@ is beschikbaar!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Een nieuwe versie van %@ is klaar om te installeren!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het ophalen van update-informatie. Probeer het later opnieuw.</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het verbinden met het installatieprogramma. Probeer het later opnieuw.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het downloaden van de update. Probeer het later opnieuw</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het uitpakken van het archief. Probeer het later opnieuw.</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het starten van het installatieprogramma. Probeer het later opnieuw.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Er heeft zich een fout voorgedaan bij het verwerken van de update-informatie.</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het uitvoeren van het bijwerkprogramma. Probeer het later opnieuw.</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>Er heeft zich een fout voorgedaan bij het starten van het installatieprogramma. Probeer het later opnieuw.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Een belangrijke update voor %@ is klaar om te installeren</string>
+	<key>Cancel</key>
+	<string>Annuleer</string>
+	<key>Cancel Update</key>
+	<string>Annuleer update</string>
+	<key>Checking for updates…</key>
+	<string>Naar updates zoeken…</string>
+	<key>Downloading update…</key>
+	<string>Update downloaden…</string>
+	<key>Extracting update…</key>
+	<string>Update uitpakken…</string>
+	<key>Failed to resume installing update.</key>
+	<string>Het hervatten van de update-installatie is mislukt.</string>
+	<key>Install and Relaunch</key>
+	<string>Installeer en herstart</string>
+	<key>Install on Quit</key>
+	<string>Installeer bij het stoppen</string>
+	<key>Installing update…</key>
+	<string>Update installeren…</string>
+	<key>Learn More…</key>
+	<string>Meer informatie…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>Stop %1$@, verplaats het naar de map 'Apps', herstart het van daaruit en probeer opnieuw.</string>
+	<key>Ready to Install</key>
+	<string>Klaar om te installeren</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Wil je dat %1$@ automatisch naar updates zoekt? Je kunt altijd nog handmatig zoeken naar updates via het %1$@-menu.</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>De updatezoeker is niet goed gestart. Je kunt wellicht met de app-ontwikkelaar contact opnemen om de fout te melden en te controleren dat je de nieuwste versie hebt.</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>De update is onjuist gesigneerd en kan niet worden gecontroleerd. Probeer het later opnieuw of neem contact op met de app-ontwikkelaar.</string>
+	<key>Unable to Check For Updates</key>
+	<string>Zoeken naar updates mislukt</string>
+	<key>Update Error!</key>
+	<string>Fout bij het bijwerken!</string>
+	<key>Update Installed</key>
+	<string>Update geïnstalleerd</string>
+	<key>Updating %@</key>
+	<string>%@ bijwerken…</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Gebruik Finder om %1$@ naar de map 'Apps' te kopiëren, herstart het van daaruit en probeer opnieuw.</string>
+	<key>Version History</key>
+	<string>Versiegeschiedenis</string>
+	<key>Your macOS version is too new</key>
+	<string>Je versie van macOS is te nieuw</string>
+	<key>Your macOS version is too old</key>
+	<string>Je versie van macOS is te oud</string>
+	<key>You’re up to date!</key>
+	<string>Je hebt de nieuwste versie!</string>
+</dict>
+</plist>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Een keer per dag</string>
+	<key>105.title</key>
+	<string>Automatisch</string>
+	<key>106.title</key>
+	<string>Nooit</string>
+	<key>107.title</key>
+	<string>Locatie:</string>
+	<key>108.title</key>
+	<string>Herinnering:</string>
+	<key>112.title</key>
+	<string>Nooit</string>
+	<key>113.title</key>
+	<string>Automatisch</string>
+	<key>115.title</key>
+	<string>Hardwarematige versnelling</string>
+	<key>116.title</key>
+	<string>Catalogus back-up</string>
+	<key>126.title</key>
+	<string>Metagegevens altijd overschrijven</string>
+	<key>127.title</key>
+	<string>Metagegevens nooit overschrijven</string>
+	<key>128.title</key>
+	<string>Vraag bij overschrijven metagegevens</string>
+	<key>131.title</key>
+	<string>Maak nieuw Album of Selectie Map aan</string>
+	<key>132.title</key>
+	<string>Overeenkomende Albums aanmaken of hergebruiken</string>
+	<key>133.title</key>
+	<string>Vraag bij synchronisatie Catalogus Sets</string>
+	<key>134.title</key>
+	<string>Van Expression Media ontvangen metagegevens en Catalogusset-informatie mogen worden gebruikt voor het updaten van afbeeldingen en Albums in Capture One. Selecteer het gedrag voor ieder informatietype.</string>
+	<key>137.title</key>
+	<string>Vraag over insluiten submappen bij toevoegen</string>
+	<key>138.title</key>
+	<string>Altijd Ja antwoorden bij Submappen Insluiten dialoog</string>
+	<key>139.title</key>
+	<string>Altijd Nee antwoorden bij Submappen Insluiten dialoog</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Standaardwaarden</string>
+	<key>142.title</key>
+	<string>Zoom met muiswiel</string>
+	<key>143.title</key>
+	<string>Viewer</string>
+	<key>150.title</key>
+	<string>Na meer dan 5 minuten inactiviteit</string>
+	<key>151.title</key>
+	<string>Na meer dan 10 minuten inactiviteit</string>
+	<key>152.title</key>
+	<string>Na meer dan 30 minuten inactiviteit</string>
+	<key>153.title</key>
+	<string>Na meer dan 1 uur inactiviteit</string>
+	<key>154.title</key>
+	<string>Na meer dan 2 uur inactiviteit</string>
+	<key>155.title</key>
+	<string>Na meer dan 4 uur inactiviteit</string>
+	<key>156.title</key>
+	<string>Bij eerste opname van de dag</string>
+	<key>157.title</key>
+	<string>Aanmaken:</string>
+	<key>158.title</key>
+	<string>Recente Opnamen Verzameling</string>
+	<key>160.title</key>
+	<string>Open Importeerder bij detecteren kaart van digitale camera</string>
+	<key>161.title</key>
+	<string>Importeren</string>
+	<key>162.title</key>
+	<string>Activiteiten</string>
+	<key>163.title</key>
+	<string>Toon venster automatisch</string>
+	<key>167.title</key>
+	<string>Favorieten</string>
+	<key>170.title</key>
+	<string>Vraag over toevoegen vorige Sessie Map aan Favorieten</string>
+	<key>171.title</key>
+	<string>Voeg altijd map vorige Sessie toe aan Favorieten</string>
+	<key>172.title</key>
+	<string>Voeg nooit map vorige Sessie toe aan Favorieten</string>
+	<key>176.title</key>
+	<string>Catalogus en Sessie</string>
+	<key>177.title</key>
+	<string>Openen in nieuw venster</string>
+	<key>59.title</key>
+	<string>Catalogus en Sessies</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Catalogus en Sessies</string>
+	<key>60.title</key>
+	<string>Favorieten</string>
+	<key>66.title</key>
+	<string>Formaat pakketbestand</string>
+	<key>67.title</key>
+	<string>Recente Opnamen Verzameling</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Status:</string>
+	<key>93.title</key>
+	<string>~/Bibliotheek/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>Altijd</string>
+	<key>97.title</key>
+	<string>Een keer per maand</string>
+	<key>98.title</key>
+	<string>Nooit</string>
+	<key>99.title</key>
+	<string>Een keer per week</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>Muiswiel wijzigt waarde schuifregelaar</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Tooltabs</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Ondersteuning Tangent-apparaat inschakelen</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + muiswiel verschuift de tooltab</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Toon bij opstarten</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent integratie</string>
+</dict>
+</plist>

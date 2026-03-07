@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Rollfilm - Feste Größe</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Gebundene Objekte - Feste Größe</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Auto-Tonwertkorrektur auf inneren Ausschnitt</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Autom. Ausschnitt</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Beim Zuschneiden</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Automatischen Ausschnitt auf neue Aufnahme anwenden.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Kante oben</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pre-Pass</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Ohne</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Beschnittzugabe, die dem automatischen Ausschnitt hinzugefügt wird.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Beschnittzugabe</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Kante unten</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Kanten oben-rechts</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Niedriger Kontrast des Objekthintergrunds</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Gerade richten</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Ohne</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Lose Objekte</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Methode</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Mittelwert</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Kante links</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Gebundene Objekte</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Beschnittzugabe, die dem automatischen Ausschnitt hinzugefügt wird.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Lose Objekte - Feste Größe</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optimierung</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Beschnittzugabe, die dem automatischen Ausschnitt hinzugefügt wird.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Ohne</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Kante rechts</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Bei Aufnahme</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Kanten unten-links</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Auslösen</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Kanten oben-links</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Mittlerer Kontrast des Objekthintergrunds</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Kanten unten-rechts</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Automatischen Ausschnitt beim Erstellen eines neuen Ausschnitts.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Master-Ausschnitt festlegen</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Sehr geringer Kontrast des Objekthintergrunds</string>
+</dict>
+</plist>

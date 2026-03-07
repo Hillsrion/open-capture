@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>261.label</key>
+	<string>現在</string>
+	<key>262.label</key>
+	<string>履歴</string>
+	<key>268.ibShadowedToolTip</key>
+	<string>バッチ キューの一時停止</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>選択されたジョブを再現像する。</string>
+	<key>284.headerCell.title</key>
+	<string>名前</string>
+	<key>285.headerCell.title</key>
+	<string>名前</string>
+	<key>646.ibShadowedToolTip</key>
+	<string>現像ジョブ履歴を消去</string>
+	<key>815.ibShadowedLabels[0]</key>
+	<string>キュー</string>
+	<key>815.ibShadowedLabels[1]</key>
+	<string>履歴</string>
+	<key>816.title</key>
+	<string>停止</string>
+	<key>818.title</key>
+	<string>1/n</string>
+	<key>819.title</key>
+	<string>選択項目を再現像</string>
+	<key>820.title</key>
+	<string>履歴をクリア</string>
+</dict>
+</plist>

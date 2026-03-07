@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>Pricktyp</string>
+	<key>108.title</key>
+	<string>OtherViews</string>
+	<key>109.title</key>
+	<string>Prick</string>
+	<key>111.title</key>
+	<string>Damm</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Ta bort vald prick</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>Vald prick</string>
+	<key>47.title</key>
+	<string>Prick</string>
+	<key>49.title</key>
+	<string>OtherViews</string>
+	<key>50.title</key>
+	<string>1 av 1</string>
+	<key>64.title</key>
+	<string>-</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>Föregående prick</string>
+	<key>76.title</key>
+	<string>&lt;</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>Nästa prick</string>
+	<key>78.title</key>
+	<string>&gt;</string>
+	<key>84.title</key>
+	<string>Typ</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Dammborttagning</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>kelvin</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Radie</string>
+</dict>
+</plist>

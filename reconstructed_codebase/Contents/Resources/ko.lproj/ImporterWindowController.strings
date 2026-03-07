@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>정렬</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>모두 가져오기</string>
+	<key>255.title</key>
+	<string>취소</string>
+	<key>256.title</key>
+	<string>복사 후 이미지 지우기</string>
+	<key>257.title</key>
+	<string>카드 꺼내기</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>가져오기 컬렉션을 열지 않습니다.</string>
+	<key>369.title</key>
+	<string>작업완료 공지</string>
+	<key>370.title</key>
+	<string>가져오기 시작시 컬렉션을 엽니다.</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>컬렉션 가져오기</string>
+	<key>5.title</key>
+	<string>창</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>폴더에 이미지 없음</string>
+</dict>
+</plist>

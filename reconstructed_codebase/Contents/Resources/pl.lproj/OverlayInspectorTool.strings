@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Uwzględnij kadrowanie</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>krycie nakładki</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Krycie</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>skala nakładki</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Skala</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Plik</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Nakładka w pionie</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pion</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>Nakładka w poziomie</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Poziom</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Pokaż</string>
+</dict>
+</plist>

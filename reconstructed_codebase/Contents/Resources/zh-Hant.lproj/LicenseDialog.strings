@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>您可在剪貼板上粘貼授權許可碼</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>您可在剪貼板上粘貼授權許可碼</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>您可在剪貼板上粘貼授權許可碼</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>授權許可碼是什麼？</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>瞭解更多有關 Capture One 帳戶的相關訊息</string>
+	<key>1348.title</key>
+	<string>關閉</string>
+	<key>1349.title</key>
+	<string>按鈕</string>
+	<key>1350.title</key>
+	<string>幫助</string>
+	<key>1356.title</key>
+	<string>啟動 Capture One。</string>
+	<key>1357.title</key>
+	<string>請填寫以下欄位。</string>
+	<key>1362.title</key>
+	<string>電子郵件：</string>
+	<key>1363.title</key>
+	<string>名字：</string>
+	<key>1364.title</key>
+	<string>姓氏：</string>
+	<key>1365.title</key>
+	<string>國家 / 地區：</string>
+	<key>1366.title</key>
+	<string>獲取帳戶資料</string>
+	<key>1367.title</key>
+	<string>小字號系統字體文字</string>
+	<key>1369.title</key>
+	<string>系統字體文字
+雙行</string>
+	<key>1371.title</key>
+	<string>授權許可碼：</string>
+	<key>1376.title</key>
+	<string>（授權許可碼）</string>
+	<key>1377.title</key>
+	<string>貼上</string>
+	<key>1378.title</key>
+	<string>啟動 Capture One。</string>
+	<key>1379.title</key>
+	<string>將為您創建一個新的帳戶。請確認訊息並為新帳戶創建一個密碼。</string>
+	<key>1380.title</key>
+	<string>電子郵件</string>
+	<key>1381.title</key>
+	<string>名字</string>
+	<key>1382.title</key>
+	<string>姓氏</string>
+	<key>1383.title</key>
+	<string>國家 / 地區</string>
+	<key>1384.title</key>
+	<string>電子郵件：</string>
+	<key>1385.title</key>
+	<string>名字：</string>
+	<key>1386.title</key>
+	<string>姓氏：</string>
+	<key>1387.title</key>
+	<string>國家 / 地區：</string>
+	<key>1388.placeholderString</key>
+	<string>最少 6 個字元</string>
+	<key>1389.placeholderString</key>
+	<string>最少 6 個字元</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>為什麼需要密碼？</string>
+	<key>1391.title</key>
+	<string>確認：</string>
+	<key>1392.title</key>
+	<string>密碼：</string>
+	<key>1393.title</key>
+	<string>感謝您啟動本產品！</string>
+	<key>1394.title</key>
+	<string>此版本的 Capture One 現已啟動。</string>
+	<key>1395.title</key>
+	<string>查看軟體授權許可協議</string>
+	<key>1396.title</key>
+	<string>Capture One 授權許可。</string>
+	<key>1397.title</key>
+	<string>此版本的 Capture One 已啟動。</string>
+	<key>1398.title</key>
+	<string>授權許可碼：</string>
+	<key>1399.title</key>
+	<string>註冊在：</string>
+	<key>1400.title</key>
+	<string>剩餘的免費更新次數：</string>
+	<key>1401.title</key>
+	<string>剩餘的啟動次數：</string>
+	<key>1402.title</key>
+	<string>-</string>
+	<key>1403.title</key>
+	<string>-</string>
+	<key>1404.title</key>
+	<string>（授權許可類型字元串）</string>
+	<key>1406.title</key>
+	<string>（被許可人）</string>
+	<key>1407.title</key>
+	<string>（授權許可碼）</string>
+	<key>1408.title</key>
+	<string>沒錯，我想為此臺電腦取消授權許可啟動。</string>
+	<key>1409.title</key>
+	<string>取消 Capture One 啟動。</string>
+	<key>1410.title</key>
+	<string>Capture One 將在您取消啟動授權許可後關閉。下次在本臺電腦開啟 Capture One 時，系統會提示您再次輸入授權許可碼。</string>
+	<key>1413.title</key>
+	<string>好</string>
+	<key>1414.title</key>
+	<string>取消</string>
+	<key>1415.title</key>
+	<string>將密碼發送至我的郵箱</string>
+	<key>1416.title</key>
+	<string>帳戶密碼：</string>
+	<key>1418.title</key>
+	<string>貼上</string>
+	<key>1426.title</key>
+	<string>1976 年 4 月 1 日</string>
+	<key>1427.title</key>
+	<string>文字儲存格</string>
+	<key>1428.title</key>
+	<string>文字儲存格</string>
+	<key>1436.title</key>
+	<string>授權許可不可更新</string>
+	<key>1443.title</key>
+	<string>該授權許可碼無法用於此版本的 Capture One。
+
+如需繼續使用 Capture One，請提供有效的授權許可碼，或訪問 Capture One 線上商店購買一個有效的授權許可。</string>
+	<key>1445.title</key>
+	<string>訪問網上商店...</string>
+	<key>1446.title</key>
+	<string>好</string>
+	<key>16.label</key>
+	<string>啟動</string>
+	<key>18.label</key>
+	<string>密碼</string>
+	<key>20.label</key>
+	<string>ThankYou</string>
+	<key>22.label</key>
+	<string>ActivationInfo</string>
+	<key>24.label</key>
+	<string>取消啟動</string>
+	<key>281.title</key>
+	<string>輸入密碼</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>您可在剪貼板上粘貼授權許可碼</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>日 月 年</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>免費更新和啟動指什麼？</string>
+	<key>5.title</key>
+	<string>授權許可</string>
+	<key>540.title</key>
+	<string>新建帳戶</string>
+	<key>546.title</key>
+	<string>創建密碼</string>
+	<key>559.title</key>
+	<string>標題名稱</string>
+	<key>565.title</key>
+	<string>授權許可</string>
+	<key>570.title</key>
+	<string>啟動歷史記錄</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>線上啟動</string>
+	<key>78.headerCell.title</key>
+	<string>日期</string>
+	<key>786.label</key>
+	<string>EntryFields</string>
+	<key>787.label</key>
+	<string>DisplayField</string>
+	<key>79.headerCell.title</key>
+	<string>電腦 ID</string>
+	<key>80.headerCell.title</key>
+	<string>啟動類型</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>啟動註冊碼無效</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>手動啟動</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>（硬體 ID）</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>您必須將以下的註冊碼輸入到線上表單裏。請登入 www.captureone.com 您的個人帳戶查找</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>驗證電子郵箱:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>啟動碼：</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>請輸入網站端提供的啟動碼，然後點擊“啟動”按鈕。</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID：</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>註冊碼：</string>
+</dict>
+</plist>

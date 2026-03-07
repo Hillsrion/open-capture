@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.ibExternalAccessibilityDescription</key>
+	<string>settingsApplyButton</string>
+	<key>258.ibExternalAccessibilityDescription</key>
+	<string>settingsCopyButton</string>
+	<key>258.ibShadowedToolTip</key>
+	<string>從主變體複製調整項</string>
+	<key>281.headerCell.title</key>
+	<string>來自</string>
+	<key>433.alternateTitle</key>
+	<string>應用</string>
+	<key>433.title</key>
+	<string>應用</string>
+	<key>434.alternateTitle</key>
+	<string>複製</string>
+	<key>434.title</key>
+	<string>複製</string>
+	<key>Eee-YC-nvV.title</key>
+	<string>標題名稱</string>
+</dict>
+</plist>

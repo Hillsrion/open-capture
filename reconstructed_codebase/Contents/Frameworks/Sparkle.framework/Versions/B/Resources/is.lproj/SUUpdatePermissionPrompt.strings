@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Upplýsingar úr nafnlausum kerfisskýrslum eru notaðar til að hjálpa okkur við framtíðarþróun hugbúnaðarins. Ekki hika við að hafa samband ef spurningar vakna um þetta.
+
+Þetta eru upplýsingarnar sem yrðu sendar:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Sækja og innsetja uppfærslur sjálfkrafa</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Kanna sjálfkrafa</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Ekki kanna</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Athuga sjálfkrafa með uppfærslur?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Innifela nafnlausa kerfisskýrslu</string>
+</dict>
+</plist>

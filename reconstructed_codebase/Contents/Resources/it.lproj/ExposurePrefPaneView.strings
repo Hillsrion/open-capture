@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>242.title</key>
+	<string>Abilita Avviso Ombre</string>
+	<key>246.title</key>
+	<string>Predefinito</string>
+	<key>247.title</key>
+	<string>Avviso di Esposizione</string>
+	<key>248.title</key>
+	<string>Seleziona Valori Tonali Target</string>
+	<key>253.title</key>
+	<string>Ombre:</string>
+	<key>254.title</key>
+	<string>Alte Luci:</string>
+	<key>255.title</key>
+	<string>Strumento Valori Tonali</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>Alte Luci:</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>Con i Selettori di Regolazione Automatica e Alte Luci &amp; Ombre, si applica la Modalità Canale.</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>Soglie del Clipping Automatico dei Valori Tonali</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>Canali Rosso, Verde e Blu</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>Modalità Canale:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>Ombre:</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>Canale RGB</string>
+</dict>
+</plist>

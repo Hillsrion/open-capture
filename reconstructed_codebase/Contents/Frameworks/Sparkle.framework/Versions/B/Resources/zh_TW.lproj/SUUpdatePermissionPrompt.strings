@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>匿名系統描述資訊可用來協助我們計畫未來的開發工作。若您有任何相關問題，請與我們聯繫。
+
+以下是會傳送的資訊：</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>自動下載並安裝更新項目</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>自動檢查</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>不要檢查</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>自動檢查更新項目？</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>包含匿名的系統描述資料</string>
+</dict>
+</plist>

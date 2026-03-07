@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Ta bort justeringslager</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Nytt lager</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Inställningar markeringsverktyg</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Masksynlighet inställningar</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Box</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>Lageropacitet</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacitet</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Lumaomfång...</string>
+</dict>
+</plist>

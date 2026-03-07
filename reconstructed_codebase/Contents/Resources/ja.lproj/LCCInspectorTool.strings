@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>カラーキャスト</string>
+	<key>1495.title</key>
+	<string>ユニフォームライト</string>
+	<key>1606.title</key>
+	<string>ゴミ除去</string>
+	<key>1699.title</key>
+	<string>LCCプロファイル名</string>
+	<key>1700.title</key>
+	<string>プロファイル</string>
+	<key>1720.title</key>
+	<string>LCCを作成</string>
+	<key>1785.title</key>
+	<string>LCCオプションを適用</string>
+	<key>1792.title</key>
+	<string>キャンセル</string>
+	<key>1793.title</key>
+	<string>OK</string>
+	<key>1795.title</key>
+	<string>ユニフォームライト</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>ケルビン</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ユニフォームライト</string>
+</dict>
+</plist>

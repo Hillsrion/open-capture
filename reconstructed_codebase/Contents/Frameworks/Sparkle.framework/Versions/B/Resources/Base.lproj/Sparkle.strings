@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>%1$@ can’t be updated if it’s running from the location it was downloaded to.</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ is currently the newest version available.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ is currently the newest version available.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>%1$@ %2$@ is now available—you have %3$@. This is an important update; would you like to download it now?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ is now available—you have %3$@. Would you like to download it now?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ is now available—you have %3$@. Would you like to learn more about this update on the web?</string>
+	<key>%@ downloaded</key>
+	<string>%@ downloaded</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>%1$@ is now updated to version %2$@!</string>
+	<key>%@ is now updated!</key>
+	<string>%@ is now updated!</string>
+	<key>%@ of %@</key>
+	<string>%1$@ of %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>A new version of %@ is available!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>A new version of %@ is ready to install!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>An error occurred in retrieving update information. Please try again later.</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>An error occurred while connecting to the installer. Please try again later.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>An error occurred while downloading the update. Please try again later.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>An error occurred while extracting the archive. Please try again later.</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>An error occurred while launching the installer. Please try again later.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>An error occurred while parsing the update feed.</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>An error occurred while running the updater. Please try again later.</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>An error occurred while starting the installer. Please try again later.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>An important update to %@ is ready to install</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Cancel Update</key>
+	<string>Cancel Update</string>
+	<key>Checking for updates…</key>
+	<string>Checking for updates…</string>
+	<key>Downloading update…</key>
+	<string>Downloading update…</string>
+	<key>Extracting update…</key>
+	<string>Extracting update…</string>
+	<key>Failed to resume installing update.</key>
+	<string>Failed to resume installing update.</string>
+	<key>Install and Relaunch</key>
+	<string>Install and Relaunch</string>
+	<key>Install on Quit</key>
+	<string>Install on Quit</string>
+	<key>Installing update…</key>
+	<string>Installing update…</string>
+	<key>Learn More…</key>
+	<string>Learn More…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</string>
+	<key>Ready to Install</key>
+	<string>Ready to Install</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</string>
+	<key>Unable to Check For Updates</key>
+	<string>Unable to Check For Updates</string>
+	<key>Update Error!</key>
+	<string>Update Error!</string>
+	<key>Update Installed</key>
+	<string>Update Installed</string>
+	<key>Updating %@</key>
+	<string>Updating %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</string>
+	<key>Version History</key>
+	<string>Version History</string>
+	<key>Your macOS version is too new</key>
+	<string>Your macOS version is too new</string>
+	<key>Your macOS version is too old</key>
+	<string>Your macOS version is too old</string>
+	<key>You’re up to date!</key>
+	<string>You’re up to date!</string>
+</dict>
+</plist>

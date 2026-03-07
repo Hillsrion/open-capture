@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3uB-Hd-hlv.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方法</string>
+	<key>4eU-we-CrP.ibExternalAccessibilityDescription</key>
+	<string>クラリティー</string>
+	<key>4eU-we-CrP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>クラリティー</string>
+	<key>HGC-Q7-zHa.title</key>
+	<string>ナチュラル</string>
+	<key>MtW-6d-65A.title</key>
+	<string>パンチ</string>
+	<key>QlG-5o-DBr.ibExternalAccessibilityDescription</key>
+	<string>表面</string>
+	<key>QlG-5o-DBr.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ストラクチャ</string>
+	<key>fSQ-BZ-Q4Z.title</key>
+	<string>ニュートラル</string>
+	<key>qTR-6X-eGH.title</key>
+	<string>クラッシック</string>
+</dict>
+</plist>

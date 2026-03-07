@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2902.ibShadowedToolTip</key>
+	<string>Mostra Pannello di Stampa</string>
+	<key>2903.ibShadowedToolTip</key>
+	<string>Interrompi stampa</string>
+	<key>2904.title</key>
+	<string>Cancella</string>
+	<key>2905.title</key>
+	<string>Stampa...</string>
+	<key>2910.ibShadowedToolTip</key>
+	<string>Pagina successiva</string>
+	<key>2911.ibShadowedToolTip</key>
+	<string>Pagina precedente</string>
+	<key>2912.title</key>
+	<string>Precedente</string>
+	<key>2913.title</key>
+	<string>Successivo</string>
+	<key>2917.title</key>
+	<string>Pagina 1 di 3</string>
+	<key>5.title</key>
+	<string>Stampa</string>
+</dict>
+</plist>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>265.title</key>
+	<string>Deelvenster</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>Voer weer te geven naam in</string>
+	<key>287.ibShadowedToolTip</key>
+	<string>Voer contactlink in (bijvoorbeeld mailto:fotograaf@phaseone.com of http://www.phaseone.com)</string>
+	<key>389.ibShadowedToolTip</key>
+	<string>XML- en DTD-bestanden exporteren naar uitvoerbestemming</string>
+	<key>398.title</key>
+	<string>Lokaal</string>
+	<key>399.title</key>
+	<string>FTP</string>
+	<key>403.label</key>
+	<string>FTP</string>
+	<key>405.label</key>
+	<string>Lokaal</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Resultaten weergeven in webbrowser</string>
+	<key>447.title</key>
+	<string>Beschrijving</string>
+	<key>448.title</key>
+	<string>Auteursrecht</string>
+	<key>449.placeholderString</key>
+	<string>Beschrijving invoeren</string>
+	<key>450.title</key>
+	<string>Titel</string>
+	<key>451.title</key>
+	<string>Weblink</string>
+	<key>452.placeholderString</key>
+	<string>Contact invoeren</string>
+	<key>453.placeholderString</key>
+	<string>Titel invoeren</string>
+	<key>454.placeholderString</key>
+	<string>Web- of e-maillink invoeren</string>
+	<key>455.title</key>
+	<string>Tekst</string>
+	<key>457.title</key>
+	<string>Miniatuur grootte</string>
+	<key>458.title</key>
+	<string>Grootte voorvertoning</string>
+	<key>459.title</key>
+	<string>Bijschrift</string>
+	<key>461.title</key>
+	<string>Kwaliteit</string>
+	<key>464.title</key>
+	<string>Afbeeldingen</string>
+	<key>465.title</key>
+	<string>Thema</string>
+	<key>469.title</key>
+	<string>Lay-outIndeling</string>
+	<key>470.title</key>
+	<string>Uitvoer</string>
+	<key>471.title</key>
+	<string>XML-gegevens foto exporteren</string>
+	<key>472.title</key>
+	<string>Type</string>
+	<key>474.title</key>
+	<string>URL</string>
+	<key>475.placeholderString</key>
+	<string>Voer volledige URL voor servermap in</string>
+	<key>476.title</key>
+	<string>Gebruikersnaam</string>
+	<key>477.placeholderString</key>
+	<string>Voer gebruikersnaam in</string>
+	<key>478.title</key>
+	<string>Wachtwoord</string>
+	<key>479.placeholderString</key>
+	<string>Voer wachtwoord in</string>
+	<key>480.title</key>
+	<string>Bestandslocatie</string>
+	<key>481.title</key>
+	<string>Toon na Export</string>
+	<key>522.ibShadowedToolTip</key>
+	<string>Toon Afdrukvenster</string>
+	<key>523.ibShadowedToolTip</key>
+	<string>Afdrukken annuleren</string>
+	<key>524.title</key>
+	<string>Annuleer</string>
+	<key>525.title</key>
+	<string>Exporteren</string>
+</dict>
+</plist>

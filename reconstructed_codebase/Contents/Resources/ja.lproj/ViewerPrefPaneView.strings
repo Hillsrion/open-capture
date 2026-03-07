@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>デフォルト</string>
+	<key>258.title</key>
+	<string>パターン:</string>
+	<key>260.title</key>
+	<string>カラー:</string>
+	<key>262.title</key>
+	<string>マージン:</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>ビューア</string>
+	<key>266.title</key>
+	<string>ビューアとブラウザ</string>
+	<key>269.title</key>
+	<string>プルーフ マージン:</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>マスク カラー:</string>
+	<key>289.title</key>
+	<string>レイヤー</string>
+	<key>293.title</key>
+	<string>プルーフ マージン</string>
+	<key>295.title</key>
+	<string>部分調整</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>選択バリアントのカラー:</string>
+	<key>drf-G9-VYV.title</key>
+	<string>比較のカラー:</string>
+</dict>
+</plist>

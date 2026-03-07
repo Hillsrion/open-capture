@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>保存済み %{value1}@ of %{value2}@ バッチジョブ</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>保存済み %{value1}@ of %{value2}@ バッチジョブ</string>
+	<key>30.title</key>
+	<string>終了</string>
+	<key>31.title</key>
+	<string>N個のバッチジョブのx番目を保存中</string>
+	<key>5.title</key>
+	<string>バッチジョブファイルを保存中</string>
+</dict>
+</plist>

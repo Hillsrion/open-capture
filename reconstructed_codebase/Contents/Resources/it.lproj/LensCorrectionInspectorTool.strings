@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Aberrazione Cromatica</string>
+	<key>1555.title</key>
+	<string>Nascondi Aree Distorte</string>
+	<key>1700.label</key>
+	<string>Scheda</string>
+	<key>1701.label</key>
+	<string>Visualizza</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Ottica</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Movimento</string>
+	<key>1741.title</key>
+	<string>Aberrazione Cromatica</string>
+	<key>1742.title</key>
+	<string>Predefinito</string>
+	<key>1743.title</key>
+	<string>Analizza</string>
+	<key>1745.title</key>
+	<string>Personalizzato</string>
+	<key>1757.title</key>
+	<string>Lunghezza focale</string>
+	<key>1760.title</key>
+	<string>Diaframma (f)</string>
+	<key>1823.title</key>
+	<string>Decentramento x</string>
+	<key>1832.title</key>
+	<string>Decentramento y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profilo</string>
+	<key>893.title</key>
+	<string>Direzione</string>
+	<key>894.title</key>
+	<string>Sposta</string>
+	<key>897.title</key>
+	<string>Direzione</string>
+	<key>898.title</key>
+	<string>Inclinazione</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>caduta di luce</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Cad. Luce</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Correzione Diffrazione</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>caduta di nitidezza</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Cad. Nitid.</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>distorsione</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Distorsione</string>
+</dict>
+</plist>

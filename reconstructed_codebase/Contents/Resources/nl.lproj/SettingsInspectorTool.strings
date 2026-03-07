@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>258.ibShadowedToolTip</key>
+	<string>Kopieer Aanpassingen van de Primaire Variant.</string>
+	<key>281.headerCell.title</key>
+	<string>Van</string>
+	<key>433.alternateTitle</key>
+	<string>Toepassen</string>
+	<key>433.title</key>
+	<string>Toepassen</string>
+	<key>434.alternateTitle</key>
+	<string>Kopiëren</string>
+	<key>434.title</key>
+	<string>Kopiëren</string>
+	<key>Eee-YC-nvV.title</key>
+	<string>titel</string>
+</dict>
+</plist>

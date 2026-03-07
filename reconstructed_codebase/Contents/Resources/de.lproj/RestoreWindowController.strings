@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Zurücksetzen</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Backup Ort:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Erneut versuchen</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Nächstes</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Katalog wiederherstellen</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Text Cell</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Ein Fehler ist aufgetreten. Erneut versuchen?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Kopiere Dateien…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Keine Sicherung gefunden</string>
+	<key>W74-ST-qV9.title</key>
+	<string>Pfad</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Abbrechen</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Im Finder anzeigen</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Dies ersetzt die vorhandene Datenbank und kann nicht rückgängig gemacht werden.
+Währenddessen nicht das Beenden erzwingen oder den Computer herunterfahren.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Backup erfolgreich wiederhergestellt.</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>Fehler</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Katalog öffnen</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Abbrechen</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Überschrift</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Vorherige</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Katalogname</string>
+</dict>
+</plist>

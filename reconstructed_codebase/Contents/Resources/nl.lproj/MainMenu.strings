@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01C-Il-VMP.title</key>
+	<string>Annotaties</string>
+	<key>0H0-Jc-t3x.title</key>
+	<string>Varianten…</string>
+	<key>0Ps-7b-sBQ.title</key>
+	<string>Hernoem Teller</string>
+	<key>0Q0-M5-LmI.title</key>
+	<string>M</string>
+	<key>0UZ-1K-nR1.title</key>
+	<string>Laag</string>
+	<key>0ih-RM-Js7.title</key>
+	<string>Weergave</string>
+	<key>14z-pL-mA5.ibShadowedToolTip</key>
+	<string>Aanpassingen voor varianten herstellen</string>
+	<key>14z-pL-mA5.title</key>
+	<string>Wis geselecteerde laag</string>
+	<key>1LQ-Jh-EPo.title</key>
+	<string>Upgrade Engine</string>
+	<key>1Lv-YA-qve.title</key>
+	<string>Selecteren</string>
+	<key>1Nd-JK-zNO.title</key>
+	<string>Shop…</string>
+	<key>1gq-zE-mEg.title</key>
+	<string>Werkbalk</string>
+	<key>1rs-DA-1do.title</key>
+	<string>Synchroniseer Metagegevens</string>
+	<key>224-6K-J3h.title</key>
+	<string>PNG-bestanden altijd verbergen</string>
+	<key>24q-pt-xtA.title</key>
+	<string>Spelling</string>
+	<key>25l-uy-u1U.title</key>
+	<string>Degradeer Variant</string>
+	<key>28d-GR-VH6.title</key>
+	<string>Verwerk selectie</string>
+	<key>2BO-O0-qsH.title</key>
+	<string>Niveaus</string>
+	<key>2Gr-gy-fxz.title</key>
+	<string>Selecteer Hot Folder…</string>
+	<key>2KV-Ld-vZd.title</key>
+	<string>Voeg toe aan Favorieten</string>
+	<key>2XR-PQ-i11.title</key>
+	<string>Help</string>
+	<key>2pa-ft-UHr.title</key>
+	<string>Schakel Laag aan/uit</string>
+	<key>3028.title</key>
+	<string>Maak nieuw venster aan</string>
+	<key>36O-pG-qIh.title</key>
+	<string>Stel teller in…</string>
+	<key>38I-f2-Ssj.title</key>
+	<string>Automatisch</string>
+	<key>3T1-Cx-ywj.title</key>
+	<string>Knippen</string>
+	<key>3To-a4-pSf.ibShadowedToolTip</key>
+	<string>Zet een back-up van deze Catalogus terug</string>
+	<key>3To-a4-pSf.title</key>
+	<string>Zet Catalogus terug…</string>
+	<key>3Ui-ok-lzu.title</key>
+	<string>Database controleren bij openen</string>
+	<key>3Z4-fg-SOV.title</key>
+	<string>Menu</string>
+	<key>3ep-eN-uVW.title</key>
+	<string>Viewer Werkbalk</string>
+	<key>3gr-b2-izd.title</key>
+	<string>Maak Album van</string>
+	<key>3lw-Wa-6il.title</key>
+	<string>Selectie</string>
+	<key>3rd-Dg-1hZ.title</key>
+	<string>Afdrukstand</string>
+	<key>40o-AJ-xoM.title</key>
+	<string>Bewerk met</string>
+	<key>44D-aG-E83.title</key>
+	<string>Lab uitlezing</string>
+	<key>4F7-S3-7wH.title</key>
+	<string>Dezelfde Classificatie</string>
+	<key>4MD-pK-52t.title</key>
+	<string>Menu</string>
+	<key>4tc-Vp-Tn2.title</key>
+	<string>Export Teller</string>
+	<key>500-CP-quJ.title</key>
+	<string>Verfijn Masker…</string>
+	<key>5Kn-v3-3J9.title</key>
+	<string>Hulplijnen</string>
+	<key>5Qh-XJ-7lV.title</key>
+	<string>Herstel Hulplijnen</string>
+	<key>5Td-ii-gu5.title</key>
+	<string>Capture One</string>
+	<key>5eA-Cd-e2H.title</key>
+	<string>Stel in als Selectie Map</string>
+	<key>5qY-K4-hhW.title</key>
+	<string>Zichtbaarheid masker</string>
+	<key>5xI-ot-kZZ.title</key>
+	<string>Reeks ID</string>
+	<key>65L-HG-c0K.title</key>
+	<string>Herstel teller</string>
+	<key>6Jb-3H-48Z.title</key>
+	<string>Voeg Inspectie tool toe aan geselecteerde tab</string>
+	<key>6Pw-sw-mKP.title</key>
+	<string>Bewerk alle geselecteerde Varianten</string>
+	<key>6RB-Ks-Q9Y.title</key>
+	<string>Stel in of wijzig PIN…</string>
+	<key>6Ve-3u-FtW.title</key>
+	<string>Selecteer volgende wanneer</string>
+	<key>6WK-Rn-IDM.title</key>
+	<string>Pas Aanpassingen toe van</string>
+	<key>6dD-vu-ayz.title</key>
+	<string>Automatisch aanpassen</string>
+	<key>6fd-wm-DqL.ibShadowedToolTip</key>
+	<string>Afbeelding vastleggen met de aangesloten camera</string>
+	<key>6fd-wm-DqL.title</key>
+	<string>Netwerk Camera Beheerder…</string>
+	<key>6nI-5Q-bF1.title</key>
+	<string>Volgende Set</string>
+	<key>6sQ-je-30n.title</key>
+	<string>Uitvoer Teller</string>
+	<key>75o-KI-t8D.title</key>
+	<string>Import Teller</string>
+	<key>7MX-Bb-VSm.title</key>
+	<string>Publiceer</string>
+	<key>7Ow-LL-dv0.title</key>
+	<string>Vorige Verzameling</string>
+	<key>7zw-gL-Wno.title</key>
+	<string>Nieuwe Variant</string>
+	<key>8I6-nm-Uiw.title</key>
+	<string>Nieuwe Verzameling</string>
+	<key>8R2-c5-XAq.title</key>
+	<string>Kopieer Aanpassingen</string>
+	<key>8du-uT-ICL.title</key>
+	<string>Stap uit Verzameling</string>
+	<key>92E-j9-FEm.title</key>
+	<string>Dezelfde Variant positie</string>
+	<key>94T-HJ-feh.title</key>
+	<string>Selecteer op</string>
+	<key>9Aa-c4-9VI.title</key>
+	<string>Vouw Selectie samen</string>
+	<key>9Hl-bF-YXx.title</key>
+	<string>Logboek</string>
+	<key>9NL-eQ-T1Q.title</key>
+	<string>Help</string>
+	<key>9b8-5C-GLZ.title</key>
+	<string>Exporteren als Catalogus...</string>
+	<key>9bM-jw-56t.title</key>
+	<string>Deselecteer alles</string>
+	<key>9g2-Zq-Mgh.title</key>
+	<string>Crash Capture One</string>
+	<key>9iB-p5-gRZ.title</key>
+	<string>Verlaag teller</string>
+	<key>9k8-L5-lSq.title</key>
+	<string>Afbeelding</string>
+	<key>9lE-sW-NkR.title</key>
+	<string>Synchroniseer map…</string>
+	<key>9pG-rx-dax.title</key>
+	<string>Verwijderen</string>
+	<key>9tG-Te-CEV.title</key>
+	<string>Diapresentatie</string>
+	<key>9wF-vo-1tW.title</key>
+	<string>Contrast en Helderheid</string>
+	<key>ACe-cT-qRq.title</key>
+	<string>Importeer Sessie…</string>
+	<key>AHw-Yv-ZV0.title</key>
+	<string>Nieuw Album…</string>
+	<key>APq-Ot-xfY.title</key>
+	<string>Stel teller in…</string>
+	<key>ARA-Qg-wH6.title</key>
+	<string>Bewerken</string>
+	<key>AVP-cL-jr5.title</key>
+	<string>Trigger in pijpleiding</string>
+	<key>AiG-bi-lBS.title</key>
+	<string>Stel stapgrootte in…</string>
+	<key>Avm-Xr-hJI.title</key>
+	<string>Originelen…</string>
+	<key>B6A-Bd-wdt.title</key>
+	<string>Laag</string>
+	<key>BBe-mx-5MA.title</key>
+	<string>Kleuruitlezingen</string>
+	<key>BKI-Ak-E3C.title</key>
+	<string>Crash OpenCore</string>
+	<key>BMq-UG-ndQ.title</key>
+	<string>Uitvoer Teller</string>
+	<key>BPz-o1-8u8.title</key>
+	<string>Recent geopend</string>
+	<key>BlO-8u-bjW.title</key>
+	<string>Selecteer Tooltab</string>
+	<key>C8i-Ie-mV3.title</key>
+	<string>Meld een Bug...</string>
+	<key>CTk-NV-A7b.title</key>
+	<string>Licentie...</string>
+	<key>Cbk-cE-Rnc.title</key>
+	<string>Toon Selectiepunten</string>
+	<key>Ce0-Be-8UJ.title</key>
+	<string>Uit</string>
+	<key>Cyj-ce-0Gd.title</key>
+	<string>Bestand</string>
+	<key>DSv-Kq-hdb.title</key>
+	<string>Controleer op updates…</string>
+	<key>Dbr-g2-CoE.title</key>
+	<string>Diensten</string>
+	<key>DiO-W0-c4G.title</key>
+	<string>Voor/Na modus</string>
+	<key>Dsw-hn-IZg.title</key>
+	<string>Voorkeuren...</string>
+	<key>E5j-Qh-yw9.title</key>
+	<string>Bewerk sneltoetsen…</string>
+	<key>EY1-4F-yTL.title</key>
+	<string>Gelabeld met kleur</string>
+	<key>Eb6-Sk-NMb.title</key>
+	<string>Laad Metagegevens</string>
+	<key>Ej6-Xy-Scx.title</key>
+	<string>Selecteer op zelfde</string>
+	<key>Ez2-nJ-UxV.title</key>
+	<string>Maak LCC aan…</string>
+	<key>F65-Hg-uD7.title</key>
+	<string>Stel stapgrootte in…</string>
+	<key>FIM-SV-caT.title</key>
+	<string>Herstel teller</string>
+	<key>FTn-px-TXb.title</key>
+	<string>Videobestanden altijd verbergen</string>
+	<key>Fbl-im-0JF.title</key>
+	<string>Promoveer Variant</string>
+	<key>Few-hi-dlj.title</key>
+	<string>Volgende</string>
+	<key>Fk8-fZ-Nge.title</key>
+	<string>Overlay</string>
+	<key>Ft0-2F-qcY.title</key>
+	<string>Stel stapgrootte in…</string>
+	<key>FyO-gf-P7P.title</key>
+	<string>Viewer</string>
+	<key>Gea-NJ-sMI.title</key>
+	<string>XL</string>
+	<key>HgY-Ir-gjR.title</key>
+	<string>Overige verbergen</string>
+	<key>I3p-9w-NiJ.title</key>
+	<string>ImageCore-schuifbalken</string>
+	<key>I5C-mb-Ph9.title</key>
+	<string>Viewer</string>
+	<key>I8M-pI-mei.title</key>
+	<string>Globale filters</string>
+	<key>IEm-f0-wfu.title</key>
+	<string>Tools</string>
+	<key>IID-Ve-jGb.title</key>
+	<string>Labels</string>
+	<key>IPe-NI-yoh.title</key>
+	<string>Bestand</string>
+	<key>IQ8-iC-ffv.title</key>
+	<string>Automatisch onderbreken</string>
+	<key>Ibb-8a-gRZ.title</key>
+	<string>L</string>
+	<key>Ic4-HZ-M7K.title</key>
+	<string>Selecteer volgende wanneer…</string>
+	<key>Ik1-xy-Hdk.title</key>
+	<string>Hetzelfde Kleurlabel</string>
+	<key>Ikz-mO-9ZA.title</key>
+	<string>Pas LCC toe</string>
+	<key>IqL-nF-pTb.title</key>
+	<string>Toon Masker nooit</string>
+	<key>Izf-b8-5gq.title</key>
+	<string>Diensten</string>
+	<key>J2g-T4-9jM.title</key>
+	<string>Configureer automatische aanpassingen</string>
+	<key>J6f-2w-feE.title</key>
+	<string>Opname Teller</string>
+	<key>JO3-mT-am1.title</key>
+	<string>Dezelfde Reeks ID</string>
+	<key>JRI-NB-DJ3.title</key>
+	<string>Verwerkingsgeschiedenis</string>
+	<key>JsD-gv-ZcN.title</key>
+	<string>Classificatie</string>
+	<key>JzF-cB-jf5.title</key>
+	<string>Voorgangsbalken</string>
+	<key>K2L-UQ-r8u.title</key>
+	<string>Crash OpenCore</string>
+	<key>K4L-nU-bL0.title</key>
+	<string>Herstel teller</string>
+	<key>KZr-yz-eOe.title</key>
+	<string>Recent geopend</string>
+	<key>KkK-Dm-Fyt.title</key>
+	<string>Verlaag Miniatuur grootte</string>
+	<key>Kw9-6p-baP.title</key>
+	<string>Uitzoomen</string>
+	<key>Kx8-Sf-MtA.title</key>
+	<string>Witbalans</string>
+	<key>L2W-qr-fDh.title</key>
+	<string>Rotatie</string>
+	<key>L6s-MY-kNd.title</key>
+	<string>Kleurlabel</string>
+	<key>LBI-uj-64k.title</key>
+	<string>Nieuw Slim Album…</string>
+	<key>LBc-ql-cwY.title</key>
+	<string>Selecteer op zelfde</string>
+	<key>LTF-ps-Dul.title</key>
+	<string>Kopiëren en toepassen Aanpassingen</string>
+	<key>LbY-8O-xu0.title</key>
+	<string>Pas Tools aan</string>
+	<key>LcB-eX-4qN.title</key>
+	<string>Verwijderen</string>
+	<key>LeW-a9-a1n.title</key>
+	<string>Weergave</string>
+	<key>LpJ-ak-5G4.title</key>
+	<string>90° rechtsom</string>
+	<key>MFE-ll-7eO.title</key>
+	<string>Importeer Catalogus</string>
+	<key>MKh-xe-MEd.title</key>
+	<string>Voorgangsbalken</string>
+	<key>MOG-uN-KrB.ibShadowedToolTip</key>
+	<string>Afbeelding vastleggen met de aangesloten camera</string>
+	<key>MOG-uN-KrB.title</key>
+	<string>Opname</string>
+	<key>Mb9-kH-qyp.title</key>
+	<string>Open met</string>
+	<key>Mfd-my-DKN.title</key>
+	<string>Voor/Na</string>
+	<key>My6-4Y-UBl.title</key>
+	<string>Vouw alles uit</string>
+	<key>N5o-dv-1Be.title</key>
+	<string>Maak ongedaan</string>
+	<key>N9h-Al-5XE.title</key>
+	<string>Verplaats naar prullenbak</string>
+	<key>Nhu-fQ-zjN.title</key>
+	<string>Verifieer Catalogus of Sessie…</string>
+	<key>NyM-Zt-y88.title</key>
+	<string>FIlmcurve-bewerker</string>
+	<key>O2C-D1-hn3.title</key>
+	<string>Auto Verberg Modus</string>
+	<key>O4t-ch-OFC.title</key>
+	<string>Kopiëren</string>
+	<key>O9F-Mo-6cG.title</key>
+	<string>Tips</string>
+	<key>OCP-rg-Tmg.title</key>
+	<string>Menu</string>
+	<key>OQY-AD-asc.title</key>
+	<string>Afdrukstand</string>
+	<key>OVh-i7-5mp.title</key>
+	<string>Trigger Assertion</string>
+	<key>OqC-NS-Eok.title</key>
+	<string>Voorbeeld balk 02</string>
+	<key>PCm-vK-OGx.title</key>
+	<string>Herstel Werkomgeving nooit automatisch</string>
+	<key>PMu-nW-YC5.title</key>
+	<string>Stap in Verzameling</string>
+	<key>PQW-J0-1bK.title</key>
+	<string>Crash CaptureCoreService</string>
+	<key>PRu-fp-fdO.title</key>
+	<string>Selecteren</string>
+	<key>PX7-Iq-9N2.title</key>
+	<string>Bekijk Licentieovereenkomst</string>
+	<key>Q9f-h8-bu5.title</key>
+	<string>Selecteer op</string>
+	<key>QHc-R7-m41.title</key>
+	<string>Afdrukken…</string>
+	<key>QSu-Ii-lqh.title</key>
+	<string>Stel stapgrootte in…</string>
+	<key>Qhq-5B-fYE.title</key>
+	<string>Rotatie</string>
+	<key>QjW-ua-tSX.title</key>
+	<string>Crash Capture One</string>
+	<key>Qkh-Pd-T00.title</key>
+	<string>Toon alles</string>
+	<key>Qu7-Iw-dyX.title</key>
+	<string>Classificatie</string>
+	<key>Qx0-Bi-x6R.title</key>
+	<string>Scripts</string>
+	<key>R3f-rv-RWH.title</key>
+	<string>Maak zwevende Tool aan</string>
+	<key>RIv-U7-9vT.title</key>
+	<string>Configureer automatische aanpassingen</string>
+	<key>RkY-nO-oYQ.title</key>
+	<string>Bewerkmodus</string>
+	<key>RuA-0Y-GGt.title</key>
+	<string>Wis Masker</string>
+	<key>S4K-SB-UBy.title</key>
+	<string>Over Capture One</string>
+	<key>SGm-xv-97r.title</key>
+	<string>Verwijder Tooltab</string>
+	<key>SJc-VY-oqD.title</key>
+	<string>Hernoem afbeelding</string>
+	<key>SXk-bE-jzi.ibShadowedToolTip</key>
+	<string>Leeg de Sessie Prullenbak. Afbeeldingen worden definitief verwijderd.</string>
+	<key>SXk-bE-jzi.title</key>
+	<string>Leeg Prullenbak</string>
+	<key>SiW-gP-wbL.title</key>
+	<string>Keer selectie om</string>
+	<key>SlN-5G-v1Q.title</key>
+	<string>Kleur Raster</string>
+	<key>Ss4-ms-B6z.title</key>
+	<string>Luma Bereik…</string>
+	<key>TB3-MG-NqE.title</key>
+	<string>Geavanceerd zoeken...</string>
+	<key>TFk-vt-N7X.title</key>
+	<string>Debuggen</string>
+	<key>TWx-jo-Xie.title</key>
+	<string>Spelling</string>
+	<key>TXq-Kk-7Ru.title</key>
+	<string>Stop Capture One</string>
+	<key>Tao-sN-xcm.title</key>
+	<string>Crash ImageCore</string>
+	<key>Tek-Pl-oY3.title</key>
+	<string>Selecteer alleen Primaire</string>
+	<key>TfA-cx-Mvh.title</key>
+	<string>Focusmasker</string>
+	<key>Tsz-Zr-wOo.title</key>
+	<string>Laatste</string>
+	<key>Txa-r9-MeZ.title</key>
+	<string>Voeg nieuwe Kloonlaag toe</string>
+	<key>U3J-Q4-APW.title</key>
+	<string>Scripts</string>
+	<key>U5C-ej-t0I.title</key>
+	<string>Geselecteerd kleurbereik</string>
+	<key>UJa-BM-gkL.title</key>
+	<string>Bewerken</string>
+	<key>UOb-cc-i4u.title</key>
+	<string>Verwijder van Schijf…</string>
+	<key>UPZ-4r-LIP.title</key>
+	<string>Auto Verberg Modus</string>
+	<key>Umj-4D-Ft5.title</key>
+	<string>90° linksom</string>
+	<key>Ums-2C-jGe.title</key>
+	<string>Rotatie</string>
+	<key>VAN-jC-sVf.title</key>
+	<string>Stel teller in…</string>
+	<key>VIk-sI-Rak.title</key>
+	<string>Spinner voorbeeld 01</string>
+	<key>VNo-j5-BoM.title</key>
+	<string>Volgende Verzameling</string>
+	<key>VRZ-08-28a.title</key>
+	<string>Kleurlabel</string>
+	<key>VYd-aa-ISY.title</key>
+	<string>Online gebruikershandleiding</string>
+	<key>Vd2-sw-pUm.title</key>
+	<string>Classificatie</string>
+	<key>W1O-Uk-8Al.title</key>
+	<string>Wis Vergelijking</string>
+	<key>W8g-vz-Nkq.title</key>
+	<string>Raster</string>
+	<key>WI5-uh-qyi.title</key>
+	<string>Sla Aanpassingen op als Stijl…</string>
+	<key>WZj-vq-3hp.ibShadowedToolTip</key>
+	<string>Een Sessie is een snelle en soepele manier om te werken met een beperkt aantal afbeeldingen voor één opdracht of gebeurtenis. Afbeeldingen kunnen worden bewerkt door naar hun locatie te bladeren op de schijf of door ze te importeren in de Sessie.</string>
+	<key>WZj-vq-3hp.title</key>
+	<string>Nieuwe Sessie...</string>
+	<key>WtP-ch-1PG.title</key>
+	<string>Capture One</string>
+	<key>XE8-eP-hGS.title</key>
+	<string>Trapezium</string>
+	<key>XEz-MA-wNM.title</key>
+	<string>Stel teller in…</string>
+	<key>XJN-4m-xYh.title</key>
+	<string>Voeg verticale Hulplijn toe</string>
+	<key>Xq1-cS-s6N.title</key>
+	<string>Pas Hulplijnen aan</string>
+	<key>Xu6-Jy-27Q.title</key>
+	<string>Dumpen voor Verwerking/Afdrukken/Webcontactblad/Exporteren</string>
+	<key>Xve-bi-pm5.ibShadowedToolTip</key>
+	<string>Varianten rechtsom roteren</string>
+	<key>Xve-bi-pm5.title</key>
+	<string>Rechtsom roteren</string>
+	<key>Ya0-fP-PFT.title</key>
+	<string>Toon Grijstoonmasker</string>
+	<key>Yhj-Cn-eCP.title</key>
+	<string>Voor/Na modus</string>
+	<key>Yhl-QQ-SNi.title</key>
+	<string>Belichtingswaarschuwing</string>
+	<key>YjW-6L-mGx.title</key>
+	<string>Stel in als Opname Map</string>
+	<key>YvP-eg-VLO.title</key>
+	<string>Browser positie aan/uit</string>
+	<key>Yzh-ba-11T.title</key>
+	<string>Export Teller</string>
+	<key>Z12-Ur-vG5.title</key>
+	<string>Camera</string>
+	<key>Z5p-mB-i3n.title</key>
+	<string>Kopieer Masker van</string>
+	<key>ZEv-jN-yCz.title</key>
+	<string>Gesplitste weergave</string>
+	<key>ZK1-Br-nPC.title</key>
+	<string>Exporteer afbeeldingen</string>
+	<key>ZSx-8D-9oe.title</key>
+	<string>Recept Proofing</string>
+	<key>ZkQ-kr-rOT.title</key>
+	<string>Raster Masker</string>
+	<key>ZtV-H5-odX.title</key>
+	<string>Stel in als Vergelijking</string>
+	<key>a5o-KL-LMv.title</key>
+	<string>Activiteiten</string>
+	<key>a6a-6k-MaI.title</key>
+	<string>Crash triggeren...</string>
+	<key>aFc-UB-Ojr.title</key>
+	<string>Nieuwe Groep…</string>
+	<key>aWi-dq-WP7.title</key>
+	<string>Kloon Variant</string>
+	<key>aeU-x2-HKG.title</key>
+	<string>Vouw Selectie uit</string>
+	<key>aoS-PQ-Fke.title</key>
+	<string>Volgende</string>
+	<key>apZ-Xi-bTS.title</key>
+	<string>Wis Menu</string>
+	<key>bC2-8p-Sbj.title</key>
+	<string>Spelling controleren</string>
+	<key>bQz-bN-0Pr.title</key>
+	<string>Maak Album van</string>
+	<key>bUF-hO-mho.title</key>
+	<string>Hoog Dynamisch Bereik</string>
+	<key>bd0-6X-m18.title</key>
+	<string>Classificatie</string>
+	<key>bdc-xp-MXX.title</key>
+	<string>Verplaats naar Selectie Map</string>
+	<key>cIQ-0c-HMd.title</key>
+	<string>Stel in als Uitvoer Map</string>
+	<key>cJ0-5a-BtU.title</key>
+	<string>Toon Masker altijd</string>
+	<key>cNu-MK-hYx.title</key>
+	<string>Direct</string>
+	<key>caw-2R-l90.title</key>
+	<string>Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>cb9-dY-odx.title</key>
+	<string>Prestatietests</string>
+	<key>cjc-7e-hFl.title</key>
+	<string>Verwijder Tool uit geselecteerde tab</string>
+	<key>ckf-EW-xkf.title</key>
+	<string>Toon in Finder</string>
+	<key>d0L-pY-VgO.title</key>
+	<string>Prestatietests</string>
+	<key>d50-fq-gSn.title</key>
+	<string>Stel teller in…</string>
+	<key>dAq-ug-Eha.title</key>
+	<string>Auto selecteer nieuwe opname</string>
+	<key>dVS-br-Kwq.title</key>
+	<string>Pas Browser aan</string>
+	<key>dVb-ZR-YFh.title</key>
+	<string>Venster</string>
+	<key>dk9-he-9dx.title</key>
+	<string>Hergenereer Voorvertoningen</string>
+	<key>eAW-D0-ka1.title</key>
+	<string>Toon Retouche en Kloon pijlen</string>
+	<key>emU-ls-KLQ.title</key>
+	<string>Menu</string>
+	<key>eqn-m3-Cil.title</key>
+	<string>Browser Werkbalk</string>
+	<key>exd-CD-8be.title</key>
+	<string>Verhoog Miniatuur grootte</string>
+	<key>fEO-V4-a9n.title</key>
+	<string>Niet-geclassificeerd</string>
+	<key>fQW-x2-JHm.title</key>
+	<string>Statusmodus</string>
+	<key>fai-sG-oed.title</key>
+	<string>Proof-profiel</string>
+	<key>fgT-gu-xT9.title</key>
+	<string>Voeg nieuwe Gevulde Aanpassingslaag toe</string>
+	<key>fs8-sW-tR1.ibShadowedToolTip</key>
+	<string>Varianten linksom roteren</string>
+	<key>fs8-sW-tR1.title</key>
+	<string>Linksom roteren</string>
+	<key>fse-N2-CBu.title</key>
+	<string>RAW-bestanden altijd verbergen</string>
+	<key>fwA-3y-i2C.title</key>
+	<string>Herstel teller</string>
+	<key>fzw-GX-3Oz.title</key>
+	<string>Beoordeeld met Ster</string>
+	<key>ga9-IJ-ciS.title</key>
+	<string>Belichting</string>
+	<key>gac-ce-4hS.title</key>
+	<string>Browse-snelheid</string>
+	<key>gaw-q6-ZQt.title</key>
+	<string>Verwerkte TIFF-bestanden altijd verbergen</string>
+	<key>hIg-Rd-5ek.title</key>
+	<string>Pas Aanpassingen toe</string>
+	<key>hKJ-lB-Wyx.title</key>
+	<string>Pas Werkbalk aan…</string>
+	<key>hNh-b3-9pp.title</key>
+	<string>Sorteren</string>
+	<key>hOL-XU-Zdy.title</key>
+	<string>Beheer vergrendelingen…</string>
+	<key>hRi-QW-I0r.title</key>
+	<string>Crash ModelCore</string>
+	<key>hap-CP-2Kr.title</key>
+	<string>Stel stapgrootte in…</string>
+	<key>hm3-R0-nnH.title</key>
+	<string>Vergrendel/ontgrendel Catalogus</string>
+	<key>hyx-xU-vkz.title</key>
+	<string>Proof-profiel</string>
+	<key>i53-f7-yoL.title</key>
+	<string>Positie tools schakelaar</string>
+	<key>i5p-Um-m9T.title</key>
+	<string>Aanpassingen</string>
+	<key>iTf-JB-Jml.title</key>
+	<string>Live-Weergave</string>
+	<key>ij0-Ig-v5x.title</key>
+	<string>Zoom Venster</string>
+	<key>itC-UE-2gw.title</key>
+	<string>Vorige</string>
+	<key>ivw-bE-Tp8.ibShadowedToolTip</key>
+	<string>Back-up de huidige Catalogus</string>
+	<key>ivw-bE-Tp8.title</key>
+	<string>Back-up Catalogus…</string>
+	<key>iz4-l5-u4d.title</key>
+	<string>Verwerkingsgeschiedenis</string>
+	<key>j9C-bw-Eqf.title</key>
+	<string>Alles naar voorgrond</string>
+	<key>jFB-IF-a18.title</key>
+	<string>Eerste</string>
+	<key>jFU-cx-apQ.title</key>
+	<string>Labels</string>
+	<key>jTl-o5-QoF.title</key>
+	<string>Vorige Set</string>
+	<key>jha-Dh-6bI.title</key>
+	<string>Vul Masker</string>
+	<key>jlv-C4-OK4.title</key>
+	<string>Exporteer Web Contactvel…</string>
+	<key>jmQ-Po-VKd.title</key>
+	<string>Selecteer alles</string>
+	<key>k11-QY-wHF.title</key>
+	<string>Crash ImageCore</string>
+	<key>kEw-1G-rHn.title</key>
+	<string>Stel in als Prullenbak Map</string>
+	<key>kJo-XM-aj7.title</key>
+	<string>XS</string>
+	<key>kLD-Ih-bSU.title</key>
+	<string>Dump voor Afdrukvoorbeeld/Viewer</string>
+	<key>kVA-By-ceo.title</key>
+	<string>Achtergrondkleur</string>
+	<key>kaS-cR-Itb.title</key>
+	<string>Volledige weergave</string>
+	<key>ks9-Py-p2q.title</key>
+	<string>Kleurlabel</string>
+	<key>kzM-Qh-gJR.ibShadowedToolTip</key>
+	<string>Maak van het huidige document een back-up als Sjabloon</string>
+	<key>kzM-Qh-gJR.title</key>
+	<string>Sla op als Sjabloon...</string>
+	<key>l6v-uQ-6vA.title</key>
+	<string>Deselecteer Primaire</string>
+	<key>lsR-Cd-YTB.title</key>
+	<string>Voeg nieuwe Retouchelaag toe</string>
+	<key>lsz-dg-BvX.title</key>
+	<string>Importeer Catalogus</string>
+	<key>lto-Al-Lic.title</key>
+	<string>Sluit venster</string>
+	<key>m53-KV-wAJ.title</key>
+	<string>Afbeelding</string>
+	<key>mGQ-hW-7fj.title</key>
+	<string>Batch-hernoem afbeeldingen…</string>
+	<key>mGw-IN-30M.title</key>
+	<string>Volledig scherm</string>
+	<key>mNh-zS-LXg.title</key>
+	<string>Kleurlabel</string>
+	<key>mTR-t7-bfn.title</key>
+	<string>Verberg Capture One</string>
+	<key>mU3-yj-odu.title</key>
+	<string>Capture One catalogus…</string>
+	<key>mWf-jA-GRT.title</key>
+	<string>Classificatie</string>
+	<key>mb2-5a-je9.title</key>
+	<string>Hernoem Teller</string>
+	<key>mz6-FE-px4.title</key>
+	<string>Nieuwe Verzameling</string>
+	<key>n5l-Fl-Ng8.title</key>
+	<string>Resource Hub…</string>
+	<key>n5r-O7-blt.title</key>
+	<string>Vouw alles samen</string>
+	<key>nE7-nm-cUN.title</key>
+	<string>Toon in Bibliotheek</string>
+	<key>nTn-id-iRz.title</key>
+	<string>Nieuw Project…</string>
+	<key>naw-rG-vWD.title</key>
+	<string>Kies Variant</string>
+	<key>nbk-yq-Chp.title</key>
+	<string>Pas Viewer aan</string>
+	<key>ndC-o5-Nrj.title</key>
+	<string>Kleurlabel</string>
+	<key>nry-zy-vLA.title</key>
+	<string>Wanneer klaar</string>
+	<key>oHh-wm-VLQ.title</key>
+	<string>Inspectie Tool verwijderen uit geselecteerde tab</string>
+	<key>oLn-zi-kJP.title</key>
+	<string>Vervaag Masker…</string>
+	<key>oNa-cq-UaH.title</key>
+	<string>Voeg Tooltab toe</string>
+	<key>oVF-Zi-Ly1.title</key>
+	<string>Stijlen</string>
+	<key>oaD-9h-WhZ.title</key>
+	<string>Importeer afbeeldingen…</string>
+	<key>pay-HP-uXe.title</key>
+	<string>JPEG-bestanden altijd verbergen</string>
+	<key>pos-6t-mez.title</key>
+	<string>Uit</string>
+	<key>pqK-xL-L7m.title</key>
+	<string>Werkomgeving</string>
+	<key>pw5-ef-Yde.title</key>
+	<string>Spinner voorbeeld 02</string>
+	<key>qPD-iq-16K.title</key>
+	<string>Keer Masker om</string>
+	<key>qfi-c8-Lj9.title</key>
+	<string>Nooit</string>
+	<key>qzd-K0-SRD.title</key>
+	<string>Pak EIP uit</string>
+	<key>r0M-bo-Ctx.title</key>
+	<string>Lijst bestandsnamen…</string>
+	<key>rIx-ZF-zzR.title</key>
+	<string>Browser</string>
+	<key>rJ7-tj-Zjx.title</key>
+	<string>Voeg Tool toe aan geselecteerde tab</string>
+	<key>rKQ-8S-jJJ.title</key>
+	<string>Opnieuw</string>
+	<key>rg8-xW-C7E.title</key>
+	<string>Pak in als EIP</string>
+	<key>rlO-p5-pah.title</key>
+	<string>Venster</string>
+	<key>rwS-sM-J09.title</key>
+	<string>Lokaliseer afbeelding…</string>
+	<key>sAJ-PN-NNm.title</key>
+	<string>Z</string>
+	<key>sNP-5H-3KI.title</key>
+	<string>Capture One ondersteuning</string>
+	<key>sWb-mO-EDh.title</key>
+	<string>Labels</string>
+	<key>sZU-Ld-R58.title</key>
+	<string>Voeg horizontale Hulplijn toe</string>
+	<key>sam-MH-Lvx.title</key>
+	<string>Passend</string>
+	<key>smy-v7-f4P.title</key>
+	<string>Debuggen</string>
+	<key>stE-xv-Kcp.title</key>
+	<string>Spelling controleren tijdens typen</string>
+	<key>t0Z-l1-Abr.title</key>
+	<string>Lab uitlezing</string>
+	<key>t64-BB-MkS.title</key>
+	<string>Achtergrondkleur</string>
+	<key>tFf-SU-Is4.title</key>
+	<string>Tooltabs</string>
+	<key>tPe-DZ-2kg.title</key>
+	<string>Exporteer afbeeldingen</string>
+	<key>tQv-C3-vCk.title</key>
+	<string>Openen...</string>
+	<key>tRq-qe-j3c.title</key>
+	<string>Werkomgeving</string>
+	<key>uIl-Sc-fHK.title</key>
+	<string>Opname Teller</string>
+	<key>uMu-4A-XMk.title</key>
+	<string>Spelling...</string>
+	<key>um6-7R-op7.title</key>
+	<string>Import Teller</string>
+	<key>vKK-zV-QgI.title</key>
+	<string>Vorige</string>
+	<key>vN0-4W-ouU.title</key>
+	<string>Pas Hulplijnen aan</string>
+	<key>vNl-rw-7XV.title</key>
+	<string>Camera</string>
+	<key>vPJ-Xt-IuB.title</key>
+	<string>Open met</string>
+	<key>vXq-3w-y0D.title</key>
+	<string>Kleur Hulplijnen</string>
+	<key>vek-MX-hli.title</key>
+	<string>Herstel teller</string>
+	<key>w0t-zA-XqW.title</key>
+	<string>Proof-marge</string>
+	<key>w1y-hX-jq1.title</key>
+	<string>Pas Browser aan</string>
+	<key>w49-QV-zqJ.title</key>
+	<string>Voeg nieuwe Lege Aanpassingslaag toe</string>
+	<key>wBf-ws-A5Q.ibShadowedToolTip</key>
+	<string>Een Catalogus is de beste plek om uw volledige afbeeldingenbibliotheek op te slaan en te organiseren. Om te kunnen werken met afbeeldingen in een Catalogus, moeten ze worden geïmporteerd door de Catalogus. Aanbevolen voor de meeste fotografen.</string>
+	<key>wBf-ws-A5Q.title</key>
+	<string>Nieuwe Catalogus...</string>
+	<key>wFu-j6-T7B.title</key>
+	<string>Hot Folder ingeschakeld</string>
+	<key>wr6-Ak-7xy.title</key>
+	<string>Voorbeeld balk 01</string>
+	<key>wxi-Vv-EBx.title</key>
+	<string>Trigger Assertion</string>
+	<key>wzo-cb-mif.title</key>
+	<string>Publiceer</string>
+	<key>x0t-84-S7U.title</key>
+	<string>Teken uitsnijde gebieden</string>
+	<key>xC8-Jz-x6n.title</key>
+	<string>Sorteren</string>
+	<key>xGv-Lk-p4S.title</key>
+	<string>Compositiemodus</string>
+	<key>xLy-q0-0Cq.title</key>
+	<string>Aanpassingen</string>
+	<key>xdM-fB-QmX.title</key>
+	<string>Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>xiu-HR-Fv3.title</key>
+	<string>Lokaliseer map…</string>
+	<key>xj1-AI-B7a.title</key>
+	<string>Multi-weergave Modus</string>
+	<key>xoa-r4-m7R.title</key>
+	<string>Plakken</string>
+	<key>y8j-67-b0w.title</key>
+	<string>Minimaliseer</string>
+	<key>yJf-h4-0Nf.title</key>
+	<string>Auto selecteer nieuwe opname</string>
+	<key>yLh-tq-tGA.title</key>
+	<string>Globale filters</string>
+	<key>zIN-U6-GWH.title</key>
+	<string>Inzoomen</string>
+	<key>zd3-KN-4Md.ibShadowedToolTip</key>
+	<string>Aanpassingen voor varianten herstellen</string>
+	<key>zd3-KN-4Md.title</key>
+	<string>Herstellen</string>
+	<key>zdr-UD-UZn.title</key>
+	<string>Toon Masker alleen tijdens bewerken</string>
+	<key>zoC-BT-olu.ibShadowedToolTip</key>
+	<string>Roteer de Primaire Variant exact naar liggend of staand. Houd de Shift-toets ingedrukt om alle geselecteerde varianten te roteren.</string>
+	<key>zoC-BT-olu.title</key>
+	<string>Exact roteren</string>
+	<key>zoo-YX-3kR.title</key>
+	<string>Pas Aanpassingen toe van</string>
+</dict>
+</plist>

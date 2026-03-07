@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Οι ανώνυμες πληροφορίες του προφίλ του συστήματός σας, μας βοηθούν στο σχεδιασμό της μελλοντικής ανάπτυξης του προγράμματος. Παρακαλώ επικοινωνήστε μαζί μας άν έχετε ερωτήσεις.
+
+Αυτές είναι οι πληροφορίες που θα σταλούν σε εμάς:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Αυτόματη λήψη και εγκατάσταση ενημερώσεων</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Αυτόματος Ελεγχος</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Κανένας έλεγχος</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Αυτόματος έλεγχος για ενημερώσεις;</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Συμπερίληψη του ανώνυμου προφίλ του συστήματός σας</string>
+</dict>
+</plist>

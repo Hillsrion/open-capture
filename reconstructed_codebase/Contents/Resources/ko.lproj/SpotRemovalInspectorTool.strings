@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>스폿 타입</string>
+	<key>108.title</key>
+	<string>OtherViews</string>
+	<key>109.title</key>
+	<string>스폿</string>
+	<key>111.title</key>
+	<string>먼지</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>선택한 스폿 삭제</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>선택한 스폿</string>
+	<key>47.title</key>
+	<string>스폿</string>
+	<key>49.title</key>
+	<string>OtherViews</string>
+	<key>50.title</key>
+	<string>1의 1</string>
+	<key>64.title</key>
+	<string>-</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>이전 스폿</string>
+	<key>76.title</key>
+	<string>&lt;</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>다음 스폿</string>
+	<key>78.title</key>
+	<string>&gt;</string>
+	<key>84.title</key>
+	<string>유형</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>스폿 제거</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>켈빈</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>반경</string>
+</dict>
+</plist>

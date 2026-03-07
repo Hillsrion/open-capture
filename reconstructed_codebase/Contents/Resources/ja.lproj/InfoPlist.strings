@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One 拡張イメージパッケージ</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One で実行するスクリプトに対して、他のアプリケーションのコントロールが必要になることがあります。</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture Oneはカレンダーにアクセスする必要はありません。 このアラートは、ライブラリフォルダにアクセスすることによって発生します。</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture Oneは連絡先にアクセスする必要はありません。 このアラートは、ライブラリフォルダにアクセスすることによって発生します。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One は写真ライブラリにアクセスする必要はありません。 このアラートは、ライブラリフォルダにアクセスすることによって発生します。</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One はリマインダーにアクセスする必要はありません。 このアラートは、ライブラリフォルダにアクセスすることによって発生します。</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>テザー機能をサポートするには、Capture One でリムーバブルボリュームにアクセスする必要があります。この設定を有効にするには Capture One を再起動する必要があります。</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW イメージ</string>
+</dict>
+</plist>

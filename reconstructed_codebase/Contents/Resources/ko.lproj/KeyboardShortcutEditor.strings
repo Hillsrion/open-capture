@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>키보드 단축키 편집</string>
+	<key>10.title</key>
+	<string>텍스트 셀</string>
+	<key>11.title</key>
+	<string>텍스트 셀</string>
+	<key>13.title</key>
+	<string>닫기</string>
+	<key>22.title</key>
+	<string>에러 레이블</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>51.title</key>
+	<string>창</string>
+	<key>59.title</key>
+	<string>확인</string>
+	<key>60.title</key>
+	<string>취소</string>
+	<key>61.title</key>
+	<string>키보드 단축키 설정을 위한 이름 입력:</string>
+	<key>62.title</key>
+	<string>오류(프로그래밍 방식으로 설정)</string>
+	<key>75.title</key>
+	<string>도움말</string>
+	<key>8.headerCell.title</key>
+	<string>커맨드</string>
+	<key>9.headerCell.title</key>
+	<string>키</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>레이블</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>커맨드</string>
+	<key>zAq-68-rPj.title</key>
+	<string>키</string>
+</dict>
+</plist>

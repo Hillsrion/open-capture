@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Формат имени</string>
+	<key>13.title</key>
+	<string>Отмена</string>
+	<key>14.title</key>
+	<string>ОК</string>
+	<key>59L-oO-NTp.title</key>
+	<string>Недавно использованные</string>
+	<key>74.title</key>
+	<string>Предустановки</string>
+	<key>77.title</key>
+	<string>Имя изображения и задания</string>
+	<key>78.title</key>
+	<string>Имя задания и счетчик</string>
+	<key>79.title</key>
+	<string>Имя задания и изображения</string>
+	<key>80.title</key>
+	<string>Имя изображения</string>
+	<key>84.title</key>
+	<string>Вы можете отредактировать текст выше, чтобы он соответствовал вашей задаче. Выберите элементы из групп ниже и перетащите их или дважды щелкните, чтобы добавить их в формат.</string>
+	<key>89.title</key>
+	<string>Сохранить пользовательскую предустановку...</string>
+	<key>94.title</key>
+	<string>Формат</string>
+	<key>96.title</key>
+	<string>Маркеры</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>Метаданные - EXIF - Камера</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>Метаданные - IPTC - Getty Images</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>Дата и время</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>Метаданные - Основные</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>Метаданные - EXIF - Экспозиция</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>Текстовая ячейка</string>
+	<key>XqK-3b-mox.title</key>
+	<string>Общие</string>
+	<key>f2N-un-vTh.title</key>
+	<string>Метаданные - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>Метаданные - От производителя</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>Исключенные маркеры (отладить)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>Метаданные - IPTC - Контактная информация</string>
+	<key>im4-Sx-noG.title</key>
+	<string>всем</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>Метаданные - IPTC - Содержание</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>Группа</string>
+	<key>pQh-ye-usp.title</key>
+	<string>Метаданные - IPTC - Изображение</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>Метаданные - IPTC - Статус</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>Образец</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>Пример строки идет здесь</string>
+</dict>
+</plist>

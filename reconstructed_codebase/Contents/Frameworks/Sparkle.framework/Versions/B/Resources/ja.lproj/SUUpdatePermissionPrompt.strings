@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>匿名のシステムプロファイル情報は、今後の開発の参考にさせていただきます。この件に関してご質問があればご連絡下さい。
+
+以下の情報が送信されます:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>アップデートを自動でダウンロードしてインストール</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>自動で確認</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>確認しない</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>アップデートを自動で確認しますか?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>匿名のシステム情報を含める</string>
+</dict>
+</plist>

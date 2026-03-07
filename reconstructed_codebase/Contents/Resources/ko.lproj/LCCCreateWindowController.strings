@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>LCC 생성 전에 렌즈 보정 툴의 값들이 올바른지 확인하십시오.</string>
+	<key>1.title</key>
+	<string>LCC 옵션 생성</string>
+	<key>10.title</key>
+	<string>먼지 제거 정보 포함</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>LCC 프로그레스 생성</string>
+	<key>22.title</key>
+	<string>LCC 생성</string>
+	<key>27.title</key>
+	<string>LCC 생성</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>항상 이 설정으로 생성합니다. LCC 툴에서 리셋할 수 있습니다.</string>
+	<key>37.title</key>
+	<string>다시 보여주지 않습니다.</string>
+	<key>46.title</key>
+	<string>창</string>
+	<key>5.title</key>
+	<string>생성</string>
+	<key>51.title</key>
+	<string>LCC를 생성할 때 경고가 있었습니다. 경고를 확인하기 위한 이벤트 로그를 보길 원하십니까?</string>
+	<key>54.title</key>
+	<string>이벤트 로그 보기</string>
+	<key>55.title</key>
+	<string>닫기</string>
+	<key>6.title</key>
+	<string>취소</string>
+	<key>65.title</key>
+	<string>취소</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>광각 렌즈를 가진 테크니컬 카메라를 위한 수정을 포함</string>
+	<key>8.title</key>
+	<string>광각 렌즈 보정 데이터 포함</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>먼지제거 정보 포함. LCC 프로파일 생성이 약간 느려질 것입니다.</string>
+</dict>
+</plist>

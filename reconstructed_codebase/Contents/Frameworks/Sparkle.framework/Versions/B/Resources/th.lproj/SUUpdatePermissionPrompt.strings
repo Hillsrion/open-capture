@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>ข้อมูลระบบแบบนิรนามช่วยในการวางแผนพัฒนาแอปพลิเคชันของเราในอนาคต กรุณาติดต่อเราถ้าคุณมีข้อสงสัยในเรื่องนี้
+
+นี่คือข้อมูลที่จะถูกส่งไป:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>ดาวน์โหลดและติดตั้งอัพเดทโดยอัตโนมัติ</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>ตรวจสอบโดยอัตโนมัติ</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>ไม่ต้องตรวจสอบ</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>ตรวจสอบอัพเดทอัตโนมัติ?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>ส่งข้อมูลระบบแบบนิรนาม</string>
+</dict>
+</plist>

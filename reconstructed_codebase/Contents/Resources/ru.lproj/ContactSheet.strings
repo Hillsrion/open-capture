@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>265.title</key>
+	<string>Панель</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>Введите отображаемое имя</string>
+	<key>287.ibShadowedToolTip</key>
+	<string>Введите контактную ссылку (например, mailto:photographer@phaseone.com или http://www.phaseone.com)</string>
+	<key>294.title</key>
+	<string>OtherViews</string>
+	<key>353.title</key>
+	<string>OtherViews</string>
+	<key>389.ibShadowedToolTip</key>
+	<string>Экспортирует XML- и DTD-файлы в расположение вывода</string>
+	<key>397.title</key>
+	<string>OtherViews</string>
+	<key>398.title</key>
+	<string>Локальный</string>
+	<key>399.title</key>
+	<string>FTP</string>
+	<key>403.label</key>
+	<string>FTP</string>
+	<key>405.label</key>
+	<string>Локальный</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Показать результат в веб-браузере</string>
+	<key>435.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>447.title</key>
+	<string>Описание</string>
+	<key>448.title</key>
+	<string>Авторские права</string>
+	<key>449.placeholderString</key>
+	<string>Введите описание</string>
+	<key>450.title</key>
+	<string>Заголовок</string>
+	<key>451.title</key>
+	<string>Интернет-ссылка</string>
+	<key>452.placeholderString</key>
+	<string>Введите контакт</string>
+	<key>453.placeholderString</key>
+	<string>Введите заголовок</string>
+	<key>454.placeholderString</key>
+	<string>Введите интернет-ссылку или ссылку электронной почты</string>
+	<key>455.title</key>
+	<string>текст</string>
+	<key>457.title</key>
+	<string>Размер миниатюры</string>
+	<key>458.title</key>
+	<string>Размер предварительного просмотра</string>
+	<key>459.title</key>
+	<string>Подпись</string>
+	<key>461.title</key>
+	<string>Качество</string>
+	<key>464.title</key>
+	<string>Изображения</string>
+	<key>465.title</key>
+	<string>Тема</string>
+	<key>469.title</key>
+	<string>Макет</string>
+	<key>470.title</key>
+	<string>Вывод</string>
+	<key>471.title</key>
+	<string>Экспортировать XML-данные фотографии</string>
+	<key>472.title</key>
+	<string>Тип</string>
+	<key>474.title</key>
+	<string>URL</string>
+	<key>475.placeholderString</key>
+	<string>Введите полный URL-адрес папки сервера</string>
+	<key>476.title</key>
+	<string>Имя пользователя</string>
+	<key>477.placeholderString</key>
+	<string>Введите имя пользователя</string>
+	<key>478.title</key>
+	<string>Пароль</string>
+	<key>479.placeholderString</key>
+	<string>Введите пароль</string>
+	<key>480.title</key>
+	<string>Путь</string>
+	<key>481.title</key>
+	<string>Показать после экспорта</string>
+	<key>482.title</key>
+	<string>…</string>
+	<key>522.ibShadowedToolTip</key>
+	<string>Показать панель печати</string>
+	<key>523.ibShadowedToolTip</key>
+	<string>Отменить печать</string>
+	<key>524.title</key>
+	<string>Отмена</string>
+	<key>525.title</key>
+	<string>Экспорт</string>
+	<key>j7A-8f-Njb.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>nlh-z2-0hN.ibExternalAccessibilityDescription</key>
+	<string>brightnessField</string>
+	<key>w4n-Fb-zyR.ibExternalAccessibilityDescription</key>
+	<string>saturationField</string>
+</dict>
+</plist>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Kopiuj warianty z podstawowego</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Kopiuj dopasowania z ostatniego przechwycenia.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Kopiuj z ostatniego</string>
+	<key>250.title</key>
+	<string>Menu</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Dopasuj automatycznie przechwycone obrazy</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Kopiuj warianty z ostatniego</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientacja</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Kopiuj dopasowania z ostatniego przechwycenia.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Kopiuj z ostatniego</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Kopiuj warianty z ostatniego</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Kopiuj wybrane z ostatniego...</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Kopiuj wybrane z wariantu podstawowego...</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Kopiuj dopasowania z wariantu podstawowego</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Kopiuj z podstawowego</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Kopiuj wybrane z ostatniego...</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Użyj dopasowań domyślnych</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Ustawienia domyślne</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Kopiuj warianty z podstawowego</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Style</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Kopiuj ze schowka</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Kopiuj dopasowania z wariantu podstawowego</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Kopiuj z podstawowego</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Kopiuj ze schowka</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Użyj dopasowań domyślnych</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Ustawienia domyślne</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Użyj domyślnego profilu ICC dla aparatu</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Domyślny</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Użyj domyślnej orientacji z aparatu.</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Domyślny</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>Kopiuj profil ICC z ostatniego przechwyconego obrazu.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Kopiuj z ostatniego</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadane</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Kopiuj wybrane z wariantu podstawowego...</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Inne</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>Kopiuj profil ICC z wariantu podstawowego</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Kopiuj z podstawowego</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil ICC</string>
+</dict>
+</plist>

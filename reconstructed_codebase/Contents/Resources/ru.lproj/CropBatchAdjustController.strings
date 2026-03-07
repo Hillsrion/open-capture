@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Как сильно переместить кадрирование по вертикали.</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Отменить</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>единицы</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Сколько добавить к ширине кадрирования.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Окно</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ Расположение</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Изменить кадрирование:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ Размер</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Сколько добавить в высоту кадрирования.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Изменить</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Как сильно переместить кадрирование по горизонтали.</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>Где существующее кадрирование должно быть закреплено при изменении размера кадрирования.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>единицы</string>
+</dict>
+</plist>

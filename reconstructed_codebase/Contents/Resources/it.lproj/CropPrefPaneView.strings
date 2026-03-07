@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Sempre</string>
+	<key>35.title</key>
+	<string>Mai</string>
+	<key>36.title</key>
+	<string>Tranne durante il trascinamento</string>
+	<key>43.title</key>
+	<string>Senza maschera</string>
+	<key>44.title</key>
+	<string>Sempre</string>
+	<key>449.title</key>
+	<string>Mostra:</string>
+	<key>450.title</key>
+	<string>Mostra cornice:</string>
+	<key>451.title</key>
+	<string>Mostra etichette:</string>
+	<key>453.title</key>
+	<string>Opacità:</string>
+	<key>455.title</key>
+	<string>Luminosità:</string>
+	<key>459.title</key>
+	<string>Predefinito</string>
+	<key>52.title</key>
+	<string>Sempre</string>
+	<key>53.title</key>
+	<string>Mai</string>
+	<key>54.title</key>
+	<string>Solo durante trascinamento</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>Tranne durante il trascinamento</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Sempre</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Maschera</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Mostra Maniglie:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Mai</string>
+</dict>
+</plist>

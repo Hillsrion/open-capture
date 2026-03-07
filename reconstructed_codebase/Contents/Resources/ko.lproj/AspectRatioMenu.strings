@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>확인</string>
+	<key>116.title</key>
+	<string>취소</string>
+	<key>117.title</key>
+	<string>이름</string>
+	<key>118.title</key>
+	<string>비율</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>완료</string>
+	<key>124.title</key>
+	<string>제거</string>
+	<key>6.title</key>
+	<string>새로운 가로세로 비율</string>
+	<key>66.title</key>
+	<string>가로 세로 비율 구성</string>
+</dict>
+</plist>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Предупреждать, когда Переместить в Корзину затронет невыбранные варианты</string>
+	<key>18v-en-xAd.title</key>
+	<string>Предупреждать при применении стиля с недопустимым LCC</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Предупреждать о сбросе Базовых цветовых коррекций</string>
+	<key>482.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>694.title</key>
+	<string>Предупреждать при перемещении изображений и папок в каталоге</string>
+	<key>697.title</key>
+	<string>Файлы и папки</string>
+	<key>701.title</key>
+	<string>Предупреждать при удалении изображений с диска</string>
+	<key>703.title</key>
+	<string>Предупреждать о перемещении изображений в корзину сессии с другого диска</string>
+	<key>707.title</key>
+	<string>Коррекции</string>
+	<key>708.title</key>
+	<string>Предупреждать при сбросе коррекций для нескольких вариантов</string>
+	<key>734.title</key>
+	<string>Вывод</string>
+	<key>789.title</key>
+	<string>Если отключен режим "Редактирование всех выбранных вариантов" и выбрано несколько вариантов:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Предупреждать при обработке нескольких вариантов, если параметр "Редактировать все выбранные варианты" отключен</string>
+	<key>793.title</key>
+	<string>Предупреждать при обработке</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Предупреждать при печати нескольких вариантов, если параметр "Редактировать все выбранные варианты" отключен</string>
+	<key>796.title</key>
+	<string>Предупреждать при печати</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Предупреждать при создании веб-галереи, если параметр "Редактировать все выбранные варианты" отключен</string>
+	<key>799.title</key>
+	<string>Предупреждать при создании веб-галереи</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Предупреждать при создании веб-галереи, если параметр "Редактировать все выбранные варианты" отключен</string>
+	<key>805.title</key>
+	<string>Предупреждать при экспорте</string>
+	<key>811.title</key>
+	<string>Предупреждать о сбросе ручной сортировки</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Предупреждать при изменении или удалении примененного LCC.</string>
+	<key>816.title</key>
+	<string>Предупреждать при изменении LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Предупреждать при создании LCC с несколькими вариантами, если параметр "Редактировать все выбранные варианты" отключен</string>
+	<key>820.title</key>
+	<string>Предупреждать при создании LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Предупреждать при применении LCC к нескольким вариантам, если параметр "Редактировать все выбранные варианты" отключен.</string>
+	<key>823.title</key>
+	<string>Предупреждать при применении LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Предупреждать при изменении или удалении примененного LCC.</string>
+	<key>829.title</key>
+	<string>Предупреждать об обновлении движка обработки</string>
+	<key>834.title</key>
+	<string>Предупреждать при сбросе поправок в корректирующем слое</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>При анализе хроматических аберраций с несколькими вариантами предупредить, если опция "Редактировать все выбранные варианты" выключена.</string>
+	<key>847.title</key>
+	<string>При анализе хроматических аберраций предупредить</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Предупреждать при растрировании параметрической маски</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Предупреждать при применении слоев к варианту, из которого они были скопированы</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Предупреждать при применении стиля с неверным ICC</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Предупреждать о частичном применении стиля</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Предупреждать при применении LCC к нескольким вариантам, если параметр "Редактировать все выбранные варианты" отключен.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Предупреждать при выборе опций создания LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Предупреждать при копировании неподдерживаемых коррекций</string>
+</dict>
+</plist>

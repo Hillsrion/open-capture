@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>173.title</key>
+	<string>参照…</string>
+	<key>176.title</key>
+	<string>開く</string>
+	<key>183.headerCell.title</key>
+	<string>最近のセッション</string>
+	<key>186.title</key>
+	<string>テキスト セル</string>
+	<key>208.title</key>
+	<string>最近のカタログまたはセッションがありません</string>
+	<key>219.title</key>
+	<string>最近使用した項目</string>
+	<key>221.ibShadowedToolTip</key>
+	<string>カタログは保管とイメージ ライブラリをまとめるのに便利な場所です。カタログでイメージの作業できるようにカタログからインポートする必要があります。多くのフォトグラファーにおすすめします。</string>
+	<key>222.title</key>
+	<string>新規カタログ...</string>
+	<key>37.ibShadowedToolTip</key>
+	<string>セッションは単一の仕事またはイベントの限られたイメージを素早く、軽快に操作できます。イメージはディスク上を参照するか、セッションにインポートすると編集できます。</string>
+	<key>54.title</key>
+	<string>キャンセル</string>
+	<key>55.title</key>
+	<string>新規セッション...</string>
+</dict>
+</plist>

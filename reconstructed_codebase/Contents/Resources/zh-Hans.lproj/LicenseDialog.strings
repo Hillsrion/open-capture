@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>您可在剪贴板上粘贴授权许可码</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>您可在剪贴板上粘贴授权许可码</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>您可在剪贴板上粘贴授权许可码</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>授权许可码是什么？</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>了解更多有关 Capture One 账户的相关信息</string>
+	<key>1348.title</key>
+	<string>关闭</string>
+	<key>1349.title</key>
+	<string>按钮</string>
+	<key>1350.title</key>
+	<string>帮助</string>
+	<key>1356.title</key>
+	<string>激活 Capture One。</string>
+	<key>1357.title</key>
+	<string>请填写以下字段。</string>
+	<key>1362.title</key>
+	<string>电子邮件：</string>
+	<key>1363.title</key>
+	<string>名字：</string>
+	<key>1364.title</key>
+	<string>姓氏：</string>
+	<key>1365.title</key>
+	<string>国家 / 地区：</string>
+	<key>1366.title</key>
+	<string>获取账户资料</string>
+	<key>1367.title</key>
+	<string>小字号系统字体文字</string>
+	<key>1369.title</key>
+	<string>系统字体文字
+双行</string>
+	<key>1371.title</key>
+	<string>授权许可码：</string>
+	<key>1376.title</key>
+	<string>（授权许可码）</string>
+	<key>1377.title</key>
+	<string>粘贴</string>
+	<key>1378.title</key>
+	<string>激活 Capture One。</string>
+	<key>1379.title</key>
+	<string>将为您创建一个新的账户。请确认信息并为新账户创建一个密码。</string>
+	<key>1380.title</key>
+	<string>电子邮件</string>
+	<key>1381.title</key>
+	<string>名字</string>
+	<key>1382.title</key>
+	<string>姓氏</string>
+	<key>1383.title</key>
+	<string>国家 / 地区</string>
+	<key>1384.title</key>
+	<string>电子邮件：</string>
+	<key>1385.title</key>
+	<string>名字：</string>
+	<key>1386.title</key>
+	<string>姓氏：</string>
+	<key>1387.title</key>
+	<string>国家 / 地区</string>
+	<key>1388.placeholderString</key>
+	<string>最少 6 个字符</string>
+	<key>1389.placeholderString</key>
+	<string>最少 6 个字符</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>为什么需要密码？</string>
+	<key>1391.title</key>
+	<string>确认：</string>
+	<key>1392.title</key>
+	<string>密码：</string>
+	<key>1393.title</key>
+	<string>感谢您激活本产品！</string>
+	<key>1394.title</key>
+	<string>此版本的 Capture One 现已激活。</string>
+	<key>1395.title</key>
+	<string>查看软件授权许可协议</string>
+	<key>1396.title</key>
+	<string>Capture One 授权许可。</string>
+	<key>1397.title</key>
+	<string>此版本的 Capture One 已激活。</string>
+	<key>1398.title</key>
+	<string>授权许可码：</string>
+	<key>1399.title</key>
+	<string>注册在：</string>
+	<key>1400.title</key>
+	<string>剩余的免费升级次数：</string>
+	<key>1401.title</key>
+	<string>剩余的激活次数：</string>
+	<key>1404.title</key>
+	<string>（授权许可类型字符串）</string>
+	<key>1406.title</key>
+	<string>（被许可人）</string>
+	<key>1407.title</key>
+	<string>（授权许可码）</string>
+	<key>1408.title</key>
+	<string>没错，我想为此台电脑取消授权许可激活。</string>
+	<key>1409.title</key>
+	<string>取消 Capture One 激活。</string>
+	<key>1410.title</key>
+	<string>Capture One 将在您取消激活授权许可后关闭。下次在本台电脑打开 Capture One 时，系统会提示您再次输入授权许可码。</string>
+	<key>1413.title</key>
+	<string>好</string>
+	<key>1414.title</key>
+	<string>取消</string>
+	<key>1415.title</key>
+	<string>将密码发送至我的邮箱</string>
+	<key>1416.title</key>
+	<string>账户密码：</string>
+	<key>1418.title</key>
+	<string>粘贴</string>
+	<key>1426.title</key>
+	<string>1976 年 4 月 1 日</string>
+	<key>1427.title</key>
+	<string>文本单元格</string>
+	<key>1428.title</key>
+	<string>文本单元格</string>
+	<key>1436.title</key>
+	<string>授权许可不可升级</string>
+	<key>1443.title</key>
+	<string>该授权许可码无法用于此版本的 Capture One。
+
+如需继续使用 Capture One，请提供有效的授权许可码，或访问 Capture One 在线商店购买一个有效的授权许可。</string>
+	<key>1445.title</key>
+	<string>访问在线商店...</string>
+	<key>1446.title</key>
+	<string>好</string>
+	<key>16.label</key>
+	<string>激活</string>
+	<key>18.label</key>
+	<string>密码</string>
+	<key>24.label</key>
+	<string>取消激活</string>
+	<key>281.title</key>
+	<string>输入密码</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>您可在剪贴板上粘贴授权许可码</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>日 月 年</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>免费升级和激活指什么？</string>
+	<key>5.title</key>
+	<string>授权许可</string>
+	<key>540.title</key>
+	<string>新建账户</string>
+	<key>546.title</key>
+	<string>创建密码</string>
+	<key>559.title</key>
+	<string>标题名称</string>
+	<key>565.title</key>
+	<string>授权许可</string>
+	<key>570.title</key>
+	<string>激活历史记录</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>在线激活</string>
+	<key>78.headerCell.title</key>
+	<string>日期</string>
+	<key>79.headerCell.title</key>
+	<string>电脑 ID</string>
+	<key>80.headerCell.title</key>
+	<string>激活类型</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>激活码无效</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>手动激活</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>（硬件 ID）</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>您必须将以下的注册码输入到线上表格里。请登录 www.captureone.com 您的个人账户查找</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>验证电子邮件：</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>激活码：</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>请输入网站端提供的激活码，然后点击“激活”按钮。</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID：</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>注册码：</string>
+</dict>
+</plist>

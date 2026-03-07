@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>导入 Aperture 图库</string>
+	<key>14.title</key>
+	<string>取消</string>
+	<key>28.title</key>
+	<string>导入 Aperture 图库时，以下资料将被转移至 Capture One：</string>
+	<key>4.title</key>
+	<string>不再显示此消息</string>
+	<key>51.title</key>
+	<string>拍摄项目、文件夹、相册
+裁切或拉直、旋转、翻转
+曝光、亮度、高光与阴影、清晰度、饱和度、黑白
+元数据（IPTC、评级、色标、关键字）</string>
+	<key>57.title</key>
+	<string>色彩调整仅可达到高度近似。
+
+如果您想导入智能相册，需提前将其转换为普通相册才可进行导入。</string>
+	<key>8.title</key>
+	<string>继续</string>
+</dict>
+</plist>

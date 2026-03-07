@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>W celu uzyskania wsparcia technicznego skontaktuj się z zespołem Capture One Support na https://support.captureone.com.</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>W celu uzyskania wsparcia technicznego skontaktuj się z zespołem Capture One Support na https://support.captureone.com. Uwzględnij w swoim zgłoszeniu następującą treść:
+
+%@</string>
+	<key>Free version limit reached</key>
+	<string>Osiągnięto limit wersji bezpłatnej</string>
+	<key>Glass settings</key>
+	<string>Ustawienia Glass</string>
+	<key>Not implemented</key>
+	<string>Nie zaimplementowano</string>
+	<key>Photography is better shared. Glass is a global, paid photography community and photo-sharing platform that helps photographers experiment, get inspired, and grow. With no ads or algorithms, your photos look their best.
+Membership required — [learn more and sign up](https://glass.photo/).</key>
+	<string>Photography is better shared. Glass is a global, paid photography community and photo-sharing platform that helps photographers experiment, get inspired, and grow. With no ads or algorithms, your photos look their best.
+Membership required — [learn more and sign up](https://glass.photo/).</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>Przygotowanie %1$i z %2$i do przesłania…</string>
+	<key>Server Error</key>
+	<string>Nieznany błąd</string>
+	<key>Something went wrong, please try again.</key>
+	<string>Coś poszło nie tak. Spróbuj ponownie.</string>
+	<key>The free version of the Glass plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>Korzystasz z bezpłatnej wersji wtyczki Glass, która nie pozwala na publikowanie ani importowanie wielu plików jednocześnie. Aby zaktualizować, odwiedź stronę https://integrations.captureone.com/upgrade/</string>
+	<key>This method is not yet implemented.</key>
+	<string>Ta metoda nie została jeszcze zaimplementowana.</string>
+	<key>Unknown Error</key>
+	<string>Nieznany błąd</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>Ładowanie %1$@ (%2$i z %3$i)…</string>
+</dict>
+</plist>

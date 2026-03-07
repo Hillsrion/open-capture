@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Ustawienia pokazu slajdów</string>
+	<key>34.title</key>
+	<string>Przenikanie</string>
+	<key>35.title</key>
+	<string>Zakrywanie</string>
+	<key>36.title</key>
+	<string>Tryb zmiany</string>
+	<key>40.title</key>
+	<string>Przesuwanie</string>
+	<key>41.title</key>
+	<string>Odkrywanie</string>
+	<key>42.title</key>
+	<string>Rozpuszczanie</string>
+	<key>43.title</key>
+	<string>Kropki</string>
+	<key>44.title</key>
+	<string>Miękkie przejście</string>
+	<key>56.title</key>
+	<string>Czas odtwarzania slajdu</string>
+	<key>69.title</key>
+	<string>Pętla</string>
+	<key>73.title</key>
+	<string>Domyślne</string>
+	<key>90.title</key>
+	<string>Dezintegracja</string>
+	<key>91.title</key>
+	<string>Przewracanie strony</string>
+	<key>92.title</key>
+	<string>Kropla</string>
+</dict>
+</plist>

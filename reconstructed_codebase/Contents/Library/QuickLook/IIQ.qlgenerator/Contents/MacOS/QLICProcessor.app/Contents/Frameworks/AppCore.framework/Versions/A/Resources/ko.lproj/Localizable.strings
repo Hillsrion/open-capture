@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>- 작성된 새 기본 이미지 설정</string>
+	<key>%.1f MB</key>
+	<string>%.1fMB</string>
+	<key>%.2f GB</key>
+	<string>%.2fGB</string>
+	<key>%.2f TB</key>
+	<string>%.2f TB</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>변형파일들의 %ld이 LCC 프로파일에 적용되었습니다. 이 변형파일에서 LCC 프로파일을 변경하는 것은 기존 프로파일의 삭제를 야기할 수 있습니다. LCC 프로파일은 오리지널 LCC 테스트샷으로 재생성할 수 있고, 프리셋으로 저장되었다면 재적용할 수 있습니다.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>%2$lu 변형 중 %1$lu 이 메타정보를 누락했습니다. 확인과 복구를 통해 이 변형값들을 삭제하여 문제를 해결할 수 있습니다.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>%2$lu 변형 중 %1$lu 이 메타정보를 누락했습니다. 확인과 복구를 통해 이 변형값들을 삭제하여 문제를 해결할 수 있습니다. 이들을 나중에 다시 가져올 수 있도록 이벤트 로거에 표시된 이미지 리스트를 저장할 수 있습니다.</string>
+	<key>%u KB</key>
+	<string>%uKB</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Error 1) 지원되지 않는 프로파일; 프로파일이 지원되지 않거나 유효하지 않은 프로파일 입니다.</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Error 10) 기울기 제한 프로파일: 어둡고 채도가 높은 컬러들은 많은 변형값들을 야기할 수 있습니다.</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Error 11) 화이트 포인트 적용이 지정되지 않거나 유효하지 않습니다.(화이트 미디어 사용 시).</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Error 12) 화이트 포인트 적용이 지정되지 않거나 유효하지 않습니다(D50 사용시).</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Error 13) 화이트 미디어 누락: D50 추정.</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Error 14) 모호한 PCS 화이트 포인트: 광원이 스펙에서 요청된 D50이 아닙니다.</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Error 15) 모호한 PCS 화이트 포인트: (255,255,255) 색조를 더합니다.</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Error 2) 지원되지 않는 컬러 스페이스 데이터: RGB 프로파일만이 지원됩니다.</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Error 3) 지원되지 않는 프로파일 연결 공간: 프로파일이 XYZ이 아닙니다.</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Error 4) 지원되지 않는 클래스: 프로파일은 디스플레이 클래스, 출력 또는 컬러 스페이스를 가져야만 합니다.</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Error 5) LUT 기반 프로파일은 지원되지 않습니다.</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Error 6) 커브 불일치 (잘못된 프로파일).</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Error 7) 프로파일 해석은 의도에 따라 달라집니다.</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Error 8) V4 스펙에 기반하여 변형; V2 변형 무시.</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Error 9) 프로파일은 블랙을 표시할 수 없습니다. 블랙 포인트 보상은 많은 변형값을 야기할 수 있습니다.</string>
+	<key>(Locked: Read Only)</key>
+	<string>(잠김: 읽기 전용)</string>
+	<key>(Missing path)</key>
+	<string>(경로 누락)</string>
+	<key>(No City)</key>
+	<string>(시/군/구 없음)</string>
+	<key>(No Country)</key>
+	<string>(국가 없음)</string>
+	<key>(No Keywords)</key>
+	<string>(키워드 없음)</string>
+	<key>(No Location)</key>
+	<string>(위치 없음)</string>
+	<key>(No State)</key>
+	<string>(시/도 없음)</string>
+	<key>(No Values)</key>
+	<string>(값 없음)</string>
+	<key>-- bytes</key>
+	<string>-- 바이트</string>
+	<key>1 Digit Counter</key>
+	<string>1 자리 카운터</string>
+	<key>1 shot</key>
+	<string>1회 촬영</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 mm</string>
+	<key>2 Digit Counter</key>
+	<string>2 자리 카운터</string>
+	<key>3 Digit Counter</key>
+	<string>3 자리 카운터</string>
+	<key>4 Digit Counter</key>
+	<string>4 자리 카운터</string>
+	<key>5 Digit Counter</key>
+	<string>5 자리 카운터</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6 자리 카운터</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;알 수 없음&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>폴더 대신 레시피 파일이 발견되었습니다.</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>레시피 폴더를 만들 수 없습니다.</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>데이터베이스 손상이 감지되었고  "%@" 카탈로그는 종료되어야 합니다.</string>
+	<key>A newer Capture One engine is required</key>
+	<string>최신 Capture One 엔진이 필요합니다.</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>"%@" 이름의 세션 하위 폴더를 만들 수 없습니다.
+
+세션 폴더가 대신 사용됩니다.</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>AI 초점</string>
+	<key>AI servo</key>
+	<string>AI 서보</string>
+	<key>About %d hours left</key>
+	<string>약 %d 시간 남음</string>
+	<key>About %d minutes left</key>
+	<string>약 %d 분 남음</string>
+	<key>About 10 seconds left</key>
+	<string>약 10초 남음</string>
+	<key>About 30 seconds left</key>
+	<string>약 30초 남음</string>
+	<key>About 5 seconds left</key>
+	<string>약 5초 남음</string>
+	<key>About a minute left</key>
+	<string>약 1분 남음</string>
+	<key>About an hour left</key>
+	<string>약 1시간 남음</string>
+	<key>Action</key>
+	<string>작업</string>
+	<key>Action (High speed)</key>
+	<string>작업(고속)</string>
+	<key>Add Layer</key>
+	<string>레이어 추가</string>
+	<key>Add Selected Images to %@</key>
+	<string>%@에 선택한 이미지 추가</string>
+	<key>Add Selected Warning</key>
+	<string>선택한 경고 추가</string>
+	<key>Address</key>
+	<string>주소</string>
+	<key>Adjusted</key>
+	<string>조정</string>
+	<key>Adjusting</key>
+	<string>조정</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>모든 이미지</string>
+	<key>Altitude</key>
+	<string>고도</string>
+	<key>Amount</key>
+	<string>수치</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>ICC 프로파일을 찾을 수 없습니다.</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>LCC 프로파일을 찾을 수 없습니다.</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>이미지를 위한 조정 마스크가 누락되었습니다. 누락 마스크는 빈 마스크로 대체되었습니다.</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>에러가 발생했고 카탈로그 “%@“ 를 닫아야 합니다.</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>에러가 발생했고 세션 “%@“를 닫아야 합니다.</string>
+	<key>An error occurred during processing.</key>
+	<string>프로세싱 중 에러가 발생했습니다.</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>몇몇 변형들의 메타데이터 정보를 로딩하는 동안 에러가 발생했습니다.</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>레이어를 적용하는 도중 오류가 발생했습니다.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>기존 레시피 폴더를 복사하는 중 오류가 발생했습니다. 기본 레시피 폴더가 대신 사용됩니다.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>기존 레시피 폴더를 복사하는 중 에러가 발생했습니다. 레시피는 로딩할 수 없습니다.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>기존 레시피 폴더를 복사하는 중 오류가 발생했습니다. 현재 경로는 폴더가 아닌 파일을 참고합니다. 기본 레시피 폴더가 대신 사용됩니다.</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>레시피 파일 '%@'을(를) 로드하려고 시도하는 중 오류가 발생했습니다. 레시피가 로드되지 않았습니다.</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>레시피 목록을 로드하려고 시도하는 중 오류가 발생했습니다. 기본 레시피 목록이 대신 사용됩니다.</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>레시피 폴더를 열려고 시도하는 중 오류가 발생했습니다.</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>ICC 프로파일을 디스크에 복사하는 중 에러가 발생했습니다. %@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>LCC 프로파일을 디스크에 복사하는 중 에러가 발생했습니다. %@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>워터마크 생성중 알수없는 오류가 발생했습니다.</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>카탈로그의 데이터베이스에서 작업하는 동안 복구 불가능한 에러가 발생했습니다.
+
+%@
+
+이제 카탈로그가 닫힐 것입니다.</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>카탈로그에서 작업하는 동안 복구 불가능한 에러가 발생했습니다. 카탈로그가 닫힐 것입니다.</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>세션의 데이터베이스에서 작업하는 동안 복구 불가능한 에러가 발생했습니다.
+
+%@
+
+이제 세션이 닫힐 것입니다.</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>세션에서 작업하는 동안 복구 불가능한 에러가 발생했습니다. 이제 세션이 닫힐 것입니다.</string>
+	<key>Annotated</key>
+	<string>주석</string>
+	<key>Annotations</key>
+	<string>주석</string>
+	<key>Any</key>
+	<string>아무것</string>
+	<key>Aper.</key>
+	<string>조리개</string>
+	<key>Aperture</key>
+	<string>조리개</string>
+	<key>Aperture priority</key>
+	<string>조리개 우선</string>
+	<key>Aperture-priority AE</key>
+	<string>조리개-우선 AE(자동노출)</string>
+	<key>Apply</key>
+	<string>적용</string>
+	<key>Apply Adjustments</key>
+	<string>조정 적용</string>
+	<key>Apply LCC</key>
+	<string>LCC 적용</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>LCC를 이전 변형파일에 적용하시겠습니까?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>LCC를 다음 변형파일에 적용하시겠습니까?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>선택한 모든 변형값에 적용</string>
+	<key>Applying Adjustments</key>
+	<string>조정 적용</string>
+	<key>Applying Adjustments to %@</key>
+	<string>%@에 조정 적용</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>“%1$@” 에서 “%2$@” 로 확장자를 변경하길 원하십니까?</string>
+	<key>Auto</key>
+	<string>자동</string>
+	<key>Auto Adjust</key>
+	<string>자동조정</string>
+	<key>Auto Exposure</key>
+	<string>자동 노출</string>
+	<key>Auto HDR</key>
+	<string>자동 HDR</string>
+	<key>Auto Keystone</key>
+	<string>자동 키스톤</string>
+	<key>Auto Levels</key>
+	<string>오토 레벨</string>
+	<key>Auto Rotation</key>
+	<string>자동 회전</string>
+	<key>Auto White Balance</key>
+	<string>자동 화이트밸런스</string>
+	<key>Auto bracket</key>
+	<string>자동 브라케팅</string>
+	<key>Auto, Did not fire</key>
+	<string>자동, 발광안됨</string>
+	<key>Auto, Fired</key>
+	<string>자동, 발광</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>자동, 발광, 적목현상제거</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>자동, 발광, 적목현상제거, 반사광있음</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>자동, 발광, 적목현상제거, 반사광없음</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>자동, 발광, 반사광있음</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>자동, 발광, 반사광없음</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>메타데이터 %2$d 세트 중 %1$d 자동로딩</string>
+	<key>Average</key>
+	<string>평균</string>
+	<key>Avg.</key>
+	<string>평균</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>B&amp;&amp;W 블루</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>B&amp;&amp;W 사이언</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>B&amp;&amp;W 어두운 스플릿 톤 색조</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>B&amp;&amp;W 어두운 스플릿 톤 채도</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>B&amp;&amp;W 사용</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>B&amp;&amp;W 그린</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>B&amp;&amp;W 밝은 스플릿 톤 색조</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>B&amp;&amp;W 밝은 스플릿 톤 채도</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>B&amp;&amp;W 마젠타</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>B&amp;&amp;W 레드</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>B&amp;&amp;W 옐로</string>
+	<key>Barcode</key>
+	<string>바코드</string>
+	<key>Base Characteristics</key>
+	<string>기본 특성</string>
+	<key>Basic</key>
+	<string>기본</string>
+	<key>Black &amp; White</key>
+	<string>흑백</string>
+	<key>Black Recovery</key>
+	<string>블랙 복구</string>
+	<key>Blue</key>
+	<string>블루</string>
+	<key>Blue Curve</key>
+	<string>블루 커브</string>
+	<key>Blue Gradation Curve</key>
+	<string>블루 그라데이션 커브</string>
+	<key>Brack.</key>
+	<string>단계 노출</string>
+	<key>Bracket</key>
+	<string>브라케팅</string>
+	<key>Bracketing</key>
+	<string>브라케팅</string>
+	<key>Bracketing: Aperture</key>
+	<string>브라케팅: 조리개</string>
+	<key>Bracketing: ISO</key>
+	<string>브라케팅: ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>브라케팅: 셔터 스피드</string>
+	<key>Brightness</key>
+	<string>밝기</string>
+	<key>Burst</key>
+	<string>버스트</string>
+	<key>CWA</key>
+	<string>CWA</string>
+	<key>Camera Counter</key>
+	<string>카메라 카운터</string>
+	<key>Camera Firmware</key>
+	<string>카메라 펌웨어</string>
+	<key>Camera Lens</key>
+	<string>카메라 렌즈</string>
+	<key>Camera Make</key>
+	<string>카메라 제조업체</string>
+	<key>Camera Model</key>
+	<string>카메라 모델</string>
+	<key>Camera Owner</key>
+	<string>카메라 소유자</string>
+	<key>Camera Profile</key>
+	<string>카메라 프로파일</string>
+	<key>Camera Serial</key>
+	<string>카메라 일련 번호</string>
+	<key>Camera Software</key>
+	<string>카메라 소프트웨어</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>카메라 디폴트에 로딩할 수 없는 ICC 프로파일이 포함되어 있습니다. 오리지널 파일이 누락 또는 손상되었을 수 있습니다.</string>
+	<key>Cancel</key>
+	<string>취소</string>
+	<key>Cannot contain characters %@</key>
+	<string>%@ 문자를 포함할 수 없습니다.</string>
+	<key>Cannot save catalog</key>
+	<string>카탈로그를 저장할 수 없음</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>카탈로그를 경로: %@ 로 저장할 수 없음
+
+카탈로그 파일이 휴지통에 있습니다. 원래 위치로 복구하십시오.</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>카탈로그를 경로: %@ 로 저장할 수 없음
+
+카탈로그 파일에 쓰기권한이 없습니다. 가능하다면 이것의 파일 사용권한을 변경해 보십시오.</string>
+	<key>Cannot save session</key>
+	<string>세션을 저장할 수 없음</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>세션을 경로: %@로 저장할 수 없음
+
+세션 파일이 휴지통에 있습니다. 원래 위치로 복구하십시오.</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>세션을 경로: %@로 저장할 수 없음
+
+세션 파일에 쓰기권한이 없습니다. 가능하다면 이것의 파일 사용권한을 변경해 보십시오.</string>
+	<key>Caption</key>
+	<string>캡션</string>
+	<key>Capture Folder</key>
+	<string>촬영 폴더</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>Capture One에서 현재 특정 워터마크를 생성할 수 없음.</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One은 이 특정 오버레이를 생성하기 위한 충분한 메모리를 가지고 있지 않습니다.</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>Capture One에서 특정 워터마크를 생성하기 위한 메모리가 부족함.</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Capture One은 최소 US 특허 8,854,482 및 8,619,146뿐 아니라, 출원 중인 특허에 의해 보호됩니다.</string>
+	<key>Catalog Export</key>
+	<string>카탈로그 내보내기</string>
+	<key>Catalog Save</key>
+	<string>카탈로그 저장</string>
+	<key>Catalog Sets Import</key>
+	<string>카탈로그 세트 가져오기</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>오프라인의 카탈로그 이미지는 미리보기 없이 보거나 작업할 수 없습니다.</string>
+	<key>Category</key>
+	<string>카테고리</string>
+	<key>Center weighted average</key>
+	<string>중앙 중점 평균</string>
+	<key>Center-weighted average</key>
+	<string>중앙부 중점 평균</string>
+	<key>Change</key>
+	<string>변경</string>
+	<key>Change the LCC Profile?</key>
+	<string>LCC 프로파일을 변경하시겠습니까?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>이 변형파일에서 LCC 프로파일 변경은 기존 프로파일의 삭제를 야기할 수 있습니다. LCC 프로파일은 오리지널 LCC 테스트샷으로 재생성될 수 있고, 프리셋으로 저장되었다면 재적용될 수 있습니다.</string>
+	<key>Chroma Fringing</key>
+	<string>색수차</string>
+	<key>Chromatic Aberration</key>
+	<string>색수차</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>색수차 사용</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>원래 색수차</string>
+	<key>City</key>
+	<string>구/군/시</string>
+	<key>Clarity</key>
+	<string>선명도</string>
+	<key>Clarity Amount</key>
+	<string>선명도 양</string>
+	<key>Clarity Method</key>
+	<string>선명도 방법</string>
+	<key>Clarity Structure</key>
+	<string>선명도 구조</string>
+	<key>Clean Single Pixel</key>
+	<string>싱글 픽셀 지우기</string>
+	<key>Clear Mask</key>
+	<string>투명 마스크</string>
+	<key>Clipboard Contents</key>
+	<string>클립보드 콘텐츠</string>
+	<key>Clone Variant</key>
+	<string>보정값 복제</string>
+	<key>Close</key>
+	<string>닫기</string>
+	<key>Close catalog</key>
+	<string>카탈로그 닫기</string>
+	<key>Close session</key>
+	<string>세션 닫기</string>
+	<key>Close view</key>
+	<string>보기 닫기</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>처리되지 않은 이미지들을 닫으시겠습니까?</string>
+	<key>Code</key>
+	<string>코드</string>
+	<key>Collapse Stack</key>
+	<string>스택 축소</string>
+	<key>Collection Choice</key>
+	<string>컬렉션 선택</string>
+	<key>Collection Name</key>
+	<string>컬렉션 이름</string>
+	<key>Color</key>
+	<string>컬러</string>
+	<key>Color Adjustments</key>
+	<string>컬러 조정</string>
+	<key>Color Balance</key>
+	<string>컬러 밸런스</string>
+	<key>Color Balance Highlight</key>
+	<string>컬러 밸런스 하이라이트</string>
+	<key>Color Balance Midtone</key>
+	<string>컬러 밸런스 미드톤</string>
+	<key>Color Balance Shadow</key>
+	<string>컬러 밸런스 셰도우</string>
+	<key>Color Cast</key>
+	<string>컬러 캐스트</string>
+	<key>Color Correction limit reached</key>
+	<string>컬러 보정 한계치 도달</string>
+	<key>Color Editor - Advanced</key>
+	<string>컬러 에디터 - 고급</string>
+	<key>Color Editor - Basic</key>
+	<string>컬러 에디터 - 기본</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>컬러 에디터 - 스킨톤</string>
+	<key>Color Noise Reduction</key>
+	<string>컬러 노이즈 제거</string>
+	<key>Color Sensitivity</key>
+	<string>컬러 감도</string>
+	<key>Color Space</key>
+	<string>컬러 공간</string>
+	<key>Color Tag</key>
+	<string>컬러 태그</string>
+	<key>Color space</key>
+	<string>컬러 공간</string>
+	<key>Complete</key>
+	<string>완료</string>
+	<key>Composition</key>
+	<string>컴퍼지션</string>
+	<key>Confirm</key>
+	<string>확인</string>
+	<key>Cont.</key>
+	<string>연속</string>
+	<key>Cont.high</key>
+	<string>연속 높음</string>
+	<key>Cont.low</key>
+	<string>연속 낮음</string>
+	<key>Contact Address</key>
+	<string>연락 주소</string>
+	<key>Contact City</key>
+	<string>도시</string>
+	<key>Contact Country</key>
+	<string>국가</string>
+	<key>Contact Emails</key>
+	<string>이메일</string>
+	<key>Contact Phones</key>
+	<string>전화번호</string>
+	<key>Contact Postal Code</key>
+	<string>우편번호</string>
+	<key>Contact State</key>
+	<string>도(행정구역)</string>
+	<key>Contact State/Province</key>
+	<string>시/도</string>
+	<key>Contact Websites</key>
+	<string>홈페이지</string>
+	<key>Content Category</key>
+	<string>콘텐츠 카테고리</string>
+	<key>Content Description</key>
+	<string>내용 설명</string>
+	<key>Content Description Writer</key>
+	<string>작가 내용 설명</string>
+	<key>Content Headline</key>
+	<string>내용 제목</string>
+	<key>Content Subject Code</key>
+	<string>콘텐츠 제목 코드</string>
+	<key>Continue</key>
+	<string>계속</string>
+	<key>Continuous</key>
+	<string>연속</string>
+	<key>Continuous High</key>
+	<string>연속 높음</string>
+	<key>Continuous Low</key>
+	<string>연속 낮음</string>
+	<key>Continuous high</key>
+	<string>연속 높음</string>
+	<key>Continuous low</key>
+	<string>연속 낮음</string>
+	<key>Contrast</key>
+	<string>콘트라스트</string>
+	<key>Copenhagen</key>
+	<string>코펜하겐</string>
+	<key>Copy</key>
+	<string>복사</string>
+	<key>Copy Images</key>
+	<string>이미지 복사</string>
+	<key>Copying %d images</key>
+	<string>%d 이미지 복사</string>
+	<key>Copying %d out of %d images</key>
+	<string>%2$d 이미지 중 %1$d 복사</string>
+	<key>Copyright</key>
+	<string>저작권</string>
+	<key>Copyright Notice</key>
+	<string>저작권 표시</string>
+	<key>Corresponding Points</key>
+	<string>대응점</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>어플리케이션 지원 폴더에 접속할 수 없습니다.</string>
+	<key>Could not activate a Catalog.</key>
+	<string>카탈로그를 활성화할 수 없습니다.</string>
+	<key>Could not add metadata for variant.</key>
+	<string>변형에 대한 메타데이터를 추가할 수 없습니다.</string>
+	<key>Could not apply layer</key>
+	<string>레이어를 적용할 수 없습니다.</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>%1$@ 파일을 %2$@에 복사할 수 없습니다.</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>레시피 폴더를 복사할 수 없습니다.</string>
+	<key>Could not create a new Catalog.</key>
+	<string>새 카탈로그를 만들 수 없습니다.</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>변형에 대한 메타데이터 경로를 만들 수 없습니다.</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>처리 레시피에 대한 ICC 프로파일을 찾을 수 없습니다.</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>처리 레시피에 대한 ICC 프로파일을 찾을 수 없습니다. 대신 '내장된 카메라 프로파일'을 사용합니다.</string>
+	<key>Could not generate print image</key>
+	<string>출력 이미지를 만들 수 없습니다.</string>
+	<key>Could not generate processed image</key>
+	<string>처리된 이미지를 생성할 수 없습니다.</string>
+	<key>Could not load ICC profile.</key>
+	<string>ICC 프로파일을 로딩할 수 없습니다.</string>
+	<key>Could not load LCC profile.</key>
+	<string>LCC 프로파일을 로딩할 수 없습니다.</string>
+	<key>Could not load a Recipe file.</key>
+	<string>레시피 파일을 로드할 수 없습니다.</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>%1$@: %2$@에 세션 데이터베이스를 로딩할 수 없습니다.</string>
+	<key>Could not load the Recipes file.</key>
+	<string>레시피 파일을 로딩할 수 없습니다.</string>
+	<key>Could not process file.</key>
+	<string>파일을 처리할 수 없습니다.</string>
+	<key>Could not process xmp file.</key>
+	<string>xmp 파일을 처리할 수 없습니다.</string>
+	<key>Could not read catalog data.</key>
+	<string>카탈로그 데이터를 읽을 수 없음</string>
+	<key>Could not read document data.</key>
+	<string>문서 데이터를 읽을 수 없음</string>
+	<key>Could not read session data.</key>
+	<string>세션 데이터를 읽을 수 없음</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>패키지 파일에서 ICC는 제거할 수 없습니다.</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>패키지 파일로부터 LCC를 제거할 수 없습니다.</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>패키지 파일에서 마스크 파일을 삭제할 수 없습니다.</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>패키지 파일에 대한 정보를 검색할 수 없습니다. 파일이 손상되었을 수 있습니다.</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>패키지 파일에 관한 정보를 되살릴 수 없습니다. 파일이 손상되거나 지원되지 않을 수 있습니다.</string>
+	<key>Could not understand file data.</key>
+	<string>파일 데이터를 인식할 수 없습니다.</string>
+	<key>Could not understand file to open.</key>
+	<string>열 파일을 인식할 수 없습니다.</string>
+	<key>Could not write ICC profile.</key>
+	<string>ICC 프로파일을 복사할 수 없음.</string>
+	<key>Could not write LCC profile.</key>
+	<string>LCC 프로파일을 복사할 수 없음.</string>
+	<key>Couldn't read image settings</key>
+	<string>이미지 설정을 읽을 수 없습니다.</string>
+	<key>Counter</key>
+	<string>카운터</string>
+	<key>Country</key>
+	<string>국가</string>
+	<key>Creat.</key>
+	<string>크리에이티브</string>
+	<key>Create LCC</key>
+	<string>LCC 생성</string>
+	<key>Creative</key>
+	<string>크리에이티브</string>
+	<key>Creative (Slow speed)</key>
+	<string>크리에이티브(저속)</string>
+	<key>Creator</key>
+	<string>만든이</string>
+	<key>Creator's Job Title</key>
+	<string>만든이의 작업 제목</string>
+	<key>Creator's Title</key>
+	<string>만든이의 작업 제목</string>
+	<key>Crop</key>
+	<string>크롭</string>
+	<key>Crop Outside Image</key>
+	<string>바깥 이미지 크롭</string>
+	<key>Cropped</key>
+	<string>잘라내기</string>
+	<key>Cubic Grain</key>
+	<string>큐빅 입자</string>
+	<key>Current Date</key>
+	<string>현재 날짜</string>
+	<key>Current Date (%@)</key>
+	<string>현재 날짜(%@)</string>
+	<key>Current Day of Month</key>
+	<string>현재 월의 날짜</string>
+	<key>Current Day of Month (%@)</key>
+	<string>현재 월의 날짜 (%@)</string>
+	<key>Current Day of Week</key>
+	<string>현재 주의 날짜</string>
+	<key>Current Day of Week (%@)</key>
+	<string>현재 주의 날짜 (%@)</string>
+	<key>Current Month</key>
+	<string>현재 월</string>
+	<key>Current Month (%@)</key>
+	<string>현재 월(%@)</string>
+	<key>Current Time</key>
+	<string>현재 시간</string>
+	<key>Current Time (%@)</key>
+	<string>현재 시간 (%@)</string>
+	<key>Current Year</key>
+	<string>현재 연도</string>
+	<key>Current Year (%@)</key>
+	<string>현재 연도 (%@)</string>
+	<key>Curve</key>
+	<string>커브</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>사용자 정의 색수차</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>사용자 지정 색수차 이름</string>
+	<key>Cyan</key>
+	<string>사이안</string>
+	<key>DK</key>
+	<string>DK</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>DNG  표준</string>
+	<key>Date</key>
+	<string>날짜</string>
+	<key>Date - Month in Year</key>
+	<string>날짜 - 월</string>
+	<key>Date - Year</key>
+	<string>날짜 - 연도</string>
+	<key>Date Created</key>
+	<string>생성 날짜</string>
+	<key>Daylight</key>
+	<string>일광</string>
+	<key>Default Chromatic Aberration</key>
+	<string>기본 색수차</string>
+	<key>Demote Variant</key>
+	<string>변형 수준 내리기</string>
+	<key>Demote Variants</key>
+	<string>변형 수준 내리기</string>
+	<key>Denmark</key>
+	<string>덴마크</string>
+	<key>Description</key>
+	<string>설명</string>
+	<key>Description Writer</key>
+	<string>작성자 설명</string>
+	<key>Destination Folder Name</key>
+	<string>대상 폴더 이름</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>대상 폴더가 존재하지 않아 생성할 수 없습니다. 당신은 충분한 권한을 가지고 있지 않은 것 같습니다.</string>
+	<key>Details</key>
+	<string>디테일</string>
+	<key>Details Noise Reduction</key>
+	<string>노이즈 제거 상세정보</string>
+	<key>Diffraction Correction</key>
+	<string>회절 보정</string>
+	<key>Dimensions</key>
+	<string>크기</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>Black &amp;&amp; White 사용 안함</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>색수차 보정 사용 안함</string>
+	<key>Disable Crop Outside Image</key>
+	<string>바깥 이미지 크롭 사용 안함</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>왜곡된 범위 숨기기 사용 안함</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>LCC 컬러 캐스트 보정 사용 안함</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>LCC 먼지 제거 사용 안함</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>LCC 균일한 빛 사용 안함</string>
+	<key>Disable Layer</key>
+	<string>레이어 불능</string>
+	<key>Disable Optic Center</key>
+	<string>광학 센터 사용 안함</string>
+	<key>Display Name</key>
+	<string>디스플레이 이름</string>
+	<key>Distant</key>
+	<string>먼</string>
+	<key>Distant view</key>
+	<string>원경</string>
+	<key>Distortion</key>
+	<string>왜곡</string>
+	<key>Distortion Amount</key>
+	<string>왜곡 양</string>
+	<key>Do Not Close</key>
+	<string>닫지 마십시오.</string>
+	<key>Do Not Overwrite</key>
+	<string>덮어쓰지 않기</string>
+	<key>Do Not Quit</key>
+	<string>끝내지 않음</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>이 %d개의 변형을 자동 조정하시겠습니까?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>%d 변형을 위해 스타일과 프리셋을 리셋하기를 원하십니까?</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>이 %d개의 변형을 왼쪽으로 회전하시겠습니까?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>이 %d개의 변형을 오른쪽으로 회전하시겠습니까?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>이 %d개의 변형을 스냅 회전하시겠습니까?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>이 문서를 위해 구동 중인 작업들을 중단하길 원하십니까?</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>구동 중인 작업들을 중단하길 원하십니까?</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>이 문서를 위해 구동 중인 작업을 중단하길 원하십니까?</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>구동 중인 작업을 중단하길 원하십니까?</string>
+	<key>Document Name</key>
+	<string>문서 이름</string>
+	<key>Document migration failed.</key>
+	<string>문서 이전 실패</string>
+	<key>Domain</key>
+	<string>도메인</string>
+	<key>Don't show this message again</key>
+	<string>이 메시지를 다시 보여주지 않습니다.</string>
+	<key>Drag Variant</key>
+	<string>변형 드래그</string>
+	<key>Drag Variants</key>
+	<string>변형들 드래그</string>
+	<key>Drive Mode</key>
+	<string>드라이브 모드</string>
+	<key>Drive mode/self timer</key>
+	<string>드라이브 모드/자동 타이머</string>
+	<key>Dust</key>
+	<string>먼지</string>
+	<key>Dust Removal</key>
+	<string>먼지 제거</string>
+	<key>E-Mail(s)</key>
+	<string>이메일</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF - 카메라</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF - 노출</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF - GPS</string>
+	<key>Emails</key>
+	<string>이메일</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>Black &amp;&amp; White 사용</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>색수차 보정 사용</string>
+	<key>Enable Crop Outside Image</key>
+	<string>바깥 이미지 크롭 사용</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>왜곡된 범위 숨기기 사용</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>LCC 컬러 캐스트 보정 사용</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>LCC 먼지 제거 사용</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>LCC 균일한 빛 사용</string>
+	<key>Enable Layer</key>
+	<string>레이어 가능</string>
+	<key>Enable Optic Center</key>
+	<string>광학 센터 사용</string>
+	<key>Enabled</key>
+	<string>가능</string>
+	<key>Error loading adjustment mask.</key>
+	<string>조정 마스크 로딩 오류</string>
+	<key>Error packing an image.</key>
+	<string>이미지 패킹중 오류 발생</string>
+	<key>Estimating time remaining…</key>
+	<string>남은 시간 확인...</string>
+	<key>Event</key>
+	<string>이벤트</string>
+	<key>Expand Stack</key>
+	<string>스택 확장</string>
+	<key>Export</key>
+	<string>내보내기</string>
+	<key>Export %d Originals</key>
+	<string>%d 오리지널 내보내기</string>
+	<key>Export 1 Original</key>
+	<string>1 오리지널 내보내기</string>
+	<key>Export Anyway</key>
+	<string>계속 내보내기</string>
+	<key>Export Date</key>
+	<string>내보내기 날짜</string>
+	<key>Export Date (%@)</key>
+	<string>내보내기 날짜 (%@)</string>
+	<key>Export to Catalog</key>
+	<string>카탈로그로 내보내기</string>
+	<key>Exposure</key>
+	<string>노출</string>
+	<key>Exposure Compensation</key>
+	<string>노출 보정</string>
+	<key>Exposure Mode</key>
+	<string>노출 모드</string>
+	<key>Exposure Program</key>
+	<string>노출 프로그램</string>
+	<key>Exposure White Balance</key>
+	<string>노출 화이트 밸러스</string>
+	<key>Exposure compensation</key>
+	<string>노출 보정</string>
+	<key>Exposure mode</key>
+	<string>노출 모드</string>
+	<key>Exposure program</key>
+	<string>노출 프로그램</string>
+	<key>Extension</key>
+	<string>확장자</string>
+	<key>Failed to create %@ database.</key>
+	<string>%@ 데이터베이스 생성 실패</string>
+	<key>Fashion</key>
+	<string>패션</string>
+	<key>File</key>
+	<string>파일</string>
+	<key>File Size</key>
+	<string>파일 크기</string>
+	<key>File conversion warning</key>
+	<string>파일 변환 경고</string>
+	<key>File name</key>
+	<string>파일 이름</string>
+	<key>File size</key>
+	<string>파일 크기</string>
+	<key>File type version not supported.</key>
+	<string>파일 형식 버전을 지원하지 않음.</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>Capture One의 이 버전에서 파일버전은 지원하지 않음</string>
+	<key>Files will be moved to a new location.</key>
+	<string>파일을 새 위치로 이동합니다.</string>
+	<key>Fill Mask</key>
+	<string>마스크 채우기</string>
+	<key>Film Curve</key>
+	<string>필름 커브</string>
+	<key>Film Extra Shadow</key>
+	<string>필름 엑스트라 셰도우</string>
+	<key>Film Grain Amount</key>
+	<string>필름 입자 양</string>
+	<key>Film Grain Density</key>
+	<string>필름 입자 밀도</string>
+	<key>Film Grain Granularity</key>
+	<string>필름 입자 입상도</string>
+	<key>Film Grain Type</key>
+	<string>필름 입자 유형</string>
+	<key>Film High Contrast</key>
+	<string>필름 고대비</string>
+	<key>Film Standard</key>
+	<string>필름 표준</string>
+	<key>Fine Grain</key>
+	<string>미세 입자</string>
+	<key>Fired</key>
+	<string>발광</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>발광, 적목현상제거</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>발광, 적목현상제거, 반사광 있음</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>발광, 적목현상제거, 반사광 없음</string>
+	<key>Fired, Return detected</key>
+	<string>발광, 반사광 있음</string>
+	<key>Fired, Return not detected</key>
+	<string>발광, 반사광 없음</string>
+	<key>Fired, auto</key>
+	<string>발광, 자동</string>
+	<key>Fired, auto, no return light</key>
+	<string>발광, 자동, 반사광 없음</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>발광, 자동, 반사광 없음, 적목 현상</string>
+	<key>Fired, auto, red-eye</key>
+	<string>발광, 자동, 적목 현상</string>
+	<key>Fired, auto, return light</key>
+	<string>발광, 자동, 반사광</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>발광, 자동, 반사광, 적목 현상</string>
+	<key>Fired, compulsory</key>
+	<string>발광, 강제</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>발광, 강제, 반사광 없음</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>발광, 강제, 적목 현상, 반사광 없음</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>발광, 강제, 적목 현상, 반사광</string>
+	<key>Fired, compulsory, return light</key>
+	<string>발광, 강제, 반사광</string>
+	<key>Fired, red-eye</key>
+	<string>발광, 적목 현상</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>발광, 적목 현상, 반사광 없음</string>
+	<key>Fired, red-eye, return light</key>
+	<string>발광, 적목 현상, 반사광</string>
+	<key>Firmware</key>
+	<string>펌웨어</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>고정</string>
+	<key>Flash Compensation</key>
+	<string>플래시 보정</string>
+	<key>Flash Mode</key>
+	<string>플래시 모드</string>
+	<key>Flash compensation</key>
+	<string>플래시 보정</string>
+	<key>Flash did not fire</key>
+	<string>플래시가 발광안됨</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>플래시가 발광안됨, 자동 모드</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>플래시가 발광안됨, 강제 플래시 모드</string>
+	<key>Flash fired</key>
+	<string>플래시 발광</string>
+	<key>Flash fired, auto mode</key>
+	<string>플래시 발광, 자동 모드</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>플래시 발광, 자동 모드, 적목 현상 제거 모드</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>플래시 발광, 자동 모드, 반사광 있음</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>플래시 발광, 자동 모드, 반사광 있음, 적목 현상 제거 모드</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>플래시 발광, 자동 모드, 반사광 없음</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>플래시 발광, 자동 모드, 반사광 없음, 적목 현상 제거 모드</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>플래시 발광, 강제 플래시 모드</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>플래시 발광, 강제 플래시 모드, 적목 현상 제거 모드</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>플래시 발광, 강제 플래시 모드, 적목 현상 제거 모드, 반사광 있음</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>플래시 발광, 강제 플래시 모드, 적목 현상 제거 모드, 반사광 없음</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>플래시 발광, 강제 플래시 모드, 반사광 있음</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>플래시 발광, 강제 플래시 모드, 반사광 없음</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>플래시 발광, 적목 현상 제거 모드</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>플래시 발광, 적목 현상 제거 모드, 반사광 있음</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>플래시 발광, 적목 현상 제거 모드, 반사광 없음</string>
+	<key>Flash mode</key>
+	<string>플래시 모드</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>플래시 끔, 발광 안됨, 반사광 없음</string>
+	<key>Flash off, no flash function</key>
+	<string>플래시 끔, 플래시 작동 안함</string>
+	<key>Flash on, did not fire</key>
+	<string>플래시 켜기, 발광안됨</string>
+	<key>Flip</key>
+	<string>플립</string>
+	<key>Focal Length</key>
+	<string>초점 거리</string>
+	<key>Focal length</key>
+	<string>초점 거리</string>
+	<key>Focus Stacking</key>
+	<string>포커스 스택</string>
+	<key>Format</key>
+	<string>형식</string>
+	<key>Fringing</key>
+	<string>프린징</string>
+	<key>Generated %d out of %d previews</key>
+	<string>%2$d 프리뷰 중 %1$d 이 생성되었습니다.</string>
+	<key>Generating %d previews</key>
+	<string>%d 프리뷰 생성</string>
+	<key>Generating previews</key>
+	<string>프리뷰 생성</string>
+	<key>Genre</key>
+	<string>장르</string>
+	<key>Geotagged</key>
+	<string>지오 태그</string>
+	<key>Getting Folders for %d images</key>
+	<string>%d 이미지를 위한 폴더 가져오기</string>
+	<key>Getty Images</key>
+	<string>게티 이미지</string>
+	<key>Getty Images Original Filename</key>
+	<string>게티 이미지 오리지널 파일명</string>
+	<key>Getty Images Parent MEID</key>
+	<string>게티 이미지 Parent MEID</string>
+	<key>Getty Images Personality</key>
+	<string>게티 이미지 개성</string>
+	<key>Gradation Curve</key>
+	<string>그라데이션 커브</string>
+	<key>Grain</key>
+	<string>입자</string>
+	<key>Grain Amount</key>
+	<string>입자의 양</string>
+	<key>Grain Density </key>
+	<string>입자 밀도</string>
+	<key>Grain Granularity</key>
+	<string>입자 입상도</string>
+	<key>Grain Type</key>
+	<string>입자 유형</string>
+	<key>Green</key>
+	<string>그린</string>
+	<key>Green Curve</key>
+	<string>초록 커브</string>
+	<key>Green Gradation Curve</key>
+	<string>그린 그라데이션 커브</string>
+	<key>HDR</key>
+	<string>HDR</string>
+	<key>HH</key>
+	<string>HH</string>
+	<key>HH-mm</key>
+	<string>HH-mm</string>
+	<key>HH-mm-ss</key>
+	<string>HH-mm-ss</string>
+	<key>Halo Control</key>
+	<string>후광 제어</string>
+	<key>Harsh Grain</key>
+	<string>거친 입자</string>
+	<key>Headline</key>
+	<string>헤드라인</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>크기가 다른 변형간에는 힐과 복제 레이어를 복사할 수 없습니다.</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>힐과 복제 레이어는 최신 엔진이 필요합니다, 기본 특성 도구를 사용하여 엔진을 업그레이드할 수 있습니다.</string>
+	<key>Height</key>
+	<string>높이</string>
+	<key>Hide Distorted Areas</key>
+	<string>왜곡된 범위 숨기기</string>
+	<key>Highlight Recovery</key>
+	<string>하이라이트 복원</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>가로 키스톤 수정</string>
+	<key>Hyperfocal</key>
+	<string>하이퍼포컬</string>
+	<key>ICC Profile</key>
+	<string>ICC 프로파일</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>ICC [ %@ ] 경로 또는 프로필 이름이 너무 깁니다 (최대 1024 바이트)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC - 연락처</string>
+	<key>IPTC - Content</key>
+	<string>IPTC - 콘텐츠</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC - Getty</string>
+	<key>IPTC - Image</key>
+	<string>IPTC - 이미지</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC - 키워드</string>
+	<key>IPTC - Status</key>
+	<string>IPTC - 상태</string>
+	<key>IPTC Scene</key>
+	<string>IPTC 장면</string>
+	<key>IPTC scene</key>
+	<string>IPTC 장면</string>
+	<key>IPTC subject code</key>
+	<string>IPTC 주제 코드</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>감도</string>
+	<key>ISO Country Code</key>
+	<string>ISO 국가 코드</string>
+	<key>ISO speed rating</key>
+	<string>감도 속도 등급</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>Capture One 윈도우 버전에서 만들어진 문서라면, 윈도우 용 Capture One 7 이후 버전에서 여십시오. 그런 다음 맥 용 Capture One에서 문서를 열어보십시오.</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>파일을 변경하면 Capture One에서 열리지 않을 수도 있습니다.</string>
+	<key>Image City</key>
+	<string>이미지 도시</string>
+	<key>Image Country</key>
+	<string>이미지 국가</string>
+	<key>Image Date</key>
+	<string>이미지 날짜</string>
+	<key>Image Date (%@)</key>
+	<string>이미지 날짜 (%@)</string>
+	<key>Image Day of Month</key>
+	<string>이미지 월의 날짜</string>
+	<key>Image Day of Month (%@)</key>
+	<string>이미지 월의 날짜 (%@)</string>
+	<key>Image Day of Week</key>
+	<string>이미지 주의 날짜</string>
+	<key>Image Day of Week (%@)</key>
+	<string>이미지 주의 날짜 (%@)</string>
+	<key>Image Folder</key>
+	<string>이미지 폴더</string>
+	<key>Image Folder Name</key>
+	<string>이미지 폴더 이름</string>
+	<key>Image Location</key>
+	<string>이미지 위치</string>
+	<key>Image Month</key>
+	<string>이미지 월</string>
+	<key>Image Month (%@)</key>
+	<string>이미지 월 (%@)</string>
+	<key>Image Name</key>
+	<string>이미지 이름</string>
+	<key>Image State</key>
+	<string>이미지 국가</string>
+	<key>Image Time</key>
+	<string>이미지 시간</string>
+	<key>Image Time (%@)</key>
+	<string>이미지 시간 (%@)</string>
+	<key>Image Year</key>
+	<string>이미지 연도</string>
+	<key>Image Year (%@)</key>
+	<string>이미지 연도 (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>이미지 경로가 없거나 너무 깁니다 (최대 1024 바이트)</string>
+	<key>Import Date</key>
+	<string>가져오기 날짜</string>
+	<key>Import Date (%@)</key>
+	<string>가져오기 날짜 (%@)</string>
+	<key>In Catalog</key>
+	<string>카탈로그에서</string>
+	<key>Instructions</key>
+	<string>지침</string>
+	<key>Int.</key>
+	<string>간격</string>
+	<key>Intellectual Genre</key>
+	<string>분류 구분</string>
+	<key>Intellectual genre</key>
+	<string>분류 구분</string>
+	<key>Interval</key>
+	<string>간격</string>
+	<key>Invalid</key>
+	<string>잘못됨</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>잘못된 JPEG 품질(0 미만 또는 100 이상)</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>잘못된 TIFF 압축(LZW, Zip 또는 없음이어야 함)</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>잘못된 예제 당 비트 수(8 또는 16이어야 함)</string>
+	<key>Invalid file format</key>
+	<string>잘못된 파일 형식</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>잘못된 해상도(10이상 10000 미만이어야 함)</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>잘못된 배율(0이상 5 미만이어야 함)</string>
+	<key>Invalid selection!</key>
+	<string>잘못된 선택!</string>
+	<key>Invalid token name '%@'</key>
+	<string>유효하지 않은 토큰 이름 '%@'</string>
+	<key>Invert Mask</key>
+	<string>마스크 반전</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 웹용 2048px</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG-전체 크기, 최고 품질</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - 인스타그램 최적화</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (미리보기 크기)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG 1280 Pixels 롱 엣지 (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>JPEG 품질 %d</string>
+	<key>JPEG file</key>
+	<string>JPEG 파일</string>
+	<key>Job Identifier</key>
+	<string>작업 ID</string>
+	<key>Job Name</key>
+	<string>작업명</string>
+	<key>Keep Capture One Values</key>
+	<string>Capture One 값을 유지</string>
+	<key>Keystone Amount</key>
+	<string>키스톤 값</string>
+	<key>Keystone Aspect</key>
+	<string>키스톤 면</string>
+	<key>Keystone Focal Length</key>
+	<string>키스톤 초점거리</string>
+	<key>Keystone Points</key>
+	<string>키스톤 포인트</string>
+	<key>Keywords</key>
+	<string>키워드</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>LCC 경로 [%@]가 너무 깁니다 (최대 1024 바이트)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>이미지가 로드되는 중에는 LCC 프로파일을 생성할 수 없습니다.  다시 시도하십시오.</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>LCC는 확실치 않은 방식에 위치합니다. LCC가 변형 전 또는 후에 위치된 것을 확인하십시오.</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>레이블</string>
+	<key>Land.</key>
+	<string>가로</string>
+	<key>Landscape</key>
+	<string>랜드스케이프</string>
+	<key>Latitude</key>
+	<string>위도</string>
+	<key>Layer Selection Point</key>
+	<string>레이어 선택 포인트</string>
+	<key>Layers</key>
+	<string>레이어</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>복사한 변형에 레이어를 적용 할 수 없습니다.</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>레이어는 %@에 적용되지 않습니다</string>
+	<key>Lens</key>
+	<string>렌즈</string>
+	<key>Lens Correction</key>
+	<string>렌즈 보정</string>
+	<key>Lens Effects</key>
+	<string>렌즈 효과</string>
+	<key>Lens Profile</key>
+	<string>렌즈 프로파일</string>
+	<key>Lens Purple Fringing</key>
+	<string>렌즈 퍼플 프린징</string>
+	<key>Lens Revision</key>
+	<string>렌즈 수정</string>
+	<key>Lens Selection</key>
+	<string>렌즈 선택</string>
+	<key>Less than a minute left</key>
+	<string>남은 시간 1분 미만</string>
+	<key>Levels</key>
+	<string>레벨</string>
+	<key>Levels &amp; Curve</key>
+	<string>레벨 및 커브</string>
+	<key>Levels Highlight</key>
+	<string>레벨 하이라이트</string>
+	<key>Levels Midtone</key>
+	<string>레벨 미드톤</string>
+	<key>Levels Shadow</key>
+	<string>셰도우 레벨</string>
+	<key>Levels Target Highlight</key>
+	<string>레벨 타겟 하이라이트</string>
+	<key>Levels Target Shadow</key>
+	<string>셰도우 레벨 타겟</string>
+	<key>Light Falloff</key>
+	<string>주변부 밝기</string>
+	<key>Light Falloff Amount</key>
+	<string>주변부 밝기 양</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>선형 응답</string>
+	<key>Load error</key>
+	<string>로드 에러</string>
+	<key>Locate File</key>
+	<string>파일 찾기</string>
+	<key>Location</key>
+	<string>위치</string>
+	<key>Long Edge</key>
+	<string>롱 엣지</string>
+	<key>Longitude</key>
+	<string>경도</string>
+	<key>Luma Curve</key>
+	<string>루마 커브</string>
+	<key>Luma Gradation Curve</key>
+	<string>루마 그라데이션 커브</string>
+	<key>Luminance Noise Reduction</key>
+	<string>휘도 노이즈 제거</string>
+	<key>M</key>
+	<string>M</string>
+	<key>M.spot</key>
+	<string>멀티 스폿</string>
+	<key>MM</key>
+	<string>MM</string>
+	<key>MMM</key>
+	<string>MMM</string>
+	<key>MMM dd yyyy</key>
+	<string>MMM dd yyyy</string>
+	<key>MMMM</key>
+	<string>MMMM</string>
+	<key>MMMMM</key>
+	<string>MMMMM</string>
+	<key>Macro</key>
+	<string>매크로</string>
+	<key>Magenta</key>
+	<string>마젠타</string>
+	<key>Make</key>
+	<string>제조업체</string>
+	<key>Man.</key>
+	<string>수동</string>
+	<key>Manual</key>
+	<string>수동</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>마스크 파일의 경로가 너무 깁니다 (최대 1024 바이트)</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>최대 레이어 수를 초과했습니다</string>
+	<key>Metadata</key>
+	<string>메타데이터</string>
+	<key>Metadata Import</key>
+	<string>메타데이터 가져오기</string>
+	<key>Metadata Synchronization</key>
+	<string>메타데이터 싱크</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>메타데이터 싱크 주의</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>이미지 '%@'에서 메타데이터 충돌이 발견되었습니다. 리로딩한 메타데이터로 Capture One에 설정한 메타데이터 값으로 대체하시겠습니까? 아니면 Capture One 값을 유지하시겠습니까?</string>
+	<key>Metering Mode</key>
+	<string>미터 형식</string>
+	<key>Metering mode</key>
+	<string>측광 모드</string>
+	<key>Method not implemented.</key>
+	<string>완성되지 않은 방법입니다.</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Capture One 문서의 이전 실패</string>
+	<key>Minimum Viewing Distance</key>
+	<string>최소 가시 거리</string>
+	<key>Mir.up</key>
+	<string>미러업</string>
+	<key>Mirror Up</key>
+	<string>미러업</string>
+	<key>Mirror up</key>
+	<string>미러업</string>
+	<key>Missing ICC Profile.</key>
+	<string>ICC 프로파일 누락</string>
+	<key>Missing LCC Profile.</key>
+	<string>LCC 프로파일 누락</string>
+	<key>Missing Preview</key>
+	<string>프리뷰 누락</string>
+	<key>Mode</key>
+	<string>모드</string>
+	<key>Model</key>
+	<string>모델</string>
+	<key>Moire</key>
+	<string>모아레</string>
+	<key>Moire Amount</key>
+	<string>모아레 양</string>
+	<key>Moire Pattern</key>
+	<string>모아레 패턴</string>
+	<key>Moire Radius</key>
+	<string>모아레 반지름</string>
+	<key>Move Files</key>
+	<string>파일 이동</string>
+	<key>Move Image</key>
+	<string>이미지 이동</string>
+	<key>Move Images</key>
+	<string>이미지 이동</string>
+	<key>Moving %d images</key>
+	<string>%d 이미지 이동</string>
+	<key>Moving %d out of %d images</key>
+	<string>%2$d 이미지 중 %1$d 이동</string>
+	<key>Multi spot</key>
+	<string>멀티 스폿</string>
+	<key>Multi-spot</key>
+	<string>멀티-스폿</string>
+	<key>NO</key>
+	<string>아니오</string>
+	<key>NY</key>
+	<string>NY</string>
+	<key>Name</key>
+	<string>이름</string>
+	<key>Nature</key>
+	<string>자연</string>
+	<key>New LCC Profile</key>
+	<string>새 LCC 프로파일</string>
+	<key>New Session</key>
+	<string>새 세션</string>
+	<key>New Variant</key>
+	<string>원본 복제</string>
+	<key>No</key>
+	<string>아니오</string>
+	<key>No Flash</key>
+	<string>플래시 없음</string>
+	<key>No LCC to apply</key>
+	<string>적용할 LCC 없음</string>
+	<key>No collection has been selected</key>
+	<string>컬렉션을 선택하지 않았습니다.</string>
+	<key>No flash function</key>
+	<string>플래시 기능 없음</string>
+	<key>No function</key>
+	<string>작동 안함</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>%@ 이상의 색상 보정이 허용되지 않습니다</string>
+	<key>No strobe return light</key>
+	<string>스트로브 반사광 없음</string>
+	<key>No variants to apply LCC</key>
+	<string>LCC에 적용하기 위한 변형들이 없습니다.</string>
+	<key>None</key>
+	<string>없음</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>선택한 변형 %d개 모두 자동 조정할 수 없습니다.</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>선택한 변형 %d개 모두 왼쪽으로 회전시킬 수 없습니다.</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>선택한 변형 %d개 모두 오른쪽으로 회전시킬 수 없습니다.</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>선택한 변형 %d개 모두 스냅 회전시킬 수 없습니다.</string>
+	<key>Norm.</key>
+	<string>일반</string>
+	<key>Normal</key>
+	<string>일반</string>
+	<key>Not Defined</key>
+	<string>명확하지 않습니다.</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>파일을 처리할 디스크 공간이 부족합니다. 처리 대기가 일시 중지되었습니다.</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>대상 볼륨의 여유 공간이 부족합니다.</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>이미지 오버레이를 할당하기 위한 메모리가 충분하지 않음.</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>이미지 워터마크를 할당하기 위한 메모리가 충분하지 않습니다.</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>텍스트 워터마크를 할당하기 위한 메모리가 부족함.</string>
+	<key>Not fired</key>
+	<string>발광안됨</string>
+	<key>Not fired, auto</key>
+	<string>발광안됨, 자동</string>
+	<key>Not fired, compulsory</key>
+	<string>발광안됨, 강제</string>
+	<key>OK</key>
+	<string>확인</string>
+	<key>Off</key>
+	<string>해제</string>
+	<key>Off, Did not fire</key>
+	<string>끔, 발광 안됨</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>끔, 발광 안됨, 반사광 없음</string>
+	<key>Off, No flash function</key>
+	<string>끔, 플래시 작동 안함</string>
+	<key>Offline images will be skipped</key>
+	<string>오프라인 이미지들은 건너뛸 것입니다.</string>
+	<key>On, Did not fire</key>
+	<string>켬, 발광 안됨</string>
+	<key>On, Fired</key>
+	<string>켬, 발광</string>
+	<key>On, Red-eye reduction</key>
+	<string>켬, 적목현상제거</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>켬, 적목현상제거, 반사광 있음</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>켬, 적목현상제거, 반사광 없음</string>
+	<key>On, Return detected</key>
+	<string>켬, 반사광 있음</string>
+	<key>On, Return not detected</key>
+	<string>켬, 반사광 없음</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>이 변형들 중 하나는 이미 적용된 LCC 프로파일을 가지고 있습니다. 이 변형에서 LCC 프로파일을 변경하면 기존 프로파일이 삭제될 수 도 있습니다. LCC 프로파일은 오리지널 LCC 테스트샷으로 재생성 되거나, 이것이 프리셋으로 저장되었다면 재적용될 수 있습니다.</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>한개 또는 그이상의 파일은 패킹가능한 이미지가 아니거나 이미 변환되었을 수 있기때문에 패킹될 수 없을 것입니다. %2$i 중에서 패킹된 %1$i는 선택한 파일입니다.</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>하나 또는 그 이상의 파일들은 패키지 파일이 아니거나 이미 변환이 되고 있기 때문에 언팩되지 않을 것입니다. 선택한 파일 %2$i 중에서 %1$i 언패킹.</string>
+	<key>One shot</key>
+	<string>원 샷</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>선택한 변형 %2$d개 중 %1$d개만 자동 조정할 수 있습니다.</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>선택한 변형 %2$d개 중 %1$d개만 회전할 수 있습니다.</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>선택한 변형 %2$d개 중 %1$d개만 오른쪽으로 회전할 수 있습니다.</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>선택한 변형 %2$d개 중 %1$d개만 스냅 회전할 수 있습니다.</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>편집 가능한 변형만 자동 조정할 수 있습니다. 편집할 수 있는 변형을 선택하십시오.</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>편집 가능한 변형만 왼쪽으로 회전할 수 있습니다. 편집할 수 있는 변형을 선택하십시오.</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>편집 가능한 변형만 오른쪽으로 회전할 수 있습니다. 편집할 수 있는 변형을 선택하십시오.</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>편집 가능한 변형만 스냅 회전할 수 있습니다. 편집할 수 있는 변형을 선택하십시오.</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>선택한 변형값만 %@에 추가될 것입니다.</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>선택한 변형만 싱크될 것입니다.</string>
+	<key>Opacity</key>
+	<string>불투명도</string>
+	<key>Open failed</key>
+	<string>열기 실패</string>
+	<key>Optic Center</key>
+	<string>광학 센터</string>
+	<key>Optic Center Enabled</key>
+	<string>광학 센터 사용</string>
+	<key>Orange</key>
+	<string>오렌지</string>
+	<key>Orientation</key>
+	<string>방향설정</string>
+	<key>Original</key>
+	<string>오리지널</string>
+	<key>Original Filename</key>
+	<string>오리지널 파일명</string>
+	<key>Output</key>
+	<string>출력</string>
+	<key>Output Folder</key>
+	<string>출력 폴더</string>
+	<key>Overwrite</key>
+	<string>덮어쓰기</string>
+	<key>Owner</key>
+	<string>소유자</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>PNG 파일</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-bit)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>패키지 이름이 너무 깁니다 (최대 260 바이트)</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>패키지 경로가 없거나 너무 깁니다 (최대 1024 바이트)</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>%2$d 이미지중 %1$d를 EIP로 패킹</string>
+	<key>Packing %d images as EIP</key>
+	<string>EIP로 %d 이미지 패킹</string>
+	<key>Parent MEID</key>
+	<string>Parent MEID</string>
+	<key>Part.</key>
+	<string>부분</string>
+	<key>Partial</key>
+	<string>부분</string>
+	<key>Patt.</key>
+	<string>패턴</string>
+	<key>Pattern</key>
+	<string>패턴</string>
+	<key>People</key>
+	<string>사람</string>
+	<key>Personality</key>
+	<string>개성</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>전화번호</string>
+	<key>Phone(s)</key>
+	<string>전화번호</string>
+	<key>Phones</key>
+	<string>전화번호</string>
+	<key>Pick Variant</key>
+	<string>변형 선택</string>
+	<key>Pink</key>
+	<string>핑크</string>
+	<key>Pixels</key>
+	<string>픽셀</string>
+	<key>Place</key>
+	<string>장소</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>지정된 카탈로그 세트와 일치하는 앨범에 이미지를 놓겠습니까?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>상세사항은 L*a*b* 판독 문서를 참조하십시오.</string>
+	<key>Please select a collection in the library tool</key>
+	<string>라이브러리 툴에서 컬렉션을 선택하십시오.</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>유효한 쓰기가능한 폴더로 선택폴더를 지정하십시오.</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>대상 볼륨의 공간을 비우십시오.</string>
+	<key>Port.</key>
+	<string>세로</string>
+	<key>Portrait</key>
+	<string>인물</string>
+	<key>Postal Code</key>
+	<string>우편번호</string>
+	<key>Postal code</key>
+	<string>우편번호</string>
+	<key>Preparing Catalog Import…</key>
+	<string>카탈로그 가져오기 준비 중…</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>이미지를 위한 프리뷰가 카탈로그에서 생성되고 있습니다. 프리뷰 생성을 중단하기 원하십니까?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>.error를 추가하여 이전 파일 이름을 변경했음</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>.invalid를 추가하여 이전 파일 이름을 변경했음</string>
+	<key>Previous will be overwritten</key>
+	<string>이전 파일을 덮어씁니다.</string>
+	<key>Processing Method</key>
+	<string>처리 방법</string>
+	<key>Profile</key>
+	<string>프로파일</string>
+	<key>Profile could not be written.</key>
+	<string>프로파일을 쓸 수 없습니다.</string>
+	<key>Program</key>
+	<string>프로그램</string>
+	<key>Program AE</key>
+	<string>프로그램 AE</string>
+	<key>Promote Variant</key>
+	<string>변형 수준 올리기</string>
+	<key>Promote Variants</key>
+	<string>변형 수준 올리기</string>
+	<key>Provider</key>
+	<string>공급자</string>
+	<key>Proxy Creation Failed</key>
+	<string>프록시 생성 실패</string>
+	<key>Public</key>
+	<string>퍼블릭</string>
+	<key>Purple</key>
+	<string>보라색</string>
+	<key>Quit Capture One</key>
+	<string>Capture One 종료</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>RAW 파일</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>RGB 커브</string>
+	<key>Radius</key>
+	<string>반경</string>
+	<key>Rasterize Mask</key>
+	<string>래스터라이즈 마스크</string>
+	<key>Rating</key>
+	<string>등급</string>
+	<key>Reason</key>
+	<string>원인</string>
+	<key>Recent Captures</key>
+	<string>최근 촬영</string>
+	<key>Recent Imports</key>
+	<string>최근 가져오기</string>
+	<key>Recipe</key>
+	<string>레시피</string>
+	<key>Recipe Format</key>
+	<string>레시피 형식</string>
+	<key>Recipe Name</key>
+	<string>레시피 이름</string>
+	<key>Recovery</key>
+	<string>복구</string>
+	<key>Red</key>
+	<string>레드</string>
+	<key>Red Curve</key>
+	<string>레드 커브</string>
+	<key>Red Gradation Curve</key>
+	<string>레드 그라데이션 커브</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>영향을 받은 이미지들의 리스트는 파일 섹션을 참조하십시오.</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>메타데이터 %2$d 세트 중 %1$d 리로딩</string>
+	<key>Remove Layer</key>
+	<string>레이어 제거</string>
+	<key>Rename Image</key>
+	<string>이미지 이름변경</string>
+	<key>Rename Layer</key>
+	<string>레이어 이름 변경</string>
+	<key>Reorder Layer</key>
+	<string>레이어 다시 정렬</string>
+	<key>Replace</key>
+	<string>대체하기</string>
+	<key>Reset Adjustments</key>
+	<string>조정값 리셋</string>
+	<key>Reset Styles and Preset</key>
+	<string>스타일과 프리셋 리셋</string>
+	<key>Reset Styles and Presets</key>
+	<string>스타일과 프리셋 리셋</string>
+	<key>Resetting</key>
+	<string>재설정</string>
+	<key>Rights Usage Terms</key>
+	<string>사용약관</string>
+	<key>Rights usage terms</key>
+	<string>사용약관</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>왼쪽 회전</string>
+	<key>Rotate Right</key>
+	<string>오른쪽 회전</string>
+	<key>Rotate Snap</key>
+	<string>스냅 회전</string>
+	<key>Rotating</key>
+	<string>회전</string>
+	<key>Rotation</key>
+	<string>회전</string>
+	<key>Running a background activity</key>
+	<string>백그라운드 액티비티 실행</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>채도</string>
+	<key>Saving Document</key>
+	<string>문서 저장</string>
+	<key>Saving Document step %d of %d</key>
+	<string>%2$d의 %1$d 문서 단계 저장</string>
+	<key>Scene</key>
+	<string>장면</string>
+	<key>Select Layer</key>
+	<string>레이어 선택</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>선택한 동영상 파일들은 싱크되지 않을 것입니다.</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>선택한 변형들은 최소 하나의 LCC 샷을 포함해야만 합니다.</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>선택한 변형들은 최소 하나의 non-LCC 샷을 포함해야만 합니다.</string>
+	<key>Selection</key>
+	<string>선택사항</string>
+	<key>Selects Folder</key>
+	<string>선택 폴더</string>
+	<key>Self Timer</key>
+	<string>셀프 타이머</string>
+	<key>Self timer</key>
+	<string>셀프 타이머</string>
+	<key>Sequence Count</key>
+	<string>시퀀스 카운트</string>
+	<key>Sequence ID</key>
+	<string>시퀀스 ID</string>
+	<key>Sequence Info</key>
+	<string>시퀀스 정보</string>
+	<key>Sequence Total</key>
+	<string>시퀀스 토탈</string>
+	<key>Sequence Type</key>
+	<string>시퀀스 형식</string>
+	<key>Serial</key>
+	<string>일련 번호</string>
+	<key>Servo</key>
+	<string>서보</string>
+	<key>Session Save</key>
+	<string>세션 저장</string>
+	<key>Session Sub Path</key>
+	<string>세션 하위 경로</string>
+	<key>Session Sub Path (Long)</key>
+	<string>세션 하위 경로(Long)</string>
+	<key>Session data migration</key>
+	<string>세션 데이터 이전</string>
+	<key>Session load</key>
+	<string>세션 불러오기</string>
+	<key>Set Mask</key>
+	<string>마스크 설정</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>설정 경로가 너무 깁니다 (최대 1024 바이트)</string>
+	<key>Shadow Recovery</key>
+	<string>셰도우 복구</string>
+	<key>Sharpening Amount</key>
+	<string>샤프닝 수치</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>샤프닝 후광 억제</string>
+	<key>Sharpening Method</key>
+	<string>샤프닝 방법</string>
+	<key>Sharpening Radius</key>
+	<string>샤프닝 반경</string>
+	<key>Sharpening Threshold</key>
+	<string>샤프닝 임계값</string>
+	<key>Sharpness Falloff</key>
+	<string>주변부 샤픈</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>주변부 샤픈 양</string>
+	<key>Shift</key>
+	<string>시프트</string>
+	<key>Shift Direction</key>
+	<string>좌우 이동 방향</string>
+	<key>Shift XY</key>
+	<string>Shift XY</string>
+	<key>Short Edge</key>
+	<string>숏 엣지</string>
+	<key>Shut.</key>
+	<string>셔터</string>
+	<key>Shutter Speed</key>
+	<string>셔터스피드</string>
+	<key>Shutter priority</key>
+	<string>셔터 우선</string>
+	<key>Shutter speed</key>
+	<string>셔터 속도</string>
+	<key>Shutter speed priority AE</key>
+	<string>셔터스피드 우선 AE</string>
+	<key>Silver Rich</key>
+	<string>풍부한 실버</string>
+	<key>Sing.</key>
+	<string>단일</string>
+	<key>Single</key>
+	<string>단일</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>싱글 픽셀 노이즈 제거</string>
+	<key>Single Shot</key>
+	<string>싱글샷</string>
+	<key>Single shot</key>
+	<string>싱글 샷</string>
+	<key>Skip</key>
+	<string>건너 뛰기</string>
+	<key>Soft Grain</key>
+	<string>소프트한 입자</string>
+	<key>Software</key>
+	<string>소프트웨어</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>일부 레이어 조정에는 최신 엔진이 필요합니다. 엔진은 %@ 에 대해 영구적으로 업그레이드되며 나중에 다운 그레이드 할 수 없습니다.</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>일부 레이어 조정에는 최신 엔진이 필요합니다. %lu 변형에 대해 엔진이 영구적으로 업그레이드되며 나중에 다운 그레이드 할 수 없습니다.</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>일부 선택한 변형의 자동 조정을 할 수 없습니다.</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>선택한 변형 중 몇몇이 읽기 전용입니다.</string>
+	<key>Some variants are missing metadata</key>
+	<string>몇몇 변형들이 메타데이터를 누락했습니다.</string>
+	<key>Sort Order</key>
+	<string>정렬 순서</string>
+	<key>Source</key>
+	<string>출처</string>
+	<key>Source image is missing</key>
+	<string>원본 이미지가 누락되었습니다.</string>
+	<key>Split Tones</key>
+	<string>색조분리</string>
+	<key>Spot</key>
+	<string>스폿</string>
+	<key>Spots</key>
+	<string>스폿</string>
+	<key>Square</key>
+	<string>정사각형</string>
+	<key>State/Province</key>
+	<string>시/도</string>
+	<key>Status</key>
+	<string>상태</string>
+	<key>Stop</key>
+	<string>중지</string>
+	<key>Strobe return light</key>
+	<string>스트로브 반사광</string>
+	<key>Strobe return light detected</key>
+	<string>스트로브 반사광 있음</string>
+	<key>Strobe return light not detected</key>
+	<string>스트로브 반사광 없음</string>
+	<key>Structure</key>
+	<string>구조</string>
+	<key>Style</key>
+	<string>스타일</string>
+	<key>Styles</key>
+	<string>스타일</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>스타일과 프리셋은 선택한 변형 %2$d 중 %1$d 만을 위해 리셋 될 수 있습니다.</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>스타일과 프리셋은 편집가능한 변형에서 리셋될 수 있습니다. 편집이 가능한 변형들을 선택하십시오.</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>스타일과 프리셋은 선택한 변형 %d 모두에서 리셋될 수 있습니다.</string>
+	<key>Sub Name</key>
+	<string>하위 이름</string>
+	<key>Subject Code</key>
+	<string>주제 코드</string>
+	<key>Summer</key>
+	<string>여름</string>
+	<key>Supplemental Categories</key>
+	<string>추가 카테고리</string>
+	<key>Surface Smoothness</key>
+	<string>표면 평활성</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>메타데이터 %2$d 세트 중 %1$d  동기화</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d비트) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF-A3 인쇄 (300dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF-Adobe RGB (1998) (8 비트)</string>
+	<key>TIFF file</key>
+	<string>TIFF 파일</string>
+	<key>Tabular Grain</key>
+	<string>입자 도표</string>
+	<key>Target Levels</key>
+	<string>레벨 타겟</string>
+	<key>Temperature</key>
+	<string>온도</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>작업을 종료하고 창을 닫습니다.</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>작동을 중지하고 프로그램을 중단합니다. 
+</string>
+	<key>Terminate and Close Window</key>
+	<string>종료와 창닫기</string>
+	<key>Terminate and Quit Application</key>
+	<string>종료와 프로그램 중지</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>LCC 프로파일은 열 수 없는 레거시 형식입니다.</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>응용 프로그램이 새로운 %@를 위한 데이터베이스를 생성하는데 실패했습니다.</string>
+	<key>The catalog could not be saved.</key>
+	<string>카탈로그를 저장할 수 없습니다.</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>카탈로그 파일이 휴지통에 있습니다.</string>
+	<key>The catalog file is not writable.</key>
+	<string>카탈로그 파일에 쓰기권한이 없습니다.</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>카탈로그는 %@에서 저장되었고 이 버전에서는 읽어지지 않습니다.</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>카탈로그는 Capture One 최신 버전에서 저장되었습니다.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>현재 변형 선택에는 선택한 변형이 없습니다. 선택한 변형 만 추가 할 수 있습니다.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>현재 변형섹션은 어떤 선택한 변형도 포함하지 않습니다. 선택한 변형만이 싱크될 수 있습니다.</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>문서 콘텐츠가 지원되지 않습니다. Capture One의 지원되지 않는 버전에서 저장되었습니다.</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>문서는 %@에서 저장되었고 이 버전에서는 읽어지지 않습니다.</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>문서는 Capture One 최신 버전에서 저장되었습니다.</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>일부 변형에 대한 기존의 메타데이터가 덮어쓰여지지 않습니다.</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>적용된 방법이 실행되지 않았습니다.</string>
+	<key>The output folder could not be created.</key>
+	<string>출력 폴더를 만들 수 없습니다.</string>
+	<key>The output folder is not writable.</key>
+	<string>출력 폴더에 쓸 수 없습니다.</string>
+	<key>The output location is not a folder.</key>
+	<string>출력 위치가 폴더가 아닙니다.</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>패키지 파일은 언패킹 전에 이름을 변경해야 합니다. 이름 변경이 실패했습니다.</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>일부 이미지를 위한 raw 파일을 찾을 수 없습니다. 누락 이미지를 빼고 내보내거나 내보내기를 취소할 수 있습니다.</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>선택한 파일 "%1$@" 은 오리지널 파일  "%2$@"와 다른 이름을 가지고 있습니다.
+
+계속 선택한 파일을 사용하길 원하십니까?</string>
+	<key>The session appears corrupt.</key>
+	<string>세션이 손상된 것 같습니다.</string>
+	<key>The session could not be saved.</key>
+	<string>세션을 저장할 수 없습니다.</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>세션 데이터 이전으로 세션 파일 이름이 바뀌었습니다. "%@"을(를) 다시 여십시오.</string>
+	<key>The session file does not exist.</key>
+	<string>세션 파일이 존재하지 않습니다.</string>
+	<key>The session file is empty.</key>
+	<string>세션 파일이 비어있습니다.</string>
+	<key>The session file is in the Trash.</key>
+	<string>세션파일이 휴지통에 있습니다.</string>
+	<key>The session file is not writable.</key>
+	<string>세션 파일에 쓰기권한이 없습니다.</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>세션은 %@에서 저장되었고 이 버전에서는 읽어지지 않습니다.</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>세션은 Capture One 최신 버전에서 저장되었습니다.</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>세션을 Capture One이 지원하지 않는 이전 버전에서 저장했습니다.</string>
+	<key>There are no images to export.</key>
+	<string>내보낼 이미지가 없습니다.</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>내보낼 이미지가 없습니다.
+ 필요하다면 하위폴더를 포함하십시오.</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>출력 파일 처리 도중 오류가 발생했습니다.</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>xmp 파일 처리 중 에러가 발생했습니다. 
+</string>
+	<key>There was an error loading the mask.</key>
+	<string>마스크를 로딩할 때 에러가 발생했습니다.</string>
+	<key>Threshold</key>
+	<string>임계값</string>
+	<key>Tilt</key>
+	<string>상하 이동</string>
+	<key>Tilt Direction</key>
+	<string>상하 방향</string>
+	<key>Time Lapse</key>
+	<string>타임랩스</string>
+	<key>Time-lapse</key>
+	<string>타임랩스</string>
+	<key>Timer</key>
+	<string>타이머</string>
+	<key>Tint</key>
+	<string>틴트</string>
+	<key>Title</key>
+	<string>제목</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>데이터베이스를 계속 사용하기 위해 확인과 복구를 진행하십시오.</string>
+	<key>Trash</key>
+	<string>휴지통</string>
+	<key>Trash Folder</key>
+	<string>휴지통 폴더</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>이미지 파일을 패키지로 변환할 수 없습니다.</string>
+	<key>Unable to convert package to image file</key>
+	<string>패키지를 이미지 파일로 변환할 수 없습니다.</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>프록시를 생성할 수 없습니다. 이미지 파일이 손상되었거나 로딩할 수 없는 것일 수 있습니다.</string>
+	<key>Unable to load LCC profile.</key>
+	<string>LCC 프로파일 로딩 불가</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>오프라인 이미지에서 메타데이터를 로드할 수 없습니다.  그들은 건너뛸 것입니다.</string>
+	<key>Unable to read package file.</key>
+	<string>패키지 파일을 읽을 수 없습니다.</string>
+	<key>Uncalib.</key>
+	<string>보정 안됨</string>
+	<key>Uncalibrated</key>
+	<string>보정 안됨</string>
+	<key>Uncataloged</key>
+	<string>카탈로그화되지 않음</string>
+	<key>Unconstrained</key>
+	<string>제한 없음</string>
+	<key>Undef.</key>
+	<string>정의되지 않음</string>
+	<key>Undefined</key>
+	<string>정의되지 않음</string>
+	<key>Uniform Light</key>
+	<string>균일한 빛</string>
+	<key>Uniform Light Amount</key>
+	<string>균일한 조명값</string>
+	<key>Unknown</key>
+	<string>알 수 없음</string>
+	<key>Unknown Font</key>
+	<string>알려지지 않은 서체</string>
+	<key>Unknown Group</key>
+	<string>알 수 없는 그룹</string>
+	<key>Unknown Processing Engine</key>
+	<string>알 수 없는 처리 엔진</string>
+	<key>Unknown Scale</key>
+	<string>알수없는 크기</string>
+	<key>Unknown Setting</key>
+	<string>알 수 없는 설정</string>
+	<key>Unknown reason.</key>
+	<string>알 수 없는 이유</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>EIP 이미지 %2$d중 %1$d를 언패킹</string>
+	<key>Unpacking %d EIP files</key>
+	<string>%d EIP 파일 언패킹</string>
+	<key>Unpacking EIP Failed</key>
+	<string>EIP 언패킹 실패</string>
+	<key>Unrated</key>
+	<string>등급 없음</string>
+	<key>Unsupported catalog version.</key>
+	<string>지원되지 않는 카탈로그 버전</string>
+	<key>Unsupported document version.</key>
+	<string>지원되지 않는 문서 버전</string>
+	<key>Unsupported session version.</key>
+	<string>지원되지 않는 세션 버전</string>
+	<key>Untitled Album</key>
+	<string>제목 없는 앨범</string>
+	<key>Untitled Recipe</key>
+	<string>제목 없는 레시피</string>
+	<key>Update Images</key>
+	<string>이미지 업데이트</string>
+	<key>Updating</key>
+	<string>업데이트 중</string>
+	<key>Upgrade Engine</key>
+	<string>업그레이드 엔진</string>
+	<key>Upgrade Processing Engine</key>
+	<string>처리 엔진 업그레이드</string>
+	<key>Urgency</key>
+	<string>긴급</string>
+	<key>Usage Terms</key>
+	<string>사용 조건</string>
+	<key>Variant Position</key>
+	<string>변형 위치</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>변형은 %1$lu 이상의 레이어를 가질 수 없습니다. 건너 뛰면 %2$@에 조정이 적용되지 않습니다</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>변형은 %1$lu 이상의 레이어를 가질 수 없습니다. 건너 뛰면 %2$lu 변형에 대한 조정이 적용되지 않습니다.</string>
+	<key>Vendor Specific</key>
+	<string>제조사 정보</string>
+	<key>Vendor White Balance</key>
+	<string>제조사 화이트 밸런스</string>
+	<key>Vertical Keystone Correction</key>
+	<string>세로 키스톤 수정</string>
+	<key>Video</key>
+	<string>비디오</string>
+	<key>Vignetting</key>
+	<string>비네팅</string>
+	<key>Vignetting Amount</key>
+	<string>비네팅 양</string>
+	<key>Vignetting Disabled</key>
+	<string>비네팅 불가</string>
+	<key>Vignetting Enabled</key>
+	<string>비네팅 사용</string>
+	<key>Vignetting Method</key>
+	<string>비네팅 방법</string>
+	<key>Vignetting Method Circular</key>
+	<string>비네팅 방법 원형</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>크롭에서 비네팅 방법 원형</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>크롭에서 비네팅 방법 타원형</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>경고: 렌즈 캐스트 캘리브레이션이 클립 데이터를 포함하고 있습니다. 좋지 않은 컬러 캐스트가 생길 수 있습니다.</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>경고: 렌즈 캐스트 캘리브레이션 노출이 좋지 않습니다. 결과물이 정확하지 않을 수 있습니다.</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>경고: 렌즈 캐스트 캘리브레이션에 심각한 부분들은 부분적으로만 보정될 수 있습니다.</string>
+	<key>Website(s)</key>
+	<string>웹사이트</string>
+	<key>Websites</key>
+	<string>웹사이트</string>
+	<key>White Balance</key>
+	<string>화이트 밸런스</string>
+	<key>White Recovery</key>
+	<string>화이트 복구</string>
+	<key>White balance</key>
+	<string>화이트 밸런스</string>
+	<key>Width</key>
+	<string>너비</string>
+	<key>Width x Height</key>
+	<string>너비 x 높이</string>
+	<key>Writer</key>
+	<string>작성자</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>패키지 파일에 설정 쓰기를 실패했습니다. 파일이 손상되었을 수 있습니다.</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>패키지 파일로의 쓰기 설정이 실패했습니다. 사용권한 문제이거나 파일이 손상되었을 수 있습니다.</string>
+	<key>YES</key>
+	<string>예</string>
+	<key>Yellow</key>
+	<string>옐로우</string>
+	<key>Yes</key>
+	<string>예</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>당신의 선택은 복수의 LCC를 포함합니다. LCC는 이전 변형들에 적용될 것입니다.(즉, LCC의 왼쪽에 보이는 파일들은 그 프로파일이 적용될 것입니다.)</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>당신의 선택은 복수의 LCC를 포함합니다. LCC는 다음 변형들에 적용될 것입니다.(즉, LCC의 오른쪽에 보이는 파일들은 그 프로파일이 적용될 것입니다.)</string>
+	<key>Zip</key>
+	<string>Zip</string>
+	<key>Zoom: %.f%%</key>
+	<string>확대/축소: %.f%%</string>
+	<key>auto</key>
+	<string>자동</string>
+	<key>begins with</key>
+	<string>시작</string>
+	<key>camera custom</key>
+	<string>카메라 사용자 지정</string>
+	<key>cloudy</key>
+	<string>흐림</string>
+	<key>contains</key>
+	<string>포함</string>
+	<key>cool white fluorescent</key>
+	<string>차가운 백색형광</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>주간 색형광</string>
+	<key>day white fluorescent</key>
+	<string>주간 백색형광</string>
+	<key>daylight</key>
+	<string>일광</string>
+	<key>daylight fluorescent</key>
+	<string>일광 형광</string>
+	<key>dd</key>
+	<string>dd</string>
+	<key>dd-MM-yy</key>
+	<string>dd-MM-yy</string>
+	<key>direct sunlight</key>
+	<string>직사 일광</string>
+	<key>does not contain</key>
+	<string>포함하지 않음</string>
+	<key>ends with</key>
+	<string>종료</string>
+	<key>equals</key>
+	<string>동일</string>
+	<key>error</key>
+	<string>오류</string>
+	<key>fine weather</key>
+	<string>맑은 날씨</string>
+	<key>fine weather with shade</key>
+	<string>맑은 날씨, 음영 포함</string>
+	<key>flash</key>
+	<string>플래시</string>
+	<key>fluorescent</key>
+	<string>형광</string>
+	<key>fluorescent d</key>
+	<string>형광 d</string>
+	<key>fluorescent h</key>
+	<string>형광 h</string>
+	<key>fluorescent n</key>
+	<string>형광 n</string>
+	<key>fluorescent w</key>
+	<string>형광 w</string>
+	<key>h</key>
+	<string>h</string>
+	<key>h-mm a</key>
+	<string>h-mm a</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>고온 수은 램프</string>
+	<key>hmi</key>
+	<string>HMI</string>
+	<key>incandescent</key>
+	<string>백열광</string>
+	<key>is</key>
+	<string>는</string>
+	<key>is after</key>
+	<string>이후</string>
+	<key>is before</key>
+	<string>이전</string>
+	<key>is false</key>
+	<string>임시</string>
+	<key>is faster than</key>
+	<string>더 빠름</string>
+	<key>is faster than or equal to</key>
+	<string>더 빠르거나 동일</string>
+	<key>is greater than</key>
+	<string>더 큼</string>
+	<key>is greater than or equal to</key>
+	<string>더 크거나 동일</string>
+	<key>is less than</key>
+	<string>더 작음</string>
+	<key>is less than or equal to</key>
+	<string>더 작거나 동일</string>
+	<key>is narrower than</key>
+	<string>더 좁음</string>
+	<key>is narrower than or equal to</key>
+	<string>더 좁거나 동일</string>
+	<key>is not</key>
+	<string>없음</string>
+	<key>is not equal to</key>
+	<string>동일하지 않음</string>
+	<key>is not on</key>
+	<string>없음</string>
+	<key>is on</key>
+	<string>있음</string>
+	<key>is slower than</key>
+	<string>더 느림</string>
+	<key>is slower than or equal to</key>
+	<string>더 느리거나 동일</string>
+	<key>is true</key>
+	<string>참</string>
+	<key>is wider than</key>
+	<string>더 넓음</string>
+	<key>is wider than or equal to</key>
+	<string>더 넓거나 동일</string>
+	<key>iso studio tungsten</key>
+	<string>감도 스튜디오 텅스텐</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>유지 .%@</string>
+	<key>kelvin</key>
+	<string>켈빈</string>
+	<key>manual</key>
+	<string>수동</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>분</string>
+	<key>mm</key>
+	<string>mm</string>
+	<key>neutral white fluorescent</key>
+	<string>뉴트럴 백색 형광</string>
+	<key>normal</key>
+	<string>보통</string>
+	<key>s</key>
+	<string>초</string>
+	<key>shade</key>
+	<string>음영</string>
+	<key>shadow</key>
+	<string>셰도우</string>
+	<key>shot</key>
+	<string>촬영</string>
+	<key>sodium-vapor lamp</key>
+	<string>나트륨 램프</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>표준광 a</string>
+	<key>standard light b</key>
+	<string>표준광 b</string>
+	<key>standard light c</key>
+	<string>표준광 c</string>
+	<key>star</key>
+	<string>별 등급</string>
+	<key>stars</key>
+	<string>별 등급</string>
+	<key>sunny</key>
+	<string>맑음</string>
+	<key>tungsten</key>
+	<string>텅스텐</string>
+	<key>underwater</key>
+	<string>물속</string>
+	<key>unknown</key>
+	<string>알 수 없음</string>
+	<key>use .%@</key>
+	<string>사용 .%@</string>
+	<key>warm white fluorescent</key>
+	<string>따뜻한 백색형광</string>
+	<key>white fluorescent</key>
+	<string>백색형광</string>
+	<key>yy</key>
+	<string>yy</string>
+	<key>yy-MM-dd</key>
+	<string>yy-MM-dd</string>
+	<key>yyyy</key>
+	<string>yyyy</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>yyyy-MM-dd HH.mm.ss</string>
+</dict>
+</plist>

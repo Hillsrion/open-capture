@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Modifica Scelte Rapide da Tastiera</string>
+	<key>10.title</key>
+	<string>Cella Testo</string>
+	<key>11.title</key>
+	<string>Cella Testo</string>
+	<key>13.title</key>
+	<string>Chiudi</string>
+	<key>22.title</key>
+	<string>Errore etichetta</string>
+	<key>51.title</key>
+	<string>Finestra</string>
+	<key>59.title</key>
+	<string>OK</string>
+	<key>60.title</key>
+	<string>Cancella</string>
+	<key>61.title</key>
+	<string>Ti preghiamo di inserire un nome per il set di scelte rapide da tastiera:</string>
+	<key>62.title</key>
+	<string>Errore (set programmatico)</string>
+	<key>75.title</key>
+	<string>Aiuto</string>
+	<key>8.headerCell.title</key>
+	<string>Cmd</string>
+	<key>9.headerCell.title</key>
+	<string>Chiave</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Etichetta</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Cmd</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Chiave</string>
+</dict>
+</plist>

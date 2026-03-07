@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>Cellule texte</string>
+	<key>491.title</key>
+	<string>Cellule de la planche contact</string>
+	<key>499.title</key>
+	<string>Filtrer la cellule de visualisation</string>
+	<key>572.title</key>
+	<string>Ajouter un terme dans le filtre</string>
+	<key>579.title</key>
+	<string>OK</string>
+	<key>580.title</key>
+	<string>Ajouter un terme dans le filtre:</string>
+	<key>582.title</key>
+	<string>Annuler</string>
+	<key>604.placeholderString</key>
+	<string>Format: "pays &gt; état &gt; ville &gt; adresse"</string>
+</dict>
+</plist>

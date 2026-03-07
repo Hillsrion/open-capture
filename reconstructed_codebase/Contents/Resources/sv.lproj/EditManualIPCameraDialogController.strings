@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8DV-BE-nxZ.title</key>
+	<string>Adress</string>
+	<key>EwJ-aC-cJp.headerCell.title</key>
+	<string>Namn</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Nätverkshanterare för kamera</string>
+	<key>TOe-TS-pWw.title</key>
+	<string>Namn</string>
+	<key>YNd-qF-0Qp.title</key>
+	<string>Ta bort</string>
+	<key>brq-Uo-oyi.title</key>
+	<string>Klart</string>
+	<key>mtB-N1-gEr.title</key>
+	<string>Lägg till...</string>
+	<key>vkB-LR-UFE.headerCell.title</key>
+	<string>Adress</string>
+</dict>
+</plist>

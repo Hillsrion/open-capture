@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Удалить рабочее пространство</string>
+	<key>12.title</key>
+	<string>Удалить</string>
+	<key>14.title</key>
+	<string>Отмена</string>
+	<key>33.title</key>
+	<string>Элемент 1</string>
+	<key>34.title</key>
+	<string>Элемент 2</string>
+	<key>35.title</key>
+	<string>Элемент 3</string>
+	<key>6.title</key>
+	<string>Рабочее пространство:</string>
+</dict>
+</plist>

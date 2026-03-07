@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Anonimizirani podaci profila susatava pomažu nam planirati budući razvoj. Kontaktiraj nas, ako imaš pitanja o tome.
+
+Šalju se sljedeći podaci:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Preuzmi i instaliraj nadogradnje automatski</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Provjeri automatski</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Nemoj provjeravati</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Automatski provjeriti nadogradnje?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Uključi anonimizirane podatke o profilu sustava</string>
+</dict>
+</plist>

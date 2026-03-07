@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Assicurati che i valori nello strumento Correzione Ottica siano corretti prima di creare un LCC.</string>
+	<key>1.title</key>
+	<string>Crea Opzioni LCC</string>
+	<key>10.title</key>
+	<string>Includi Informazioni Rimozione Polvere</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Progresso creazione LCC</string>
+	<key>22.title</key>
+	<string>Creazione LCC</string>
+	<key>27.title</key>
+	<string>Creazione LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Crea sempre con queste impostazioni. Può essere reimpostato dallo strumento LCC.</string>
+	<key>37.title</key>
+	<string>Non mostrare più</string>
+	<key>46.title</key>
+	<string>Finestra</string>
+	<key>5.title</key>
+	<string>Crea</string>
+	<key>51.title</key>
+	<string>Ci sono stati degli avvisi durante la creazione dei profili LCC. Desideri visualizzare il Registro Eventi per consultarli?</string>
+	<key>54.title</key>
+	<string>Mostra Registro Eventi</string>
+	<key>55.title</key>
+	<string>Chiudi</string>
+	<key>6.title</key>
+	<string>Cancella</string>
+	<key>65.title</key>
+	<string>Cancella</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Includi correzioni per fotocamere tecniche con ottiche grandangolari.</string>
+	<key>8.title</key>
+	<string>Includi Dati Correzione Ottica Grandangolare</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Includi informazioni rimozione polvere. La creazione del profilo LCC sarà più lenta.</string>
+</dict>
+</plist>

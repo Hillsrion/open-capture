@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Le informazioni del profilo di sistema anomino sono utilizzate per aiutarci in futuri lavori di sviluppo. Contattaci se hai dei quesiti sull’argomento.
+
+Queste sono le informazioni che verrebbero inviate:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Scarica e installa automaticamente gli aggiornamenti</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Controlla Automaticamente</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Non controllare</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Controllo automaticamente gli aggiornamenti?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Include profilo di sistema anonimo</string>
+</dict>
+</plist>

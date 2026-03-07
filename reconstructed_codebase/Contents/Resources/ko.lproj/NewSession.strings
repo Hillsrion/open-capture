@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>새 세션</string>
+	<key>100.title</key>
+	<string>하위폴더 선택:</string>
+	<key>104.title</key>
+	<string>휴지통 하위 폴더:</string>
+	<key>147.title</key>
+	<string>새 창에서 열기</string>
+	<key>151.title</key>
+	<string>촬영 이름:</string>
+	<key>167.title</key>
+	<string>...</string>
+	<key>39.ibExternalAccessibilityDescription</key>
+	<string>processRecipeScaleMethodPopup</string>
+	<key>46.title</key>
+	<string>템플릿:</string>
+	<key>47.title</key>
+	<string>위치:</string>
+	<key>48.title</key>
+	<string>이름:</string>
+	<key>51.title</key>
+	<string>OtherViews</string>
+	<key>52.title</key>
+	<string>????</string>
+	<key>54.title</key>
+	<string>취소</string>
+	<key>55.title</key>
+	<string>확인</string>
+	<key>91.title</key>
+	<string>촬영 하위 폴더:</string>
+	<key>96.title</key>
+	<string>출력 하위 폴더:</string>
+</dict>
+</plist>

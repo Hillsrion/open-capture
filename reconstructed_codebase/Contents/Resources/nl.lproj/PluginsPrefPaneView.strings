@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>Plug-in instellingen konden niet worden opgehaald</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>Plug-in is uitgeschakeld</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>Box</string>
+	<key>AQe-BF-01j.title</key>
+	<string>Installeer meer plug-ins</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>Deze plug-in kan niet worden uitgeschakeld</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>Geen plug-in geselecteerd</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>Deze plug-in heeft geen aanpasbare instellingen</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>Tekstcel</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>Opnieuw proberen</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>Plug-in titel</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>Ingeschakeld</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>Kenmerken</string>
+</dict>
+</plist>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Kopiera varianter från primär</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Kopiera justeringarna från den senast tagna bilden.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Kopiera från senaste</string>
+	<key>250.title</key>
+	<string>Meny</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Autojustera tagna bilder</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Kopiera varianter från senaste</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientering</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Kopiera justeringarna från den senast tagna bilden.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Kopiera från senaste</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Kopiera varianter från senaste</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Kopiera enskild från senaste</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Kopiera enskild från primär</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Kopiera justeringar från den primära varianten</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Kopiera från primär</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Kopiera enskild från senaste</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Använd standardjusteringarna</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Standard</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Kopiera varianter från primär</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stilar</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Kopiera från Urklipp</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Kopiera justeringar från den primära varianten</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Kopiera från primär</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Kopiera från Urklipp</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Använd standardjusteringarna</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Standard</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Använd kamerans standardprofil för ICC</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Standard</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Use the default orientation from the camera</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Standard</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>Kopiera ICC-profilen från den senast tagna bilden.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Kopiera från senaste</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadata</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Kopiera enskild från primär</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Annan</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>Kopiera ICC-profilen från den primära varianten</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Kopiera från primär</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC-profil</string>
+</dict>
+</plist>

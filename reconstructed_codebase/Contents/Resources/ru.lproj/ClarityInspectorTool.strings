@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3uB-Hd-hlv.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Метод</string>
+	<key>4eU-we-CrP.ibExternalAccessibilityDescription</key>
+	<string>четкость</string>
+	<key>4eU-we-CrP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Четкость</string>
+	<key>HGC-Q7-zHa.title</key>
+	<string>Eстественный</string>
+	<key>MtW-6d-65A.title</key>
+	<string>Yдар</string>
+	<key>QlG-5o-DBr.ibExternalAccessibilityDescription</key>
+	<string>структура</string>
+	<key>QlG-5o-DBr.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Структура</string>
+	<key>fSQ-BZ-Q4Z.title</key>
+	<string>Hейтральный</string>
+	<key>qTR-6X-eGH.title</key>
+	<string>Kлассический</string>
+</dict>
+</plist>

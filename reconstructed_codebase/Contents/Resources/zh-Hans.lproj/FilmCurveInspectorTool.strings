@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kd-Me-j9L.title</key>
+	<string>Box</string>
+	<key>5g4-db-4VZ.title</key>
+	<string>保存 CCD…</string>
+	<key>6.title</key>
+	<string>胶片曲线编辑器</string>
+	<key>BK1-2w-5lD.title</key>
+	<string>响应曲线</string>
+	<key>CVb-vV-i6f.title</key>
+	<string>文件自带</string>
+	<key>Rts-E6-n2i.title</key>
+	<string>负片</string>
+	<key>TBm-vJ-Pyc.title</key>
+	<string>图例</string>
+	<key>VT0-X5-JQY.title</key>
+	<string>CCD 曲线</string>
+	<key>acb-et-6NQ.title</key>
+	<string>科学曲线</string>
+	<key>aug-sl-lwg.title</key>
+	<string>载入响应…</string>
+	<key>bz5-cK-Z1M.title</key>
+	<string>相机名称</string>
+	<key>ceZ-qo-Uqe.title</key>
+	<string>保存响应…</string>
+	<key>etm-wu-HvW.title</key>
+	<string>载入 CCD…</string>
+	<key>kxg-jo-5b4.title</key>
+	<string>Box</string>
+	<key>ltb-w6-cuP.title</key>
+	<string>Box</string>
+	<key>rgI-5u-aUJ.title</key>
+	<string>最终曲线</string>
+	<key>tj2-4L-igh.title</key>
+	<string>保存胶片曲线…</string>
+	<key>tkZ-Jz-4b0.title</key>
+	<string>载入胶片曲线…</string>
+	<key>uNF-sJ-VDP.title</key>
+	<string>自动</string>
+	<key>xaf-OC-EEW.title</key>
+	<string>曲线名称</string>
+</dict>
+</plist>

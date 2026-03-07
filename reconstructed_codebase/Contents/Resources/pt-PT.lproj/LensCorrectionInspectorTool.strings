@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Aberração cromática</string>
+	<key>1555.title</key>
+	<string>Ocultar áreas distorcidas</string>
+	<key>1700.label</key>
+	<string>Guia</string>
+	<key>1701.label</key>
+	<string>Exibir</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Lente</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Movimento</string>
+	<key>1741.title</key>
+	<string>Aberração cromática</string>
+	<key>1742.title</key>
+	<string>Padrão</string>
+	<key>1743.title</key>
+	<string>Analisar</string>
+	<key>1745.title</key>
+	<string>Personalizar</string>
+	<key>1757.title</key>
+	<string>Comprimento focal</string>
+	<key>1760.title</key>
+	<string>Abertura (f)</string>
+	<key>1823.title</key>
+	<string>Alterar x</string>
+	<key>1832.title</key>
+	<string>Alterar y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Perfil</string>
+	<key>893.title</key>
+	<string>Direção</string>
+	<key>894.title</key>
+	<string>Alterar</string>
+	<key>897.title</key>
+	<string>Direção</string>
+	<key>898.title</key>
+	<string>Inclinar</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>Queda de luz</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Queda de luz</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Correção de Difração</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>Diminuição da nitidez</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Queda de brilho</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>distorção</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Distorção</string>
+</dict>
+</plist>

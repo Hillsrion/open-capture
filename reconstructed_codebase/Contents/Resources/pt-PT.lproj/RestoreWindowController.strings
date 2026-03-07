@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Restaurar</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Local de backup:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Tentar novamente</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Próximo</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Restaurar Catálogo</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Célula do Texto</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Ocorreu um erro. Você gostaria de tentar novamente?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Copiando arquivos ...</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Não foram encontrados backups</string>
+	<key>W74-ST-qV9.title</key>
+	<string>Caminho</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Cancelar</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Mostrar no Localizador</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Isso irá substituir o banco de dados existente e não pode ser desfeito.
+Por favor, não force o encerramento ou desligue o computador durante a restauração.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Backup restaurado com sucesso</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>erro</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Abrir catálogo</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Cancelar</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Manchete</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Anterior</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Nome do catálogo</string>
+</dict>
+</plist>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>185.title</key>
+	<string>標題名稱</string>
+	<key>25a-h5-zmc.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>預設</string>
+	<key>396.title</key>
+	<string>Macintosh HD/Users/jfr/Pictures/Two of Each 3.7.6</string>
+	<key>397.title</key>
+	<string>位置</string>
+	<key>398.title</key>
+	<string>…</string>
+	<key>399.title</key>
+	<string>剩餘 20MB 可用存儲空間</string>
+	<key>400.title</key>
+	<string>剩餘空間</string>
+	<key>401.title</key>
+	<string>範例</string>
+	<key>402.title</key>
+	<string>My Great Safari.TIF</string>
+	<key>404.title</key>
+	<string>工作名稱</string>
+	<key>405.title</key>
+	<string>My Great Safari</string>
+	<key>408.title</key>
+	<string>取消</string>
+	<key>409.title</key>
+	<string>重新命名</string>
+	<key>419.title</key>
+	<string>格式</string>
+	<key>433.title</key>
+	<string>…</string>
+	<key>Blt-Ql-npf.title</key>
+	<string>查找並替換</string>
+	<key>IGF-8H-wTJ.title</key>
+	<string>圖像名稱</string>
+	<key>RmK-jn-2V2.title</key>
+	<string>工作與圖像名稱</string>
+	<key>YZM-cp-W0o.title</key>
+	<string>工作名稱與計數器</string>
+	<key>aAZ-NK-Xjh.title</key>
+	<string>查找</string>
+	<key>jdM-ZY-EwL.title</key>
+	<string>替換</string>
+	<key>qma-yp-kDJ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方法</string>
+	<key>y3Z-8k-G7y.title</key>
+	<string>圖像與工作名稱</string>
+	<key>znA-BM-BP2.title</key>
+	<string>文本與代號</string>
+</dict>
+</plist>

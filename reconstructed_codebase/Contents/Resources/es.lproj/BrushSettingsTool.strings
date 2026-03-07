@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>209.title</key>
+	<string>Este panel también se puede mostrar haciendo clic derecho en el Visor cuando se selecciona un cursor Pincel o Borrador.</string>
+	<key>rnX-Cy-M0S.title</key>
+	<string>Mostrar Flechas</string>
+</dict>
+</plist>

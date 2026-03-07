@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ ได้ถูกดาวน์โหลดและพร้อมใช้งานแล้ว คุณต้องการติดตั้งและเริ่ม %1$@ ใหม่เดี๋ยวนี้หรือไม่</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ ไม่สามารถรับการอัพเดทได้เมื่อถูกเรียกจากดิสก์แบบอ่านอย่างเดียวหรือซีดีรอม ย้าย</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ เป็นเวอร์ชั่นใหม่ล่าสุดแล้ว</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ เป็นเวอร์ชั่นใหม่ล่าสุดแล้ว
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ พร้อมให้ดาวน์โหลดแล้ว (คุณมีเวอร์ชั่น %3$@) ต้องการดาวน์โหลดเลยหรือไม่</string>
+	<key>%@ downloaded</key>
+	<string>ดาวน์โหลด %@ เสร็จสิ้น</string>
+	<key>%@ of %@</key>
+	<string>%1$@ จาก %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>%@ มีเวอร์ชั่นใหม่!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>เวอร์ชั่นใหม่ของ %@ พร้อมสำหรับการติดตั้งแล้ว</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>เกิดข้อผิดพลาดระหว่างการรับข้อมูลอัพเดท กรุณาลองใหม่ในภายหลัง</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>เกิดข้อผิดพลาดระหว่างพยายามดาวน์โหลดอัพเดท กรุณาลองใหม่ในภายหลัง</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>เกิดข้อผิดพลาดระหว่างการแตกไฟล์ที่ถูกบีบอัด กรุณาลองใหม่ในภายหลัง</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>เกิดข้อผิดพลาดระหว่างการประมวลผลฟีดอัพเดท กรุณาลองใหม่ในภายหลัง</string>
+	<key>Cancel</key>
+	<string>ยกเลิก</string>
+	<key>Cancel Update</key>
+	<string>ยกเลิกอัพเดท</string>
+	<key>Checking for updates…</key>
+	<string>ตรวจสอบอัพเดท…</string>
+	<key>Downloading update…</key>
+	<string>กำลังดาวน์โหลดอัพเดท…</string>
+	<key>Extracting update…</key>
+	<string>กำลังแตกไฟล์อัพเดท…</string>
+	<key>Install and Relaunch</key>
+	<string>ติดตั้งและเริ่มแอปพลิเคชันใหม่</string>
+	<key>Installing update…</key>
+	<string>กำลังติดตั้งอัพเดท…</string>
+	<key>Learn More…</key>
+	<string>เรียนรู้เพิ่มเติม…</string>
+	<key>OK</key>
+	<string>ตกลง</string>
+	<key>Ready to Install</key>
+	<string>พร้อมติดตั้ง</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>คุณต้องการให้ %1$@ ตรวจสอบอัพเดทโดยอัตโนมัติหรือไม่ คุณสามารถเริ่มการตรวจสอบอัพเดทด้วยตนเองได้ทุกเมื่อจากเมนูของ %1$@</string>
+	<key>Update Error!</key>
+	<string>อัพเดทผิดพลาด!</string>
+	<key>Updating %@</key>
+	<string>กำลังอัพเดท %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>%1$@ ไปยังโฟลเดอร์แอปพลิเคชัน และเรียกใช้งาน จากนั้นลองใหม่อีกครั้ง</string>
+	<key>You’re up to date!</key>
+	<string>คุณมีเวอร์ชั่นล่าสุดแล้ว!</string>
+</dict>
+</plist>

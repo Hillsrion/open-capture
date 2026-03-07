@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>Bilder farbig markieren</string>
+	<key>125.title</key>
+	<string>Bilder anpassen</string>
+	<key>131.title</key>
+	<string>Bilder aufnehmen</string>
+	<key>136.title</key>
+	<string>Rechte</string>
+	<key>157.label</key>
+	<string>Web</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>Über Web senden</string>
+	<key>166.title</key>
+	<string>Webbrowser</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>Über Web senden</string>
+	<key>171.title</key>
+	<string>Mobiles Gerät</string>
+	<key>203.title</key>
+	<string>Bilder bewerten</string>
+	<key>212.title</key>
+	<string>Rechte</string>
+	<key>213.title</key>
+	<string>Bilder bewerten</string>
+	<key>214.title</key>
+	<string>Bilder farbig markieren</string>
+	<key>243.title</key>
+	<string>Port Nummer</string>
+	<key>254.title</key>
+	<string>&lt;local IP&gt;</string>
+	<key>27.title</key>
+	<string>Passwort</string>
+	<key>291.title</key>
+	<string>&lt;local IP&gt;</string>
+	<key>306.title</key>
+	<string>Local IP</string>
+	<key>308.title</key>
+	<string>Local IP</string>
+	<key>43.title</key>
+	<string>Server Name</string>
+	<key>53.label</key>
+	<string>Basisdaten</string>
+	<key>54.label</key>
+	<string>Mobil</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>Basisdaten</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>Mobil</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>Web</string>
+	<key>63.title</key>
+	<string>Port Nummer</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Veröffentlichen</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>Mobil und Web</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>Mobiles Gerät</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>Webbrowser</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ordner</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stil</string>
+</dict>
+</plist>

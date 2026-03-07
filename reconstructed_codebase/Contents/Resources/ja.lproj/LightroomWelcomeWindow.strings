@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1QD-EF-Ywu.title</key>
+	<string>キャンセル</string>
+	<key>5EK-j8-ODd.title</key>
+	<string>詳しくはこちら…</string>
+	<key>7GG-dw-LUz.title</key>
+	<string>カタログとイメージは安全です</string>
+	<key>7Ph-T5-rPl.title</key>
+	<string>詳しくはこちら</string>
+	<key>BsR-81-gfg.title</key>
+	<string>Lightroom カタログ インポーター</string>
+	<key>BtN-DU-luM.title</key>
+	<string>しばらくかかるかもしれません</string>
+	<key>HAZ-Nj-moR.title</key>
+	<string>インポート</string>
+	<key>Kcg-Fm-v0w.title</key>
+	<string>カタログを選択…</string>
+	<key>NhM-y8-EG2.title</key>
+	<string>&lt;&lt; summary placeholder - do not localize &gt;&gt;</string>
+	<key>SZv-e8-CDZ.title</key>
+	<string>実行前にインポートプロセスのすべてをよく確認してください。</string>
+	<key>XAe-Xn-OX8.title</key>
+	<string>カタログをインポートする準備が整いました</string>
+	<key>XEl-l0-UXf.title</key>
+	<string>次のものがインポートされます</string>
+	<key>Ybc-1K-cno.title</key>
+	<string>カタログのインポートは、オリジナルのカタログやイメージファイルには影響ありません。</string>
+	<key>aNb-I8-rkE.title</key>
+	<string>詳しくはこちら…</string>
+	<key>bCc-dM-ZpV.title</key>
+	<string>Lightroom から Capture One に写真をインポートするには、これらの手順に従ってください。</string>
+	<key>fb6-Qp-o7J.title</key>
+	<string>Lightroom カタログ インポーター</string>
+	<key>nfn-Hm-UIh.title</key>
+	<string>&lt;&lt; path placeholder - do not localize &gt;&gt;</string>
+	<key>o4X-mv-IK0.title</key>
+	<string>イメージのすべてのメタデータと基本的な調整（クロップ、方向、ホワイトバランス、露出、コントラスト、彩度）がインポートされます。スマートコレクションの転送には、まず通常のコレクションに変換します。</string>
+	<key>peZ-gq-vBV.title</key>
+	<string>カタログ サイズによって時間がかかります。インポート中は、コンピュータの電源を切らずに Capture One を起動したままにしておきます。</string>
+	<key>sKJ-Sa-lTo.title</key>
+	<string>Lightroom カタログをインポート</string>
+	<key>t1E-dm-e2p.title</key>
+	<string>キャンセル</string>
+	<key>yp2-z7-JP2.title</key>
+	<string>選択されたカタログ</string>
+</dict>
+</plist>

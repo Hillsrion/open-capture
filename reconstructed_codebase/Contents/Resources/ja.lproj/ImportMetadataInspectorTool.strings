@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>57.title</key>
+	<string>説明</string>
+	<key>58.title</key>
+	<string>コピーライト</string>
+	<key>59.title</key>
+	<string>My コピーライト</string>
+	<key>60.title</key>
+	<string>My 記述</string>
+</dict>
+</plist>

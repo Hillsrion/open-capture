@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Salvar espaço de trabalho</string>
+	<key>12.title</key>
+	<string>Salvar</string>
+	<key>14.title</key>
+	<string>Cancelar</string>
+	<key>6.title</key>
+	<string>Nome:</string>
+</dict>
+</plist>

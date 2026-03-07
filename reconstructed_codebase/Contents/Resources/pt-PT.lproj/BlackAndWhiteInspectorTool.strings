@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Hv-MQ-Xea.ibExternalAccessibilityDescription</key>
+	<string>saturação</string>
+	<key>1Hv-MQ-Xea.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Amarelo</string>
+	<key>450.title</key>
+	<string>Habilitar Preto &amp; Branco</string>
+	<key>709.title</key>
+	<string>Destaques</string>
+	<key>887.title</key>
+	<string>Sombras</string>
+	<key>916.ibShadowedLabels[0]</key>
+	<string>Sensibilidade de cor</string>
+	<key>916.ibShadowedLabels[1]</key>
+	<string>Dividir tons</string>
+	<key>918.label</key>
+	<string>Sensibilidade à cor</string>
+	<key>919.label</key>
+	<string>Tons divididos</string>
+	<key>94N-k5-35A.ibExternalAccessibilityDescription</key>
+	<string>vermelho</string>
+	<key>94N-k5-35A.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Vermelho</string>
+	<key>953.title</key>
+	<string>Habilitar Preto &amp; Branco</string>
+	<key>FTZ-Ys-qEN.ibExternalAccessibilityDescription</key>
+	<string>vermelho</string>
+	<key>FTZ-Ys-qEN.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>OrD-M8-LcE.ibExternalAccessibilityDescription</key>
+	<string>vermelho</string>
+	<key>OrD-M8-LcE.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturação</string>
+	<key>epE-Bj-Ea0.ibExternalAccessibilityDescription</key>
+	<string>saturação</string>
+	<key>epE-Bj-Ea0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Verde</string>
+	<key>kA4-IV-KrW.ibExternalAccessibilityDescription</key>
+	<string>saturação</string>
+	<key>kA4-IV-KrW.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Magenta</string>
+	<key>ncO-s8-djm.ibExternalAccessibilityDescription</key>
+	<string>saturação</string>
+	<key>ncO-s8-djm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Azul</string>
+	<key>qmI-bB-Ky2.ibExternalAccessibilityDescription</key>
+	<string>vermelho</string>
+	<key>qmI-bB-Ky2.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>vL2-c5-pGT.ibExternalAccessibilityDescription</key>
+	<string>vermelho</string>
+	<key>vL2-c5-pGT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tonalidade</string>
+	<key>xhj-to-hD5.ibExternalAccessibilityDescription</key>
+	<string>saturação</string>
+	<key>xhj-to-hD5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ciano</string>
+</dict>
+</plist>

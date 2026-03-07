@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Terugzetten</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Back-up locatie:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Probeer opnieuw</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Volgende</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Catalogus terugzetten</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Tekstcel</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Er is een fout opgetreden. Nog eens proberen?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Kopiëren bestanden…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Geen back-ups gevonden</string>
+	<key>W74-ST-qV9.title</key>
+	<string>bestandslocatie</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Annuleer</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Toon in Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>Dit zal de bestaande database vervangen en kan niet ongedaan worden gemaakt.
+Schakel uw computer niet uit of stop geforeerd tijdens het terugzetten.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Backup succesvol teruggezet</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>fout</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Catalogus openen</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Annuleer</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Kop</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Vorige</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Catalogusnaam</string>
+</dict>
+</plist>

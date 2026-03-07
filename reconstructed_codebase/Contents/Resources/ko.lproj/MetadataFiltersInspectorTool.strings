@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>텍스트 셀</string>
+	<key>491.title</key>
+	<string>테이블 보기 셀</string>
+	<key>499.title</key>
+	<string>필터 그룹 보기 셀</string>
+	<key>572.title</key>
+	<string>필터 조건 추가</string>
+	<key>579.title</key>
+	<string>확인</string>
+	<key>580.title</key>
+	<string>필터 조건 추가:</string>
+	<key>582.title</key>
+	<string>취소</string>
+	<key>604.placeholderString</key>
+	<string>Format: "country &gt; state &gt; city &gt; location"</string>
+</dict>
+</plist>

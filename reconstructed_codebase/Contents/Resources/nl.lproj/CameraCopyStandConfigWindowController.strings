@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0d0-8R-tLw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Laag</string>
+	<key>6Sd-kz-UIh.title</key>
+	<string>Afstandseenheid</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Configureren</string>
+	<key>Fzy-PA-eLs.title</key>
+	<string>Omhoog</string>
+	<key>GwY-gy-ciJ.title</key>
+	<string>Harde stops</string>
+	<key>H8r-FG-Kr3.title</key>
+	<string>Centimeter</string>
+	<key>LKh-K1-Y6N.title</key>
+	<string>Onderste</string>
+	<key>N8e-Em-hgs.title</key>
+	<string>Inch</string>
+	<key>NrY-xR-emd.title</key>
+	<string>PPI</string>
+	<key>OIm-4a-xHW.title</key>
+	<string>Positie</string>
+	<key>Q9f-5E-WvF.title</key>
+	<string>Positieve richting</string>
+	<key>UHt-zv-9SR.title</key>
+	<string>Instellen</string>
+	<key>Xjf-k5-hQK.title</key>
+	<string>Definieer huidige positie</string>
+	<key>b1o-xe-f2L.title</key>
+	<string>Box</string>
+	<key>dmz-Zi-K8p.title</key>
+	<string>Positie-instellingen</string>
+	<key>dpt-fL-j8i.title</key>
+	<string>Positie</string>
+	<key>gf5-bG-nhb.title</key>
+	<string>Gereed</string>
+	<key>kXp-pb-vUY.title</key>
+	<string>Definieer huidige positie</string>
+	<key>knt-jR-igh.title</key>
+	<string>Snelheid instellingen</string>
+	<key>mo9-ag-5qk.title</key>
+	<string>Millimeter</string>
+	<key>r6Q-Yq-qbn.title</key>
+	<string>Resolutie instellingen</string>
+	<key>t88-sx-mlj.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Hoog</string>
+	<key>wha-sd-g2k.title</key>
+	<string>Box</string>
+	<key>x71-Fc-ePv.title</key>
+	<string>Bovenste</string>
+	<key>yDQ-Al-p0h.title</key>
+	<string>Virtuele stops</string>
+	<key>yOk-jx-9Zz.title</key>
+	<string>Omlaag</string>
+</dict>
+</plist>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ загружен и готов к использованию! Хотите установить и перезапустить %1$@?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Не удаётся обновить %1$@ с тома, предназначенного только для чтения.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>В настоящий момент %1$@ %2$@ является новейшей версией.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>В настоящий момент %1$@ %2$@ является новейшей версией.
+(У вас установлена %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ теперь доступен – у вас установлен %3$@. Хотите загрузить его сейчас?</string>
+	<key>%@ downloaded</key>
+	<string>%@ загружено</string>
+	<key>%@ of %@</key>
+	<string>%1$@ из %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Имеется новая версия %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Новая версия %@ готова к установке!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Произошла ошибка при извлечении информации обновления. Повторите попытку позже.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Произошла ошибка при загрузке обновления. Повторите попытку позже.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Произошла ошибка при извлечении архива. Повторите попытку позже.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Произошла ошибка при извлечении канала обновления.</string>
+	<key>Cancel</key>
+	<string>Отменить</string>
+	<key>Cancel Update</key>
+	<string>Отменить обновление</string>
+	<key>Checking for updates…</key>
+	<string>Проверяю наличие обновлений…</string>
+	<key>Downloading update…</key>
+	<string>Загружаю обновление…</string>
+	<key>Extracting update…</key>
+	<string>Извлекаю обновление…</string>
+	<key>Install and Relaunch</key>
+	<string>Установить и перезапустить</string>
+	<key>Installing update…</key>
+	<string>Устанавливаю обновление…</string>
+	<key>Learn More…</key>
+	<string>Узнать больше…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Готов к установке</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Должен ли %1$@ выполнять автоматическую проверку обновлений? Вы всегда можете выполнять проверку обновлений вручную в меню %1$@.</string>
+	<key>Update Error!</key>
+	<string>Ошибка при обновлении!</string>
+	<key>Updating %@</key>
+	<string>Обновляю %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Переместите %1$@ в Папку приложений, перезапустите его оттуда и повторите попытку.</string>
+	<key>You’re up to date!</key>
+	<string>У вас все обновлено!</string>
+</dict>
+</plist>

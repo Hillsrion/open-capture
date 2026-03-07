@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Anonimni profil sistema se uporablja za načrtovanje nadaljnega razvoja programa. V primeru vprašanj nas lahko kontaktirate.
+
+Pošljejo se sledeče informacije:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Samodejno namestite posodobitve</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Samodejno preverjaj</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Ne preverjaj</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Naj občasno preverjam, če so na voljo posodobitve?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Vključi anonimni profil sistema</string>
+</dict>
+</plist>

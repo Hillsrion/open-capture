@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>479.ibShadowedToolTip</key>
+	<string>缩放图像至填满单元格</string>
+	<key>480.title</key>
+	<string>缩放至填满</string>
+	<key>481.ibShadowedToolTip</key>
+	<string>旋转图像至填满单元格</string>
+	<key>482.title</key>
+	<string>旋转至填满</string>
+	<key>533.ibShadowedToolTip</key>
+	<string>重复每页一张图像</string>
+	<key>534.title</key>
+	<string>重复每页一张图像</string>
+	<key>RE7-8e-Cmc.ibShadowedToolTip</key>
+	<string>打印时包含叠加层。</string>
+	<key>qW6-mG-nAl.title</key>
+	<string>包含叠加层</string>
+	<key>vCy-SR-hV4.ibShadowedToolTip</key>
+	<string>打印时包含注释</string>
+	<key>vuu-ZS-7Gi.title</key>
+	<string>包含注释</string>
+</dict>
+</plist>

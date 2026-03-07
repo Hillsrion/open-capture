@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kr-6e-gGc.title</key>
+	<string>가로</string>
+	<key>G12-Sn-HBX.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>플립</string>
+	<key>I2U-2L-rjq.title</key>
+	<string>오른쪽</string>
+	<key>cI4-Zq-zzr.title</key>
+	<string>왼쪽</string>
+	<key>kyM-Qd-Xbo.title</key>
+	<string>세로</string>
+	<key>y2q-bz-5Ol.ibExternalAccessibilityDescription</key>
+	<string>각도</string>
+	<key>y2q-bz-5Ol.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>각도</string>
+	<key>yiE-dF-xvm.title</key>
+	<string>없음</string>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Ausschnitt berücksichtigen</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>Deckkraft der Überlagerung</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Deckkraft</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>Skalierung Überlagerung</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Skalierung</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Datei</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Vertikale Überlagerung</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Vertikal</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>Horizontale Überlagerung</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Horizontal</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Anzeigen</string>
+</dict>
+</plist>

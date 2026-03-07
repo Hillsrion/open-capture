@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Editera kortkommandon</string>
+	<key>10.title</key>
+	<string>Textruta</string>
+	<key>11.title</key>
+	<string>Textruta</string>
+	<key>13.title</key>
+	<string>Stäng</string>
+	<key>22.title</key>
+	<string>Felmeddelande</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>51.title</key>
+	<string>Fönster</string>
+	<key>59.title</key>
+	<string>OK</string>
+	<key>60.title</key>
+	<string>Avbryt</string>
+	<key>61.title</key>
+	<string>Skriv in ett namn för kortkommando gruppen:</string>
+	<key>62.title</key>
+	<string>fel (inställt programmatiskt)</string>
+	<key>75.title</key>
+	<string>Hjälp</string>
+	<key>8.headerCell.title</key>
+	<string>Kommando</string>
+	<key>9.headerCell.title</key>
+	<string>Nyckel</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Etikett</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Kommando</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Nyckel</string>
+</dict>
+</plist>

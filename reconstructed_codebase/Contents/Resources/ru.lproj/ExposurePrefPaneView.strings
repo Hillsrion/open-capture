@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>242.title</key>
+	<string>Включить предупреждение о недодержке</string>
+	<key>246.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>247.title</key>
+	<string>Предупреждение об экспозиции</string>
+	<key>248.title</key>
+	<string>Выбрать целевые уровни</string>
+	<key>253.title</key>
+	<string>Тени:</string>
+	<key>254.title</key>
+	<string>Света:</string>
+	<key>255.title</key>
+	<string>Инструмент уровней</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>Света:</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>Выбранный режим применяется к автоматическим коррекциям и при выборе пипеткой уровня теней и уровня яркости в светах.</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>Порог отсечения при автоматической коррекции уровней</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>Красный, Зеленый и Синий каналы</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>Режим каналов:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>Тени:</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>Канал RGB</string>
+</dict>
+</plist>

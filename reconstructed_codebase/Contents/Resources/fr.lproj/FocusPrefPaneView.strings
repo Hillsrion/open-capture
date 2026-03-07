@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>Seuil</string>
+	<key>14.title</key>
+	<string>Masque de Mise au Point</string>
+	<key>17.title</key>
+	<string>Couleur :</string>
+	<key>30.title</key>
+	<string>Opacité :</string>
+	<key>6.title</key>
+	<string>Défaut</string>
+</dict>
+</plist>

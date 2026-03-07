@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>無法找回外掛程式設定</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>外掛程式已禁用</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>Box</string>
+	<key>AQe-BF-01j.title</key>
+	<string>獲取更多外掛程式</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>該外掛程式無法禁用</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>未選擇外掛程式</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>該外掛程式沒有可自訂的設定</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>文本單元格</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>重試</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>外掛程式標題名稱</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>已啓用</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>功能</string>
+</dict>
+</plist>

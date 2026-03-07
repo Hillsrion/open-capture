@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>Textruta</string>
+	<key>491.title</key>
+	<string>Table View Cell</string>
+	<key>499.title</key>
+	<string>Filter Group View Cell</string>
+	<key>572.title</key>
+	<string>Lägg till filtervillkor</string>
+	<key>579.title</key>
+	<string>OK</string>
+	<key>580.title</key>
+	<string>Lägg till filtervillkor:</string>
+	<key>582.title</key>
+	<string>Avbryt</string>
+	<key>604.placeholderString</key>
+	<string>Format: \”land &gt; landsområde &gt; stad &gt; plats\”</string>
+</dict>
+</plist>

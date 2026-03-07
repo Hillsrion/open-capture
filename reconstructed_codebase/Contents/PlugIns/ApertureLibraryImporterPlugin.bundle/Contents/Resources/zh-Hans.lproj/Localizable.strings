@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Aperture Library…</key>
+	<string>Aperture 图库…</string>
+	<key>Could not open this Aperture library's database.</key>
+	<string>无法打开此 Aperture 图库数据库。</string>
+	<key>This library appears to be empty.</key>
+	<string>该图库为空。</string>
+	<key>This library is currently open.</key>
+	<string>该图库当前已开启。</string>
+	<key>Unable to read Aperture library properties.</key>
+	<string>无法读取 Aperture 图库属性。</string>
+</dict>
+</plist>

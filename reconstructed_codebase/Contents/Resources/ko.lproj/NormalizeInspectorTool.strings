@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27P-ZX-9aK.title</key>
+	<string>조정</string>
+	<key>L6O-bj-g3A.title</key>
+	<string>화이트 밸런스</string>
+	<key>Ml0-RG-Mdb.title</key>
+	<string>콘트라스트와 밝기</string>
+	<key>iP1-vZ-mrg.title</key>
+	<string>노출</string>
+	<key>ikq-WS-AgG.title</key>
+	<string>하이 다이나믹레인지</string>
+	<key>n35-IB-a6Q.title</key>
+	<string>선택</string>
+	<key>xc4-is-FBf.title</key>
+	<string>레벨</string>
+</dict>
+</plist>

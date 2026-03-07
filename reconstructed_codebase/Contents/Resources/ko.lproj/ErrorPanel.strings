@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.headerCell.title</key>
+	<string>날짜</string>
+	<key>5.title</key>
+	<string>이벤트</string>
+	<key>67.title</key>
+	<string>지우기</string>
+	<key>68.title</key>
+	<string>모두 표시</string>
+	<key>69.title</key>
+	<string>새 이벤트의 패널 표시</string>
+	<key>70.title</key>
+	<string>닫기</string>
+	<key>72.title</key>
+	<string>텍스트 셀</string>
+	<key>73.title</key>
+	<string>텍스트 셀</string>
+	<key>9.headerCell.title</key>
+	<string>설명</string>
+</dict>
+</plist>

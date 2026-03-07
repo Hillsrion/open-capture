@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>384.ibShadowedToolTip</key>
+	<string>Rotazione immagine in gradi</string>
+	<key>385.title</key>
+	<string>Rotazione</string>
+	<key>387.ibShadowedToolTip</key>
+	<string>Rotazione immagine in gradi</string>
+	<key>390.ibShadowedToolTip</key>
+	<string>Rotazione immagine in gradi</string>
+	<key>391.ibShadowedToolTip</key>
+	<string>Numero frame al secondo</string>
+	<key>393.title</key>
+	<string>Numero Frame</string>
+	<key>397.ibShadowedToolTip</key>
+	<string>Rotazione immagine in gradi</string>
+	<key>398.ibShadowedToolTip</key>
+	<string>Rotazione immagine in gradi</string>
+	<key>399.title</key>
+	<string>Pitch</string>
+</dict>
+</plist>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>クロップをどのくらい垂直に移動させるか。</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>キャンセル</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>単位</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>クロップの幅をどのくらい広げるか。</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>ウィンドウ</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ 位置</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>クロップを変更:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ サイズ</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>クロップの高さをどのくらい広げるか。</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>修正</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>クロップをどのくらい水平に動かすか。</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>クロップサイズを変更する場合、既存のクロップをどこに固定する。</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>単位</string>
+</dict>
+</plist>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>Вы можете вставить лицензионный код из буфера обмена</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>Вы можете вставить лицензионный код из буфера обмена</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>Вы можете вставить лицензионный код из буфера обмена</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>Что такое лицензионный код?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Дополнительные сведения о профилях Capture One</string>
+	<key>1348.title</key>
+	<string>Закрыть</string>
+	<key>1349.title</key>
+	<string>Кнопка</string>
+	<key>1350.title</key>
+	<string>Справка</string>
+	<key>1356.title</key>
+	<string>Активировать Capture One.</string>
+	<key>1357.title</key>
+	<string>Заполните следующие поля.</string>
+	<key>1362.title</key>
+	<string>Электронная почта:</string>
+	<key>1363.title</key>
+	<string>Имя:</string>
+	<key>1364.title</key>
+	<string>Фамилия:</string>
+	<key>1365.title</key>
+	<string>Страна:</string>
+	<key>1366.title</key>
+	<string>Получить профиль</string>
+	<key>1367.title</key>
+	<string>Текст, написанный мелким системным шрифтом</string>
+	<key>1369.title</key>
+	<string>Текст системного шрифта
+2 линии</string>
+	<key>1371.title</key>
+	<string>Лицензионный код:</string>
+	<key>1376.title</key>
+	<string>(Лицензионный код)</string>
+	<key>1377.title</key>
+	<string>Вставить</string>
+	<key>1378.title</key>
+	<string>Активировать Capture One.</string>
+	<key>1379.title</key>
+	<string>Для вас будет создан новый профиль. Проверьте сведения и введите пароль для нового профиля.</string>
+	<key>1380.title</key>
+	<string>Электронная почта</string>
+	<key>1381.title</key>
+	<string>Имя</string>
+	<key>1382.title</key>
+	<string>Фамилия</string>
+	<key>1383.title</key>
+	<string>Страна</string>
+	<key>1384.title</key>
+	<string>Электронная почта:</string>
+	<key>1385.title</key>
+	<string>Имя:</string>
+	<key>1386.title</key>
+	<string>Фамилия:</string>
+	<key>1387.title</key>
+	<string>Страна:</string>
+	<key>1388.placeholderString</key>
+	<string>Не менее 6 знаков</string>
+	<key>1389.placeholderString</key>
+	<string>Не менее 6 знаков</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>Зачем нужен пароль?</string>
+	<key>1391.title</key>
+	<string>Подтвердите:</string>
+	<key>1392.title</key>
+	<string>Пароль:</string>
+	<key>1393.title</key>
+	<string>Благодарим за активацию!</string>
+	<key>1394.title</key>
+	<string>Теперь эта версия Capture One активирована.</string>
+	<key>1395.title</key>
+	<string>Прочитать лицензионное соглашение</string>
+	<key>1396.title</key>
+	<string>Лицензия Capture One.</string>
+	<key>1397.title</key>
+	<string>Эта версия Capture One активирована.</string>
+	<key>1398.title</key>
+	<string>Лицензионный код:</string>
+	<key>1399.title</key>
+	<string>Владелец лицензии:</string>
+	<key>1400.title</key>
+	<string>Осталось бесплатных обновлений:</string>
+	<key>1401.title</key>
+	<string>Осталось активаций:</string>
+	<key>1404.title</key>
+	<string>(Строка типа лицензии)</string>
+	<key>1406.title</key>
+	<string>(Владелец лицензии)</string>
+	<key>1407.title</key>
+	<string>(Лицензионный код)</string>
+	<key>1408.title</key>
+	<string>Да, я хочу деактивировать лицензию на этом компьютере.</string>
+	<key>1409.title</key>
+	<string>Отменить активацию Capture One.</string>
+	<key>1410.title</key>
+	<string>Capture One закроется, когда вы деактивируете лицензию. При следующем открытии Capture One на этом компьютере вас попросят снова ввести лицензионный код.</string>
+	<key>1413.title</key>
+	<string>ОК</string>
+	<key>1414.title</key>
+	<string>Отмена</string>
+	<key>1415.title</key>
+	<string>Прислать пароль по электронной почте</string>
+	<key>1416.title</key>
+	<string>Пароль профиля:</string>
+	<key>1418.title</key>
+	<string>Вставить</string>
+	<key>1426.title</key>
+	<string>1 апреля 1976 г.</string>
+	<key>1427.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1428.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1436.title</key>
+	<string>Необновляемая лицензия</string>
+	<key>1443.title</key>
+	<string>Лицензионный код недействителен для этой версии Capture One.
+
+Чтобы продолжить использование Capture One, активируйте его с помощью действительного лицензионного кода или посетите интернет-магазин Capture One (будет запущен веб-браузер), в котором можно приобрести действительную лицензию.</string>
+	<key>1445.title</key>
+	<string>Посетить интернет-магазин...</string>
+	<key>1446.title</key>
+	<string>ОК</string>
+	<key>16.label</key>
+	<string>Активация</string>
+	<key>18.label</key>
+	<string>Пароль</string>
+	<key>24.label</key>
+	<string>Отмена активации</string>
+	<key>281.title</key>
+	<string>Введите пароль</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Вы можете вставить лицензионный код из буфера обмена</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>д ММММ г</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>Что такое бесплатные обновления и активации?</string>
+	<key>5.title</key>
+	<string>Лицензия</string>
+	<key>540.title</key>
+	<string>Новый профиль</string>
+	<key>546.title</key>
+	<string>Новый пароль</string>
+	<key>559.title</key>
+	<string>Заголовок</string>
+	<key>565.title</key>
+	<string>Лицензия</string>
+	<key>570.title</key>
+	<string>История активаций</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>Интернет активация</string>
+	<key>78.headerCell.title</key>
+	<string>Дата</string>
+	<key>79.headerCell.title</key>
+	<string>Идентификатор компьютера</string>
+	<key>80.headerCell.title</key>
+	<string>Тип активации</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>Ключ активации недействителен</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>Ручная активация</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(Идентификатор аппаратного средства)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>Регистрационный ключ нужно ввести в веб-форму, которая находится на странице вашего профиля на www.captureone.com</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>Подтвердить эл. адрес:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>Ключ активации:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>Enter the Activation Key returned on the website and press the button labeled 'Activate'</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>Идентификатор:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>Ключ регистрации:</string>
+</dict>
+</plist>

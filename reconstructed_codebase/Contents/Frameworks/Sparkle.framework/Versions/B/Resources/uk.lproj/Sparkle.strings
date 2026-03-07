@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ завантажений і готовий до використання! Бажаєте встановити і перезавантажити %1$@?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Під час роботи з %1$@ з тому, що призначений лише для читання, наприклад, образу диска чи оптичного диску, його неможливо оновити.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>У данний момент %1$@ %2$@ є останньою версією.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%У данний момент %1$@ %2$@ є останньою версією.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ доступна – ви маєте %3$@. Бажаєте завантажити її зараз?</string>
+	<key>%@ downloaded</key>
+	<string>%@ завантажено</string>
+	<key>%@ of %@</key>
+	<string>%1$@ із %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Доступна нова версія %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Нова версія %@ готова до встановлення!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Виникла помилка при отриманні інформації про оновлення. Спробуйте ще раз пізніше.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Виникла помилка при завантаження оновлення. Спробуйте ще раз пізніше.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Виникла помилка при розпаковуванні архіву. Спробуйте ще раз пізніше.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Виникла помилка розбору каналу оновлень.</string>
+	<key>Cancel</key>
+	<string>Відмінити</string>
+	<key>Cancel Update</key>
+	<string>Відмінити оновлення</string>
+	<key>Checking for updates…</key>
+	<string>Перевіряю наявність оновлень…</string>
+	<key>Downloading update…</key>
+	<string>Завантажую оновлення…</string>
+	<key>Extracting update…</key>
+	<string>Розпаковую оновлення…</string>
+	<key>Install and Relaunch</key>
+	<string>Встановити та перезавантажити</string>
+	<key>Installing update…</key>
+	<string>Встановлюю оновлення…</string>
+	<key>Learn More…</key>
+	<string>Дізнатись більше…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Готовий до встановлення</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Чи повинен %1$@ автоматично виконувати перевірку на оновлення? Ви завжди можете самостійно перевірити оновлення у меню %1$@.</string>
+	<key>Update Error!</key>
+	<string>Помилка оновлення!</string>
+	<key>Updating %@</key>
+	<string>Оновлюю %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Перемістіть %1$@ у папку з програмами, перезавантажте його звідти і спробуйте ще раз.</string>
+	<key>You’re up to date!</key>
+	<string>У вас остання версія!</string>
+</dict>
+</plist>

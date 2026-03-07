@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>157.title</key>
+	<string>30秒</string>
+	<key>158.title</key>
+	<string>1分</string>
+	<key>161.title</key>
+	<string>2分</string>
+	<key>162.title</key>
+	<string>5分</string>
+	<key>163.title</key>
+	<string>10分</string>
+	<key>164.title</key>
+	<string>20分</string>
+	<key>174.title</key>
+	<string>拡張子:</string>
+	<key>176.title</key>
+	<string>デフォルト</string>
+	<key>182.title</key>
+	<string>ライブプレビュー</string>
+	<key>183.title</key>
+	<string>Phase One の設定</string>
+	<key>185.title</key>
+	<string>一時停止:</string>
+	<key>226.title</key>
+	<string>テザーサポート</string>
+	<key>234.title</key>
+	<string>Canon</string>
+	<key>237.title</key>
+	<string>Nikon</string>
+	<key>2Yl-km-wBI.title</key>
+	<string>Phase One</string>
+	<key>34.title</key>
+	<string>TIF</string>
+	<key>35.title</key>
+	<string>IIQ</string>
+	<key>Gjs-2G-7hO.title</key>
+	<string>Sony</string>
+	<key>Lgf-eS-J2Q.title</key>
+	<string>Fujifilm</string>
+</dict>
+</plist>

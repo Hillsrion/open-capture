@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Aberration chrom.</string>
+	<key>1555.title</key>
+	<string>Masquer les zones déformées</string>
+	<key>1700.label</key>
+	<string>Onglet</string>
+	<key>1701.label</key>
+	<string>Affichage</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Objectif</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Bascule</string>
+	<key>1741.title</key>
+	<string>Aberration chrom.</string>
+	<key>1742.title</key>
+	<string>Par défaut</string>
+	<key>1743.title</key>
+	<string>Analyser</string>
+	<key>1745.title</key>
+	<string>Personnalisé</string>
+	<key>1757.title</key>
+	<string>Focale</string>
+	<key>1760.title</key>
+	<string>Diaph. (f)</string>
+	<key>1823.title</key>
+	<string>Décentrement x</string>
+	<key>1832.title</key>
+	<string>Décentrement y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil</string>
+	<key>893.title</key>
+	<string>Sens</string>
+	<key>894.title</key>
+	<string>Décalage</string>
+	<key>897.title</key>
+	<string>Sens</string>
+	<key>898.title</key>
+	<string>Incliner</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>Affaiblissement de lumière</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Affaiblissement de la lumière</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Correction de Diffraction</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>Affaiblissement de netteté</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Affaiblissement de la netteté</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>Distorsion</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Déformation</string>
+</dict>
+</plist>

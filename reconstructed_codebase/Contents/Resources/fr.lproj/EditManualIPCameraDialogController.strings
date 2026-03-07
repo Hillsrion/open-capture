@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8DV-BE-nxZ.title</key>
+	<string>Adresse</string>
+	<key>EwJ-aC-cJp.headerCell.title</key>
+	<string>Nom</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Gestionnaire d’Appareil Photo Réseau</string>
+	<key>TOe-TS-pWw.title</key>
+	<string>Nom</string>
+	<key>YNd-qF-0Qp.title</key>
+	<string>Supprimer</string>
+	<key>brq-Uo-oyi.title</key>
+	<string>Terminé</string>
+	<key>mtB-N1-gEr.title</key>
+	<string>Ajouter…</string>
+	<key>vkB-LR-UFE.headerCell.title</key>
+	<string>Adresse</string>
+</dict>
+</plist>

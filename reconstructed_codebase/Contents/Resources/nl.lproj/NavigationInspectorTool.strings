@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>146.title</key>
+	<string>Menu</string>
+	<key>148.title</key>
+	<string>Zoom Viewer passend</string>
+	<key>149.title</key>
+	<string>Viewer zoomen 100%</string>
+	<key>150.title</key>
+	<string>Viewer zoomen 200%</string>
+	<key>151.title</key>
+	<string>Viewer zoomen 400%</string>
+</dict>
+</plist>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>图像色标</string>
+	<key>125.title</key>
+	<string>调整图像</string>
+	<key>131.title</key>
+	<string>拍摄图像</string>
+	<key>136.title</key>
+	<string>权限</string>
+	<key>157.label</key>
+	<string>网页端</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>发布至互联网</string>
+	<key>166.title</key>
+	<string>网页浏览器</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>发布至互联网</string>
+	<key>171.title</key>
+	<string>移动设备</string>
+	<key>203.title</key>
+	<string>图像评级</string>
+	<key>212.title</key>
+	<string>权限</string>
+	<key>213.title</key>
+	<string>图像评级</string>
+	<key>214.title</key>
+	<string>图像色标</string>
+	<key>243.title</key>
+	<string>端口号码</string>
+	<key>254.title</key>
+	<string>&lt;本地 IP&gt;</string>
+	<key>27.title</key>
+	<string>密码</string>
+	<key>291.title</key>
+	<string>&lt;本地 IP&gt;</string>
+	<key>306.title</key>
+	<string>本地 IP</string>
+	<key>308.title</key>
+	<string>本地 IP</string>
+	<key>43.title</key>
+	<string>服务器名称</string>
+	<key>53.label</key>
+	<string>基本</string>
+	<key>54.label</key>
+	<string>移动端</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>基本</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>移动端</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>网页端</string>
+	<key>63.title</key>
+	<string>端口号码</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>发布至</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>移动端与网页端</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>移动设备</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>网页浏览器</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>文件夹</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>主题</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>116.title</key>
+	<string>キャンセル</string>
+	<key>148.title</key>
+	<string>現在のイメージでアルバムを作成</string>
+	<key>171.title</key>
+	<string>保存</string>
+	<key>172.title</key>
+	<string>キャンセル</string>
+	<key>173.title</key>
+	<string>スマートアルバム名:</string>
+	<key>188.title</key>
+	<string>ヘルプ</string>
+	<key>48.title</key>
+	<string>スマートアルバムを作成</string>
+</dict>
+</plist>

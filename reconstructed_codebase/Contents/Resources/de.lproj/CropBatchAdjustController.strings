@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Weite der vertikalen Verschiebung des Ausschnitts.</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Abbruch</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>Einheiten</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Wie viel der Breite des Ausschnitts hinzugefügt wird.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Fenster</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ Location</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Ausschnitt verändern:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ Size</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Wie viel der Höhe des Ausschnitts hinzufügen.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Ändern</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Weite der horizontalen Verschiebung des Ausschnitts.</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>An welcher Stelle der vorhandene Ausschnitt verankert werden soll, wenn der Ausschnitt geändert wird.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>Einheiten</string>
+</dict>
+</plist>

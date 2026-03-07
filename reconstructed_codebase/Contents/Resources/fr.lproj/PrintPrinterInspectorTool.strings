@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Résolution</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Nom de l'imprimante</string>
+	<key>469.title</key>
+	<string>Imprimante Canon modèle xxx</string>
+	<key>489.title</key>
+	<string>Papier</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Perceptif</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Taille de papier</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Ouvrir la fenêtre Mise en Page</string>
+	<key>509.title</key>
+	<string>Mise en Page...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Ouvrir le panneau de réglages d'impression</string>
+	<key>514.title</key>
+	<string>Paramètres d'impression...</string>
+	<key>544.title</key>
+	<string>Netteté</string>
+	<key>556.title</key>
+	<string>Compensation du point noir</string>
+	<key>558.title</key>
+	<string>color management text color management text color management text color management text color management text</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Netteté</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Netteté</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil couleur</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Mode de rendu</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Colorimétrie absolue</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Colorimétrie relative</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Saturation</string>
+</dict>
+</plist>

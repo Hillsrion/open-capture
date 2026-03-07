@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>當’移至回收箱’影響到未選變體時發出警告</string>
+	<key>18v-en-xAd.title</key>
+	<string>當選用帶有無效 LCC 的風格時發出警告</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>重置‘基本色彩校正’時發出警告</string>
+	<key>482.title</key>
+	<string>默認設定</string>
+	<key>694.title</key>
+	<string>在目錄中移動圖像和文件夾時發出警告</string>
+	<key>697.title</key>
+	<string>文科與文件夾</string>
+	<key>701.title</key>
+	<string>從硬碟上刪除圖像時發出警告</string>
+	<key>703.title</key>
+	<string>將圖像移至其他硬碟上的’會話回收箱’時發出警告</string>
+	<key>707.title</key>
+	<string>調整</string>
+	<key>708.title</key>
+	<string>當重置多個變體的調整時發出警告</string>
+	<key>734.title</key>
+	<string>輸出</string>
+	<key>789.title</key>
+	<string>如果’編輯所有已選變體’未開啟，而您選擇了多個變體時：</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>當處理多個變體，而’編輯所有已選變體’未開啟時發出警告</string>
+	<key>793.title</key>
+	<string>處理時發出警告</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>當列印多個變體，而’編輯所有已選變體’未開啟時發出警告</string>
+	<key>796.title</key>
+	<string>列印時發出警告</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>當採用多個變體創建網路印樣，而’編輯所有已選變體’未開啟時發出警告</string>
+	<key>799.title</key>
+	<string>創建網路印樣時發出警告</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>當採用多個變體創建網路印樣，而’編輯所有已選變體’未開啟時發出警告</string>
+	<key>805.title</key>
+	<string>導出時發出警告</string>
+	<key>811.title</key>
+	<string>當重置手動排序時發出警告</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>當修改或刪除已應用的 LCC 時發出警告。</string>
+	<key>816.title</key>
+	<string>修改 LCC 時發出警告</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>當採用多個變體創建 LCC，而’編輯所有已選變體’未開啟時發出警告。</string>
+	<key>820.title</key>
+	<string>創建 LCC 時發出警告</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>當應用 LCC 到多個變體上，而’編輯所有已選變體’未開啟時發出警告。</string>
+	<key>823.title</key>
+	<string>應用 LCC 時發出警告</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>當修改或刪除已應用的 LCC 時發出警告。</string>
+	<key>829.title</key>
+	<string>更新引擎時發出警告</string>
+	<key>834.title</key>
+	<string>當重置調整圖層的調整項時發出警告</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>當運用多個變體進行色像差分析，而’編輯所有已選變體’未開啟時發出警告。</string>
+	<key>847.title</key>
+	<string>進行色像差分析時發出警告</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>點陣化一個參數遮罩時發出警告</string>
+	<key>Yac-6R-euW.title</key>
+	<string>當從同一個變體複製又應用圖層時發出警告</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>當應用帶有無效 ICC 的風格時發出警告</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>當部分應用風格時發出警告</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>當應用 LCC 到多個變體上，而’編輯所有已選變體’未開啟時發出警告。</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>選擇 LCC 創建選項時發出警告。</string>
+	<key>vL9-36-JKs.title</key>
+	<string>複製不支援的調整項時發出警告</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>510.ibShadowedToolTip</key>
+	<string>显示 / 隐藏 纸张参考线</string>
+	<key>511.title</key>
+	<string>显示参考线</string>
+	<key>543.ibShadowedToolTip</key>
+	<string>显示 / 隐藏 纸张参考线</string>
+	<key>544.title</key>
+	<string>打印参考线</string>
+	<key>UWG-4M-2dn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>单位</string>
+</dict>
+</plist>

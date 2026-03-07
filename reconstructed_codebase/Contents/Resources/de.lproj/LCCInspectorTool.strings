@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>Farbstich</string>
+	<key>1495.title</key>
+	<string>Homogenes Licht aktivieren</string>
+	<key>1606.title</key>
+	<string>Staubentfernung</string>
+	<key>1699.title</key>
+	<string>Name des LCC-Profils</string>
+	<key>1700.title</key>
+	<string>Profil</string>
+	<key>1720.title</key>
+	<string>LCC erstellen</string>
+	<key>1785.title</key>
+	<string>LCC-Optionen zuweisen</string>
+	<key>1792.title</key>
+	<string>Abbrechen</string>
+	<key>1793.title</key>
+	<string>OK</string>
+	<key>1795.title</key>
+	<string>Licht-Nivellierung</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>Kelvin</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Homogenes Licht</string>
+</dict>
+</plist>

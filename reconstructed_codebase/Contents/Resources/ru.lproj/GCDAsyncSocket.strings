@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>Разъём закрыт удаленным партнером.</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>Истекло время попытки подключения к узлу.</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>Попытка создать сокет из сокета FD не удалась. getpeername() не удалась.</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>Операция чтения достигла установленной максимальной длины</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>Истекло время для операции чтения</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>Истекло время для операции записи</string>
+</dict>
+</plist>

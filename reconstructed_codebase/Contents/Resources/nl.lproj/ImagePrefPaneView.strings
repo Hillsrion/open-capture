@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Standaardwaarden</string>
+	<key>486.title</key>
+	<string>Cache</string>
+	<key>526.title</key>
+	<string>Inpakken EIP (alleen Sessies)</string>
+	<key>557.title</key>
+	<string>Voorvertoning (pixels):</string>
+	<key>559.title</key>
+	<string>Cache</string>
+	<key>563.title</key>
+	<string>Prioriteit ingesloten XMP boven ingesloten IPTC</string>
+	<key>565.title</key>
+	<string>Prioriteit secundaire XMP boven ingesloten metagegevens</string>
+	<key>568.title</key>
+	<string>Metagegevens</string>
+	<key>586.title</key>
+	<string>Formaat pakketbestand</string>
+	<key>590.title</key>
+	<string>Pak in als EIP bij importeren</string>
+	<key>591.title</key>
+	<string>Pak in als EIP bij opnemen</string>
+	<key>592.title</key>
+	<string>JPEG- en bewerkte TIFF-bestanden worden niet ingepakt als EIP.</string>
+	<key>601.title</key>
+	<string>Bewerken</string>
+	<key>602.title</key>
+	<string>TIFF-bewerking inschakelen</string>
+	<key>603.title</key>
+	<string>JPEG-bewerking inschakelen</string>
+	<key>621.title</key>
+	<string>Volledig synchroniseren</string>
+	<key>622.title</key>
+	<string>Laden</string>
+	<key>623.title</key>
+	<string>Geen</string>
+	<key>626.title</key>
+	<string>Auto Sync uit XMP:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>Voor nieuwe bestanden (aangemaakt bij importeren, vastleggen of EIP-conversie) heeft iedereen schrijfrechten, niet alleen de bestandseigenaar.</string>
+	<key>629.title</key>
+	<string>Schrijfrechten voor nieuwe bestanden toekennen aan iedereen</string>
+	<key>635.title</key>
+	<string>PNG-bewerking inschakelen</string>
+	<key>667.title</key>
+	<string>Standaard Engine voor verwerking:</string>
+</dict>
+</plist>

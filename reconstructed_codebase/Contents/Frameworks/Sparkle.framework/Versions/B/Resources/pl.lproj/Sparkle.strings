@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ został pobrany i jest gotowy do użycia! Czy chcesz teraz zainstalować i ponownie uruchomić %1$@?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ nie może zostać uaktualniony, ponieważ został uruchomiony z folderu tymczasowego lub tylko do odczytu.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ jest najnowszą dostępną wersją.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ jest najnowszą dostępną wersją.
+(aktualnie posiadasz %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ jest już dostępny (aktualnie posiadasz %3$@). Czy chcesz go teraz pobrać?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ jest już dostępny (aktualnie posiadasz %3$@). Czy chcesz otworzyć stronę z informacjami o tym uaktualnieniu?</string>
+	<key>%@ downloaded</key>
+	<string>Pobrano %@</string>
+	<key>%@ of %@</key>
+	<string>%1$@ z %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Dostępna jest nowa wersja %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Nowa wersja %@ gotowa do zainstalowania!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Błąd podczas pobierania informacji o uaktualnieniach. Spróbuj ponownie później.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Błąd podczas pobierania uaktualnienia. Spróbuj ponownie później.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Błąd podczas rozpakowywania archiwum. Spróbuj ponownie później</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Błąd podczas wczytywania danych o uaktualnieniu.</string>
+	<key>Cancel</key>
+	<string>Anuluj</string>
+	<key>Cancel Update</key>
+	<string>Anuluj uaktualnianie</string>
+	<key>Checking for updates…</key>
+	<string>Sprawdzam uaktualnienia…</string>
+	<key>Downloading update…</key>
+	<string>Pobieram uaktualnienie…</string>
+	<key>Extracting update…</key>
+	<string>Rozpakowuję uaktualnienie…</string>
+	<key>Install and Relaunch</key>
+	<string>Zainstaluj i uruchom ponownie</string>
+	<key>Installing update…</key>
+	<string>Instalowanie uaktualnienia…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Gotowy do instalacji</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Czy %1$@ ma automatycznie sprawdzać uaktualnienia? Zawsze możesz ręcznie sprawdzać z menu %1$@.</string>
+	<key>Update Error!</key>
+	<string>Błąd uaktualniania!</string>
+	<key>Updating %@</key>
+	<string>Uaktualniam %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Użyj Findera, aby skopiować %1$@ do folderu Programy, uruchom z nowej lokacji i spróbuj ponownie.</string>
+	<key>You’re up to date!</key>
+	<string>Jesteś na bieżąco!</string>
+</dict>
+</plist>

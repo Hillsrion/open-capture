@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>文本單元格</string>
+	<key>491.title</key>
+	<string>表格視圖儲存格</string>
+	<key>499.title</key>
+	<string>過濾組視圖儲存格</string>
+	<key>572.title</key>
+	<string>添加過濾條件</string>
+	<key>579.title</key>
+	<string>好</string>
+	<key>580.title</key>
+	<string>添加過濾條件：</string>
+	<key>582.title</key>
+	<string>取消</string>
+	<key>604.placeholderString</key>
+	<string>格式：”國家 / 地區 &gt; 州 / 省 &gt; 城市 &gt; 地點”</string>
+</dict>
+</plist>

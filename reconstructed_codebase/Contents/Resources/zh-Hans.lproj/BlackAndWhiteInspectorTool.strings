@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Hv-MQ-Xea.ibExternalAccessibilityDescription</key>
+	<string>饱和度</string>
+	<key>1Hv-MQ-Xea.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>黄色</string>
+	<key>450.title</key>
+	<string>启用黑白</string>
+	<key>709.title</key>
+	<string>高光</string>
+	<key>887.title</key>
+	<string>阴影</string>
+	<key>916.ibShadowedLabels[0]</key>
+	<string>色彩敏感度</string>
+	<key>916.ibShadowedLabels[1]</key>
+	<string>拆分色调</string>
+	<key>918.label</key>
+	<string>色彩敏感度</string>
+	<key>919.label</key>
+	<string>拆分色调</string>
+	<key>94N-k5-35A.ibExternalAccessibilityDescription</key>
+	<string>红色</string>
+	<key>94N-k5-35A.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>红色</string>
+	<key>953.title</key>
+	<string>启用黑白</string>
+	<key>FTZ-Ys-qEN.ibExternalAccessibilityDescription</key>
+	<string>红色</string>
+	<key>FTZ-Ys-qEN.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>饱和度</string>
+	<key>OrD-M8-LcE.ibExternalAccessibilityDescription</key>
+	<string>红色</string>
+	<key>OrD-M8-LcE.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>饱和度</string>
+	<key>epE-Bj-Ea0.ibExternalAccessibilityDescription</key>
+	<string>饱和度</string>
+	<key>epE-Bj-Ea0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>绿色</string>
+	<key>kA4-IV-KrW.ibExternalAccessibilityDescription</key>
+	<string>饱和度</string>
+	<key>kA4-IV-KrW.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>洋红</string>
+	<key>ncO-s8-djm.ibExternalAccessibilityDescription</key>
+	<string>饱和度</string>
+	<key>ncO-s8-djm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>蓝色</string>
+	<key>qmI-bB-Ky2.ibExternalAccessibilityDescription</key>
+	<string>红色</string>
+	<key>qmI-bB-Ky2.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>色相</string>
+	<key>vL2-c5-pGT.ibExternalAccessibilityDescription</key>
+	<string>红色</string>
+	<key>vL2-c5-pGT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>色相</string>
+	<key>xhj-to-hD5.ibExternalAccessibilityDescription</key>
+	<string>饱和度</string>
+	<key>xhj-to-hD5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>青色</string>
+</dict>
+</plist>

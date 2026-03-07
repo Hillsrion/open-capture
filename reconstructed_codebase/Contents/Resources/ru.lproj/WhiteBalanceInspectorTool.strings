@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>136.title</key>
+	<string>Настройка</string>
+	<key>137.title</key>
+	<string>Как снято</string>
+	<key>138.title</key>
+	<string>Облачно</string>
+	<key>238.title</key>
+	<string>Режим</string>
+	<key>EP8-Am-6Fw.ibExternalAccessibilityDescription</key>
+	<string>кельвин</string>
+	<key>EP8-Am-6Fw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Кельвин</string>
+	<key>n63-za-y7v.ibExternalAccessibilityDescription</key>
+	<string>оттенок</string>
+	<key>n63-za-y7v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Оттенок</string>
+</dict>
+</plist>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Rullfilm - fast storlek</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Bundet material - fast storlek</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Autonivå på inre beskärning</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Auto beskärning</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>På beskärning</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Beskär automatiskt när nästa bild tas</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Övre kant</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Bakgrundskontrast</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Ingen</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Marginalstorlek läggs på vid autobeskärning.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Marginal</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Nedre kant</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Övre och högra kant</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Lågt objekt-bakgrundskontrast</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Räta upp</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Ingen</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Löst material</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metod</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Genomsnitt</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Vänster kant</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Bundet material</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Marginalstorlek läggs på vid autobeskärning.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Löst material - bestämd storlek</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optimering</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Marginalstorlek läggs på vid autobeskärning.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Ingen</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Höger kant</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Vid exponering</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Vänster och nedre kant</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Utlösare</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Övre och vänstra kant</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Medium objekt-bakgrundskontrast</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Höger och nedre kant</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Automatisk beskärning</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Ställ in styrande beskärning</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Väldigt lågt objekt - fast storlek</string>
+</dict>
+</plist>

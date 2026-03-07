@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Ostrzegaj, gdy polecenie „Przenieś do kosza” zadziała na niewybrane warianty</string>
+	<key>18v-en-xAd.title</key>
+	<string>Ostrzegaj przy zastosowaniu stylu z niepoprawnym LCC</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Ostrzegaj przy resetowaniu podstawowej korekcji koloru</string>
+	<key>482.title</key>
+	<string>Wartości domyślne</string>
+	<key>694.title</key>
+	<string>Ostrzegaj przy przenoszeniu obrazów i folderów w katalogu</string>
+	<key>697.title</key>
+	<string>Pliki i foldery</string>
+	<key>701.title</key>
+	<string>Ostrzegaj przy usuwaniu obrazów z dysku</string>
+	<key>703.title</key>
+	<string>Ostrzegaj przy przenoszeniu obrazów do kosza sesji z innego dysku</string>
+	<key>707.title</key>
+	<string>Dopasowania</string>
+	<key>708.title</key>
+	<string>Ostrzegaj przy resetowaniu dopasowań na wielu wariantach</string>
+	<key>734.title</key>
+	<string>Wynik</string>
+	<key>789.title</key>
+	<string>Jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona, a wybrano wiele wariantów:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy przetwarzaniu wielu wariantów, jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>793.title</key>
+	<string>Ostrzegaj przy przetwarzaniu</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy drukowaniu wielu wariantów, jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>796.title</key>
+	<string>Ostrzegaj przy drukowaniu</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Ostrzegaj, gdy podczas tworzenia stykówki internetowej z wieloma wariantami opcja „Edytuj wszystkie wybrane warianty” jest wyłączona</string>
+	<key>799.title</key>
+	<string>Ostrzegaj przy tworzeniu stykówki internetowej</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Ostrzegaj, gdy podczas tworzenia stykówki internetowej z wieloma wariantami opcja „Edytuj wszystkie wybrane warianty” jest wyłączona</string>
+	<key>805.title</key>
+	<string>Ostrzegaj przy eksportowaniu</string>
+	<key>811.title</key>
+	<string>Ostrzegaj przy resetowaniu sortowania ręcznego</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy zmianie lub usuwaniu zastosowanej LCC.</string>
+	<key>816.title</key>
+	<string>Ostrzegaj przy zmianie LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy tworzeniu LCC dla wielu wariantów, jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>820.title</key>
+	<string>Ostrzegaj przy tworzeniu LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy stosowaniu LCC do wielu wariantów, jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>823.title</key>
+	<string>Ostrzegaj przy stosowaniu LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy zmianie lub usuwaniu zastosowanej LCC.</string>
+	<key>829.title</key>
+	<string>Ostrzegaj przy aktualizacji silnika</string>
+	<key>834.title</key>
+	<string>Ostrzegaj przy resetowaniu dopasowań na warstwie dopasowań</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy analizowaniu aberracji chromatycznej z wieloma wariantami, a opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>847.title</key>
+	<string>Ostrzegaj przy analizowaniu aberracji chromatycznej</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Ostrzegaj przy rasteryzowaniu maski parametrycznej</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Ostrzegaj przy zastosowaniu warstw do wariantu, z którego zostały skopiowane</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Ostrzegaj przy zastosowaniu stylu z niepoprawnym ICC</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Ostrzegaj przy częściowym zastosowaniu stylu</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Ostrzegaj przy stosowaniu LCC do wielu wariantów, jeśli opcja „Edytuj wszystkie wybrane warianty” jest wyłączona.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Ostrzegaj przy wybieraniu opcji tworzenia LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Ostrzegaj przy kopiowaniu nieobsługiwanych dopasowań</string>
+</dict>
+</plist>

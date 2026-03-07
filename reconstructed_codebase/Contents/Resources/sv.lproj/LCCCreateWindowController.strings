@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Säkerställ att värdena för objektivkorrigering är korrekta innan en LCC skapas.</string>
+	<key>1.title</key>
+	<string>Skapa LCC val</string>
+	<key>10.title</key>
+	<string>Ta med information om dammborttagning</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Skapar LCC utveckling</string>
+	<key>22.title</key>
+	<string>Skapar LCC</string>
+	<key>27.title</key>
+	<string>Skapar LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Skapa alltid med dessa inställningar. Kan ändras senare i LCC verktyget.</string>
+	<key>37.title</key>
+	<string>Visa inte igen</string>
+	<key>46.title</key>
+	<string>Fönster</string>
+	<key>5.title</key>
+	<string>Skapa</string>
+	<key>51.title</key>
+	<string>När LCC:n skapades blev det varningar. Vill du öppna Händelseloggen för att se dom?</string>
+	<key>54.title</key>
+	<string>Visa Händelselogg</string>
+	<key>55.title</key>
+	<string>Stäng</string>
+	<key>6.title</key>
+	<string>Avbryt</string>
+	<key>65.title</key>
+	<string>Avbryt</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Ta med korrektioner för teknisk kamera med vidvinkelobjektiv.</string>
+	<key>8.title</key>
+	<string>Inkludera korrektionsdata för vidvinkelobjektiv</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Ta med dammbortagningsinformation. Skapandet av LCC går lite långsammare.</string>
+</dict>
+</plist>

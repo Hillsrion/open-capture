@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0nb-tv-adw.title</key>
+	<string>長さ</string>
+	<key>1ui-qy-xtG.ibShadowedToolTip</key>
+	<string>解像度 定規を引く</string>
+	<key>9bo-Mu-PlE.ibShadowedToolTip</key>
+	<string>解像度 定規を設定</string>
+	<key>DXg-Do-40d.title</key>
+	<string>px/cm</string>
+	<key>Db8-xO-H48.title</key>
+	<string>cm</string>
+	<key>M4e-ku-3Bm.ibShadowedToolTip</key>
+	<string>長さの単位</string>
+	<key>Rl1-JQ-0eY.ibShadowedToolTip</key>
+	<string>解像度の単位</string>
+	<key>SUh-jZ-b24.title</key>
+	<string>px/mm</string>
+	<key>T3C-zc-BTc.title</key>
+	<string>mm</string>
+	<key>WF0-dW-OoL.title</key>
+	<string>in</string>
+	<key>aKK-Md-MYM.ibShadowedToolTip</key>
+	<string>長さ 定規を設定</string>
+	<key>cCM-Xg-iQj.title</key>
+	<string>解像度</string>
+	<key>fJY-12-BCy.title</key>
+	<string>px/in</string>
+	<key>hKu-CW-XlU.title</key>
+	<string>表示</string>
+</dict>
+</plist>

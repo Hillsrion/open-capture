@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Раз в день</string>
+	<key>105.title</key>
+	<string>Авто</string>
+	<key>106.title</key>
+	<string>Никогда</string>
+	<key>107.title</key>
+	<string>Расположение:</string>
+	<key>108.title</key>
+	<string>Напомнить при закрытии:</string>
+	<key>112.title</key>
+	<string>Никогда</string>
+	<key>113.title</key>
+	<string>Авто</string>
+	<key>115.title</key>
+	<string>Аппаратное ускорение</string>
+	<key>116.title</key>
+	<string>Резервное копирование каталога</string>
+	<key>126.title</key>
+	<string>Всегда перезаписывать метаданные</string>
+	<key>127.title</key>
+	<string>Никогда не перезаписывать метаданные</string>
+	<key>128.title</key>
+	<string>Спрашивать при перезаписи метаданных</string>
+	<key>131.title</key>
+	<string>Создать новый альбом или выделить папку</string>
+	<key>132.title</key>
+	<string>Создать или заново использовать подходящие альбомы</string>
+	<key>133.title</key>
+	<string>Спрашивать при синхронизации наборов каталогов</string>
+	<key>134.title</key>
+	<string>Чтобы обновить изображения и альбомы в Capture One, можно использовать метаданные и сведения о наборе каталогов, полученные из Expression Media. Выберите действия для каждого типа сведений.</string>
+	<key>137.title</key>
+	<string>При добавлении спрашивать о включении подпапок</string>
+	<key>138.title</key>
+	<string>Всегда отвечать Да в диалоговом окне Включить подпапки</string>
+	<key>139.title</key>
+	<string>Всегда отвечать Нет в диалоговом окне Включить подпапки</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>142.title</key>
+	<string>Масштабировать с помощью колеса прокрутки</string>
+	<key>143.title</key>
+	<string>Просмотр</string>
+	<key>150.title</key>
+	<string>После более чем 5 минут бездействия</string>
+	<key>151.title</key>
+	<string>После более чем 10 минут бездействия</string>
+	<key>152.title</key>
+	<string>После более чем 30 минут бездействия</string>
+	<key>153.title</key>
+	<string>После более чем 1 часа бездействия</string>
+	<key>154.title</key>
+	<string>После более чем 2 часов бездействия</string>
+	<key>155.title</key>
+	<string>После более чем 4 часов бездействия</string>
+	<key>156.title</key>
+	<string>На первом кадре дня</string>
+	<key>157.title</key>
+	<string>Создать:</string>
+	<key>158.title</key>
+	<string>Коллекция недавних кадров</string>
+	<key>160.title</key>
+	<string>Открывать окно импорта при подключении карты памяти камеры</string>
+	<key>161.title</key>
+	<string>Импорт</string>
+	<key>162.title</key>
+	<string>Операции</string>
+	<key>163.title</key>
+	<string>Показывать окно автоматически</string>
+	<key>167.title</key>
+	<string>Избранные</string>
+	<key>170.title</key>
+	<string>Спрашивать о добавлении папки предыдущей сессии в Избранные</string>
+	<key>171.title</key>
+	<string>Всегда добавлять папку предыдущей сессии в Избранные</string>
+	<key>172.title</key>
+	<string>Никогда не добавлять папку предыдущей сессии в Избранные</string>
+	<key>176.title</key>
+	<string>Каталог и сессия</string>
+	<key>177.title</key>
+	<string>Открывать в новом окне</string>
+	<key>59.title</key>
+	<string>Каталог и cессии</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Каталог и cессии</string>
+	<key>60.title</key>
+	<string>Избранные</string>
+	<key>66.title</key>
+	<string>Формат упакованного файла</string>
+	<key>67.title</key>
+	<string>Коллекция недавних кадров</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Состояние:</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>Всегда</string>
+	<key>97.title</key>
+	<string>Раз в месяц</string>
+	<key>98.title</key>
+	<string>Никогда</string>
+	<key>99.title</key>
+	<string>Раз в неделю</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>Колесо прокрутки изменяет значение ползунка</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Панели инструментов</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Включить поддержку устройств Tangent</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option+колесо прокручивает вкладку инструментов</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Показать на старте</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Интеграция Tangent</string>
+</dict>
+</plist>

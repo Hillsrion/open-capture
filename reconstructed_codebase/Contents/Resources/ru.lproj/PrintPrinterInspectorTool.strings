@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Разрешение</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Имя принтера</string>
+	<key>469.title</key>
+	<string>Принтер Canon, модель xxx</string>
+	<key>489.title</key>
+	<string>Бумага</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Перцепционный</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Размер бумаги</string>
+	<key>506.title</key>
+	<string>А4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Открыть панель настроек страницы</string>
+	<key>509.title</key>
+	<string>Настройки страницы...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Открыть панель настроек печати</string>
+	<key>514.title</key>
+	<string>Настройки печати...</string>
+	<key>544.title</key>
+	<string>Усиление резкости</string>
+	<key>556.title</key>
+	<string>Компенсация черной точки</string>
+	<key>558.title</key>
+	<string>текст управления цветом текст управления цветом текст управления цветом текст управления цветом текст управления цветом</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Усиление резкости</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Усиление резкости</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Цветовой профиль</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Цель рендеринга</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Абсолютный колориметрический</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Относительный колориметрический</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Насыщенность</string>
+</dict>
+</plist>

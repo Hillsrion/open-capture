@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>173.title</key>
+	<string>Procurar...</string>
+	<key>176.title</key>
+	<string>Abrir</string>
+	<key>183.headerCell.title</key>
+	<string>Sessões recentes</string>
+	<key>186.title</key>
+	<string>Célula do Texto</string>
+	<key>208.title</key>
+	<string>Não há nenhum catálogo ou sessão recente</string>
+	<key>219.title</key>
+	<string>Recentes</string>
+	<key>221.ibShadowedToolTip</key>
+	<string>Um Catálogo é o melhor local para armazenar e organizar toda a sua biblioteca de imagens. Para trabalhar com imagens em um catálogo, elas precisam ser importadas pelo catálogo. Recomendado para a maioria dos fotógrafos.</string>
+	<key>222.title</key>
+	<string>Novo catálogo...</string>
+	<key>37.ibShadowedToolTip</key>
+	<string>Uma Sessão é uma maneira rápida e leve de trabalhar com um número limitado de imagens para um único trabalho ou evento. As imagens podem ser editadas navegando até seu local no disco ou importando-as para a sessão.</string>
+	<key>54.title</key>
+	<string>Cancelar</string>
+	<key>55.title</key>
+	<string>Nova sessão...</string>
+</dict>
+</plist>

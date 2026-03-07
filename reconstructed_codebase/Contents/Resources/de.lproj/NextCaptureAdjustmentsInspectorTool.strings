@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Varianten von Hauptvariante kopieren</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Anpassungen vom letzten aufgenommenen Bild übernehmen.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Von letzter Aufnahme kopieren</string>
+	<key>250.title</key>
+	<string>Menü</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Aufnahmen automatisch anpassen</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Varianten von letzter Variante kopieren</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ausrichtung</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Anpassungen vom letzten aufgenommenen Bild übernehmen.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Von letzter Aufnahme kopieren</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Varianten von letzter Variante kopieren</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Spezifisches von letzter Aufnahme kopieren</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Spezifisches von Hauptvariante kopieren</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Anpassungen der Hauptvariante kopieren</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Von Hauptvariante kopieren</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Spezifisches von letzter Aufnahme kopieren</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Standardanpassungen verwenden</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Voreinstellung</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Varianten von Hauptvariante kopieren</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stile</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Aus Zwischenablage kopieren</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Anpassungen der Hauptvariante kopieren</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Von Hauptvariante kopieren</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Aus Zwischenablage kopieren</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Standardanpassungen verwenden</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Voreinstellung</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Standard-ICC-Profil für die Kamera verwenden</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Standard</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Use the default orientation from the camera</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Standard</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>ICC-Profil vom letzten aufgenommenen Bild übernehmen.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Von letzter Aufnahme kopieren</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadaten</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Spezifisches von Hauptvariante kopieren</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sonstige</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>ICC-Profil von der Hauptvariante kopieren</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Von Hauptvariante kopieren</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC-Profil</string>
+</dict>
+</plist>

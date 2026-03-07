@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Formato de nome</string>
+	<key>13.title</key>
+	<string>Cancelar</string>
+	<key>14.title</key>
+	<string>OK</string>
+	<key>1jF-qm-LNb.title</key>
+	<string>OtherViews</string>
+	<key>59L-oO-NTp.title</key>
+	<string>Usados recentemente</string>
+	<key>74.title</key>
+	<string>Predefinições</string>
+	<key>76.title</key>
+	<string>OtherViews</string>
+	<key>77.title</key>
+	<string>Nome do trabalho e imagem</string>
+	<key>78.title</key>
+	<string>Nome do trabalho e contador</string>
+	<key>79.title</key>
+	<string>Nome da imagem e trabalho</string>
+	<key>80.title</key>
+	<string>Nome da imagem</string>
+	<key>84.title</key>
+	<string>Você pode editar o texto acima para atender às suas necessidades. Selecione os elementos dos grupos abaixo e arraste ou clique duas vezes para adicioná-los ao formato.</string>
+	<key>89.title</key>
+	<string>Salvar predefinição do usuário...</string>
+	<key>94.title</key>
+	<string>Formato</string>
+	<key>96.title</key>
+	<string>Tokens</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>Metadados - EXIF - Câmera</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>Metadados - IPTC - Getty Images</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>Data e Hora</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>Metadados - Básico</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>Metadados - EXIF - Exposição</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>Célula do Texto</string>
+	<key>XqK-3b-mox.title</key>
+	<string>Geral</string>
+	<key>f2N-un-vTh.title</key>
+	<string>Metadados - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>Metadados - Fornecedor Específico</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>Símbolos excluídos (Debug)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>Metadados - IPTC - Contato</string>
+	<key>im4-Sx-noG.title</key>
+	<string>Todas</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>Metadados - IPTC - Conteúdo</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>Grupo</string>
+	<key>pQh-ye-usp.title</key>
+	<string>Metadados - IPTC - Imagem</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>Metadata - IPTC - Status</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>Amostra</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>Seqüência de exemplo vai aqui</string>
+</dict>
+</plist>

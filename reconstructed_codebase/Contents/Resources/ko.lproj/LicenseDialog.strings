@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>클립보드의 라이센스 코드를 붙여넣을 수 있습니다.</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>클립보드의 라이센스 코드를 붙여넣을 수 있습니다.</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>클립보드의 라이센스 코드를 붙여넣을 수 있습니다.</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>라이센스 코드가 무엇입니까?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Capture One 프로파일에 대한 자세한 설명</string>
+	<key>1348.title</key>
+	<string>닫기</string>
+	<key>1349.title</key>
+	<string>버튼</string>
+	<key>1350.title</key>
+	<string>도움말</string>
+	<key>1356.title</key>
+	<string>Capture One 활성화</string>
+	<key>1357.title</key>
+	<string>아래 필드에 입력하십시오.</string>
+	<key>1362.title</key>
+	<string>전자 메일:</string>
+	<key>1363.title</key>
+	<string>이름:</string>
+	<key>1364.title</key>
+	<string>성:</string>
+	<key>1365.title</key>
+	<string>국가:</string>
+	<key>1366.title</key>
+	<string>프로파일 가져오기</string>
+	<key>1367.title</key>
+	<string>Small System Font Text</string>
+	<key>1369.title</key>
+	<string>System Font Text
+2 lines</string>
+	<key>1371.title</key>
+	<string>라이센스 코드:</string>
+	<key>1376.title</key>
+	<string>(라이센스 코드)</string>
+	<key>1377.title</key>
+	<string>붙여넣기</string>
+	<key>1378.title</key>
+	<string>Capture One 활성화</string>
+	<key>1379.title</key>
+	<string>새 프로파일이 만들어집니다. 정보를 확인하고 새 프로파일의 암호를 만드십시오.</string>
+	<key>1380.title</key>
+	<string>전자 메일</string>
+	<key>1381.title</key>
+	<string>이름</string>
+	<key>1382.title</key>
+	<string>성</string>
+	<key>1383.title</key>
+	<string>국가</string>
+	<key>1384.title</key>
+	<string>전자 메일:</string>
+	<key>1385.title</key>
+	<string>이름:</string>
+	<key>1386.title</key>
+	<string>성:</string>
+	<key>1387.title</key>
+	<string>국가:</string>
+	<key>1388.placeholderString</key>
+	<string>최소 6자</string>
+	<key>1389.placeholderString</key>
+	<string>최소 6자</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>패스워드가 필요한 이유는 무엇입니까?</string>
+	<key>1391.title</key>
+	<string>암호 확인:</string>
+	<key>1392.title</key>
+	<string>암호:</string>
+	<key>1393.title</key>
+	<string>활성화해 주셔서 감사합니다.</string>
+	<key>1394.title</key>
+	<string>이 버전의 Capture One이 활성화되었습니다.</string>
+	<key>1395.title</key>
+	<string>소프트웨어 라이센스 계약 보기</string>
+	<key>1396.title</key>
+	<string>Capture One 라이센스</string>
+	<key>1397.title</key>
+	<string>이 버전의 Capture One이 활성화되었습니다.</string>
+	<key>1398.title</key>
+	<string>라이센스 코드:</string>
+	<key>1399.title</key>
+	<string>사용자 정보:</string>
+	<key>1400.title</key>
+	<string>남은 무료 업그레이드:</string>
+	<key>1401.title</key>
+	<string>남은 활성화:</string>
+	<key>1402.title</key>
+	<string>-</string>
+	<key>1403.title</key>
+	<string>-</string>
+	<key>1404.title</key>
+	<string>(라이센스 유형 문자열)</string>
+	<key>1406.title</key>
+	<string>(정식 사용자)</string>
+	<key>1407.title</key>
+	<string>(라이센스 코드)</string>
+	<key>1408.title</key>
+	<string>예, 이 컴퓨터에서 라이센스를 비활성화를 원합니다.</string>
+	<key>1409.title</key>
+	<string>Capture One 비활성화</string>
+	<key>1410.title</key>
+	<string>라이센스를 비활성화하면 Capture One이 닫힙니다. 다음에 이 컴퓨터에서 Capture One을 열 때 라이센스 코드를 다시 입력하라는 메시지가 표시됩니다.</string>
+	<key>1413.title</key>
+	<string>확인</string>
+	<key>1414.title</key>
+	<string>취소</string>
+	<key>1415.title</key>
+	<string>내 암호를 전자 메일로 보내기</string>
+	<key>1416.title</key>
+	<string>프로파일 암호:</string>
+	<key>1418.title</key>
+	<string>붙여넣기</string>
+	<key>1426.title</key>
+	<string>1976년 4월 1일</string>
+	<key>1427.title</key>
+	<string>텍스트 셀</string>
+	<key>1428.title</key>
+	<string>텍스트 셀</string>
+	<key>1436.title</key>
+	<string>라이센스 업그레이드가 불가능함</string>
+	<key>1443.title</key>
+	<string>제공된 라이센스 코드가 이 버전의 Capture One에 유효하지 않습니다.
+
+Capture One을 계속 사용하기 위하여, 유효한 코드를 통하여 인증하거나 Capture One 온라인 스토어 (웹 브라우저 사용)에서 유효한 라이센스를 구매해주십시오.</string>
+	<key>1445.title</key>
+	<string>온라인 스토어 방문...</string>
+	<key>1446.title</key>
+	<string>확인</string>
+	<key>16.label</key>
+	<string>활성화</string>
+	<key>18.label</key>
+	<string>암호</string>
+	<key>20.label</key>
+	<string>ThankYou</string>
+	<key>22.label</key>
+	<string>ActivationInfo</string>
+	<key>24.label</key>
+	<string>비활성화</string>
+	<key>281.title</key>
+	<string>암호 입력</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>클립보드의 라이센스 코드를 붙여넣을 수 있습니다.</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>d MMMM y</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>무상 업그레이드와 인증은 무엇입니까?</string>
+	<key>5.title</key>
+	<string>라이센스</string>
+	<key>540.title</key>
+	<string>새 프로파일</string>
+	<key>546.title</key>
+	<string>새 암호</string>
+	<key>559.title</key>
+	<string>제목</string>
+	<key>565.title</key>
+	<string>라이센스</string>
+	<key>570.title</key>
+	<string>활성화 기록</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>온라인 활성화</string>
+	<key>78.headerCell.title</key>
+	<string>날짜</string>
+	<key>786.label</key>
+	<string>EntryFields</string>
+	<key>787.label</key>
+	<string>DisplayField</string>
+	<key>79.headerCell.title</key>
+	<string>컴퓨터 ID</string>
+	<key>80.headerCell.title</key>
+	<string>활성화 유형</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>활성화 키가 유효하지 않습니다.</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>수동 활성화</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(Hardware ID)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>아래 등록 키는 온라인 웹 형식으로 입력되어야 합니다. 이것은 www.captureone.com의 당신 프로파일에 로그인하여 확인할 수 있습니다.</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>이메일 확인:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>활성화 키:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>웹사이트에 활성화 키를 입력하고 ‘활성화’ 버튼을 누르십시오.</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>등록 키:</string>
+</dict>
+</plist>

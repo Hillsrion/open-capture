@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>65.ibShadowedToolTip</key>
+	<string>Réglage Auto des Images Importées</string>
+	<key>66.title</key>
+	<string>Régler Automatiquement</string>
+	<key>72.ibShadowedToolTip</key>
+	<string>Inclure Réglages Existants</string>
+	<key>73.title</key>
+	<string>Inclure Réglages Existants</string>
+	<key>SWB-m8-0GG.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Styles</string>
+</dict>
+</plist>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>복구</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>백업 위치:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>다시 시도하십시오.</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>다음</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>카탈록 복구</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>텍스트 셀</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>에러가 발생했습니다. 다시 시도하시겠습니까?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>파일 복사...</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>발견된 백업 없음</string>
+	<key>W74-ST-qV9.title</key>
+	<string>경로</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>취소</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Finder에 표시</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>이것은 기존 데이터베이스를 대체할 것이고 중단 불가합니다. 
+복구되는 동안 컴퓨터를 강제로 중단하거나 끄지 마십시오.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>백업이 성공적으로 복구되었습니다.</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>오류</string>
+	<key>osi-c2-YUn.title</key>
+	<string>카탈록 열기</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>취소</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>헤드라인</string>
+	<key>ygv-37-SJC.title</key>
+	<string>이전</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>카탈록 이름</string>
+</dict>
+</plist>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ 已下载完毕并可以使用。您想要现在安装 %1$@ 吗？</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>如果在下载位置运行此程序，则无法对 %1$@ 进行更新。</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>无法更新 %1$@，因为它运行于一个只读或临时位置。</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ 是当前的最新版本。</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ 是当前的最新版本（您正在运行 %3$@）。</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ 可供下载，您现在的版本是 %3$@。要现在下载吗？</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ 已经推出，您正在运行 %3$@。您要在网站上查看关于更新的更多信息吗？</string>
+	<key>%@ downloaded</key>
+	<string>%@ 已下载</string>
+	<key>%@ of %@</key>
+	<string>%1$@ / %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>新版本的 %@ 已经发布</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>新版本的 %@ 可以安装了</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>获取升级信息时出现错误，请稍后再试。</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>下载过程中出现错误，请稍后再试。</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>解压过程中出现错误，请稍后再试。</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>解析更新信息时出现错误，请稍后再试。</string>
+	<key>Cancel</key>
+	<string>取消</string>
+	<key>Cancel Update</key>
+	<string>取消更新</string>
+	<key>Checking for updates…</key>
+	<string>正在检查更新…</string>
+	<key>Downloading update…</key>
+	<string>正在下载更新…</string>
+	<key>Extracting update…</key>
+	<string>正在解压更新…</string>
+	<key>Install and Relaunch</key>
+	<string>安装并重启应用</string>
+	<key>Installing update…</key>
+	<string>正在安装更新…</string>
+	<key>Learn More…</key>
+	<string>查看更多…</string>
+	<key>OK</key>
+	<string>好</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>退出 %1$@，将其移至“应用程序”，并在那里重新启动，然后再试。</string>
+	<key>Ready to Install</key>
+	<string>可以开始安装了</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>您想让 %1$@ 在启动时自动检查更新么？您也可以在程序菜单 %1$@ 中手动检查。</string>
+	<key>Update Error!</key>
+	<string>更新错误！</string>
+	<key>Updating %@</key>
+	<string>正在更新 %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>移动 %1$@ 到应用程序文件夹并再试一次。</string>
+	<key>Version History</key>
+	<string>版本历史记录</string>
+	<key>You’re up to date!</key>
+	<string>您使用的就是最新版！</string>
+</dict>
+</plist>

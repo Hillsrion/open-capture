@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Pellicola in Rullini - Dimensione Fissa</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Materiale Rilegato - Dimensione Fissa</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Valori Tonali Automatici sul Ritaglio Interno</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Ritaglio Automatico</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Ritaglia</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Ritaglia auto. con l’acquisizione di una nuova immagine.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Margine Superiore</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pre-Pass</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Nessuno</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Con il Ritaglio Automatico si applica la funzione Riempimento.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Riempimento</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Margine Inferiore</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Margini Superiori a Destra</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Contrasto Oggetto-Sfondo Basso</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Raddrizza</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Nessuno</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Materiale non Rilegato</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metodo</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Media</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Margine Sinistro</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Materiale Rilegato</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Con il Ritaglio Automatico si applica la funzione Riempimento.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Materiale non Rilegato - Dimensione Fissa</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ottimizzazione</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Con il Ritaglio Automatico si applica la funzione Riempimento.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Nessuno</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Margine Destro</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Acquisizione</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Margini Inferiori a Sinistra</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Trigger</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Margini Superiori a Sinistra</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Contrasto Oggetto-Sfondo Medio</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Margini Inferiori a Destra</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Ritaglio automatico con creazione di un nuovo ritaglio.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Imposta il Ritaglio Principale</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Contrasto Oggetto-Sfondo Molto Basso</string>
+</dict>
+</plist>

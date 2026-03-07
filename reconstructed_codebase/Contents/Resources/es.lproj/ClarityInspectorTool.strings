@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3uB-Hd-hlv.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Método</string>
+	<key>4eU-we-CrP.ibExternalAccessibilityDescription</key>
+	<string>claridad</string>
+	<key>4eU-we-CrP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Claridad</string>
+	<key>HGC-Q7-zHa.title</key>
+	<string>Natural</string>
+	<key>MtW-6d-65A.title</key>
+	<string>Intensidad</string>
+	<key>QlG-5o-DBr.ibExternalAccessibilityDescription</key>
+	<string>estructura</string>
+	<key>QlG-5o-DBr.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Estructura</string>
+	<key>fSQ-BZ-Q4Z.title</key>
+	<string>Neutro</string>
+	<key>qTR-6X-eGH.title</key>
+	<string>Modo clásico</string>
+</dict>
+</plist>

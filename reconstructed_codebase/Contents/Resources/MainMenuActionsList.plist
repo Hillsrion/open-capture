@@ -1,0 +1,3888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>command</key>
+		<string>AddColorReadout</string>
+		<key>title</key>
+		<string>Add Color Readout</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>AiEraser</string>
+		<key>title</key>
+		<string>AI Eraser</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>ApplyAdjustments</string>
+		<key>title</key>
+		<string>Apply Adjustments</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>ApplyNormalization</string>
+		<key>title</key>
+		<string>Apply Normalization</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>AutoMask</string>
+		<key>title</key>
+		<string>AI Select</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>CopyAdjustments</string>
+		<key>title</key>
+		<string>Copy Adjustments</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Crop</string>
+		<key>title</key>
+		<string>Crop</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DeleteColorReadout</string>
+		<key>title</key>
+		<string>Delete Color Readout</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DrawAnnotations</string>
+		<key>title</key>
+		<string>Draw Annotations</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DrawCloningMask</string>
+		<key>title</key>
+		<string>Draw Cloning Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DrawHealingMask</string>
+		<key>title</key>
+		<string>Draw Healing Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DrawMagicMask</string>
+		<key>title</key>
+		<string>Magic Brush</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>DrawMask</string>
+		<key>title</key>
+		<string>Draw Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>EraseAnnotations</string>
+		<key>title</key>
+		<string>Erase Annotations</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>EraseMagicMask</string>
+		<key>title</key>
+		<string>Magic Eraser</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>EraseMask</string>
+		<key>title</key>
+		<string>Erase Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>GradientMask</string>
+		<key>title</key>
+		<string>Draw Linear Gradient Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>KeyStone</string>
+		<key>title</key>
+		<string>Keystone</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>KeyStoneHorizontal</string>
+		<key>title</key>
+		<string>Keystone Horizontal</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>KeyStoneVertical</string>
+		<key>title</key>
+		<string>Keystone Vertical</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>LivePreviewFocusPoint</string>
+		<key>title</key>
+		<string>Live View Focus Meter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Loupe</string>
+		<key>title</key>
+		<string>Loupe</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>MoveTo</string>
+		<key>title</key>
+		<string>Move to Selects Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Overlay</string>
+		<key>title</key>
+		<string>Move Overlay</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Pan</string>
+		<key>title</key>
+		<string>Pan</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickBasicColorCorrection</string>
+		<key>title</key>
+		<string>Direct Color Editor</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickColorCorrection</string>
+		<key>title</key>
+		<string>Pick Color Correction</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickFocusPoint</string>
+		<key>title</key>
+		<string>Pick Focus Point</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickHazeColor</string>
+		<key>title</key>
+		<string>Pick Haze Shadow Tone</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickHighlightLevel</string>
+		<key>title</key>
+		<string>Pick Highlight Level</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickLumaCurvePoint</string>
+		<key>title</key>
+		<string>Pick Luma Curve Point</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickNormalizeToolTarget</string>
+		<key>title</key>
+		<string>Pick Normalize Color</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickRGBCurvePoint</string>
+		<key>title</key>
+		<string>Pick RGB Curve Point</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickShadowLevel</string>
+		<key>title</key>
+		<string>Pick Shadow Level</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickSkinColorCorrection</string>
+		<key>title</key>
+		<string>Pick Skin Color Correction</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>PickWhiteBalance</string>
+		<key>title</key>
+		<string>Pick White Balance</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RadialMask</string>
+		<key>title</key>
+		<string>Draw Radial Gradient Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RemoveDust</string>
+		<key>title</key>
+		<string>Remove Dust</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RemoveSpot</string>
+		<key>title</key>
+		<string>Remove Spot</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RotateFreeHand</string>
+		<key>title</key>
+		<string>Rotate Freehand</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RotateLeft</string>
+		<key>title</key>
+		<string>Rotate Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>RotateRight</string>
+		<key>title</key>
+		<string>Rotate Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Select</string>
+		<key>title</key>
+		<string>Select</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Straighten</string>
+		<key>title</key>
+		<string>Straighten</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Trash</string>
+		<key>title</key>
+		<string>Remove</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>Watermark</string>
+		<key>title</key>
+		<string>Move Watermark</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>ZoomIn</string>
+		<key>title</key>
+		<string>Zoom-in</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>ZoomOut</string>
+		<key>title</key>
+		<string>Zoom-out</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_configureServicesMenu:</string>
+		<key>title</key>
+		<string>Services Settings…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_handleInsertFromContactsCommand:</string>
+		<key>title</key>
+		<string>Contact…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_handleInsertFromPasswordsCommand:</string>
+		<key>title</key>
+		<string>Passwords…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_noServicesApplyAction:</string>
+		<key>title</key>
+		<string>No Services Apply</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Show Map</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Add to Music as a Spoken Track</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Time Profile App Under Mouse</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Encode Selected Video Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Allocations &amp; Leaks</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Look Up in Dictionary</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Add to Reading List</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Search man Page Index in Terminal</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>New Email To Address</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Open man Page in Terminal</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Set Desktop Picture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Time Profile Entire System</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Show Info in Finder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>File Activity</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Time Profile Active Application</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Folder Actions Setup…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Toggle Instruments Recording</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Open URL</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Encode Selected Audio Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Convert Text to Half Width</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Scan with Microsoft Defender</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Search With Google</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Make New Sticky Note</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>New Terminal at Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>New Email With Selection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Show in Finder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Convert Text to Traditional Chinese</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Activity Monitor</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Convert Text to Full Width</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>New Terminal Tab at Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Open in Sourcetree</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Convert Text to Simplified Chinese</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>Open</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_processRequest:</string>
+		<key>title</key>
+		<string>System Trace</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_removeWindowFromStageManagerSet:</string>
+		<key>title</key>
+		<string>Remove Window from Set</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_tileLeft:</string>
+		<key>title</key>
+		<string>Left of Screen</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_tileRight:</string>
+		<key>title</key>
+		<string>Right of Screen</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomBottom:</string>
+		<key>title</key>
+		<string>Bottom</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomBottomAndTop:</string>
+		<key>title</key>
+		<string>Bottom &amp; Top</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomBottomLeft:</string>
+		<key>title</key>
+		<string>Bottom Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomBottomRight:</string>
+		<key>title</key>
+		<string>Bottom Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomBottomThreeUp:</string>
+		<key>title</key>
+		<string>Bottom &amp; Quarters</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomCenter:</string>
+		<key>title</key>
+		<string>Center</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomFill:</string>
+		<key>title</key>
+		<string>Fill</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomLeft:</string>
+		<key>title</key>
+		<string>Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomLeftAndRight:</string>
+		<key>title</key>
+		<string>Left &amp; Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomLeftThreeUp:</string>
+		<key>title</key>
+		<string>Left &amp; Quarters</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomQuarters:</string>
+		<key>title</key>
+		<string>Quarters</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomRight:</string>
+		<key>title</key>
+		<string>Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomRightAndLeft:</string>
+		<key>title</key>
+		<string>Right &amp; Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomRightThreeUp:</string>
+		<key>title</key>
+		<string>Right &amp; Quarters</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomTop:</string>
+		<key>title</key>
+		<string>Top</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomTopAndBottom:</string>
+		<key>title</key>
+		<string>Top &amp; Bottom</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomTopLeft:</string>
+		<key>title</key>
+		<string>Top Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomTopRight:</string>
+		<key>title</key>
+		<string>Top Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomTopThreeUp:</string>
+		<key>title</key>
+		<string>Top &amp; Quarters</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>_zoomUntile:</string>
+		<key>title</key>
+		<string>Return to Previous Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addCloneLayer:</string>
+		<key>title</key>
+		<string>Add New Clone Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addFilledLocalAdjustmentsLayer:</string>
+		<key>title</key>
+		<string>Add New Filled Adjustment Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addHealLayer:</string>
+		<key>title</key>
+		<string>Add New Heal Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addHorizontalGuide:</string>
+		<key>title</key>
+		<string>Add Horizontal Guide</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addLocalAdjustmentsLayer:</string>
+		<key>title</key>
+		<string>Add New Empty Adjustment Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addOrRemoveFromFavorites:</string>
+		<key>title</key>
+		<string>Add/Remove from Favorites</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addToCompareVariants:</string>
+		<key>title</key>
+		<string>Add Compare Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>addVerticalGuide:</string>
+		<key>title</key>
+		<string>Add Vertical Guide</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>alternateArrangeInFront:</string>
+		<key>title</key>
+		<string>Arrange in Front</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>analyzeLCC:</string>
+		<key>title</key>
+		<string>Create LCC…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAIColorGrade:</string>
+		<key>title</key>
+		<string>Apply Match Look</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAICropThroughShortcut:</string>
+		<key>title</key>
+		<string>Apply AI Crop</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAdjustments:</string>
+		<key>title</key>
+		<string>Apply Adjustments</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustContrastAndBrightness:</string>
+		<key>title</key>
+		<string>Contrast and Brightness</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustExposure:</string>
+		<key>title</key>
+		<string>Exposure</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustHighDynamicRange:</string>
+		<key>title</key>
+		<string>High Dynamic Range</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustKeystone:</string>
+		<key>title</key>
+		<string>Keystone (Vertical)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustLevels:</string>
+		<key>title</key>
+		<string>Levels</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustRotation:</string>
+		<key>title</key>
+		<string>Rotation</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoAdjustWhiteBalance:</string>
+		<key>title</key>
+		<string>White Balance</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyAutoDustRemoval:</string>
+		<key>title</key>
+		<string>Auto Dust Removal</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applyLCC:</string>
+		<key>title</key>
+		<string>Apply LCC</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>applySmartAdjustmentsThroughShortcut:</string>
+		<key>title</key>
+		<string>Apply</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>arrangeInFront:</string>
+		<key>title</key>
+		<string>Bring All to Front</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>autoAdjust:</string>
+		<key>title</key>
+		<string>Auto Adjust</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>autoPauseNewCaptureSelection:</string>
+		<key>title</key>
+		<string>Auto Pause</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>autoSelectsNewCaptureImmediately:</string>
+		<key>title</key>
+		<string>Immediately</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>autoSelectsNewCaptureNever:</string>
+		<key>title</key>
+		<string>Never</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>autoSelectsNewCaptureWhenReady:</string>
+		<key>title</key>
+		<string>When Ready</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>backupCatalog:</string>
+		<key>title</key>
+		<string>Backup Catalog…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>batchRenameImages:</string>
+		<key>title</key>
+		<string>Batch Rename Images…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>biggerBrush:</string>
+		<key>title</key>
+		<string>Increase Brush Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>capture:</string>
+		<key>title</key>
+		<string>Capture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorBlack:</string>
+		<key>title</key>
+		<string>Black</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorCyan:</string>
+		<key>title</key>
+		<string>Cyan</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorMagenta:</string>
+		<key>title</key>
+		<string>Magenta</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorRed:</string>
+		<key>title</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorWhite:</string>
+		<key>title</key>
+		<string>White</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGridColorYellow:</string>
+		<key>title</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorBlack:</string>
+		<key>title</key>
+		<string>Black</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorCyan:</string>
+		<key>title</key>
+		<string>Cyan</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorMagenta:</string>
+		<key>title</key>
+		<string>Magenta</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorRed:</string>
+		<key>title</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorWhite:</string>
+		<key>title</key>
+		<string>White</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>changeGuidesColorYellow:</string>
+		<key>title</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>checkForUpdatesStub:</string>
+		<key>title</key>
+		<string>Check for Updates…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>checkSpelling:</string>
+		<key>title</key>
+		<string>Check Spelling</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clearCompareVariant:</string>
+		<key>title</key>
+		<string>Clear Compare Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clearSelectedCompareVariants:</string>
+		<key>title</key>
+		<string>Clear Selected Compare Variants</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clearGuides:</string>
+		<key>title</key>
+		<string>Reset Guides</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clearLayerMask:</string>
+		<key>title</key>
+		<string>Clear Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerAOptionSelectedLastCapture:</string>
+		<key>title</key>
+		<string>Follow Capture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerAOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerAOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin to Client Viewer A</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerAOptionSelectedPrimary:</string>
+		<key>title</key>
+		<string>Follow Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerBOptionSelectedLastCapture:</string>
+		<key>title</key>
+		<string>Follow Capture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerBOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerBOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin to Client Viewer B</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerBOptionSelectedPrimary:</string>
+		<key>title</key>
+		<string>Follow Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerCOptionSelectedLastCapture:</string>
+		<key>title</key>
+		<string>Follow Capture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerCOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin to Client Viewer C</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerCOptionSelectedPin:</string>
+		<key>title</key>
+		<string>Pin Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>clientViewerCOptionSelectedPrimary:</string>
+		<key>title</key>
+		<string>Follow Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>cloneVariant:</string>
+		<key>title</key>
+		<string>Clone Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>closeAll:</string>
+		<key>title</key>
+		<string>Close All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>cloudSync:</string>
+		<key>title</key>
+		<string>Import from Cloud…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>collapseAllImages:</string>
+		<key>title</key>
+		<string>Collapse All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>collapseImageForPrimary:</string>
+		<key>title</key>
+		<string>Collapse Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>convertToPackage:</string>
+		<key>title</key>
+		<string>Pack as EIP</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>copy:</string>
+		<key>title</key>
+		<string>Copy</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>copyAdjustments:</string>
+		<key>title</key>
+		<string>Copy Adjustments</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>copyAndApplyAdjustments:</string>
+		<key>title</key>
+		<string>Copy and Apply Adjustments</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>copyKeywordsFromPrimaryVariantToNextCaptureKeywords:</string>
+		<key>title</key>
+		<string>Copy Keywords from Primary</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>copyMetadataFromPrimaryVariantToNextCaptureMetadata:</string>
+		<key>title</key>
+		<string>Copy Metadata values from Primary</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createAlbumsFromColorTag:</string>
+		<key>title</key>
+		<string>Color Tag</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createAlbumsFromRating:</string>
+		<key>title</key>
+		<string>Rating</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createAlbumsFromSelection:</string>
+		<key>title</key>
+		<string>Selection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createAlbumsFromSequenceId:</string>
+		<key>title</key>
+		<string>Sequence ID</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createNewCatalog:</string>
+		<key>title</key>
+		<string>New Catalog…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>createNewSession:</string>
+		<key>title</key>
+		<string>New Session…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>cut:</string>
+		<key>title</key>
+		<string>Cut</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseBrightness:</string>
+		<key>title</key>
+		<string>Brightness (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseBrushFlow:</string>
+		<key>title</key>
+		<string>Decrease Brush Flow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseBrushOpacity:</string>
+		<key>title</key>
+		<string>Decrease Brush Opacity</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseClarity:</string>
+		<key>title</key>
+		<string>Clarity (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseClarityStructure:</string>
+		<key>title</key>
+		<string>Structure (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceHighlightHue:</string>
+		<key>title</key>
+		<string>Highlight Hue (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceHighlightLightness:</string>
+		<key>title</key>
+		<string>Highlight Lightness (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceHighlightSaturation:</string>
+		<key>title</key>
+		<string>Highlight Saturation (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceHue:</string>
+		<key>title</key>
+		<string>Hue (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceMidtoneHue:</string>
+		<key>title</key>
+		<string>Midtone Hue (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceMidtoneLightness:</string>
+		<key>title</key>
+		<string>Midtone Lightness (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceMidtoneSaturation:</string>
+		<key>title</key>
+		<string>Midtone Saturation (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceSaturation:</string>
+		<key>title</key>
+		<string>Saturation (-2)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceShadowHue:</string>
+		<key>title</key>
+		<string>Shadow Hue (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceShadowLightness:</string>
+		<key>title</key>
+		<string>Shadow Lightness (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseColorBalanceShadowSaturation:</string>
+		<key>title</key>
+		<string>Shadow Saturation (-0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseContrast:</string>
+		<key>title</key>
+		<string>Contrast (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseDehazeAmount:</string>
+		<key>title</key>
+		<string>Amount (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseExposure:</string>
+		<key>title</key>
+		<string>Exposure (-0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseFilmGrainAmount:</string>
+		<key>title</key>
+		<string>Impact (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseFilmGrainGranularity:</string>
+		<key>title</key>
+		<string>Granularity (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseHDRBlack:</string>
+		<key>title</key>
+		<string>Black (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseHDRHighlight:</string>
+		<key>title</key>
+		<string>Highlight (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseHDRShadow:</string>
+		<key>title</key>
+		<string>Shadow (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseHDRWhite:</string>
+		<key>title</key>
+		<string>White (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseKeystoneAmount:</string>
+		<key>title</key>
+		<string>Keystone Amount  (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseKeystoneAspect:</string>
+		<key>title</key>
+		<string>Keystone Aspect  (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseKeystoneHorizontal:</string>
+		<key>title</key>
+		<string>Keystone Horizontal  (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseKeystoneSkew:</string>
+		<key>title</key>
+		<string>Keystone Skew  (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseKeystoneVertical:</string>
+		<key>title</key>
+		<string>Keystone Vertical  (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLayerOpacity:</string>
+		<key>title</key>
+		<string>Layer Opacity (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsBHighlight:</string>
+		<key>title</key>
+		<string>Highlight B (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsBMidtone:</string>
+		<key>title</key>
+		<string>Midtone B (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsBShadow:</string>
+		<key>title</key>
+		<string>Shadow B (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsGHighlight:</string>
+		<key>title</key>
+		<string>Highlight G (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsGMidtone:</string>
+		<key>title</key>
+		<string>Midtone G (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsGShadow:</string>
+		<key>title</key>
+		<string>Shadow G (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRGBHighlight:</string>
+		<key>title</key>
+		<string>Highlight RGB (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRGBMidtone:</string>
+		<key>title</key>
+		<string>Midtone RGB (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRGBShadow:</string>
+		<key>title</key>
+		<string>Shadow RGB (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRHighlight:</string>
+		<key>title</key>
+		<string>Highlight R (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRMidtone:</string>
+		<key>title</key>
+		<string>Midtone R (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsRShadow:</string>
+		<key>title</key>
+		<string>Shadow R (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetBHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight B (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetBShadow:</string>
+		<key>title</key>
+		<string>Target Shadow B (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetGHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight G (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetGShadow:</string>
+		<key>title</key>
+		<string>Target Shadow G (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight RGB (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetRHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight R (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetRShadow:</string>
+		<key>title</key>
+		<string>Target Shadow R (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseLevelsTargetShadow:</string>
+		<key>title</key>
+		<string>Target Shadow RGB (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseMoireAmount:</string>
+		<key>title</key>
+		<string>Amount (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseMoireRadius:</string>
+		<key>title</key>
+		<string>Pattern (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseNRColor:</string>
+		<key>title</key>
+		<string>Color (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseNRLongExp:</string>
+		<key>title</key>
+		<string>Single Pixel (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseNRLuminance:</string>
+		<key>title</key>
+		<string>Luminance (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseNoiseDetails:</string>
+		<key>title</key>
+		<string>Details (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseRotation:</string>
+		<key>title</key>
+		<string>Rotation (-0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseSaturation:</string>
+		<key>title</key>
+		<string>Saturation (-2)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseUSMAmount:</string>
+		<key>title</key>
+		<string>Amount (-10)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseUSMHaloControl:</string>
+		<key>title</key>
+		<string>Halo Control (-10.0)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseUSMRadius:</string>
+		<key>title</key>
+		<string>Radius (-0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseUSMThreshold:</string>
+		<key>title</key>
+		<string>Threshold (-0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseVignettingAmount:</string>
+		<key>title</key>
+		<string>Amount (-0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseWBKelvin:</string>
+		<key>title</key>
+		<string>Kelvin (-50)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decreaseWBTint:</string>
+		<key>title</key>
+		<string>Tint (-1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decrementCameraAperture:</string>
+		<key>title</key>
+		<string>Adjust Aperture (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decrementCameraEV:</string>
+		<key>title</key>
+		<string>Adjust Exposure Bias (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decrementCameraISO:</string>
+		<key>title</key>
+		<string>Adjust ISO (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decrementCameraShutter:</string>
+		<key>title</key>
+		<string>Adjust Shutter Speed (-)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>decrementCaptureCounter:</string>
+		<key>title</key>
+		<string>Decrement Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>delete:</string>
+		<key>title</key>
+		<string>Delete</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>deletePermanently:</string>
+		<key>title</key>
+		<string>Delete from Disk…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>deleteSelectedLayer:</string>
+		<key>title</key>
+		<string>Delete Selected Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>demoteVariant:</string>
+		<key>title</key>
+		<string>Demote Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>deselectAll:</string>
+		<key>title</key>
+		<string>Deselect All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>deselectPrimaryVariant:</string>
+		<key>title</key>
+		<string>Deselect Primary</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>displayHealAndCloneArrows:</string>
+		<key>title</key>
+		<string>Display Heal and Clone Arrows</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>displaySelectionPoints:</string>
+		<key>title</key>
+		<string>Display Selection Points</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>duplicateSelectedLayer:</string>
+		<key>title</key>
+		<string>Duplicate Selected Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>emptyTrash:</string>
+		<key>title</key>
+		<string>Empty Session Trash…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>expandAllImages:</string>
+		<key>title</key>
+		<string>Expand All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>expandImageForPrimary:</string>
+		<key>title</key>
+		<string>Expand Selected</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>exportCollectionAsCatalog:</string>
+		<key>title</key>
+		<string>Export Collection as Catalog…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>exportSelectedOriginals:</string>
+		<key>title</key>
+		<string>Export Original Files…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>extractFromPackage:</string>
+		<key>title</key>
+		<string>Unpack EIP</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>featherLocalAdjustmentMask:</string>
+		<key>title</key>
+		<string>Feather Mask…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>fillLocalAdjustmentMask:</string>
+		<key>title</key>
+		<string>Fill Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>hide:</string>
+		<key>title</key>
+		<string>Hide Capture One</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>hideOtherApplications:</string>
+		<key>title</key>
+		<string>Hide Others</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>import:</string>
+		<key>title</key>
+		<string>Import Images…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>importSession:</string>
+		<key>title</key>
+		<string>Import Session…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseBrightness:</string>
+		<key>title</key>
+		<string>Brightness (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseBrushFlow:</string>
+		<key>title</key>
+		<string>Increase Brush Flow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseBrushOpacity:</string>
+		<key>title</key>
+		<string>Increase Brush Opacity</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseClarity:</string>
+		<key>title</key>
+		<string>Clarity (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseClarityStructure:</string>
+		<key>title</key>
+		<string>Structure (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceHighlightHue:</string>
+		<key>title</key>
+		<string>Highlight Hue (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceHighlightLightness:</string>
+		<key>title</key>
+		<string>Highlight Lightness (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceHighlightSaturation:</string>
+		<key>title</key>
+		<string>Highlight Saturation (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceHue:</string>
+		<key>title</key>
+		<string>Hue (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceMidtoneHue:</string>
+		<key>title</key>
+		<string>Midtone Hue (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceMidtoneLightness:</string>
+		<key>title</key>
+		<string>Midtone Lightness (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceMidtoneSaturation:</string>
+		<key>title</key>
+		<string>Midtone Saturation (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceSaturation:</string>
+		<key>title</key>
+		<string>Saturation (+2)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceShadowHue:</string>
+		<key>title</key>
+		<string>Shadow Hue (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceShadowLightness:</string>
+		<key>title</key>
+		<string>Shadow Lightness (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseColorBalanceShadowSaturation:</string>
+		<key>title</key>
+		<string>Shadow Saturation (+0.01)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseContrast:</string>
+		<key>title</key>
+		<string>Contrast (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseDehazeAmount:</string>
+		<key>title</key>
+		<string>Amount (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseExposure:</string>
+		<key>title</key>
+		<string>Exposure (+0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseFilmGrainAmount:</string>
+		<key>title</key>
+		<string>Impact (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseFilmGrainGranularity:</string>
+		<key>title</key>
+		<string>Granularity (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseHDRBlack:</string>
+		<key>title</key>
+		<string>Black (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseHDRHighlight:</string>
+		<key>title</key>
+		<string>Highlight (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseHDRShadow:</string>
+		<key>title</key>
+		<string>Shadow (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseHDRWhite:</string>
+		<key>title</key>
+		<string>White (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseKeystoneAmount:</string>
+		<key>title</key>
+		<string>Keystone Amount  (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseKeystoneAspect:</string>
+		<key>title</key>
+		<string>Keystone Aspect  (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseKeystoneHorizontal:</string>
+		<key>title</key>
+		<string>Keystone Horizontal  (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseKeystoneSkew:</string>
+		<key>title</key>
+		<string>Keystone Skew  (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseKeystoneVertical:</string>
+		<key>title</key>
+		<string>Keystone Vertical  (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLayerOpacity:</string>
+		<key>title</key>
+		<string>Layer Opacity (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsBHighlight:</string>
+		<key>title</key>
+		<string>Highlight B (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsBMidtone:</string>
+		<key>title</key>
+		<string>Midtone B (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsBShadow:</string>
+		<key>title</key>
+		<string>Shadow B (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsGHighlight:</string>
+		<key>title</key>
+		<string>Highlight G (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsGMidtone:</string>
+		<key>title</key>
+		<string>Midtone G (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsGShadow:</string>
+		<key>title</key>
+		<string>Shadow G (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRGBHighlight:</string>
+		<key>title</key>
+		<string>Highlight RGB (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRGBMidtone:</string>
+		<key>title</key>
+		<string>Midtone RGB (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRGBShadow:</string>
+		<key>title</key>
+		<string>Shadow RGB (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRHighlight:</string>
+		<key>title</key>
+		<string>Highlight R (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRMidtone:</string>
+		<key>title</key>
+		<string>Midtone R (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsRShadow:</string>
+		<key>title</key>
+		<string>Shadow R (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetBHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight B (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetBShadow:</string>
+		<key>title</key>
+		<string>Target Shadow B (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetGHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight G (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetGShadow:</string>
+		<key>title</key>
+		<string>Target Shadow G (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight RGB (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetRHighlight:</string>
+		<key>title</key>
+		<string>Target Highlight R (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetRShadow:</string>
+		<key>title</key>
+		<string>Target Shadow R (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseLevelsTargetShadow:</string>
+		<key>title</key>
+		<string>Target Shadow RGB (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseMoireAmount:</string>
+		<key>title</key>
+		<string>Amount (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseMoireRadius:</string>
+		<key>title</key>
+		<string>Pattern (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseNRColor:</string>
+		<key>title</key>
+		<string>Color (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseNRLongExp:</string>
+		<key>title</key>
+		<string>Single Pixel (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseNRLuminance:</string>
+		<key>title</key>
+		<string>Luminance (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseNoiseDetails:</string>
+		<key>title</key>
+		<string>Details (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseRotation:</string>
+		<key>title</key>
+		<string>Rotation (+0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseSaturation:</string>
+		<key>title</key>
+		<string>Saturation (+2)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseUSMAmount:</string>
+		<key>title</key>
+		<string>Amount (+10)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseUSMHaloControl:</string>
+		<key>title</key>
+		<string>Halo Control (+10.0)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseUSMRadius:</string>
+		<key>title</key>
+		<string>Radius (+0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseUSMThreshold:</string>
+		<key>title</key>
+		<string>Threshold (+0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseVignettingAmount:</string>
+		<key>title</key>
+		<string>Amount (+0.1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseWBKelvin:</string>
+		<key>title</key>
+		<string>Kelvin (+50)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>increaseWBTint:</string>
+		<key>title</key>
+		<string>Tint (+1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>incrementCameraAperture:</string>
+		<key>title</key>
+		<string>Adjust Aperture (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>incrementCameraEV:</string>
+		<key>title</key>
+		<string>Adjust Exposure Bias (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>incrementCameraISO:</string>
+		<key>title</key>
+		<string>Adjust ISO (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>incrementCameraShutter:</string>
+		<key>title</key>
+		<string>Adjust Shutter Speed (+)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>invertApertureStepDirection:</string>
+		<key>title</key>
+		<string>Invert Aperture (+ / -)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>invertLocalAdjustmentMask:</string>
+		<key>title</key>
+		<string>Invert Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>invertSelection:</string>
+		<key>title</key>
+		<string>Invert Selection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>invertShutterAdjustmentDirection:</string>
+		<key>title</key>
+		<string>Invert Shutter Speed (+ / -)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>lessHardness:</string>
+		<key>title</key>
+		<string>Decrease Brush Hardness</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>loadMetadata:</string>
+		<key>title</key>
+		<string>Load Metadata</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>locateCollection:</string>
+		<key>title</key>
+		<string>Locate Folder…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>locateImage:</string>
+		<key>title</key>
+		<string>Locate Image…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>mergeHDRDirectly:</string>
+		<key>title</key>
+		<string>Merge to HDR with default</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>mergeHDRWithOptions:</string>
+		<key>title</key>
+		<string>Merge to HDR…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>mergePanorama:</string>
+		<key>title</key>
+		<string>Stitch to Panorama…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>miniaturizeAll:</string>
+		<key>title</key>
+		<string>Minimize All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>moreHardness:</string>
+		<key>title</key>
+		<string>Increase Brush Hardness</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>moveBackgroundAdjustmentsToNewLayer:</string>
+		<key>title</key>
+		<string>Move Image Layer Adjustments to New Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>moveToDocumentTrash:</string>
+		<key>title</key>
+		<string>Move to Catalog Trash</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>moveToFolder:</string>
+		<key>title</key>
+		<string>Add to Selects Album</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>newAlbum:</string>
+		<key>title</key>
+		<string>New Album…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>newGroup:</string>
+		<key>title</key>
+		<string>New Group…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>newProject:</string>
+		<key>title</key>
+		<string>New Project…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>newSmartAlbum:</string>
+		<key>title</key>
+		<string>New Smart Album…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>newVariant:</string>
+		<key>title</key>
+		<string>New Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openAbout:</string>
+		<key>title</key>
+		<string>About Capture One</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openChangeTimeStampWindow:</string>
+		<key>title</key>
+		<string>Change Capture Time</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openCloudSettingsWindow:</string>
+		<key>title</key>
+		<string>Manage Cloud Recipes</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openCloudSettingsWindow:</string>
+		<key>title</key>
+		<string>Manage Cloud Keyboard Shortcuts</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openCloudSettingsWindow:</string>
+		<key>title</key>
+		<string>Cloud Settings</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openCullingWindow:</string>
+		<key>title</key>
+		<string>Cull Images…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openDocument:</string>
+		<key>title</key>
+		<string>Open…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openExportDialog:</string>
+		<key>title</key>
+		<string>Export…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openFilterDialog:</string>
+		<key>title</key>
+		<string>Advanced Search…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openKeyboardShortcutEditor:</string>
+		<key>title</key>
+		<string>Edit Keyboard Shortcuts…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openLuminosityRangeDialog:</string>
+		<key>title</key>
+		<string>Luma Range…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openNagScreenResourceHub:</string>
+		<key>title</key>
+		<string>Resource Hub…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openNagScreenShop:</string>
+		<key>title</key>
+		<string>Shop…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openScriptingDictionary:</string>
+		<key>title</key>
+		<string>Open Scripting Dictionary</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>openUserScriptsFolder:</string>
+		<key>title</key>
+		<string>Open Scripts Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>orderFrontCharacterPalette:</string>
+		<key>title</key>
+		<string>Emoji &amp; Symbols</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>overlayModeEdit:</string>
+		<key>title</key>
+		<string>Edit mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>overlayModeOff:</string>
+		<key>title</key>
+		<string>Off</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>overlayModeStatus:</string>
+		<key>title</key>
+		<string>Status mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>paste:</string>
+		<key>title</key>
+		<string>Paste</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>performClose:</string>
+		<key>title</key>
+		<string>Close Window</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>performMiniaturize:</string>
+		<key>title</key>
+		<string>Minimize</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>performZoom:</string>
+		<key>title</key>
+		<string>Zoom Window</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>pickVariant:</string>
+		<key>title</key>
+		<string>Pick Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>printImages:</string>
+		<key>title</key>
+		<string>Print…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>process:</string>
+		<key>title</key>
+		<string>Export with previous settings</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>promoteVariant:</string>
+		<key>title</key>
+		<string>Promote Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rasterizeLocalAdjustmentMask:</string>
+		<key>title</key>
+		<string>Rasterize Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate0:</string>
+		<key>title</key>
+		<string>No Rating</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate1:</string>
+		<key>title</key>
+		<string>★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate2:</string>
+		<key>title</key>
+		<string>★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate3:</string>
+		<key>title</key>
+		<string>★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate4:</string>
+		<key>title</key>
+		<string>★★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rate5:</string>
+		<key>title</key>
+		<string>★★★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rebuildMenu</string>
+		<key>title</key>
+		<string>Update Scripts Menu</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>redo:</string>
+		<key>title</key>
+		<string>Redo</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>refineLocalAdjustmentMask:</string>
+		<key>title</key>
+		<string>Refine Mask…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>regenerateProxies:</string>
+		<key>title</key>
+		<string>Regenerate Previews</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>renameImage:</string>
+		<key>title</key>
+		<string>Rename Image</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetAdjustments:</string>
+		<key>title</key>
+		<string>Reset</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetCaptureCounter:</string>
+		<key>title</key>
+		<string>Reset Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetCrop:</string>
+		<key>title</key>
+		<string>Reset Crop</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetExceptComposition:</string>
+		<key>title</key>
+		<string>Reset Except Composition</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetExportCounter:</string>
+		<key>title</key>
+		<string>Reset Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetImportCounter:</string>
+		<key>title</key>
+		<string>Reset Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetOutputCounter:</string>
+		<key>title</key>
+		<string>Reset Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>resetRenameCounter:</string>
+		<key>title</key>
+		<string>Reset Counter</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>restoreCatalog:</string>
+		<key>title</key>
+		<string>Restore Catalog…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rotateLeft:</string>
+		<key>title</key>
+		<string>Rotate Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rotateRight:</string>
+		<key>title</key>
+		<string>Rotate Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>rotateSnap:</string>
+		<key>title</key>
+		<string>Rotate Snap</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>runToolbarCustomizationPalette:</string>
+		<key>title</key>
+		<string>Customize Toolbar…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>saveAsTemplate:</string>
+		<key>title</key>
+		<string>Save as Template…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>saveLayerAdjustmentsAsStyle:</string>
+		<key>title</key>
+		<string>Save Adjustments as Style…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>saveLayerAdjustmentsAsStyleBrush:</string>
+		<key>title</key>
+		<string>Save Adjustments as Style Brush…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectAll:</string>
+		<key>title</key>
+		<string>Select All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBackgroundLayer:</string>
+		<key>title</key>
+		<string>Select Background Layer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBrowserZoomL:</string>
+		<key>title</key>
+		<string>L</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBrowserZoomM:</string>
+		<key>title</key>
+		<string>M</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBrowserZoomS:</string>
+		<key>title</key>
+		<string>S</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBrowserZoomXL:</string>
+		<key>title</key>
+		<string>XL</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBrowserZoomXS:</string>
+		<key>title</key>
+		<string>XS</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag0:</string>
+		<key>title</key>
+		<string>None</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag1:</string>
+		<key>title</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag2:</string>
+		<key>title</key>
+		<string>Orange</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag3:</string>
+		<key>title</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag4:</string>
+		<key>title</key>
+		<string>Green</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag5:</string>
+		<key>title</key>
+		<string>Blue</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag6:</string>
+		<key>title</key>
+		<string>Pink</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByColorTag7:</string>
+		<key>title</key>
+		<string>Purple</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating0:</string>
+		<key>title</key>
+		<string>Unrated</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating1:</string>
+		<key>title</key>
+		<string>1 star</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating2:</string>
+		<key>title</key>
+		<string>2 stars</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating3:</string>
+		<key>title</key>
+		<string>3 stars</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating4:</string>
+		<key>title</key>
+		<string>4 stars</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectByRating5:</string>
+		<key>title</key>
+		<string>5 stars</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBySameColorTag:</string>
+		<key>title</key>
+		<string>Color Tag (None)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBySameRating:</string>
+		<key>title</key>
+		<string>Rating (Unrated)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBySameSequenceId:</string>
+		<key>title</key>
+		<string>Same Sequence ID</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectBySameVariantPosition:</string>
+		<key>title</key>
+		<string>Variant Position (1)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectFirst:</string>
+		<key>title</key>
+		<string>First</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectFirstChildCollection:</string>
+		<key>title</key>
+		<string>Step In Collection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectFromFilenameList:</string>
+		<key>title</key>
+		<string>Filename List…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectHotFolder:</string>
+		<key>title</key>
+		<string>Select Hot Folder…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>Adobe (generic)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>GoldenThread (ICC)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>GoldenThread (standard)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>Generic (media white)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>Off</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>Adobe (neutral)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLabOption:</string>
+		<key>title</key>
+		<string>Generic (D50)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectLast:</string>
+		<key>title</key>
+		<string>Last</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNext:</string>
+		<key>title</key>
+		<string>Next</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNextCollection:</string>
+		<key>title</key>
+		<string>Next Collection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNextInspector:</string>
+		<key>title</key>
+		<string>Next</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNextLocalAdjustmentLayerDown:</string>
+		<key>title</key>
+		<string>Select Next Layer (down)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNextLocalAdjustmentLayerUp:</string>
+		<key>title</key>
+		<string>Select Next Layer (up)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectNextPage:</string>
+		<key>title</key>
+		<string>Next Set</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectParentCollection:</string>
+		<key>title</key>
+		<string>Step Out Collection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectPrevious:</string>
+		<key>title</key>
+		<string>Previous</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectPreviousCollection:</string>
+		<key>title</key>
+		<string>Previous Collection</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectPreviousInspector:</string>
+		<key>title</key>
+		<string>Previous</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectPreviousPage:</string>
+		<key>title</key>
+		<string>Previous Set</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectPrimaryVariantOnly:</string>
+		<key>title</key>
+		<string>Select Primary Only</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortAperture:</string>
+		<key>title</key>
+		<string>Aperture</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortColorTag:</string>
+		<key>title</key>
+		<string>Color Tag</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortDate:</string>
+		<key>title</key>
+		<string>Date</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortFileExtension:</string>
+		<key>title</key>
+		<string>Extension</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortFileSize:</string>
+		<key>title</key>
+		<string>File Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortFocalLength:</string>
+		<key>title</key>
+		<string>Focal Length</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortHeight:</string>
+		<key>title</key>
+		<string>Height</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortISO:</string>
+		<key>title</key>
+		<string>ISO</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortLens:</string>
+		<key>title</key>
+		<string>Camera Lens</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortManual:</string>
+		<key>title</key>
+		<string>Manual</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortName:</string>
+		<key>title</key>
+		<string>Name</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortProcessedState:</string>
+		<key>title</key>
+		<string>Exported</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortRating:</string>
+		<key>title</key>
+		<string>Rating</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortSequenceID:</string>
+		<key>title</key>
+		<string>Sequence ID</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortShutterSpeed:</string>
+		<key>title</key>
+		<string>Shutter Speed</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectSortWidth:</string>
+		<key>title</key>
+		<string>Width</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab10:</string>
+		<key>title</key>
+		<string>Tool Tab 10</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab11:</string>
+		<key>title</key>
+		<string>Tool Tab 11</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab12:</string>
+		<key>title</key>
+		<string>Tool Tab 12</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab13:</string>
+		<key>title</key>
+		<string>Tool Tab 13</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab14:</string>
+		<key>title</key>
+		<string>Tool Tab 14</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab15:</string>
+		<key>title</key>
+		<string>Tool Tab 15</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab16:</string>
+		<key>title</key>
+		<string>Tool Tab 16</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab1:</string>
+		<key>title</key>
+		<string>Tool Tab 1</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab2:</string>
+		<key>title</key>
+		<string>Tool Tab 2</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab3:</string>
+		<key>title</key>
+		<string>Tool Tab 3</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab4:</string>
+		<key>title</key>
+		<string>Tool Tab 4</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab5:</string>
+		<key>title</key>
+		<string>Tool Tab 5</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab6:</string>
+		<key>title</key>
+		<string>Tool Tab 6</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab7:</string>
+		<key>title</key>
+		<string>Tool Tab 7</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab8:</string>
+		<key>title</key>
+		<string>Tool Tab 8</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>selectTab9:</string>
+		<key>title</key>
+		<string>Tool Tab 9</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAIColorGradeReference:</string>
+		<key>title</key>
+		<string>Set Match Look Reference</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAICropReferenceThroughShortcut:</string>
+		<key>title</key>
+		<string>Set as reference</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAsCaptureCollection:</string>
+		<key>title</key>
+		<string>Set as Capture Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAsCompareVariant:</string>
+		<key>title</key>
+		<string>Set As Compare Variant</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAsMoveToCollection:</string>
+		<key>title</key>
+		<string>Set as Selects Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAsOutputCollection:</string>
+		<key>title</key>
+		<string>Set as Output Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setAsTrashCollection:</string>
+		<key>title</key>
+		<string>Set as Trash Folder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setBatchRenameCounter:</string>
+		<key>title</key>
+		<string>Set Counter…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setBatchRenameCounterIncrement:</string>
+		<key>title</key>
+		<string>Set Increment…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCameraOrientation0:</string>
+		<key>title</key>
+		<string>0°</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCameraOrientation180:</string>
+		<key>title</key>
+		<string>180°</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCameraOrientation90L:</string>
+		<key>title</key>
+		<string>90° Left</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCameraOrientation90R:</string>
+		<key>title</key>
+		<string>90° Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCameraOrientationAuto:</string>
+		<key>title</key>
+		<string>Auto</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCaptureCounter:</string>
+		<key>title</key>
+		<string>Set Counter…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setCaptureCounterIncrement:</string>
+		<key>title</key>
+		<string>Set Increment…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag0:</string>
+		<key>title</key>
+		<string>None</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag1:</string>
+		<key>title</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag2:</string>
+		<key>title</key>
+		<string>Orange</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag3:</string>
+		<key>title</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag4:</string>
+		<key>title</key>
+		<string>Green</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag5:</string>
+		<key>title</key>
+		<string>Blue</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag6:</string>
+		<key>title</key>
+		<string>Pink</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setColorTag7:</string>
+		<key>title</key>
+		<string>Purple</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setExportCounter:</string>
+		<key>title</key>
+		<string>Set Counter…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setExportCounterIncrement:</string>
+		<key>title</key>
+		<string>Set Increment…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setImportCounter:</string>
+		<key>title</key>
+		<string>Set Counter…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setImportCounterIncrement:</string>
+		<key>title</key>
+		<string>Set Increment…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setOutputCounter:</string>
+		<key>title</key>
+		<string>Set Counter…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setOutputCounterIncrement:</string>
+		<key>title</key>
+		<string>Set Increment…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setSmartAdjustmentsReferenceThroughShortcut:</string>
+		<key>title</key>
+		<string>Set as Reference</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor0:</string>
+		<key>title</key>
+		<string>Black</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor1:</string>
+		<key>title</key>
+		<string>Dark</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor2:</string>
+		<key>title</key>
+		<string>Medium</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor3:</string>
+		<key>title</key>
+		<string>Light</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor4:</string>
+		<key>title</key>
+		<string>White</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>setViewerBackgroundColor5:</string>
+		<key>title</key>
+		<string>Very Dark</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showActivities:</string>
+		<key>title</key>
+		<string>Activities</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showContactSheet:</string>
+		<key>title</key>
+		<string>Export Web Contact Sheet…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showEULA:</string>
+		<key>title</key>
+		<string>View License Agreement</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showErrors:</string>
+		<key>title</key>
+		<string>Event Log</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showGuessPanel:</string>
+		<key>title</key>
+		<string>Show Spelling and Grammar</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showHelpGeneral:</string>
+		<key>title</key>
+		<string>Online User Guide</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showHelpSupport:</string>
+		<key>title</key>
+		<string>Capture One Support</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showLicenseInformation:</string>
+		<key>title</key>
+		<string>License…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showLivePreview:</string>
+		<key>title</key>
+		<string>Live View</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showManageLocks:</string>
+		<key>title</key>
+		<string>Manage Locks…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showNetworkCameraManager:</string>
+		<key>title</key>
+		<string>Phase One Network Cameras…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showPreferencesWindow:</string>
+		<key>title</key>
+		<string>Settings…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showPrimaryInFinder:</string>
+		<key>title</key>
+		<string>Show in Finder</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showPrimaryVariantInLibrary:</string>
+		<key>title</key>
+		<string>Show in Library</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showSetOrChangePassword:</string>
+		<key>title</key>
+		<string>Set or Change PIN…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>showViewerWindow:</string>
+		<key>title</key>
+		<string>Viewer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>smallerBrush:</string>
+		<key>title</key>
+		<string>Decrease Brush Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>startDictation:</string>
+		<key>title</key>
+		<string>Start Dictation…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>switchBeforeAfterMode:</string>
+		<key>title</key>
+		<string>Switch Before/After Mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>syncFolder:</string>
+		<key>title</key>
+		<string>Synchronize Folder…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>syncMetadata:</string>
+		<key>title</key>
+		<string>Sync Metadata</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>terminate:</string>
+		<key>title</key>
+		<string>Quit and Keep Windows</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>terminate:</string>
+		<key>title</key>
+		<string>Quit Capture One</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleAlwaysShowAnnotations:</string>
+		<key>title</key>
+		<string>Annotations</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleAlwaysShowReadouts:</string>
+		<key>title</key>
+		<string>Color Readouts</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleAutoAdvanceWhenRating:</string>
+		<key>title</key>
+		<string>Star Rated</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleAutoAdvanceWhenTagging:</string>
+		<key>title</key>
+		<string>Color Tagged</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBeforeAfterEnabled:</string>
+		<key>title</key>
+		<string>Before/After</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBlackAndWhite:</string>
+		<key>title</key>
+		<string>Toggle Black and White</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBrowserDisplayStateAuto:</string>
+		<key>title</key>
+		<string>Auto Hide Mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBrowserDisplayStateShown:</string>
+		<key>title</key>
+		<string>Show/Hide Browser</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBrowserPosition:</string>
+		<key>title</key>
+		<string>Place Browser Left/Right/Below</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleBrowserToolbarShown:</string>
+		<key>title</key>
+		<string>Browser Toolbar</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleCameraAF:</string>
+		<key>title</key>
+		<string>Start/Stop Camera Autofocus</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleCameraFineAF:</string>
+		<key>title</key>
+		<string>Start/Stop Camera Autofocus (Fine)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleCompositionMode:</string>
+		<key>title</key>
+		<string>Composition Mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleContinuousSpellChecking:</string>
+		<key>title</key>
+		<string>Check Spelling While Typing</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleCropOrientation:</string>
+		<key>title</key>
+		<string>Switch Crop Orientation</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleDocumentSharedMode:</string>
+		<key>title</key>
+		<string>Lock Catalog…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleEditPrimary:</string>
+		<key>title</key>
+		<string>Edit All Selected Variants</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleExposureWarningsEnabled:</string>
+		<key>title</key>
+		<string>Exposure Warning</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFacePanelShown:</string>
+		<key>title</key>
+		<string>Face Focus</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag0:</string>
+		<key>title</key>
+		<string>No Color Tag</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag1:</string>
+		<key>title</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag2:</string>
+		<key>title</key>
+		<string>Orange</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag3:</string>
+		<key>title</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag4:</string>
+		<key>title</key>
+		<string>Green</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag5:</string>
+		<key>title</key>
+		<string>Blue</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag6:</string>
+		<key>title</key>
+		<string>Pink</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_ColorTag7:</string>
+		<key>title</key>
+		<string>Purple</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating0:</string>
+		<key>title</key>
+		<string>No Rating</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating1:</string>
+		<key>title</key>
+		<string>★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating2:</string>
+		<key>title</key>
+		<string>★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating3:</string>
+		<key>title</key>
+		<string>★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating4:</string>
+		<key>title</key>
+		<string>★★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFilter_Rating5:</string>
+		<key>title</key>
+		<string>★★★★★</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFocusMaskShow:</string>
+		<key>title</key>
+		<string>Focus Mask</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleFullScreen:</string>
+		<key>title</key>
+		<string>Enter Full Screen</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHelpOverlay:</string>
+		<key>title</key>
+		<string>Tips</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHideJPGs:</string>
+		<key>title</key>
+		<string>Always Hide JPEG Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHidePNGs:</string>
+		<key>title</key>
+		<string>Always Hide PNG Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHideRAWs:</string>
+		<key>title</key>
+		<string>Always Hide RAW Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHideTIFFs:</string>
+		<key>title</key>
+		<string>Always Hide Processed TIFF Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHideVideos:</string>
+		<key>title</key>
+		<string>Always Hide Video Files</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleHotFolderMode:</string>
+		<key>title</key>
+		<string>Hot Folder Enabled</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleMultiView:</string>
+		<key>title</key>
+		<string>Multi View Mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleOverlayEnabled:</string>
+		<key>title</key>
+		<string>Overlay</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleProofMarginState:</string>
+		<key>title</key>
+		<string>Proof Margin</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleRecipeProofing:</string>
+		<key>title</key>
+		<string>Recipe Proofing</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleSelectedLocalAdjustmentLayerOnOff:</string>
+		<key>title</key>
+		<string>Toggle Layer On/Off</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleShowGrid:</string>
+		<key>title</key>
+		<string>Grid</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleShowGuides:</string>
+		<key>title</key>
+		<string>Guides</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleSlideShow:</string>
+		<key>title</key>
+		<string>Slide Show</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleSortingDirection:</string>
+		<key>title</key>
+		<string>Reverse</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleToolbarShown:</string>
+		<key>title</key>
+		<string>Toolbar</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleToolsDisplayStateAuto:</string>
+		<key>title</key>
+		<string>Auto Hide Mode</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleToolsDisplayStateShown:</string>
+		<key>title</key>
+		<string>Show/Hide Tools</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleToolsPosition:</string>
+		<key>title</key>
+		<string>Place Tools Left/Right</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleViewSelectiveColorChangesEnabled:</string>
+		<key>title</key>
+		<string>Selected Color Range</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleViewerLabels:</string>
+		<key>title</key>
+		<string>Labels</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleViewerShown:</string>
+		<key>title</key>
+		<string>Show/Hide Viewer</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>toggleViewerToolbarShown:</string>
+		<key>title</key>
+		<string>Viewer Toolbar</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>trash:</string>
+		<key>title</key>
+		<string>Delete (Move to Catalog Trash)</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>triggerMaskBackground:</string>
+		<key>title</key>
+		<string>Mask Background</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>triggerMaskPeople:</string>
+		<key>title</key>
+		<string>Mask People</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>triggerMaskSubject:</string>
+		<key>title</key>
+		<string>Mask Subject</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>undo:</string>
+		<key>title</key>
+		<string>Undo</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>unhideAllApplications:</string>
+		<key>title</key>
+		<string>Show All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>upgradeEngine:</string>
+		<key>title</key>
+		<string>Upgrade Engine</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>verifyCatalogOrSession:</string>
+		<key>title</key>
+		<string>Verify Catalog or Session…</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomAll:</string>
+		<key>title</key>
+		<string>Zoom All</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomBrowserIn:</string>
+		<key>title</key>
+		<string>Increase Thumbnail Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomBrowserOut:</string>
+		<key>title</key>
+		<string>Decrease Thumbnail Size</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewer100:</string>
+		<key>title</key>
+		<string>100%</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewer1600:</string>
+		<key>title</key>
+		<string>1600%</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewer200:</string>
+		<key>title</key>
+		<string>200%</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewer400:</string>
+		<key>title</key>
+		<string>400%</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewer800:</string>
+		<key>title</key>
+		<string>800%</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewerIn:</string>
+		<key>title</key>
+		<string>Zoom In</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewerOut:</string>
+		<key>title</key>
+		<string>Zoom Out</string>
+	</dict>
+	<dict>
+		<key>command</key>
+		<string>zoomViewerToFit:</string>
+		<key>title</key>
+		<string>To Fit</string>
+	</dict>
+</array>
+</plist>

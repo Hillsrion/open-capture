@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kr-6e-gGc.title</key>
+	<string>水平</string>
+	<key>G12-Sn-HBX.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>翻轉</string>
+	<key>I2U-2L-rjq.title</key>
+	<string>右</string>
+	<key>cI4-Zq-zzr.title</key>
+	<string>左</string>
+	<key>kyM-Qd-Xbo.title</key>
+	<string>垂直線</string>
+	<key>y2q-bz-5Ol.ibExternalAccessibilityDescription</key>
+	<string>角度</string>
+	<key>y2q-bz-5Ol.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>角度</string>
+	<key>yiE-dF-xvm.title</key>
+	<string>無</string>
+</dict>
+</plist>

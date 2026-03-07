@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>Backup</string>
+	<key>17.title</key>
+	<string>Abbrechen</string>
+	<key>21.label</key>
+	<string>Fortschritt</string>
+	<key>22.label</key>
+	<string>Warnung</string>
+	<key>37.title</key>
+	<string>Test-Integrität</string>
+	<key>39.title</key>
+	<string>Katalog optimieren</string>
+	<key>45.title</key>
+	<string>…</string>
+	<key>46.title</key>
+	<string>Backup Ort:</string>
+	<key>49.title</key>
+	<string>Auch:</string>
+	<key>78.label</key>
+	<string>Fehler</string>
+	<key>99.label</key>
+	<string>Fehler</string>
+</dict>
+</plist>

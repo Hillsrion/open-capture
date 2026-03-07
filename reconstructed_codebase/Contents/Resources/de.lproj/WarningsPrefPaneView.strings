@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Warnen, wenn die Aktion „In den Papierkorb verschieben“ nicht ausgewählte Varianten beinhaltet.</string>
+	<key>18v-en-xAd.title</key>
+	<string>Warnen, wenn ein Stil mit einem ungültigen LCC-Profil zugewiesen wird</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Warnen, wenn Basis-Farbkorrekturen zurückgesetzt werden</string>
+	<key>482.title</key>
+	<string>Voreinstellung</string>
+	<key>694.title</key>
+	<string>Warnen, wenn Bilder und Ordner innerhalb des Katalogs verschoben werden</string>
+	<key>697.title</key>
+	<string>Dateien und Ordner</string>
+	<key>701.title</key>
+	<string>Warnen, wenn Bilder von der Festplatte gelöscht werden</string>
+	<key>703.title</key>
+	<string>Warnen, wenn Bilder von einem anderen Laufwerk in den Sitzungspapierkorb verschoben werden</string>
+	<key>707.title</key>
+	<string>Anpassungen</string>
+	<key>708.title</key>
+	<string>Warnen, wenn Anpassungen von mehreren Varianten zurückgesetzt werden</string>
+	<key>734.title</key>
+	<string>Ausgabe</string>
+	<key>789.title</key>
+	<string>Wenn Ausgewählte Varianten bearbeiten ausgeschaltet ist und mehrere Varianten ausgewählt sind:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Warnen, wenn mehrere Varianten zur Verarbeitung ausgewählt sind und „Ausgewählte Varianten bearbeiten“ ausgeschaltet ist</string>
+	<key>793.title</key>
+	<string>Beim Verarbeiten warnen</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Warnen, wenn mehrere Varianten für den Druck ausgewählt sind und „Ausgewählte Varianten bearbeiten“ ausgeschaltet ist</string>
+	<key>796.title</key>
+	<string>Beim Drucken warnen</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Bei dem Erstellen eines Web-Kontaktbogens warnen wenn mehrere Varianten ausgewählt sind und Ausgewählte Varianten bearbeiten ausgeschaltet ist</string>
+	<key>799.title</key>
+	<string>Beim Erstellen eines Web-Kontaktbogens warnen</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Bei dem Erstellen eines Web-Kontaktbogens warnen wenn mehrere Varianten ausgewählt sind und Ausgewählte Varianten bearbeiten ausgeschaltet ist</string>
+	<key>805.title</key>
+	<string>Beim Exportieren warnen</string>
+	<key>811.title</key>
+	<string>Warnen, wenn die manuelle Sortierung zurückgesetzt wird</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Warnen, wenn die zugewiesene LCC geändert oder gelöscht wird.</string>
+	<key>816.title</key>
+	<string>Warnen, wenn LCC geändert wird</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Warnen, wenn LCC für mehrere Varianten erstellt wird falls „Alle ausgewählten Varianten bearbeiten“ ausgeschaltet ist.</string>
+	<key>820.title</key>
+	<string>Warnen, wenn LCC erstellt wird</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Warnen, wenn LCC mehreren Varianten zugewiesen wird falls Alle ausgewählten Varianten bearbeiten ausgeschaltet ist.</string>
+	<key>823.title</key>
+	<string>Warnen, wenn LCC zugewiesen wird</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Warnen, wenn die zugewiesene LCC geändert oder gelöscht wird.</string>
+	<key>829.title</key>
+	<string>Warnen, wenn die Engine aktualisiert wird</string>
+	<key>834.title</key>
+	<string>Warnen, wenn Anpassungen auf einer Anpassungsebene zurückgesetzt werden</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Warnen, wenn die Chromatische Aberration analysiert wird aber die Funktion "Alle ausgewählten Varianten bearbeiten" ausgeschaltet ist.</string>
+	<key>847.title</key>
+	<string>Warnen, wenn die Chromatische Aberration analysiert wird</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Warnen, wenn eine parametrische Maske gerastert wird</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Warnen beim Anwenden von Ebenen auf die Variante, von der sie kopiert wurde.</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Warnen, wenn ein Stil mit einem ungültigen ICC-Profil zugewiesen wird</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Warnen, wenn ein Stil nur teilweise zugewiesen wird</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Warnen, wenn LCC mehreren Varianten zugewiesen wird falls Alle ausgewählten Varianten bearbeiten ausgeschaltet ist.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Warnen bei der Auswahl der LCC-Erstellungsoptionen.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Warnen, wenn nicht unterstützte Anpassungen kopiert werden</string>
+</dict>
+</plist>

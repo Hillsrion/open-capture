@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>跟隨裁切</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>疊加層不透明度</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>不透明度</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>疊加比例</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>比例</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>文件</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>垂直疊加</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>垂直線</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>水平疊加</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>水平</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>顯示</string>
+</dict>
+</plist>

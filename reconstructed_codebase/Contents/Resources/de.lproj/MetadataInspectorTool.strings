@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>335.headerCell.title</key>
+	<string>Name</string>
+	<key>336.headerCell.title</key>
+	<string>Wert</string>
+	<key>487.title</key>
+	<string>Auf Karte zeigen</string>
+	<key>497.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

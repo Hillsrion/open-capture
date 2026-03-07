@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Maximalt höjdmått för att skala slutgiltig bild.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Förstoringsgrad</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Upplösning</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Maximalt breddmått för att skala slutgiltig bild.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Avstånd</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Aktuell</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Avstånd</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Stoppa</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Starta</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Förstoringsgrad</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Avstånd</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Förstoringsgrad</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Skala originalbilden angiven mängd för att få resultatbilden.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Maximalt höjdmått för att skala slutgiltig bild.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Nära</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Objektivsynfält</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Objektivsynfält</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Upplösning [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Upplösning</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Avlägsen</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>Metod som är använd för klarhet.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Skala originalbilden angiven mängd för att få resultatbilden.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Mål</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Objektivsynfält</string>
+</dict>
+</plist>

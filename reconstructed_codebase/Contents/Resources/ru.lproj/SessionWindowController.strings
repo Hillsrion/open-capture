@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>09H-LY-aNy.ibShadowedToolTip</key>
+	<string>Переключиться между показом основного изображения или нескольких изображений</string>
+	<key>0v4-ek-mqo.title</key>
+	<string>Контраст и Яркость</string>
+	<key>1088.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из основного варианта</string>
+	<key>1089.ibShadowedToolTip</key>
+	<string>Применить настройки к выделенным вариантам</string>
+	<key>1168.ibShadowedToolTip</key>
+	<string>Переместить варианты в папку отобранных файлов</string>
+	<key>1171.ibShadowedToolTip</key>
+	<string>Новый вариант</string>
+	<key>1172.ibShadowedToolTip</key>
+	<string>Выбрать вариант</string>
+	<key>1337.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1339.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1340.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1341.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1342.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1343.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1570.headerCell.title</key>
+	<string>Статус</string>
+	<key>1813.title</key>
+	<string>Уместить</string>
+	<key>1814.title</key>
+	<string>LLL</string>
+	<key>1815.title</key>
+	<string>BBB</string>
+	<key>1816.title</key>
+	<string>GGG</string>
+	<key>1817.title</key>
+	<string>RRR</string>
+	<key>1820.title</key>
+	<string>Нет выделения</string>
+	<key>1821.title</key>
+	<string>Нет выделения</string>
+	<key>1824.title</key>
+	<string>Кнопка</string>
+	<key>1825.title</key>
+	<string>Кнопка</string>
+	<key>1829.title</key>
+	<string>Кнопка</string>
+	<key>1830.title</key>
+	<string>Кнопка</string>
+	<key>1831.title</key>
+	<string>Кнопка</string>
+	<key>1833.title</key>
+	<string>Кнопка</string>
+	<key>1834.title</key>
+	<string>Кнопка</string>
+	<key>1836.title</key>
+	<string>Кнопка</string>
+	<key>1841.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1842.title</key>
+	<string>Текстовая ячейка</string>
+	<key>1851.ibShadowedToolTip</key>
+	<string>Сортировать</string>
+	<key>1871.title</key>
+	<string>1 из 100</string>
+	<key>2217.ibShadowedToolTip</key>
+	<string>Захватить изображение, используя подключенную камеру</string>
+	<key>2218.title</key>
+	<string>Кнопка</string>
+	<key>2410.title</key>
+	<string>Кнопка</string>
+	<key>2415.title</key>
+	<string>Box</string>
+	<key>2460.headerCell.title</key>
+	<string>История</string>
+	<key>2500.title</key>
+	<string>BLK</string>
+	<key>2501.title</key>
+	<string>YYY</string>
+	<key>2502.title</key>
+	<string>ммм</string>
+	<key>2503.title</key>
+	<string>CCC</string>
+	<key>2609.title</key>
+	<string>текст</string>
+	<key>2623.title</key>
+	<string>GRA</string>
+	<key>2653.ibShadowedToolTip</key>
+	<string>Контрольное поле</string>
+	<key>2731.title</key>
+	<string>Кнопка</string>
+	<key>2835.ibShadowedToolTip</key>
+	<string>Направление сортировки</string>
+	<key>2958.ibShadowedToolTip</key>
+	<string>Слои коррекций</string>
+	<key>2962.title</key>
+	<string>Слой</string>
+	<key>297.headerCell.title</key>
+	<string>Имя</string>
+	<key>2998.title</key>
+	<string>Нет выделения</string>
+	<key>3003.title</key>
+	<string>Настроить автоматическую коррекцию</string>
+	<key>3004.title</key>
+	<string>Перспективные искажения</string>
+	<key>3005.title</key>
+	<string>Поворот</string>
+	<key>3006.title</key>
+	<string>Уровни</string>
+	<key>3007.title</key>
+	<string>Высокий динамический диапазон</string>
+	<key>3008.title</key>
+	<string>Экспозиция</string>
+	<key>3009.title</key>
+	<string>Баланс белого</string>
+	<key>3044.title</key>
+	<string>имя новой коллекции</string>
+	<key>3051.title</key>
+	<string>Имя новой коллекции:</string>
+	<key>3052.title</key>
+	<string>ОК</string>
+	<key>3059.ibShadowedToolTip</key>
+	<string>Экспортировать версии</string>
+	<key>3060.title</key>
+	<string>Кнопка</string>
+	<key>3063.ibShadowedToolTip</key>
+	<string>Захватить изображение, используя подключенную камеру</string>
+	<key>3064.title</key>
+	<string>Кнопка</string>
+	<key>3085.title</key>
+	<string>Отмена</string>
+	<key>3097.ibShadowedToolTip</key>
+	<string>Настроить панель инструментов</string>
+	<key>3101.ibShadowedToolTip</key>
+	<string>Изменить настройки Capture One</string>
+	<key>3102.title</key>
+	<string>Кнопка</string>
+	<key>3152.ibShadowedToolTip</key>
+	<string>Начать показ слайдов</string>
+	<key>3237.title</key>
+	<string>синхронизация папки</string>
+	<key>3244.title</key>
+	<string>Синхронизация</string>
+	<key>3245.title</key>
+	<string>Новое название коллекции: Новое название коллекции: Новое название коллекции: Новое название коллекции: Новое название коллекции: Новое название коллекции: Новое название коллекции:</string>
+	<key>3247.title</key>
+	<string>Отмена</string>
+	<key>3255.title</key>
+	<string>Импортировать новые изображения</string>
+	<key>3257.title</key>
+	<string>Удалить недостающие изображения</string>
+	<key>3276.title</key>
+	<string>Показать импортера</string>
+	<key>3282.title</key>
+	<string>Показать отсутствующие изображения</string>
+	<key>3290.title</key>
+	<string>Также включить оригиналы</string>
+	<key>3297.title</key>
+	<string>Включая известные подпапки</string>
+	<key>3302.title</key>
+	<string>Включить подпапки</string>
+	<key>46A-69-Nqd.title</key>
+	<string>Ползунок раздельного просмотра</string>
+	<key>4hC-Nj-5MJ.headerCell.title</key>
+	<string>Идентификатор последовательности</string>
+	<key>5.title</key>
+	<string>Окно просмотра</string>
+	<key>5Qx-vh-xgO.title</key>
+	<string>Новый пустой слой</string>
+	<key>883.ibShadowedToolTip</key>
+	<string>Повторить</string>
+	<key>889.ibShadowedToolTip</key>
+	<string>Повернуть вправо</string>
+	<key>893.ibShadowedToolTip</key>
+	<string>Выбрать предыдущий
+Alt-клик левой кнопкой мыши - выбрать предыдущий набор</string>
+	<key>894.ibShadowedToolTip</key>
+	<string>Выбрать следующий
+Alt-клик левой кнопкой мыши - выбрать следующий набор</string>
+	<key>908.ibShadowedToolTip</key>
+	<string>Отменить</string>
+	<key>993.headerCell.title</key>
+	<string>Рейтинг</string>
+	<key>994.headerCell.title</key>
+	<string>Вариант</string>
+	<key>995.headerCell.title</key>
+	<string>Светочувствительность</string>
+	<key>996.headerCell.title</key>
+	<string>Диафрагма</string>
+	<key>997.headerCell.title</key>
+	<string>Выдержка</string>
+	<key>998.headerCell.title</key>
+	<string>Фокусное расстояние</string>
+	<key>999.headerCell.title</key>
+	<string>Дата изображения</string>
+	<key>DRr-D1-csk.title</key>
+	<string>Импортировать изображения</string>
+	<key>DaL-Ea-zEX.title</key>
+	<string>Кнопка</string>
+	<key>EiS-hX-M0T.ibShadowedToolTip</key>
+	<string>Советы</string>
+	<key>OLF-gr-xkN.ibShadowedToolTip</key>
+	<string>Новый слой</string>
+	<key>UZE-NT-qce.title</key>
+	<string>Новый клонирующий слой</string>
+	<key>YkD-v3-VfH.title</key>
+	<string>Новый восстанавливающий слой</string>
+	<key>axa-pb-3sd.title</key>
+	<string>Новый заполненный слой</string>
+	<key>bdF-40-gYt.title</key>
+	<string>Выбрать коллекцию после создания</string>
+	<key>fH6-6w-qg3.title</key>
+	<string>Добавить выбранные изображения после создания</string>
+	<key>glS-uC-beD.title</key>
+	<string>LABB</string>
+	<key>hew-LV-0p3.ibShadowedToolTip</key>
+	<string>Заряд батареи</string>
+	<key>iZI-Rn-Ulo.title</key>
+	<string>LABA</string>
+	<key>m2J-7q-yMC.title</key>
+	<string>Текстовая ячейка</string>
+	<key>rkL-D2-fDQ.title</key>
+	<string>LABL</string>
+	<key>x6g-PB-hlq.title</key>
+	<string>Общий вид</string>
+</dict>
+</plist>

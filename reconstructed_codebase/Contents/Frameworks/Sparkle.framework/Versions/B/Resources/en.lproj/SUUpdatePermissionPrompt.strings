@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>179.title</key>
+	<string>DO NOT LOCALIZE</string>
+	<key>183.title</key>
+	<string>Anonymous system profile information is used to help us plan future development work. Please contact us if you have any questions about this.
+
+This is the information that would be sent:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Automatically download and install updates</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Check Automatically</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Don’t Check</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Check for updates automatically?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Include anonymous system profile</string>
+</dict>
+</plist>

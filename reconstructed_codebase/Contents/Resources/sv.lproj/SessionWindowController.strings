@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>09H-LY-aNy.ibShadowedToolTip</key>
+	<string>Välj mellan Primärvy/Multivy</string>
+	<key>0v4-ek-mqo.title</key>
+	<string>Kontrast och Ljusstyrka</string>
+	<key>1088.ibShadowedToolTip</key>
+	<string>Kopiera justeringar från den primära varianten</string>
+	<key>1089.ibShadowedToolTip</key>
+	<string>Lägg på inställningar på valda varianter</string>
+	<key>1168.ibShadowedToolTip</key>
+	<string>Flytta varianter till Urvalsmapp</string>
+	<key>1171.ibShadowedToolTip</key>
+	<string>Ny variant</string>
+	<key>1172.ibShadowedToolTip</key>
+	<string>Välj variant</string>
+	<key>1337.title</key>
+	<string>Textruta</string>
+	<key>1339.title</key>
+	<string>Textruta</string>
+	<key>1340.title</key>
+	<string>Textruta</string>
+	<key>1341.title</key>
+	<string>Textruta</string>
+	<key>1342.title</key>
+	<string>Textruta</string>
+	<key>1343.placeholderString</key>
+	<string>1999:10:10 20:30:40</string>
+	<key>1343.title</key>
+	<string>Textruta</string>
+	<key>1570.headerCell.title</key>
+	<string>Status</string>
+	<key>1778.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolSelector</string>
+	<key>1813.title</key>
+	<string>Passa in</string>
+	<key>1814.title</key>
+	<string>LLL</string>
+	<key>1815.title</key>
+	<string>BBB</string>
+	<key>1816.title</key>
+	<string>GGG</string>
+	<key>1817.title</key>
+	<string>RRR</string>
+	<key>1820.title</key>
+	<string>Inget valt</string>
+	<key>1821.title</key>
+	<string>Inget valt</string>
+	<key>1824.title</key>
+	<string>Knapp</string>
+	<key>1825.title</key>
+	<string>Knapp</string>
+	<key>1829.title</key>
+	<string>Knapp</string>
+	<key>1830.title</key>
+	<string>Knapp</string>
+	<key>1831.title</key>
+	<string>Knapp</string>
+	<key>1833.title</key>
+	<string>Knapp</string>
+	<key>1834.title</key>
+	<string>Knapp</string>
+	<key>1836.title</key>
+	<string>Knapp</string>
+	<key>1841.title</key>
+	<string>Textruta</string>
+	<key>1842.title</key>
+	<string>Textruta</string>
+	<key>1851.ibShadowedToolTip</key>
+	<string>Sortera</string>
+	<key>1857.title</key>
+	<string>OtherViews</string>
+	<key>1871.title</key>
+	<string>1 av 100</string>
+	<key>2217.ibShadowedToolTip</key>
+	<string>Ta en bild med ansluten kamera</string>
+	<key>2218.title</key>
+	<string>Knapp</string>
+	<key>2410.title</key>
+	<string>Knapp</string>
+	<key>2415.title</key>
+	<string>Box</string>
+	<key>2460.headerCell.title</key>
+	<string>Historik</string>
+	<key>2500.title</key>
+	<string>BLK</string>
+	<key>2501.title</key>
+	<string>YYY</string>
+	<key>2502.title</key>
+	<string>MMM</string>
+	<key>2503.title</key>
+	<string>CCC</string>
+	<key>254.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolTabs</string>
+	<key>2609.title</key>
+	<string>Text</string>
+	<key>2623.title</key>
+	<string>GRA</string>
+	<key>2653.ibShadowedToolTip</key>
+	<string>Visningsmarginal</string>
+	<key>2731.title</key>
+	<string>Knapp</string>
+	<key>2745.label</key>
+	<string>BrowserFilmStripView</string>
+	<key>280.label</key>
+	<string>BrowserGridView</string>
+	<key>282.label</key>
+	<string>BrowserListView</string>
+	<key>2835.ibShadowedToolTip</key>
+	<string>Sorteringsordning</string>
+	<key>2958.ibShadowedToolTip</key>
+	<string>Justeringslager</string>
+	<key>2960.title</key>
+	<string>OtherViews</string>
+	<key>2962.title</key>
+	<string>Lager</string>
+	<key>297.headerCell.title</key>
+	<string>Namn</string>
+	<key>2998.title</key>
+	<string>Inget valt</string>
+	<key>3003.title</key>
+	<string>Egna inställningar på autojustering</string>
+	<key>3004.title</key>
+	<string>Perspektiv</string>
+	<key>3005.title</key>
+	<string>Rotering</string>
+	<key>3006.title</key>
+	<string>Nivåer</string>
+	<key>3007.title</key>
+	<string>HDR</string>
+	<key>3008.title</key>
+	<string>Exponering</string>
+	<key>3009.title</key>
+	<string>Vitbalans</string>
+	<key>3044.title</key>
+	<string>Namn på ny kollektion</string>
+	<key>3051.title</key>
+	<string>Namn på ny kollektion:</string>
+	<key>3052.title</key>
+	<string>OK</string>
+	<key>3059.ibShadowedToolTip</key>
+	<string>Exportera varianter</string>
+	<key>3060.title</key>
+	<string>Knapp</string>
+	<key>3063.ibShadowedToolTip</key>
+	<string>Ta en bild med ansluten kamera</string>
+	<key>3064.title</key>
+	<string>Knapp</string>
+	<key>3085.title</key>
+	<string>Avbryt</string>
+	<key>3097.ibShadowedToolTip</key>
+	<string>Anpassa verktygsfält</string>
+	<key>3101.ibShadowedToolTip</key>
+	<string>Redigera Capture Ones inställningar</string>
+	<key>3102.title</key>
+	<string>Knapp</string>
+	<key>3152.ibShadowedToolTip</key>
+	<string>Visa bildspel</string>
+	<key>3237.title</key>
+	<string>mapp synk</string>
+	<key>3244.title</key>
+	<string>Synk</string>
+	<key>3245.title</key>
+	<string>Nytt kollektionsnamn:Nytt kollektionsnamn:Nytt kollektionsnamn:Nytt kollektionsnamn:Nytt kollektionsnamn:Nytt kollektionsnamn:Nytt kollektionsnamn:</string>
+	<key>3247.title</key>
+	<string>Avbryt</string>
+	<key>3255.title</key>
+	<string>Importera nya bilder</string>
+	<key>3257.title</key>
+	<string>Ta bort saknade lager</string>
+	<key>3276.title</key>
+	<string>Visa importfönster</string>
+	<key>3282.title</key>
+	<string>Visa saknade bilder</string>
+	<key>3290.title</key>
+	<string>Inkludera även refererade orginal</string>
+	<key>3297.title</key>
+	<string>Ta med kända undermappar</string>
+	<key>3302.title</key>
+	<string>Ta med undermappar</string>
+	<key>46A-69-Nqd.title</key>
+	<string>Delad vy reglage</string>
+	<key>4hC-Nj-5MJ.headerCell.title</key>
+	<string>Sekvens ID</string>
+	<key>5.title</key>
+	<string>Bildvisarfönster</string>
+	<key>5Qx-vh-xgO.title</key>
+	<string>Nytt tomt lager</string>
+	<key>883.ibShadowedToolTip</key>
+	<string>Gör om</string>
+	<key>889.ibShadowedToolTip</key>
+	<string>Rotera åt höger</string>
+	<key>893.ibShadowedToolTip</key>
+	<string>Välj föregående
+Alt-klicka för att välja föregående set</string>
+	<key>894.ibShadowedToolTip</key>
+	<string>Välj nästa
+Alt-klicka för att välja nästa set</string>
+	<key>908.ibShadowedToolTip</key>
+	<string>Ångra</string>
+	<key>993.headerCell.title</key>
+	<string>Märkning</string>
+	<key>994.headerCell.title</key>
+	<string>Variant</string>
+	<key>995.headerCell.title</key>
+	<string>ISO-värde</string>
+	<key>996.headerCell.title</key>
+	<string>Bländare</string>
+	<key>997.headerCell.title</key>
+	<string>Slutartid</string>
+	<key>998.headerCell.title</key>
+	<string>Brännvidd</string>
+	<key>999.headerCell.title</key>
+	<string>Bilddatum</string>
+	<key>DRr-D1-csk.title</key>
+	<string>Importera bilder</string>
+	<key>DaL-Ea-zEX.title</key>
+	<string>Knapp</string>
+	<key>EiS-hX-M0T.ibShadowedToolTip</key>
+	<string>Tips</string>
+	<key>OLF-gr-xkN.ibShadowedToolTip</key>
+	<string>Nytt lager</string>
+	<key>R2a-2j-fME.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>UZE-NT-qce.title</key>
+	<string>Nytt kloningslager</string>
+	<key>YkD-v3-VfH.title</key>
+	<string>Nytt reparationslager</string>
+	<key>axa-pb-3sd.title</key>
+	<string>Nytt ifyllt lager</string>
+	<key>bdF-40-gYt.title</key>
+	<string>Välj kollektionen efter skapande</string>
+	<key>fH6-6w-qg3.title</key>
+	<string>Lägg till valda bilder efter skapandet</string>
+	<key>glS-uC-beD.title</key>
+	<string>LABB</string>
+	<key>hew-LV-0p3.ibShadowedToolTip</key>
+	<string>Batteriets status</string>
+	<key>iZI-Rn-Ulo.title</key>
+	<string>LABA</string>
+	<key>lY3-1i-UTe.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>m2J-7q-yMC.title</key>
+	<string>Textruta</string>
+	<key>rkL-D2-fDQ.title</key>
+	<string>LABL</string>
+	<key>wCI-8w-MsQ.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>x6g-PB-hlq.title</key>
+	<string>Full vy</string>
+</dict>
+</plist>

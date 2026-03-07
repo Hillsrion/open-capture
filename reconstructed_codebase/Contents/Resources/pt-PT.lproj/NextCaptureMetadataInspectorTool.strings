@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>335.headerCell.title</key>
+	<string>Nome</string>
+	<key>336.headerCell.title</key>
+	<string>Valor</string>
+	<key>OdI-KZ-CTd.title</key>
+	<string>Copiar valores da Primária</string>
+</dict>
+</plist>

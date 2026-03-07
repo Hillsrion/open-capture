@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Hasta dónde se mueve verticalemnte el recorte</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Cancelar</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>unidades</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Cuánto se puede agregar al ancho del recorte.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Ventana</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ Localización</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Modificar recorte:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ Tamaño</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Cuánto se puede agregar a lo alto del recorte.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Modificar</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Hasta dónde se mueve horizontalmente el recorte</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>Lugar donde el recorte existente debe ser anclado cuando se modifica el tamaño del recorte.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>unidades</string>
+</dict>
+</plist>

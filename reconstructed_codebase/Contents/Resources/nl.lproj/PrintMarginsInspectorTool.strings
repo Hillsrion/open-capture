@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>357.title</key>
+	<string>Links</string>
+	<key>359.title</key>
+	<string>Rechts</string>
+	<key>394.ibShadowedToolTip</key>
+	<string>Linkermarge</string>
+	<key>396.ibShadowedToolTip</key>
+	<string>Rechtermarge</string>
+	<key>406.ibShadowedToolTip</key>
+	<string>Linkermarge</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Rechtermarge</string>
+	<key>420.ibShadowedToolTip</key>
+	<string>Bovenmarge</string>
+	<key>422.ibShadowedToolTip</key>
+	<string>Bovenmarge</string>
+	<key>425.title</key>
+	<string>Boven</string>
+	<key>429.ibShadowedToolTip</key>
+	<string>Ondermarge</string>
+	<key>431.ibShadowedToolTip</key>
+	<string>Ondermarge</string>
+	<key>434.title</key>
+	<string>Onder</string>
+	<key>523.title</key>
+	<string>in</string>
+	<key>525.title</key>
+	<string>in</string>
+	<key>527.title</key>
+	<string>in</string>
+	<key>529.title</key>
+	<string>in</string>
+</dict>
+</plist>

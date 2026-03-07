@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>433.title</key>
+	<string>Tekstcel</string>
+	<key>491.title</key>
+	<string>Cel tabelweergave</string>
+	<key>499.title</key>
+	<string>Cel groepsweergave filteren</string>
+	<key>572.title</key>
+	<string>Voeg Filtervoorwaarde toe</string>
+	<key>579.title</key>
+	<string>OK</string>
+	<key>580.title</key>
+	<string>Voeg Filtervoorwaarde toe:</string>
+	<key>582.title</key>
+	<string>Annuleer</string>
+	<key>604.placeholderString</key>
+	<string>Opzet: "land &gt; provincie &gt; plaats &gt; locatie"</string>
+</dict>
+</plist>

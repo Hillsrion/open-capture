@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Nueva Sesión</string>
+	<key>100.title</key>
+	<string>Subcarpeta de Seleccionadas:</string>
+	<key>104.title</key>
+	<string>Subcarpeta Papelera:</string>
+	<key>147.title</key>
+	<string>Abrir en una nueva ventana</string>
+	<key>151.title</key>
+	<string>Nombre de captura:</string>
+	<key>46.title</key>
+	<string>Plantilla:</string>
+	<key>47.title</key>
+	<string>Ubicación:</string>
+	<key>48.title</key>
+	<string>Nombre:</string>
+	<key>54.title</key>
+	<string>Cancelar</string>
+	<key>55.title</key>
+	<string>Aceptar</string>
+	<key>91.title</key>
+	<string>Subcarpeta Captura:</string>
+	<key>96.title</key>
+	<string>Subcarpeta Salida:</string>
+</dict>
+</plist>

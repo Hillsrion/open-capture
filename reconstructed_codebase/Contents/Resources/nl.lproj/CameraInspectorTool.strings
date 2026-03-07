@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0ii-N6-LBa.title</key>
+	<string>Accustatus</string>
+	<key>253.ibShadowedToolTip</key>
+	<string>De aangesloten camera</string>
+	<key>256.title</key>
+	<string>Geen camera aangesloten</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Afbeelding vastleggen met de aangesloten camera</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>Witbalans instellen op de aangesloten camera</string>
+	<key>284.ibShadowedToolTip</key>
+	<string>Witbalans-kiezer</string>
+	<key>535.ibShadowedToolTip</key>
+	<string>Start Live-Weergave</string>
+	<key>588.title</key>
+	<string>Vastleggen</string>
+	<key>590.title</key>
+	<string>Instellen</string>
+	<key>593.title</key>
+	<string>LV</string>
+	<key>596.title</key>
+	<string>Bezig met uploaden...</string>
+	<key>5oy-9F-JjU.title</key>
+	<string>L</string>
+	<key>B1G-l7-xL0.title</key>
+	<string>S+</string>
+	<key>O7G-o4-UfJ.title</key>
+	<string>Lens model</string>
+	<key>Tkg-mG-GrG.title</key>
+	<string>Witbalans</string>
+	<key>ggr-GE-HP4.title</key>
+	<string>RAW</string>
+</dict>
+</plist>

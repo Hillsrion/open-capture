@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2KX-yW-Y8Z.title</key>
+	<string>Применить</string>
+	<key>3jn-o8-abc.title</key>
+	<string>Отмена</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Уточнить маску</string>
+	<key>Vmk-QE-bDz.title</key>
+	<string>Показать маску</string>
+	<key>fLd-KN-RDQ.ibExternalAccessibilityDescription</key>
+	<string>Значение размытия</string>
+	<key>fLd-KN-RDQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Радиус</string>
+</dict>
+</plist>

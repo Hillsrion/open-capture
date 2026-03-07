@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Varianten kopiëren van primair</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Kopiëren aanpassingen van de laatste opname.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Kopieer van Laatste opname</string>
+	<key>250.title</key>
+	<string>Menu</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Vastgelegde afbeeldingen automatisch aanpassen</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Varianten kopiëren van laatste</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Afdrukstand</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Kopiëren aanpassingen van de laatste opname.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Kopieer van Laatste opname</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Varianten kopiëren van laatste</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Kopieer specifiek van Laatste opname…</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Kopieer specifiek van Primaire Variant…</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Aanpassingen kopiëren van de Primaire Variant</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Kopieer van Primaire Variant</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Kopieer specifiek van Laatste opname…</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Standaardaanpassingen gebruiken</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Standaardwaarden</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Varianten kopiëren van primair</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stijlen</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Kopieer van klembord</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Aanpassingen kopiëren van de Primaire Variant</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Kopieer van Primaire Variant</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Kopieer van klembord</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Standaardaanpassingen gebruiken</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Standaardwaarden</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Standaard ICC-profiel voor de camera gebruiken</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Standaard</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Gebruik de standaard afdrukstand van de camera</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Standaard</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>ICC-profiel kopiëren van de laatst vastgelegd afbeelding</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Kopieer van Laatste opname</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadata</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Kopieer specifiek van Primaire Variant…</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Anders</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>ICC-profiel kopiëren van de Primaire Variant</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Kopieer van Primaire Variant</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC-profiel</string>
+</dict>
+</plist>

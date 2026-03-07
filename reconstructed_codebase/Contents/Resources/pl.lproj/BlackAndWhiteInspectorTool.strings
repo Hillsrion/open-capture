@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Hv-MQ-Xea.ibExternalAccessibilityDescription</key>
+	<string>nasycenie</string>
+	<key>1Hv-MQ-Xea.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Żółty</string>
+	<key>450.title</key>
+	<string>Włącz tryb czarno-biały</string>
+	<key>709.title</key>
+	<string>Światła</string>
+	<key>887.title</key>
+	<string>Cienie</string>
+	<key>916.ibShadowedLabels[0]</key>
+	<string>Przekształcanie kolorów</string>
+	<key>916.ibShadowedLabels[1]</key>
+	<string>Podzielone tonowanie</string>
+	<key>918.label</key>
+	<string>Przekształcanie kolorów</string>
+	<key>919.label</key>
+	<string>Podzielone tonowanie</string>
+	<key>94N-k5-35A.ibExternalAccessibilityDescription</key>
+	<string>czerwony</string>
+	<key>94N-k5-35A.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Czerwony</string>
+	<key>953.title</key>
+	<string>Włącz tryb czarno-biały</string>
+	<key>FTZ-Ys-qEN.ibExternalAccessibilityDescription</key>
+	<string>czerwony</string>
+	<key>FTZ-Ys-qEN.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Nasycenie</string>
+	<key>OrD-M8-LcE.ibExternalAccessibilityDescription</key>
+	<string>czerwony</string>
+	<key>OrD-M8-LcE.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Nasycenie</string>
+	<key>epE-Bj-Ea0.ibExternalAccessibilityDescription</key>
+	<string>nasycenie</string>
+	<key>epE-Bj-Ea0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Zielony</string>
+	<key>kA4-IV-KrW.ibExternalAccessibilityDescription</key>
+	<string>nasycenie</string>
+	<key>kA4-IV-KrW.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Magenta</string>
+	<key>ncO-s8-djm.ibExternalAccessibilityDescription</key>
+	<string>nasycenie</string>
+	<key>ncO-s8-djm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Niebieski</string>
+	<key>qmI-bB-Ky2.ibExternalAccessibilityDescription</key>
+	<string>czerwony</string>
+	<key>qmI-bB-Ky2.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Odcień</string>
+	<key>vL2-c5-pGT.ibExternalAccessibilityDescription</key>
+	<string>czerwony</string>
+	<key>vL2-c5-pGT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Odcień</string>
+	<key>xhj-to-hD5.ibExternalAccessibilityDescription</key>
+	<string>nasycenie</string>
+	<key>xhj-to-hD5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Cyjan</string>
+</dict>
+</plist>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ wurde geladen und steht zur Installation bereit! Dies ist ein wichtiges Update. Möchtest du %1$@ jetzt durch die neue Version ersetzen und neu starten?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ wurde geladen und steht zur Installation bereit! Möchtest du %1$@ jetzt durch die neue Version ersetzen und neu starten?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@ ist verfügbar, aber deine Version von macOS ist zu neu für dieses Update. Das Update unterstützt nur bis macOS %3$@.</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@ ist verfügbar, aber deine Version von macOS ist zu alt, um das Update zu installieren. Es wird mindestens macOS %3$@ benötigt.</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>„%1$@“ kann nicht aktualisiert werden, wenn das Programm von dem Ort ausgeführt wird, an den es heruntergeladen wurde.</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ kann nicht aktualisiert werden, da es aus dem Downloads-Order, oder von einer DMG-Datei oder einem Laufwerk ohne Schreibzugriff gestartet wurde.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ ist zurzeit die neueste verfügbare Version.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ ist zurzeit die neueste verfügbare Version.
+(Die derzeit installierte Version ist %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>%1$@ %2$@ ist verfügbar – du verwendest Version %3$@. Dies ist ein wichtiges Update. Möchtest du die neue Version jetzt laden?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ ist verfügbar – du verwendest Version %3$@. Möchtest du die neue Version jetzt laden?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ ist verfügbar – du verwendest Version %3$@. Möchtest du mehr über dieses Update erfahren?</string>
+	<key>%@ downloaded</key>
+	<string>%@ geladen</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>%@ ist aktualisiert auf Version %@!</string>
+	<key>%@ is now updated!</key>
+	<string>%@ ist aktualisiert!</string>
+	<key>%@ of %@</key>
+	<string>%1$@ von %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Eine neue Version von %@ ist verfügbar!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Eine neue Version von %@ steht zur Installation bereit!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Beim Laden der Updateinformationen ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>Beim Verbinden mit dem Installationsprogramm ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Beim Laden des Updates ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Beim Entpacken des Archivs ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>Beim Starten des Installationsprogramms ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Beim Lesen der Updateinformationen ist ein Fehler aufgetreten.</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>Beim Ausführen des Aktualisierungsprogramms ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>Beim Starten des Installationsprogramms ist ein Fehler aufgetreten. Bitte versuche es später erneut.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Ein wichtiges Update von %@ steht zur Installation bereit</string>
+	<key>Cancel</key>
+	<string>Abbrechen</string>
+	<key>Cancel Update</key>
+	<string>Aktualisierung abbrechen</string>
+	<key>Checking for updates…</key>
+	<string>Nach Updates suchen …</string>
+	<key>Downloading update…</key>
+	<string>Update laden …</string>
+	<key>Extracting update…</key>
+	<string>Update entpacken …</string>
+	<key>Failed to resume installing update.</key>
+	<string>Das Fortsetzen der Installation ist fehlgeschlagen.</string>
+	<key>Install and Relaunch</key>
+	<string>Installieren und neu starten</string>
+	<key>Install on Quit</key>
+	<string>Installieren beim Beenden</string>
+	<key>Installing update…</key>
+	<string>Update installieren …</string>
+	<key>Learn More…</key>
+	<string>Mehr über …</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>Beende „%1$@“, bewege es in den Ordner „Programme“, starte das Programm von dort erneut und versuche es noch einmal.</string>
+	<key>Ready to Install</key>
+	<string>Bereit zum Installieren</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Soll %1$@ automatisch nach Updates suchen? Du kannst im %1$@-Menü auch manuell nach Updates suchen.</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>Das Aktualisierungsprogramm wurde nicht richtig gestartet. Du solltest den App-Entwickler kontaktieren, um diesen Fehler zu melden und zu prüfen, ob du die neueste Version hast.</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>Das Update ist nicht ordnungsgemäß signiert und konnte nicht überprüft werden. Bitte versuche es später erneut oder kontaktiere den App-Entwickler.</string>
+	<key>Unable to Check For Updates</key>
+	<string>Suche nach Updates ist fehlgeschlagen</string>
+	<key>Update Error!</key>
+	<string>Fehler beim Aktualisieren!</string>
+	<key>Update Installed</key>
+	<string>Update installiert</string>
+	<key>Updating %@</key>
+	<string>Aktualisierung von %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Kopiere %1$@ in den Programmeordner, starte es von dort aus und versuche es erneut zu aktualisieren.</string>
+	<key>Version History</key>
+	<string>Versionsverlauf</string>
+	<key>Your macOS version is too new</key>
+	<string>Deine Version von macOS ist zu neu</string>
+	<key>Your macOS version is too old</key>
+	<string>Deine Version von macOS ist zu alt</string>
+	<key>You’re up to date!</key>
+	<string>Du bist auf dem neuesten Stand!</string>
+</dict>
+</plist>

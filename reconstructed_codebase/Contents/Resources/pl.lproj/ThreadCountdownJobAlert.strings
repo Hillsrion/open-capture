@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>Zapisano %{value1}@ z %{value2}@ zadań seryjnych</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>Zapisano %{value1}@ z %{value2}@ zadań seryjnych</string>
+	<key>30.title</key>
+	<string>Zamknij</string>
+	<key>31.title</key>
+	<string>zapisywanie x z N zadań seryjnych</string>
+	<key>5.title</key>
+	<string>Zapisywanie plików zadania seryjnego</string>
+</dict>
+</plist>

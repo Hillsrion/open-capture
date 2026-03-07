@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>Standaardwaarden</string>
+	<key>258.title</key>
+	<string>Patroon:</string>
+	<key>260.title</key>
+	<string>Kleur:</string>
+	<key>262.title</key>
+	<string>Marge:</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>Viewer</string>
+	<key>266.title</key>
+	<string>Viewer en browser</string>
+	<key>269.title</key>
+	<string>Proof-marge:</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>Kleur Masker:</string>
+	<key>289.title</key>
+	<string>Lagen</string>
+	<key>293.title</key>
+	<string>Proof-marge</string>
+	<key>295.title</key>
+	<string>Lokale aanpassingen</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>Geselecteerde Variant</string>
+	<key>drf-G9-VYV.title</key>
+	<string>Vergelijkingsvariant</string>
+</dict>
+</plist>

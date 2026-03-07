@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>크롭 따르기</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>오버레이 불투명도</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>불투명도</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>오버레이 배율</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>배율</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>파일</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>세로 오버레이</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>세로</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>가로 오버레이</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>가로</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>표시</string>
+</dict>
+</plist>

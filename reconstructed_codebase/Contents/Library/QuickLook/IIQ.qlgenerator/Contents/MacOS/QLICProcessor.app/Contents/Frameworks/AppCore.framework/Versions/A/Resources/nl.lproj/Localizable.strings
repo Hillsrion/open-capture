@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>- Nieuwe standaardinstellingen voor afbeeldingen aangemaakt.</string>
+	<key>%.1f MB</key>
+	<string>%.1f MB</string>
+	<key>%.2f GB</key>
+	<string>%.2f GB</string>
+	<key>%.2f TB</key>
+	<string>%.2f TB</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Bij %ld van deze varianten is een LCC-profiel toegepast. Als u het LCC-profiel van deze variant wijzigt, kan het bestaande profiel hierdoor worden verwijderd. Een LCC-profiel kan alleen opnieuw worden aangemaakt met de originele LCC-testopname of opnieuw worden toegepast indien het als Voorinstelling is opgeslagen.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>%1$lu van de %2$lu Varianten hebben geen metagegevens. Controleer en Repareer kan het probleem verhelpen door die Varianten te verwijderen.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>%1$lu van de %2$lu Varianten hebben geen metagegevens. Controleer en Repareer kan het probleem verhelpen door die Varianten te verwijderen. Overweeg om de lijst met afbeeldingen in het Logboek op te slaan, zodat u ze later opnieuw kunt importeren.</string>
+	<key>%u KB</key>
+	<string>%u KB</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Fout 1) Niet-ondersteund profiel: profiel wordt niet ondersteund of is ongeldig.</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Fout 10) Helling-beperkt profiel: donkere en verzadigde kleuren kunnen grote verschillen veroorzaken.</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Fout 11) Aanpassing witpunt is niet-gespecificeerd of ongeldig (media wit gebruikend).</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Fout 12) Aanpassing witpunt is niet gespecificeerd of ongeldig (D50 gebruikend).</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Fout 13) Media wit ontbreekt: D50 aangenomen.</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Fout 14) Dubbelzinnig PCS witpunt: illuminant is geen D50 zoals vereist door de specificatie.</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Fout 15) Dubbelzinnig PCS witpunt: (255,255,255) is getint.</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Fout 2) Kleurruimte niet ondersteund: uitsluitend RGB profielen worden ondersteund.</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Fout 3) Profiel Verbindingsruimte niet ondersteund: profiel is niet XYZ.</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Fout 4) Klasse niet ondersteund: profiel dient klasse voor beeldscherm, uitvoer en kleurruimte te hebben.</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Fout 5) LUT-gebaseerde profielen worden niet ondersteund.</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Fout 6) Wanverhouding curven (misvormd profiel).</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Fout 7) Profiel interpretatie bepaald door intent.</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Fout 8) Omzetting gebaseerd op V4 specificatie; V2 omzetting genegeerd.</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Fout 9) Profiel kan geen zwart weergeven. Zwartpunt compensatie kan grote verschillen veroorzaken.</string>
+	<key>(Locked: Read Only)</key>
+	<string>(Vergrendeld: Alleen-lezen)</string>
+	<key>(Missing path)</key>
+	<string>(Bestandslocatie ontbreekt)</string>
+	<key>(No City)</key>
+	<string>(Geen Stad)</string>
+	<key>(No Country)</key>
+	<string>(Geen Land)</string>
+	<key>(No Keywords)</key>
+	<string>(Geen Trefwoorden)</string>
+	<key>(No Location)</key>
+	<string>(Geen Locatie)</string>
+	<key>(No State)</key>
+	<string>(Geen Staat)</string>
+	<key>(No Values)</key>
+	<string>(Geen waarden)</string>
+	<key>-- bytes</key>
+	<string>-- bytes</string>
+	<key>1 Digit Counter</key>
+	<string>1-cijferige teller</string>
+	<key>1 shot</key>
+	<string>1 opname</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 mm</string>
+	<key>2 Digit Counter</key>
+	<string>2-cijferige teller</string>
+	<key>3 Digit Counter</key>
+	<string>3-cijferige teller</string>
+	<key>4 Digit Counter</key>
+	<string>4-cijferige teller</string>
+	<key>5 Digit Counter</key>
+	<string>5-cijferige teller</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6-cijferige teller</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;onbekend&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>Er is een receptenbestand gevonden in plaats van een map.</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>Er kon geen receptenmap worden aangemaakt.</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>Er is een databasebeschadiging gedetecteerd en de catalogus "%@" moet worden gesloten.</string>
+	<key>A newer Capture One engine is required</key>
+	<string>Een nieuwere Capture One engine is vereist</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>Het aanmaken van een Sessie-submap met de naam "%@" is mislukt.
+
+In plaats daarvan zal de Sessiemap worden gebruikt.</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>AI focus</string>
+	<key>AI servo</key>
+	<string>AI servo</string>
+	<key>About %d hours left</key>
+	<string>Ca. %d uren resterend</string>
+	<key>About %d minutes left</key>
+	<string>Ca. %d minuten resterend</string>
+	<key>About 10 seconds left</key>
+	<string>Ca. 10 seconden resterend</string>
+	<key>About 30 seconds left</key>
+	<string>Ca. 30 seconden resterend</string>
+	<key>About 5 seconds left</key>
+	<string>Ca. 5 seconden resterend</string>
+	<key>About a minute left</key>
+	<string>Ca. één minuut resterend</string>
+	<key>About an hour left</key>
+	<string>Ca. één uur resterend</string>
+	<key>Action</key>
+	<string>Actie</string>
+	<key>Action (High speed)</key>
+	<string>Actie (Hoge snelheid)</string>
+	<key>Add Layer</key>
+	<string>Voeg laag toe</string>
+	<key>Add Selected Images to %@</key>
+	<string>Voeg geselecteerde afbeeldingen toe aan %@</string>
+	<key>Add Selected Warning</key>
+	<string>Voeg geselecteerde waarschuwing toe</string>
+	<key>Address</key>
+	<string>Adres</string>
+	<key>Adjusted</key>
+	<string>Aangepast</string>
+	<key>Adjusting</key>
+	<string>Aanpassen</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>Alle afbeeldingen</string>
+	<key>Altitude</key>
+	<string>Hoogte</string>
+	<key>Amount</key>
+	<string>Hoeveelheid</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>Een ICC Profiel kan niet worden gevonden.</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>Een LCC Profiel kan niet worden gevonden.</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>Een aanpassingenmasker voor een afbeelding ontbreekt. Het ontbrekende masker is vervangen door een leeg masker.</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>Er is een fout opgetreden en de catalogus "%@" moet sluiten.</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>Er is een fout opgetreden en de sessie "%@" moet sluiten.</string>
+	<key>An error occurred during processing.</key>
+	<string>Er is een fout opgetreden tijdens de verwerking.</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>Er is een fout opgetreden tijdens het laden van metagegevens voor sommige varianten.</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>Er is een fout opgetreden bij het toepassen van een laag</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>Er is een fout opgetreden bij het kopiëren de bestaande receptenmap. Een standaardrecept zal worden gebruikt.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>Er is een fout opgetreden bij het kopiëren van de bestaande map met recepten. Recepten kunnen niet worden geladen.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>Er is een fout opgetreden bij het kopiëren van de bestaande receptenmap. De huidige bestandslocatie verwijst naar een bestand en niet een map. Een standaardrecept zal worden gebruikt.</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>Er is een fout opgetreden bij het laden van het receptbestand '%@.' Het recept is niet geladen.</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>Er is een fout opgetreden bij het laden van de receptenlijst. Er zal in plaats daarvan een standaard receptenlijst worden gebruikt.</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>Er is een fout opgetreden bij het openen van een receptenmap.</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>Er is een fout opgetreden bij het opslaan van het ICC profiel op de schijf. %@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>Er is een fout opgetreden bij het opslaan van het LCC profiel op de schijf. %@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>Er is een onbekende fout opgetreden bij het aanmaken van het watermerk.</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>Een onherstelbare fout is opgetreden tijdens het werken met de database van de Catalogus.
+
+%@
+
+De Catalogus zal nu sluiten.</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>Een onherstelbare fout is opgetreden tijdens het werken met de Catalogus. De Catalogus zal nu sluiten.</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>Een onherstelbare fout is opgetreden tijdens het werken met de database van de Sessie.
+
+%@
+
+De Sessie zal nu sluiten.</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>Een onherstelbare fout is opgetreden tijdens het werken met de Sessie. De Sessie zal nu sluiten.</string>
+	<key>Annotated</key>
+	<string>Geannoteerd</string>
+	<key>Annotations</key>
+	<string>Annotaties</string>
+	<key>Any</key>
+	<string>elke</string>
+	<key>Aper.</key>
+	<string>Diafr.</string>
+	<key>Aperture</key>
+	<string>Diafragma</string>
+	<key>Aperture priority</key>
+	<string>Diafragmavoorkeuze</string>
+	<key>Aperture-priority AE</key>
+	<string>Diafragma-prioriteit AE</string>
+	<key>Apply</key>
+	<string>Toepassen</string>
+	<key>Apply Adjustments</key>
+	<string>Pas Aanpassingen toe</string>
+	<key>Apply LCC</key>
+	<string>Pas LCC toe</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>LCC's toepassen op de voorgaande Varianten?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>LCC's toepassen op de volgende Varianten?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>Toepassen op alle geselecteerde varianten</string>
+	<key>Applying Adjustments</key>
+	<string>Aanpassingen toepassen</string>
+	<key>Applying Adjustments to %@</key>
+	<string>Aanpassingen toepassen op %@</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>Wilt u zeker dat u de extensie wilt veranderen van “%1$@” in “%2$@”?</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>Auto Adjust</key>
+	<string>Automatisch aanpassen</string>
+	<key>Auto Exposure</key>
+	<string>Auto Belichting</string>
+	<key>Auto HDR</key>
+	<string>Auto Hoog Dynamisch Bereik</string>
+	<key>Auto Keystone</key>
+	<string>Auto Trapezium</string>
+	<key>Auto Levels</key>
+	<string>Auto Niveaus</string>
+	<key>Auto Rotation</key>
+	<string>Auto Rotatie</string>
+	<key>Auto White Balance</key>
+	<string>Auto Witbalans</string>
+	<key>Auto bracket</key>
+	<string>Auto bracket</string>
+	<key>Auto, Did not fire</key>
+	<string>Automatisch, Niet geactiveerd</string>
+	<key>Auto, Fired</key>
+	<string>Automatisch, Geactiveerd</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>Automatisch, Geactiveerd, Rode-ogenreductie</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>Automatisch, Geactiveerd, Rode-ogenreductie, Weerkaatsing gedetecteerd</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>Automatisch, Geactiveerd, Rode-ogenreductie, Weerkaatsing niet gedetecteerd</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>Automatisch, Geactiveerd, Weerkaatsing gedetecteerd</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>Automatisch, Geactiveerd, Weerkaatsing niet gedetecteerd</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>%1$d van %2$d sets metagegevens automatisch geladen</string>
+	<key>Average</key>
+	<string>Gemiddeld</string>
+	<key>Avg.</key>
+	<string>Gem.</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>Z/W Blauw</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>Z/W Cyaan</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>Z/W Donker gesplitste tinten kleurtoon</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>Z/W Donker gesplitste tinten verzadiging</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>Z/W Ingeschakeld</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>Z/W Groen</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>Z/W Licht gesplitste tinten kleurtoon</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>Z/W Licht gesplitste tinten verzadiging</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>Z/W Magenta</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>Z/W Rood</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>Z/W Geel</string>
+	<key>Barcode</key>
+	<string>Barcode</string>
+	<key>Base Characteristics</key>
+	<string>Basiseigenschappen</string>
+	<key>Basic</key>
+	<string>Basis</string>
+	<key>Black &amp; White</key>
+	<string>Zwart-Wit</string>
+	<key>Black Recovery</key>
+	<string>Zwart-herstel</string>
+	<key>Blue</key>
+	<string>Blauw</string>
+	<key>Blue Curve</key>
+	<string>Blauwe curve</string>
+	<key>Blue Gradation Curve</key>
+	<string>Blauwe gradatiecurve</string>
+	<key>Brack.</key>
+	<string>Brack.</string>
+	<key>Bracket</key>
+	<string>Bracket</string>
+	<key>Bracketing</key>
+	<string>Bracketing</string>
+	<key>Bracketing: Aperture</key>
+	<string>Bracketing: diafragma</string>
+	<key>Bracketing: ISO</key>
+	<string>Bracketing: ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>Bracketing: sluitertijd</string>
+	<key>Brightness</key>
+	<string>Helderheid</string>
+	<key>Burst</key>
+	<string>Burst</string>
+	<key>CWA</key>
+	<string>GCG</string>
+	<key>Camera Counter</key>
+	<string>Teller camera</string>
+	<key>Camera Firmware</key>
+	<string>Camera-firmware</string>
+	<key>Camera Lens</key>
+	<string>Cameralens</string>
+	<key>Camera Make</key>
+	<string>Cameramerk</string>
+	<key>Camera Model</key>
+	<string>Cameramodel</string>
+	<key>Camera Owner</key>
+	<string>Camera-eigenaar</string>
+	<key>Camera Profile</key>
+	<string>Cameraprofiel</string>
+	<key>Camera Serial</key>
+	<string>Serienr. camera</string>
+	<key>Camera Software</key>
+	<string>Camerasoftware</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>Camera standaardinstellingen bevatten een ICC-profiel dat niet geladen kan worden. Dit kan zijn omdat het originele bestand ontbreekt of beschadigd is.</string>
+	<key>Cancel</key>
+	<string>Annuleer</string>
+	<key>Cannot contain characters %@</key>
+	<string>Kan niet bevatten de tekens %@</string>
+	<key>Cannot save catalog</key>
+	<string>Kan catalogus niet opslaan</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>Kan catalogus niet opslaan in bestandslocatie: %@
+
+Het Catalogus-bestand is in de Prullenbak. Zet het terug naar de originele locatie.</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>Kan catalogus niet opslaan in bestandslocatie: %@
+
+Het catalogusbestand is niet beschrijfbaar. Probeer de bestandspermissies te wijzigen indien mogelijk.</string>
+	<key>Cannot save session</key>
+	<string>Kan sessie niet opslaan</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>Kan sessie niet opslaan in bestandslocatie: %@
+
+Het sessiebestand is in de Prullenbak. Zet het terug naar de originele locatie.</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>Kan sessie niet opslaan in bestandslocatie: %@
+
+Het sessiebestand is niet beschrijfbaar. Probeer de bestandspermissies te wijzigen indien mogelijk.</string>
+	<key>Caption</key>
+	<string>Bijschrift</string>
+	<key>Capture Folder</key>
+	<string>Opname Map</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>Capture One kan het aangegeven watermerk op dit moment niet aanmaken.</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One heeft niet genoeg geheugen om de gekozen Overlay te maken.</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>Capture One heeft onvoldoende geheugen om het aangegeven watermerk aan te maken.</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Capture One wordt in ieder geval beschermd door US Patent 8.854.482 en 8.619.146 alsmede een aantal aangevraagde patenten.</string>
+	<key>Catalog Export</key>
+	<string>Exporteren Catalogus</string>
+	<key>Catalog Save</key>
+	<string>Catalogus Opslaan</string>
+	<key>Catalog Sets Import</key>
+	<string>Importeren Catalogussets</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>Catalogusafbeeldingen zonder voorvertoningen kunnen niet worden weergegeven en bewerkt als ze offline komen te staan.</string>
+	<key>Category</key>
+	<string>Categorie</string>
+	<key>Center weighted average</key>
+	<string>Gemiddelde centrum gericht</string>
+	<key>Center-weighted average</key>
+	<string>Centrum-georiënteerd gemiddelde</string>
+	<key>Change</key>
+	<string>Wijzigen</string>
+	<key>Change the LCC Profile?</key>
+	<string>LCC-profiel wijzigen?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Als u het LCC-profiel van deze variant wijzigt, kan het bestaande profiel hierdoor worden verwijderd. Dit LCC-profiel kan alleen opnieuw worden aangemaakt met de originele LCC-testopname of opnieuw worden toegepast indien het als Voorinstelling is opgeslagen.</string>
+	<key>Chroma Fringing</key>
+	<string>Kleurschifting</string>
+	<key>Chromatic Aberration</key>
+	<string>Kleurafwijking</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>Kleurafwijking ingeschakeld</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>Herkomst kleurafwijking</string>
+	<key>City</key>
+	<string>Plaats</string>
+	<key>Clarity</key>
+	<string>Klaarheid</string>
+	<key>Clarity Amount</key>
+	<string>Klaarheid Hoeveelheid</string>
+	<key>Clarity Method</key>
+	<string>Klaarheid Methode</string>
+	<key>Clarity Structure</key>
+	<string>Klaarheid Structuur</string>
+	<key>Clean Single Pixel</key>
+	<string>Enkele Pixel schoonmaken</string>
+	<key>Clear Mask</key>
+	<string>Wis Masker</string>
+	<key>Clipboard Contents</key>
+	<string>Inhoud klembord</string>
+	<key>Clone Variant</key>
+	<string>Kloon Variant</string>
+	<key>Close</key>
+	<string>Sluiten</string>
+	<key>Close catalog</key>
+	<string>Sluit Catalogus</string>
+	<key>Close session</key>
+	<string>Sluit Sessie</string>
+	<key>Close view</key>
+	<string>Beeld afsluiten</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>Sluiten met onbewerkte afbeeldingen?</string>
+	<key>Code</key>
+	<string>Code</string>
+	<key>Collapse Stack</key>
+	<string>Vouw Stapel samen</string>
+	<key>Collection Choice</key>
+	<string>Verzameling keuze</string>
+	<key>Collection Name</key>
+	<string>Verzamelingnaam</string>
+	<key>Color</key>
+	<string>Kleur</string>
+	<key>Color Adjustments</key>
+	<string>Kleuraanpassingen</string>
+	<key>Color Balance</key>
+	<string>Kleurbalans</string>
+	<key>Color Balance Highlight</key>
+	<string>Kleurbalans Hooglicht</string>
+	<key>Color Balance Midtone</key>
+	<string>Kleurbalans Middentonen</string>
+	<key>Color Balance Shadow</key>
+	<string>Kleurbalans Schaduw</string>
+	<key>Color Cast</key>
+	<string>Kleurzweem</string>
+	<key>Color Correction limit reached</key>
+	<string>Kleurcorrectie imiet bereikt</string>
+	<key>Color Editor - Advanced</key>
+	<string>Kleurbewerker - Geavanceerd</string>
+	<key>Color Editor - Basic</key>
+	<string>Kleurbewerker - Basis</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>Kleurbewerker - Huidtint</string>
+	<key>Color Noise Reduction</key>
+	<string>Kleurruisreductie</string>
+	<key>Color Sensitivity</key>
+	<string>Kleurgevoeligheid</string>
+	<key>Color Space</key>
+	<string>Kleurruimte</string>
+	<key>Color Tag</key>
+	<string>Kleurlabel</string>
+	<key>Color space</key>
+	<string>Kleurruimte</string>
+	<key>Complete</key>
+	<string>Gereed</string>
+	<key>Composition</key>
+	<string>Compositie</string>
+	<key>Confirm</key>
+	<string>Bevestigen</string>
+	<key>Cont.</key>
+	<string>Cont.</string>
+	<key>Cont.high</key>
+	<string>Cont.hoog</string>
+	<key>Cont.low</key>
+	<string>Cont.laag</string>
+	<key>Contact Address</key>
+	<string>Adres contact</string>
+	<key>Contact City</key>
+	<string>Plaats contact</string>
+	<key>Contact Country</key>
+	<string>Land contact</string>
+	<key>Contact Emails</key>
+	<string>E-mails contact</string>
+	<key>Contact Phones</key>
+	<string>Telefoons contact</string>
+	<key>Contact Postal Code</key>
+	<string>Postcode contact</string>
+	<key>Contact State</key>
+	<string>Staat contact</string>
+	<key>Contact State/Province</key>
+	<string>Provincie contact</string>
+	<key>Contact Websites</key>
+	<string>Websites contact</string>
+	<key>Content Category</key>
+	<string>Categorie inhoud</string>
+	<key>Content Description</key>
+	<string>Beschrijving inhoud</string>
+	<key>Content Description Writer</key>
+	<string>Schrijver beschrijving inhoud</string>
+	<key>Content Headline</key>
+	<string>Korte inhoud</string>
+	<key>Content Subject Code</key>
+	<string>Onderwerpcode inhoud</string>
+	<key>Continue</key>
+	<string>Doorgaan</string>
+	<key>Continuous</key>
+	<string>Continu</string>
+	<key>Continuous High</key>
+	<string>Continu hoog</string>
+	<key>Continuous Low</key>
+	<string>Continu laag</string>
+	<key>Continuous high</key>
+	<string>Continu hoog</string>
+	<key>Continuous low</key>
+	<string>Continu laag</string>
+	<key>Contrast</key>
+	<string>Contrast</string>
+	<key>Copenhagen</key>
+	<string>Kopenhagen</string>
+	<key>Copy</key>
+	<string>Kopiëren</string>
+	<key>Copy Images</key>
+	<string>Kopieer Afbeeldingen</string>
+	<key>Copying %d images</key>
+	<string>Kopieer %d afbeeldingen</string>
+	<key>Copying %d out of %d images</key>
+	<string>%1$d van de %2$d afbeeldingen kopiëren</string>
+	<key>Copyright</key>
+	<string>Auteursrecht</string>
+	<key>Copyright Notice</key>
+	<string>Kennisgeving auteursrecht</string>
+	<key>Corresponding Points</key>
+	<string>Corresponderende punten</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>Kon geen toegang krijgen tot Application Support map.</string>
+	<key>Could not activate a Catalog.</key>
+	<string>Kon een Catalogus niet activeren.</string>
+	<key>Could not add metadata for variant.</key>
+	<string>Kon geen metagegevens toevoegen voor variant.</string>
+	<key>Could not apply layer</key>
+	<string>Kon laag niet toepassen</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>Kon bestand %1$@ niet kopiëren naar %2$@</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>Kon Receptenmap niet kopiëren.</string>
+	<key>Could not create a new Catalog.</key>
+	<string>Kon geen nieuwe Catalogus aanmaken.</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>Kon bestandslocatie van metagegevens voor variant niet aanmaken.</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>Kon ICC-profiel voor verwerkingsrecept niet vinden.</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>Kon het ICC-profiel voor verwerkingsrecept niet vinden. In plaats daarvan wordt 'Cameraprofiel insluiten' gebruikt.</string>
+	<key>Could not generate print image</key>
+	<string>Kon afdrukafbeelding niet genereren</string>
+	<key>Could not generate processed image</key>
+	<string>Kon verwerkte afbeelding niet genereren</string>
+	<key>Could not load ICC profile.</key>
+	<string>Kon ICC-profiel niet laden.</string>
+	<key>Could not load LCC profile.</key>
+	<string>Kon LCC-profiel niet laden.</string>
+	<key>Could not load a Recipe file.</key>
+	<string>Kon geen receptbestand laden.</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>Kon Sessiedatabase niet laden op %1$@: %2$@</string>
+	<key>Could not load the Recipes file.</key>
+	<string>Kon het receptenbestand niet laden.</string>
+	<key>Could not process file.</key>
+	<string>Kon bestand niet verwerken.</string>
+	<key>Could not process xmp file.</key>
+	<string>Kon xmp-bestand niet verwerken.</string>
+	<key>Could not read catalog data.</key>
+	<string>Kon catalogusgegevens niet lezen.</string>
+	<key>Could not read document data.</key>
+	<string>Kon documentgegevens niet lezen.</string>
+	<key>Could not read session data.</key>
+	<string>Kon sessiegegevens niet lezen.</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>Kon ICC niet uit pakketbestand verwijderen.</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>Kon LCC niet uit pakketbestand verwijderen.</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>Kon niet het Masker bestand uit het pakketbestand verwijderen.</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>Kon geen informatie ophalen over pakketbestand. Bestand is mogelijk beschadigd</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>Kon geen informatie ophalen over pakketbestand. Bestand wordt mogelijk niet ondersteund of is beschadigd</string>
+	<key>Could not understand file data.</key>
+	<string>Kon bestandsgegevens niet begrijpen.</string>
+	<key>Could not understand file to open.</key>
+	<string>Kon bestand niet begrijpen voor openen.</string>
+	<key>Could not write ICC profile.</key>
+	<string>Kon ICC profiel niet opslaan.</string>
+	<key>Could not write LCC profile.</key>
+	<string>Kon LCC profiel niet opslaan.</string>
+	<key>Couldn't read image settings</key>
+	<string>Kon afbeeldingsinstellingen niet lezen</string>
+	<key>Counter</key>
+	<string>Teller</string>
+	<key>Country</key>
+	<string>Land</string>
+	<key>Creat.</key>
+	<string>Creat.</string>
+	<key>Create LCC</key>
+	<string>Maak LCC aan</string>
+	<key>Creative</key>
+	<string>Creatief</string>
+	<key>Creative (Slow speed)</key>
+	<string>Creatief (langzaam)</string>
+	<key>Creator</key>
+	<string>Maker</string>
+	<key>Creator's Job Title</key>
+	<string>Functie van maker</string>
+	<key>Creator's Title</key>
+	<string>Titel van de maker</string>
+	<key>Crop</key>
+	<string>Uitsnijden</string>
+	<key>Crop Outside Image</key>
+	<string>Uitsnede buiten afbeelding</string>
+	<key>Cropped</key>
+	<string>Uitgesneden</string>
+	<key>Cubic Grain</key>
+	<string>Kubusvormige korrel</string>
+	<key>Current Date</key>
+	<string>Huidige datum</string>
+	<key>Current Date (%@)</key>
+	<string>Huidige datum (%@)</string>
+	<key>Current Day of Month</key>
+	<string>Huidige dag van de maand</string>
+	<key>Current Day of Month (%@)</key>
+	<string>Huidige dag van de maand (%@)</string>
+	<key>Current Day of Week</key>
+	<string>Huidige dag van de week</string>
+	<key>Current Day of Week (%@)</key>
+	<string>Huidige dag van de week (%@)</string>
+	<key>Current Month</key>
+	<string>Huidige maand</string>
+	<key>Current Month (%@)</key>
+	<string>Huidige maand (%@)</string>
+	<key>Current Time</key>
+	<string>Huidige tijd</string>
+	<key>Current Time (%@)</key>
+	<string>Huidige tijd (%@)</string>
+	<key>Current Year</key>
+	<string>Huidig jaar</string>
+	<key>Current Year (%@)</key>
+	<string>Huidig jaar (%@)</string>
+	<key>Curve</key>
+	<string>Curve</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>Aangepaste kleurafwijking</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>Naam aangepaste kleurafwijking</string>
+	<key>Cyan</key>
+	<string>Cyaan</string>
+	<key>DK</key>
+	<string>DK</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>DNG Standaard</string>
+	<key>Date</key>
+	<string>Datum</string>
+	<key>Date - Month in Year</key>
+	<string>Datum - maand in jaar</string>
+	<key>Date - Year</key>
+	<string>Datum - jaar</string>
+	<key>Date Created</key>
+	<string>Aanmaakdatum</string>
+	<key>Daylight</key>
+	<string>Daglicht</string>
+	<key>Default Chromatic Aberration</key>
+	<string>Standaardkleurafwijking</string>
+	<key>Demote Variant</key>
+	<string>Degradeer Variant</string>
+	<key>Demote Variants</key>
+	<string>Degradeer Varianten</string>
+	<key>Denmark</key>
+	<string>Denemarken</string>
+	<key>Description</key>
+	<string>Beschrijving</string>
+	<key>Description Writer</key>
+	<string>Schrijver beschrijving</string>
+	<key>Destination Folder Name</key>
+	<string>Naam Doelmap</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>De Doelmap bestaat niet en kon niet worden aangemaakt. U hebt mogelijk onvoldoende rechten.</string>
+	<key>Details</key>
+	<string>Details</string>
+	<key>Details Noise Reduction</key>
+	<string>Details ruisreductie</string>
+	<key>Diffraction Correction</key>
+	<string>Diffractie correctie</string>
+	<key>Dimensions</key>
+	<string>Afmetingen</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>Zwart-Wit uitschakelen</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>Correctie kleurafwijking uitschakelen</string>
+	<key>Disable Crop Outside Image</key>
+	<string>Uitsnede buiten afbeelding uitschakelen</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>Vervormde gebieden verbergen uitschakelen</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>LCC kleurzweemcorrectie uitschakelen</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>LCC stofverwijdering uitschakelen</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>LCC uniform licht uitschakelen</string>
+	<key>Disable Layer</key>
+	<string>Laag uitschakelen</string>
+	<key>Disable Optic Center</key>
+	<string>Optisch centrum uitschakelen</string>
+	<key>Display Name</key>
+	<string>Displaynaam</string>
+	<key>Distant</key>
+	<string>Ver</string>
+	<key>Distant view</key>
+	<string>Vergezicht</string>
+	<key>Distortion</key>
+	<string>Vervorming</string>
+	<key>Distortion Amount</key>
+	<string>Hoeveelheid vervorming</string>
+	<key>Do Not Close</key>
+	<string>Niet sluiten</string>
+	<key>Do Not Overwrite</key>
+	<string>Niet overschrijven</string>
+	<key>Do Not Quit</key>
+	<string>Niet stoppen</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>Wilt u deze %d varianten automatisch aanpassen?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>Wilt u Stijlen en Voorinstellingen voor deze %d varianten herstellen?</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>Wilt u deze %d varianten linksom roteren?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>Wilt u deze %d varianten rechtsom roteren?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>Wilt u deze %d varianten exact roteren?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>Wilt u de lopende activiteiten voor dit document beëindigen?</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>Wilt u de lopende activiteiten beëindigen?</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>Wilt u de lopende activiteit voor dit document beëindigen?</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>Wilt u de lopende activiteit beëindigen?</string>
+	<key>Document Name</key>
+	<string>Naam document</string>
+	<key>Document migration failed.</key>
+	<string>Migratie van document mislukt.</string>
+	<key>Domain</key>
+	<string>Domein</string>
+	<key>Don't show this message again</key>
+	<string>Toon dit bericht niet meer</string>
+	<key>Drag Variant</key>
+	<string>Variant slepen</string>
+	<key>Drag Variants</key>
+	<string>Varianten slepen</string>
+	<key>Drive Mode</key>
+	<string>Drive-modus</string>
+	<key>Drive mode/self timer</key>
+	<string>Drive-modus/zelftimer</string>
+	<key>Dust</key>
+	<string>Stof</string>
+	<key>Dust Removal</key>
+	<string>Stofverwijdering</string>
+	<key>E-Mail(s)</key>
+	<string>E-mail(s)</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF - Camera</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF - Belichting</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF - GPS</string>
+	<key>Emails</key>
+	<string>E-mails</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>Zwart-Wit inschakelen</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>Correctie kleurafwijking inschakelen</string>
+	<key>Enable Crop Outside Image</key>
+	<string>Uitsnede buiten afbeelding inschakelen</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>Vervormde gebieden verbergen inschakelen</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>LCC kleurzweemcorrectie inschakelen</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>LCC stofverwijdering inschakelen</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>LCC uniform licht inschakelen</string>
+	<key>Enable Layer</key>
+	<string>Laag inschakelen</string>
+	<key>Enable Optic Center</key>
+	<string>Optisch centrum inschakelen</string>
+	<key>Enabled</key>
+	<string>Ingeschakeld</string>
+	<key>Error loading adjustment mask.</key>
+	<string>Fout in laden aanpassingenmasker.</string>
+	<key>Error packing an image.</key>
+	<string>Fout bij het inpakken van een afbeelding.</string>
+	<key>Estimating time remaining…</key>
+	<string>Bezig met schatten resterende tijd...</string>
+	<key>Event</key>
+	<string>Gebeurtenis</string>
+	<key>Expand Stack</key>
+	<string>Vouw Stapel uit</string>
+	<key>Export</key>
+	<string>Exporteren</string>
+	<key>Export %d Originals</key>
+	<string>%d originelen exporteren</string>
+	<key>Export 1 Original</key>
+	<string>1 origineel exporteren</string>
+	<key>Export Anyway</key>
+	<string>Toch exporteren</string>
+	<key>Export Date</key>
+	<string>Export datum</string>
+	<key>Export Date (%@)</key>
+	<string>Export datum (%@)</string>
+	<key>Export to Catalog</key>
+	<string>Exporteren naar Catalogus</string>
+	<key>Exposure</key>
+	<string>Belichting</string>
+	<key>Exposure Compensation</key>
+	<string>Belichtingscompensatie</string>
+	<key>Exposure Mode</key>
+	<string>Belichtingsmodus</string>
+	<key>Exposure Program</key>
+	<string>Belichtingsprogramma</string>
+	<key>Exposure White Balance</key>
+	<string>Witbalans van opname</string>
+	<key>Exposure compensation</key>
+	<string>Belichtingscompensatie</string>
+	<key>Exposure mode</key>
+	<string>Belichtingsmodus</string>
+	<key>Exposure program</key>
+	<string>Belichtingsprogramma</string>
+	<key>Extension</key>
+	<string>Extensie</string>
+	<key>Failed to create %@ database.</key>
+	<string>Aanmaken %@ database mislukt.</string>
+	<key>Fashion</key>
+	<string>Mode</string>
+	<key>File</key>
+	<string>Bestand</string>
+	<key>File Size</key>
+	<string>Bestandsgrootte</string>
+	<key>File conversion warning</key>
+	<string>Waarschuwing bestandsconversie</string>
+	<key>File name</key>
+	<string>Bestandsnaam</string>
+	<key>File size</key>
+	<string>Bestandsgrootte</string>
+	<key>File type version not supported.</key>
+	<string>Bestandstypeversie wordt niet ondersteund</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>Bestandstype wordt niet ondersteund door deze versie van Capture One</string>
+	<key>Files will be moved to a new location.</key>
+	<string>Bestanden worden verplaatst naar een nieuwe locatie.</string>
+	<key>Fill Mask</key>
+	<string>Vul Masker</string>
+	<key>Film Curve</key>
+	<string>FIlmcurve</string>
+	<key>Film Extra Shadow</key>
+	<string>Film extra schaduw</string>
+	<key>Film Grain Amount</key>
+	<string>Hoeveelheid Filmkorrel</string>
+	<key>Film Grain Density</key>
+	<string>Dichtheid Filmkorrel</string>
+	<key>Film Grain Granularity</key>
+	<string>Filmkorrel Korreligheid</string>
+	<key>Film Grain Type</key>
+	<string>Type Filmkorrel</string>
+	<key>Film High Contrast</key>
+	<string>Film hoog contrast</string>
+	<key>Film Standard</key>
+	<string>Film standaard</string>
+	<key>Fine Grain</key>
+	<string>Fijne korrel</string>
+	<key>Fired</key>
+	<string>Geactiveerd</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>Geactiveerd, Rode-ogenreductie</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>Geactiveerd, Rode-ogenreductie, Weerkaatsing gedetecteerd</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>Geactiveerd, Rode-ogenreductie, Weerkaatsing niet gedetecteerd</string>
+	<key>Fired, Return detected</key>
+	<string>Geactiveerd, Weerkaatsing gedetecteerd</string>
+	<key>Fired, Return not detected</key>
+	<string>Geactiveerd, Weerkaatsing niet gedetecteerd</string>
+	<key>Fired, auto</key>
+	<string>Geactiveerd, automatisch</string>
+	<key>Fired, auto, no return light</key>
+	<string>Geactiveerd, automatisch, geen weerkaatst licht</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>Geactiveerd, geen weerkaatst licht, rode ogen</string>
+	<key>Fired, auto, red-eye</key>
+	<string>Geactiveerd, automatisch, rode ogen</string>
+	<key>Fired, auto, return light</key>
+	<string>Geactiveerd, automatisch, weerkaatst licht</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>Geactiveerd, automatisch, weerkaatst licht, rode ogen</string>
+	<key>Fired, compulsory</key>
+	<string>Geactiveerd, altijd flitsen</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>Geactiveerd, altijd flitsen, geen weerkaatst licht</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>Geactiveerd, altijd flitsen, rode ogen, geen weerkaatst licht</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>Geactiveerd, altijd flitsen, rode ogen, weerkaatst licht</string>
+	<key>Fired, compulsory, return light</key>
+	<string>Geactiveerd, altijd flitsen, weerkaatst licht</string>
+	<key>Fired, red-eye</key>
+	<string>Geactiveerd, rode ogen</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>Geactiveerd, rode ogen, geen weerkaatst licht</string>
+	<key>Fired, red-eye, return light</key>
+	<string>Geactiveerd, rode ogen, weerkaatst licht</string>
+	<key>Firmware</key>
+	<string>Firmware</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>Vast</string>
+	<key>Flash Compensation</key>
+	<string>Flitscompensatie</string>
+	<key>Flash Mode</key>
+	<string>Flitsmodus</string>
+	<key>Flash compensation</key>
+	<string>Flitscompensatie</string>
+	<key>Flash did not fire</key>
+	<string>Flits niet geactiveerd</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>Flits niet geactiveerd, automatische modus</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>Flits niet geactiveerd, altijd flitsen</string>
+	<key>Flash fired</key>
+	<string>Flits geactiveerd</string>
+	<key>Flash fired, auto mode</key>
+	<string>Flits geactiveerd, automatische modus</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>Flits geactiveerd, automatische modus, rode-ogenreductiemodus</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>Flits geactiveerd, automatische modus, weerkaatst licht gedetecteerd</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>Flits geactiveerd, automatische modus, weerkaatst licht gedetecteerd, rode-ogenreductiemodus</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>Flits geactiveerd, automatische modus, weerkaatst licht niet gedetecteerd</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>Flits geactiveerd, automatische modus, weerkaatst licht niet gedetecteerd, rode-ogenreductiemodus</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>Flits geactiveerd, altijd flitsen</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>Flits geactiveerd, altijd flitsen, rode-ogenreductiemodus</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>Flits geactiveerd,altijd flitsen, rode-ogenreductiemodus, weerkaatst licht gedetecteerd</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>Flits geactiveerd,altijd flitsen, rode-ogenreductiemodus, weerkaatst licht niet gedetecteerd</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>Flits geactiveerd, altijd flitsen, weerkaatst licht gedetecteerd</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>Flits geactiveerd, altijd flitsen, weerkaatst licht niet gedetecteerd</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>Flits geactiveerd, rode-ogenreductiemodus</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>Flits geactiveerd, rode-ogenreductiemodus, weerkaatst licht gedetecteerd</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>Flits geactiveerd, rode-ogenreductiemodus, weerkaatst licht niet gedetecteerd</string>
+	<key>Flash mode</key>
+	<string>Flitsmodus</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>Flits uit, niet geactiveerd, weerkaatst licht niet gedetecteerd</string>
+	<key>Flash off, no flash function</key>
+	<string>Flits uit, geen flitsfunctie</string>
+	<key>Flash on, did not fire</key>
+	<string>Flits aan, niet geactiveerd</string>
+	<key>Flip</key>
+	<string>Spiegelen</string>
+	<key>Focal Length</key>
+	<string>Brandpuntsafstand</string>
+	<key>Focal length</key>
+	<string>Brandpuntsafst.</string>
+	<key>Focus Stacking</key>
+	<string>Focus stapelen</string>
+	<key>Format</key>
+	<string>Bestandstype</string>
+	<key>Fringing</key>
+	<string>Schiften</string>
+	<key>Generated %d out of %d previews</key>
+	<string>%1$d van %2$d voorvertoningen gegenereerd</string>
+	<key>Generating %d previews</key>
+	<string>Genereren van %d voorvertoningen</string>
+	<key>Generating previews</key>
+	<string>Genereren van voorvertoningen</string>
+	<key>Genre</key>
+	<string>Genre</string>
+	<key>Geotagged</key>
+	<string>Met geotags</string>
+	<key>Getting Folders for %d images</key>
+	<string>Mappen lezen voor %d afbeeldingen</string>
+	<key>Getty Images</key>
+	<string>Getty Images</string>
+	<key>Getty Images Original Filename</key>
+	<string>Originele bestandsnaam Getty Images</string>
+	<key>Getty Images Parent MEID</key>
+	<string>Getty Images Hoofd MEID</string>
+	<key>Getty Images Personality</key>
+	<string>Persoonlijkheid Getty Images</string>
+	<key>Gradation Curve</key>
+	<string>Gradatiecurve</string>
+	<key>Grain</key>
+	<string>Korrel</string>
+	<key>Grain Amount</key>
+	<string>Hoeveelheid korrel</string>
+	<key>Grain Density </key>
+	<string>Korreldichtheid</string>
+	<key>Grain Granularity</key>
+	<string>Korrel Korreligheid</string>
+	<key>Grain Type</key>
+	<string>Korreltype</string>
+	<key>Green</key>
+	<string>Groen</string>
+	<key>Green Curve</key>
+	<string>Groene curve</string>
+	<key>Green Gradation Curve</key>
+	<string>Groene gradatiecurve</string>
+	<key>HDR</key>
+	<string>HDB</string>
+	<key>HH</key>
+	<string>UU</string>
+	<key>HH-mm</key>
+	<string>UU-mm</string>
+	<key>HH-mm-ss</key>
+	<string>UU-mm-ss</string>
+	<key>Halo Control</key>
+	<string>Halo-beheersing</string>
+	<key>Harsh Grain</key>
+	<string>Grove korrel</string>
+	<key>Headline</key>
+	<string>Kop</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>Retouche- en kloonlagen lagen kunnen niet worden gekopieerd tussen varianten met verschillende afmetingen</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>Retouche- en kloonlagen vereisen een nieuwere Engine. De Engine kan worden geüpgraded met behulp van de tool Basiseigenschappen.</string>
+	<key>Height</key>
+	<string>Hoogte</string>
+	<key>Hide Distorted Areas</key>
+	<string>Vervormde gebieden verbergen</string>
+	<key>Highlight Recovery</key>
+	<string>Hooglicht-herstel</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>Horizontale Trapeziumcorrectie</string>
+	<key>Hyperfocal</key>
+	<string>Hyperfocaal</string>
+	<key>ICC Profile</key>
+	<string>ICC-profiel</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>ICC [ %@ ] locatie- of profielnaam is te lang (max 1024 bytes)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC - Contact</string>
+	<key>IPTC - Content</key>
+	<string>IPTC - Inhoud</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC - Getty</string>
+	<key>IPTC - Image</key>
+	<string>IPTC - Afbeelding</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC - Trefwoorden</string>
+	<key>IPTC - Status</key>
+	<string>IPTC - Status</string>
+	<key>IPTC Scene</key>
+	<string>IPTC-scène</string>
+	<key>IPTC scene</key>
+	<string>IPTC-scène</string>
+	<key>IPTC subject code</key>
+	<string>IPTC onderwerpcode</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>ISO</string>
+	<key>ISO Country Code</key>
+	<string>ISO landcode</string>
+	<key>ISO speed rating</key>
+	<string>ISO-snelheid</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>Als het document is gemaakt met een Windows-versie van Capture One, opent u het in Capture One voor Windows, versie 7 of nieuwer. Vervolgens probeert u weer om het document te openen met Capture One voor Mac.</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>Als u deze wijziging doorvoert, wordt uw document mogelijk niet geopend in Capture One.</string>
+	<key>Image City</key>
+	<string>Stad afbeelding</string>
+	<key>Image Country</key>
+	<string>Land afbeelding</string>
+	<key>Image Date</key>
+	<string>Datum afbeelding</string>
+	<key>Image Date (%@)</key>
+	<string>Datum afbeelding (%@)</string>
+	<key>Image Day of Month</key>
+	<string>Opnamedag van de maand</string>
+	<key>Image Day of Month (%@)</key>
+	<string>Opnamedag van de maand (%@)</string>
+	<key>Image Day of Week</key>
+	<string>Opnamedag van de week</string>
+	<key>Image Day of Week (%@)</key>
+	<string>Opnamedag van de week (%@)</string>
+	<key>Image Folder</key>
+	<string>Afbeeldingenmap</string>
+	<key>Image Folder Name</key>
+	<string>Naam afbeeldingenmap</string>
+	<key>Image Location</key>
+	<string>Locatie afbeelding</string>
+	<key>Image Month</key>
+	<string>Maand afbeelding</string>
+	<key>Image Month (%@)</key>
+	<string>Maand afbeelding (%@)</string>
+	<key>Image Name</key>
+	<string>Afbeeldingsnaam</string>
+	<key>Image State</key>
+	<string>Provincie afbeelding</string>
+	<key>Image Time</key>
+	<string>Tijd afbeelding</string>
+	<key>Image Time (%@)</key>
+	<string>Tijd afbeelding (%@)</string>
+	<key>Image Year</key>
+	<string>Jaar afbeelding</string>
+	<key>Image Year (%@)</key>
+	<string>Jaar afbeelding (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Afbeeldingslocatie bestaat niet of is te lang (max 1024 bytes)</string>
+	<key>Import Date</key>
+	<string>Datum import</string>
+	<key>Import Date (%@)</key>
+	<string>Datum import (%@)</string>
+	<key>In Catalog</key>
+	<string>In Catalogus</string>
+	<key>Instructions</key>
+	<string>Instructies</string>
+	<key>Int.</key>
+	<string>Int.</string>
+	<key>Intellectual Genre</key>
+	<string>Intellectueel genre</string>
+	<key>Intellectual genre</key>
+	<string>Intellectueel genre</string>
+	<key>Interval</key>
+	<string>Interval</string>
+	<key>Invalid</key>
+	<string>Ongeldig</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>Ongeldige JPEG-kwaliteit (minder dan 0 of meer dan 100).</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>Ongeldige TIFF-compressie (moet zijn: LZW, ZIP of geen).</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>Ongeldig aantal bits per sample (moet 8 of 16 zijn).</string>
+	<key>Invalid file format</key>
+	<string>Ongeldig bestandsformaat</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>Ongeldige resolutie (moet meer zijn dan 10 en minder dan 10000).</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>Ongeldige verschaling (moet meer zijn dan 0 en minder dan 5).</string>
+	<key>Invalid selection!</key>
+	<string>Ongeldige selectie!</string>
+	<key>Invalid token name '%@'</key>
+	<string>Ongeldige token naam '%@'</string>
+	<key>Invert Mask</key>
+	<string>Keer Masker om</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 2048px voor web gebruik</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG - Volledige grootte, hoogste kwaliteit</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - Instagram geoptimaliseerd</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (grootte voorvertoning)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG 1280 pixels lange zijde (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>JPEG-kwaliteit %d</string>
+	<key>JPEG file</key>
+	<string>JPEG-bestand</string>
+	<key>Job Identifier</key>
+	<string>Opdrachtidentificatie</string>
+	<key>Job Name</key>
+	<string>Opdrachtnaam</string>
+	<key>Keep Capture One Values</key>
+	<string>Capture One-waarden behouden</string>
+	<key>Keystone Amount</key>
+	<string>Trapezium hoeveelheid</string>
+	<key>Keystone Aspect</key>
+	<string>Verhouding Trapezium</string>
+	<key>Keystone Focal Length</key>
+	<string>Trapezium brandpuntsafstand</string>
+	<key>Keystone Points</key>
+	<string>Punten Trapezium</string>
+	<key>Keywords</key>
+	<string>Trefwoorden</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>LCC pad [ %@ ] is te lang (max 1024 bytes)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>LCC-profiel kon niet worden gegenereerd terwijl afbeelding nog werd geladen. Probeer het opnieuw.</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>LCC's zijn op ongedefinieerde wijze gepositioneerd. Zorg ervoor dat LLC's gepositioneerd zijn vóór OF na varianten.</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>Label</string>
+	<key>Land.</key>
+	<string>Ligg.</string>
+	<key>Landscape</key>
+	<string>Liggend</string>
+	<key>Latitude</key>
+	<string>Breedtegraad</string>
+	<key>Layer Selection Point</key>
+	<string>Selectiepunt Laag</string>
+	<key>Layers</key>
+	<string>Lagen</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>Lagen kunnen niet worden toegepast op de variant waaruit ze zijn gekopieerd</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>Lagen zullen niet toegepast worden op %@</string>
+	<key>Lens</key>
+	<string>Lens</string>
+	<key>Lens Correction</key>
+	<string>Lenscorrectie</string>
+	<key>Lens Effects</key>
+	<string>Lenseffecten</string>
+	<key>Lens Profile</key>
+	<string>Lensprofiel</string>
+	<key>Lens Purple Fringing</key>
+	<string>Kleurschifting lens</string>
+	<key>Lens Revision</key>
+	<string>Lensrevisie</string>
+	<key>Lens Selection</key>
+	<string>Lensselectie</string>
+	<key>Less than a minute left</key>
+	<string>Minder dan een minuut resterend</string>
+	<key>Levels</key>
+	<string>Niveaus</string>
+	<key>Levels &amp; Curve</key>
+	<string>Niveaus &amp; Curve</string>
+	<key>Levels Highlight</key>
+	<string>Niveaus hooglicht</string>
+	<key>Levels Midtone</key>
+	<string>Niveaus middentonen</string>
+	<key>Levels Shadow</key>
+	<string>Niveaus schaduw</string>
+	<key>Levels Target Highlight</key>
+	<string>Niveaus doel hooglicht</string>
+	<key>Levels Target Shadow</key>
+	<string>Niveaus doel schaduw</string>
+	<key>Light Falloff</key>
+	<string>Lichtafval</string>
+	<key>Light Falloff Amount</key>
+	<string>Hoeveelheid lichtafval</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>Lineaire weergave</string>
+	<key>Load error</key>
+	<string>Fout bij laden</string>
+	<key>Locate File</key>
+	<string>Lokaliseer bestand</string>
+	<key>Location</key>
+	<string>Locatie</string>
+	<key>Long Edge</key>
+	<string>Lange zijde</string>
+	<key>Longitude</key>
+	<string>Lengtegraad</string>
+	<key>Luma Curve</key>
+	<string>Luma curve</string>
+	<key>Luma Gradation Curve</key>
+	<string>Luma gradatiecurve</string>
+	<key>Luminance Noise Reduction</key>
+	<string>Ruisreductie luminantie</string>
+	<key>M</key>
+	<string>M</string>
+	<key>M.spot</key>
+	<string>M.punts</string>
+	<key>MM</key>
+	<string>MM</string>
+	<key>MMM</key>
+	<string>MMM</string>
+	<key>MMM dd yyyy</key>
+	<string>MMM dd jjjj</string>
+	<key>MMMM</key>
+	<string>MMMM</string>
+	<key>MMMMM</key>
+	<string>MMMMM</string>
+	<key>Macro</key>
+	<string>Macro</string>
+	<key>Magenta</key>
+	<string>Magenta</string>
+	<key>Make</key>
+	<string>Merk</string>
+	<key>Man.</key>
+	<string>Handm.</string>
+	<key>Manual</key>
+	<string>Handmatig</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>Bestandslocatienaam van masker is te lang (max 1024 bytes)</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>Maximum aantal lagen overschreden</string>
+	<key>Metadata</key>
+	<string>Metagegevens</string>
+	<key>Metadata Import</key>
+	<string>Metadata import</string>
+	<key>Metadata Synchronization</key>
+	<string>Synchronisatie metagegevens</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>Waarschuwing synchronisatie metagegevens</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>Conflicten metagegevens gedetecteerd voor een variant van afbeelding '%@'. Wilt u de waarden voor metagegevens die u heeft ingesteld in Capture One vervangen door opnieuw geladen metagegevens of wilt u de Capture One-waarden behouden?</string>
+	<key>Metering Mode</key>
+	<string>Meetmodus</string>
+	<key>Metering mode</key>
+	<string>Meetmodus</string>
+	<key>Method not implemented.</key>
+	<string>Methode niet geïmplementeerd.</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Migratie van het Capture One document mislukt.</string>
+	<key>Minimum Viewing Distance</key>
+	<string>Minimale kijkafstand</string>
+	<key>Mir.up</key>
+	<string>Spgl.omhoog</string>
+	<key>Mirror Up</key>
+	<string>Spiegel omhoog</string>
+	<key>Mirror up</key>
+	<string>Spiegel omhoog</string>
+	<key>Missing ICC Profile.</key>
+	<string>ICC profiel ontbreekt.</string>
+	<key>Missing LCC Profile.</key>
+	<string>LCC profiel ontbreekt.</string>
+	<key>Missing Preview</key>
+	<string>Voorvertoning ontbreekt</string>
+	<key>Mode</key>
+	<string>Modus</string>
+	<key>Model</key>
+	<string>Model</string>
+	<key>Moire</key>
+	<string>Moiré</string>
+	<key>Moire Amount</key>
+	<string>Hoeveelheid moiré</string>
+	<key>Moire Pattern</key>
+	<string>Moirépatroon</string>
+	<key>Moire Radius</key>
+	<string>Moiréstraal</string>
+	<key>Move Files</key>
+	<string>Bestanden verplaatsen</string>
+	<key>Move Image</key>
+	<string>Afbeelding verplaatsen</string>
+	<key>Move Images</key>
+	<string>Afbeeldingen verplaatsen</string>
+	<key>Moving %d images</key>
+	<string>Verplaatsen %d afbeeldingen</string>
+	<key>Moving %d out of %d images</key>
+	<string>%1$d van de %2$d afbeeldingen verplaatsen</string>
+	<key>Multi spot</key>
+	<string>Meerpunts</string>
+	<key>Multi-spot</key>
+	<string>Multi-spot</string>
+	<key>NO</key>
+	<string>NEE</string>
+	<key>NY</key>
+	<string>NY</string>
+	<key>Name</key>
+	<string>Naam</string>
+	<key>Nature</key>
+	<string>Aard</string>
+	<key>New LCC Profile</key>
+	<string>Nieuw LCC-profiel</string>
+	<key>New Session</key>
+	<string>Nieuwe Sessie</string>
+	<key>New Variant</key>
+	<string>Nieuwe Variant</string>
+	<key>No</key>
+	<string>Nee</string>
+	<key>No Flash</key>
+	<string>Geen flits</string>
+	<key>No LCC to apply</key>
+	<string>Geen LCC om toe te passen</string>
+	<key>No collection has been selected</key>
+	<string>Geen Verzameling geselecteerd</string>
+	<key>No flash function</key>
+	<string>Geen flitsfunctie</string>
+	<key>No function</key>
+	<string>Zonder functie</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>Niet meer dan %@ Kleurcorrecties zijn toegestaan</string>
+	<key>No strobe return light</key>
+	<string>Geen weerkaatst strobe-licht</string>
+	<key>No variants to apply LCC</key>
+	<string>Geen varianten voor toepassen van LCC.</string>
+	<key>None</key>
+	<string>Geen</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>Geen van de %d geselecteerde varianten kan automatisch worden aangepast</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>Geen van de %d geselecteerde varianten kan linksom worden geroteerd.</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>Geen van de %d geselecteerde varianten kan rechtsom worden geroteerd.</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>Geen van de %d geselecteerde varianten kan exact worden geroteerd.</string>
+	<key>Norm.</key>
+	<string>Norm.</string>
+	<key>Normal</key>
+	<string>Normaal</string>
+	<key>Not Defined</key>
+	<string>Niet gedefinieerd</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>Onvoldoende schijfruimte om het bestand te verwerken. De wachtrij voor verwerking is stopgezet.</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>Onvoldoende vrije ruimte op doelvolume.</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>Onvoldoende geheugen om aan Overlay-afbeelding toe te wijzen.</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>Onvoldoende geheugen om aan afbeelding-watermerk toe te wijzen.</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>Onvoldoende geheugen om aan tekst-watermerk toe te wijzen.</string>
+	<key>Not fired</key>
+	<string>Niet geactiveerd</string>
+	<key>Not fired, auto</key>
+	<string>Niet geactiveerd, automatisch</string>
+	<key>Not fired, compulsory</key>
+	<string>Niet geactiveerd, altijd flitsen</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Off</key>
+	<string>Uit</string>
+	<key>Off, Did not fire</key>
+	<string>Uit, Niet geactiveerd</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>Uit, Niet geactiveerd, Weerkaatsing niet gedetecteerd</string>
+	<key>Off, No flash function</key>
+	<string>Uit, Geen flitsfunctie</string>
+	<key>Offline images will be skipped</key>
+	<string>Offline afbeeldingen worden overgeslagen</string>
+	<key>On, Did not fire</key>
+	<string>Aan, Niet geactiveerd</string>
+	<key>On, Fired</key>
+	<string>Aan, Geactiveerd</string>
+	<key>On, Red-eye reduction</key>
+	<string>Aan, Rode-ogenreductie</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>Aan, Rode-ogenreductie, Weerkaatsing gedetecteerd</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>Aan, Rode-ogenreductie, Weerkaatsing niet gedetecteerd</string>
+	<key>On, Return detected</key>
+	<string>Aan, Weerkaatsing gedetecteerd</string>
+	<key>On, Return not detected</key>
+	<string>Aan, Weerkaatsing niet gedetecteerd</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Bij één van deze varianten is een LCC-profiel toegepast. Als u het LCC-profiel van deze variant wijzigt, kan het bestaande profiel hierdoor worden verwijderd. Een LCC-profiel kan alleen opnieuw worden aangemaakt met de originele LCC-testopname of opnieuw worden toegepast indien het als Voorinstelling is opgeslagen.</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>Eén of meer bestanden worden niet ingepakt, omdat het geen inpakbare afbeeldingen zijn of omdat ze al geconverteerd worden. Bezig met inpakken van %1$i van %2$i geselecteerde bestanden.</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>Eén of meer bestanden worden niet uitgepakt, omdat het geen pakketbestanden zijn of omdat ze al geconverteerd worden. Bezig met uitpakken van %1$i van %2$i geselecteerde bestanden.</string>
+	<key>One shot</key>
+	<string>Enkele opname</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>Slechts %1$d van de %2$d geselecteerde varianten kan/kunnen automatisch worden aangepast.</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>Slechts %1$d van de %2$d geselecteerde varianten kan/kunnen worden geroteerd</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>Slechts %1$d van de %2$d geselecteerde varianten kan/kunnen rechtsom worden geroteerd</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>Slecht %1$d van de %2$d geselecteerde varianten kan/kunnen exact worden geroteerd.</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>Alleen bewerkbare varianten kunnen automatisch worden aangepast. Selecteer varianten die kunnen worden bewerkt.</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>Alleen bewerkbare varianten kunnen linksom worden geroteerd. Selecteer varianten die kunnen worden bewerkt.</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>Alleen bewerkbare varianten kunnen rechtsom worden geroteerd. Selecteer varianten die kunnen worden bewerkt.</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>Alleen bewerkbare varianten kunnen exact worden geroteerd. Selecteer varianten die kunnen worden bewerkt.</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>Alleen de gekozen varianten worden toegevoegd aan %@.</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>Alleen de gekozen varianten worden gesynchroniseerd.</string>
+	<key>Opacity</key>
+	<string>Opaciteit</string>
+	<key>Open failed</key>
+	<string>Openen mislukt</string>
+	<key>Optic Center</key>
+	<string>Optisch centrum</string>
+	<key>Optic Center Enabled</key>
+	<string>Optisch centrum ingeschakeld</string>
+	<key>Orange</key>
+	<string>Oranje</string>
+	<key>Orientation</key>
+	<string>Afdrukstand</string>
+	<key>Original</key>
+	<string>Origineel</string>
+	<key>Original Filename</key>
+	<string>Originele bestandsnaam</string>
+	<key>Output</key>
+	<string>Uitvoer</string>
+	<key>Output Folder</key>
+	<string>Uitvoer Map</string>
+	<key>Overwrite</key>
+	<string>Overschrijven</string>
+	<key>Owner</key>
+	<string>Eigenaar</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>PNG-bestand</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-bit)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>Pakketnaam is te lang (max 260 bytes)</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Bestandslocatie van pakket bestaat niet of is te lang (max 1024 bytes)</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>%1$d van %2$d afbeeldingen ingepakt als EIP</string>
+	<key>Packing %d images as EIP</key>
+	<string>Inpakken %d afbeeldingen als EIP</string>
+	<key>Parent MEID</key>
+	<string>Hoofd MEID</string>
+	<key>Part.</key>
+	<string>Ged.</string>
+	<key>Partial</key>
+	<string>Gedeeltelijk</string>
+	<key>Patt.</key>
+	<string>Patr.</string>
+	<key>Pattern</key>
+	<string>Patroon</string>
+	<key>People</key>
+	<string>Mensen</string>
+	<key>Personality</key>
+	<string>Persoonlijkheid</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>Telefoonnummers</string>
+	<key>Phone(s)</key>
+	<string>Telefoon(s)</string>
+	<key>Phones</key>
+	<string>Telefoons</string>
+	<key>Pick Variant</key>
+	<string>Kies Variant</string>
+	<key>Pink</key>
+	<string>Roze</string>
+	<key>Pixels</key>
+	<string>Pixels</string>
+	<key>Place</key>
+	<string>Plaatsen</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>Afbeeldingen plaatsen in Albums die overeenkomen met de aangegeven Catalogussets?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>Bekijk documentatie over uitgelezen L*a*b waarden voor details.</string>
+	<key>Please select a collection in the library tool</key>
+	<string>Selecteer een Verzameling in de Bibliotheek tool</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>Stel de Selectie Map in op een geldige, beschrijfbaar map.</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>Maak ruimte vrij op doelvolume.</string>
+	<key>Port.</key>
+	<string>Poort</string>
+	<key>Portrait</key>
+	<string>Staand</string>
+	<key>Postal Code</key>
+	<string>Postcode</string>
+	<key>Postal code</key>
+	<string>Postcode</string>
+	<key>Preparing Catalog Import…</key>
+	<string>Bezig met voorbereiden van importeren Catalogus...</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>Er worden voorvertoningen gegenereerd voor afbeeldingen in een Catalogus. Wilt u het genereren van voorvertoningen beëindigen?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>Eerder hernoemd door toevoeging van .error</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>Eerder hernoemd door toevoeging van .invalid</string>
+	<key>Previous will be overwritten</key>
+	<string>Vorige wordt overschreven</string>
+	<key>Processing Method</key>
+	<string>Verwerkingsmethode</string>
+	<key>Profile</key>
+	<string>Profiel</string>
+	<key>Profile could not be written.</key>
+	<string>Profiel kon niet worden geschreven.</string>
+	<key>Program</key>
+	<string>Programma</string>
+	<key>Program AE</key>
+	<string>Programma AE</string>
+	<key>Promote Variant</key>
+	<string>Promoveer Variant</string>
+	<key>Promote Variants</key>
+	<string>Promoveer Variant</string>
+	<key>Provider</key>
+	<string>Leverancier</string>
+	<key>Proxy Creation Failed</key>
+	<string>Aanmaken proxies mislukt</string>
+	<key>Public</key>
+	<string>Publiek</string>
+	<key>Purple</key>
+	<string>Paars</string>
+	<key>Quit Capture One</key>
+	<string>Stop Capture One</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>RAW-bestand</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>RGB curve</string>
+	<key>Radius</key>
+	<string>Straal</string>
+	<key>Rasterize Mask</key>
+	<string>Raster Masker</string>
+	<key>Rating</key>
+	<string>Classificatie</string>
+	<key>Reason</key>
+	<string>Reden</string>
+	<key>Recent Captures</key>
+	<string>Recente Opnamen</string>
+	<key>Recent Imports</key>
+	<string>Recente Import</string>
+	<key>Recipe</key>
+	<string>Recept</string>
+	<key>Recipe Format</key>
+	<string>Recept bestandstype</string>
+	<key>Recipe Name</key>
+	<string>Recept naam</string>
+	<key>Recovery</key>
+	<string>Herstel</string>
+	<key>Red</key>
+	<string>Rood</string>
+	<key>Red Curve</key>
+	<string>Rode curve</string>
+	<key>Red Gradation Curve</key>
+	<string>Rode gradatiecurve</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>Raadpleeg het Bestand-gedeelte voor de lijst met betrokken afbeeldingen.</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>%1$d van %2$d sets metagegevens opnieuw geladen</string>
+	<key>Remove Layer</key>
+	<string>Laag verwijderen</string>
+	<key>Rename Image</key>
+	<string>Hernoem afbeelding</string>
+	<key>Rename Layer</key>
+	<string>Hernoem Laag</string>
+	<key>Reorder Layer</key>
+	<string>Laag herschikken</string>
+	<key>Replace</key>
+	<string>Vervangen</string>
+	<key>Reset Adjustments</key>
+	<string>Aanpassingen herstellen</string>
+	<key>Reset Styles and Preset</key>
+	<string>Herstel Stijlen en Voorinstelling</string>
+	<key>Reset Styles and Presets</key>
+	<string>Herstel Stijlen en Voorinstelling</string>
+	<key>Resetting</key>
+	<string>herstellen</string>
+	<key>Rights Usage Terms</key>
+	<string>Rechten gebruiksvoorwaarden</string>
+	<key>Rights usage terms</key>
+	<string>Rechten gebruiksvoorwaarden</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>Linksom roteren</string>
+	<key>Rotate Right</key>
+	<string>Rechtsom roteren</string>
+	<key>Rotate Snap</key>
+	<string>Exact roteren</string>
+	<key>Rotating</key>
+	<string>Roteren</string>
+	<key>Rotation</key>
+	<string>Rotatie</string>
+	<key>Running a background activity</key>
+	<string>Bezig met draaien activiteit op achtergrond</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>Verzadiging</string>
+	<key>Saving Document</key>
+	<string>Opslaan van document</string>
+	<key>Saving Document step %d of %d</key>
+	<string>Document opslaan stap %1$d van %2$d</string>
+	<key>Scene</key>
+	<string>Scène</string>
+	<key>Select Layer</key>
+	<string>Laag selecteren</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>Geselecteerde filmbestanden worden niet gesynchroniseerd.</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>Geselecteerde varianten moeten minimaal één LCC-shot bevatten</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>Geselecteerde varianten moeten minimaal één niet-LCC-shot bevatten.</string>
+	<key>Selection</key>
+	<string>Selectie</string>
+	<key>Selects Folder</key>
+	<string>Selectie Map</string>
+	<key>Self Timer</key>
+	<string>Zelfontspanner</string>
+	<key>Self timer</key>
+	<string>Zelfontspanner</string>
+	<key>Sequence Count</key>
+	<string>Reeks teller</string>
+	<key>Sequence ID</key>
+	<string>Reeks ID</string>
+	<key>Sequence Info</key>
+	<string>Reeks informatie</string>
+	<key>Sequence Total</key>
+	<string>Reeks totaal</string>
+	<key>Sequence Type</key>
+	<string>Reeks type</string>
+	<key>Serial</key>
+	<string>Serienummer</string>
+	<key>Servo</key>
+	<string>Servo</string>
+	<key>Session Save</key>
+	<string>Sessie Opslaan</string>
+	<key>Session Sub Path</key>
+	<string>Sessie sub-bestandslocatie</string>
+	<key>Session Sub Path (Long)</key>
+	<string>Sessie sub-bestandslocatie (lang)</string>
+	<key>Session data migration</key>
+	<string>Migratie van Sessiegegevens</string>
+	<key>Session load</key>
+	<string>Sessie laden</string>
+	<key>Set Mask</key>
+	<string>Stel Masker in</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>Instellingen locatie is te lang (max 1024 bytes)</string>
+	<key>Shadow Recovery</key>
+	<string>Schaduwcorrectie</string>
+	<key>Sharpening Amount</key>
+	<string>Mate van verscherpen</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>Verscherping Halo onderdrukking</string>
+	<key>Sharpening Method</key>
+	<string>Verscherpingsmethode</string>
+	<key>Sharpening Radius</key>
+	<string>Verscherpingsstraal</string>
+	<key>Sharpening Threshold</key>
+	<string>Verscherpingsdrempel</string>
+	<key>Sharpness Falloff</key>
+	<string>Scherpteafval</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>Hoeveelheid scherpteafval</string>
+	<key>Shift</key>
+	<string>Verschuiving</string>
+	<key>Shift Direction</key>
+	<string>Richting wisselen</string>
+	<key>Shift XY</key>
+	<string>Verschuiving XY</string>
+	<key>Short Edge</key>
+	<string>Korte zijde</string>
+	<key>Shut.</key>
+	<string>Slt.</string>
+	<key>Shutter Speed</key>
+	<string>Sluitersnelheid</string>
+	<key>Shutter priority</key>
+	<string>Sluitervoorkeuze</string>
+	<key>Shutter speed</key>
+	<string>Sluitersnelheid</string>
+	<key>Shutter speed priority AE</key>
+	<string>Prioriteit sluitersnelheid AE</string>
+	<key>Silver Rich</key>
+	<string>Silver Rich</string>
+	<key>Sing.</key>
+	<string>Enk.</string>
+	<key>Single</key>
+	<string>Enkel</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>Enkele Pixel ruisreductie</string>
+	<key>Single Shot</key>
+	<string>Enkele opname</string>
+	<key>Single shot</key>
+	<string>Enkele opname</string>
+	<key>Skip</key>
+	<string>Sla over</string>
+	<key>Soft Grain</key>
+	<string>Zachte korrel</string>
+	<key>Software</key>
+	<string>Software</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>Sommige laagaanpassingen vereisen een nieuwere Engine. De Engine wordt permanent geüpgraded voor %@ en u kunt later niet downgraden.</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>Sommige laagaanpassingen vereisen een nieuwere Engine. De Engine wordt permanent geüpgraded voor %lu varianten en u kunt later niet downgraden.</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>Enkele van de geselecteerde Varianten kon niet automatisch worden aangepast.</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>Een aantal geselecteerde varianten is alleen-lezen.</string>
+	<key>Some variants are missing metadata</key>
+	<string>Sommige Varianten hebben geen metagegevens</string>
+	<key>Sort Order</key>
+	<string>Sorteervolgorde</string>
+	<key>Source</key>
+	<string>Bron</string>
+	<key>Source image is missing</key>
+	<string>Bronafbeelding ontbreekt</string>
+	<key>Split Tones</key>
+	<string>Gesplitste tinten</string>
+	<key>Spot</key>
+	<string>Vlek</string>
+	<key>Spots</key>
+	<string>Vlekken</string>
+	<key>Square</key>
+	<string>Vierkant</string>
+	<key>State/Province</key>
+	<string>Provincie</string>
+	<key>Status</key>
+	<string>Status</string>
+	<key>Stop</key>
+	<string>Stoppen</string>
+	<key>Strobe return light</key>
+	<string>Weerkaatst strobe-licht</string>
+	<key>Strobe return light detected</key>
+	<string>Weerkaatst strobe-licht gedetecteerd</string>
+	<key>Strobe return light not detected</key>
+	<string>Geen weerkaatst strobe-licht gedetecteerd</string>
+	<key>Structure</key>
+	<string>Structuur</string>
+	<key>Style</key>
+	<string>Stijl</string>
+	<key>Styles</key>
+	<string>Stijlen</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>Herstellen van Stijlen en Voorinstellingen is alleen mogelijk voor %1$d van de %2$d geselecteerde varianten</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>Herstellen van Stijlen en Voorinstellingen is alleen mogelijk voor bewerkbare varianten. Selecteer varianten die kunnen worden bewerkt.</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>Voor geen van de %d geselecteerde varianten kunnen Stijlen en Voorinstellingen worden hersteld.</string>
+	<key>Sub Name</key>
+	<string>Subnaam</string>
+	<key>Subject Code</key>
+	<string>Onderwerpcode</string>
+	<key>Summer</key>
+	<string>Zomer</string>
+	<key>Supplemental Categories</key>
+	<string>Aanvullende categorieën</string>
+	<key>Surface Smoothness</key>
+	<string>Oppervlaktegladheid</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>%1$d van %2$d sets metagegevens gesynchroniseerd</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d-bit) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF - A3 Afdruk (300 dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF - Adobe RGB (1998) (8bit)</string>
+	<key>TIFF file</key>
+	<string>TIFF-bestand</string>
+	<key>Tabular Grain</key>
+	<string>Tabelvormige korrel</string>
+	<key>Target Levels</key>
+	<string>Doel Niveaus</string>
+	<key>Temperature</key>
+	<string>Temperatuur</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>Beëindig activiteiten en sluit venster</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>Activiteiten beëindigen en toepassing sluiten</string>
+	<key>Terminate and Close Window</key>
+	<string>Beëindig en sluit venster</string>
+	<key>Terminate and Quit Application</key>
+	<string>Beëindigen en toepassing sluiten</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>Het LCC-profiel is in een oud formaat dat niet kan worden geopend.</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>De toepassing kon geen database aanmaken voor de/het nieuwe %@.</string>
+	<key>The catalog could not be saved.</key>
+	<string>De Catalogus kon niet worden opgeslagen.</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>Het Catalogus-bestand is in de Prullenbak.</string>
+	<key>The catalog file is not writable.</key>
+	<string>Het catalogusbestand is niet beschrijfbaar.</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>De Catalogus was opgeslagen met %@ en kan niet worden gelezen door deze versie.</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>De Catalogus was opgeslagen met een nieuwere versie van Capture One.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>De huidige variantenselectie bevat geen gekozen varianten. Alleen gekozen varianten kunnen worden toegevoegd.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>De huidige variantenselectie bevat geen gekozen varianten. Alleen gekozen varianten kunnen worden gesynchroniseerd.</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>De inhoud van het document wordt niet ondersteund. Het is opgeslagen met een niet-ondersteunde versie van Capture One.</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>Het document was opgeslagen met %@ en kan niet worden gelezen door deze versie.</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>Het document was opgeslagen met een nieuwere versie van Capture One.</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>De bestaande metagegevens voor bepaalde varianten worden overschreven.</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>De gebruikte methode is niet geïmplementeerd.</string>
+	<key>The output folder could not be created.</key>
+	<string>De Uitvoer Map kon niet worden aangemaakt.</string>
+	<key>The output folder is not writable.</key>
+	<string>De Uitvoer Map is niet beschrijfbaar.</string>
+	<key>The output location is not a folder.</key>
+	<string>De uitvoerlocatie is geen map.</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>Het pakketbestand moet eerst worden hernoemd voordat er wordt uitgepakt. Hernoemen mislukt.</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>De ruwe bestanden voor bepaalde afbeeldingen konden niet worden gevonden. U kunt óf toch exporteren zonder de ontbrekende bestanden óf het exporteren annuleren.</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>Het geselecteerde bestand "%1$@" heeft een andere naam dan het originele bestand "%2$@".
+
+Wilt u het geselecteerde bestand toch gebruiken?</string>
+	<key>The session appears corrupt.</key>
+	<string>De Sessie lijkt te zijn beschadigd.</string>
+	<key>The session could not be saved.</key>
+	<string>De Sessie kon niet worden opgeslagen.</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>Door het migreren van Sessie-gegevens is de naam van een Sessie-bestand gewijzigd. Open "%@" opnieuw.</string>
+	<key>The session file does not exist.</key>
+	<string>Het Sessie-bestand bestaat niet.</string>
+	<key>The session file is empty.</key>
+	<string>Het Sessie-bestand is leeg.</string>
+	<key>The session file is in the Trash.</key>
+	<string>Het sessiebestand is in de Prullenbak.</string>
+	<key>The session file is not writable.</key>
+	<string>Het sessiebestand is niet beschrijfbaar.</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>De Sessie was opgeslagen met %@ en kan niet worden gelezen door deze versie.</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>De Sessie was opgeslagen met een nieuwere versie van Capture One.</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>De Sessie was opgeslagen met een oudere, niet-ondersteunde versie van Capture One.</string>
+	<key>There are no images to export.</key>
+	<string>Er zijn geen afbeeldingen om te exporteren.</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>Er zijn geen afbeeldingen om te exporteren.
+Suit zonodig de submappen in.</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>Er is een fout opgetreden tijdens het verwerken van het uitvoerbestand.</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>Er is een fout opgetreden tijdens het verwerken van het xmp-bestand.</string>
+	<key>There was an error loading the mask.</key>
+	<string>Er is een fout opgetreden bij het laden van het masker.</string>
+	<key>Threshold</key>
+	<string>Drempel</string>
+	<key>Tilt</key>
+	<string>Kantelen</string>
+	<key>Tilt Direction</key>
+	<string>Kantelrichting</string>
+	<key>Time Lapse</key>
+	<string>Tijdsverloop</string>
+	<key>Time-lapse</key>
+	<string>Tijdsverloop</string>
+	<key>Timer</key>
+	<string>Timer</string>
+	<key>Tint</key>
+	<string>Kleurtint</string>
+	<key>Title</key>
+	<string>Titel</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>Als u de database wilt blijven gebruiken, verifieert en repareert u deze.</string>
+	<key>Trash</key>
+	<string>Prullenbak</string>
+	<key>Trash Folder</key>
+	<string>Prullenbak Map</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>Kan afbeeldingsbestand niet omzetten naar pakket</string>
+	<key>Unable to convert package to image file</key>
+	<string>Kan pakket niet omzetten naar afbeeldingsbestand</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>Niet instaat om proxy te maken. Het afbeeldingsbestand kan beschadigd zijn of niet worden geladen.</string>
+	<key>Unable to load LCC profile.</key>
+	<string>LCC-profiel kan niet worden geladen.</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>Kan metadata niet laden van offline afbeeldingen. Ze worden overgeslagen.</string>
+	<key>Unable to read package file.</key>
+	<string>Kan pakketbestand niet lezen.</string>
+	<key>Uncalib.</key>
+	<string>Ongekalibr.</string>
+	<key>Uncalibrated</key>
+	<string>Ongekalibreerd</string>
+	<key>Uncataloged</key>
+	<string>Niet-gecatalogiseerd</string>
+	<key>Unconstrained</key>
+	<string>Zonder beperking</string>
+	<key>Undef.</key>
+	<string>Ongedef.</string>
+	<key>Undefined</key>
+	<string>Ongedefinieerd</string>
+	<key>Uniform Light</key>
+	<string>Uniform licht</string>
+	<key>Uniform Light Amount</key>
+	<string>Uniforme lichthoeveelheid</string>
+	<key>Unknown</key>
+	<string>Onbekend</string>
+	<key>Unknown Font</key>
+	<string>Onbekend lettertype</string>
+	<key>Unknown Group</key>
+	<string>Onbekende Groep</string>
+	<key>Unknown Processing Engine</key>
+	<string>Onbekende Engine</string>
+	<key>Unknown Scale</key>
+	<string>Onbekende schaalgrootte</string>
+	<key>Unknown Setting</key>
+	<string>Onbekende instelling</string>
+	<key>Unknown reason.</key>
+	<string>Onbekende reden</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>%1$d van %2$d EIP-afbeeldingen uitgepakt</string>
+	<key>Unpacking %d EIP files</key>
+	<string>%d EIP-bestanden uitpakken</string>
+	<key>Unpacking EIP Failed</key>
+	<string>EIP-bestanden uitpakken mislukt</string>
+	<key>Unrated</key>
+	<string>Niet-geclassificeerd</string>
+	<key>Unsupported catalog version.</key>
+	<string>Niet-ondersteunde Catalogus versie.</string>
+	<key>Unsupported document version.</key>
+	<string>Niet-ondersteunde document versie.</string>
+	<key>Unsupported session version.</key>
+	<string>Niet-ondersteunde Sessie versie.</string>
+	<key>Untitled Album</key>
+	<string>Album zonder titel</string>
+	<key>Untitled Recipe</key>
+	<string>Recept zonder titel</string>
+	<key>Update Images</key>
+	<string>Afbeeldingen bijwerken</string>
+	<key>Updating</key>
+	<string>Bijwerken</string>
+	<key>Upgrade Engine</key>
+	<string>Upgrade Engine</string>
+	<key>Upgrade Processing Engine</key>
+	<string>Upgrade Processing Engine</string>
+	<key>Urgency</key>
+	<string>Urgentie</string>
+	<key>Usage Terms</key>
+	<string>Gebruiksvoorwaarden</string>
+	<key>Variant Position</key>
+	<string>Variantpositie</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>Varianten kunnen niet meer dan %1$lu lagen hebben. Als u overslaat, worden er geen aanpassingen toegepast op %2$@</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>Varianten kunnen niet meer dan %1$lu lagen hebben. Als u overslaat, worden er geen aanpassingen toegepast op %2$lu varianten</string>
+	<key>Vendor Specific</key>
+	<string>Specifiek voor verkoper</string>
+	<key>Vendor White Balance</key>
+	<string>Witbalans leverancier</string>
+	<key>Vertical Keystone Correction</key>
+	<string>Verticale Trapeziumcorrectie</string>
+	<key>Video</key>
+	<string>Video</string>
+	<key>Vignetting</key>
+	<string>Vignettering</string>
+	<key>Vignetting Amount</key>
+	<string>Hoeveelheid vignettering</string>
+	<key>Vignetting Disabled</key>
+	<string>Vignettering uitgeschakeld</string>
+	<key>Vignetting Enabled</key>
+	<string>Vignettering ingeschakeld</string>
+	<key>Vignetting Method</key>
+	<string>Vignetteringsmethode</string>
+	<key>Vignetting Method Circular</key>
+	<string>Vignetteringsmethode rond</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>Vignetteringsmethode rond bij uitsnede</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>Vignetteringsmethode elliptisch bij uitsnede</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>Waarschuwing: Lens Cast Calibration bevat geclipte gegevens. Er kunnen slechte kleurzwemen voorkomen.</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>Waarschuwing: Slechte belichting Lens Cast Calibration. Resultaten zijn mogelijk onjuist.</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>Waarschuwing: Ernstige vlekken in Lens Cast Calibration kunnen slechts gedeeltelijk worden gecorrigeerd.</string>
+	<key>Website(s)</key>
+	<string>Website(s)</string>
+	<key>Websites</key>
+	<string>Websites</string>
+	<key>White Balance</key>
+	<string>Witbalans</string>
+	<key>White Recovery</key>
+	<string>Wit-herstel</string>
+	<key>White balance</key>
+	<string>Witbalans</string>
+	<key>Width</key>
+	<string>Breedte</string>
+	<key>Width x Height</key>
+	<string>Breedte x hoogte</string>
+	<key>Writer</key>
+	<string>Schrijver</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>Schrijven van instellingen naar pakketbestand mislukt. Bestand is mogelijk beschadigd</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>Schrijven van instellingen naar pakketbestand mislukt. Dit kan komen door rechten of het bestand is mogelijk beschadigd</string>
+	<key>YES</key>
+	<string>JA</string>
+	<key>Yellow</key>
+	<string>Geel</string>
+	<key>Yes</key>
+	<string>Ja</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>Uw selectie bevat meerdere LCC's. LCC's worden toegepast op voorgaande varianten. (d.w.z. dat op alle bestanden die links van een LCC staan dat profiel wordt toegepast).</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>Uw selectie bevat meerdere LCC's. LCC's worden toegepast op volgende varianten. (d.w.z. dat op alle bestanden die rechts van een LCC staan dat profiel wordt toegepast).</string>
+	<key>Zip</key>
+	<string>Zip</string>
+	<key>Zoom: %.f%%</key>
+	<string>Zoomen: %.f%%</string>
+	<key>auto</key>
+	<string>automatisch</string>
+	<key>begins with</key>
+	<string>begint met</string>
+	<key>camera custom</key>
+	<string>camera aangepast</string>
+	<key>cloudy</key>
+	<string>bewolkt</string>
+	<key>contains</key>
+	<string>bevat</string>
+	<key>cool white fluorescent</key>
+	<string>koel wit fluorescerend</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>dagkleur fluorescerend</string>
+	<key>day white fluorescent</key>
+	<string>dagwit fluorescerend</string>
+	<key>daylight</key>
+	<string>daglicht</string>
+	<key>daylight fluorescent</key>
+	<string>daglicht fluorescerend</string>
+	<key>dd</key>
+	<string>dd</string>
+	<key>dd-MM-yy</key>
+	<string>dd-MM-jj</string>
+	<key>direct sunlight</key>
+	<string>direct zonlicht</string>
+	<key>does not contain</key>
+	<string>bevat niet</string>
+	<key>ends with</key>
+	<string>eindigt op</string>
+	<key>equals</key>
+	<string>is gelijk aan</string>
+	<key>error</key>
+	<string>fout</string>
+	<key>fine weather</key>
+	<string>mooi weer</string>
+	<key>fine weather with shade</key>
+	<string>mooi weer met schaduw</string>
+	<key>flash</key>
+	<string>flits</string>
+	<key>fluorescent</key>
+	<string>fluorescerend</string>
+	<key>fluorescent d</key>
+	<string>fluorescerend d</string>
+	<key>fluorescent h</key>
+	<string>fluorescerend h</string>
+	<key>fluorescent n</key>
+	<string>fluorescerend n</string>
+	<key>fluorescent w</key>
+	<string>fluorescerend w</string>
+	<key>h</key>
+	<string>u</string>
+	<key>h-mm a</key>
+	<string>u-mm a</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>hete kwikdamplamp</string>
+	<key>hmi</key>
+	<string>hmi</string>
+	<key>incandescent</key>
+	<string>gloeilamp</string>
+	<key>is</key>
+	<string>is</string>
+	<key>is after</key>
+	<string>is na</string>
+	<key>is before</key>
+	<string>is voor</string>
+	<key>is false</key>
+	<string>is onjuist</string>
+	<key>is faster than</key>
+	<string>is sneller dan</string>
+	<key>is faster than or equal to</key>
+	<string>is sneller dan of gelijk aan</string>
+	<key>is greater than</key>
+	<string>is groter dan</string>
+	<key>is greater than or equal to</key>
+	<string>is groter dan of gelijk aan</string>
+	<key>is less than</key>
+	<string>is kleiner dan</string>
+	<key>is less than or equal to</key>
+	<string>is kleiner dan of gelijk aan</string>
+	<key>is narrower than</key>
+	<string>is smaller dan</string>
+	<key>is narrower than or equal to</key>
+	<string>is smaller dan of gelijk aan</string>
+	<key>is not</key>
+	<string>is niet</string>
+	<key>is not equal to</key>
+	<string>is niet gelijk aan</string>
+	<key>is not on</key>
+	<string>is niet op</string>
+	<key>is on</key>
+	<string>is op</string>
+	<key>is slower than</key>
+	<string>is langzamer dan</string>
+	<key>is slower than or equal to</key>
+	<string>is langzamer dan of gelijk aan</string>
+	<key>is true</key>
+	<string>is juist</string>
+	<key>is wider than</key>
+	<string>is breder dan</string>
+	<key>is wider than or equal to</key>
+	<string>is breder dan of gelijk aan</string>
+	<key>iso studio tungsten</key>
+	<string>iso studio kunstlicht</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>behoud .%@</string>
+	<key>kelvin</key>
+	<string>kelvin</string>
+	<key>manual</key>
+	<string>handmatig</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>min</string>
+	<key>mm</key>
+	<string>mm</string>
+	<key>neutral white fluorescent</key>
+	<string>neutraal wit fluorescerend</string>
+	<key>normal</key>
+	<string>normaal</string>
+	<key>s</key>
+	<string>s</string>
+	<key>shade</key>
+	<string>schaduw</string>
+	<key>shadow</key>
+	<string>schaduw</string>
+	<key>shot</key>
+	<string>opname</string>
+	<key>sodium-vapor lamp</key>
+	<string>natriumdamplamp</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>standaardlicht a</string>
+	<key>standard light b</key>
+	<string>standaardlicht b</string>
+	<key>standard light c</key>
+	<string>standaardlicht c</string>
+	<key>star</key>
+	<string>ster</string>
+	<key>stars</key>
+	<string>sterren</string>
+	<key>sunny</key>
+	<string>zonnig</string>
+	<key>tungsten</key>
+	<string>kunstlicht</string>
+	<key>underwater</key>
+	<string>onder water</string>
+	<key>unknown</key>
+	<string>onbekend</string>
+	<key>use .%@</key>
+	<string>gebruik .%@</string>
+	<key>warm white fluorescent</key>
+	<string>warm wit fluorescerend</string>
+	<key>white fluorescent</key>
+	<string>wit fluorescerend</string>
+	<key>yy</key>
+	<string>jj</string>
+	<key>yy-MM-dd</key>
+	<string>jj-MM-dd</string>
+	<key>yyyy</key>
+	<string>jjjj</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>yyyy-MM-dd UU.mm.ss</string>
+</dict>
+</plist>

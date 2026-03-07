@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Importeer Aperture bibliotheek</string>
+	<key>14.title</key>
+	<string>Annuleer</string>
+	<key>28.title</key>
+	<string>Bij het importeren van een bibliotheek uit Aperture worden de volgende eigenschappen overgezet naar Capture One:</string>
+	<key>4.title</key>
+	<string>Toon dit niet meer</string>
+	<key>51.title</key>
+	<string>Projecten, Mappen, Albums
+Uitnsijden OF Rechttrekken, Rotatie, Spiegelen
+Belichting, Helderheid, Hooglichten &amp; Schaduwen, Definitie, Verzadiging, Z/W
+Metagegevens (IPTC, Classificatie, Kleurlabel, Trefwoorden)</string>
+	<key>57.title</key>
+	<string>Kleuraanpassingen zijn slechts benaderingen.
+
+Als u ook Slim Albums wilt migreren, dient u ze vóór het importeren om te zetten naar normale Albums.</string>
+	<key>8.title</key>
+	<string>Doorgaan</string>
+</dict>
+</plist>

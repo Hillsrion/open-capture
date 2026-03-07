@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Rolfilm - Vaste Grootte</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Gebonden Materiaal - Vaste Grootte</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Automatische niveaus op Binnen Uitsnede</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Automatisch Uitsnijden</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Na uitsnede</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Automatisch uitsnijden bij maken nieuwe Opname.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Bovenzijde</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pre-Pass</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Geen</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Vullingsgrootte bij automatisch uitsnijden.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Vulling</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Onderzijde</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Rechter bovenzijden</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Laag Object-Achtergrond Contrast</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rechttrekken</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Geen</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Los Materiaal</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Methode</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Gemiddeld</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Linkerzijde</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Gebonden Materiaal</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Vullinggrootte bij automatisch uitsnijden.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Los Materiaal - Vaste Grootte</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optimalisatie</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Vullinggrootte bij automatisch uitsnijden.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Geen</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Rechterzijde</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Na opname</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Linker onderzijden</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Triggers</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Linker bovenzijden</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Gemiddeld Object-Achtergrond Contrast</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Rechter onderzijden</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Automatisch Uitsnijden als een nieuwe uitsnede gemaakt wordt.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Stel Hoofduitsnede in</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Zeer Laag Object-Achtergrond Contrast</string>
+</dict>
+</plist>

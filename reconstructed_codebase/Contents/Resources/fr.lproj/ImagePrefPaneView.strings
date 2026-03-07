@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Défaut</string>
+	<key>486.title</key>
+	<string>Cache</string>
+	<key>526.title</key>
+	<string>Compression EIP (Sessions uniquement)</string>
+	<key>557.title</key>
+	<string>Taille de l'image de prévisualisation (px) :</string>
+	<key>559.title</key>
+	<string>Cache</string>
+	<key>563.title</key>
+	<string>Préférer les XMP Intégrées aux IPTC Intégrées</string>
+	<key>565.title</key>
+	<string>Préférer le XMP lié aux Métadonnées Intégrées</string>
+	<key>568.title</key>
+	<string>Métadonnées</string>
+	<key>586.title</key>
+	<string>Format du fichier de package</string>
+	<key>590.title</key>
+	<string>Compresser en EIP lors de l'import</string>
+	<key>591.title</key>
+	<string>Compresser en EIP lors de la capture</string>
+	<key>592.title</key>
+	<string>Les fichiers JPEG et TIFF développés ne seront pas compressés en EIP.</string>
+	<key>601.title</key>
+	<string>Editing</string>
+	<key>602.title</key>
+	<string>Activer l'éditing sur les TIFF</string>
+	<key>603.title</key>
+	<string>Activer l’édition des JPEG</string>
+	<key>621.title</key>
+	<string>Synchronisation complète</string>
+	<key>622.title</key>
+	<string>Chargement</string>
+	<key>623.title</key>
+	<string>Aucun</string>
+	<key>626.title</key>
+	<string>Synchro. auto XMP</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>Les nouveaux fichiers (créés durant l'import, la capture ou la conversion en EIP) auront les droits d'accès en écriture pour tous les utilisateurs et non pas uniquement pour l'utilisateur du fichier.</string>
+	<key>629.title</key>
+	<string>Autoriser les droits d'accès en écriture des nouveaux fichiers pour tous les utilisateurs</string>
+	<key>635.title</key>
+	<string>Activer l'édition sur les PNG</string>
+	<key>667.title</key>
+	<string>Moteur de Traitement par Défaut:</string>
+</dict>
+</plist>

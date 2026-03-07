@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>134.ibExternalAccessibilityDescription</key>
+	<string>balancePopup</string>
+	<key>135.title</key>
+	<string>OtherViews</string>
+	<key>136.title</key>
+	<string>自定义</string>
+	<key>137.title</key>
+	<string>随拍随定</string>
+	<key>138.title</key>
+	<string>多云</string>
+	<key>238.title</key>
+	<string>模式</string>
+	<key>EP8-Am-6Fw.ibExternalAccessibilityDescription</key>
+	<string>色温</string>
+	<key>n63-za-y7v.ibExternalAccessibilityDescription</key>
+	<string>色调</string>
+</dict>
+</plist>

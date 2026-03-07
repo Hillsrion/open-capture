@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>479.ibShadowedToolTip</key>
+	<string>Cel vullen met afbeelding</string>
+	<key>480.title</key>
+	<string>Vullen</string>
+	<key>481.ibShadowedToolTip</key>
+	<string>Cel vullen door roteren afbeelding</string>
+	<key>482.title</key>
+	<string>Roteren en vullen</string>
+	<key>533.ibShadowedToolTip</key>
+	<string>Eén afbeelding per pagina herhalen</string>
+	<key>534.title</key>
+	<string>Eén afbeelding per pagina herhalen</string>
+	<key>RE7-8e-Cmc.ibShadowedToolTip</key>
+	<string>Moet de Overlay worden opgenomen in de afdruk.</string>
+	<key>qW6-mG-nAl.title</key>
+	<string>Voeg Overlay bij</string>
+	<key>vCy-SR-hV4.ibShadowedToolTip</key>
+	<string>Moeten annotaties worden opgenomen in de afdruk.</string>
+	<key>vuu-ZS-7Gi.title</key>
+	<string>Annotaties bijvoegen</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Ts-lC-79c.title</key>
+	<string>Aktywuj</string>
+	<key>EmI-9f-2Nz.title</key>
+	<string>Wprowadź swój kod licencyjny poniżej.</string>
+	<key>dfz-fK-Aqm.title</key>
+	<string>AKTYWACJA</string>
+	<key>g7a-A2-x6e.title</key>
+	<string>Nie masz kodu licencyjnego?</string>
+	<key>iab-Ss-ZJ9.placeholderString</key>
+	<string>Wynik aktywacji licencji</string>
+	<key>q3z-qX-DzI.title</key>
+	<string>Aktywuj swoją licencję</string>
+</dict>
+</plist>

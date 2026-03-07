@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>Sortieren</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>Alle importieren</string>
+	<key>255.title</key>
+	<string>Abbrechen</string>
+	<key>256.title</key>
+	<string>Bilder nach dem Kopieren löschen</string>
+	<key>257.title</key>
+	<string>Karte auswerfen</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>Die Importsammlung nie öffnen</string>
+	<key>369.title</key>
+	<string>Bei Abschluss benachrichtigen</string>
+	<key>370.title</key>
+	<string>Sammlung öffnen, wenn der Import beginnt</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>Auswahl importieren</string>
+	<key>5.title</key>
+	<string>Fenster</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>Keine Bilder im Ordner vorhanden</string>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Максимальный размер высоты для масштабирования конечного изображения.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Увеличение</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>АФ</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Разрешение</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Максимальный размер по ширине для масштабирования конечного изображения.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Расстояние</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Текущий</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Расстояние</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Остановить</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Запустить</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Увеличение</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Расстояние</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Увеличение</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Изменение масштаба исходного изображения на указанную величину для получения окончательной версии.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Максимальный размер высоты для масштабирования конечного изображения.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Близко</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Поле зрения</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Поле зрения</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Разрешение [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Разрешение</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Далеко</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>Метод, используемый для коррекции четкости.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Изменение масштаба исходного изображения на указанную величину для получения окончательной версии.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Цель</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Поле зрения</string>
+</dict>
+</plist>

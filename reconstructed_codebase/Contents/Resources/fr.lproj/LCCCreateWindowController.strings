@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Assurez-vous que les valeurs dans l’outil de Correction d’Objectif sont correctes avant de créer un LCC.</string>
+	<key>1.title</key>
+	<string>Créer les Options LCC</string>
+	<key>10.title</key>
+	<string>Inclure Infos de Suppression Poussières</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Création LCC en cours</string>
+	<key>22.title</key>
+	<string>Création LCC</string>
+	<key>27.title</key>
+	<string>Création LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Toujours créer avec ces réglages. Désactivable depuis Outil LCC</string>
+	<key>37.title</key>
+	<string>Ne plus demander</string>
+	<key>46.title</key>
+	<string>Fenêtre</string>
+	<key>5.title</key>
+	<string>Créer</string>
+	<key>51.title</key>
+	<string>Des alertes sont apparues à la création du LCC. Voulez-vous voir le Journal d'Alertes ?</string>
+	<key>54.title</key>
+	<string>Voir le Journal des Evenements</string>
+	<key>55.title</key>
+	<string>Fermer</string>
+	<key>6.title</key>
+	<string>Annuler</string>
+	<key>65.title</key>
+	<string>Annuler</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Inclure les corrections d'objectif grand angle pour chambre 4x5'</string>
+	<key>8.title</key>
+	<string>Inclure Données de Correction Objectif Grand Angle</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Inclure Infos de Suppression Poussières. La création du profil LCC sera ralentie.</string>
+</dict>
+</plist>

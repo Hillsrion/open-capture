@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>261.label</key>
+	<string>Huidig</string>
+	<key>262.label</key>
+	<string>Geschiedenis</string>
+	<key>268.ibShadowedToolTip</key>
+	<string>Batch-wachtrij onderbreken</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Verwerk de geselecteerde taken opnieuw.</string>
+	<key>284.headerCell.title</key>
+	<string>Naam</string>
+	<key>285.headerCell.title</key>
+	<string>Naam</string>
+	<key>646.ibShadowedToolTip</key>
+	<string>Wis geschiedenis verwerkte opdrachten</string>
+	<key>815.ibShadowedLabels[0]</key>
+	<string>Wachtrij</string>
+	<key>815.ibShadowedLabels[1]</key>
+	<string>Geschiedenis</string>
+	<key>816.title</key>
+	<string>Onderbreken</string>
+	<key>818.title</key>
+	<string>1/n</string>
+	<key>819.title</key>
+	<string>Verwerk selectie opnieuw</string>
+	<key>820.title</key>
+	<string>Wis geschiedenis</string>
+</dict>
+</plist>

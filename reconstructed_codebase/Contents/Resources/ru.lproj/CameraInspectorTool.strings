@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0ii-N6-LBa.title</key>
+	<string>Заряд батареи</string>
+	<key>253.ibShadowedToolTip</key>
+	<string>Камера подключена</string>
+	<key>254.title</key>
+	<string>OtherViews</string>
+	<key>256.title</key>
+	<string>Камера не подключена</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Захватить изображение, используя подключенную камеру</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>Установить баланс белого на подключенной камере</string>
+	<key>284.ibShadowedToolTip</key>
+	<string>Средство выбора баланса белого</string>
+	<key>535.ibShadowedToolTip</key>
+	<string>Начать живой просмотр</string>
+	<key>588.title</key>
+	<string>Кадр</string>
+	<key>590.title</key>
+	<string>Установить</string>
+	<key>593.title</key>
+	<string>LV</string>
+	<key>596.title</key>
+	<string>Передача...</string>
+	<key>5RQ-bu-rlV.title</key>
+	<string>+1.00</string>
+	<key>5oy-9F-JjU.title</key>
+	<string>Крупный</string>
+	<key>B1G-l7-xL0.title</key>
+	<string>S+</string>
+	<key>NAp-76-d3r.title</key>
+	<string>5.6</string>
+	<key>O7G-o4-UfJ.title</key>
+	<string>Lens Model</string>
+	<key>QR9-LL-vWQ.title</key>
+	<string>800</string>
+	<key>Tkg-mG-GrG.title</key>
+	<string>Баланс белого</string>
+	<key>ggr-GE-HP4.title</key>
+	<string>RAW</string>
+	<key>l4U-GZ-tya.title</key>
+	<string>1/100</string>
+</dict>
+</plist>

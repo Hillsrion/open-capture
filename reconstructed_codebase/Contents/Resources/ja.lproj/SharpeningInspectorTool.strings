@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bxk-2e-NaG.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>適用量</string>
+	<key>Bxk-2e-NaG.ibShadowedToolTip</key>
+	<string>シャープニング量。シャープニングの量をコントロール。</string>
+	<key>MFJ-3v-Pqa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>半径</string>
+	<key>MFJ-3v-Pqa.ibShadowedToolTip</key>
+	<string>シャープニング 半径。 シャープニングのピクセル半径を設定します。</string>
+	<key>SPM-3K-Lvp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>しきい値</string>
+	<key>SPM-3K-Lvp.ibShadowedToolTip</key>
+	<string>シャープニング しきい値。</string>
+	<key>YWb-mP-DhK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ハロ抑制</string>
+	<key>YWb-mP-DhK.ibShadowedToolTip</key>
+	<string>ハロ抑制</string>
+</dict>
+</plist>

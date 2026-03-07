@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1QD-EF-Ywu.title</key>
+	<string>取消</string>
+	<key>5EK-j8-ODd.title</key>
+	<string>了解详情…</string>
+	<key>7GG-dw-LUz.title</key>
+	<string>您的目录与图像安全完好</string>
+	<key>7Ph-T5-rPl.title</key>
+	<string>了解详情</string>
+	<key>BsR-81-gfg.title</key>
+	<string>Lightroom 目录导入助手</string>
+	<key>BtN-DU-luM.title</key>
+	<string>请耐心等待</string>
+	<key>HAZ-Nj-moR.title</key>
+	<string>导入</string>
+	<key>Kcg-Fm-v0w.title</key>
+	<string>选择目录…</string>
+	<key>NhM-y8-EG2.title</key>
+	<string>&lt;&lt; summary placeholder - do not localize &gt;&gt;</string>
+	<key>SZv-e8-CDZ.title</key>
+	<string>掌握导入时所需的全部信息再进行导入。</string>
+	<key>XAe-Xn-OX8.title</key>
+	<string>您的导入目录已准备好。</string>
+	<key>XEl-l0-UXf.title</key>
+	<string>以下将被导入</string>
+	<key>Ybc-1K-cno.title</key>
+	<string>导入目录对您没有任何风险 - 您的原目录与图像文件不受影响。</string>
+	<key>aNb-I8-rkE.title</key>
+	<string>了解详情…</string>
+	<key>bCc-dM-ZpV.title</key>
+	<string>按以下简单步骤操作，轻松将照片从 Lightroom 导入至 Capture One。</string>
+	<key>fb6-Qp-o7J.title</key>
+	<string>Lightroom 目录导入助手</string>
+	<key>nfn-Hm-UIh.title</key>
+	<string>&lt;&lt; path placeholder - do not localize &gt;&gt;</string>
+	<key>o4X-mv-IK0.title</key>
+	<string>您所有的元数据和基本调整 (裁切、旋转、白平衡、曝光、对比度与饱和度) 将会被导入。导入智能相册前，需先将它们转为普通相册。</string>
+	<key>peZ-gq-vBV.title</key>
+	<string>根据您的目录大小，可能需要一点时间。请确保导入过程中电脑不关机，Capture One 为打开状态。</string>
+	<key>sKJ-Sa-lTo.title</key>
+	<string>导入您的 Lightroom 目录</string>
+	<key>t1E-dm-e2p.title</key>
+	<string>取消</string>
+	<key>yp2-z7-JP2.title</key>
+	<string>已选目录</string>
+</dict>
+</plist>

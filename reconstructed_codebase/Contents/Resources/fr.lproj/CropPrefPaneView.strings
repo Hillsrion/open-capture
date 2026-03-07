@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Toujours</string>
+	<key>35.title</key>
+	<string>Jamais</string>
+	<key>36.title</key>
+	<string>Sauf pendant glissement</string>
+	<key>43.title</key>
+	<string>Si aucun masque</string>
+	<key>44.title</key>
+	<string>Toujours</string>
+	<key>449.title</key>
+	<string>Affiche:</string>
+	<key>450.title</key>
+	<string>Afficher le cadre :</string>
+	<key>451.title</key>
+	<string>Afficher les étiquettes :</string>
+	<key>453.title</key>
+	<string>Opacité :</string>
+	<key>455.title</key>
+	<string>Luminosité :</string>
+	<key>459.title</key>
+	<string>Défaut</string>
+	<key>52.title</key>
+	<string>Toujours</string>
+	<key>53.title</key>
+	<string>Jamais</string>
+	<key>54.title</key>
+	<string>Pendant un glisser uniquement</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>Sauf pendant glissement</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Toujours</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Masque</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Afficher poignées:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Jamais</string>
+</dict>
+</plist>

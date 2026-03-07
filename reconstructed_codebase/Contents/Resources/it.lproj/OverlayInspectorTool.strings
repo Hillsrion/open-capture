@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Segui Ritaglio</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>opacità sovrapposizione</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Opacità</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>scala sovrapposizione</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Scala</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>File</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Sovrapposizione verticale</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Verticale</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>Sovrapposizione orizzontale</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orizzontale</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Mostra</string>
+</dict>
+</plist>

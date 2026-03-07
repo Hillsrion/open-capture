@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1xe-Um-CIL.title</key>
+	<string>打印代码</string>
+	<key>8DD-xd-Xz5.title</key>
+	<string>扫描仪已设置并准备就绪。</string>
+	<key>BW0-mv-EQA.title</key>
+	<string>请重试</string>
+	<key>F0m-fq-GYU.title</key>
+	<string>取消</string>
+	<key>FQJ-9d-y3h.title</key>
+	<string>请扫描条形码以进行扫描仪配置。</string>
+	<key>Ipa-tx-QXw.title</key>
+	<string>如果您需要使用其他扫描仪，您可在 … 菜单里进行新设备配置</string>
+	<key>WZn-5g-bos.title</key>
+	<string>取消</string>
+	<key>ab6-x1-HFX.title</key>
+	<string>好</string>
+	<key>iQE-CB-bxP.title</key>
+	<string>配置扫描仪</string>
+	<key>ifD-R2-JOJ.title</key>
+	<string>设置扫描仪时发生错误。</string>
+</dict>
+</plist>

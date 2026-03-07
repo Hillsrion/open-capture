@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Avertir lorsque Déplacer vers Corbeille affecte des variantes non sélectionnées</string>
+	<key>18v-en-xAd.title</key>
+	<string>Avertir lors de l’application d’un style avec un LCC non valide</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Avertir lors réinitialisation Corrections de Couleur Basiques</string>
+	<key>482.title</key>
+	<string>Défaut</string>
+	<key>694.title</key>
+	<string>Avertir lors du déplacement d’images et dossiers dans le Catalogue</string>
+	<key>697.title</key>
+	<string>Fichiers et Dossiers</string>
+	<key>701.title</key>
+	<string>Avertir lors de la suppression d’images du disque</string>
+	<key>703.title</key>
+	<string>Avertir lors du déplacement d’images vers la Corbeille de Session d’un disque différent</string>
+	<key>707.title</key>
+	<string>Réglages</string>
+	<key>708.title</key>
+	<string>Alerter lors de la réinitialisation de réglages sur plusieurs variantes</string>
+	<key>734.title</key>
+	<string>Sortie</string>
+	<key>789.title</key>
+	<string>Si Editer toutes les Variantes Sélectionnées est désactivé et que plusieurs variantes sont sélectionnées:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Alerter lors du développement de plusieurs variantes si Editer toutes les Variantes Sélectionnées est désactivé</string>
+	<key>793.title</key>
+	<string>Alerter lors du développement</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Alerter lors de l'impression de plusieurs variantes si Editer toutes les Variantes Sélectionnées est désactivé</string>
+	<key>796.title</key>
+	<string>Alerter lors de l'impression</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Alerter lors de la création d'une planche contact web de plusieurs variantes si Editer toutes les Variantes Sélectionnées est désactivé</string>
+	<key>799.title</key>
+	<string>Alerter lors de la création d'une planche contact web</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Alerter lors de la création d'une planche contact web de plusieurs variantes si Editer toutes les Variantes Sélectionnées est désactivé</string>
+	<key>805.title</key>
+	<string>Avertir lors de l'exportation</string>
+	<key>811.title</key>
+	<string>Avertir lors de la réinitialisation du tri manuel</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Avertir lorsque le LCC appliqué est changé ou détruit.</string>
+	<key>816.title</key>
+	<string>Avertir lorsque LCC est changé</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Avertir lors de la création LCC avec plusieurs variantes si Éditer Toutes Variantes Sélectionnées est désactivé.</string>
+	<key>820.title</key>
+	<string>Avertir lors de la création LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Avertir lors de l'application LCC à plusieurs variantes si Éditer Toutes Variantes Sélectionnées est désactivé.</string>
+	<key>823.title</key>
+	<string>Avertir lors de l'application LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Avertir lorsque le LCC appliqué est changé ou détruit.</string>
+	<key>829.title</key>
+	<string>Avertir lors de la mise à jour du Moteur de Traitement</string>
+	<key>834.title</key>
+	<string>Avertir lors de la remise à zéro des réglages sur un calque de réglages.</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Prevenir lors de l'analyse des aberrations chromatiques avec de multiples variantes si Modifier toutes les variantes sélectionnées est innactif.</string>
+	<key>847.title</key>
+	<string>Prévenir lors de l'analyse des aberrations chromatiques</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Avertir lors de la pixellisation d’un masque paramétrique</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Avertir lors application calques sur la variante depuis laquelle ils sont copiés</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Avertir lors de l’application d’un style avec un ICC non valide</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Avertir lors de l’application partielle d’un style</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Avertir lors de l’application LCC à plusieurs variantes si Editer Toutes Variantes est désactivé.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Avertir lors de la sélection des options de création LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Alerter lors de la copie de réglages non supportés</string>
+</dict>
+</plist>

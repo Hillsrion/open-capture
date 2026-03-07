@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Imposta contatore</string>
+	<key>10.title</key>
+	<string>Cancella</string>
+	<key>4.title</key>
+	<string>Inserisci il valore del contatore desiderato</string>
+	<key>8.title</key>
+	<string>OK</string>
+</dict>
+</plist>

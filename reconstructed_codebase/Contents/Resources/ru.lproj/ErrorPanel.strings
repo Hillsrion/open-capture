@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.headerCell.title</key>
+	<string>Дата</string>
+	<key>5.title</key>
+	<string>События</string>
+	<key>67.title</key>
+	<string>Очистить</string>
+	<key>68.title</key>
+	<string>Показать все</string>
+	<key>69.title</key>
+	<string>Показать панель для новых событий</string>
+	<key>70.title</key>
+	<string>Закрыть</string>
+	<key>72.title</key>
+	<string>Текстовая ячейка</string>
+	<key>73.title</key>
+	<string>Текстовая ячейка</string>
+	<key>9.headerCell.title</key>
+	<string>Описание</string>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>154.ibExternalAccessibilityDescription</key>
+	<string>CropShowMaskPopup</string>
+	<key>156.title</key>
+	<string>OtherViews</string>
+	<key>157.title</key>
+	<string>30 秒</string>
+	<key>158.title</key>
+	<string>1 分鐘</string>
+	<key>161.title</key>
+	<string>2 分鐘</string>
+	<key>162.title</key>
+	<string>5 分鐘</string>
+	<key>163.title</key>
+	<string>10 分鐘</string>
+	<key>164.title</key>
+	<string>20 分鐘</string>
+	<key>174.title</key>
+	<string>副檔名：</string>
+	<key>176.title</key>
+	<string>默認設定</string>
+	<key>182.title</key>
+	<string>即時預覽</string>
+	<key>183.title</key>
+	<string>Phase One 配置</string>
+	<key>185.title</key>
+	<string>在…之後暫停：</string>
+	<key>226.title</key>
+	<string>設備製造商</string>
+	<key>32.ibExternalAccessibilityDescription</key>
+	<string>CropShowMaskPopup</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>TIF</string>
+	<key>35.title</key>
+	<string>IIQ</string>
+	<key>55.ibExternalAccessibilityDescription</key>
+	<string>CropResetButton</string>
+</dict>
+</plist>

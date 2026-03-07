@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>Tipo de mancha</string>
+	<key>109.title</key>
+	<string>Mota</string>
+	<key>111.title</key>
+	<string>Polvo</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Borrar mancha seleccionada</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>Mancha seleccionada</string>
+	<key>47.title</key>
+	<string>Mota</string>
+	<key>50.title</key>
+	<string>1 de 1</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>Mancha previa</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>Siguiente Mancha</string>
+	<key>84.title</key>
+	<string>Tipo</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Eliminador de polvo</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>kelvin</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Radio</string>
+</dict>
+</plist>

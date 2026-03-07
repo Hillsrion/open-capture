@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>Label afbeeldingen</string>
+	<key>125.title</key>
+	<string>Pas afbeeldingen aan</string>
+	<key>131.title</key>
+	<string>Opnames maken</string>
+	<key>136.title</key>
+	<string>Rechten</string>
+	<key>157.label</key>
+	<string>Web</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>Uitzenden via internet</string>
+	<key>166.title</key>
+	<string>Web Browser</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>Uitzenden via internet</string>
+	<key>171.title</key>
+	<string>Mobiel apparaat</string>
+	<key>203.title</key>
+	<string>Classificeer afbeeldingen</string>
+	<key>212.title</key>
+	<string>Rechten</string>
+	<key>213.title</key>
+	<string>Classificeer afbeeldingen</string>
+	<key>214.title</key>
+	<string>Label afbeeldingen</string>
+	<key>243.title</key>
+	<string>Poortnummer</string>
+	<key>254.title</key>
+	<string>&lt;lokaal IP&gt;</string>
+	<key>27.title</key>
+	<string>Wachtwoord</string>
+	<key>291.title</key>
+	<string>&lt;lokaal IP&gt;</string>
+	<key>306.title</key>
+	<string>Lokaal IP</string>
+	<key>308.title</key>
+	<string>Lokaal IP</string>
+	<key>43.title</key>
+	<string>Servernaam</string>
+	<key>53.label</key>
+	<string>Basis</string>
+	<key>54.label</key>
+	<string>Mobiel</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>Basis</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>Mobiel</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>Web</string>
+	<key>63.title</key>
+	<string>Poortnummer</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Publiceer naar</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>Mobiel en Web</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>Mobiel apparaat</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>Web Browser</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Map</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Thema</string>
+</dict>
+</plist>

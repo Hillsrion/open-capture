@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>编辑键盘快捷键</string>
+	<key>13.title</key>
+	<string>关闭</string>
+	<key>51.title</key>
+	<string>视窗</string>
+	<key>59.title</key>
+	<string>好</string>
+	<key>60.title</key>
+	<string>取消</string>
+	<key>61.title</key>
+	<string>为键盘快捷键群组输入一个名称：</string>
+	<key>62.title</key>
+	<string>错误（以编程方式设置）</string>
+	<key>75.title</key>
+	<string>帮助</string>
+</dict>
+</plist>

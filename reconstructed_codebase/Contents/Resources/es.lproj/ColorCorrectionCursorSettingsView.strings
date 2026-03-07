@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>645-F9-nRt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Matiz</string>
+	<key>7sk-7W-MYa.title</key>
+	<string>Ajustes del Editor de Color Directa</string>
+	<key>CsU-40-n2D.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sensibilidad</string>
+	<key>DgY-Rv-4cU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosidad</string>
+	<key>bG3-MB-sba.title</key>
+	<string>Este panel también se puede mostrar haciendo clic derecho en el Visor cuando se selecciona el cursor del Editor de Color Directo.</string>
+	<key>veB-Rz-2X3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturación</string>
+</dict>
+</plist>

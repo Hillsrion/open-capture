@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Taille de la hauteur max. pour fixer la taille finale de l'image</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Grossissement</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Résolution</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Taille de la largeur max. pour fixer la taille finale de l'image</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Distance</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Actuel</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Distance</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Arrêter</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Démarrer</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Grossissement</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Distance</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Grossissement</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Mettre à l'échelle l'image originale à la valeur donnée pour obtenir l'image finale.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Taille de la hauteur max. pour fixer la taille finale de l'image</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Proche</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Champ de vision</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Champ de vision</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Résolution [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Résolution</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Loin</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>Méthode utilisé pour ajuster la clarté (micro-contraste)</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Mettre à l'échelle l'image originale à la valeur donnée pour obtenir l'image finale.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Cible</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Champ de vision</string>
+</dict>
+</plist>

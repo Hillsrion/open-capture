@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>每日一次</string>
+	<key>105.title</key>
+	<string>自动</string>
+	<key>106.title</key>
+	<string>永不</string>
+	<key>107.title</key>
+	<string>位置：</string>
+	<key>108.title</key>
+	<string>关闭时提醒：</string>
+	<key>112.title</key>
+	<string>永不</string>
+	<key>113.title</key>
+	<string>自动</string>
+	<key>115.title</key>
+	<string>硬件加速器</string>
+	<key>116.title</key>
+	<string>目录备份</string>
+	<key>126.title</key>
+	<string>总是覆写元数据</string>
+	<key>127.title</key>
+	<string>永不覆写元数据</string>
+	<key>128.title</key>
+	<string>覆写元数据时询问</string>
+	<key>131.title</key>
+	<string>创建新相册或选择文件夹</string>
+	<key>132.title</key>
+	<string>创建或重复使用匹配的相册</string>
+	<key>133.title</key>
+	<string>同步目录集时询问</string>
+	<key>134.title</key>
+	<string>从 Expression Media 中接收的元数据和目录集信息可能会更新 Capture One 中的图像和相册。请选择每种信息类型相对应的行为表现。</string>
+	<key>137.title</key>
+	<string>添加时询问是否包含子文件夹</string>
+	<key>138.title</key>
+	<string>包含子文件夹的提示中始终选择“是”</string>
+	<key>139.title</key>
+	<string>包含子文件夹的提示中始终选择“否”</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>默认设置</string>
+	<key>142.title</key>
+	<string>使用滚轮缩放</string>
+	<key>143.title</key>
+	<string>查看器</string>
+	<key>150.title</key>
+	<string>闲置超过 5 分钟之后</string>
+	<key>151.title</key>
+	<string>闲置超过 10 分钟之后</string>
+	<key>152.title</key>
+	<string>闲置超过 30 分钟之后</string>
+	<key>153.title</key>
+	<string>闲置超过 1 小时之后</string>
+	<key>154.title</key>
+	<string>闲置超过 2 小时之后</string>
+	<key>155.title</key>
+	<string>闲置超过 4 小时之后</string>
+	<key>156.title</key>
+	<string>在拍摄当天的第一张照片时</string>
+	<key>157.title</key>
+	<string>创建：</string>
+	<key>158.title</key>
+	<string>最近拍摄汇集</string>
+	<key>160.title</key>
+	<string>当检测到数码相机的储存卡时打开导入助手</string>
+	<key>161.title</key>
+	<string>正在导入</string>
+	<key>162.title</key>
+	<string>活动</string>
+	<key>163.title</key>
+	<string>自动显示视窗</string>
+	<key>167.title</key>
+	<string>收藏夹</string>
+	<key>170.title</key>
+	<string>添加上一个会话文件夹至收藏夹时询问</string>
+	<key>171.title</key>
+	<string>总是添加上一个会话文件夹至收藏夹</string>
+	<key>172.title</key>
+	<string>永不添加上一个会话文件夹至收藏夹</string>
+	<key>176.title</key>
+	<string>目录与会话</string>
+	<key>177.title</key>
+	<string>在新视窗中打开</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>状态：</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>总是</string>
+	<key>97.title</key>
+	<string>每月一次</string>
+	<key>98.title</key>
+	<string>永不</string>
+	<key>99.title</key>
+	<string>每周一次</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>滚轮可修改滑条值</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>工具栏</string>
+	<key>PQo-en-IWM.title</key>
+	<string>启用 Tangent 调色设备支持</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>按 Option + 滚轮可切换于工具栏之间</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>在启动时显示</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent Integration</string>
+</dict>
+</plist>

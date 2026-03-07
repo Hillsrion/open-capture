@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Uma vez por dia</string>
+	<key>104.title</key>
+	<string>OtherViews</string>
+	<key>105.title</key>
+	<string>Automático</string>
+	<key>106.title</key>
+	<string>Nunca</string>
+	<key>107.title</key>
+	<string>Local:</string>
+	<key>108.title</key>
+	<string>Lembrar ao fechar:</string>
+	<key>111.title</key>
+	<string>OtherViews</string>
+	<key>112.title</key>
+	<string>Nunca</string>
+	<key>113.title</key>
+	<string>Automático</string>
+	<key>115.title</key>
+	<string>Aceleração de hardware</string>
+	<key>116.title</key>
+	<string>Backup de Catálogo</string>
+	<key>125.title</key>
+	<string>OtherViews</string>
+	<key>126.title</key>
+	<string>Sempre sobrescrever metadados</string>
+	<key>127.title</key>
+	<string>Nunca sobrescrever metadados</string>
+	<key>128.title</key>
+	<string>Perguntar sobre sobrescrever metadados</string>
+	<key>130.title</key>
+	<string>OtherViews</string>
+	<key>131.title</key>
+	<string>Criar Novo Álbum ou Selecionar Pasta</string>
+	<key>132.title</key>
+	<string>Criar ou Reutilizar álbuns correspondente</string>
+	<key>133.title</key>
+	<string>Perguntar ao sincronizar conjuntos de catálogos</string>
+	<key>134.title</key>
+	<string>Informações de metadados e conjunto de catálogos recebidas do Expression Media podem ser usadas para atualizar Imagens e Álbuns no Capture One. Selecione o comportamento para cada tipo de informação.</string>
+	<key>136.title</key>
+	<string>OtherViews</string>
+	<key>137.title</key>
+	<string>Perguntar sobre Incluir Subpastas ao Adicionar</string>
+	<key>138.title</key>
+	<string>Sempre responder Sim na caixa de diálogo Incluir subpastas</string>
+	<key>139.title</key>
+	<string>Sempre responder Não na caixa de diálogo Incluir subpastas</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Padrões</string>
+	<key>142.title</key>
+	<string>Aplicar zoom com barra de rolagem</string>
+	<key>143.title</key>
+	<string>Visualizador</string>
+	<key>149.title</key>
+	<string>OtherViews</string>
+	<key>150.title</key>
+	<string>Após mais de 5 minutos de inatividade</string>
+	<key>151.title</key>
+	<string>Após mais de 10 minutos de inatividade</string>
+	<key>152.title</key>
+	<string>Após mais de 30 minutos de inatividade</string>
+	<key>153.title</key>
+	<string>Após mais de 1 hora de inatividade</string>
+	<key>154.title</key>
+	<string>Após mais de 2 horas de inatividade</string>
+	<key>155.title</key>
+	<string>Após mais de 4 horas de inatividade</string>
+	<key>156.title</key>
+	<string>Na primeira captura do dia</string>
+	<key>157.title</key>
+	<string>Criar:</string>
+	<key>158.title</key>
+	<string>Coleção de Capturas Recentes</string>
+	<key>159.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>160.title</key>
+	<string>Abrir o importador ao detectar o cartão da câmera digital</string>
+	<key>161.title</key>
+	<string>Importando</string>
+	<key>162.title</key>
+	<string>Atividades</string>
+	<key>163.title</key>
+	<string>Mostrar janela automaticamente</string>
+	<key>167.title</key>
+	<string>Favoritos</string>
+	<key>169.title</key>
+	<string>OtherViews</string>
+	<key>170.title</key>
+	<string>Perguntar Sobre Adicionar a Pasta da Sessão Anterior aos Favoritos</string>
+	<key>171.title</key>
+	<string>Sempre Adicionar a Pasta da Sessão Anterior aos Favoritos</string>
+	<key>172.title</key>
+	<string>Nunca Adicionar a Pasta da Sessão Anterior aos Favoritos</string>
+	<key>173.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>176.title</key>
+	<string>Catálogo e Sessão</string>
+	<key>177.title</key>
+	<string>Abrir em uma nova janela</string>
+	<key>59.title</key>
+	<string>Catálogo e Sessões</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Catálogo e sessões</string>
+	<key>60.title</key>
+	<string>Favoritos</string>
+	<key>61.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>66.title</key>
+	<string>Formato de arquivo empacotado</string>
+	<key>67.title</key>
+	<string>Coleção de Capturas Recentes</string>
+	<key>70.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Status:</string>
+	<key>92.title</key>
+	<string>…</string>
+	<key>93.title</key>
+	<string>~/Library/Suporte a aplicativos/Capture One/Backups</string>
+	<key>95.title</key>
+	<string>OtherViews</string>
+	<key>96.title</key>
+	<string>Sempre</string>
+	<key>97.title</key>
+	<string>Uma vez por mês</string>
+	<key>98.title</key>
+	<string>Nunca</string>
+	<key>99.title</key>
+	<string>Uma vez por semana</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>O botão de rolagem altera o valor do controle deslizante</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Guias de ferramenta</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Habilitar o suporte de dispositivo de tangente</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + Roda de rolagem, desliza a guia da ferramenta</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Mostrar ao iniciar</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Integração tangente</string>
+</dict>
+</plist>

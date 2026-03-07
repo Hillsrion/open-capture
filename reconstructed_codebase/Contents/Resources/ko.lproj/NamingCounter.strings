@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>카운터 설정</string>
+	<key>10.title</key>
+	<string>취소</string>
+	<key>4.title</key>
+	<string>원하는 카운터 값을 입력하십시오.</string>
+	<key>8.title</key>
+	<string>확인</string>
+</dict>
+</plist>

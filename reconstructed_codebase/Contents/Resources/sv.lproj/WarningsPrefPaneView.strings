@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Varna om Flytta till papperskorg påverkar icke valda varianter</string>
+	<key>18v-en-xAd.title</key>
+	<string>Varna om stil med felaktig LCC appliceras</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Varna när återställning görs på "grund"-fliken i färgredigeraren</string>
+	<key>482.title</key>
+	<string>Standard</string>
+	<key>694.title</key>
+	<string>Varna om bilder och mappaf flyttas i Katalogen</string>
+	<key>697.title</key>
+	<string>Filer och mappar</string>
+	<key>701.title</key>
+	<string>Varna när bilder raderas från hårddisken</string>
+	<key>703.title</key>
+	<string>Varna när blider flyttas till sessionens papperskorg från en annan hårddisk</string>
+	<key>707.title</key>
+	<string>Justeringar</string>
+	<key>708.title</key>
+	<string>Varna när justeringar återställs på flera bilder</string>
+	<key>734.title</key>
+	<string>Bildstorlek</string>
+	<key>789.title</key>
+	<string>Om Redigera alla valda varianter är avstängt och flera varianter är valda:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Varna vid framkallning av flera filer när Redigera alla valda varianter är av</string>
+	<key>793.title</key>
+	<string>Varna när framkallning pågår</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Varna vid utskrift av flera varianter när Redigera alla valda varianter är av</string>
+	<key>796.title</key>
+	<string>Varna när utskrift pågår</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Varna vid skapande av kontaktkarta för webben, med flera bilder valda, om Redigera alla valda varianter är av</string>
+	<key>799.title</key>
+	<string>Varna när en kontakttkarta för webben skapas</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Varna vid skapande av kontaktkarta för webben, med flera bilder valda, om Redigera alla valda varianter är av</string>
+	<key>805.title</key>
+	<string>Varna vid export</string>
+	<key>811.title</key>
+	<string>Varna när manuell sortering återställs</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Varna när pålagd LCC ändras eller tas bort.</string>
+	<key>816.title</key>
+	<string>Varna när LCC ändras</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Varna när LCC skapas med flera varianter om "Redigera alla valda varianter" är avstängd.</string>
+	<key>820.title</key>
+	<string>Varna när LCC skapas</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Varna när LCC läggs på flera varianter om "Redigera alla valda varianter" är avstängd.</string>
+	<key>823.title</key>
+	<string>Varna när LCC läggs på</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Varna när pålagd LCC ändras eller tas bort.</string>
+	<key>829.title</key>
+	<string>Varna när motorn uppgraderas</string>
+	<key>834.title</key>
+	<string>Varna när justeringar återställs på ett justeringslager</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Varna vid kromatisk aberrationsanalys av flera varianter om regigera alla valda varianter är avstängt.</string>
+	<key>847.title</key>
+	<string>Varna vid kromatisk aberrationsanalys</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Varna när parametrisk mask rastereras</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Varna när lager appliceras på den variant som de kopieras ifrån</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Varna om stil med felaktig ICC appliceras</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Varna om stil bara appliceras delvis</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Varna när LCC appliceras på flera varianter om “redigera alla valda varianter” är av.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Varna när val görs av olika alternativ för skapande av LCC</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Varna vid kopiering av justeringar som ej stöds</string>
+</dict>
+</plist>

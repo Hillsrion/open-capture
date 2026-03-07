@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>09H-LY-aNy.ibShadowedToolTip</key>
+	<string>シングル/ マルチビュー切り替え</string>
+	<key>0v4-ek-mqo.title</key>
+	<string>コントラストと明るさ</string>
+	<key>1088.ibShadowedToolTip</key>
+	<string>一次バリアントからの調整をコピーする</string>
+	<key>1089.ibShadowedToolTip</key>
+	<string>選択されたバリアントに設定を適用</string>
+	<key>1168.ibShadowedToolTip</key>
+	<string>セレクトフォルダにバリアントを移動</string>
+	<key>1171.ibShadowedToolTip</key>
+	<string>新規バリアント</string>
+	<key>1172.ibShadowedToolTip</key>
+	<string>バリアントを選択</string>
+	<key>1337.title</key>
+	<string>テキスト セル</string>
+	<key>1339.title</key>
+	<string>テキスト セル</string>
+	<key>1340.title</key>
+	<string>テキスト セル</string>
+	<key>1341.title</key>
+	<string>テキスト セル</string>
+	<key>1342.title</key>
+	<string>テキスト セル</string>
+	<key>1343.title</key>
+	<string>テキスト セル</string>
+	<key>1570.headerCell.title</key>
+	<string>ステータス</string>
+	<key>1813.title</key>
+	<string>サイズ</string>
+	<key>1814.title</key>
+	<string>LLL</string>
+	<key>1815.title</key>
+	<string>BBB</string>
+	<key>1816.title</key>
+	<string>GGG</string>
+	<key>1817.title</key>
+	<string>RRR</string>
+	<key>1820.title</key>
+	<string>選択肢がありません</string>
+	<key>1821.title</key>
+	<string>選択肢がありません</string>
+	<key>1824.title</key>
+	<string>ボタン</string>
+	<key>1825.title</key>
+	<string>ボタン</string>
+	<key>1829.title</key>
+	<string>ボタン</string>
+	<key>1830.title</key>
+	<string>ボタン</string>
+	<key>1831.title</key>
+	<string>ボタン</string>
+	<key>1833.title</key>
+	<string>ボタン</string>
+	<key>1834.title</key>
+	<string>ボタン</string>
+	<key>1836.title</key>
+	<string>ボタン</string>
+	<key>1841.title</key>
+	<string>テキスト セル</string>
+	<key>1842.title</key>
+	<string>テキスト セル</string>
+	<key>1851.ibShadowedToolTip</key>
+	<string>並べ替え</string>
+	<key>1871.title</key>
+	<string>100中の1</string>
+	<key>2217.ibShadowedToolTip</key>
+	<string>接続されたカメラを使用して撮影</string>
+	<key>2218.title</key>
+	<string>ボタン</string>
+	<key>2410.title</key>
+	<string>ボタン</string>
+	<key>2415.title</key>
+	<string>Box</string>
+	<key>2460.headerCell.title</key>
+	<string>履歴</string>
+	<key>2500.title</key>
+	<string>BLK</string>
+	<key>2501.title</key>
+	<string>YYY</string>
+	<key>2502.title</key>
+	<string>MMM</string>
+	<key>2503.title</key>
+	<string>CCC</string>
+	<key>2609.title</key>
+	<string>テキスト</string>
+	<key>2623.title</key>
+	<string>GRA</string>
+	<key>2653.ibShadowedToolTip</key>
+	<string>プルーフ マージン</string>
+	<key>2731.title</key>
+	<string>ボタン</string>
+	<key>2835.ibShadowedToolTip</key>
+	<string>並び順</string>
+	<key>2958.ibShadowedToolTip</key>
+	<string>調整レイヤー</string>
+	<key>2962.title</key>
+	<string>レイヤー</string>
+	<key>297.headerCell.title</key>
+	<string>名前</string>
+	<key>2998.title</key>
+	<string>選択肢がありません</string>
+	<key>3003.title</key>
+	<string>オート調整をカスタマイズ</string>
+	<key>3004.title</key>
+	<string>キーストーン</string>
+	<key>3005.title</key>
+	<string>回転</string>
+	<key>3006.title</key>
+	<string>レベル</string>
+	<key>3007.title</key>
+	<string>ハイダイナミックレンジ</string>
+	<key>3008.title</key>
+	<string>露出</string>
+	<key>3009.title</key>
+	<string>ホワイトバランス</string>
+	<key>3044.title</key>
+	<string>新規コレクション名</string>
+	<key>3051.title</key>
+	<string>新規コレクション名:</string>
+	<key>3052.title</key>
+	<string>OK</string>
+	<key>3059.ibShadowedToolTip</key>
+	<string>バリアントをエクスポート</string>
+	<key>3060.title</key>
+	<string>ボタン</string>
+	<key>3063.ibShadowedToolTip</key>
+	<string>接続されたカメラを使用して撮影</string>
+	<key>3064.title</key>
+	<string>ボタン</string>
+	<key>3085.title</key>
+	<string>キャンセル</string>
+	<key>3097.ibShadowedToolTip</key>
+	<string>ツールバーをカスタマイズ</string>
+	<key>3101.ibShadowedToolTip</key>
+	<string>Capture Oneの環境設定を編集</string>
+	<key>3102.title</key>
+	<string>ボタン</string>
+	<key>3152.ibShadowedToolTip</key>
+	<string>スライドショーを表示</string>
+	<key>3237.title</key>
+	<string>フォルダ同期</string>
+	<key>3244.title</key>
+	<string>同期</string>
+	<key>3245.title</key>
+	<string>新規コレクション名:新規コレクション名:新規コレクション名:新規コレクション名:新規コレクション名:新規コレクション名:新規コレクション名:</string>
+	<key>3247.title</key>
+	<string>キャンセル</string>
+	<key>3255.title</key>
+	<string>新しいイメージをインポート</string>
+	<key>3257.title</key>
+	<string>不明なイメージを削除</string>
+	<key>3276.title</key>
+	<string>インポーターを表示</string>
+	<key>3282.title</key>
+	<string>見つからないイメージを表示</string>
+	<key>3290.title</key>
+	<string>参照されたオリジナルも含む</string>
+	<key>3297.title</key>
+	<string>既知のサブフォルダを含む</string>
+	<key>3302.title</key>
+	<string>サブフォルダを含む</string>
+	<key>46A-69-Nqd.title</key>
+	<string>スプリットビュー スライダー</string>
+	<key>4hC-Nj-5MJ.headerCell.title</key>
+	<string>シーケンスID</string>
+	<key>5.title</key>
+	<string>ビューア ウィンドウ</string>
+	<key>5Qx-vh-xgO.title</key>
+	<string>新規レイヤー</string>
+	<key>883.ibShadowedToolTip</key>
+	<string>やり直す</string>
+	<key>889.ibShadowedToolTip</key>
+	<string>右回転</string>
+	<key>893.ibShadowedToolTip</key>
+	<string>前を選択
+Altクリックで前のセットを選択</string>
+	<key>894.ibShadowedToolTip</key>
+	<string>次を選択する
+Altクリックで次のセットを選択</string>
+	<key>908.ibShadowedToolTip</key>
+	<string>取り消す</string>
+	<key>993.headerCell.title</key>
+	<string>レーティング</string>
+	<key>994.headerCell.title</key>
+	<string>バリアント</string>
+	<key>995.headerCell.title</key>
+	<string>ISO</string>
+	<key>996.headerCell.title</key>
+	<string>絞り</string>
+	<key>997.headerCell.title</key>
+	<string>シャッタースピード</string>
+	<key>998.headerCell.title</key>
+	<string>焦点距離</string>
+	<key>999.headerCell.title</key>
+	<string>イメージの日付</string>
+	<key>DRr-D1-csk.title</key>
+	<string>イメージのインポート</string>
+	<key>DaL-Ea-zEX.title</key>
+	<string>ボタン</string>
+	<key>EiS-hX-M0T.ibShadowedToolTip</key>
+	<string>ヒント</string>
+	<key>OLF-gr-xkN.ibShadowedToolTip</key>
+	<string>新規レイヤー</string>
+	<key>UZE-NT-qce.title</key>
+	<string>新規クローンレイヤー</string>
+	<key>YkD-v3-VfH.title</key>
+	<string>新規修復レイヤー</string>
+	<key>axa-pb-3sd.title</key>
+	<string>新規塗りつぶしレイヤー</string>
+	<key>bdF-40-gYt.title</key>
+	<string>作成後コレクションを選択</string>
+	<key>fH6-6w-qg3.title</key>
+	<string>作成したあと選択したイメージを追加</string>
+	<key>glS-uC-beD.title</key>
+	<string>LABB</string>
+	<key>hew-LV-0p3.ibShadowedToolTip</key>
+	<string>バッテリー ステータス</string>
+	<key>iZI-Rn-Ulo.title</key>
+	<string>LABA</string>
+	<key>m2J-7q-yMC.title</key>
+	<string>テキスト セル</string>
+	<key>rkL-D2-fDQ.title</key>
+	<string>LABL</string>
+	<key>x6g-PB-hlq.title</key>
+	<string>フルビュー</string>
+</dict>
+</plist>

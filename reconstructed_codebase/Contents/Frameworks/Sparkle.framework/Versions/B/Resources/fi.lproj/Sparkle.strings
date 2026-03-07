@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ on uusin saatavilla oleva versio.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ on uusin saatavilla oleva versio.
+(Asennettu versio on %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ on nyt saatavilla (nykyinen versiosi on %3$@). Haluatko ladata päivityksen nyt?</string>
+	<key>%@ of %@</key>
+	<string>%1$@ / %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Uusi versio ohjelmasta  %@ on saatavilla!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Päivitystietojen haussa tapahtui virhe. Yritä myöhemmin uudelleen.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Pakkauksen purkamisessa tapahtui virhe. Yritä myöhemmin uudelleen.</string>
+	<key>Cancel</key>
+	<string>Kumoa</string>
+	<key>Cancel Update</key>
+	<string>Peruuta päivitykset</string>
+	<key>Checking for updates…</key>
+	<string>Tarkistetaan päivityksiä…</string>
+	<key>Downloading update…</key>
+	<string>Haetaan päivitystä…</string>
+	<key>Extracting update…</key>
+	<string>Puretaan päivitystä…</string>
+	<key>Install and Relaunch</key>
+	<string>Asenna ja käynnistä ohjelma uudelleen</string>
+	<key>Installing update…</key>
+	<string>Päivitys asennetaan…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Valmiina asentamaan</string>
+	<key>Update Error!</key>
+	<string>Virhe päivityksessä</string>
+	<key>Updating %@</key>
+	<string>Päivitetään %@</string>
+	<key>You’re up to date!</key>
+	<string>Sinulla on viimeisin versio!</string>
+</dict>
+</plist>

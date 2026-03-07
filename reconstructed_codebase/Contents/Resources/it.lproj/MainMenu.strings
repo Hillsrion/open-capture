@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01C-Il-VMP.title</key>
+	<string>Note</string>
+	<key>0H0-Jc-t3x.title</key>
+	<string>Varianti...</string>
+	<key>0Ps-7b-sBQ.title</key>
+	<string>Rinomina Contatore</string>
+	<key>0Q0-M5-LmI.title</key>
+	<string>M</string>
+	<key>0UZ-1K-nR1.title</key>
+	<string>Livello</string>
+	<key>0ih-RM-Js7.title</key>
+	<string>Visualizza</string>
+	<key>14z-pL-mA5.ibShadowedToolTip</key>
+	<string>Resetta le regolazioni per le varianti</string>
+	<key>14z-pL-mA5.title</key>
+	<string>Elimina Livello Selezionato</string>
+	<key>1LQ-Jh-EPo.title</key>
+	<string>Aggiornamento Motore</string>
+	<key>1Lv-YA-qve.title</key>
+	<string>Seleziona</string>
+	<key>1Nd-JK-zNO.title</key>
+	<string>Shop…</string>
+	<key>1gq-zE-mEg.title</key>
+	<string>Barra degli strumenti</string>
+	<key>1rs-DA-1do.title</key>
+	<string>Sincronizza Metadati</string>
+	<key>224-6K-J3h.title</key>
+	<string>Nascondi Sempre i File PNG</string>
+	<key>24q-pt-xtA.title</key>
+	<string>Ortografia</string>
+	<key>25l-uy-u1U.title</key>
+	<string>Retrocedi Variante</string>
+	<key>28d-GR-VH6.title</key>
+	<string>Elabora selezione</string>
+	<key>29.title</key>
+	<string>MainMenu</string>
+	<key>2BO-O0-qsH.title</key>
+	<string>Valori Tonali</string>
+	<key>2Gr-gy-fxz.title</key>
+	<string>Seleziona Hot Folder…</string>
+	<key>2KV-Ld-vZd.title</key>
+	<string>Aggiungi ai Preferiti</string>
+	<key>2XR-PQ-i11.title</key>
+	<string>Aiuto</string>
+	<key>2pa-ft-UHr.title</key>
+	<string>Attiva/Disattiva Livello</string>
+	<key>3028.title</key>
+	<string>Crea Nuova Finestra</string>
+	<key>36O-pG-qIh.title</key>
+	<string>Imposta Contatore…</string>
+	<key>38I-f2-Ssj.title</key>
+	<string>Automatico</string>
+	<key>3T1-Cx-ywj.title</key>
+	<string>Taglia</string>
+	<key>3To-a4-pSf.ibShadowedToolTip</key>
+	<string>Ripristina un backup da questo Catalogo</string>
+	<key>3To-a4-pSf.title</key>
+	<string>Ripristina Catalogo…</string>
+	<key>3Ui-ok-lzu.title</key>
+	<string>Verifica il database all'apertura</string>
+	<key>3Z4-fg-SOV.title</key>
+	<string>Menu</string>
+	<key>3ep-eN-uVW.title</key>
+	<string>Barra degli strumenti Visore</string>
+	<key>3gr-b2-izd.title</key>
+	<string>Griglia e Guide</string>
+	<key>3lw-Wa-6il.title</key>
+	<string>Selezione</string>
+	<key>3rd-Dg-1hZ.title</key>
+	<string>Orientamento</string>
+	<key>40o-AJ-xoM.title</key>
+	<string>Modifica con</string>
+	<key>44D-aG-E83.title</key>
+	<string>Lettura dei valori Lab</string>
+	<key>4F7-S3-7wH.title</key>
+	<string>Stessa Classificazione</string>
+	<key>4MD-pK-52t.title</key>
+	<string>Menu</string>
+	<key>4tc-Vp-Tn2.title</key>
+	<string>Esporta Contatore</string>
+	<key>500-CP-quJ.title</key>
+	<string>Rifinisci Maschera…</string>
+	<key>5Kn-v3-3J9.title</key>
+	<string>Guide</string>
+	<key>5Qh-XJ-7lV.title</key>
+	<string>Resetta Guide</string>
+	<key>5Td-ii-gu5.title</key>
+	<string>Capture One</string>
+	<key>5eA-Cd-e2H.title</key>
+	<string>Imposta come Cartella Selezioni</string>
+	<key>5qY-K4-hhW.title</key>
+	<string>Visibilità Maschera</string>
+	<key>5xI-ot-kZZ.title</key>
+	<string>ID Sequenza</string>
+	<key>65L-HG-c0K.title</key>
+	<string>Resetta Contatore</string>
+	<key>6Jb-3H-48Z.title</key>
+	<string>Aggiungi Strumento Ispettore alla Scheda Selezionata</string>
+	<key>6Pw-sw-mKP.title</key>
+	<string>Modifica Tutte le Varianti Selezionate</string>
+	<key>6RB-Ks-Q9Y.title</key>
+	<string>Imposta o Cambia PIN…</string>
+	<key>6Ve-3u-FtW.title</key>
+	<string>Seleziona Successivo Quando</string>
+	<key>6WK-Rn-IDM.title</key>
+	<string>Applica Regolazioni da</string>
+	<key>6dD-vu-ayz.title</key>
+	<string>Regolazione Auto.</string>
+	<key>6fd-wm-DqL.ibShadowedToolTip</key>
+	<string>Acquisisci un'immagine utilizzando la fotocamera collegata</string>
+	<key>6fd-wm-DqL.title</key>
+	<string>Gestione Fotocamera di Rete…</string>
+	<key>6nI-5Q-bF1.title</key>
+	<string>Set Successivo</string>
+	<key>6sQ-je-30n.title</key>
+	<string>Contatore Output</string>
+	<key>75o-KI-t8D.title</key>
+	<string>Importa Contatore</string>
+	<key>7MX-Bb-VSm.title</key>
+	<string>Pubblica</string>
+	<key>7Ow-LL-dv0.title</key>
+	<string>Raccolta Precedente</string>
+	<key>7zw-gL-Wno.title</key>
+	<string>Nuova variante</string>
+	<key>8I6-nm-Uiw.title</key>
+	<string>Nuovo Raccolta</string>
+	<key>8R2-c5-XAq.title</key>
+	<string>Copia Regolazioni</string>
+	<key>8du-uT-ICL.title</key>
+	<string>Esci dalla Raccolta</string>
+	<key>92E-j9-FEm.title</key>
+	<string>Stessa Posizione Variante</string>
+	<key>94T-HJ-feh.title</key>
+	<string>Seleziona Per</string>
+	<key>9Aa-c4-9VI.title</key>
+	<string>Riduci Selezione</string>
+	<key>9Hl-bF-YXx.title</key>
+	<string>Registro Eventi</string>
+	<key>9NL-eQ-T1Q.title</key>
+	<string>Aiuto</string>
+	<key>9b8-5C-GLZ.title</key>
+	<string>Esporta come Catalogo...</string>
+	<key>9bM-jw-56t.title</key>
+	<string>Deseleziona Tutto</string>
+	<key>9g2-Zq-Mgh.title</key>
+	<string>Crash Capture One</string>
+	<key>9iB-p5-gRZ.title</key>
+	<string>Riduci Contatore</string>
+	<key>9k8-L5-lSq.title</key>
+	<string>Immagine</string>
+	<key>9lE-sW-NkR.title</key>
+	<string>Sincronizza Cartella…</string>
+	<key>9pG-rx-dax.title</key>
+	<string>Elimina</string>
+	<key>9tG-Te-CEV.title</key>
+	<string>Presentazione Immagini</string>
+	<key>9wF-vo-1tW.title</key>
+	<string>Contrasto e Luminosità</string>
+	<key>ACe-cT-qRq.title</key>
+	<string>Importa Sessione…</string>
+	<key>AHw-Yv-ZV0.title</key>
+	<string>Nuovo Album…</string>
+	<key>APq-Ot-xfY.title</key>
+	<string>Imposta contatore…</string>
+	<key>ARA-Qg-wH6.title</key>
+	<string>Modifica</string>
+	<key>AVP-cL-jr5.title</key>
+	<string>Trigger</string>
+	<key>AiG-bi-lBS.title</key>
+	<string>Imposta Incremento…</string>
+	<key>Avm-Xr-hJI.title</key>
+	<string>Originali...</string>
+	<key>B6A-Bd-wdt.title</key>
+	<string>Livello</string>
+	<key>BBe-mx-5MA.title</key>
+	<string>Lettura dei valori Colore</string>
+	<key>BKI-Ak-E3C.title</key>
+	<string>Crash OpenCore</string>
+	<key>BMq-UG-ndQ.title</key>
+	<string>Contatore Output</string>
+	<key>BPz-o1-8u8.title</key>
+	<string>Apri Recente</string>
+	<key>BlO-8u-bjW.title</key>
+	<string>Seleziona Scheda Strumenti</string>
+	<key>C8i-Ie-mV3.title</key>
+	<string>Segnala un Problema…</string>
+	<key>CTk-NV-A7b.title</key>
+	<string>Licenza…</string>
+	<key>Cbk-cE-Rnc.title</key>
+	<string>Mostra i Punti Selezione</string>
+	<key>Ce0-Be-8UJ.title</key>
+	<string>Disattiva</string>
+	<key>Cyj-ce-0Gd.title</key>
+	<string>File</string>
+	<key>DSv-Kq-hdb.title</key>
+	<string>Verifica disponibilità aggiornamenti…</string>
+	<key>Dbr-g2-CoE.title</key>
+	<string>Servizi</string>
+	<key>DiO-W0-c4G.title</key>
+	<string>Modalità Prima/Dopo</string>
+	<key>Dsw-hn-IZg.title</key>
+	<string>Preferenze…</string>
+	<key>E5j-Qh-yw9.title</key>
+	<string>Modifica Scelte Rapide da Tastiera…</string>
+	<key>EY1-4F-yTL.title</key>
+	<string>Classificato Tag Colore</string>
+	<key>Eb6-Sk-NMb.title</key>
+	<string>Carica Metadati</string>
+	<key>Ej6-Xy-Scx.title</key>
+	<string>Seleziona per Medesimo</string>
+	<key>Ez2-nJ-UxV.title</key>
+	<string>Crea LCC...</string>
+	<key>F65-Hg-uD7.title</key>
+	<string>Imposta Incremento…</string>
+	<key>FIM-SV-caT.title</key>
+	<string>Resetta Contatore</string>
+	<key>FTn-px-TXb.title</key>
+	<string>Nascondi Sempre i File Video</string>
+	<key>Fbl-im-0JF.title</key>
+	<string>Promuovi Variante</string>
+	<key>Few-hi-dlj.title</key>
+	<string>Successivo</string>
+	<key>Fk8-fZ-Nge.title</key>
+	<string>Sovrapposizione</string>
+	<key>Ft0-2F-qcY.title</key>
+	<string>Imposta Incremento…</string>
+	<key>FyO-gf-P7P.title</key>
+	<string>Visore</string>
+	<key>Gea-NJ-sMI.title</key>
+	<string>XL</string>
+	<key>HgY-Ir-gjR.title</key>
+	<string>Nascondi Altre</string>
+	<key>I3p-9w-NiJ.title</key>
+	<string>Cursori Immagine Principale</string>
+	<key>I5C-mb-Ph9.title</key>
+	<string>Visore</string>
+	<key>I8M-pI-mei.title</key>
+	<string>Filtri Globali</string>
+	<key>IEm-f0-wfu.title</key>
+	<string>Strumenti</string>
+	<key>IID-Ve-jGb.title</key>
+	<string>Etichette</string>
+	<key>IPe-NI-yoh.title</key>
+	<string>File</string>
+	<key>IQ8-iC-ffv.title</key>
+	<string>Interruzione Automatica</string>
+	<key>Ibb-8a-gRZ.title</key>
+	<string>L</string>
+	<key>Ic4-HZ-M7K.title</key>
+	<string>Seleziona Prossimo Quando…</string>
+	<key>Ik1-xy-Hdk.title</key>
+	<string>Stesso Tag Colore</string>
+	<key>Ikz-mO-9ZA.title</key>
+	<string>Applica LCC</string>
+	<key>IqL-nF-pTb.title</key>
+	<string>Non Mostrare Mai la Maschera</string>
+	<key>Izf-b8-5gq.title</key>
+	<string>Servizi</string>
+	<key>J2g-T4-9jM.title</key>
+	<string>Configura Regolazioni Automatiche</string>
+	<key>J6f-2w-feE.title</key>
+	<string>Contatore Acquisizione</string>
+	<key>JO3-mT-am1.title</key>
+	<string>Stessa Sequenza ID</string>
+	<key>JRI-NB-DJ3.title</key>
+	<string>Cronologia Elaborazioni</string>
+	<key>JsD-gv-ZcN.title</key>
+	<string>Classificazione</string>
+	<key>JzF-cB-jf5.title</key>
+	<string>Barre di Avanzamento</string>
+	<key>K2L-UQ-r8u.title</key>
+	<string>Crash OpenCore</string>
+	<key>K4L-nU-bL0.title</key>
+	<string>Resetta Contatore</string>
+	<key>KZr-yz-eOe.title</key>
+	<string>Apri Recente</string>
+	<key>KkK-Dm-Fyt.title</key>
+	<string>Riduci Dimensione Anteprima</string>
+	<key>Kw9-6p-baP.title</key>
+	<string>Riduci</string>
+	<key>Kx8-Sf-MtA.title</key>
+	<string>Bilanciamento del bianco</string>
+	<key>L2W-qr-fDh.title</key>
+	<string>Rotazione</string>
+	<key>L6s-MY-kNd.title</key>
+	<string>Tag Colore</string>
+	<key>LBI-uj-64k.title</key>
+	<string>Nuovo Album Intelligente...</string>
+	<key>LBc-ql-cwY.title</key>
+	<string>Seleziona per Medesimo</string>
+	<key>LTF-ps-Dul.title</key>
+	<string>Copia e Applica Regolazioni</string>
+	<key>LbY-8O-xu0.title</key>
+	<string>Strumenti Personalizzati</string>
+	<key>LcB-eX-4qN.title</key>
+	<string>Elimina</string>
+	<key>LeW-a9-a1n.title</key>
+	<string>Visualizza</string>
+	<key>LpJ-ak-5G4.title</key>
+	<string>90° Destra</string>
+	<key>MFE-ll-7eO.title</key>
+	<string>Importa Catalogo</string>
+	<key>MKh-xe-MEd.title</key>
+	<string>Barre di Avanzamento</string>
+	<key>MOG-uN-KrB.ibShadowedToolTip</key>
+	<string>Acquisisci un'immagine utilizzando la fotocamera collegata</string>
+	<key>MOG-uN-KrB.title</key>
+	<string>Acquisizione</string>
+	<key>Mb9-kH-qyp.title</key>
+	<string>Apri con</string>
+	<key>Mfd-my-DKN.title</key>
+	<string>Prima/Dopo</string>
+	<key>My6-4Y-UBl.title</key>
+	<string>Espandi tutto</string>
+	<key>N5o-dv-1Be.title</key>
+	<string>Annulla</string>
+	<key>N9h-Al-5XE.title</key>
+	<string>Sposta nel cestino</string>
+	<key>Nhu-fQ-zjN.title</key>
+	<string>Verifica Catalogo o Sessione</string>
+	<key>NyM-Zt-y88.title</key>
+	<string>Editor Curva Pellicola</string>
+	<key>O2C-D1-hn3.title</key>
+	<string>Modalità Nascondi Automatico</string>
+	<key>O4t-ch-OFC.title</key>
+	<string>Copia</string>
+	<key>O9F-Mo-6cG.title</key>
+	<string>Consigli</string>
+	<key>OCP-rg-Tmg.title</key>
+	<string>Menu</string>
+	<key>OQY-AD-asc.title</key>
+	<string>Orientamento</string>
+	<key>OVh-i7-5mp.title</key>
+	<string>Conferma Trigger</string>
+	<key>OqC-NS-Eok.title</key>
+	<string>Campione Bar 02</string>
+	<key>PCm-vK-OGx.title</key>
+	<string>Non resettare mai in automatico le aree di lavoro</string>
+	<key>PMu-nW-YC5.title</key>
+	<string>Entra nella Raccolta</string>
+	<key>PQW-J0-1bK.title</key>
+	<string>Crash CaptureCoreService</string>
+	<key>PRu-fp-fdO.title</key>
+	<string>Seleziona</string>
+	<key>PX7-Iq-9N2.title</key>
+	<string>Visualizza il Contratto di Licenza</string>
+	<key>Q9f-h8-bu5.title</key>
+	<string>Seleziona Per</string>
+	<key>QHc-R7-m41.title</key>
+	<string>Stampa...</string>
+	<key>QSu-Ii-lqh.title</key>
+	<string>Imposta Incremento…</string>
+	<key>Qhq-5B-fYE.title</key>
+	<string>Rotazione</string>
+	<key>QjW-ua-tSX.title</key>
+	<string>Crash Capture One</string>
+	<key>Qkh-Pd-T00.title</key>
+	<string>Mostra tutto</string>
+	<key>Qu7-Iw-dyX.title</key>
+	<string>Classificazione</string>
+	<key>Qx0-Bi-x6R.title</key>
+	<string>Script</string>
+	<key>R3f-rv-RWH.title</key>
+	<string>Crea Strumento Mobile</string>
+	<key>RIv-U7-9vT.title</key>
+	<string>Configura Regolazioni Automatiche</string>
+	<key>RkY-nO-oYQ.title</key>
+	<string>Modalità Modifica</string>
+	<key>RuA-0Y-GGt.title</key>
+	<string>Pulisci Maschera</string>
+	<key>S4K-SB-UBy.title</key>
+	<string>Informazioni su Capture One</string>
+	<key>SGm-xv-97r.title</key>
+	<string>Rimuovi Pannello Strumenti</string>
+	<key>SJc-VY-oqD.title</key>
+	<string>Rinomina immagine</string>
+	<key>SXk-bE-jzi.ibShadowedToolTip</key>
+	<string>Svuota la sessione cestino. Le immagini saranno eliminate definitivamente</string>
+	<key>SXk-bE-jzi.title</key>
+	<string>Svuota il Cestino</string>
+	<key>SiW-gP-wbL.title</key>
+	<string>Inverti Selezione</string>
+	<key>SlN-5G-v1Q.title</key>
+	<string>Colore Griglia</string>
+	<key>Ss4-ms-B6z.title</key>
+	<string>Gamma Luma…</string>
+	<key>TB3-MG-NqE.title</key>
+	<string>Ricerca Avanzata...</string>
+	<key>TFk-vt-N7X.title</key>
+	<string>Elimina errori</string>
+	<key>TWx-jo-Xie.title</key>
+	<string>Ortografia</string>
+	<key>TXq-Kk-7Ru.title</key>
+	<string>Esci da Capture One</string>
+	<key>Tao-sN-xcm.title</key>
+	<string>Crash ImageCore</string>
+	<key>Tek-Pl-oY3.title</key>
+	<string>Selezionare Solo Primaria</string>
+	<key>TfA-cx-Mvh.title</key>
+	<string>Maschera di messa a fuoco</string>
+	<key>Tsz-Zr-wOo.title</key>
+	<string>Ultimo</string>
+	<key>Txa-r9-MeZ.title</key>
+	<string>Aggiungi Nuovo Livello Clone</string>
+	<key>U3J-Q4-APW.title</key>
+	<string>Script</string>
+	<key>U5C-ej-t0I.title</key>
+	<string>Gamma Colore Selezionata</string>
+	<key>UJa-BM-gkL.title</key>
+	<string>Modifica</string>
+	<key>UOb-cc-i4u.title</key>
+	<string>Elimina dal Disco…</string>
+	<key>UPZ-4r-LIP.title</key>
+	<string>Modalità Nascondi Automatico</string>
+	<key>Umj-4D-Ft5.title</key>
+	<string>90° Sinistra</string>
+	<key>Ums-2C-jGe.title</key>
+	<string>Rotazione</string>
+	<key>VAN-jC-sVf.title</key>
+	<string>Imposta contatore…</string>
+	<key>VIk-sI-Rak.title</key>
+	<string>Campione Spinner 01</string>
+	<key>VNo-j5-BoM.title</key>
+	<string>Raccolta Successiva</string>
+	<key>VRZ-08-28a.title</key>
+	<string>Tag Colore</string>
+	<key>VYd-aa-ISY.title</key>
+	<string>Guida Utente Online</string>
+	<key>Vd2-sw-pUm.title</key>
+	<string>Classificazione</string>
+	<key>W1O-Uk-8Al.title</key>
+	<string>Cancella Paragone</string>
+	<key>W8g-vz-Nkq.title</key>
+	<string>Griglia</string>
+	<key>WI5-uh-qyi.title</key>
+	<string>Salva le Regolazioni come Style…</string>
+	<key>WZj-vq-3hp.ibShadowedToolTip</key>
+	<string>Una sessione è il modo più veloce e leggero per lavorare con un limitato numero di immagini per un singolo lavoro o evento. Le immagini possono essere modificate sfogliando le cartelle in cui si trovano o importandole in una sessione.</string>
+	<key>WZj-vq-3hp.title</key>
+	<string>Nuova Sessione...</string>
+	<key>WtP-ch-1PG.title</key>
+	<string>Capture One</string>
+	<key>XE8-eP-hGS.title</key>
+	<string>Punto Chiave</string>
+	<key>XEz-MA-wNM.title</key>
+	<string>Imposta contatore…</string>
+	<key>XJN-4m-xYh.title</key>
+	<string>Aggiungi Guida Verticale</string>
+	<key>Xq1-cS-s6N.title</key>
+	<string>Guide Personalizzate</string>
+	<key>Xu6-Jy-27Q.title</key>
+	<string>Esegui Dump per Elaborazione/Stampa/Provino Contatto per Web/Esportazione</string>
+	<key>Xve-bi-pm5.ibShadowedToolTip</key>
+	<string>Ruota varianti destra</string>
+	<key>Xve-bi-pm5.title</key>
+	<string>Ruota a destra</string>
+	<key>Ya0-fP-PFT.title</key>
+	<string>Mostra Maschera in Scala di grigi</string>
+	<key>Yhj-Cn-eCP.title</key>
+	<string>Modalità Prima/Dopo</string>
+	<key>Yhl-QQ-SNi.title</key>
+	<string>Avviso di Esposizione</string>
+	<key>YjW-6L-mGx.title</key>
+	<string>Imposta come Cartella Acquisizioni</string>
+	<key>YvP-eg-VLO.title</key>
+	<string>Attiva/Disattiva Posizione Browser</string>
+	<key>Yzh-ba-11T.title</key>
+	<string>Esporta Contatore</string>
+	<key>Z12-Ur-vG5.title</key>
+	<string>Fotocamera</string>
+	<key>Z5p-mB-i3n.title</key>
+	<string>Copia Maschera Da</string>
+	<key>ZEv-jN-yCz.title</key>
+	<string>Cursore Split View</string>
+	<key>ZK1-Br-nPC.title</key>
+	<string>Esporta Immagini</string>
+	<key>ZSx-8D-9oe.title</key>
+	<string>Prova Formula</string>
+	<key>ZkQ-kr-rOT.title</key>
+	<string>Rasterizza Maschera</string>
+	<key>ZtV-H5-odX.title</key>
+	<string>Imposta come Paragone</string>
+	<key>a5o-KL-LMv.title</key>
+	<string>Attività</string>
+	<key>a6a-6k-MaI.title</key>
+	<string>Crash Trigger…</string>
+	<key>aFc-UB-Ojr.title</key>
+	<string>Nuovo Gruppo…</string>
+	<key>aWi-dq-WP7.title</key>
+	<string>Clona Variante</string>
+	<key>aeU-x2-HKG.title</key>
+	<string>Espandi Selezione</string>
+	<key>aoS-PQ-Fke.title</key>
+	<string>Successivo</string>
+	<key>apZ-Xi-bTS.title</key>
+	<string>Nascondi Menù</string>
+	<key>bC2-8p-Sbj.title</key>
+	<string>Controlla ortografia</string>
+	<key>bQz-bN-0Pr.title</key>
+	<string>Crea Album da</string>
+	<key>bUF-hO-mho.title</key>
+	<string>HDR (Alta gamma dinamica)</string>
+	<key>bd0-6X-m18.title</key>
+	<string>Classificazione</string>
+	<key>bdc-xp-MXX.title</key>
+	<string>Sposta in Cartella Selezioni</string>
+	<key>cIQ-0c-HMd.title</key>
+	<string>Imposta come Cartella di Output</string>
+	<key>cJ0-5a-BtU.title</key>
+	<string>Visualizza sempre la Maschera</string>
+	<key>cNu-MK-hYx.title</key>
+	<string>Subito</string>
+	<key>caw-2R-l90.title</key>
+	<string>Esegui Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>cb9-dY-odx.title</key>
+	<string>Test prestazioni</string>
+	<key>cjc-7e-hFl.title</key>
+	<string>Rimuovi Strumento dalla Scheda Selezionata</string>
+	<key>ckf-EW-xkf.title</key>
+	<string>Mostra nel Finder</string>
+	<key>d0L-pY-VgO.title</key>
+	<string>Test prestazioni</string>
+	<key>d50-fq-gSn.title</key>
+	<string>Imposta contatore…</string>
+	<key>dAq-ug-Eha.title</key>
+	<string>Seleziona automaticamente nuova acquisizione</string>
+	<key>dVS-br-Kwq.title</key>
+	<string>Browser Personalizzato</string>
+	<key>dVb-ZR-YFh.title</key>
+	<string>Finestra</string>
+	<key>dk9-he-9dx.title</key>
+	<string>Rigenera Anteprime</string>
+	<key>eAW-D0-ka1.title</key>
+	<string>Mostra le Frecce Correzione e Clonazione</string>
+	<key>emU-ls-KLQ.title</key>
+	<string>Menu</string>
+	<key>eqn-m3-Cil.title</key>
+	<string>Barra degli strumenti del Browser</string>
+	<key>exd-CD-8be.title</key>
+	<string>Aumenta Dimensione Anteprima</string>
+	<key>fEO-V4-a9n.title</key>
+	<string>Non classificato</string>
+	<key>fQW-x2-JHm.title</key>
+	<string>Modalità Stato</string>
+	<key>fai-sG-oed.title</key>
+	<string>Profilo prova</string>
+	<key>fgT-gu-xT9.title</key>
+	<string>Aggiungi un Nuovo Livello di Regolazione di Riempimento</string>
+	<key>fs8-sW-tR1.ibShadowedToolTip</key>
+	<string>Ruota varianti sinistra</string>
+	<key>fs8-sW-tR1.title</key>
+	<string>Ruota a sinistra</string>
+	<key>fse-N2-CBu.title</key>
+	<string>Nascondi Sempre i File RAW</string>
+	<key>fwA-3y-i2C.title</key>
+	<string>Resetta Contatore</string>
+	<key>fzw-GX-3Oz.title</key>
+	<string>Classificazione a Stelle</string>
+	<key>ga9-IJ-ciS.title</key>
+	<string>Esposizione</string>
+	<key>gac-ce-4hS.title</key>
+	<string>Velocità esplorazione</string>
+	<key>gaw-q6-ZQt.title</key>
+	<string>Nascondi Sempre i File TIFF Processati</string>
+	<key>hIg-Rd-5ek.title</key>
+	<string>Applica Regolazioni</string>
+	<key>hKJ-lB-Wyx.title</key>
+	<string>Personalizza Barra degli strumenti…</string>
+	<key>hNh-b3-9pp.title</key>
+	<string>Ordina</string>
+	<key>hOL-XU-Zdy.title</key>
+	<string>Gestisci Blocchi…</string>
+	<key>hRi-QW-I0r.title</key>
+	<string>Crash ModelCore</string>
+	<key>hap-CP-2Kr.title</key>
+	<string>Imposta Incremento…</string>
+	<key>hm3-R0-nnH.title</key>
+	<string>Blocca/Sblocca Catalogo</string>
+	<key>hyx-xU-vkz.title</key>
+	<string>Profilo prova</string>
+	<key>i53-f7-yoL.title</key>
+	<string>Attiva/Disattiva Posizione Strumenti</string>
+	<key>i5p-Um-m9T.title</key>
+	<string>Regolazioni</string>
+	<key>iTf-JB-Jml.title</key>
+	<string>Live View</string>
+	<key>ij0-Ig-v5x.title</key>
+	<string>Ingrandisci Finestra</string>
+	<key>itC-UE-2gw.title</key>
+	<string>Precedente</string>
+	<key>ivw-bE-Tp8.ibShadowedToolTip</key>
+	<string>Fai il backup di questo catalogo</string>
+	<key>ivw-bE-Tp8.title</key>
+	<string>Backup Catalogo…</string>
+	<key>iz4-l5-u4d.title</key>
+	<string>Cronologia Elaborazioni</string>
+	<key>j9C-bw-Eqf.title</key>
+	<string>Porta Tutto in Primo Piano</string>
+	<key>jFB-IF-a18.title</key>
+	<string>Primo</string>
+	<key>jFU-cx-apQ.title</key>
+	<string>Etichette</string>
+	<key>jTl-o5-QoF.title</key>
+	<string>Set Precedente</string>
+	<key>jha-Dh-6bI.title</key>
+	<string>Riempi Maschera</string>
+	<key>jlv-C4-OK4.title</key>
+	<string>Esporta un Provino Contatto per Web…</string>
+	<key>jmQ-Po-VKd.title</key>
+	<string>Seleziona Tutto</string>
+	<key>k11-QY-wHF.title</key>
+	<string>Crash ImageCore</string>
+	<key>kEw-1G-rHn.title</key>
+	<string>Imposta come Cartella Cestino</string>
+	<key>kJo-XM-aj7.title</key>
+	<string>XS</string>
+	<key>kLD-Ih-bSU.title</key>
+	<string>Esegui Dump per Anteprima di stampa/Visore</string>
+	<key>kVA-By-ceo.title</key>
+	<string>Colore Sfondo</string>
+	<key>kaS-cR-Itb.title</key>
+	<string>Full View</string>
+	<key>ks9-Py-p2q.title</key>
+	<string>Tag Colore</string>
+	<key>kzM-Qh-gJR.ibShadowedToolTip</key>
+	<string>Fai il backup di questo documento come template</string>
+	<key>kzM-Qh-gJR.title</key>
+	<string>Salva come Template…</string>
+	<key>l6v-uQ-6vA.title</key>
+	<string>Deselezionare Primaria</string>
+	<key>lsR-Cd-YTB.title</key>
+	<string>Aggiungi Nuovo Livello Correzione</string>
+	<key>lsz-dg-BvX.title</key>
+	<string>Importa Catalogo</string>
+	<key>lto-Al-Lic.title</key>
+	<string>Chiudi Finestra</string>
+	<key>m53-KV-wAJ.title</key>
+	<string>Immagine</string>
+	<key>mGQ-hW-7fj.title</key>
+	<string>Rinomina Immagini in Batch…</string>
+	<key>mGw-IN-30M.title</key>
+	<string>Schermo Intero</string>
+	<key>mNh-zS-LXg.title</key>
+	<string>Tag Colore</string>
+	<key>mTR-t7-bfn.title</key>
+	<string>Riduci Capture One</string>
+	<key>mU3-yj-odu.title</key>
+	<string>Catalogo Capture One…</string>
+	<key>mWf-jA-GRT.title</key>
+	<string>Classificazione</string>
+	<key>mb2-5a-je9.title</key>
+	<string>Rinomina Contatore</string>
+	<key>mz6-FE-px4.title</key>
+	<string>Nuovo Raccolta</string>
+	<key>n5l-Fl-Ng8.title</key>
+	<string>Resource Hub…</string>
+	<key>n5r-O7-blt.title</key>
+	<string>Comprimi tutto</string>
+	<key>nE7-nm-cUN.title</key>
+	<string>Mostra nella Libreria</string>
+	<key>nTn-id-iRz.title</key>
+	<string>Nuovo Progetto…</string>
+	<key>naw-rG-vWD.title</key>
+	<string>Seleziona Variante</string>
+	<key>nbk-yq-Chp.title</key>
+	<string>Personalizza Visore</string>
+	<key>ndC-o5-Nrj.title</key>
+	<string>Tag Colore</string>
+	<key>nry-zy-vLA.title</key>
+	<string>Quando pronti</string>
+	<key>oHh-wm-VLQ.title</key>
+	<string>Rimuovi Strumento Ispettore Da Pannello Strumenti</string>
+	<key>oLn-zi-kJP.title</key>
+	<string>Sfuma Maschera…</string>
+	<key>oNa-cq-UaH.title</key>
+	<string>Aggiungi Pannello Strumenti</string>
+	<key>oVF-Zi-Ly1.title</key>
+	<string>Stili</string>
+	<key>oaD-9h-WhZ.title</key>
+	<string>Importa Immagini…</string>
+	<key>pay-HP-uXe.title</key>
+	<string>Nascondi Sempre i File JPEG</string>
+	<key>pos-6t-mez.title</key>
+	<string>Disattiva</string>
+	<key>pqK-xL-L7m.title</key>
+	<string>Area di lavoro</string>
+	<key>pw5-ef-Yde.title</key>
+	<string>Campione Spinner 02</string>
+	<key>qPD-iq-16K.title</key>
+	<string>Inverti Maschera</string>
+	<key>qfi-c8-Lj9.title</key>
+	<string>Mai</string>
+	<key>qzd-K0-SRD.title</key>
+	<string>Apri EIP</string>
+	<key>r0M-bo-Ctx.title</key>
+	<string>Lista Nome File…</string>
+	<key>rIx-ZF-zzR.title</key>
+	<string>Browser</string>
+	<key>rJ7-tj-Zjx.title</key>
+	<string>Aggiungi Strumento alla Scheda Selezionata</string>
+	<key>rKQ-8S-jJJ.title</key>
+	<string>Ripristina</string>
+	<key>rg8-xW-C7E.title</key>
+	<string>Crea pacchetto EIP</string>
+	<key>rlO-p5-pah.title</key>
+	<string>Finestra</string>
+	<key>rwS-sM-J09.title</key>
+	<string>Posiziona Immagine…</string>
+	<key>sAJ-PN-NNm.title</key>
+	<string>S</string>
+	<key>sNP-5H-3KI.title</key>
+	<string>Supporto tecnico di Capture One</string>
+	<key>sWb-mO-EDh.title</key>
+	<string>Etichette</string>
+	<key>sZU-Ld-R58.title</key>
+	<string>Aggiungi Guida Orizzontale</string>
+	<key>sam-MH-Lvx.title</key>
+	<string>Adatta</string>
+	<key>smy-v7-f4P.title</key>
+	<string>Elimina errori</string>
+	<key>stE-xv-Kcp.title</key>
+	<string>Controlla ortografia durante la digitazione</string>
+	<key>t0Z-l1-Abr.title</key>
+	<string>Lettura dei valori Lab</string>
+	<key>t64-BB-MkS.title</key>
+	<string>Colore Sfondo</string>
+	<key>tFf-SU-Is4.title</key>
+	<string>Schede Strumenti</string>
+	<key>tPe-DZ-2kg.title</key>
+	<string>Esporta Immagini</string>
+	<key>tQv-C3-vCk.title</key>
+	<string>Apri...</string>
+	<key>tRq-qe-j3c.title</key>
+	<string>Area di lavoro</string>
+	<key>uIl-Sc-fHK.title</key>
+	<string>Contatore Acquisizioni</string>
+	<key>uMu-4A-XMk.title</key>
+	<string>Ortografia…</string>
+	<key>um6-7R-op7.title</key>
+	<string>Importa Contatore</string>
+	<key>vKK-zV-QgI.title</key>
+	<string>Precedente</string>
+	<key>vN0-4W-ouU.title</key>
+	<string>Guide Personalizzate</string>
+	<key>vNl-rw-7XV.title</key>
+	<string>Fotocamera</string>
+	<key>vPJ-Xt-IuB.title</key>
+	<string>Apri con</string>
+	<key>vXq-3w-y0D.title</key>
+	<string>Colore Guide</string>
+	<key>vek-MX-hli.title</key>
+	<string>Resetta Contatore</string>
+	<key>w0t-zA-XqW.title</key>
+	<string>Prova Margine</string>
+	<key>w1y-hX-jq1.title</key>
+	<string>Browser Personalizzato</string>
+	<key>w49-QV-zqJ.title</key>
+	<string>Aggiungi un Nuovo Livello di Regolazione Vuoto</string>
+	<key>wBf-ws-A5Q.ibShadowedToolTip</key>
+	<string>Un Catalogo è il miglior posto in cui archiviare e organizzare una libreria. Per lavorare con le immagini di un catalogo, è necessario importarle nel catalogo. Si consiglia alla maggior parte dei fotografi.</string>
+	<key>wBf-ws-A5Q.title</key>
+	<string>Nuovo Catalogo...</string>
+	<key>wFu-j6-T7B.title</key>
+	<string>Hot folder Abilitato</string>
+	<key>wr6-Ak-7xy.title</key>
+	<string>Campione Bar 01</string>
+	<key>wxi-Vv-EBx.title</key>
+	<string>Conferma Trigger</string>
+	<key>wzo-cb-mif.title</key>
+	<string>Pubblica</string>
+	<key>x0t-84-S7U.title</key>
+	<string>Disegna aree ritagliate</string>
+	<key>xC8-Jz-x6n.title</key>
+	<string>Ordina</string>
+	<key>xGv-Lk-p4S.title</key>
+	<string>Modalità Composizione</string>
+	<key>xLy-q0-0Cq.title</key>
+	<string>Regolazioni</string>
+	<key>xdM-fB-QmX.title</key>
+	<string>Esegui Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>xiu-HR-Fv3.title</key>
+	<string>Posiziona Cartella…</string>
+	<key>xj1-AI-B7a.title</key>
+	<string>Modalità Vista Multipla</string>
+	<key>xoa-r4-m7R.title</key>
+	<string>Incolla</string>
+	<key>y8j-67-b0w.title</key>
+	<string>Minimizza</string>
+	<key>yJf-h4-0Nf.title</key>
+	<string>Seleziona automaticamente nuova acquisizione</string>
+	<key>yLh-tq-tGA.title</key>
+	<string>Filtri Globali</string>
+	<key>zIN-U6-GWH.title</key>
+	<string>Ingrandisci</string>
+	<key>zd3-KN-4Md.ibShadowedToolTip</key>
+	<string>Resetta le regolazioni per le varianti</string>
+	<key>zd3-KN-4Md.title</key>
+	<string>Resetta</string>
+	<key>zdr-UD-UZn.title</key>
+	<string>Mostra la Maschera solo Quando Disegno</string>
+	<key>zoC-BT-olu.ibShadowedToolTip</key>
+	<string>Ruota la variante primaria per passare a orizzontale o verticale. Premi il tasto Shift per ruotate tutte le varianti selezionate</string>
+	<key>zoC-BT-olu.title</key>
+	<string>Raddrizza</string>
+	<key>zoo-YX-3kR.title</key>
+	<string>Applica Regolazioni da</string>
+</dict>
+</plist>

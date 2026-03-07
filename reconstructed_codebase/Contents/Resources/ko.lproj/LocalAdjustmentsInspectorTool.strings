@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>레이어 조정 삭제</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>새로운 레이어</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>커서 툴 옵션</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>마스크 가시성 설정</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>상자</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>레이어 불투명도</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>불투명도</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>루마 레인지</string>
+</dict>
+</plist>

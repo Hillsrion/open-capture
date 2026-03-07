@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>233.ibShadowedToolTip</key>
+	<string>Ordenar</string>
+	<key>254.title</key>
+	<string>Importar todo</string>
+	<key>255.title</key>
+	<string>Cancelar</string>
+	<key>256.title</key>
+	<string>Borrar imágenes tras copiarlas</string>
+	<key>257.title</key>
+	<string>Expulsar tarjeta</string>
+	<key>368.title</key>
+	<string>Nunca abrir colección de importaciones</string>
+	<key>369.title</key>
+	<string>Notificar al finalizar</string>
+	<key>370.title</key>
+	<string>Abrir colección cuando comienza la importación</string>
+	<key>378.title</key>
+	<string>Importar Colección</string>
+	<key>5.title</key>
+	<string>Ventana</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>No hay imágenes en la carpeta</string>
+</dict>
+</plist>

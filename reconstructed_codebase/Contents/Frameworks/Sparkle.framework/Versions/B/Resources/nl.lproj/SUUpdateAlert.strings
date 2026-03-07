@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Versiegegevens:</string>
+	<key>171.title</key>
+	<string>Herinner mij later</string>
+	<key>172.title</key>
+	<string>Sla deze versie over</string>
+	<key>173.title</key>
+	<string>Installeer update</string>
+	<key>175.title</key>
+	<string>Download en installeer updates voortaan automatisch</string>
+	<key>5.title</key>
+	<string>Software-update</string>
+</dict>
+</plist>

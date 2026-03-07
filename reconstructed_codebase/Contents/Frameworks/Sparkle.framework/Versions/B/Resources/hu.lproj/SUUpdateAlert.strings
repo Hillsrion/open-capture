@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Változások az előző verzióhoz képest:</string>
+	<key>171.title</key>
+	<string>Emlékeztessen később</string>
+	<key>172.title</key>
+	<string>Verzió kihagyása</string>
+	<key>173.title</key>
+	<string>Telepítés</string>
+	<key>175.title</key>
+	<string>A jövőben automatikusan töltse le és telepítse a frissítéseket</string>
+	<key>5.title</key>
+	<string>Szoftverfrissítés</string>
+</dict>
+</plist>

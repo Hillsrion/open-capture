@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Rozszerzony format obrazu Capture One (EIP)</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One czasami wymaga dostępu do innych aplikacji, aby korzystać z wewnętrznych skryptów.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Program Capture One nie wymaga dostępu do Kalendarza. Ta wiadomość mogła zostać wywołana przez próbę dostępu do Kalendarza.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Program Capture One nie wymaga dostępu do Kontaktów. Ta wiadomość mogła zostać wywołana przez próbę dostępu do Biblioteki.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Program Capture One wymaga dostępu do biblioteki zdjęć, aby korzystać z tetheringu. Ta wiadomość mogła zostać wywołana przez próbę dostępu do biblioteki zdjęć przez Capture One.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Program Capture One nie wymaga dostępu do Przypomnień. Ta wiadomość mogła zostać wywołana przez próbę dostępu do Biblioteki.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Program Capture One wymaga dostępu do dysków zewnętrznych, aby korzystać z tetheringu. Zmiana tych ustawień może wymagać restartu programu Capture One.</string>
+	<key>Phase One RAW image</key>
+	<string>Plik RAW Phase One</string>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>도움이 필요하면 https://support.captureone.com에서 Capture One 지원에 문의하십시오.</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>도움이 필요하면 https://support.captureone.com에서 Capture One 지원에 문의하십시오. 지원 요청에 아래 텍스트 문자열을 포함하세요.
+
+%@</string>
+	<key>Free version limit reached</key>
+	<string>무료 버전 한도에 도달</string>
+	<key>Glass settings</key>
+	<string>Glass 설정</string>
+	<key>Not implemented</key>
+	<string>구현되지 않음</string>
+	<key>Photography is better shared. Glass is a global, paid photography community and photo-sharing platform that helps photographers experiment, get inspired, and grow. With no ads or algorithms, your photos look their best.
+Membership required — [learn more and sign up](https://glass.photo/).</key>
+	<string>Photography is better shared. Glass is a global, paid photography community and photo-sharing platform that helps photographers experiment, get inspired, and grow. With no ads or algorithms, your photos look their best.
+Membership required — [learn more and sign up](https://glass.photo/).</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>업로드할 자산 %1$i/%2$i 준비 중…</string>
+	<key>Server Error</key>
+	<string>알 수 없는 오류</string>
+	<key>Something went wrong, please try again.</key>
+	<string>문제가 발생했습니다. 나중에 다시 시도해 보십시오.</string>
+	<key>The free version of the Glass plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>Glass 플러그인의 무료 버전을 사용 중이며, 많은 파일을 동시에 게시하거나 가져올 수 없습니다. 업그레이드하려면 https://integrations.captureone.com/upgrade/ 를 방문하십시오</string>
+	<key>This method is not yet implemented.</key>
+	<string>이 방법은 아직 구현되지 않았습니다.</string>
+	<key>Unknown Error</key>
+	<string>알 수 없는 오류</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>%1$@ 업로드 중(%2$i/%3$i)…</string>
+</dict>
+</plist>

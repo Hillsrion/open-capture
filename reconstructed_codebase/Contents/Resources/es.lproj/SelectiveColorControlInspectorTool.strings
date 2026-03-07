@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0vp-Kx-FHd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tono</string>
+	<key>2031.title</key>
+	<string>Box</string>
+	<key>3060.label</key>
+	<string>Tono de Piel</string>
+	<key>3178.title</key>
+	<string>Box</string>
+	<key>3180.ibShadowedToolTip</key>
+	<string>Completado el rango completo de saturación</string>
+	<key>352.headerCell.title</key>
+	<string>∆L</string>
+	<key>353.headerCell.title</key>
+	<string>∆S</string>
+	<key>354.headerCell.title</key>
+	<string>∆H</string>
+	<key>363.title</key>
+	<string>Area de texto</string>
+	<key>3774.title</key>
+	<string>Ver intervalo de color seleccionado</string>
+	<key>3820.title</key>
+	<string>Ver intervalo de color seleccionado</string>
+	<key>3844.ibShadowedLabels[0]</key>
+	<string>Básico</string>
+	<key>3844.ibShadowedLabels[1]</key>
+	<string>Avanzado</string>
+	<key>3844.ibShadowedLabels[2]</key>
+	<string>Tono de Piel</string>
+	<key>628.label</key>
+	<string>Avanzado</string>
+	<key>630.label</key>
+	<string>Básico</string>
+	<key>6aV-yX-U5u.ibShadowedToolTip</key>
+	<string>Opciones de los cursores</string>
+	<key>7NC-Ij-t7t.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturación</string>
+	<key>Am6-fU-DiK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturación</string>
+	<key>Cgr-sZ-I5Z.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturación</string>
+	<key>EVP-VL-Yjl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Claridad</string>
+	<key>H8b-hH-diC.title</key>
+	<string>Uniformidad</string>
+	<key>Hxa-eC-810.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Claridad</string>
+	<key>Rtj-aW-pbn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Suavidad</string>
+	<key>ePg-3Z-cxt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Claridad</string>
+	<key>gKT-4w-rzy.title</key>
+	<string>Cantidad</string>
+	<key>hcB-Tf-YVV.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tono</string>
+	<key>nm6-Wj-rzB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tono</string>
+	<key>oet-kp-YCb.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Suavidad</string>
+	<key>paI-fK-pg5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturación</string>
+	<key>tZF-2c-Xyl.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tono</string>
+	<key>xHN-h1-U6H.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Claridad</string>
+</dict>
+</plist>

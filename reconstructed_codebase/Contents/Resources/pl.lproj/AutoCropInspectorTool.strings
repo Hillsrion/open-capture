@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Film zwojowy - stały wymiar</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Materiały oprawione - stały wymiar</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Automatyczne poziomy w wewnętrznym kadrze</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Autokadrowanie</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Przy kadrowaniu</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Automatycznie użyj autokadrowania podczas przechwytywania nowego obrazu.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Górna krawędź</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pre-Pass</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Brak</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Przy kadrowaniu automatycznym zastosowano rozmiar wyrównujący.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Zapas</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Dolna krawędź</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Prawa i górna krawędź</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Niski kontrast między obiektem a tłem</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Wyprostuj</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Brak</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Materiały luzem</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metoda</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Uśredniony</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Lewa krawędź</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Materiały oprawione</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Przy kadrowaniu automatycznym zastosowano rozmiar wyrównujący.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Materiały luzem - stały wymiar</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optymalizacja</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Przy kadrowaniu automatycznym zastosowano rozmiar wyrównujący.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Brak</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Prawa krawędź</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Przy przechwytywaniu</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Lewa i dolna krawędź</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Warunki</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Lewa i górna krawędź</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Średni kontrast między obiektem a tłem</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Prawa i dolna krawędź</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Automatycznie użyj autokadrowania podczas tworzenia nowego kadru.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Ustaw jako wzorzec kadrowania</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Bardzo niski kontrast między obiektem a tłem</string>
+</dict>
+</plist>

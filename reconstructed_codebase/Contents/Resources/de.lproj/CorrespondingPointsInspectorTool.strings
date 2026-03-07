@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>128.ibShadowedToolTip</key>
+	<string>Angewählten Fleck entfernen</string>
+	<key>129.title</key>
+	<string>Analysieren</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Angewählten Fleck entfernen</string>
+	<key>64.title</key>
+	<string>Add points for me</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Fleckenentfernung</string>
+</dict>
+</plist>

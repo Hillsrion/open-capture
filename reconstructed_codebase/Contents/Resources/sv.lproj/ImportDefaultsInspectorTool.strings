@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>65.ibShadowedToolTip</key>
+	<string>Auto justera importerade bilder</string>
+	<key>66.title</key>
+	<string>Autojustering</string>
+	<key>72.ibShadowedToolTip</key>
+	<string>Ta med nuvarande justeringar</string>
+	<key>73.title</key>
+	<string>Ta med nuvarande justeringar</string>
+	<key>SWB-m8-0GG.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stilar</string>
+</dict>
+</plist>

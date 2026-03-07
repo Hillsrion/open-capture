@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.ibExternalAccessibilityDescription</key>
+	<string>settingsApplyButton</string>
+	<key>258.ibExternalAccessibilityDescription</key>
+	<string>settingsCopyButton</string>
+	<key>258.ibShadowedToolTip</key>
+	<string>Copiar ajustes da variante primária.</string>
+	<key>281.headerCell.title</key>
+	<string>De</string>
+	<key>433.alternateTitle</key>
+	<string>Aplicar</string>
+	<key>433.title</key>
+	<string>Aplicar</string>
+	<key>434.alternateTitle</key>
+	<string>Copiar</string>
+	<key>434.title</key>
+	<string>Copiar</string>
+	<key>Eee-YC-nvV.title</key>
+	<string>título</string>
+</dict>
+</plist>

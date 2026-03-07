@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Maximale Höhe Dimension für die Skalierung des endgültigen Bildes.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Vergrößerung</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Auflösung</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Maximale Breite Dimension für die Skalierung des endgültigen Bildes.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Abstand</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Aktuell</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Abstand</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Anhalten</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Starten</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Vergrößerung</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Abstand</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Vergrößerung</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Größe des Originalbildes um den vorgegebenen Wert ändern, um das endgültige Bild zu erhalten.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Maximale Höhe Dimension für die Skalierung des endgültigen Bildes.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Nah</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Sichtfeld</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Sichtfeld</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Auflösung [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Auflösung</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Fern</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>Methode die für die Anpassung der Klarheit verwendet wird.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Größe des Originalbildes um den vorgegebenen Wert ändern, um das endgültige Bild zu erhalten.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Zielwerte</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Sichtfeld</string>
+</dict>
+</plist>

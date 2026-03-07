@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>无记名系统概况信息被用于帮助我们安排将来的开发工作。如果对此存在疑问请联系我们。
+
+这是将要被发送的信息：:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>自动下载并安装更新</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>自动核查</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>不核查</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>自动核查更新？</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>包括无记名系统概况</string>
+</dict>
+</plist>

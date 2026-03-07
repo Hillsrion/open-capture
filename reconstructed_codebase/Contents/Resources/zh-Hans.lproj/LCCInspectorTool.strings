@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>色偏</string>
+	<key>1495.title</key>
+	<string>启用均匀光</string>
+	<key>1606.title</key>
+	<string>除尘</string>
+	<key>1699.title</key>
+	<string>LCC 配置文件名称</string>
+	<key>1700.title</key>
+	<string>配置文件</string>
+	<key>1720.title</key>
+	<string>创建 LCC（镜头投射校准）</string>
+	<key>1785.title</key>
+	<string>应用 LCC 选项</string>
+	<key>1792.title</key>
+	<string>取消</string>
+	<key>1793.title</key>
+	<string>好</string>
+	<key>1795.title</key>
+	<string>均匀光</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>色温</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>均匀光</string>
+</dict>
+</plist>

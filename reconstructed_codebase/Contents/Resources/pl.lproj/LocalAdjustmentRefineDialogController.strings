@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2KX-yW-Y8Z.title</key>
+	<string>Zastosuj</string>
+	<key>3jn-o8-abc.title</key>
+	<string>Anuluj</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Doprecyzuj maskę</string>
+	<key>Vmk-QE-bDz.title</key>
+	<string>Wyświetl maskę</string>
+	<key>fLd-KN-RDQ.ibExternalAccessibilityDescription</key>
+	<string>Wartość wtapiania</string>
+	<key>fLd-KN-RDQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Promień</string>
+</dict>
+</plist>

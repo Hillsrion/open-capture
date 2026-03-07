@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Hv-MQ-Xea.ibExternalAccessibilityDescription</key>
+	<string>насыщенность</string>
+	<key>1Hv-MQ-Xea.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Желтый</string>
+	<key>450.title</key>
+	<string>Включить черно-белые изображения</string>
+	<key>709.title</key>
+	<string>Света</string>
+	<key>887.title</key>
+	<string>Тени</string>
+	<key>916.ibShadowedLabels[0]</key>
+	<string>Цветовая чувствительность</string>
+	<key>916.ibShadowedLabels[1]</key>
+	<string>Разделить тона</string>
+	<key>918.label</key>
+	<string>Цветовая чувствительность</string>
+	<key>919.label</key>
+	<string>Разделить тона</string>
+	<key>94N-k5-35A.ibExternalAccessibilityDescription</key>
+	<string>красный</string>
+	<key>94N-k5-35A.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Красный</string>
+	<key>953.title</key>
+	<string>Включить черно-белые изображения</string>
+	<key>FTZ-Ys-qEN.ibExternalAccessibilityDescription</key>
+	<string>красный</string>
+	<key>FTZ-Ys-qEN.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>OrD-M8-LcE.ibExternalAccessibilityDescription</key>
+	<string>красный</string>
+	<key>OrD-M8-LcE.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Насыщенность</string>
+	<key>epE-Bj-Ea0.ibExternalAccessibilityDescription</key>
+	<string>насыщенность</string>
+	<key>epE-Bj-Ea0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Зеленый</string>
+	<key>kA4-IV-KrW.ibExternalAccessibilityDescription</key>
+	<string>насыщенность</string>
+	<key>kA4-IV-KrW.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Пурпурный</string>
+	<key>ncO-s8-djm.ibExternalAccessibilityDescription</key>
+	<string>насыщенность</string>
+	<key>ncO-s8-djm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Синий</string>
+	<key>qmI-bB-Ky2.ibExternalAccessibilityDescription</key>
+	<string>красный</string>
+	<key>qmI-bB-Ky2.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>vL2-c5-pGT.ibExternalAccessibilityDescription</key>
+	<string>красный</string>
+	<key>vL2-c5-pGT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тон</string>
+	<key>xhj-to-hD5.ibExternalAccessibilityDescription</key>
+	<string>насыщенность</string>
+	<key>xhj-to-hD5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Голубой</string>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>120.title</key>
+	<string>OtherViews</string>
+	<key>121.title</key>
+	<string>裁剪壓縮</string>
+	<key>122.title</key>
+	<string>等比壓縮</string>
+	<key>152.title</key>
+	<string>飽和度優先</string>
+	<key>153.title</key>
+	<string>絕對色度座標複製</string>
+	<key>157.title</key>
+	<string>默認設定</string>
+	<key>158.title</key>
+	<string>渲染意圖：</string>
+	<key>U5h-5o-7Bi.title</key>
+	<string>標準</string>
+	<key>ezE-kB-AL7.title</key>
+	<string>向量示波器</string>
+	<key>tT2-rk-Tsn.title</key>
+	<string>轉換</string>
+	<key>y0A-7I-fJB.title</key>
+	<string>色輪面板佈局</string>
+</dict>
+</plist>

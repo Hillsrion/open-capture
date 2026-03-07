@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>645-F9-nRt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Farbton</string>
+	<key>7sk-7W-MYa.title</key>
+	<string>Einstellungen des direkten Farbeditors</string>
+	<key>CsU-40-n2D.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Empfindlichkeit</string>
+	<key>DgY-Rv-4cU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Helligkeit</string>
+	<key>bG3-MB-sba.title</key>
+	<string>Dieses Fenster kann auch durch einen Rechtsklick im Viewer angezeigt werden, wenn der direkter Farbeditor-Mauszeiger ausgewählt ist.</string>
+	<key>veB-Rz-2X3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sättigung</string>
+</dict>
+</plist>

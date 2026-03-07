@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5ws-qz-AUV.title</key>
+	<string>Чтобы пропустить это окно: удерживайте нажатой кнопку Option для копирования или Shift для копирования и применения.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Буфер обмена коррекций</string>
+	<key>a5v-SA-4aX.title</key>
+	<string>Копировать</string>
+	<key>dXt-VV-iUD.title</key>
+	<string>заголовок</string>
+	<key>pwS-pN-OgU.title</key>
+	<string>Применить</string>
+	<key>wEg-nR-fZO.title</key>
+	<string>Текстовая ячейка</string>
+	<key>wYo-A4-YMk.title</key>
+	<string>Отмена</string>
+</dict>
+</plist>

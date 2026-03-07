@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>157.title</key>
+	<string>30 секунд</string>
+	<key>158.title</key>
+	<string>1 минута</string>
+	<key>161.title</key>
+	<string>2 минуты</string>
+	<key>162.title</key>
+	<string>5 минут</string>
+	<key>163.title</key>
+	<string>10 минут</string>
+	<key>164.title</key>
+	<string>20 минут</string>
+	<key>174.title</key>
+	<string>Расширение:</string>
+	<key>176.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>182.title</key>
+	<string>Живой просмотр</string>
+	<key>183.title</key>
+	<string>Настройки Phase One</string>
+	<key>185.title</key>
+	<string>Приостановить после:</string>
+	<key>226.title</key>
+	<string>Производители</string>
+	<key>234.title</key>
+	<string>Canon</string>
+	<key>237.title</key>
+	<string>Nikon</string>
+	<key>2Yl-km-wBI.title</key>
+	<string>Phase One</string>
+	<key>34.title</key>
+	<string>TIF</string>
+	<key>35.title</key>
+	<string>IIQ</string>
+	<key>Gjs-2G-7hO.title</key>
+	<string>Sony</string>
+	<key>Lgf-eS-J2Q.title</key>
+	<string>Fujifilm</string>
+</dict>
+</plist>

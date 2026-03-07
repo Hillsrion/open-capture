@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>プラグインの設定が見つかりませんでした</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>プラグインは無効になっています</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>ボックス</string>
+	<key>AQe-BF-01j.title</key>
+	<string>プラグインを入手</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>このプラグインは無効にできません</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>プラグインが選択されていません</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>このプラグインにカスタマイズ可能な設定はありません</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>テキスト セル</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>再試行</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>プラグイン タイトル</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>ブラック &amp; ホワイトを有効にする</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>特徴</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>518.title</key>
+	<string>Fuente</string>
+	<key>519.ibShadowedToolTip</key>
+	<string>Anotación del nombre de la fuente y el tamaño</string>
+	<key>520.title</key>
+	<string>Helvetica</string>
+	<key>529.ibShadowedToolTip</key>
+	<string>Cambiar la fuente anotada</string>
+	<key>fQl-5q-wXK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tipo</string>
+</dict>
+</plist>

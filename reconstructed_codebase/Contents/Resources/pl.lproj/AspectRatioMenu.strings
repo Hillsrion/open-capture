@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>OK</string>
+	<key>116.title</key>
+	<string>Anuluj</string>
+	<key>117.title</key>
+	<string>Nazwa</string>
+	<key>118.title</key>
+	<string>Proporcje</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Gotowe</string>
+	<key>124.title</key>
+	<string>Usuń</string>
+	<key>6.title</key>
+	<string>Nowe proporcje obrazu</string>
+	<key>66.title</key>
+	<string>Organizuj zapisane proporcje obrazu</string>
+</dict>
+</plist>

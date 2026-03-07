@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Auflösung</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Druckername</string>
+	<key>469.title</key>
+	<string>Canon Drucker Model xxx</string>
+	<key>489.title</key>
+	<string>Papier</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Perzeptiv</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Papiergröße</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Öffne Eingabefeld für die Seiteneinrichtung</string>
+	<key>509.title</key>
+	<string>Seite einrichten...</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Druckeinstellungen öffnen</string>
+	<key>514.title</key>
+	<string>Druckereinstellungen...</string>
+	<key>544.title</key>
+	<string>Schärfung</string>
+	<key>556.title</key>
+	<string>Schwarzpunkt Kompensation</string>
+	<key>558.title</key>
+	<string>Farbmanagement Text Farbmanagement Text Farbmanagement Text Farbmanagement Text Farbmanagement Text</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Schärfung</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Schärfung</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Farbprofile</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rend. Intent</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Absolut farbmetrisch</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Relativ farbmetrisch</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Sättigung</string>
+</dict>
+</plist>

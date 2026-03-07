@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@  er lastet ned og er klar til bruk!  Dette er en viktig oppdatering; ønsker du å installere og restarte %1$@ nå?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ er lastet ned og er klar til bruk! Ønsker du å installere og restarte %1$@ nå?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ kan ikke oppdateres fra en 'bare lesbar' enhet som f.eks. en cd</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ er nyeste versjon.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ er nyeste versjon.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ er nå tilgjengelig—du har %3$@. Ønsker du å laste ned og installere nå?</string>
+	<key>%@ downloaded</key>
+	<string>%@ lastet ned</string>
+	<key>%@ of %@</key>
+	<string>%1$@ av %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>En ny versjon av %@ er tilgjengelig!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>En ny versjon av %@ er klar for installering!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>En feil oppstod ved henting av oppdateringsinformasjon. Vennligst prøv igjen senere.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>En feil oppstod under nedlasting av oppdateringen. Vennligst prøv igjen senere.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>En feil oppstod under utpakking av oppdateringen. Vennligst prøv igjen senere.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>En feil oppstod under lesing av oppdateringsstrømmen.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>En viktig oppdatering for %@ er klar til å installeres</string>
+	<key>Cancel</key>
+	<string>Avbryt</string>
+	<key>Cancel Update</key>
+	<string>Avbryt oppdateringen</string>
+	<key>Checking for updates…</key>
+	<string>Søker etter oppdateringer…</string>
+	<key>Downloading update…</key>
+	<string>Laster ned oppdateringen…</string>
+	<key>Extracting update…</key>
+	<string>Pakker ut oppdateringen…</string>
+	<key>Install and Relaunch</key>
+	<string>Installer og start på ny</string>
+	<key>Installing update…</key>
+	<string>Installerer oppdateringen…</string>
+	<key>Learn More…</key>
+	<string>Mer info…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Klar til å installere</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Skal %1$@ søke automatisk etter oppdateringer? Du kan når som helst søke manuelt fra %1$@-menyen.</string>
+	<key>Update Error!</key>
+	<string>Feil ved oppdateringen!</string>
+	<key>Updating %@</key>
+	<string>Oppdaterer %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Flytt %1$@ til Programmer-katalogen, start på ny og prøv igjen.</string>
+	<key>You’re up to date!</key>
+	<string>Ingen nye oppdateringer</string>
+</dict>
+</plist>

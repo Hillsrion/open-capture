@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>510.ibShadowedToolTip</key>
+	<string>Включить/выключить печать направляющих на бумаге</string>
+	<key>511.title</key>
+	<string>Показать направляющие</string>
+	<key>543.ibShadowedToolTip</key>
+	<string>Включить/выключить печать направляющих на бумаге</string>
+	<key>544.title</key>
+	<string>Печатать направляющие</string>
+	<key>UWG-4M-2dn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Единицы</string>
+</dict>
+</plist>

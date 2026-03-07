@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>258.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из основного варианта.</string>
+	<key>281.headerCell.title</key>
+	<string>Из</string>
+	<key>433.alternateTitle</key>
+	<string>Применить</string>
+	<key>433.title</key>
+	<string>Применить</string>
+	<key>434.alternateTitle</key>
+	<string>Копировать</string>
+	<key>434.title</key>
+	<string>Копировать</string>
+	<key>Eee-YC-nvV.title</key>
+	<string>заголовок</string>
+</dict>
+</plist>

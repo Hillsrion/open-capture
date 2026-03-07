@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>09H-LY-aNy.ibShadowedToolTip</key>
+	<string>주요/멀티 뷰 전환</string>
+	<key>0v4-ek-mqo.title</key>
+	<string>콘트라스트와 밝기</string>
+	<key>1088.ibShadowedToolTip</key>
+	<string>1차 변형의 조정을 복사합니다.</string>
+	<key>1089.ibShadowedToolTip</key>
+	<string>선택 변형에 설정 적용</string>
+	<key>1168.ibShadowedToolTip</key>
+	<string>변형을 선택 폴더로 이동</string>
+	<key>1171.ibShadowedToolTip</key>
+	<string>원본 복제</string>
+	<key>1172.ibShadowedToolTip</key>
+	<string>변형 선택</string>
+	<key>1337.title</key>
+	<string>텍스트 셀</string>
+	<key>1339.title</key>
+	<string>텍스트 셀</string>
+	<key>1340.title</key>
+	<string>텍스트 셀</string>
+	<key>1341.title</key>
+	<string>텍스트 셀</string>
+	<key>1342.title</key>
+	<string>텍스트 셀</string>
+	<key>1343.placeholderString</key>
+	<string>1999:10:10 20:30:40</string>
+	<key>1343.title</key>
+	<string>텍스트 셀</string>
+	<key>1570.headerCell.title</key>
+	<string>상태</string>
+	<key>1778.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolSelector</string>
+	<key>1813.title</key>
+	<string>맞춤</string>
+	<key>1814.title</key>
+	<string>LLL</string>
+	<key>1815.title</key>
+	<string>BBB</string>
+	<key>1816.title</key>
+	<string>GGG</string>
+	<key>1817.title</key>
+	<string>RRR</string>
+	<key>1820.title</key>
+	<string>선택 안 함</string>
+	<key>1821.title</key>
+	<string>선택 안 함</string>
+	<key>1824.title</key>
+	<string>버튼</string>
+	<key>1825.title</key>
+	<string>버튼</string>
+	<key>1829.title</key>
+	<string>버튼</string>
+	<key>1830.title</key>
+	<string>버튼</string>
+	<key>1831.title</key>
+	<string>버튼</string>
+	<key>1833.title</key>
+	<string>버튼</string>
+	<key>1834.title</key>
+	<string>버튼</string>
+	<key>1836.title</key>
+	<string>버튼</string>
+	<key>1841.title</key>
+	<string>텍스트 셀</string>
+	<key>1842.title</key>
+	<string>텍스트 셀</string>
+	<key>1851.ibShadowedToolTip</key>
+	<string>정렬</string>
+	<key>1857.title</key>
+	<string>OtherViews</string>
+	<key>1871.title</key>
+	<string>1 / 100</string>
+	<key>2217.ibShadowedToolTip</key>
+	<string>연결한 카메라를 사용하여 이미지 촬영</string>
+	<key>2218.title</key>
+	<string>버튼</string>
+	<key>2410.title</key>
+	<string>버튼</string>
+	<key>2415.title</key>
+	<string>상자</string>
+	<key>2460.headerCell.title</key>
+	<string>기록</string>
+	<key>2500.title</key>
+	<string>BLK</string>
+	<key>2501.title</key>
+	<string>YYY</string>
+	<key>2502.title</key>
+	<string>MMM</string>
+	<key>2503.title</key>
+	<string>CCC</string>
+	<key>254.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolTabs</string>
+	<key>2609.title</key>
+	<string>텍스트</string>
+	<key>2623.title</key>
+	<string>GRA</string>
+	<key>2653.ibShadowedToolTip</key>
+	<string>여백 확인</string>
+	<key>2731.title</key>
+	<string>버튼</string>
+	<key>2745.label</key>
+	<string>BrowserFilmStripView</string>
+	<key>280.label</key>
+	<string>BrowserGridView</string>
+	<key>282.label</key>
+	<string>BrowserListView</string>
+	<key>2835.ibShadowedToolTip</key>
+	<string>방향 정렬</string>
+	<key>2958.ibShadowedToolTip</key>
+	<string>레이어 조정</string>
+	<key>2960.title</key>
+	<string>OtherViews</string>
+	<key>2962.title</key>
+	<string>레이어</string>
+	<key>297.headerCell.title</key>
+	<string>이름</string>
+	<key>2998.title</key>
+	<string>선택 안 함</string>
+	<key>3003.title</key>
+	<string>자동 조정 사용자정의</string>
+	<key>3004.title</key>
+	<string>키스톤</string>
+	<key>3005.title</key>
+	<string>회전</string>
+	<key>3006.title</key>
+	<string>레벨</string>
+	<key>3007.title</key>
+	<string>하이 다이나믹레인지</string>
+	<key>3008.title</key>
+	<string>노출</string>
+	<key>3009.title</key>
+	<string>화이트 밸런스</string>
+	<key>3044.title</key>
+	<string>새로운 컬렉션 이름</string>
+	<key>3051.title</key>
+	<string>새로운 컬렉션 이름:</string>
+	<key>3052.title</key>
+	<string>확인</string>
+	<key>3059.ibShadowedToolTip</key>
+	<string>변형 내보내기</string>
+	<key>3060.title</key>
+	<string>버튼</string>
+	<key>3063.ibShadowedToolTip</key>
+	<string>연결한 카메라를 사용하여 이미지 촬영</string>
+	<key>3064.title</key>
+	<string>버튼</string>
+	<key>3085.title</key>
+	<string>취소</string>
+	<key>3097.ibShadowedToolTip</key>
+	<string>툴바 사용자 지정</string>
+	<key>3101.ibShadowedToolTip</key>
+	<string>Capture One 환경설정 편집</string>
+	<key>3102.title</key>
+	<string>버튼</string>
+	<key>3152.ibShadowedToolTip</key>
+	<string>슬라이드쇼 보기</string>
+	<key>3237.title</key>
+	<string>폴더 싱크</string>
+	<key>3244.title</key>
+	<string>싱크</string>
+	<key>3245.title</key>
+	<string>새로운 컬렉션 이름:새로운 컬렉션 이름:새로운 컬렉션 이름:새로운 컬렉션 이름:새로운 컬렉션 이름:새로운 컬렉션 이름:새로운 컬렉션 이름:</string>
+	<key>3247.title</key>
+	<string>취소</string>
+	<key>3255.title</key>
+	<string>새로운 이미지 가져오기</string>
+	<key>3257.title</key>
+	<string>누락 이미지 제거</string>
+	<key>3276.title</key>
+	<string>가져오기 창 표시</string>
+	<key>3282.title</key>
+	<string>누락 이미지 표시</string>
+	<key>3290.title</key>
+	<string>참조된 오리지널도 포함</string>
+	<key>3297.title</key>
+	<string>알려진 하위폴더 포함</string>
+	<key>3302.title</key>
+	<string>하위폴더 포함</string>
+	<key>46A-69-Nqd.title</key>
+	<string>슬라이더 뷰 분할</string>
+	<key>4hC-Nj-5MJ.headerCell.title</key>
+	<string>시퀀스 ID</string>
+	<key>5.title</key>
+	<string>뷰어 창</string>
+	<key>5Qx-vh-xgO.title</key>
+	<string>새로운 빈 레이어</string>
+	<key>883.ibShadowedToolTip</key>
+	<string>다시 실행</string>
+	<key>889.ibShadowedToolTip</key>
+	<string>오른쪽 회전</string>
+	<key>893.ibShadowedToolTip</key>
+	<string>이전 선택
+이전 세트를 선택하려면 Alt 클릭</string>
+	<key>894.ibShadowedToolTip</key>
+	<string>다음 선택
+다음 세트를 선택하려면 Alt 클릭</string>
+	<key>908.ibShadowedToolTip</key>
+	<string>실행 취소</string>
+	<key>993.headerCell.title</key>
+	<string>등급</string>
+	<key>994.headerCell.title</key>
+	<string>변형</string>
+	<key>995.headerCell.title</key>
+	<string>감도 속도</string>
+	<key>996.headerCell.title</key>
+	<string>조리개</string>
+	<key>997.headerCell.title</key>
+	<string>셔터스피드</string>
+	<key>998.headerCell.title</key>
+	<string>초점 거리</string>
+	<key>999.headerCell.title</key>
+	<string>이미지 날짜</string>
+	<key>DRr-D1-csk.title</key>
+	<string>이미지 가져오기</string>
+	<key>DaL-Ea-zEX.title</key>
+	<string>버튼</string>
+	<key>EiS-hX-M0T.ibShadowedToolTip</key>
+	<string>Tips</string>
+	<key>OLF-gr-xkN.ibShadowedToolTip</key>
+	<string>새로운 레이어</string>
+	<key>R2a-2j-fME.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>UZE-NT-qce.title</key>
+	<string>새로운 복제 레이어</string>
+	<key>YkD-v3-VfH.title</key>
+	<string>새로운 힐 레이어</string>
+	<key>axa-pb-3sd.title</key>
+	<string>새로운 채운 레이어</string>
+	<key>bdF-40-gYt.title</key>
+	<string>수정 후 컬렉션 선택</string>
+	<key>fH6-6w-qg3.title</key>
+	<string>생성 후 선택한 이미지 추가</string>
+	<key>glS-uC-beD.title</key>
+	<string>LABB</string>
+	<key>hew-LV-0p3.ibShadowedToolTip</key>
+	<string>배터리 상태</string>
+	<key>iZI-Rn-Ulo.title</key>
+	<string>LABA</string>
+	<key>lY3-1i-UTe.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>m2J-7q-yMC.title</key>
+	<string>텍스트 셀</string>
+	<key>rkL-D2-fDQ.title</key>
+	<string>LABL</string>
+	<key>wCI-8w-MsQ.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>x6g-PB-hlq.title</key>
+	<string>전체 보기</string>
+</dict>
+</plist>

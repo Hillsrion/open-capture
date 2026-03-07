@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8lq-h0-SFd.title</key>
+	<string>Wyświetl maskę</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Zakres lumy</string>
+	<key>FbV-P7-eqk.title</key>
+	<string>Zastosuj</string>
+	<key>YfH-dk-BXr.title</key>
+	<string>Odwróć zakres</string>
+	<key>a54-hW-ls3.title</key>
+	<string>Zakres</string>
+	<key>aF3-Qm-EPZ.title</key>
+	<string>Usuń</string>
+	<key>aMi-BY-toh.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Promień</string>
+	<key>fCE-1I-KP5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Czułość</string>
+	<key>gVr-xe-Lwg.title</key>
+	<string>Spadek</string>
+	<key>qeQ-TA-Q4r.title</key>
+	<string>Anuluj</string>
+</dict>
+</plist>

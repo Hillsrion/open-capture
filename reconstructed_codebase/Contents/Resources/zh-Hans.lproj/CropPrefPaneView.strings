@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>总是</string>
+	<key>35.title</key>
+	<string>永不</string>
+	<key>36.title</key>
+	<string>拖动动作除外</string>
+	<key>43.title</key>
+	<string>无遮罩时</string>
+	<key>44.title</key>
+	<string>总是</string>
+	<key>449.title</key>
+	<string>显示：</string>
+	<key>450.title</key>
+	<string>显示边框：</string>
+	<key>451.title</key>
+	<string>显示标签：</string>
+	<key>453.title</key>
+	<string>不透明度：</string>
+	<key>455.title</key>
+	<string>亮度：</string>
+	<key>459.title</key>
+	<string>默认设置</string>
+	<key>52.title</key>
+	<string>总是</string>
+	<key>53.title</key>
+	<string>永不</string>
+	<key>54.title</key>
+	<string>仅在拖动时</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>拖动动作除外</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>总是</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>遮罩</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>显示手柄：</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>永不</string>
+</dict>
+</plist>

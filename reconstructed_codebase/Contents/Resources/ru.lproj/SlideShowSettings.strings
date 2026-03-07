@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Настройки показа слайдов</string>
+	<key>34.title</key>
+	<string>Затухание</string>
+	<key>35.title</key>
+	<string>Вдвигание</string>
+	<key>36.title</key>
+	<string>Переход</string>
+	<key>40.title</key>
+	<string>Толчок</string>
+	<key>41.title</key>
+	<string>Проявление</string>
+	<key>42.title</key>
+	<string>Растворение</string>
+	<key>43.title</key>
+	<string>Изменение</string>
+	<key>44.title</key>
+	<string>Перелистывание</string>
+	<key>56.title</key>
+	<string>Время показа слайда</string>
+	<key>69.title</key>
+	<string>Повтор</string>
+	<key>73.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>90.title</key>
+	<string>Расщепление</string>
+	<key>91.title</key>
+	<string>Сворачивание страницы</string>
+	<key>92.title</key>
+	<string>Рябь</string>
+</dict>
+</plist>

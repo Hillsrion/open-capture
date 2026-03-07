@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>이름 형식</string>
+	<key>13.title</key>
+	<string>취소</string>
+	<key>14.title</key>
+	<string>확인</string>
+	<key>1jF-qm-LNb.title</key>
+	<string>OtherViews</string>
+	<key>59L-oO-NTp.title</key>
+	<string>최근에 사용</string>
+	<key>74.title</key>
+	<string>프리셋</string>
+	<key>76.title</key>
+	<string>OtherViews</string>
+	<key>77.title</key>
+	<string>이미지와 작업 이름</string>
+	<key>78.title</key>
+	<string>작업명과 카운터</string>
+	<key>79.title</key>
+	<string>작업과 이미지 이름</string>
+	<key>80.title</key>
+	<string>이미지 이름</string>
+	<key>84.title</key>
+	<string>당신이 원하는 대로 위 텍스트를 편집할 있습니다. 아래 그룹들에서 요소들을 선택하고 드래그 또는 더블클릭하여 형식(format)에 추가하십시오.</string>
+	<key>89.title</key>
+	<string>사용자 프리셋 저장...</string>
+	<key>94.title</key>
+	<string>형식</string>
+	<key>96.title</key>
+	<string>표시(토큰)</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>메타정보 - EXIF - 카메라</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>메타정보 - IPTC - 게티 이미지</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>날짜와 시간</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>메타정보 - 기본</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>메타정보 - EXIF - 노출</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>텍스트 셀</string>
+	<key>XqK-3b-mox.title</key>
+	<string>일반</string>
+	<key>f2N-un-vTh.title</key>
+	<string>메타정보 - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>메타정보 - 제조사 정보</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>표시(토큰) 거부(디버그)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>메타정보 - IPTC - 연락처</string>
+	<key>im4-Sx-noG.title</key>
+	<string>모두</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>메타정보 - IPTC - 콘텐츠</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>그룹</string>
+	<key>pQh-ye-usp.title</key>
+	<string>메타정보 - IPTC - 이미지</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>메타정보 - IPTC - 상태</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>예제</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>샘플 문자열은 여기로</string>
+</dict>
+</plist>

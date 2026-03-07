@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%d collection(s)</key>
+	<string>%d コレクション</string>
+	<key>%d image(s)</key>
+	<string>%d イメージ</string>
+	<key>Containing %@ in %@</key>
+	<string>%1$@ を %2$@ に取込み中</string>
+	<key>Could not open this Lightroom catalog's database.</key>
+	<string>Lightroomのカタログデータベースを開くことができませんでした。</string>
+	<key>Lightroom Catalog…</key>
+	<string>Lightroomカタログ…</string>
+	<key>LightroomMigrationBlogURL</key>
+	<string>https://support.captureone.com/hc/en-us/articles/360006595157</string>
+	<key>This catalog appears to be empty.</key>
+	<string>このカタログは空のようです。</string>
+	<key>This catalog is currently open in Lightroom.</key>
+	<string>このカタログはLightroomで現在開いています。</string>
+	<key>Unable to read Lightroom catalog properties.</key>
+	<string>Lightroomのカタログ プロパティーは読み込むことができません。</string>
+	<key>Visit our online guide to find out more</key>
+	<string>詳細はオンラインガイドをご覧ください</string>
+</dict>
+</plist>

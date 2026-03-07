@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>261.label</key>
+	<string>Actual</string>
+	<key>262.label</key>
+	<string>Historial</string>
+	<key>268.ibShadowedToolTip</key>
+	<string>Detener la cola del lote</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Reprocesar los trabajos seleccionados.</string>
+	<key>284.headerCell.title</key>
+	<string>Nombre</string>
+	<key>285.headerCell.title</key>
+	<string>Nombre</string>
+	<key>646.ibShadowedToolTip</key>
+	<string>Eliminar histórico de trabajos procesados</string>
+	<key>815.ibShadowedLabels[0]</key>
+	<string>Cola</string>
+	<key>815.ibShadowedLabels[1]</key>
+	<string>Historial</string>
+	<key>816.title</key>
+	<string>Pausa</string>
+	<key>818.title</key>
+	<string>1/n</string>
+	<key>819.title</key>
+	<string>Procesar de nuevo lo seleccionado</string>
+	<key>820.title</key>
+	<string>Borrar historial</string>
+</dict>
+</plist>

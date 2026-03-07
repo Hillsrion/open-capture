@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One Enhanced Image Package</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One behöver ibland kunna kontrollera andra applikationer indirekt för olika skript som körs.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One behöver inte tillgång till din kalender. Denna varning skapas på grund av åtkomst till din Biblioteksmapp.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One behöver inte tillgång till dina kontakter. Denna varning skapas på grund av åtkomst till din Biblioteksmapp.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One behöver inte tillgång till fotobibliotek. Denna varning skapas på grund av åtkomst till din Biblioteksmapp.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One behöver inte tillgång till din minneslista. Denna varning skapas på grund av åtkomst till din Biblioteksmapp.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One behöver tillgång till avlägsningsbara enheter för att kunna understödja tethering och kamerakopplingsfunktionen. Du kan behöver starta om Capture One för att detta ska börja fungera.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW Image</string>
+</dict>
+</plist>

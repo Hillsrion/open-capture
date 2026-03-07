@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Anpassungsebene löschen</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Neue Ebene</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Mauszeiger-Werkzeug Optionen</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Einstellungen für die Sichtbarkeit der Maskierung</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Box</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>Deckkraft der Ebene</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Deckkraft</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Luminanzbereich…</string>
+</dict>
+</plist>

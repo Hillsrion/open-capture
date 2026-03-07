@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One 增强图像包（EIP）</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One 有时需要间接控制参与脚本运行的其他应用程序来完成指令。</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One 无需访问您的日历。出现此提示是因为访问了图库文件夹。</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One 无需访问您的通讯录。出现此提示是因为访问了图库文件夹。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One 需要访问图库才能够支持联机拍摄功能。出现此提示也许是因为 Capture One 访问了图库文件夹。</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One 无需访问您的提醒事项。出现此提示是因为访问了图库文件夹。</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One 需要可移除储存设备的访问权限来支持联机拍摄功能。您可能需要重启 Capture One 才能够使设置生效。</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW 图像</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8DV-BE-nxZ.title</key>
+	<string>Adres</string>
+	<key>EwJ-aC-cJp.headerCell.title</key>
+	<string>Nazwa</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Menedżer sieci aparatów</string>
+	<key>TOe-TS-pWw.title</key>
+	<string>Nazwa</string>
+	<key>YNd-qF-0Qp.title</key>
+	<string>Usuń</string>
+	<key>brq-Uo-oyi.title</key>
+	<string>Gotowe</string>
+	<key>mtB-N1-gEr.title</key>
+	<string>Dodaj...</string>
+	<key>vkB-LR-UFE.headerCell.title</key>
+	<string>Adres</string>
+</dict>
+</plist>

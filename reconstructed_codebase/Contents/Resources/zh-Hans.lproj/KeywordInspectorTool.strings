@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>9YU-Ja-zpA.ibShadowedToolTip</key>
+	<string>当选择了多个变体并开启“编辑已选变体”时，无法进行手动排序，关键字将按字母顺序排列。</string>
+</dict>
+</plist>

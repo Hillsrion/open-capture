@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>90.title</key>
+	<string>Имя</string>
+	<key>91.title</key>
+	<string>ISO</string>
+	<key>94.title</key>
+	<string>Затвор</string>
+	<key>95.title</key>
+	<string>Диафрагма</string>
+	<key>96.title</key>
+	<string>Фокусное</string>
+</dict>
+</plist>

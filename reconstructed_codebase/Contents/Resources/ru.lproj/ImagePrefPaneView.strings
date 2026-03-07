@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>486.title</key>
+	<string>Кэш</string>
+	<key>526.title</key>
+	<string>Упаковка в формате EIP (только для сессий)</string>
+	<key>557.title</key>
+	<string>Размер предварительного просмотра (пикс.):</string>
+	<key>559.title</key>
+	<string>Кэш</string>
+	<key>563.title</key>
+	<string>Использовать встроенный XMP вместо встроенного IPTC</string>
+	<key>565.title</key>
+	<string>Использовать XMP из кэша вместо встроенных метаданных</string>
+	<key>568.title</key>
+	<string>Метаданные</string>
+	<key>586.title</key>
+	<string>Формат упакованного файла</string>
+	<key>590.title</key>
+	<string>Запаковать в формате EIP при импорте</string>
+	<key>591.title</key>
+	<string>Запаковать в формате EIP при съемке в компьютер</string>
+	<key>592.title</key>
+	<string>JPEG-файлы и обработанные TIFF-файлы не будут упакованы в формате EIP.</string>
+	<key>601.title</key>
+	<string>Редактирование</string>
+	<key>602.title</key>
+	<string>Разрешить редактирование TIFF</string>
+	<key>603.title</key>
+	<string>Разрешить редактирование JPEG</string>
+	<key>621.title</key>
+	<string>Полная синхронизация</string>
+	<key>622.title</key>
+	<string>Загружать</string>
+	<key>623.title</key>
+	<string>Нет</string>
+	<key>626.title</key>
+	<string>Автосинхронизация XMP:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>У новых файлов (созданных в процессе импорта, захвата или преобразования EIP) будет разрешение на запись для всех пользователей, а не только для владельца файлов.</string>
+	<key>629.title</key>
+	<string>Делать новые файлы доступными для записи для всех пользователей</string>
+	<key>635.title</key>
+	<string>Разрешить редактирование PNG-файлов</string>
+	<key>667.title</key>
+	<string>Движок обработки по умолчанию:</string>
+</dict>
+</plist>

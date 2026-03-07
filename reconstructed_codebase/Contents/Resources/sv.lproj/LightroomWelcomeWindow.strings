@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1QD-EF-Ywu.title</key>
+	<string>Avbryt</string>
+	<key>5EK-j8-ODd.title</key>
+	<string>Lär dig mer…</string>
+	<key>7GG-dw-LUz.title</key>
+	<string>Din katalog och dina bilder är säkra</string>
+	<key>7Ph-T5-rPl.title</key>
+	<string>Lär dig mer</string>
+	<key>BsR-81-gfg.title</key>
+	<string>Lightroom Katalogimporterare</string>
+	<key>BtN-DU-luM.title</key>
+	<string>Detta kan ta ett tag</string>
+	<key>HAZ-Nj-moR.title</key>
+	<string>Importera</string>
+	<key>Kcg-Fm-v0w.title</key>
+	<string>Välj katalog…</string>
+	<key>NhM-y8-EG2.title</key>
+	<string>&lt;&lt; summary placeholder - do not localize &gt;&gt;</string>
+	<key>SZv-e8-CDZ.title</key>
+	<string>Få alla detaljer om importprocessen innan du fortsätter</string>
+	<key>XAe-Xn-OX8.title</key>
+	<string>Din katalog är redo för import</string>
+	<key>XEl-l0-UXf.title</key>
+	<string>Följande kommer att importeras</string>
+	<key>Ybc-1K-cno.title</key>
+	<string>Importera din katalog är riskfritt - din ursprungliga katalog och dina bildfiler kommer inte att påverkas.</string>
+	<key>aNb-I8-rkE.title</key>
+	<string>Lär dig mer…</string>
+	<key>bCc-dM-ZpV.title</key>
+	<string>Följ dessa enkla steg för att importera dina foton från Lightroom till Capture One</string>
+	<key>fb6-Qp-o7J.title</key>
+	<string>Lightroom katalogoimporterare</string>
+	<key>nfn-Hm-UIh.title</key>
+	<string>&lt;&lt; path placeholder - do not localize &gt;&gt;</string>
+	<key>o4X-mv-IK0.title</key>
+	<string>All metadata från dina bilder och enkla justeringar (beskärning, rotation, vitbalans, exponering, contrast och färgmättnad) kommer att importeras. För att överföra smarta kollektioner, konvertera dessa till vanliga kollektioner först.</string>
+	<key>peZ-gq-vBV.title</key>
+	<string>Beroende av din katalogstorlek, så kan detta ta ett tag. Stäng inte av din dator eller Capture One under importen.</string>
+	<key>sKJ-Sa-lTo.title</key>
+	<string>Importera din Lightroom katalog</string>
+	<key>t1E-dm-e2p.title</key>
+	<string>Avbryt</string>
+	<key>yp2-z7-JP2.title</key>
+	<string>Välj en katalog</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1s6-DA-AtS.ibExternalAccessibilityDescription</key>
+	<string>sombra</string>
+	<key>1s6-DA-AtS.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sombra</string>
+	<key>MUs-ga-mtQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Preto</string>
+	<key>QUi-IQ-WRI.ibExternalAccessibilityDescription</key>
+	<string>realçar</string>
+	<key>QUi-IQ-WRI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Destaque</string>
+	<key>XJk-jj-dE3.ibExternalAccessibilityDescription</key>
+	<string>branco</string>
+	<key>XJk-jj-dE3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Branco</string>
+</dict>
+</plist>

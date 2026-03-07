@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>從主變體複製變體</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>從最後一張拍攝複製調整項。</string>
+	<key>1xt-dV-kug.title</key>
+	<string>從最後一張複製</string>
+	<key>250.title</key>
+	<string>選單</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>自動調整拍攝圖像</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>從最後一張複製變體</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方向</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>從最後一張拍攝複製調整項。</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>從最後一張複製</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>從最後一張複製變體</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>從最後一張複製指定項…</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>從主變體複製指定項…</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>從主變體複製調整項</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>從主變體複製</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>從最後一張複製指定項…</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>使用默認調整項</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>默認設定</string>
+	<key>JgD-8n-qns.title</key>
+	<string>從主變體複製變體</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>風格</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>從剪貼板複製</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>從主變體複製調整項</string>
+	<key>RWO-hh-M69.title</key>
+	<string>從主變體複製</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>從剪貼板複製</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>使用默認調整項</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>默認設定</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>為相機使用默認 ICC 色彩特性文件</string>
+	<key>abE-6a-zrB.title</key>
+	<string>默認設定</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>使用相機默認的構圖方向</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>默認設定</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>從最後一張拍攝圖像複製 ICC 色彩特性文件。</string>
+	<key>gij-EA-zK2.title</key>
+	<string>從最後一張複製</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>中繼資料</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>從主變體複製指定項…</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>其他</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>從主變體複製 ICC 色彩特性文件</string>
+	<key>s07-eL-TTi.title</key>
+	<string>從主變體複製</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC 色彩特性文件</string>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Kleurafwijking</string>
+	<key>1555.title</key>
+	<string>Vervormde gebieden verbergen</string>
+	<key>1700.label</key>
+	<string>Tab</string>
+	<key>1701.label</key>
+	<string>Weergave</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Lens</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Verschuiving</string>
+	<key>1741.title</key>
+	<string>Kleurafwijking</string>
+	<key>1742.title</key>
+	<string>Standaard</string>
+	<key>1743.title</key>
+	<string>Analyseren</string>
+	<key>1745.title</key>
+	<string>Aangepast</string>
+	<key>1757.title</key>
+	<string>Brandpuntsafst.</string>
+	<key>1760.title</key>
+	<string>Diafragma (f)</string>
+	<key>1823.title</key>
+	<string>Verschuiving x</string>
+	<key>1832.title</key>
+	<string>Verschuiving y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profiel</string>
+	<key>893.title</key>
+	<string>Richting</string>
+	<key>894.title</key>
+	<string>Verschuiving</string>
+	<key>897.title</key>
+	<string>Richting</string>
+	<key>898.title</key>
+	<string>Kantelen</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>lichtafval</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Lichtafval</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Diffractie correctie</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>scherpteafval</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Scherpteafval</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>vervorming</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Vervorming</string>
+</dict>
+</plist>

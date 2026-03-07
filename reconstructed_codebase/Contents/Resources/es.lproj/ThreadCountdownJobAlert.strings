@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ de %{value2}@ trabajos por lotes guardados</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ de %{value2}@ trabajos por lotes guardados</string>
+	<key>30.title</key>
+	<string>Salir</string>
+	<key>31.title</key>
+	<string>Guardando x de N trabajos por lotes</string>
+	<key>5.title</key>
+	<string>Guardando archivos de trabajos por lotes</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8DV-BE-nxZ.title</key>
+	<string>Dirección</string>
+	<key>EwJ-aC-cJp.headerCell.title</key>
+	<string>Nombre</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Administrador de Cámaras en Red</string>
+	<key>TOe-TS-pWw.title</key>
+	<string>Nombre</string>
+	<key>YNd-qF-0Qp.title</key>
+	<string>Eliminar</string>
+	<key>brq-Uo-oyi.title</key>
+	<string>Hecho</string>
+	<key>mtB-N1-gEr.title</key>
+	<string>Añadir…</string>
+	<key>vkB-LR-UFE.headerCell.title</key>
+	<string>Dirección</string>
+</dict>
+</plist>

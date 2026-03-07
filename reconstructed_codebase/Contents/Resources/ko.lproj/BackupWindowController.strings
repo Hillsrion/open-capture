@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>백업</string>
+	<key>17.title</key>
+	<string>취소</string>
+	<key>21.label</key>
+	<string>진행</string>
+	<key>22.label</key>
+	<string>경고</string>
+	<key>37.title</key>
+	<string>테스트 완전성</string>
+	<key>39.title</key>
+	<string>카탈로그 최적화</string>
+	<key>45.title</key>
+	<string>…</string>
+	<key>46.title</key>
+	<string>백업 위치:</string>
+	<key>49.title</key>
+	<string>Also:</string>
+	<key>78.label</key>
+	<string>에러</string>
+	<key>99.label</key>
+	<string>에러</string>
+</dict>
+</plist>

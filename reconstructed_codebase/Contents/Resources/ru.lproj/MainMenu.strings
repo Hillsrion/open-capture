@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01C-Il-VMP.title</key>
+	<string>Аннотации</string>
+	<key>0H0-Jc-t3x.title</key>
+	<string>Варианты...</string>
+	<key>0Ps-7b-sBQ.title</key>
+	<string>Счетчик переименований</string>
+	<key>0Q0-M5-LmI.title</key>
+	<string>Средний</string>
+	<key>0UZ-1K-nR1.title</key>
+	<string>Слой</string>
+	<key>0ih-RM-Js7.title</key>
+	<string>Вид</string>
+	<key>14z-pL-mA5.ibShadowedToolTip</key>
+	<string>Сбросить коррекции для вариантов</string>
+	<key>14z-pL-mA5.title</key>
+	<string>Удалить выбранный слой</string>
+	<key>1LQ-Jh-EPo.title</key>
+	<string>Обновить движок обработки</string>
+	<key>1Lv-YA-qve.title</key>
+	<string>Выбрать</string>
+	<key>1Nd-JK-zNO.title</key>
+	<string>Магазин…</string>
+	<key>1gq-zE-mEg.title</key>
+	<string>Панель инструментов</string>
+	<key>1rs-DA-1do.title</key>
+	<string>Синхронизировать метаданные</string>
+	<key>224-6K-J3h.title</key>
+	<string>Всегда скрывать PNG-файлы</string>
+	<key>24q-pt-xtA.title</key>
+	<string>Правописание</string>
+	<key>25l-uy-u1U.title</key>
+	<string>Понизить рейтинг варианта</string>
+	<key>28d-GR-VH6.title</key>
+	<string>Обработать выделенные</string>
+	<key>29.title</key>
+	<string>MainMenu</string>
+	<key>2BO-O0-qsH.title</key>
+	<string>Уровни</string>
+	<key>2Gr-gy-fxz.title</key>
+	<string>Выбрать горячую папку...</string>
+	<key>2KV-Ld-vZd.title</key>
+	<string>Добавить в избранное</string>
+	<key>2XR-PQ-i11.title</key>
+	<string>Справка</string>
+	<key>2pa-ft-UHr.title</key>
+	<string>Включение / выключение слоя</string>
+	<key>3028.title</key>
+	<string>Создать новое окно</string>
+	<key>36O-pG-qIh.title</key>
+	<string>Установить счетчик…</string>
+	<key>38I-f2-Ssj.title</key>
+	<string>Авто</string>
+	<key>3T1-Cx-ywj.title</key>
+	<string>Вырезать</string>
+	<key>3To-a4-pSf.ibShadowedToolTip</key>
+	<string>Восстановить резервную копию этого каталога</string>
+	<key>3To-a4-pSf.title</key>
+	<string>Восстановить каталог…</string>
+	<key>3Ui-ok-lzu.title</key>
+	<string>Проверить базу данных при открытии</string>
+	<key>3Z4-fg-SOV.title</key>
+	<string>Меню</string>
+	<key>3ep-eN-uVW.title</key>
+	<string>Панель инструментов просмотра</string>
+	<key>3gr-b2-izd.title</key>
+	<string>Создать альбом из</string>
+	<key>3lw-Wa-6il.title</key>
+	<string>Выбор</string>
+	<key>3rd-Dg-1hZ.title</key>
+	<string>Ориентация</string>
+	<key>40o-AJ-xoM.title</key>
+	<string>Редактировать с помощью</string>
+	<key>44D-aG-E83.title</key>
+	<string>Замер цвета в Lab</string>
+	<key>4F7-S3-7wH.title</key>
+	<string>Такой же рейтинг</string>
+	<key>4MD-pK-52t.title</key>
+	<string>Меню</string>
+	<key>4tc-Vp-Tn2.title</key>
+	<string>Счетчик экспорта</string>
+	<key>500-CP-quJ.title</key>
+	<string>Уточнить маску…</string>
+	<key>5Kn-v3-3J9.title</key>
+	<string>Направляющие</string>
+	<key>5Qh-XJ-7lV.title</key>
+	<string>Сбросить направляющие</string>
+	<key>5Td-ii-gu5.title</key>
+	<string>Capture One</string>
+	<key>5eA-Cd-e2H.title</key>
+	<string>Назначить папкой отобранных файлов</string>
+	<key>5qY-K4-hhW.title</key>
+	<string>Видимость маски</string>
+	<key>5xI-ot-kZZ.title</key>
+	<string>Идентификатор последовательности</string>
+	<key>65L-HG-c0K.title</key>
+	<string>Сбросить счетчик</string>
+	<key>6Jb-3H-48Z.title</key>
+	<string>Добавить инструмент Инспектор на выделенную панель</string>
+	<key>6Pw-sw-mKP.title</key>
+	<string>Редактировать все выделенные варианты</string>
+	<key>6RB-Ks-Q9Y.title</key>
+	<string>Установить или изменить PIN-код…</string>
+	<key>6Ve-3u-FtW.title</key>
+	<string>Выбрать следующий когда</string>
+	<key>6WK-Rn-IDM.title</key>
+	<string>Применить коррекции из</string>
+	<key>6dD-vu-ayz.title</key>
+	<string>Автокоррекция</string>
+	<key>6fd-wm-DqL.ibShadowedToolTip</key>
+	<string>Захватить изображение, используя подключенную камеру</string>
+	<key>6fd-wm-DqL.title</key>
+	<string>Управление сетевыми камерами…</string>
+	<key>6nI-5Q-bF1.title</key>
+	<string>Следующий набор</string>
+	<key>6sQ-je-30n.title</key>
+	<string>Cчетчик вывода</string>
+	<key>75o-KI-t8D.title</key>
+	<string>Счетчик импорта</string>
+	<key>7MX-Bb-VSm.title</key>
+	<string>Публикация</string>
+	<key>7Ow-LL-dv0.title</key>
+	<string>Предыдущая коллекция</string>
+	<key>7zw-gL-Wno.title</key>
+	<string>Новый вариант</string>
+	<key>8I6-nm-Uiw.title</key>
+	<string>Новая коллекция</string>
+	<key>8R2-c5-XAq.title</key>
+	<string>Копировать коррекции</string>
+	<key>8du-uT-ICL.title</key>
+	<string>Выйти из коллекции</string>
+	<key>92E-j9-FEm.title</key>
+	<string>Такое же расположение варианта</string>
+	<key>94T-HJ-feh.title</key>
+	<string>Выбрать по параметрам</string>
+	<key>9Aa-c4-9VI.title</key>
+	<string>Свернуть выбранное</string>
+	<key>9Hl-bF-YXx.title</key>
+	<string>Журнал событий</string>
+	<key>9NL-eQ-T1Q.title</key>
+	<string>Справка</string>
+	<key>9b8-5C-GLZ.title</key>
+	<string>Экспортировать как каталог...</string>
+	<key>9bM-jw-56t.title</key>
+	<string>Отменить выделение для всех</string>
+	<key>9g2-Zq-Mgh.title</key>
+	<string>Crash Capture One</string>
+	<key>9iB-p5-gRZ.title</key>
+	<string>Уменьшить счетчик</string>
+	<key>9k8-L5-lSq.title</key>
+	<string>Изображение</string>
+	<key>9lE-sW-NkR.title</key>
+	<string>Синхронизировать папку…</string>
+	<key>9pG-rx-dax.title</key>
+	<string>Удалить</string>
+	<key>9tG-Te-CEV.title</key>
+	<string>Слайд-шоу</string>
+	<key>9wF-vo-1tW.title</key>
+	<string>Контраст и Яркость</string>
+	<key>ACe-cT-qRq.title</key>
+	<string>Импорт "Сессии"…</string>
+	<key>AHw-Yv-ZV0.title</key>
+	<string>Новый альбом…</string>
+	<key>APq-Ot-xfY.title</key>
+	<string>Установить счетчик…</string>
+	<key>ARA-Qg-wH6.title</key>
+	<string>Редактировать</string>
+	<key>AVP-cL-jr5.title</key>
+	<string>Trigger in pipeline</string>
+	<key>AiG-bi-lBS.title</key>
+	<string>Задать шаг увеличения…</string>
+	<key>Avm-Xr-hJI.title</key>
+	<string>Оригиналы...</string>
+	<key>B6A-Bd-wdt.title</key>
+	<string>Слой</string>
+	<key>BBe-mx-5MA.title</key>
+	<string>Замер цвета</string>
+	<key>BKI-Ak-E3C.title</key>
+	<string>Crash OpenCore</string>
+	<key>BMq-UG-ndQ.title</key>
+	<string>Cчетчик вывода</string>
+	<key>BPz-o1-8u8.title</key>
+	<string>Открыть недавние документы</string>
+	<key>BlO-8u-bjW.title</key>
+	<string>Выбрать панель инструмента</string>
+	<key>C8i-Ie-mV3.title</key>
+	<string>Сообщить об ошибке...</string>
+	<key>CTk-NV-A7b.title</key>
+	<string>Лицензия...</string>
+	<key>Cbk-cE-Rnc.title</key>
+	<string>Показать точки выделения</string>
+	<key>Ce0-Be-8UJ.title</key>
+	<string>Выключен</string>
+	<key>Cyj-ce-0Gd.title</key>
+	<string>Файл</string>
+	<key>DSv-Kq-hdb.title</key>
+	<string>Проверить обновления...</string>
+	<key>Dbr-g2-CoE.title</key>
+	<string>Службы</string>
+	<key>DiO-W0-c4G.title</key>
+	<string>Режим до/после</string>
+	<key>Dsw-hn-IZg.title</key>
+	<string>Настройки...</string>
+	<key>E5j-Qh-yw9.title</key>
+	<string>Изменить сочетания клавиш...</string>
+	<key>EY1-4F-yTL.title</key>
+	<string>Задана цветная метка</string>
+	<key>Eb6-Sk-NMb.title</key>
+	<string>Загрузить метаданные</string>
+	<key>Ej6-Xy-Scx.title</key>
+	<string>Выбрать по аналогичным параметрам</string>
+	<key>Ez2-nJ-UxV.title</key>
+	<string>Создать LCC...</string>
+	<key>F65-Hg-uD7.title</key>
+	<string>Задать шаг увеличения…</string>
+	<key>FIM-SV-caT.title</key>
+	<string>Сбросить счетчик</string>
+	<key>FTn-px-TXb.title</key>
+	<string>Всегда скрывать видео файлы</string>
+	<key>Fbl-im-0JF.title</key>
+	<string>Повысить рейтинг варианта</string>
+	<key>Few-hi-dlj.title</key>
+	<string>Далее</string>
+	<key>Fk8-fZ-Nge.title</key>
+	<string>Наложение</string>
+	<key>Ft0-2F-qcY.title</key>
+	<string>Задать шаг увеличения…</string>
+	<key>FyO-gf-P7P.title</key>
+	<string>Просмотр</string>
+	<key>Gea-NJ-sMI.title</key>
+	<string>Очень крупный</string>
+	<key>HgY-Ir-gjR.title</key>
+	<string>Скрыть прочие</string>
+	<key>I3p-9w-NiJ.title</key>
+	<string>Ползунки ImageCore</string>
+	<key>I5C-mb-Ph9.title</key>
+	<string>Просмотр</string>
+	<key>I8M-pI-mei.title</key>
+	<string>Глобальные фильтры</string>
+	<key>IEm-f0-wfu.title</key>
+	<string>Инструменты</string>
+	<key>IID-Ve-jGb.title</key>
+	<string>Ярлыки</string>
+	<key>IPe-NI-yoh.title</key>
+	<string>Файл</string>
+	<key>IQ8-iC-ffv.title</key>
+	<string>Автопауза</string>
+	<key>Ibb-8a-gRZ.title</key>
+	<string>Крупный</string>
+	<key>Ic4-HZ-M7K.title</key>
+	<string>Выбрать следующий когда…</string>
+	<key>Ik1-xy-Hdk.title</key>
+	<string>Такая же цветная метка</string>
+	<key>Ikz-mO-9ZA.title</key>
+	<string>Применить LCC</string>
+	<key>IqL-nF-pTb.title</key>
+	<string>Никогда не показывать маску</string>
+	<key>Izf-b8-5gq.title</key>
+	<string>Службы</string>
+	<key>J2g-T4-9jM.title</key>
+	<string>Настройка автокоррекций</string>
+	<key>J6f-2w-feE.title</key>
+	<string>Счетчик кадров</string>
+	<key>JO3-mT-am1.title</key>
+	<string>Такой же идентификатор последовательности</string>
+	<key>JRI-NB-DJ3.title</key>
+	<string>История обработки</string>
+	<key>JsD-gv-ZcN.title</key>
+	<string>Рейтинг</string>
+	<key>JzF-cB-jf5.title</key>
+	<string>Progess Bars</string>
+	<key>K2L-UQ-r8u.title</key>
+	<string>Crash OpenCore</string>
+	<key>K4L-nU-bL0.title</key>
+	<string>Сбросить счетчик</string>
+	<key>KZr-yz-eOe.title</key>
+	<string>Открыть недавние документы</string>
+	<key>KkK-Dm-Fyt.title</key>
+	<string>Уменьшить размер миниатюр</string>
+	<key>Kw9-6p-baP.title</key>
+	<string>Уменьшить</string>
+	<key>Kx8-Sf-MtA.title</key>
+	<string>Баланс белого</string>
+	<key>L2W-qr-fDh.title</key>
+	<string>Поворот</string>
+	<key>L6s-MY-kNd.title</key>
+	<string>Цветная метка</string>
+	<key>LBI-uj-64k.title</key>
+	<string>Создать Умный альбом...</string>
+	<key>LBc-ql-cwY.title</key>
+	<string>Выбрать по аналогичным параметрам</string>
+	<key>LTF-ps-Dul.title</key>
+	<string>Скопировать и применить коррекции</string>
+	<key>LbY-8O-xu0.title</key>
+	<string>Настроить инструменты</string>
+	<key>LcB-eX-4qN.title</key>
+	<string>Удалить</string>
+	<key>LeW-a9-a1n.title</key>
+	<string>Вид</string>
+	<key>LpJ-ak-5G4.title</key>
+	<string>90° вправо</string>
+	<key>MFE-ll-7eO.title</key>
+	<string>Импортировать каталог</string>
+	<key>MKh-xe-MEd.title</key>
+	<string>Progess Bars</string>
+	<key>MOG-uN-KrB.ibShadowedToolTip</key>
+	<string>Захватить изображение, используя подключенную камеру</string>
+	<key>MOG-uN-KrB.title</key>
+	<string>Кадр</string>
+	<key>Mb9-kH-qyp.title</key>
+	<string>Открыть с помощью</string>
+	<key>Mfd-my-DKN.title</key>
+	<string>До/после</string>
+	<key>My6-4Y-UBl.title</key>
+	<string>Развернуть все</string>
+	<key>N5o-dv-1Be.title</key>
+	<string>Отменить</string>
+	<key>N9h-Al-5XE.title</key>
+	<string>Переместить в корзину</string>
+	<key>Nhu-fQ-zjN.title</key>
+	<string>Проверить каталог или сессию…</string>
+	<key>NyM-Zt-y88.title</key>
+	<string>Редактор пленочных кривых</string>
+	<key>O2C-D1-hn3.title</key>
+	<string>Режим автоматического скрытия</string>
+	<key>O4t-ch-OFC.title</key>
+	<string>Копировать</string>
+	<key>O9F-Mo-6cG.title</key>
+	<string>Советы</string>
+	<key>OCP-rg-Tmg.title</key>
+	<string>Меню</string>
+	<key>OQY-AD-asc.title</key>
+	<string>Ориентация</string>
+	<key>OVh-i7-5mp.title</key>
+	<string>Trigger Assertion</string>
+	<key>OqC-NS-Eok.title</key>
+	<string>Bar Sample 02</string>
+	<key>PCm-vK-OGx.title</key>
+	<string>Никогда не сбрасывать рабочее пространство автоматически</string>
+	<key>PMu-nW-YC5.title</key>
+	<string>Войти в коллекцию</string>
+	<key>PQW-J0-1bK.title</key>
+	<string>Crash CaptureCoreService</string>
+	<key>PRu-fp-fdO.title</key>
+	<string>Выбрать</string>
+	<key>PX7-Iq-9N2.title</key>
+	<string>Просмотр лицензионного соглашения</string>
+	<key>Q9f-h8-bu5.title</key>
+	<string>Выбрать по параметрам</string>
+	<key>QHc-R7-m41.title</key>
+	<string>Печать...</string>
+	<key>QSu-Ii-lqh.title</key>
+	<string>Задать шаг увеличения…</string>
+	<key>Qhq-5B-fYE.title</key>
+	<string>Поворот</string>
+	<key>QjW-ua-tSX.title</key>
+	<string>Crash Capture One</string>
+	<key>Qkh-Pd-T00.title</key>
+	<string>Показать все</string>
+	<key>Qu7-Iw-dyX.title</key>
+	<string>Рейтинг</string>
+	<key>Qx0-Bi-x6R.title</key>
+	<string>Скрипты</string>
+	<key>R3f-rv-RWH.title</key>
+	<string>Создать плавающий инструмент</string>
+	<key>RIv-U7-9vT.title</key>
+	<string>Настройка автокоррекций</string>
+	<key>RkY-nO-oYQ.title</key>
+	<string>Режим редактирования</string>
+	<key>RuA-0Y-GGt.title</key>
+	<string>Очистить маску</string>
+	<key>S4K-SB-UBy.title</key>
+	<string>Подробнее о Capture One</string>
+	<key>SGm-xv-97r.title</key>
+	<string>Удалить панель инструмента</string>
+	<key>SJc-VY-oqD.title</key>
+	<string>Переименовать изображение</string>
+	<key>SXk-bE-jzi.ibShadowedToolTip</key>
+	<string>Очистить Корзину сессии. Изображения удаляются безвозвратно</string>
+	<key>SXk-bE-jzi.title</key>
+	<string>Очистить Корзину</string>
+	<key>SiW-gP-wbL.title</key>
+	<string>Инвертировать выделение</string>
+	<key>SlN-5G-v1Q.title</key>
+	<string>Цвет сетки</string>
+	<key>Ss4-ms-B6z.title</key>
+	<string>Диапазон яркости…</string>
+	<key>TB3-MG-NqE.title</key>
+	<string>Расширенный поиск...</string>
+	<key>TFk-vt-N7X.title</key>
+	<string>Отладить</string>
+	<key>TWx-jo-Xie.title</key>
+	<string>Правописание</string>
+	<key>TXq-Kk-7Ru.title</key>
+	<string>Выйти из Capture One</string>
+	<key>Tao-sN-xcm.title</key>
+	<string>Crash ImageCore</string>
+	<key>Tek-Pl-oY3.title</key>
+	<string>Выбрать только основной</string>
+	<key>TfA-cx-Mvh.title</key>
+	<string>Маска фокуса</string>
+	<key>Tsz-Zr-wOo.title</key>
+	<string>Последний</string>
+	<key>Txa-r9-MeZ.title</key>
+	<string>Добавить новый клонирующий слой</string>
+	<key>U3J-Q4-APW.title</key>
+	<string>Скрипты</string>
+	<key>U5C-ej-t0I.title</key>
+	<string>Выбранный цветовой диапазон</string>
+	<key>UJa-BM-gkL.title</key>
+	<string>Редактировать</string>
+	<key>UOb-cc-i4u.title</key>
+	<string>Удалить с диска…</string>
+	<key>UPZ-4r-LIP.title</key>
+	<string>Режим автоматического скрытия</string>
+	<key>Umj-4D-Ft5.title</key>
+	<string>90° влево</string>
+	<key>Ums-2C-jGe.title</key>
+	<string>Поворот</string>
+	<key>VAN-jC-sVf.title</key>
+	<string>Установить счетчик…</string>
+	<key>VIk-sI-Rak.title</key>
+	<string>Spinner Sample 01</string>
+	<key>VNo-j5-BoM.title</key>
+	<string>Следующая коллекция</string>
+	<key>VRZ-08-28a.title</key>
+	<string>Цветная метка</string>
+	<key>VYd-aa-ISY.title</key>
+	<string>Руководство пользователя в Интернете</string>
+	<key>Vd2-sw-pUm.title</key>
+	<string>Рейтинг</string>
+	<key>W1O-Uk-8Al.title</key>
+	<string>Очистить сравнение</string>
+	<key>W8g-vz-Nkq.title</key>
+	<string>Сетка</string>
+	<key>WI5-uh-qyi.title</key>
+	<string>Сохранить коррекции как стиль…</string>
+	<key>WZj-vq-3hp.ibShadowedToolTip</key>
+	<string>Сессия — это быстрый и удобный инструмент для работы с ограниченным числом изображений для отдельного задания или события. Изображения, которые требуется отредактировать, можно находить на диске или импортировать в отдельную сессию.</string>
+	<key>WZj-vq-3hp.title</key>
+	<string>Новая сессия...</string>
+	<key>WtP-ch-1PG.title</key>
+	<string>Capture One</string>
+	<key>XE8-eP-hGS.title</key>
+	<string>Перспективные искажения</string>
+	<key>XEz-MA-wNM.title</key>
+	<string>Установить счетчик…</string>
+	<key>XJN-4m-xYh.title</key>
+	<string>Добавить вертикальную направляющую</string>
+	<key>Xq1-cS-s6N.title</key>
+	<string>Настроить направляющие</string>
+	<key>Xu6-Jy-27Q.title</key>
+	<string>Dump for Processing/Print/Web Contact Sheet/Export</string>
+	<key>Xve-bi-pm5.ibShadowedToolTip</key>
+	<string>Повернуть варианты вправо</string>
+	<key>Xve-bi-pm5.title</key>
+	<string>Повернуть вправо</string>
+	<key>Ya0-fP-PFT.title</key>
+	<string>Показать маску градаций серого</string>
+	<key>Yhj-Cn-eCP.title</key>
+	<string>Режим до/после</string>
+	<key>Yhl-QQ-SNi.title</key>
+	<string>Предупреждение об экспозиции</string>
+	<key>YjW-6L-mGx.title</key>
+	<string>Назначить папкой кадров</string>
+	<key>YvP-eg-VLO.title</key>
+	<string>Переключить расположение браузера</string>
+	<key>Yzh-ba-11T.title</key>
+	<string>Счетчик экспорта</string>
+	<key>Z12-Ur-vG5.title</key>
+	<string>Камера</string>
+	<key>Z5p-mB-i3n.title</key>
+	<string>Копировать маску из</string>
+	<key>ZEv-jN-yCz.title</key>
+	<string>Ползунок раздельного просмотра</string>
+	<key>ZK1-Br-nPC.title</key>
+	<string>Экспорт изображений</string>
+	<key>ZSx-8D-9oe.title</key>
+	<string>Цветопроба набора команд обработки</string>
+	<key>ZkQ-kr-rOT.title</key>
+	<string>Растрировать маску</string>
+	<key>ZtV-H5-odX.title</key>
+	<string>Назначить для сравнения</string>
+	<key>a5o-KL-LMv.title</key>
+	<string>Операции</string>
+	<key>a6a-6k-MaI.title</key>
+	<string>Trigger Crash…</string>
+	<key>aFc-UB-Ojr.title</key>
+	<string>Новая группа…</string>
+	<key>aWi-dq-WP7.title</key>
+	<string>Клонировать вариант</string>
+	<key>aeU-x2-HKG.title</key>
+	<string>Развернуть выбранное</string>
+	<key>aoS-PQ-Fke.title</key>
+	<string>Далее</string>
+	<key>apZ-Xi-bTS.title</key>
+	<string>Меню очистки</string>
+	<key>bC2-8p-Sbj.title</key>
+	<string>Проверить правописание</string>
+	<key>bQz-bN-0Pr.title</key>
+	<string>Создать альбом из</string>
+	<key>bUF-hO-mho.title</key>
+	<string>Высокий динамический диапазон</string>
+	<key>bd0-6X-m18.title</key>
+	<string>Рейтинг</string>
+	<key>bdc-xp-MXX.title</key>
+	<string>Переместить в папку отобранных файлов</string>
+	<key>cIQ-0c-HMd.title</key>
+	<string>Назначить папкой вывода</string>
+	<key>cJ0-5a-BtU.title</key>
+	<string>Всегда показывать маску</string>
+	<key>cNu-MK-hYx.title</key>
+	<string>Немедленно</string>
+	<key>caw-2R-l90.title</key>
+	<string>Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>cb9-dY-odx.title</key>
+	<string>Проверка производительности</string>
+	<key>cjc-7e-hFl.title</key>
+	<string>Удалить инструмент с выделенной панели</string>
+	<key>ckf-EW-xkf.title</key>
+	<string>Показать в Finder</string>
+	<key>d0L-pY-VgO.title</key>
+	<string>Проверка производительности</string>
+	<key>d50-fq-gSn.title</key>
+	<string>Установить счетчик…</string>
+	<key>dAq-ug-Eha.title</key>
+	<string>Автоматически выбирать новый кадр</string>
+	<key>dVS-br-Kwq.title</key>
+	<string>Настроить браузер</string>
+	<key>dVb-ZR-YFh.title</key>
+	<string>Окно</string>
+	<key>dk9-he-9dx.title</key>
+	<string>Пересоздать изображения предварительного просмотра</string>
+	<key>eAW-D0-ka1.title</key>
+	<string>Показать восстанавливающие и клонирующие стрелки</string>
+	<key>emU-ls-KLQ.title</key>
+	<string>Меню</string>
+	<key>eqn-m3-Cil.title</key>
+	<string>Панель инструментов браузера</string>
+	<key>exd-CD-8be.title</key>
+	<string>Увеличить размер миниатюр</string>
+	<key>fEO-V4-a9n.title</key>
+	<string>Без рейтинга</string>
+	<key>fQW-x2-JHm.title</key>
+	<string>Режим состояния</string>
+	<key>fai-sG-oed.title</key>
+	<string>Контрольный профиль</string>
+	<key>fgT-gu-xT9.title</key>
+	<string>Добавить новый заполненный корректирующий слой</string>
+	<key>fs8-sW-tR1.ibShadowedToolTip</key>
+	<string>Повернуть варианты влево</string>
+	<key>fs8-sW-tR1.title</key>
+	<string>Повернуть влево</string>
+	<key>fse-N2-CBu.title</key>
+	<string>Всегда скрывать RAW-файлы</string>
+	<key>fwA-3y-i2C.title</key>
+	<string>Сбросить счетчик</string>
+	<key>fzw-GX-3Oz.title</key>
+	<string>Задан рейтинг</string>
+	<key>ga9-IJ-ciS.title</key>
+	<string>Экспозиция</string>
+	<key>gac-ce-4hS.title</key>
+	<string>Скорость просмотра</string>
+	<key>gaw-q6-ZQt.title</key>
+	<string>Всегда скрывать обработанные TIFF-файлы</string>
+	<key>hIg-Rd-5ek.title</key>
+	<string>Применить коррекции</string>
+	<key>hKJ-lB-Wyx.title</key>
+	<string>Настроить панель инструментов…</string>
+	<key>hNh-b3-9pp.title</key>
+	<string>Сортировать</string>
+	<key>hOL-XU-Zdy.title</key>
+	<string>Управление блокировками…</string>
+	<key>hRi-QW-I0r.title</key>
+	<string>Crash ModelCore</string>
+	<key>hap-CP-2Kr.title</key>
+	<string>Задать шаг увеличения…</string>
+	<key>hm3-R0-nnH.title</key>
+	<string>Заблокировать / разблокировать каталог</string>
+	<key>hyx-xU-vkz.title</key>
+	<string>Контрольный профиль</string>
+	<key>i53-f7-yoL.title</key>
+	<string>Включить/выключить позиции инструментов</string>
+	<key>i5p-Um-m9T.title</key>
+	<string>Коррекции</string>
+	<key>iTf-JB-Jml.title</key>
+	<string>Живой просмотр</string>
+	<key>ij0-Ig-v5x.title</key>
+	<string>Масштабировать окно</string>
+	<key>itC-UE-2gw.title</key>
+	<string>Назад</string>
+	<key>ivw-bE-Tp8.ibShadowedToolTip</key>
+	<string>Выполнить резервное копирование текущего каталога</string>
+	<key>ivw-bE-Tp8.title</key>
+	<string>Выполнить резервное копирование каталога...</string>
+	<key>iz4-l5-u4d.title</key>
+	<string>История обработки</string>
+	<key>j9C-bw-Eqf.title</key>
+	<string>Поместить все на передний план</string>
+	<key>jFB-IF-a18.title</key>
+	<string>Первый</string>
+	<key>jFU-cx-apQ.title</key>
+	<string>Ярлыки</string>
+	<key>jTl-o5-QoF.title</key>
+	<string>Предыдущий набор</string>
+	<key>jha-Dh-6bI.title</key>
+	<string>Заполнить маску</string>
+	<key>jlv-C4-OK4.title</key>
+	<string>Экспортировать веб-галерею…</string>
+	<key>jmQ-Po-VKd.title</key>
+	<string>Выделить все</string>
+	<key>k11-QY-wHF.title</key>
+	<string>Crash ImageCore</string>
+	<key>kEw-1G-rHn.title</key>
+	<string>Назначить папкой корзины</string>
+	<key>kJo-XM-aj7.title</key>
+	<string>Очень мелкий</string>
+	<key>kLD-Ih-bSU.title</key>
+	<string>Dump for Print Preview/Viewer</string>
+	<key>kVA-By-ceo.title</key>
+	<string>Цвет фона</string>
+	<key>kaS-cR-Itb.title</key>
+	<string>Общий вид</string>
+	<key>ks9-Py-p2q.title</key>
+	<string>Цветная метка</string>
+	<key>kzM-Qh-gJR.ibShadowedToolTip</key>
+	<string>Backup the current document as a template</string>
+	<key>kzM-Qh-gJR.title</key>
+	<string>Сохранить в виде шаблона...</string>
+	<key>l6v-uQ-6vA.title</key>
+	<string>Отметить выделение основного варианта</string>
+	<key>lsR-Cd-YTB.title</key>
+	<string>Добавить новый восстанавливающий слой</string>
+	<key>lsz-dg-BvX.title</key>
+	<string>Импортировать каталог</string>
+	<key>lto-Al-Lic.title</key>
+	<string>Закрыть окно</string>
+	<key>m53-KV-wAJ.title</key>
+	<string>Изображение</string>
+	<key>mGQ-hW-7fj.title</key>
+	<string>Пакетное переименование изображений…</string>
+	<key>mGw-IN-30M.title</key>
+	<string>Полный экран</string>
+	<key>mNh-zS-LXg.title</key>
+	<string>Цветная метка</string>
+	<key>mTR-t7-bfn.title</key>
+	<string>Скрыть Capture One</string>
+	<key>mU3-yj-odu.title</key>
+	<string>Каталог Capture One…</string>
+	<key>mWf-jA-GRT.title</key>
+	<string>Рейтинг</string>
+	<key>mb2-5a-je9.title</key>
+	<string>Счетчик переименований</string>
+	<key>mz6-FE-px4.title</key>
+	<string>Новая коллекция</string>
+	<key>n5l-Fl-Ng8.title</key>
+	<string>Resource Hub…</string>
+	<key>n5r-O7-blt.title</key>
+	<string>Свернуть все</string>
+	<key>nE7-nm-cUN.title</key>
+	<string>Показать в библиотеке</string>
+	<key>nTn-id-iRz.title</key>
+	<string>Новый проект…</string>
+	<key>naw-rG-vWD.title</key>
+	<string>Выбрать вариант</string>
+	<key>nbk-yq-Chp.title</key>
+	<string>Настроить просмотр</string>
+	<key>ndC-o5-Nrj.title</key>
+	<string>Цветная метка</string>
+	<key>nry-zy-vLA.title</key>
+	<string>По готовности</string>
+	<key>oHh-wm-VLQ.title</key>
+	<string>Удалить инструмент Инспектор с выделенной панели</string>
+	<key>oLn-zi-kJP.title</key>
+	<string>Размыть маску…</string>
+	<key>oNa-cq-UaH.title</key>
+	<string>Добавить панель инструмента</string>
+	<key>oVF-Zi-Ly1.title</key>
+	<string>Стили</string>
+	<key>oaD-9h-WhZ.title</key>
+	<string>Импортировать изображения...</string>
+	<key>pay-HP-uXe.title</key>
+	<string>Всегда скрывать JPEG-файлы</string>
+	<key>pos-6t-mez.title</key>
+	<string>Выключен</string>
+	<key>pqK-xL-L7m.title</key>
+	<string>Рабочее пространство</string>
+	<key>pw5-ef-Yde.title</key>
+	<string>Spinner Sample 02</string>
+	<key>qPD-iq-16K.title</key>
+	<string>Инвертировать маску</string>
+	<key>qfi-c8-Lj9.title</key>
+	<string>Никогда</string>
+	<key>qzd-K0-SRD.title</key>
+	<string>Распаковать EIP</string>
+	<key>r0M-bo-Ctx.title</key>
+	<string>Список имен файлов…</string>
+	<key>rIx-ZF-zzR.title</key>
+	<string>Браузер</string>
+	<key>rJ7-tj-Zjx.title</key>
+	<string>Добавить инструмент на выделенную панель</string>
+	<key>rKQ-8S-jJJ.title</key>
+	<string>Повторить</string>
+	<key>rg8-xW-C7E.title</key>
+	<string>Запаковать как EIP</string>
+	<key>rlO-p5-pah.title</key>
+	<string>Окно</string>
+	<key>rwS-sM-J09.title</key>
+	<string>Найти изображение…</string>
+	<key>sAJ-PN-NNm.title</key>
+	<string>S</string>
+	<key>sNP-5H-3KI.title</key>
+	<string>Поддержка Capture One</string>
+	<key>sWb-mO-EDh.title</key>
+	<string>Ярлыки</string>
+	<key>sZU-Ld-R58.title</key>
+	<string>Добавить горизонтальную направляющую</string>
+	<key>sam-MH-Lvx.title</key>
+	<string>Уместить</string>
+	<key>smy-v7-f4P.title</key>
+	<string>Отладить</string>
+	<key>stE-xv-Kcp.title</key>
+	<string>Проверять правописание при вводе</string>
+	<key>t0Z-l1-Abr.title</key>
+	<string>Замер цвета в Lab</string>
+	<key>t64-BB-MkS.title</key>
+	<string>Цвет фона</string>
+	<key>tFf-SU-Is4.title</key>
+	<string>Панели инструментов</string>
+	<key>tPe-DZ-2kg.title</key>
+	<string>Экспорт изображений</string>
+	<key>tQv-C3-vCk.title</key>
+	<string>Открыть...</string>
+	<key>tRq-qe-j3c.title</key>
+	<string>Рабочее пространство</string>
+	<key>uIl-Sc-fHK.title</key>
+	<string>Счетчик кадров</string>
+	<key>uMu-4A-XMk.title</key>
+	<string>Правописание...</string>
+	<key>um6-7R-op7.title</key>
+	<string>Счетчик импорта</string>
+	<key>vKK-zV-QgI.title</key>
+	<string>Назад</string>
+	<key>vN0-4W-ouU.title</key>
+	<string>Настроить направляющие</string>
+	<key>vNl-rw-7XV.title</key>
+	<string>Камера</string>
+	<key>vPJ-Xt-IuB.title</key>
+	<string>Открыть с помощью</string>
+	<key>vXq-3w-y0D.title</key>
+	<string>Цвет направляющих</string>
+	<key>vek-MX-hli.title</key>
+	<string>Сбросить счетчик</string>
+	<key>w0t-zA-XqW.title</key>
+	<string>Контрольное поле</string>
+	<key>w1y-hX-jq1.title</key>
+	<string>Настроить браузер</string>
+	<key>w49-QV-zqJ.title</key>
+	<string>Добавить новый пустой корректирующий слой</string>
+	<key>wBf-ws-A5Q.ibShadowedToolTip</key>
+	<string>Каталог — лучшее место для хранения и систематизации библиотеки изображений. Для работы с изображениями в каталоге их необходимо импортировать туда. Этот вариант рекомендуется для большинства фотографов.</string>
+	<key>wBf-ws-A5Q.title</key>
+	<string>Новый каталог…</string>
+	<key>wFu-j6-T7B.title</key>
+	<string>Горячая папка включена</string>
+	<key>wr6-Ak-7xy.title</key>
+	<string>Bar Sample 01</string>
+	<key>wxi-Vv-EBx.title</key>
+	<string>Trigger Assertion</string>
+	<key>wzo-cb-mif.title</key>
+	<string>Публикация</string>
+	<key>x0t-84-S7U.title</key>
+	<string>Задать область кадрирования</string>
+	<key>xC8-Jz-x6n.title</key>
+	<string>Сортировать</string>
+	<key>xGv-Lk-p4S.title</key>
+	<string>Режим композиции</string>
+	<key>xLy-q0-0Cq.title</key>
+	<string>Коррекции</string>
+	<key>xdM-fB-QmX.title</key>
+	<string>Dump IC_ProcessSettings/IC_FileDestination</string>
+	<key>xiu-HR-Fv3.title</key>
+	<string>Найти папку…</string>
+	<key>xj1-AI-B7a.title</key>
+	<string>Режим показа нескольких изображений</string>
+	<key>xoa-r4-m7R.title</key>
+	<string>Вставить</string>
+	<key>y8j-67-b0w.title</key>
+	<string>Свернуть</string>
+	<key>yJf-h4-0Nf.title</key>
+	<string>Автоматически выбирать новый кадр</string>
+	<key>yLh-tq-tGA.title</key>
+	<string>Глобальные фильтры</string>
+	<key>zIN-U6-GWH.title</key>
+	<string>Увеличить</string>
+	<key>zd3-KN-4Md.ibShadowedToolTip</key>
+	<string>Сбросить коррекции для вариантов</string>
+	<key>zd3-KN-4Md.title</key>
+	<string>Сбросить</string>
+	<key>zdr-UD-UZn.title</key>
+	<string>Показывать маску только при рисовании</string>
+	<key>zoC-BT-olu.ibShadowedToolTip</key>
+	<string>Вращать основной вариант до альбомной или портретной ориентации. Чтобы вращать все выделенные варианты, удерживайте нажатой клавишу SHIFT</string>
+	<key>zoC-BT-olu.title</key>
+	<string>Повернуть с привязкой</string>
+	<key>zoo-YX-3kR.title</key>
+	<string>Применить коррекции из</string>
+</dict>
+</plist>

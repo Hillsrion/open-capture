@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>LCCを作成する前にレンズ補正ツールの値が正しいことを確認してください。</string>
+	<key>1.title</key>
+	<string>LCCオプションを作成</string>
+	<key>10.title</key>
+	<string>ゴミ除去情報を含む</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>LCCを作成中</string>
+	<key>22.title</key>
+	<string>LCCを作成</string>
+	<key>27.title</key>
+	<string>LCCを作成</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>常にこれらの設定を作成します。LCCツールからオフにできます。</string>
+	<key>37.title</key>
+	<string>再度表示しない</string>
+	<key>46.title</key>
+	<string>ウィンドウ</string>
+	<key>5.title</key>
+	<string>作成</string>
+	<key>51.title</key>
+	<string>LCCを作成するときに警告がありました。イベントログを表示しますか?</string>
+	<key>54.title</key>
+	<string>イベントログを表示</string>
+	<key>55.title</key>
+	<string>閉じる</string>
+	<key>6.title</key>
+	<string>キャンセル</string>
+	<key>65.title</key>
+	<string>キャンセル</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>テクニカルカメラ広角の補正が含まれます。</string>
+	<key>8.title</key>
+	<string>広角レンズ補正データを含める</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>ゴミ除去情報を含める。LCCプロファイルを作成すると少し遅くなります。</string>
+</dict>
+</plist>

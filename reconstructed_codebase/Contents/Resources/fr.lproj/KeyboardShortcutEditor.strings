@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Editer les raccourcis clavier</string>
+	<key>10.title</key>
+	<string>Cellule texte</string>
+	<key>11.title</key>
+	<string>Cellule texte</string>
+	<key>13.title</key>
+	<string>Fermer</string>
+	<key>22.title</key>
+	<string>Erreur</string>
+	<key>51.title</key>
+	<string>Fenêtre</string>
+	<key>59.title</key>
+	<string>OK</string>
+	<key>60.title</key>
+	<string>Annuler</string>
+	<key>61.title</key>
+	<string>Entrer le nom du jeu de raccourcis</string>
+	<key>62.title</key>
+	<string>Erreur (définie automatiquement)</string>
+	<key>75.title</key>
+	<string>Aide</string>
+	<key>8.headerCell.title</key>
+	<string>Commande</string>
+	<key>9.headerCell.title</key>
+	<string>Touche</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Etiquette</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Commande</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Touche</string>
+</dict>
+</plist>

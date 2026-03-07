@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Copia Varianti da Primaria</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Copia le regolazioni dall'ultima acquisizione.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Copia da Ultima</string>
+	<key>250.title</key>
+	<string>Menu</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Regolazione automatica immagini acquisite</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Copia Varianti da Ultima</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientamento</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Copia le regolazioni dall'ultima acquisizione.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Copia da Ultima</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Copia Varianti da Ultima</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Copia specifica da Ultima…</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Copia specifica da Primaria…</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Copia le regolazioni dalla variante primaria</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Copia da Primaria</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Copia specifica da Ultima…</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Utilizza le regolazioni predefinite</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Predefiniti</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Copia Varianti da Primaria</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Stili</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Copia dagli Appunti</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Copia le regolazioni dalla variante primaria</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Copia da Primaria</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Copia dagli Appunti</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Utilizza le regolazioni predefinite</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Predefiniti</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Utilizza il profilo ICC predefinito per la fotocamera</string>
+	<key>abE-6a-zrB.title</key>
+	<string>Predefinito</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Usa l’orientamento predefinito dalla fotocamera</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>Predefinito</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>Copia il profilo ICC dall'ultima immagine acquisita.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Copia da Ultima</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Metadati</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Copia specifica da Primaria…</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Altro</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>Copia il profilo ICC dalla variante primaria</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Copia da Primaria</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profilo ICC</string>
+</dict>
+</plist>

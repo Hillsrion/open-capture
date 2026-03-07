@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kr-6e-gGc.title</key>
+	<string>Poziom</string>
+	<key>G12-Sn-HBX.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Odbij</string>
+	<key>I2U-2L-rjq.title</key>
+	<string>Prawy</string>
+	<key>cI4-Zq-zzr.title</key>
+	<string>Lewy</string>
+	<key>kyM-Qd-Xbo.title</key>
+	<string>Pion</string>
+	<key>y2q-bz-5Ol.ibExternalAccessibilityDescription</key>
+	<string>kąt</string>
+	<key>y2q-bz-5Ol.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Kąt</string>
+	<key>yiE-dF-xvm.title</key>
+	<string>Brak</string>
+</dict>
+</plist>

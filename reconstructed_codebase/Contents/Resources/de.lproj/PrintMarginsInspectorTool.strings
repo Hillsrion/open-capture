@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>357.title</key>
+	<string>Links</string>
+	<key>359.title</key>
+	<string>Rechts</string>
+	<key>394.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>394.ibShadowedToolTip</key>
+	<string>Rand Links</string>
+	<key>396.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>396.ibShadowedToolTip</key>
+	<string>Rand Rechts</string>
+	<key>406.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>406.ibShadowedToolTip</key>
+	<string>Rand Links</string>
+	<key>409.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Rand Rechts</string>
+	<key>420.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>420.ibShadowedToolTip</key>
+	<string>Rand Oben</string>
+	<key>422.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>422.ibShadowedToolTip</key>
+	<string>Rand Oben</string>
+	<key>425.title</key>
+	<string>Oben</string>
+	<key>429.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>429.ibShadowedToolTip</key>
+	<string>Rand unten</string>
+	<key>431.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>431.ibShadowedToolTip</key>
+	<string>Rand unten</string>
+	<key>434.title</key>
+	<string>Unten</string>
+	<key>523.title</key>
+	<string>Zoll</string>
+	<key>525.title</key>
+	<string>Zoll</string>
+	<key>527.title</key>
+	<string>Zoll</string>
+	<key>529.title</key>
+	<string>Zoll</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>116.title</key>
+	<string>Anuluj</string>
+	<key>148.title</key>
+	<string>Utwórz album z bieżącymi obrazami</string>
+	<key>171.title</key>
+	<string>Zapisz</string>
+	<key>172.title</key>
+	<string>Anuluj</string>
+	<key>173.title</key>
+	<string>Nazwa inteligentnego albumu:</string>
+	<key>188.title</key>
+	<string>Pomoc</string>
+	<key>48.title</key>
+	<string>Utwórz inteligentny album</string>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>点的类型</string>
+	<key>108.title</key>
+	<string>OtherViews</string>
+	<key>109.title</key>
+	<string>点</string>
+	<key>111.title</key>
+	<string>灰尘</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>清除已选污点</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>已选污点</string>
+	<key>47.title</key>
+	<string>点</string>
+	<key>49.title</key>
+	<string>OtherViews</string>
+	<key>50.title</key>
+	<string>1 of 1</string>
+	<key>64.title</key>
+	<string>-</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>上一个污点</string>
+	<key>76.title</key>
+	<string>&lt;</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>下一个污点</string>
+	<key>78.title</key>
+	<string>&gt;</string>
+	<key>84.title</key>
+	<string>类型</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>污点清除</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>色温</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>半径</string>
+</dict>
+</plist>

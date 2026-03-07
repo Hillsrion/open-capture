@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>209.title</key>
+	<string>Эту панель можно также вызвать, щелкнув правой кнопкой мыши в окне просмотра при выборе курсора "Маска радиального градиента".</string>
+	<key>MNb-OO-L0P.title</key>
+	<string>Настройки маски радиального градиента</string>
+	<key>de3-fe-AEM.title</key>
+	<string>Нарисовать маску внутри</string>
+</dict>
+</plist>

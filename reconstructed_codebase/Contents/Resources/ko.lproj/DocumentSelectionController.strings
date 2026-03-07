@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>173.title</key>
+	<string>브라우즈...</string>
+	<key>176.title</key>
+	<string>열기</string>
+	<key>183.headerCell.title</key>
+	<string>최근 세션</string>
+	<key>186.title</key>
+	<string>텍스트 셀</string>
+	<key>208.title</key>
+	<string>최근 카탈로그 또는 세션이 없음</string>
+	<key>219.title</key>
+	<string>최근</string>
+	<key>221.ibShadowedToolTip</key>
+	<string>카탈로그는 전체 이미지 라이브러리를 저장하고 구성하는 가장 좋은 장소입니다. 카탈로그의 이미지로 작업하려면 카탈로그에서 이미지를 가져와야합니다. 대부분의 사진가에게 권장됩니다.</string>
+	<key>222.title</key>
+	<string>새로운 카탈로그...</string>
+	<key>37.ibShadowedToolTip</key>
+	<string>세션은 단일 작업 또는 이벤트를 위해 제한된 수의 이미지를 작업하기 위한 빠르고 간단한 방법입니다. 디스크에 이미지 위치를 검색하거나 세션으로 이미지를 가져오기하여 이미지들을 편집할 수 있습니다.</string>
+	<key>54.title</key>
+	<string>취소</string>
+	<key>55.title</key>
+	<string>새로운 세션...</string>
+</dict>
+</plist>

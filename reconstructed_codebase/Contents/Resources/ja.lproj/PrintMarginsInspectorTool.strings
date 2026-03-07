@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>357.title</key>
+	<string>左</string>
+	<key>359.title</key>
+	<string>右</string>
+	<key>394.ibShadowedToolTip</key>
+	<string>左の余白</string>
+	<key>396.ibShadowedToolTip</key>
+	<string>右の余白</string>
+	<key>406.ibShadowedToolTip</key>
+	<string>左の余白</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>右の余白</string>
+	<key>420.ibShadowedToolTip</key>
+	<string>上の余白</string>
+	<key>422.ibShadowedToolTip</key>
+	<string>上の余白</string>
+	<key>425.title</key>
+	<string>上</string>
+	<key>429.ibShadowedToolTip</key>
+	<string>下の余白</string>
+	<key>431.ibShadowedToolTip</key>
+	<string>下の余白</string>
+	<key>434.title</key>
+	<string>下</string>
+	<key>523.title</key>
+	<string>in</string>
+	<key>525.title</key>
+	<string>in</string>
+	<key>527.title</key>
+	<string>in</string>
+	<key>529.title</key>
+	<string>in</string>
+</dict>
+</plist>

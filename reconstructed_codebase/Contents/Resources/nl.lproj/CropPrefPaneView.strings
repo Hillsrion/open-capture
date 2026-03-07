@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Altijd</string>
+	<key>35.title</key>
+	<string>Nooit</string>
+	<key>36.title</key>
+	<string>Behalve tijdens slepen</string>
+	<key>43.title</key>
+	<string>Indien geen masker</string>
+	<key>44.title</key>
+	<string>Altijd</string>
+	<key>449.title</key>
+	<string>Tonen:</string>
+	<key>450.title</key>
+	<string>Toon kader:</string>
+	<key>451.title</key>
+	<string>Toon labels:</string>
+	<key>453.title</key>
+	<string>Opaciteit:</string>
+	<key>455.title</key>
+	<string>Helderheid:</string>
+	<key>459.title</key>
+	<string>Standaardwaarden</string>
+	<key>52.title</key>
+	<string>Altijd</string>
+	<key>53.title</key>
+	<string>Nooit</string>
+	<key>54.title</key>
+	<string>Alleen tijdens slepen</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>Behalve tijdens slepen</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Altijd</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Masker</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Toon handvatten:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Nooit</string>
+</dict>
+</plist>

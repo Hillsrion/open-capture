@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>Aplikácia %1$@ %2$@ bola prevzatá a je pripravená na použitie! Chcete teraz nainštalovať a následne znovu spustiť %1$@?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Aplikáciu %1$@ nemožno aktualizovať, ak je spustená zo zväzku s právami len na čítanie (napríklad z obrazu disku alebo optického disku).</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@
+je najnovšia dostupná verzia.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@
+je najnovšia dostupná verzia.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>Je dostupná aplikácia %1$@ %2$@ — máte %3$@. Chcete ju prevziať teraz?</string>
+	<key>%@ downloaded</key>
+	<string>%@ prevzaté</string>
+	<key>%@ of %@</key>
+	<string>%1$@ z %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Je dostupná nová verzia aplikácie %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Nová verzia aplikácie %@ je pripravená na inštaláciu!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Pri získavaní informácie o aktualizácii sa vyskytla chyba. Skúste neskôr.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Pri preberaní aktualizácie sa vyskytla chyba. Skúste neskôr.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Pri rozbaľovaní archívu sa vyskytla chyba. Skúste neskôr.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Pri analyzovaní aktualizácie sa vyskytla chyba.</string>
+	<key>Cancel</key>
+	<string>Zrušiť</string>
+	<key>Cancel Update</key>
+	<string>Zrušiť aktualizáciu</string>
+	<key>Checking for updates…</key>
+	<string>Kontrolujú sa aktualizácie…</string>
+	<key>Downloading update…</key>
+	<string>Preberá sa aktualizácia…</string>
+	<key>Extracting update…</key>
+	<string>Rozbaľuje sa aktualizácia…</string>
+	<key>Install and Relaunch</key>
+	<string>Inštalovať a znovu spustiť</string>
+	<key>Installing update…</key>
+	<string>Inštaluje sa aktualizácia…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Pripravené na inštaláciu</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Môže %1$@ automaticky kontrolovať aktualizácie? Kedykoľvek ich môžete z ponuky %1$@ skontrolovať aj manuálne.</string>
+	<key>Update Error!</key>
+	<string>Chyba aktualizácie!</string>
+	<key>Updating %@</key>
+	<string>Aktualizuje sa %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Presuňte aplikáciu %1$@ do priečinka Applications, spustite ju odtiaľ a potom znova skúste aktualizáciu.</string>
+	<key>You’re up to date!</key>
+	<string>Máte aktuálnu verziu!</string>
+</dict>
+</plist>

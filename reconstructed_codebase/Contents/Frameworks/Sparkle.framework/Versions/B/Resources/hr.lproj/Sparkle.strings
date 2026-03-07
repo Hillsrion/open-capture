@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ je preuzeta i spremna za upotrebu! Ovo je važna nadogradnja. Želiš li je sada instalirati, te ponovo pokrenuti %1$@?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ je preuzeta i spremna za upotrebu! Želiš li je sada instalirati, te ponovo pokrenuti %1$@?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ nije moguće aktualizirati, jer je pokrenuta s lokacije bez korisničkih prava pisanja, npr. dmg.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ je trenutačno najnovija dostupna verzija.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ je trenutačno najnovija dostupna verzija.
+(Trenutačno pokrećeš verziju %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ je sada dostupna. Ti koristiš verziju %3$@. Želiš li je sada preuzeti?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ je sada dostupna. Ti koristiš verziju %3$@. Želiš li saznati više o ovoj nadogradnji na našim web-stranicama?</string>
+	<key>%@ downloaded</key>
+	<string>%@ preuzeto</string>
+	<key>%@ of %@</key>
+	<string>%1$@ od %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Dostupna je nova verzija za %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Nova verzija za %@ je spremna za instaliranje!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Dogodila se greška u dohvaćanju informacija o nadogradnji. Pokušaj kasnije ponovo.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Dogodila se greška prilikom preuzimanja nadogradnje. Pokušaj kasnije ponovo.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Dogodila se greška prilikom raspakiranja arhive. Pokušaj kasnije ponovo.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Dogodila se greška prilikom obrađivanja nadogradnje.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Važna nadogradnja za %@ je spremna za instaliranje</string>
+	<key>Cancel</key>
+	<string>Odustani</string>
+	<key>Cancel Update</key>
+	<string>Prekini aktualiziranje</string>
+	<key>Checking for updates…</key>
+	<string>Provjera nadogradnji …</string>
+	<key>Downloading update…</key>
+	<string>Preuzimanje nadogradnje …</string>
+	<key>Extracting update…</key>
+	<string>Raspakiravanje nadogradnje …</string>
+	<key>Install and Relaunch</key>
+	<string>Instaliraj i ponovo pokreni</string>
+	<key>Installing update…</key>
+	<string>Instaliranje nadogradnje …</string>
+	<key>Learn More…</key>
+	<string>Saznaj više …</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>Spremno za instaliranje</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Želiš li da %1$@ automatski provjerava nadogradnje? Nadogradnje možeš i ručno provjeriti u %1$@ izborniku.</string>
+	<key>Update Error!</key>
+	<string>Greška prilikom aktualiziranja!</string>
+	<key>Updating %@</key>
+	<string>%@ se aktualizira</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Kopiraj %1$@ u mapu Aplikacije, pokreni je odande i pokušaj ponovo.</string>
+	<key>You’re up to date!</key>
+	<string>Koristiš najnoviju verziju!</string>
+</dict>
+</plist>

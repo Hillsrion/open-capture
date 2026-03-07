@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3q5-Qh-upk.ibShadowedToolTip</key>
+	<string>DOF - skärpedjup</string>
+	<key>546.ibShadowedToolTip</key>
+	<string>Skärpedjup DOF</string>
+	<key>547.title</key>
+	<string>DOF - skärpedjup</string>
+	<key>86u-ew-JY8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Orientering</string>
+	<key>IRF-4f-LhB.ibExternalAccessibilityDescription</key>
+	<string>Klarhet</string>
+	<key>IRF-4f-LhB.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ljushet</string>
+	<key>j1P-cW-C07.title</key>
+	<string>Standard</string>
+	<key>k4U-4f-oTq.ibExternalAccessibilityDescription</key>
+	<string>Klarhet</string>
+	<key>k4U-4f-oTq.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Kvalitet</string>
+</dict>
+</plist>

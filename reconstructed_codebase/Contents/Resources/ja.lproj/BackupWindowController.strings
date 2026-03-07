@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>バックアップ</string>
+	<key>17.title</key>
+	<string>キャンセル</string>
+	<key>21.label</key>
+	<string>進捗状況</string>
+	<key>22.label</key>
+	<string>警告</string>
+	<key>37.title</key>
+	<string>整合性テスト</string>
+	<key>39.title</key>
+	<string>カタログ最適化</string>
+	<key>46.title</key>
+	<string>バックアップ場所:</string>
+	<key>49.title</key>
+	<string>次を含む:</string>
+	<key>78.label</key>
+	<string>エラー</string>
+	<key>99.label</key>
+	<string>エラー</string>
+</dict>
+</plist>

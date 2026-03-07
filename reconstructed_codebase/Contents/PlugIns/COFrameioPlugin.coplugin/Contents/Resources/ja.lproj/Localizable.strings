@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disconnect from Frame.io</key>
+	<string>Frame.ioとの接続を解除</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>ご不明な点は、Capture One サポート（https://support.captureone.com）までお問い合わせください。</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>ご不明な点は、Capture One サポート（https://support.captureone.com）までお問い合わせください。下記をサポートリクエストに含めてください：
+
+%@</string>
+	<key>Frame.io settings</key>
+	<string>Frame.io 設定</string>
+	<key>Free version limit reached</key>
+	<string>無料バージョンの上限に達しました</string>
+	<key>Not implemented</key>
+	<string>実装されていません</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>%2$iのアセットのうち%1$iをアップロードのために準備中…</string>
+	<key>Server Error</key>
+	<string>不明なエラー</string>
+	<key>Something went wrong, please try again.</key>
+	<string>問題が発生しました。後ほどもう一度お試しください。</string>
+	<key>The free version of the Frame.io plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>Frame.io プラグインの無料バージョンをご利用になっているため、多数のファイルを同時に公開またはインポートすることはできません。 アップグレードについては、 https://integrations.captureone.com/upgrade/ をご覧ください。</string>
+	<key>This method is not yet implemented.</key>
+	<string>このメソッドはまだ実装されていません。</string>
+	<key>Unknown Error</key>
+	<string>不明なエラー</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>アップロード中 %1$@（%2$i / %3$i）…</string>
+	<key>Work with stakeholders, clients, and collaborators like never before with easy-to-use review and approval tools, lightning-fast unbreakable file transfers, and the fastest growing Camera to Cloud ecosystem in the market. For more details please read more details [here](https://frame.io/).</key>
+	<string>使いやすいレビュー/承認ツール、壊れない超高速ファイル転送、市場で最も急成長しているCamera to Cloudエコシステムにより、かつてないほど、ステークホルダー、クライアント、コラボレーターと協力して作業ができます。 詳細については、[ こちら ]（https://frame.io/）をご覧ください。</string>
+</dict>
+</plist>

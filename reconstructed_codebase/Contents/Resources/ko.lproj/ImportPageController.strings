@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>9TB-Lh-0GN.title</key>
+	<string>사진 추가</string>
+	<key>GcS-sj-TVF.title</key>
+	<string>시작할 사진을 몇 장 선택하십시오. 나중에 언제든지 더 추가할 수 있습니다.</string>
+	<key>MYN-Mv-BfB.title</key>
+	<string>사진 가져오기</string>
+	<key>PfL-9K-WyW.title</key>
+	<string>디스크에서 찾기</string>
+	<key>b2Z-JR-cNm.title</key>
+	<string>샘플 이미지 사용</string>
+</dict>
+</plist>

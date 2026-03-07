@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>Back-up</string>
+	<key>17.title</key>
+	<string>Annuleer</string>
+	<key>21.label</key>
+	<string>Voortgang</string>
+	<key>22.label</key>
+	<string>Waarschuwing</string>
+	<key>37.title</key>
+	<string>Integriteit testen</string>
+	<key>39.title</key>
+	<string>Catalogus optimaliseren</string>
+	<key>46.title</key>
+	<string>Back-up locatie:</string>
+	<key>49.title</key>
+	<string>Ook:</string>
+	<key>78.label</key>
+	<string>Fout</string>
+	<key>99.label</key>
+	<string>Fout</string>
+</dict>
+</plist>

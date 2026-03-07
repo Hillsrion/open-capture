@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.headerCell.title</key>
+	<string>日期</string>
+	<key>5.title</key>
+	<string>事件</string>
+	<key>67.title</key>
+	<string>清除</string>
+	<key>68.title</key>
+	<string>显示全部</string>
+	<key>69.title</key>
+	<string>显示新事件面板</string>
+	<key>70.title</key>
+	<string>关闭</string>
+	<key>72.title</key>
+	<string>文本单元格</string>
+	<key>73.title</key>
+	<string>文本单元格</string>
+	<key>9.headerCell.title</key>
+	<string>描述</string>
+</dict>
+</plist>

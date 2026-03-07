@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>ロールフィルム - サイズ固定</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>綴じられた素材 - 固定サイズ</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>クロップ内部でオートレベル</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>オート クロップ</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>クロップを適用</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>新しいイメージを撮影したときに自オート クロップする。</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>上端</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>プレ・パス</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>なし</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>オート クロップ時に枠取りサイズを適用。</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>枠取り</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>下端</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>上 - 右端</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>コントラストの低い被写体</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>傾き補正</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>なし</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>綴じられていない素材</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方法</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>平均</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>左端</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>綴じられた素材</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>オート クロップ時に枠取りサイズを適用。</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>綴じられていない素材 - 固定サイズ</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>最適化</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>オート クロップ時に枠取りサイズを適用した。</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>なし</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>右端</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>撮影時に適用</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>下 - 左端</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>トリガー</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>上 - 左端</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>ミディアムコントラストの被写体</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>下 - 右端</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>新規プロップを作成したときオート クロップする。</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>マスタークロップ設定</string>
+	<key>zfu-c3-n97.title</key>
+	<string>非常にコントラストの低い被写体</string>
+</dict>
+</plist>

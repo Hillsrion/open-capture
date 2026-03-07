@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Aberracja chromatyczna</string>
+	<key>1555.title</key>
+	<string>Ukryj zniekształcone obszary</string>
+	<key>1700.label</key>
+	<string>Karta</string>
+	<key>1701.label</key>
+	<string>Widok</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Obiektyw</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Przesuwy</string>
+	<key>1741.title</key>
+	<string>Aberracja chromatyczna</string>
+	<key>1742.title</key>
+	<string>Domyślne</string>
+	<key>1743.title</key>
+	<string>Analizuj</string>
+	<key>1745.title</key>
+	<string>Spersonalizowane</string>
+	<key>1757.title</key>
+	<string>Ogniskowa</string>
+	<key>1760.title</key>
+	<string>Przysłona (f)</string>
+	<key>1823.title</key>
+	<string>Przesunięcie x</string>
+	<key>1832.title</key>
+	<string>Przesunięcie y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Profil</string>
+	<key>893.title</key>
+	<string>Kierunek</string>
+	<key>894.title</key>
+	<string>Przesunięcie</string>
+	<key>897.title</key>
+	<string>Kierunek</string>
+	<key>898.title</key>
+	<string>Pochyły</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>spadek jasności</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Spadek jasności</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Korekcja dyfrakcji</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>spadek ostrości</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Spadek ostrości</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>dystorsja</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Dystorsja</string>
+</dict>
+</plist>

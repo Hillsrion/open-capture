@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Upplösning</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Skrivarnamn</string>
+	<key>469.title</key>
+	<string>Canon skrivarmodell xxx</string>
+	<key>489.title</key>
+	<string>Papper</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Perceptuell</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>Pappersstorlek</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Öppna sidinställningsfönster</string>
+	<key>509.title</key>
+	<string>Sidinställning</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Öppnar skrivarinställningar</string>
+	<key>514.title</key>
+	<string>Skrivarinställningar...</string>
+	<key>544.title</key>
+	<string>Skärpa</string>
+	<key>556.title</key>
+	<string>Svartpunktskompensation</string>
+	<key>558.title</key>
+	<string>color management text color management text color management text color management text color management text</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Skärpa</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Skärpa</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Färgprofil</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Återgivning</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Absolut färgvärde</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Relativt färgvärde</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Mättnad</string>
+</dict>
+</plist>

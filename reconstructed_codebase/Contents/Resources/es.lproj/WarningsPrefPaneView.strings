@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Avisar cuando Mover a la Papelera afecte a variantes no seleccionadas</string>
+	<key>18v-en-xAd.title</key>
+	<string>Avisar al aplicar un estilo con un LCC no válido</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Avisar al restablecer las Correcciones de Color Básicas</string>
+	<key>482.title</key>
+	<string>Valores predeterminados</string>
+	<key>694.title</key>
+	<string>Avisar al mover imágenes y carpetas en el catálogo</string>
+	<key>697.title</key>
+	<string>Archivos y carpetas</string>
+	<key>701.title</key>
+	<string>Avisar al eliminar imágenes del disco</string>
+	<key>703.title</key>
+	<string>Avisar cuando se muevan imágenes a la Papelera de la Sesión desde un disco diferente</string>
+	<key>707.title</key>
+	<string>Ajustes</string>
+	<key>708.title</key>
+	<string>Avisar cuando se restauren los ajustes en varias variantes</string>
+	<key>734.title</key>
+	<string>Salida</string>
+	<key>789.title</key>
+	<string>Si Editar todas las variantes seleccionadas está apagado y múltiples variantes están seleccionadas:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Avisar al procesar múltiples variantes, si Editar todas las variantes seleccionadas  está apagado</string>
+	<key>793.title</key>
+	<string>Avisar al procesar</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Avisar al imprimir múltiples variantes si Editar variantes seleccionadas está apagado</string>
+	<key>796.title</key>
+	<string>Avisar al imprimir</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Avisar cuando se crea una hoja de contactos para web con múltiples variantes si Editar variantes seleccionadas está apagado</string>
+	<key>799.title</key>
+	<string>Avisar al crear hoja de contactos para web</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Avisar cuando se crea una hoja de contactos para web con múltiples variantes si Editar variantes seleccionadas está apagado</string>
+	<key>805.title</key>
+	<string>Avisar al exportar</string>
+	<key>811.title</key>
+	<string>Avisar al restablecer el ordenado manual</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Avisar al cambiar o eliminar el LCC aplicado.</string>
+	<key>816.title</key>
+	<string>Avisar al cambiar el LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Avisar al crear un LCC con múltiples variantes, cuando Editar Todas las Variantes Seleccionadas está inactivo.</string>
+	<key>820.title</key>
+	<string>Avisar al crear LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Avisar al aplicar LCC a múltiples variantes cuando Editar Todas las Variantes Seleccionadas está inactivo.</string>
+	<key>823.title</key>
+	<string>Avisar al aplicar LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Avisar al cambiar o eliminar el LCC aplicado.</string>
+	<key>829.title</key>
+	<string>Avisar al actualizar motor</string>
+	<key>834.title</key>
+	<string>Avisar al restablecer los ajustes de una capa ajustes</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Avisar al analizar Aberración Cromática con múltiples variantes si Editar Todas las Variantes Seleccionadas está apagado.</string>
+	<key>847.title</key>
+	<string>Avisar al analizar Aberración Cromática</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Avisar al rasterizar una máscara paramétrica</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Avisar al aplicar capas a la misma variante de la que se copiaron</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Avisar al aplicar un estilo con un ICC no válido</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Avisar al aplicar un estilo parcialmente</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Avisar cuando aplica el LCC a múltiples variantes si Editar Todas las Variantes Seleccionadas está desactivado.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Avisar al seleccionar las opciones de creación de LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Avisar al copiar ajustes incompatibles.</string>
+</dict>
+</plist>

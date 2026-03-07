@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Nombre del formato</string>
+	<key>13.title</key>
+	<string>Cancelar</string>
+	<key>14.title</key>
+	<string>Aceptar</string>
+	<key>59L-oO-NTp.title</key>
+	<string>Usado Recientemente</string>
+	<key>74.title</key>
+	<string>Ajustes</string>
+	<key>77.title</key>
+	<string>Imagen y nombre de trabajo</string>
+	<key>78.title</key>
+	<string>Nombre de trabajo y contador</string>
+	<key>79.title</key>
+	<string>Trabajo y nombre de imagen</string>
+	<key>80.title</key>
+	<string>Nombre de imagen</string>
+	<key>84.title</key>
+	<string>Puedes editar el texto anterior para cubrir tus necesadidades. Selecciona elementos de los siguientes grupos, arrastra o haz doble click para añadirlos en el formato.</string>
+	<key>89.title</key>
+	<string>Salvar Ajustes de usuario...</string>
+	<key>94.title</key>
+	<string>Formato</string>
+	<key>96.title</key>
+	<string>Atríbutos</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>Metadatos - EXIF - Cámara</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>Metadatos - IPTC - Getty Images</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>Fecha y Hora</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>Metadatos - Básico</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>Metadatos - EXIF - Exposición</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>Area de texto</string>
+	<key>XqK-3b-mox.title</key>
+	<string>General</string>
+	<key>f2N-un-vTh.title</key>
+	<string>Metadatos - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>Metadatos - Fabricante</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>Atríbutos Excluidos (Depurar)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>Metadatos - IPTC - Contacto</string>
+	<key>im4-Sx-noG.title</key>
+	<string>Todo</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>Metadatos - IPTC - Contenido</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>Grupo</string>
+	<key>pQh-ye-usp.title</key>
+	<string>Metadatos - IPTC - Imagen</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>Metadatos - IPTC - Estado</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>Muestra</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>La cadena de muestra va aquí</string>
+</dict>
+</plist>

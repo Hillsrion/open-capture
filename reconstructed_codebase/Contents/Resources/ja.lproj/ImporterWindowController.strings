@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>233.ibShadowedToolTip</key>
+	<string>並べ替え</string>
+	<key>254.title</key>
+	<string>すべてインポート</string>
+	<key>255.title</key>
+	<string>キャンセル</string>
+	<key>256.title</key>
+	<string>インポート後に削除</string>
+	<key>257.title</key>
+	<string>カード取出</string>
+	<key>368.title</key>
+	<string>常にインポート コレクションを開く</string>
+	<key>369.title</key>
+	<string>完了時に通知する</string>
+	<key>370.title</key>
+	<string>インポートが開始されたらコレクションを開く</string>
+	<key>378.title</key>
+	<string>インポート</string>
+	<key>5.title</key>
+	<string>ウィンドウ</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>フォルダ内にイメージがありません</string>
+</dict>
+</plist>

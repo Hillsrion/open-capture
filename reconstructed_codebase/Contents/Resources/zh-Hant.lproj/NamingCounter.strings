@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>設定計數器</string>
+	<key>10.title</key>
+	<string>取消</string>
+	<key>4.title</key>
+	<string>輸入所需的計數器值</string>
+	<key>8.title</key>
+	<string>好</string>
+</dict>
+</plist>

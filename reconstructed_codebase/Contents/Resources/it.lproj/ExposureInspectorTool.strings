@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ads-E4-haH.ibExternalAccessibilityDescription</key>
+	<string>contrasto</string>
+	<key>Ads-E4-haH.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Contrasto</string>
+	<key>a62-F5-gNw.ibExternalAccessibilityDescription</key>
+	<string>luminosità</string>
+	<key>a62-F5-gNw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Luminosità</string>
+	<key>tVv-XR-GTd.ibExternalAccessibilityDescription</key>
+	<string>esposizione</string>
+	<key>tVv-XR-GTd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Esposizione</string>
+	<key>zkd-Q5-XUm.ibExternalAccessibilityDescription</key>
+	<string>saturazione</string>
+	<key>zkd-Q5-XUm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Saturazione</string>
+</dict>
+</plist>

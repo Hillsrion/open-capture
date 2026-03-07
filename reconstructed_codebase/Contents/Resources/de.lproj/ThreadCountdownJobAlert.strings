@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ von %{value2}@ Stapelverarbeitungsaufträgen wurden gesichert</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ von %{value2}@ Stapelverarbeitungsaufträgen wurden gesichert</string>
+	<key>30.title</key>
+	<string>Beenden</string>
+	<key>31.title</key>
+	<string>x von N Stapelverarbeitungsaufträgen werden gesichert</string>
+	<key>5.title</key>
+	<string>Stapelverarbeitungsauftragsdateien werden gesichert</string>
+</dict>
+</plist>

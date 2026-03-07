@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>默认设置</string>
+	<key>486.title</key>
+	<string>缓存</string>
+	<key>526.title</key>
+	<string>EIP 打包（仅针对会话）</string>
+	<key>557.title</key>
+	<string>预览图像尺寸（px）：</string>
+	<key>559.title</key>
+	<string>缓存</string>
+	<key>563.title</key>
+	<string>倾向于使用嵌入式 XMP 代替嵌入式 IPTC</string>
+	<key>565.title</key>
+	<string>倾向于使用附属 XMP 代替嵌入式元数据</string>
+	<key>568.title</key>
+	<string>元数据</string>
+	<key>586.title</key>
+	<string>打包文件格式</string>
+	<key>590.title</key>
+	<string>导入时打包为 EIP 格式</string>
+	<key>591.title</key>
+	<string>拍摄时打包为 EIP 格式</string>
+	<key>592.title</key>
+	<string>JPEG 及处理过的 TIFF 文件无法打包为 EIP 格式。</string>
+	<key>601.title</key>
+	<string>编辑</string>
+	<key>602.title</key>
+	<string>启用 TIFF 编辑</string>
+	<key>603.title</key>
+	<string>启用 JPEG 编辑</string>
+	<key>621.title</key>
+	<string>全部同步</string>
+	<key>622.title</key>
+	<string>加载</string>
+	<key>623.title</key>
+	<string>无</string>
+	<key>626.title</key>
+	<string>自动同步附属 XMP：</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>所有人都将拥有（在导入、拍摄或 EIP 转换时创建的）新文件的写入权限，而不仅仅是文件的拥有者。</string>
+	<key>629.title</key>
+	<string>将新文件的写入权限开放给所有人</string>
+	<key>635.title</key>
+	<string>启用 PNG 编辑</string>
+	<key>667.title</key>
+	<string>默认处理引擎：</string>
+</dict>
+</plist>

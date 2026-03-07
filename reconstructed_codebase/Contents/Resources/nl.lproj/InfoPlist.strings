@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One Enhanced Image Package</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One vereist soms indirect controle over andere applicaties voor scripts die u erin uitvoert.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One heeft geen toegang tot uw Agenda nodig. Deze waarschuwing wordt veroorzaakt door toegang tot uw Bibliotheek map.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One heeft geen toegang tot uw Contacten nodig. Deze waarschuwing wordt veroorzaakt door toegang tot uw Bibliotheek map.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One heeft geen toegang tot uw Foto bibliotheek nodig. Deze waarschuwing wordt veroorzaakt door toegang tot uw Bibliotheek map.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One heeft geen toegang tot uw Herinneringen nodig. Deze waarschuwing wordt veroorzaakt door toegang tot uw Bibliotheek map.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One vereist toegang tot verwijderbare volumes om de tethering-functionaliteit te ondersteunen. Mogelijk moet u Capture One opnieuw opstarten om deze instelling van kracht te laten worden.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW afbeelding</string>
+</dict>
+</plist>

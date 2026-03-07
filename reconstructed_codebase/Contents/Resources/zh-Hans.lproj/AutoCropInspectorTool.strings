@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>胶卷 - 固定尺寸</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>装订材料 - 固定尺寸</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>内部裁切自动色阶</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>自动裁切</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>裁切时</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>拍摄新图像时自动进行自动裁切。</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>顶边</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>预识别</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>无</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>自动裁切时应用边缘填充。</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>边缘填充</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>底边</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>右-上边</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>主体-背景 低对比度</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>拉直</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>无</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>活页材料</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>方法</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>平均</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>左边</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>装订材料</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>自动裁切时应用边缘填充。</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>活页材料 - 固定尺寸</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>优化</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>自动裁切时应用边缘填充。</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>无</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>右边</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>拍摄时</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>左-下边</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>触发器</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>左-上边</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>主体-背景 中对比度</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>右-下边</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>创建新的裁切时自动进行自动裁切。</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>设置主裁切</string>
+	<key>zfu-c3-n97.title</key>
+	<string>主体-背景 极低对比度</string>
+</dict>
+</plist>

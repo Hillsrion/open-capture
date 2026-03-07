@@ -1,0 +1,5 @@
+/* Class = "NSTextFieldCell"; title = "This panel can also be shown by right-clicking in the Viewer when a Brush or Eraser cursor is selected."; ObjectID = "209"; */
+"209.title" = "Dit deelvenster kunt u ook weergeven door met de rechtermuisknop in de Viewer te klikken als de penseel- of gumcursor geselecteerd is.";
+
+s/* Class = "NSButtonCell"; title = "Display Arrows"; ObjectID = "rnX-Cy-M0S"; */
+"rnX-Cy-M0S.title" = "Toon pijlen";

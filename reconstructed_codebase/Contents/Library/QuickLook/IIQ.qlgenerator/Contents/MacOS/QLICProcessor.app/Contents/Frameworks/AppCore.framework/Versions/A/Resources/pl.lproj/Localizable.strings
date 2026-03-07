@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>- Utworzono nowe ustawienia domyślne obrazu.</string>
+	<key>%.1f MB</key>
+	<string>%.1f MB</string>
+	<key>%.2f GB</key>
+	<string>%.2f GB</string>
+	<key>%.2f TB</key>
+	<string>%.2f TB</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>%ld z tych wariantów ma zastosowany profil LCC. Zmiana profilu LCC w tym wariancie może spowodować skasowanie istniejącego profilu. Profil LCC można utworzyć ponownie tylko za pomocą oryginalnego zdjęcia testowego LCC lub ponownie zastosować, jeśli został zapisany jako preset.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>W %1$lu z %2$lu wariantów brakuje metadanych. Funkcja Sprawdź i napraw może rozwiązać problem poprzez usunięcie tych wariantów.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>W %1$lu z %2$lu wariantów brakuje metadanych. Funkcja Sprawdź i napraw może rozwiązać problem poprzez usunięcie tych wariantów. Rozważ zapisanie listy obrazów z dziennika zdarzeń, aby móc zaimportować je ponownie.</string>
+	<key>%u KB</key>
+	<string>%u kB</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Błąd 1) Nieobsługiwany profil: profil jest nieobsługiwany lub nieprawidłowy.</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Błąd 10) Profil o korygowanych charakterystykach: może powodować duże zmiany w kolorach ciemnych i nasyconych.</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Błąd 11) Ustawienie punktu bieli jest niemożliwe lub błędne (dla bieli podłoża).</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Błąd 12) Ustawienie punktu bieli jest niemożliwe lub błędne (dla D50).</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Błąd 13) Biel podłoża nieokreślona: użyto D50.</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Błąd 14) Niejednoznaczny punkt bieli PCS: iluminant niezgodny ze standardem D50 wymaganym przez specyfikację.</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Błąd 15) Niejednoznaczny punkt bieli PCS: (255,255,255) jest zabarwiony.</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Błąd 2) Dane przestrzeni barwnej nieobsługiwane: obsługiwane są tylko profile RGB.</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Błąd 3) Nieobsługiwana struktura profilu: profil nie jest XYZ.</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Błąd 4) Nieobsługiwany rodzaj profilu: profil musi być właściwy dla monitora, urządzenia wyjściowego lub przestrzeni barwnej.</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Błąd 5) Profile LUT-based nie są obsługiwane.</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Błąd 6) Niezgodność krzywych (nieprawidłowy profil).</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Błąd 7) Interpretacja profilu zależy od wybranego rodzaju renderingu.</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Błąd 8) Przekształcenie według specyfikacji V4, dane specyfikacji V2 będą ignorowane.</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Błąd 9) Profil nie zawiera danych kanału czerni. Użycie narzędzia "Kompensacja punktu czerni" może powodować duże różnice.</string>
+	<key>(Locked: Read Only)</key>
+	<string>(Zablokowano: tylko do odczytu)</string>
+	<key>(Missing path)</key>
+	<string>(Brakująca ścieżka)</string>
+	<key>(No City)</key>
+	<string>(Brak miasta)</string>
+	<key>(No Country)</key>
+	<string>(Brak kraju)</string>
+	<key>(No Keywords)</key>
+	<string>(Brak słów kluczowych)</string>
+	<key>(No Location)</key>
+	<string>(Brak lokalizacji)</string>
+	<key>(No State)</key>
+	<string>(Brak stanu)</string>
+	<key>(No Values)</key>
+	<string>(Brak wartości)</string>
+	<key>-- bytes</key>
+	<string>-- bajtów</string>
+	<key>1 Digit Counter</key>
+	<string>1-cyfrowy licznik</string>
+	<key>1 shot</key>
+	<string>1 zdjęcie</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 mm</string>
+	<key>2 Digit Counter</key>
+	<string>2-cyfrowy licznik</string>
+	<key>3 Digit Counter</key>
+	<string>3-cyfrowy licznik</string>
+	<key>4 Digit Counter</key>
+	<string>4-cyfrowy licznik</string>
+	<key>5 Digit Counter</key>
+	<string>5-cyfrowy licznik</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6-cyfrowy licznik</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;nieznane&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>Zamiast folderu znaleziono plik formuł.</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>Nie można utworzyć folderu z formułami wywoływania.</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>Wykryto uszkodzenie bazy danych. Katalog "%@" musi zostać zamknięty.</string>
+	<key>A newer Capture One engine is required</key>
+	<string>Wymagana jest nowsza wersja silnika Capture One</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>Nie można utworzyć podfolderu sesji o nazwie "%@".
+
+W zamian użyty zostanie folder sesji.</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>Ostrość AI</string>
+	<key>AI servo</key>
+	<string>Serwo AI</string>
+	<key>About %d hours left</key>
+	<string>Zostało około %d godzin</string>
+	<key>About %d minutes left</key>
+	<string>Zostało około %d minut</string>
+	<key>About 10 seconds left</key>
+	<string>Zostało około 10 sekund</string>
+	<key>About 30 seconds left</key>
+	<string>Zostało około 30 sekund</string>
+	<key>About 5 seconds left</key>
+	<string>Zostało około 5 sekund</string>
+	<key>About a minute left</key>
+	<string>Zostało około minuty</string>
+	<key>About an hour left</key>
+	<string>Zostało około godziny</string>
+	<key>Action</key>
+	<string>Działanie</string>
+	<key>Action (High speed)</key>
+	<string>Akcja (duża szybkość)</string>
+	<key>Add Layer</key>
+	<string>Dodaj warstwę</string>
+	<key>Add Selected Images to %@</key>
+	<string>Dodaj wybrane obrazy do %@</string>
+	<key>Add Selected Warning</key>
+	<string>Dodaj wybrane obrazy - ostrzeżenie</string>
+	<key>Address</key>
+	<string>Adres</string>
+	<key>Adjusted</key>
+	<string>Z dopasowaniami</string>
+	<key>Adjusting</key>
+	<string>Dopasowywanie</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>Wszystkie obrazy</string>
+	<key>Altitude</key>
+	<string>Wysokość n.p.m.</string>
+	<key>Amount</key>
+	<string>Zakres</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>Nie odnaleziono profilu ICC.</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>Nie odnaleziono profilu LCC.</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>Brakuje maski dopasowania dla obrazu. Brakująca maska została zastąpiona przez pustą maskę.</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>Wystąpił błąd i katalog %@ musi być zamknięty.</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>Wystąpił błąd i sesja %@ musi być zamknięta.</string>
+	<key>An error occurred during processing.</key>
+	<string>Wystąpił błąd podczas przetwarzania.</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>Wystąpił błąd podczas ładowania metadanych dla niektórych wariantów.</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>Wystąpił błąd podczas próby zastosowania warstwy</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>Wystąpił błąd podczas próby kopiowania istniejącego folderu z formułami wywoływania. Zostanie użyty domyślny folder z formułami wywoływania.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>Wystąpił błąd podczas próby kopiowania folderu z istniejącymi formułami wywoływania. Formuły wywoływania nie mogły zostać załadowane.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>Wystąpił błąd podczas próby kopiowania istniejącego folderu z formułami wywoływania. Obecna ścieżka odnosi się do pliku, a nie folderu. Zostanie użyty domyślny folder z formułami wywoływania.</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>Wystąpił błąd podczas próby pobrania pliku formuły '%@'. Formuła wywoływania nie została pobrana.</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>Wystąpił błąd podczas próby pobrania listy formuł wywoływania. W zamian zostanie użyta domyślna lista formuł.</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>Wystąpił błąd podczas próby otwarcia folderu z formułami wywolywania.</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>Wystąpił błąd podczas zapisywania Profilu ICC na dysku. %@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>Wystąpił błąd podczas zapisywania Profilu LCC na dysku. %@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>Wystąpił nieznany błąd podczas próby utworzenia znaku wodnego.</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>Podczas pracy z bazą danych katalogu wystąpił krytyczny błąd zapisu.
+
+%@
+
+Katalog zostanie zamknięty.</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>Podczas pracy z katalogiem wystąpił krytyczny błąd zapisu. Katalog zostanie zamknięty.</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>Podczas pracy z bazą danych sesji wystąpił krytyczny błąd zapisu.
+
+%@
+
+Sesja zostanie zamknięta.</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>Podczas pracy z sesją wystąpił krytyczny błąd zapisu. Sesja zostanie zamknięta.</string>
+	<key>Annotated</key>
+	<string>Z adnotacjami</string>
+	<key>Annotations</key>
+	<string>Adnotacje</string>
+	<key>Any</key>
+	<string>Gdziekolwiek</string>
+	<key>Aper.</key>
+	<string>Przys.</string>
+	<key>Aperture</key>
+	<string>Przysłona</string>
+	<key>Aperture priority</key>
+	<string>Preselekcja przysłony</string>
+	<key>Aperture-priority AE</key>
+	<string>AE - preselekcja przysłony</string>
+	<key>Apply</key>
+	<string>Zastosuj</string>
+	<key>Apply Adjustments</key>
+	<string>Zastosuj dopasowania</string>
+	<key>Apply LCC</key>
+	<string>Zastosuj LCC</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>Czy zastosować LCC do poprzedzającego zdjęcia w serii?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>Czy zastosować LCC do następującego zdjęcia w serii?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>Zastosuj do wszystkich wybranych wariantów</string>
+	<key>Applying Adjustments</key>
+	<string>Stosowanie dopasowań</string>
+	<key>Applying Adjustments to %@</key>
+	<string>Stosowanie dopasowań do %@</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>Czy na pewno chcesz zmienić rozszerzenie z „%1$@” na „%2$@”?</string>
+	<key>Auto</key>
+	<string>Auto</string>
+	<key>Auto Adjust</key>
+	<string>Dopasuj automatycznie</string>
+	<key>Auto Exposure</key>
+	<string>Automatyczna korekcja ekspozycji</string>
+	<key>Auto HDR</key>
+	<string>Automatyczny HDR</string>
+	<key>Auto Keystone</key>
+	<string>Automatyczna korekcja perspektywy</string>
+	<key>Auto Levels</key>
+	<string>Automatyczne poziomy</string>
+	<key>Auto Rotation</key>
+	<string>Automatyczny obrót</string>
+	<key>Auto White Balance</key>
+	<string>Automatyczny balans bieli</string>
+	<key>Auto bracket</key>
+	<string>Auto-bracketing</string>
+	<key>Auto, Did not fire</key>
+	<string>Auto, bez flesza</string>
+	<key>Auto, Fired</key>
+	<string>Auto, z fleszem</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>Auto, z fleszem, redukcja czerwonych oczu</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>Auto, z fleszem, redukcja czerwonych oczu, wykryte światło odbite</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>Auto, z fleszem, redukcja czerwonych oczu, niewykryte światło odbite</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>Auto, z fleszem, wykryte światło odbite</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>Auto, z fleszem, niewykryte światło odbite</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>Automatycznie pobrano %1$d z %2$d zbiorów metadanych</string>
+	<key>Average</key>
+	<string>Uśredniony</string>
+	<key>Avg.</key>
+	<string>Śred.</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>Cz.-b. niebieski</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>Cz.-b. cyjan</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>Cz.-b. ciemny z podziałem tonowania odcienia</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>Cz.-b. ciemny z podziałem tonowania nasycenia</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>Opcja cz.-b. włączona</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>Cz.-b. zielony</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>Cz.-b. jasny z podziałem tonowania odcienia</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>Cz.-b. jasny z podziałem tonowania nasycenia</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>Cz.-b. magenta</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>Cz.-b. czerwony</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>Cz.-b. żółty</string>
+	<key>Barcode</key>
+	<string>Kod kreskowy</string>
+	<key>Base Characteristics</key>
+	<string>Podstawowe parametry</string>
+	<key>Basic</key>
+	<string>Podstawowe</string>
+	<key>Black &amp; White</key>
+	<string>Czarno-biały</string>
+	<key>Black Recovery</key>
+	<string>Odzyskiwanie czerni</string>
+	<key>Blue</key>
+	<string>Niebieski</string>
+	<key>Blue Curve</key>
+	<string>Krzywa niebieskiego</string>
+	<key>Blue Gradation Curve</key>
+	<string>Krzywa gradacji koloru niebieskiego</string>
+	<key>Brack.</key>
+	<string>Brack.</string>
+	<key>Bracket</key>
+	<string>Bracketing</string>
+	<key>Bracketing</key>
+	<string>Bracketing</string>
+	<key>Bracketing: Aperture</key>
+	<string>Bracketing przysłony</string>
+	<key>Bracketing: ISO</key>
+	<string>Bracketing ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>Bracketing czasu</string>
+	<key>Brightness</key>
+	<string>Jasność</string>
+	<key>Burst</key>
+	<string>Zdjęcia seryjne</string>
+	<key>CWA</key>
+	<string>CWA</string>
+	<key>Camera Counter</key>
+	<string>Licznik aparatu</string>
+	<key>Camera Firmware</key>
+	<string>Firmware aparatu</string>
+	<key>Camera Lens</key>
+	<string>Obiektyw aparatu</string>
+	<key>Camera Make</key>
+	<string>Marka aparatu</string>
+	<key>Camera Model</key>
+	<string>Model aparatu</string>
+	<key>Camera Owner</key>
+	<string>Właściciel aparatu</string>
+	<key>Camera Profile</key>
+	<string>Profil aparatu</string>
+	<key>Camera Serial</key>
+	<string>Numer seryjny aparatu</string>
+	<key>Camera Software</key>
+	<string>Oprogramowanie aparatu</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>Wartości domyślne aparatu zawierają profil ICC, który nie może być załadowany. Oryginalny plik może być uszkodzony lub może go brakować.</string>
+	<key>Cancel</key>
+	<string>Anuluj</string>
+	<key>Cannot contain characters %@</key>
+	<string>Nie może zawierać znaków %@</string>
+	<key>Cannot save catalog</key>
+	<string>Nie można zapisać katalogu</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>Nie można zapisać katalogu w lokalizacji: %@.
+
+Plik katalogu jest w koszu. Przywróć plik do orginalnej lokalizacji.</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>Nie można zapisać katalogu w lokalizacji: %@.
+
+Plik katalogu jest tylko do odczytu. Jeśli to możliwe zmień prawa dostępu pliku.</string>
+	<key>Cannot save session</key>
+	<string>Nie można zapisać sesji</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>Nie można zapisać sesji w lokalizacji: %@.
+
+Plik sesji jest w koszu. Przywróć plik do orginalnej lokalizacji.</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>Nie można zapisać sesji w lokalizacji: %@.
+
+Plik sesji jest tylko do odczytu. Jeśli to możliwe zmień prawa dostępu pliku.</string>
+	<key>Caption</key>
+	<string>Podpis</string>
+	<key>Capture Folder</key>
+	<string>Folder przechwytywania</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>Capture One nie mógł wówczas utworzyć konkretnego znaku wodnego.</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One nie ma wystarczająco dużo pamięci, aby utworzyć wybraną nakładkę.</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>Capture One nie ma wystarczająco dużo pamięci, aby utworzyć wybrany znak wodny.</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Capture One jest chroniony patentem amerykańskim nr 8,854,482 i 8,619,146 oraz wnioskami patentowymi.</string>
+	<key>Catalog Export</key>
+	<string>Eksport katalogu</string>
+	<key>Catalog Save</key>
+	<string>Zapis katalogu</string>
+	<key>Catalog Sets Import</key>
+	<string>Import zestawów katalogowania</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>Obrazy katalogu bez podglądu nie mogą zostać wyświetlone i nie można na nich pracować, jeśli będą w trybie offline.</string>
+	<key>Category</key>
+	<string>Kategoria</string>
+	<key>Center weighted average</key>
+	<string>Centralnie ważony</string>
+	<key>Center-weighted average</key>
+	<string>Centralnie ważony</string>
+	<key>Change</key>
+	<string>Zmień</string>
+	<key>Change the LCC Profile?</key>
+	<string>Czy zmienić profil LCC?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Zmiana profilu LCC w tym wariancie może spowodować skasowanie istniejącego profilu. Ten profil LCC można utworzyć ponownie tylko przy pomocy oryginalnego zdjęcia testowego LCC lub ponownie zastosować, jeśli został zapisany jako preset.</string>
+	<key>Chroma Fringing</key>
+	<string>Barwienie krawędzi</string>
+	<key>Chromatic Aberration</key>
+	<string>Aberracja chromatyczna</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>Aberracja chromatyczna włączona</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>Pierwotna aberracja chromatyczna</string>
+	<key>City</key>
+	<string>Miasto</string>
+	<key>Clarity</key>
+	<string>Przejrzystość</string>
+	<key>Clarity Amount</key>
+	<string>Wartość przejrzystości</string>
+	<key>Clarity Method</key>
+	<string>Metoda stosowania przejrzystości</string>
+	<key>Clarity Structure</key>
+	<string>Struktura przejrzystości</string>
+	<key>Clean Single Pixel</key>
+	<string>Napraw pojedynczy piksel</string>
+	<key>Clear Mask</key>
+	<string>Wyczyść maskę</string>
+	<key>Clipboard Contents</key>
+	<string>Zawartość schowka</string>
+	<key>Clone Variant</key>
+	<string>Klonuj wariant</string>
+	<key>Close</key>
+	<string>Zamknij</string>
+	<key>Close catalog</key>
+	<string>Zamknij katalog</string>
+	<key>Close session</key>
+	<string>Zamknij sesję</string>
+	<key>Close view</key>
+	<string>Zamknij widok</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>Zamknąć mino nieprzetworzonych obrazów?</string>
+	<key>Code</key>
+	<string>Kod</string>
+	<key>Collapse Stack</key>
+	<string>Zwiń stos</string>
+	<key>Collection Choice</key>
+	<string>Wybór kolekcji</string>
+	<key>Collection Name</key>
+	<string>Nazwa kolekcji</string>
+	<key>Color</key>
+	<string>Kolor</string>
+	<key>Color Adjustments</key>
+	<string>Dopasowania koloru</string>
+	<key>Color Balance</key>
+	<string>Balans koloru</string>
+	<key>Color Balance Highlight</key>
+	<string>Balans koloru w światłach</string>
+	<key>Color Balance Midtone</key>
+	<string>Balans koloru w półtonach</string>
+	<key>Color Balance Shadow</key>
+	<string>Balans koloru w cieniach</string>
+	<key>Color Cast</key>
+	<string>Wybarwienia koloru</string>
+	<key>Color Correction limit reached</key>
+	<string>Osiągnięto limit korekcji koloru</string>
+	<key>Color Editor - Advanced</key>
+	<string>Edytor kolorów - zaawansowany</string>
+	<key>Color Editor - Basic</key>
+	<string>Edytor kolorów - podstawowy</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>Edytor kolorów - ton karnacji</string>
+	<key>Color Noise Reduction</key>
+	<string>Redukcja szumów koloru</string>
+	<key>Color Sensitivity</key>
+	<string>Przekształcanie kolorów</string>
+	<key>Color Space</key>
+	<string>Przestrzeń kolorów</string>
+	<key>Color Tag</key>
+	<string>Tag koloru</string>
+	<key>Color space</key>
+	<string>Przestrzeń kolorów</string>
+	<key>Complete</key>
+	<string>Zakończono</string>
+	<key>Composition</key>
+	<string>Kompozycja</string>
+	<key>Confirm</key>
+	<string>Potwierdź</string>
+	<key>Cont.</key>
+	<string>Ciągł.</string>
+	<key>Cont.high</key>
+	<string>Ciągł. szyb.</string>
+	<key>Cont.low</key>
+	<string>Ciągł. wol.</string>
+	<key>Contact Address</key>
+	<string>Adres kontaktowy</string>
+	<key>Contact City</key>
+	<string>Adres kontaktowy – miasto</string>
+	<key>Contact Country</key>
+	<string>Adres kontaktowy – kraj</string>
+	<key>Contact Emails</key>
+	<string>Kontakt - adresy e-mail</string>
+	<key>Contact Phones</key>
+	<string>Kontakt - numery telefonów</string>
+	<key>Contact Postal Code</key>
+	<string>Adres kontaktowy – kod</string>
+	<key>Contact State</key>
+	<string>Adres kontaktowy – stan</string>
+	<key>Contact State/Province</key>
+	<string>Adres kontaktowy – stan/prowincja</string>
+	<key>Contact Websites</key>
+	<string>Kontakt - strony www</string>
+	<key>Content Category</key>
+	<string>Kategoria zawartość</string>
+	<key>Content Description</key>
+	<string>Opis zawartości</string>
+	<key>Content Description Writer</key>
+	<string>Autor opisu zawartości</string>
+	<key>Content Headline</key>
+	<string>Nagłówek zawartości</string>
+	<key>Content Subject Code</key>
+	<string>Kod tematu zawartości</string>
+	<key>Continue</key>
+	<string>Kontynuuj</string>
+	<key>Continuous</key>
+	<string>Ciągły</string>
+	<key>Continuous High</key>
+	<string>Ciągły szybki</string>
+	<key>Continuous Low</key>
+	<string>Ciągły wolny</string>
+	<key>Continuous high</key>
+	<string>Ciągły szybki</string>
+	<key>Continuous low</key>
+	<string>Ciągły wolny</string>
+	<key>Contrast</key>
+	<string>Kontrast</string>
+	<key>Copenhagen</key>
+	<string>Kopenhaga</string>
+	<key>Copy</key>
+	<string>Kopiuj</string>
+	<key>Copy Images</key>
+	<string>Kopiowanie obrazów</string>
+	<key>Copying %d images</key>
+	<string>Kopiowanie %d obrazów</string>
+	<key>Copying %d out of %d images</key>
+	<string>Kopiowanie %1$d z %2$d obrazów</string>
+	<key>Copyright</key>
+	<string>Copyright</string>
+	<key>Copyright Notice</key>
+	<string>Informacja o prawach autorskich</string>
+	<key>Corresponding Points</key>
+	<string>Odpowiadające punkty</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>Folder Application Support jest niedostępny.</string>
+	<key>Could not activate a Catalog.</key>
+	<string>Nie można aktywować katalogu.</string>
+	<key>Could not add metadata for variant.</key>
+	<string>Nie można dodać metadanych do wariantu.</string>
+	<key>Could not apply layer</key>
+	<string>Nie można ustawić warstwy</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>Nie można skopiować %1$@ do %2$@</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>Nie można skopiować folderu z formułami wywoływania.</string>
+	<key>Could not create a new Catalog.</key>
+	<string>Nie można utworzyć nowego katalogu.</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>Nie można utworzyć ścieżki metadanych dla wariantu.</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>Nie można znaleźć profilu ICC dla formuły wywoływania.</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>Nie można znaleźć profilu ICC dla formuły wywoływania. W zamian zostanie użyta formuła „Wbudowany profil aparatu”.</string>
+	<key>Could not generate print image</key>
+	<string>Nie można wygenerować obrazu do druku</string>
+	<key>Could not generate processed image</key>
+	<string>Nie można wygenerować obrazu przetworzonego</string>
+	<key>Could not load ICC profile.</key>
+	<string>Nie można wczytać profilu ICC.</string>
+	<key>Could not load LCC profile.</key>
+	<string>Nie można wczytać profilu LCC.</string>
+	<key>Could not load a Recipe file.</key>
+	<string>Nie można wczytać pliku formuły wywoływania.</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>Nie można pobrać bazy danych sesji w %1$@: %2$@</string>
+	<key>Could not load the Recipes file.</key>
+	<string>Nie można wczytać pliku formuł wywoływania.</string>
+	<key>Could not process file.</key>
+	<string>Nie można przetworzyć pliku.</string>
+	<key>Could not process xmp file.</key>
+	<string>Nie można przetworzyć pliku XMP.</string>
+	<key>Could not read catalog data.</key>
+	<string>Nie można odczytać danych katalogu.</string>
+	<key>Could not read document data.</key>
+	<string>Nie można odczytać danych dokumentu.</string>
+	<key>Could not read session data.</key>
+	<string>Nie można odczytać danych sesji.</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>Nie można usunąć ICC ze spakowanego pliku.</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>Nie można usunąć LCC ze spakowanego pliku.</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>Nie można usunąć maski ze spakowanego pliku.</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>Nie można uzyskać informacji o spakowanym pliku. Plik może być uszkodzony</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>Nie można uzyskać informacji o spakowanym pliku. Plik może mieć nieobsługiwany format lub być uszkodzony</string>
+	<key>Could not understand file data.</key>
+	<string>Nie można zinterpretować pliku z danymi.</string>
+	<key>Could not understand file to open.</key>
+	<string>Nie można zinterpretować otwieranego pliku.</string>
+	<key>Could not write ICC profile.</key>
+	<string>Nie można zapisać profilu ICC.</string>
+	<key>Could not write LCC profile.</key>
+	<string>Nie można zapisać profilu LCC.</string>
+	<key>Couldn't read image settings</key>
+	<string>Nie można odczytać ustawień obrazu</string>
+	<key>Counter</key>
+	<string>Licznik</string>
+	<key>Country</key>
+	<string>Kraj</string>
+	<key>Creat.</key>
+	<string>Utw.</string>
+	<key>Create LCC</key>
+	<string>Utwórz LCC</string>
+	<key>Creative</key>
+	<string>Kreatywny</string>
+	<key>Creative (Slow speed)</key>
+	<string>Kreatywny (mała szybkość)</string>
+	<key>Creator</key>
+	<string>Autor</string>
+	<key>Creator's Job Title</key>
+	<string>Stanowisko autora</string>
+	<key>Creator's Title</key>
+	<string>Stanowisko autora</string>
+	<key>Crop</key>
+	<string>Kadruj</string>
+	<key>Crop Outside Image</key>
+	<string>Kadruj obraz z zewnątrz</string>
+	<key>Cropped</key>
+	<string>Wykadrowane</string>
+	<key>Cubic Grain</key>
+	<string>Ziarnistość sześcienna</string>
+	<key>Current Date</key>
+	<string>Aktualna data</string>
+	<key>Current Date (%@)</key>
+	<string>Aktualna data (%@)</string>
+	<key>Current Day of Month</key>
+	<string>Aktualny dzień miesiąca</string>
+	<key>Current Day of Month (%@)</key>
+	<string>Aktualny dzień miesiąca (%@)</string>
+	<key>Current Day of Week</key>
+	<string>Aktualny dzień tygodnia</string>
+	<key>Current Day of Week (%@)</key>
+	<string>Aktualny dzień tygodnia (%@)</string>
+	<key>Current Month</key>
+	<string>Aktualny miesiąc</string>
+	<key>Current Month (%@)</key>
+	<string>Aktualny miesiąc (%@)</string>
+	<key>Current Time</key>
+	<string>Aktualny czas</string>
+	<key>Current Time (%@)</key>
+	<string>Aktualny czas (%@)</string>
+	<key>Current Year</key>
+	<string>Aktualny rok</string>
+	<key>Current Year (%@)</key>
+	<string>Aktualny rok (%@)</string>
+	<key>Curve</key>
+	<string>Krzywa</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>Spersonalizowana korekcja aberracji chromatycznej</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>Nazwa spersonalizowanej korekcji aberracji chromatycznej</string>
+	<key>Cyan</key>
+	<string>Cyjan</string>
+	<key>DK</key>
+	<string>DK</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>Standardowa DNG</string>
+	<key>Date</key>
+	<string>Data</string>
+	<key>Date - Month in Year</key>
+	<string>Data – miesiąc roku</string>
+	<key>Date - Year</key>
+	<string>Data – rok</string>
+	<key>Date Created</key>
+	<string>Data utworzenia</string>
+	<key>Daylight</key>
+	<string>Światło dzienne</string>
+	<key>Default Chromatic Aberration</key>
+	<string>Domyślna aberracja chromatyczna</string>
+	<key>Demote Variant</key>
+	<string>Przenieś wariant niżej</string>
+	<key>Demote Variants</key>
+	<string>Przenieś warianty niżej</string>
+	<key>Denmark</key>
+	<string>Dania</string>
+	<key>Description</key>
+	<string>Opis</string>
+	<key>Description Writer</key>
+	<string>Autor opisu</string>
+	<key>Destination Folder Name</key>
+	<string>Nazwa folderu docelowego</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>Folder docelowy nie istnieje i nie może być utworzony. Nie masz wystarczających uprawnień.</string>
+	<key>Details</key>
+	<string>Szczegóły</string>
+	<key>Details Noise Reduction</key>
+	<string>Redukcja szumów szczegółów</string>
+	<key>Diffraction Correction</key>
+	<string>Korekcja dyfrakcji</string>
+	<key>Dimensions</key>
+	<string>Wymiary</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>Wyłącz tryb czarno-biały</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>Wyłącz korekcję aberracji chromatycznej</string>
+	<key>Disable Crop Outside Image</key>
+	<string>Wyłącz kadrowanie obrazu z zewnątrz</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>Wyłącz opcję Ukryj zniekształcone obszary</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>Wyłącz korekcję wybarwień LCC</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>Wyłącz usuwanie kurzu dla LCC</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>Wyłącz wyrównywanie światła dla LCC</string>
+	<key>Disable Layer</key>
+	<string>Wyłącz warstwę</string>
+	<key>Disable Optic Center</key>
+	<string>Wyłącz środek optyczny</string>
+	<key>Display Name</key>
+	<string>Wyświetl nazwę</string>
+	<key>Distant</key>
+	<string>Odległy</string>
+	<key>Distant view</key>
+	<string>Daleki widok</string>
+	<key>Distortion</key>
+	<string>Dystorsja</string>
+	<key>Distortion Amount</key>
+	<string>Korekcja dystorsji</string>
+	<key>Do Not Close</key>
+	<string>Nie zamykaj</string>
+	<key>Do Not Overwrite</key>
+	<string>Nie nadpisuj</string>
+	<key>Do Not Quit</key>
+	<string>Nie zamykaj</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>Czy chcesz dopasować automatycznie te %d wariantów?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>Czy chcesz zresetować style i presety dla tych %d wariantów?</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>Czy chcesz obrócić te %d wariantów w lewo?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>Czy chcesz obrócić te %d wariantów w prawo?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>Czy chcesz obrócić do pełnych kątów te %d wariantów?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>Czy chcesz przerwać trwające działania dla tego dokumentu?</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>Czy chcesz przerwać trwające działania?</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>Czy chcesz przerwać trwające działania dla tego dokumentu?</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>Czy chcesz przerwać trwające działanie?</string>
+	<key>Document Name</key>
+	<string>Nazwa dokumentu</string>
+	<key>Document migration failed.</key>
+	<string>Migracja dokumentu się nie udała.</string>
+	<key>Domain</key>
+	<string>Domena</string>
+	<key>Don't show this message again</key>
+	<string>Nie pokazuj ponownie tego komunikatu</string>
+	<key>Drag Variant</key>
+	<string>Przeciągnij wariant</string>
+	<key>Drag Variants</key>
+	<string>Przeciągnij warianty</string>
+	<key>Drive Mode</key>
+	<string>Tryb pracy aparatu</string>
+	<key>Drive mode/self timer</key>
+	<string>Tryb pracy/samowyzwalacz</string>
+	<key>Dust</key>
+	<string>Kurz</string>
+	<key>Dust Removal</key>
+	<string>Usuwanie kurzu</string>
+	<key>E-Mail(s)</key>
+	<string>E-mail(e)</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF – aparat</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF – ekspozycja</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF – GPS</string>
+	<key>Emails</key>
+	<string>E-maile</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>Włącz tryb czarno-biały</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>Włącz korekcję aberracji chromatycznej</string>
+	<key>Enable Crop Outside Image</key>
+	<string>Włącz kadrowanie obrazu z zewnątrz</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>Włącz opcję Ukryj zniekształcone obszary</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>Włącz korekcję wybarwień LCC</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>Włącz usuwanie kurzu dla LCC</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>Włącz wyrównywanie światła dla LCC</string>
+	<key>Enable Layer</key>
+	<string>Włącz warstwę</string>
+	<key>Enable Optic Center</key>
+	<string>Włącz środek optyczny</string>
+	<key>Enabled</key>
+	<string>Włączone</string>
+	<key>Error loading adjustment mask.</key>
+	<string>Błąd wczytywania maski dopasowania.</string>
+	<key>Error packing an image.</key>
+	<string>Błąd pakowania pliku.</string>
+	<key>Estimating time remaining…</key>
+	<string>Szacowanie pozostałego czasu...</string>
+	<key>Event</key>
+	<string>Zdarzenie</string>
+	<key>Expand Stack</key>
+	<string>Rozwiń stos</string>
+	<key>Export</key>
+	<string>Eksport</string>
+	<key>Export %d Originals</key>
+	<string>Eksportuj %d oryginałów</string>
+	<key>Export 1 Original</key>
+	<string>Eksportuj 1 oryginał</string>
+	<key>Export Anyway</key>
+	<string>Eksportuj mimo to</string>
+	<key>Export Date</key>
+	<string>Data eksportu</string>
+	<key>Export Date (%@)</key>
+	<string>Data eksportu (%@)</string>
+	<key>Export to Catalog</key>
+	<string>Eksportuj do katalogu</string>
+	<key>Exposure</key>
+	<string>Ekspozycja</string>
+	<key>Exposure Compensation</key>
+	<string>Kompensacja ekspozycji</string>
+	<key>Exposure Mode</key>
+	<string>Tryb ekspozycji</string>
+	<key>Exposure Program</key>
+	<string>Program automatyki ekspozycji</string>
+	<key>Exposure White Balance</key>
+	<string>Balans bieli ekspozycji</string>
+	<key>Exposure compensation</key>
+	<string>Kompensacja ekspozycji</string>
+	<key>Exposure mode</key>
+	<string>Tryb ekspozycji</string>
+	<key>Exposure program</key>
+	<string>Program automatyki ekspozycji</string>
+	<key>Extension</key>
+	<string>Rozszerzenie</string>
+	<key>Failed to create %@ database.</key>
+	<string>Tworzenie bazy danych %@ zakończone niepowodzeniem.</string>
+	<key>Fashion</key>
+	<string>Moda</string>
+	<key>File</key>
+	<string>Plik</string>
+	<key>File Size</key>
+	<string>Rozmiar pliku</string>
+	<key>File conversion warning</key>
+	<string>Ostrzeżenie o konwersji pliku</string>
+	<key>File name</key>
+	<string>Nazwa pliku</string>
+	<key>File size</key>
+	<string>Rozmiar pliku</string>
+	<key>File type version not supported.</key>
+	<string>Nieobsługiwana wersja typu pliku.</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>Ta wersja programu Capture One nie obsługuje tej wersji pliku</string>
+	<key>Files will be moved to a new location.</key>
+	<string>Pliki zostaną przeniesione do nowej lokalizacji.</string>
+	<key>Fill Mask</key>
+	<string>Wypełnij maskę</string>
+	<key>Film Curve</key>
+	<string>Krzywa filmu</string>
+	<key>Film Extra Shadow</key>
+	<string>Filmu z pogłębionymi cieniami</string>
+	<key>Film Grain Amount</key>
+	<string>Siła ziarna filmu</string>
+	<key>Film Grain Density</key>
+	<string>Gęstość ziarna filmu</string>
+	<key>Film Grain Granularity</key>
+	<string>Poziom ziarnistości filmu</string>
+	<key>Film Grain Type</key>
+	<string>Typ ziarna filmu</string>
+	<key>Film High Contrast</key>
+	<string>Filmu z dużym kontrastem</string>
+	<key>Film Standard</key>
+	<string>Filmu standardowa</string>
+	<key>Fine Grain</key>
+	<string>Ziarnistość drobna</string>
+	<key>Fired</key>
+	<string>Z fleszem</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>Z fleszem, redukcja czerwonych oczu</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>Z fleszem, redukcja czerwonych oczu, wykryto światło odbite</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>Z fleszem, redukcja czerwonych oczu, nie wykryto światła odbitego</string>
+	<key>Fired, Return detected</key>
+	<string>Z fleszem, wykryto światło odbite</string>
+	<key>Fired, Return not detected</key>
+	<string>Z fleszem, niewykryte światło odbite</string>
+	<key>Fired, auto</key>
+	<string>Z fleszem, auto</string>
+	<key>Fired, auto, no return light</key>
+	<string>Z fleszem, auto, bez światła odbitego</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>Z fleszem, auto, bez światła odbitego, czerwone oczy</string>
+	<key>Fired, auto, red-eye</key>
+	<string>Z fleszem, auto, czerwone oczy</string>
+	<key>Fired, auto, return light</key>
+	<string>Z fleszem, auto, ze światłem odbitym</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>Z fleszem, auto, ze światłem odbitym, czerwone oczy</string>
+	<key>Fired, compulsory</key>
+	<string>Z fleszem, obowiązkowy</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>Z fleszem,obowiązkowy, bez światła odbitego</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>Z fleszem, obowiązkowy, bez światła odbitego, czerwone oczy</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>Z fleszem, obowiązkowy, ze światłem odbitym, czerwone oczy</string>
+	<key>Fired, compulsory, return light</key>
+	<string>Z fleszem, obowiązkowy, ze światłem odbitym</string>
+	<key>Fired, red-eye</key>
+	<string>Z fleszem, czerwone oczy</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>Z fleszem, czerwone oczy, bez światła odbitego</string>
+	<key>Fired, red-eye, return light</key>
+	<string>Z fleszem, czerwone oczy, ze światłem odbitym</string>
+	<key>Firmware</key>
+	<string>Firmware</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>Stała</string>
+	<key>Flash Compensation</key>
+	<string>Kompensacja błysku</string>
+	<key>Flash Mode</key>
+	<string>Tryb z lampą</string>
+	<key>Flash compensation</key>
+	<string>Kompensacja błysku</string>
+	<key>Flash did not fire</key>
+	<string>Bez flesza</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>Bez flesza, auto</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>Bez flesza, wymuszony tryb z fleszem</string>
+	<key>Flash fired</key>
+	<string>Z fleszem,</string>
+	<key>Flash fired, auto mode</key>
+	<string>Z fleszem, tryb automatyczny</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>Z fleszem, tryb automatyczny, tryb redukcji czerwonych oczu</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>Z fleszem, tryb automatyczny, wykryte światło odbite</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>Z fleszem, tryb automatyczny, wykryte światło odbite, redukcja czerwonych oczu</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>Z fleszem, tryb automatyczny, niewykryte światło odbite</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>Z fleszem, tryb automatyczny, niewykryte światło odbite, redukcja czerwonych oczu</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>Z fleszem, wymuszony tryb z fleszem</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>Z fleszem, wymuszony tryb z fleszem, redukcja czerwonych oczu</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>Z fleszem, wymuszony tryb z fleszem, redukcja czerwonych oczu, wykryto światło odbite</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>Z fleszem, wymuszony tryb z fleszem, redukcja czerwonych oczu, niewykryte światło odbite</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>Z fleszem, wymuszony tryb z fleszem, wykryto światło odbite</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>Z fleszem, wymuszony tryb z fleszem, niewykryte światło odbite</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>Z fleszem, tryb redukcji czerwonych oczu</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>Z fleszem, tryb redukcji czerwonych oczu, wykryto światło odbite</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>Z fleszem, tryb redukcji czerwonych oczu, niewykryte światło odbite</string>
+	<key>Flash mode</key>
+	<string>Tryb z fleszem</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>Wyłączona, bez flesza, niewykryte światło odbite</string>
+	<key>Flash off, no flash function</key>
+	<string>Flesz wyłączony, tryb bez flesza</string>
+	<key>Flash on, did not fire</key>
+	<string>Włączona, bez flesza</string>
+	<key>Flip</key>
+	<string>Odbij</string>
+	<key>Focal Length</key>
+	<string>Ogniskowa</string>
+	<key>Focal length</key>
+	<string>Ogniskowa</string>
+	<key>Focus Stacking</key>
+	<string>Focus Stacking</string>
+	<key>Format</key>
+	<string>Format</string>
+	<key>Fringing</key>
+	<string>Barwienie krawędzi</string>
+	<key>Generated %d out of %d previews</key>
+	<string>Wygenerowano %1$d z %2$d podglądów</string>
+	<key>Generating %d previews</key>
+	<string>Generuję %d podglądów</string>
+	<key>Generating previews</key>
+	<string>Generuję podglądy</string>
+	<key>Genre</key>
+	<string>Gatunek</string>
+	<key>Geotagged</key>
+	<string>Oznaczony geotagami</string>
+	<key>Getting Folders for %d images</key>
+	<string>Pobieram foldery dla %d obrazów.</string>
+	<key>Getty Images</key>
+	<string>Getty Images</string>
+	<key>Getty Images Original Filename</key>
+	<string>Oryginalna nazwa pliku Getty Images</string>
+	<key>Getty Images Parent MEID</key>
+	<string>Nadrzędny MEID Getty Images</string>
+	<key>Getty Images Personality</key>
+	<string>Osobowość Getty Images</string>
+	<key>Gradation Curve</key>
+	<string>Krzywa gradacji</string>
+	<key>Grain</key>
+	<string>Ziarno</string>
+	<key>Grain Amount</key>
+	<string>Ilość ziarna</string>
+	<key>Grain Density </key>
+	<string>Gęstość ziarna</string>
+	<key>Grain Granularity</key>
+	<string>Gęstość ziarna</string>
+	<key>Grain Type</key>
+	<string>Typ ziarna</string>
+	<key>Green</key>
+	<string>Zielony</string>
+	<key>Green Curve</key>
+	<string>Krzywa zielonego</string>
+	<key>Green Gradation Curve</key>
+	<string>Krzywa gradacji koloru zielonego</string>
+	<key>HDR</key>
+	<string>HDR</string>
+	<key>HH</key>
+	<string>GG</string>
+	<key>HH-mm</key>
+	<string>GG-mm</string>
+	<key>HH-mm-ss</key>
+	<string>GG-mm-ss</string>
+	<key>Halo Control</key>
+	<string>Kontrola halo</string>
+	<key>Harsh Grain</key>
+	<string>Twarde ziarno</string>
+	<key>Headline</key>
+	<string>Nagłówek</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>Warstwy korygowania i klonowania nie mogą być kopiowane między wariantami o różnych wymiarach.</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>Warstwy korygowania i klonowania wymagają nowszej wersji silnika. Silnik może być zaktualizowany przy użyciu narzędzia Podstawowe Parametry.</string>
+	<key>Height</key>
+	<string>Wysokość</string>
+	<key>Hide Distorted Areas</key>
+	<string>Ukryj zniekształcone obszary</string>
+	<key>Highlight Recovery</key>
+	<string>Odzyskiwanie świateł</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>Korekcja zbieżności poziomej</string>
+	<key>Hyperfocal</key>
+	<string>Hiperfokalna</string>
+	<key>ICC Profile</key>
+	<string>Profil ICC</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>Nazwa lub ścieżka profilu ICC [%@] jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC – kontakt</string>
+	<key>IPTC - Content</key>
+	<string>IPTC – zawartość</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC – Getty Images</string>
+	<key>IPTC - Image</key>
+	<string>IPTC – obraz</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC – słowa kluczowe</string>
+	<key>IPTC - Status</key>
+	<string>IPTC – Status</string>
+	<key>IPTC Scene</key>
+	<string>Scena IPTC</string>
+	<key>IPTC scene</key>
+	<string>Scena IPTC</string>
+	<key>IPTC subject code</key>
+	<string>Kod tematu IPTC</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>ISO</string>
+	<key>ISO Country Code</key>
+	<string>Kod krajowy ISO</string>
+	<key>ISO speed rating</key>
+	<string>Wskaźnik czułości ISO</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>Jeśli dokument utworzono w wersji Capture One dla systemu Windows, otwórz w programie Capture One w wersji 7 lub nowszej dla Windows. Następnie spróbuj ponownie otworzyć dokument programem Capture One dla Mac OS.</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>Jeśli wprowadzisz tę zmianę, dokument może nie otworzyć się w programie Capture One</string>
+	<key>Image City</key>
+	<string>Lokalizacja obrazu - miasto</string>
+	<key>Image Country</key>
+	<string>Lokalizacja obrazu - kraj</string>
+	<key>Image Date</key>
+	<string>Data wykonania obrazu</string>
+	<key>Image Date (%@)</key>
+	<string>Data wykonania obrazu (%@)</string>
+	<key>Image Day of Month</key>
+	<string>Dzień miesiąca wykonania obrazu</string>
+	<key>Image Day of Month (%@)</key>
+	<string>Dzień miesiąca wykonania obrazu (%@)</string>
+	<key>Image Day of Week</key>
+	<string>Dzień tygodnia wykonania obrazu</string>
+	<key>Image Day of Week (%@)</key>
+	<string>Dzień tygodnia wykonania obrazu (%@)</string>
+	<key>Image Folder</key>
+	<string>Folder obrazu</string>
+	<key>Image Folder Name</key>
+	<string>Nazwa folderu obrazu</string>
+	<key>Image Location</key>
+	<string>Lokalizacja obrazu</string>
+	<key>Image Month</key>
+	<string>Miesiąc wykonania obrazu</string>
+	<key>Image Month (%@)</key>
+	<string>Miesiąc wykonania obrazu (%@)</string>
+	<key>Image Name</key>
+	<string>Nazwa obrazu</string>
+	<key>Image State</key>
+	<string>Lokalizacja obrazu - stan</string>
+	<key>Image Time</key>
+	<string>Czas wykonania obrazu</string>
+	<key>Image Time (%@)</key>
+	<string>Czas wykonania obrazu (%@)</string>
+	<key>Image Year</key>
+	<string>Rok wykonania obrazu</string>
+	<key>Image Year (%@)</key>
+	<string>Rok wykonania obrazu (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Ścieżka obrazu nie istnieje lub jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>Import Date</key>
+	<string>Data importu</string>
+	<key>Import Date (%@)</key>
+	<string>Data importu (%@)</string>
+	<key>In Catalog</key>
+	<string>W katalogu</string>
+	<key>Instructions</key>
+	<string>Instrukcje</string>
+	<key>Int.</key>
+	<string>Int.</string>
+	<key>Intellectual Genre</key>
+	<string>Gatunek intelektualny</string>
+	<key>Intellectual genre</key>
+	<string>Gatunek intelektualny</string>
+	<key>Interval</key>
+	<string>Odstęp</string>
+	<key>Invalid</key>
+	<string>Nieprawidłowy</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>Nieprawidłowa jakość JPEG (mniej niż 0 lub więcej niż 100).</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>Niewłaściwy typ kompresji TIFF (dopuszczalne: LZW, Zip lub bez kompresji).</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>Nieprawidłowa liczba bitów w próbce (powinno być 8 lub 16).</string>
+	<key>Invalid file format</key>
+	<string>Nieprawidłowy format pliku</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>Nieprawidłowa rozdzielczość (powinna wynosić więcej niż 10 i mniej niż 10000).</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>Nieprawidłowa skala (powinna wynosić więcej niż 0 i mniej niż 5).</string>
+	<key>Invalid selection!</key>
+	<string>Nieprawidłowy wybór!</string>
+	<key>Invalid token name '%@'</key>
+	<string>Nieprawidłowa nazwa tokena '%@'</string>
+	<key>Invert Mask</key>
+	<string>Odwróć maskę</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 2048px do użytku w sieci</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG - pełen rozmiar, najwyższa jakość</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - zoptymalizowany dla Instagrama</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (rozmiar podglądowy)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG, dłuższa krawędź: 1280 pikseli (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>JPEG jakość %d</string>
+	<key>JPEG file</key>
+	<string>Plik JPEG</string>
+	<key>Job Identifier</key>
+	<string>Identyfikator zadania</string>
+	<key>Job Name</key>
+	<string>Nazwa zadania</string>
+	<key>Keep Capture One Values</key>
+	<string>Zachowaj wartości Capture One</string>
+	<key>Keystone Amount</key>
+	<string>Zakres korekcji zbieżności</string>
+	<key>Keystone Aspect</key>
+	<string>Proporcje korekcji zbieżności</string>
+	<key>Keystone Focal Length</key>
+	<string>Ogniskowa korekcji zbieżności</string>
+	<key>Keystone Points</key>
+	<string>Punkty korekcji zbieżności</string>
+	<key>Keywords</key>
+	<string>Słowa kluczowe</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>Ścieżka pliku LCC [%@] jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>Nie udało się wygenerować profilu LCC, ponieważ obraz był jeszcze wczytywany. Spróbuj ponownie.</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>LCC są ułożone w niezdefiniowany sposób. Proszę sprawdzić, czy LCC są umiejscowione przed LUB po wariantach.</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>Etykieta</string>
+	<key>Land.</key>
+	<string>Poziom</string>
+	<key>Landscape</key>
+	<string>Orientacja pozioma</string>
+	<key>Latitude</key>
+	<string>Szerokość geograficzna</string>
+	<key>Layer Selection Point</key>
+	<string>Punkt wyboru warstwy</string>
+	<key>Layers</key>
+	<string>Warstwy</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>Warstwy nie mogą być zastosowane dla wariantu, z którego zostały skopiowane.</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>Warstwy nie będą zastosowane dla %@</string>
+	<key>Lens</key>
+	<string>Obiektyw</string>
+	<key>Lens Correction</key>
+	<string>Korekcja obiektywu</string>
+	<key>Lens Effects</key>
+	<string>Efekty obiektywu</string>
+	<key>Lens Profile</key>
+	<string>Profil obiektywu</string>
+	<key>Lens Purple Fringing</key>
+	<string>Fioletowe barwienie krawędzi przez obiektyw</string>
+	<key>Lens Revision</key>
+	<string>Weryfikacja obiektywu</string>
+	<key>Lens Selection</key>
+	<string>Wybór obiektywu</string>
+	<key>Less than a minute left</key>
+	<string>Zostało mniej niż jedna minuta</string>
+	<key>Levels</key>
+	<string>Poziomy</string>
+	<key>Levels &amp; Curve</key>
+	<string>Poziomy i krzywa</string>
+	<key>Levels Highlight</key>
+	<string>Poziomy światłeł</string>
+	<key>Levels Midtone</key>
+	<string>Poziomy półtonów</string>
+	<key>Levels Shadow</key>
+	<string>Poziomy cieni</string>
+	<key>Levels Target Highlight</key>
+	<string>Docelowy poziom świateł</string>
+	<key>Levels Target Shadow</key>
+	<string>Docelowy poziom cieni</string>
+	<key>Light Falloff</key>
+	<string>Spadek jasności</string>
+	<key>Light Falloff Amount</key>
+	<string>Wartość spadku jasności</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>Liniowa</string>
+	<key>Load error</key>
+	<string>Błąd pobierania</string>
+	<key>Locate File</key>
+	<string>Zlokalizuj plik</string>
+	<key>Location</key>
+	<string>Lokalizacja</string>
+	<key>Long Edge</key>
+	<string>Dłuższa krawędź</string>
+	<key>Longitude</key>
+	<string>Długość geograficzna</string>
+	<key>Luma Curve</key>
+	<string>Krzywa lumy</string>
+	<key>Luma Gradation Curve</key>
+	<string>Krzywa gradacji lumy</string>
+	<key>Luminance Noise Reduction</key>
+	<string>Redukcja szumów luminancji</string>
+	<key>M</key>
+	<string>M</string>
+	<key>M.spot</key>
+	<string>Wielopunkt.</string>
+	<key>MM</key>
+	<string>MM</string>
+	<key>MMM</key>
+	<string>MMM</string>
+	<key>MMM dd yyyy</key>
+	<string>MMM dd rrrr</string>
+	<key>MMMM</key>
+	<string>MMMM</string>
+	<key>MMMMM</key>
+	<string>MMMMM</string>
+	<key>Macro</key>
+	<string>Makro</string>
+	<key>Magenta</key>
+	<string>Magenta</string>
+	<key>Make</key>
+	<string>Producent</string>
+	<key>Man.</key>
+	<string>Ręcz.</string>
+	<key>Manual</key>
+	<string>Tryb manualny</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>Ścieżka pliku maski jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>Maksymalna liczba warstw przekroczona</string>
+	<key>Metadata</key>
+	<string>Metadane</string>
+	<key>Metadata Import</key>
+	<string>Import metadanych</string>
+	<key>Metadata Synchronization</key>
+	<string>Synchronizacja metadanych</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>Ostrzeżenie o synchronizacji metadanych</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>Wykryto konflikty metadanych w wariancie obrazu '%@'. Czy chcesz zastąpić wartości metadanych ustawione w programie Capture One ponownie pobranymi metadanymi, czy też zachować wartości określone przez program Capture One?</string>
+	<key>Metering Mode</key>
+	<string>Tryb pomiaru</string>
+	<key>Metering mode</key>
+	<string>Tryb pomiaru</string>
+	<key>Method not implemented.</key>
+	<string>Metoda nie może być zrealizowana.</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Migracja dokumentu Capture One nie powiodła się.</string>
+	<key>Minimum Viewing Distance</key>
+	<string>Minimalna odległość oglądania</string>
+	<key>Mir.up</key>
+	<string>Mir. up</string>
+	<key>Mirror Up</key>
+	<string>Unoszenie lustra</string>
+	<key>Mirror up</key>
+	<string>Unoszenie lustra</string>
+	<key>Missing ICC Profile.</key>
+	<string>Brakuje profilu ICC.</string>
+	<key>Missing LCC Profile.</key>
+	<string>Brakuje profilu LCC.</string>
+	<key>Missing Preview</key>
+	<string>Brak podglądu</string>
+	<key>Mode</key>
+	<string>Tryb</string>
+	<key>Model</key>
+	<string>Model</string>
+	<key>Moire</key>
+	<string>Mora</string>
+	<key>Moire Amount</key>
+	<string>Zakres mory</string>
+	<key>Moire Pattern</key>
+	<string>Wzór mory</string>
+	<key>Moire Radius</key>
+	<string>Promień mory</string>
+	<key>Move Files</key>
+	<string>Przenieś pliki</string>
+	<key>Move Image</key>
+	<string>Przenieś obraz</string>
+	<key>Move Images</key>
+	<string>Przenieś obrazy</string>
+	<key>Moving %d images</key>
+	<string>Przenoszenie %d obrazów</string>
+	<key>Moving %d out of %d images</key>
+	<string>Przenoszenie %1$d z %2$d obrazów</string>
+	<key>Multi spot</key>
+	<string>Wielopunktowy</string>
+	<key>Multi-spot</key>
+	<string>Wielopunktowy</string>
+	<key>NO</key>
+	<string>NIE</string>
+	<key>NY</key>
+	<string>NY</string>
+	<key>Name</key>
+	<string>Nazwa</string>
+	<key>Nature</key>
+	<string>Natura</string>
+	<key>New LCC Profile</key>
+	<string>Nowy profil LCC</string>
+	<key>New Session</key>
+	<string>Nowa sesja</string>
+	<key>New Variant</key>
+	<string>Nowy wariant</string>
+	<key>No</key>
+	<string>Nie</string>
+	<key>No Flash</key>
+	<string>Bez flesza</string>
+	<key>No LCC to apply</key>
+	<string>Nie ma żadnego LCC do zastosowania</string>
+	<key>No collection has been selected</key>
+	<string>Nie wybrano kolekcji</string>
+	<key>No flash function</key>
+	<string>Tryb bez flesza</string>
+	<key>No function</key>
+	<string>Brak funkcji</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>Dozwolone jest nie więcej niż %@ korekcji koloru</string>
+	<key>No strobe return light</key>
+	<string>Brak światła odbitego lampy</string>
+	<key>No variants to apply LCC</key>
+	<string>Brak wariantów do zastosowania LCC</string>
+	<key>None</key>
+	<string>Brak</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>Żadnego z %d wybranych wariantów nie można dopasować automatycznie</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>Żadnego z %d wybranych wariantów nie można obrócić w lewo</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>Żadnego z %d wybranych wariantów nie można obrócić w prawo</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>Żadnego z %d wybranych wariantów nie można obrócić do pełnych kątów</string>
+	<key>Norm.</key>
+	<string>Norm.</string>
+	<key>Normal</key>
+	<string>Normalny</string>
+	<key>Not Defined</key>
+	<string>Niezdefiniowany</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>Brak wystarczającego miejsca na dysku do przetworzenia pliku. Kolejka przetwarzania została wstrzymana.</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>Brak wystarczającej ilości miejsca na docelowym woluminie.</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>Brak wystarczającej ilości pamięci do przypisania nakładki.</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>Brak wystarczającej ilości pamięci do przypisania graficznego znaku wodnego.</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>Brak wystarczającej ilości pamięci do przypisania tekstowego znaku wodnego.</string>
+	<key>Not fired</key>
+	<string>Bez flesza</string>
+	<key>Not fired, auto</key>
+	<string>Bez flesza, auto</string>
+	<key>Not fired, compulsory</key>
+	<string>Bez flesza, obowiązkowy</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Off</key>
+	<string>Wyłączona</string>
+	<key>Off, Did not fire</key>
+	<string>Wyłączona, bez flesza</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>Wyłączona, bez flesza, niewykryte światło odbite</string>
+	<key>Off, No flash function</key>
+	<string>Wyłączona, bez flesza</string>
+	<key>Offline images will be skipped</key>
+	<string>Zdjęcia w trybie offline będą pominięte</string>
+	<key>On, Did not fire</key>
+	<string>Włączona, bez flesza</string>
+	<key>On, Fired</key>
+	<string>Włączona, z fleszem</string>
+	<key>On, Red-eye reduction</key>
+	<string>Włączona, redukcja czerwonych oczu</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>Włączona, redukcja czerwonych oczu, wykryto światło odbite</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>Włączona, redukcja czerwonych oczu, nie wykryto światła odbitego</string>
+	<key>On, Return detected</key>
+	<string>Włączona, wykryto światło odbite</string>
+	<key>On, Return not detected</key>
+	<string>Włączona, niewykryte światło odbite</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Dla jednego z tych wariantów zastosowano już profil LCC. Zmiana profilu LCC w tym wariancie może spowodować skasowanie istniejącego profilu. Profil LCC można utworzyć ponownie tylko za pomocą oryginalnego zdjęcia testowego LCC lub ponownie zastosować, jeśli został zapisany jako preset.</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>Jeden lub więcej plików nie zostanie spakowanych, ponieważ są to pliki, których nie można spakować lub zostały już przekonwertowane. Pakowanie %1$i z %2$i wybranych plików.</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>Jeden lub więcej plików nie zostanie rozpakowanych, ponieważ nie są to pliki spakowane lub zostały już przekonwertowane. Rozpakowywanie %1$i z %2$i wybranych plików.</string>
+	<key>One shot</key>
+	<string>Jedno zdjęcie</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>Tylko %1$d z %2$d wybranych wariantów można dopasować automatycznie</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>Tylko %1$d z %2$d wybranych wariantów można obrócić</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>Tylko %1$d z %2$d wybranych wariantów można obrócić w prawo</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>Tylko %1$d z %2$d wybranych wariantów można obrócić do pełnych kątów</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>Tylko warianty edytowalne można dopasować automatycznie. Proszę wybrać warianty, które można edytować</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>Tylko warianty edytowalne można obracać w lewo. Proszę wybrać warianty, które można edytować</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>Tylko warianty edytowalne można obracać w prawo. Proszę wybrać warianty, które można edytować</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>Tylko warianty edytowalne można obrócić do pełnych kątów. Proszę wybrać warianty, które można edytować</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>Tylko najwyższe warianty zostaną dodane do %@.</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>Tylko najwyższe warianty zostaną zsynchronizowane.</string>
+	<key>Opacity</key>
+	<string>Krycie</string>
+	<key>Open failed</key>
+	<string>Nie udało się otworzyć</string>
+	<key>Optic Center</key>
+	<string>Środek optyczny</string>
+	<key>Optic Center Enabled</key>
+	<string>Włączony środek optyczny</string>
+	<key>Orange</key>
+	<string>Pomarańczowy</string>
+	<key>Orientation</key>
+	<string>Orientacja</string>
+	<key>Original</key>
+	<string>Oryginał</string>
+	<key>Original Filename</key>
+	<string>Oryginalna nazwa pliku</string>
+	<key>Output</key>
+	<string>Wynik</string>
+	<key>Output Folder</key>
+	<string>Folder wyjściowy</string>
+	<key>Overwrite</key>
+	<string>Nadpisz</string>
+	<key>Owner</key>
+	<string>Właściciel</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>Plik PNG</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-bit)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>Nazwa spakowanego pliku jest zbyt długa (maksymalnie 260 bajtów)</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Ścieżka spakowanego pliku nie istnieje lub jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>Spakowano %1$d z %2$d obrazów jako EIP</string>
+	<key>Packing %d images as EIP</key>
+	<string>Pakowanie %d obrazów jako EIP</string>
+	<key>Parent MEID</key>
+	<string>Nadrzędny MEID</string>
+	<key>Part.</key>
+	<string>Cz.</string>
+	<key>Partial</key>
+	<string>Częściowo</string>
+	<key>Patt.</key>
+	<string>Wzór</string>
+	<key>Pattern</key>
+	<string>Wzór</string>
+	<key>People</key>
+	<string>Osoby</string>
+	<key>Personality</key>
+	<string>Osobowość</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>Numery telefonu</string>
+	<key>Phone(s)</key>
+	<string>Telefon (y)</string>
+	<key>Phones</key>
+	<string>Telefony</string>
+	<key>Pick Variant</key>
+	<string>Ustaw wariant jako najwyższy</string>
+	<key>Pink</key>
+	<string>Różowy</string>
+	<key>Pixels</key>
+	<string>Piksele</string>
+	<key>Place</key>
+	<string>Lokalizacja</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>Czy umieścić obrazy w albumach pasujących do określonych zestawów katalogowania?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>W celu poznania szczegółów proszę odnieść się do dokumentacji dotyczącej odczytów L*a*b*.</string>
+	<key>Please select a collection in the library tool</key>
+	<string>Wybierz kolekcję w narzędziu Biblioteka.</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>Proszę ustawić folder Wybrane jako prawidłowy folder do zapisu.</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>Proszę zwolnić miejsce w woluminie docelowym.</string>
+	<key>Port.</key>
+	<string>Portr.</string>
+	<key>Portrait</key>
+	<string>Orientacja pionowa</string>
+	<key>Postal Code</key>
+	<string>Kod pocztowy</string>
+	<key>Postal code</key>
+	<string>Kod pocztowy</string>
+	<key>Preparing Catalog Import…</key>
+	<string>Przygotowywanie importu katalogu...</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>Podglądy są tworzone dla obrazów w katalogu. Czy chcesz przerwać tworzenie podglądów?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>Poprzedni element przemianowany poprzez dodanie rozszerzenia .error</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>Poprzedni element przemianowany poprzez dodanie ".invalid".</string>
+	<key>Previous will be overwritten</key>
+	<string>Poprzedni zostanie nadpisany</string>
+	<key>Processing Method</key>
+	<string>Metoda przetwarzania</string>
+	<key>Profile</key>
+	<string>Profil</string>
+	<key>Profile could not be written.</key>
+	<string>Nie można zapisać profilu.</string>
+	<key>Program</key>
+	<string>Program</string>
+	<key>Program AE</key>
+	<string>AE - program</string>
+	<key>Promote Variant</key>
+	<string>Przenieś wariant wyżej</string>
+	<key>Promote Variants</key>
+	<string>Przenieś warianty wyżej</string>
+	<key>Provider</key>
+	<string>Dostawca</string>
+	<key>Proxy Creation Failed</key>
+	<string>Stworzenie Proxy nie powiodło się</string>
+	<key>Public</key>
+	<string>Publiczny</string>
+	<key>Purple</key>
+	<string>Fioletowy</string>
+	<key>Quit Capture One</key>
+	<string>Zamknij program Capture One</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>Plik RAW</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>Krzywa RGB</string>
+	<key>Radius</key>
+	<string>Promień</string>
+	<key>Rasterize Mask</key>
+	<string>Rasteryzuj maskę</string>
+	<key>Rating</key>
+	<string>Ocena</string>
+	<key>Reason</key>
+	<string>Powód</string>
+	<key>Recent Captures</key>
+	<string>Ostatnie przechwytywania</string>
+	<key>Recent Imports</key>
+	<string>Ostatnie importy</string>
+	<key>Recipe</key>
+	<string>Formuła</string>
+	<key>Recipe Format</key>
+	<string>Format formuły</string>
+	<key>Recipe Name</key>
+	<string>Nazwa formuły</string>
+	<key>Recovery</key>
+	<string>Odzyskiwanie</string>
+	<key>Red</key>
+	<string>Czerwony</string>
+	<key>Red Curve</key>
+	<string>Krzywa czerwonego</string>
+	<key>Red Gradation Curve</key>
+	<string>Krzywa gradacji koloru czerwonego</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>Aby zobaczyć listę uszkodzonych obrazów, odnieś się do sekcji Pliki.</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>Pobrano ponownie %1$d z %2$d zbiorów metadanych</string>
+	<key>Remove Layer</key>
+	<string>Usuń warstwę</string>
+	<key>Rename Image</key>
+	<string>Zmień nazwę obrazu</string>
+	<key>Rename Layer</key>
+	<string>Zmień nazwę warstwy</string>
+	<key>Reorder Layer</key>
+	<string>Zmień kolejność warstw</string>
+	<key>Replace</key>
+	<string>Zamień</string>
+	<key>Reset Adjustments</key>
+	<string>Zresetuj dopasowania</string>
+	<key>Reset Styles and Preset</key>
+	<string>Resetowanie styli i presetu</string>
+	<key>Reset Styles and Presets</key>
+	<string>Resetowanie styli i presetów</string>
+	<key>Resetting</key>
+	<string>Resetowanie</string>
+	<key>Rights Usage Terms</key>
+	<string>Warunki użytkowania</string>
+	<key>Rights usage terms</key>
+	<string>Warunki korzystania z praw</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>Obróć w lewo</string>
+	<key>Rotate Right</key>
+	<string>Obróć w prawo</string>
+	<key>Rotate Snap</key>
+	<string>Wyrównaj do pionu/poziomu</string>
+	<key>Rotating</key>
+	<string>Obracanie</string>
+	<key>Rotation</key>
+	<string>Obrót</string>
+	<key>Running a background activity</key>
+	<string>Wykonywanie działania w tle</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>Nasycenie</string>
+	<key>Saving Document</key>
+	<string>Zapisywanie dokumentu</string>
+	<key>Saving Document step %d of %d</key>
+	<string>Zapisz %1$d z %2$d etapów dokumentu</string>
+	<key>Scene</key>
+	<string>Scena</string>
+	<key>Select Layer</key>
+	<string>Wybierz warstwę</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>Wybrane pliki filmowe nie zostaną zsynchronizowane.</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>Wybrane warianty muszą zawierać co najmniej jedno zdjęcie LCC</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>Wybrane warianty muszą zawierać co najmniej jedno zdjęcie inne niż LCC.</string>
+	<key>Selection</key>
+	<string>Wybór</string>
+	<key>Selects Folder</key>
+	<string>Folder Wybrane</string>
+	<key>Self Timer</key>
+	<string>Samowyzwalacz</string>
+	<key>Self timer</key>
+	<string>Samowyzwalacz</string>
+	<key>Sequence Count</key>
+	<string>Numer w sekwencji</string>
+	<key>Sequence ID</key>
+	<string>ID sekwencji</string>
+	<key>Sequence Info</key>
+	<string>Informacje sekwencji</string>
+	<key>Sequence Total</key>
+	<string>Suma obrazów w sekwencji</string>
+	<key>Sequence Type</key>
+	<string>Typ sekwencji</string>
+	<key>Serial</key>
+	<string>Seryjny</string>
+	<key>Servo</key>
+	<string>Serwo</string>
+	<key>Session Save</key>
+	<string>Zapis sesji</string>
+	<key>Session Sub Path</key>
+	<string>Podścieżka sesji</string>
+	<key>Session Sub Path (Long)</key>
+	<string>Podścieżka sesji (długa)</string>
+	<key>Session data migration</key>
+	<string>Migracja danych sesji</string>
+	<key>Session load</key>
+	<string>Pobieranie sesji</string>
+	<key>Set Mask</key>
+	<string>Ustaw maskę</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>Ścieżka pliku ustawień jest zbyt długa (maksymalnie 1024 bajty)</string>
+	<key>Shadow Recovery</key>
+	<string>Odzyskiwanie cieni</string>
+	<key>Sharpening Amount</key>
+	<string>Zakres wyostrzania</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>Likwidacja halo wyostrzania</string>
+	<key>Sharpening Method</key>
+	<string>Metoda wyostrzania</string>
+	<key>Sharpening Radius</key>
+	<string>Promień wyostrzania</string>
+	<key>Sharpening Threshold</key>
+	<string>Próg wyostrzania.</string>
+	<key>Sharpness Falloff</key>
+	<string>Spadek ostrości</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>Wartość spadku ostrości</string>
+	<key>Shift</key>
+	<string>Przesunięcie</string>
+	<key>Shift Direction</key>
+	<string>Kierunek przesunięcia</string>
+	<key>Shift XY</key>
+	<string>Osie XY przesunięcia</string>
+	<key>Short Edge</key>
+	<string>Krótsza krawędź</string>
+	<key>Shut.</key>
+	<string>Mig.</string>
+	<key>Shutter Speed</key>
+	<string>Czas migawki</string>
+	<key>Shutter priority</key>
+	<string>Preselekcja czasu</string>
+	<key>Shutter speed</key>
+	<string>Czas migawki</string>
+	<key>Shutter speed priority AE</key>
+	<string>AE - preselekcja czasu</string>
+	<key>Silver Rich</key>
+	<string>Ziarnistość srebrowa</string>
+	<key>Sing.</key>
+	<string>Poj.</string>
+	<key>Single</key>
+	<string>Pojedynczy</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>Redukcja szumów pojedynczych pikseli</string>
+	<key>Single Shot</key>
+	<string>Pojedyncze zdjęcie</string>
+	<key>Single shot</key>
+	<string>Pojedyncze zdjęcie</string>
+	<key>Skip</key>
+	<string>Pomiń</string>
+	<key>Soft Grain</key>
+	<string>Miękkie ziarno</string>
+	<key>Software</key>
+	<string>Oprogramowanie</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>Niektóre z dopasowań na warstwach wymagają nowszego silnika. Silnik zostanie zaktualizowany dla %@ i nie będzie można cofnąć tej operacji.</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>Niektóre z dopasowań na warstwach wymagają nowszego silnika. Silnik zostanie zaktualizowany dla %lu wariantów i nie będzie można cofnąć tej operacji.</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>Niektóre z wybranych Wariantów nie mogły być skorygowane automatycznie.</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>Niektóre wybrane warianty mają format tylko do odczytu.</string>
+	<key>Some variants are missing metadata</key>
+	<string>W niektórych wariantach brakuje metadanych</string>
+	<key>Sort Order</key>
+	<string>Porządek sortowania</string>
+	<key>Source</key>
+	<string>Źródło</string>
+	<key>Source image is missing</key>
+	<string>Brak obrazu źródłowego</string>
+	<key>Split Tones</key>
+	<string>Podzielone tonowanie</string>
+	<key>Spot</key>
+	<string>Plama</string>
+	<key>Spots</key>
+	<string>Plamy</string>
+	<key>Square</key>
+	<string>Kwadrat</string>
+	<key>State/Province</key>
+	<string>Stan/prowincja</string>
+	<key>Status</key>
+	<string>Stan</string>
+	<key>Stop</key>
+	<string>Zatrzymaj</string>
+	<key>Strobe return light</key>
+	<string>Światło odbite lampy</string>
+	<key>Strobe return light detected</key>
+	<string>Wykryto światło odbite lampy</string>
+	<key>Strobe return light not detected</key>
+	<string>Nie wykryto światła odbitego lampy</string>
+	<key>Structure</key>
+	<string>Struktura</string>
+	<key>Style</key>
+	<string>Styl</string>
+	<key>Styles</key>
+	<string>Style</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>Style i presety można zresetować tylko dla %1$d z %2$d wybranych wariantów</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>Style i presety można zresetować tylko dla edytowalnych wariantów. Proszę wybrać warianty, które można edytować</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>Styli i preseów nie można zresetować dla żadnego z %d wybranych wariantów</string>
+	<key>Sub Name</key>
+	<string>Nazwa pomocnicza</string>
+	<key>Subject Code</key>
+	<string>Kod tematu</string>
+	<key>Summer</key>
+	<string>Lato</string>
+	<key>Supplemental Categories</key>
+	<string>Kategorie uzupełniające</string>
+	<key>Surface Smoothness</key>
+	<string>Wygładzanie powierzchni</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>Zsynchronizowano %1$d z %2$d zbiorów metadanych</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d-bitowy) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF - Wydruk A3 (300 dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF - Adobe RGB (1998) (8-bitowy)</string>
+	<key>TIFF file</key>
+	<string>Plik TIFF</string>
+	<key>Tabular Grain</key>
+	<string>Ziarnistość płytkowa</string>
+	<key>Target Levels</key>
+	<string>Poziomy docelowe</string>
+	<key>Temperature</key>
+	<string>Temperatura barwna</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>Przerwij działania i zamknij okno</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>Przerwij działania i zamknij program</string>
+	<key>Terminate and Close Window</key>
+	<string>Przerwij i zamknij okno</string>
+	<key>Terminate and Quit Application</key>
+	<string>Przerwij i zamknij program</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>Profil LCC jest w starym formacie, który nie może być otwarty.</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>Tworzenie przez aplikację bazy danych dla nowego %@ zakończone niepowodzeniem.</string>
+	<key>The catalog could not be saved.</key>
+	<string>Katalog nie może być zapisany.</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>Plik katalogu jest w koszu.</string>
+	<key>The catalog file is not writable.</key>
+	<string>Plik katalogu jest tylko do odczytu.</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>Katalog został zapisany w wersji %@ i nie może być odczytany przez tę wersję programu.</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>Katalog został zapisany w nowszej wersji programu Capture One.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>Aktualne zaznaczenie nie zawiera żadnych najwyższych wariantów. Dodawać można tylko najwyższe warianty.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>Aktualne zaznaczenie nie zawiera żadnych najwyższych wariantów. Synchronizować można tylko najwyższe warianty.</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>Program nie obsługuje zawartości dokumentu.  Został zapisany w nieobsługiwanej wersji programu Capture One.</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>Dokument został zapisany w wersji %@ i nie może być odczytany przez tę wersję programu.</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>Dokument został zapisany w nowszej wersji programu Capture One.</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>Istniejące metadane dla niektórych wariantów zostaną nadpisane.</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>Wybrana metoda nie może być zrealizowana.</string>
+	<key>The output folder could not be created.</key>
+	<string>Nie można utworzyć folderu wyjściowego.</string>
+	<key>The output folder is not writable.</key>
+	<string>Folder wyjściowy nie jest przeznaczony do zapisu.</string>
+	<key>The output location is not a folder.</key>
+	<string>Lokalizacja wyjściowa nie jest folderem.</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>Przed rozpakowaniem trzeba zmienić nazwę spakowanego pliku. Aktualna zmiana nazwy nie powiodła się.</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>Nie można znaleźć plików RAW niektórych obrazów. Możesz kontynuować eksport bez brakujących obrazów lub anulować go.</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>Wybrany plik "%1$@" ma inną nazwę niż plik oryginalny "%2$@".
+
+Czy mimo to chcesz użyć wybranego pliku?</string>
+	<key>The session appears corrupt.</key>
+	<string>Sesja jest prawdopodobnie uszkodzona.</string>
+	<key>The session could not be saved.</key>
+	<string>Sesja nie może być zapisana.</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>Migracja danych sesji spowodowała zmianę nazwy pliku sesji. Proszę otworzyć ponownie "%@".</string>
+	<key>The session file does not exist.</key>
+	<string>Plik sesji nie istnieje.</string>
+	<key>The session file is empty.</key>
+	<string>Plik sesji jest pusty.</string>
+	<key>The session file is in the Trash.</key>
+	<string>Plik sesji jest w koszu.</string>
+	<key>The session file is not writable.</key>
+	<string>Plik sesji nie ma uprawnień do zapisu.</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>Sesja została zapisana w wersji %@ i nie może być odczytana przez tę wersję programu.</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>Sesja została zapisana w nowszej wersji programu Capture One.</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>Sesja została zapisana w starszej, nieobsługiwanej wersji programu Capture One.</string>
+	<key>There are no images to export.</key>
+	<string>Brak obrazów do wyeksportowania.</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>Brak obrazów do wyeksportowania.
+ W razie potrzeby uwzględnij podfoldery.</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>Podczas przetwarzania pliku wyjściowego wystąpił błąd.</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>Podczas przetwarzania pliku xmp wystąpił błąd.</string>
+	<key>There was an error loading the mask.</key>
+	<string>Wystąpił błąd podczas wczytywania maski.</string>
+	<key>Threshold</key>
+	<string>Próg</string>
+	<key>Tilt</key>
+	<string>Pochyły</string>
+	<key>Tilt Direction</key>
+	<string>Kierunek pochyłów</string>
+	<key>Time Lapse</key>
+	<string>Zdjęcia poklatkowe</string>
+	<key>Time-lapse</key>
+	<string>Poklatkowo</string>
+	<key>Timer</key>
+	<string>Wyzwalacz</string>
+	<key>Tint</key>
+	<string>Odcień</string>
+	<key>Title</key>
+	<string>Tytuł</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>Aby dalej korzystać z bazy danych, należy ją sprawdzić i naprawić.</string>
+	<key>Trash</key>
+	<string>Kosz</string>
+	<key>Trash Folder</key>
+	<string>Folder Kosz</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>Nie można przekonwertować pliku obrazu na spakowany plik</string>
+	<key>Unable to convert package to image file</key>
+	<string>Nie można przekonwertować spakowanego pliku na plik obrazu</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>Nie można utworzyć proxy. Plik obrazu może być uszkodzony lub nie można go załadować.</string>
+	<key>Unable to load LCC profile.</key>
+	<string>Nie można załadować profilu LCC.</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>Nie można załadować metadanych z obrazów offline. Zostaną one pominięte.</string>
+	<key>Unable to read package file.</key>
+	<string>Nie można odczytać spakowanego pliku.</string>
+	<key>Uncalib.</key>
+	<string>Nieskal.</string>
+	<key>Uncalibrated</key>
+	<string>Nieskalibrowany</string>
+	<key>Uncataloged</key>
+	<string>Nieskatalogowany</string>
+	<key>Unconstrained</key>
+	<string>Dowolne</string>
+	<key>Undef.</key>
+	<string>Niezdef.</string>
+	<key>Undefined</key>
+	<string>Niezdefiniowany</string>
+	<key>Uniform Light</key>
+	<string>Wyrównywanie światła</string>
+	<key>Uniform Light Amount</key>
+	<string>Wartość wyrównywania światła</string>
+	<key>Unknown</key>
+	<string>Nieznany</string>
+	<key>Unknown Font</key>
+	<string>Nieznana czcionka</string>
+	<key>Unknown Group</key>
+	<string>Nieznana grupa</string>
+	<key>Unknown Processing Engine</key>
+	<string>Nieznany silnik przetwarzania</string>
+	<key>Unknown Scale</key>
+	<string>Nieznana skala</string>
+	<key>Unknown Setting</key>
+	<string>Nieznane ustawienie</string>
+	<key>Unknown reason.</key>
+	<string>Nieznany powód.</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>Wypakowano %1$d z %2$d obrazów EIP</string>
+	<key>Unpacking %d EIP files</key>
+	<string>Wypakowywanie %d plików EIP</string>
+	<key>Unpacking EIP Failed</key>
+	<string>Wypakowywanie plików EIP zakończone niepowodzeniem</string>
+	<key>Unrated</key>
+	<string>Bez oceny</string>
+	<key>Unsupported catalog version.</key>
+	<string>Nieobsługiwana wersja katalogu.</string>
+	<key>Unsupported document version.</key>
+	<string>Nieobsługiwana wersja dokumentu.</string>
+	<key>Unsupported session version.</key>
+	<string>Nieobsługiwana wersja sesji.</string>
+	<key>Untitled Album</key>
+	<string>Album bez nazwy</string>
+	<key>Untitled Recipe</key>
+	<string>Formuła bez nazwy</string>
+	<key>Update Images</key>
+	<string>Aktualizuj obrazy</string>
+	<key>Updating</key>
+	<string>Aktualizacja</string>
+	<key>Upgrade Engine</key>
+	<string>Aktualizuj silnik</string>
+	<key>Upgrade Processing Engine</key>
+	<string>Aktualizuj silnik przetwarzania.</string>
+	<key>Urgency</key>
+	<string>Pilność</string>
+	<key>Usage Terms</key>
+	<string>Warunki użytkowania</string>
+	<key>Variant Position</key>
+	<string>Pozycja wariantu</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>Warianty nie mogą mieć więcej niż %1$lu warstw. Jeśli pominiesz, żadne dopasowania nie zostaną zastosowane dla %2$@.</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>Warianty nie mogą mieć więcej niż %1$lu warstw. Jeśli pominiesz, żadne dopasowania nie zostaną zastosowane dla %2$lu wariantów.</string>
+	<key>Vendor Specific</key>
+	<string>Producenta</string>
+	<key>Vendor White Balance</key>
+	<string>Balans bieli producenta</string>
+	<key>Vertical Keystone Correction</key>
+	<string>Korekcja zbieżności pionowej</string>
+	<key>Video</key>
+	<string>Wideo</string>
+	<key>Vignetting</key>
+	<string>Winietowanie</string>
+	<key>Vignetting Amount</key>
+	<string>Siła winietowania</string>
+	<key>Vignetting Disabled</key>
+	<string>Winietowanie wyłączone</string>
+	<key>Vignetting Enabled</key>
+	<string>Winietowanie włączone</string>
+	<key>Vignetting Method</key>
+	<string>Metoda winietowania</string>
+	<key>Vignetting Method Circular</key>
+	<string>Okrężna metoda winietowania</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>Metoda winietowania "Okrężnie przy kadrowaniu"</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>Metoda winietowania "Eliptycznie przy kadrowaniu"</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>Ostrzeżenie: LCC zawiera niewłaściwe dane. Mogą dalej wystąpić wybarwienia koloru.</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>Ostrzeżenie: ekspozycja kalibracji LCC jest słaba. Wyniki mogą być niedokładne.</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>Ostrzeżenie: duże plamy mogą być tylko częściowo skorygowane przy kalibracji LCC.</string>
+	<key>Website(s)</key>
+	<string>Strona internetowa</string>
+	<key>Websites</key>
+	<string>Strony internetowe</string>
+	<key>White Balance</key>
+	<string>Balans bieli</string>
+	<key>White Recovery</key>
+	<string>Odzyskiwanie bieli</string>
+	<key>White balance</key>
+	<string>Balans bieli</string>
+	<key>Width</key>
+	<string>Szerokość</string>
+	<key>Width x Height</key>
+	<string>Szerokość x wysokość</string>
+	<key>Writer</key>
+	<string>Pisarz</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>Zapisywanie ustawień do spakowanego pliku nie powiodło się. Plik może być uszkodzony</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>Zapisywanie ustawień do spakowanego pliku nie powiodło się. Mogą występować problemy z prawami dostępu albo plik może być uszkodzony.</string>
+	<key>YES</key>
+	<string>TAK</string>
+	<key>Yellow</key>
+	<string>Żółty</string>
+	<key>Yes</key>
+	<string>Tak</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>Twój wybór obejmuje wiele LCC. LCC zostanie zastosowana do poprzednich wariantów. (Tj. Wszystkie pliki, które pojawiają się z lewej strony LCC będą mieć zastosowany ten profil).</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>Twój wybór obejmuje wiele LCC. LCC zostanie zastosowana do kolejnych wariantów. (Tj. Wszystkie pliki, które pojawiają się z prawej strony LCC będą mieć zastosowany ten profil).</string>
+	<key>Zip</key>
+	<string>Kod</string>
+	<key>Zoom: %.f%%</key>
+	<string>Przybliżenie: %.f%%</string>
+	<key>auto</key>
+	<string>auto</string>
+	<key>begins with</key>
+	<string>zaczyna się od</string>
+	<key>camera custom</key>
+	<string>ustawienia spersonalizowane aparatu</string>
+	<key>cloudy</key>
+	<string>pochmurnie</string>
+	<key>contains</key>
+	<string>zawiera</string>
+	<key>cool white fluorescent</key>
+	<string>zimne białe światło fluorescencyjne</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>fluorescencyjna, światło dzienne kolorowe</string>
+	<key>day white fluorescent</key>
+	<string>fluorescencyjna, światło dzienne białe</string>
+	<key>daylight</key>
+	<string>światło dzienne</string>
+	<key>daylight fluorescent</key>
+	<string>światło dzienne fluorescencyjne</string>
+	<key>dd</key>
+	<string>dd</string>
+	<key>dd-MM-yy</key>
+	<string>dd-mm-rr</string>
+	<key>direct sunlight</key>
+	<string>bezpośrednie światło słoneczne</string>
+	<key>does not contain</key>
+	<string>nie zawiera</string>
+	<key>ends with</key>
+	<string>kończy się</string>
+	<key>equals</key>
+	<string>równa się</string>
+	<key>error</key>
+	<string>błąd</string>
+	<key>fine weather</key>
+	<string>dobra pogoda</string>
+	<key>fine weather with shade</key>
+	<string>dobra pogoda z cieniem</string>
+	<key>flash</key>
+	<string>flesz</string>
+	<key>fluorescent</key>
+	<string>światło fluorescencyjne</string>
+	<key>fluorescent d</key>
+	<string>światło fluorescencyjne d</string>
+	<key>fluorescent h</key>
+	<string>światło fluorescencyjne h</string>
+	<key>fluorescent n</key>
+	<string>światło fluorescencyjne n</string>
+	<key>fluorescent w</key>
+	<string>światło fluorescencyjne w</string>
+	<key>h</key>
+	<string>h</string>
+	<key>h-mm a</key>
+	<string>g-mm am/pm</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>wysokotemperaturowa lampa rtęciowa</string>
+	<key>hmi</key>
+	<string>hmi</string>
+	<key>incandescent</key>
+	<string>lampa żarowa</string>
+	<key>is</key>
+	<string>jest</string>
+	<key>is after</key>
+	<string>po</string>
+	<key>is before</key>
+	<string>przed</string>
+	<key>is false</key>
+	<string>jest fałszywy</string>
+	<key>is faster than</key>
+	<string>jest krótszy niż</string>
+	<key>is faster than or equal to</key>
+	<string>jest krótszy niż lub równy</string>
+	<key>is greater than</key>
+	<string>jest większy niż</string>
+	<key>is greater than or equal to</key>
+	<string>jest większy niż lub równy</string>
+	<key>is less than</key>
+	<string>jest mniejszy niż</string>
+	<key>is less than or equal to</key>
+	<string>jest mniejszy niż lub równy</string>
+	<key>is narrower than</key>
+	<string>jest węższy niż</string>
+	<key>is narrower than or equal to</key>
+	<string>jest węższy niż lub równy</string>
+	<key>is not</key>
+	<string>nie jest</string>
+	<key>is not equal to</key>
+	<string>nie jest równy</string>
+	<key>is not on</key>
+	<string>dowolna poza</string>
+	<key>is on</key>
+	<string>dokładnie</string>
+	<key>is slower than</key>
+	<string>jest dłuższy niż</string>
+	<key>is slower than or equal to</key>
+	<string>jest dłuższy niż lub równy</string>
+	<key>is true</key>
+	<string>jest prawdziwy</string>
+	<key>is wider than</key>
+	<string>jest szerszy niż</string>
+	<key>is wider than or equal to</key>
+	<string>jest szerszy niż lub równy</string>
+	<key>iso studio tungsten</key>
+	<string>ISO, oświetlenie studyjne, lampa wolframowa</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>zachowaj .%@</string>
+	<key>kelvin</key>
+	<string>Kelwiny</string>
+	<key>manual</key>
+	<string>ręcznie</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>min</string>
+	<key>mm</key>
+	<string>mm</string>
+	<key>neutral white fluorescent</key>
+	<string>neutralne białe światło fluorescencyjne</string>
+	<key>normal</key>
+	<string>normalny</string>
+	<key>s</key>
+	<string>s</string>
+	<key>shade</key>
+	<string>odcień</string>
+	<key>shadow</key>
+	<string>cień</string>
+	<key>shot</key>
+	<string>zdjęcie</string>
+	<key>sodium-vapor lamp</key>
+	<string>lampa sodowa</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>standardowe światło a</string>
+	<key>standard light b</key>
+	<string>standardowe światło b</string>
+	<key>standard light c</key>
+	<string>standardowe światło c</string>
+	<key>star</key>
+	<string>gwiazdka</string>
+	<key>stars</key>
+	<string>gwiazdki</string>
+	<key>sunny</key>
+	<string>słonecznie</string>
+	<key>tungsten</key>
+	<string>lampa wolframowa</string>
+	<key>underwater</key>
+	<string>podwodne</string>
+	<key>unknown</key>
+	<string>nieznany</string>
+	<key>use .%@</key>
+	<string>użyj .%@</string>
+	<key>warm white fluorescent</key>
+	<string>ciepłe białe światło fluorescencyjne</string>
+	<key>white fluorescent</key>
+	<string>białe światło fluorescencyjne</string>
+	<key>yy</key>
+	<string>rr</string>
+	<key>yy-MM-dd</key>
+	<string>rr-mm-dd</string>
+	<key>yyyy</key>
+	<string>rrrr</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>rrrr-MM-dd GG.mm.ss</string>
+</dict>
+</plist>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Importa Libreria di Aperture</string>
+	<key>14.title</key>
+	<string>Cancella</string>
+	<key>28.title</key>
+	<string>Importando immagini da Aperture in Capture One, verranno trasferite solo le seguenti proprietà:</string>
+	<key>4.title</key>
+	<string>Non mostrarlo più</string>
+	<key>51.title</key>
+	<string>Progetti, Cartelle, Album
+Ritaglia O Raddrizza, Ruota, Capovolgi
+Esposizione, Luminosità, Alte Luci &amp; Ombre, Definizione, Saturazione, B &amp; W
+Metadati (IPTC, Classificazione, Tag Colore, Parole Chiave)</string>
+	<key>57.title</key>
+	<string>Le regolazioni al colore sono solo approssimative.
+
+Per includere degli Album Intelligenti, è necessario convertirli in Album di base prima dell’importazione.</string>
+	<key>8.title</key>
+	<string>Avanti</string>
+</dict>
+</plist>

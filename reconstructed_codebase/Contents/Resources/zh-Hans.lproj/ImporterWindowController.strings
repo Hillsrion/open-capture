@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>排序</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>全部导入</string>
+	<key>255.title</key>
+	<string>取消</string>
+	<key>256.title</key>
+	<string>复制后抹掉图像</string>
+	<key>257.title</key>
+	<string>弹出储存卡</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>永不打开导入汇集</string>
+	<key>369.title</key>
+	<string>完成后提示</string>
+	<key>370.title</key>
+	<string>开始导入时打开汇集</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>导入汇集</string>
+	<key>5.title</key>
+	<string>视窗</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>文件夹中无图像</string>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>キーボード ショート カットの編集</string>
+	<key>10.title</key>
+	<string>テキスト セル</string>
+	<key>11.title</key>
+	<string>テキスト セル</string>
+	<key>13.title</key>
+	<string>閉じる</string>
+	<key>22.title</key>
+	<string>エラー ラベル</string>
+	<key>51.title</key>
+	<string>ウィンドウ</string>
+	<key>59.title</key>
+	<string>OK</string>
+	<key>60.title</key>
+	<string>キャンセル</string>
+	<key>61.title</key>
+	<string>キーボード ショート カット セットの名前を入力:</string>
+	<key>62.title</key>
+	<string>エラー(プログラムによって設定)</string>
+	<key>75.title</key>
+	<string>ヘルプ</string>
+	<key>8.headerCell.title</key>
+	<string>コマンド</string>
+	<key>9.headerCell.title</key>
+	<string>キー</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>ラベル</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>コマンド</string>
+	<key>zAq-68-rPj.title</key>
+	<string>キー</string>
+</dict>
+</plist>

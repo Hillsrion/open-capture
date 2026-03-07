@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>9TB-Lh-0GN.title</key>
+	<string>添加照片</string>
+	<key>GcS-sj-TVF.title</key>
+	<string>请选择几张照片开始使用。您可以随时添加更多照片。</string>
+	<key>MYN-Mv-BfB.title</key>
+	<string>导入照片</string>
+	<key>PfL-9K-WyW.title</key>
+	<string>在硬盘上查找</string>
+	<key>b2Z-JR-cNm.title</key>
+	<string>使用样图</string>
+</dict>
+</plist>

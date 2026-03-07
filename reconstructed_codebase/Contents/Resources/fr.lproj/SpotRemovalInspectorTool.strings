@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>Type de Tache</string>
+	<key>109.title</key>
+	<string>Tache</string>
+	<key>111.title</key>
+	<string>Poussière</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Supprimer Tache Sélectionnée</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>Tache Sélectionnée</string>
+	<key>47.title</key>
+	<string>Tache</string>
+	<key>50.title</key>
+	<string>1 sur 1</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>Tache Précédente</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>Tache Suivante</string>
+	<key>84.title</key>
+	<string>Type</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Sélectionner Tache</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>kelvin</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rayon</string>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0nb-tv-adw.title</key>
+	<string>長度</string>
+	<key>1ui-qy-xtG.ibShadowedToolTip</key>
+	<string>繪製解析度尺規</string>
+	<key>9bo-Mu-PlE.ibShadowedToolTip</key>
+	<string>設定尺規解析度</string>
+	<key>DXg-Do-40d.title</key>
+	<string>像素 / 釐米</string>
+	<key>Db8-xO-H48.title</key>
+	<string>釐米</string>
+	<key>M4e-ku-3Bm.ibShadowedToolTip</key>
+	<string>長度單位</string>
+	<key>Rl1-JQ-0eY.ibShadowedToolTip</key>
+	<string>解析度單位</string>
+	<key>SUh-jZ-b24.title</key>
+	<string>像素 / 毫米</string>
+	<key>T3C-zc-BTc.title</key>
+	<string>毫米</string>
+	<key>WF0-dW-OoL.title</key>
+	<string>英寸</string>
+	<key>a5h-Bf-9UD.placeholderString</key>
+	<string>-</string>
+	<key>aKK-Md-MYM.ibShadowedToolTip</key>
+	<string>設定尺規長度</string>
+	<key>cCM-Xg-iQj.title</key>
+	<string>解析度</string>
+	<key>fJY-12-BCy.title</key>
+	<string>像素 / 英寸</string>
+	<key>hKu-CW-XlU.title</key>
+	<string>顯示</string>
+	<key>jTj-dM-td2.placeholderString</key>
+	<string>-</string>
+	<key>lIl-SC-rRY.title</key>
+	<string>OtherViews</string>
+	<key>n82-wo-coz.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

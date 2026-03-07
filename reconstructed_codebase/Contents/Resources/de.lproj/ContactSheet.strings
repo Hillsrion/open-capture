@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>265.title</key>
+	<string>Teilfenster</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>Geben Sie den Namen so ein, wie er angezeigt werden soll</string>
+	<key>287.ibShadowedToolTip</key>
+	<string>Eingabe Kontaktlink (z.B. mailto:photographer@phaseone.com oder http://www.phaseone.com)</string>
+	<key>294.title</key>
+	<string>OtherViews</string>
+	<key>353.title</key>
+	<string>OtherViews</string>
+	<key>389.ibShadowedToolTip</key>
+	<string>Exportiert XML- und DTD-Dateien an den Ausgabe-Speicherort</string>
+	<key>397.title</key>
+	<string>OtherViews</string>
+	<key>398.title</key>
+	<string>Lokal</string>
+	<key>399.title</key>
+	<string>FTP</string>
+	<key>403.label</key>
+	<string>FTP</string>
+	<key>405.label</key>
+	<string>Lokal</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Zeigt das Ergebnis im Webbrowser an</string>
+	<key>435.ibShadowedIsNilPlaceholder</key>
+	<string>--</string>
+	<key>447.title</key>
+	<string>Beschreibung</string>
+	<key>448.title</key>
+	<string>Copyright</string>
+	<key>449.placeholderString</key>
+	<string>Beschreibung eingeben</string>
+	<key>450.title</key>
+	<string>Titel</string>
+	<key>451.title</key>
+	<string>Web-Link</string>
+	<key>452.placeholderString</key>
+	<string>Kontaktdaten eingeben</string>
+	<key>453.placeholderString</key>
+	<string>Titel eingeben</string>
+	<key>454.placeholderString</key>
+	<string>Web- oder E-Mail-Link eingeben</string>
+	<key>455.title</key>
+	<string>Text</string>
+	<key>457.title</key>
+	<string>Miniaturbildgröße</string>
+	<key>458.title</key>
+	<string>Vorschaugröße</string>
+	<key>459.title</key>
+	<string>Bildunterschrift</string>
+	<key>461.title</key>
+	<string>Qualität</string>
+	<key>464.title</key>
+	<string>Bilder</string>
+	<key>465.title</key>
+	<string>Stil</string>
+	<key>469.title</key>
+	<string>Layout</string>
+	<key>470.title</key>
+	<string>Ausgabe</string>
+	<key>471.title</key>
+	<string>Foto-XML-Daten exportieren</string>
+	<key>472.title</key>
+	<string>Typ</string>
+	<key>474.title</key>
+	<string>URL</string>
+	<key>475.placeholderString</key>
+	<string>Geben Sie die vollständige URL des Serverordners ein</string>
+	<key>476.title</key>
+	<string>Benutzername</string>
+	<key>477.placeholderString</key>
+	<string>Geben Sie den Benutzernamen ein</string>
+	<key>478.title</key>
+	<string>Passwort</string>
+	<key>479.placeholderString</key>
+	<string>Geben Sie das Passwort ein</string>
+	<key>480.title</key>
+	<string>Pfad</string>
+	<key>481.title</key>
+	<string>Nach dem Exportieren anzeigen</string>
+	<key>482.title</key>
+	<string>…</string>
+	<key>522.ibShadowedToolTip</key>
+	<string>Zeige Druckerpanel</string>
+	<key>523.ibShadowedToolTip</key>
+	<string>Druck abbrechen</string>
+	<key>524.title</key>
+	<string>Abbrechen</string>
+	<key>525.title</key>
+	<string>Exportieren</string>
+	<key>j7A-8f-Njb.ibExternalAccessibilityDescription</key>
+	<string>exposureField</string>
+	<key>nlh-z2-0hN.ibExternalAccessibilityDescription</key>
+	<string>brightnessField</string>
+	<key>w4n-Fb-zyR.ibExternalAccessibilityDescription</key>
+	<string>saturationField</string>
+</dict>
+</plist>

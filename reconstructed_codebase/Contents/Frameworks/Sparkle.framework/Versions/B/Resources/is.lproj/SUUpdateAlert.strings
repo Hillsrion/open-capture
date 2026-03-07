@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Útgáfupunktar:</string>
+	<key>171.title</key>
+	<string>Áminntu mig síðar</string>
+	<key>172.title</key>
+	<string>Sleppa þessari útgáfu</string>
+	<key>173.title</key>
+	<string>Innsetja</string>
+	<key>175.title</key>
+	<string>Sækja og innsetja uppfærslur sjálfkrafa framvegis</string>
+	<key>5.title</key>
+	<string>Hugbúnaðaruppfærsla</string>
+</dict>
+</plist>

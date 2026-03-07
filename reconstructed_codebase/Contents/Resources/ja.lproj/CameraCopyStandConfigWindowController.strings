@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0d0-8R-tLw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>下げる</string>
+	<key>6Sd-kz-UIh.title</key>
+	<string>距離単位</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>構成</string>
+	<key>Fzy-PA-eLs.title</key>
+	<string>上げる</string>
+	<key>GwY-gy-ciJ.title</key>
+	<string>ハード ストップ</string>
+	<key>H8r-FG-Kr3.title</key>
+	<string>センチメーター</string>
+	<key>LKh-K1-Y6N.title</key>
+	<string>下部</string>
+	<key>N8e-Em-hgs.title</key>
+	<string>インチ</string>
+	<key>NrY-xR-emd.title</key>
+	<string>PPI</string>
+	<key>OIm-4a-xHW.title</key>
+	<string>ポジジョン</string>
+	<key>Q9f-5E-WvF.title</key>
+	<string>プラス方向</string>
+	<key>UHt-zv-9SR.title</key>
+	<string>セット</string>
+	<key>Xjf-k5-hQK.title</key>
+	<string>現在のポジションを定義</string>
+	<key>b1o-xe-f2L.title</key>
+	<string>Box</string>
+	<key>dmz-Zi-K8p.title</key>
+	<string>ポジション設定</string>
+	<key>dpt-fL-j8i.title</key>
+	<string>ポジション</string>
+	<key>gf5-bG-nhb.title</key>
+	<string>完了</string>
+	<key>kXp-pb-vUY.title</key>
+	<string>現在のポジションを定義</string>
+	<key>knt-jR-igh.title</key>
+	<string>スピード設定</string>
+	<key>mo9-ag-5qk.title</key>
+	<string>ミリメーター</string>
+	<key>r6Q-Yq-qbn.title</key>
+	<string>解像度 設定</string>
+	<key>t88-sx-mlj.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>高さ</string>
+	<key>wha-sd-g2k.title</key>
+	<string>Box</string>
+	<key>x71-Fc-ePv.title</key>
+	<string>上部</string>
+	<key>yDQ-Al-p0h.title</key>
+	<string>バーチャル ストップ</string>
+	<key>yOk-jx-9Zz.title</key>
+	<string>下げる</string>
+</dict>
+</plist>

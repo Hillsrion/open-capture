@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>518.title</key>
+	<string>字体</string>
+	<key>519.ibShadowedToolTip</key>
+	<string>说明文字字体名称与大小</string>
+	<key>520.title</key>
+	<string>黑体</string>
+	<key>529.ibShadowedToolTip</key>
+	<string>修改说明文字字体</string>
+	<key>fQl-5q-wXK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>类型</string>
+</dict>
+</plist>

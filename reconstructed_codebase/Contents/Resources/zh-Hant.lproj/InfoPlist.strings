@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One 增強圖像包（EIP）</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One 有時需要間接控制參與編碼運行的其他應用程式來完成指令。</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One 無需訪問您的日曆。出現此提示是因為訪問了圖庫文件夾。</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One 無需訪問您的通訊錄。出現此提示是因為訪問了圖庫文件夾。</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One 需要訪問圖庫才能夠支持連線拍攝功能。出現此提示也許是因為 Capture One 訪問了圖庫文件夾。</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One 無需訪問您的提醒事項。出現此提示是因為訪問了圖庫文件夾。</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One 需要可移除儲存設備的訪問權限來支援連線拍攝功能。您可能需要重啟 Capture One 才能夠使設定生效。</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW 圖像</string>
+</dict>
+</plist>

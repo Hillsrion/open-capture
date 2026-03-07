@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>Säkerhetskopiera</string>
+	<key>17.title</key>
+	<string>Avbryt</string>
+	<key>21.label</key>
+	<string>Förlopp</string>
+	<key>22.label</key>
+	<string>Varning</string>
+	<key>37.title</key>
+	<string>Testa integritet</string>
+	<key>39.title</key>
+	<string>Optimera katalog</string>
+	<key>45.title</key>
+	<string>…</string>
+	<key>46.title</key>
+	<string>Plats för säkerhetskopior:</string>
+	<key>49.title</key>
+	<string>Även:</string>
+	<key>78.label</key>
+	<string>Fel</string>
+	<key>99.label</key>
+	<string>Fel</string>
+</dict>
+</plist>

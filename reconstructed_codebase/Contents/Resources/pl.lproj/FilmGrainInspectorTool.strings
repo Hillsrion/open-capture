@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>45u-oY-7a0.ibExternalAccessibilityDescription</key>
+	<string>jasność</string>
+	<key>45u-oY-7a0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ziarnistość</string>
+	<key>gX2-sJ-VmO.ibExternalAccessibilityDescription</key>
+	<string>siła</string>
+	<key>gX2-sJ-VmO.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Siła</string>
+	<key>rVu-m5-KCC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Typ</string>
+</dict>
+</plist>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>還原</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>備份位置：</string>
+	<key>67h-cn-iXH.title</key>
+	<string>請重試</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>下一個</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>恢復目錄</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>文字儲存格</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>發生錯誤。是否重試？</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>正在複製文件…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>未找到備份</string>
+	<key>W74-ST-qV9.title</key>
+	<string>路徑</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>取消</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>在 Finder 中顯示</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>這將取代當前的資料庫並且無法撤銷。
+恢復過程中，請勿強制退出或關閉電腦。</string>
+	<key>dvV-is-gQP.title</key>
+	<string>已成功恢復備份</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>錯誤</string>
+	<key>osi-c2-YUn.title</key>
+	<string>開啟目錄</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>取消</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>主標題</string>
+	<key>ygv-37-SJC.title</key>
+	<string>上一個</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>目錄名稱</string>
+</dict>
+</plist>

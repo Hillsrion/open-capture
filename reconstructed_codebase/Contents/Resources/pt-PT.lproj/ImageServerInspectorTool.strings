@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>Marcar imagens com etiquetas de cores</string>
+	<key>125.title</key>
+	<string>Ajustar imagens</string>
+	<key>131.title</key>
+	<string>Capturar imagens</string>
+	<key>136.title</key>
+	<string>Permissões</string>
+	<key>157.label</key>
+	<string>Web</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>Transmitir pela Web</string>
+	<key>166.title</key>
+	<string>Navegador Web</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>Transmitir pela Web</string>
+	<key>171.title</key>
+	<string>Dispositivo móvel</string>
+	<key>203.title</key>
+	<string>Classificar imagens</string>
+	<key>212.title</key>
+	<string>Permissões</string>
+	<key>213.title</key>
+	<string>Classificar imagens</string>
+	<key>214.title</key>
+	<string>Marcar imagens com etiquetas de cores</string>
+	<key>243.title</key>
+	<string>Número de porta</string>
+	<key>254.title</key>
+	<string>&lt;IP local&gt;</string>
+	<key>27.title</key>
+	<string>Senha</string>
+	<key>291.title</key>
+	<string>&lt;IP local&gt;</string>
+	<key>306.title</key>
+	<string>IP local</string>
+	<key>308.title</key>
+	<string>IP local</string>
+	<key>43.title</key>
+	<string>Nome do servidor</string>
+	<key>53.label</key>
+	<string>Básico</string>
+	<key>54.label</key>
+	<string>Móvel</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>Básico</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>Móvel</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>Web</string>
+	<key>63.title</key>
+	<string>Número de porta</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Publicar em</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>Móvel e Web</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>Dispositivo móvel</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>Navegador Web</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pasta</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Tema</string>
+</dict>
+</plist>

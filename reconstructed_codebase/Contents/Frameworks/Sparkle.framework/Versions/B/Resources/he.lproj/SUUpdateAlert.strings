@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>פרטי גרסה:</string>
+	<key>171.title</key>
+	<string>הזכר לי מאוחר יותר</string>
+	<key>172.title</key>
+	<string>דלג על גרסה זו</string>
+	<key>173.title</key>
+	<string>התקן עדכון</string>
+	<key>175.title</key>
+	<string>הורד והתקן עדכונים אוטומטית גם בעתיד</string>
+	<key>5.title</key>
+	<string>עדכון תכנה</string>
+</dict>
+</plist>

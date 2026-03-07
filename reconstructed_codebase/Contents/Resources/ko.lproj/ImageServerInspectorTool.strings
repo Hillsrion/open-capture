@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>컬러 태그 이미지</string>
+	<key>125.title</key>
+	<string>이미지 조정</string>
+	<key>131.title</key>
+	<string>촬영 이미지</string>
+	<key>136.title</key>
+	<string>권한</string>
+	<key>157.label</key>
+	<string>웹</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>웹사이트 방송</string>
+	<key>166.title</key>
+	<string>웹 브라우저</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>웹사이트 방송</string>
+	<key>171.title</key>
+	<string>휴대장치</string>
+	<key>203.title</key>
+	<string>이미지 등급</string>
+	<key>212.title</key>
+	<string>권한</string>
+	<key>213.title</key>
+	<string>이미지 등급</string>
+	<key>214.title</key>
+	<string>컬러 태그 이미지</string>
+	<key>243.title</key>
+	<string>포트 번호</string>
+	<key>254.title</key>
+	<string>&lt;로컬 IP&gt;</string>
+	<key>27.title</key>
+	<string>암호</string>
+	<key>291.title</key>
+	<string>&lt;로컬 IP&gt;</string>
+	<key>306.title</key>
+	<string>로컬 IP</string>
+	<key>308.title</key>
+	<string>로컬 IP</string>
+	<key>43.title</key>
+	<string>서버명</string>
+	<key>53.label</key>
+	<string>기본</string>
+	<key>54.label</key>
+	<string>모바일</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>기본</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>모바일</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>웹</string>
+	<key>63.title</key>
+	<string>포트 번호</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>게시</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>모바일과 웹</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>휴대장치</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>웹 브라우저</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>폴더</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>주제</string>
+</dict>
+</plist>

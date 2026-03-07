@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>146.title</key>
+	<string>菜单</string>
+	<key>148.title</key>
+	<string>将预览缩放到合适大小</string>
+	<key>149.title</key>
+	<string>将预览缩放为 100%</string>
+	<key>150.title</key>
+	<string>将预览缩放为 200%</string>
+	<key>151.title</key>
+	<string>将预览缩放为 400%</string>
+</dict>
+</plist>

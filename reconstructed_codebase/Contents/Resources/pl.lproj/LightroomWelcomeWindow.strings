@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1QD-EF-Ywu.title</key>
+	<string>Anuluj</string>
+	<key>5EK-j8-ODd.title</key>
+	<string>Dowiedz się więcej...</string>
+	<key>7GG-dw-LUz.title</key>
+	<string>Twój katalog i obrazy są bezpieczne.</string>
+	<key>7Ph-T5-rPl.title</key>
+	<string>Dowiedz się więcej</string>
+	<key>BsR-81-gfg.title</key>
+	<string>Importer katalogów Lightroom</string>
+	<key>BtN-DU-luM.title</key>
+	<string>To może zająć trochę czasu</string>
+	<key>HAZ-Nj-moR.title</key>
+	<string>Importuj</string>
+	<key>Kcg-Fm-v0w.title</key>
+	<string>Wybierz katalog...</string>
+	<key>SZv-e8-CDZ.title</key>
+	<string>Zapoznaj się ze szczegółami importu, zanim przejdziesz dalej.</string>
+	<key>XAe-Xn-OX8.title</key>
+	<string>Twój katalog jest gotowy do zaimportowania.</string>
+	<key>XEl-l0-UXf.title</key>
+	<string>Następujące elementy zostaną importowane</string>
+	<key>Ybc-1K-cno.title</key>
+	<string>Importowanie katalogu jest bezpieczne - oryginalny katalog i obrazy pozostaną nienaruszone.</string>
+	<key>aNb-I8-rkE.title</key>
+	<string>Dowiedz się więcej...</string>
+	<key>bCc-dM-ZpV.title</key>
+	<string>Postępuj zgodnie z instrukcjami, aby zaimportować twoje zdjęcia z programu Lightroom do Capture One.</string>
+	<key>fb6-Qp-o7J.title</key>
+	<string>Importer katalogów Lightroom</string>
+	<key>o4X-mv-IK0.title</key>
+	<string>Wszystkie metadane z twoich obrazów oraz podstawowe dopasowania (kadrowanie, obrót, balans bieli, ekspozycja, kontrast i nasycenie) zostaną zaimportowane. Aby przenieść inteligentne kolekcje, najpierw przekonwertuj je na zwykłe kolekcje.</string>
+	<key>peZ-gq-vBV.title</key>
+	<string>Ta operacja może zająć trochę czasu w zależności od rozmiaru katalogu. Nie wyłączaj komputera ani programu Capture One w trakcie importowania.</string>
+	<key>sKJ-Sa-lTo.title</key>
+	<string>Importuj katalog Lightroom</string>
+	<key>t1E-dm-e2p.title</key>
+	<string>Anuluj</string>
+	<key>yp2-z7-JP2.title</key>
+	<string>Wybrany katalog</string>
+</dict>
+</plist>

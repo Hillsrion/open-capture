@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Check Catalog</string>
+	<key>14.title</key>
+	<string>Verify</string>
+	<key>4.title</key>
+	<string>Multiuse</string>
+	<key>79.title</key>
+	<string>Box</string>
+	<key>82.title</key>
+	<string>Activity Message</string>
+	<key>98.title</key>
+	<string>Закрыть</string>
+</dict>
+</plist>

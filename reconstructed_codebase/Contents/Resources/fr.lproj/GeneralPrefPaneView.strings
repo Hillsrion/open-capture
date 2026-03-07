@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Un fois par jour</string>
+	<key>105.title</key>
+	<string>Auto</string>
+	<key>106.title</key>
+	<string>Jamais</string>
+	<key>107.title</key>
+	<string>Emplacement :</string>
+	<key>108.title</key>
+	<string>Rappel à la fermeture :</string>
+	<key>112.title</key>
+	<string>Jamais</string>
+	<key>113.title</key>
+	<string>Auto</string>
+	<key>115.title</key>
+	<string>Accélération matérielle</string>
+	<key>116.title</key>
+	<string>Sauvegarde du Catalogue</string>
+	<key>126.title</key>
+	<string>Toujours remplacer les Métadonnées</string>
+	<key>127.title</key>
+	<string>Ne jamais remplacer les Métadonnées</string>
+	<key>128.title</key>
+	<string>Demander avant de remplacer les Métadonnées</string>
+	<key>131.title</key>
+	<string>Créer un nouvel album ou sélectionner un dossier</string>
+	<key>132.title</key>
+	<string>Créer ou réutiliser les albums correspondants</string>
+	<key>133.title</key>
+	<string>Demander lors de la synchronisation des jeux de catalogues</string>
+	<key>134.title</key>
+	<string>Les métadonnées et les information de jeux de catalogue reçues d'Expression Media peuvent être utilisées pour mettre à jour les Images et les Albums dans Capture One. Sélectionnez le comportement de chaque type d'information.</string>
+	<key>137.title</key>
+	<string>Choisir d'inclure les Sous Dossierslors à l'import</string>
+	<key>138.title</key>
+	<string>Toujours inclure les Sous Dossiers</string>
+	<key>139.title</key>
+	<string>Ne Jamais inclure les Sous Dossiers</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Défaut</string>
+	<key>142.title</key>
+	<string>Zoom avec molette souris</string>
+	<key>143.title</key>
+	<string>Visionneuse</string>
+	<key>150.title</key>
+	<string>Après plus de 5 minutes d'inactivité</string>
+	<key>151.title</key>
+	<string>Après plus de 10 minutes d'inactivité</string>
+	<key>152.title</key>
+	<string>Après plus de 30 minutes d'inactivité</string>
+	<key>153.title</key>
+	<string>Après plus de 1 heure d'inactivité</string>
+	<key>154.title</key>
+	<string>Après plus de 2 heures d'inactivité</string>
+	<key>155.title</key>
+	<string>Après plus de 4 heures d'inactivité</string>
+	<key>156.title</key>
+	<string>A la première Capture du jour</string>
+	<key>157.title</key>
+	<string>Créer :</string>
+	<key>158.title</key>
+	<string>Collection Images Récentes</string>
+	<key>160.title</key>
+	<string>Afficher l’importateur quand une carte mémoire est détectée</string>
+	<key>161.title</key>
+	<string>Importation</string>
+	<key>162.title</key>
+	<string>Activités</string>
+	<key>163.title</key>
+	<string>Afficher la fenêtre automatiquement</string>
+	<key>167.title</key>
+	<string>Favoris</string>
+	<key>170.title</key>
+	<string>Demander d'ajouter les dossiers des sessions précédentes aux Favoris</string>
+	<key>171.title</key>
+	<string>Toujours ajouter les dossiers des sessions précédentes aux Favoris</string>
+	<key>172.title</key>
+	<string>Ne jamais ajouter les dossiers des sessions précédentes aux Favoris</string>
+	<key>176.title</key>
+	<string>Catalogue et Session</string>
+	<key>177.title</key>
+	<string>Ouvrir dans une nouvelle fenêtre</string>
+	<key>59.title</key>
+	<string>Catalogues et Sessions</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Catalogue et Sessions</string>
+	<key>60.title</key>
+	<string>Favoris</string>
+	<key>66.title</key>
+	<string>Format du fichier de package</string>
+	<key>67.title</key>
+	<string>Collection Images Récentes</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Statuts :</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>Toujours</string>
+	<key>97.title</key>
+	<string>Une fois par mois</string>
+	<key>98.title</key>
+	<string>Jamais</string>
+	<key>99.title</key>
+	<string>Une fois par semaine</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>La molette de défilement change la valeur du curseur</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Onglets Outils</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Activer le support de périphérique Tangent</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option+Molette défile l’onglet d’outils</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Afficher au démarrage</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Intégration Tangent</string>
+</dict>
+</plist>

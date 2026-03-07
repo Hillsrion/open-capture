@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0ii-N6-LBa.title</key>
+	<string>電池狀態</string>
+	<key>253.ibShadowedToolTip</key>
+	<string>連接的相機</string>
+	<key>254.title</key>
+	<string>OtherViews</string>
+	<key>256.title</key>
+	<string>相機未連接</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>用連接的相機拍攝一張照片</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>為連接的相機設定白平衡</string>
+	<key>284.ibShadowedToolTip</key>
+	<string>白平衡滴管工具</string>
+	<key>535.ibShadowedToolTip</key>
+	<string>開始即時預覽</string>
+	<key>588.title</key>
+	<string>拍攝</string>
+	<key>590.title</key>
+	<string>設定</string>
+	<key>593.title</key>
+	<string>LV</string>
+	<key>596.title</key>
+	<string>正在上傳…</string>
+	<key>5RQ-bu-rlV.title</key>
+	<string>+1.00</string>
+	<key>5oy-9F-JjU.title</key>
+	<string>L</string>
+	<key>B1G-l7-xL0.title</key>
+	<string>S+</string>
+	<key>NAp-76-d3r.title</key>
+	<string>5.6</string>
+	<key>O7G-o4-UfJ.title</key>
+	<string>鏡頭型號</string>
+	<key>QR9-LL-vWQ.title</key>
+	<string>800</string>
+	<key>Tkg-mG-GrG.title</key>
+	<string>白平衡</string>
+	<key>ggr-GE-HP4.title</key>
+	<string>RAW</string>
+	<key>l4U-GZ-tya.title</key>
+	<string>1/100</string>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kd-Me-j9L.title</key>
+	<string>ボックス</string>
+	<key>5g4-db-4VZ.title</key>
+	<string>CCD を保存…</string>
+	<key>6.title</key>
+	<string>フィルムカーブエディタ</string>
+	<key>BK1-2w-5lD.title</key>
+	<string>レスポンス カーブ</string>
+	<key>CVb-vV-i6f.title</key>
+	<string>ファイルから</string>
+	<key>Rts-E6-n2i.title</key>
+	<string>ネガ</string>
+	<key>TBm-vJ-Pyc.title</key>
+	<string>レジェンド</string>
+	<key>VT0-X5-JQY.title</key>
+	<string>CCD カーブ</string>
+	<key>acb-et-6NQ.title</key>
+	<string>科学的</string>
+	<key>aug-sl-lwg.title</key>
+	<string>レスポンスを読込む…</string>
+	<key>bz5-cK-Z1M.title</key>
+	<string>カメラ名</string>
+	<key>ceZ-qo-Uqe.title</key>
+	<string>レスポンスを保存…</string>
+	<key>etm-wu-HvW.title</key>
+	<string>CCD 読込み…</string>
+	<key>kxg-jo-5b4.title</key>
+	<string>ボックス</string>
+	<key>ltb-w6-cuP.title</key>
+	<string>ボックス</string>
+	<key>rgI-5u-aUJ.title</key>
+	<string>ファイナル カーブ</string>
+	<key>tj2-4L-igh.title</key>
+	<string>フイルムカーブを保存…</string>
+	<key>tkZ-Jz-4b0.title</key>
+	<string>フイルムカーブを読込む…</string>
+	<key>uNF-sJ-VDP.title</key>
+	<string>オート</string>
+	<key>xaf-OC-EEW.title</key>
+	<string>カーブ名</string>
+</dict>
+</plist>

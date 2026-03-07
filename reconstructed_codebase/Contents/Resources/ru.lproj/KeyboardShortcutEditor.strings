@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Редактировать сочетания клавиш</string>
+	<key>10.title</key>
+	<string>Текстовая ячейка</string>
+	<key>11.title</key>
+	<string>Текстовая ячейка</string>
+	<key>13.title</key>
+	<string>Закрыть</string>
+	<key>22.title</key>
+	<string>Подпись ошибки</string>
+	<key>51.title</key>
+	<string>Окно</string>
+	<key>59.title</key>
+	<string>ОК</string>
+	<key>60.title</key>
+	<string>Отмена</string>
+	<key>61.title</key>
+	<string>Введите имя для набора сочетания клавиш:</string>
+	<key>62.title</key>
+	<string>ошибка (устанавливается программно)</string>
+	<key>75.title</key>
+	<string>Справка</string>
+	<key>8.headerCell.title</key>
+	<string>Команда</string>
+	<key>9.headerCell.title</key>
+	<string>Клавиша</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Надпись</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Команда</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Клавиша</string>
+</dict>
+</plist>

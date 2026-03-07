@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Configurações da apresentação de slides</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>Diminuir</string>
+	<key>35.title</key>
+	<string>Mover para dentro</string>
+	<key>36.title</key>
+	<string>Transição</string>
+	<key>40.title</key>
+	<string>Empurrar</string>
+	<key>41.title</key>
+	<string>Revelar</string>
+	<key>42.title</key>
+	<string>Dissolver</string>
+	<key>43.title</key>
+	<string>Mod</string>
+	<key>44.title</key>
+	<string>Deslizar</string>
+	<key>56.title</key>
+	<string>Duração do slide</string>
+	<key>59.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>69.title</key>
+	<string>Voltar</string>
+	<key>73.title</key>
+	<string>Padrões</string>
+	<key>90.title</key>
+	<string>Desintegrar</string>
+	<key>91.title</key>
+	<string>Ondular página</string>
+	<key>92.title</key>
+	<string>Ondulação</string>
+</dict>
+</plist>

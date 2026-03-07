@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2UW-z5-qxR.title</key>
+	<string>Ustaw priorytetowy rozmiar komórki</string>
+	<key>438.ibShadowedToolTip</key>
+	<string>Liczba wierszy</string>
+	<key>440.ibShadowedToolTip</key>
+	<string>Liczba wierszy</string>
+	<key>443.title</key>
+	<string>Wiersze</string>
+	<key>447.ibShadowedToolTip</key>
+	<string>Liczba kolumn</string>
+	<key>449.ibShadowedToolTip</key>
+	<string>Liczba kolumn</string>
+	<key>452.title</key>
+	<string>Kolumny</string>
+	<key>488.ibShadowedToolTip</key>
+	<string>Odstęp między kolumnami</string>
+	<key>490.ibShadowedToolTip</key>
+	<string>Odstęp między kolumnami</string>
+	<key>491.ibShadowedToolTip</key>
+	<string>Odstęp między wierszami</string>
+	<key>493.ibShadowedToolTip</key>
+	<string>Odstęp między wierszami</string>
+	<key>499.title</key>
+	<string>Odstęp między wierszami</string>
+	<key>503.title</key>
+	<string>Odstęp kolumn</string>
+	<key>531.title</key>
+	<string>in</string>
+	<key>533.title</key>
+	<string>in</string>
+	<key>552.ibShadowedToolTip</key>
+	<string>Odstęp między kolumnami</string>
+	<key>555.ibShadowedToolTip</key>
+	<string>Odstęp między wierszami</string>
+	<key>558.title</key>
+	<string>in</string>
+	<key>559.title</key>
+	<string>in</string>
+	<key>562.title</key>
+	<string>Wysokość komórki</string>
+	<key>566.title</key>
+	<string>Szerokość komórki</string>
+	<key>598.ibShadowedToolTip</key>
+	<string>Odstęp między kolumnami</string>
+	<key>600.title</key>
+	<string>in</string>
+	<key>603.title</key>
+	<string>Granica komórki</string>
+	<key>awY-ai-FAo.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Zmiana rozmiaru</string>
+	<key>maT-3O-DaK.title</key>
+	<string>Ustaw priorytetowy odstęp</string>
+</dict>
+</plist>

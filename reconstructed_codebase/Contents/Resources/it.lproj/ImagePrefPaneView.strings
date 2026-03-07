@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Predefinito</string>
+	<key>486.title</key>
+	<string>Cache</string>
+	<key>526.title</key>
+	<string>Pacchetto EIP (Solo Sessioni)</string>
+	<key>557.title</key>
+	<string>Dimensione Anteprima (px):</string>
+	<key>559.title</key>
+	<string>Cache</string>
+	<key>563.title</key>
+	<string>Preferisco includere XMP al di sopra di IPTC</string>
+	<key>565.title</key>
+	<string>Preferisci Sidecar XMP al posto dei Metadati Incorporati</string>
+	<key>568.title</key>
+	<string>Metadati</string>
+	<key>586.title</key>
+	<string>Formato pacchetto file</string>
+	<key>590.title</key>
+	<string>Pack come EIP in importazione</string>
+	<key>591.title</key>
+	<string>Pack come EIP durante l'acquisizione</string>
+	<key>592.title</key>
+	<string>I file JPEG e i TIFF processati non sono stati packed come EIP.</string>
+	<key>601.title</key>
+	<string>Modifica</string>
+	<key>602.title</key>
+	<string>Abilita Modifica TIFF</string>
+	<key>603.title</key>
+	<string>Abilita Modifica JPEG</string>
+	<key>621.title</key>
+	<string>Sincronizzazione Completa</string>
+	<key>622.title</key>
+	<string>Carica</string>
+	<key>623.title</key>
+	<string>Nessuno</string>
+	<key>626.title</key>
+	<string>Sincronizza Automaticamente Sidecar XMP:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>Nuovi files (creati durante l'importazione, acquisizione, o conversione a pacchetto EIP) avranno permessi di scrittura per ogni file e non solo per i file proprietari.</string>
+	<key>629.title</key>
+	<string>Crea nuovi files scrivibili da tutti</string>
+	<key>635.title</key>
+	<string>Abilita Modifica PNG</string>
+	<key>667.title</key>
+	<string>Motore di Elaborazione Predefinito:</string>
+</dict>
+</plist>

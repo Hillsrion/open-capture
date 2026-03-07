@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>126.ibExternalAccessibilityDescription</key>
+	<string>EnableShadowWarningButton</string>
+	<key>128.ibExternalAccessibilityDescription</key>
+	<string>ShadowTargetLevelSlider</string>
+	<key>129.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>133.ibExternalAccessibilityDescription</key>
+	<string>HighlightTargetLevelSlider</string>
+	<key>134.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>242.title</key>
+	<string>Habilitar aviso de sombra</string>
+	<key>244.title</key>
+	<string>255</string>
+	<key>245.title</key>
+	<string>0</string>
+	<key>246.title</key>
+	<string>Padrões</string>
+	<key>247.title</key>
+	<string>Aviso de Exposição</string>
+	<key>248.title</key>
+	<string>Escolher os níveis pretendidos</string>
+	<key>250.placeholderString</key>
+	<string>0</string>
+	<key>252.placeholderString</key>
+	<string>255</string>
+	<key>253.title</key>
+	<string>Sombras:</string>
+	<key>254.title</key>
+	<string>Destaques:</string>
+	<key>255.title</key>
+	<string>Ferramenta Níveis</string>
+	<key>5.ibExternalAccessibilityDescription</key>
+	<string>ExposureWarningResetButton</string>
+	<key>68.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningLevelSlider</string>
+	<key>69.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningColorWell</string>
+	<key>77.ibExternalAccessibilityDescription</key>
+	<string>EnableShadowWarningButton</string>
+	<key>78.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelSlider</string>
+	<key>79.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningColorWell</string>
+	<key>80.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningLevelField</string>
+	<key>82.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>Destaques:</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>O Modo Canal aplica-se aos coletores Ajuste Automático e Sombras&amp;Destaques.</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>Níveis automáticos de limites de recortes</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>Canais Vermelho, Verde e Azul</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>Modo Canal:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>Sombras:</string>
+	<key>ixc-xh-cy8.title</key>
+	<string>%</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>Canal RGB</string>
+	<key>qk8-eY-e7A.title</key>
+	<string>%</string>
+	<key>vcD-AP-Mgo.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

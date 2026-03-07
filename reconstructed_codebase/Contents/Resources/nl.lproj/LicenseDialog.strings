@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>U kunt uw licentiecode plakken vanaf het klembord.</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>U kunt uw licentiecode plakken vanaf het klembord.</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>U kunt uw licentiecode plakken vanaf het klembord.</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>Wat is een licentiecode?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Meer lezen over Capture One-profielen</string>
+	<key>1348.title</key>
+	<string>Sluiten</string>
+	<key>1349.title</key>
+	<string>Knop</string>
+	<key>1350.title</key>
+	<string>Help</string>
+	<key>1356.title</key>
+	<string>Capture One activeren.</string>
+	<key>1357.title</key>
+	<string>Vul de onderstaande velden in.</string>
+	<key>1362.title</key>
+	<string>E-mail:</string>
+	<key>1363.title</key>
+	<string>Voornaam:</string>
+	<key>1364.title</key>
+	<string>Achternaam:</string>
+	<key>1365.title</key>
+	<string>Land:</string>
+	<key>1366.title</key>
+	<string>Haal profiel op</string>
+	<key>1367.title</key>
+	<string>Tekst klein systeemlettertype</string>
+	<key>1369.title</key>
+	<string>Systeem Font Tekst
+2 regels</string>
+	<key>1371.title</key>
+	<string>Licentiecode:</string>
+	<key>1376.title</key>
+	<string>(Licentiecode)</string>
+	<key>1377.title</key>
+	<string>Plakken</string>
+	<key>1378.title</key>
+	<string>Capture One activeren.</string>
+	<key>1379.title</key>
+	<string>Er wordt een nieuw profiel voor u aangemaakt. Controleer de informatie en maak een wachtwoord aan voor uw nieuwe profiel.</string>
+	<key>1380.title</key>
+	<string>E-mail</string>
+	<key>1381.title</key>
+	<string>Voornaam</string>
+	<key>1382.title</key>
+	<string>Achternaam</string>
+	<key>1383.title</key>
+	<string>Land</string>
+	<key>1384.title</key>
+	<string>E-mail:</string>
+	<key>1385.title</key>
+	<string>Voornaam:</string>
+	<key>1386.title</key>
+	<string>Achternaam:</string>
+	<key>1387.title</key>
+	<string>Land:</string>
+	<key>1388.placeholderString</key>
+	<string>Minimaal 6 tekens</string>
+	<key>1389.placeholderString</key>
+	<string>Minimaal 6 tekens</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>Waarom heb ik een wachtwoord nodig?</string>
+	<key>1391.title</key>
+	<string>Bevestigen:</string>
+	<key>1392.title</key>
+	<string>Wachtwoord:</string>
+	<key>1393.title</key>
+	<string>Bedankt voor het activeren!</string>
+	<key>1394.title</key>
+	<string>Deze versie van Capture One is nu geactiveerd.</string>
+	<key>1395.title</key>
+	<string>Software-licentieovereenkomst weergeven</string>
+	<key>1396.title</key>
+	<string>Capture One-licentie.</string>
+	<key>1397.title</key>
+	<string>Deze versie van Capture One is geactiveerd.</string>
+	<key>1398.title</key>
+	<string>Licentiecode:</string>
+	<key>1399.title</key>
+	<string>Geregistreerd voor:</string>
+	<key>1400.title</key>
+	<string>Resterende gratis upgrades:</string>
+	<key>1401.title</key>
+	<string>Resterende activeringen:</string>
+	<key>1404.title</key>
+	<string>(String type licentie)</string>
+	<key>1406.title</key>
+	<string>(Licentiehouder)</string>
+	<key>1407.title</key>
+	<string>(Licentiecode)</string>
+	<key>1408.title</key>
+	<string>Ja, ik wil mijn licentie op deze computer deactiveren.</string>
+	<key>1409.title</key>
+	<string>Deactiveer Capture One.</string>
+	<key>1410.title</key>
+	<string>Capture One wordt gesloten wanneer u de licentie deactiveert. De volgende keer dat u Capture One op deze computer opent, wordt u gevraagd om opnieuw een licentiecode in te voeren.</string>
+	<key>1413.title</key>
+	<string>OK</string>
+	<key>1414.title</key>
+	<string>Annuleer</string>
+	<key>1415.title</key>
+	<string>E-mail mijn wachtwoord</string>
+	<key>1416.title</key>
+	<string>Profielwachtwoord:</string>
+	<key>1418.title</key>
+	<string>Plakken</string>
+	<key>1426.title</key>
+	<string>1 april 1976</string>
+	<key>1427.title</key>
+	<string>Tekstcel</string>
+	<key>1428.title</key>
+	<string>Tekstcel</string>
+	<key>1436.title</key>
+	<string>Upgrade van licentie niet mogelijk</string>
+	<key>1443.title</key>
+	<string>De ingevoerde licentiecode is niet geldig voor deze versie van Capture One.
+
+Om Capture One te kunnen blijven gebruiken, moet u activeren met een geldige code of naar de Capture One Online Store (wordt geopend via de browser) gaan om een geldige licentie te kopen.</string>
+	<key>1445.title</key>
+	<string>Ga naar Online Store...</string>
+	<key>1446.title</key>
+	<string>OK</string>
+	<key>16.label</key>
+	<string>Activering</string>
+	<key>18.label</key>
+	<string>Wachtwoord</string>
+	<key>24.label</key>
+	<string>Deactivering</string>
+	<key>281.title</key>
+	<string>Voer wachtwoord in</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>U kunt uw licentiecode plakken vanaf het klembord.</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>d MMMM j</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>Gratis upgrades en activeringen, wat houdt dat in?</string>
+	<key>5.title</key>
+	<string>Licentie</string>
+	<key>540.title</key>
+	<string>Nieuw profiel</string>
+	<key>546.title</key>
+	<string>Nieuw wachtwoord</string>
+	<key>559.title</key>
+	<string>Titel</string>
+	<key>565.title</key>
+	<string>Licentie</string>
+	<key>570.title</key>
+	<string>Activeringsgeschiedenis</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>Online activatie</string>
+	<key>78.headerCell.title</key>
+	<string>Datum</string>
+	<key>79.headerCell.title</key>
+	<string>Computer-ID</string>
+	<key>80.headerCell.title</key>
+	<string>Type activering</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>De activatiesleutel is niet geldig</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>Handmatige activatie</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(Hardware ID)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>De Registratiesleutel dient te worden ingevuld in het online webformulier. Deze kunt u vinden door in te loggen op uw profiel op www.captureone.com</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>Verifieer e-mail:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>Activatiesleutel:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>Voeg de Activatiesleutel in die ontvangen is van de website en klik op de knop gelabeld ‘Activeer’</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>Registratiesleutel:</string>
+</dict>
+</plist>

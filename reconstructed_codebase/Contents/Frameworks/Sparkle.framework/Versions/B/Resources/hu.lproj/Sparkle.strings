@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>A %1$@ %2$@ verziója letöltődött és készen áll a telepítésre! Ez egy fontos frissítés; szeretné most telepíteni, majd újraindítani a %1$@ alkalmazást?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>A %1$@ %2$@ verziója letöltődött és készen áll a telepítésre! Szeretné most telepíteni, majd újraindítani a %1$@ alkalmazást?</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>A %1$@ %2$@ a jelenleg elérhető legfrissebb verzió.</string>
+	<key>%@ downloaded</key>
+	<string>%@ letöltve</string>
+	<key>%@ of %@</key>
+	<string>%1$@ / %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>A %@ egy újabb verziója elérhető!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>A %@ egy újabb verziója készen áll a telepítésre!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Hiba történt a frissítések lekérdezésekor. Kérjük, próbálja újra később.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Hiba történt a frissítés letöltése közben. Kérjük, próbálja újra később.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Hiba történt a frissítés kicsomagolása közben. Kérjük, próbálja újra később.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Hiba történt az elérhető frissítések beolvasásakor.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>A %@ egy fontos frissítése készen áll a telepítésre</string>
+	<key>Cancel</key>
+	<string>Mégsem</string>
+	<key>Cancel Update</key>
+	<string>Frissítés megszakítása</string>
+	<key>Install and Relaunch</key>
+	<string>Telepítés és újraindítás</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Ready to Install</key>
+	<string>A telepítő készen áll</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Szeretné, hogy a %1$@ ellenőrizze az elérhető frissítéseket induláskor? Ha nem, a frissítések keresését kézzel is elindíthatja a %1$@ menüből.</string>
+	<key>Update Error!</key>
+	<string>Frissítési hiba!</string>
+	<key>Updating %@</key>
+	<string>%@ frissítése</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Mozgassa a %1$@ alkalmazást az Alkalmazások mappába, indítsa újra onnan, majd próbálja újra a frissítést.</string>
+</dict>
+</plist>

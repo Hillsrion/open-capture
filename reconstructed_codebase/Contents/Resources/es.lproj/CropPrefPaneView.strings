@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Siempre</string>
+	<key>35.title</key>
+	<string>Nunca</string>
+	<key>36.title</key>
+	<string>Excepto al arrastrar</string>
+	<key>43.title</key>
+	<string>Cuando no haya máscara</string>
+	<key>44.title</key>
+	<string>Siempre</string>
+	<key>449.title</key>
+	<string>Mostrar:</string>
+	<key>450.title</key>
+	<string>Mostrar marco:</string>
+	<key>451.title</key>
+	<string>Mostrar etiquetas:</string>
+	<key>453.title</key>
+	<string>Opacidad:</string>
+	<key>455.title</key>
+	<string>Brillo:</string>
+	<key>459.title</key>
+	<string>Valores predeterminados</string>
+	<key>52.title</key>
+	<string>Siempre</string>
+	<key>53.title</key>
+	<string>Nunca</string>
+	<key>54.title</key>
+	<string>Sólo al arrastrar</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>Excepto al arrastrar</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Siempre</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Máscara</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Mostrar Controles:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Nunca</string>
+</dict>
+</plist>

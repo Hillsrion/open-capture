@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Импортировать библиотеку Aperture</string>
+	<key>14.title</key>
+	<string>Отмена</string>
+	<key>28.title</key>
+	<string>При импорте из библиотеки Aperture, следующие параметры будут переданы в Capture One:</string>
+	<key>4.title</key>
+	<string>Больше не показывать</string>
+	<key>51.title</key>
+	<string>Проекты, Папки, Альбомы
+Кадрирование ИЛИ Выпрямить, Вращение, Переворот
+Экспозиция, Яркость, Света и тени, Определение, Насыщенность, Ч/Б
+Метаданные (IPTC, Рейтинг, Цветная метка, Ключевые слова)</string>
+	<key>57.title</key>
+	<string>Коррекции цвета являются приблизительными.
+
+Если вы хотите включить любые умные альбомы, вам нужно будет конвертировать их в обычные альбомы перед импортом.</string>
+	<key>8.title</key>
+	<string>Продолжить</string>
+</dict>
+</plist>

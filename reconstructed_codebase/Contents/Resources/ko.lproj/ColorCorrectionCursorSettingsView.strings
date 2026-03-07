@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>645-F9-nRt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>색조</string>
+	<key>7sk-7W-MYa.title</key>
+	<string>다이렉트 컬러 에디터 설정</string>
+	<key>CsU-40-n2D.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>감광도</string>
+	<key>DgY-Rv-4cU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>빛</string>
+	<key>bG3-MB-sba.title</key>
+	<string>이 패널은 Direct Color Editor 커서가 선택된 경우 뷰어에서 마우스 오른쪽 버튼을 클릭하여 표시 할 수도 있습니다.</string>
+	<key>veB-Rz-2X3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>채도</string>
+</dict>
+</plist>

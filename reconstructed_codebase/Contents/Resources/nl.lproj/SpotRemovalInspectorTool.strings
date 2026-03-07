@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>Vlektype</string>
+	<key>109.title</key>
+	<string>Vlek</string>
+	<key>111.title</key>
+	<string>Stof</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Wis geselecteerde vlek</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>Geselecteerde vlek</string>
+	<key>47.title</key>
+	<string>Vlek</string>
+	<key>50.title</key>
+	<string>1 van 1</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>Vorige vlek</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>Volgende vlek</string>
+	<key>84.title</key>
+	<string>Type</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Vlekken verwijderen</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>kelvin</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Straal</string>
+</dict>
+</plist>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>플러그인 설정을 가져올 수 없습니다.</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>플러그인이 사용 중지되었습니다.</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>상자</string>
+	<key>AQe-BF-01j.title</key>
+	<string>더 많은 플러그인 가져 오기</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>이 플러그인을 사용 중지 할 수 없습니다.</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>선택한 플러그인이 없습니다.</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>이 플러그인에는 맞춤 설정이 없습니다.</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>텍스트 셀</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>재시도</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>플러그인 제목</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>가능</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>특징</string>
+</dict>
+</plist>

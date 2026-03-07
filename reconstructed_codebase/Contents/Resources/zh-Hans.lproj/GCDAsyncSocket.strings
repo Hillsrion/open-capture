@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>连接被服务器断开</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>尝试连接主机超时</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>尝试通过 FD 端口建立连接失败。getpeername() 失败</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>读取操作已达最大上限</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>读取操作超时</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>写入操作超时</string>
+</dict>
+</plist>

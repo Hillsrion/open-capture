@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Usuń warstwę dopasowania</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Nowa warstwa</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Opcje narzędzia kursora</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Ustawienia widoku maski</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Pole</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>krycie warstwy</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Krycie</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Zakres lumy...</string>
+</dict>
+</plist>

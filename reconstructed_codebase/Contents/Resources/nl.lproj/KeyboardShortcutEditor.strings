@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Bewerk sneltoetsen</string>
+	<key>10.title</key>
+	<string>Tekstcel</string>
+	<key>11.title</key>
+	<string>Tekstcel</string>
+	<key>13.title</key>
+	<string>Sluiten</string>
+	<key>22.title</key>
+	<string>Foutlabel</string>
+	<key>51.title</key>
+	<string>Venster</string>
+	<key>59.title</key>
+	<string>OK</string>
+	<key>60.title</key>
+	<string>Annuleer</string>
+	<key>61.title</key>
+	<string>Voer een naam in voor de sneltoetsenset</string>
+	<key>62.title</key>
+	<string>fout (programmatisch)</string>
+	<key>75.title</key>
+	<string>Help</string>
+	<key>8.headerCell.title</key>
+	<string>Opdracht</string>
+	<key>9.headerCell.title</key>
+	<string>Toets</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Label</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Opdracht</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Toets</string>
+</dict>
+</plist>

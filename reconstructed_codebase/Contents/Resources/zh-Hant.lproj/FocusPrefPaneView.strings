@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>閾值：</string>
+	<key>14.title</key>
+	<string>焦點遮罩</string>
+	<key>15.ibExternalAccessibilityDescription</key>
+	<string>GridColorWell</string>
+	<key>17.title</key>
+	<string>色彩：</string>
+	<key>22.ibExternalAccessibilityDescription</key>
+	<string>CropOpacitySlider</string>
+	<key>25.ibExternalAccessibilityDescription</key>
+	<string>CropOpacitySlider</string>
+	<key>30.title</key>
+	<string>不透明度：</string>
+	<key>5.ibExternalAccessibilityDescription</key>
+	<string>CropResetButton</string>
+	<key>6.title</key>
+	<string>默認設定</string>
+</dict>
+</plist>

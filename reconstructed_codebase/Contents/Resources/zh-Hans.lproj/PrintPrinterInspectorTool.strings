@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>分辨率</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>打印机名称</string>
+	<key>469.title</key>
+	<string>Canon 打印机型号 xxx</string>
+	<key>489.title</key>
+	<string>纸张</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>感知恒定</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>纸张尺寸</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>打开页面设置界面</string>
+	<key>509.title</key>
+	<string>页面设置</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>打开打印设置界面</string>
+	<key>514.title</key>
+	<string>打印设置…</string>
+	<key>544.title</key>
+	<string>锐化</string>
+	<key>556.title</key>
+	<string>黑点补偿</string>
+	<key>558.title</key>
+	<string>色彩管理文字 色彩管理文字 色彩管理文字 色彩管理文字 色彩管理文字</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>锐化</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>锐化</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>色彩配置文件</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>渲染意图：</string>
+	<key>HNV-gP-la6.title</key>
+	<string>绝对色度匹配</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>相对色度匹配</string>
+	<key>vIk-s2-hue.title</key>
+	<string>饱和度</string>
+</dict>
+</plist>

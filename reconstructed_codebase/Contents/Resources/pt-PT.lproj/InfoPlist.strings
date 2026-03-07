@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Pacote de imagem aprimorada da Capture One</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>O Capture One às vezes requer o controle de outros aplicativos indiretamente para scripts executados nele.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>O Capture One não precisa de acesso ao seu Calendário. Esse alerta é causado pelo acesso à sua pasta da Biblioteca.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>O Capture One não precisa de acesso aos seus contatos. Esse alerta é causado pelo acesso à sua pasta da Biblioteca.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>O Capture One requer acesso à biblioteca de fotos para suportar a funcionalidade de captura conectada. Esse alerta também pode ser causado pelo acesso do Capture One à sua pasta da Biblioteca.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>O Capture One não precisa de acesso aos seus Lembretes. Esse alerta é causado pelo acesso à sua pasta da Biblioteca.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>O Capture One requer acesso removível ao volume para oferecer suporte à funcionalidade de captura conectada. Pode ser necessário reiniciar o Capture One para que essa configuração seja aplicada.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One imagem RAW</string>
+</dict>
+</plist>

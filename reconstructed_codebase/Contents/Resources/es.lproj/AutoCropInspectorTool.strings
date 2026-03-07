@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Rollo de película - Tamaño Fijo</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>El material unido - Tamaño fijo</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Niveles automáticos en corte interior</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Auto Recorte</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>En Recorte</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Auto-recorte automático al capturar una nueva imagen.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Borde superior</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Paso bajo</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Ninguna</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Tamaño del relleno para auto recorte.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Relleno</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Borde inferior</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Bordes superior-derecho</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Bajo contraste objeto-fondo</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Enderezar</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Ninguna</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Material suelto</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Método</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Media</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Borde izquierdo</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Material unido</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Tamaño del relleno para auto recorte.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Material suelto - Tamaño fijo</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optimización</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Tamaño del relleno para auto recorte.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Ninguna</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Borde derecho</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>En Captura</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Bordes inferior-izquierda</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Activado</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Bordes superior-izquierda</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Medio contraste objeto-fondo</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Bordes inferior-derecha</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Auto recortar automáticamente al hacer un nuevo recorte.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Establecer Recorte Maestro</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Muy bajo contraste objeto-fondo</string>
+</dict>
+</plist>

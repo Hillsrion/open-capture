@@ -1,0 +1,2320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> - New default image settings created. </key>
+	<string>— Созданы новые настройки изображения по умолчанию.</string>
+	<key>%.1f MB</key>
+	<string>%.1f МБ</string>
+	<key>%.2f GB</key>
+	<string>%.2f ГБ</string>
+	<key>%.2f TB</key>
+	<string>%.2f ТБ</string>
+	<key>%ld of these variants have an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Для %ld из этих вариантов применен профиль LCC. Изменение профиля LCC для этого варианта может привести к удалению существующего профиля. Профиль LCC может быть воссоздан только по оригинальному тестовому кадру LCC или применен заново, если он был сохранен как предустановка.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants.</key>
+	<string>У %1$lu из %2$lu вариантов отсутствуют метаданные. Инструменты Проверка и Восстановление могут устранить проблему, удалив эти варианты.</string>
+	<key>%lu out of %lu variants are missing metadata. Verify and Repair can fix the problem by removing those variants. Please consider saving the list of images shown on the Event Logger, so you can import them again later.</key>
+	<string>У %1$lu из %2$lu вариантов отсутствуют метаданные. Инструменты Проверка и Восстановление могут устранить проблему, удалив эти варианты. Рекомендуем сохранить список изображений, отображаемый в журнале событий, чтобы изображения можно было импортировать позже.</string>
+	<key>%u KB</key>
+	<string>%u КБ</string>
+	<key>(Error 1) Unsupported profile: profile is not supported or invalid profile.</key>
+	<string>(Ошибка 1) Неподдерживаемый профиль: профиль не поддерживается или недействителен.</string>
+	<key>(Error 10) Slope limited profile: dark and saturated colors may cause large variations.</key>
+	<string>(Ошибка 10) Ограниченный профиль: темные и насыщенные цвета могут иметь большую вариативность.</string>
+	<key>(Error 11) Adaptation white-point is unspecified or invalid (using media white).</key>
+	<string>(Ошибка 11) Адаптация точки белого не определена или недействительна (с использованием медиа-белого).</string>
+	<key>(Error 12) Adaptation white-point is unspecified or invalid (using D50).</key>
+	<string>(Ошибка 12) Адаптация точки белого не определена или недействительна (с использованием D50).</string>
+	<key>(Error 13) Media white is missing: assuming D50.</key>
+	<string>(Ошибка 13) Медиа-белый отсутствует: предположительно D50.</string>
+	<key>(Error 14) Ambiguous PCS white-point: illuminant is not D50 as required by the specification.</key>
+	<string>(Ошибка 14) Неопределенная PCS точка белого: в соответствии с требованиями спецификации, источник света не должен отличаться от D50 .</string>
+	<key>(Error 15) Ambiguous PCS white-point: (255,255,255) is tinted.</key>
+	<string>(Ошибка 15) Неопределенная PCS точка белого: (255,255,255) окрашена.</string>
+	<key>(Error 2) Data Color Space not supported: only RGB profiles are supported.</key>
+	<string>(Ошибка 2) Цветовое пространство не поддерживается: только RGB профили поддерживаются.</string>
+	<key>(Error 3) Profile Connection Space not supported: profile is not XYZ.</key>
+	<string>(Ошибка 3) Объединенное цветовое пространство не поддерживается: профиль имеет отличное от XYZ цветовое пространство.</string>
+	<key>(Error 4) Class not supported: profile must have class display, output or color space.</key>
+	<string>(Ошибка 4) Класс не поддерживается: профиль должен иметь класс дисплея, устройства вывода или цветового пространства.</string>
+	<key>(Error 5) LUT-based profiles are not supported.</key>
+	<string>(Ошибка 5) Профили на основе LUT не поддерживаются.</string>
+	<key>(Error 6) Curves mismatch (malformed profile).</key>
+	<string>(Ошибка 6) Несоответствие кривых (неверный формат профиля).</string>
+	<key>(Error 7) Profile interpretation depends on intent.</key>
+	<string>(Ошибка 7) Интерпретация профиля зависит от цветопередачи.</string>
+	<key>(Error 8) Transform based on V4 specification; V2 transform ignored.</key>
+	<string>(Ошибка 8) Преобразование основано на спецификации V4; преобразования V2 игнорируются.</string>
+	<key>(Error 9) Profile cannot express black. Black point compensation may cause large variations.</key>
+	<string>(Ошибка 9) Профиль не может отобразить черный цвет. Компенсация точки черного может вызвать большую вариативность.</string>
+	<key>(Locked: Read Only)</key>
+	<string>(Заблокирован: только для чтения)</string>
+	<key>(Missing path)</key>
+	<string>(Отсутствует путь)</string>
+	<key>(No City)</key>
+	<string>(Нет города)</string>
+	<key>(No Country)</key>
+	<string>(Нет страны)</string>
+	<key>(No Keywords)</key>
+	<string>(Нет ключивых слов)</string>
+	<key>(No Location)</key>
+	<string>(Нет местоположения)</string>
+	<key>(No State)</key>
+	<string>(Нет области)</string>
+	<key>(No Values)</key>
+	<string>(Нет значения)</string>
+	<key>-- bytes</key>
+	<string>-- байт</string>
+	<key>1 Digit Counter</key>
+	<string>1-разрядный счетчик</string>
+	<key>1 shot</key>
+	<string>1 кадр</string>
+	<key>12,30.9509E</key>
+	<string>12,30.9509E</string>
+	<key>1500x1200</key>
+	<string>1500x1200</string>
+	<key>18 mm</key>
+	<string>18 мм</string>
+	<key>2 Digit Counter</key>
+	<string>2-разрядный счетчик</string>
+	<key>3 Digit Counter</key>
+	<string>3-разрядный счетчик</string>
+	<key>4 Digit Counter</key>
+	<string>4-разрядный счетчик</string>
+	<key>5 Digit Counter</key>
+	<string>5-разрядный счетчик</string>
+	<key>55,40.2995N</key>
+	<string>55,40.2995N</string>
+	<key>6 Digit Counter</key>
+	<string>6-разрядный счетчик</string>
+	<key>70-200mm</key>
+	<string>70-200mm</string>
+	<key>&lt;unknown&gt;</key>
+	<string>&lt;неизвестно&gt;</string>
+	<key>A Recipes file was found instead of a folder.</key>
+	<string>Вместо папки обнаружен файл наборов команд.</string>
+	<key>A Recipes folder could not be created.</key>
+	<string>Не удалось создать папку наборов команд.</string>
+	<key>A database corruption was detected and the catalog "%@" must close.</key>
+	<string>Было обнаружено повреждение базы данных, и каталог "%@" должен быть закрыт.</string>
+	<key>A newer Capture One engine is required</key>
+	<string>Требуется более новый движок Capture One</string>
+	<key>A session subfolder named "%@" could not be created.
+
+The session folder will be used instead.</key>
+	<string>Не удалось создать вложенную папку сессии под именем "%@".
+
+Вместо нее будет использоваться папка сессии.</string>
+	<key>AI</key>
+	<string>AI</string>
+	<key>AI focus</key>
+	<string>Фокус AI</string>
+	<key>AI servo</key>
+	<string>Слежение AI</string>
+	<key>About %d hours left</key>
+	<string>Осталось примерно %d ч.</string>
+	<key>About %d minutes left</key>
+	<string>Осталось примерно %d мин.</string>
+	<key>About 10 seconds left</key>
+	<string>Осталось примерно 10 секунд</string>
+	<key>About 30 seconds left</key>
+	<string>Осталось примерно 30 секунд</string>
+	<key>About 5 seconds left</key>
+	<string>Осталось примерно 5 секунд</string>
+	<key>About a minute left</key>
+	<string>Осталось около минуты</string>
+	<key>About an hour left</key>
+	<string>Осталось около часа</string>
+	<key>Action</key>
+	<string>Действие</string>
+	<key>Action (High speed)</key>
+	<string>Спорт (высокая скорость)</string>
+	<key>Add Layer</key>
+	<string>Добавить слой</string>
+	<key>Add Selected Images to %@</key>
+	<string>Добавить выделенные изображения в %@</string>
+	<key>Add Selected Warning</key>
+	<string>Добавить выделенные предупреждения</string>
+	<key>Address</key>
+	<string>Адрес</string>
+	<key>Adjusted</key>
+	<string>Обработанные</string>
+	<key>Adjusting</key>
+	<string>Коррекция</string>
+	<key>Adobe RGB</key>
+	<string>Adobe RGB</string>
+	<key>All Images</key>
+	<string>Все изображения</string>
+	<key>Altitude</key>
+	<string>Высота над уровнем моря</string>
+	<key>Amount</key>
+	<string>Количество</string>
+	<key>An ICC Profile cannot be located. </key>
+	<string>Не удалось найти ICC профиль.</string>
+	<key>An LCC Profile cannot be located. </key>
+	<string>Не удалось найти LCC профиль.</string>
+	<key>An adjustment mask for an image is missing. The missing mask has been replaced by an empty mask.</key>
+	<string>Маска слоя отсутствует и была заменена пустой маской.</string>
+	<key>An error occurred and the catalog "%@" must close.</key>
+	<string>Произошла ошибка, и каталог "%@" должен быть закрыт.</string>
+	<key>An error occurred and the session "%@" must close.</key>
+	<string>Произошла ошибка, и сессия "%@" должна быть закрыта.</string>
+	<key>An error occurred during processing.</key>
+	<string>Произошла ошибка во время обработки.</string>
+	<key>An error occurred while loading metadata information for some variants.</key>
+	<string>Произошла ошибка при загрузке метаданных для некоторых вариантов.</string>
+	<key>An error occurred while trying to apply a layer</key>
+	<string>При попытке применить слой возникла ошибка</string>
+	<key>An error occurred while trying to copy the existing recipes folder. A default recipes folder will be used instead.</key>
+	<string>Произошла ошибка при попытке скопировать существующую папку набора команд обработки. Вместо нее будет использована стандартная папка набора команд обработки.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. Recipes could not be loaded.</key>
+	<string>Произошла ошибка при копировании существующей папки наборов командр обработки. Наборы командр обработки не могут быть загружены.</string>
+	<key>An error occurred while trying to copy the existing recipes folder. The current path references a file and not a folder. A default recipes folder will be used instead.</key>
+	<string>Произошла ошибка при попытке скопировать существующую папку набора команд обработки. Текущий путь указывает на файл, а не на папку. Будет использована стандартная папка набора команд обработки.</string>
+	<key>An error occurred while trying to load the recipe file '%@.' The recipe was not loaded.</key>
+	<string>При попытке загрузить файл наборов команд "%@" произошла ошибка. Набор команд не загружен.</string>
+	<key>An error occurred while trying to load the recipes list. A default recipes list will be used instead.</key>
+	<string>При попытке загрузить список наборов команд произошла ошибка. Будет использоваться список наборов команд по умолчанию.</string>
+	<key>An error occurred while trying to open a Recipes folder.</key>
+	<string>При попытке открыть папку наборов команд произошла ошибка.</string>
+	<key>An error occurred while writing the ICC Profile to disk. %@</key>
+	<string>При копировании ICC профиля произошла ошибка. %@</string>
+	<key>An error occurred while writing the LCC Profile to disk. %@</key>
+	<string>При копировании LCC профиля произошла ошибка. %@</string>
+	<key>An unknown error occurred while trying to create the watermark.</key>
+	<string>При попытке создать водяной знак произошла неизвестная ошибка.</string>
+	<key>An unrecoverable error was encountered while working with the catalog's database.
+
+%@
+
+The catalog will now close.</key>
+	<string>Во время работы с базой данных каталога возникла неустранимая ошибка.
+
+%@
+
+Каталог будет закрыт.</string>
+	<key>An unrecoverable error was encountered while working with the catalog. The catalog will now close.</key>
+	<string>Во время работы с базой данных каталога возникла неустранимая ошибка. Каталог будет закрыт.</string>
+	<key>An unrecoverable error was encountered while working with the session's database.
+
+%@
+
+The session will now close.</key>
+	<string>Во время работы с базой данных сессии возникла неустранимая ошибка.
+
+%@
+
+Сессия будет закрыта.</string>
+	<key>An unrecoverable error was encountered while working with the session. The session will now close.</key>
+	<string>Во время работы с базой данных сессии возникла неустранимая ошибка. Сессия будет закрыта.</string>
+	<key>Annotated</key>
+	<string>С аннотацией</string>
+	<key>Annotations</key>
+	<string>Аннотации</string>
+	<key>Any</key>
+	<string>любому</string>
+	<key>Aper.</key>
+	<string>Апертура</string>
+	<key>Aperture</key>
+	<string>Диафрагма</string>
+	<key>Aperture priority</key>
+	<string>Приоритет диафрагмы</string>
+	<key>Aperture-priority AE</key>
+	<string>Приоритет диафрагмы АЕ (автоэкспозиция)</string>
+	<key>Apply</key>
+	<string>Применить</string>
+	<key>Apply Adjustments</key>
+	<string>Применить коррекции</string>
+	<key>Apply LCC</key>
+	<string>Применить LCC</string>
+	<key>Apply LCC's to the preceding variants?</key>
+	<string>Применить профили LCC к предыдущим вариантам?</string>
+	<key>Apply LCC's to the subsequent variants?</key>
+	<string>Применить профили LCC к последующим вариантам?</string>
+	<key>Apply to All Selected Variants</key>
+	<string>Применить ко всем выбранным вариантам</string>
+	<key>Applying Adjustments</key>
+	<string>Применение коррекций</string>
+	<key>Applying Adjustments to %@</key>
+	<string>Применение коррекций к %@</string>
+	<key>Are you sure you want to change the extension from “%@” to “%@”?</key>
+	<string>Действительно изменить расширение с %1$@ на %2$@?</string>
+	<key>Auto</key>
+	<string>Авто</string>
+	<key>Auto Adjust</key>
+	<string>Автокоррекция</string>
+	<key>Auto Exposure</key>
+	<string>Автоэкспозиция</string>
+	<key>Auto HDR</key>
+	<string>Автокоррекция HDR</string>
+	<key>Auto Keystone</key>
+	<string>Автокоррекция перспективных искажений</string>
+	<key>Auto Levels</key>
+	<string>Автокоррекция уровней</string>
+	<key>Auto Rotation</key>
+	<string>Автоповорот</string>
+	<key>Auto White Balance</key>
+	<string>Автокоррекция Баланса Белого</string>
+	<key>Auto bracket</key>
+	<string>Автоматическая эксповилка</string>
+	<key>Auto, Did not fire</key>
+	<string>Авторежим, вспышка не сработала</string>
+	<key>Auto, Fired</key>
+	<string>Авторежим, сработала</string>
+	<key>Auto, Fired, Red-eye reduction</key>
+	<string>Авторежим, вспышка сработала, подавление эффекта красных глаз</string>
+	<key>Auto, Fired, Red-eye reduction, Return detected</key>
+	<string>Авторежим, вспышка сработала, подавление эффекта красных глаз, отраженный свет зафиксирован</string>
+	<key>Auto, Fired, Red-eye reduction, Return not detected</key>
+	<string>Авторежим, вспышка сработала, подавление эффекта красных глаз, отраженный свет не зафиксирован</string>
+	<key>Auto, Fired, Return detected</key>
+	<string>Авторежим, вспышка сработала, отраженный свет зафиксирован</string>
+	<key>Auto, Fired, Return not detected</key>
+	<string>Авторежим, вспышка сработала, отраженный свет не зафиксирован</string>
+	<key>Autoloaded %d out of %d sets of metadata</key>
+	<string>Автоматически загружено наборов метаданных: %1$d из %2$d</string>
+	<key>Average</key>
+	<string>Средний</string>
+	<key>Avg.</key>
+	<string>Сред.</string>
+	<key>B&amp;&amp;W Blue</key>
+	<string>Ч&amp;&amp;Б Синий</string>
+	<key>B&amp;&amp;W Cyan</key>
+	<string>Ч&amp;&amp;Б Голубой</string>
+	<key>B&amp;&amp;W Dark Split-tone Hue</key>
+	<string>Ч/Б Тонирование Тени Оттенок</string>
+	<key>B&amp;&amp;W Dark Split-tone Saturation</key>
+	<string>Ч/Б Тонирование Тени Насыщенность</string>
+	<key>B&amp;&amp;W Enabled</key>
+	<string>Ч/Б включено</string>
+	<key>B&amp;&amp;W Green</key>
+	<string>Ч&amp;&amp;Б Зеленый</string>
+	<key>B&amp;&amp;W Light Split-tone Hue</key>
+	<string>Ч/Б Тонирование Света Оттенок</string>
+	<key>B&amp;&amp;W Light Split-tone Saturation</key>
+	<string>Ч/Б Тонирование Света Насыщенность</string>
+	<key>B&amp;&amp;W Magenta</key>
+	<string>Ч&amp;&amp;Б Пурпурный</string>
+	<key>B&amp;&amp;W Red</key>
+	<string>Ч&amp;&amp;Б Красный</string>
+	<key>B&amp;&amp;W Yellow</key>
+	<string>Ч&amp;&amp;Б Желтый</string>
+	<key>Barcode</key>
+	<string>Штрих-код</string>
+	<key>Base Characteristics</key>
+	<string>Базовые характеристики</string>
+	<key>Basic</key>
+	<string>Базовый</string>
+	<key>Black &amp; White</key>
+	<string>Черно-белое</string>
+	<key>Black Recovery</key>
+	<string>Восстановление Черного</string>
+	<key>Blue</key>
+	<string>Синий</string>
+	<key>Blue Curve</key>
+	<string>Кривая синего</string>
+	<key>Blue Gradation Curve</key>
+	<string>Градационная кривая синего</string>
+	<key>Brack.</key>
+	<string>Брект.</string>
+	<key>Bracket</key>
+	<string>Эксповилка</string>
+	<key>Bracketing</key>
+	<string>Эксповилка</string>
+	<key>Bracketing: Aperture</key>
+	<string>Брекетинг: Диафрагма</string>
+	<key>Bracketing: ISO</key>
+	<string>Брекетинг: ISO</string>
+	<key>Bracketing: Shutter Speed</key>
+	<string>Брекетинг: Выдержка</string>
+	<key>Brightness</key>
+	<string>Яркость</string>
+	<key>Burst</key>
+	<string>Пакетный</string>
+	<key>CWA</key>
+	<string>CWA</string>
+	<key>Camera Counter</key>
+	<string>Счетчик камеры</string>
+	<key>Camera Firmware</key>
+	<string>Прошивка камеры</string>
+	<key>Camera Lens</key>
+	<string>Объектив камеры</string>
+	<key>Camera Make</key>
+	<string>Марка камеры</string>
+	<key>Camera Model</key>
+	<string>Модель камеры</string>
+	<key>Camera Owner</key>
+	<string>Владелец камеры</string>
+	<key>Camera Profile</key>
+	<string>Профиль камеры</string>
+	<key>Camera Serial</key>
+	<string>Серийный номер камеры</string>
+	<key>Camera Software</key>
+	<string>ПО камеры</string>
+	<key>Camera defaults contains an ICC profile that couldn't be loaded. This could be because the original file is missing or corrupted.</key>
+	<string>Настройки камеры по умолчанию содержат профиль ICC, который нельзя загрузить. Это может быть связано с тем, что исходный файл отсутствует или поврежден.</string>
+	<key>Cancel</key>
+	<string>Отмена</string>
+	<key>Cannot contain characters %@</key>
+	<string>Не может содержать символы %@</string>
+	<key>Cannot save catalog</key>
+	<string>Не удалось сохранить каталог</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is in the Trash. Please restore it to its original location.</key>
+	<string>Невозможно сохранить каталог по этому пути: %@
+
+Файл каталога находится в корзине. Восстановите его в исходное местоположение.</string>
+	<key>Cannot save catalog to path: %@
+
+The catalog file is not writable. Try to change its file permissions if possible.</key>
+	<string>Невозможно сохранить каталог по этому пути: %@
+
+Файл каталога не доступен для записи. Попробуйте изменить права доступа к файлу каталога.</string>
+	<key>Cannot save session</key>
+	<string>Не удалось сохранить сессию</string>
+	<key>Cannot save session to path: %@
+
+The session file is in the Trash. Please restore it to its original location.</key>
+	<string>Невозможно сохранить сессию по этому пути: %@
+
+Файл сессии находится в корзине. Восстановите его в исходное местоположение.</string>
+	<key>Cannot save session to path: %@
+
+The session file is not writable. Try to change its file permissions if possible.</key>
+	<string>Невозможно сохранить сессию по этому пути: %@
+
+Файл сессии не доступен для записи. Попробуйте изменить права доступа к файлу сессии.</string>
+	<key>Caption</key>
+	<string>Подпись</string>
+	<key>Capture Folder</key>
+	<string>Папка кадров</string>
+	<key>Capture One could not create the specified watermark at this time.</key>
+	<string>Приложению Capture One не удалось создать указанный водяной знак.</string>
+	<key>Capture One does not have enough memory to create the specified overlay.</key>
+	<string>Capture One не хватает памяти для создания данного наложения.</string>
+	<key>Capture One does not have enough memory to create the specified watermark.</key>
+	<string>В Capture One недостаточно памяти для создания указанного водяного знака.</string>
+	<key>Capture One is protected by at least US Patent 8,854,482 and 8,619,146 as well as pending patents.</key>
+	<string>Приложение Capture One защищено патентами США 8 854 482 и 8 619 146, а также другими патентами, находящимися на рассмотрении.</string>
+	<key>Catalog Export</key>
+	<string>Экспорт Каталога</string>
+	<key>Catalog Save</key>
+	<string>Сохранить каталог</string>
+	<key>Catalog Sets Import</key>
+	<string>Импорт разделов каталога</string>
+	<key>Catalog images without previews cannot be shown and worked on if they become offline.</key>
+	<string>Если изображения из каталога, не имеющие предварительных изображений, станут недоступны, их нельзя будет отобразить и работать над ними.</string>
+	<key>Category</key>
+	<string>Категория</string>
+	<key>Center weighted average</key>
+	<string>Усредненный по центру</string>
+	<key>Center-weighted average</key>
+	<string>Усредненный взвешенный по центру</string>
+	<key>Change</key>
+	<string>Изменить</string>
+	<key>Change the LCC Profile?</key>
+	<string>Изменить профиль LCC?</string>
+	<key>Changing the LCC Profile on this variant may cause the existing profile to be deleted. This LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Изменение профиля LCC для этого варианта может привести к удалению существующего профиля. Этот профиль LCC может быть воссоздан только по оригинальному тестовому кадру LCC или применен заново, если он был сохранен как предустановка.</string>
+	<key>Chroma Fringing</key>
+	<string>Хроматическая аберрация</string>
+	<key>Chromatic Aberration</key>
+	<string>Хроматическая аберрация</string>
+	<key>Chromatic Aberration Enabled</key>
+	<string>Хроматическая аберрация включена</string>
+	<key>Chromatic Aberration Origin</key>
+	<string>Источник хроматической аберрации</string>
+	<key>City</key>
+	<string>Город</string>
+	<key>Clarity</key>
+	<string>Четкость</string>
+	<key>Clarity Amount</key>
+	<string>Значение четкости</string>
+	<key>Clarity Method</key>
+	<string>Метод четкости</string>
+	<key>Clarity Structure</key>
+	<string>Структура четкости</string>
+	<key>Clean Single Pixel</key>
+	<string>Чистый одиночный пиксель</string>
+	<key>Clear Mask</key>
+	<string>Очистить маску</string>
+	<key>Clipboard Contents</key>
+	<string>Содержимое буфера обмена</string>
+	<key>Clone Variant</key>
+	<string>Клонировать вариант</string>
+	<key>Close</key>
+	<string>Закрыть</string>
+	<key>Close catalog</key>
+	<string>Закрыть каталог</string>
+	<key>Close session</key>
+	<string>Закрыть сессию</string>
+	<key>Close view</key>
+	<string>Закрыть просмотр</string>
+	<key>Close with Unprocessed Images?</key>
+	<string>Закрыть, оставив необработанные изображения?</string>
+	<key>Code</key>
+	<string>Код</string>
+	<key>Collapse Stack</key>
+	<string>Свернуть группу</string>
+	<key>Collection Choice</key>
+	<string>Выбор коллекции</string>
+	<key>Collection Name</key>
+	<string>Имя коллекции</string>
+	<key>Color</key>
+	<string>Цвет</string>
+	<key>Color Adjustments</key>
+	<string>Регулировка цвета</string>
+	<key>Color Balance</key>
+	<string>Цветовой баланс</string>
+	<key>Color Balance Highlight</key>
+	<string>Цветовой Баланс свет</string>
+	<key>Color Balance Midtone</key>
+	<string>Цветовой Баланс полутона</string>
+	<key>Color Balance Shadow</key>
+	<string>Цветовой Баланс тень</string>
+	<key>Color Cast</key>
+	<string>Цветовое искажение</string>
+	<key>Color Correction limit reached</key>
+	<string>Достигнут предел цветокоррекции</string>
+	<key>Color Editor - Advanced</key>
+	<string>Цветовой редактор - Расширенный</string>
+	<key>Color Editor - Basic</key>
+	<string>Цветовой редактор - Базовый</string>
+	<key>Color Editor - Skin Tone</key>
+	<string>Цветовой редактор - Тон кожи</string>
+	<key>Color Noise Reduction</key>
+	<string>Подавление цветового шума</string>
+	<key>Color Sensitivity</key>
+	<string>Цветовая чувствительность</string>
+	<key>Color Space</key>
+	<string>Цветовое пространство</string>
+	<key>Color Tag</key>
+	<string>Цветная метка</string>
+	<key>Color space</key>
+	<string>Цветовое пространство</string>
+	<key>Complete</key>
+	<string>Законченный</string>
+	<key>Composition</key>
+	<string>Композиция</string>
+	<key>Confirm</key>
+	<string>Подтвердить</string>
+	<key>Cont.</key>
+	<string>След.</string>
+	<key>Cont.high</key>
+	<string>Непр. выс.</string>
+	<key>Cont.low</key>
+	<string>Непр. низ.</string>
+	<key>Contact Address</key>
+	<string>Адрес контакта</string>
+	<key>Contact City</key>
+	<string>Город контакта</string>
+	<key>Contact Country</key>
+	<string>Страна контакта</string>
+	<key>Contact Emails</key>
+	<string>Адреса эл. почты контакта</string>
+	<key>Contact Phones</key>
+	<string>Номера телефонов контакта</string>
+	<key>Contact Postal Code</key>
+	<string>Почтовый индекс контакта</string>
+	<key>Contact State</key>
+	<string>Область контакта</string>
+	<key>Contact State/Province</key>
+	<string>Область или регион контакта</string>
+	<key>Contact Websites</key>
+	<string>Веб-сайты контакта</string>
+	<key>Content Category</key>
+	<string>Категория содержания</string>
+	<key>Content Description</key>
+	<string>Описание содержания</string>
+	<key>Content Description Writer</key>
+	<string>Автор описания содержания</string>
+	<key>Content Headline</key>
+	<string>Заголовок содержания</string>
+	<key>Content Subject Code</key>
+	<string>Код объекта содержания</string>
+	<key>Continue</key>
+	<string>Продолжить</string>
+	<key>Continuous</key>
+	<string>Непрерывно</string>
+	<key>Continuous High</key>
+	<string>Непрерывно с высокой скоростью</string>
+	<key>Continuous Low</key>
+	<string>Непрерывно с низкой скоростью</string>
+	<key>Continuous high</key>
+	<string>Непрерывно с высокой скоростью</string>
+	<key>Continuous low</key>
+	<string>Непрерывно с медленной скоростью</string>
+	<key>Contrast</key>
+	<string>Контраст</string>
+	<key>Copenhagen</key>
+	<string>Копенгаген</string>
+	<key>Copy</key>
+	<string>Копировать</string>
+	<key>Copy Images</key>
+	<string>Скопировать изображения</string>
+	<key>Copying %d images</key>
+	<string>Копирование %d изображений</string>
+	<key>Copying %d out of %d images</key>
+	<string>Копирование %1$d из %2$d изображений</string>
+	<key>Copyright</key>
+	<string>Авторские права</string>
+	<key>Copyright Notice</key>
+	<string>Уведомление об авторских правах</string>
+	<key>Corresponding Points</key>
+	<string>Соответствующие точки</string>
+	<key>Could not access the Application Support folder.</key>
+	<string>Не удалось получить доступ к папке поддержки приложений.</string>
+	<key>Could not activate a Catalog.</key>
+	<string>Не удалось активировать каталог.</string>
+	<key>Could not add metadata for variant.</key>
+	<string>Не удалось добавить метаданные для варианта.</string>
+	<key>Could not apply layer</key>
+	<string>Не удалось применить слой</string>
+	<key>Could not copy file %@ to %@</key>
+	<string>Не удалось скопировать файл %1$@ в %2$@</string>
+	<key>Could not copy the Recipes folder.</key>
+	<string>Не удается скопировать папку команд обработки.</string>
+	<key>Could not create a new Catalog.</key>
+	<string>Не удалось создать новый каталог.</string>
+	<key>Could not create metadata path for variant.</key>
+	<string>Не удалось создать путь к метаданным для варианта.</string>
+	<key>Could not find ICC profile for process recipe.</key>
+	<string>Не удалось найти профиль ICC для обработки набора команд.</string>
+	<key>Could not find the ICC profile for process recipe. Will use 'Embed camera profile' instead.</key>
+	<string>Не удалось найти профиль ICC для обработки набора команд. Будет использовать встроенный профиль камеры.</string>
+	<key>Could not generate print image</key>
+	<string>Не удалось создать изображение для печати</string>
+	<key>Could not generate processed image</key>
+	<string>Не удалось создать обработанное изображение</string>
+	<key>Could not load ICC profile.</key>
+	<string>Не удалось загрузить ICC профиль.</string>
+	<key>Could not load LCC profile.</key>
+	<string>Не удается загрузить LCC профиль.</string>
+	<key>Could not load a Recipe file.</key>
+	<string>Не удалось загрузить файл набора команд.</string>
+	<key>Could not load session database at %@: %@</key>
+	<string>Не удалось загрузить базу данных сессии (%1$@: %2$@)</string>
+	<key>Could not load the Recipes file.</key>
+	<string>Не удалось загрузить файл наборов команд.</string>
+	<key>Could not process file.</key>
+	<string>Не удалось обработать файл.</string>
+	<key>Could not process xmp file.</key>
+	<string>Не удалось обработать XMP-файл.</string>
+	<key>Could not read catalog data.</key>
+	<string>Не удалось прочитать данные каталога.</string>
+	<key>Could not read document data.</key>
+	<string>Не удалось прочитать данные документа.</string>
+	<key>Could not read session data.</key>
+	<string>Не удалось прочитать данные сессии.</string>
+	<key>Could not remove ICC from package file.</key>
+	<string>Не удалось удалить профиль ICC из файла пакета.</string>
+	<key>Could not remove LCC from package file.</key>
+	<string>Не удалось удалить профиль LCC из файла пакета.</string>
+	<key>Could not remove Mask file from package file.</key>
+	<string>Не удалось удалить файл маски из файла пакета.</string>
+	<key>Could not retrieve information about package file. File may be corrupted</key>
+	<string>Не удалось получить информацию о файле пакета. Возможно, файл поврежден.</string>
+	<key>Could not retrieve information about package file. File may be unsupported or corrupted</key>
+	<string>Не удалось получить информацию о файле пакета. Возможно, файл не поддерживается или поврежден.</string>
+	<key>Could not understand file data.</key>
+	<string>Не удалось распознать данные из файла.</string>
+	<key>Could not understand file to open.</key>
+	<string>Не удалось распознать открываемый файл.</string>
+	<key>Could not write ICC profile.</key>
+	<string>Не удается записать ICC профиль.</string>
+	<key>Could not write LCC profile.</key>
+	<string>Не удается записать LCC профиль.</string>
+	<key>Couldn't read image settings</key>
+	<string>Не удалось прочитать настройки изображения</string>
+	<key>Counter</key>
+	<string>Счетчик</string>
+	<key>Country</key>
+	<string>Страна</string>
+	<key>Creat.</key>
+	<string>Твор.</string>
+	<key>Create LCC</key>
+	<string>Создать LCC</string>
+	<key>Creative</key>
+	<string>Творческий</string>
+	<key>Creative (Slow speed)</key>
+	<string>Творческий (низкая скорость)</string>
+	<key>Creator</key>
+	<string>Автор</string>
+	<key>Creator's Job Title</key>
+	<string>Должность автора</string>
+	<key>Creator's Title</key>
+	<string>Звание автора</string>
+	<key>Crop</key>
+	<string>Кадрировать</string>
+	<key>Crop Outside Image</key>
+	<string>Кадрировать вне рамки</string>
+	<key>Cropped</key>
+	<string>Кадрировано</string>
+	<key>Cubic Grain</key>
+	<string>Кубическое зерно</string>
+	<key>Current Date</key>
+	<string>Текущая дата</string>
+	<key>Current Date (%@)</key>
+	<string>Текущая дата (%@)</string>
+	<key>Current Day of Month</key>
+	<string>Текущий день месяца</string>
+	<key>Current Day of Month (%@)</key>
+	<string>Текущий день месяца (%@)</string>
+	<key>Current Day of Week</key>
+	<string>Текущий день недели</string>
+	<key>Current Day of Week (%@)</key>
+	<string>Текущий день недели (%@)</string>
+	<key>Current Month</key>
+	<string>Текущий месяц</string>
+	<key>Current Month (%@)</key>
+	<string>Текущий месяц (%@)</string>
+	<key>Current Time</key>
+	<string>Текущее время</string>
+	<key>Current Time (%@)</key>
+	<string>Текущее время (%@)</string>
+	<key>Current Year</key>
+	<string>Текущий год</string>
+	<key>Current Year (%@)</key>
+	<string>Текущий год (%@)</string>
+	<key>Curve</key>
+	<string>Кривая</string>
+	<key>Custom Chromatic Aberration</key>
+	<string>Пользовательская хроматическая аберрация</string>
+	<key>Custom Chromatic Aberration Name</key>
+	<string>Имя пользовательской хроматической аберрации</string>
+	<key>Cyan</key>
+	<string>Голубой</string>
+	<key>DK</key>
+	<string>DK</string>
+	<key>DNG</key>
+	<string>DNG</string>
+	<key>DNG Standard</key>
+	<string>Стандартный DNG</string>
+	<key>Date</key>
+	<string>Дата</string>
+	<key>Date - Month in Year</key>
+	<string>Дата — месяц года</string>
+	<key>Date - Year</key>
+	<string>Дата — год</string>
+	<key>Date Created</key>
+	<string>Дата создания</string>
+	<key>Daylight</key>
+	<string>Дневной свет</string>
+	<key>Default Chromatic Aberration</key>
+	<string>Хроматическая аберрация по умолчанию</string>
+	<key>Demote Variant</key>
+	<string>Понизить рейтинг варианта</string>
+	<key>Demote Variants</key>
+	<string>Понизить Варианты</string>
+	<key>Denmark</key>
+	<string>Дания</string>
+	<key>Description</key>
+	<string>Описание</string>
+	<key>Description Writer</key>
+	<string>Автор описания</string>
+	<key>Destination Folder Name</key>
+	<string>Имя папки назначения</string>
+	<key>Destination folder does not exist and could not be created. You may not have sufficient privileges.</key>
+	<string>Целевая папка не существует и не может быть создана. Возможно, у вас нет необходимых прав доступа.</string>
+	<key>Details</key>
+	<string>Детали</string>
+	<key>Details Noise Reduction</key>
+	<string>Детализация при подавлении шумов</string>
+	<key>Diffraction Correction</key>
+	<string>Коррекция дифракции</string>
+	<key>Dimensions</key>
+	<string>Размеры</string>
+	<key>Disable Black &amp;&amp; White</key>
+	<string>Отключить Ч/Б</string>
+	<key>Disable Chromatic Aberration Correction</key>
+	<string>Отключить коррекцию хроматических аберраций</string>
+	<key>Disable Crop Outside Image</key>
+	<string>Отключить кадрирование вне рамки</string>
+	<key>Disable Hide Distorted Areas</key>
+	<string>Отключить скрытие области дисторсии</string>
+	<key>Disable LCC Color Cast Correction</key>
+	<string>Отключить исправление цветового искажения LCC</string>
+	<key>Disable LCC Dust Removal</key>
+	<string>Отключить удаление пыли LCC</string>
+	<key>Disable LCC Uniform Light</key>
+	<string>Отключить однородный свет LCC</string>
+	<key>Disable Layer</key>
+	<string>Отключить слой</string>
+	<key>Disable Optic Center</key>
+	<string>Отключить оптический центр</string>
+	<key>Display Name</key>
+	<string>Отображаемое имя</string>
+	<key>Distant</key>
+	<string>Удаленный</string>
+	<key>Distant view</key>
+	<string>Удаленный просмотр</string>
+	<key>Distortion</key>
+	<string>Дисторсия</string>
+	<key>Distortion Amount</key>
+	<string>Количество дисторсии</string>
+	<key>Do Not Close</key>
+	<string>Не Закрывать</string>
+	<key>Do Not Overwrite</key>
+	<string>Не перезаписывать</string>
+	<key>Do Not Quit</key>
+	<string>Не выходить</string>
+	<key>Do you want to auto adjust these %d variants?</key>
+	<string>Выполнить автоматическую коррекцию для этих вариантов (%d)?</string>
+	<key>Do you want to reset styles and presets for these %d variants?</key>
+	<string>Сбросить стили и предустановки для этих вариантов (%d)?</string>
+	<key>Do you want to rotate these %d variants left?</key>
+	<string>Повернуть влево эти варианты (%d)?</string>
+	<key>Do you want to rotate these %d variants right?</key>
+	<string>Повернуть вправо эти варианты (%d)?</string>
+	<key>Do you want to rotate these %d variants to snap?</key>
+	<string>Повернуть эти варианты (%d) с привязкой?</string>
+	<key>Do you want to terminate the running activities for this document?</key>
+	<string>Вы хотите прервать выполнение команд для этого документа?</string>
+	<key>Do you want to terminate the running activities?</key>
+	<string>Вы хотите прервать выполнение команд?</string>
+	<key>Do you want to terminate the running activity for this document?</key>
+	<string>Вы хотите прервать выполнение команды для этого документа?</string>
+	<key>Do you want to terminate the running activity?</key>
+	<string>Вы хотите прервать выполнение команды?</string>
+	<key>Document Name</key>
+	<string>Название документа</string>
+	<key>Document migration failed.</key>
+	<string>Не удалось переместить документ.</string>
+	<key>Domain</key>
+	<string>Область</string>
+	<key>Don't show this message again</key>
+	<string>Больше не показывать это сообщение</string>
+	<key>Drag Variant</key>
+	<string>Перетащить вариант</string>
+	<key>Drag Variants</key>
+	<string>Перетащить варианты</string>
+	<key>Drive Mode</key>
+	<string>Режим съемки</string>
+	<key>Drive mode/self timer</key>
+	<string>Режим съемки/автоспуск</string>
+	<key>Dust</key>
+	<string>Пыль</string>
+	<key>Dust Removal</key>
+	<string>Удаление пыли</string>
+	<key>E-Mail(s)</key>
+	<string>E-Mail(s)</string>
+	<key>EEE</key>
+	<string>EEE</string>
+	<key>EEEE</key>
+	<string>EEEE</string>
+	<key>EEEEE</key>
+	<string>EEEEE</string>
+	<key>EXIF - Camera</key>
+	<string>EXIF — камера</string>
+	<key>EXIF - Exposure</key>
+	<string>EXIF — экспозиция</string>
+	<key>EXIF - GPS</key>
+	<string>EXIF — GPS</string>
+	<key>Emails</key>
+	<string>Сообщения эл. почты</string>
+	<key>Enable Black &amp;&amp; White</key>
+	<string>Включить черно-белые изображения</string>
+	<key>Enable Chromatic Aberration Correction</key>
+	<string>Включить коррекцию хроматических аберраций</string>
+	<key>Enable Crop Outside Image</key>
+	<string>Включить кадрирование вне рамки</string>
+	<key>Enable Hide Distorted Areas</key>
+	<string>Включить скрытие области дисторсии</string>
+	<key>Enable LCC Color Cast Correction</key>
+	<string>Включить исправление цветового искажения LCC</string>
+	<key>Enable LCC Dust Removal</key>
+	<string>Включить удаление пыли LCC</string>
+	<key>Enable LCC Uniform Light</key>
+	<string>Включить однородный свет LCC</string>
+	<key>Enable Layer</key>
+	<string>Включить слой</string>
+	<key>Enable Optic Center</key>
+	<string>Включить оптический центр</string>
+	<key>Enabled</key>
+	<string>Включено</string>
+	<key>Error loading adjustment mask.</key>
+	<string>Ошибка загрузки маски коррекции.</string>
+	<key>Error packing an image.</key>
+	<string>Возникла ошибка при упаковке изображения.</string>
+	<key>Estimating time remaining…</key>
+	<string>Вычисление оставшегося времени...</string>
+	<key>Event</key>
+	<string>Мероприятие</string>
+	<key>Expand Stack</key>
+	<string>Развернуть группу</string>
+	<key>Export</key>
+	<string>Экспорт</string>
+	<key>Export %d Originals</key>
+	<string>Экспортировать оригиналы (%d)</string>
+	<key>Export 1 Original</key>
+	<string>Экспортировать 1 оригинал</string>
+	<key>Export Anyway</key>
+	<string>Экспортировать в любом случае</string>
+	<key>Export Date</key>
+	<string>Дата экспорта</string>
+	<key>Export Date (%@)</key>
+	<string>Дата экспорта (%@)</string>
+	<key>Export to Catalog</key>
+	<string>Экспортировать в каталог</string>
+	<key>Exposure</key>
+	<string>Экспозиция</string>
+	<key>Exposure Compensation</key>
+	<string>Экспокоррекция</string>
+	<key>Exposure Mode</key>
+	<string>Режим экспозиции</string>
+	<key>Exposure Program</key>
+	<string>Программа экспозиции</string>
+	<key>Exposure White Balance</key>
+	<string>Экспозиция баланс белого</string>
+	<key>Exposure compensation</key>
+	<string>Экспокоррекция</string>
+	<key>Exposure mode</key>
+	<string>Режим экспозиции</string>
+	<key>Exposure program</key>
+	<string>Программа экспозиции</string>
+	<key>Extension</key>
+	<string>Расширение</string>
+	<key>Failed to create %@ database.</key>
+	<string>Не удалось создать базу данных %@.</string>
+	<key>Fashion</key>
+	<string>Фэшн-фотография</string>
+	<key>File</key>
+	<string>Файл</string>
+	<key>File Size</key>
+	<string>Размер файла</string>
+	<key>File conversion warning</key>
+	<string>Предупреждение о преобразовании файла</string>
+	<key>File name</key>
+	<string>Имя файла</string>
+	<key>File size</key>
+	<string>Размер файла</string>
+	<key>File type version not supported.</key>
+	<string>Версия типа файла не поддерживается.</string>
+	<key>File version is not supported by this version of Capture One</key>
+	<string>Версия файла не поддерживается этой версией Capture One.</string>
+	<key>Files will be moved to a new location.</key>
+	<string>Файлы будут перемещены в новое место.</string>
+	<key>Fill Mask</key>
+	<string>Заполнить маску</string>
+	<key>Film Curve</key>
+	<string>Пленочная кривая</string>
+	<key>Film Extra Shadow</key>
+	<string>Низкоконтрастная пленка</string>
+	<key>Film Grain Amount</key>
+	<string>Воздействие пленочного зерна</string>
+	<key>Film Grain Density</key>
+	<string>Плотность пленочного зерна</string>
+	<key>Film Grain Granularity</key>
+	<string>Детализация пленочного зерна</string>
+	<key>Film Grain Type</key>
+	<string>Тип пленочного зерна</string>
+	<key>Film High Contrast</key>
+	<string>Высококонтрастная пленка</string>
+	<key>Film Standard</key>
+	<string>Стандартная пленка</string>
+	<key>Fine Grain</key>
+	<string>Мелкое зерно</string>
+	<key>Fired</key>
+	<string>Вспышка сработала</string>
+	<key>Fired, Red-eye reduction</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз</string>
+	<key>Fired, Red-eye reduction, Return detected</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз, отраженный свет зафиксирован</string>
+	<key>Fired, Red-eye reduction, Return not detected</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз, отраженный свет не зафиксирован</string>
+	<key>Fired, Return detected</key>
+	<string>Вспышка сработала, отраженный свет зафиксирован</string>
+	<key>Fired, Return not detected</key>
+	<string>Вспышка сработала, отраженный свет не зафиксирован</string>
+	<key>Fired, auto</key>
+	<string>Вспышка сработала, авторежим</string>
+	<key>Fired, auto, no return light</key>
+	<string>Вспышка сработала, авторежим, отраженный свет не зафиксирован</string>
+	<key>Fired, auto, no return light, red-eye</key>
+	<string>Вспышка сработала, авторежим, отраженный свет не зафиксирован, подавление эффекта красных глаз</string>
+	<key>Fired, auto, red-eye</key>
+	<string>Вспышка сработала, авторежим, подавление эффекта красных глаз</string>
+	<key>Fired, auto, return light</key>
+	<string>Вспышка сработала, авторежим, отраженный свет зафиксирован</string>
+	<key>Fired, auto, return light, red-eye</key>
+	<string>Вспышка сработала, авторежим, отраженный свет зафиксирован, подавление эффекта красных глаз</string>
+	<key>Fired, compulsory</key>
+	<string>Вспышка сработала, принудительный режим</string>
+	<key>Fired, compulsory, no return light</key>
+	<string>Вспышка сработала, принудительный режим, отраженный свет не зафиксирован</string>
+	<key>Fired, compulsory, red-eye, no return light</key>
+	<string>Вспышка сработала, принудительный режим, подавление эффекта красных глаз, отраженный свет не зафиксирован</string>
+	<key>Fired, compulsory, red-eye, return light</key>
+	<string>Вспышка сработала, принудительный режим, подавление эффекта красных глаз, отраженный свет зафиксирован</string>
+	<key>Fired, compulsory, return light</key>
+	<string>Вспышка сработала, принудительный режим, отраженный свет зафиксирован</string>
+	<key>Fired, red-eye</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз</string>
+	<key>Fired, red-eye, no return light</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз, отраженный свет не зафиксирован</string>
+	<key>Fired, red-eye, return light</key>
+	<string>Вспышка сработала, подавление эффекта красных глаз, отраженный свет зафиксирован</string>
+	<key>Firmware</key>
+	<string>Прошивка</string>
+	<key>Firmware 1.0</key>
+	<string>Firmware 1.0</string>
+	<key>Fixed</key>
+	<string>Постоянный</string>
+	<key>Flash Compensation</key>
+	<string>Экспокоррекция вспышки</string>
+	<key>Flash Mode</key>
+	<string>Режим вспышки</string>
+	<key>Flash compensation</key>
+	<string>Экспокоррекция вспышки</string>
+	<key>Flash did not fire</key>
+	<string>Вспышка не сработала</string>
+	<key>Flash did not fire, auto mode</key>
+	<string>Вспышка не сработала, авторежим</string>
+	<key>Flash did not fire, compulsory flash mode</key>
+	<string>Вспышка не сработала, принудительный режим</string>
+	<key>Flash fired</key>
+	<string>Вспышка сработала</string>
+	<key>Flash fired, auto mode</key>
+	<string>Вспышка сработала, авторежим</string>
+	<key>Flash fired, auto mode, red-eye reduction mode</key>
+	<string>Вспышка сработала, авторежим, режим подавления красных глаз</string>
+	<key>Flash fired, auto mode, return light detected</key>
+	<string>Вспышка сработала, авторежим, отраженный свет зафиксирован</string>
+	<key>Flash fired, auto mode, return light detected, red-eye reduction mode</key>
+	<string>Вспышка сработала, авторежим, отраженный свет зафиксирован, режим подавления красных глаз</string>
+	<key>Flash fired, auto mode, return light not detected</key>
+	<string>Вспышка сработала, авторежим, отраженный свет не зафиксирован</string>
+	<key>Flash fired, auto mode, return light not detected, red-eye reduction mode</key>
+	<string>Вспышка сработала, авторежим, отраженный свет не зафиксирован, режим подавления красных глаз</string>
+	<key>Flash fired, compulsory flash mode</key>
+	<string>Вспышка сработала, принудительный режим</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode</key>
+	<string>Вспышка сработала, принудительный режим, режим подавления красных глаз</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light detected</key>
+	<string>Вспышка сработала, принудительный режим, режим подавления красных глаз, отраженный свет зафиксирован</string>
+	<key>Flash fired, compulsory flash mode, red-eye reduction mode, return light not detected</key>
+	<string>Вспышка сработала, принудительный режим, режим подавления красных глаз, отраженный свет не зафиксирован</string>
+	<key>Flash fired, compulsory flash mode, return light detected</key>
+	<string>Вспышка сработала, принудительный режим, отраженный свет зафиксирован</string>
+	<key>Flash fired, compulsory flash mode, return light not detected</key>
+	<string>Вспышка сработала, принудительный режим, отраженный свет не зафиксирован</string>
+	<key>Flash fired, red-eye reduction mode</key>
+	<string>Вспышка сработала, режим подавления красных глаз</string>
+	<key>Flash fired, red-eye reduction mode, return light detected</key>
+	<string>Вспышка сработала, режим подавления красных глаз, отраженный свет зафиксирован</string>
+	<key>Flash fired, red-eye reduction mode, return light not detected</key>
+	<string>Вспышка сработала, режим подавления красных глаз, отраженный свет не зафиксирован</string>
+	<key>Flash mode</key>
+	<string>Режим вспышки</string>
+	<key>Flash off, did not fire, return light not detected</key>
+	<string>Вспышка выключена, не сработала, отраженный свет не зафиксирован</string>
+	<key>Flash off, no flash function</key>
+	<string>Вспышка выключена, нет функций вспышки</string>
+	<key>Flash on, did not fire</key>
+	<string>Вспышка включена, не сработала</string>
+	<key>Flip</key>
+	<string>Переворот</string>
+	<key>Focal Length</key>
+	<string>Фокусное расстояние</string>
+	<key>Focal length</key>
+	<string>Фокусное расстояние</string>
+	<key>Focus Stacking</key>
+	<string>Совмещённый фокус</string>
+	<key>Format</key>
+	<string>Формат</string>
+	<key>Fringing</key>
+	<string>Ореолы</string>
+	<key>Generated %d out of %d previews</key>
+	<string>Создано изображений для предв. просмотра: %1$d из %2$d</string>
+	<key>Generating %d previews</key>
+	<string>Создание %d изображений предварительного просмотра</string>
+	<key>Generating previews</key>
+	<string>Создание изображений предварительного просмотра</string>
+	<key>Genre</key>
+	<string>Жанр</string>
+	<key>Geotagged</key>
+	<string>Географически помечен</string>
+	<key>Getting Folders for %d images</key>
+	<string>Получение папок для %d изображений</string>
+	<key>Getty Images</key>
+	<string>Getty Images</string>
+	<key>Getty Images Original Filename</key>
+	<string>Исходное имя файла Getty Images</string>
+	<key>Getty Images Parent MEID</key>
+	<string>MEID родительского объекта Getty Images</string>
+	<key>Getty Images Personality</key>
+	<string>Характеристики Getty Images</string>
+	<key>Gradation Curve</key>
+	<string>Градационная кривая</string>
+	<key>Grain</key>
+	<string>Зерно</string>
+	<key>Grain Amount</key>
+	<string>Количество зерна</string>
+	<key>Grain Density </key>
+	<string>Плотность зерна</string>
+	<key>Grain Granularity</key>
+	<string>Детализация зерна</string>
+	<key>Grain Type</key>
+	<string>Тип зерна</string>
+	<key>Green</key>
+	<string>Зеленый</string>
+	<key>Green Curve</key>
+	<string>Зеленая кривая</string>
+	<key>Green Gradation Curve</key>
+	<string>Градационная кривая зеленого</string>
+	<key>HDR</key>
+	<string>HDR</string>
+	<key>HH</key>
+	<string>HH</string>
+	<key>HH-mm</key>
+	<string>ЧЧ:мм</string>
+	<key>HH-mm-ss</key>
+	<string>HH-mm-ss</string>
+	<key>Halo Control</key>
+	<string>Контроль ореола</string>
+	<key>Harsh Grain</key>
+	<string>Грубое зерно</string>
+	<key>Headline</key>
+	<string>Заголовок</string>
+	<key>Heal and clone layers can't be copied between variants with different dimensions</key>
+	<string>Восстанавливающие и клонирующие слои не могут быть скопированы между вариантами с разными размерами</string>
+	<key>Heal and clone layers require a newer engine. The engine can be upgraded using the Base Characteristics tool.</key>
+	<string>Для использования восстанавливающих и клонирующих слоев необходим более новый движок обработки. Обновить движок обработки можно в инструменте Базовые характеристики.</string>
+	<key>Height</key>
+	<string>Высота</string>
+	<key>Hide Distorted Areas</key>
+	<string>Скрыть области дисторсии</string>
+	<key>Highlight Recovery</key>
+	<string>Восстановление светов</string>
+	<key>Horizontal Keystone Correction</key>
+	<string>Горизонтальная перспективная коррекция</string>
+	<key>Hyperfocal</key>
+	<string>Гиперфокальный</string>
+	<key>ICC Profile</key>
+	<string>Профиль ICC</string>
+	<key>ICC [ %@ ] path or profile name is too long (max 1024 bytes)</key>
+	<string>Путь или имя профиля ICC [ %@ ] слишком длинные (макс. 1024 байта)</string>
+	<key>IPTC - Contact</key>
+	<string>IPTC — контакт</string>
+	<key>IPTC - Content</key>
+	<string>IPTC — содержание</string>
+	<key>IPTC - Getty</key>
+	<string>IPTC - полученный</string>
+	<key>IPTC - Image</key>
+	<string>IPTC — изображение</string>
+	<key>IPTC - Keywords</key>
+	<string>IPTC — ключевые слова</string>
+	<key>IPTC - Status</key>
+	<string>IPTC — статус</string>
+	<key>IPTC Scene</key>
+	<string>IPTC — описание сцены</string>
+	<key>IPTC scene</key>
+	<string>IPTC — описание сцены</string>
+	<key>IPTC subject code</key>
+	<string>IPTC — код объекта</string>
+	<key>IQ250</key>
+	<string>IQ250</string>
+	<key>ISO</key>
+	<string>ISO</string>
+	<key>ISO Country Code</key>
+	<string>ISO — код страны</string>
+	<key>ISO speed rating</key>
+	<string>Определение светочувствительности</string>
+	<key>If the document was created with a Windows version of Capture One, then open it in Capture One for Windows, version 7 or later. Then try to open the document with Capture One for Mac again.</key>
+	<string>Если документ был создан в Windows-версии Capture One, откройте его в Capture One для Windows версии 7 или более поздней. Затем попытайтесь снова открыть документ в Capture One для Mac.</string>
+	<key>If you make this change, your document may not open in Capture One.</key>
+	<string>Если вы внесете это изменение, документ может не открыться в Capture One.</string>
+	<key>Image City</key>
+	<string>Город изображения</string>
+	<key>Image Country</key>
+	<string>Страна изображения</string>
+	<key>Image Date</key>
+	<string>Дата изображения</string>
+	<key>Image Date (%@)</key>
+	<string>Дата изображения (%@)</string>
+	<key>Image Day of Month</key>
+	<string>День месяца изображения</string>
+	<key>Image Day of Month (%@)</key>
+	<string>День месяца изображения (%@)</string>
+	<key>Image Day of Week</key>
+	<string>День недели изображения</string>
+	<key>Image Day of Week (%@)</key>
+	<string>День недели изображения (%@)</string>
+	<key>Image Folder</key>
+	<string>Папка изображения</string>
+	<key>Image Folder Name</key>
+	<string>Имя папки изображения</string>
+	<key>Image Location</key>
+	<string>Расположение изображения</string>
+	<key>Image Month</key>
+	<string>Месяц изображения</string>
+	<key>Image Month (%@)</key>
+	<string>Месяц изображения (%@)</string>
+	<key>Image Name</key>
+	<string>Имя изображения</string>
+	<key>Image State</key>
+	<string>Регион изображения</string>
+	<key>Image Time</key>
+	<string>Время изображения</string>
+	<key>Image Time (%@)</key>
+	<string>Время изображения (%@)</string>
+	<key>Image Year</key>
+	<string>Год изображения</string>
+	<key>Image Year (%@)</key>
+	<string>Год изображения (%@)</string>
+	<key>Image path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Путь изображения не существует или слишком длинный (максимум 1024 байта)</string>
+	<key>Import Date</key>
+	<string>Дата импорта</string>
+	<key>Import Date (%@)</key>
+	<string>Дата импорта (%@)</string>
+	<key>In Catalog</key>
+	<string>В каталог</string>
+	<key>Instructions</key>
+	<string>Инструкции</string>
+	<key>Int.</key>
+	<string>Инт.</string>
+	<key>Intellectual Genre</key>
+	<string>Интеллектуальный жанр</string>
+	<key>Intellectual genre</key>
+	<string>Интеллектуальный жанр</string>
+	<key>Interval</key>
+	<string>Интервал</string>
+	<key>Invalid</key>
+	<string>Недействительно</string>
+	<key>Invalid JPEG quality (less than 0 or more than 100).</key>
+	<string>Недопустимое качество JPEG (меньше 0 или больше 100).</string>
+	<key>Invalid TIFF compression (should be LZW, Zip or None).</key>
+	<string>Недопустимый алгоритм сжатия TIFF (возможные варианты: LZW, ZIP или "Нет").</string>
+	<key>Invalid bits per sample (should be 8 or 16).</key>
+	<string>Недопустимое число бит в выборке (возможные варианты: 8 или 16).</string>
+	<key>Invalid file format</key>
+	<string>Недопустимый формат файла</string>
+	<key>Invalid resolution (should be more than 10 and less than 10000).</key>
+	<string>Недопустимое разрешение (должно быть больше 10 и меньше 10000).</string>
+	<key>Invalid scaling (should be more than 0 and less than 5).</key>
+	<string>Недопустимый уровень масштабирования (должен быть больше 0 и меньше 5).</string>
+	<key>Invalid selection!</key>
+	<string>Недопустимое выделение</string>
+	<key>Invalid token name '%@'</key>
+	<string>Недопустимое имя маркера '%@'</string>
+	<key>Invert Mask</key>
+	<string>Инвертировать маску</string>
+	<key>JPEG - 2048px for web use</key>
+	<string>JPEG - 2048px для интернета</string>
+	<key>JPEG - Full size, highest quality</key>
+	<string>JPEG - полный размер, высшее качество</string>
+	<key>JPEG - Instagram optimized</key>
+	<string>JPEG - оптимизировано для Instagram</string>
+	<key>JPEG - QuickProof (preview size)</key>
+	<string>JPEG - QuickProof (превью размер)</string>
+	<key>JPEG 1280 Pixels Long Edge (sRGB)</key>
+	<string>JPEG 1280 Пикселей по длинной стороне (sRGB)</string>
+	<key>JPEG Quality %d</key>
+	<string>Качество JPEG %d</string>
+	<key>JPEG file</key>
+	<string>JPEG-файл</string>
+	<key>Job Identifier</key>
+	<string>Идентификатор задания</string>
+	<key>Job Name</key>
+	<string>Имя задания</string>
+	<key>Keep Capture One Values</key>
+	<string>Оставить значения Capture One</string>
+	<key>Keystone Amount</key>
+	<string>Значение перспективного искажения</string>
+	<key>Keystone Aspect</key>
+	<string>Направление перспективного искажения</string>
+	<key>Keystone Focal Length</key>
+	<string>Фокусное расстояние перспективного искажения</string>
+	<key>Keystone Points</key>
+	<string>Точки перспективного искажения</string>
+	<key>Keywords</key>
+	<string>Ключевые слова</string>
+	<key>LCC</key>
+	<string>LCC</string>
+	<key>LCC path [ %@ ] is too long (max 1024 bytes)</key>
+	<string>Путь LCC [ %@ ] слишком длинный (макс. 1024 байта)</string>
+	<key>LCC profile could not be generated while image was still loading.  Please try again.</key>
+	<string>Не удалось создать профиль LCC, пока изображение загружалось. Повторите попытку.</string>
+	<key>LCC's are positioned in an undefined manner. Please ensure that LCC's are positioned before OR after variants.</key>
+	<string>Расположение профилей LCC не определено. Убедитесь в том, что профили LCC расположены перед ИЛИ за вариантами.</string>
+	<key>LZW</key>
+	<string>LZW</string>
+	<key>Label</key>
+	<string>Надпись</string>
+	<key>Land.</key>
+	<string>Пейзаж</string>
+	<key>Landscape</key>
+	<string>Пейзаж</string>
+	<key>Latitude</key>
+	<string>Широта</string>
+	<key>Layer Selection Point</key>
+	<string>Точка выбора слоя</string>
+	<key>Layers</key>
+	<string>Слои</string>
+	<key>Layers can't be applied to the variant they were copied from</key>
+	<string>Слои не могут быть применены к варианту, из которого они были скопированы</string>
+	<key>Layers won’t be applied to %@</key>
+	<string>Слои не будут применены к %@</string>
+	<key>Lens</key>
+	<string>Объектив</string>
+	<key>Lens Correction</key>
+	<string>Корректировка объектива</string>
+	<key>Lens Effects</key>
+	<string>Эффекты объектива</string>
+	<key>Lens Profile</key>
+	<string>Профиль объектива</string>
+	<key>Lens Purple Fringing</key>
+	<string>Пурпурные аберрации объектива</string>
+	<key>Lens Revision</key>
+	<string>Версия объектива</string>
+	<key>Lens Selection</key>
+	<string>Выбор объектива</string>
+	<key>Less than a minute left</key>
+	<string>Осталось менее минуты</string>
+	<key>Levels</key>
+	<string>Уровни</string>
+	<key>Levels &amp; Curve</key>
+	<string>Уровни и кривая</string>
+	<key>Levels Highlight</key>
+	<string>Уровни света</string>
+	<key>Levels Midtone</key>
+	<string>Уровни полутона</string>
+	<key>Levels Shadow</key>
+	<string>Уровни тени</string>
+	<key>Levels Target Highlight</key>
+	<string>Целевые уровни света</string>
+	<key>Levels Target Shadow</key>
+	<string>Целевые уровни тени</string>
+	<key>Light Falloff</key>
+	<string>Падение света</string>
+	<key>Light Falloff Amount</key>
+	<string>Количество падения света</string>
+	<key>LightPhase 1.5.3</key>
+	<string>LightPhase 1.5.3</string>
+	<key>Linear Response</key>
+	<string>Линейный отклик</string>
+	<key>Load error</key>
+	<string>Ошибка загрузки</string>
+	<key>Locate File</key>
+	<string>Найти файл</string>
+	<key>Location</key>
+	<string>Местоположение</string>
+	<key>Long Edge</key>
+	<string>Длинная сторона</string>
+	<key>Longitude</key>
+	<string>Долгота</string>
+	<key>Luma Curve</key>
+	<string>Люма кривая</string>
+	<key>Luma Gradation Curve</key>
+	<string>Градация Люма кривой</string>
+	<key>Luminance Noise Reduction</key>
+	<string>Подавление шумов яркости</string>
+	<key>M</key>
+	<string>Средний</string>
+	<key>M.spot</key>
+	<string>Многоточ.</string>
+	<key>MM</key>
+	<string>мм</string>
+	<key>MMM</key>
+	<string>ммм</string>
+	<key>MMM dd yyyy</key>
+	<string>ммм дд гггг</string>
+	<key>MMMM</key>
+	<string>мммм</string>
+	<key>MMMMM</key>
+	<string>ммммм</string>
+	<key>Macro</key>
+	<string>Макро</string>
+	<key>Magenta</key>
+	<string>Пурпурный</string>
+	<key>Make</key>
+	<string>Марка</string>
+	<key>Man.</key>
+	<string>Руч.</string>
+	<key>Manual</key>
+	<string>Ручной</string>
+	<key>Mask file's path is too long (max 1024 bytes)</key>
+	<string>Путь файла маски слишком длинный (макс. 1024 байта)</string>
+	<key>Maximum number of layers exceeded</key>
+	<string>Превышено максимальное количество слоев</string>
+	<key>Metadata</key>
+	<string>Метаданные</string>
+	<key>Metadata Import</key>
+	<string>Импорт метаданных</string>
+	<key>Metadata Synchronization</key>
+	<string>Синхронизация метаданных</string>
+	<key>Metadata Synchronization Warning</key>
+	<string>Предупреждение синхронизации метаданных</string>
+	<key>Metadata conflicts have been detected on a variant of image '%@'. Do you want to replace metadata values you set in Capture One with reloaded metadata or preserve the Capture One values?</key>
+	<string>Обнаружены конфликты метаданных для варианта изображения "%@". Заменить значения метаданных, установленные в Capture One, перезагруженными метаданными или сохранить значения Capture One?</string>
+	<key>Metering Mode</key>
+	<string>Тип экспозамера</string>
+	<key>Metering mode</key>
+	<string>Тип экспозамера</string>
+	<key>Method not implemented.</key>
+	<string>Метод не реализован.</string>
+	<key>Migration of the Capture One document failed.</key>
+	<string>Не удалось переместить документ Capture One.</string>
+	<key>Minimum Viewing Distance</key>
+	<string>Минимальное расстояние просмотра</string>
+	<key>Mir.up</key>
+	<string>Пред. под.</string>
+	<key>Mirror Up</key>
+	<string>Подъем зеркала</string>
+	<key>Mirror up</key>
+	<string>Предподъем зеркала</string>
+	<key>Missing ICC Profile.</key>
+	<string>Отсутствует профиль ICC.</string>
+	<key>Missing LCC Profile.</key>
+	<string>Отсутствует профиль LCC.</string>
+	<key>Missing Preview</key>
+	<string>Отсутствует изображение для предв. просмотра</string>
+	<key>Mode</key>
+	<string>Режим</string>
+	<key>Model</key>
+	<string>Модель</string>
+	<key>Moire</key>
+	<string>Муар</string>
+	<key>Moire Amount</key>
+	<string>Количество муара</string>
+	<key>Moire Pattern</key>
+	<string>Паттерн муара</string>
+	<key>Moire Radius</key>
+	<string>Радиус муара</string>
+	<key>Move Files</key>
+	<string>Переместить файлы</string>
+	<key>Move Image</key>
+	<string>Переместить изображение</string>
+	<key>Move Images</key>
+	<string>Переместить изображения</string>
+	<key>Moving %d images</key>
+	<string>Перемещение %d изображений</string>
+	<key>Moving %d out of %d images</key>
+	<string>Перемещение %1$d из %2$d изображений</string>
+	<key>Multi spot</key>
+	<string>Многоточечный</string>
+	<key>Multi-spot</key>
+	<string>Многоточечный</string>
+	<key>NO</key>
+	<string>НЕТ</string>
+	<key>NY</key>
+	<string>NY</string>
+	<key>Name</key>
+	<string>Имя</string>
+	<key>Nature</key>
+	<string>Природа</string>
+	<key>New LCC Profile</key>
+	<string>Новый профиль LCC</string>
+	<key>New Session</key>
+	<string>Новая сессия</string>
+	<key>New Variant</key>
+	<string>Новый вариант</string>
+	<key>No</key>
+	<string>Нет</string>
+	<key>No Flash</key>
+	<string>Без вспышки</string>
+	<key>No LCC to apply</key>
+	<string>Нет профилей LCC для применения</string>
+	<key>No collection has been selected</key>
+	<string>Не выбрано ни одной коллекции</string>
+	<key>No flash function</key>
+	<string>Вспышка не работает</string>
+	<key>No function</key>
+	<string>Не работает</string>
+	<key>No more than %@ Color Corrections are allowed</key>
+	<string>Допускается не более %@ цветовых коррекций</string>
+	<key>No strobe return light</key>
+	<string>Стробоскопический отраженный свет не зафиксирован</string>
+	<key>No variants to apply LCC</key>
+	<string>Нет вариантов, к которым можно применить LCC</string>
+	<key>None</key>
+	<string>Нет</string>
+	<key>None of the %d selected variants can be auto adjusted</key>
+	<string>Невозможно применить автокоррекцию ни к одному из выбранных вариантов (%d)</string>
+	<key>None of the %d selected variants can be rotated left</key>
+	<string>Ни один из выбранных вариантов (%d) невозможно повернуть влево</string>
+	<key>None of the %d selected variants can be rotated right</key>
+	<string>Ни один из выбранных вариантов (%d) невозможно повернуть вправо</string>
+	<key>None of the %d selected variants can be rotated to snap</key>
+	<string>Ни один из выбранных вариантов (%d) невозможно повернуть с привязкой</string>
+	<key>Norm.</key>
+	<string>Норм.</string>
+	<key>Normal</key>
+	<string>Нормальный</string>
+	<key>Not Defined</key>
+	<string>Не определено</string>
+	<key>Not enough disk space to process the file. The Processing Queue has been paused.</key>
+	<string>Недостаточно места на диске для обработки файла. Очередь обработки приостановлена.</string>
+	<key>Not enough free space on destination volume.</key>
+	<string>Недостаточно места на целевом томе.</string>
+	<key>Not enough memory to allocate the image overlay.</key>
+	<string>Недостаточно памяти для размещения наложения.</string>
+	<key>Not enough memory to allocate the image watermark.</key>
+	<string>Недостаточно памяти для графического водяного знака.</string>
+	<key>Not enough memory to allocate the text watermark.</key>
+	<string>Недостаточно памяти для текстового водяного знака.</string>
+	<key>Not fired</key>
+	<string>Не сработала</string>
+	<key>Not fired, auto</key>
+	<string>Не сработала, авто</string>
+	<key>Not fired, compulsory</key>
+	<string>Не сработала, обязательный</string>
+	<key>OK</key>
+	<string>ОК</string>
+	<key>Off</key>
+	<string>Выключен</string>
+	<key>Off, Did not fire</key>
+	<string>Отключена, вспышка не сработала</string>
+	<key>Off, Did not fire, Return not detected</key>
+	<string>Отключена, вспышка не сработала, отраженный свет не зафиксирован</string>
+	<key>Off, No flash function</key>
+	<string>Отключена, вспышка не работает</string>
+	<key>Offline images will be skipped</key>
+	<string>Недоступные изображения будут пропущены</string>
+	<key>On, Did not fire</key>
+	<string>Включена, вспышка не сработала</string>
+	<key>On, Fired</key>
+	<string>Включена, вспышка сработала</string>
+	<key>On, Red-eye reduction</key>
+	<string>Включена, подавление эффекта красных глаз</string>
+	<key>On, Red-eye reduction, Return detected</key>
+	<string>Включена, подавление эффекта красных глаз, отраженный свет зафиксирован</string>
+	<key>On, Red-eye reduction, Return not detected</key>
+	<string>Включена, подавление эффекта красных глаз, отраженный свет не зафиксирован</string>
+	<key>On, Return detected</key>
+	<string>Включена, отраженный свет зафиксирован</string>
+	<key>On, Return not detected</key>
+	<string>Включена, отраженный свет не зафиксирован</string>
+	<key>One of these variants already has an LCC Profile applied. Changing the LCC Profile on this variant may cause the existing profile to be deleted. An LCC Profile can only be recreated with the original LCC test shot or reapplied if it has been saved as a preset.</key>
+	<string>Для одного из этих вариантов уже применен профиль LCC. Изменение профиля LCC для этого варианта может привести к удалению существующего профиля. Профиль LCC может быть воссоздан только по оригинальному тестовому кадру LCC или применен заново, если он был сохранен как предустановка.</string>
+	<key>One or more files will not be packed because they are not packable images or they are already being converted. Packaging %i out of %i selected files.</key>
+	<string>Один или несколько файлов не будут упакованы, так как они не являются упаковываемыми изображениями либо уже преобразованы. Упаковка выбранных файлов (%1$i из %2$i).</string>
+	<key>One or more files will not be unpacked because they are not package files or they are already being converted. Unpacking %i out of %i selected files.</key>
+	<string>Один или несколько файлов не будут распакованы, так как они не являются упакованными либо уже преобразованы. Распаковка выбранных файлов (%1$i из %2$i).</string>
+	<key>One shot</key>
+	<string>Один кадр</string>
+	<key>Only %d of the %d selected variants can be auto adjusted</key>
+	<string>Автокоррекцию можно применить лишь к некоторым из выбранных вариантов (%1$d из %2$d)</string>
+	<key>Only %d of the %d selected variants can be rotated</key>
+	<string>Повернуть можно применить лишь некоторые из выбранных вариантов (%1$d из %2$d)</string>
+	<key>Only %d of the %d selected variants can be rotated right</key>
+	<string>Повернуть вправо можно применить лишь некоторые из выбранных вариантов (%1$d из %2$d)</string>
+	<key>Only %d of the %d selected variants can be rotated to snap</key>
+	<string>Повернуть с привязкой можно применить лишь некоторые из выбранных вариантов (%1$d из %2$d)</string>
+	<key>Only editable variants can be auto adjusted. Please select variants that can be edited</key>
+	<string>Автокоррекцию можно применить только к редактируемым вариантам. Выберите варианты, которые можно редактировать.</string>
+	<key>Only editable variants can be rotated left. Please select variants that can be edited</key>
+	<string>Повернуть влево можно только редактируемые варианты. Выберите варианты, которые можно редактировать.</string>
+	<key>Only editable variants can be rotated right. Please select variants that can be edited</key>
+	<string>Повернуть вправо можно только редактируемые варианты. Выберите варианты, которые можно редактировать.</string>
+	<key>Only editable variants can be rotated to snap. Please select variants that can be edited</key>
+	<string>Повернуть с привязкой можно только редактируемые варианты. Выберите варианты, которые можно редактировать.</string>
+	<key>Only the picked variants will be added to %@.</key>
+	<string>Добавлены в %@ будут только отобранные варианты.</string>
+	<key>Only the picked variants will be synchronized.</key>
+	<string>Синхронизированы будут только отобранные варианты.</string>
+	<key>Opacity</key>
+	<string>Прозрачность</string>
+	<key>Open failed</key>
+	<string>Не удалось открыть</string>
+	<key>Optic Center</key>
+	<string>Оптический центр</string>
+	<key>Optic Center Enabled</key>
+	<string>Оптический центр включен</string>
+	<key>Orange</key>
+	<string>Оранжевый</string>
+	<key>Orientation</key>
+	<string>Ориентация</string>
+	<key>Original</key>
+	<string>Оригинал</string>
+	<key>Original Filename</key>
+	<string>Исходное имя файла</string>
+	<key>Output</key>
+	<string>Вывод</string>
+	<key>Output Folder</key>
+	<string>Папка вывода</string>
+	<key>Overwrite</key>
+	<string>Перезаписать</string>
+	<key>Owner</key>
+	<string>Владелец</string>
+	<key>PNG</key>
+	<string>PNG</string>
+	<key>PNG file</key>
+	<string>PNG-файл</string>
+	<key>PSD (%d-bit)</key>
+	<string>PSD (%d-битный)</string>
+	<key>Package name is too long (max 260 bytes)</key>
+	<string>Имя пакета слишком длинное (макс. 260 байт)</string>
+	<key>Package path doesn't exist or is too long (max 1024 bytes)</key>
+	<string>Путь к пакету не существует или слишком длинный (максимум 1024 байта)</string>
+	<key>Packed %d out of %d images as EIP</key>
+	<string>Упаковано изображений как EIP: %1$d из %2$d</string>
+	<key>Packing %d images as EIP</key>
+	<string>Упаковка изображений как EIP (%d)</string>
+	<key>Parent MEID</key>
+	<string>MEID родительского объекта</string>
+	<key>Part.</key>
+	<string>Част.</string>
+	<key>Partial</key>
+	<string>Частичный</string>
+	<key>Patt.</key>
+	<string>Пат.</string>
+	<key>Pattern</key>
+	<string>Паттерн</string>
+	<key>People</key>
+	<string>Человек</string>
+	<key>Personality</key>
+	<string>Характеристики</string>
+	<key>Phase One</key>
+	<string>Phase One</string>
+	<key>PhaseOne.com</key>
+	<string>PhaseOne.com</string>
+	<key>Phone Numbers</key>
+	<string>Номера телефонов</string>
+	<key>Phone(s)</key>
+	<string>Телефоны</string>
+	<key>Phones</key>
+	<string>Телефоны</string>
+	<key>Pick Variant</key>
+	<string>Выбрать вариант</string>
+	<key>Pink</key>
+	<string>Розовый</string>
+	<key>Pixels</key>
+	<string>Пиксели</string>
+	<key>Place</key>
+	<string>Поместить</string>
+	<key>Place images in Albums that match the Catalog Sets specified?</key>
+	<string>Поместить изображения в альбомы, соответствующие разделам каталога?</string>
+	<key>Please refer to the L*a*b* readouts documentation for details.</key>
+	<string>Пожалуйста, обратитесь к документации по данным замеров L*a*b* для более детальной информации.</string>
+	<key>Please select a collection in the library tool</key>
+	<string>Выберите коллекцию в инструменте "Библиотека"</string>
+	<key>Please set the Selects Folder to a valid writable folder.</key>
+	<string>Выберите в качестве папки вывода допустимый каталог, доступный для записи.</string>
+	<key>Please, free up space on destination volume.</key>
+	<string>Освободите место на целевом томе.</string>
+	<key>Port.</key>
+	<string>Порт.</string>
+	<key>Portrait</key>
+	<string>Портрет</string>
+	<key>Postal Code</key>
+	<string>Почтовый индекс</string>
+	<key>Postal code</key>
+	<string>Почтовый индекс</string>
+	<key>Preparing Catalog Import…</key>
+	<string>Подготовка импорта каталога...</string>
+	<key>Previews are being generated for images in a catalog. Do you want to terminate the generation of previews?</key>
+	<string>Генерируются файлы предварительного просмотра изображений в данном каталоге. Вы хотите прекратить генерацию файлов предварительного просмотра изображений?</string>
+	<key>Previous renamed by appending .error</key>
+	<string>Предыдущий вариант переименован путем добавления строки .error</string>
+	<key>Previous renamed by appending .invalid</key>
+	<string>Предыдущий вариант переименован путем добавления строки .invalid</string>
+	<key>Previous will be overwritten</key>
+	<string>Предыдущий вариант будет перезаписан</string>
+	<key>Processing Method</key>
+	<string>Метод обработки</string>
+	<key>Profile</key>
+	<string>Профиль</string>
+	<key>Profile could not be written.</key>
+	<string>Не удалось записать данные в профиль.</string>
+	<key>Program</key>
+	<string>Программа</string>
+	<key>Program AE</key>
+	<string>Программа АЕ (автоэкспозиция)</string>
+	<key>Promote Variant</key>
+	<string>Повысить рейтинг варианта</string>
+	<key>Promote Variants</key>
+	<string>Повысить рейтинг вариантов</string>
+	<key>Provider</key>
+	<string>Поставщик</string>
+	<key>Proxy Creation Failed</key>
+	<string>Не удалось создать прокси</string>
+	<key>Public</key>
+	<string>Публичный</string>
+	<key>Purple</key>
+	<string>Пурпурный</string>
+	<key>Quit Capture One</key>
+	<string>Выйти из Capture One</string>
+	<key>RAW</key>
+	<string>RAW</string>
+	<key>RAW L</key>
+	<string>RAW L</string>
+	<key>RAW M</key>
+	<string>RAW M</string>
+	<key>RAW S</key>
+	<string>RAW S</string>
+	<key>RAW file</key>
+	<string>RAW-файл</string>
+	<key>RGB</key>
+	<string>RGB</string>
+	<key>RGB Curve</key>
+	<string>RGB кривая</string>
+	<key>Radius</key>
+	<string>Радиус</string>
+	<key>Rasterize Mask</key>
+	<string>Растрировать маску</string>
+	<key>Rating</key>
+	<string>Рейтинг</string>
+	<key>Reason</key>
+	<string>Причина</string>
+	<key>Recent Captures</key>
+	<string>последние кадры</string>
+	<key>Recent Imports</key>
+	<string>Недавние импортированные</string>
+	<key>Recipe</key>
+	<string>Набор команд</string>
+	<key>Recipe Format</key>
+	<string>Формат команды обработки</string>
+	<key>Recipe Name</key>
+	<string>Имя команды обработки</string>
+	<key>Recovery</key>
+	<string>Восстановление</string>
+	<key>Red</key>
+	<string>Красный</string>
+	<key>Red Curve</key>
+	<string>Красная кривая</string>
+	<key>Red Gradation Curve</key>
+	<string>Градационная кривая красного</string>
+	<key>Refer to the File section for the list of affected images.</key>
+	<string>Вы найдете список затронутых изображений в разделе «Файл».</string>
+	<key>Reloaded %d out of %d sets of metadata</key>
+	<string>Повторно загружено наборов метаданных: %1$d из %2$d</string>
+	<key>Remove Layer</key>
+	<string>Удалить слой</string>
+	<key>Rename Image</key>
+	<string>Переименовать изображение</string>
+	<key>Rename Layer</key>
+	<string>Удалить слой</string>
+	<key>Reorder Layer</key>
+	<string>Изменить порядок слоя</string>
+	<key>Replace</key>
+	<string>Заменить</string>
+	<key>Reset Adjustments</key>
+	<string>Сбросить коррекции</string>
+	<key>Reset Styles and Preset</key>
+	<string>Сбросить стили и предустановки</string>
+	<key>Reset Styles and Presets</key>
+	<string>Сбросить стили и предустановки</string>
+	<key>Resetting</key>
+	<string>Сброс</string>
+	<key>Rights Usage Terms</key>
+	<string>Условия использования</string>
+	<key>Rights usage terms</key>
+	<string>Условия и права использования</string>
+	<key>Roskildevej 39</key>
+	<string>Roskildevej 39</string>
+	<key>Rotate Left</key>
+	<string>Повернуть влево</string>
+	<key>Rotate Right</key>
+	<string>Повернуть вправо</string>
+	<key>Rotate Snap</key>
+	<string>Повернуть с привязкой</string>
+	<key>Rotating</key>
+	<string>Поворот</string>
+	<key>Rotation</key>
+	<string>Поворот</string>
+	<key>Running a background activity</key>
+	<string>Запуск фоновой активности</string>
+	<key>SC1</key>
+	<string>SC1</string>
+	<key>Saturation</key>
+	<string>Насыщенность</string>
+	<key>Saving Document</key>
+	<string>Согранение документа</string>
+	<key>Saving Document step %d of %d</key>
+	<string>Согранение документа. Шаг %1$d из %2$d</string>
+	<key>Scene</key>
+	<string>Сцена</string>
+	<key>Select Layer</key>
+	<string>Выбрать слой</string>
+	<key>Selected Movie files will not be synchronized.</key>
+	<string>Выбранные файлы фильмов не будут синхронизированы.</string>
+	<key>Selected variants must contain at least one LCC shot</key>
+	<string>Выбранные варианты должны содержать хотя бы один снимок LCC.</string>
+	<key>Selected variants must contain at least one non-LCC shot.</key>
+	<string>Выбранные варианты должны содержать хотя бы один снимок, не связанный с LCC.</string>
+	<key>Selection</key>
+	<string>Выбор</string>
+	<key>Selects Folder</key>
+	<string>Папка отобранных файлов</string>
+	<key>Self Timer</key>
+	<string>Автоспуск</string>
+	<key>Self timer</key>
+	<string>Автоспуск</string>
+	<key>Sequence Count</key>
+	<string>Счетчик последовательность</string>
+	<key>Sequence ID</key>
+	<string>Идентификатор последовательности</string>
+	<key>Sequence Info</key>
+	<string>Информация последовательности</string>
+	<key>Sequence Total</key>
+	<string>Итог последовательности</string>
+	<key>Sequence Type</key>
+	<string>Тип последовательности</string>
+	<key>Serial</key>
+	<string>Серийный</string>
+	<key>Servo</key>
+	<string>Слежение</string>
+	<key>Session Save</key>
+	<string>Сохранить сессию</string>
+	<key>Session Sub Path</key>
+	<string>Подпуть сессии</string>
+	<key>Session Sub Path (Long)</key>
+	<string>Подпуть сессии (длинный)</string>
+	<key>Session data migration</key>
+	<string>Перенос данных сессии</string>
+	<key>Session load</key>
+	<string>Загрузка сессии</string>
+	<key>Set Mask</key>
+	<string>Установить маску</string>
+	<key>Settings path is too long (max 1024 bytes)</key>
+	<string>Путь настроек слишком длинный (макс. 1024 байта)</string>
+	<key>Shadow Recovery</key>
+	<string>Восстановление теней</string>
+	<key>Sharpening Amount</key>
+	<string>Степень усиления резкости</string>
+	<key>Sharpening Halo Suppression</key>
+	<string>Подавление ореола усиления резкости</string>
+	<key>Sharpening Method</key>
+	<string>Способ усиления резкости</string>
+	<key>Sharpening Radius</key>
+	<string>Радиус резкости</string>
+	<key>Sharpening Threshold</key>
+	<string>Порог резкости</string>
+	<key>Sharpness Falloff</key>
+	<string>Падение резкости</string>
+	<key>Sharpness Falloff Amount</key>
+	<string>Степень падения резкости</string>
+	<key>Shift</key>
+	<string>Смещение</string>
+	<key>Shift Direction</key>
+	<string>Направление смещения</string>
+	<key>Shift XY</key>
+	<string>Координаты XY смещения</string>
+	<key>Short Edge</key>
+	<string>Короткая сторона</string>
+	<key>Shut.</key>
+	<string>Затв.</string>
+	<key>Shutter Speed</key>
+	<string>Выдержка</string>
+	<key>Shutter priority</key>
+	<string>Приоретите выдержки</string>
+	<key>Shutter speed</key>
+	<string>Выдержка</string>
+	<key>Shutter speed priority AE</key>
+	<string>Приоритет выдержки АЕ (автоэкспозиция)</string>
+	<key>Silver Rich</key>
+	<string>Silver Rich</string>
+	<key>Sing.</key>
+	<string>Один.</string>
+	<key>Single</key>
+	<string>Одиночный</string>
+	<key>Single Pixel Noise Reduction</key>
+	<string>Подавление шумов из одиночных пикселей</string>
+	<key>Single Shot</key>
+	<string>Покадровый</string>
+	<key>Single shot</key>
+	<string>Одиночный кадр</string>
+	<key>Skip</key>
+	<string>Пропустить</string>
+	<key>Soft Grain</key>
+	<string>Мягкое зерно</string>
+	<key>Software</key>
+	<string>Программное обеспечение</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %@ and you won't be able to downgrade later.</key>
+	<string>Некоторые корректировки слоёв требуют наличия более нового движка обработки. Движок будет безвозвратно обновлен на версию %@, и вы не сможете изменить его версию позже.</string>
+	<key>Some of the layer adjustments require a newer engine. The engine will be permanently upgraded for %lu variants and you won’t be able to downgrade later.</key>
+	<string>Некоторые корректировки слоёв требуют наличия более нового движка обработки. Движок будет безвозвратно обновлен для %lu вариантов, и вы не сможете изменить его версию позже.</string>
+	<key>Some of the selected Variants could not be auto adjusted.</key>
+	<string>На некоторые выбранные варианты нельзя применить автоматическую коррекцию.</string>
+	<key>Some of the selected variants are read-only.</key>
+	<string>Некоторые из выбранных вариантов являются вариантами только для чтения.</string>
+	<key>Some variants are missing metadata</key>
+	<string>У некоторых вариантах отсутствуют метаданные</string>
+	<key>Sort Order</key>
+	<string>Порядок сортировки</string>
+	<key>Source</key>
+	<string>Источник</string>
+	<key>Source image is missing</key>
+	<string>Отсутствует исходное изображение</string>
+	<key>Split Tones</key>
+	<string>Разделить тона</string>
+	<key>Spot</key>
+	<string>Пятно</string>
+	<key>Spots</key>
+	<string>Пятна</string>
+	<key>Square</key>
+	<string>Квадрат</string>
+	<key>State/Province</key>
+	<string>Область или регион</string>
+	<key>Status</key>
+	<string>Статус</string>
+	<key>Stop</key>
+	<string>Остановить</string>
+	<key>Strobe return light</key>
+	<string>Стробоскопический отраженный свет</string>
+	<key>Strobe return light detected</key>
+	<string>Стробоскопический отраженный свет не зафиксирован</string>
+	<key>Strobe return light not detected</key>
+	<string>Стробоскопический отраженный свет не зафиксирован</string>
+	<key>Structure</key>
+	<string>Структура</string>
+	<key>Style</key>
+	<string>Стиль</string>
+	<key>Styles</key>
+	<string>Стили</string>
+	<key>Styles and Presets can only be reset for %d of the %d selected variants</key>
+	<string>Стили и предустановки можно сбросить только для некоторых из выбранных вариантов (%1$d из %2$d)</string>
+	<key>Styles and Presets can only be reset for editable variants. Please select variants that can be edited</key>
+	<string>Стили и предустановки можно сбросить только для редактируемых вариантов. Выберите варианты, которые можно редактировать.</string>
+	<key>Styles and Presets cannot be reset for any of the %d selected variants </key>
+	<string>Стили и предустановки можно сбросить для любого из выбранных вариантов (%d)</string>
+	<key>Sub Name</key>
+	<string>Доп. имя</string>
+	<key>Subject Code</key>
+	<string>Код объекта</string>
+	<key>Summer</key>
+	<string>Лето</string>
+	<key>Supplemental Categories</key>
+	<string>Дополнительные категории</string>
+	<key>Surface Smoothness</key>
+	<string>Сглаживание поверхности</string>
+	<key>Synchronized %d out of %d sets of metadata</key>
+	<string>Синхронизировано наборов метаданных: %1$d из %2$d</string>
+	<key>TIFF (%d-bit) %@</key>
+	<string>TIFF (%1$d бит) %2$@</string>
+	<key>TIFF - A3 Print (300 dpi)</key>
+	<string>TIFF - Печать форматом A3 (300 dpi)</string>
+	<key>TIFF - Adobe RGB (1998) (8bit)</key>
+	<string>TIFF - Adobe RGB (1998) (8bit)</string>
+	<key>TIFF file</key>
+	<string>TIFF-файл</string>
+	<key>Tabular Grain</key>
+	<string>Слоистое зерно</string>
+	<key>Target Levels</key>
+	<string>Целевые уровни</string>
+	<key>Temperature</key>
+	<string>Температура</string>
+	<key>Terminate Activities and Close Window</key>
+	<string>Прекратить деятельность и закрыть окно.</string>
+	<key>Terminate Activities and Quit Application</key>
+	<string>Прервать операции и выйти из приложения</string>
+	<key>Terminate and Close Window</key>
+	<string>Прекратить и закрыть окно</string>
+	<key>Terminate and Quit Application</key>
+	<string>Прекратить и завершить работу приложения</string>
+	<key>The LCC profile is in a legacy format that cannot be opened.</key>
+	<string>Профиль LCC имеет унаследованный формат, который не может быть открыт.</string>
+	<key>The application failed to create a database for the new %@.</key>
+	<string>Приложению не удалось создать базу данных для нового объекта %@.</string>
+	<key>The catalog could not be saved.</key>
+	<string>Не удалось сохранить каталог.</string>
+	<key>The catalog file is in the Trash.</key>
+	<string>Файл каталога находится в корзине.</string>
+	<key>The catalog file is not writable.</key>
+	<string>Файл каталога не доступен для записи.</string>
+	<key>The catalog was saved with %@ and cannot be read by this version.</key>
+	<string>Каталог был сохранен в %@  и не может быть прочитан этой версией программы.</string>
+	<key>The catalog was saved with a newer version of Capture One.</key>
+	<string>Каталог был сохранен в более новой версии Capture One.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be added.</key>
+	<string>Среди выделенных вариантов нет отобранных. Добавить можно только отобранные варианты.</string>
+	<key>The current variant selection does not contain any picked variants. Only picked variants can be synchronized.</key>
+	<string>Среди выделенных вариантов нет отобранных. Синхронизировать можно только отобранные варианты.</string>
+	<key>The document content is not supported. It was saved with an unsupported version of Capture One.</key>
+	<string>Содержание документа не поддерживается, так как он был сохранен в неподдерживаемой версии Capture One.</string>
+	<key>The document was saved with %@ and cannot be read by this version.</key>
+	<string>Документ был сохранен в %@  и не может быть прочитан этой версией программы.</string>
+	<key>The document was saved with a newer version of Capture One.</key>
+	<string>Документ был сохранен в более новой версии Capture One.</string>
+	<key>The existing metadata for some variants will be overwritten.</key>
+	<string>Для некоторых вариантов будут перезаписаны существующие метаданные.</string>
+	<key>The invoked method has not been implemented.</key>
+	<string>Выбранный метод не был реализован.</string>
+	<key>The output folder could not be created.</key>
+	<string>Не удалось создать папку вывода.</string>
+	<key>The output folder is not writable.</key>
+	<string>Папка вывода недоступна для записи.</string>
+	<key>The output location is not a folder.</key>
+	<string>Место вывода не является папкой.</string>
+	<key>The package file needs to be renamed before unpacking. This renaming failed.</key>
+	<string>Перед распаковкой файл пакета необходимо переименовать. Не удалось выполнить переименование.</string>
+	<key>The raw files for some images cannot be found. You can either export anyway without the missing images or cancel the export.</key>
+	<string>RAW файлы для некоторых изображений не удалось найти. Вы можете или продолжить экспорт без отсутствующих изображений или отменить экспорт.</string>
+	<key>The selected file "%@" has a different name than the original file "%@".
+
+Do you want to use the selected file anyway?</key>
+	<string>Имя выбранного файла "%1$@" отличается от имени исходного файла "%2$@".
+
+Все равно использовать выбранный файл?</string>
+	<key>The session appears corrupt.</key>
+	<string>Похоже, сессия повреждена.</string>
+	<key>The session could not be saved.</key>
+	<string>Не удалось сохранить сессию.</string>
+	<key>The session data migration resulted in a renamed session file. Please re-open "%@".</key>
+	<string>В ходе переноса данных сессии файл сессии был переименован. Откройте "%@" еще раз.</string>
+	<key>The session file does not exist.</key>
+	<string>Файл сессии не существует.</string>
+	<key>The session file is empty.</key>
+	<string>Файл сессии пустой.</string>
+	<key>The session file is in the Trash.</key>
+	<string>Файл сессии находится в корзине.</string>
+	<key>The session file is not writable.</key>
+	<string>Файл сессии недоступен для записи.</string>
+	<key>The session was saved with %@ and cannot be read by this version.</key>
+	<string>Сессия была сохранена в %@  и не может быть прочитана этой версией программы.</string>
+	<key>The session was saved with a newer version of Capture One.</key>
+	<string>Сессия была сохранена в более новой версии Capture One.</string>
+	<key>The session was saved with an older, unsupported version of Capture One.</key>
+	<string>Сессия была сохранена в более старой версии Capture One, которая не поддерживается.</string>
+	<key>There are no images to export.</key>
+	<string>Нет изображений для экспорта.</string>
+	<key>There are no images to export.
+ Please include subfolders if needed.</key>
+	<string>Изображения, предназначенные для экспорта отсутствуют .
+ Пожалуйста, выберите и вложенные папки, если это необходимо.</string>
+	<key>There was an error during the processing of the output file.</key>
+	<string>При обработке файла вывода возникла ошибка.</string>
+	<key>There was an error during the processing of the xmp file.</key>
+	<string>При обработке XMP-файла возникла ошибка.</string>
+	<key>There was an error loading the mask.</key>
+	<string>Ошибка загрузки маски.</string>
+	<key>Threshold</key>
+	<string>Порог</string>
+	<key>Tilt</key>
+	<string>Наклон</string>
+	<key>Tilt Direction</key>
+	<string>Направление наклона</string>
+	<key>Time Lapse</key>
+	<string>Интервальная съёмка</string>
+	<key>Time-lapse</key>
+	<string>Интервальная съёмка</string>
+	<key>Timer</key>
+	<string>Таймер</string>
+	<key>Tint</key>
+	<string>Оттенок</string>
+	<key>Title</key>
+	<string>Заголовок</string>
+	<key>To continue using the database, please verify and repair it.</key>
+	<string>Чтобы продолжить использование базы данных, проверьте ее и исправьте.</string>
+	<key>Trash</key>
+	<string>Корзина</string>
+	<key>Trash Folder</key>
+	<string>Папка корзины</string>
+	<key>URL</key>
+	<string>URL</string>
+	<key>Unable to convert image file to package</key>
+	<string>Не удается преобразовать файл изображения в пакет</string>
+	<key>Unable to convert package to image file</key>
+	<string>Не удается преобразовать пакет в файл изображения</string>
+	<key>Unable to create proxy. The image file may be damaged or otherwise unable to load.</key>
+	<string>Невозможно создать прокси. Возможно, файл изображения поврежден или по иным причинам не может быть загружен.</string>
+	<key>Unable to load LCC profile.</key>
+	<string>Не удалось загрузить профиль LCC.</string>
+	<key>Unable to load metadata from offline images. They will be skipped.</key>
+	<string>Невозможно загрузить метаданные из автономных изображений. Они будут пропущены.</string>
+	<key>Unable to read package file.</key>
+	<string>Не удается прочитать файл пакета.</string>
+	<key>Uncalib.</key>
+	<string>Неоткалиб.</string>
+	<key>Uncalibrated</key>
+	<string>Неоткалиброван</string>
+	<key>Uncataloged</key>
+	<string>Не в каталоге</string>
+	<key>Unconstrained</key>
+	<string>Без пропорции</string>
+	<key>Undef.</key>
+	<string>Не опр.</string>
+	<key>Undefined</key>
+	<string>Не определено</string>
+	<key>Uniform Light</key>
+	<string>Однородный свет</string>
+	<key>Uniform Light Amount</key>
+	<string>Количество однородного света</string>
+	<key>Unknown</key>
+	<string>Неизвестно</string>
+	<key>Unknown Font</key>
+	<string>Неизвестный шрифт</string>
+	<key>Unknown Group</key>
+	<string>Неизвестная группа</string>
+	<key>Unknown Processing Engine</key>
+	<string>Неизвестный движок обработки</string>
+	<key>Unknown Scale</key>
+	<string>Неизвестный масштаб</string>
+	<key>Unknown Setting</key>
+	<string>Неизвестный параметр</string>
+	<key>Unknown reason.</key>
+	<string>Неизвестная причина.</string>
+	<key>Unpacked %d out of %d EIP images</key>
+	<string>Распаковано изображений EIP: %1$d из %2$d</string>
+	<key>Unpacking %d EIP files</key>
+	<string>Распаковка изображений EIP (%d)</string>
+	<key>Unpacking EIP Failed</key>
+	<string>Не удалось распаковать EIP</string>
+	<key>Unrated</key>
+	<string>Без рейтинга</string>
+	<key>Unsupported catalog version.</key>
+	<string>Версия каталога не поддерживается.</string>
+	<key>Unsupported document version.</key>
+	<string>Версия документа не поддерживается.</string>
+	<key>Unsupported session version.</key>
+	<string>Версия сессии не поддерживается.</string>
+	<key>Untitled Album</key>
+	<string>Альбом без названия</string>
+	<key>Untitled Recipe</key>
+	<string>Набор команд без названия</string>
+	<key>Update Images</key>
+	<string>Обновить изображения</string>
+	<key>Updating</key>
+	<string>Обновление</string>
+	<key>Upgrade Engine</key>
+	<string>Обновить движок обработки</string>
+	<key>Upgrade Processing Engine</key>
+	<string>Обновить движок обработки</string>
+	<key>Urgency</key>
+	<string>Срочность</string>
+	<key>Usage Terms</key>
+	<string>Условия использования</string>
+	<key>Variant Position</key>
+	<string>Расположение варианта</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %@</key>
+	<string>Варианты не могут иметь более %1$lu слоев. Если вы пропустите, никакие корректировки не будут применены к %2$@</string>
+	<key>Variants can’t have more than %lu layers. If you skip, no adjustments will be applied to %lu variants.</key>
+	<string>Варианты не могут иметь более %1$lu слоев. Если вы пропустите, никакие корректировки не будут применены к %2$lu вариантам.</string>
+	<key>Vendor Specific</key>
+	<string>Определенный производитель</string>
+	<key>Vendor White Balance</key>
+	<string>Баланс белого от производителя</string>
+	<key>Vertical Keystone Correction</key>
+	<string>Вертикальная перспективная коррекция</string>
+	<key>Video</key>
+	<string>Видео</string>
+	<key>Vignetting</key>
+	<string>Виньетирование</string>
+	<key>Vignetting Amount</key>
+	<string>Количество виньетирования</string>
+	<key>Vignetting Disabled</key>
+	<string>Виньетирование отключено</string>
+	<key>Vignetting Enabled</key>
+	<string>Виньетирование включено</string>
+	<key>Vignetting Method</key>
+	<string>Метод виньетирования</string>
+	<key>Vignetting Method Circular</key>
+	<string>Метод виньетирования — круглый</string>
+	<key>Vignetting Method Circular on Crop</key>
+	<string>Метод виньетирования — круглый при кадрировании</string>
+	<key>Vignetting Method Elliptic on Crop</key>
+	<string>Метод виньетирования — эллиптический при кадрировании</string>
+	<key>Warning: Lens Cast Calibration contains clipped data. Bad color casts may occur.</key>
+	<string>Внимание! Калибровка затенения изображения, создаваемого объективом, содержит неполные данные. Возможно появление сильных цветовых сдвигов.</string>
+	<key>Warning: Lens Cast Calibration exposure is poor. Results may be inaccurate.</key>
+	<string>Внимание! Калибровка затенения изображения, создаваемого объективом, недостаточна. Результат может быть неточным.</string>
+	<key>Warning: Severe spots in Lens Cast Calibration may only be partially corrected.</key>
+	<string>Внимание! Очень большие пятна могут быть лишь частично скорректированы с помощью калибровки затенения, создаваемого объективом.</string>
+	<key>Website(s)</key>
+	<string>Веб-сайты</string>
+	<key>Websites</key>
+	<string>Веб-сайты</string>
+	<key>White Balance</key>
+	<string>Баланс белого</string>
+	<key>White Recovery</key>
+	<string>Восстановление Белого</string>
+	<key>White balance</key>
+	<string>Баланс белого</string>
+	<key>Width</key>
+	<string>Ширина</string>
+	<key>Width x Height</key>
+	<string>Ширина и высота</string>
+	<key>Writer</key>
+	<string>Автор описания содержания</string>
+	<key>Writing settings to package file failed. File may be corrupted</key>
+	<string>Не удалось записать настройки в файл пакета. Возможно, файл поврежден.</string>
+	<key>Writing settings to package file failed. This may be a permissions issue or the file may be corrupted</key>
+	<string>Не удалось записать настройки в файл пакета. Возможно, отсутствуют разрешения на доступ либо файл поврежден.</string>
+	<key>YES</key>
+	<string>ДА</string>
+	<key>Yellow</key>
+	<string>Желтый</string>
+	<key>Yes</key>
+	<string>Да</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to preceding variants. (I.e. All files that appear to the left of an LCC will have that profile applied).</key>
+	<string>Вы выбрали несколько LCC. Профили LCC будут применены к предыдущим вариантам (т. е. соответствующий профиль LCC будет применен ко всем файлам, которые отображаются слева от него).</string>
+	<key>Your selection includes multiple LCC's. LCC's will be applied to subsequent variants. (I.e. All files that appear to the right of an LCC will have that profile applied).</key>
+	<string>Вы выбрали несколько LCC. Профили LCC будут применены к последующим вариантам (т. е. соответствующий профиль LCC будет применен ко всем файлам, которые отображаются справа от него).</string>
+	<key>Zip</key>
+	<string>ZIP</string>
+	<key>Zoom: %.f%%</key>
+	<string>Масштаб: %.f%%</string>
+	<key>auto</key>
+	<string>авто</string>
+	<key>begins with</key>
+	<string>начинается с</string>
+	<key>camera custom</key>
+	<string>настройка камеры</string>
+	<key>cloudy</key>
+	<string>облачно</string>
+	<key>contains</key>
+	<string>содержит</string>
+	<key>cool white fluorescent</key>
+	<string>холодный белый флуоресцентный</string>
+	<key>d</key>
+	<string>d</string>
+	<key>day color fluorescent</key>
+	<string>флуоресцентный дневного цвета</string>
+	<key>day white fluorescent</key>
+	<string>флуоресцентный дневной белый</string>
+	<key>daylight</key>
+	<string>дневной свет</string>
+	<key>daylight fluorescent</key>
+	<string>флуоресцентный дневной</string>
+	<key>dd</key>
+	<string>дд</string>
+	<key>dd-MM-yy</key>
+	<string>дд-мм-гг</string>
+	<key>direct sunlight</key>
+	<string>Яркое солнце</string>
+	<key>does not contain</key>
+	<string>не содержит</string>
+	<key>ends with</key>
+	<string>заканчивается на</string>
+	<key>equals</key>
+	<string>равно</string>
+	<key>error</key>
+	<string>ошибка</string>
+	<key>fine weather</key>
+	<string>ясное небо</string>
+	<key>fine weather with shade</key>
+	<string>ясное небо с облаками</string>
+	<key>flash</key>
+	<string>вспышка</string>
+	<key>fluorescent</key>
+	<string>флуоресцентный</string>
+	<key>fluorescent d</key>
+	<string>флуоресцентный d</string>
+	<key>fluorescent h</key>
+	<string>флуоресцентный h</string>
+	<key>fluorescent n</key>
+	<string>флуоресцентный n</string>
+	<key>fluorescent w</key>
+	<string>флуоресцентный w</string>
+	<key>h</key>
+	<string>ч.</string>
+	<key>h-mm a</key>
+	<string>ч-мм a</string>
+	<key>high-temperature mercury-vapor lamp</key>
+	<string>высокотемпературная газоразрядная ртутная лампа</string>
+	<key>hmi</key>
+	<string>металлогалогенный</string>
+	<key>incandescent</key>
+	<string>накал</string>
+	<key>is</key>
+	<string>является</string>
+	<key>is after</key>
+	<string>после</string>
+	<key>is before</key>
+	<string>до</string>
+	<key>is false</key>
+	<string>неверно</string>
+	<key>is faster than</key>
+	<string>быстрее чем</string>
+	<key>is faster than or equal to</key>
+	<string>быстрее чем или равно</string>
+	<key>is greater than</key>
+	<string>больше чем</string>
+	<key>is greater than or equal to</key>
+	<string>больше чем или равно</string>
+	<key>is less than</key>
+	<string>меньше чем</string>
+	<key>is less than or equal to</key>
+	<string>меньше чем или равно</string>
+	<key>is narrower than</key>
+	<string>уже чем</string>
+	<key>is narrower than or equal to</key>
+	<string>уже чем или равно</string>
+	<key>is not</key>
+	<string>не</string>
+	<key>is not equal to</key>
+	<string>не равно</string>
+	<key>is not on</key>
+	<string>находится не на</string>
+	<key>is on</key>
+	<string>приходится на</string>
+	<key>is slower than</key>
+	<string>медленнее чем</string>
+	<key>is slower than or equal to</key>
+	<string>медленнее чем или равно</string>
+	<key>is true</key>
+	<string>верно</string>
+	<key>is wider than</key>
+	<string>шире чем</string>
+	<key>is wider than or equal to</key>
+	<string>шире чем или равно</string>
+	<key>iso studio tungsten</key>
+	<string>студийные лампы накаливания</string>
+	<key>jpg</key>
+	<string>jpg</string>
+	<key>keep .%@</key>
+	<string>оставить .%@</string>
+	<key>kelvin</key>
+	<string>кельвин</string>
+	<key>manual</key>
+	<string>ручной</string>
+	<key>me@abc.com</key>
+	<string>me@abc.com</string>
+	<key>min</key>
+	<string>мин.</string>
+	<key>mm</key>
+	<string>мм</string>
+	<key>neutral white fluorescent</key>
+	<string>флуоресцентный нейтральный белый</string>
+	<key>normal</key>
+	<string>нормальный</string>
+	<key>s</key>
+	<string>s</string>
+	<key>shade</key>
+	<string>в тени</string>
+	<key>shadow</key>
+	<string>тень</string>
+	<key>shot</key>
+	<string>кадр</string>
+	<key>sodium-vapor lamp</key>
+	<string>натриевая лампа</string>
+	<key>ss</key>
+	<string>ss</string>
+	<key>standard light a</key>
+	<string>стандартный свет a</string>
+	<key>standard light b</key>
+	<string>стандартный свет b</string>
+	<key>standard light c</key>
+	<string>стандартный свет c</string>
+	<key>star</key>
+	<string>звезда</string>
+	<key>stars</key>
+	<string>звезды</string>
+	<key>sunny</key>
+	<string>солнечно</string>
+	<key>tungsten</key>
+	<string>лампа накаливания</string>
+	<key>underwater</key>
+	<string>под водой</string>
+	<key>unknown</key>
+	<string>неизвестно</string>
+	<key>use .%@</key>
+	<string>использовать .%@</string>
+	<key>warm white fluorescent</key>
+	<string>теплый белый флуоресцентный</string>
+	<key>white fluorescent</key>
+	<string>белый флуоресцентный</string>
+	<key>yy</key>
+	<string>гг</string>
+	<key>yy-MM-dd</key>
+	<string>гг-мм-дд</string>
+	<key>yyyy</key>
+	<string>гггг</string>
+	<key>yyyy-MM-dd HH.mm.ss</key>
+	<string>yyyy-MM-dd HH.mm.ss</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5ws-qz-AUV.title</key>
+	<string>取消此对话框：按住 Option 键复制或按住 Shift 键复制并应用</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>调整项剪贴板</string>
+	<key>a5v-SA-4aX.title</key>
+	<string>复制</string>
+	<key>dXt-VV-iUD.title</key>
+	<string>标题名称</string>
+	<key>pwS-pN-OgU.title</key>
+	<string>应用</string>
+	<key>wEg-nR-fZO.title</key>
+	<string>文本单元格</string>
+	<key>wYo-A4-YMk.title</key>
+	<string>取消</string>
+</dict>
+</plist>

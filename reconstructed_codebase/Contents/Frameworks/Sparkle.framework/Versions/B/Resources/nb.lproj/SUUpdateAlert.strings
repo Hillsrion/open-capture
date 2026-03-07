@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Om oppdateringen:</string>
+	<key>171.title</key>
+	<string>Utsett</string>
+	<key>172.title</key>
+	<string>Hopp over</string>
+	<key>173.title</key>
+	<string>Installer</string>
+	<key>175.title</key>
+	<string>Last ned og installer automatisk i fremtiden</string>
+	<key>5.title</key>
+	<string>Programoppdatering</string>
+</dict>
+</plist>

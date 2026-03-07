@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>173.title</key>
+	<string>Durchsuchen...</string>
+	<key>176.title</key>
+	<string>Öffnen</string>
+	<key>183.headerCell.title</key>
+	<string>Kürzlich verwendete Sitzung</string>
+	<key>186.title</key>
+	<string>Text Cell</string>
+	<key>208.title</key>
+	<string>Keine zuletzt verwendeten Kataloge oder Sitzungen</string>
+	<key>219.title</key>
+	<string>Letzte</string>
+	<key>221.ibShadowedToolTip</key>
+	<string>Ein Katalog ist der beste Ort um Ihre gesamte Bildbibliothek zu organisieren und zu speichern. Um mit Bildern im Katalog arbeiten zu können, müssen Sie diese in den Katalog importieren. Empfohlen für die meisten Fotografen.</string>
+	<key>222.title</key>
+	<string>Neuer Katalog...</string>
+	<key>37.ibShadowedToolTip</key>
+	<string>Eine Sitzung ist eine schnelle und einfache Art mit einer begrenzten Anzahl an Bildern oder einem einzelnen Auftrag zu arbeiten. Bilder können bearbeitet werden indem Sie den Ordner anwählen indem sich die Bilddateien befinden oder Sie importieren die Bilder in die Sitzung.</string>
+	<key>54.title</key>
+	<string>Abbrechen</string>
+	<key>55.title</key>
+	<string>Neue Sitzung...</string>
+</dict>
+</plist>

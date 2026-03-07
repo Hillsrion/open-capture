@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>128.ibShadowedToolTip</key>
+	<string>선택한 스폿 삭제</string>
+	<key>129.title</key>
+	<string>분석</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>선택한 스폿 삭제</string>
+	<key>64.title</key>
+	<string>포인트 추가</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>스폿 제거</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>%{value2}@개의 일괄 작업 중 %{value1}@개 저장</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>%{value2}@개의 일괄 작업 중 %{value1}@개 저장</string>
+	<key>30.title</key>
+	<string>끝내기</string>
+	<key>31.title</key>
+	<string>N개의 일괄 작업 중 x개 저장</string>
+	<key>5.title</key>
+	<string>일괄 작업 파일 저장</string>
+</dict>
+</plist>

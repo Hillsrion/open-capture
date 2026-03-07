@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Standard</string>
+	<key>486.title</key>
+	<string>Cache</string>
+	<key>526.title</key>
+	<string>Packa som EIP (enbart sessioner)</string>
+	<key>557.title</key>
+	<string>Storlek förhandsvisning (px):</string>
+	<key>559.title</key>
+	<string>Cache</string>
+	<key>563.title</key>
+	<string>Välj inbäddad XMP före inbäddad IPTC</string>
+	<key>565.title</key>
+	<string>Välj länkad XMP före inbäddad Metadata</string>
+	<key>568.title</key>
+	<string>Metadata</string>
+	<key>586.title</key>
+	<string>Packat filformat</string>
+	<key>590.title</key>
+	<string>Packa som EIP vid import</string>
+	<key>591.title</key>
+	<string>Packa som EIP vid fotografering</string>
+	<key>592.title</key>
+	<string>JPEG och framkallad TIFF kan ej packas som EIP.</string>
+	<key>601.title</key>
+	<string>Redigera</string>
+	<key>602.title</key>
+	<string>Tillåt TIFF redigering</string>
+	<key>603.title</key>
+	<string>Tillåt JPEG redigering</string>
+	<key>621.title</key>
+	<string>Full synk</string>
+	<key>622.title</key>
+	<string>Ladda</string>
+	<key>623.title</key>
+	<string>Ingen</string>
+	<key>626.title</key>
+	<string>Autosynka länkad XMP:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>Nya filer (skapade via import, fotografering eller EIP konvertering), kommer att ha skrivrättigheter för alla på denna dator och inte bara ägaren.</string>
+	<key>629.title</key>
+	<string>Gör nya filer skrivbara för alla</string>
+	<key>635.title</key>
+	<string>Tillåt PNG redigering</string>
+	<key>667.title</key>
+	<string>Standard framkallningsmotor:</string>
+</dict>
+</plist>

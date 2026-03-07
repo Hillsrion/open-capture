@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Hv-MQ-Xea.ibExternalAccessibilityDescription</key>
+	<string>Sättigung</string>
+	<key>1Hv-MQ-Xea.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Gelb</string>
+	<key>450.title</key>
+	<string>Schwarz &amp; Weiß aktivieren</string>
+	<key>709.title</key>
+	<string>Lichter</string>
+	<key>887.title</key>
+	<string>Tiefen</string>
+	<key>916.ibShadowedLabels[0]</key>
+	<string>Farbempfindlichkeit</string>
+	<key>916.ibShadowedLabels[1]</key>
+	<string>Duplex</string>
+	<key>918.label</key>
+	<string>Farbempfindlichkeit</string>
+	<key>919.label</key>
+	<string>Duplex</string>
+	<key>94N-k5-35A.ibExternalAccessibilityDescription</key>
+	<string>Rot</string>
+	<key>94N-k5-35A.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Rot</string>
+	<key>953.title</key>
+	<string>Schwarz &amp; Weiß aktivieren</string>
+	<key>FTZ-Ys-qEN.ibExternalAccessibilityDescription</key>
+	<string>Rot</string>
+	<key>FTZ-Ys-qEN.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sättigung</string>
+	<key>OrD-M8-LcE.ibExternalAccessibilityDescription</key>
+	<string>Rot</string>
+	<key>OrD-M8-LcE.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Sättigung</string>
+	<key>epE-Bj-Ea0.ibExternalAccessibilityDescription</key>
+	<string>Sättigung</string>
+	<key>epE-Bj-Ea0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Grün</string>
+	<key>kA4-IV-KrW.ibExternalAccessibilityDescription</key>
+	<string>Sättigung</string>
+	<key>kA4-IV-KrW.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Magenta</string>
+	<key>ncO-s8-djm.ibExternalAccessibilityDescription</key>
+	<string>Sättigung</string>
+	<key>ncO-s8-djm.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Blau</string>
+	<key>qmI-bB-Ky2.ibExternalAccessibilityDescription</key>
+	<string>Rot</string>
+	<key>qmI-bB-Ky2.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Farbton</string>
+	<key>vL2-c5-pGT.ibExternalAccessibilityDescription</key>
+	<string>Rot</string>
+	<key>vL2-c5-pGT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Farbton</string>
+	<key>xhj-to-hD5.ibExternalAccessibilityDescription</key>
+	<string>Sättigung</string>
+	<key>xhj-to-hD5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Cyan</string>
+</dict>
+</plist>

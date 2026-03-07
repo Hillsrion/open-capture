@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>510.ibShadowedToolTip</key>
+	<string>Mostra/Nascondi guide carta</string>
+	<key>511.title</key>
+	<string>Mostra Guide</string>
+	<key>543.ibShadowedToolTip</key>
+	<string>Mostra/Nascondi guide carta</string>
+	<key>544.title</key>
+	<string>Guide Stampa</string>
+	<key>UWG-4M-2dn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Unità</string>
+</dict>
+</plist>

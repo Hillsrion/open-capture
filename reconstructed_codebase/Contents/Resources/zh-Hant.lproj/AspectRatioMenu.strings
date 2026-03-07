@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>好</string>
+	<key>116.title</key>
+	<string>取消</string>
+	<key>117.title</key>
+	<string>名稱</string>
+	<key>118.title</key>
+	<string>比例</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>完成</string>
+	<key>124.title</key>
+	<string>移除</string>
+	<key>6.title</key>
+	<string>新建縱橫比</string>
+	<key>66.title</key>
+	<string>整理縱橫比</string>
+</dict>
+</plist>

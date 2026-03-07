@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>하루 한번</string>
+	<key>104.title</key>
+	<string>OtherViews</string>
+	<key>105.title</key>
+	<string>자동</string>
+	<key>106.title</key>
+	<string>안 함</string>
+	<key>107.title</key>
+	<string>위치:</string>
+	<key>108.title</key>
+	<string>종료 알림</string>
+	<key>111.title</key>
+	<string>OtherViews</string>
+	<key>112.title</key>
+	<string>안 함</string>
+	<key>113.title</key>
+	<string>자동</string>
+	<key>115.title</key>
+	<string>하드웨어 가속</string>
+	<key>116.title</key>
+	<string>카탈로그 백업</string>
+	<key>125.title</key>
+	<string>OtherViews</string>
+	<key>126.title</key>
+	<string>메타데이터를 항상 덮어씀</string>
+	<key>127.title</key>
+	<string>메타데이터를 덮어쓰지 않음</string>
+	<key>128.title</key>
+	<string>메타데이터를 덮어쓰기할 때 물어보기</string>
+	<key>130.title</key>
+	<string>OtherViews</string>
+	<key>131.title</key>
+	<string>새 앨범 만들기 또는 폴더 선택</string>
+	<key>132.title</key>
+	<string>일치하는 앨범 만들기 또는 재사용</string>
+	<key>133.title</key>
+	<string>카탈로그 세트를 싱크할 때 물어보기</string>
+	<key>134.title</key>
+	<string>Expression Media로부터 수신된 메타데이터 및 카탈로그 세트 정보는 Capture One의 앨범 및 이미지 업데이트에서 사용될 수 있습니다. 정보의 각 유형별 반응을 설정하십시오.</string>
+	<key>136.title</key>
+	<string>OtherViews</string>
+	<key>137.title</key>
+	<string>추가할때 하위폴더 포함여부를 확인</string>
+	<key>138.title</key>
+	<string>하위폴더 다이얼로그를 포함하기 위해 항상 예를 선택</string>
+	<key>139.title</key>
+	<string>하위폴더 다이얼로그를 포함하기 위해 항상 아니오를 선택</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>기본값</string>
+	<key>142.title</key>
+	<string>스크롤 휠로 줌</string>
+	<key>143.title</key>
+	<string>뷰어</string>
+	<key>149.title</key>
+	<string>OtherViews</string>
+	<key>150.title</key>
+	<string>5분후 비활성</string>
+	<key>151.title</key>
+	<string>10분후 비활성</string>
+	<key>152.title</key>
+	<string>30분후 비활성</string>
+	<key>153.title</key>
+	<string>1시간후 비활성</string>
+	<key>154.title</key>
+	<string>2시간후 비활성</string>
+	<key>155.title</key>
+	<string>4시간후 비활성</string>
+	<key>156.title</key>
+	<string>오늘의 첫 촬영</string>
+	<key>157.title</key>
+	<string>생성:</string>
+	<key>158.title</key>
+	<string>최근 촬영 컬렉션</string>
+	<key>159.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>160.title</key>
+	<string>디지털카메라에서 카드를 감지할 때 가져오기 창을 엽니다.</string>
+	<key>161.title</key>
+	<string>가져오기</string>
+	<key>162.title</key>
+	<string>활성화</string>
+	<key>163.title</key>
+	<string>자동 표시 창</string>
+	<key>167.title</key>
+	<string>즐겨찾기</string>
+	<key>169.title</key>
+	<string>OtherViews</string>
+	<key>170.title</key>
+	<string>이전 세션폴더를 즐겨찾기에 추가할지 물어보기</string>
+	<key>171.title</key>
+	<string>이전 세션폴더를 즐겨찾기에 항상 추가</string>
+	<key>172.title</key>
+	<string>이전 세션폴더를 즐겨찾기에 추가하지 않음</string>
+	<key>173.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>176.title</key>
+	<string>카탈로그와 세션</string>
+	<key>177.title</key>
+	<string>새 창에서 열기</string>
+	<key>59.title</key>
+	<string>카탈로그와 세션</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>카탈로그와 세션</string>
+	<key>60.title</key>
+	<string>즐겨찾기</string>
+	<key>61.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>66.title</key>
+	<string>패키지된 파일 형식</string>
+	<key>67.title</key>
+	<string>최근 촬영 컬렉션</string>
+	<key>70.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>72.title</key>
+	<string>상자</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>상태:</string>
+	<key>92.title</key>
+	<string>…</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>95.title</key>
+	<string>OtherViews</string>
+	<key>96.title</key>
+	<string>항상</string>
+	<key>97.title</key>
+	<string>한달에 한번</string>
+	<key>98.title</key>
+	<string>안 함</string>
+	<key>99.title</key>
+	<string>일주일에 한번</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>스크롤 휠로 슬라이더 값을 변경합니다</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>툴 탭</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Tangent 장비 지원 가능</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + 스크롤 휠로 툴탭을 스크롤 합니다.</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>시작 보기</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent 통합</string>
+</dict>
+</plist>

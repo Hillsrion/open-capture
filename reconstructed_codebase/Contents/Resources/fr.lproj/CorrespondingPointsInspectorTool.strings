@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>128.ibShadowedToolTip</key>
+	<string>Supprimer Tache Sélectionnée</string>
+	<key>129.title</key>
+	<string>Analyser</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Supprimer point sélectionner</string>
+	<key>64.title</key>
+	<string>Ajouter des points pour moi</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Suppression Tache</string>
+</dict>
+</plist>

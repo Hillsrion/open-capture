@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>Limiar</string>
+	<key>14.title</key>
+	<string>Máscara de Foco</string>
+	<key>15.ibExternalAccessibilityDescription</key>
+	<string>GridColorWell</string>
+	<key>17.title</key>
+	<string>Cor:</string>
+	<key>22.ibExternalAccessibilityDescription</key>
+	<string>CropOpacitySlider</string>
+	<key>25.ibExternalAccessibilityDescription</key>
+	<string>CropOpacitySlider</string>
+	<key>30.title</key>
+	<string>Opacidade:</string>
+	<key>5.ibExternalAccessibilityDescription</key>
+	<string>CropResetButton</string>
+	<key>6.title</key>
+	<string>Padrões</string>
+</dict>
+</plist>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>1日1回</string>
+	<key>105.title</key>
+	<string>オート</string>
+	<key>106.title</key>
+	<string>しない</string>
+	<key>107.title</key>
+	<string>場所:</string>
+	<key>108.title</key>
+	<string>閉じるときに警告:</string>
+	<key>112.title</key>
+	<string>しない</string>
+	<key>113.title</key>
+	<string>オート</string>
+	<key>115.title</key>
+	<string>ハードウェア アクセレーション</string>
+	<key>116.title</key>
+	<string>カタログ バックアップ</string>
+	<key>126.title</key>
+	<string>メタデータを常に上書き</string>
+	<key>127.title</key>
+	<string>メタデータを上書きしない</string>
+	<key>128.title</key>
+	<string>メタデータの上書きを確認する</string>
+	<key>131.title</key>
+	<string>新規アルバムまたはセレクトフォルダを作成</string>
+	<key>132.title</key>
+	<string>マッチング アルバムの作成または再使用</string>
+	<key>133.title</key>
+	<string>カタログセットと同期を確認する</string>
+	<key>134.title</key>
+	<string>Expression Mediaから受けたメタデータとカタログセット情報は、Capture Oneでイメージとアルバムをアップデートするのに使用されるかもしれません。 各情報の種類のために動作選択してください。インフォメーションの各タイプの動作選択をしてください。</string>
+	<key>137.title</key>
+	<string>追加するとき、サブフォルダを含めるか確認する</string>
+	<key>138.title</key>
+	<string>サブフォルダを含めるダイアログに常にYesと答える</string>
+	<key>139.title</key>
+	<string>サブフォルダを含めるダイアログに常にNoと答える</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>デフォルト</string>
+	<key>142.title</key>
+	<string>スクロール ホイールでズーム</string>
+	<key>143.title</key>
+	<string>ビューア</string>
+	<key>150.title</key>
+	<string>非アクティブが5分以上続いた後</string>
+	<key>151.title</key>
+	<string>非アクティブが10分以上続いた後</string>
+	<key>152.title</key>
+	<string>非アクティブが30分以上続いた後</string>
+	<key>153.title</key>
+	<string>非アクティブが1時間以上続いた後</string>
+	<key>154.title</key>
+	<string>非アクティブが2時間以上続いた後</string>
+	<key>155.title</key>
+	<string>非アクティブが4時間以上続いた後</string>
+	<key>156.title</key>
+	<string>一日の最初の撮影</string>
+	<key>157.title</key>
+	<string>作成 :</string>
+	<key>158.title</key>
+	<string>最近のキャプチャー コレクション</string>
+	<key>160.title</key>
+	<string>デジタルカメラのカードが接続されたらインポートを開く</string>
+	<key>161.title</key>
+	<string>インポート</string>
+	<key>162.title</key>
+	<string>アクティビティー</string>
+	<key>163.title</key>
+	<string>自動的にウィンドウを表示</string>
+	<key>167.title</key>
+	<string>お気に入り</string>
+	<key>170.title</key>
+	<string>直前のセッションフォルダをお気に入りに追加するか確認</string>
+	<key>171.title</key>
+	<string>直前のセッションフォルダを常にお気に入りに追加</string>
+	<key>172.title</key>
+	<string>直前のセッションフォルダをお気に入りに追加しない</string>
+	<key>176.title</key>
+	<string>カタログとセッション</string>
+	<key>177.title</key>
+	<string>新規ウィンドウで開く</string>
+	<key>59.title</key>
+	<string>カタログとセッション</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>カタログとセッション</string>
+	<key>60.title</key>
+	<string>お気に入り</string>
+	<key>66.title</key>
+	<string>パッケージされたファイル形式</string>
+	<key>67.title</key>
+	<string>最近のキャプチャー コレクション</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>ステイタス:</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>96.title</key>
+	<string>常に</string>
+	<key>97.title</key>
+	<string>月1回</string>
+	<key>98.title</key>
+	<string>しない</string>
+	<key>99.title</key>
+	<string>週1回</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>スクロールホイールでスライダーの値を変更</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>ツールタブ</string>
+	<key>PQo-en-IWM.title</key>
+	<string>接続デバイスのサポートを有効にする</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + スクロールホイールでツールタブをスクロール</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>起動時に表示</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent の統合</string>
+</dict>
+</plist>

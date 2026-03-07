@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BQe-ch-zT5.ibExternalAccessibilityDescription</key>
+	<string>表面</string>
+	<key>BQe-ch-zT5.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>サーフェス</string>
+	<key>ZRc-KI-4KK.ibExternalAccessibilityDescription</key>
+	<string>輝度</string>
+	<key>ZRc-KI-4KK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ルミナンス</string>
+	<key>Zuk-OM-RR8.ibExternalAccessibilityDescription</key>
+	<string>カラー</string>
+	<key>Zuk-OM-RR8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>カラー</string>
+	<key>hL8-wU-SQL.ibExternalAccessibilityDescription</key>
+	<string>シングルピクセル</string>
+	<key>hL8-wU-SQL.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ピクセル</string>
+	<key>zlR-yp-kOa.ibExternalAccessibilityDescription</key>
+	<string>詳細</string>
+	<key>zlR-yp-kOa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ディテール</string>
+</dict>
+</plist>

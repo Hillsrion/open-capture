@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>258.title</key>
+	<string>Шаблон:</string>
+	<key>260.title</key>
+	<string>Цвет:</string>
+	<key>262.title</key>
+	<string>Поле:</string>
+	<key>263.title</key>
+	<string>пк</string>
+	<key>265.title</key>
+	<string>Просмотр</string>
+	<key>266.title</key>
+	<string>Окно просмотра и браузер</string>
+	<key>269.title</key>
+	<string>Контрольное поле:</string>
+	<key>270.title</key>
+	<string>пк</string>
+	<key>277.title</key>
+	<string>Цвет маски:</string>
+	<key>289.title</key>
+	<string>Слои</string>
+	<key>293.title</key>
+	<string>Контрольное поле</string>
+	<key>295.title</key>
+	<string>Локальные коррекции</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>Выбранный вариант:</string>
+	<key>drf-G9-VYV.title</key>
+	<string>Вариант сравнения:</string>
+</dict>
+</plist>

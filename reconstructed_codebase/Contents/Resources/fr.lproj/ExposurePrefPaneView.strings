@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>242.title</key>
+	<string>Active alarme ombres</string>
+	<key>246.title</key>
+	<string>Défaut</string>
+	<key>247.title</key>
+	<string>Avertissement d’Exposition</string>
+	<key>248.title</key>
+	<string>Sélectionner Niveaux Cibles</string>
+	<key>253.title</key>
+	<string>Ombres:</string>
+	<key>254.title</key>
+	<string>Hautes lumières :</string>
+	<key>255.title</key>
+	<string>Outil Niveaux</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>Hautes lumières :</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>Le Mode Canal s'applique aux Réglages Auto et aux pipettes Ombres et Hautes lumières.</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>Niveaux Auto</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>Canaux Rouge, Vert et Bleu</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>Mode Canal:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>Ombres:</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>Canal RVB</string>
+</dict>
+</plist>

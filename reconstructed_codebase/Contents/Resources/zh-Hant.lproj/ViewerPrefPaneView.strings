@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>默認設定</string>
+	<key>258.title</key>
+	<string>圖案：</string>
+	<key>260.title</key>
+	<string>顏色：</string>
+	<key>262.title</key>
+	<string>邊距：</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>查看器</string>
+	<key>266.title</key>
+	<string>查看器與瀏覽器</string>
+	<key>268.title</key>
+	<string>100</string>
+	<key>269.title</key>
+	<string>校樣邊距：</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>遮罩顏色：</string>
+	<key>289.title</key>
+	<string>圖層</string>
+	<key>293.title</key>
+	<string>校樣邊距</string>
+	<key>295.title</key>
+	<string>本地調整</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>已選變體顏色：</string>
+	<key>drf-G9-VYV.title</key>
+	<string>比對變體顏色：</string>
+</dict>
+</plist>

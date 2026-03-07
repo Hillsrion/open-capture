@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>144.title</key>
+	<string>OtherViews</string>
+	<key>145.title</key>
+	<string>Organiser…</string>
+	<key>146.title</key>
+	<string>Nouveau…</string>
+	<key>147.title</key>
+	<string>Non imposé</string>
+	<key>149.title</key>
+	<string>Sortie</string>
+	<key>152.title</key>
+	<string>1x1</string>
+	<key>153.title</key>
+	<string>2x3</string>
+	<key>155.ibShadowedToolTip</key>
+	<string>Réglage de la variante : la taille de l'image qui en résulte une fois la variante traitée.</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Unité de taille</string>
+	<key>158.title</key>
+	<string>OtherViews</string>
+	<key>159.title</key>
+	<string>px</string>
+	<key>160.title</key>
+	<string>in</string>
+	<key>161.title</key>
+	<string>cm</string>
+	<key>162.title</key>
+	<string>mm</string>
+	<key>326.title</key>
+	<string>Format</string>
+	<key>327.title</key>
+	<string>Taille</string>
+	<key>331.title</key>
+	<string>x</string>
+	<key>334.title</key>
+	<string>Recadrage en dehors de l'image</string>
+	<key>IUp-Ub-TaZ.title</key>
+	<string>Afficher Grille lors du Recadrage</string>
+</dict>
+</plist>

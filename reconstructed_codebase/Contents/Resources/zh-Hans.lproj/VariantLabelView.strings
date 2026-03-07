@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>90.title</key>
+	<string>名称</string>
+	<key>91.title</key>
+	<string>Iso</string>
+	<key>94.title</key>
+	<string>快门</string>
+	<key>95.title</key>
+	<string>光圈</string>
+	<key>96.title</key>
+	<string>焦距</string>
+</dict>
+</plist>

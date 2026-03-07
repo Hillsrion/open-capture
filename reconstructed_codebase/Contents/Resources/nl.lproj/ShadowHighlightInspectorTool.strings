@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1s6-DA-AtS.ibExternalAccessibilityDescription</key>
+	<string>schaduw</string>
+	<key>1s6-DA-AtS.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Schaduw</string>
+	<key>MUs-ga-mtQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Zwart</string>
+	<key>QUi-IQ-WRI.ibExternalAccessibilityDescription</key>
+	<string>hooglicht</string>
+	<key>QUi-IQ-WRI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Hooglicht</string>
+	<key>XJk-jj-dE3.ibExternalAccessibilityDescription</key>
+	<string>wit</string>
+	<key>XJk-jj-dE3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Wit</string>
+</dict>
+</plist>

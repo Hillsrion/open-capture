@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>Soquete fechado por ponto remoto</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>Tentativa de conexão com o servidor expirou</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>A tentativa de criar soquete do soquete FD falhou. getpeername () falhou</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>Operação de leitura atingiu o comprimento máximo definido</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>A operação de leitura expirou</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>A operação escrita expirou</string>
+</dict>
+</plist>

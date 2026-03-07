@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>처음 이미지에서 변형값 복사</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>마지막 촬영의 조정을 복사합니다.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>마지막값 복사</string>
+	<key>250.title</key>
+	<string>메뉴</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>촬영 이미지의 자동 조정</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>마지막 이미지에서 변형값 복사</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>방향설정</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>마지막 촬영의 조정을 복사합니다.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>마지막값 복사</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>마지막 이미지에서 변형값 복사</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>마지막값에서 특정값 복사...</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>첫번째값에서 특정값 복사...</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>1차 변형의 조정을 복사합니다.</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>첫번째값 복사</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>마지막값에서 특정값 복사...</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>기본 조정 사용</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>기본값</string>
+	<key>JgD-8n-qns.title</key>
+	<string>처음 이미지에서 변형값 복사</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>스타일</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>클립보드에서 복사</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>1차 변형의 조정을 복사합니다.</string>
+	<key>RWO-hh-M69.title</key>
+	<string>첫번째값 복사</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>클립보드에서 복사</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>기본 조정 사용</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>기본값</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>카메라에 대한 기본 ICC 프로파일 사용</string>
+	<key>abE-6a-zrB.title</key>
+	<string>기본값</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>카메라에서 기본 방향설정 사용</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>기본값</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>촬영한 마지막 이미지의 ICC프로파일을 복사합니다.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>마지막값 복사</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>메타데이터</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>첫번째값에서 특정값 복사...</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>기타</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>기본 변형의 ICC 프로파일을 복사합니다.</string>
+	<key>s07-eL-TTi.title</key>
+	<string>첫번째값 복사</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ICC 프로파일</string>
+</dict>
+</plist>

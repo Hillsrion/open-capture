@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>OK</string>
+	<key>116.title</key>
+	<string>Cancelar</string>
+	<key>117.title</key>
+	<string>Nome</string>
+	<key>118.title</key>
+	<string>Proporção</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Concluído</string>
+	<key>124.title</key>
+	<string>Remover</string>
+	<key>6.title</key>
+	<string>Nova taxa de proporção</string>
+	<key>66.title</key>
+	<string>Organizar taxas de proporção</string>
+</dict>
+</plist>

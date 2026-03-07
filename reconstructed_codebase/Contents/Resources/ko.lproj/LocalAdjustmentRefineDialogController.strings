@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2KX-yW-Y8Z.title</key>
+	<string>적용</string>
+	<key>3jn-o8-abc.title</key>
+	<string>취소</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>리파인 마스크</string>
+	<key>Vmk-QE-bDz.title</key>
+	<string>마스크 표시</string>
+	<key>fLd-KN-RDQ.ibExternalAccessibilityDescription</key>
+	<string>페더 값</string>
+	<key>fLd-KN-RDQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>반경</string>
+</dict>
+</plist>

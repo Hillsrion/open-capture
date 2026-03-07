@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bxk-2e-NaG.ibShadowedToolTip</key>
+	<string>銳利化量。控制銳利化的程度。</string>
+	<key>MFJ-3v-Pqa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>半徑</string>
+	<key>MFJ-3v-Pqa.ibShadowedToolTip</key>
+	<string>銳利化半徑。設定銳利化中心的像素半徑。</string>
+	<key>SPM-3K-Lvp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>閾值</string>
+	<key>SPM-3K-Lvp.ibShadowedToolTip</key>
+	<string>銳利化閾值。決定未經銳利化的下限閾值。</string>
+	<key>YWb-mP-DhK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>光暈抑制</string>
+	<key>YWb-mP-DhK.ibShadowedToolTip</key>
+	<string>光暈抑制</string>
+</dict>
+</plist>

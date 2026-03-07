@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Przed stworzeniem LCC upewnij się, że parametry narzędzia Korekcja obiektywu są prawidłowe.</string>
+	<key>1.title</key>
+	<string>Opcje tworzenia LCC</string>
+	<key>10.title</key>
+	<string>Uwzględnij informacje o usuwaniu kurzu</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Postęp tworzenia LCC</string>
+	<key>22.title</key>
+	<string>Tworzenie LCC</string>
+	<key>27.title</key>
+	<string>Tworzenie LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Zawsze twórz za pomocą tych ustawień. Można cofnąć ustawienie w narzędziu LCC.</string>
+	<key>37.title</key>
+	<string>Nie pokazuj ponownie</string>
+	<key>46.title</key>
+	<string>Okno</string>
+	<key>5.title</key>
+	<string>Utwórz</string>
+	<key>51.title</key>
+	<string>Podczas tworzenia LCC pojawiły się ostrzeżenia. Czy chcesz otworzyć dziennik zdarzeń, aby je zobaczyć?</string>
+	<key>54.title</key>
+	<string>Pokaż dziennik zdarzeń</string>
+	<key>55.title</key>
+	<string>Zamknij</string>
+	<key>6.title</key>
+	<string>Anuluj</string>
+	<key>65.title</key>
+	<string>Anuluj</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Uwzględnij korekcje dla aparatu technicznego z obiektywem szerokokątnym.</string>
+	<key>8.title</key>
+	<string>Uwzględnij dane korekcji obiektywu szerokokątnego</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Uwzględnij informacje o usuwaniu kurzu. Tworzenie profilu LCC potrwa nieco dłużej.</string>
+</dict>
+</plist>

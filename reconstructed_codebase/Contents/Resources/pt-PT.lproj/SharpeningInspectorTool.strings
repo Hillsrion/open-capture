@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bxk-2e-NaG.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Quantidade</string>
+	<key>Bxk-2e-NaG.ibShadowedToolTip</key>
+	<string>Quantidade de afiação. Controla a quantidade de nitidez.</string>
+	<key>MFJ-3v-Pqa.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Raio</string>
+	<key>MFJ-3v-Pqa.ibShadowedToolTip</key>
+	<string>Raio de afiação. Defina o raio de pixel do núcleo de nitidez.</string>
+	<key>SPM-3K-Lvp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Limite</string>
+	<key>SPM-3K-Lvp.ibShadowedToolTip</key>
+	<string>Limiar de afiação. Determina o limite inferior onde nenhuma nitidez é realizada.</string>
+	<key>YWb-mP-DhK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Supressão do halo</string>
+	<key>YWb-mP-DhK.ibShadowedToolTip</key>
+	<string>Supressão do halo</string>
+</dict>
+</plist>

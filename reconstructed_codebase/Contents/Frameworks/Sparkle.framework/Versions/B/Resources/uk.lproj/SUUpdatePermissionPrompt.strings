@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>183.title</key>
+	<string>Використання анонімного профілю системи допомагає нам у планування майбутньої розробки. Якщо у вас виникли питання щодо цього, звертайтесь до нас.
+
+Інформація, що буде надіслано:</string>
+	<key>43.title</key>
+	<string>Text Cell</string>
+	<key>45.title</key>
+	<string>Text Cell</string>
+	<key>AUc-33-qGN.title</key>
+	<string>Автоматично завантажувати та встановлювати оновлення</string>
+	<key>OhZ-1K-DmA.title</key>
+	<string>Перевіряти автоматично</string>
+	<key>cCJ-V0-aTi.title</key>
+	<string>Не перервіряти</string>
+	<key>gmh-T4-BO0.title</key>
+	<string>Виконувати автоматичну перевірку оновлень?</string>
+	<key>gz7-LM-gNf.title</key>
+	<string>Автоматично надсилати профіль системи</string>
+</dict>
+</plist>

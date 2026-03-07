@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1xe-Um-CIL.title</key>
+	<string>Drukuj kod kreskowy</string>
+	<key>8DD-xd-Xz5.title</key>
+	<string>Czytnik jest skonfigurowany i gotowy do pracy.</string>
+	<key>BW0-mv-EQA.title</key>
+	<string>Spróbuj ponownie</string>
+	<key>F0m-fq-GYU.title</key>
+	<string>Anuluj</string>
+	<key>FQJ-9d-y3h.title</key>
+	<string>Zeskanuj kod kreskowy, aby skonfigurować czytnik.</string>
+	<key>Ipa-tx-QXw.title</key>
+	<string>Jeśli chcesz użyć innego czytnika, możesz go skonfigurować w menu ….</string>
+	<key>WZn-5g-bos.title</key>
+	<string>Anuluj</string>
+	<key>ab6-x1-HFX.title</key>
+	<string>OK</string>
+	<key>iQE-CB-bxP.title</key>
+	<string>Konfiguruj czytnik</string>
+	<key>ifD-R2-JOJ.title</key>
+	<string>Wystąpił błąd podczas konfigurowania czytnika.</string>
+</dict>
+</plist>

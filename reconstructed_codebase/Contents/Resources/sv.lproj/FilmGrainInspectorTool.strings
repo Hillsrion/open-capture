@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>45u-oY-7a0.ibExternalAccessibilityDescription</key>
+	<string>ljusstyrka</string>
+	<key>45u-oY-7a0.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Grovlek</string>
+	<key>gX2-sJ-VmO.ibExternalAccessibilityDescription</key>
+	<string>inverkan</string>
+	<key>gX2-sJ-VmO.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Styrka</string>
+	<key>rVu-m5-KCC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Typ</string>
+</dict>
+</plist>

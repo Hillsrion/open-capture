@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Einmal pro Tag</string>
+	<key>104.title</key>
+	<string>OtherViews</string>
+	<key>105.title</key>
+	<string>Auto</string>
+	<key>106.title</key>
+	<string>Nie</string>
+	<key>107.title</key>
+	<string>Speicherort:</string>
+	<key>108.title</key>
+	<string>Fragen beim Schließen:</string>
+	<key>111.title</key>
+	<string>OtherViews</string>
+	<key>112.title</key>
+	<string>Nie</string>
+	<key>113.title</key>
+	<string>Auto</string>
+	<key>115.title</key>
+	<string>Hardwarebeschleunigung</string>
+	<key>116.title</key>
+	<string>Katalog-Backup</string>
+	<key>125.title</key>
+	<string>OtherViews</string>
+	<key>126.title</key>
+	<string>Metadaten immer überschreiben</string>
+	<key>127.title</key>
+	<string>Metadaten nie überschreiben</string>
+	<key>128.title</key>
+	<string>Fragen ob Metadaten überschrieben werden sollen</string>
+	<key>130.title</key>
+	<string>OtherViews</string>
+	<key>131.title</key>
+	<string>Neues Album erstellen oder Ordner auswählen</string>
+	<key>132.title</key>
+	<string>Passende Alben erstellen oder wiederverwenden</string>
+	<key>133.title</key>
+	<string>Fragen ob Katalogsets synchronisiert werden sollen</string>
+	<key>134.title</key>
+	<string>Informationen zu Metadaten und Katalogsatz die von Expression Media empfangen wurden, können zur Aktualisierung von Bildern und Alben in Capture One genutzt werden. Wählen Sie das Verhalten für die entsprechenden Informationen.</string>
+	<key>136.title</key>
+	<string>OtherViews</string>
+	<key>137.title</key>
+	<string>Fragen ob beim Hinzufügen Unterordner einbezogen werden sollen</string>
+	<key>138.title</key>
+	<string>Im Dialog "Unterordner einschließen" immer mit "ja" antworten</string>
+	<key>139.title</key>
+	<string>Im Dialog "Unterordner einbeziehen" immer mit "nein" antworten</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Voreinstellung</string>
+	<key>142.title</key>
+	<string>Zoom mit Mausrad</string>
+	<key>143.title</key>
+	<string>Viewer</string>
+	<key>149.title</key>
+	<string>OtherViews</string>
+	<key>150.title</key>
+	<string>Nach mehr als 5 Minuten Inaktivität</string>
+	<key>151.title</key>
+	<string>Nach mehr als 10 Minuten Inaktivität</string>
+	<key>152.title</key>
+	<string>Nach mehr als 30 Minuten Inaktivität</string>
+	<key>153.title</key>
+	<string>Nach mehr als 1 Stunde Inaktivität</string>
+	<key>154.title</key>
+	<string>Nach mehr als 2 Stunden Inaktivität</string>
+	<key>155.title</key>
+	<string>Nach mehr als 4 Stunden Inaktivität</string>
+	<key>156.title</key>
+	<string>Beim ersten Bild des Tages</string>
+	<key>157.title</key>
+	<string>Erstelle:</string>
+	<key>158.title</key>
+	<string>Kürzlich verwendete Aufnahmesammlung</string>
+	<key>159.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>160.title</key>
+	<string>Importfenster öffnen, wenn eine Speicherkarte erkannt wird</string>
+	<key>161.title</key>
+	<string>Importieren</string>
+	<key>162.title</key>
+	<string>Aktivitäten</string>
+	<key>163.title</key>
+	<string>Fenster automatisch anzeigen</string>
+	<key>167.title</key>
+	<string>Favoriten</string>
+	<key>169.title</key>
+	<string>OtherViews</string>
+	<key>170.title</key>
+	<string>Fragen ob der vorherige Sitzungsordner den Favoriten hinzugefügt werden soll</string>
+	<key>171.title</key>
+	<string>Vorherige Sitzungsordner immer den Favoriten hinzufügen</string>
+	<key>172.title</key>
+	<string>Vorherige Sitzungsordner nie den Favoriten hinzufügen</string>
+	<key>173.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>176.title</key>
+	<string>Katalog und Sitzung</string>
+	<key>177.title</key>
+	<string>In neuem Fenster öffnen</string>
+	<key>59.title</key>
+	<string>Katalog und Sitzungen</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Katalog und Sitzungen</string>
+	<key>60.title</key>
+	<string>Favoriten</string>
+	<key>61.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>66.title</key>
+	<string>Format der gepackten Datei</string>
+	<key>67.title</key>
+	<string>Kürzlich verwendete Aufnahmesammlung</string>
+	<key>70.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Status:</string>
+	<key>92.title</key>
+	<string>…</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>95.title</key>
+	<string>OtherViews</string>
+	<key>96.title</key>
+	<string>Immer</string>
+	<key>97.title</key>
+	<string>Einmal pro Monat</string>
+	<key>98.title</key>
+	<string>Nie</string>
+	<key>99.title</key>
+	<string>Einmal pro Woche</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>Scrollrad ändert den Schiebereglerwert</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Werkzeugregister</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Tangent-Unterstützung aktivieren</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + Scrollrad scrollt die Werkzeugregisterkarte</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Beim Start einblenden</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent-Integration</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>8DV-BE-nxZ.title</key>
+	<string>주소</string>
+	<key>EwJ-aC-cJp.headerCell.title</key>
+	<string>이름</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>네트워크 카메라 관리기</string>
+	<key>TOe-TS-pWw.title</key>
+	<string>이름</string>
+	<key>YNd-qF-0Qp.title</key>
+	<string>제거</string>
+	<key>brq-Uo-oyi.title</key>
+	<string>완료</string>
+	<key>mtB-N1-gEr.title</key>
+	<string>추가...</string>
+	<key>vkB-LR-UFE.headerCell.title</key>
+	<string>주소</string>
+</dict>
+</plist>

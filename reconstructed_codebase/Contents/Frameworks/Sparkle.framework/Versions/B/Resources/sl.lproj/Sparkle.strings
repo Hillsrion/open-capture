@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@ je bil uspešno prenešen s spleta in je pripravljen na namestitev. Ga želite namestiti in ponovno zagnati takoj?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Programa %1$@ ni mogoče posodobiti, ker ga poganjate iz lokacije, kamor pisanje ni dovoljeno (pogosto je to slika diska dmg ali optična enota).</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ je najnovejša verzija programa.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ je najnovejša verzija programa.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>Na voljo je %1$@ %2$@ — vi imate %3$@. Ga želite prenesti s spleta sedaj?</string>
+	<key>%@ downloaded</key>
+	<string>prenešenih je %@</string>
+	<key>%@ of %@</key>
+	<string>%1$@ od %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Na voljo je nova verzija programa %@.</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Najnovejša verzija programa %@ je že nameščena.</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Med iskanjem posodobitev je prišlo do napake. Prosimo poskusite ponovno čez nekaj časa.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Med prenašanje posodobitve s spleta je prišlo do napake. Prosimo poskusite ponovno čez nekaj časa.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Med odpiranjem arhiva je prišlo do napake. Prosimo poskusite ponovno čez nekaj časa.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Napaka pri interpretaciji RSS vira s posodobitvami.</string>
+	<key>Cancel</key>
+	<string>Prekliči</string>
+	<key>Cancel Update</key>
+	<string>Prekliči posodabljanje</string>
+	<key>Checking for updates…</key>
+	<string>Iskanje posodobitev …</string>
+	<key>Downloading update…</key>
+	<string>Prenašanje posodobitve …</string>
+	<key>Extracting update…</key>
+	<string>Razpakiranje posodobitve …</string>
+	<key>Install and Relaunch</key>
+	<string>Namesti in ponovno zaženi</string>
+	<key>Installing update…</key>
+	<string>Nameščanje posodobitve …</string>
+	<key>OK</key>
+	<string>V redu</string>
+	<key>Ready to Install</key>
+	<string>Pripravljen na namestitev</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Naj %1$@ samodejno preverja, če so na voljo posodobitve? To lahko kadarkoli preverite tudi sami iz menija za %1$@.</string>
+	<key>Update Error!</key>
+	<string>Napaka pri posodabljanju</string>
+	<key>Updating %@</key>
+	<string>Posodabljam %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Poskusite %1$@ premakniti v direktorij z aplikacijami (Applications), ga ponovno zagnati in šele nato posodobiti.</string>
+	<key>You’re up to date!</key>
+	<string>Uporabljate zadnjo verzijo.</string>
+</dict>
+</plist>

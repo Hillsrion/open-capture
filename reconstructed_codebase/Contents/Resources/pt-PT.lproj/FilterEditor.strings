@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>102.title</key>
+	<string>OtherViews</string>
+	<key>116.title</key>
+	<string>Cancelar</string>
+	<key>148.title</key>
+	<string>Criar álbum com imagens atuais</string>
+	<key>171.title</key>
+	<string>Salvar</string>
+	<key>172.title</key>
+	<string>Cancelar</string>
+	<key>173.title</key>
+	<string>Nome do Álbum Inteligente:</string>
+	<key>188.title</key>
+	<string>Ajuda</string>
+	<key>48.title</key>
+	<string>Criar Álbum Inteligente</string>
+</dict>
+</plist>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>%1$@ %2$@이(가) 다운로드 되었습니다. 프로그램을 업데이트하고 재실행 하시겠습니까?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@이(가) 디스크 이미지나 CD 드라이브 같은 읽기 전용 볼륨에서 실행되고 있으므로 업데이트 할 수 없습니다.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@이(가) 현재 최신 버전입니다.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@이(가) 현재 최신 버전입니다.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@이(가) 업데이트 되었습니다. (현재 버전 : %3$@) 다운로드 하시겠습니까?</string>
+	<key>%@ downloaded</key>
+	<string>%@ 다운로드 완료</string>
+	<key>%@ of %@</key>
+	<string>%1$@ / %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>%@ 새 버전이 있습니다.</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>%@ 새 버전을 설치할 준비가 되었습니다.</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>업데이트 정보를 수집하는 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>업데이트를 다운로드 하는 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>압축 파일을 푸는 중 오류가 발생하였습니다. 나중에 다시 시도해 주십시오.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>업데이트 피드를 분석하는 중 오류가 발생하였습니다.</string>
+	<key>Cancel</key>
+	<string>취소</string>
+	<key>Cancel Update</key>
+	<string>업데이트 취소</string>
+	<key>Checking for updates…</key>
+	<string>업데이트 확인 중…</string>
+	<key>Downloading update…</key>
+	<string>다운로드 중…</string>
+	<key>Extracting update…</key>
+	<string>압축 푸는 중…</string>
+	<key>Install and Relaunch</key>
+	<string>설치 &amp; 재실행</string>
+	<key>Installing update…</key>
+	<string>설치 중…</string>
+	<key>OK</key>
+	<string>확인</string>
+	<key>Ready to Install</key>
+	<string>설치 준비 완료</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>%1$@ 업데이트 확인을 자동으로 할까요? %1$@ 메뉴에서 수동 설정을 할 수 있습니다.</string>
+	<key>Update Error!</key>
+	<string>업데이트 오류!</string>
+	<key>Updating %@</key>
+	<string>%@ 업데이트 중</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>%1$@을(를) 응용프로그램 폴더로 이동하여 다시 실행해 주십시오.</string>
+	<key>You’re up to date!</key>
+	<string>최신 버전입니다.</string>
+</dict>
+</plist>

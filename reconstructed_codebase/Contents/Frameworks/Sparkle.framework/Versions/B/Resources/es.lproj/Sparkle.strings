@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>¡%1$@ %2$@ se ha descargado y está lista para usarse! Ésta es una actualización importante. ¿Te gustaría instalarla y volver a abrir %1$@ ahora?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>¡%1$@ %2$@ se ha descargado y está lista para usarse! ¿Te gustaría instalarla y volver a abrir %1$@ ahora?</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ no se puede actualizar porque fue abierta desde una ubicación temporal o de solo lectura.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ es la versión más nueva disponible.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ es la versión más nueva disponible.
+(Actualmente estás corriendo la versión %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ ya está disponible (tienes la %3$@). ¿Quisieras descargarla ahora?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ ya está disponible--tú tienes la %3$@. ¿Quisieras aprender más acerca de esta actualización en la red?</string>
+	<key>%@ downloaded</key>
+	<string>%@ descargado</string>
+	<key>%@ of %@</key>
+	<string>%1$@ de %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>¡Una nueva versión de %@ está disponible!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>¡Una nueva versión de %@ está lista para instalarse!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Ocurrió un error al recopilar información sobre la actualización. Por favor inténtalo de nuevo más tarde.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Ocurrió un error al descargar la actualización. Por favor inténtalo de nuevo más tarde.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Ocurrió un error al extraer el archivo. Por favor inténtalo de nuevo más tarde.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Ocurrió un error al analizar la información de la actualización.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Una actualización importante para %@ está lista para instalarse</string>
+	<key>Cancel</key>
+	<string>Cancelar</string>
+	<key>Cancel Update</key>
+	<string>Cancelar actualización</string>
+	<key>Checking for updates…</key>
+	<string>Buscando actualizaciones…</string>
+	<key>Downloading update…</key>
+	<string>Descargando actualización…</string>
+	<key>Extracting update…</key>
+	<string>Extrayendo actualización…</string>
+	<key>Install and Relaunch</key>
+	<string>Instalar y volver a abrir</string>
+	<key>Installing update…</key>
+	<string>Instalando actualización…</string>
+	<key>Learn More…</key>
+	<string>Más información…</string>
+	<key>OK</key>
+	<string>Aceptar</string>
+	<key>Ready to Install</key>
+	<string>Listo para instalarse</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>¿Debería %1$@ buscar actualizaciones automáticamente? Siempre puedes buscar actualizaciones manualmente desde el menú %1$@.</string>
+	<key>Update Error!</key>
+	<string>¡Error de actualización!</string>
+	<key>Updating %@</key>
+	<string>Actualizando %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Usa Finder para copiar %1$@ a la carpeta Aplicaciones, vuélvela a abrir desde ahí e inténtalo de nuevo.</string>
+	<key>Version History</key>
+	<string>Historial de versiones</string>
+	<key>You’re up to date!</key>
+	<string>¡Está actualizado!</string>
+</dict>
+</plist>

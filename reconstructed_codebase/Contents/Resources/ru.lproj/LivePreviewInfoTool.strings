@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>384.ibShadowedToolTip</key>
+	<string>Поворот изображения в градусах</string>
+	<key>385.title</key>
+	<string>Поворот</string>
+	<key>387.ibShadowedToolTip</key>
+	<string>Поворот изображения в градусах</string>
+	<key>390.ibShadowedToolTip</key>
+	<string>Поворот изображения в градусах</string>
+	<key>391.ibShadowedToolTip</key>
+	<string>Частота съемки в изображениях в секунду</string>
+	<key>393.title</key>
+	<string>Частота съемки</string>
+	<key>397.ibShadowedToolTip</key>
+	<string>Поворот изображения в градусах</string>
+	<key>398.ibShadowedToolTip</key>
+	<string>Поворот изображения в градусах</string>
+	<key>399.title</key>
+	<string>Шаг</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>225.title</key>
+	<string>매치</string>
+	<key>227.title</key>
+	<string>규칙들</string>
+	<key>234.title</key>
+	<string>아무것</string>
+	<key>235.title</key>
+	<string>모두</string>
+	<key>4.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

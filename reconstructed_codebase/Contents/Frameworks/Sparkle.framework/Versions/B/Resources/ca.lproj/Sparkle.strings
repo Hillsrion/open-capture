@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>%1$@ no es pot actualitzar quan funciona des d'un disc d'imatge.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%@ %@ és la versió disponible més actual.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%@ %@ és la versió disponible més actual.
+(You are currently running version %@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%@ %@ està disponible (ara teniu %@). Voleu actualitzar?</string>
+	<key>%@ of %@</key>
+	<string>%1$@ de %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Hi ha una nova versió de %@ disponible!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Hi ha hagut un error obtenint la informació d'actualització. Torneu a provar-ho més tard.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Hi ha hagut un error al extreure l'arxiu? Torneu a provar-ho més tard.</string>
+	<key>Cancel</key>
+	<string>Cancel·la</string>
+	<key>Downloading update…</key>
+	<string>Descarregant l'actualització…</string>
+	<key>Extracting update…</key>
+	<string>Extraient l'actualització…</string>
+	<key>Install and Relaunch</key>
+	<string>Instal·la i reinicia</string>
+	<key>Install on Quit</key>
+	<string>Reinicia el programa més tard</string>
+	<key>Installing update…</key>
+	<string>Instal·lant l'actualització…</string>
+	<key>OK</key>
+	<string>D'acord</string>
+	<key>Ready to Install</key>
+	<string>A punt per instal·lar</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Voleu que %1$@ comprovi si hi ha noves actualitzacions al iniciar? Si no, podeu inciar la comprovació manualment des del menú %1$@.</string>
+	<key>Update Error!</key>
+	<string>Error d'actualització!</string>
+	<key>Updating %@</key>
+	<string>Actualitzant %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Moveu %1$@ al vostre directori Aplicacions, reinicieu-lo, i torneu a provar-ho.</string>
+	<key>You’re up to date!</key>
+	<string>Ja esteu al dia!</string>
+</dict>
+</plist>

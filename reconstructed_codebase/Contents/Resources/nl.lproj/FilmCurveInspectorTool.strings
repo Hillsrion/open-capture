@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2kd-Me-j9L.title</key>
+	<string>Box</string>
+	<key>5g4-db-4VZ.title</key>
+	<string>Sla CCD op…</string>
+	<key>6.title</key>
+	<string>FIlmcurve-bewerker</string>
+	<key>BK1-2w-5lD.title</key>
+	<string>Reactiecurve</string>
+	<key>CVb-vV-i6f.title</key>
+	<string>Van bestand</string>
+	<key>Rts-E6-n2i.title</key>
+	<string>Negatief</string>
+	<key>TBm-vJ-Pyc.title</key>
+	<string>Legenda</string>
+	<key>VT0-X5-JQY.title</key>
+	<string>CCD Curve</string>
+	<key>acb-et-6NQ.title</key>
+	<string>Wetenschappelijk</string>
+	<key>aug-sl-lwg.title</key>
+	<string>Load Reactie…</string>
+	<key>bz5-cK-Z1M.title</key>
+	<string>Naam camera</string>
+	<key>ceZ-qo-Uqe.title</key>
+	<string>Sla Reactie op…</string>
+	<key>etm-wu-HvW.title</key>
+	<string>Laad CCD...</string>
+	<key>kxg-jo-5b4.title</key>
+	<string>Box</string>
+	<key>ltb-w6-cuP.title</key>
+	<string>Box</string>
+	<key>rgI-5u-aUJ.title</key>
+	<string>Definitieve Curve</string>
+	<key>tj2-4L-igh.title</key>
+	<string>Sla Film Curve op…</string>
+	<key>tkZ-Jz-4b0.title</key>
+	<string>Laad Film Curve...</string>
+	<key>uNF-sJ-VDP.title</key>
+	<string>Auto</string>
+	<key>xaf-OC-EEW.title</key>
+	<string>Naam Curve</string>
+</dict>
+</plist>

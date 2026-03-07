@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>Перед созданием LCC убедитесь, что значения в инструменте Корректировка объектива верны.</string>
+	<key>1.title</key>
+	<string>Создать параметры LCC</string>
+	<key>10.title</key>
+	<string>Включить информацию об удалении пыли</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>Ход создания LCC</string>
+	<key>22.title</key>
+	<string>Создание LCC</string>
+	<key>27.title</key>
+	<string>Создание LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Всегда создавать с этими настройками. Может быть изменено с помощью инструмента LCC.</string>
+	<key>37.title</key>
+	<string>Больше не показывать</string>
+	<key>46.title</key>
+	<string>Окно</string>
+	<key>5.title</key>
+	<string>Создать</string>
+	<key>51.title</key>
+	<string>При создании LCC возникли предупреждения. Просмотреть их в журнале событий?</string>
+	<key>54.title</key>
+	<string>Показать журнал событий</string>
+	<key>55.title</key>
+	<string>Закрыть</string>
+	<key>6.title</key>
+	<string>Отмена</string>
+	<key>65.title</key>
+	<string>Отмена</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>Включение коррекции для технической камеры с широкоугольным объективом.</string>
+	<key>8.title</key>
+	<string>Включить данные коррекции широкоугольных объективов</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>Включение информации об удалении пыли. Создание профиля LCC займет чуть больше времени.</string>
+</dict>
+</plist>

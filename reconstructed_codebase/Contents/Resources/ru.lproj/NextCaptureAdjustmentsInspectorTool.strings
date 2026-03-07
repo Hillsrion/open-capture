@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1fh-n9-LQH.title</key>
+	<string>Копировать варианты из основных</string>
+	<key>1xt-dV-kug.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из последнего кадра.</string>
+	<key>1xt-dV-kug.title</key>
+	<string>Копировать из последних</string>
+	<key>250.title</key>
+	<string>Меню</string>
+	<key>437.ibShadowedToolTip</key>
+	<string>Автоматически корректировать захваченные изображения</string>
+	<key>4jT-BI-Tt1.title</key>
+	<string>Копировать варианты из последних</string>
+	<key>5tw-32-WJt.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Ориентация</string>
+	<key>6FN-pe-a1A.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из последнего кадра.</string>
+	<key>6FN-pe-a1A.title</key>
+	<string>Копировать из последних</string>
+	<key>6uU-Kc-qnz.title</key>
+	<string>Копировать варианты из последних</string>
+	<key>9pl-mW-pP7.title</key>
+	<string>Копировать определенные настройки из последних...</string>
+	<key>BH0-cz-xDp.title</key>
+	<string>Copy specific from Primary...</string>
+	<key>E2Z-F5-3g9.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из основного варианта</string>
+	<key>E2Z-F5-3g9.title</key>
+	<string>Копировать из основного</string>
+	<key>IQQ-K7-eG8.title</key>
+	<string>Копировать определенные настройки из последних...</string>
+	<key>Jfq-Qx-Wc8.ibShadowedToolTip</key>
+	<string>Использовать коррекции по умолчанию</string>
+	<key>Jfq-Qx-Wc8.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>JgD-8n-qns.title</key>
+	<string>Копировать варианты из основных</string>
+	<key>O9q-db-Y3n.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Стили</string>
+	<key>R6j-Ww-gyc.title</key>
+	<string>Скопировать из буфера обмена</string>
+	<key>RWO-hh-M69.ibShadowedToolTip</key>
+	<string>Скопировать коррекции из основного варианта</string>
+	<key>RWO-hh-M69.title</key>
+	<string>Копировать из основного</string>
+	<key>W3G-Em-rUj.title</key>
+	<string>Скопировать из буфера обмена</string>
+	<key>X6Q-vm-89c.ibShadowedToolTip</key>
+	<string>Использовать коррекции по умолчанию</string>
+	<key>X6Q-vm-89c.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>abE-6a-zrB.ibShadowedToolTip</key>
+	<string>Использовать для камеры профиль ICC по умолчанию</string>
+	<key>abE-6a-zrB.title</key>
+	<string>По умолчанию</string>
+	<key>d3M-jK-dwn.ibShadowedToolTip</key>
+	<string>Use the default orientation from the camera</string>
+	<key>d3M-jK-dwn.title</key>
+	<string>По умолчанию</string>
+	<key>gij-EA-zK2.ibShadowedToolTip</key>
+	<string>Скопировать профиль ICC из последнего захваченного изображения.</string>
+	<key>gij-EA-zK2.title</key>
+	<string>Копировать из последних</string>
+	<key>m0f-DK-lIy.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Метаданные</string>
+	<key>mVo-jT-1HB.title</key>
+	<string>Copy specific from Primary...</string>
+	<key>mw0-8B-bEF.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Другие</string>
+	<key>s07-eL-TTi.ibShadowedToolTip</key>
+	<string>Скопировать профиль ICC из основного варианта</string>
+	<key>s07-eL-TTi.title</key>
+	<string>Копировать из основного</string>
+	<key>vou-JF-WdZ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Профиль ICC</string>
+</dict>
+</plist>

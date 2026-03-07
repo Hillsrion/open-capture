@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Apertureライブラリーをインポート</string>
+	<key>14.title</key>
+	<string>キャンセル</string>
+	<key>28.title</key>
+	<string>Apertureからライブラリーをインポートする場合、次のプロパティはCapture Oneに転送されます:</string>
+	<key>4.title</key>
+	<string>再度表示しない</string>
+	<key>51.title</key>
+	<string>プロジェクト, フォルダ, アルバム
+クロップ または 傾き, 回転, フリップ
+露出, 明るさ, ハイライト &amp; シャドウ, 鮮明度, 彩度, B &amp; W
+メタデータ (IPTC, レーティング, カラーラベル, キーワード)</string>
+	<key>57.title</key>
+	<string>色調整は近似値のみです。 
+
+スマートアルバムを含めたい場合は、インポートする前に通常のアルバムに変換する必要があります。</string>
+	<key>8.title</key>
+	<string>続行</string>
+</dict>
+</plist>

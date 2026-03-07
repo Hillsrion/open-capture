@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>166.ibExternalAccessibilityDescription</key>
+	<string>importerEraseImagesDoneCheckbox</string>
+	<key>167.ibExternalAccessibilityDescription</key>
+	<string>importerEjectCardDoneCheckbox</string>
+	<key>233.ibShadowedToolTip</key>
+	<string>Сортировать</string>
+	<key>234.title</key>
+	<string>OtherViews</string>
+	<key>254.title</key>
+	<string>Импортировать все</string>
+	<key>255.title</key>
+	<string>Отмена</string>
+	<key>256.title</key>
+	<string>Удалить изображения после копирования</string>
+	<key>257.title</key>
+	<string>Извлечь карту</string>
+	<key>367.title</key>
+	<string>OtherViews</string>
+	<key>368.title</key>
+	<string>Никогда не открывать коллекцию импортированных</string>
+	<key>369.title</key>
+	<string>Уведомить по завершении</string>
+	<key>370.title</key>
+	<string>Открыть коллекцию при начале импорта</string>
+	<key>377.ibExternalAccessibilityDescription</key>
+	<string>importerLocationsBackupToTitle</string>
+	<key>378.title</key>
+	<string>Импортировать коллекцию</string>
+	<key>5.title</key>
+	<string>Окно</string>
+	<key>d3P-zb-jqw.title</key>
+	<string>В папке нет изображений</string>
+</dict>
+</plist>

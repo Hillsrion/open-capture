@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.headerCell.title</key>
+	<string>Date</string>
+	<key>5.title</key>
+	<string>Evénements</string>
+	<key>67.title</key>
+	<string>Effacer</string>
+	<key>68.title</key>
+	<string>Tout afficher</string>
+	<key>69.title</key>
+	<string>Afficher le panneau des nouveaux événements</string>
+	<key>70.title</key>
+	<string>Fermer</string>
+	<key>72.title</key>
+	<string>Cellule texte</string>
+	<key>73.title</key>
+	<string>Cellule texte</string>
+	<key>9.headerCell.title</key>
+	<string>Description</string>
+</dict>
+</plist>

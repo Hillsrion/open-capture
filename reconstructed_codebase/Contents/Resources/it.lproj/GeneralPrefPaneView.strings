@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>Una volta al giorno</string>
+	<key>105.title</key>
+	<string>Automatico</string>
+	<key>106.title</key>
+	<string>Mai</string>
+	<key>107.title</key>
+	<string>Posizione:</string>
+	<key>108.title</key>
+	<string>Ricordami alla chiusura:</string>
+	<key>112.title</key>
+	<string>Mai</string>
+	<key>113.title</key>
+	<string>Automatico</string>
+	<key>115.title</key>
+	<string>Acceleratore Hardware</string>
+	<key>116.title</key>
+	<string>Backup del Catalogo</string>
+	<key>126.title</key>
+	<string>Sovrascrivi sempre i Metadati</string>
+	<key>127.title</key>
+	<string>Non Sovrascrivere mai i Metadati</string>
+	<key>128.title</key>
+	<string>Chiedi se Sovrascrivere i Metadati</string>
+	<key>131.title</key>
+	<string>Crea Nuovo Album o Cartella Selezioni</string>
+	<key>132.title</key>
+	<string>Crea o riutilizza album corrispondenti</string>
+	<key>133.title</key>
+	<string>Chiedi quando sincronizzi impostazioni Catalogo</string>
+	<key>134.title</key>
+	<string>Le informazioni quali, Metadati e Impostazioni Catalogo, ricevute da Expression Media possono essere usate per aggiornare  Immagini e Album in Capture One. Seleziona il comportamento per ogni tipo di informazione.</string>
+	<key>137.title</key>
+	<string>Chiedi se Includere Sottocartelle quando si Aggiunge</string>
+	<key>138.title</key>
+	<string>Rispondi sempre Sì per Includere la finestra di dialogo Sottocartelle</string>
+	<key>139.title</key>
+	<string>Rispondi sempre No per Includere la finestra di dialogo Sottocartelle</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>Predefinito</string>
+	<key>142.title</key>
+	<string>Ingrandisci con rotellina</string>
+	<key>143.title</key>
+	<string>Visore</string>
+	<key>150.title</key>
+	<string>Dopo più di 5 minuti di inattività</string>
+	<key>151.title</key>
+	<string>Dopo più di 10 minuti di inattività</string>
+	<key>152.title</key>
+	<string>Dopo più di 30 minuti di inattività</string>
+	<key>153.title</key>
+	<string>Dopo più di 1 ora di inattività</string>
+	<key>154.title</key>
+	<string>Dopo più di 2 ore di inattività</string>
+	<key>155.title</key>
+	<string>Dopo più di 4 ore di inattività</string>
+	<key>156.title</key>
+	<string>Alla prima acquisizione del giorno</string>
+	<key>157.title</key>
+	<string>Crea:</string>
+	<key>158.title</key>
+	<string>Raccolte Acquisizioni Recenti</string>
+	<key>160.title</key>
+	<string>Apri l’importatore quando viene rilevata una scheda da fotocamera digitale</string>
+	<key>161.title</key>
+	<string>Importazione</string>
+	<key>162.title</key>
+	<string>Attività</string>
+	<key>163.title</key>
+	<string>Mostra in automatico la finestra</string>
+	<key>167.title</key>
+	<string>Preferiti</string>
+	<key>170.title</key>
+	<string>Chiedi se Aggiungere Cartella Sessione Anteprima ai Preferiti</string>
+	<key>171.title</key>
+	<string>Aggiungi Sempre Cartella Sessione Anteprime ai Preferiti</string>
+	<key>172.title</key>
+	<string>Non Aggiungere Mai la Cartella Sessione Anteprime ai Preferiti</string>
+	<key>176.title</key>
+	<string>Catalogo e Sessione</string>
+	<key>177.title</key>
+	<string>Apri in una nuova finestra</string>
+	<key>59.title</key>
+	<string>Catalogo e Sessioni</string>
+	<key>5br-hq-Ye3.title</key>
+	<string>Catalogo e Sessioni</string>
+	<key>60.title</key>
+	<string>Preferiti</string>
+	<key>66.title</key>
+	<string>Formato pacchetto file</string>
+	<key>67.title</key>
+	<string>Raccolte Acquisizioni Recenti</string>
+	<key>72.title</key>
+	<string>Box</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>Stato:</string>
+	<key>93.title</key>
+	<string>~/Libreria/Supporto Applicazione/Capture One/Backup</string>
+	<key>96.title</key>
+	<string>Sempre</string>
+	<key>97.title</key>
+	<string>Una volta al mese</string>
+	<key>98.title</key>
+	<string>Mai</string>
+	<key>99.title</key>
+	<string>Una volta alla settimana</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>La rotellina cambia il valore del cursore</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>Schede Strumenti</string>
+	<key>PQo-en-IWM.title</key>
+	<string>Abilita supporto dispositivo Tangent</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>Option + Rotellina per scorrere la scheda strumenti</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>Mostra all’Avvio</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Integrazione Tangent</string>
+</dict>
+</plist>

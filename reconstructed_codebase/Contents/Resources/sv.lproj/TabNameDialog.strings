@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Ny egen verktygsflik</string>
+	<key>10.title</key>
+	<string>Avbryt</string>
+	<key>19.title</key>
+	<string>Ange fliknamn:</string>
+	<key>26.title</key>
+	<string>OtherViews</string>
+	<key>27.title</key>
+	<string>Objekt 1</string>
+	<key>28.title</key>
+	<string>Objekt 2</string>
+	<key>29.title</key>
+	<string>Objekt 3</string>
+	<key>33.title</key>
+	<string>Ikon:</string>
+	<key>8.title</key>
+	<string>Lägg till flik</string>
+</dict>
+</plist>

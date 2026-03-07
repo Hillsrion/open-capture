@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0Dt-yd-gay.title</key>
+	<string>创建 LCC 之前，请确保镜头校正工具中的数值正确。</string>
+	<key>1.title</key>
+	<string>创建 LCC 选项</string>
+	<key>10.title</key>
+	<string>包含除尘信息</string>
+	<key>105.ibShadowedToolTip</key>
+	<string>正在创建 LCC 的进度</string>
+	<key>22.title</key>
+	<string>正在创建 LCC</string>
+	<key>27.title</key>
+	<string>正在创建 LCC</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>总是使用该设置进行创建。设置可在 LCC 工具中修改。</string>
+	<key>37.title</key>
+	<string>不再显示</string>
+	<key>46.title</key>
+	<string>视窗</string>
+	<key>5.title</key>
+	<string>创建</string>
+	<key>51.title</key>
+	<string>创建 LCC 时曾发出警告。是否为您显示事件日志进行查看？</string>
+	<key>54.title</key>
+	<string>显示事件日志</string>
+	<key>55.title</key>
+	<string>关闭</string>
+	<key>6.title</key>
+	<string>取消</string>
+	<key>65.title</key>
+	<string>取消</string>
+	<key>7.ibShadowedToolTip</key>
+	<string>包含技术相机广角镜头的校正。</string>
+	<key>8.title</key>
+	<string>包含广角镜头校正数据</string>
+	<key>9.ibShadowedToolTip</key>
+	<string>包含除尘信息。创建 LCC 配置文件会慢一些。</string>
+</dict>
+</plist>

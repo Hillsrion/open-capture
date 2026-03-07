@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.ibExternalAccessibilityDescription</key>
+	<string>batchQueueTableView</string>
+	<key>261.label</key>
+	<string>Aktualne</string>
+	<key>262.label</key>
+	<string>Historia</string>
+	<key>265.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryTableView</string>
+	<key>268.ibExternalAccessibilityDescription</key>
+	<string>batchQueueStopStartButton</string>
+	<key>268.ibShadowedToolTip</key>
+	<string>Wstrzymaj kolejkę</string>
+	<key>273.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryReprocessButton</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Ponownie przetwórz wybrane zadania.</string>
+	<key>284.headerCell.title</key>
+	<string>Nazwa</string>
+	<key>285.headerCell.title</key>
+	<string>Nazwa</string>
+	<key>302.ibExternalAccessibilityDescription</key>
+	<string>batchQueueProgressBar</string>
+	<key>519.ibExternalAccessibilityDescription</key>
+	<string>batchQueueProgressText</string>
+	<key>646.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryReprocessButton</string>
+	<key>646.ibShadowedToolTip</key>
+	<string>Wyczyść historię przetworzonych zadań</string>
+	<key>815.ibShadowedLabels[0]</key>
+	<string>Kolejka</string>
+	<key>815.ibShadowedLabels[1]</key>
+	<string>Historia</string>
+	<key>816.title</key>
+	<string>Pauza</string>
+	<key>818.title</key>
+	<string>1/n</string>
+	<key>819.title</key>
+	<string>Przetwórz ponownie wybrane</string>
+	<key>820.title</key>
+	<string>Wyczyść historię</string>
+</dict>
+</plist>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>115.title</key>
+	<string>OK</string>
+	<key>116.title</key>
+	<string>Cancella</string>
+	<key>117.title</key>
+	<string>Nome</string>
+	<key>118.title</key>
+	<string>Rapporto</string>
+	<key>121.title</key>
+	<string>x</string>
+	<key>123.title</key>
+	<string>Fine</string>
+	<key>124.title</key>
+	<string>Rimuovi</string>
+	<key>6.title</key>
+	<string>Nuovo Rapporto d’aspetto</string>
+	<key>66.title</key>
+	<string>Organizza Rapporti d’aspetto</string>
+</dict>
+</plist>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Avisar quando “mover para a lixeira” afetar as variantes não selecionadas</string>
+	<key>18v-en-xAd.title</key>
+	<string>Avisar ao aplicar um estilo com um LCC inválido</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Avisar ao redefinir as correções básicas de cores</string>
+	<key>482.title</key>
+	<string>Padrões</string>
+	<key>694.title</key>
+	<string>Avisar ao mover imagens e pastas no Catálogo</string>
+	<key>697.title</key>
+	<string>Arquivos e pastas</string>
+	<key>701.title</key>
+	<string>Avisar ao excluir imagens do disco</string>
+	<key>703.title</key>
+	<string>Avisar quando mover imagens para o Lixo da Sessão a partir de uma unidade diferente</string>
+	<key>707.title</key>
+	<string>Ajustes</string>
+	<key>708.title</key>
+	<string>Avisar ao redefinir ajustes em várias variantes</string>
+	<key>734.title</key>
+	<string>Saída</string>
+	<key>789.title</key>
+	<string>Se Editar Todas as Variantes Selecionadas estiver desativado e várias variantes forem selecionadas:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Avisar ao processar várias variantes, se Editar Todas as Variantes Selecionadas estiver desativado</string>
+	<key>793.title</key>
+	<string>Avisar ao processar</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Avisar ao imprimir várias variantes, se Editar Todas as Variantes Selecionadas estiver desativado</string>
+	<key>796.title</key>
+	<string>Avisar ao imprimir</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Avisar ao criar uma Folha de Contatos Web com múltiplas variantes se Editar Todas as Variantes Selecionadas estiver desativado</string>
+	<key>799.title</key>
+	<string>Avisar ao criar uma Folha de Contatos Web</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Avisar ao criar uma Folha de Contatos Web com múltiplas variantes se Editar Todas as Variantes Selecionadas estiver desativado</string>
+	<key>805.title</key>
+	<string>Avisar ao exportar</string>
+	<key>811.title</key>
+	<string>Avisar ao redefinir a forma de organização manual</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Avisar ao alterar ou excluir o LCC aplicado.</string>
+	<key>816.title</key>
+	<string>Avisar ao alterar LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Avisar ao criar LCC com várias variantes se Editar todas as variantes selecionadas estiver desativado.</string>
+	<key>820.title</key>
+	<string>Avisar ao criar LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Avisar ao aplicar LCC a várias variantes se Editar todas as variantes selecionadas estiver desativado.</string>
+	<key>823.title</key>
+	<string>Avisar ao aplicar LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Avisar ao alterar ou excluir o LCC aplicado.</string>
+	<key>829.title</key>
+	<string>Avisar ao atualizar Mecanismo</string>
+	<key>834.title</key>
+	<string>Avisar ao redefinir ajustes em uma camada de ajustes</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Avisar ao analisar Aberração cromática com várias variantes se Editar todas as variantes selecionadas estiver desativado.</string>
+	<key>847.title</key>
+	<string>Avisar ao analisar Aberração cromática</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Avisar ao rasterizar uma máscara paramétrica</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Avisar ao aplicar camadas à variante da qual foram copiadas</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Avisar ao aplicar um estilo com um LCC inválido</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Avisar ao aplicar um estilo parcialmente</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Avise ao aplicar LCC a várias variantes se a opção Editar Todas as Variantes Selecionadas estiver desativada.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Avisar ao selecionar opções de criação de LCC.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Avisar ao copiar ajustes não compatíveis</string>
+</dict>
+</plist>

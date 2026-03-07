@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.title</key>
+	<string>Всегда</string>
+	<key>35.title</key>
+	<string>Никогда</string>
+	<key>36.title</key>
+	<string>За исключением перетаскивания</string>
+	<key>43.title</key>
+	<string>При отсутствии маски</string>
+	<key>44.title</key>
+	<string>Всегда</string>
+	<key>449.title</key>
+	<string>Показывать:</string>
+	<key>450.title</key>
+	<string>Показать рамку:</string>
+	<key>451.title</key>
+	<string>Показать надписи:</string>
+	<key>453.title</key>
+	<string>Прозрачность:</string>
+	<key>455.title</key>
+	<string>Яркость:</string>
+	<key>459.title</key>
+	<string>Настройки по умолчанию</string>
+	<key>52.title</key>
+	<string>Всегда</string>
+	<key>53.title</key>
+	<string>Никогда</string>
+	<key>54.title</key>
+	<string>Только при перетаскивании</string>
+	<key>6gE-Gs-wlD.title</key>
+	<string>За исключением перетаскивания</string>
+	<key>aAC-TR-XbP.title</key>
+	<string>Всегда</string>
+	<key>ax2-Us-YFd.title</key>
+	<string>Маска</string>
+	<key>hxa-T0-rcd.title</key>
+	<string>Показать держатели:</string>
+	<key>qeU-ej-PAe.title</key>
+	<string>Никогда</string>
+</dict>
+</plist>

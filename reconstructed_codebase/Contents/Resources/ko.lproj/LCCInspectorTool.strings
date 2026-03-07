@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1061.title</key>
+	<string>컬러 캐스트</string>
+	<key>1495.title</key>
+	<string>균일한 빛 설정</string>
+	<key>1606.title</key>
+	<string>먼지 제거</string>
+	<key>1699.title</key>
+	<string>LCC 프로파일명</string>
+	<key>1700.title</key>
+	<string>프로파일</string>
+	<key>1720.title</key>
+	<string>LCC 생성</string>
+	<key>1785.title</key>
+	<string>LCC 옵션 적용</string>
+	<key>1792.title</key>
+	<string>취소</string>
+	<key>1793.title</key>
+	<string>확인</string>
+	<key>1795.title</key>
+	<string>균일한 빛</string>
+	<key>SPn-xm-1Kd.ibExternalAccessibilityDescription</key>
+	<string>켈빈</string>
+	<key>SPn-xm-1Kd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>균일한 빛</string>
+</dict>
+</plist>

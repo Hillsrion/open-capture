@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>Σημειώσεις Έκδοσης:</string>
+	<key>171.title</key>
+	<string>Υπενθύμιση Αργότερα</string>
+	<key>172.title</key>
+	<string>Παράλειψη Έκδοσης</string>
+	<key>173.title</key>
+	<string>Εγκατάσταση Ενημέρωσης</string>
+	<key>175.title</key>
+	<string>Αυτόματη λήψη και εγκατάσταση ενημερώσεων στο μέλλον</string>
+	<key>5.title</key>
+	<string>Ενημέρωση προγράμματος</string>
+</dict>
+</plist>

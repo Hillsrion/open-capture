@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2q5-z1-hmK.title</key>
+	<string>Учитывать кадрирование</string>
+	<key>6Rm-S2-XJR.ibExternalAccessibilityDescription</key>
+	<string>Прозрачность наложения</string>
+	<key>6Rm-S2-XJR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Прозрачность</string>
+	<key>TTG-6T-Ce8.ibExternalAccessibilityDescription</key>
+	<string>масштаб наложения</string>
+	<key>TTG-6T-Ce8.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Масштаб</string>
+	<key>aLI-4N-Tsk.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Файл</string>
+	<key>i3e-TJ-csC.ibExternalAccessibilityDescription</key>
+	<string>Вертикальное наложение</string>
+	<key>i3e-TJ-csC.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>По вертикали</string>
+	<key>n42-so-MNQ.ibExternalAccessibilityDescription</key>
+	<string>горизонтальное наложение</string>
+	<key>n42-so-MNQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>По горизонтали</string>
+	<key>xyY-qj-WE7.title</key>
+	<string>Показать</string>
+</dict>
+</plist>

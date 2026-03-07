@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>3dW-cS-b1R.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Resolución</string>
+	<key>468.ibShadowedToolTip</key>
+	<string>Nombre de impresora</string>
+	<key>469.title</key>
+	<string>No se puede imprimir modelo xxx</string>
+	<key>489.title</key>
+	<string>Papel</string>
+	<key>4Ph-0t-5Fg.title</key>
+	<string>Perceptual</string>
+	<key>505.ibShadowedToolTip</key>
+	<string>tamaño de papel</string>
+	<key>506.title</key>
+	<string>A4</string>
+	<key>508.ibShadowedToolTip</key>
+	<string>Abrir ventana de ajustes</string>
+	<key>509.title</key>
+	<string>Ajustar página</string>
+	<key>513.ibShadowedToolTip</key>
+	<string>Abrir el panel de ajustes de impresión</string>
+	<key>514.title</key>
+	<string>ajustes de impresión...</string>
+	<key>544.title</key>
+	<string>Enfoque</string>
+	<key>556.title</key>
+	<string>Compensación de punto negro</string>
+	<key>558.title</key>
+	<string>color management text color management text color management text color management text color management text</string>
+	<key>566.ibShadowedToolTip</key>
+	<string>Enfoque</string>
+	<key>567.ibShadowedToolTip</key>
+	<string>Enfoque</string>
+	<key>9jP-nY-nN9.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Perfil de color</string>
+	<key>ET4-fo-ERU.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Propósito de conversión</string>
+	<key>HNV-gP-la6.title</key>
+	<string>Colorimétrico absoluto</string>
+	<key>T1L-jb-aXq.title</key>
+	<string>Colorimétrico relativo</string>
+	<key>vIk-s2-hue.title</key>
+	<string>Saturación</string>
+</dict>
+</plist>

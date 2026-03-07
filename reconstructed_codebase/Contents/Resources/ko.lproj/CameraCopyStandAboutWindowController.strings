@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0km-mn-TdH.title</key>
+	<string>테이블 보기 셀</string>
+	<key>Eue-5x-5KM.title</key>
+	<string>Setting Label</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>카피 스탠드 장비 정보</string>
+	<key>oL1-Uw-BSd.title</key>
+	<string>텍스트 셀</string>
+	<key>ulg-Aq-ie9.title</key>
+	<string>텍스트 셀</string>
+</dict>
+</plist>

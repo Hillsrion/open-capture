@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>U1G-fX-PSc.title</key>
+	<string>Круглый при кадрировании</string>
+	<key>Wkh-tE-r4o.ibExternalAccessibilityDescription</key>
+	<string>количество виньетирования</string>
+	<key>Wkh-tE-r4o.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Количество</string>
+	<key>Yi3-G7-2UC.title</key>
+	<string>Эллиптический при кадрировании</string>
+	<key>Z9W-Yg-VTF.title</key>
+	<string>Круглый</string>
+	<key>lSB-c9-3hh.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Метод</string>
+</dict>
+</plist>

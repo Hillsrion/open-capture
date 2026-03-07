@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>색수차</string>
+	<key>1555.title</key>
+	<string>왜곡된 범위 숨기기</string>
+	<key>1700.label</key>
+	<string>탭</string>
+	<key>1701.label</key>
+	<string>보기</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>렌즈</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>무브먼트</string>
+	<key>1741.title</key>
+	<string>색수차</string>
+	<key>1742.title</key>
+	<string>기본값</string>
+	<key>1743.title</key>
+	<string>분석</string>
+	<key>1745.title</key>
+	<string>사용자 지정</string>
+	<key>1757.title</key>
+	<string>초점 거리</string>
+	<key>1760.title</key>
+	<string>조리개(f)</string>
+	<key>1823.title</key>
+	<string>Shift  x</string>
+	<key>1832.title</key>
+	<string>Shift  y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>프로파일</string>
+	<key>893.title</key>
+	<string>방향</string>
+	<key>894.title</key>
+	<string>시프트</string>
+	<key>897.title</key>
+	<string>방향</string>
+	<key>898.title</key>
+	<string>상하 이동</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>주변부 밝기</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>주변부 밝기</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>회절 보정</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>주변부 샤픈</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>주변부 샤픈</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>왜곡</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>왜곡</string>
+</dict>
+</plist>

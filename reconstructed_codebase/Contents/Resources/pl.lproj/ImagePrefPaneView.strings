@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>459.title</key>
+	<string>Wartości domyślne</string>
+	<key>486.title</key>
+	<string>Pamięć podręczna</string>
+	<key>526.title</key>
+	<string>Pakowanie EIP (tylko sesje)</string>
+	<key>557.title</key>
+	<string>Rozmiar Podglądu Obrazu (px):</string>
+	<key>559.title</key>
+	<string>Pamięć podręczna</string>
+	<key>563.title</key>
+	<string>Wybieraj wbudowane XMP zamiast wbudowanych IPTC</string>
+	<key>565.title</key>
+	<string>Wybieraj Sidecar XMP zamiast wbudowanych metadanych</string>
+	<key>568.title</key>
+	<string>Metadane</string>
+	<key>586.title</key>
+	<string>Format spakowanego pliku</string>
+	<key>590.title</key>
+	<string>Spakuj jako EIP przy importowaniu</string>
+	<key>591.title</key>
+	<string>Spakuj jako EIP przy przechwytywaniu</string>
+	<key>592.title</key>
+	<string>Pliki JPEG i przetworzone TIFF nie zostaną spakowane jako EIP.</string>
+	<key>601.title</key>
+	<string>Edycja</string>
+	<key>602.title</key>
+	<string>Włącz edycję TIFF</string>
+	<key>603.title</key>
+	<string>Włącz edycję JPEG</string>
+	<key>621.title</key>
+	<string>Pełna synchronizacja</string>
+	<key>622.title</key>
+	<string>Pobierz</string>
+	<key>623.title</key>
+	<string>Brak</string>
+	<key>626.title</key>
+	<string>Autosynchronizacja Sidecar XMP:</string>
+	<key>628.ibShadowedToolTip</key>
+	<string>Nowe pliki (utworzone podczas importu, przechwytywania lub konwersji EIP) będą mieć możliwość zapisu przez każdego, nie tylko użytkownika pliku.</string>
+	<key>629.title</key>
+	<string>Ustaw uprawnienia edycji nowych plików na dostępne dla wszystkich</string>
+	<key>635.title</key>
+	<string>Włącz edycję PNG</string>
+	<key>667.title</key>
+	<string>Domyślny silnik przetwarzania:</string>
+</dict>
+</plist>

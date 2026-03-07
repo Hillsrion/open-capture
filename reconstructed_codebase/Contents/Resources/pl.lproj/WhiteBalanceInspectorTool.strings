@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>134.ibExternalAccessibilityDescription</key>
+	<string>balancePopup</string>
+	<key>135.title</key>
+	<string>OtherViews</string>
+	<key>136.title</key>
+	<string>Spersonalizowane</string>
+	<key>137.title</key>
+	<string>Z aparatu</string>
+	<key>138.title</key>
+	<string>Pochmurnie</string>
+	<key>238.title</key>
+	<string>Tryb</string>
+	<key>EP8-Am-6Fw.ibExternalAccessibilityDescription</key>
+	<string>kelwinów</string>
+	<key>EP8-Am-6Fw.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Kelwiny</string>
+	<key>n63-za-y7v.ibExternalAccessibilityDescription</key>
+	<string>odcień</string>
+	<key>n63-za-y7v.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Odcień</string>
+</dict>
+</plist>

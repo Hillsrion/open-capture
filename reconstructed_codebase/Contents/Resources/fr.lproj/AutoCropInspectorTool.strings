@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>Pellicule - Taille Fixe</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Support Relié - Taille Fixe</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>Niveaux automatiques sur l’intérieur du cadrage</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>Recadrage Auto</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>Recadrage actif</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>Recadrage auto systématique lors de la capture d'une nouvelle image.</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>Bord Haut</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Pre-Passe</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>Aucun</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>Taille de sortie appliquée lors du recadrage auto.</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>Remplissage</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>Bord Bas</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>Bords Haut-Droit</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>Objet bas - Contraste de Fond</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Redresser</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>Aucun</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Document volant</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Mode</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>Moyenne</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>Bord Gauche</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Document Relié</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>Taille de sortie appliquée lors du recadrage auto.</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Document Volant - Taille fixe</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Optimisation</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>Taille de sortie appliquée lors du recadrage auto.</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>Aucun</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>Bord Droit</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>Sur capture</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>Bords Bas-Gauche</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>Déclencheurs</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>Bords Haut-Gauche</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>Objet Moyen - Contraste de Fond</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>Bords Bas-Droite</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>Recadrage auto systématique lors de la création d'un nouveau recadrage.</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>Définir Recadrage Référence</string>
+	<key>zfu-c3-n97.title</key>
+	<string>Objet très bas - Contraste de fond</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>116.title</key>
+	<string>Отмена</string>
+	<key>148.title</key>
+	<string>Создать альбом с этими изображениями</string>
+	<key>171.title</key>
+	<string>Сохранить</string>
+	<key>172.title</key>
+	<string>Отмена</string>
+	<key>173.title</key>
+	<string>Имя умного альбома:</string>
+	<key>188.title</key>
+	<string>Справка</string>
+	<key>48.title</key>
+	<string>Создать интеллектуальный альбом</string>
+</dict>
+</plist>

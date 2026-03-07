@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>Połączenie sieciowe zostało zamknięte przez serwer.</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>Próba połączenia z hostem przekroczyła limit czasowy</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>Próba utworzenia gniazda z gniazda FD nie powiodła się, połaczenie zerwane przez drugą stronę.</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>Operacja wczytywania osiągnęła ustoloną maksymalną długość</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>Operacja wczytywania przekroczyła limit czasowy</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>Operacja zapisywania przekroczyła limit czasowy</string>
+</dict>
+</plist>

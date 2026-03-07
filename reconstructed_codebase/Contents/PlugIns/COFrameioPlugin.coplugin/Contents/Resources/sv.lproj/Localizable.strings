@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disconnect from Frame.io</key>
+	<string>Koppla bort från Frame.io</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>För hjälp vänligen kontakta Capture One support på https://support.captureone.com.</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>För hjälp vänligen kontakta Capture One support på https://support.captureone.com. Inkludera textsträngen nedan i din supportförfrågan:
+
+%@</string>
+	<key>Frame.io settings</key>
+	<string>Frame.io-inställningar</string>
+	<key>Free version limit reached</key>
+	<string>Gränsen för gratisversion har nåtts</string>
+	<key>Not implemented</key>
+	<string>Inte implementerad</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>Förbereder %1$i av %2$i mediefiler för uppladdning…</string>
+	<key>Server Error</key>
+	<string>Okänt fel</string>
+	<key>Something went wrong, please try again.</key>
+	<string>Något gick fel, försök igen.</string>
+	<key>The free version of the Frame.io plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>Du använder den kostnadsfria versionen av  Frame.io‑plugin-programmet som inte tillåter publicering eller import av så många filer samtidigt. För uppgradering, besök https://integrations.captureone.com/upgrade/</string>
+	<key>This method is not yet implemented.</key>
+	<string>Den här metoden är ännu inte implementerad.</string>
+	<key>Unknown Error</key>
+	<string>Okänt fel</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>Laddar upp %1$@ (%2$i av %3$i)…</string>
+	<key>Work with stakeholders, clients, and collaborators like never before with easy-to-use review and approval tools, lightning-fast unbreakable file transfers, and the fastest growing Camera to Cloud ecosystem in the market. For more details please read more details [here](https://frame.io/).</key>
+	<string>Arbeta med intressenter, kunder och samarbetspartners som aldrig förr, med lättanvända gransknings- och godkännandeverktyg, blixtsnabba oknäckbara filöverföringar samt marknadens snabbast växande Camera to Cloud-ekosystem. Läs mer information [här] (https://frame.io/).</string>
+</dict>
+</plist>

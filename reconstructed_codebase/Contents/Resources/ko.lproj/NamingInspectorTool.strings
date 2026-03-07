@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>185.title</key>
+	<string>제목</string>
+	<key>25a-h5-zmc.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>프리셋</string>
+	<key>396.title</key>
+	<string>Macintosh HD/Users/jfr/Pictures/Two of Each 3.7.6</string>
+	<key>397.title</key>
+	<string>위치</string>
+	<key>398.title</key>
+	<string>…</string>
+	<key>399.title</key>
+	<string>저장장치에서 20MB 사용 가능</string>
+	<key>400.title</key>
+	<string>남은 공간</string>
+	<key>401.title</key>
+	<string>예제</string>
+	<key>402.title</key>
+	<string>My Great Safari.TIF</string>
+	<key>404.title</key>
+	<string>작업명</string>
+	<key>405.title</key>
+	<string>My Great Safari</string>
+	<key>408.title</key>
+	<string>취소</string>
+	<key>409.title</key>
+	<string>이름 변경</string>
+	<key>419.title</key>
+	<string>형식</string>
+	<key>433.title</key>
+	<string>…</string>
+	<key>Blt-Ql-npf.title</key>
+	<string>찾기와 교체</string>
+	<key>IGF-8H-wTJ.title</key>
+	<string>이미지 이름</string>
+	<key>RmK-jn-2V2.title</key>
+	<string>작업과 이미지 이름</string>
+	<key>YZM-cp-W0o.title</key>
+	<string>작업명과 카운터</string>
+	<key>aAZ-NK-Xjh.title</key>
+	<string>찾기</string>
+	<key>jdM-ZY-EwL.title</key>
+	<string>대체하기</string>
+	<key>qma-yp-kDJ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>방법</string>
+	<key>y3Z-8k-G7y.title</key>
+	<string>이미지와 작업 이름</string>
+	<key>znA-BM-BP2.title</key>
+	<string>텍스트와 표시(토큰)</string>
+</dict>
+</plist>

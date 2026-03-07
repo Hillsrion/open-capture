@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>265.title</key>
+	<string>パネル</string>
+	<key>282.ibShadowedToolTip</key>
+	<string>表示する名称を入力</string>
+	<key>287.ibShadowedToolTip</key>
+	<string>連絡先リンクの入力(例 mailto:photographer@phaseone.com or http://www.phaseone.com)</string>
+	<key>389.ibShadowedToolTip</key>
+	<string>XMLとDTDファイルを現像先にエクスポート</string>
+	<key>398.title</key>
+	<string>ローカル</string>
+	<key>399.title</key>
+	<string>FTP</string>
+	<key>403.label</key>
+	<string>FTP</string>
+	<key>405.label</key>
+	<string>ローカル</string>
+	<key>409.ibShadowedToolTip</key>
+	<string>Webブラウザに結果を表示</string>
+	<key>447.title</key>
+	<string>説明</string>
+	<key>448.title</key>
+	<string>コピーライト</string>
+	<key>449.placeholderString</key>
+	<string>説明入力</string>
+	<key>450.title</key>
+	<string>タイトル</string>
+	<key>451.title</key>
+	<string>Webリンク</string>
+	<key>452.placeholderString</key>
+	<string>コンタクトを入力</string>
+	<key>453.placeholderString</key>
+	<string>タイトルを入力</string>
+	<key>454.placeholderString</key>
+	<string>webまたはメールのリンクを入力</string>
+	<key>455.title</key>
+	<string>テキスト</string>
+	<key>457.title</key>
+	<string>サムネイル</string>
+	<key>458.title</key>
+	<string>プレビュー</string>
+	<key>459.title</key>
+	<string>キャプション</string>
+	<key>461.title</key>
+	<string>クオリティ</string>
+	<key>464.title</key>
+	<string>イメージ</string>
+	<key>465.title</key>
+	<string>テーマ</string>
+	<key>469.title</key>
+	<string>レイアウト</string>
+	<key>470.title</key>
+	<string>現像</string>
+	<key>471.title</key>
+	<string>Photo XMLをエクスポート</string>
+	<key>472.title</key>
+	<string>タイプ</string>
+	<key>474.title</key>
+	<string>URL</string>
+	<key>475.placeholderString</key>
+	<string>サーバフォルダへすべてのURLを入力</string>
+	<key>476.title</key>
+	<string>ユーザ名</string>
+	<key>477.placeholderString</key>
+	<string>ユーザ名を入力</string>
+	<key>478.title</key>
+	<string>パスワード</string>
+	<key>479.placeholderString</key>
+	<string>パスワードを入力</string>
+	<key>480.title</key>
+	<string>パス</string>
+	<key>481.title</key>
+	<string>エクスポート後に表示</string>
+	<key>522.ibShadowedToolTip</key>
+	<string>プリント パネルを表示</string>
+	<key>523.ibShadowedToolTip</key>
+	<string>プリント キャンセル</string>
+	<key>524.title</key>
+	<string>キャンセル</string>
+	<key>525.title</key>
+	<string>エクスポート</string>
+</dict>
+</plist>

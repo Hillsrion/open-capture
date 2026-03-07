@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.title</key>
+	<string>Standard</string>
+	<key>258.title</key>
+	<string>Mönster:</string>
+	<key>260.title</key>
+	<string>Färg:</string>
+	<key>262.title</key>
+	<string>Marginal:</string>
+	<key>263.title</key>
+	<string>px</string>
+	<key>265.title</key>
+	<string>Bildvisare</string>
+	<key>266.title</key>
+	<string>Bildvisare och miniatyrläsare</string>
+	<key>268.title</key>
+	<string>100</string>
+	<key>269.title</key>
+	<string>Visningsmarginal:</string>
+	<key>270.title</key>
+	<string>px</string>
+	<key>277.title</key>
+	<string>Maskfärg:</string>
+	<key>289.title</key>
+	<string>Lager</string>
+	<key>293.title</key>
+	<string>Visningsmarginal</string>
+	<key>295.title</key>
+	<string>Lokal justering</string>
+	<key>RSD-oE-2ka.title</key>
+	<string>Vald variant färg:</string>
+	<key>drf-G9-VYV.title</key>
+	<string>Färg på jämförelsevariant:</string>
+</dict>
+</plist>

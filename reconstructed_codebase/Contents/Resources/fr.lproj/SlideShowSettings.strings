@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Paramètres du diaporama</string>
+	<key>34.title</key>
+	<string>Fondu</string>
+	<key>35.title</key>
+	<string>Poussée recouvrante</string>
+	<key>36.title</key>
+	<string>Transition</string>
+	<key>40.title</key>
+	<string>Balayage</string>
+	<key>41.title</key>
+	<string>Poussée découvrante</string>
+	<key>42.title</key>
+	<string>Dissolution</string>
+	<key>43.title</key>
+	<string>Damier nid d'abeille</string>
+	<key>44.title</key>
+	<string>Balayage adouci</string>
+	<key>56.title</key>
+	<string>Durée de la diapo</string>
+	<key>69.title</key>
+	<string>En boucle</string>
+	<key>73.title</key>
+	<string>Défaut</string>
+	<key>90.title</key>
+	<string>Désintégration</string>
+	<key>91.title</key>
+	<string>Balayage diagonal</string>
+	<key>92.title</key>
+	<string>Ondulation</string>
+</dict>
+</plist>

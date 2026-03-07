@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Naamformaat</string>
+	<key>13.title</key>
+	<string>Annuleer</string>
+	<key>14.title</key>
+	<string>OK</string>
+	<key>59L-oO-NTp.title</key>
+	<string>Recent gebruikt</string>
+	<key>74.title</key>
+	<string>Voorinstellingen</string>
+	<key>77.title</key>
+	<string>Afbeeldings- en opdrachtnaam</string>
+	<key>78.title</key>
+	<string>Opdrachtnaam en teller</string>
+	<key>79.title</key>
+	<string>Opdracht- en Afbeeldingsnaam</string>
+	<key>80.title</key>
+	<string>Afbeeldingsnaam</string>
+	<key>84.title</key>
+	<string>U kunt de tekst hierboven aanpassen naar behoefte. Selecteer elementen in de groepen hieronder en sleep or dubbelklik om ze toe te voegen aan het formaat.</string>
+	<key>89.title</key>
+	<string>Sla Voorinstelling van gebruiker op…</string>
+	<key>94.title</key>
+	<string>Bestandstype</string>
+	<key>96.title</key>
+	<string>Tokens</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>Metagegevens - EXIF - Camera</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>Metagegevens - IPTC - Getty Images</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>Datum en tijd</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>Metagegevens - Basis</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>Metagegevens - EXIF - Belichting</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>Tekstcel</string>
+	<key>XqK-3b-mox.title</key>
+	<string>Algemeen</string>
+	<key>f2N-un-vTh.title</key>
+	<string>Metagegevens - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>Metagegevens - Leverancier Specifiek</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>Tokens uitsluiten (Debug)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>Metagegevens - IPTC - Contact</string>
+	<key>im4-Sx-noG.title</key>
+	<string>Alle</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>Metagegevens - IPTC - Inhoud</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>Groep</string>
+	<key>pQh-ye-usp.title</key>
+	<string>Metagegevens - IPTC - Afbeelding</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>Metagegevens - IPTC - Status</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>Voorbeeld</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>Voorbeeldtekst hier invullen</string>
+</dict>
+</plist>

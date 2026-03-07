@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>删除</string>
+	<key>264.title</key>
+	<string>管理用户模板</string>
+	<key>274.title</key>
+	<string>完成</string>
+</dict>
+</plist>

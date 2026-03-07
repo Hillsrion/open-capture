@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100.title</key>
+	<string>每日一次</string>
+	<key>104.title</key>
+	<string>OtherViews</string>
+	<key>105.title</key>
+	<string>自動</string>
+	<key>106.title</key>
+	<string>永不</string>
+	<key>107.title</key>
+	<string>位置：</string>
+	<key>108.title</key>
+	<string>關閉時提醒：</string>
+	<key>111.title</key>
+	<string>OtherViews</string>
+	<key>112.title</key>
+	<string>永不</string>
+	<key>113.title</key>
+	<string>自動</string>
+	<key>115.title</key>
+	<string>硬體加速器</string>
+	<key>116.title</key>
+	<string>目錄備份</string>
+	<key>125.title</key>
+	<string>OtherViews</string>
+	<key>126.title</key>
+	<string>總是覆寫中繼資料</string>
+	<key>127.title</key>
+	<string>永不覆寫中繼資料</string>
+	<key>128.title</key>
+	<string>覆寫中繼資料時詢問</string>
+	<key>130.title</key>
+	<string>OtherViews</string>
+	<key>131.title</key>
+	<string>創建新相簿或選擇文件夾</string>
+	<key>132.title</key>
+	<string>創建或重複使用匹配的相簿</string>
+	<key>133.title</key>
+	<string>同步目錄集時詢問</string>
+	<key>134.title</key>
+	<string>從 Expression Media 中接收的中繼資料和目錄集訊息可能會更新 Capture One 中的圖像和相簿。請選擇每種訊息類型相對應的行為表現。</string>
+	<key>136.title</key>
+	<string>OtherViews</string>
+	<key>137.title</key>
+	<string>添加時詢問是否包含子文件夾</string>
+	<key>138.title</key>
+	<string>包含子文件夾的提示中始終選擇“是”</string>
+	<key>139.title</key>
+	<string>包含子文件夾的提示中始終選擇“否”</string>
+	<key>140.title</key>
+	<string>Expression Media</string>
+	<key>141.title</key>
+	<string>默認設定</string>
+	<key>142.title</key>
+	<string>使用滾輪縮放</string>
+	<key>143.title</key>
+	<string>查看器</string>
+	<key>149.title</key>
+	<string>OtherViews</string>
+	<key>150.title</key>
+	<string>閒置超過 5 分鐘之後</string>
+	<key>151.title</key>
+	<string>閒置超過 10 分鐘之後</string>
+	<key>152.title</key>
+	<string>閒置超過 30 分鐘之後</string>
+	<key>153.title</key>
+	<string>閒置超過 1 小時之後</string>
+	<key>154.title</key>
+	<string>閒置超過 2 小時之後</string>
+	<key>155.title</key>
+	<string>閒置超過 4 小時之後</string>
+	<key>156.title</key>
+	<string>在拍攝當天的第一張照片時</string>
+	<key>157.title</key>
+	<string>創建：</string>
+	<key>158.title</key>
+	<string>最近拍攝匯集</string>
+	<key>159.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>160.title</key>
+	<string>當檢測到數碼相機的記憶卡時開啟導入助手</string>
+	<key>161.title</key>
+	<string>正在導入</string>
+	<key>162.title</key>
+	<string>啟動</string>
+	<key>163.title</key>
+	<string>自動顯示視窗</string>
+	<key>167.title</key>
+	<string>收藏夾</string>
+	<key>169.title</key>
+	<string>OtherViews</string>
+	<key>170.title</key>
+	<string>添加上一個會話文件夾至收藏夾時詢問</string>
+	<key>171.title</key>
+	<string>總是添加上一個會話文件夾至收藏夾</string>
+	<key>172.title</key>
+	<string>永不添加上一個會話文件夾至收藏夾</string>
+	<key>173.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>176.title</key>
+	<string>目錄與會話</string>
+	<key>177.title</key>
+	<string>在新視窗中開啟</string>
+	<key>61.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>70.ibExternalAccessibilityDescription</key>
+	<string>GeneralZoomCheckbox</string>
+	<key>7cZ-B2-onY.title</key>
+	<string>狀態：</string>
+	<key>92.title</key>
+	<string>…</string>
+	<key>93.title</key>
+	<string>~/Library/Application Support/Capture One/Backups</string>
+	<key>95.title</key>
+	<string>OtherViews</string>
+	<key>96.title</key>
+	<string>總是</string>
+	<key>97.title</key>
+	<string>每月一次</string>
+	<key>98.title</key>
+	<string>永不</string>
+	<key>99.title</key>
+	<string>每週一次</string>
+	<key>BH0-04-0aJ.title</key>
+	<string>滾輪可修改滑條值</string>
+	<key>FMP-1B-uF6.title</key>
+	<string>工具列</string>
+	<key>PQo-en-IWM.title</key>
+	<string>啟用 Tangent 調色設備支援</string>
+	<key>SpW-MT-i4c.title</key>
+	<string>Resource Hub</string>
+	<key>caB-eA-tjS.title</key>
+	<string>按 Option + 滾輪可切換於工具列之間</string>
+	<key>jfj-Ks-wpZ.title</key>
+	<string>在啟動時顯示</string>
+	<key>yng-WN-yJ1.title</key>
+	<string>Tangent Integration</string>
+</dict>
+</plist>

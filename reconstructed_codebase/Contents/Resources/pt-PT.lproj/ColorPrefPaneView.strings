@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>120.title</key>
+	<string>OtherViews</string>
+	<key>121.title</key>
+	<string>Colorimétrico relativo</string>
+	<key>122.title</key>
+	<string>Perceptivo</string>
+	<key>152.title</key>
+	<string>Saturação</string>
+	<key>153.title</key>
+	<string>Colorimétrico absoluto</string>
+	<key>157.title</key>
+	<string>Padrões</string>
+	<key>158.title</key>
+	<string>Tentativa de renderização:</string>
+	<key>U5h-5o-7Bi.title</key>
+	<string>Padrão</string>
+	<key>ezE-kB-AL7.title</key>
+	<string>Vectorscope</string>
+	<key>tT2-rk-Tsn.title</key>
+	<string>Transformar</string>
+	<key>y0A-7I-fJB.title</key>
+	<string>Disposição das rodas das cores</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>27.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ of %{value2}@ tâches de lot enregistrées</string>
+	<key>28.ibShadowedDisplayPattern</key>
+	<string>%{value1}@ of %{value2}@ tâches de lot enregistrées</string>
+	<key>30.title</key>
+	<string>Quitter</string>
+	<key>31.title</key>
+	<string>enregistrement x de N tâches de lot</string>
+	<key>5.title</key>
+	<string>Enregistrement fichiers de file d'attente</string>
+</dict>
+</plist>

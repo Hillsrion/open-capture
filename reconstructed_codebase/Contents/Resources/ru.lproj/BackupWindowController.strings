@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>Резервное копирование</string>
+	<key>17.title</key>
+	<string>Отмена</string>
+	<key>21.label</key>
+	<string>Ход выполнения</string>
+	<key>22.label</key>
+	<string>Предупреждение</string>
+	<key>37.title</key>
+	<string>Проверка интегративности</string>
+	<key>39.title</key>
+	<string>Оптимизировать каталог</string>
+	<key>45.title</key>
+	<string>…</string>
+	<key>46.title</key>
+	<string>Расположение для резервного копирования:";"</string>
+	<key>49.title</key>
+	<string>Также:</string>
+	<key>78.label</key>
+	<string>Ошибка</string>
+	<key>99.label</key>
+	<string>Ошибка</string>
+</dict>
+</plist>

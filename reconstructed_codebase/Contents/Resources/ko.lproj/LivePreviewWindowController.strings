@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2666.label</key>
+	<string>라이브 뷰</string>
+	<key>2873.title</key>
+	<string>상자</string>
+	<key>2889.title</key>
+	<string>맞춤</string>
+	<key>2958.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolSelector</string>
+	<key>2968.ibExternalAccessibilityDescription</key>
+	<string>inspectorToolSelector</string>
+	<key>5.title</key>
+	<string>라이브 뷰</string>
+	<key>QHE-Qa-T6o.ibShadowedToolTip</key>
+	<string>연결된 카메라를 사용하여 이미지 캡처</string>
+	<key>hFG-vJ-633.title</key>
+	<string>버튼</string>
+</dict>
+</plist>

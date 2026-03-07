@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>145.title</key>
+	<string>Organizar...</string>
+	<key>146.title</key>
+	<string>Nuevo...</string>
+	<key>147.title</key>
+	<string>Sin restricciones</string>
+	<key>149.title</key>
+	<string>Salida</string>
+	<key>152.title</key>
+	<string>1x1</string>
+	<key>153.title</key>
+	<string>2x3</string>
+	<key>155.ibShadowedToolTip</key>
+	<string>Ajustes de la variante: Tamaño de la imagen final cuando las variantes son procesadas</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Unidad de medida.</string>
+	<key>159.title</key>
+	<string>px</string>
+	<key>160.title</key>
+	<string>pulg.</string>
+	<key>161.title</key>
+	<string>cm</string>
+	<key>162.title</key>
+	<string>mm</string>
+	<key>326.title</key>
+	<string>Relación</string>
+	<key>327.title</key>
+	<string>Tamaño</string>
+	<key>331.title</key>
+	<string>x</string>
+	<key>334.title</key>
+	<string>Cortar imagen por fuera</string>
+	<key>IUp-Ub-TaZ.title</key>
+	<string>Mostrar cuadrícula durante el recorte</string>
+</dict>
+</plist>

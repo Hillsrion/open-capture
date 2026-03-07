@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Formato nomina</string>
+	<key>13.title</key>
+	<string>Cancella</string>
+	<key>14.title</key>
+	<string>OK</string>
+	<key>59L-oO-NTp.title</key>
+	<string>Utilizzato recentemente</string>
+	<key>74.title</key>
+	<string>Preset</string>
+	<key>77.title</key>
+	<string>Nomi di Immagine e Lavoro</string>
+	<key>78.title</key>
+	<string>Nome Lavoro e Contatore</string>
+	<key>79.title</key>
+	<string>Nomi Lavoro e Immagine</string>
+	<key>80.title</key>
+	<string>Nome immagine</string>
+	<key>84.title</key>
+	<string>È possibile modificare il testo sopra per soddisfare le necessità personali. Seleziona gli elementi dai gruppi sotto e trascinali o fai doppio clic per aggiungerli al formato.</string>
+	<key>89.title</key>
+	<string>Salva Preset Utente…</string>
+	<key>94.title</key>
+	<string>Formato</string>
+	<key>96.title</key>
+	<string>Token</string>
+	<key>9IJ-Rj-Mn6.title</key>
+	<string>Metadati - EXIF - Fotocamera</string>
+	<key>IcR-I5-MrP.title</key>
+	<string>Metadati - IPTC - Getty Images</string>
+	<key>Iov-PJ-gmm.title</key>
+	<string>Data e Ora</string>
+	<key>Sj2-sS-faM.title</key>
+	<string>Metadati - Basico</string>
+	<key>UDJ-1y-oOK.title</key>
+	<string>Metadati - EXIF - Esposizione</string>
+	<key>VU8-ib-KQU.title</key>
+	<string>Cella Testo</string>
+	<key>XqK-3b-mox.title</key>
+	<string>Generale</string>
+	<key>f2N-un-vTh.title</key>
+	<string>Metadati - EXIF - GPS</string>
+	<key>gbF-cc-3Gm.title</key>
+	<string>Metadati - Specifiche del Fornitore</string>
+	<key>h0E-Xs-g3o.title</key>
+	<string>Token Esclusi (Debug)</string>
+	<key>iEP-7R-U0R.title</key>
+	<string>Metadati - IPTC - Contatto</string>
+	<key>im4-Sx-noG.title</key>
+	<string>Tutti</string>
+	<key>jEp-eA-ZqR.title</key>
+	<string>Metadati - IPTC - Contenuto</string>
+	<key>nqc-FB-Qwc.title</key>
+	<string>Gruppo</string>
+	<key>pQh-ye-usp.title</key>
+	<string>Metadati - IPTC - Immagine</string>
+	<key>pxr-Cf-W6a.title</key>
+	<string>Metadati - IPTC - Stato</string>
+	<key>q5j-D3-iFU.title</key>
+	<string>Esempio</string>
+	<key>xrA-Fa-8YI.title</key>
+	<string>La stringa campione va inserita qui</string>
+</dict>
+</plist>

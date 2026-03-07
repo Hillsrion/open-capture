@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>Aplikace %1$@ %2$@ byla stažena a je připravena k použití po příštím spuštění! Toto je důležitá aktualizace; přejete si aplikaci %1$@ nyní nainstalovat a znovu spustit?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>Aplikace %1$@ %2$@ byla stažena a je připravena k použití po příštím spuštění! Přejete si aplikaci %1$@ nyní nainstalovat a znovu spustit?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>%1$@ %2$@ je k dispozici, ale vaše verze macOS je pro tuto aktualizaci příliš nová. Aktualizace podporuje nejvýše macOS %3$@.</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>%1$@ %2$@ je k dispozici, ale vaše verze macOS je pro tuto aktualizaci příliš stará. Je potřeba alespoň macOS %3$@.</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>Aplikace %1$@ nemůže být aktualizována pokud je spuštěna z umístění, ve kterém je stažena.</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>Aplikace %1$@ nemůže být aktualizována, protože je spuštěna z dočasného umístění nebo z umístění, na které nelze zapisovat.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ je nejnovější dostupná verze</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ je nejnovější dostupná verze.
+(Aktuálně používáte verzi %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>Verze %1$@ %2$@ je nyní k dispozici – nainstalována je %3$@. Tato aktualizace je důležitá; přejete si ji nyní stáhnout?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>Je k dispozici %1$@ %2$@ - nainstalována je %3$@. Přejete si nyní stáhnout aktualizaci?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>%1$@ %2$@ je nyní k dispozici – nainstalována je %3$@. Přejete si zobrazit o této aktualizaci další informace?</string>
+	<key>%@ downloaded</key>
+	<string>staženo %@</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>Aplikace %1$@ je nyní aktualizována na verzi %2$@! </string>
+	<key>%@ is now updated!</key>
+	<string>%@ je nyní aktuální!</string>
+	<key>%@ of %@</key>
+	<string>%1$@ z %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Je dostupná nová verze aplikace %@!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Nová verze %@ je připravena k instalaci!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Při získávání údajů o aktualizaci se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>Při připojování k instalátoru se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Při stahování souboru se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Při rozbalování archivu se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>Při spouštění instalátoru se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Při zpracování údajů o aktualizaci se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>Při provádění aktualizace se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>Při spouštění instalátoru se vyskytla chyba. Zkuste to prosím později.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Důležitá aktualizace %@ je připravena k instalaci</string>
+	<key>Cancel</key>
+	<string>Zrušit</string>
+	<key>Cancel Update</key>
+	<string>Zrušit aktualizaci</string>
+	<key>Checking for updates…</key>
+	<string>Hledání aktualizací…</string>
+	<key>Downloading update…</key>
+	<string>Stahuje se aktualizace…</string>
+	<key>Extracting update…</key>
+	<string>Rozbaluje se aktualizace…</string>
+	<key>Failed to resume installing update.</key>
+	<string>Nepodařilo se pokračovat v aktualizaci.</string>
+	<key>Install and Relaunch</key>
+	<string>Instalovat a znovu spustit</string>
+	<key>Install on Quit</key>
+	<string>Instalovat a ukončit</string>
+	<key>Installing update…</key>
+	<string>Instaluje se aktualizace…</string>
+	<key>Learn More…</key>
+	<string>Další informace…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>Ukončete %1$@, spusťte %1$@ ze složky Aplikace a spusťte aktualizaci znovu.</string>
+	<key>Ready to Install</key>
+	<string>Připraveno k instalaci</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Přejete si, aby aplikace %1$@ automaticky vyhledávala aktualizace? Tuto volbu můžete kdykoliv změnit v nabídce %1$@.</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>Nepodařilo se správně spustit update checker. Kontaktujte prosím vývojáře, nahlašte tento problém a ujistěte se, že používáte nejnovější verzi.</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>Tato aktualizace není správně podepsaná a nelze ji ověřit. Zkuste to prosím později nebo kontaktujte vývojáře aplikace.</string>
+	<key>Unable to Check For Updates</key>
+	<string>Hledání aktualizací se nezdařilo</string>
+	<key>Update Error!</key>
+	<string>Chyba při aktualizaci!</string>
+	<key>Update Installed</key>
+	<string>Aktualizace dokončena</string>
+	<key>Updating %@</key>
+	<string>Aktualizuje se %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Přesuňte %1$@ do složky Aplikace a spusťte ji z tohoto umístění znovu.</string>
+	<key>Version History</key>
+	<string>Historie verzí</string>
+	<key>Your macOS version is too new</key>
+	<string>Vaše verze macOS je příliš nová</string>
+	<key>Your macOS version is too old</key>
+	<string>Vaše verze macOS je příliš stará</string>
+	<key>You’re up to date!</key>
+	<string>Vaše verze je aktuální!</string>
+</dict>
+</plist>

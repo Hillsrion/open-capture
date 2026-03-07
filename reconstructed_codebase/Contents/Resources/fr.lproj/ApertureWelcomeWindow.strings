@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Importer Bibliothèque Aperture</string>
+	<key>14.title</key>
+	<string>Annuler</string>
+	<key>28.title</key>
+	<string>Les propriétés suivantes seront transférées dans Capture One lors de l'importation d'une Bibliothèque Aperture:</string>
+	<key>4.title</key>
+	<string>Ne plus demander</string>
+	<key>51.title</key>
+	<string>Projets, Dossiers, Albums
+Recadrage OU Redressement, Rotation, Inverser
+Exposition, Luminosité, Hautes lumières et Ombres, Définition, Saturation, N&amp;B
+Métadonnées (IPTC, Note, Label Couleur, Mots Clés)</string>
+	<key>57.title</key>
+	<string>Les réglages couleurs sont indicatifs.
+
+Si vous souhaitez inclure un Album Intelligent, vous devez le convertir en un Album classique avant importation.</string>
+	<key>8.title</key>
+	<string>Continuer</string>
+</dict>
+</plist>

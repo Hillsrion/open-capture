@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Décalage vertical du cadrage.</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Annuler</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>unités</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Ajout en largeur au cadrage.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Fenêtre</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Δ Emplacement</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Modifier cadrage:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Δ Taille</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Ajout en hauteur au cadrage.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Modifier</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Décalage horizontal du cadrage.</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>Où le cadrage actuel doit être ancré durant la modification de la taille de cadrage.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>unités</string>
+</dict>
+</plist>

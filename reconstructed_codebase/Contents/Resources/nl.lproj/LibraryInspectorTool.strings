@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>142.title</key>
+	<string>Menu</string>
+	<key>143.title</key>
+	<string>Voeg toe aan Favorieten</string>
+	<key>145.title</key>
+	<string>Toon in Bibliotheek</string>
+	<key>157.title</key>
+	<string>Verzameling verwijderen</string>
+	<key>160.title</key>
+	<string>Stel in als Opname Map</string>
+	<key>162.title</key>
+	<string>Stel in als Selectie Map</string>
+	<key>164.title</key>
+	<string>Toon informatie</string>
+	<key>200.title</key>
+	<string>Box</string>
+	<key>274.title</key>
+	<string>Soort:</string>
+	<key>275.title</key>
+	<string>Soort:</string>
+	<key>276.title</key>
+	<string>Soort:</string>
+	<key>277.title</key>
+	<string>Soort:</string>
+	<key>278.title</key>
+	<string>Soort:</string>
+	<key>279.title</key>
+	<string>Soort:</string>
+	<key>280.title</key>
+	<string>Soort:</string>
+	<key>281.title</key>
+	<string>Map</string>
+	<key>282.title</key>
+	<string>Map</string>
+	<key>283.title</key>
+	<string>Map</string>
+	<key>284.title</key>
+	<string>Map</string>
+	<key>285.title</key>
+	<string>Map</string>
+	<key>286.title</key>
+	<string>Map</string>
+	<key>287.title</key>
+	<string>Map</string>
+	<key>292.title</key>
+	<string>Absoluut</string>
+	<key>293.title</key>
+	<string>Gerelateerd aan Sessie</string>
+	<key>302.title</key>
+	<string>Importeer vanuit geselecteerde map</string>
+	<key>307.title</key>
+	<string>Toon in Finder</string>
+	<key>311.title</key>
+	<string>Hernoem</string>
+	<key>313.title</key>
+	<string>Stel in als Uitvoer Map</string>
+	<key>342.title</key>
+	<string>Stel in als Sessie Prullenbak Map</string>
+	<key>457.ibShadowedToolTip</key>
+	<string>Andere Sessie</string>
+	<key>486.ibShadowedToolTip</key>
+	<string>Nieuwe Sessie...</string>
+	<key>543.title</key>
+	<string>Geen selectie</string>
+	<key>544.title</key>
+	<string>Lokaliseer…</string>
+	<key>552.title</key>
+	<string>Soort:</string>
+	<key>553.title</key>
+	<string>Map</string>
+	<key>557.title</key>
+	<string>Leeg Sessie Prullenbak</string>
+	<key>568.title</key>
+	<string>Bewerk Slim Album</string>
+	<key>624.title</key>
+	<string>Exporteren</string>
+	<key>628.title</key>
+	<string>Exporteren</string>
+	<key>629.title</key>
+	<string>Originelen…</string>
+	<key>696.title</key>
+	<string>Menu</string>
+	<key>699.title</key>
+	<string>Exporteer afbeeldingen</string>
+	<key>702.title</key>
+	<string>Verzameling bewerken</string>
+	<key>703.title</key>
+	<string>Leeg Catalogus Prullenbak</string>
+	<key>708.title</key>
+	<string>Hernoem</string>
+	<key>710.title</key>
+	<string>Toon in Finder</string>
+	<key>716.title</key>
+	<string>Toon informatie</string>
+	<key>718.title</key>
+	<string>Stel in als Selectie Verzameling</string>
+	<key>719.title</key>
+	<string>Stel in als Opname Verzameling</string>
+	<key>721.title</key>
+	<string>Verzameling verwijderen</string>
+	<key>725.title</key>
+	<string>Exporteer afbeeldingen</string>
+	<key>726.title</key>
+	<string>Originelen…</string>
+	<key>818.title</key>
+	<string>Toon mappenhiërarchie</string>
+	<key>823.title</key>
+	<string>Lokaliseer…</string>
+	<key>827.title</key>
+	<string>Sorteren op naam</string>
+	<key>866.title</key>
+	<string>Nieuw</string>
+	<key>867.title</key>
+	<string>Nieuw</string>
+	<key>869.title</key>
+	<string>Nieuw Album</string>
+	<key>871.title</key>
+	<string>Nieuw Slim Album...</string>
+	<key>873.title</key>
+	<string>Nieuw Project</string>
+	<key>875.title</key>
+	<string>Nieuwe Groep</string>
+	<key>879.title</key>
+	<string>Nieuw</string>
+	<key>880.title</key>
+	<string>Nieuw</string>
+	<key>882.title</key>
+	<string>Nieuw Album</string>
+	<key>884.title</key>
+	<string>Nieuw Slim Album...</string>
+	<key>886.title</key>
+	<string>Map</string>
+	<key>896.title</key>
+	<string>Voeg map toe...</string>
+	<key>901.title</key>
+	<string>Informatie verbergen</string>
+	<key>916.title</key>
+	<string>Varianten…</string>
+	<key>919.title</key>
+	<string>Varianten…</string>
+	<key>921.title</key>
+	<string>Sorteer Albums en Favorieten op naam</string>
+	<key>924.title</key>
+	<string>Synchroniseren...</string>
+	<key>927.title</key>
+	<string>Exporteren als Catalogus</string>
+	<key>931.title</key>
+	<string>Importeren</string>
+	<key>932.title</key>
+	<string>Importeren</string>
+	<key>934.title</key>
+	<string>Importeer naar geselecteerde map</string>
+</dict>
+</plist>

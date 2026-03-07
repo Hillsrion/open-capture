@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>휴지통으로 이동이 선택하지 않은 변형들에 영향을 줄 때 경고</string>
+	<key>18v-en-xAd.title</key>
+	<string>유효하지 않은 LCC를 가진 스타일을 적용할 떄 경고</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>기본 색 보정을 재설정시 경고</string>
+	<key>482.title</key>
+	<string>기본값</string>
+	<key>694.title</key>
+	<string>카탈로그에 있는 이미지와 폴더를 이동할 때 경고</string>
+	<key>697.title</key>
+	<string>파일과 폴더</string>
+	<key>701.title</key>
+	<string>디스크에서 이미지를 삭제할 때 경고</string>
+	<key>703.title</key>
+	<string>다른 드라이브에서 세션 휴지통으로 이미지들을 이동할 때 경고</string>
+	<key>707.title</key>
+	<string>조정</string>
+	<key>708.title</key>
+	<string>복수 변형들에 조정을 리셋할 때 경고</string>
+	<key>734.title</key>
+	<string>출력</string>
+	<key>789.title</key>
+	<string>선택한 모든 변형 편집이 꺼져 있고 복수 변형이 선택되었다면:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>선택한 모든 변형 편집이 꺼져 있는데 복수 변형을 처리할 때 경고</string>
+	<key>793.title</key>
+	<string>처리할 때 경고</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>선택한 모든 변형 편집이 꺼져 있는데 복수 변형을 출력할 때 경고</string>
+	<key>796.title</key>
+	<string>출력할 때 경고</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>선택한 모든 변형 편집이 꺼져 있는데 복수의 변형을 가진 웹 갤러리를 생성할 때 경고</string>
+	<key>799.title</key>
+	<string>웹 갤러리를 생성할 때 경고</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>선택한 모든 변형 편집이 꺼져 있는데 복수의 변형을 가진 웹 갤러리를 생성할 때 경고</string>
+	<key>805.title</key>
+	<string>내보내기할 때 경고</string>
+	<key>811.title</key>
+	<string>수동 정렬을 재설정할 때 경고</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>적용된 LCC를 변경 또는 삭제할 때 경고</string>
+	<key>816.title</key>
+	<string>LCC 변경할 때 경고</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>선택한 모든 변형값 편집이 꺼져 있을때 복수의 변형값을 가진 LCC를 생성하면 경고</string>
+	<key>820.title</key>
+	<string>LCC 생성할 때 경고</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>선택한 모든 변형값 편집이 꺼져 있을때 LCC를 복수의 변형값에 적용하면 경고</string>
+	<key>823.title</key>
+	<string>LCC를 적용할 때 경고</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>적용된 LCC를 변경 또는 삭제할 때 경고</string>
+	<key>829.title</key>
+	<string>엔진 업그레이드 시 경고</string>
+	<key>834.title</key>
+	<string>레이어 조정에서 조정값을 리셋할 때 경고</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>복수의 변형값을 가지고 색수차를 분석할 때 모든 선택 변형 파일 편집이 꺼져 있는 경우 경고 표시</string>
+	<key>847.title</key>
+	<string>색수차를 분석할 때 경고</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>파라 메트릭 마스크를 래스터화할 때 경고</string>
+	<key>Yac-6R-euW.title</key>
+	<string>복사된 변형에 레이어를 적용할 때 경고</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>유효하지 않은  ICC를 가진 스타일을 적용할 때 경고</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>스타일을 부분적으로 적용할 때 경고</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>모든 선택한 변형 편집이 꺼져 있는 경우 LCC를 여러 변형에 적용할 때 경고합니다.</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>LCC 생성 옵션을 선택할 때 경고합니다.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>지원되지 않는 조정값을 복사할 때 경고</string>
+</dict>
+</plist>

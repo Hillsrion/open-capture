@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Altura máxima para escalado final de imagen</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Augmento</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Resolución</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Ancho máximo para escalar la imagen final</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Distancia</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Actual</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Distancia</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Detener</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Iniciar</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Augmento</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Distancia</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Augmento</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Permite escalar la imagen original la cantidad especificada para obtener la imagen final.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Altura máxima para escalado final de imagen</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Cerca</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Campo de Visión</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Campo de Visión</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Resolución [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Resolución</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Lejos</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>El método utilizado para ajustar la claridad.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Permite escalar la imagen original la cantidad especificada para obtener la imagen final.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Destino</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Campo de Visión</string>
+</dict>
+</plist>

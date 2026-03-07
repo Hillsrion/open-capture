@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>128.ibShadowedToolTip</key>
+	<string>Ta bort vald prick</string>
+	<key>129.title</key>
+	<string>Analysera</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Ta bort vald prick</string>
+	<key>64.title</key>
+	<string>Lägg till punkter för mig</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Dammborttagning</string>
+</dict>
+</plist>

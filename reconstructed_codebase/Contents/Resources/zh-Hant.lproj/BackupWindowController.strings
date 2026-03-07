@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16.title</key>
+	<string>備份</string>
+	<key>17.title</key>
+	<string>取消</string>
+	<key>21.label</key>
+	<string>進度</string>
+	<key>22.label</key>
+	<string>警報</string>
+	<key>37.title</key>
+	<string>測試完整性</string>
+	<key>39.title</key>
+	<string>優化目錄</string>
+	<key>45.title</key>
+	<string>…</string>
+	<key>46.title</key>
+	<string>備份位置：</string>
+	<key>49.title</key>
+	<string>另外：</string>
+	<key>78.label</key>
+	<string>錯誤</string>
+	<key>99.label</key>
+	<string>錯誤</string>
+</dict>
+</plist>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>导出图像可缩放的最高尺寸。</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>放大率</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>自动对焦</string>
+	<key>8gB-9c-rck.title</key>
+	<string>分辨率</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>导出图像可缩放的最宽尺寸。</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>距离</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>当前</string>
+	<key>Rse-mY-54W.title</key>
+	<string>距离</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>停止</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>开始</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>放大率</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>距离</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>放大率</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>按导出图像大小缩放原始图像。</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>导出图像可缩放的最高尺寸。</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>近</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>视场</string>
+	<key>o74-F8-nGn.title</key>
+	<string>视场</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>分辨率 [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>分辨率</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>远</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>用于调整清晰度的方法。</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>按导出图像大小缩放原始图像。</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>目标</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>视场</string>
+</dict>
+</plist>

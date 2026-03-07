@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>479.ibShadowedToolTip</key>
+	<string>Ingrandisci immagine adattando alla cella</string>
+	<key>480.title</key>
+	<string>Zoom Adattato</string>
+	<key>481.ibShadowedToolTip</key>
+	<string>Ruota l’immagine per riempire la cella</string>
+	<key>482.title</key>
+	<string>Ruota per Riempire</string>
+	<key>533.ibShadowedToolTip</key>
+	<string>Ripeti un’immagine per pagina</string>
+	<key>534.title</key>
+	<string>Ripeti Una Immagine per Pagina</string>
+	<key>RE7-8e-Cmc.ibShadowedToolTip</key>
+	<string>La sovrapposizione dovrebbe essere inclusa nella stampa.</string>
+	<key>qW6-mG-nAl.title</key>
+	<string>Includi Sovrapposizione</string>
+	<key>vCy-SR-hV4.ibShadowedToolTip</key>
+	<string>Le note dovrebbero essere incluse nella stampa</string>
+	<key>vuu-ZS-7Gi.title</key>
+	<string>Includi Note</string>
+</dict>
+</plist>

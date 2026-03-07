@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>156.ibShadowedToolTip</key>
+	<string>Удалить слой коррекций</string>
+	<key>157.ibShadowedToolTip</key>
+	<string>Новый слой</string>
+	<key>256.ibShadowedToolTip</key>
+	<string>Параметры инструментов курсора</string>
+	<key>C3p-Kd-I6y.ibShadowedToolTip</key>
+	<string>Настройки отображения маски</string>
+	<key>ZgX-WE-hww.title</key>
+	<string>Box</string>
+	<key>n77-Nx-rgK.ibExternalAccessibilityDescription</key>
+	<string>непрозрачность слоя</string>
+	<key>n77-Nx-rgK.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Прозрачность</string>
+	<key>rpZ-6o-iul.title</key>
+	<string>Диапазон яркости…</string>
+</dict>
+</plist>

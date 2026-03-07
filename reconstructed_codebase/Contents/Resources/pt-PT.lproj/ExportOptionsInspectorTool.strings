@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.ibShadowedToolTip</key>
+	<string>Incluir Ajustes ao exportar</string>
+	<key>41.title</key>
+	<string>Incluir Ajustes</string>
+	<key>42.ibShadowedToolTip</key>
+	<string>Notificar ao concluir a exportação</string>
+	<key>43.title</key>
+	<string>Notificar ao concluir</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Adicionar pasta de exportação na Sessão Favoritos</string>
+	<key>45.title</key>
+	<string>Adicionar a pasta na Sessão Favoritos</string>
+	<key>48.ibShadowedToolTip</key>
+	<string>Incluir filmes na exportação</string>
+	<key>49.title</key>
+	<string>Incluir filmes</string>
+	<key>6Ot-LC-POj.ibShadowedToolTip</key>
+	<string>Embalar a imagem RAW como EIP</string>
+	<key>7QU-HS-eh7.title</key>
+	<string>Embalar como EIP</string>
+</dict>
+</plist>

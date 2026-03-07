@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>최종 이미지 크기조정을 위한 최대 높이 치수</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>확대</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>해상도</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>최종 이미지 크기조정을 위한 최대 너비 치수</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>거리</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>현재</string>
+	<key>Rse-mY-54W.title</key>
+	<string>거리</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>중지</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>시작</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>확대</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>거리</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>확대</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>마지막 이미지를 얻으려면 원본 이미지를 지정된 크기로 조정합니다.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>최종 이미지 크기조정을 위한 최대 높이 치수</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>근거리</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>시야</string>
+	<key>o74-F8-nGn.title</key>
+	<string>시야</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>해상도 [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>해상도</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>원거리</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>선명도를 조절할 때 사용되는 방법</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>마지막 이미지를 얻으려면 원본 이미지를 지정된 크기로 조정합니다.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>타겟</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>시야</string>
+</dict>
+</plist>

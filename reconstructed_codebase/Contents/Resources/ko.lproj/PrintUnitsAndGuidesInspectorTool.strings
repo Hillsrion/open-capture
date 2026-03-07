@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>510.ibShadowedToolTip</key>
+	<string>용지 안내 보기/숨기기</string>
+	<key>511.title</key>
+	<string>안내선 표시</string>
+	<key>543.ibShadowedToolTip</key>
+	<string>용지 안내 보기/숨기기</string>
+	<key>544.title</key>
+	<string>출력 안내</string>
+	<key>UWG-4M-2dn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>장비</string>
+</dict>
+</plist>

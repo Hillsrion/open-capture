@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GCDAsyncSocketClosedError</key>
+	<string>リモート ピアによってソケットを閉じました</string>
+	<key>GCDAsyncSocketConnectTimeoutError</key>
+	<string>タイムアウトしたホストに接続しようとしました</string>
+	<key>GCDAsyncSocketOtherError</key>
+	<string>ソケット FD からのソケット作成に失敗しました。 getpeername() に失敗しました</string>
+	<key>GCDAsyncSocketReadMaxedOutError</key>
+	<string>読み取り操作は最大長に設定しました</string>
+	<key>GCDAsyncSocketReadTimeoutError</key>
+	<string>読み取り操作はタイムアウトしました</string>
+	<key>GCDAsyncSocketWriteTimeoutError</key>
+	<string>書き込み操作はタイムアウトしました</string>
+</dict>
+</plist>

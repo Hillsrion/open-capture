@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>Присвоить изображениям цветные метки</string>
+	<key>125.title</key>
+	<string>Корректировать изображения</string>
+	<key>131.title</key>
+	<string>Захватить изображения</string>
+	<key>136.title</key>
+	<string>Разрешения</string>
+	<key>157.label</key>
+	<string>Интернет</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>Транслировать в Интернете</string>
+	<key>166.title</key>
+	<string>Веб-браузер</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>Транслировать в Интернете</string>
+	<key>171.title</key>
+	<string>Мобильное устройство</string>
+	<key>203.title</key>
+	<string>Назначить рейтинг изображениям</string>
+	<key>212.title</key>
+	<string>Разрешения</string>
+	<key>213.title</key>
+	<string>Назначить рейтинг изображениям</string>
+	<key>214.title</key>
+	<string>Присвоить изображениям цветные метки</string>
+	<key>243.title</key>
+	<string>Номер порта</string>
+	<key>254.title</key>
+	<string>&lt;Локальный IP-адрес&gt;</string>
+	<key>27.title</key>
+	<string>Пароль</string>
+	<key>291.title</key>
+	<string>&lt;Локальный IP-адрес&gt;</string>
+	<key>306.title</key>
+	<string>Локальный IP-адрес</string>
+	<key>308.title</key>
+	<string>Локальный IP-адрес</string>
+	<key>43.title</key>
+	<string>Имя сервера</string>
+	<key>53.label</key>
+	<string>Базовый</string>
+	<key>54.label</key>
+	<string>Мобильный</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>Базовый</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>Мобильный</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>Интернет</string>
+	<key>63.title</key>
+	<string>Номер порта</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Опубликовать в</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>Мобильная связь и Интернет</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>Мобильное устройство</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>Веб-браузер</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Папка</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Тема</string>
+</dict>
+</plist>

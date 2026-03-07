@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Pacchetto Immagini Migliorato Capture One</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>A volte Capture One richiede il controllo di altre applicazioni indirettamente per script che avvii insieme.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One non necessita l’accesso al tuo Calendario. Questo avviso nasce dall’accesso alla tua cartella Libreria.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One non necessita l’accesso ai tuoi Contatti. Questo avviso nasce dall’accesso alla tua cartella Libreria.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One non necessita l’accesso alla tua Libreria Foto. Questo avviso nasce dall’accesso alla tua cartella Libreria.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One non necessita l’accesso ai tuoi Promemoria. Questo avviso nasce dall’accesso alla tua cartella Libreria.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One richiede un accesso volume rimovibile per supportare le funzionalità del tethering. Se l’impostazione non funziona, riavvia Capture One.</string>
+	<key>Phase One RAW image</key>
+	<string>Immagine RAW Phase One</string>
+</dict>
+</plist>

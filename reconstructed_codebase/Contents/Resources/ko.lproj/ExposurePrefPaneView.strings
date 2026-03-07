@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>126.ibExternalAccessibilityDescription</key>
+	<string>EnableShadowWarningButton</string>
+	<key>128.ibExternalAccessibilityDescription</key>
+	<string>ShadowTargetLevelSlider</string>
+	<key>129.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>133.ibExternalAccessibilityDescription</key>
+	<string>HighlightTargetLevelSlider</string>
+	<key>134.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>242.title</key>
+	<string>셰도우 경고 사용</string>
+	<key>244.title</key>
+	<string>255</string>
+	<key>245.title</key>
+	<string>0</string>
+	<key>246.title</key>
+	<string>기본값</string>
+	<key>247.title</key>
+	<string>노출 경고</string>
+	<key>248.title</key>
+	<string>대상 레벨 선택</string>
+	<key>250.placeholderString</key>
+	<string>0</string>
+	<key>252.placeholderString</key>
+	<string>255</string>
+	<key>253.title</key>
+	<string>셰도우:</string>
+	<key>254.title</key>
+	<string>하이라이트:</string>
+	<key>255.title</key>
+	<string>레벨 툴</string>
+	<key>5.ibExternalAccessibilityDescription</key>
+	<string>ExposureWarningResetButton</string>
+	<key>68.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningLevelSlider</string>
+	<key>69.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningColorWell</string>
+	<key>77.ibExternalAccessibilityDescription</key>
+	<string>EnableShadowWarningButton</string>
+	<key>78.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelSlider</string>
+	<key>79.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningColorWell</string>
+	<key>80.ibExternalAccessibilityDescription</key>
+	<string>HighlightWarningLevelField</string>
+	<key>82.ibExternalAccessibilityDescription</key>
+	<string>ShadowWarningLevelField</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>하이라이트:</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>채널 모드를 자동 조정, 셰도우와 하이라이트 선택기에 적용</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>자동 레벨 클립 임계값</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>레드, 그린 그리고 블루 채널</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>채널 모드:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>셰도우:</string>
+	<key>ixc-xh-cy8.title</key>
+	<string>%</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>RGB 채널</string>
+	<key>qk8-eY-e7A.title</key>
+	<string>%</string>
+	<key>vcD-AP-Mgo.title</key>
+	<string>OtherViews</string>
+</dict>
+</plist>

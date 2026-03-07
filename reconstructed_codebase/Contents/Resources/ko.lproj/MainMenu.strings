@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01C-Il-VMP.title</key>
+	<string>주석</string>
+	<key>0H0-Jc-t3x.title</key>
+	<string>변형들...</string>
+	<key>0Ps-7b-sBQ.title</key>
+	<string>이름변경 카운터</string>
+	<key>0Q0-M5-LmI.title</key>
+	<string>M</string>
+	<key>0UZ-1K-nR1.title</key>
+	<string>레이어</string>
+	<key>0ih-RM-Js7.title</key>
+	<string>보기</string>
+	<key>14z-pL-mA5.ibShadowedToolTip</key>
+	<string>변형을 위한 조정값 리셋</string>
+	<key>14z-pL-mA5.title</key>
+	<string>선택 레이어 삭제</string>
+	<key>1LQ-Jh-EPo.title</key>
+	<string>엔진 업그레이드</string>
+	<key>1Lv-YA-qve.title</key>
+	<string>선택</string>
+	<key>1Nd-JK-zNO.title</key>
+	<string>Shop…</string>
+	<key>1gq-zE-mEg.title</key>
+	<string>툴바</string>
+	<key>1rs-DA-1do.title</key>
+	<string>메타데이터 싱크</string>
+	<key>224-6K-J3h.title</key>
+	<string>PNG 파일을 항상 숨김</string>
+	<key>24q-pt-xtA.title</key>
+	<string>맞춤법</string>
+	<key>25l-uy-u1U.title</key>
+	<string>변형 수준 내리기</string>
+	<key>28d-GR-VH6.title</key>
+	<string>처리 선택</string>
+	<key>29.title</key>
+	<string>MainMenu</string>
+	<key>2BO-O0-qsH.title</key>
+	<string>레벨</string>
+	<key>2Gr-gy-fxz.title</key>
+	<string>핫 폴더 선택...</string>
+	<key>2KV-Ld-vZd.title</key>
+	<string>즐겨찾기에 추가</string>
+	<key>2XR-PQ-i11.title</key>
+	<string>도움말</string>
+	<key>2pa-ft-UHr.title</key>
+	<string>레이어 켬/끔 전환</string>
+	<key>3028.title</key>
+	<string>새로운 창 생성</string>
+	<key>36O-pG-qIh.title</key>
+	<string>카운터 설정…</string>
+	<key>38I-f2-Ssj.title</key>
+	<string>자동</string>
+	<key>3T1-Cx-ywj.title</key>
+	<string>잘라내기</string>
+	<key>3To-a4-pSf.ibShadowedToolTip</key>
+	<string>이 카탈로그의 백업 복원</string>
+	<key>3To-a4-pSf.title</key>
+	<string>카탈로그 복구…</string>
+	<key>3Ui-ok-lzu.title</key>
+	<string>오픈 데이터베이스 확인</string>
+	<key>3Z4-fg-SOV.title</key>
+	<string>메뉴</string>
+	<key>3ep-eN-uVW.title</key>
+	<string>뷰어 툴바</string>
+	<key>3gr-b2-izd.title</key>
+	<string>앨범 생성</string>
+	<key>3lw-Wa-6il.title</key>
+	<string>선택사항</string>
+	<key>3rd-Dg-1hZ.title</key>
+	<string>방향설정</string>
+	<key>40o-AJ-xoM.title</key>
+	<string>편집</string>
+	<key>44D-aG-E83.title</key>
+	<string>Lab 판독</string>
+	<key>4F7-S3-7wH.title</key>
+	<string>같은 등급</string>
+	<key>4MD-pK-52t.title</key>
+	<string>메뉴</string>
+	<key>4tc-Vp-Tn2.title</key>
+	<string>내보내기 카운터</string>
+	<key>500-CP-quJ.title</key>
+	<string>리파인 마스크...</string>
+	<key>5Kn-v3-3J9.title</key>
+	<string>가이드</string>
+	<key>5Qh-XJ-7lV.title</key>
+	<string>가이드 리셋</string>
+	<key>5Td-ii-gu5.title</key>
+	<string>Capture One</string>
+	<key>5eA-Cd-e2H.title</key>
+	<string>선택 폴더로 설정</string>
+	<key>5qY-K4-hhW.title</key>
+	<string>마스크 가시성</string>
+	<key>5xI-ot-kZZ.title</key>
+	<string>시퀀스 ID</string>
+	<key>65L-HG-c0K.title</key>
+	<string>카운터 리셋</string>
+	<key>6Jb-3H-48Z.title</key>
+	<string>선택 탭에 대한 검사 도구 추가</string>
+	<key>6Pw-sw-mKP.title</key>
+	<string>모든 선택 편집</string>
+	<key>6RB-Ks-Q9Y.title</key>
+	<string>PIN 설정 또는 변경 ...</string>
+	<key>6Ve-3u-FtW.title</key>
+	<string>선택후 다음장 이동</string>
+	<key>6WK-Rn-IDM.title</key>
+	<string>조정값 적용</string>
+	<key>6dD-vu-ayz.title</key>
+	<string>자동조정</string>
+	<key>6fd-wm-DqL.ibShadowedToolTip</key>
+	<string>연결한 카메라를 사용하여 이미지 촬영</string>
+	<key>6fd-wm-DqL.title</key>
+	<string>네트워크 카메라 관리기..</string>
+	<key>6nI-5Q-bF1.title</key>
+	<string>다음 설정</string>
+	<key>6sQ-je-30n.title</key>
+	<string>출력 카운터</string>
+	<key>75o-KI-t8D.title</key>
+	<string>카운터 가져오기</string>
+	<key>7MX-Bb-VSm.title</key>
+	<string>게시</string>
+	<key>7Ow-LL-dv0.title</key>
+	<string>이전 컬렉션</string>
+	<key>7zw-gL-Wno.title</key>
+	<string>원본 복제</string>
+	<key>8I6-nm-Uiw.title</key>
+	<string>새로운 컬렉션</string>
+	<key>8R2-c5-XAq.title</key>
+	<string>조정 복사</string>
+	<key>8du-uT-ICL.title</key>
+	<string>폴더 밖으로 / 축소</string>
+	<key>92E-j9-FEm.title</key>
+	<string>동일한 변형 위치</string>
+	<key>94T-HJ-feh.title</key>
+	<string>선택</string>
+	<key>9Aa-c4-9VI.title</key>
+	<string>선택 축소</string>
+	<key>9Hl-bF-YXx.title</key>
+	<string>이벤트 로그</string>
+	<key>9NL-eQ-T1Q.title</key>
+	<string>도움말</string>
+	<key>9b8-5C-GLZ.title</key>
+	<string>카탈로그로 내보내기...</string>
+	<key>9bM-jw-56t.title</key>
+	<string>모두 선택 취소</string>
+	<key>9g2-Zq-Mgh.title</key>
+	<string>Crash Capture One</string>
+	<key>9iB-p5-gRZ.title</key>
+	<string>카운터 감소</string>
+	<key>9k8-L5-lSq.title</key>
+	<string>이미지</string>
+	<key>9lE-sW-NkR.title</key>
+	<string>폴더 싱크…</string>
+	<key>9pG-rx-dax.title</key>
+	<string>삭제</string>
+	<key>9tG-Te-CEV.title</key>
+	<string>슬라이드쇼</string>
+	<key>9wF-vo-1tW.title</key>
+	<string>콘트라스트와 밝기</string>
+	<key>ACe-cT-qRq.title</key>
+	<string>세션 가져오기…</string>
+	<key>AHw-Yv-ZV0.title</key>
+	<string>새 앨범...</string>
+	<key>APq-Ot-xfY.title</key>
+	<string>카운터 설정…</string>
+	<key>ARA-Qg-wH6.title</key>
+	<string>편집</string>
+	<key>AVP-cL-jr5.title</key>
+	<string>진행중인 트리거</string>
+	<key>AiG-bi-lBS.title</key>
+	<string>설정 증가...</string>
+	<key>Avm-Xr-hJI.title</key>
+	<string>오리지널...</string>
+	<key>B6A-Bd-wdt.title</key>
+	<string>레이어</string>
+	<key>BBe-mx-5MA.title</key>
+	<string>컬러 판독</string>
+	<key>BKI-Ak-E3C.title</key>
+	<string>크래시 오픈코어</string>
+	<key>BMq-UG-ndQ.title</key>
+	<string>출력 카운터</string>
+	<key>BPz-o1-8u8.title</key>
+	<string>최근 자료 열기</string>
+	<key>BlO-8u-bjW.title</key>
+	<string>툴 탭 선택</string>
+	<key>C8i-Ie-mV3.title</key>
+	<string>결함을 보고..</string>
+	<key>CTk-NV-A7b.title</key>
+	<string>라이센스...</string>
+	<key>Cbk-cE-Rnc.title</key>
+	<string>선택 지점 표시</string>
+	<key>Ce0-Be-8UJ.title</key>
+	<string>해제</string>
+	<key>Cyj-ce-0Gd.title</key>
+	<string>파일</string>
+	<key>DSv-Kq-hdb.title</key>
+	<string>업데이트 확인</string>
+	<key>Dbr-g2-CoE.title</key>
+	<string>서비스</string>
+	<key>DiO-W0-c4G.title</key>
+	<string>이전/후 모드</string>
+	<key>Dsw-hn-IZg.title</key>
+	<string>환경설정...</string>
+	<key>E5j-Qh-yw9.title</key>
+	<string>키보드 단축키 편집</string>
+	<key>EY1-4F-yTL.title</key>
+	<string>컬러 태그</string>
+	<key>Eb6-Sk-NMb.title</key>
+	<string>메타데이터 로드</string>
+	<key>Ej6-Xy-Scx.title</key>
+	<string>동일한 변형의 이미지 선택</string>
+	<key>Ez2-nJ-UxV.title</key>
+	<string>LCC 생성...</string>
+	<key>F65-Hg-uD7.title</key>
+	<string>설정 증가...</string>
+	<key>FIM-SV-caT.title</key>
+	<string>카운터 리셋</string>
+	<key>FTn-px-TXb.title</key>
+	<string>항상 비디오 파일 숨김</string>
+	<key>Fbl-im-0JF.title</key>
+	<string>변형 수준 올리기</string>
+	<key>Few-hi-dlj.title</key>
+	<string>다음</string>
+	<key>Fk8-fZ-Nge.title</key>
+	<string>오버레이</string>
+	<key>Ft0-2F-qcY.title</key>
+	<string>설정 증가...</string>
+	<key>FyO-gf-P7P.title</key>
+	<string>뷰어</string>
+	<key>Gea-NJ-sMI.title</key>
+	<string>XL</string>
+	<key>HgY-Ir-gjR.title</key>
+	<string>다른 항목 숨기기</string>
+	<key>I3p-9w-NiJ.title</key>
+	<string>이미지코어 슬라이더</string>
+	<key>I5C-mb-Ph9.title</key>
+	<string>뷰어</string>
+	<key>I8M-pI-mei.title</key>
+	<string>전체 필터</string>
+	<key>IEm-f0-wfu.title</key>
+	<string>툴</string>
+	<key>IID-Ve-jGb.title</key>
+	<string>라벨</string>
+	<key>IPe-NI-yoh.title</key>
+	<string>파일</string>
+	<key>IQ8-iC-ffv.title</key>
+	<string>자동 일시정지</string>
+	<key>Ibb-8a-gRZ.title</key>
+	<string>L</string>
+	<key>Ic4-HZ-M7K.title</key>
+	<string>다음 선택시....</string>
+	<key>Ik1-xy-Hdk.title</key>
+	<string>같은 컬러 태그</string>
+	<key>Ikz-mO-9ZA.title</key>
+	<string>LCC 적용</string>
+	<key>IqL-nF-pTb.title</key>
+	<string>마스크 표시 안함</string>
+	<key>Izf-b8-5gq.title</key>
+	<string>서비스</string>
+	<key>J2g-T4-9jM.title</key>
+	<string>자동 조정 구성</string>
+	<key>J6f-2w-feE.title</key>
+	<string>촬영 카운터</string>
+	<key>JO3-mT-am1.title</key>
+	<string>동일한 시퀀스 ID</string>
+	<key>JRI-NB-DJ3.title</key>
+	<string>처리 기록</string>
+	<key>JsD-gv-ZcN.title</key>
+	<string>등급</string>
+	<key>JzF-cB-jf5.title</key>
+	<string>프로그레스 바</string>
+	<key>K2L-UQ-r8u.title</key>
+	<string>크래시 오픈코어</string>
+	<key>K4L-nU-bL0.title</key>
+	<string>카운터 리셋</string>
+	<key>KZr-yz-eOe.title</key>
+	<string>최근 자료 열기</string>
+	<key>KkK-Dm-Fyt.title</key>
+	<string>썸네일 크기 감소</string>
+	<key>Kw9-6p-baP.title</key>
+	<string>줌아웃</string>
+	<key>Kx8-Sf-MtA.title</key>
+	<string>화이트 밸런스</string>
+	<key>L2W-qr-fDh.title</key>
+	<string>회전</string>
+	<key>L6s-MY-kNd.title</key>
+	<string>컬러 태그</string>
+	<key>LBI-uj-64k.title</key>
+	<string>새로운 스마트앨범...</string>
+	<key>LBc-ql-cwY.title</key>
+	<string>동일한 변형의 이미지 선택</string>
+	<key>LTF-ps-Dul.title</key>
+	<string>조정값 복사 및 적용</string>
+	<key>LbY-8O-xu0.title</key>
+	<string>툴 사용자 지정</string>
+	<key>LcB-eX-4qN.title</key>
+	<string>삭제</string>
+	<key>LeW-a9-a1n.title</key>
+	<string>보기</string>
+	<key>LpJ-ak-5G4.title</key>
+	<string>90° 오른쪽</string>
+	<key>MFE-ll-7eO.title</key>
+	<string>카탈로그 가져오기</string>
+	<key>MKh-xe-MEd.title</key>
+	<string>프로그레스 바</string>
+	<key>MOG-uN-KrB.ibShadowedToolTip</key>
+	<string>연결한 카메라를 사용하여 이미지 촬영</string>
+	<key>MOG-uN-KrB.title</key>
+	<string>촬영</string>
+	<key>Mb9-kH-qyp.title</key>
+	<string>연결 S/W</string>
+	<key>Mfd-my-DKN.title</key>
+	<string>이전/후</string>
+	<key>My6-4Y-UBl.title</key>
+	<string>모두 확장</string>
+	<key>N5o-dv-1Be.title</key>
+	<string>실행 취소</string>
+	<key>N9h-Al-5XE.title</key>
+	<string>휴지통으로 이동</string>
+	<key>Nhu-fQ-zjN.title</key>
+	<string>카탈로그 또는 세션 확인...</string>
+	<key>NyM-Zt-y88.title</key>
+	<string>필름 커브 편집기</string>
+	<key>O2C-D1-hn3.title</key>
+	<string>자동 숨기기 모드</string>
+	<key>O4t-ch-OFC.title</key>
+	<string>복사</string>
+	<key>O9F-Mo-6cG.title</key>
+	<string>Tips</string>
+	<key>OCP-rg-Tmg.title</key>
+	<string>메뉴</string>
+	<key>OQY-AD-asc.title</key>
+	<string>방향설정</string>
+	<key>OVh-i7-5mp.title</key>
+	<string>트리거 어서션</string>
+	<key>OqC-NS-Eok.title</key>
+	<string>바 샘플 02</string>
+	<key>PCm-vK-OGx.title</key>
+	<string>작업공간을 자동으로 리셋하지 않습니다.</string>
+	<key>PMu-nW-YC5.title</key>
+	<string>폴더 안으로 / 확장</string>
+	<key>PQW-J0-1bK.title</key>
+	<string>Crash CaptureCoreService</string>
+	<key>PRu-fp-fdO.title</key>
+	<string>선택</string>
+	<key>PX7-Iq-9N2.title</key>
+	<string>라이선스 동의 보기</string>
+	<key>Q9f-h8-bu5.title</key>
+	<string>선택</string>
+	<key>QHc-R7-m41.title</key>
+	<string>출력...</string>
+	<key>QSu-Ii-lqh.title</key>
+	<string>설정 증가...</string>
+	<key>Qhq-5B-fYE.title</key>
+	<string>회전</string>
+	<key>QjW-ua-tSX.title</key>
+	<string>Crash Capture One</string>
+	<key>Qkh-Pd-T00.title</key>
+	<string>모두 표시</string>
+	<key>Qu7-Iw-dyX.title</key>
+	<string>등급</string>
+	<key>Qx0-Bi-x6R.title</key>
+	<string>스크립트</string>
+	<key>R3f-rv-RWH.title</key>
+	<string>유동 툴 생성</string>
+	<key>RIv-U7-9vT.title</key>
+	<string>자동 조정 구성</string>
+	<key>RkY-nO-oYQ.title</key>
+	<string>편집 모드</string>
+	<key>RuA-0Y-GGt.title</key>
+	<string>마스크 삭제</string>
+	<key>S4K-SB-UBy.title</key>
+	<string>Capture One에 대하여</string>
+	<key>SGm-xv-97r.title</key>
+	<string>툴 탭 제거</string>
+	<key>SJc-VY-oqD.title</key>
+	<string>이미지 이름변경</string>
+	<key>SXk-bE-jzi.ibShadowedToolTip</key>
+	<string>세션 휴지통 비우기. 이미지가 영구적으로 삭제됩니다.</string>
+	<key>SXk-bE-jzi.title</key>
+	<string>휴지통 비우기</string>
+	<key>SiW-gP-wbL.title</key>
+	<string>선택 영역 반전</string>
+	<key>SlN-5G-v1Q.title</key>
+	<string>그리드 컬러</string>
+	<key>Ss4-ms-B6z.title</key>
+	<string>루마 범위...</string>
+	<key>TB3-MG-NqE.title</key>
+	<string>고급 검색...</string>
+	<key>TFk-vt-N7X.title</key>
+	<string>디버그</string>
+	<key>TWx-jo-Xie.title</key>
+	<string>맞춤법</string>
+	<key>TXq-Kk-7Ru.title</key>
+	<string>Capture One 종료</string>
+	<key>Tao-sN-xcm.title</key>
+	<string>Crash ImageCore</string>
+	<key>Tek-Pl-oY3.title</key>
+	<string>1차 변형만 선택</string>
+	<key>TfA-cx-Mvh.title</key>
+	<string>포커스 마스크</string>
+	<key>Tsz-Zr-wOo.title</key>
+	<string>마지막</string>
+	<key>Txa-r9-MeZ.title</key>
+	<string>새로운 복제 레이어 추가</string>
+	<key>U3J-Q4-APW.title</key>
+	<string>스크립트</string>
+	<key>U5C-ej-t0I.title</key>
+	<string>선택한 컬러 범위</string>
+	<key>UJa-BM-gkL.title</key>
+	<string>편집</string>
+	<key>UOb-cc-i4u.title</key>
+	<string>디스크에서 삭제...</string>
+	<key>UPZ-4r-LIP.title</key>
+	<string>자동 숨기기 모드</string>
+	<key>Umj-4D-Ft5.title</key>
+	<string>90° 왼쪽</string>
+	<key>Ums-2C-jGe.title</key>
+	<string>회전</string>
+	<key>VAN-jC-sVf.title</key>
+	<string>카운터 설정…</string>
+	<key>VIk-sI-Rak.title</key>
+	<string>스피너 샘플 01</string>
+	<key>VNo-j5-BoM.title</key>
+	<string>다음 컬렉션</string>
+	<key>VRZ-08-28a.title</key>
+	<string>컬러 태그</string>
+	<key>VYd-aa-ISY.title</key>
+	<string>온라인 사용자설명서</string>
+	<key>Vd2-sw-pUm.title</key>
+	<string>등급</string>
+	<key>W1O-Uk-8Al.title</key>
+	<string>비교 지우기</string>
+	<key>W8g-vz-Nkq.title</key>
+	<string>그리드</string>
+	<key>WI5-uh-qyi.title</key>
+	<string>조정값을 스타일로 저장...</string>
+	<key>WZj-vq-3hp.ibShadowedToolTip</key>
+	<string>세션은 단일 작업 또는 이벤트를 위해 제한된 수의 이미지를 작업하기 위한 빠르고 간단한 방법입니다. 디스크에 이미지 위치를 검색하거나 세션으로 이미지를 가져오기하여 이미지들을 편집할 수 있습니다.</string>
+	<key>WZj-vq-3hp.title</key>
+	<string>새로운 세션...</string>
+	<key>WtP-ch-1PG.title</key>
+	<string>Capture One</string>
+	<key>XE8-eP-hGS.title</key>
+	<string>키스톤</string>
+	<key>XEz-MA-wNM.title</key>
+	<string>카운터 설정…</string>
+	<key>XJN-4m-xYh.title</key>
+	<string>수직 가이드 추가</string>
+	<key>Xq1-cS-s6N.title</key>
+	<string>가이드 사용자정의</string>
+	<key>Xu6-Jy-27Q.title</key>
+	<string>처리/프린트/웹 갤러리/내보내기를 위한 덤프</string>
+	<key>Xve-bi-pm5.ibShadowedToolTip</key>
+	<string>변형 오른쪽 회전</string>
+	<key>Xve-bi-pm5.title</key>
+	<string>오른쪽 회전</string>
+	<key>Ya0-fP-PFT.title</key>
+	<string>그레이스케일 마스크 표시</string>
+	<key>Yhj-Cn-eCP.title</key>
+	<string>이전/후 모드</string>
+	<key>Yhl-QQ-SNi.title</key>
+	<string>노출 경고</string>
+	<key>YjW-6L-mGx.title</key>
+	<string>촬영 폴더로 설정</string>
+	<key>YvP-eg-VLO.title</key>
+	<string>브라우저 위치 전환</string>
+	<key>Yzh-ba-11T.title</key>
+	<string>내보내기 카운터</string>
+	<key>Z12-Ur-vG5.title</key>
+	<string>카메라</string>
+	<key>Z5p-mB-i3n.title</key>
+	<string>마스크 복사</string>
+	<key>ZEv-jN-yCz.title</key>
+	<string>슬라이더 뷰 분할</string>
+	<key>ZK1-Br-nPC.title</key>
+	<string>이미지 내보내기</string>
+	<key>ZSx-8D-9oe.title</key>
+	<string>레시피 교정</string>
+	<key>ZkQ-kr-rOT.title</key>
+	<string>마스크 래스터화</string>
+	<key>ZtV-H5-odX.title</key>
+	<string>비교로 설정</string>
+	<key>a5o-KL-LMv.title</key>
+	<string>활성화</string>
+	<key>a6a-6k-MaI.title</key>
+	<string>트리거 충돌…</string>
+	<key>aFc-UB-Ojr.title</key>
+	<string>새 그룹...</string>
+	<key>aWi-dq-WP7.title</key>
+	<string>보정값 복제</string>
+	<key>aeU-x2-HKG.title</key>
+	<string>선택항목 확장</string>
+	<key>aoS-PQ-Fke.title</key>
+	<string>다음</string>
+	<key>apZ-Xi-bTS.title</key>
+	<string>메뉴 지우기</string>
+	<key>bC2-8p-Sbj.title</key>
+	<string>맞춤법 검사</string>
+	<key>bQz-bN-0Pr.title</key>
+	<string>앨범 생성</string>
+	<key>bUF-hO-mho.title</key>
+	<string>하이 다이나믹레인지</string>
+	<key>bd0-6X-m18.title</key>
+	<string>등급</string>
+	<key>bdc-xp-MXX.title</key>
+	<string>선택 폴더로 이동</string>
+	<key>cIQ-0c-HMd.title</key>
+	<string>출력 폴더로 설정</string>
+	<key>cJ0-5a-BtU.title</key>
+	<string>항상 마스크 표시</string>
+	<key>cNu-MK-hYx.title</key>
+	<string>즉시</string>
+	<key>caw-2R-l90.title</key>
+	<string>덤프 IC_프로세싱 설정/IC_대상파일</string>
+	<key>cb9-dY-odx.title</key>
+	<string>성능 테스트</string>
+	<key>cjc-7e-hFl.title</key>
+	<string>선택 탭에서 툴 제거</string>
+	<key>ckf-EW-xkf.title</key>
+	<string>Finder에 표시</string>
+	<key>d0L-pY-VgO.title</key>
+	<string>성능 테스트</string>
+	<key>d50-fq-gSn.title</key>
+	<string>카운터 설정…</string>
+	<key>dAq-ug-Eha.title</key>
+	<string>새 촬영 자동 선택</string>
+	<key>dVS-br-Kwq.title</key>
+	<string>브라우저 사용자 지정</string>
+	<key>dVb-ZR-YFh.title</key>
+	<string>창</string>
+	<key>dk9-he-9dx.title</key>
+	<string>프리뷰 재생성</string>
+	<key>eAW-D0-ka1.title</key>
+	<string>힐 &amp; 복제 화살표 표시</string>
+	<key>emU-ls-KLQ.title</key>
+	<string>메뉴</string>
+	<key>eqn-m3-Cil.title</key>
+	<string>브라우저 툴바</string>
+	<key>exd-CD-8be.title</key>
+	<string>썸네일 크기 증가</string>
+	<key>fEO-V4-a9n.title</key>
+	<string>등급 없음</string>
+	<key>fQW-x2-JHm.title</key>
+	<string>상태 모드</string>
+	<key>fai-sG-oed.title</key>
+	<string>프로파일 검증</string>
+	<key>fgT-gu-xT9.title</key>
+	<string>새로운 채워진 레이어 조정 추가</string>
+	<key>fs8-sW-tR1.ibShadowedToolTip</key>
+	<string>변형 왼쪽 회전</string>
+	<key>fs8-sW-tR1.title</key>
+	<string>왼쪽 회전</string>
+	<key>fse-N2-CBu.title</key>
+	<string>항상 RAW 파일 숨김</string>
+	<key>fwA-3y-i2C.title</key>
+	<string>카운터 리셋</string>
+	<key>fzw-GX-3Oz.title</key>
+	<string>별 등급</string>
+	<key>ga9-IJ-ciS.title</key>
+	<string>노출</string>
+	<key>gac-ce-4hS.title</key>
+	<string>탐색 속도</string>
+	<key>gaw-q6-ZQt.title</key>
+	<string>항상 처리된 TIFF 파일 숨김</string>
+	<key>hIg-Rd-5ek.title</key>
+	<string>조정 적용</string>
+	<key>hKJ-lB-Wyx.title</key>
+	<string>툴바 사용자지정...</string>
+	<key>hNh-b3-9pp.title</key>
+	<string>정렬</string>
+	<key>hOL-XU-Zdy.title</key>
+	<string>잠금 관리...</string>
+	<key>hRi-QW-I0r.title</key>
+	<string>크래시 모델코어</string>
+	<key>hap-CP-2Kr.title</key>
+	<string>설정 증가...</string>
+	<key>hm3-R0-nnH.title</key>
+	<string>카탈로그 잠금/해제</string>
+	<key>hyx-xU-vkz.title</key>
+	<string>프로파일 검증</string>
+	<key>i53-f7-yoL.title</key>
+	<string>툴 위치 전환</string>
+	<key>i5p-Um-m9T.title</key>
+	<string>조정</string>
+	<key>iTf-JB-Jml.title</key>
+	<string>라이브 뷰</string>
+	<key>ij0-Ig-v5x.title</key>
+	<string>창 확대/축소</string>
+	<key>itC-UE-2gw.title</key>
+	<string>이전</string>
+	<key>ivw-bE-Tp8.ibShadowedToolTip</key>
+	<string>현재 카탈로그 백업</string>
+	<key>ivw-bE-Tp8.title</key>
+	<string>카탈로그 백업...</string>
+	<key>iz4-l5-u4d.title</key>
+	<string>처리 기록</string>
+	<key>j9C-bw-Eqf.title</key>
+	<string>모두 맨 앞으로 가져오기</string>
+	<key>jFB-IF-a18.title</key>
+	<string>첫번 째</string>
+	<key>jFU-cx-apQ.title</key>
+	<string>라벨</string>
+	<key>jTl-o5-QoF.title</key>
+	<string>이전 설정</string>
+	<key>jha-Dh-6bI.title</key>
+	<string>마스크 채우기</string>
+	<key>jlv-C4-OK4.title</key>
+	<string>웹 갤러리 내보내기</string>
+	<key>jmQ-Po-VKd.title</key>
+	<string>모두 선택</string>
+	<key>k11-QY-wHF.title</key>
+	<string>Crash ImageCore</string>
+	<key>kEw-1G-rHn.title</key>
+	<string>휴지통 폴더로 설정</string>
+	<key>kJo-XM-aj7.title</key>
+	<string>XS</string>
+	<key>kLD-Ih-bSU.title</key>
+	<string>프린트 프리뷰/뷰어를 위한 덤프</string>
+	<key>kVA-By-ceo.title</key>
+	<string>배경 컬러</string>
+	<key>kaS-cR-Itb.title</key>
+	<string>전체 보기</string>
+	<key>ks9-Py-p2q.title</key>
+	<string>컬러 태그</string>
+	<key>kzM-Qh-gJR.ibShadowedToolTip</key>
+	<string>템플릿으로 현재 문서 백업</string>
+	<key>kzM-Qh-gJR.title</key>
+	<string>템플릿으로 저장...</string>
+	<key>l6v-uQ-6vA.title</key>
+	<string>1차 변형 취소</string>
+	<key>lsR-Cd-YTB.title</key>
+	<string>새로운 힐 레이어 추가</string>
+	<key>lsz-dg-BvX.title</key>
+	<string>카탈로그 가져오기</string>
+	<key>lto-Al-Lic.title</key>
+	<string>창 닫기</string>
+	<key>m53-KV-wAJ.title</key>
+	<string>이미지</string>
+	<key>mGQ-hW-7fj.title</key>
+	<string>이미지이름 일괄 변경...</string>
+	<key>mGw-IN-30M.title</key>
+	<string>전체화면</string>
+	<key>mNh-zS-LXg.title</key>
+	<string>컬러 태그</string>
+	<key>mTR-t7-bfn.title</key>
+	<string>Capture One 숨기기</string>
+	<key>mU3-yj-odu.title</key>
+	<string>Capture One 카탈로그…</string>
+	<key>mWf-jA-GRT.title</key>
+	<string>등급</string>
+	<key>mb2-5a-je9.title</key>
+	<string>이름변경 카운터</string>
+	<key>mz6-FE-px4.title</key>
+	<string>새로운 컬렉션</string>
+	<key>n5l-Fl-Ng8.title</key>
+	<string>Resource Hub…</string>
+	<key>n5r-O7-blt.title</key>
+	<string>모두 축소</string>
+	<key>nE7-nm-cUN.title</key>
+	<string>라이브러리에 표시</string>
+	<key>nTn-id-iRz.title</key>
+	<string>새로운 프로젝트...</string>
+	<key>naw-rG-vWD.title</key>
+	<string>변형 선택</string>
+	<key>nbk-yq-Chp.title</key>
+	<string>뷰어 사용자 지정</string>
+	<key>ndC-o5-Nrj.title</key>
+	<string>컬러 태그</string>
+	<key>nry-zy-vLA.title</key>
+	<string>준비되었을 때</string>
+	<key>oHh-wm-VLQ.title</key>
+	<string>선택 탭에서 툴 인스펙터 제거</string>
+	<key>oLn-zi-kJP.title</key>
+	<string>페더 마스크...</string>
+	<key>oNa-cq-UaH.title</key>
+	<string>툴 탭 추가</string>
+	<key>oVF-Zi-Ly1.title</key>
+	<string>스타일</string>
+	<key>oaD-9h-WhZ.title</key>
+	<string>이미지 가져오기...</string>
+	<key>pay-HP-uXe.title</key>
+	<string>JPEG 파일을 항상 숨김</string>
+	<key>pos-6t-mez.title</key>
+	<string>해제</string>
+	<key>pqK-xL-L7m.title</key>
+	<string>작업공간</string>
+	<key>pw5-ef-Yde.title</key>
+	<string>스피너 샘플 02</string>
+	<key>qPD-iq-16K.title</key>
+	<string>마스크 반전</string>
+	<key>qfi-c8-Lj9.title</key>
+	<string>안 함</string>
+	<key>qzd-K0-SRD.title</key>
+	<string>EIP 패킹 해제</string>
+	<key>r0M-bo-Ctx.title</key>
+	<string>파일명 목록…</string>
+	<key>rIx-ZF-zzR.title</key>
+	<string>브라우저</string>
+	<key>rJ7-tj-Zjx.title</key>
+	<string>선택 탭에 대한 툴 추가</string>
+	<key>rKQ-8S-jJJ.title</key>
+	<string>다시 실행</string>
+	<key>rg8-xW-C7E.title</key>
+	<string>EIP로 패킹</string>
+	<key>rlO-p5-pah.title</key>
+	<string>창</string>
+	<key>rwS-sM-J09.title</key>
+	<string>이미지 찾기...</string>
+	<key>sAJ-PN-NNm.title</key>
+	<string>S</string>
+	<key>sNP-5H-3KI.title</key>
+	<string>Capture One 지원</string>
+	<key>sWb-mO-EDh.title</key>
+	<string>라벨</string>
+	<key>sZU-Ld-R58.title</key>
+	<string>수평 가이드 추가</string>
+	<key>sam-MH-Lvx.title</key>
+	<string>크기에 맞게</string>
+	<key>smy-v7-f4P.title</key>
+	<string>디버그</string>
+	<key>stE-xv-Kcp.title</key>
+	<string>입력할 때 자동으로 맞춤법 검사</string>
+	<key>t0Z-l1-Abr.title</key>
+	<string>Lab 판독</string>
+	<key>t64-BB-MkS.title</key>
+	<string>배경 컬러</string>
+	<key>tFf-SU-Is4.title</key>
+	<string>툴 탭</string>
+	<key>tPe-DZ-2kg.title</key>
+	<string>이미지 내보내기</string>
+	<key>tQv-C3-vCk.title</key>
+	<string>열기...</string>
+	<key>tRq-qe-j3c.title</key>
+	<string>작업공간</string>
+	<key>uIl-Sc-fHK.title</key>
+	<string>촬영 카운터</string>
+	<key>uMu-4A-XMk.title</key>
+	<string>맞춤법...</string>
+	<key>um6-7R-op7.title</key>
+	<string>카운터 가져오기</string>
+	<key>vKK-zV-QgI.title</key>
+	<string>이전</string>
+	<key>vN0-4W-ouU.title</key>
+	<string>가이드 사용자정의</string>
+	<key>vNl-rw-7XV.title</key>
+	<string>카메라</string>
+	<key>vPJ-Xt-IuB.title</key>
+	<string>연결 S/W</string>
+	<key>vXq-3w-y0D.title</key>
+	<string>가이드 컬러</string>
+	<key>vek-MX-hli.title</key>
+	<string>카운터 리셋</string>
+	<key>w0t-zA-XqW.title</key>
+	<string>여백 확인</string>
+	<key>w1y-hX-jq1.title</key>
+	<string>브라우저 사용자 지정</string>
+	<key>w49-QV-zqJ.title</key>
+	<string>새로운 빈 레이어 조정 추가</string>
+	<key>wBf-ws-A5Q.ibShadowedToolTip</key>
+	<string>카탈로그는 전체 이미지 라이브러리를 저장하고 구성하는 가장 좋은 장소입니다. 카탈로그의 이미지로 작업하려면 카탈로그에서 이미지를 가져와야합니다. 대부분의 사진가에게 권장됩니다.</string>
+	<key>wBf-ws-A5Q.title</key>
+	<string>새로운 카탈로그...</string>
+	<key>wFu-j6-T7B.title</key>
+	<string>핫 폴더 사용</string>
+	<key>wr6-Ak-7xy.title</key>
+	<string>바 샘플 01</string>
+	<key>wxi-Vv-EBx.title</key>
+	<string>트리거 어서션</string>
+	<key>wzo-cb-mif.title</key>
+	<string>게시</string>
+	<key>x0t-84-S7U.title</key>
+	<string>크롭 영역 그리기</string>
+	<key>xC8-Jz-x6n.title</key>
+	<string>정렬</string>
+	<key>xGv-Lk-p4S.title</key>
+	<string>테스트 모드</string>
+	<key>xLy-q0-0Cq.title</key>
+	<string>조정</string>
+	<key>xdM-fB-QmX.title</key>
+	<string>덤프 IC_프로세싱 설정/IC_대상파일</string>
+	<key>xiu-HR-Fv3.title</key>
+	<string>폴더 찾기</string>
+	<key>xj1-AI-B7a.title</key>
+	<string>멀티 뷰 모드</string>
+	<key>xoa-r4-m7R.title</key>
+	<string>붙여넣기</string>
+	<key>y8j-67-b0w.title</key>
+	<string>최소화</string>
+	<key>yJf-h4-0Nf.title</key>
+	<string>새 촬영 자동 선택</string>
+	<key>yLh-tq-tGA.title</key>
+	<string>전체 필터</string>
+	<key>zIN-U6-GWH.title</key>
+	<string>줌인</string>
+	<key>zd3-KN-4Md.ibShadowedToolTip</key>
+	<string>변형을 위한 조정값 리셋</string>
+	<key>zd3-KN-4Md.title</key>
+	<string>리셋</string>
+	<key>zdr-UD-UZn.title</key>
+	<string>그리기 경우에만 마스크 표시</string>
+	<key>zoC-BT-olu.ibShadowedToolTip</key>
+	<string>주요 변형을 풍경 또는 인물로 스냅 회전. 모든 선택 변형을 회전하려면 Shift 키를 누르십시오.</string>
+	<key>zoC-BT-olu.title</key>
+	<string>스냅 회전</string>
+	<key>zoo-YX-3kR.title</key>
+	<string>조정값 적용</string>
+</dict>
+</plist>

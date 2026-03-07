@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34f-cS-bqY.ibShadowedToolTip</key>
+	<string>Quanto mover verticalmente o corte</string>
+	<key>Cwn-Nw-XEd.title</key>
+	<string>Cancelat</string>
+	<key>DKa-L2-NCj.title</key>
+	<string>unidades</string>
+	<key>DVj-D0-1f7.ibShadowedToolTip</key>
+	<string>Quanto adicionar à largura do corte.</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Janela</string>
+	<key>Gl4-xb-vC0.title</key>
+	<string>Localização do Δ</string>
+	<key>NDM-fz-TAT.title</key>
+	<string>Modificar Recorte:</string>
+	<key>dcT-yz-pNO.title</key>
+	<string>Tamanho Δ</string>
+	<key>if2-pr-Wbv.ibShadowedToolTip</key>
+	<string>Quanto adicionar à altura do corte.</string>
+	<key>kEP-MA-1bN.title</key>
+	<string>x</string>
+	<key>kzK-gy-OX2.title</key>
+	<string>Modificar</string>
+	<key>ofT-lq-a57.ibShadowedToolTip</key>
+	<string>Quanto mover horizontalmente o corte</string>
+	<key>pBD-mP-Idc.ibShadowedToolTip</key>
+	<string>O corte existente deve ser fixado no local ao modificar o tamanho do corte.</string>
+	<key>wHz-kn-gIW.title</key>
+	<string>unidades</string>
+</dict>
+</plist>

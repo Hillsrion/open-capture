@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Afmeting maximale hoogte voor verschalen van definitieve afbeelding.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Vergroting</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Resolutie</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Afmeting maximale breedte voor verschalen van definitieve afbeelding.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Afstand</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Huidig</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Afstand</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Stoppen</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Starten</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Vergroting</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Afstand</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Vergroting</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Schaalgrootte van originele afbeelding in aangegeven mate aanpassen voor definitieve afbeelding.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Afmeting maximale hoogte voor verschalen van definitieve afbeelding.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Dichtbij</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Beelduitsnede</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Beelduitsnede</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Resolutie [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Resolutie</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Ver weg</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>De gebruikte methode voor aanpassen Klaarheid.</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Schaalgrootte van originele afbeelding in aangegeven mate aanpassen voor definitieve afbeelding.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Doel</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Beelduitsnede</string>
+</dict>
+</plist>

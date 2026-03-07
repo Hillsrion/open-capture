@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%@ %@ er nýjasta útgáfan sem er fáanleg þessa stundina.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%@ %@ er nýjasta útgáfan sem er fáanleg þessa stundina.
+(You are currently running version %@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>Útgafa %2$@ af %1$@ er nú fáanlegt en þú ert með %3$@. Viltu sækja hana núna?</string>
+	<key>%@ of %@</key>
+	<string>%@ af %@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Ný útgáfa af %@ er fáanleg!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Villa kom upp við að sækja uppfærsluupplýsingar. Vinsamlegast reynið síðar.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Villa kom upp við afþjöppun skráarsafns. Vinsamlegast reynið síðar.</string>
+	<key>Cancel</key>
+	<string>Hætta við</string>
+	<key>Downloading update…</key>
+	<string>Sækja nýja útgáfu…</string>
+	<key>Extracting update…</key>
+	<string>Afþjappa uppfærslu…</string>
+	<key>Install and Relaunch</key>
+	<string>Setja upp og ræsa aftur</string>
+	<key>Installing update…</key>
+	<string>Set inn uppfærslu…</string>
+	<key>OK</key>
+	<string>Í lagi</string>
+	<key>Ready to Install</key>
+	<string>Innsetning reiðubúin</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Viltu að forritið %1$@ athugi með uppfærslur þegar það er ræst? Ef ekki getur þú athugað handvirkt af %1$@-valblaðinu.</string>
+	<key>Update Error!</key>
+	<string>Villa við uppfærslu!</string>
+	<key>Updating %@</key>
+	<string>Uppfæri %@</string>
+	<key>You’re up to date!</key>
+	<string>Það er allt uppfært hjá þér!</string>
+</dict>
+</plist>

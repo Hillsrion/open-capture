@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>470.ibShadowedLabels[0]</key>
+	<string>RVB</string>
+	<key>470.ibShadowedLabels[1]</key>
+	<string>Rouge</string>
+	<key>470.ibShadowedLabels[2]</key>
+	<string>Vert</string>
+	<key>470.ibShadowedLabels[3]</key>
+	<string>Bleu</string>
+</dict>
+</plist>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>111.ibShadowedToolTip</key>
+	<string>Sie können Ihren Lizenzcode aus der Zwischenablage einfügen</string>
+	<key>112.ibShadowedToolTip</key>
+	<string>Sie können Ihren Lizenzcode aus der Zwischenablage einfügen</string>
+	<key>113.ibShadowedToolTip</key>
+	<string>Sie können Ihren Lizenzcode aus der Zwischenablage einfügen</string>
+	<key>127.ibShadowedToolTip</key>
+	<string>Was ist ein Lizenzcode?</string>
+	<key>134.ibShadowedToolTip</key>
+	<string>Mehr über Capture One-Profile</string>
+	<key>1348.title</key>
+	<string>Schließen</string>
+	<key>1349.title</key>
+	<string>Schaltfläche</string>
+	<key>1350.title</key>
+	<string>Hilfe</string>
+	<key>1356.title</key>
+	<string>Capture One aktivieren.</string>
+	<key>1357.title</key>
+	<string>Bitte füllen Sie die Felder aus.</string>
+	<key>1362.title</key>
+	<string>E-Mail:</string>
+	<key>1363.title</key>
+	<string>Vorname:</string>
+	<key>1364.title</key>
+	<string>Nachname:</string>
+	<key>1365.title</key>
+	<string>Land:</string>
+	<key>1366.title</key>
+	<string>Profil anfordern</string>
+	<key>1367.title</key>
+	<string>Kleine Systemschrift</string>
+	<key>1369.title</key>
+	<string>System Font Text
+2 lines</string>
+	<key>1371.title</key>
+	<string>Lizenzcode:</string>
+	<key>1376.title</key>
+	<string>(Lizenzcode)</string>
+	<key>1377.title</key>
+	<string>Einfügen</string>
+	<key>1378.title</key>
+	<string>Capture One aktivieren.</string>
+	<key>1379.title</key>
+	<string>Es wird ein neues Profil für Sie erstellt. Bitte überprüfen Sie die Angaben und erstellen Sie ein Passwort für Ihr neues Profil.</string>
+	<key>1380.title</key>
+	<string>E-Mail</string>
+	<key>1381.title</key>
+	<string>Vorname</string>
+	<key>1382.title</key>
+	<string>Nachname</string>
+	<key>1383.title</key>
+	<string>Land</string>
+	<key>1384.title</key>
+	<string>E-Mail:</string>
+	<key>1385.title</key>
+	<string>Vorname:</string>
+	<key>1386.title</key>
+	<string>Nachname:</string>
+	<key>1387.title</key>
+	<string>Land:</string>
+	<key>1388.placeholderString</key>
+	<string>Minimal 6 Zeichen</string>
+	<key>1389.placeholderString</key>
+	<string>Minimal 6 Zeichen</string>
+	<key>139.ibShadowedToolTip</key>
+	<string>Warum benötige ich ein Passwort?</string>
+	<key>1391.title</key>
+	<string>Bestätigen:</string>
+	<key>1392.title</key>
+	<string>Passwort:</string>
+	<key>1393.title</key>
+	<string>Danke für die Aktivierung!</string>
+	<key>1394.title</key>
+	<string>Diese Version von Capture One wurde nun aktiviert.</string>
+	<key>1395.title</key>
+	<string>Software-Lizenzvereinbarung anzeigen</string>
+	<key>1396.title</key>
+	<string>Capture One Lizenz</string>
+	<key>1397.title</key>
+	<string>Diese Version von Capture One wurde aktiviert.</string>
+	<key>1398.title</key>
+	<string>Lizenzcode:</string>
+	<key>1399.title</key>
+	<string>Registriert auf:</string>
+	<key>1400.title</key>
+	<string>Kostenlose Upgrades verbleibend:</string>
+	<key>1401.title</key>
+	<string>Aktivierungen verbleibend:</string>
+	<key>1402.title</key>
+	<string>-</string>
+	<key>1403.title</key>
+	<string>-</string>
+	<key>1404.title</key>
+	<string>Lizenzablauf</string>
+	<key>1406.title</key>
+	<string>(Lizenzinhaber)</string>
+	<key>1407.title</key>
+	<string>(Lizenzcode)</string>
+	<key>1408.title</key>
+	<string>Ja, ich möchte meine Lizenz auf diesem Computer deaktivieren.</string>
+	<key>1409.title</key>
+	<string>Capture One Deaktivieren.</string>
+	<key>1410.title</key>
+	<string>Capture One wird geschlossen, wenn Sie die Lizenz deaktivieren. Sie werden beim nächsten Öffnen von Capture One auf diesem Computer aufgefordert, einen Lizenzschlüssel erneut einzugeben.</string>
+	<key>1413.title</key>
+	<string>OK</string>
+	<key>1414.title</key>
+	<string>Abbrechen</string>
+	<key>1415.title</key>
+	<string>Passwort per E-Mail zusenden</string>
+	<key>1416.title</key>
+	<string>Profil-Passwort:</string>
+	<key>1418.title</key>
+	<string>Einfügen</string>
+	<key>1426.title</key>
+	<string>1 April 1976</string>
+	<key>1427.title</key>
+	<string>Text Cell</string>
+	<key>1428.title</key>
+	<string>Text Cell</string>
+	<key>1436.title</key>
+	<string>Upgrade dieser Lizenz nicht möglich</string>
+	<key>1443.title</key>
+	<string>Der angegebene Lizenzcode ist für diese Version von Capture One nicht gültig. 
+
+Um Capture One weiterhin zu verwenden, aktivieren Sie mit einem gültigen Schlüssel oder besuchen Sie den Capture One Online-Shop (öffnet Webbrowser) um eine gültige Lizenz zu erwerben.</string>
+	<key>1445.title</key>
+	<string>Online-Shop besuchen...</string>
+	<key>1446.title</key>
+	<string>OK</string>
+	<key>16.label</key>
+	<string>Aktivierung</string>
+	<key>18.label</key>
+	<string>Passwort</string>
+	<key>20.label</key>
+	<string>ThankYou</string>
+	<key>22.label</key>
+	<string>ActivationInfo</string>
+	<key>24.label</key>
+	<string>Deaktivierung</string>
+	<key>281.title</key>
+	<string>Passwort eingeben</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>Sie können Ihren Lizenzcode aus der Zwischenablage einfügen</string>
+	<key>471.ibShadowedDateFormat</key>
+	<string>t MMMM j</string>
+	<key>484.ibShadowedToolTip</key>
+	<string>Worum handelt es sich bei kostenlosen Aktualisierungen und Aktivierungen?</string>
+	<key>5.title</key>
+	<string>Lizenz</string>
+	<key>540.title</key>
+	<string>Neues Profil</string>
+	<key>546.title</key>
+	<string>Neues Passwort</string>
+	<key>559.title</key>
+	<string>Titel</string>
+	<key>565.title</key>
+	<string>Lizenz</string>
+	<key>570.title</key>
+	<string>Aktivierungsverlauf</string>
+	<key>6MP-Fl-l5N.label</key>
+	<string>Online Aktivierung</string>
+	<key>78.headerCell.title</key>
+	<string>Datum</string>
+	<key>786.label</key>
+	<string>EntryFields</string>
+	<key>787.label</key>
+	<string>DisplayField</string>
+	<key>79.headerCell.title</key>
+	<string>Computer-ID</string>
+	<key>80.headerCell.title</key>
+	<string>Aktivierungstyp</string>
+	<key>8b7-0m-Zvb.title</key>
+	<string>Der Aktivierungsschlüssel ist ungültig</string>
+	<key>AyA-j4-ehd.label</key>
+	<string>Manuelle Aktivierung</string>
+	<key>QT0-WX-eHB.title</key>
+	<string>(Hardware ID)</string>
+	<key>QgT-qS-Ycw.title</key>
+	<string>Der untenstehende Registrierungsschlüssel muss in das Online-Webformular eingegeben werden. Dieses finden Sie indem Sie sich mit Ihrem Profil auf der Webseite www.captureone.com einloggen.</string>
+	<key>V9T-1H-bn3.title</key>
+	<string>E-Mail bestätigen:</string>
+	<key>VC6-KA-aJr.title</key>
+	<string>Aktivierungsschlüssel:</string>
+	<key>dF5-sN-aMB.title</key>
+	<string>Geben Sie den auf der Website erstellten Aktivierungsschlüssel ein und drücken Sie die Schaltfläche "Aktivieren"</string>
+	<key>jaK-GD-gbq.title</key>
+	<string>ID:</string>
+	<key>wI3-Gb-PxD.title</key>
+	<string>Registrierungsschlüssel</string>
+</dict>
+</plist>

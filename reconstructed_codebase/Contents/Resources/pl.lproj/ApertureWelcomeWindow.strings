@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Importuj bibliotekę programu Aperture</string>
+	<key>14.title</key>
+	<string>Anuluj</string>
+	<key>28.title</key>
+	<string>Przy importowaniu biblioteki z programu Aperture do programu Capture One zostaną przeniesione następujące dane:</string>
+	<key>4.title</key>
+	<string>Nie pokazuj ponownie</string>
+	<key>51.title</key>
+	<string>Projekty, foldery, albumy
+Kadrowanie LUB prostowanie, obrót, odbicie
+Ekspozycja, jasność, światła i cienie, definicja, nasycenie, cz.-b.
+Metadane (IPTC, ocena, tag koloru, słowa kluczowe)</string>
+	<key>57.title</key>
+	<string>Dopasowanie koloru jest przybliżone.
+
+Jeśli chcesz uwzględnić inteligentne albumy, musisz przekonwertować je na zwykłe albumy przed importem.</string>
+	<key>8.title</key>
+	<string>Kontynuuj</string>
+</dict>
+</plist>

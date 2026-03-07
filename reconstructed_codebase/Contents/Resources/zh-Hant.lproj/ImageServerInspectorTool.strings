@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>123.title</key>
+	<string>圖像色標</string>
+	<key>125.title</key>
+	<string>調整圖像</string>
+	<key>131.title</key>
+	<string>拍攝圖像</string>
+	<key>136.title</key>
+	<string>權限</string>
+	<key>157.label</key>
+	<string>網頁</string>
+	<key>165.ibShadowedToolTip</key>
+	<string>發佈至網際網路</string>
+	<key>166.title</key>
+	<string>網頁瀏覽器</string>
+	<key>170.ibShadowedToolTip</key>
+	<string>發佈至網際網路</string>
+	<key>171.title</key>
+	<string>移動設備</string>
+	<key>203.title</key>
+	<string>圖像評級</string>
+	<key>212.title</key>
+	<string>權限</string>
+	<key>213.title</key>
+	<string>圖像評級</string>
+	<key>214.title</key>
+	<string>圖像色標</string>
+	<key>243.title</key>
+	<string>通訊埠號碼</string>
+	<key>254.title</key>
+	<string>&lt;本地 IP&gt;</string>
+	<key>27.title</key>
+	<string>密碼</string>
+	<key>291.title</key>
+	<string>&lt;本地 IP&gt;</string>
+	<key>306.title</key>
+	<string>本地 IP</string>
+	<key>308.title</key>
+	<string>本地 IP</string>
+	<key>43.title</key>
+	<string>伺服器名稱</string>
+	<key>53.label</key>
+	<string>基本</string>
+	<key>54.label</key>
+	<string>移動設備</string>
+	<key>58.ibShadowedLabels[0]</key>
+	<string>基本</string>
+	<key>58.ibShadowedLabels[1]</key>
+	<string>移動設備</string>
+	<key>58.ibShadowedLabels[2]</key>
+	<string>網頁</string>
+	<key>63.title</key>
+	<string>通訊埠號碼</string>
+	<key>EvH-sS-PFP.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>發佈至</string>
+	<key>Kmo-T0-VXt.title</key>
+	<string>移動設備與網頁瀏覽器</string>
+	<key>PyD-k4-gcm.title</key>
+	<string>移動設備</string>
+	<key>TJO-Fr-9Yv.title</key>
+	<string>網頁瀏覽器</string>
+	<key>lfN-1m-0dg.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>文件夹</string>
+	<key>nKc-nv-P4y.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>主題</string>
+</dict>
+</plist>

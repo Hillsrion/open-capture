@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Instellingen Diapresentatie</string>
+	<key>34.title</key>
+	<string>Vervagen</string>
+	<key>35.title</key>
+	<string>Verplaats naar binnen</string>
+	<key>36.title</key>
+	<string>Transitie</string>
+	<key>40.title</key>
+	<string>Schuiven</string>
+	<key>41.title</key>
+	<string>Onthullen</string>
+	<key>42.title</key>
+	<string>Overvloeien</string>
+	<key>43.title</key>
+	<string>Wijzig</string>
+	<key>44.title</key>
+	<string>Vegen</string>
+	<key>56.title</key>
+	<string>Duur dia</string>
+	<key>69.title</key>
+	<string>Lus</string>
+	<key>73.title</key>
+	<string>Standaardwaarden</string>
+	<key>90.title</key>
+	<string>Uit elkaar halen</string>
+	<key>91.title</key>
+	<string>Pagina omkrullen</string>
+	<key>92.title</key>
+	<string>Rimpel</string>
+</dict>
+</plist>

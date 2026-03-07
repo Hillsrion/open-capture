@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>11W-al-zCq.title</key>
+	<string>Waarschuw als Verplaats naar Prullenbak betrekking heeft op niet-geselecteerde varianten</string>
+	<key>18v-en-xAd.title</key>
+	<string>Waarschuw bij het toepassen van een Stijl met een ongeldige LCC</string>
+	<key>3nZ-CD-QYj.title</key>
+	<string>Waarschuw bij het herstellen van Basis Kleurcorrecties</string>
+	<key>482.title</key>
+	<string>Standaardwaarden</string>
+	<key>694.title</key>
+	<string>Waarschuw bij het verplaatsen van afbeeldingen en mappen in Catalogus</string>
+	<key>697.title</key>
+	<string>Afbeeldingen en mappen</string>
+	<key>701.title</key>
+	<string>Waarschuw bij verwijderen afbeeldingen van schijf</string>
+	<key>703.title</key>
+	<string>Waarschuw bij verplaatsen afbeeldingen naar de Sessie Prullenbak op andere schijf</string>
+	<key>707.title</key>
+	<string>Aanpassingen</string>
+	<key>708.title</key>
+	<string>Waarschuw bij herstellen van aanpassingen voor meerdere varianten</string>
+	<key>734.title</key>
+	<string>Uitvoer</string>
+	<key>789.title</key>
+	<string>Als Bewerk alle geselecteerde Varianten uit is en meerdere varianten zijn geselecteerd:</string>
+	<key>792.ibShadowedToolTip</key>
+	<string>Waarschuw bij verwerken van meerdere varianten als Bewerk alle geselecteerde Varianten uit is</string>
+	<key>793.title</key>
+	<string>Waarschuw bij verwerken</string>
+	<key>795.ibShadowedToolTip</key>
+	<string>Waarschuw bij afdrukken van meerdere varianten als Bewerk alle geselecteerde Varianten uit is</string>
+	<key>796.title</key>
+	<string>Waarschuw bij afdrukken</string>
+	<key>798.ibShadowedToolTip</key>
+	<string>Waarschuw bij aanmaken van web contactvel met meerdere varianten als Bewerk alle geselecteerde Varianten uit is</string>
+	<key>799.title</key>
+	<string>Waarschuw bij aanmaken van web contactvel</string>
+	<key>804.ibShadowedToolTip</key>
+	<string>Waarschuw bij aanmaken van web contactvel met meerdere varianten als Bewerk alle geselecteerde Varianten uit is</string>
+	<key>805.title</key>
+	<string>Waarschuw bij exporteren</string>
+	<key>811.title</key>
+	<string>Waarschuw bij herstellen handmatig sorteren</string>
+	<key>815.ibShadowedToolTip</key>
+	<string>Waarschuw bij wijzigen of verwijderen van toegepaste LCC.</string>
+	<key>816.title</key>
+	<string>Waarschuw bij wijzigen LCC</string>
+	<key>819.ibShadowedToolTip</key>
+	<string>Waarschuw bij aanmaken LCC met meerdere varianten als Bewerk alle geselecteerde Varianten uit is.</string>
+	<key>820.title</key>
+	<string>Waarschuw bij aanmaken LCC</string>
+	<key>822.ibShadowedToolTip</key>
+	<string>Waarschuw bij toepassen LCC op meerdere varianten als Bewerk alle geselecteerde Varianten uit is.</string>
+	<key>823.title</key>
+	<string>Waarschuw bij toepassen LCC</string>
+	<key>828.ibShadowedToolTip</key>
+	<string>Waarschuw bij wijzigen of verwijderen van toegepaste LCC.</string>
+	<key>829.title</key>
+	<string>Waarschuw bij opwaarderen van Engine</string>
+	<key>834.title</key>
+	<string>Waarschuw bij herstellen van aanpassingen op een aanpassingenlaag</string>
+	<key>846.ibShadowedToolTip</key>
+	<string>Waarschuw bij analyseren van kleurafwijking met meerdere varianten als Bewerk alle geselecteerde Varianten uit is</string>
+	<key>847.title</key>
+	<string>Waarschuw bij analyseren van kleurafwijking</string>
+	<key>YLZ-gd-vnA.title</key>
+	<string>Waarschuw bij het rasteren van een parametrisch masker</string>
+	<key>Yac-6R-euW.title</key>
+	<string>Waarschuw wanneer lagen worden toegepast op de variant waaruit ze zijn gekopieerd</string>
+	<key>Zwn-SQ-wPT.title</key>
+	<string>Waarschuw bij het toepassen van een Stijl met een ongeldige ICC</string>
+	<key>bEM-Ld-dkv.title</key>
+	<string>Waarschuwen bij het gedeeltelijk toepassen van een Stijl</string>
+	<key>dh5-MZ-PeJ.ibShadowedToolTip</key>
+	<string>Waarschuw bij toepassen LCC op meerdere varianten als “Bewerk alle geselecteerde Varianten” uit is</string>
+	<key>jGr-dp-dVs.title</key>
+	<string>Waarschuw bij het selecteren van LCC-aanmaakopties.</string>
+	<key>vL9-36-JKs.title</key>
+	<string>Waarschuw bij kopiëren niet-ondersteunde aanpassingen</string>
+</dict>
+</plist>

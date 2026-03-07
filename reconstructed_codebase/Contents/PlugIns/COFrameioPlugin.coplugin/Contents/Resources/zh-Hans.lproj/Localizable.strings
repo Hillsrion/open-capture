@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disconnect from Frame.io</key>
+	<string>与 Frame.io 断开连接</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com.</key>
+	<string>如需帮助，请前往 https://support.captureone.com Capture One 技术支持。</string>
+	<key>For assistance, please reach out to Capture One Support at https://support.captureone.com. Include the text string below in your support request:
+
+%@</key>
+	<string>如需帮助，请前往 https://support.captureone.com Capture One 技术支持。在支持咨询内容中包含以下文字：
+
+%@</string>
+	<key>Frame.io settings</key>
+	<string>Frame.io 设置</string>
+	<key>Free version limit reached</key>
+	<string>已达到免费版本限制</string>
+	<key>Not implemented</key>
+	<string>未实施</string>
+	<key>Preparing %i of %i assets for upload…</key>
+	<string>正在准备上传 %1$i 个图像资产（共 %2$i 个）…</string>
+	<key>Server Error</key>
+	<string>未知错误</string>
+	<key>Something went wrong, please try again.</key>
+	<string>出错了，请重试。</string>
+	<key>The free version of the Frame.io plugin does not allow publishing or importing that many files simultaneously. To upgrade please visit https://integrations.captureone.com/upgrade/</key>
+	<string>您正在使用 Frame.io 插件的免费版本，不可以同时发布或导入那么多文件。 如需升级，请访问 https://integrations.captureone.com/upgrade/</string>
+	<key>This method is not yet implemented.</key>
+	<string>该方法尚未实施。</string>
+	<key>Unknown Error</key>
+	<string>未知错误</string>
+	<key>Uploading %@ (%i of %i)…</key>
+	<string>正在上传%1$@ （%2$i / %3$i）…</string>
+	<key>Work with stakeholders, clients, and collaborators like never before with easy-to-use review and approval tools, lightning-fast unbreakable file transfers, and the fastest growing Camera to Cloud ecosystem in the market. For more details please read more details [here](https://frame.io/).</key>
+	<string>借助易于使用的审核与批准工具、不易中断的闪电般文件传输，以及市场上发展速度最快的相机到云端生态系统，以前所未有的方式与利益相关方、客户和协作者开展合作。 更多详情，请阅读[此处](https://frame.io/)。</string>
+</dict>
+</plist>

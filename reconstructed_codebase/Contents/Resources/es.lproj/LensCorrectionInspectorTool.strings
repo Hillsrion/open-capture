@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>Aberración cromática</string>
+	<key>1555.title</key>
+	<string>Ocultar áreas distorsionadas</string>
+	<key>1700.label</key>
+	<string>Ficha</string>
+	<key>1701.label</key>
+	<string>Ver</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>Lentes</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>Movimiento</string>
+	<key>1741.title</key>
+	<string>Aberración cromática</string>
+	<key>1742.title</key>
+	<string>Valor predeterminado</string>
+	<key>1743.title</key>
+	<string>Analizar</string>
+	<key>1745.title</key>
+	<string>Config. personalizada</string>
+	<key>1757.title</key>
+	<string>Distancia focal</string>
+	<key>1760.title</key>
+	<string>Apertura (f)</string>
+	<key>1823.title</key>
+	<string>Movimiento x</string>
+	<key>1832.title</key>
+	<string>Movimiento y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Perfil</string>
+	<key>893.title</key>
+	<string>Dirección</string>
+	<key>894.title</key>
+	<string>Desplazamiento</string>
+	<key>897.title</key>
+	<string>Dirección</string>
+	<key>898.title</key>
+	<string>Inclinación</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>disminución de luz</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Disminución de luz</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>Corrección de Difracción</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>disminución de nitidez</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Disminución de nitidez</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>distorsión</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Distorsión</string>
+</dict>
+</plist>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>170.title</key>
+	<string>배포 정보:</string>
+	<key>171.title</key>
+	<string>나중에</string>
+	<key>172.title</key>
+	<string>이 버전 건너뛰기</string>
+	<key>173.title</key>
+	<string>업데이트 설치</string>
+	<key>175.title</key>
+	<string>나중에 업데이트 자동으로 다운로드 및 설치</string>
+	<key>5.title</key>
+	<string>Software Update</string>
+</dict>
+</plist>

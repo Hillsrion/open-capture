@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! This is an important update; would you like to install it and relaunch %1$@ now?</key>
+	<string>O app %1$@ %2$@ foi baixado e está pronto para uso! Esta é uma atualização importante; deseja instalar e reabrir o app %1$@ agora?</string>
+	<key>%1$@ %2$@ has been downloaded and is ready to use! Would you like to install it and relaunch %1$@ now?</key>
+	<string>O app %1$@ %2$@ foi baixado e está pronto para uso! Deseja instalar e reabrir o app %1$@ agora?</string>
+	<key>%1$@ %2$@ is available but your macOS version is too new for this update. This update only supports up to macOS %3$@.</key>
+	<string>O app %1$@ %2$@ está disponível, mas a versão do macOS é nova demais para esta atualização, que oferece compatibilidade até o macOS %3$@.</string>
+	<key>%1$@ %2$@ is available but your macOS version is too old to install it. At least macOS %3$@ is required.</key>
+	<string>O app %1$@ %2$@ está disponível, mas a versão do macOS é antiga demais para instalá-lo. Você deve ter, no mínimo, o macOS %3$@.</string>
+	<key>%1$@ can’t be updated if it’s running from the location it was downloaded to.</key>
+	<string>O app %1$@ não pode ser atualizado se ele estiver aberto do local onde foi baixado.</string>
+	<key>%1$@ can’t be updated, because it was opened from a read-only or a temporary location.</key>
+	<string>O app %1$@ não pode ser atualizado porque foi aberto de um volume somente leitura ou local temporário.</string>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ é a versão mais recente disponível.</string>
+	<key>%@ %@ is now available—you have %@. This is an important update; would you like to download it now?</key>
+	<string>O app %1$@ %2$@ está disponível — sua versão é %3$@. Esta é uma atualização importante. Deseja baixá-la agora?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>O app %1$@ %2$@ está disponível — sua versão é %3$@. Deseja baixá-lo agora?</string>
+	<key>%@ %@ is now available—you have %@. Would you like to learn more about this update on the web?</key>
+	<string>O app %1$@ %2$@ está disponível — sua versão é %3$@. Deseja saber mais sobre esta atualização na web?</string>
+	<key>%@ downloaded</key>
+	<string>%@ baixados</string>
+	<key>%@ is now updated to version %@!</key>
+	<string>O app %@ foi atualizado para a versão %@!</string>
+	<key>%@ is now updated!</key>
+	<string>O app %@ foi atualizado!</string>
+	<key>%@ of %@</key>
+	<string>%1$@ de %2$@</string>
+	<key>A new version of %@ is available!</key>
+	<string>Uma nova versão do app %@ está disponível!</string>
+	<key>A new version of %@ is ready to install!</key>
+	<string>Uma nova versão do app %@ está pronta para ser instalada!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>Ocorreu um erro ao obter informações de atualização. Tente novamente mais tarde.</string>
+	<key>An error occurred while connecting to the installer. Please try again later.</key>
+	<string>Ocorreu um erro ao conectar-se ao instalador. Tente novamente mais tarde.</string>
+	<key>An error occurred while downloading the update. Please try again later.</key>
+	<string>Ocorreu um erro ao baixar a atualização. Tente novamente mais tarde.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>Ocorreu um erro ao extrair o arquivo comprimido. Tente novamente mais tarde.</string>
+	<key>An error occurred while launching the installer. Please try again later.</key>
+	<string>Ocorreu um erro ao abrir o instalador. Tente novamente mais tarde.</string>
+	<key>An error occurred while parsing the update feed.</key>
+	<string>Ocorreu um erro ao analisar o feed de atualização.</string>
+	<key>An error occurred while running the updater. Please try again later.</key>
+	<string>Ocorreu um erro ao abrir o atualizador. Tente novamente mais tarde.</string>
+	<key>An error occurred while starting the installer. Please try again later.</key>
+	<string>Ocorreu um erro ao iniciar o instalador. Tente novamente mais tarde.</string>
+	<key>An important update to %@ is ready to install</key>
+	<string>Uma atualização importante do app %@ está pronta para ser instalada</string>
+	<key>Cancel</key>
+	<string>Cancelar</string>
+	<key>Cancel Update</key>
+	<string>Cancelar Atualização</string>
+	<key>Checking for updates…</key>
+	<string>Buscando atualizações…</string>
+	<key>Downloading update…</key>
+	<string>Baixando atualização…</string>
+	<key>Extracting update…</key>
+	<string>Extraindo atualização…</string>
+	<key>Failed to resume installing update.</key>
+	<string>Falha ao retomar a instalação da atualização.</string>
+	<key>Install and Relaunch</key>
+	<string>Instalar e Reabrir</string>
+	<key>Install on Quit</key>
+	<string>Instalar ao Encerrar</string>
+	<key>Installing update…</key>
+	<string>Instalando atualização…</string>
+	<key>Learn More…</key>
+	<string>Saber Mais…</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Quit %1$@, move it into your Applications folder, relaunch it from there and try again.</key>
+	<string>Encerre o app %1$@, mova-o para a pasta Aplicativos, reabra-o e tente novamente.</string>
+	<key>Ready to Install</key>
+	<string>Pronto para Instalar</string>
+	<key>Should %1$@ automatically check for updates? You can always check for updates manually from the %1$@ menu.</key>
+	<string>Deseja que o app %1$@ busque atualizações automaticamente? Você também pode buscar atualizações manualmente no menu %1$@.</string>
+	<key>The update checker failed to start correctly. You should contact the app developer to report this issue and verify that you have the latest version.</key>
+	<string>Houve uma falha ao iniciar a busca de atualizações. Contate o desenvolvedor do app para comunicar esse problema e verifique se você tem a versão mais recente.</string>
+	<key>The update is improperly signed and could not be validated. Please try again later or contact the app developer.</key>
+	<string>A atualização foi assinada incorretamente e não pôde ser validada. Tente novamente mais tarde ou contate o desenvolvedor do app.</string>
+	<key>Unable to Check For Updates</key>
+	<string>Não Foi Possível Buscar Atualizações</string>
+	<key>Update Error!</key>
+	<string>Erro de atualização!</string>
+	<key>Update Installed</key>
+	<string>Atualização Instalada</string>
+	<key>Updating %@</key>
+	<string>Atualizando o app %@</string>
+	<key>Use Finder to copy %1$@ to the Applications folder, relaunch it from there, and try again.</key>
+	<string>Use o Finder para copiar o app %1$@ para a pasta Aplicativos, reabra-o e tente novamente.</string>
+	<key>Version History</key>
+	<string>Histórico de Versões</string>
+	<key>Your macOS version is too new</key>
+	<string>A versão do macOS é nova demais</string>
+	<key>Your macOS version is too old</key>
+	<string>A versão do macOS é antiga demais</string>
+	<key>You’re up to date!</key>
+	<string>O app está atualizado!</string>
+</dict>
+</plist>

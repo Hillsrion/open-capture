@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>242.title</key>
+	<string>Schaduwwaarschuwing inschakelen</string>
+	<key>246.title</key>
+	<string>Standaardwaarden</string>
+	<key>247.title</key>
+	<string>Belichtingswaarschuwing</string>
+	<key>248.title</key>
+	<string>Kies Doel Niveaus</string>
+	<key>253.title</key>
+	<string>Schaduwen:</string>
+	<key>254.title</key>
+	<string>Hooglichten:</string>
+	<key>255.title</key>
+	<string>Niveaus tool</string>
+	<key>AED-lq-Ig5.title</key>
+	<string>Hooglichten:</string>
+	<key>C7l-gM-xYV.title</key>
+	<string>Kanaalmodus geldt voor Automatisch Aanpassen en Schaduw- en Hooglichtkiezers</string>
+	<key>Ke0-eA-B1k.title</key>
+	<string>Drempels overschrijden Automatische Niveaus</string>
+	<key>Udv-uy-wiA.title</key>
+	<string>Kanalen Rood, Groen en Blauw</string>
+	<key>Uue-zV-dO9.title</key>
+	<string>Kanaalmodus:</string>
+	<key>UwU-3w-FFA.title</key>
+	<string>Schaduwen:</string>
+	<key>kym-LE-y4Z.title</key>
+	<string>RGB-kanaal</string>
+</dict>
+</plist>

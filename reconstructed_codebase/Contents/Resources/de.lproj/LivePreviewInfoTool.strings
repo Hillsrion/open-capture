@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>384.ibShadowedToolTip</key>
+	<string>Bilddrehung in Grad</string>
+	<key>385.title</key>
+	<string>Drehen</string>
+	<key>387.ibShadowedToolTip</key>
+	<string>Bilddrehung in Grad</string>
+	<key>388.title</key>
+	<string>--</string>
+	<key>390.ibShadowedToolTip</key>
+	<string>Bilddrehung in Grad</string>
+	<key>391.ibShadowedToolTip</key>
+	<string>Bildrate in Bildern pro Sekunde</string>
+	<key>392.title</key>
+	<string>--</string>
+	<key>393.title</key>
+	<string>Bildrate</string>
+	<key>397.ibShadowedToolTip</key>
+	<string>Bilddrehung in Grad</string>
+	<key>398.ibShadowedToolTip</key>
+	<string>Bilddrehung in Grad</string>
+	<key>399.title</key>
+	<string>Neigung</string>
+	<key>400.title</key>
+	<string>--</string>
+</dict>
+</plist>

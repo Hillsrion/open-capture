@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>257.ibExternalAccessibilityDescription</key>
+	<string>batchQueueTableView</string>
+	<key>261.label</key>
+	<string>Corrente</string>
+	<key>262.label</key>
+	<string>Cronologia</string>
+	<key>265.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryTableView</string>
+	<key>268.ibExternalAccessibilityDescription</key>
+	<string>batchQueueStopStartButton</string>
+	<key>268.ibShadowedToolTip</key>
+	<string>Interrompi la coda dei batch</string>
+	<key>273.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryReprocessButton</string>
+	<key>273.ibShadowedToolTip</key>
+	<string>Rielabora i lavori selezionati.</string>
+	<key>284.headerCell.title</key>
+	<string>Nome</string>
+	<key>285.headerCell.title</key>
+	<string>Nome</string>
+	<key>302.ibExternalAccessibilityDescription</key>
+	<string>batchQueueProgressBar</string>
+	<key>519.ibExternalAccessibilityDescription</key>
+	<string>batchQueueProgressText</string>
+	<key>646.ibExternalAccessibilityDescription</key>
+	<string>batchHistoryReprocessButton</string>
+	<key>646.ibShadowedToolTip</key>
+	<string>Cancella la cronologia dei lavori elaborati</string>
+	<key>815.ibShadowedLabels[0]</key>
+	<string>Coda</string>
+	<key>815.ibShadowedLabels[1]</key>
+	<string>Cronologia</string>
+	<key>816.title</key>
+	<string>Interrompi</string>
+	<key>818.title</key>
+	<string>1/n</string>
+	<key>819.title</key>
+	<string>Rielabora Selezionati</string>
+	<key>820.title</key>
+	<string>Cancella Cronologia</string>
+</dict>
+</plist>

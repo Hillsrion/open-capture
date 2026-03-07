@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Capture One Enhanced Image Package</key>
+	<string>Capture One Enhanced Image Package</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Capture One erfordert manchmal die indirekte Kontrolle über andere Anwendungen für Skripte, die Sie darin ausführen.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Capture One benötigt keinen Zugriff auf Ihren Kalender. Diese Warnung wird durch den Zugriff auf Ihren Bibliotheksordner verursacht.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Capture One benötigt keinen Zugriff auf Ihre Kontakte. Diese Warnung wird durch den Zugriff auf Ihren Bibliotheksordner verursacht.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Capture One benötigt keinen Zugriff auf Ihre Fotobibliothek. Diese Warnung wird durch den Zugriff auf Ihren Bibliotheksordner verursacht.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Capture One benötigt keinen Zugriff auf Ihre Erinnerungen. Diese Warnung wird durch den Zugriff auf Ihren Bibliotheksordner verursacht.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Capture One erfordert den Zugriff auf Wechselmedien, um die Tethering-Funktionalität zu unterstützen. Möglicherweise müssen Sie Capture One neu starten, damit diese Einstellung wirksam wird.</string>
+	<key>Phase One RAW image</key>
+	<string>Phase One RAW Bild</string>
+</dict>
+</plist>

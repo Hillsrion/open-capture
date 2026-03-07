@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>Przywróć</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>Lokalizacja kopii zapasowej:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>Spróbuj ponownie</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>Dalej</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>Przywróć katalog</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>Komórka tekstowa</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>Wystąpił błąd. Spróbuj ponownie.</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>Kopiowanie plików...</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>Nie znaleziono kopii zapasowych</string>
+	<key>W74-ST-qV9.title</key>
+	<string>ścieżka</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>Anuluj</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Pokaż w programie Finder</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>To spowoduje zastąpienie istniejącej bazy danych i nie może być cofnięte.
+Nie wymuszaj zakończenia programu i nie wyłączaj komputera podczas tej czynności.</string>
+	<key>dvV-is-gQP.title</key>
+	<string>Kopia zapasowa została pomyślnie przywrócona</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>błąd</string>
+	<key>osi-c2-YUn.title</key>
+	<string>Otwórz katalog</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>Anuluj</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>Nagłówek</string>
+	<key>ygv-37-SJC.title</key>
+	<string>Poprzednie</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>Nazwa katalogu</string>
+</dict>
+</plist>

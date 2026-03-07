@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>34.ibShadowedToolTip</key>
+	<string>エクスポート時に調整を含む</string>
+	<key>41.title</key>
+	<string>調整を含む</string>
+	<key>42.ibShadowedToolTip</key>
+	<string>エクスポート完了後に通知</string>
+	<key>43.title</key>
+	<string>完了後に通知</string>
+	<key>44.ibShadowedToolTip</key>
+	<string>セッションのお気に入りにエクスポート フォルダを追加</string>
+	<key>45.title</key>
+	<string>セッションのお気に入りにフォルダを追加</string>
+	<key>48.ibShadowedToolTip</key>
+	<string>エクスポートにムービーが含まれています</string>
+	<key>49.title</key>
+	<string>ムービーを含む</string>
+	<key>6Ot-LC-POj.ibShadowedToolTip</key>
+	<string>RAWをEIPに圧縮</string>
+	<key>7QU-HS-eh7.title</key>
+	<string>EIPに圧縮</string>
+</dict>
+</plist>

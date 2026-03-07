@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>4sr-v4-i8p.title</key>
+	<string>롤 필름 - 고정된 크기</string>
+	<key>4yo-cu-B4v.title</key>
+	<string>Bound Material - 고정된 크기</string>
+	<key>7yh-cw-jdP.title</key>
+	<string>내부 크롭에서 자동 레벨</string>
+	<key>8AF-6R-ogO.title</key>
+	<string>자동 크롭</string>
+	<key>9hS-yp-LOJ.title</key>
+	<string>크롭</string>
+	<key>AD7-0S-uNY.ibShadowedToolTip</key>
+	<string>새로운 이미지 촬영시 자동으로 오토크롭</string>
+	<key>EIr-Dy-73Z.title</key>
+	<string>상단 가장자리</string>
+	<key>HBn-Bj-WwI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>사전 통과</string>
+	<key>J4Q-sT-G5R.title</key>
+	<string>없음</string>
+	<key>OcE-Xy-utJ.ibShadowedToolTip</key>
+	<string>자동 크롭할 때 적용된 패딩 크기</string>
+	<key>PMH-AD-yfv.title</key>
+	<string>패딩</string>
+	<key>QKc-dp-BPh.title</key>
+	<string>하단 가장자리</string>
+	<key>QUA-nq-VEa.title</key>
+	<string>우측상단 가장자리</string>
+	<key>QfF-GH-pfo.title</key>
+	<string>개체 하단-배경 콘트라스트</string>
+	<key>Qz9-Ze-Bux.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>수직수평</string>
+	<key>R7X-2v-UzN.title</key>
+	<string>없음</string>
+	<key>TzQ-VR-TlO.title</key>
+	<string>Loose Material</string>
+	<key>Uiq-vE-uCn.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>방법</string>
+	<key>WaG-K3-5Ld.title</key>
+	<string>px</string>
+	<key>bHw-ic-N9M.title</key>
+	<string>평균</string>
+	<key>cMC-Ed-bpk.title</key>
+	<string>좌측 가장자리</string>
+	<key>dPe-9F-2eS.title</key>
+	<string>Bound Material</string>
+	<key>enf-Sq-Fqs.ibShadowedToolTip</key>
+	<string>자동 크롭할 때 적용된 패딩 크기</string>
+	<key>j1h-gN-xq9.title</key>
+	<string>Loose Material - 고정된 크기</string>
+	<key>jBi-Ve-vQd.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>최적화</string>
+	<key>k74-JJ-OGL.ibShadowedToolTip</key>
+	<string>자동 크롭할 때 적용된 패딩 크기</string>
+	<key>l5R-Hd-85G.title</key>
+	<string>없음</string>
+	<key>mvq-L6-rI7.title</key>
+	<string>우측 가장자리</string>
+	<key>pt0-XJ-zeL.title</key>
+	<string>촬영</string>
+	<key>tIR-qu-c2b.title</key>
+	<string>좌측하단 가장자리</string>
+	<key>tlr-gc-GZK.title</key>
+	<string>트리거</string>
+	<key>vjm-Fn-0IZ.title</key>
+	<string>좌측상단 가장자리</string>
+	<key>vts-H0-7RQ.title</key>
+	<string>개체 중간-배경 콘트라스트</string>
+	<key>wSc-kj-U5V.title</key>
+	<string>우측하단 가장자리</string>
+	<key>xF6-s0-mbU.ibShadowedToolTip</key>
+	<string>새로운 크롭을 생성시 자동으로 오토 크롭</string>
+	<key>yK2-gT-SoK.title</key>
+	<string>마스터 크롭 설정</string>
+	<key>zfu-c3-n97.title</key>
+	<string>개체 최하단-배경 콘트라스트</string>
+</dict>
+</plist>

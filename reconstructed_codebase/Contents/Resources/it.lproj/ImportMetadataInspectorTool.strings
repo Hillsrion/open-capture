@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.ibExternalAccessibilityDescription</key>
+	<string>importerMetadataCopyrightTitle</string>
+	<key>15.ibExternalAccessibilityDescription</key>
+	<string>importerMetadataCopyrightTextField</string>
+	<key>16.ibExternalAccessibilityDescription</key>
+	<string>importerMetadataCreatorTextField</string>
+	<key>57.title</key>
+	<string>Descrizione</string>
+	<key>58.title</key>
+	<string>Copyright</string>
+	<key>59.title</key>
+	<string>Mio Copyright</string>
+	<key>60.title</key>
+	<string>Mia Descrizione</string>
+	<key>7.ibExternalAccessibilityDescription</key>
+	<string>importerMetadataCreatorTitle</string>
+</dict>
+</plist>

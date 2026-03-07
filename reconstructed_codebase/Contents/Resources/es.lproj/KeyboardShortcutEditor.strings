@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Editar atajos de teclado</string>
+	<key>10.title</key>
+	<string>Area de texto</string>
+	<key>11.title</key>
+	<string>Area de texto</string>
+	<key>13.title</key>
+	<string>Cerrar</string>
+	<key>22.title</key>
+	<string>Error de etiqueta</string>
+	<key>51.title</key>
+	<string>Window</string>
+	<key>59.title</key>
+	<string>Aceptar</string>
+	<key>60.title</key>
+	<string>Cancelar</string>
+	<key>61.title</key>
+	<string>Introduzca un nombre para el grupo de atajos de teclado:</string>
+	<key>62.title</key>
+	<string>Error (ajuste programatically)</string>
+	<key>75.title</key>
+	<string>Ayuda</string>
+	<key>8.headerCell.title</key>
+	<string>Comando</string>
+	<key>9.headerCell.title</key>
+	<string>Llave</string>
+	<key>Oyv-yk-Lsw.title</key>
+	<string>Etiqueta</string>
+	<key>nvZ-BF-hp3.title</key>
+	<string>Comando</string>
+	<key>zAq-68-rPj.title</key>
+	<string>Llave</string>
+</dict>
+</plist>

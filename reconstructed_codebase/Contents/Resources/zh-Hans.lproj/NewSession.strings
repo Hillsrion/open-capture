@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>新建会话</string>
+	<key>100.title</key>
+	<string>已选子文件夹：</string>
+	<key>104.title</key>
+	<string>回收箱子文件夹：</string>
+	<key>147.title</key>
+	<string>在新视窗中打开</string>
+	<key>151.title</key>
+	<string>拍摄名称：</string>
+	<key>167.title</key>
+	<string>...</string>
+	<key>39.ibExternalAccessibilityDescription</key>
+	<string>processRecipeScaleMethodPopup</string>
+	<key>46.title</key>
+	<string>模板：</string>
+	<key>47.title</key>
+	<string>位置：</string>
+	<key>48.title</key>
+	<string>名称：</string>
+	<key>51.title</key>
+	<string>OtherViews</string>
+	<key>52.title</key>
+	<string>????</string>
+	<key>54.title</key>
+	<string>取消</string>
+	<key>55.title</key>
+	<string>好</string>
+	<key>91.title</key>
+	<string>拍摄子文件夹：</string>
+	<key>96.title</key>
+	<string>输出子文件夹：</string>
+</dict>
+</plist>

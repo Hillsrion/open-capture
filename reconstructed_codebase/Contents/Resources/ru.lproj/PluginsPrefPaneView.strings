@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1Yr-RV-0u5.title</key>
+	<string>Настройки плагина не могут быть восстановлены</string>
+	<key>2K0-Lo-jkW.placeholderString</key>
+	<string>Плагин отключен</string>
+	<key>6oJ-Zo-5RH.title</key>
+	<string>Box</string>
+	<key>AQe-BF-01j.title</key>
+	<string>Больше плагинов</string>
+	<key>Caa-Gd-7FD.title</key>
+	<string>Данный плагин нельзя отключить</string>
+	<key>ULK-kh-QlX.placeholderString</key>
+	<string>Не выбран плагин</string>
+	<key>Yel-ev-2hj.placeholderString</key>
+	<string>Данный плагин не имеет параметров настройки</string>
+	<key>afd-fn-Nwa.title</key>
+	<string>Текстовая ячейка</string>
+	<key>gwp-l7-MK4.title</key>
+	<string>Повторить</string>
+	<key>igc-ub-fRc.placeholderString</key>
+	<string>Название плагина</string>
+	<key>nSU-Y8-Mzj.title</key>
+	<string>Включено</string>
+	<key>w0j-dk-XuD.placeholderString</key>
+	<string>Функции</string>
+</dict>
+</plist>

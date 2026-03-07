@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1s6-DA-AtS.ibExternalAccessibilityDescription</key>
+	<string>シャドウ</string>
+	<key>1s6-DA-AtS.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>シャドウ</string>
+	<key>MUs-ga-mtQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ブラック</string>
+	<key>QUi-IQ-WRI.ibExternalAccessibilityDescription</key>
+	<string>ハイライト</string>
+	<key>QUi-IQ-WRI.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ハイライト</string>
+	<key>XJk-jj-dE3.ibExternalAccessibilityDescription</key>
+	<string>ホワイト</string>
+	<key>XJk-jj-dE3.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ホワイト</string>
+</dict>
+</plist>

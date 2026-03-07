@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>5jl-ym-Pew.ibShadowedToolTip</key>
+	<string>Altezza massima per cambiare le dimensioni mantenendo in scala l’mmagine finale.</string>
+	<key>5mM-aF-NZf.label</key>
+	<string>Ingrandimento</string>
+	<key>8a4-ra-ryD.title</key>
+	<string>AF</string>
+	<key>8gB-9c-rck.title</key>
+	<string>Risoluzione</string>
+	<key>941-UD-yO9.ibShadowedToolTip</key>
+	<string>Ampiezza massima per cambiare le dimensioni mantenendo in scala l’mmagine finale.</string>
+	<key>Dlg-hW-8rc.label</key>
+	<string>Distanza</string>
+	<key>Luo-Rg-sJR.title</key>
+	<string>Corrente</string>
+	<key>Rse-mY-54W.title</key>
+	<string>Distanza</string>
+	<key>SAA-iC-fyC.alternateTitle</key>
+	<string>Interrompi</string>
+	<key>SAA-iC-fyC.title</key>
+	<string>Avvia</string>
+	<key>Sjt-vZ-Tda.title</key>
+	<string>Ingrandimento</string>
+	<key>YWt-SJ-6q2.title</key>
+	<string>Distanza</string>
+	<key>ZBV-is-bLr.title</key>
+	<string>Ingrandimento</string>
+	<key>aon-fi-Fse.ibShadowedToolTip</key>
+	<string>Scala l'immagine originale in base alla percentuale indicata per ottenere l'immagine finale.</string>
+	<key>cQW-7w-5ZW.title</key>
+	<string>x</string>
+	<key>cjH-bT-56C.ibShadowedToolTip</key>
+	<string>Altezza massima per cambiare le dimensioni mantenendo in scala l’mmagine finale.</string>
+	<key>d6i-Mj-beK.title</key>
+	<string>Vicino</string>
+	<key>kVH-7e-JeU.label</key>
+	<string>Campo Visivo</string>
+	<key>o74-F8-nGn.title</key>
+	<string>Campo Visivo</string>
+	<key>p7U-3T-iRc.title</key>
+	<string>Risoluzione [PPI]</string>
+	<key>tjp-SD-bJh.label</key>
+	<string>Risoluzione</string>
+	<key>vDf-Yj-l2z.title</key>
+	<string>Distante</string>
+	<key>vFT-Tb-S1V.ibShadowedToolTip</key>
+	<string>Metodo usato per le regolazioni di chiarezza</string>
+	<key>vhu-uP-VNl.ibShadowedToolTip</key>
+	<string>Scala l'immagine originale in base alla percentuale indicata per ottenere l'immagine finale.</string>
+	<key>x1j-3c-mQV.title</key>
+	<string>Target</string>
+	<key>xXJ-BO-AAU.title</key>
+	<string>Campo Visivo</string>
+</dict>
+</plist>

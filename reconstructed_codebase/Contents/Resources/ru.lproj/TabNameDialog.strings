@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Новая пользовательская панель инструментов</string>
+	<key>10.title</key>
+	<string>Отмена</string>
+	<key>19.title</key>
+	<string>Введите имя панели:</string>
+	<key>26.title</key>
+	<string>OtherViews</string>
+	<key>27.title</key>
+	<string>Элемент 1</string>
+	<key>28.title</key>
+	<string>Элемент 2</string>
+	<key>29.title</key>
+	<string>Элемент 3</string>
+	<key>33.title</key>
+	<string>Значок:</string>
+	<key>8.title</key>
+	<string>Добавить панель</string>
+</dict>
+</plist>

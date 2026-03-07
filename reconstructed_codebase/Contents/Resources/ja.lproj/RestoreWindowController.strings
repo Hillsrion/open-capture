@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>399-rU-8DF.title</key>
+	<string>復元</string>
+	<key>5Sn-Gl-tkt.title</key>
+	<string>バックアップ先:</string>
+	<key>67h-cn-iXH.title</key>
+	<string>再試行</string>
+	<key>6fj-4u-gLd.title</key>
+	<string>次へ</string>
+	<key>F0z-JX-Cv5.title</key>
+	<string>カタログを復元</string>
+	<key>FEk-Wp-ega.title</key>
+	<string>テキスト セル</string>
+	<key>KYX-QD-GFy.title</key>
+	<string>エラーが発生しました。もう一度試しますか?</string>
+	<key>PX3-ag-0K1.title</key>
+	<string>ファイル コピー中…</string>
+	<key>QwN-ZJ-CGJ.title</key>
+	<string>バックアップが見つかりません</string>
+	<key>W74-ST-qV9.title</key>
+	<string>パス</string>
+	<key>Z9t-j4-5sK.title</key>
+	<string>キャンセル</string>
+	<key>cpR-bv-7gf.title</key>
+	<string>Finderに表示</string>
+	<key>cyb-S5-xWA.title</key>
+	<string>現在のデータベースが置き換えられ、元に戻すことができません。
+復元中に強制終了やコンピュータの電源を切らないでください。</string>
+	<key>dvV-is-gQP.title</key>
+	<string>バックアップが正常に復元されました</string>
+	<key>hHN-ZC-38j.title</key>
+	<string>エラー</string>
+	<key>osi-c2-YUn.title</key>
+	<string>カタログを開く</string>
+	<key>qoc-Kq-LpV.title</key>
+	<string>キャンセル</string>
+	<key>sWD-FV-PK1.title</key>
+	<string>見出し</string>
+	<key>ygv-37-SJC.title</key>
+	<string>前へ</string>
+	<key>ysv-Ng-w2A.title</key>
+	<string>カタログ名</string>
+</dict>
+</plist>

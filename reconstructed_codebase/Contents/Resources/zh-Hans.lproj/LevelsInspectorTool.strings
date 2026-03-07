@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>289.ibExternalAccessibilityDescription</key>
+	<string>levelsTargetShadowField</string>
+	<key>293.ibExternalAccessibilityDescription</key>
+	<string>levelsShadowField</string>
+	<key>297.ibExternalAccessibilityDescription</key>
+	<string>levelsMidtoneField</string>
+	<key>338.ibExternalAccessibilityDescription</key>
+	<string>levelsTargetHighlightField</string>
+	<key>342.ibExternalAccessibilityDescription</key>
+	<string>levelsHighlightField</string>
+	<key>428.placeholderString</key>
+	<string>0</string>
+	<key>470.ibShadowedLabels[0]</key>
+	<string>RGB</string>
+	<key>470.ibShadowedLabels[1]</key>
+	<string>红色</string>
+	<key>470.ibShadowedLabels[2]</key>
+	<string>绿色</string>
+	<key>470.ibShadowedLabels[3]</key>
+	<string>蓝色</string>
+</dict>
+</plist>

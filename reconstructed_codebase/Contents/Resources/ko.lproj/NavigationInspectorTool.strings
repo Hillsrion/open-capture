@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>146.title</key>
+	<string>메뉴</string>
+	<key>148.title</key>
+	<string>뷰어 크기에 맞게</string>
+	<key>149.title</key>
+	<string>뷰어 100% 확대/축소</string>
+	<key>150.title</key>
+	<string>뷰어 200% 확대/축소</string>
+	<key>151.title</key>
+	<string>뷰어 400% 확대/축소</string>
+</dict>
+</plist>

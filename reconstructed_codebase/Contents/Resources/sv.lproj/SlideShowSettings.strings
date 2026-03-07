@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1.title</key>
+	<string>Bildspelinställningar</string>
+	<key>33.title</key>
+	<string>OtherViews</string>
+	<key>34.title</key>
+	<string>Tona</string>
+	<key>35.title</key>
+	<string>Flytta in</string>
+	<key>36.title</key>
+	<string>Övergång</string>
+	<key>40.title</key>
+	<string>Tryck</string>
+	<key>41.title</key>
+	<string>Uppenbara</string>
+	<key>42.title</key>
+	<string>Tona bort</string>
+	<key>43.title</key>
+	<string>Mod</string>
+	<key>44.title</key>
+	<string>Slå över</string>
+	<key>56.title</key>
+	<string>Bildrutans varaktighet</string>
+	<key>59.ibExternalAccessibilityDescription</key>
+	<string>kelvinSlider</string>
+	<key>69.title</key>
+	<string>Loop</string>
+	<key>73.title</key>
+	<string>Standard</string>
+	<key>90.title</key>
+	<string>Lös upp</string>
+	<key>91.title</key>
+	<string>Bläddra</string>
+	<key>92.title</key>
+	<string>Krusa</string>
+</dict>
+</plist>

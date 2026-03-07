@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10.title</key>
+	<string>Umbral:</string>
+	<key>14.title</key>
+	<string>Máscara de Enfoque</string>
+	<key>17.title</key>
+	<string>Color:</string>
+	<key>30.title</key>
+	<string>Opacidad:</string>
+	<key>6.title</key>
+	<string>Valores predeterminados</string>
+</dict>
+</plist>

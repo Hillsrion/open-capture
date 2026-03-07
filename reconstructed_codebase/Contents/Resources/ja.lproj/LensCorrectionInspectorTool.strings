@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>1062.title</key>
+	<string>色収差</string>
+	<key>1555.title</key>
+	<string>ディストーション エリアを隠す</string>
+	<key>1700.label</key>
+	<string>タブ</string>
+	<key>1701.label</key>
+	<string>表示</string>
+	<key>1705.ibShadowedLabels[0]</key>
+	<string>レンズ</string>
+	<key>1705.ibShadowedLabels[1]</key>
+	<string>アオリ</string>
+	<key>1741.title</key>
+	<string>色収差</string>
+	<key>1742.title</key>
+	<string>デフォルト</string>
+	<key>1743.title</key>
+	<string>解析</string>
+	<key>1745.title</key>
+	<string>カスタム</string>
+	<key>1757.title</key>
+	<string>焦点距離</string>
+	<key>1760.title</key>
+	<string>絞り(f)</string>
+	<key>1823.title</key>
+	<string>シフト  x</string>
+	<key>1832.title</key>
+	<string>シフト  y</string>
+	<key>6P6-Mu-jHQ.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>プロファイル</string>
+	<key>893.title</key>
+	<string>方向</string>
+	<key>894.title</key>
+	<string>シフト</string>
+	<key>897.title</key>
+	<string>方向</string>
+	<key>898.title</key>
+	<string>傾斜</string>
+	<key>ax9-dq-KjT.ibExternalAccessibilityDescription</key>
+	<string>光量低下</string>
+	<key>ax9-dq-KjT.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>光量低下</string>
+	<key>dsa-Sr-DkR.title</key>
+	<string>回折補正</string>
+	<key>eHa-vS-H7f.ibExternalAccessibilityDescription</key>
+	<string>シャープネス低下</string>
+	<key>eHa-vS-H7f.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>鮮明度</string>
+	<key>uGw-q7-BaR.ibExternalAccessibilityDescription</key>
+	<string>ディストーション</string>
+	<key>uGw-q7-BaR.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>ディストーション</string>
+</dict>
+</plist>

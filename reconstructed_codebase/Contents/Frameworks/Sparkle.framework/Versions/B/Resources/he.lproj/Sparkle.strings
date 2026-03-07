@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>%@ %@ is currently the newest version available.</key>
+	<string>%1$@ %2$@ היא הגרסה האחונה הזמינה.</string>
+	<key>%@ %@ is currently the newest version available.
+(You are currently running version %@.)</key>
+	<string>%1$@ %2$@ היא הגרסה האחונה הזמינה.
+(You are currently running version %3$@.)</string>
+	<key>%@ %@ is now available—you have %@. Would you like to download it now?</key>
+	<string>%1$@ %2$@ זמין כעת (לך יש %3$@). ברצונך להוריד כעת?</string>
+	<key>A new version of %@ is available!</key>
+	<string>גרסה חדשה של %@ זמינה!</string>
+	<key>An error occurred in retrieving update information. Please try again later.</key>
+	<string>שגיאה בקבלת מידע על עדכונים. אנא נסה שנית במועד מאוחר יותר.</string>
+	<key>An error occurred while extracting the archive. Please try again later.</key>
+	<string>שגיאה בפתיחת הקובת המקווץ. אנא נסה שנית במועד מאוחר יותר.</string>
+	<key>Cancel</key>
+	<string>ביטול</string>
+	<key>Cancel Update</key>
+	<string>בטל עדכון</string>
+	<key>Downloading update…</key>
+	<string>מוריד עדכון…</string>
+	<key>Extracting update…</key>
+	<string>פותח עדכון…</string>
+	<key>Install and Relaunch</key>
+	<string>התקן ואתחל</string>
+	<key>Install on Quit</key>
+	<string>אתחל מאוחר יותר</string>
+	<key>Installing update…</key>
+	<string>מתקין עידכון…</string>
+	<key>OK</key>
+	<string>אישור</string>
+	<key>Ready to Install</key>
+	<string>מוכן להתקנה!</string>
+	<key>Update Error!</key>
+	<string>שגיאה בעדכון!</string>
+	<key>Updating %@</key>
+	<string>מעדכן %@</string>
+	<key>You’re up to date!</key>
+	<string>התכנה עדכנית!</string>
+</dict>
+</plist>

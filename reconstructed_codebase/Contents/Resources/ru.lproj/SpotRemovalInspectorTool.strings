@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>106.ibShadowedToolTip</key>
+	<string>Тип пятна</string>
+	<key>109.title</key>
+	<string>Пятно</string>
+	<key>111.title</key>
+	<string>Пыль</string>
+	<key>36.ibShadowedToolTip</key>
+	<string>Удалить выделенное пятно</string>
+	<key>45.ibShadowedToolTip</key>
+	<string>Выделенное пятно</string>
+	<key>47.title</key>
+	<string>Пятно</string>
+	<key>50.title</key>
+	<string>1 из 1</string>
+	<key>75.ibShadowedToolTip</key>
+	<string>Предыдущее пятно</string>
+	<key>77.ibShadowedToolTip</key>
+	<string>Следующее пятно</string>
+	<key>84.title</key>
+	<string>Тип</string>
+	<key>95.ibShadowedToolTip</key>
+	<string>Удаление пятен</string>
+	<key>a19-rB-Box.ibExternalAccessibilityDescription</key>
+	<string>кельвин</string>
+	<key>a19-rB-Box.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]</key>
+	<string>Радиус</string>
+</dict>
+</plist>
