@@ -37,11 +37,47 @@ public class MetadataSynchronizer {
     }
     
     /// Reconstructed logic for synchronizing metadata to XMP.
-    public func syncToSidecar(imageUUID: String, xmpPath: String) {
+    public func syncToSidecar(imageUUID: String, xmpPath: String) throws {
         // Logic recovery:
-        // 1. Fetch metadata from ZVARIANTMETADATA for the variant
-        // 2. Format as XMP XML
-        // 3. Write to file at xmpPath
-        // 4. Update ZXMPMETADATAMODIFICATIONDATE in ZIMAGE
+        // 1. Fetch metadata from ZMETADATA for the image
+        let query = "SELECT ZCREATOR, ZCOPYRIGHT, ZDESCRIPTION, ZKEYWORDS FROM ZMETADATA WHERE ZIMAGE = (SELECT Z_PK FROM ZIMAGE WHERE ZIMAGEUUID = '\(imageUUID)');"
+        var statement: OpaquePointer?
+        
+        guard let db = db else { return }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            if sqlite3_step(statement) == SQLITE_ROW {
+                let creator = String(cString: sqlite3_column_text(statement, 0))
+                let copyright = String(cString: sqlite3_column_text(statement, 1))
+                let description = String(cString: sqlite3_column_text(statement, 2))
+                let keywords = String(cString: sqlite3_column_text(statement, 3)).components(separatedBy: ",")
+                
+                // 2. Generate XMP
+                let xmpString = XMPGenerator.generateXMP(
+                    rating: 0, // Should fetch from Variant
+                    colorTag: "None", 
+                    creator: creator,
+                    copyright: copyright,
+                    description: description,
+                    keywords: keywords
+                )
+                
+                try xmpString.write(to: URL(fileURLWithPath: xmpPath), atomically: true, encoding: .utf8)
+                print("[MetadataSync] Syncing metadata for \(imageUUID) to \(xmpPath)")
+                
+                // 3. Update modification date
+                let now = NSDate().timeIntervalSince1970
+                let updateQuery = "UPDATE ZIMAGE SET ZXMPMETADATAMODIFICATIONDATE = \(now) WHERE ZIMAGEUUID = '\(imageUUID)';"
+                try DataCoreManager.shared.execute(query: updateQuery)
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+    
+    /// Reconstructed logic for reading metadata from an XMP sidecar.
+    public func readFromSidecar(xmpPath: String) throws -> [String: Any] {
+        let data = try Data(contentsOf: URL(fileURLWithPath: xmpPath))
+        let parser = XMPParser()
+        return parser.parse(xmp: data)
     }
 }
