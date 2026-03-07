@@ -102,6 +102,23 @@ public struct HDRToolView: View {
     }
 }
 
+/// The integrated Lens Correction and LCC tools in the sidebar.
+public struct LensCorrectionInspectorTool: View {
+    @ObservedObject var controller: AdjustmentToolController
+    
+    public var body: some View {
+        VStack(spacing: 0) {
+            LensCorrectionToolView(
+                distortion: $controller.lensDistortion,
+                sharpnessFalloff: $controller.lensSharpnessFalloff,
+                lightFalloff: $controller.lensLightFalloff
+            )
+            
+            LCCToolView(isLCCActive: $controller.isLCCActive)
+        }
+    }
+}
+
 /// Reconstructed high-fidelity Histogram tool.
 public struct HistogramToolView: View {
     public init() {}

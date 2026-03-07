@@ -13,9 +13,9 @@
 - [x] Task: Commit Phase 2. c21efc1
 
 ## Phase 3: LCC Logic & Integration (ImageCore)
-- [ ] Task: Implement `IC_CreateLCCProfile` logic based on Analyze and Create LCC.
-- [ ] Task: Implement LCC application in `ImageCorePipeline`.
-- [ ] Task: Commit Phase 3.
+- [x] Task: Implement `IC_CreateLCCProfile` logic based on Analyze and Create LCC. d06a106
+- [x] Task: Implement LCC application in `ImageCorePipeline`. d06a106
+- [x] Task: Commit Phase 3. d06a106
 
 ## Phase 4: UI & Validation (CaptureOneUI)
 - [ ] Task: Reconstruct `LensCorrectionView` tool inspector (Distortion, Sharpness Falloff, Light Falloff sliders).

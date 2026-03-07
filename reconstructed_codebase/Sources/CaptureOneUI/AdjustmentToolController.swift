@@ -48,6 +48,18 @@ public class AdjustmentToolController: ObservableObject {
     // Advanced Color Editor
     @Published public var colorCorrections: [IC_ColorCorrection] = []
     
+    // Lens Correction (ENG-006)
+    @Published public var lensDistortion: Double = 0.0
+    @Published public var lensSharpnessFalloff: Double = 0.0
+    @Published public var lensLightFalloff: Double = 0.0
+    @Published public var lensShiftX: Float = 0.0
+    @Published public var lensShiftY: Float = 0.0
+    @Published public var clipDistortedEdges: Bool = false
+    @Published public var chromaticAberration: Bool = false
+    @Published public var diffraction: Bool = false
+    @Published public var isLCCActive: Bool = false
+    @Published public var lccProfileUUID: String? = nil
+
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
@@ -80,7 +92,17 @@ public class AdjustmentToolController: ObservableObject {
             $clarityAmount.map { _ in }.eraseToAnyPublisher(),
             $structureAmount.map { _ in }.eraseToAnyPublisher(),
             $clarityMethod.map { _ in }.eraseToAnyPublisher(),
-            $colorCorrections.map { _ in }.eraseToAnyPublisher()
+            $colorCorrections.map { _ in }.eraseToAnyPublisher(),
+            $lensDistortion.map { _ in }.eraseToAnyPublisher(),
+            $lensSharpnessFalloff.map { _ in }.eraseToAnyPublisher(),
+            $lensLightFalloff.map { _ in }.eraseToAnyPublisher(),
+            $lensShiftX.map { _ in }.eraseToAnyPublisher(),
+            $lensShiftY.map { _ in }.eraseToAnyPublisher(),
+            $clipDistortedEdges.map { _ in }.eraseToAnyPublisher(),
+            $chromaticAberration.map { _ in }.eraseToAnyPublisher(),
+            $diffraction.map { _ in }.eraseToAnyPublisher(),
+            $isLCCActive.map { _ in }.eraseToAnyPublisher(),
+            $lccProfileUUID.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -120,6 +142,15 @@ public class AdjustmentToolController: ObservableObject {
             return defaultVal
         }
         
+        func getDouble(_ key: String, _ defaultVal: Double) -> Double {
+            if let mcSource = source as? MCVariant {
+                return (mcSource.objectForKey(key) as? Double) ?? defaultVal
+            } else if let mcLayerSource = source as? MCAdjLayer {
+                return (mcLayerSource.objectForKey(key) as? Double) ?? defaultVal
+            }
+            return defaultVal
+        }
+        
         // 2. Map properties back to published floats
         self.exposure = getFloat("ZEXPOSURE", 0.0)
         self.contrast = getFloat("ZCONTRAST", 0.0)
@@ -138,6 +169,18 @@ public class AdjustmentToolController: ObservableObject {
         self.shadows = (mc.objectForKey("ZSHADOWS") as? Float) ?? 0.0
         self.whites = (mc.objectForKey("ZWHITES") as? Float) ?? 0.0
         self.blacks = (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0
+        
+        // Lens Correction
+        self.lensDistortion = getDouble("ZLENS_DISTORTION", 0.0)
+        self.lensSharpnessFalloff = getDouble("ZLENS_SHARPNESS_FALLOFF", 0.0)
+        self.lensLightFalloff = getDouble("ZLENS_LIGHT_FALLOFF", 0.0)
+        self.lensShiftX = getFloat("ZLENS_SHIFT_X", 0.0)
+        self.lensShiftY = getFloat("ZLENS_SHIFT_Y", 0.0)
+        self.clipDistortedEdges = (mc.objectForKey("ZCLIP_DISTORTED_EDGES") as? Bool) ?? false
+        self.chromaticAberration = (mc.objectForKey("ZCHROMATIC_ABERRATION") as? Bool) ?? false
+        self.diffraction = (mc.objectForKey("ZDIFFRACTION") as? Bool) ?? false
+        self.isLCCActive = (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false
+        self.lccProfileUUID = mc.objectForKey("ZLCC_PROFILE_UUID") as? String
         
         self.levelsBlackPoint = (mc.objectForKey("ZLEVELS_BLACK") as? Float) ?? 0.0
         self.levelsWhitePoint = (mc.objectForKey("ZLEVELS_WHITE") as? Float) ?? 1.0
@@ -178,6 +221,11 @@ public class AdjustmentToolController: ObservableObject {
             activeLayer.mcLayer?.setObject(clarityAmount, forKey: "ZCLARITY_AMOUNT")
             activeLayer.mcLayer?.setObject(structureAmount, forKey: "ZSTRUCTURE_AMOUNT")
             activeLayer.mcLayer?.setObject(clarityMethod, forKey: "ZCLARITY_METHOD")
+            
+            // Per-layer Lens Correction (if supported by Engine)
+            activeLayer.mcLayer?.setObject(lensDistortion, forKey: "ZLENS_DISTORTION")
+            activeLayer.mcLayer?.setObject(lensSharpnessFalloff, forKey: "ZLENS_SHARPNESS_FALLOFF")
+            activeLayer.mcLayer?.setObject(lensLightFalloff, forKey: "ZLENS_LIGHT_FALLOFF")
         } else {
             mc.setObject(exposure, forKey: "ZEXPOSURE")
             mc.setObject(contrast, forKey: "ZCONTRAST")
@@ -186,6 +234,10 @@ public class AdjustmentToolController: ObservableObject {
             mc.setObject(clarityAmount, forKey: "ZCLARITY_AMOUNT")
             mc.setObject(structureAmount, forKey: "ZSTRUCTURE_AMOUNT")
             mc.setObject(clarityMethod, forKey: "ZCLARITY_METHOD")
+            
+            mc.setObject(lensDistortion, forKey: "ZLENS_DISTORTION")
+            mc.setObject(lensSharpnessFalloff, forKey: "ZLENS_SHARPNESS_FALLOFF")
+            mc.setObject(lensLightFalloff, forKey: "ZLENS_LIGHT_FALLOFF")
         }
         
         // 2. Global updates
@@ -195,6 +247,15 @@ public class AdjustmentToolController: ObservableObject {
         mc.setObject(shadows, forKey: "ZSHADOWS")
         mc.setObject(whites, forKey: "ZWHITES")
         mc.setObject(blacks, forKey: "ZBLACKS")
+        
+        mc.setObject(lensShiftX, forKey: "ZLENS_SHIFT_X")
+        mc.setObject(lensShiftY, forKey: "ZLENS_SHIFT_Y")
+        mc.setObject(clipDistortedEdges, forKey: "ZCLIP_DISTORTED_EDGES")
+        mc.setObject(chromaticAberration, forKey: "ZCHROMATIC_ABERRATION")
+        mc.setObject(diffraction, forKey: "ZDIFFRACTION")
+        mc.setObject(isLCCActive, forKey: "ZLCC_ACTIVE")
+        mc.setObject(lccProfileUUID, forKey: "ZLCC_PROFILE_UUID")
+        
         mc.setObject(levelsBlackPoint, forKey: "ZLEVELS_BLACK")
         mc.setObject(levelsWhitePoint, forKey: "ZLEVELS_WHITE")
         mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
@@ -217,6 +278,13 @@ public class AdjustmentToolController: ObservableObject {
         settings.saturation = (mc.objectForKey("ZSATURATION") as? Double) ?? 0.0
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
+        
+        settings.lensCorrection.distortion = lensDistortion
+        settings.lensCorrection.lightFalloff = lensLightFalloff
+        settings.lensCorrection.sharpnessFalloff = lensSharpnessFalloff
+        settings.lensCorrection.chromaticAberration = chromaticAberration
+        settings.lensCorrection.diffraction = diffraction
+        settings.lensCorrection.lccProfileUUID = lccProfileUUID
         
         settings.levelsShadow = levelsBlackPoint
         settings.levelsHighlight = levelsWhitePoint
@@ -265,3 +333,4 @@ public class AdjustmentToolController: ObservableObject {
         variant.isModified = true
     }
 }
+

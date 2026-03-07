@@ -30,6 +30,7 @@ class LensCorrectionTests: XCTestCase {
         let settings = MCLCCSettings(profile: lccProfile, isActive: true)
         
         XCTAssertEqual(settings.profile?.uuid, "test-lcc-uuid")
+        XCTAssertEqual(settings.profile?.displayName, "Test LCC Profile")
         XCTAssertTrue(settings.isActive)
     }
     
@@ -41,7 +42,7 @@ class LensCorrectionTests: XCTestCase {
         
         let retrieved = manager.profile(withUUID: "manager-test-uuid")
         XCTAssertNotNil(retrieved)
-        XCTAssertEqual(retrieved?.name, "Manager Test Profile")
+        XCTAssertEqual(retrieved?.displayName, "Manager Test Profile")
         
         XCTAssertNil(manager.profile(withUUID: "non-existent"))
     }

@@ -190,6 +190,9 @@ public struct IC_ProcessSettings {
     // Local Adjustments (Layers)
     public var localAdjustments: [IC_LocalAdjustmentSettings]
 
+    // Lens Correction (ENG-006)
+    public var lensCorrection: IC_LensCorrectionSettings
+
     // Geometry
     public var cropRect: CGRect
     public var rotation: Double
@@ -211,6 +214,7 @@ public struct IC_ProcessSettings {
         self.clarity = IC_ClaritySettings()
         self.colorCorrectionList = IC_ColorCorrectionList()
         self.localAdjustments = []
+        self.lensCorrection = IC_LensCorrectionSettings()
         self.cropRect = .zero
         self.rotation = 0.0
     }

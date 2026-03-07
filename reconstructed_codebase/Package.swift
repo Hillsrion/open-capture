@@ -54,6 +54,11 @@ let package = Package(
             name: "ImageCoreTests",
             dependencies: ["ImageCore"],
             path: "Tests/ImageCoreTests"
+        ),
+        .testTarget(
+            name: "CaptureOneUITests",
+            dependencies: ["CaptureOneUI"],
+            path: "Tests/CaptureOneUITests"
         )
     ]
 )
