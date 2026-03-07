@@ -9,6 +9,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+- [ ] **Track: Full Restoration of DataCore Persistence Logic**
+  *Link: [./tracks/datacore_restoration_20260307/](./tracks/datacore_restoration_20260307/)*
 
 ---
 
