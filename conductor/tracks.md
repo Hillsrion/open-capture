@@ -25,7 +25,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 ---
 
 - [x] **Track: High-Speed Image Browsing and Rendering Integration**
-  *Link: [./tracks/image_browsing_20260307/](./tracks/image_browsing_20260307/)*
+  *Link: [./archive/image_browsing_20260307/](./archive/image_browsing_20260307/)*
+
+---
+
+- [ ] **Track: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)**
+  *Link: [./tracks/adjustment_tools_restoration_20260307/](./tracks/adjustment_tools_restoration_20260307/)*
 
 ---
 
