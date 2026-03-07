@@ -14,7 +14,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Full Restoration of CaptureOneUI Presentation Logic**
+- [x] **Track: Full Restoration of CaptureOneUI Presentation Logic**
   *Link: [./tracks/captureoneui_restoration_20260307/](./tracks/captureoneui_restoration_20260307/)*
 
 ---
