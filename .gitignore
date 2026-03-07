@@ -1,1 +1,2 @@
 Capture One.app/\ndsdump\n.DS_Store
+\n# Build artifacts\n.build/\n*.log\n.DS_Store
