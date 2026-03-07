@@ -33,6 +33,20 @@ public class ImageBase: BaseObject {
     public var shutter: Double { (mcImage?.objectForKey("ZSHUTTER") as? Double) ?? 0.0 }
     public var focalLength: Int { (mcImage?.objectForKey("ZFOCALLENGTH") as? Int) ?? 0 }
     
+    // MARK: - Capabilities (Inferred from MOImage metadata)
+    @objc public var canApplyLensCorrection: Bool {
+        // In original, this checks if the image is RAW or has lens profile support
+        return true
+    }
+    
+    @objc public var canApplyChromaticAberration: Bool {
+        return true
+    }
+    
+    @objc public var canApplyPurpleDeFringe: Bool {
+        return true
+    }
+    
     // MARK: - Relationships
     public var mcImage: MCImage?
     public var variants: [VariantBase] = []

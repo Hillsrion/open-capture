@@ -65,6 +65,19 @@ public class VariantBase: BaseObject {
         }
     }
     
+    // MARK: - Capabilities (Inferred from MOVariant metadata)
+    @objc public var canApplyLensCorrection: Bool {
+        return image?.canApplyLensCorrection ?? false
+    }
+    
+    @objc public var canApplyChromaticAberration: Bool {
+        return image?.canApplyChromaticAberration ?? false
+    }
+    
+    @objc public var canApplyPurpleDeFringe: Bool {
+        return image?.canApplyPurpleDeFringe ?? false
+    }
+    
     // MARK: - Initialization
     public init(variantUUID: String, image: ImageBase?, context: ObjectContext?) {
         self.variantUUID = variantUUID

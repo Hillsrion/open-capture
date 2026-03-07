@@ -75,4 +75,32 @@ public class DatabaseReader {
         sqlite3_finalize(statement)
         return results
     }
+    
+    /// Reconstructed logic for fetching full variant settings from ZVARIANT.
+    public func fetchVariantSettings(uuid: String) throws -> [String: Any] {
+        let query = "SELECT ZLENS_DISTORTION, ZLENS_SHARPNESS_FALLOFF, ZLENS_LIGHT_FALLOFF, ZLENS_SHIFT_X, ZLENS_SHIFT_Y, ZCHROMATIC_ABERRATION, ZLCC_ACTIVE, ZLCC_PROFILE_UUID FROM ZVARIANT WHERE ZVARIANTUUID = ?;"
+        var statement: OpaquePointer?
+        var settings: [String: Any] = [:]
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (uuid as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(statement) == SQLITE_ROW {
+                settings["ZLENS_DISTORTION"] = sqlite3_column_double(statement, 0)
+                settings["ZLENS_SHARPNESS_FALLOFF"] = sqlite3_column_double(statement, 1)
+                settings["ZLENS_LIGHT_FALLOFF"] = sqlite3_column_double(statement, 2)
+                settings["ZLENS_SHIFT_X"] = Float(sqlite3_column_double(statement, 3))
+                settings["ZLENS_SHIFT_Y"] = Float(sqlite3_column_double(statement, 4))
+                settings["ZCHROMATIC_ABERRATION"] = sqlite3_column_int(statement, 5) != 0
+                settings["ZLCC_ACTIVE"] = sqlite3_column_int(statement, 6) != 0
+                if let profileUUID = sqlite3_column_text(statement, 7) {
+                    settings["ZLCC_PROFILE_UUID"] = String(cString: profileUUID)
+                }
+            }
+        }
+        sqlite3_finalize(statement)
+        return settings
+    }
 }
