@@ -1,15 +1,15 @@
 # Implementation Plan: High-Speed Image Browsing and Rendering Integration
 
-## Phase 1: Folder Scanning & Asset Mapping
+## Phase 1: Folder Scanning & Asset Mapping [checkpoint: 5a85c6d]
 - [x] Task: Map the `CImageBrowser` and `ThumbnailCache` logic from disassembly. 75a2eb4
 - [x] Task: Implement actual folder scanning in `MOFolderCollection` using `FileManager`. 75a2eb4
-- [~] Task: Create a base `ThumbnailManager` using `ImageIO` or `QuickLook` for fast extraction.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Folder Scanning & Asset Mapping' (Protocol in workflow.md)
+- [x] Task: Create a base `ThumbnailManager` using `ImageIO` or `QuickLook` for fast extraction. 75a2eb4
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Folder Scanning & Asset Mapping' (Protocol in workflow.md) 75a2eb4
 
 ## Phase 2: Image Browser UI Implementation
-- [ ] Task: Reconstruct the `ImageBrowserView` in `CaptureOneUI` using a SwiftUI `LazyVGrid`.
-- [ ] Task: Implement thumbnail cell views with metadata overlays (rating, tags).
-- [ ] Task: Connect browser selection events to the global `ObjectContext`.
+- [x] Task: Reconstruct the `ImageBrowserView` in `CaptureOneUI` using a SwiftUI `LazyVGrid`. 5a85c6d
+- [x] Task: Implement thumbnail cell views with metadata overlays (rating, tags). 5a85c6d
+- [~] Task: Connect browser selection events to the global `ObjectContext`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Image Browser UI Implementation' (Protocol in workflow.md)
 
 ## Phase 3: Viewer & Rendering Integration
