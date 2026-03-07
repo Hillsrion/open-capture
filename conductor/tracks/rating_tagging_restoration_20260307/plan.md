@@ -12,9 +12,9 @@
 - [x] Task: Commit Phase 2: UI Components.
 
 ## Phase 3: Browser Overlays & Shortcuts
-- [ ] Task: Update `COImageBrowserView` to show rating/color tag overlays on thumbnails.
-- [ ] Task: Implement keyboard shortcuts (1-5 for stars, 6-9 for colors).
-- [ ] Task: Commit Phase 3: Integration.
+- [x] Task: Update `COImageBrowserView` to show rating/color tag overlays on thumbnails.
+- [x] Task: Implement keyboard shortcuts (1-5 for stars, 6-9 for colors).
+- [x] Task: Commit Phase 3: Integration.
 
 ## Phase 4: Validation
 - [ ] Task: Build and verify the culling workflow.

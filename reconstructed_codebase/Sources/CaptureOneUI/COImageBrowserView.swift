@@ -87,11 +87,36 @@ struct COThumbnailCell: View {
                 )
                 
                 // Status Icons (Inferred)
-                if image.isOffline {
-                    Image(systemName: "bolt.horizontal.circle.fill")
-                        .foregroundColor(.orange)
-                        .font(.system(size: 10))
-                        .padding(4)
+                VStack(alignment: .trailing, spacing: 2) {
+                    if image.isOffline {
+                        Image(systemName: "bolt.horizontal.circle.fill")
+                            .foregroundColor(.orange)
+                            .font(.system(size: 10))
+                    }
+                    
+                    // Rating stars on thumbnail (Reconstructed)
+                    if let variant = image.primaryVariant, variant.rating > 0 {
+                        HStack(spacing: 1) {
+                            ForEach(0..<variant.rating, id: \.self) { _ in
+                                Image(systemName: "star.fill")
+                                    .font(.system(size: 8))
+                                    .foregroundColor(.yellow)
+                            }
+                        }
+                        .padding(2)
+                        .background(Color.black.opacity(0.4))
+                        .cornerRadius(2)
+                    }
+                }
+                .padding(4)
+                
+                // Color Tag Overlay (Reconstructed)
+                if let variant = image.primaryVariant, variant.colorTag != .none {
+                    Rectangle()
+                        .fill(colorForTag(variant.colorTag))
+                        .frame(width: 4, height: 16)
+                        .cornerRadius(1)
+                        .position(x: 4, y: 12)
                 }
             }
             
@@ -100,6 +125,20 @@ struct COThumbnailCell: View {
                 .font(.system(size: 10))
                 .foregroundColor(.white.opacity(0.9))
                 .lineLimit(1)
+        }
+        .onAppear { loadThumbnail() }
+    }
+    
+    private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
+        switch tag {
+        case .none: return Color.clear
+        case .red: return Color.red
+        case .orange: return Color.orange
+        case .yellow: return Color.yellow
+        case .green: return Color.green
+        case .blue: return Color.blue
+        case .purple: return Color.purple
+        case .pink: return Color.pink
         }
     }
     

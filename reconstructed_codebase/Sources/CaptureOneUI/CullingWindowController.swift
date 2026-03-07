@@ -224,6 +224,35 @@ public struct CullingView: View {
         }
         .background(CaptureOneTheme.Colors.applicationBackground)
         .preferredColorScheme(.dark)
+        .onAppear {
+            NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                if handleShortcut(event) { return nil }
+                return event
+            }
+        }
+    }
+    
+    private func handleShortcut(_ event: NSEvent) -> Bool {
+        guard let variant = selectedImage?.primaryVariant else { return false }
+        
+        switch event.charactersIgnoringModifiers {
+        // Rating (1-5, 0 to reset)
+        case "1": variant.rating = 1; return true
+        case "2": variant.rating = 2; return true
+        case "3": variant.rating = 3; return true
+        case "4": variant.rating = 4; return true
+        case "5": variant.rating = 5; return true
+        case "0": variant.rating = 0; return true
+            
+        // Color Tags (6-9)
+        case "6": variant.colorTag = .red; return true
+        case "7": variant.colorTag = .yellow; return true
+        case "8": variant.colorTag = .green; return true
+        case "9": variant.colorTag = .blue; return true
+            
+        default:
+            return false
+        }
     }
 }
 
