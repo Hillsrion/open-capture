@@ -1,0 +1,29 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "ff167c56c219",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/CaptureOneUI/AdjustmentToolController.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/AdjustmentToolViews.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LensCorrectionView.swift",
+    "reconstructed_codebase/Sources/ImageCore/ImageCorePipeline.swift",
+    "reconstructed_codebase/Sources/ImageCore/LCCManager.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/ff/167c56c219/0/metadata.json",
+      "transcript": "/ff/167c56c219/0/full.jsonl",
+      "content_hash": "/ff/167c56c219/0/content_hash.txt",
+      "prompt": "/ff/167c56c219/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4665895,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 4105837,
+    "output_tokens": 7101,
+    "api_call_count": 30
+  }
+}
