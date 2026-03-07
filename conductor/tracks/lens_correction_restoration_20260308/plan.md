@@ -1,6 +1,6 @@
 # Implementation Plan: Restoration of Lens Correction (Distortion, LCC, CA)
 
-## Phase 1: Data Models (AppCoreShared / ModelCore)
+## Phase 1: Data Models (AppCoreShared / ModelCore) [checkpoint: d06a106]
 - [x] Task: Reconstruct `MCLensCorrectionSettings` (distortion, light falloff, sharpness falloff). f2a610d
 - [x] Task: Reconstruct `MCLCCSettings` and `MCLCCProfile` data models. f2a610d
 - [x] Task: Implement `LensCorrectionManager` to handle profile lookups and active settings. f2a610d
