@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-005** (Layer Blending) and **UI-004** (Layer Inspector) within the `layers_masking_restoration` track.
+Currently working on **ENG-003** (Clarity & Structure) within the `clarity_structure_restoration` track.

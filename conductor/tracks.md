@@ -59,3 +59,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
+- [ ] **Track: Restoration of Clarity & Structure (Classic, Punch, Natural, Neutral)**
+  *Link: [./tracks/clarity_structure_restoration_20260307/](./tracks/clarity_structure_restoration_20260307/)*
+
+---
+
