@@ -40,6 +40,11 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var rating: Int = 0
     @Published public var colorTag: VariantBase.ColorTag = .none
     
+    // Clarity & Structure
+    @Published public var clarityAmount: Float = 0.0
+    @Published public var structureAmount: Float = 0.0
+    @Published public var clarityMethod: Int = 0 // 0: Classic, 1: Punch, 2: Neutral, 3: Natural
+    
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
@@ -68,7 +73,10 @@ public class AdjustmentToolController: ObservableObject {
             $curvesPoints.map { _ in }.eraseToAnyPublisher(),
             $rating.map { _ in }.eraseToAnyPublisher(),
             $colorTag.map { _ in }.eraseToAnyPublisher(),
-            $activePredicate.map { _ in }.eraseToAnyPublisher()
+            $activePredicate.map { _ in }.eraseToAnyPublisher(),
+            $clarityAmount.map { _ in }.eraseToAnyPublisher(),
+            $structureAmount.map { _ in }.eraseToAnyPublisher(),
+            $clarityMethod.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -83,9 +91,6 @@ public class AdjustmentToolController: ObservableObject {
     /// Binds the controller to a specific variant.
     public func bind(to variant: VariantBase?) {
         self.currentVariant = variant
-        
-        // Simple manual observation of activeLayerIndex if it were @objc
-        // For now, we'll assume the UI triggers a re-bind or we refresh manually
         refreshToolValues()
     }
     
@@ -116,6 +121,10 @@ public class AdjustmentToolController: ObservableObject {
         self.contrast = getFloat("ZCONTRAST", 0.0)
         self.brightness = getFloat("ZBRIGHTNESS", 0.0)
         self.saturation = getFloat("ZSATURATION", 0.0)
+        
+        self.clarityAmount = getFloat("ZCLARITY_AMOUNT", 0.0)
+        self.structureAmount = getFloat("ZSTRUCTURE_AMOUNT", 0.0)
+        self.clarityMethod = Int(getFloat("ZCLARITY_METHOD", 0.0))
         
         // WB and other tools are usually global or per-layer depending on tool
         self.kelvin = (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0
@@ -155,11 +164,17 @@ public class AdjustmentToolController: ObservableObject {
             activeLayer.mcLayer?.setObject(contrast, forKey: "ZCONTRAST")
             activeLayer.mcLayer?.setObject(brightness, forKey: "ZBRIGHTNESS")
             activeLayer.mcLayer?.setObject(saturation, forKey: "ZSATURATION")
+            activeLayer.mcLayer?.setObject(clarityAmount, forKey: "ZCLARITY_AMOUNT")
+            activeLayer.mcLayer?.setObject(structureAmount, forKey: "ZSTRUCTURE_AMOUNT")
+            activeLayer.mcLayer?.setObject(clarityMethod, forKey: "ZCLARITY_METHOD")
         } else {
             mc.setObject(exposure, forKey: "ZEXPOSURE")
             mc.setObject(contrast, forKey: "ZCONTRAST")
             mc.setObject(brightness, forKey: "ZBRIGHTNESS")
             mc.setObject(saturation, forKey: "ZSATURATION")
+            mc.setObject(clarityAmount, forKey: "ZCLARITY_AMOUNT")
+            mc.setObject(structureAmount, forKey: "ZSTRUCTURE_AMOUNT")
+            mc.setObject(clarityMethod, forKey: "ZCLARITY_METHOD")
         }
         
         // 2. Global updates
@@ -200,6 +215,10 @@ public class AdjustmentToolController: ObservableObject {
         }
         settings.gradationCurves.curveX = curveX
         
+        settings.clarity.amount = clarityAmount
+        settings.clarity.structureAmount = structureAmount
+        settings.clarity.clarityMethod = Int32(clarityMethod)
+        
         // 4. Map Local Adjustments (Layers)
         for layer in variant.layers where layer.type != .background {
             var localAdj = IC_LocalAdjustmentSettings()
@@ -209,6 +228,9 @@ public class AdjustmentToolController: ObservableObject {
                 localAdj.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
                 localAdj.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
                 localAdj.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
+                localAdj.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
+                localAdj.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
+                localAdj.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
             }
             settings.localAdjustments.append(localAdj)
         }

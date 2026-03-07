@@ -41,12 +41,25 @@ public struct ICGradationCurves {
     }
 }
 
+public struct IC_ClaritySettings {
+    public var amount: Float
+    public var structureAmount: Float
+    public var clarityMethod: Int32 // 0: Classic, 1: Punch, 2: Neutral, 3: Natural
+    
+    public init() {
+        self.amount = 0.0
+        self.structureAmount = 0.0
+        self.clarityMethod = 0
+    }
+}
+
 public struct IC_LocalAdjustmentSettings {
     public var opacity: Float
     public var exposure: Float
     public var contrast: Float
     public var brightness: Float
     public var saturation: Float
+    public var clarity: IC_ClaritySettings
     public var maskUUID: String?
     
     public init() {
@@ -55,6 +68,7 @@ public struct IC_LocalAdjustmentSettings {
         self.contrast = 0.0
         self.brightness = 0.0
         self.saturation = 0.0
+        self.clarity = IC_ClaritySettings()
     }
 }
 
@@ -82,6 +96,9 @@ public struct IC_ProcessSettings {
     // Gradation Curves (High-Fidelity)
     public var gradationCurves: ICGradationCurves
     
+    // Clarity & Structure (ENG-003)
+    public var clarity: IC_ClaritySettings
+    
     // Local Adjustments (Layers)
     public var localAdjustments: [IC_LocalAdjustmentSettings]
 
@@ -103,6 +120,7 @@ public struct IC_ProcessSettings {
         self.levelsTargetShadow = 0.0
         self.levelsTargetHighlight = 1.0
         self.gradationCurves = ICGradationCurves()
+        self.clarity = IC_ClaritySettings()
         self.localAdjustments = []
         self.cropRect = .zero
         self.rotation = 0.0
