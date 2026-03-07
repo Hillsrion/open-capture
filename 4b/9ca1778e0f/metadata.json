@@ -1,0 +1,29 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "4b9ca1778e0f",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/ImportSourceScanner.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/POImporter.swift",
+    "reconstructed_codebase/Sources/DataCore/DataCoreManager.swift",
+    "reconstructed_codebase/Sources/DataCore/DatabaseWriter.swift",
+    "reconstructed_codebase/Tests/AppCoreSharedTests/ImportTests.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/4b/9ca1778e0f/0/metadata.json",
+      "transcript": "/4b/9ca1778e0f/0/full.jsonl",
+      "content_hash": "/4b/9ca1778e0f/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4671633,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 4083281,
+    "output_tokens": 9176,
+    "api_call_count": 20
+  }
+}
