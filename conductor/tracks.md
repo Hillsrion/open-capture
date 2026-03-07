@@ -29,8 +29,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)**
+- [x] **Track: Full Restoration of Adjustment Tools (Exposure, Contrast, WB, HDR)**
   *Link: [./tracks/adjustment_tools_restoration_20260307/](./tracks/adjustment_tools_restoration_20260307/)*
+
+---
+
+- [ ] **Track: Restoration of Levels and Curves Tools (Interpolation, Splines, Histogram)**
+  *Link: [./tracks/levels_curves_restoration_20260307/](./tracks/levels_curves_restoration_20260307/)*
 
 ---
 

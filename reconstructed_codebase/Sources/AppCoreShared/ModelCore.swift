@@ -30,6 +30,14 @@ public class MCVariant: NSObject {
         return properties[key]
     }
     
+    public func setObject(_ object: Any?, forKey key: String) {
+        if let object = object {
+            properties[key] = object
+        } else {
+            properties.removeValue(forKey: key)
+        }
+    }
+    
     public func variantByAddingStyle(_ style: Any) -> MCVariant {
         // Implementation logic recovery: 
         // Create a copy and merge style properties

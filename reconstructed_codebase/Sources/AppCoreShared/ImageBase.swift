@@ -29,6 +29,10 @@ public class ImageBase: BaseObject {
     
     // MARK: - Relationships
     public var mcImage: MCImage?
+    public var variants: [VariantBase] = []
+    public var primaryVariant: VariantBase? {
+        return variants.first
+    }
     
     // MARK: - Initialization
     public init(imageUUID: String, path: String, context: ObjectContext?) {

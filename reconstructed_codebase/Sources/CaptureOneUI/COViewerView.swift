@@ -1,16 +1,19 @@
 import SwiftUI
 import AppCoreShared
 import ImageCore
+import Combine
 
 /// Reconstructed high-fidelity Viewer for Capture One.
 /// Based on _TtC10CaptureOne25ViewerDisplayModeSettings and related metadata.
 public struct COViewerView: View {
     
-    public init(image: ImageBase?) {
+    public init(image: ImageBase?, adjustmentController: AdjustmentToolController? = nil) {
         self.image = image
+        self.adjustmentController = adjustmentController
     }
     
     let image: ImageBase?
+    let adjustmentController: AdjustmentToolController?
     @State private var renderedImage: NSImage?
     @State private var zoomLevel: Double = 1.0 // Inferred from ViewerZoomViewController
     
@@ -40,12 +43,34 @@ public struct COViewerView: View {
         .onChange(of: image?.imageUUID) { _ in
             render()
         }
+        .onReceive(Just(adjustmentController).compactMap { $0?.objectWillChange }.flatMap { $0 }) { _ in
+            render()
+        }
     }
     
     private func render() {
         guard let image = image else { return }
         ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
-            self.renderedImage = thumb
+            guard let thumb = thumb, let controller = adjustmentController else {
+                self.renderedImage = thumb
+                return
+            }
+            
+            // Simulation: Apply basic CI adjustments to the thumbnail
+            let ciImage = CIImage(data: thumb.tiffRepresentation!)!
+            let filtered = ciImage
+                .applyingFilter("CIExposureAdjust", parameters: ["inputEV": controller.exposure])
+                .applyingFilter("CIColorControls", parameters: [
+                    "inputContrast": 1.0 + controller.contrast / 100.0,
+                    "inputBrightness": controller.brightness / 100.0,
+                    "inputSaturation": 1.0 + controller.saturation / 100.0
+                ])
+            
+            let rep = NSCIImageRep(ciImage: filtered)
+            let finalImage = NSImage(size: rep.size)
+            finalImage.addRepresentation(rep)
+            
+            self.renderedImage = finalImage
         }
     }
 }

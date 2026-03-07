@@ -40,7 +40,15 @@ public class MOFolderCollection: MOCollection {
                 guard supportedExtensions.contains(fileURL.pathExtension.lowercased()) else { return nil }
                 
                 // Create a reconstructed ImageBase for each file
-                return ImageBase(imageUUID: UUID().uuidString, path: fileURL.path, context: self.managedObjectContext)
+                let image = ImageBase(imageUUID: UUID().uuidString, path: fileURL.path, context: self.managedObjectContext)
+                
+                // Logic recovery: Every image must have at least one variant
+                let primary = VariantBase(variantUUID: UUID().uuidString, image: image, context: self.managedObjectContext)
+                // Add a dummy MCVariant for the simulation
+                primary.mcVariant = MCVariant(dictionary: ["ZEXPOSURE": 0.0, "ZCONTRAST": 0.0, "ZBRIGHTNESS": 0.0, "ZSATURATION": 0.0])
+                image.variants = [primary]
+                
+                return image
             }
             
             print("[System] Scanned \(images.count) images in \(path)")

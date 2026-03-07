@@ -1,40 +1,168 @@
 import SwiftUI
 import AppKit
 
-/// Reconstructed visual theme for Capture One.
-/// Based on NSColor(CaptureOne) extensions from version 16.5.9.7.
+/// Reconstructed visual theme for Capture One (High Fidelity).
+/// Based on version 16.5.9.7 and visual analysis of the reference UI.
 public struct CaptureOneTheme {
     
     public struct Colors {
         // MARK: - Core Backgrounds
-        public static let applicationBackground = Color(NSColor(calibratedWhite: 0.12, alpha: 1.0)) // coApplicationBackgroundColor
-        public static let mainWindowTitleAndToolbar = Color(NSColor(calibratedWhite: 0.15, alpha: 1.0)) // coMainWindowTitleAndToolbarColor
-        public static let histogramBackground = Color(NSColor(calibratedWhite: 0.10, alpha: 1.0)) // coHistogramBackgroundColor
+        public static let applicationBackground = Color(red: 0.11, green: 0.11, blue: 0.11) // Very dark gray
+        public static let toolbarBackground = Color(red: 0.15, green: 0.15, blue: 0.15)
+        public static let panelBackground = Color(red: 0.13, green: 0.13, blue: 0.13)
+        public static let histogramBackground = Color(red: 0.08, green: 0.08, blue: 0.08)
+        
+        // Aliases for compatibility
+        public static let mainWindowTitleAndToolbar = toolbarBackground
+        public static let buttonBackground = Color(white: 0.2)
         
         // MARK: - Highlights & Selection
-        public static let activeHighlight = Color.orange // coActiveHighlightColor (Inferred from C1 aesthetic)
-        public static let inactiveHighlight = Color.gray // coInactiveHighlightColor
+        public static let activeHighlight = Color(red: 0.95, green: 0.55, blue: 0.10) // Signature C1 Orange
+        public static let selectionBorder = Color(red: 0.95, green: 0.55, blue: 0.10)
         
         // MARK: - Text & Icons
-        public static let mainText = Color.white // coMainTextColor (Inferred)
-        public static let disabledText = Color.gray // coDisabledTextColor
-        public static let iconColor = Color(white: 0.8) // coIconColor
+        public static let textPrimary = Color(white: 0.9)
+        public static let textSecondary = Color(white: 0.6)
+        public static let iconNormal = Color(white: 0.8)
+        public static let iconDisabled = Color(white: 0.3)
         
-        // MARK: - Specialized Tool Colors
-        public static let redHistogram = Color.red // coRedHistogramColor
-        public static let greenHistogram = Color.green // coGreenHistogramColor
-        public static let blueHistogram = Color.blue // coBlueHistogramColor
-        public static let lumaHistogram = Color.white // coLumaHistogramColor
-        
-        // MARK: - UI Elements
-        public static let buttonBackground = Color(white: 0.2) // coButtonBackgroundColor
-        public static let separatorDark = Color(white: 0.05) // coDarkSeparatorColor
-        public static let separatorLight = Color(white: 0.2) // coLightSeparatorColor
+        // MARK: - Dividers
+        public static let separator = Color(white: 0.05)
+    }
+}
+
+// MARK: - Reconstructed Reusable Components
+
+/// A collapsible tool section like "White Balance" or "Exposure"
+public struct COToolSection<Content: View>: View {
+    let title: String
+    @State var isExpanded: Bool = true
+    let content: Content
+    
+    public init(_ title: String, isExpanded: Bool = true, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self._isExpanded = State(initialValue: isExpanded)
+        self.content = content()
+    }
+    
+    public var body: some View {
+        VStack(spacing: 0) {
+            Button(action: { withAnimation { isExpanded.toggle() } }) {
+                HStack(spacing: 6) {
+                    Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
+                        .font(.system(size: 8, weight: .bold))
+                    Text(title.uppercased())
+                        .font(.system(size: 11, weight: .bold))
+                    Spacer()
+                    // Action icons placeholder
+                    Image(systemName: "wand.and.stars").font(.system(size: 10))
+                    Image(systemName: "ellipsis").font(.system(size: 10))
+                }
+                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                .padding(.horizontal, 8)
+                .frame(height: 28)
+                .background(Color.white.opacity(0.05))
+            }
+            .buttonStyle(PlainButtonStyle())
+            
+            if isExpanded {
+                content
+                    .padding(8)
+                    .background(CaptureOneTheme.Colors.applicationBackground)
+            }
+            
+            Divider().background(CaptureOneTheme.Colors.separator)
+        }
+    }
+}
+
+/// The high-fidelity C1 Slider
+public struct COUISlider: View {
+    let label: String
+    @Binding var value: Float
+    let range: ClosedRange<Float>
+    let showLabel: Bool
+    
+    public init(label: String, value: Binding<Float>, range: ClosedRange<Float>, showLabel: Bool = true) {
+        self.label = label
+        self._value = value
+        self.range = range
+        self.showLabel = showLabel
+    }
+    
+    public var body: some View {
+        VStack(spacing: 2) {
+            if showLabel {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(label)
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                    Spacer()
+                    Text("\(Int(value))")
+                        .font(.system(size: 11, design: .monospaced))
+                        .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                }
+            }
+            
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    // Track background
+                    Capsule()
+                        .fill(Color.white.opacity(0.1))
+                        .frame(height: 2)
+                    
+                    // Active track
+                    let isBipolar = range.contains(0)
+                    if isBipolar {
+                        let centerPercent = CGFloat(-range.lowerBound / (range.upperBound - range.lowerBound))
+                        let currentPercent = CGFloat((value - range.lowerBound) / (range.upperBound - range.lowerBound))
+                        let width = abs(currentPercent - centerPercent) * geo.size.width
+                        let startX = min(centerPercent, currentPercent) * geo.size.width
+                        
+                        Capsule()
+                            .fill(CaptureOneTheme.Colors.activeHighlight)
+                            .frame(width: width, height: 2)
+                            .offset(x: startX)
+                    } else {
+                        Capsule()
+                            .fill(CaptureOneTheme.Colors.activeHighlight)
+                            .frame(width: CGFloat((value - range.lowerBound) / (range.upperBound - range.lowerBound)) * geo.size.width, height: 2)
+                    }
+                    
+                    // Knob
+                    Circle()
+                        .fill(Color(white: 0.95))
+                        .frame(width: 14, height: 14)
+                        .shadow(color: .black.opacity(0.3), radius: 1, x: 0, y: 1)
+                        .offset(x: CGFloat((value - range.lowerBound) / (range.upperBound - range.lowerBound)) * geo.size.width - 7)
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { gesture in
+                                    let percent = min(max(0, Float(gesture.location.x / geo.size.width)), 1.0)
+                                    self.value = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+                                }
+                        )
+                }
+                .frame(maxHeight: .infinity)
+            }
+            .frame(height: 14) // Total height of the slider interaction area
+        }
     }
 }
 
 // MARK: - AppKit Compatibility
+extension Color {
+    public var nsColor: NSColor {
+        switch self {
+        case CaptureOneTheme.Colors.activeHighlight: return NSColor(red: 0.95, green: 0.55, blue: 0.10, alpha: 1.0)
+        case CaptureOneTheme.Colors.applicationBackground: return NSColor(calibratedWhite: 0.11, alpha: 1.0)
+        case CaptureOneTheme.Colors.buttonBackground: return NSColor(calibratedWhite: 0.2, alpha: 1.0)
+        default: return NSColor.gray
+        }
+    }
+}
+
 extension NSColor {
-    public static var coApplicationBackground: NSColor { NSColor(calibratedWhite: 0.12, alpha: 1.0) }
-    public static var coActiveHighlight: NSColor { NSColor.orange }
+    public static var coApplicationBackground: NSColor { NSColor(calibratedWhite: 0.11, alpha: 1.0) }
+    public static var coActiveHighlight: NSColor { NSColor(red: 0.95, green: 0.55, blue: 0.10, alpha: 1.0) }
 }

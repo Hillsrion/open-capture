@@ -20,6 +20,10 @@ This file contains foundational mandates for the Capture One reconstruction proj
 - **Action:** If a specific workflow or complex reverse-engineering task becomes repetitive, use the `skill-creator` tool to formalize it into a Gemini CLI skill.
 - **Documentation:** Any new skill must be documented in the project's technical docs.
 
-## 4. Source Control
-- **Commits:** Use git commits for action summaries ("what" was done).
-- **Docs:** Use the `docs/` folder for "why" and "how it works" (the reconstructed engineering logic).
+## 6. UI Bridging Strategy (AppKit to SwiftUI)
+- **Architectural Shift:** The original codebase is built on **AppKit** (`NSControl`, `NSCell`, `NSView`) with imperative drawing logic (`drawRect:`). Our reconstruction uses **SwiftUI** for its modern state management and declarative UI.
+- **High-Fidelity Translation:**
+    1. **Style Extraction:** Analyze AppKit drawing methods (e.g., `drawBarInside:flipped:`) to extract constants like track thickness, corner radius, and shadow offsets.
+    2. **SwiftUI Implementation:** Replicate these visuals manually in SwiftUI using `GeometryReader`, `Path`, and custom `Shape` modifiers. Do not rely on native SwiftUI defaults (which follow macOS system styles, not C1 custom styles).
+    3. **Bipolar Logic:** For sliders that start from the center (Exposure, Contrast), implement custom range-mapping in the SwiftUI view to draw the active track correctly from the zero-point.
+    4. **Compatibility Layer:** Provide `NSColor` extensions and AppKit-to-SwiftUI color mappings in `CaptureOneTheme.swift` to ensure consistency when bridging legacy AppKit code with new SwiftUI views.

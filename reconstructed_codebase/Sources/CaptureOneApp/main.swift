@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = LicenseInfo()
         
         // 2. Setup Context
-        let context = ObjectContext()
+        let _ = ObjectContext()
 
         // 3. Create the Window
         print("[System] Creating Window...")
@@ -31,12 +31,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.title = "Capture One Reconstructed"
         window.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
         
-        // 4. Setup Browser Data Source
+        // 4. Setup Browser Data Source and Adjustment Controller
         let browser = CImageBrowser()
-        // Note: For testing, the CullingWindowController logic will trigger the scan.
-        // We initialize the view with the browser.
+        let adjustmentController = AdjustmentToolController()
         
-        let contentView = CullingView(browser: browser)
+        let contentView = CullingView(browser: browser, adjustmentController: adjustmentController)
         window.contentView = NSHostingView(rootView: contentView)
         
         window.makeKeyAndOrderFront(nil)
