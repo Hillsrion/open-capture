@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "e5fb476da140",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "conductor/tracks/lens_correction_restoration_20260308/plan.md",
+    "reconstructed_codebase/Package.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/LensCorrection.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LensCorrectionView.swift",
+    "reconstructed_codebase/Sources/ImageCore/ImageCoreBase.swift",
+    "reconstructed_codebase/Tests/AppCoreSharedTests/LensCorrectionTests.swift",
+    "reconstructed_codebase/Tests/CaptureOneUITests/LensCorrectionUITests.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/e5/fb476da140/0/metadata.json",
+      "transcript": "/e5/fb476da140/0/full.jsonl",
+      "content_hash": "/e5/fb476da140/0/content_hash.txt",
+      "prompt": "/e5/fb476da140/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 6878223,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 6206796,
+    "output_tokens": 40204,
+    "api_call_count": 121
+  }
+}
