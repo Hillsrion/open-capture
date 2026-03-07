@@ -140,6 +140,9 @@ public struct CullingView: View {
                                 VStack(spacing: 0) {
                                     if let variant = selectedImage?.primaryVariant {
                                         LayerInspectorView(variant: variant)
+                                            .onChange(of: variant.activeLayerIndex) { _ in
+                                                adjustmentController.refreshToolValues()
+                                            }
                                     }
                                     
                                     ExposureToolView(

@@ -2,7 +2,7 @@ import Foundation
 
 /// Reconstructed root class for managed objects in AppCoreShared.
 /// Provides integration with ObjectContext and KVO-based change tracking.
-public class BaseObject: NSObject {
+public class BaseObject: NSObject, ObservableObject {
     
     public weak var managedObjectContext: ObjectContext?
     

@@ -19,6 +19,7 @@
 - [x] Task: Commit Phase 3: Blending Logic.
 
 ## Phase 4: Integration & Validation
-- [ ] Task: Bind UI layer selection to adjustment tools (adjusting a layer instead of background).
-- [ ] Task: Verify end-to-end multi-layer adjustments.
-- [ ] Task: Commit Phase 4: Finalization.
+- [x] Task: Bind UI layer selection to adjustment tools (adjusting a layer instead of background).
+- [x] Task: Verify end-to-end multi-layer adjustments.
+- [x] Task: Commit Phase 4: Finalization.
+

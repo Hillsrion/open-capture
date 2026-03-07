@@ -83,16 +83,41 @@ public class AdjustmentToolController: ObservableObject {
     /// Binds the controller to a specific variant.
     public func bind(to variant: VariantBase?) {
         self.currentVariant = variant
-        guard let variant = variant, let mc = variant.mcVariant else { return }
+        
+        // Simple manual observation of activeLayerIndex if it were @objc
+        // For now, we'll assume the UI triggers a re-bind or we refresh manually
+        refreshToolValues()
+    }
+    
+    public func refreshToolValues() {
+        guard let variant = currentVariant, let mc = variant.mcVariant else { return }
         
         self.isUpdatingFromModel = true
         
-        // Logic recovery: Map MCVariant dictionary properties back to published floats
-        self.exposure = (mc.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
-        self.contrast = (mc.objectForKey("ZCONTRAST") as? Float) ?? 0.0
-        self.brightness = (mc.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
-        self.saturation = (mc.objectForKey("ZSATURATION") as? Float) ?? 0.0
+        // 1. Determine active source (Layer or Global)
+        let source: Any?
+        if let activeLayer = variant.activeLayer, activeLayer.type != .background {
+            source = activeLayer.mcLayer
+        } else {
+            source = mc
+        }
         
+        func getFloat(_ key: String, _ defaultVal: Float) -> Float {
+            if let mcSource = source as? MCVariant {
+                return (mcSource.objectForKey(key) as? Float) ?? defaultVal
+            } else if let mcLayerSource = source as? MCAdjLayer {
+                return (mcLayerSource.objectForKey(key) as? Float) ?? defaultVal
+            }
+            return defaultVal
+        }
+        
+        // 2. Map properties back to published floats
+        self.exposure = getFloat("ZEXPOSURE", 0.0)
+        self.contrast = getFloat("ZCONTRAST", 0.0)
+        self.brightness = getFloat("ZBRIGHTNESS", 0.0)
+        self.saturation = getFloat("ZSATURATION", 0.0)
+        
+        // WB and other tools are usually global or per-layer depending on tool
         self.kelvin = (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0
         self.tint = (mc.objectForKey("ZTINT") as? Float) ?? 0.0
         
@@ -107,7 +132,6 @@ public class AdjustmentToolController: ObservableObject {
         self.levelsTargetBlack = (mc.objectForKey("ZLEVELS_TARGET_BLACK") as? Float) ?? 0.0
         self.levelsTargetWhite = (mc.objectForKey("ZLEVELS_TARGET_WHITE") as? Float) ?? 1.0
         
-        // Reconstruct curves from array or string if needed. Simplifying here.
         if let curvePts = mc.objectForKey("ZCURVE_POINTS") as? [CGPoint] {
             self.curvesPoints = curvePts
         } else {
@@ -124,47 +148,51 @@ public class AdjustmentToolController: ObservableObject {
     public func commitChanges(to variant: VariantBase?) {
         guard let variant = variant, let mc = variant.mcVariant else { return }
         
-        // 1. Update MCVariant properties
-        mc.setObject(exposure, forKey: "ZEXPOSURE")
-        mc.setObject(contrast, forKey: "ZCONTRAST")
-        mc.setObject(brightness, forKey: "ZBRIGHTNESS")
-        mc.setObject(saturation, forKey: "ZSATURATION")
+        // 1. Update active layer/global properties
+        if let activeLayer = variant.activeLayer, activeLayer.type != .background {
+            if activeLayer.mcLayer == nil { activeLayer.mcLayer = MCAdjLayer(dictionary: [:]) }
+            activeLayer.mcLayer?.setObject(exposure, forKey: "ZEXPOSURE")
+            activeLayer.mcLayer?.setObject(contrast, forKey: "ZCONTRAST")
+            activeLayer.mcLayer?.setObject(brightness, forKey: "ZBRIGHTNESS")
+            activeLayer.mcLayer?.setObject(saturation, forKey: "ZSATURATION")
+        } else {
+            mc.setObject(exposure, forKey: "ZEXPOSURE")
+            mc.setObject(contrast, forKey: "ZCONTRAST")
+            mc.setObject(brightness, forKey: "ZBRIGHTNESS")
+            mc.setObject(saturation, forKey: "ZSATURATION")
+        }
         
+        // 2. Global updates
         mc.setObject(kelvin, forKey: "ZKELVIN")
         mc.setObject(tint, forKey: "ZTINT")
-        
         mc.setObject(highlights, forKey: "ZHIGHLIGHTS")
         mc.setObject(shadows, forKey: "ZSHADOWS")
         mc.setObject(whites, forKey: "ZWHITES")
         mc.setObject(blacks, forKey: "ZBLACKS")
-        
         mc.setObject(levelsBlackPoint, forKey: "ZLEVELS_BLACK")
         mc.setObject(levelsWhitePoint, forKey: "ZLEVELS_WHITE")
         mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
         mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
         mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
         mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
-        
         mc.setObject(rating, forKey: "ZRATING")
         mc.setObject(colorTag.rawValue, forKey: "ZCOLOR_TAG")
         
-        // 2. Map to ImageCore settings
+        // 3. Map to ImageCore settings
         var settings = IC_ProcessSettings()
-        settings.exposure = Double(exposure)
-        settings.contrast = Double(contrast)
-        settings.brightness = Double(brightness)
-        settings.saturation = Double(saturation)
+        settings.exposure = (mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0
+        settings.contrast = (mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0
+        settings.brightness = (mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0
+        settings.saturation = (mc.objectForKey("ZSATURATION") as? Double) ?? 0.0
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
         
-        // Levels & Curves bindings (High Fidelity)
         settings.levelsShadow = levelsBlackPoint
         settings.levelsHighlight = levelsWhitePoint
         settings.levelsMidtone = levelsMidtone
         settings.levelsTargetShadow = levelsTargetBlack
         settings.levelsTargetHighlight = levelsTargetWhite
         
-        // Map UI points to ICCurve (curveX for RGB)
         var curveX = ICCurve()
         curveX.count = Int32(min(curvesPoints.count, 16))
         for i in 0..<Int(curveX.count) {
@@ -172,11 +200,23 @@ public class AdjustmentToolController: ObservableObject {
         }
         settings.gradationCurves.curveX = curveX
         
-        // 3. Trigger pipeline execution (Simulation for now)
+        // 4. Map Local Adjustments (Layers)
+        for layer in variant.layers where layer.type != .background {
+            var localAdj = IC_LocalAdjustmentSettings()
+            localAdj.opacity = layer.opacity
+            if let mcLayer = layer.mcLayer {
+                localAdj.exposure = (mcLayer.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
+                localAdj.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
+                localAdj.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
+                localAdj.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
+            }
+            settings.localAdjustments.append(localAdj)
+        }
+        
+        // 5. Trigger pipeline execution
         _ = ImageCorePipeline(mode: .cpu_simd)
         print("[Adjustment] Committing changes for \(variant.variantUUID)")
         
-        // Mark variant as modified
         variant.isModified = true
     }
 }
