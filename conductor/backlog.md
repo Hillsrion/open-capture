@@ -9,7 +9,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| CORE-001 | **Smart Albums & Advanced Filters** (SQL for ratings, tags, EXIF) | High | Med | ⏳ Pending |
+| CORE-001 | **Smart Albums & Advanced Filters** (SQL for ratings, tags, EXIF) | High | Med | ✅ Done |
 | CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ⏳ Pending |
 | CORE-003 | **Variant Cloning** (Logic for creating new variants) | High | Low | ✅ Done |
 | CORE-004 | **Session/Catalog Switching** (Hot-swapping databases) | High | Med | ✅ Done |

@@ -3,26 +3,17 @@ import Accelerate
 
 /// Reconstructed Curves spline interpolation and LUT generation.
 
-public struct CurvePoint {
-    public var x: Float
-    public var y: Float
-    public init(x: Float, y: Float) {
-        self.x = x
-        self.y = y
-    }
-}
-
 public struct CurvesKernels {
-    
+
     /// Generates a LUT from a set of control points using Cubic Spline Interpolation.
-    public static func generateLUT(from points: [CurvePoint], lutSize: Int = 256) -> [Float] {
-        guard points.count > 1 else {
+    public static func generateLUT(from points: [ICCurvePoint], count: Int, lutSize: Int = 256) -> [Float] {
+        guard count > 1 else {
             return (0..<lutSize).map { Float($0) / Float(lutSize - 1) }
         }
-        
-        let sortedPoints = points.sorted { $0.x < $1.x }
+
+        let sortedPoints = points.prefix(count).sorted { $0.x < $1.x }
         let n = sortedPoints.count
-        
+
         var a = [Float](repeating: 0, count: n)
         for i in 0..<n { a[i] = sortedPoints[i].y }
         

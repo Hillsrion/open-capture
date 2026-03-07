@@ -157,14 +157,20 @@ public class AdjustmentToolController: ObservableObject {
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
         
-        // Levels & Curves bindings
-        settings.levelsBlackPoint = Double(levelsBlackPoint)
-        settings.levelsWhitePoint = Double(levelsWhitePoint)
-        settings.levelsMidtone = Double(levelsMidtone)
-        settings.levelsTargetBlack = Double(levelsTargetBlack)
-        settings.levelsTargetWhite = Double(levelsTargetWhite)
+        // Levels & Curves bindings (High Fidelity)
+        settings.levelsShadow = levelsBlackPoint
+        settings.levelsHighlight = levelsWhitePoint
+        settings.levelsMidtone = levelsMidtone
+        settings.levelsTargetShadow = levelsTargetBlack
+        settings.levelsTargetHighlight = levelsTargetWhite
         
-        settings.curvesPoints = curvesPoints.map { CurvePoint(x: Float($0.x), y: Float($0.y)) }
+        // Map UI points to ICCurve (curveX for RGB)
+        var curveX = ICCurve()
+        curveX.count = Int32(min(curvesPoints.count, 16))
+        for i in 0..<Int(curveX.count) {
+            curveX.points[i] = ICCurvePoint(x: Float(curvesPoints[i].x), y: Float(curvesPoints[i].y))
+        }
+        settings.gradationCurves.curveX = curveX
         
         // 3. Trigger pipeline execution (Simulation for now)
         _ = ImageCorePipeline(mode: .cpu_simd)

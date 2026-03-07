@@ -49,7 +49,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Metadata Synchronization (XMP, EXIF/IPTC)**
+- [x] **Track: Restoration of Metadata Synchronization (XMP, EXIF/IPTC)**
   *Link: [./tracks/metadata_sync_restoration_20260307/](./tracks/metadata_sync_restoration_20260307/)*
 
 ---
