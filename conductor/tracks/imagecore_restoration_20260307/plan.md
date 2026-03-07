@@ -1,10 +1,10 @@
 # Implementation Plan: Full Restoration of ImageCore Processing Logic
 
 ## Phase 1: Engine Architecture & Mapping
-- [ ] Task: Map the core processing engine hierarchy from `ImageCore` metadata.
-- [ ] Task: Identify and reconstruct the `ICEngine` base classes and versioning logic.
-- [ ] Task: Identify all adjustment operations (`ICAdjustmentOperation`) and their property mappings.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Engine Architecture & Mapping' (Protocol in workflow.md)
+- [x] Task: Map the core processing engine hierarchy from `ImageCore` metadata.
+- [x] Task: Identify and reconstruct the `ICEngine` base classes and versioning logic.
+- [x] Task: Identify all adjustment operations (`ICAdjustmentOperation`) and their property mappings.
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Engine Architecture & Mapping' (Protocol in workflow.md)
 
 ## Phase 2: Pipeline & Metal Logic Restoration
 - [ ] Task: Reconstruct the image processing pipeline coordination logic.
