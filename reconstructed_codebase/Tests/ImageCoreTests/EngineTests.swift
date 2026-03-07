@@ -14,11 +14,12 @@ class ImageCoreEngineTests: XCTestCase {
     func testPipelineCoordination() {
         let pipeline = ImageCorePipeline(mode: .cpu_simd)
         let rep = RawImageRep(model: "Test Camera", size: CGSize(width: 100, height: 100))
-        let settings = IC_ProcessSettings()
+        var settings = IC_ProcessSettings()
+        
+        // Add Lens Correction settings
+        settings.lensCorrection.distortion = 10.0
         
         // Dry run simulation of pipeline execution
-        // Verify that the call doesn't crash and initializes correctly.
         pipeline.run(input: rep, settings: settings, outputBuffer: UnsafeMutableRawPointer.allocate(byteCount: 100, alignment: 1))
     }
-    
 }

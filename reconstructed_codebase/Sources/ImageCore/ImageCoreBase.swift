@@ -123,6 +123,24 @@ public struct IC_LocalAdjustmentSettings {
     }
 }
 
+public struct IC_LensCorrectionSettings {
+    public var distortion: Double
+    public var lightFalloff: Double
+    public var sharpnessFalloff: Double
+    public var chromaticAberration: Bool
+    public var diffraction: Bool
+    public var lccProfileUUID: String?
+    
+    public init() {
+        self.distortion = 0.0
+        self.lightFalloff = 0.0
+        self.sharpnessFalloff = 0.0
+        self.chromaticAberration = false
+        self.diffraction = false
+        self.lccProfileUUID = nil
+    }
+}
+
 public struct IC_ExportSettings {
     public var format: Int32 // 0: JPEG, 1: TIFF, 2: PNG, 3: PSD, 4: DNG
     public var quality: Int32

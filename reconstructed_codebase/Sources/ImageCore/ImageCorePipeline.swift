@@ -32,10 +32,31 @@ public class ImageCorePipeline {
         // NEON/SIMD optimized logic inferred from disassembly:
         // Using Accelerate framework to mimic low-level instructions like ld4.16b/st3.16b.
         
-        // Example: Apply gain table/matrix for RAW conversion
-        let _ = input.getMatrix(for: settings)
+        let pixelCount = Int(input.sensorSize.width * input.sensorSize.height)
+        var floatBuffer = [Float](repeating: 0.0, count: pixelCount)
         
-        // vImage or custom SIMD kernels would be called here.
+        // --- Lens Correction (ENG-006) ---
+        
+        // 1. Distortion & CA
+        if settings.lensCorrection.distortion != 0 {
+            // Simplified: In a real pipeline, this would involve re-sampling/interpolation
+            // We'll simulate by calling our kernel logic on coordinates if needed.
+            print("[ImageCore] Applying Distortion Correction: \(settings.lensCorrection.distortion)")
+        }
+        
+        // 2. Light Falloff
+        if settings.lensCorrection.lightFalloff != 0 {
+            // Calculate distances from center for each pixel (normally cached or procedural)
+            let distances = [Float](repeating: 0.5, count: pixelCount) 
+            LensCorrectionKernels.applyLightFalloff(to: &floatBuffer, distances: distances, count: pixelCount, amount: Float(settings.lensCorrection.lightFalloff))
+        }
+        
+        // 3. LCC (Lens Cast Calibration)
+        if let lccUUID = settings.lensCorrection.lccProfileUUID {
+            // In a real implementation, we would fetch the profile from a manager/cache
+            print("[ImageCore] Applying LCC Profile: \(lccUUID)")
+            // LCCManager.shared.apply(profile: profile, to: &floatBuffer, count: pixelCount)
+        }
         
         // --- Layer Blending Simulation (ENG-005) ---
         for localAdj in settings.localAdjustments {
@@ -44,6 +65,9 @@ public class ImageCorePipeline {
             // 2. Apply adjustments to temp buffer
             // 3. Blend temp buffer into output using mask and opacity
         }
+        
+        // Finalize: Copy floatBuffer back to output (simplified cast)
+        // ...
     }
     
     /// High-level function to render a variant to a file.
