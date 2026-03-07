@@ -72,10 +72,4 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Restoration of Export Engine & Process Recipes**
   *Link: [./tracks/export_engine_restoration_20260308/](./tracks/export_engine_restoration_20260308/)*
 
----
-
-- [x] **Track: Restoration of Lens Correction (Distortion, LCC, CA)**
-  *Link: [./tracks/lens_correction_restoration_20260308/](./tracks/lens_correction_restoration_20260308/)*
-
----
 
