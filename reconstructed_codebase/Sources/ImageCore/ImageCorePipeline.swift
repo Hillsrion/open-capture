@@ -46,6 +46,32 @@ public class ImageCorePipeline {
             // 3. Blend temp buffer into output using mask and opacity
         }
     }
+    
+    /// High-level function to render a variant to a file.
+    /// Based on _ICP_ProcessToFile binary entry point.
+    public func processToFile(input: RawImageRep, settings: IC_ProcessSettings, exportSettings: IC_ExportSettings, destination: String) {
+        print("[ImageCore] Exporting image to: \(destination)")
+        print("[ImageCore] Format: \(exportSettings.format), Quality: \(exportSettings.quality)")
+        
+        // 1. Setup output buffer
+        // (For simplicity, we simulate the output buffer creation based on sensor size)
+        let pixelCount = Int(input.sensorSize.width * input.sensorSize.height)
+        let byteCount = pixelCount * 4 // RGBA8
+        let buffer = UnsafeMutableRawPointer.allocate(byteCount: byteCount, alignment: 8)
+        defer { buffer.deallocate() }
+        
+        // 2. Run the pipeline
+        run(input: input, settings: settings, outputBuffer: buffer)
+        
+        // 3. Encode and save
+        let data = Data(bytes: buffer, count: byteCount)
+        // Simulate file writing to the destination
+        do {
+            try data.write(to: URL(fileURLWithPath: destination))
+        } catch {
+            print("[ImageCore] Failed to write file: \(error)")
+        }
+    }
 }
 
 /// Reconstructed Tile Execution Manager.

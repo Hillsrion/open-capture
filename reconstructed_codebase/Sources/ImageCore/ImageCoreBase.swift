@@ -123,6 +123,22 @@ public struct IC_LocalAdjustmentSettings {
     }
 }
 
+public struct IC_ExportSettings {
+    public var format: Int32 // 0: JPEG, 1: TIFF, 2: PNG, 3: PSD, 4: DNG
+    public var quality: Int32
+    public var iccProfilePath: String?
+    public var bitsPerChannel: Int32
+    public var compression: Int32
+    
+    public init() {
+        self.format = 0
+        self.quality = 80
+        self.iccProfilePath = nil
+        self.bitsPerChannel = 8
+        self.compression = 0
+    }
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32
