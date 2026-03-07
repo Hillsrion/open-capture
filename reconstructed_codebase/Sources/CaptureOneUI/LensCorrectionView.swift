@@ -7,12 +7,16 @@ public struct LensCorrectionToolView: View {
     @Binding var distortion: Double
     @Binding var sharpnessFalloff: Double
     @Binding var lightFalloff: Double
+    @Binding var shiftX: Float
+    @Binding var shiftY: Float
     @State private var profile: String = "Generic"
     
-    public init(distortion: Binding<Double>, sharpnessFalloff: Binding<Double>, lightFalloff: Binding<Double>) {
+    public init(distortion: Binding<Double>, sharpnessFalloff: Binding<Double>, lightFalloff: Binding<Double>, shiftX: Binding<Float>, shiftY: Binding<Float>) {
         self._distortion = distortion
         self._sharpnessFalloff = sharpnessFalloff
         self._lightFalloff = lightFalloff
+        self._shiftX = shiftX
+        self._shiftY = shiftY
     }
     
     public var body: some View {
@@ -39,6 +43,9 @@ public struct LensCorrectionToolView: View {
                 COUISlider(label: "Distortion", value: Binding(get: { Float(distortion) }, set: { distortion = Double($0) }), range: 0...100)
                 COUISlider(label: "Sharpness Falloff", value: Binding(get: { Float(sharpnessFalloff) }, set: { sharpnessFalloff = Double($0) }), range: 0...100)
                 COUISlider(label: "Light Falloff", value: Binding(get: { Float(lightFalloff) }, set: { lightFalloff = Double($0) }), range: 0...100)
+                
+                COUISlider(label: "Movement X", value: $shiftX, range: -100...100)
+                COUISlider(label: "Movement Y", value: $shiftY, range: -100...100)
                 
                 HStack {
                     Toggle("Chromatic Aberration", isOn: .constant(true))

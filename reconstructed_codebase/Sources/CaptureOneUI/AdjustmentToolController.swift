@@ -333,4 +333,3 @@ public class AdjustmentToolController: ObservableObject {
         variant.isModified = true
     }
 }
-

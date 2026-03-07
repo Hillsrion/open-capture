@@ -111,7 +111,9 @@ public struct LensCorrectionInspectorTool: View {
             LensCorrectionToolView(
                 distortion: $controller.lensDistortion,
                 sharpnessFalloff: $controller.lensSharpnessFalloff,
-                lightFalloff: $controller.lensLightFalloff
+                lightFalloff: $controller.lensLightFalloff,
+                shiftX: $controller.lensShiftX,
+                shiftY: $controller.lensShiftY
             )
             
             LCCToolView(isLCCActive: $controller.isLCCActive)

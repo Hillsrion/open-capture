@@ -40,7 +40,7 @@ public class LCCManager {
         if maxBrightness > 0 {
             for i in 0..<pixelCount {
                 // Avoid division by zero and handle clipped areas
-                let val = buffer[i] > 0 ? buffer[i] : 1.0
+                let val = max(1e-6, buffer[i])
                 uniformityMap[i] = maxBrightness / val
             }
         }

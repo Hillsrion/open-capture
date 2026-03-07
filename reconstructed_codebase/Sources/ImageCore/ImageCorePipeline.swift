@@ -55,7 +55,10 @@ public class ImageCorePipeline {
         if let lccUUID = settings.lensCorrection.lccProfileUUID {
             // In a real implementation, we would fetch the profile from a manager/cache
             print("[ImageCore] Applying LCC Profile: \(lccUUID)")
-            // LCCManager.shared.apply(profile: profile, to: &floatBuffer, count: pixelCount)
+            
+            // Simulation of profile retrieval and application
+            let profile = IC_LCCProfile(cameraModel: "Unknown", size: input.sensorSize, uniformityMap: [])
+            LCCManager.shared.apply(profile: profile, to: &floatBuffer, count: pixelCount)
         }
         
         // --- Layer Blending Simulation (ENG-005) ---
