@@ -30,6 +30,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Core data models (Image, Variant, Collection, Session) and logic coordination (ObjectContext) reconstructed for `AppCoreShared`. License checks and telemetry neutralized.
 - **Status:** Processing pipeline, Metal GPU dispatching, and Masking engine (LumaRange/Local AI) reconstructed for `ImageCore`.
 - **Status:** SQLite schema mapped and persistence layer (Catalogs/Sessions/Sidecars) reconstructed for `DataCore`.
+- **Status:** Presentation layer (Themes, Custom Controls, Windowing, Tool Views) reconstructed for `CaptureOneUI`.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.
