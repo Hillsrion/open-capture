@@ -49,6 +49,9 @@ public class CullingWindowController: NSWindowController {
 
 /// SwiftUI Wrapper for Culling interface
 public struct CullingView: View {
+    
+    public init() {}
+    
     @State private var selectedImageID: String?
     
     public var body: some View {

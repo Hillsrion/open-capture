@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/master.swiftdeps"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/ImageCore/ImageCoreBase.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreBase.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreBase.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreBase~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreBase.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreBase.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/ImageCore/ImageCoreGPU.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreGPU.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreGPU.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreGPU~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreGPU.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreGPU.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/ImageCore/ImageCoreMasking.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreMasking.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreMasking.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreMasking~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreMasking.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCoreMasking.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/ImageCore/ImageCorePipeline.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCorePipeline.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCorePipeline.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCorePipeline~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCorePipeline.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/ImageCorePipeline.dia"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/ImageCore/RawImageRep.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/RawImageRep.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/RawImageRep.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/RawImageRep~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/RawImageRep.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/ImageCore.build/RawImageRep.dia"
+  }
+}

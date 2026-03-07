@@ -7,6 +7,8 @@ import SwiftUI
 /// Combines exposure data (ISO, Aperture, Shutter) with histogram visualization.
 public struct HistogramToolView: View {
     
+    public init() {}
+    
     // MARK: - State (Inferred from properties)
     @State var aperture: String = "f/2.8"
     @State var shutterSpeed: String = "1/125"

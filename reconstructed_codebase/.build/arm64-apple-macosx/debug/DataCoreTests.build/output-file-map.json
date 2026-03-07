@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/master.swiftdeps"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Tests/DataCoreTests/PersistenceTests.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/PersistenceTests.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/PersistenceTests.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/PersistenceTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/PersistenceTests.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/DataCoreTests.build/PersistenceTests.dia"
+  }
+}

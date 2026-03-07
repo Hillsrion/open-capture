@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/master.swiftdeps"
+  },
+  "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/runner.d",
+    "object": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/.build/arm64-apple-macosx/debug/CaptureOneReconstructedPackageTests.build/runner.dia"
+  }
+}

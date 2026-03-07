@@ -7,6 +7,7 @@ let package = Package(
         .macOS(.v13)
     ],
     products: [
+        .executable(name: "CaptureOneApp", targets: ["CaptureOneApp"]),
         .library(name: "AppCoreShared", targets: ["AppCoreShared"]),
         .library(name: "ImageCore", targets: ["ImageCore"]),
         .library(name: "DataCore", targets: ["DataCore"]),
@@ -14,6 +15,11 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
+        .executableTarget(
+            name: "CaptureOneApp",
+            dependencies: ["AppCoreShared", "DataCore", "ImageCore", "CaptureOneUI"],
+            path: "Sources/CaptureOneApp"
+        ),
         .target(
             name: "DataCore",
             dependencies: [],
