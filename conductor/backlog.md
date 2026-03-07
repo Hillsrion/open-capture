@@ -29,8 +29,8 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | ENG-001 | **Bipolar Adjustments** (Exposure, Contrast kernels) | High | Low | ✅ Done |
 | ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ✅ Done |
 | ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ✅ Done |
-| ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ⏳ Pending |
-| ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ⏳ Pending |
+| ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ✅ Done |
+| ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ✅ Done |
 | ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ⏳ Pending |
 | ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ⏳ Pending |
 | ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ⏳ Pending |
@@ -71,7 +71,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | UI-001 | **High-Fidelity Sliders** (Thin track, bipolar mode) | High | Low | ✅ Done |
 | UI-002 | **Curves Interactive Widget** (Bezier point editor) | High | High | ✅ Done |
 | UI-003 | **Color Wheels UI** (360° color picker interface) | Med | High | ⏳ Pending |
-| UI-004 | **Layer Inspector** (Layer stack, opacity, visibility) | High | Med | ⏳ Pending |
+| UI-004 | **Layer Inspector** (Layer stack, opacity, visibility) | High | Med | ✅ Done |
 | UI-005 | **Grid View Browser** (Lazy loading, resizable thumbnails, list view) | High | High | ⏳ Pending |
 | UI-006 | **Heal / Clone Brush Tools** (Source point selection UI) | Med | High | ⏳ Pending |
 | UI-007 | **Annotations View** (Drawing layer on top of viewer) | Low | Med | ⏳ Pending |
@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-004** (Advanced Color Editor) within the `advanced_color_editor_restoration` track.
+Currently working on **ENG-009** (Export Engine) within the `export_engine_restoration` track.

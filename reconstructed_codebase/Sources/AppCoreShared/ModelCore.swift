@@ -69,3 +69,39 @@ public class MCVariant: NSObject {
         return newVariant
     }
 }
+
+/// Reconstructed Base class for Export Recipes in ModelCore.
+public class MCRecipe: NSObject {
+    public var properties: [String: Any] = [:]
+    
+    public init(dictionary: [String: Any]) {
+        self.properties = dictionary
+        super.init()
+    }
+    
+    public func objectForKey(_ key: String) -> Any? {
+        return properties[key]
+    }
+    
+    public func setObject(_ object: Any?, forKey key: String) {
+        if let object = object {
+            properties[key] = object
+        } else {
+            properties.removeValue(forKey: key)
+        }
+    }
+    
+    public static func allKeys() -> [String] {
+        return [
+            "MCRecipeKeyFileFormat",
+            "MCRecipeKeyJpegQuality",
+            "MCRecipeKeyDestinationRootFolder",
+            "MCRecipeKeyDestinationSubFolder",
+            "MCRecipeKeyICCOutputProfile",
+            "MCRecipeKeyScaleType",
+            "MCRecipeKeyScaleValue",
+            "MCRecipeKeyMetadataIncludeAll",
+            "MCRecipeKeyNamingFormat"
+        ]
+    }
+}
