@@ -151,6 +151,13 @@ public struct CullingView: View {
                                         brightness: $adjustmentController.brightness,
                                         saturation: $adjustmentController.saturation
                                     )
+                                    
+                                    ClarityToolView(
+                                        amount: $adjustmentController.clarityAmount,
+                                        structure: $adjustmentController.structureAmount,
+                                        method: $adjustmentController.clarityMethod
+                                    )
+                                    
                                     HDRToolView(
                                         highlights: $adjustmentController.highlights,
                                         shadows: $adjustmentController.shadows,

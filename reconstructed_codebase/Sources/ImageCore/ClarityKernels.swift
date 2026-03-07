@@ -61,7 +61,7 @@ public struct ClarityKernels {
             // Structure acts on high-frequencies. 
             // Simulated here as a slight sharpen-like boost.
             let val = buffer[i]
-            let detail = (val > 0.5) ? 0.01 : -0.01 // Very crude detail simulation
+            let detail: Float = (val > 0.5) ? 0.01 : -0.01 // Very crude detail simulation
             buffer[i] = max(0.0, min(1.0, val + detail * scalar))
         }
     }

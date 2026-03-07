@@ -7,10 +7,10 @@
 - [x] Task: Commit Phase 1.
 
 ## Phase 2: UI Component (CaptureOneUI)
-- [ ] Task: Create `ClarityToolView` with sliders for Amount, Structure, and Method Picker.
-- [ ] Task: Add `ClarityToolView` to `CullingWindowController` under the ADJUST tab.
-- [ ] Task: Commit Phase 2.
+- [x] Task: Create `ClarityToolView` with sliders for Amount, Structure, and Method Picker.
+- [x] Task: Add `ClarityToolView` to `CullingWindowController` under the ADJUST tab.
+- [x] Task: Commit Phase 2.
 
 ## Phase 3: Validation
-- [ ] Task: Verify the build and tool binding.
-- [ ] Task: Commit Phase 3.
+- [x] Task: Verify the build and tool binding.
+- [x] Task: Commit Phase 3.
