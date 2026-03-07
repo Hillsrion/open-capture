@@ -22,3 +22,6 @@
 - [x] Task: Reconstruct `LCCView` tool inspector and "Create LCC" workflow. ca138ed
 - [x] Task: Create a test case to apply lens correction to a variant and verify histogram changes. ca138ed
 - [x] Task: Commit Phase 4. ca138ed
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions 590df4e
