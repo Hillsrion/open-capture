@@ -17,8 +17,8 @@
 - [x] Task: Implement LCC application in `ImageCorePipeline`. d06a106
 - [x] Task: Commit Phase 3. d06a106
 
-## Phase 4: UI & Validation (CaptureOneUI)
-- [ ] Task: Reconstruct `LensCorrectionView` tool inspector (Distortion, Sharpness Falloff, Light Falloff sliders).
-- [ ] Task: Reconstruct `LCCView` tool inspector and "Create LCC" workflow.
-- [ ] Task: Create a test case to apply lens correction to a variant and verify histogram changes.
-- [ ] Task: Commit Phase 4.
+## Phase 4: UI & Validation (CaptureOneUI) [checkpoint: ca138ed]
+- [x] Task: Reconstruct `LensCorrectionView` tool inspector (Distortion, Sharpness Falloff, Light Falloff sliders). ca138ed
+- [x] Task: Reconstruct `LCCView` tool inspector and "Create LCC" workflow. ca138ed
+- [x] Task: Create a test case to apply lens correction to a variant and verify histogram changes. ca138ed
+- [x] Task: Commit Phase 4. ca138ed
