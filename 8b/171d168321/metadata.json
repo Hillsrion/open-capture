@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "8b171d168321",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/tethered_enhancements_20260308/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/CameraModels.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/NamingEngine.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/CameraSettingsTool.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewOverlayView.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/NextCaptureSettingsTool.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/8b/171d168321/0/metadata.json",
+      "transcript": "/8b/171d168321/0/full.jsonl",
+      "content_hash": "/8b/171d168321/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
