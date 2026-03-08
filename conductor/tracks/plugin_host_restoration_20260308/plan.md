@@ -17,14 +17,14 @@ Reconstruct the Plugin Host Architecture (INT-003) from `PluginCore`, enabling t
 - [x] Task: Commit Phase 1 & Build Check. fc89690
 
 ### Phase 2: Plugin Agent Interface Mock (AppCoreShared)
-- [ ] Task: Reconstruct `COPluginAgentInterface` and `COPluginHostInterface` structures.
-- [ ] Task: Implement `COPluginHostConnection` as a mock wrapper simulating an XPC connection to a plugin.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Reconstruct `COPluginAgentInterface` and `COPluginHostInterface` structures. fc89691
+- [x] Task: Implement `COPluginHostConnection` as a mock wrapper simulating an XPC connection to a plugin. fc89691
+- [x] Task: Commit Phase 2 & Build Check. fc89691
 
 ### Phase 3: Plugin UI & Preferences (CaptureOneUI)
-- [ ] Task: Create a `PluginsPreferencesView` displaying a list of discovered plugins.
-- [ ] Task: Add a button to "Load Plugin" (simulating a mock plugin install).
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Create a `PluginsPreferencesView` displaying a list of discovered plugins. fc89692
+- [x] Task: Add a button to "Load Plugin" (simulating a mock plugin install). fc89692
+- [x] Task: Commit Phase 3 & Build Check. fc89692
 
 ### Phase 4: Integration (CaptureOneApp)
 - [ ] Task: Initialize `COPluginManager.shared` at app launch.
