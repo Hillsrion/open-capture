@@ -109,8 +109,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Print Layout Window Restoration**
+- [x] **Track: Print Layout Window Restoration**
   *Link: [./tracks/print_layout_restoration_20260308/](./tracks/print_layout_restoration_20260308/)*
+
+---
+
+- [~] **Track: Plugin Host Architecture Restoration**
+  *Link: [./tracks/plugin_host_restoration_20260308/](./tracks/plugin_host_restoration_20260308/)*
 
 ---
 
