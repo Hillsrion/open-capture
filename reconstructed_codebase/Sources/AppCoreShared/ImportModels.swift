@@ -40,6 +40,10 @@ public struct ImportSettings {
     public var smartStyleUUID: String? = nil
     public var smartReferenceVariantUUID: String? = nil
     
+    // EIP Settings (CORE-006)
+    public var alwaysUnpackEIP: Bool = false
+    public var alwaysPackAsEIP: Bool = false
+    
     public var metadata: ImportMetadata = ImportMetadata()
     
     public init() {}

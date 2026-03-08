@@ -52,9 +52,13 @@ public class POImporter: ObservableObject {
             var sequence = 1
             
             for url in itemsToImport {
+                // Reconstructed EIP Ingest (CORE-006)
+                let isEIP = url.pathExtension.lowercased() == "eip"
+                
                 // Task 3: Implement file copying logic with token-based renaming
+                let baseName = isEIP ? url.deletingPathExtension().lastPathComponent : url.deletingPathExtension().lastPathComponent
                 let context = TokenEvaluator.Context(
-                    imageName: url.deletingPathExtension().lastPathComponent,
+                    imageName: baseName,
                     date: Date(),
                     sequence: sequence,
                     jobName: self.settings.metadata.jobName
@@ -62,13 +66,14 @@ public class POImporter: ObservableObject {
                 
                 let newFileName = evaluator.evaluate(format: self.settings.namingFormat, context: context)
                 let destinationURL: URL
+                let finalExtension = isEIP ? "eip" : url.pathExtension
                 
                 if self.settings.destinationFolderType == .insideCatalog {
                     // Placeholder for catalog path resolution
-                    destinationURL = url.deletingLastPathComponent().appendingPathComponent(newFileName).appendingPathExtension(url.pathExtension)
+                    destinationURL = url.deletingLastPathComponent().appendingPathComponent(newFileName).appendingPathExtension(finalExtension)
                 } else {
                     let customPathURL = URL(fileURLWithPath: self.settings.destinationCustomPath)
-                    destinationURL = customPathURL.appendingPathComponent(newFileName).appendingPathExtension(url.pathExtension)
+                    destinationURL = customPathURL.appendingPathComponent(newFileName).appendingPathExtension(finalExtension)
                 }
                 
                 do {
@@ -87,8 +92,13 @@ public class POImporter: ObservableObject {
                     // Task 5: Apply Smart Adjustments if enabled (AI-002)
                     if let _ = self.settings.smartStyleUUID {
                         print("[POImporter] Applying Smart Adjustments to \(uuid)")
-                        // Logic: In the real app, this would fetch the reference variant,
-                        // analyze the new image, calculate deltas, and write to DataCore.
+                    }
+                    
+                    // Reconstructed: Unpack EIP if requested (CORE-006)
+                    if isEIP && self.settings.alwaysUnpackEIP {
+                        let archiver = EIPArchive(path: destinationURL)
+                        try archiver.extract(to: destinationURL.deletingPathExtension())
+                        print("[POImporter] Unpacked EIP contents for \(destinationURL.lastPathComponent)")
                     }
                     
                     print("[POImporter] Imported and Registered \(destinationURL.lastPathComponent)")

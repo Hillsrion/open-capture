@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed high-fidelity Main Toolbar (UI-013/INT-001).
 /// Based on version 16.5 layout and disassembly.
@@ -18,8 +19,8 @@ public struct MainToolbarView: View {
                     Spacer()
                 } else if id == "FIXED_SPACER" {
                     Spacer().frame(width: 20)
-                } else if let item = ToolbarItemRegistry.item(for: id) {
-                    ToolbarButton(item: item, isSelected: selectedToolID == item.id) {
+                } else if let item = COToolbarItemRegistry.item(for: id) {
+                    COToolbarButton(item: item, isSelected: selectedToolID == item.id) {
                         if item.type == .tool {
                             selectedToolID = item.id
                         }
@@ -55,7 +56,6 @@ public struct MainToolbarView: View {
                             .font(.system(size: 10, design: .monospaced))
                             .foregroundColor(.gray)
                     }
-                    .menuStyle(PlainMenuStyle())
                     .frame(width: 100)
                 }
             }
@@ -80,8 +80,8 @@ public struct MainToolbarView: View {
     }
 }
 
-struct ToolbarButton: View {
-    let item: ToolbarItem
+struct COToolbarButton: View {
+    let item: COToolbarItem
     let isSelected: Bool
     let action: () -> Void
     

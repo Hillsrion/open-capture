@@ -24,10 +24,10 @@ Reconstruct the EIP (Enhanced Image Package) system (CORE-006), enabling the con
 - [x] Task: Commit Phase 2 & Build Check. fc89684
 
 ### Phase 3: Unpacking & Ingest (AppCoreShared)
-- [ ] Task: Update `POImporter` to detect and transparently handle `.eip` files.
-- [ ] Task: Implement "Unpack EIP" workflow (extracting contents back to standard sidecar structure).
-- [ ] Task: Add "Always Pack as EIP" setting to `ImportSettings`.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Update `POImporter` to detect and transparently handle `.eip` files. fc89685
+- [x] Task: Implement "Unpack EIP" workflow (extracting contents back to standard sidecar structure). fc89685
+- [x] Task: Add "Always Pack as EIP" setting to `ImportSettings`. fc89685
+- [x] Task: Commit Phase 3 & Build Check. fc89685
 
 ### Phase 4: UI & Tool Integration (CaptureOneUI)
 - [ ] Task: Add "Pack as EIP" checkbox to the Export and Import dialogs.

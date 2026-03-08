@@ -20,7 +20,7 @@ public struct ToolbarCustomizationDialog: View {
             // Grid of all available items
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 80))], spacing: 20) {
-                    ForEach(ToolbarItemRegistry.availableItems) { item in
+                    ForEach(COToolbarItemRegistry.availableItems) { item in
                         CustomizationItemView(item: item)
                             .onDrag {
                                 NSItemProvider(object: item.id as NSString)
@@ -41,8 +41,8 @@ public struct ToolbarCustomizationDialog: View {
                 
                 HStack(spacing: 4) {
                     ForEach(workspaceManager.activeWorkspace.toolbarConfiguration.itemIDs, id: \.self) { id in
-                        if let item = ToolbarItemRegistry.item(for: id) {
-                            ToolbarButton(item: item, isSelected: false) {}
+                        if let item = COToolbarItemRegistry.item(for: id) {
+                            COToolbarButton(item: item, isSelected: false) {}
                                 .onDrag {
                                     NSItemProvider(object: id as NSString)
                                 }
@@ -64,7 +64,11 @@ public struct ToolbarCustomizationDialog: View {
                 Button("Reset to Default") {
                     workspaceManager.activeWorkspace.toolbarConfiguration = .defaultConfiguration
                 }
-                .buttonStyle(CaptureOneTheme.Styles.SecondaryButton())
+                .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(4)
                 
                 Spacer()
                 
@@ -72,7 +76,11 @@ public struct ToolbarCustomizationDialog: View {
                     workspaceManager.saveWorkspace()
                     dismiss()
                 }
-                .buttonStyle(CaptureOneTheme.Styles.PrimaryButton())
+                .buttonStyle(PlainButtonStyle())
+                .padding(.horizontal, 16)
+                .padding(.vertical, 6)
+                .background(CaptureOneTheme.Colors.activeHighlight)
+                .cornerRadius(4)
             }
         }
         .padding(20)
@@ -83,7 +91,7 @@ public struct ToolbarCustomizationDialog: View {
 }
 
 struct CustomizationItemView: View {
-    let item: ToolbarItem
+    let item: COToolbarItem
     
     var body: some View {
         VStack(spacing: 4) {

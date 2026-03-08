@@ -2,7 +2,7 @@ import Foundation
 
 /// Reconstructed Data Model for a Toolbar Item (INT-001).
 /// Represents a single icon or widget in the main application toolbar.
-public struct ToolbarItem: Identifiable, Codable, Hashable {
+public struct COToolbarItem: Identifiable, Codable, Hashable {
     public let id: String
     public let name: String
     public let iconName: String
@@ -55,34 +55,34 @@ public struct ToolbarConfiguration: Codable, Hashable {
 }
 
 /// Registry of all available toolbar items in Capture One.
-public struct ToolbarItemRegistry {
-    public static let availableItems: [ToolbarItem] = [
+public struct COToolbarItemRegistry {
+    public static let availableItems: [COToolbarItem] = [
         // Tools
-        ToolbarItem(id: "Select", name: "Select", iconName: "cursorarrow", type: .tool),
-        ToolbarItem(id: "Pan", name: "Pan", iconName: "hand.raised", type: .tool),
-        ToolbarItem(id: "Loupe", name: "Loupe", iconName: "magnifyingglass", type: .tool),
-        ToolbarItem(id: "Crop", name: "Crop", iconName: "crop", type: .tool),
-        ToolbarItem(id: "Straighten", name: "Straighten", iconName: "line.diagonal", type: .tool),
-        ToolbarItem(id: "Rotate", name: "Rotate", iconName: "rotate.right", type: .tool),
-        ToolbarItem(id: "Keystone", name: "Keystone", iconName: "rectangle.distorted", type: .tool),
+        COToolbarItem(id: "Select", name: "Select", iconName: "cursorarrow", type: .tool),
+        COToolbarItem(id: "Pan", name: "Pan", iconName: "hand.raised", type: .tool),
+        COToolbarItem(id: "Loupe", name: "Loupe", iconName: "magnifyingglass", type: .tool),
+        COToolbarItem(id: "Crop", name: "Crop", iconName: "crop", type: .tool),
+        COToolbarItem(id: "Straighten", name: "Straighten", iconName: "line.diagonal", type: .tool),
+        COToolbarItem(id: "Rotate", name: "Rotate", iconName: "rotate.right", type: .tool),
+        COToolbarItem(id: "Keystone", name: "Keystone", iconName: "rectangle.distorted", type: .tool),
         
         // Actions
-        ToolbarItem(id: "AutoAdjust", name: "Auto Adjust", iconName: "wand.and.stars"),
-        ToolbarItem(id: "CopyAdjustments", name: "Copy Adjustments", iconName: "arrow.up.doc"),
-        ToolbarItem(id: "ApplyAdjustments", name: "Apply Adjustments", iconName: "arrow.down.doc"),
-        ToolbarItem(id: "Reset", name: "Reset", iconName: "arrow.counterclockwise"),
+        COToolbarItem(id: "AutoAdjust", name: "Auto Adjust", iconName: "wand.and.stars"),
+        COToolbarItem(id: "CopyAdjustments", name: "Copy Adjustments", iconName: "arrow.up.doc"),
+        COToolbarItem(id: "ApplyAdjustments", name: "Apply Adjustments", iconName: "arrow.down.doc"),
+        COToolbarItem(id: "Reset", name: "Reset", iconName: "arrow.counterclockwise"),
         
         // Workflow
-        ToolbarItem(id: "Import", name: "Import", iconName: "square.and.arrow.down"),
-        ToolbarItem(id: "Capture", name: "Capture", iconName: "camera"),
-        ToolbarItem(id: "Export", name: "Export", iconName: "square.and.arrow.up"),
+        COToolbarItem(id: "Import", name: "Import", iconName: "square.and.arrow.down"),
+        COToolbarItem(id: "Capture", name: "Capture", iconName: "camera"),
+        COToolbarItem(id: "Export", name: "Export", iconName: "square.and.arrow.up"),
         
         // Spacers (Special IDs)
-        ToolbarItem(id: "FIXED_SPACER", name: "Space", iconName: "space", type: .spacer),
-        ToolbarItem(id: "FLEXIBLE_SPACER", name: "Flexible Space", iconName: "arrow.left.and.right", type: .flexibleSpacer)
+        COToolbarItem(id: "FIXED_SPACER", name: "Space", iconName: "space", type: .spacer),
+        COToolbarItem(id: "FLEXIBLE_SPACER", name: "Flexible Space", iconName: "arrow.left.and.right", type: .flexibleSpacer)
     ]
     
-    public static func item(for id: String) -> ToolbarItem? {
+    public static func item(for id: String) -> COToolbarItem? {
         return availableItems.first { $0.id == id }
     }
 }
