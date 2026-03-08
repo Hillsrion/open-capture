@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "883e30d68c44",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/noise_sharpening_restoration_20260308/plan.md",
+    "conductor/tracks/noise_sharpening_restoration_20260308/spec.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/88/3e30d68c44/0/metadata.json",
+      "transcript": "/88/3e30d68c44/0/full.jsonl",
+      "content_hash": "/88/3e30d68c44/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 201577452,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 183587141,
+    "output_tokens": 330986,
+    "api_call_count": 774
+  }
+}
