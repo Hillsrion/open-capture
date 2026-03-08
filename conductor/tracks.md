@@ -54,7 +54,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Restoration of Layers & Masking Engine (Alpha Blending, Opacity)**
+- [ ] **Track: Restoration of Layers & Masking Engine (Alpha Blending, Opacity)**
   *Link: [./tracks/layers_masking_restoration_20260307/](./tracks/layers_masking_restoration_20260307/)*
 
 ---
@@ -69,17 +69,17 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Restoration of Export Engine & Process Recipes**
+- [ ] **Track: Restoration of Export Engine & Process Recipes**
   *Link: [./tracks/export_engine_restoration_20260308/](./tracks/export_engine_restoration_20260308/)*
 
 ---
 
-- [x] **Track: Live View Engine Restoration**
-  *Link: [./tracks/styles_presets_restoration_20260308/](./tracks/styles_presets_restoration_20260308/)*
+- [ ] **Track: Live View Engine Restoration**
+  *Link: [./tracks/live_view_restoration_20260308/](./tracks/live_view_restoration_20260308/)*
 
 ---
 
-- [x] **Track: Tethered Capture Enhancements (Next Capture Naming & Adjustments)**
+- [ ] **Track: Tethered Capture Enhancements (Next Capture Naming & Adjustments)**
   *Link: [./tracks/tethered_enhancements_20260308/](./tracks/tethered_enhancements_20260308/)*
 
 ---
@@ -130,6 +130,20 @@ This file tracks all major tracks for the project. Each track has its own detail
 ---
 
 
+---
+
+- [x] **Track: Workspace Parity - Library Organize Workflow (UI-201, GAP-402, UI-214, UI-215)**
+  *Link: [./tracks/library_organize_workflow_20260308/](./tracks/library_organize_workflow_20260308/)*
+
+---
+
+- [ ] **Track: Workspace Parity - Document Lifecycle & Preferences (UI-212, UI-213, WF-506, WF-507, UI-211)**
+  *Link: [./tracks/document_lifecycle_20260308/](./tracks/document_lifecycle_20260308/)*
+
+---
+
+- [ ] **Track: Workspace Parity - Exposure, Details, Lens Tools (UI-202, UI-203, UI-204)**
+  *Link: [./tracks/tool_placeholders_20260308/](./tracks/tool_placeholders_20260308/)*
 
 
 
