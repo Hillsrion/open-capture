@@ -196,10 +196,9 @@ public struct CullingView: View {
                                         targetBlack: $adjustmentController.levelsTargetBlack,
                                         targetWhite: $adjustmentController.levelsTargetWhite
                                     )
-                                    POCurvesControl(
-                                        points: $adjustmentController.curvesPoints
-                                    )
-                                    
+
+                                    FilmGrainToolView(controller: adjustmentController)
+
                                     MetadataInspectorView(image: adjustmentController.currentVariant?.image)
                                 }
                             } else if selectedToolTab == "DETAILS" {

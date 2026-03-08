@@ -1,5 +1,6 @@
 import Foundation
 import CoreGraphics
+import ImageCore
 
 /// Reconstructed logic for automated repair source selection (UI-006).
 public class RepairEngine {
