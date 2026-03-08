@@ -40,6 +40,13 @@ public struct COViewerView: View {
                                 .opacity(0.5)
                                 .colorMultiply(.red)
                         }
+                        
+                        // Repair Arrows Overlay (UI-006)
+                        if let active = adjustmentController?.currentVariant?.activeLayer {
+                            ForEach(active.repairArrows) { arrow in
+                                RepairArrowView(arrow: arrow)
+                            }
+                        }
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)

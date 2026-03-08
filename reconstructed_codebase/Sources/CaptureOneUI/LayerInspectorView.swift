@@ -37,6 +37,8 @@ public struct LayerInspectorView: View {
                 HStack {
                     Menu {
                         Button("New Empty Layer", action: addLayer)
+                        Button("New Heal Layer") { addLayer(type: .heal) }
+                        Button("New Clone Layer") { addLayer(type: .clone) }
                         Button("Select Subject") {
                             if let image = variant.image {
                                 SubjectMaskingEngine.shared.selectSubject(for: image) { mask in
@@ -80,6 +82,18 @@ public struct LayerInspectorView: View {
     
     private func addLayer() {
         addLayer(withMask: nil, name: "Adjustment Layer \(variant.layers.count)")
+    }
+    
+    private func addLayer(type: LayerBase.LayerType) {
+        let name = type == .heal ? "Heal Layer" : "Clone Layer"
+        let newLayer = LayerBase(
+            uuid: UUID().uuidString,
+            name: "\(name) \(variant.layers.count)",
+            type: type,
+            context: variant.managedObjectContext
+        )
+        variant.layers.append(newLayer)
+        variant.isModified = true
     }
     
     private func addLayer(withMask mask: [Float]?, name: String) {
