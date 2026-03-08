@@ -246,9 +246,9 @@ public enum ToolRegistry {
         case "Settings":
             return .unavailable(toolID)
         case "Navigator":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(NavigatorToolView()) }
         case "Focus":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(FocusToolView()) }
         case "Sharpening":
             return .implemented { context in
                 AnyView(SharpeningToolView(
@@ -294,11 +294,11 @@ public enum ToolRegistry {
         case "Film Grain":
             return .implemented { context in AnyView(FilmGrainToolView(controller: context.adjustmentController)) }
         case "SpotRemoval":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(SpotRemovalToolView()) }
         case "LensColorCorrections":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(LensColorCorrectionsToolView()) }
         case "Moire":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(MoireToolView(controller: context.adjustmentController)) }
         case "Annotations":
             return .adapter { context in
                 if let variant = context.adjustmentController.currentVariant {
