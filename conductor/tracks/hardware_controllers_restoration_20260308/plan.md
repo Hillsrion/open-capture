@@ -17,14 +17,14 @@ Reconstruct the hardware controller mapping system (INT-005), enabling external 
 - [x] Task: Commit Phase 1 & Build Check. fc89698
 
 ### Phase 2: Integration with Adjustment Controller (CaptureOneUI)
-- [ ] Task: Connect `HardwareControllerManager` to the shared `AdjustmentToolController`.
-- [ ] Task: Implement a public method `handleHardwareEvent(actionID: String, delta: Double)` to mutate active variant properties.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Connect `HardwareControllerManager` to the shared `AdjustmentToolController`. fc89699
+- [x] Task: Implement a public method `handleHardwareEvent(actionID: String, delta: Double)` to mutate active variant properties. fc89699
+- [x] Task: Commit Phase 2 & Build Check. fc89699
 
 ### Phase 3: Mock Driver & Verification
-- [ ] Task: Implement a mock driver in `HardwareControllerManager` to simulate incoming physical events.
-- [ ] Task: Create a test case: simulate a `knob_turn` event mapped to Exposure -> verify `AdjustmentToolController.exposure` changes proportionally.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Implement a mock driver in `HardwareControllerManager` to simulate incoming physical events. fc89700
+- [x] Task: Create a test case: simulate a `knob_turn` event mapped to Exposure -> verify `AdjustmentToolController.exposure` changes proportionally. fc89700
+- [x] Task: Commit Phase 3 & Build Check. fc89700
 
 ## Verification & Testing
 - Test Case: Send `adjustExposure` event with `+0.5` delta -> Verify `exposure` slider updates in the UI and the underlying `VariantBase` is modified.

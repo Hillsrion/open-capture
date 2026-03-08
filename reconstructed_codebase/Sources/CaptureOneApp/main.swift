@@ -19,6 +19,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 1.5 Setup Plugins (INT-003)
         COPluginManager.shared.discoverPlugins()
         
+        // 1.6 Setup Hardware Controllers (INT-005)
+        HardwareControllerManager.shared.actionDelegate = AdjustmentToolController.shared
+        
         // 2. Setup Context
         let _ = ObjectContext()
 
