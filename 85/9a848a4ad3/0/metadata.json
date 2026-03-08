@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "859a848a4ad3",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T01:15:54.959964Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/RepairModels.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/LayerBase.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/VariantBase.swift"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "006088836d94",
+  "checkpoint_transcript_start": 722,
+  "transcript_lines_at_start": 722,
+  "token_usage": {
+    "input_tokens": 2460314,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2255878,
+    "output_tokens": 5935,
+    "api_call_count": 15
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T01:15:51.227632Z",
+    "agent_lines": 34,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 34,
+    "agent_percentage": 100
+  }
+}
