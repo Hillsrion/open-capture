@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "042b42d8db3c",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/KeywordModels.swift",
+    "reconstructed_codebase/Tests/AppCoreSharedTests/KeywordTests.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/04/2b42d8db3c/0/metadata.json",
+      "transcript": "/04/2b42d8db3c/0/full.jsonl",
+      "content_hash": "/04/2b42d8db3c/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 9535767,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 8790970,
+    "output_tokens": 7001,
+    "api_call_count": 21
+  }
+}
