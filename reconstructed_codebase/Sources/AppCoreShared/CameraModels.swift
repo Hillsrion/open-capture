@@ -18,7 +18,7 @@ public struct P1CaptureCore_Property: Identifiable, Codable {
 
 /// Reconstructed Base class for Camera control (INT-001).
 /// Based on disassembly of P1CaptureCore_Camera.
-public class P1CaptureCore_Camera: ObservableObject, Identifiable {
+public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     public let id: String
     public let name: String
     @Published public var isConnected: Bool = false
@@ -29,6 +29,14 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable {
         self.id = id
         self.name = name
         setupDefaultProperties()
+    }
+    
+    public static func == (lhs: P1CaptureCore_Camera, rhs: P1CaptureCore_Camera) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
     
     private func setupDefaultProperties() {
