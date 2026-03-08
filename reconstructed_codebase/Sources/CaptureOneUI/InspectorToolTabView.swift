@@ -1,101 +1,124 @@
 import SwiftUI
 import AppCoreShared
 
+public struct InspectorToolContext {
+    public let adjustmentController: AdjustmentToolController
+    public let session: SessionBase
+    public let recipeManager: OutputRecipeManager
+    public let batchQueue: BatchQueue
+    public let keywordCache: DocumentKeywordCache
+
+    public init(
+        adjustmentController: AdjustmentToolController,
+        session: SessionBase,
+        recipeManager: OutputRecipeManager,
+        batchQueue: BatchQueue,
+        keywordCache: DocumentKeywordCache
+    ) {
+        self.adjustmentController = adjustmentController
+        self.session = session
+        self.recipeManager = recipeManager
+        self.batchQueue = batchQueue
+        self.keywordCache = keywordCache
+    }
+}
+
 /// Reconstructed high-fidelity Tool Tab bar (UI-013).
-/// Based on disassembly of InspectorToolTabView.
 public struct InspectorToolTabView: View {
     @ObservedObject var workspaceManager = WorkspaceManager.shared
     @Binding var selectedTabID: String
-    
+
     public init(selectedTabID: Binding<String>) {
         self._selectedTabID = selectedTabID
     }
-    
+
     public var body: some View {
         HStack(spacing: 0) {
-            ForEach(workspaceManager.activeWorkspace.leftSidebarTabs) { tab in
-                Button(action: { selectedTabID = tab.id }) {
-                    VStack(spacing: 4) {
-                        Image(systemName: tab.iconName)
+            ForEach(workspaceManager.activeWorkspace.palettes) { palette in
+                Button(action: { selectedTabID = palette.id }) {
+                    VStack(spacing: 3) {
+                        Image(systemName: palette.iconName)
                             .font(.system(size: 14))
-                        
-                        if selectedTabID == tab.id {
-                            Rectangle()
-                                .fill(CaptureOneTheme.Colors.activeHighlight)
-                                .frame(height: 2)
-                        } else {
-                            Rectangle()
-                                .fill(Color.clear)
-                                .frame(height: 2)
-                        }
+                        Text(palette.name)
+                            .font(.system(size: 8, weight: .semibold))
+                            .lineLimit(1)
+
+                        Rectangle()
+                            .fill(selectedTabID == palette.id ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                            .frame(height: 2)
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.top, 8)
+                    .padding(.top, 6)
                     .contentShape(Rectangle())
                 }
-                .buttonStyle(PlainButtonStyle())
-                .foregroundColor(selectedTabID == tab.id ? .white : .gray)
+                .buttonStyle(.plain)
+                .foregroundColor(selectedTabID == palette.id ? .white : .gray)
             }
         }
-        .frame(height: 40)
+        .frame(height: 44)
         .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
     }
 }
 
-/// Reconstructed high-fidelity vertical layout for tool inspectors.
-/// Based on disassembly of InspectorToolLayout.
+/// Reconstructed inspector stack with fixed and scrollable tool zones.
 public struct InspectorToolLayout: View {
-    let tab: WorkspaceTab
-    @ObservedObject var adjustmentController: AdjustmentToolController
-    
-    public init(tab: WorkspaceTab, adjustmentController: AdjustmentToolController) {
-        self.tab = tab
-        self.adjustmentController = adjustmentController
+    let palette: WorkspacePaletteDefinition
+    let context: InspectorToolContext
+
+    public init(palette: WorkspacePaletteDefinition, context: InspectorToolContext) {
+        self.palette = palette
+        self.context = context
     }
-    
+
     public var body: some View {
-        ScrollView {
-            VStack(spacing: 1) {
-                ForEach(tab.tools) { config in
-                    ToolContainer(config: config, adjustmentController: adjustmentController)
+        VStack(spacing: 0) {
+            if !palette.fixedTools.isEmpty {
+                VStack(spacing: 1) {
+                    ForEach(palette.fixedTools) { config in
+                        ToolContainer(config: config, context: context)
+                    }
                 }
-                Spacer()
+            }
+
+            if !palette.fixedTools.isEmpty && !palette.scrolledTools.isEmpty {
+                Divider().background(Color.black)
+            }
+
+            if !palette.scrolledTools.isEmpty {
+                ScrollView {
+                    VStack(spacing: 1) {
+                        ForEach(palette.scrolledTools) { config in
+                            ToolContainer(config: config, context: context)
+                        }
+                        Spacer(minLength: 12)
+                    }
+                }
+            } else {
+                Spacer(minLength: 0)
             }
         }
         .background(CaptureOneTheme.Colors.applicationBackground)
     }
 }
 
-/// Helper to map Tool IDs to their actual View implementations.
 struct ToolContainer: View {
     let config: ToolConfiguration
-    @ObservedObject var adjustmentController: AdjustmentToolController
-    
+    let context: InspectorToolContext
+
     var body: some View {
+        let registryContext = ToolRegistryContext(
+            config: config,
+            adjustmentController: context.adjustmentController,
+            session: context.session,
+            recipeManager: context.recipeManager,
+            batchQueue: context.batchQueue,
+            keywordCache: context.keywordCache
+        )
+
         Group {
-            switch config.id {
-            case "Histogram": HistogramToolView()
-            case "Exposure": ExposureToolView(
-                exposure: $adjustmentController.exposure,
-                contrast: $adjustmentController.contrast,
-                brightness: $adjustmentController.brightness,
-                saturation: $adjustmentController.saturation
-            )
-            case "SmartAdjustments": SmartAdjustmentsToolView(controller: adjustmentController)
-            case "HDR": HDRToolView(
-                highlights: $adjustmentController.highlights,
-                shadows: $adjustmentController.shadows,
-                whites: $adjustmentController.whites,
-                blacks: $adjustmentController.blacks
-            )
-            case "ColorBalance": ColorBalanceToolView(controller: adjustmentController)
-            case "WhiteBalance": WhiteBalanceToolView(
-                kelvin: $adjustmentController.kelvin,
-                tint: $adjustmentController.tint
-            )
-            default: Text("Tool \(config.id) Not Implemented").foregroundColor(.gray).padding()
-            }
-        Group {}.onAppear { /* Simulation of collapsed state */ }
+            ToolRegistry.view(for: config.id, context: registryContext)
         }
+        .frame(maxWidth: .infinity)
+        .frame(height: config.height.map { CGFloat($0) })
     }
 }

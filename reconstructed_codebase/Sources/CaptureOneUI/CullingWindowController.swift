@@ -37,6 +37,7 @@ public class CullingWindowController: NSWindowController {
     
     private func setupUI() {
         window?.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
+        WorkspaceManager.shared.activeWorkspace = WorkspaceManager.createWorkspace(windowKind: .session, name: "Default")
         
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
@@ -75,54 +76,23 @@ public struct CullingView: View {
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
     @ObservedObject var workspaceManager = WorkspaceManager.shared
-    
-    @State private var selectedToolTab: String = "ADJUST"
+    @StateObject private var keywordCache: DocumentKeywordCache
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
         self.browserWrapper = BrowserWrapper(browser: browser)
-        // self.adjustmentController = adjustmentController // Use shared
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
         self.session = session
+        self._keywordCache = StateObject(wrappedValue: DocumentKeywordCache(session: session))
     }
     
     public var body: some View {
         VStack(spacing: 0) {
-            // MARK: - 1. Top Toolbar (Dynamic & Customizable - INT-001)
             MainToolbarView()
             
             Divider().background(Color.black)
             
-            // MARK: - 2. Main Workspace
-            HStack(spacing: 0) {
-                
-                // MARK: - Left Sidebar (Vertical Tool Tabs)
-                VStack(spacing: 0) {
-                    InspectorToolTabView(selectedTabID: $selectedToolTab)
-                    
-                    if let activeTab = workspaceManager.activeWorkspace.leftSidebarTabs.first(where: { $0.id == selectedToolTab }) {
-                        InspectorToolLayout(tab: activeTab, adjustmentController: adjustmentController)
-                    }
-                }
-                .frame(width: workspaceManager.activeWorkspace.sidebarWidth)
-                .background(CaptureOneTheme.Colors.panelBackground)
-                
-                Divider().background(Color.black)
-                
-                // MARK: - Center Viewer
-                COViewerView(image: adjustmentController.currentVariant?.image, adjustmentController: adjustmentController)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
-                Divider().background(Color.black)
-                
-                // MARK: - Right Filmstrip (Vertical)
-                COImageBrowserView(
-                    images: $browserWrapper.browser.dataSource,
-                    predicate: $adjustmentController.activePredicate,
-                    selectedVariant: $adjustmentController.currentVariant
-                )
-                .frame(width: 250)
-            }
+            workspaceBody
         }
         .background(CaptureOneTheme.Colors.applicationBackground)
         .preferredColorScheme(.dark)
@@ -155,6 +125,104 @@ public struct CullingView: View {
         default:
             return false
         }
+    }
+
+    private var selectedPaletteBinding: Binding<String> {
+        Binding(
+            get: { workspaceManager.activeWorkspace.selectedPaletteID },
+            set: { workspaceManager.setSelectedPaletteID($0, autosave: true) }
+        )
+    }
+
+    private var inspectorContext: InspectorToolContext {
+        InspectorToolContext(
+            adjustmentController: adjustmentController,
+            session: session,
+            recipeManager: recipeManager,
+            batchQueue: batchQueue,
+            keywordCache: keywordCache
+        )
+    }
+
+    @ViewBuilder
+    private var workspaceBody: some View {
+        HStack(spacing: 0) {
+            if workspaceManager.activeWorkspace.chromeState.toolsDisplayState != .hidden,
+               workspaceManager.activeWorkspace.chromeState.toolsPosition == .left {
+                toolsSidebar
+                Divider().background(Color.black)
+            }
+
+            mainContentArea
+
+            if workspaceManager.activeWorkspace.chromeState.toolsDisplayState != .hidden,
+               workspaceManager.activeWorkspace.chromeState.toolsPosition == .right {
+                Divider().background(Color.black)
+                toolsSidebar
+            }
+        }
+    }
+
+    private var toolsSidebar: some View {
+        VStack(spacing: 0) {
+            InspectorToolTabView(selectedTabID: selectedPaletteBinding)
+
+            if let activePalette = workspaceManager.activeWorkspace.activePalette() {
+                InspectorToolLayout(palette: activePalette, context: inspectorContext)
+            } else {
+                Spacer(minLength: 0)
+            }
+        }
+        .frame(width: workspaceManager.activeWorkspace.sidebarWidth)
+        .background(CaptureOneTheme.Colors.panelBackground)
+    }
+
+    @ViewBuilder
+    private var mainContentArea: some View {
+        if workspaceManager.activeWorkspace.chromeState.browserDisplayState == .hidden {
+            viewerPane
+        } else if workspaceManager.activeWorkspace.chromeState.browserPosition == .portrait {
+            HStack(spacing: 0) {
+                viewerPane
+                Divider().background(Color.black)
+                browserPanePortrait
+            }
+        } else {
+            VStack(spacing: 0) {
+                viewerPane
+                Divider().background(Color.black)
+                browserPaneLandscape
+            }
+        }
+    }
+
+    private var viewerPane: some View {
+        Group {
+            if workspaceManager.activeWorkspace.chromeState.viewerShown {
+                COViewerView(image: adjustmentController.currentVariant?.image, adjustmentController: adjustmentController)
+            } else {
+                Color.clear
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    private var browserPanePortrait: some View {
+        COImageBrowserView(
+            images: $browserWrapper.browser.dataSource,
+            predicate: $adjustmentController.activePredicate,
+            selectedVariant: $adjustmentController.currentVariant
+        )
+        .frame(width: workspaceManager.activeWorkspace.chromeState.browserWidth)
+    }
+
+    private var browserPaneLandscape: some View {
+        COImageBrowserView(
+            images: $browserWrapper.browser.dataSource,
+            predicate: $adjustmentController.activePredicate,
+            selectedVariant: $adjustmentController.currentVariant
+        )
+        .frame(height: workspaceManager.activeWorkspace.chromeState.browserHeight)
     }
 }
 
