@@ -38,34 +38,102 @@ public struct CaptureOneTheme {
 /// A collapsible tool section like "White Balance" or "Exposure"
 public struct COToolSection<Content: View>: View {
     let title: String
+    let toolID: String
     @State var isExpanded: Bool = true
+    @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var workspaceManager = WorkspaceManager.shared
+    @ObservedObject private var styleManager = StyleManager.shared
     let content: Content
     
-    public init(_ title: String, isExpanded: Bool = true, @ViewBuilder content: () -> Content) {
+    public init(_ title: String, toolID: String? = nil, isExpanded: Bool = true, @ViewBuilder content: () -> Content) {
         self.title = title
+        self.toolID = toolID ?? title
         self._isExpanded = State(initialValue: isExpanded)
         self.content = content()
     }
     
     public var body: some View {
         VStack(spacing: 0) {
-            Button(action: { withAnimation { isExpanded.toggle() } }) {
-                HStack(spacing: 6) {
-                    Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
-                        .font(.system(size: 8, weight: .bold))
-                    Text(title.uppercased())
-                        .font(.system(size: 11, weight: .bold))
-                    Spacer()
-                    // Action icons placeholder
-                    Image(systemName: "wand.and.stars").font(.system(size: 10))
-                    Image(systemName: "ellipsis").font(.system(size: 10))
+            HStack(spacing: 6) {
+                Button(action: { withAnimation { isExpanded.toggle() } }) {
+                    HStack(spacing: 6) {
+                        Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
+                            .font(.system(size: 8, weight: .bold))
+                        Text(title.uppercased())
+                            .font(.system(size: 11, weight: .bold))
+                    }
                 }
+                .buttonStyle(PlainButtonStyle())
+
+                Spacer()
+
+                toolHeaderButton(systemName: "questionmark.circle") {
+                    commands.showHelp(for: toolID)
+                }
+
+                toolHeaderButton(systemName: "arrow.uturn.backward.circle") {
+                    commands.resetTool(toolID)
+                }
+
+                Menu {
+                    Button("Save Adjustments as Style...") {
+                        commands.saveCurrentAdjustmentsAsStyle(toolID: toolID)
+                    }
+
+                    if !styleManager.allStyles().isEmpty {
+                        Menu("Apply Adjustments From") {
+                            ForEach(styleManager.allStyles()) { style in
+                                Button(style.name) {
+                                    commands.applyStyle(style)
+                                }
+                            }
+                        }
+                    }
+                } label: {
+                    Image(systemName: "square.and.arrow.down")
+                        .font(.system(size: 11))
+                        .frame(width: 18, height: 18)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
                 .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-                .padding(.horizontal, 8)
-                .frame(height: 28)
-                .background(Color.white.opacity(0.05))
+
+                Menu {
+                    Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
+                        workspaceManager.moveTool(toolID, toPinnedArea: !isPinned)
+                    }
+
+                    Divider()
+
+                    Button("Auto Size") {
+                        workspaceManager.setToolSizeOption(nil, for: toolID)
+                    }
+                    Button("Small Size") {
+                        workspaceManager.setToolSizeOption(1, for: toolID)
+                    }
+                    Button("Medium Size") {
+                        workspaceManager.setToolSizeOption(2, for: toolID)
+                    }
+                    Button("Large Size") {
+                        workspaceManager.setToolSizeOption(3, for: toolID)
+                    }
+
+                    Divider()
+
+                    Button("Remove Tool") {
+                        workspaceManager.removeTool(toolID)
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .font(.system(size: 11))
+                        .frame(width: 18, height: 18)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
+                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
             }
-            .buttonStyle(PlainButtonStyle())
+            .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+            .padding(.horizontal, 8)
+            .frame(height: 28)
+            .background(Color.white.opacity(0.05))
             
             if isExpanded {
                 content
@@ -75,6 +143,21 @@ public struct COToolSection<Content: View>: View {
             
             Divider().background(CaptureOneTheme.Colors.separator)
         }
+    }
+
+    private var isPinned: Bool {
+        workspaceManager.activeWorkspace.activePalette()?.fixedTools.contains(where: { $0.id == toolID }) ?? false
+    }
+
+    @ViewBuilder
+    private func toolHeaderButton(systemName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: 11))
+                .frame(width: 18, height: 18)
+        }
+        .buttonStyle(.plain)
+        .foregroundColor(CaptureOneTheme.Colors.textPrimary)
     }
 }
 

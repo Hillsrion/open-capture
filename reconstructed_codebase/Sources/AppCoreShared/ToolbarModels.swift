@@ -44,12 +44,11 @@ public struct ToolbarConfiguration: Codable, Hashable {
     
     public static var defaultConfiguration: ToolbarConfiguration {
         return ToolbarConfiguration(itemIDs: [
-            "Select", "Pan", "Loupe", "FIXED_SPACER",
-            "Crop", "Rotate", "Keystone", "FIXED_SPACER",
-            "FLEXIBLE_SPACER",
-            "AutoAdjust", "FIXED_SPACER",
-            "CopyAdjustments", "ApplyAdjustments", "FIXED_SPACER",
-            "Import", "Capture", "Export", "Print"
+            "Import", "Export", "Capture", "FIXED_SPACER",
+            "Reset", "UndoRedo", "AutoAdjust", "FIXED_SPACER",
+            "CursorTools", "FLEXIBLE_SPACER",
+            "BeforeAfter", "Grid", "ExposureWarning", "Proofing", "FocusMask", "FIXED_SPACER",
+            "CopyAdjustments", "ApplyAdjustments", "EditSelected", "Print"
         ])
     }
 }
@@ -71,6 +70,19 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "CopyAdjustments", name: "Copy Adjustments", iconName: "arrow.up.doc"),
         COToolbarItem(id: "ApplyAdjustments", name: "Apply Adjustments", iconName: "arrow.down.doc"),
         COToolbarItem(id: "Reset", name: "Reset", iconName: "arrow.counterclockwise"),
+        COToolbarItem(id: "UndoRedo", name: "Undo / Redo", iconName: "arrow.uturn.backward.circle", type: .group),
+        COToolbarItem(id: "CursorTools", name: "Cursor Tools", iconName: "cursorarrow", type: .group),
+        COToolbarItem(id: "Activity", name: "Activity", iconName: "clock.arrow.circlepath", type: .group),
+        COToolbarItem(id: "BeforeAfter", name: "Before / After", iconName: "rectangle.split.2x1"),
+        COToolbarItem(id: "Grid", name: "Grid", iconName: "square.grid.3x3"),
+        COToolbarItem(id: "ExposureWarning", name: "Exposure Warning", iconName: "exclamationmark.triangle"),
+        COToolbarItem(id: "FocusMask", name: "Focus Mask", iconName: "scope"),
+        COToolbarItem(id: "Proofing", name: "Proofing", iconName: "eyeglasses"),
+        COToolbarItem(id: "EditSelected", name: "Edit Selected", iconName: "square.stack.3d.up"),
+        COToolbarItem(id: "Culling", name: "Culling", iconName: "rectangle.grid.1x2"),
+        COToolbarItem(id: "Live", name: "Live", iconName: "dot.radiowaves.left.and.right"),
+        COToolbarItem(id: "SelfServe", name: "Self Serve", iconName: "person.crop.circle.badge.questionmark"),
+        COToolbarItem(id: "Tips", name: "Tips", iconName: "lightbulb"),
         
         // Workflow
         COToolbarItem(id: "Import", name: "Import", iconName: "square.and.arrow.down"),

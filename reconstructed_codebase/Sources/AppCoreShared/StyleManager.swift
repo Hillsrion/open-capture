@@ -51,6 +51,10 @@ public class StyleManager: ObservableObject {
             mapPackToTree(userStyles)
         ]
     }
+
+    public func allStyles() -> [Style] {
+        collectStyles(from: builtInStyles) + collectStyles(from: userStyles)
+    }
     
     private func mapPackToTree(_ pack: StylePack) -> StyleTreeItem {
         var children: [StyleTreeItem] = []
@@ -66,5 +70,9 @@ public class StyleManager: ObservableObject {
         }
         
         return StyleTreeItem(name: pack.name, isFolder: true, children: children)
+    }
+
+    private func collectStyles(from pack: StylePack) -> [Style] {
+        pack.styles + pack.childPacks.flatMap(collectStyles(from:))
     }
 }

@@ -164,6 +164,10 @@ public final class DefaultWorkspacePresetLoader {
             return "Capture"
         case "ExportVariantsItem":
             return "Export"
+        case "CullingItem":
+            return "Culling"
+        case "CaptureOneLiveToolbarItem":
+            return "Live"
         case "RotateItem":
             return "Rotate"
         case "AutoAdjustItem":
@@ -172,8 +176,30 @@ public final class DefaultWorkspacePresetLoader {
             return "Print"
         case "ResetAdjustmentsItem":
             return "Reset"
+        case "UndoRedoItem":
+            return "UndoRedo"
+        case "EditPrimaryOnlyItem":
+            return "EditSelected"
+        case "CursorToolItem":
+            return "CursorTools"
+        case "ActivitiesProgressItem":
+            return "Activity"
+        case "BeforeAfterItem":
+            return "BeforeAfter"
+        case "AlignmentItem":
+            return "Grid"
+        case "ExposureWarningItem":
+            return "ExposureWarning"
+        case "RecipeProofingItem":
+            return "Proofing"
+        case "FocusMaskItem":
+            return "FocusMask"
         case "AdjustmentsItem":
             return "ApplyAdjustments"
+        case "SelfServeItem":
+            return "SelfServe"
+        case "TipsItem":
+            return "Tips"
         default:
             return nil
         }

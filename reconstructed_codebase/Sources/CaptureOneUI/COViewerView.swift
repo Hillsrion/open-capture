@@ -15,7 +15,9 @@ public struct COViewerView: View {
     let image: ImageBase?
     let adjustmentController: AdjustmentToolController?
     @ObservedObject var liveView = LiveViewEngine.shared
+    @ObservedObject var commands = AppCommandCenter.shared
     @State private var renderedImage: NSImage?
+    @State private var sourceImage: NSImage?
     @State private var maskImage: NSImage?
     @State private var zoomLevel: Double = 1.0 // Inferred from ViewerZoomViewController
     
@@ -27,21 +29,23 @@ public struct COViewerView: View {
                 
                 if liveView.isActive {
                     LiveViewOverlayView(camera: liveView.currentCamera)
+                } else if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
+                    HStack(spacing: 1) {
+                        viewerImageView(sourceImage)
+                        viewerImageView(renderedImage)
+                    }
+                    .overlay(alignment: .topLeading) {
+                        ViewerModeBadge(text: "Before / After")
+                            .padding(12)
+                    }
+                    .overlay {
+                        if commands.showGridOverlay {
+                            ViewerGridOverlay()
+                        }
+                    }
                 } else if let nsImage = renderedImage {
                     ZStack {
-                        // Apply Soft Proofing simulation if enabled
-                        let finalImage: NSImage = {
-                            if let controller = adjustmentController, controller.isSoftProofingEnabled {
-                                // Simulation: apply proofing kernel
-                                return nsImage // Placeholder for the actual CIImage pipeline
-                            }
-                            return nsImage
-                        }()
-                        
-                        Image(nsImage: finalImage)
-                            .resizable()
-                            .scaleEffect(zoomLevel)
-                            .aspectRatio(contentMode: .fit)
+                        viewerImageView(nsImage)
                         
                         // Mask Overlay (Red tint)
                         if let mask = maskImage {
@@ -77,8 +81,17 @@ public struct COViewerView: View {
                                 print("[UI] Brushing at: \(gesture.location)")
                             }
                     )
+                    .overlay(alignment: .topLeading) {
+                        viewerStatusBadges
+                            .padding(12)
+                    }
+                    .overlay {
+                        if commands.showGridOverlay {
+                            ViewerGridOverlay()
+                        }
+                    }
                 } else {
-                    ProgressView().tint(.white)
+                    ViewerEmptyStateView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -98,12 +111,18 @@ public struct COViewerView: View {
     }
     
     private func render() {
-        guard let image = image else { return }
+        guard let image = image else {
+            sourceImage = nil
+            renderedImage = nil
+            return
+        }
         ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
             guard let thumb = thumb, let controller = adjustmentController else {
+                self.sourceImage = thumb
                 self.renderedImage = thumb
                 return
             }
+            self.sourceImage = thumb
             
             // Simulation: Apply basic CI adjustments to the thumbnail
             let ciImage = CIImage(data: thumb.tiffRepresentation!)!
@@ -137,6 +156,29 @@ public struct COViewerView: View {
             finalImage.addRepresentation(rep)
             
             self.renderedImage = finalImage
+        }
+    }
+
+    @ViewBuilder
+    private func viewerImageView(_ image: NSImage) -> some View {
+        Image(nsImage: image)
+            .resizable()
+            .scaleEffect(zoomLevel)
+            .aspectRatio(contentMode: .fit)
+    }
+
+    @ViewBuilder
+    private var viewerStatusBadges: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            if commands.showExposureWarning {
+                ViewerModeBadge(text: "Exposure Warning")
+            }
+            if commands.showFocusMask {
+                ViewerModeBadge(text: "Focus Mask")
+            }
+            if let controller = adjustmentController, controller.isSoftProofingEnabled {
+                ViewerModeBadge(text: "Proofing: \(controller.proofingProfileID)")
+            }
         }
     }
 }
@@ -173,6 +215,73 @@ struct COViewerBarView: View {
         .frame(height: 35)
         .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
         .foregroundColor(.white)
+    }
+}
+
+private struct ViewerEmptyStateView: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        VStack(spacing: 14) {
+            Image(systemName: "photo.on.rectangle.angled")
+                .font(.system(size: 42))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+
+            Text("No image selected")
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.white)
+
+            Text("Open a session, import images, or pick a variant from the browser.")
+                .font(.system(size: 12))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+
+            HStack(spacing: 10) {
+                Button("Import Images...") {
+                    commands.presentImport()
+                }
+                .buttonStyle(.borderedProminent)
+
+                Button("Preferences") {
+                    commands.presentPreferences()
+                }
+                .buttonStyle(.bordered)
+            }
+        }
+        .padding(24)
+    }
+}
+
+private struct ViewerGridOverlay: View {
+    var body: some View {
+        GeometryReader { proxy in
+            Path { path in
+                let width = proxy.size.width
+                let height = proxy.size.height
+                path.move(to: CGPoint(x: width / 3, y: 0))
+                path.addLine(to: CGPoint(x: width / 3, y: height))
+                path.move(to: CGPoint(x: width * 2 / 3, y: 0))
+                path.addLine(to: CGPoint(x: width * 2 / 3, y: height))
+                path.move(to: CGPoint(x: 0, y: height / 3))
+                path.addLine(to: CGPoint(x: width, y: height / 3))
+                path.move(to: CGPoint(x: 0, y: height * 2 / 3))
+                path.addLine(to: CGPoint(x: width, y: height * 2 / 3))
+            }
+            .stroke(Color.white.opacity(0.35), style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
+        }
+    }
+}
+
+private struct ViewerModeBadge: View {
+    let text: String
+
+    var body: some View {
+        Text(text)
+            .font(.system(size: 10, weight: .semibold))
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color.black.opacity(0.55))
+            .foregroundColor(.white)
+            .clipShape(Capsule())
     }
 }
 

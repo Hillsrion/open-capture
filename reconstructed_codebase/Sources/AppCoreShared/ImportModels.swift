@@ -57,14 +57,15 @@ public class ImporterPickedState: ObservableObject {
     public init() {}
     
     public func isPicked(_ url: URL) -> Bool {
-        return pickedURLs.contains(url)
+        return pickedURLs.contains(normalized(url))
     }
     
     public func setPicked(_ picked: Bool, for url: URL) {
+        let normalizedURL = normalized(url)
         if picked {
-            pickedURLs.insert(url)
+            pickedURLs.insert(normalizedURL)
         } else {
-            pickedURLs.remove(url)
+            pickedURLs.remove(normalizedURL)
         }
     }
     
@@ -75,8 +76,16 @@ public class ImporterPickedState: ObservableObject {
     public func clear() {
         pickedURLs.removeAll()
     }
+
+    public func selectAll(_ urls: [URL]) {
+        pickedURLs = Set(urls.map(normalized))
+    }
     
     public var count: Int {
         return pickedURLs.count
+    }
+
+    private func normalized(_ url: URL) -> URL {
+        url.resolvingSymlinksInPath().standardizedFileURL
     }
 }

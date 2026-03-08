@@ -119,6 +119,23 @@ struct ToolContainer: View {
             ToolRegistry.view(for: config.id, context: registryContext)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: config.height.map { CGFloat($0) })
+        .frame(height: resolvedHeight)
+    }
+
+    private var resolvedHeight: CGFloat? {
+        if let height = config.height {
+            return CGFloat(height)
+        }
+
+        switch config.sizeOption {
+        case 1:
+            return 140
+        case 2:
+            return 220
+        case 3:
+            return 320
+        default:
+            return nil
+        }
     }
 }

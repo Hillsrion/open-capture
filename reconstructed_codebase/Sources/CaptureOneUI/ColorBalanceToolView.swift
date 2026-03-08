@@ -29,7 +29,7 @@ public struct ColorBalanceToolView: View {
     private let selectedTabKey = "ColorBalanceInspectorToolSelectedTab"
 
     public var body: some View {
-        COToolSection("Color Balance") {
+        COToolSection("Color Balance", toolID: toolID) {
             VStack(spacing: 14) {
                 tabStrip
 

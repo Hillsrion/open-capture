@@ -410,6 +410,62 @@ public class WorkspaceManager: ObservableObject {
         }
     }
 
+    public func moveTool(_ toolID: String, toPinnedArea pinned: Bool, autosave: Bool = true) {
+        guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == activeWorkspace.selectedPaletteID }) else {
+            return
+        }
+
+        var palette = activeWorkspace.palettes[paletteIndex]
+        let fixedIndex = palette.fixedTools.firstIndex(where: { $0.id == toolID })
+        let scrolledIndex = palette.scrolledTools.firstIndex(where: { $0.id == toolID })
+
+        if pinned {
+            guard let scrolledIndex else { return }
+            let tool = palette.scrolledTools.remove(at: scrolledIndex)
+            palette.fixedTools.append(tool)
+        } else {
+            guard let fixedIndex else { return }
+            let tool = palette.fixedTools.remove(at: fixedIndex)
+            palette.scrolledTools.insert(tool, at: 0)
+        }
+
+        activeWorkspace.palettes[paletteIndex] = palette
+        if autosave {
+            saveWorkspace()
+        }
+    }
+
+    public func removeTool(_ toolID: String, autosave: Bool = true) {
+        guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == activeWorkspace.selectedPaletteID }) else {
+            return
+        }
+
+        var palette = activeWorkspace.palettes[paletteIndex]
+        palette.fixedTools.removeAll { $0.id == toolID }
+        palette.scrolledTools.removeAll { $0.id == toolID }
+        activeWorkspace.palettes[paletteIndex] = palette
+
+        if autosave {
+            saveWorkspace()
+        }
+    }
+
+    public func setToolSizeOption(_ sizeOption: Int?, for toolID: String, autosave: Bool = true) {
+        guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == activeWorkspace.selectedPaletteID }) else {
+            return
+        }
+
+        var palette = activeWorkspace.palettes[paletteIndex]
+        if let fixedIndex = palette.fixedTools.firstIndex(where: { $0.id == toolID }) {
+            palette.fixedTools[fixedIndex].sizeOption = sizeOption
+        }
+        if let scrolledIndex = palette.scrolledTools.firstIndex(where: { $0.id == toolID }) {
+            palette.scrolledTools[scrolledIndex].sizeOption = sizeOption
+        }
+        activeWorkspace.palettes[paletteIndex] = palette
+        setToolStateValue(sizeOption.map(String.init), toolID: toolID, key: "sizeOption", autosave: autosave)
+    }
+
     public static func createDefaultWorkspace() -> Workspace {
         createWorkspace(windowKind: .session, name: "Default")
     }

@@ -16,7 +16,7 @@ public struct ExposureToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Exposure") {
+        COToolSection("Exposure", toolID: "Exposure") {
             VStack(spacing: 8) {
                 POSliderControl(label: "Exposure", value: $exposure, range: -4...4)
                 POSliderControl(label: "Contrast", value: $contrast, range: -50...50)
@@ -39,7 +39,7 @@ public struct WhiteBalanceToolView: View {
     }
     
     public var body: some View {
-        COToolSection("White Balance") {
+        COToolSection("White Balance", toolID: "WhiteBalance") {
             VStack(spacing: 8) {
                 // Mode Selector and Picker
                 HStack {
@@ -91,7 +91,7 @@ public struct HDRToolView: View {
     }
     
     public var body: some View {
-        COToolSection("High Dynamic Range") {
+        COToolSection("High Dynamic Range", toolID: "ShadowHighlight") {
             VStack(spacing: 8) {
                 POSliderControl(label: "Highlights", value: $highlights, range: 0...100)
                 POSliderControl(label: "Shadows", value: $shadows, range: 0...100)
@@ -159,7 +159,7 @@ public struct StyleInspectorTool: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            COToolSection("Styles & Presets") {
+            COToolSection("Styles & Presets", toolID: "Styles") {
                 VStack(spacing: 8) {
                     HStack {
                         Toggle("Stack Styles", isOn: $controller.stackStyles)
@@ -196,7 +196,7 @@ public struct HistogramToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Histogram") {
+        COToolSection("Histogram", toolID: "Histogram") {
             VStack(spacing: 4) {
                 // Exposure info header
                 HStack {

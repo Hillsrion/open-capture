@@ -15,7 +15,7 @@ public struct ClarityToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Clarity") {
+        COToolSection("Clarity", toolID: "Clarity") {
             VStack(spacing: 8) {
                 // Method Selector
                 Picker("Method", selection: $method) {

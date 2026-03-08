@@ -42,19 +42,12 @@ public class CullingWindowController: NSWindowController {
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
         
-        // Initialize a mock session for the UI
-        session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: context)
-        session?.rootFolder = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.path
+        // Start from an empty shell instead of pretending a session is already loaded.
+        session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: context)
+        session?.name = "Untitled Catalog"
         
         // Add a default recipe
         recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: context))
-        
-        let picturesPath = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.path ?? "/"
-        cullingCollection?.updateWithFolderPath(picturesPath, clear: true, synchronizeFS: true)
-        
-        if let images = cullingCollection?.images {
-            browser.dataSource = images
-        }
         
         let contentView = CullingView(
             browser: browser,
@@ -76,6 +69,7 @@ public struct CullingView: View {
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
     @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var commands = AppCommandCenter.shared
     @StateObject private var keywordCache: DocumentKeywordCache
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
@@ -97,10 +91,24 @@ public struct CullingView: View {
         .background(CaptureOneTheme.Colors.applicationBackground)
         .preferredColorScheme(.dark)
         .onAppear {
+            commands.configure(session: session, recipeManager: recipeManager, batchQueue: batchQueue)
+            if recipeManager.recipes.isEmpty {
+                recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+            }
             NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
                 if handleShortcut(event) { return nil }
                 return event
             }
+        }
+        .sheet(item: $commands.presentedSheet) { route in
+            sheetView(for: route)
+        }
+        .alert(item: $commands.notice) { notice in
+            Alert(
+                title: Text(notice.title),
+                message: Text(notice.message),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
     
@@ -224,6 +232,27 @@ public struct CullingView: View {
         )
         .frame(height: workspaceManager.activeWorkspace.chromeState.browserHeight)
     }
+
+    @ViewBuilder
+    private func sheetView(for route: AppSheetRoute) -> some View {
+        switch route {
+        case .importImages:
+            ImportDialog(importer: commands.importer)
+        case .exportImages:
+            ExportView(
+                recipeManager: recipeManager,
+                batchQueue: batchQueue,
+                selectedVariant: adjustmentController.currentVariant
+            )
+            .frame(minWidth: 720, minHeight: 480)
+        case .preferences:
+            AppPreferencesView()
+        case .keyboardShortcuts:
+            ShortcutEditorSheet()
+        case .print:
+            PrintSheetHost()
+        }
+    }
 }
 
 // MARK: - Helper Components
@@ -287,5 +316,43 @@ struct VToolTab: View {
             )
         }
         .buttonStyle(PlainButtonStyle())
+    }
+}
+
+private struct ShortcutEditorSheet: View {
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ShortcutEditorView()
+                .padding(16)
+
+            Divider()
+
+            HStack {
+                Spacer()
+                Button("Done") {
+                    dismiss()
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(CaptureOneTheme.Colors.activeHighlight)
+                .padding(16)
+            }
+        }
+        .frame(minWidth: 720, minHeight: 420)
+        .background(CaptureOneTheme.Colors.panelBackground)
+        .foregroundColor(.white)
+    }
+}
+
+private struct PrintSheetHost: View {
+    @ObservedObject private var adjustmentController = AdjustmentToolController.shared
+    @State private var selectedVariants: [VariantBase] = []
+
+    var body: some View {
+        PrintDialog(selectedVariants: $selectedVariants)
+            .onAppear {
+                selectedVariants = adjustmentController.currentVariant.map { [$0] } ?? []
+            }
     }
 }

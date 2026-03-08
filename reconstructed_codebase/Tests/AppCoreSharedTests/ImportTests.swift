@@ -42,6 +42,24 @@ class ImportTests: XCTestCase {
         XCTAssertFalse(state.isPicked(url))
         XCTAssertEqual(state.count, 0)
     }
+
+    func testImporterPickedStateNormalizesEquivalentFileURLs() {
+        let state = ImporterPickedState()
+        let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+        let original = directory.appendingPathComponent("test-image.jpg")
+        let equivalent = URL(fileURLWithPath: "/private\(original.path)")
+
+        try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        try? Data("x".utf8).write(to: original)
+        defer { try? FileManager.default.removeItem(at: directory) }
+
+        state.setPicked(true, for: original)
+        state.setPicked(true, for: equivalent)
+
+        XCTAssertEqual(state.count, 1)
+        XCTAssertTrue(state.isPicked(original))
+        XCTAssertTrue(state.isPicked(equivalent))
+    }
     
     func testImportMetadata() {
         var metadata = ImportMetadata()

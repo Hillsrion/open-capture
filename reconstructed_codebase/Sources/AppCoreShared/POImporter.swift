@@ -32,6 +32,7 @@ public class POImporter: ObservableObject {
             
             DispatchQueue.main.async {
                 self.discoveredURLs = urls
+                self.pickedState.selectAll(urls)
                 self.status = .idle
             }
         }

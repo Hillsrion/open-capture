@@ -16,7 +16,7 @@ public struct SharpeningToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Sharpening") {
+        COToolSection("Sharpening", toolID: "Sharpening") {
             VStack(spacing: 8) {
                 COUISlider(label: "Amount", value: Binding(get: { Float(amount) }, set: { amount = Double($0) }), range: 0...500)
                 COUISlider(label: "Radius", value: Binding(get: { Float(radius) }, set: { radius = Double($0) }), range: 0.1...2.5)
@@ -42,7 +42,7 @@ public struct NoiseReductionToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Noise Reduction") {
+        COToolSection("Noise Reduction", toolID: "Noise") {
             VStack(spacing: 8) {
                 COUISlider(label: "Luminance", value: Binding(get: { Float(luminance) }, set: { luminance = Double($0) }), range: 0...100)
                 COUISlider(label: "Details", value: Binding(get: { Float(details) }, set: { details = Double($0) }), range: 0...100)

@@ -101,4 +101,20 @@ final class WorkspacePresetLoaderTests: XCTestCase {
             "0"
         )
     }
+
+    func testWorkspaceManagerCanMoveAndResizeToolsWithinActivePalette() throws {
+        let manager = WorkspaceManager.shared
+        manager.activeWorkspace = WorkspaceManager.createWorkspace(windowKind: .session, name: "WorkspaceToolMutation")
+        manager.setSelectedPaletteID("ExposureToolTab", autosave: false)
+
+        manager.moveTool("ColorBalance", toPinnedArea: true, autosave: false)
+        manager.setToolSizeOption(3, for: "ColorBalance", autosave: false)
+
+        let palette = try XCTUnwrap(manager.activeWorkspace.activePalette())
+        XCTAssertTrue(palette.fixedTools.contains(where: { $0.id == "ColorBalance" }))
+        XCTAssertEqual(
+            palette.fixedTools.first(where: { $0.id == "ColorBalance" })?.sizeOption,
+            3
+        )
+    }
 }

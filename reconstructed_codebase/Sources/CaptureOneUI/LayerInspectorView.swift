@@ -15,7 +15,7 @@ public struct LayerInspectorView: View {
     }
     
     public var body: some View {
-        COToolSection("Layers") {
+        COToolSection("Layers", toolID: "LocalAdjustments") {
             VStack(spacing: 8) {
                 // Layer Stack
                 VStack(spacing: 1) {

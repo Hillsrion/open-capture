@@ -5,6 +5,7 @@ import AppCoreShared
 /// Based on disassembly of ImporterWindowController.
 public struct ImportDialog: View {
     @ObservedObject var importer: POImporter
+    @Environment(\.dismiss) private var dismiss
     
     public init(importer: POImporter) {
         self.importer = importer
@@ -47,7 +48,14 @@ struct ImportSettingsSidebar: View {
                 COToolSection("Import From") {
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
-                            // Logic for picking source folder
+                            let panel = NSOpenPanel()
+                            panel.canChooseDirectories = true
+                            panel.canChooseFiles = false
+                            panel.allowsMultipleSelection = false
+                            panel.prompt = "Choose"
+                            if panel.runModal() == .OK, let url = panel.url {
+                                importer.scanSource(url: url)
+                            }
                         }) {
                             HStack {
                                 Image(systemName: "folder")
@@ -189,6 +197,7 @@ struct ImportThumbnailCell: View {
 /// Bottom bar actions.
 struct ImportBottomBar: View {
     @ObservedObject var importer: POImporter
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         HStack {
@@ -207,7 +216,7 @@ struct ImportBottomBar: View {
             Spacer()
             
             Button("Cancel") {
-                // Close window
+                dismiss()
             }
             .buttonStyle(PlainButtonStyle())
             .padding(.horizontal, 10)
