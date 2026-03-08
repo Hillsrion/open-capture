@@ -199,6 +199,10 @@ public struct CullingView: View {
 
                                     FilmGrainToolView(controller: adjustmentController)
 
+                                    if let current = adjustmentController.currentVariant {
+                                        AnnotationsInspectorTool(variant: current)
+                                    }
+
                                     MetadataInspectorView(image: adjustmentController.currentVariant?.image)
                                 }
                             } else if selectedToolTab == "DETAILS" {
