@@ -31,6 +31,7 @@ Status vocabulary used below:
 | UI-215 | Library folder context menu parity | High | `DONE-RECENT` | All Library context menu variants match decomps. |
 | WF-506 | Session and catalog lifecycle workflows | High | `DONE-RECENT` | Document creation, opening, and multi-window behavior are supported by COWindowManager. |
 | WF-507 | Image preloading and preview queue behavior | High | `DONE-RECENT` | Thumbnail prefetch logic avoids idle rendering. |
+| GAP-401 | Actual live view engine | High | `DONE-RECENT` | Restored standalone live preview window, custom Workspace loading, tool views, and menu hooks. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -91,7 +92,6 @@ These are the misleading areas where backend or isolated UI work exists, but the
 
 | Task ID | Track Area | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| GAP-401 | Live View restoration | High | High | `PARTIAL` | `Live View Engine Restoration` is marked done in `tracks.md`, but the track link is wrong and the dedicated live preview window/shell is not restored. |
 | GAP-402 | Smart albums and organize workflows | High | High | `PARTIAL` | Data and predicates exist, but album/smart album management is not restored in the main `Library` UX. |
 | GAP-403 | Metadata sync UX | Med | Med | `PARTIAL` | Basic metadata views are reachable, but editable metadata grouping, richer IPTC workflows, and XMP-facing UI parity are still shallow. |
 | GAP-404 | Layers and local adjustments UX | High | High | `PARTIAL` | Layers exist, but the full `LocalAdjustmentsToolTab`/brush-tool inspector flow from the plist is not rebuilt. |
@@ -144,5 +144,4 @@ The project tracking itself now needs correction so the repository stops oversta
 If work resumes immediately, the highest-value sequence is:
 
 1. `WS-101` to `WS-106`: Start addressing real window shell fidelity.
-2. `GAP-401`: Actual live view engine.
-3. `UI-207` to `UI-210`: Fix top chrome and tool headers across palettes.
+2. `UI-207` to `UI-210`: Fix top chrome and tool headers across palettes.

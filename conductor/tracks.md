@@ -74,7 +74,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Live View Engine Restoration**
+- [x] **Track: Live View Engine Restoration**
   *Link: [./tracks/live_view_restoration_20260308/](./tracks/live_view_restoration_20260308/)*
 
 ---
