@@ -3,7 +3,7 @@
   "checkpoint_id": "e4b415801232",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/smart_adjustments_restoration_20260308/plan.md",
     "reconstructed_codebase/Sources/AppCoreShared/ImportModels.swift",
@@ -25,13 +25,19 @@
       "transcript": "/e4/b415801232/0/full.jsonl",
       "content_hash": "/e4/b415801232/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/e4/b415801232/1/metadata.json",
+      "transcript": "/e4/b415801232/1/full.jsonl",
+      "content_hash": "/e4/b415801232/1/content_hash.txt",
+      "prompt": ""
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 17907644,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 15959047,
+    "output_tokens": 41994,
+    "api_call_count": 203
   }
 }
