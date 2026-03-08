@@ -7,8 +7,11 @@ import Combine
 /// Reconstructed controller for managing adjustment tool states.
 /// Bridges the UI sliders to the underlying MCVariant settings.
 public class AdjustmentToolController: ObservableObject {
+    public static let shared = AdjustmentToolController()
     
-    @Published public var currentVariant: VariantBase?
+    @Published public var currentVariant: VariantBase? {
+        didSet { refreshToolValues() }
+    }
     private var cancellables = Set<AnyCancellable>()
     private var isUpdatingFromModel = false
     
@@ -69,6 +72,11 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var smartReference: SmartAdjustmentsReference? = nil
     @Published public var smartExposureEnabled: Bool = true
     @Published public var smartWhiteBalanceEnabled: Bool = true
+    
+    // Soft Proofing (ENG-011)
+    @Published public var isSoftProofingEnabled: Bool = false
+    @Published public var proofingProfileID: String = "sRGB"
+    @Published public var showGamutWarning: Bool = false
     
     @Published public var chromaticAberration: Bool = false
     @Published public var diffraction: Bool = false
@@ -147,6 +155,9 @@ public class AdjustmentToolController: ObservableObject {
             $diffraction.map { _ in }.eraseToAnyPublisher(),
             $isLCCActive.map { _ in }.eraseToAnyPublisher(),
             $lccProfileUUID.map { _ in }.eraseToAnyPublisher(),
+            $isSoftProofingEnabled.map { _ in }.eraseToAnyPublisher(),
+            $proofingProfileID.map { _ in }.eraseToAnyPublisher(),
+            $showGamutWarning.map { _ in }.eraseToAnyPublisher(),
             $keystoneTiltX.map { _ in }.eraseToAnyPublisher(),
             $keystoneTiltY.map { _ in }.eraseToAnyPublisher(),
             $keystoneAmount.map { _ in }.eraseToAnyPublisher(),
@@ -525,6 +536,11 @@ public class AdjustmentToolController: ObservableObject {
                 settings.colorCorrectionList.corrections[index] = cc
             }
         }
+        
+        // Soft Proofing
+        settings.isSoftProofingEnabled = isSoftProofingEnabled
+        settings.proofingProfileID = proofingProfileID
+        settings.showGamutWarning = showGamutWarning
         
         // 4. Map Local Adjustments (Layers)
         for layer in variant.layers where layer.type != .background {

@@ -70,7 +70,7 @@ public class CullingWindowController: NSWindowController {
 public struct CullingView: View {
     
     @ObservedObject var browserWrapper: BrowserWrapper
-    @ObservedObject var adjustmentController: AdjustmentToolController
+    @ObservedObject var adjustmentController = AdjustmentToolController.shared
     @ObservedObject var recipeManager: OutputRecipeManager
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
@@ -80,7 +80,7 @@ public struct CullingView: View {
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
         self.browserWrapper = BrowserWrapper(browser: browser)
-        self.adjustmentController = adjustmentController
+        // self.adjustmentController = adjustmentController // Use shared
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
         self.session = session

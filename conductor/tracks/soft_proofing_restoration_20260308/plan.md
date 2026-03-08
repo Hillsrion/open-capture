@@ -24,10 +24,10 @@ Reconstruct the Soft Proofing Engine (ENG-011), enabling the simulation of outpu
 - [x] Task: Commit Phase 2 & Build Check. fc89680
 
 ### Phase 3: UI Integration (CaptureOneUI)
-- [ ] Task: Add Soft Proofing toggle to the `MainToolbarView`.
-- [ ] Task: Implement a profile picker in the `Viewer` or `Export` tab.
-- [ ] Task: Update `COViewerView` to apply the proofing kernel if enabled.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Add Soft Proofing toggle to the `MainToolbarView`. fc89681
+- [x] Task: Implement a profile picker in the `Viewer` or `Export` tab. fc89681
+- [x] Task: Update `COViewerView` to apply the proofing kernel if enabled. fc89681
+- [x] Task: Commit Phase 3 & Build Check. fc89681
 
 ### Phase 4: Recipe Synchronization (AppCoreShared / ImageCore)
 - [ ] Task: Implement logic to automatically proof the "Primary Recipe" when enabled.

@@ -5,6 +5,7 @@ import AppCoreShared
 /// Based on version 16.5 layout and disassembly.
 public struct MainToolbarView: View {
     @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var adjustmentController = AdjustmentToolController.shared // Assuming shared instance or passed down
     @State private var selectedToolID: String = "Select"
     @State private var showingCustomization: Bool = false
     
@@ -24,6 +25,38 @@ public struct MainToolbarView: View {
                         }
                         print("[Toolbar] Executed: \(item.name)")
                     }
+                }
+            }
+            
+            // Reconstructed Proofing Button (ENG-011)
+            HStack(spacing: 8) {
+                Divider().frame(height: 20).padding(.horizontal, 4)
+                
+                Button(action: { adjustmentController.isSoftProofingEnabled.toggle() }) {
+                    Image(systemName: "eyeglasses")
+                        .font(.system(size: 16))
+                        .padding(6)
+                        .background(adjustmentController.isSoftProofingEnabled ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                        .foregroundColor(adjustmentController.isSoftProofingEnabled ? .white : .gray)
+                        .cornerRadius(4)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .help("Soft Proofing")
+                
+                if adjustmentController.isSoftProofingEnabled {
+                    Menu {
+                        ForEach(ICCManager.shared.availableProfiles(for: .output)) { profile in
+                            Button(profile.name) {
+                                adjustmentController.proofingProfileID = profile.id
+                            }
+                        }
+                    } label: {
+                        Text(adjustmentController.proofingProfileID)
+                            .font(.system(size: 10, design: .monospaced))
+                            .foregroundColor(.gray)
+                    }
+                    .menuStyle(PlainMenuStyle())
+                    .frame(width: 100)
                 }
             }
         }
