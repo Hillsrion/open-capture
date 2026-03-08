@@ -3,7 +3,7 @@
   "checkpoint_id": "6c3b88f2b1d9",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/eip_packaging_restoration_20260308/plan.md",
     "reconstructed_codebase/Sources/CaptureOneUI/BrowserOverlayView.swift",
@@ -17,13 +17,19 @@
       "transcript": "/6c/3b88f2b1d9/0/full.jsonl",
       "content_hash": "/6c/3b88f2b1d9/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/6c/3b88f2b1d9/1/metadata.json",
+      "transcript": "/6c/3b88f2b1d9/1/full.jsonl",
+      "content_hash": "/6c/3b88f2b1d9/1/content_hash.txt",
+      "prompt": "/6c/3b88f2b1d9/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 38283773,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 33891313,
+    "output_tokens": 77418,
+    "api_call_count": 323
   }
 }
