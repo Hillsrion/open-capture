@@ -32,6 +32,9 @@ Status vocabulary used below:
 | WF-506 | Session and catalog lifecycle workflows | High | `DONE-RECENT` | Document creation, opening, and multi-window behavior are supported by COWindowManager. |
 | WF-507 | Image preloading and preview queue behavior | High | `DONE-RECENT` | Thumbnail prefetch logic avoids idle rendering. |
 | GAP-401 | Actual live view engine | High | `DONE-RECENT` | Restored standalone live preview window, custom Workspace loading, tool views, and menu hooks. |
+| WS-101 | Viewer window shell restoration | High | `DONE-RECENT` | Dedicated ViewerWindowController loads viewerwindow.tools presets. |
+| WS-102 | Live preview window shell restoration | High | `DONE-RECENT` | Validated LivePreviewWindowController correctly loads .livePreview preset. |
+| WS-103 | Culling window shell restoration | High | `DONE-RECENT` | Dedicated CullingShellController loads cullingwindow.tools presets. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -59,9 +62,6 @@ The session window is no longer synthetic, but the rest of the workspace family 
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| WS-101 | Viewer window shell restoration | High | High | `TODO` | `viewerwindow.tools` presets load, but there is no dedicated viewer shell reproducing the viewer window layout, palette switching, and browser/tool visibility behavior from the plist. |
-| WS-102 | Live preview window shell restoration | High | High | `TODO` | `livepreviewwindow` presets and tool IDs load, but the actual live preview window UI is not rebuilt around them. |
-| WS-103 | Culling window shell restoration | High | High | `TODO` | `cullingwindow.tools` presets load, but there is no dedicated culling shell exposing `TimeBasedGrouping`, `FaceFocus`, `ImporterFilters`, and `ImportFileInfo` as intended. |
 | WS-104 | Exporter / importer / print workspace chrome fidelity | Med | Med | `TODO` | Window chrome states from `exporterwindow`, `importerwindow`, and `printwindow` are not yet used to drive dedicated shells consistently. |
 | WS-105 | Palette undocking / redocking / floating panels | High | Very High | `TODO` | Current session shell reproduces palette order, not the tool-window behavior and persistence implied by `tool-windows` and Capture One workspace editing. |
 | WS-106 | Multi-monitor workspace behavior | High | Very High | `TODO` | Recent workspace fixes did not restore real multi-monitor placement and full-screen behavior per window/palette family. |

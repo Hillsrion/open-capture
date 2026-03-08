@@ -145,6 +145,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Workspace Parity - Exposure, Details, Lens Tools (UI-202, UI-203, UI-204)**
   *Link: [./tracks/tool_placeholders_20260308/](./tracks/tool_placeholders_20260308/)*
 
+---
+
+- [x] **Track: Window Shell Restoration (WS-101, WS-102, WS-103)**
+  *Link: [./tracks/window_shells_restoration_20260308/](./tracks/window_shells_restoration_20260308/)*
+
+
 
 
 
