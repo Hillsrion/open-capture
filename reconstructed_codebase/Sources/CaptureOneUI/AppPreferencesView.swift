@@ -25,6 +25,9 @@ public struct AppPreferencesView: View {
                 case .shortcuts:
                     ShortcutEditorView()
                         .padding(16)
+                case .catalogAndSession:
+                    CatalogAndSessionPreferencesView()
+                        .padding(16)
                 case .plugins:
                     PluginsPreferencesView()
                 }
@@ -52,6 +55,7 @@ public struct AppPreferencesView: View {
 private enum PreferencesSection: CaseIterable {
     case general
     case shortcuts
+    case catalogAndSession
     case plugins
 
     var title: String {
@@ -60,6 +64,8 @@ private enum PreferencesSection: CaseIterable {
             return "General"
         case .shortcuts:
             return "Shortcuts"
+        case .catalogAndSession:
+            return "Catalog / Session"
         case .plugins:
             return "Plugins"
         }
@@ -80,6 +86,36 @@ private struct GeneralPreferencesPane: View {
             Toggle("Show Focus Mask", isOn: $commands.showFocusMask)
             Toggle("Edit Selected Only", isOn: $commands.editSelectedOnly)
 
+            Spacer()
+        }
+        .padding(20)
+    }
+}
+
+private struct CatalogAndSessionPreferencesView: View {
+    @AppStorage("COOpenInNewWindow") private var openInNewWindow: Bool = true
+    @AppStorage("COEnableSessionFolders") private var enableSessionFolders: Bool = true
+    @AppStorage("COIncludeOutputFolder") private var includeOutputFolder: Bool = false
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            Text("Catalog and Session")
+                .font(.title3.weight(.semibold))
+                
+            VStack(alignment: .leading, spacing: 12) {
+                Toggle("Open in new window", isOn: $openInNewWindow)
+                Text("Changes to window behavior will take effect next time you open a document.")
+                    .font(.caption)
+                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    .padding(.leading, 24)
+            }
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Session Defaults").font(.headline)
+                Toggle("Enable Session Folders", isOn: $enableSessionFolders)
+                Toggle("Include Output Folder", isOn: $includeOutputFolder)
+            }
+            
             Spacer()
         }
         .padding(20)
