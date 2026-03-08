@@ -90,6 +90,15 @@ public class OutputRecipe: BaseObject {
             notifyChange()
         }
     }
+    
+    // EIP Support (CORE-006)
+    public var packAsEIP: Bool {
+        get { return mcRecipe.objectForKey("MCRecipeKeyPackAsEIP") as? Bool ?? false }
+        set {
+            mcRecipe.setObject(newValue, forKey: "MCRecipeKeyPackAsEIP")
+            notifyChange()
+        }
+    }
 }
 
 /// Manages the collection of recipes.

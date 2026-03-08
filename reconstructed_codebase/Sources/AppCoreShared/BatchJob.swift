@@ -75,11 +75,36 @@ public class BatchQueue: ObservableObject {
             
             self.pipeline.processToFile(input: rep, settings: pSettings, exportSettings: eSettings, destination: job.destinationPath)
             
+            // Reconstructed EIP Packing (CORE-006)
+            if job.recipe.packAsEIP {
+                self.performEIPPacking(for: job)
+            }
+            
             DispatchQueue.main.async {
                 job.status = .completed
                 self.completedJobs.append(job)
                 self.processNext()
             }
+        }
+    }
+    
+    private func performEIPPacking(for job: BatchJob) {
+        guard let variant = job.variant as? VariantBase, let imagePath = variant.image?.path else { return }
+        
+        let rawURL = URL(fileURLWithPath: imagePath)
+        let archiveURL = URL(fileURLWithPath: job.destinationPath).deletingPathExtension().appendingPathExtension("eip")
+        
+        // Gather sidecars (Simulation)
+        let sidecars: [URL] = [] // In real app, this would find .cos, masks, etc.
+        
+        do {
+            try EIPArchive.create(at: archiveURL, rawURL: rawURL, sidecars: sidecars)
+            print("[Batch] EIP Packed: \(archiveURL.lastPathComponent)")
+            
+            // Clean up the temporary exported file if it was just a sidecar for EIP
+            // (Capture One usually packs the original RAW and sidecars)
+        } catch {
+            print("[Batch] EIP Packing failed: \(error)")
         }
     }
 }

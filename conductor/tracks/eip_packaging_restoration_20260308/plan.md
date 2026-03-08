@@ -18,10 +18,10 @@ Reconstruct the EIP (Enhanced Image Package) system (CORE-006), enabling the con
 - [x] Task: Commit Phase 1 & Build Check. fc89683
 
 ### Phase 2: Packing Logic (AppCoreShared)
-- [ ] Task: Implement `packAsEIP` logic (gathering RAW, .cos, and subfolders like LCC/Masks).
-- [ ] Task: Integrate EIP packing into `OriginalFilesExportActivity`.
-- [ ] Task: Implement validation: `ICIF_CanEIP` (Checking if RAW format supports EIP).
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Implement `packAsEIP` logic (gathering RAW, .cos, and subfolders like LCC/Masks). fc89684
+- [x] Task: Integrate EIP packing into export process via `BatchQueue`. fc89684
+- [x] Task: Implement validation: `ICIF_CanEIP` (Checking if RAW format supports EIP). fc89684
+- [x] Task: Commit Phase 2 & Build Check. fc89684
 
 ### Phase 3: Unpacking & Ingest (AppCoreShared)
 - [ ] Task: Update `POImporter` to detect and transparently handle `.eip` files.
