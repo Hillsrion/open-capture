@@ -124,7 +124,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Hardware Controllers Restoration**
+- [x] **Track: Hardware Controllers Restoration**
   *Link: [./tracks/hardware_controllers_restoration_20260308/](./tracks/hardware_controllers_restoration_20260308/)*
 
 ---
