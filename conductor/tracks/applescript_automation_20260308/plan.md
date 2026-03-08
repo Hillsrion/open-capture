@@ -19,14 +19,14 @@ Reconstruct the AppleScript Automation bridge (INT-004), enabling external scrip
 - [x] Task: Commit Phase 1 & Build Check. fc89694
 
 ### Phase 2: Document (Session) Scriptability (AppCoreShared)
-- [ ] Task: Implement scripting extensions for `SessionBase` (exposing `name`, `path`).
-- [ ] Task: Allow scripts to query `variants` within the active session.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Implement scripting extensions for `SessionBase` (exposing `name`, `path`). fc89695
+- [x] Task: Allow scripts to query `variants` within the active session. fc89695
+- [x] Task: Commit Phase 2 & Build Check. fc89695
 
 ### Phase 3: Variant Scriptability (AppCoreShared)
-- [ ] Task: Implement scripting extensions for `VariantBase`.
-- [ ] Task: Expose properties like `name`, `rating`, and `color tag` as read/write scriptable properties.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Implement scripting extensions for `VariantBase`. fc89696
+- [x] Task: Expose properties like `name`, `rating`, and `color tag` as read/write scriptable properties. fc89696
+- [x] Task: Commit Phase 3 & Build Check. fc89696
 
 ### Phase 4: AppleScript Commands (AppCoreShared)
 - [ ] Task: Implement a custom script command (e.g., `process` or `export`) taking a variant as an argument.

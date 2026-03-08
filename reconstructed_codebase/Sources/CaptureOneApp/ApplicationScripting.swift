@@ -1,5 +1,6 @@
 import AppKit
 import AppCoreShared
+import CaptureOneUI
 
 /// Reconstructed AppleScript support for NSApplication (INT-004).
 extension NSApplication {
