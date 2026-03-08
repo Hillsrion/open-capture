@@ -4,6 +4,7 @@ import AppCoreShared
 /// Reconstructed high-fidelity Camera Settings tool (TETH-001).
 public struct CameraSettingsTool: View {
     @ObservedObject var browser = PtpDeviceBrowser.shared
+    @ObservedObject var liveView = LiveViewEngine.shared
     @State private var selectedCamera: P1CaptureCore_Camera?
     
     public init() {}
@@ -45,6 +46,27 @@ public struct CameraSettingsTool: View {
                     .padding(8)
                     .background(Color.black.opacity(0.2))
                     .cornerRadius(4)
+                    
+                    // 2.5 Live View (TETH-001)
+                    Button(action: {
+                        if liveView.isActive {
+                            liveView.stop()
+                        } else {
+                            liveView.start(for: camera)
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: "video.fill")
+                            Text(liveView.isActive ? "STOP LIVE VIEW" : "LIVE VIEW")
+                                .font(.system(size: 11, weight: .bold))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background(liveView.isActive ? Color.orange : Color.gray.opacity(0.3))
+                        .foregroundColor(.white)
+                        .cornerRadius(4)
+                    }
+                    .buttonStyle(PlainButtonStyle())
                     
                     // 3. Capture Button
                     Button(action: { camera.shutterRelease() }) {

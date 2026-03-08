@@ -13,10 +13,10 @@
 - [x] Task: Commit Phase 2 & Build Check. fc89663
 
 ## Phase 3: Viewer Integration (CaptureOneUI)
-- [ ] Task: Reconstruct the `LiveViewOverlayView` for high-performance frame rendering.
-- [ ] Task: Implement the `cropMatchesCurrentCameraCrop` aspect ratio logic.
-- [ ] Task: Add the "Live View" button to the `CameraSettingsTool`.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Reconstruct the `LiveViewOverlayView` for high-performance frame rendering. fc89664
+- [x] Task: Implement the `cropMatchesCurrentCameraCrop` aspect ratio logic. fc89664
+- [x] Task: Add the "Live View" button to the `CameraSettingsTool`. fc89664
+- [x] Task: Commit Phase 3 & Build Check. fc89664
 
 ## Phase 4: Validation & Optimization (Project-wide)
 - [ ] Task: Implement automatic live view pausing during high-res capture.

@@ -9,9 +9,9 @@ public class LiveViewEngine: ObservableObject {
     
     @Published public var currentFrame: NSImage?
     @Published public var isActive: Bool = false
+    @Published public var currentCamera: P1CaptureCore_Camera?
     
     private var frameLoop: LiveViewFrameLoop?
-    private var currentCamera: P1CaptureCore_Camera?
     
     private init() {}
     

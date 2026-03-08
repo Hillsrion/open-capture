@@ -25,10 +25,8 @@ public struct COViewerView: View {
             ZStack {
                 CaptureOneTheme.Colors.applicationBackground
                 
-                if liveView.isActive, let frame = liveView.currentFrame {
-                    Image(nsImage: frame)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                if liveView.isActive {
+                    LiveViewOverlayView(camera: liveView.currentCamera)
                 } else if let nsImage = renderedImage {
                     ZStack {
                         Image(nsImage: nsImage)
