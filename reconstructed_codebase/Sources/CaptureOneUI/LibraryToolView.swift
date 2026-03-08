@@ -23,16 +23,51 @@ public struct LibraryToolView: View {
                 .padding(.vertical, 4)
             }
             
+            // Session Albums Section
+            COToolSection("Session Albums") {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { album in
+                        HStack(spacing: 8) {
+                            Image(systemName: album is SmartAlbum ? "gearshape.fill" : "photo.on.rectangle")
+                                .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
+                                .frame(width: 16)
+                            Text(album.name ?? "Untitled Album").font(.system(size: 11))
+                            Spacer()
+                        }
+                        .padding(.vertical, 2)
+                    }
+                }
+                .padding(.vertical, 4)
+            }
+            
             // Session Favorites Section
             COToolSection("Session Favorites") {
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Image(systemName: "star.fill").foregroundColor(.yellow).font(.system(size: 10))
-                        Text("Pictures").font(.system(size: 11))
-                        Spacer()
+                    ForEach(session.arrangedUserFavouriteCollections, id: \.uuid) { favorite in
+                        HStack(spacing: 8) {
+                            Image(systemName: "star.fill").foregroundColor(.yellow).font(.system(size: 10))
+                            Text(favorite.name ?? "Untitled Favorite").font(.system(size: 11))
+                            Spacer()
+                        }
+                        .padding(.vertical, 2)
                     }
-                    .padding(.vertical, 2)
                 }
+                .padding(.vertical, 4)
+            }
+            
+            // System Folders Section
+            COToolSection("System Folders") {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { folderPath in
+                        HStack(spacing: 8) {
+                            Image(systemName: "folder.fill").foregroundColor(.blue).font(.system(size: 10))
+                            Text((folderPath as NSString).lastPathComponent).font(.system(size: 11))
+                            Spacer()
+                        }
+                        .padding(.vertical, 2)
+                    }
+                }
+                .padding(.vertical, 4)
             }
         }
     }

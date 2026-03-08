@@ -37,6 +37,11 @@ public class SessionBase: BaseObject {
     public var captureNamingTokenBasedFormat: String?
     
     // MARK: - Relationships
+    public var arrangedFixedCollections: [CollectionBase] = []
+    public var arrangedUserAlbumCollections: [CollectionBase] = []
+    public var arrangedUserFavouriteCollections: [CollectionBase] = []
+    public var arrangedUserCachedFolderCollections: [String] = [] // Assuming strings for now, or could be a system folder model
+    
     // public var allCollections: FetchArray
     // public var trashCollection: MOCollection?
     // public var captureCollection: MOCollection?
