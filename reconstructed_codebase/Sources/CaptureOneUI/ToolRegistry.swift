@@ -92,7 +92,7 @@ public enum ToolRegistry {
         case "StyleBrushes":
             return .implemented { context in AnyView(StyleInspectorTool(controller: context.adjustmentController)) }
         case "MatchLook":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(MatchLookToolView()) }
         case "WhiteBalance":
             return .implemented { context in
                 AnyView(WhiteBalanceToolView(
@@ -157,7 +157,7 @@ public enum ToolRegistry {
         case "ColorBalance":
             return .implemented { context in AnyView(ColorBalanceToolView(controller: context.adjustmentController)) }
         case "BlackAndWhite":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController)) }
         case "Clarity":
             return .implemented { context in
                 AnyView(ClarityToolView(
@@ -176,9 +176,9 @@ public enum ToolRegistry {
                 ))
             }
         case "Dehaze":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(DehazeToolView(controller: context.adjustmentController)) }
         case "Vignetting":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(VignettingToolView(controller: context.adjustmentController)) }
         case "Crop":
             return .unavailable(toolID)
         case "AICrop":
