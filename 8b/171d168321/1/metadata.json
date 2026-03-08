@@ -1,0 +1,42 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "8b171d168321",
+  "session_id": "b84bdb03-56b5-48f3-bc85-10e4ed8e5780",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T02:22:43.858501Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/tracks.md",
+    "conductor/backlog.md",
+    "conductor/tracks/tethered_enhancements_20260308/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/NamingEngine.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/CameraModels.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewOverlayView.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/NextCaptureSettingsTool.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/CameraSettingsTool.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/NextCaptureSettingsTool.swift",
+    "conductor/tracks/tethered_enhancements_20260308/plan.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "155311e66f8e",
+  "checkpoint_transcript_start": 60,
+  "transcript_lines_at_start": 60,
+  "token_usage": {
+    "input_tokens": 2651595,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2430625,
+    "output_tokens": 10199,
+    "api_call_count": 36
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T02:22:43.70582Z",
+    "agent_lines": 380,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 380,
+    "agent_percentage": 100
+  }
+}
