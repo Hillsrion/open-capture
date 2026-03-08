@@ -35,6 +35,8 @@ Status vocabulary used below:
 | WS-101 | Viewer window shell restoration | High | `DONE-RECENT` | Dedicated ViewerWindowController loads viewerwindow.tools presets. |
 | WS-102 | Live preview window shell restoration | High | `DONE-RECENT` | Validated LivePreviewWindowController correctly loads .livePreview preset. |
 | WS-103 | Culling window shell restoration | High | `DONE-RECENT` | Dedicated CullingShellController loads cullingwindow.tools presets. |
+| UI-205 | Capture palette parity | High | `DONE-RECENT` | All Capture palette tools now have stub views. |
+| UI-206 | Settings palette parity | High | `DONE-RECENT` | BaseCharacteristics and Settings tools restored. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -46,8 +48,6 @@ These are the highest-value gaps because they are visible in the main session UX
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| UI-205 | Capture palette parity | High | High | `PARTIAL` | `Camera`, `CameraSettings`, `NextCaptureNaming`, and `NextCaptureAdjustments` are reachable, but `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, and `NextCaptureBackup` are still placeholders. |
-| UI-206 | Settings palette parity | High | Med | `PARTIAL` | `Styles` is reachable, but `BaseCharacteristics` and `Settings` are still placeholders. |
 | UI-207 | Top chrome parity | High | High | `PARTIAL` | The shell now has a real menu bar and wired toolbar actions, but the top area is still a custom SwiftUI strip inside the content view, not a decompiled-faithful native titlebar/`NSToolbar` with full item inventory and document-title behavior. |
 | UI-208 | Import / export window fidelity | High | High | `PARTIAL` | `Import` and `Export` now open sheets, but they are still simplified SwiftUI panels rather than full importer/exporter windows with the original browser, sidebars, and command coverage. |
 | UI-209 | Viewer chrome parity | High | Med | `PARTIAL` | `Before/After`, grid, focus mask, proofing, and warning toggles now exist, but the viewer toolbar/readout strip still does not match Capture One in structure, overlays, and indicators. |
@@ -77,8 +77,8 @@ These tools are now honestly exposed as missing. They should be treated as concr
 | TOOL-301 | `MatchLook`, `BlackAndWhite`, `Dehaze`, `Vignetting` | High | Med | `PLACEHOLDER` |
 | TOOL-302 | `Crop`, `AICrop`, `Rotation`, `Grid`, `Guides` | High | Med | `PLACEHOLDER` |
 | TOOL-303 | `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, `Moire` | High | High | `PLACEHOLDER` |
-| TOOL-304 | `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, `NextCaptureBackup` | High | High | `PLACEHOLDER` |
-| TOOL-305 | `BaseCharacteristics`, `Settings` | Med | Med | `PLACEHOLDER` |
+| TOOL-304 | `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, `NextCaptureBackup` | High | High | `DONE-RECENT` |
+| TOOL-305 | `BaseCharacteristics`, `Settings` | Med | Med | `DONE-RECENT` |
 | TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `PLACEHOLDER` |
 | TOOL-307 | `LivePreviewComposition`, `LivePreviewAdjustments`, `LivePreviewInfoTool`, `Normalize` | Med | Med | `PLACEHOLDER` |
 
