@@ -60,6 +60,18 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var isLCCActive: Bool = false
     @Published public var lccProfileUUID: String? = nil
 
+    // Noise Reduction (ENG-007)
+    @Published public var nrLuminance: Double = 50.0
+    @Published public var nrDetails: Double = 50.0
+    @Published public var nrColor: Double = 50.0
+    @Published public var nrSinglePixel: Double = 0.0
+    
+    // Sharpening (ENG-007)
+    @Published public var sharpAmount: Double = 100.0
+    @Published public var sharpRadius: Double = 0.8
+    @Published public var sharpThreshold: Double = 1.0
+    @Published public var sharpHalo: Double = 0.0
+
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
@@ -102,7 +114,15 @@ public class AdjustmentToolController: ObservableObject {
             $chromaticAberration.map { _ in }.eraseToAnyPublisher(),
             $diffraction.map { _ in }.eraseToAnyPublisher(),
             $isLCCActive.map { _ in }.eraseToAnyPublisher(),
-            $lccProfileUUID.map { _ in }.eraseToAnyPublisher()
+            $lccProfileUUID.map { _ in }.eraseToAnyPublisher(),
+            $nrLuminance.map { _ in }.eraseToAnyPublisher(),
+            $nrDetails.map { _ in }.eraseToAnyPublisher(),
+            $nrColor.map { _ in }.eraseToAnyPublisher(),
+            $nrSinglePixel.map { _ in }.eraseToAnyPublisher(),
+            $sharpAmount.map { _ in }.eraseToAnyPublisher(),
+            $sharpRadius.map { _ in }.eraseToAnyPublisher(),
+            $sharpThreshold.map { _ in }.eraseToAnyPublisher(),
+            $sharpHalo.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -182,6 +202,18 @@ public class AdjustmentToolController: ObservableObject {
         self.isLCCActive = (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false
         self.lccProfileUUID = mc.objectForKey("ZLCC_PROFILE_UUID") as? String
         
+        // Noise Reduction
+        self.nrLuminance = getDouble("ZNR_LUMINANCE", 50.0)
+        self.nrDetails = getDouble("ZNR_DETAILS", 50.0)
+        self.nrColor = getDouble("ZNR_COLOR", 50.0)
+        self.nrSinglePixel = getDouble("ZNR_SINGLE_PIXEL", 0.0)
+        
+        // Sharpening
+        self.sharpAmount = getDouble("ZSHARP_AMOUNT", 100.0)
+        self.sharpRadius = getDouble("ZSHARP_RADIUS", 0.8)
+        self.sharpThreshold = getDouble("ZSHARP_THRESHOLD", 1.0)
+        self.sharpHalo = getDouble("ZSHARP_HALO", 0.0)
+        
         self.levelsBlackPoint = (mc.objectForKey("ZLEVELS_BLACK") as? Float) ?? 0.0
         self.levelsWhitePoint = (mc.objectForKey("ZLEVELS_WHITE") as? Float) ?? 1.0
         self.levelsMidtone = (mc.objectForKey("ZLEVELS_MIDTONE") as? Float) ?? 1.0
@@ -226,6 +258,15 @@ public class AdjustmentToolController: ObservableObject {
             activeLayer.mcLayer?.setObject(lensDistortion, forKey: "ZLENS_DISTORTION")
             activeLayer.mcLayer?.setObject(lensSharpnessFalloff, forKey: "ZLENS_SHARPNESS_FALLOFF")
             activeLayer.mcLayer?.setObject(lensLightFalloff, forKey: "ZLENS_LIGHT_FALLOFF")
+            
+            // Per-layer NR/Sharpening
+            activeLayer.mcLayer?.setObject(nrLuminance, forKey: "ZNR_LUMINANCE")
+            activeLayer.mcLayer?.setObject(nrDetails, forKey: "ZNR_DETAILS")
+            activeLayer.mcLayer?.setObject(nrColor, forKey: "ZNR_COLOR")
+            activeLayer.mcLayer?.setObject(sharpAmount, forKey: "ZSHARP_AMOUNT")
+            activeLayer.mcLayer?.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
+            activeLayer.mcLayer?.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
+            activeLayer.mcLayer?.setObject(sharpHalo, forKey: "ZSHARP_HALO")
         } else {
             mc.setObject(exposure, forKey: "ZEXPOSURE")
             mc.setObject(contrast, forKey: "ZCONTRAST")
@@ -238,6 +279,16 @@ public class AdjustmentToolController: ObservableObject {
             mc.setObject(lensDistortion, forKey: "ZLENS_DISTORTION")
             mc.setObject(lensSharpnessFalloff, forKey: "ZLENS_SHARPNESS_FALLOFF")
             mc.setObject(lensLightFalloff, forKey: "ZLENS_LIGHT_FALLOFF")
+            
+            mc.setObject(nrLuminance, forKey: "ZNR_LUMINANCE")
+            mc.setObject(nrDetails, forKey: "ZNR_DETAILS")
+            mc.setObject(nrColor, forKey: "ZNR_COLOR")
+            mc.setObject(nrSinglePixel, forKey: "ZNR_SINGLE_PIXEL")
+            
+            mc.setObject(sharpAmount, forKey: "ZSHARP_AMOUNT")
+            mc.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
+            mc.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
+            mc.setObject(sharpHalo, forKey: "ZSHARP_HALO")
         }
         
         // 2. Global updates
@@ -285,6 +336,16 @@ public class AdjustmentToolController: ObservableObject {
         settings.lensCorrection.chromaticAberration = chromaticAberration
         settings.lensCorrection.diffraction = diffraction
         settings.lensCorrection.lccProfileUUID = lccProfileUUID
+        
+        settings.noiseReduction.luminance = nrLuminance
+        settings.noiseReduction.details = nrDetails
+        settings.noiseReduction.color = nrColor
+        settings.noiseReduction.singlePixel = nrSinglePixel
+        
+        settings.sharpening.amount = sharpAmount
+        settings.sharpening.radius = sharpRadius
+        settings.sharpening.threshold = sharpThreshold
+        settings.sharpening.haloControl = sharpHalo
         
         settings.geometry.cropRect = .zero // Inferred: logic for mapping variant crop to IC_GeometryAdjustments
         settings.geometry.rotation = 0.0

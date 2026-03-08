@@ -72,7 +72,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | UI-002 | **Curves Interactive Widget** (Bezier point editor) | High | High | ✅ Done |
 | UI-003 | **Color Wheels UI** (360° color picker interface) | Med | High | ⏳ Pending |
 | UI-004 | **Layer Inspector** (Layer stack, opacity, visibility) | High | Med | ✅ Done |
-| UI-005 | **Grid View Browser** (Lazy loading, resizable thumbnails, list view) | High | High | ⏳ Pending |
+| UI-005 | **Grid View Browser** (Lazy loading, resizable thumbnails, list view) | High | High | ✅ Done |
 | UI-006 | **Heal / Clone Brush Tools** (Source point selection UI) | Med | High | ⏳ Pending |
 | UI-007 | **Annotations View** (Drawing layer on top of viewer) | Low | Med | ⏳ Pending |
 | UI-008 | **Import Dialog** (Source selection, naming format, backup) | High | Med | ✅ Done |

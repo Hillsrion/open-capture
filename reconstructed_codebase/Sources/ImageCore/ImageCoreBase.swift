@@ -183,6 +183,34 @@ public struct IC_VignettingAdjustments {
     }
 }
 
+public struct IC_NoiseReductionSettings {
+    public var luminance: Double
+    public var details: Double
+    public var color: Double
+    public var singlePixel: Double
+    
+    public init() {
+        self.luminance = 50.0
+        self.details = 50.0
+        self.color = 50.0
+        self.singlePixel = 0.0
+    }
+}
+
+public struct IC_SharpeningSettings {
+    public var amount: Double
+    public var radius: Double
+    public var threshold: Double
+    public var haloControl: Double
+    
+    public init() {
+        self.amount = 100.0
+        self.radius = 0.8
+        self.threshold = 1.0
+        self.haloControl = 0.0
+    }
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32
@@ -213,6 +241,12 @@ public struct IC_ProcessSettings {
     // Advanced Color Editor (ENG-004)
     public var colorCorrectionList: IC_ColorCorrectionList
     
+    // Noise Reduction (ENG-007)
+    public var noiseReduction: IC_NoiseReductionSettings
+    
+    // Sharpening (ENG-007)
+    public var sharpening: IC_SharpeningSettings
+    
     // Local Adjustments (Layers)
     public var localAdjustments: [IC_LocalAdjustmentSettings]
 
@@ -241,6 +275,8 @@ public struct IC_ProcessSettings {
         self.gradationCurves = ICGradationCurves()
         self.clarity = IC_ClaritySettings()
         self.colorCorrectionList = IC_ColorCorrectionList()
+        self.noiseReduction = IC_NoiseReductionSettings()
+        self.sharpening = IC_SharpeningSettings()
         self.localAdjustments = []
         self.lensCorrection = IC_LensCorrectionSettings()
         self.geometry = IC_GeometryAdjustments()

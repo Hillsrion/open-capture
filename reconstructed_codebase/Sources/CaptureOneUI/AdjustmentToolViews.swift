@@ -121,6 +121,29 @@ public struct LensCorrectionInspectorTool: View {
     }
 }
 
+/// The integrated Details tools (Sharpening, NR).
+public struct DetailInspectorTool: View {
+    @ObservedObject var controller: AdjustmentToolController
+    
+    public var body: some View {
+        VStack(spacing: 0) {
+            SharpeningToolView(
+                amount: $controller.sharpAmount,
+                radius: $controller.sharpRadius,
+                threshold: $controller.sharpThreshold,
+                halo: $controller.sharpHalo
+            )
+            
+            NoiseReductionToolView(
+                luminance: $controller.nrLuminance,
+                details: $controller.nrDetails,
+                color: $controller.nrColor,
+                singlePixel: $controller.nrSinglePixel
+            )
+        }
+    }
+}
+
 /// Reconstructed high-fidelity Histogram tool.
 public struct HistogramToolView: View {
     public init() {}

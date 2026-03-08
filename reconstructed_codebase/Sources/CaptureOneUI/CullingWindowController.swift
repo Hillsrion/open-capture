@@ -140,7 +140,7 @@ public struct CullingView: View {
                     // Tool Tab Bar
                     HStack(spacing: 0) {
                         VToolTab(icon: "folder", label: "LIBRARY", isSelected: selectedToolTab == "LIBRARY") { selectedToolTab = "LIBRARY" }
-                        VToolTab(icon: "camera", label: "TETHER", isSelected: selectedToolTab == "TETHER") { selectedToolTab = "TETHER" }
+                        VToolTab(icon: "magnifyingglass", label: "DETAILS", isSelected: selectedToolTab == "DETAILS") { selectedToolTab = "DETAILS" }
                         VToolTab(icon: "skew", label: "SHAPE", isSelected: selectedToolTab == "SHAPE") { selectedToolTab = "SHAPE" }
                         VToolTab(icon: "slider.horizontal.3", label: "ADJUST", isSelected: selectedToolTab == "ADJUST") { selectedToolTab = "ADJUST" }
                         VToolTab(icon: "circle.recircle", label: "COLOR", isSelected: selectedToolTab == "COLOR") { selectedToolTab = "COLOR" }
@@ -199,6 +199,8 @@ public struct CullingView: View {
                                     
                                     MetadataInspectorView(image: adjustmentController.currentVariant?.image)
                                 }
+                            } else if selectedToolTab == "DETAILS" {
+                                DetailInspectorTool(controller: adjustmentController)
                             } else if selectedToolTab == "LIBRARY" {
                                 LibraryToolView(session: session)
                                 FilterToolView(predicate: $adjustmentController.activePredicate)

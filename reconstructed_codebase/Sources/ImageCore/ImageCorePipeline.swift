@@ -69,6 +69,46 @@ public class ImageCorePipeline {
             // 3. Blend temp buffer into output using mask and opacity
         }
         
+        // --- Detail Refinement (ENG-007) ---
+        
+        // 1. Noise Reduction
+        if settings.noiseReduction.luminance > 0 || settings.noiseReduction.color > 0 || settings.noiseReduction.singlePixel > 0 {
+            print("[ImageCore] Applying Noise Reduction")
+            var r = [Float](floatBuffer)
+            var g = [Float](floatBuffer)
+            var b = [Float](floatBuffer)
+            
+            if settings.noiseReduction.singlePixel > 0 {
+                NoiseReductionKernels.applySinglePixelNR(to: &r, count: pixelCount, amount: Float(settings.noiseReduction.singlePixel))
+            }
+            
+            if settings.noiseReduction.luminance > 0 {
+                NoiseReductionKernels.applyLuminanceNR(to: &r, count: pixelCount, amount: Float(settings.noiseReduction.luminance), details: Float(settings.noiseReduction.details))
+            }
+            
+            if settings.noiseReduction.color > 0 {
+                NoiseReductionKernels.applyColorNR(r: &r, g: &g, b: &b, count: pixelCount, amount: Float(settings.noiseReduction.color))
+            }
+        }
+        
+        // 2. Sharpening
+        if settings.sharpening.amount > 0 {
+            print("[ImageCore] Applying Sharpening: \(settings.sharpening.amount)")
+            var r = [Float](floatBuffer)
+            var g = [Float](floatBuffer)
+            var b = [Float](floatBuffer)
+            
+            SharpeningKernels.applySharpening(r: &r, g: &g, b: &b, count: pixelCount, 
+                                             amount: Float(settings.sharpening.amount), 
+                                             radius: Float(settings.sharpening.radius), 
+                                             threshold: Float(settings.sharpening.threshold))
+            
+            if settings.sharpening.haloControl > 0 {
+                SharpeningKernels.applyHaloControl(to: &r, count: pixelCount, amount: Float(settings.sharpening.haloControl))
+            }
+            // (Finalize merging RGB back omitted for simulation)
+        }
+        
         // Finalize: Copy floatBuffer back to output (simplified cast)
         // ...
     }
