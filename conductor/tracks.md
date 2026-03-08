@@ -104,8 +104,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: EIP Packaging Restoration**
+- [x] **Track: EIP Packaging Restoration**
   *Link: [./tracks/eip_packaging_restoration_20260308/](./tracks/eip_packaging_restoration_20260308/)*
+
+---
+
+- [~] **Track: Print Layout Window Restoration**
+  *Link: [./tracks/print_layout_restoration_20260308/](./tracks/print_layout_restoration_20260308/)*
 
 ---
 
