@@ -173,6 +173,22 @@ public final class AppCommandCenter: ObservableObject {
         }
         COWindowManager.shared.openLivePreview(for: session)
     }
+    
+    public func openViewerWindow() {
+        guard let session = session else {
+            notice = AppNotice(title: "No Session", message: "A session must be open before launching a Viewer window.")
+            return
+        }
+        COWindowManager.shared.openViewerWindow(for: session)
+    }
+    
+    public func openCullingWindow() {
+        guard let session = session else {
+            notice = AppNotice(title: "No Session", message: "A session must be open before launching a Culling window.")
+            return
+        }
+        COWindowManager.shared.openCullingWindow(for: session)
+    }
 
     public func presentPreferences() {
         presentedSheet = .preferences

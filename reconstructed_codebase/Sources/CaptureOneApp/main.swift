@@ -40,6 +40,14 @@ final class AppMenuTarget: NSObject {
         Task { @MainActor in AppCommandCenter.shared.openLivePreview() }
     }
 
+    @objc func openViewerWindow(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.openViewerWindow() }
+    }
+
+    @objc func openCullingWindow(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.openCullingWindow() }
+    }
+
     @objc func showPreferences(_ sender: Any?) {
         Task { @MainActor in
             AppCommandCenter.shared.presentPreferences()
@@ -199,6 +207,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowMenu.addItem(withTitle: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
         windowMenu.addItem(.separator())
         windowMenu.addItem(withTitle: "Live View", action: #selector(AppMenuTarget.openLivePreview(_:)), keyEquivalent: "l").target = menuTarget
+        windowMenu.addItem(withTitle: "New Viewer", action: #selector(AppMenuTarget.openViewerWindow(_:)), keyEquivalent: "V").target = menuTarget
+        windowMenu.addItem(withTitle: "Culling", action: #selector(AppMenuTarget.openCullingWindow(_:)), keyEquivalent: "").target = menuTarget
         NSApp.windowsMenu = windowMenu
 
         let helpMenuItem = NSMenuItem()

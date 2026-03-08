@@ -13,9 +13,13 @@ public final class COWindowManager {
     private var documentWindows: [String: NSWindow] = [:]
     private var windowDelegates: [String: DocumentWindowDelegate] = [:]
     private var livePreviewWindowDelegate: LivePreviewWindowDelegate?
+    private var viewerWindowDelegate: AuxiliaryWindowDelegate?
+    private var cullingWindowDelegate: AuxiliaryWindowDelegate?
     
-    // Live Preview window
+    // Auxiliary windows
     private var livePreviewWindowController: NSWindowController?
+    private var viewerWindowController: NSWindowController?
+    private var cullingWindowController: NSWindowController?
     private var startWindow: NSWindow?
     
     private init() {}
@@ -153,6 +157,52 @@ public final class COWindowManager {
         livePreviewWindowController = nil
         livePreviewWindowDelegate = nil
     }
+    
+    // MARK: - Viewer Window (WS-101)
+    
+    public func openViewerWindow(for session: SessionBase) {
+        if let existingController = viewerWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+        
+        let controller = ViewerWindowController(session: session)
+        self.viewerWindowController = controller
+        
+        guard let window = controller.window else { return }
+        let delegate = AuxiliaryWindowDelegate(manager: self, kind: .viewer)
+        self.viewerWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+    
+    public func removeViewerWindow() {
+        viewerWindowController = nil
+        viewerWindowDelegate = nil
+    }
+    
+    // MARK: - Culling Window (WS-103)
+    
+    public func openCullingWindow(for session: SessionBase) {
+        if let existingController = cullingWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+        
+        let controller = CullingShellController(session: session)
+        self.cullingWindowController = controller
+        
+        guard let window = controller.window else { return }
+        let delegate = AuxiliaryWindowDelegate(manager: self, kind: .culling)
+        self.cullingWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+    
+    public func removeCullingWindow() {
+        cullingWindowController = nil
+        cullingWindowDelegate = nil
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -178,5 +228,29 @@ fileprivate class LivePreviewWindowDelegate: NSObject, NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
         manager.removeLivePreviewWindow()
+    }
+}
+
+enum AuxiliaryWindowKind {
+    case viewer
+    case culling
+}
+
+fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
+    let manager: COWindowManager
+    let kind: AuxiliaryWindowKind
+    
+    init(manager: COWindowManager, kind: AuxiliaryWindowKind) {
+        self.manager = manager
+        self.kind = kind
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        switch kind {
+        case .viewer:
+            manager.removeViewerWindow()
+        case .culling:
+            manager.removeCullingWindow()
+        }
     }
 }
