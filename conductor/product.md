@@ -33,6 +33,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Presentation layer (Themes, Custom Controls, Windowing, Tool Views) reconstructed for `CaptureOneUI`.
 - **Status:** High-speed image browsing (folder scan, thumbnail caching) and high-fidelity viewer integrated across all core frameworks.
 - **Status:** Lens Correction (Distortion, CA, Light Falloff) and LCC (Lens Cast Calibration) engine reconstructed and integrated into the ImageCore pipeline.
+- **Status:** Import Engine (POImporter) reconstructed with support for source scanning, token-based renaming, and catalog registration.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.
