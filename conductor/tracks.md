@@ -72,6 +72,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Restoration of Export Engine & Process Recipes**
   *Link: [./tracks/export_engine_restoration_20260308/](./tracks/export_engine_restoration_20260308/)*
 
+---
+
+- [~] **Track: Grid View Browser Restoration**
+  *Link: [./tracks/grid_browser_restoration_20260308/](./tracks/grid_browser_restoration_20260308/)*
+
+---
+
 
 
 

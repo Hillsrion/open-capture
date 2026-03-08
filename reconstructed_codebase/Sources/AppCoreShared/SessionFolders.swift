@@ -30,6 +30,19 @@ public class SessionFolderManager {
     
     public init() {}
     
+    /// Ensures that all default session folders exist on disk.
+    public func createDefaultFolders(at session: SessionBase) throws {
+        guard let root = session.rootFolder else { return }
+        let rootURL = URL(fileURLWithPath: root)
+        
+        for type in SessionFolderType.allCases {
+            let folderURL = resolvePath(for: type, in: session) ?? rootURL.appendingPathComponent(type.defaultName)
+            if !FileManager.default.fileExists(atPath: folderURL.path) {
+                try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
+            }
+        }
+    }
+    
     /// Resolves the physical path for a session system folder.
     public func resolvePath(for type: SessionFolderType, in session: SessionBase) -> URL? {
         guard let root = session.rootFolder else { return nil }

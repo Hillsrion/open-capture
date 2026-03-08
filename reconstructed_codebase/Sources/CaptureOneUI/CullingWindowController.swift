@@ -75,7 +75,6 @@ public struct CullingView: View {
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
     
-    @State private var selectedImage: ImageBase?
     @State private var selectedToolTab: String = "ADJUST"
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
@@ -84,7 +83,6 @@ public struct CullingView: View {
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
         self.session = session
-        self._selectedImage = State(initialValue: browser.dataSource.first)
     }
     
     public var body: some View {
@@ -162,7 +160,7 @@ public struct CullingView: View {
                             
                             if selectedToolTab == "ADJUST" {
                                 VStack(spacing: 0) {
-                                    if let variant = selectedImage?.primaryVariant {
+                                    if let variant = adjustmentController.currentVariant {
                                         LayerInspectorView(variant: variant)
                                             .onChange(of: variant.activeLayerIndex) { _ in
                                                 adjustmentController.refreshToolValues()
@@ -199,7 +197,7 @@ public struct CullingView: View {
                                         points: $adjustmentController.curvesPoints
                                     )
                                     
-                                    MetadataInspectorView(image: selectedImage)
+                                    MetadataInspectorView(image: adjustmentController.currentVariant?.image)
                                 }
                             } else if selectedToolTab == "LIBRARY" {
                                 LibraryToolView(session: session)
@@ -214,7 +212,7 @@ public struct CullingView: View {
                                 ExportView(
                                     recipeManager: recipeManager,
                                     batchQueue: batchQueue,
-                                    selectedVariant: selectedImage?.primaryVariant
+                                    selectedVariant: adjustmentController.currentVariant
                                 )
                             } else {
                                 Text("Other Tools").foregroundColor(.gray).padding()
@@ -228,32 +226,18 @@ public struct CullingView: View {
                 Divider().background(Color.black)
                 
                 // MARK: - Center Viewer
-                COViewerView(image: selectedImage, adjustmentController: adjustmentController)
+                COViewerView(image: adjustmentController.currentVariant?.image, adjustmentController: adjustmentController)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 Divider().background(Color.black)
                 
                 // MARK: - Right Filmstrip (Vertical)
-                VStack(spacing: 0) {
-                    // Browser Header
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("1 of \(browserWrapper.browser.dataSource.count)").font(.system(size: 10))
-                        Image(systemName: "chevron.right")
-                        Spacer()
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                    }
-                    .padding(8)
-                    .font(.system(size: 12))
-                    .foregroundColor(.gray)
-                    
-                    COImageBrowserView(images: browserWrapper.browser.dataSource, predicate: $adjustmentController.activePredicate, onSelect: { image in
-                        self.selectedImage = image
-                        self.adjustmentController.bind(to: image.primaryVariant)
-                    })
-                }
-                .frame(width: 180)
-                .background(CaptureOneTheme.Colors.panelBackground)
+                COImageBrowserView(
+                    images: $browserWrapper.browser.dataSource,
+                    predicate: $adjustmentController.activePredicate,
+                    selectedVariant: $adjustmentController.currentVariant
+                )
+                .frame(width: 250)
             }
         }
         .background(CaptureOneTheme.Colors.applicationBackground)
@@ -267,7 +251,7 @@ public struct CullingView: View {
     }
     
     private func handleShortcut(_ event: NSEvent) -> Bool {
-        guard let variant = selectedImage?.primaryVariant else { return false }
+        guard let variant = adjustmentController.currentVariant else { return false }
         
         switch event.charactersIgnoringModifiers {
         // Rating (1-5, 0 to reset)
@@ -279,10 +263,10 @@ public struct CullingView: View {
         case "0": variant.rating = 0; return true
             
         // Color Tags (6-9)
-        case "6": variant.colorTag = .red; return true
-        case "7": variant.colorTag = .yellow; return true
-        case "8": variant.colorTag = .green; return true
-        case "9": variant.colorTag = .blue; return true
+        case "6": variant.colorTag = VariantBase.ColorTag.red; return true
+        case "7": variant.colorTag = VariantBase.ColorTag.yellow; return true
+        case "8": variant.colorTag = VariantBase.ColorTag.green; return true
+        case "9": variant.colorTag = VariantBase.ColorTag.blue; return true
             
         default:
             return false

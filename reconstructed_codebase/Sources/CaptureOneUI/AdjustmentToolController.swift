@@ -8,7 +8,7 @@ import Combine
 /// Bridges the UI sliders to the underlying MCVariant settings.
 public class AdjustmentToolController: ObservableObject {
     
-    private var currentVariant: VariantBase?
+    @Published public var currentVariant: VariantBase?
     private var cancellables = Set<AnyCancellable>()
     private var isUpdatingFromModel = false
     
