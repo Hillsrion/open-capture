@@ -2,6 +2,12 @@ import SwiftUI
 import AppCoreShared
 import DataCore
 
+/// Compatibility class for managing browser data source.
+public class CImageBrowser: ObservableObject {
+    @Published public var dataSource: [ImageBase] = []
+    public init() {}
+}
+
 /// Reconstructed high-performance Grid View Browser (UI-005).
 /// Based on disassembly of _TtC10CaptureOne22ImageBrowserInteractor and Related Metadata.
 public struct COImageBrowserView: View {
@@ -103,6 +109,24 @@ public struct COImageBrowserView: View {
                 }
                 .padding(20)
             }
+            
+            Divider().background(Color.black)
+            
+            // MARK: - Browser Footer
+            HStack {
+                if let selected = selectedVariant,
+                   let index = images.firstIndex(where: { $0.primaryVariant?.variantUUID == selected.variantUUID }) {
+                    Text("\(index + 1) of \(images.count)")
+                } else {
+                    Text("\(images.count) images")
+                }
+                Spacer()
+            }
+            .font(.system(size: 10))
+            .foregroundColor(.gray)
+            .padding(.horizontal, 12)
+            .frame(height: 22)
+            .background(CaptureOneTheme.Colors.panelBackground)
         }
         .background(CaptureOneTheme.Colors.browserBackground)
         .onAppear {
@@ -161,37 +185,7 @@ public struct COImageBrowserCell: View {
                 }
                 
                 // 3. Overlays
-                VStack {
-                    HStack(alignment: .top) {
-                        if let variant = image.primaryVariant, variant.colorTag != .none {
-                            Rectangle()
-                                .fill(colorForTag(variant.colorTag))
-                                .frame(width: 5, height: 18)
-                                .cornerRadius(1.5)
-                        }
-                        Spacer()
-                        if image.isOffline {
-                            Image(systemName: "bolt.horizontal.circle.fill")
-                                .foregroundColor(.orange)
-                                .font(.system(size: 11))
-                        }
-                    }
-                    Spacer()
-                    if let variant = image.primaryVariant, variant.rating > 0 {
-                        HStack(spacing: 1.5) {
-                            ForEach(0..<variant.rating, id: \.self) { _ in
-                                Image(systemName: "star.fill")
-                                    .font(.system(size: 8))
-                                    .foregroundColor(.yellow)
-                            }
-                        }
-                        .padding(.horizontal, 4)
-                        .padding(.vertical, 2)
-                        .background(Color.black.opacity(0.7))
-                        .cornerRadius(3)
-                    }
-                }
-                .padding(8)
+                BrowserOverlayView(variant: image.primaryVariant, image: image)
             }
             .frame(width: size, height: size)
             
@@ -203,19 +197,6 @@ public struct COImageBrowserCell: View {
         }
         .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
-    }
-    
-    private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
-        switch tag {
-        case .none: return Color.clear
-        case .red: return Color.red
-        case .orange: return Color.orange
-        case .yellow: return Color.yellow
-        case .green: return Color.green
-        case .blue: return Color.blue
-        case .purple: return Color.purple
-        case .pink: return Color.pink
-        }
     }
     
     private func loadThumbnail() {

@@ -74,7 +74,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Grid View Browser Restoration**
+- [x] **Track: Grid View Browser Restoration**
   *Link: [./tracks/grid_browser_restoration_20260308/](./tracks/grid_browser_restoration_20260308/)*
 
 ---

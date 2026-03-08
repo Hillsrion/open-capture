@@ -5,6 +5,23 @@ import AppKit
 /// Reconstructed high-speed thumbnail management logic.
 /// Utilizes QuickLookThumbnailing for performant extraction of RAW and standard image previews.
 
+public class ThumbnailCache {
+    public static let shared = ThumbnailCache()
+    private let cache = NSCache<NSString, NSData>()
+    
+    private init() {
+        cache.countLimit = 500 // Limit to 500 thumbnails in memory
+    }
+    
+    public func thumbnail(for identifier: String) -> NSData? {
+        return cache.object(forKey: identifier as NSString)
+    }
+    
+    public func setThumbnail(_ data: NSData, for identifier: String) {
+        cache.setObject(data, forKey: identifier as NSString)
+    }
+}
+
 public class ThumbnailManager {
     
     public static let shared = ThumbnailManager()
