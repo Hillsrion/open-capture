@@ -152,33 +152,42 @@ public struct StyleInspectorTool: View {
     public var body: some View {
         VStack(spacing: 0) {
             COToolSection("Styles & Presets") {
-                List(styleManager.getStyleTree(), children: \.children) { item in
+                VStack(spacing: 8) {
                     HStack {
-                        Image(systemName: item.isFolder ? "folder.fill" : "slider.horizontal.3")
-                            .font(.system(size: 10))
-                            .foregroundColor(item.isFolder ? .gray : CaptureOneTheme.Colors.activeHighlight)
-                        
-                        Text(item.name)
+                        Toggle("Stack Styles", isOn: $controller.stackStyles)
+                            .toggleStyle(POCheckboxStyle())
                             .font(.system(size: 11))
-                        
                         Spacer()
                     }
-                    .padding(.vertical, 2)
-                    .contentShape(Rectangle())
-                    .onHover { isHovering in
-                        if !item.isFolder, let style = item.style {
-                            controller.temporarilyApplyStyle(isHovering ? style : nil)
+                    .padding(.bottom, 4)
+                    
+                    List(styleManager.getStyleTree(), children: \.children) { item in
+                        HStack {
+                            Image(systemName: item.isFolder ? "folder.fill" : "slider.horizontal.3")
+                                .font(.system(size: 10))
+                                .foregroundColor(item.isFolder ? .gray : CaptureOneTheme.Colors.activeHighlight)
+                            
+                            Text(item.name)
+                                .font(.system(size: 11))
+                            
+                            Spacer()
+                        }
+                        .padding(.vertical, 2)
+                        .contentShape(Rectangle())
+                        .onHover { isHovering in
+                            if !item.isFolder, let style = item.style {
+                                controller.temporarilyApplyStyle(isHovering ? style : nil)
+                            }
+                        }
+                        .onTapGesture {
+                            if !item.isFolder, let style = item.style {
+                                controller.applyStyle(style)
+                            }
                         }
                     }
-                    .onTapGesture {
-                        if !item.isFolder, let style = item.style {
-                            // Task: Implement permanent applyStyle in Phase 3
-                            print("[UI] Style clicked: \(style.name)")
-                        }
-                    }
+                    .listStyle(SidebarListStyle())
+                    .frame(minHeight: 300)
                 }
-                .listStyle(SidebarListStyle())
-                .frame(minHeight: 300)
             }
         }
     }

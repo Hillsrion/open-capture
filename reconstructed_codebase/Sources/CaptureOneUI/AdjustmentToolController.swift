@@ -75,6 +75,7 @@ public class AdjustmentToolController: ObservableObject {
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
     @Published public var previewingStyle: Style?
+    @Published public var stackStyles: Bool = false
 
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
@@ -126,7 +127,8 @@ public class AdjustmentToolController: ObservableObject {
             $sharpAmount.map { _ in }.eraseToAnyPublisher(),
             $sharpRadius.map { _ in }.eraseToAnyPublisher(),
             $sharpThreshold.map { _ in }.eraseToAnyPublisher(),
-            $sharpHalo.map { _ in }.eraseToAnyPublisher()
+            $sharpHalo.map { _ in }.eraseToAnyPublisher(),
+            $stackStyles.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -175,6 +177,39 @@ public class AdjustmentToolController: ObservableObject {
             previewingStyle = nil
             commitChanges(to: variant)
         }
+    }
+    
+    /// Permanently applies a style to the current variant.
+    public func applyStyle(_ style: Style) {
+        guard let variant = currentVariant else { return }
+        
+        // 1. If not stacking, reset to neutral first (simulated)
+        if !stackStyles {
+            resetToNeutral()
+        }
+        
+        // 2. Apply style adjustments permanently
+        isUpdatingFromModel = true
+        for (key, val) in style.adjustments {
+            applyAdjustmentValue(val.value, forKey: key)
+        }
+        isUpdatingFromModel = false
+        
+        // 3. Clear preview state since it's now permanent
+        originalSettings = nil
+        previewingStyle = nil
+        
+        commitChanges(to: variant)
+        print("[Adjustment] Style applied: \(style.name)")
+    }
+    
+    public func resetToNeutral() {
+        self.exposure = 0.0
+        self.contrast = 0.0
+        self.brightness = 0.0
+        self.saturation = 0.0
+        self.kelvin = 5000.0
+        self.tint = 0.0
     }
     
     private func applyAdjustmentValue(_ value: Any, forKey key: String) {
