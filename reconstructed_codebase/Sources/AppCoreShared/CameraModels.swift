@@ -16,6 +16,20 @@ public struct P1CaptureCore_Property: Identifiable, Codable {
     }
 }
 
+/// Reconstructed Data Model for a Live View frame (TETH-002).
+public class P1CaptureCore_LiveViewImage: Identifiable {
+    public let id: String = UUID().uuidString
+    public var imageData: Data?
+    public var timestamp: TimeInterval
+    public var focusStatus: Int // 0: unknown, 1: in focus, 2: out of focus
+    
+    public init(data: Data?, timestamp: TimeInterval, focus: Int = 0) {
+        self.imageData = data
+        self.timestamp = timestamp
+        self.focusStatus = focus
+    }
+}
+
 /// Reconstructed Base class for Camera control (INT-001).
 /// Based on disassembly of P1CaptureCore_Camera.
 public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
@@ -23,6 +37,11 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     public let name: String
     @Published public var isConnected: Bool = false
     @Published public var isCapturing: Bool = false
+    
+    public enum LiveViewState {
+        case off, starting, active, paused
+    }
+    @Published public var liveViewState: LiveViewState = .off
     @Published public var properties: [P1CaptureCore_Property] = []
     
     public init(id: String, name: String) {
@@ -61,6 +80,34 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     
     public func open() { isConnected = true }
     public func close() { isConnected = false }
+    
+    // MARK: - Live View Management (TETH-002)
+    
+    public func startLiveView() {
+        print("[Capture] Starting Live View for \(name)")
+        liveViewState = .starting
+        // Logic: Send PTP StartLiveView command
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.liveViewState = .active
+        }
+    }
+    
+    public func stopLiveView() {
+        print("[Capture] Stopping Live View")
+        liveViewState = .off
+    }
+    
+    public func pauseLiveView() {
+        if liveViewState == .active {
+            liveViewState = .paused
+        }
+    }
+    
+    public func resumeLiveView() {
+        if liveViewState == .paused {
+            liveViewState = .active
+        }
+    }
 }
 
 /// Reconstructed discovery service for PTP devices.
