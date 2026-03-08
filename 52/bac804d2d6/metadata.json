@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "52bac804d2d6",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/smart_adjustments_restoration_20260308/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/SmartAdjustmentsModel.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/StyleManager.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/StyleModels.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/52/bac804d2d6/0/metadata.json",
+      "transcript": "/52/bac804d2d6/0/full.jsonl",
+      "content_hash": "/52/bac804d2d6/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
