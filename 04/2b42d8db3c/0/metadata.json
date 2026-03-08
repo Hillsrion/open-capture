@@ -1,0 +1,37 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "042b42d8db3c",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T00:50:40.295429Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/KeywordModels.swift",
+    "reconstructed_codebase/Tests/AppCoreSharedTests/KeywordTests.swift"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "006088836d94",
+  "checkpoint_transcript_start": 590,
+  "transcript_lines_at_start": 590,
+  "token_usage": {
+    "input_tokens": 9535767,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 8790970,
+    "output_tokens": 7001,
+    "api_call_count": 21
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T00:50:36.832352Z",
+    "agent_lines": 80,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 80,
+    "agent_percentage": 100
+  }
+}
