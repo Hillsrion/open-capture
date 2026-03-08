@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "a0ef9c55aabe",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/archive/annotations_restoration_20260308/plan.md",
+    "conductor/archive/annotations_restoration_20260308/spec.md",
+    "conductor/tracks/styles_presets_restoration_20260308/plan.md",
+    "conductor/tracks/styles_presets_restoration_20260308/spec.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/a0/ef9c55aabe/0/metadata.json",
+      "transcript": "/a0/ef9c55aabe/0/full.jsonl",
+      "content_hash": "/a0/ef9c55aabe/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 238934,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 237265,
+    "output_tokens": 223,
+    "api_call_count": 1
+  }
+}
