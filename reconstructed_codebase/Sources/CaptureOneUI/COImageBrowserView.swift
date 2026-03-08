@@ -11,7 +11,7 @@ public struct COImageBrowserView: View {
     @Binding var selectedVariant: VariantBase?
     
     // Zoom state (based on ImageBrowserZoomLevelStore)
-    @State private var thumbnailSize: CGFloat = 160
+    @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
     @State private var sortOrder: String = "filename"
 
     public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
@@ -36,7 +36,7 @@ public struct COImageBrowserView: View {
     }
     
     private var columns: [GridItem] {
-        [GridItem(.adaptive(minimum: thumbnailSize, maximum: thumbnailSize * 1.5), spacing: 15)]
+        [GridItem(.adaptive(minimum: CGFloat(zoomStore.thumbnailSize), maximum: CGFloat(zoomStore.thumbnailSize) * 1.5), spacing: 15)]
     }
     
     public var body: some View {
@@ -50,7 +50,7 @@ public struct COImageBrowserView: View {
                 // Zoom Slider
                 HStack(spacing: 6) {
                     Image(systemName: "photo").font(.system(size: 8))
-                    Slider(value: $thumbnailSize, in: 80...400)
+                    Slider(value: $zoomStore.thumbnailSize, in: 80...400)
                         .frame(width: 100)
                         .accentColor(CaptureOneTheme.Colors.activeHighlight)
                     Image(systemName: "photo").font(.system(size: 12))
@@ -73,14 +73,14 @@ public struct COImageBrowserView: View {
             
             Divider().background(Color.black)
             
-            // MARK: - Main Grid
+            // MARK: - Grid
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 25) {
                     ForEach(filteredImages, id: \.imageUUID) { image in
                         COImageBrowserCell(
                             image: image,
                             isSelected: selectedVariant?.variantUUID == image.primaryVariant?.variantUUID,
-                            size: thumbnailSize
+                            size: CGFloat(zoomStore.thumbnailSize)
                         )
                         .onTapGesture {
                             selectedVariant = image.primaryVariant
