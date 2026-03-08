@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "9581fd8ba4fb",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/CameraModels.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/95/81fd8ba4fb/0/metadata.json",
+      "transcript": "/95/81fd8ba4fb/0/full.jsonl",
+      "content_hash": "/95/81fd8ba4fb/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 5990953,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 5487923,
+    "output_tokens": 7362,
+    "api_call_count": 19
+  }
+}
