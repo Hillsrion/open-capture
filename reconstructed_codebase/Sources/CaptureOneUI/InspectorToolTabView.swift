@@ -81,6 +81,7 @@ struct ToolContainer: View {
                 brightness: $adjustmentController.brightness,
                 saturation: $adjustmentController.saturation
             )
+            case "SmartAdjustments": SmartAdjustmentsToolView(controller: adjustmentController)
             case "HDR": HDRToolView(
                 highlights: $adjustmentController.highlights,
                 shadows: $adjustmentController.shadows,

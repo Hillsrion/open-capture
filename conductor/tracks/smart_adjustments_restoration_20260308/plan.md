@@ -24,10 +24,10 @@ Reconstruct the Smart Adjustments feature (AI-002), enabling automatic matching 
 - [x] Task: Commit Phase 2 & Build Check. fc89672
 
 ### Phase 3: UI & Tool Integration (CaptureOneUI)
-- [ ] Task: Create `SmartAdjustmentsToolView` with "Set Reference" and "Apply" buttons.
-- [ ] Task: Add "Exposure" and "White Balance" checkboxes for selective application.
-- [ ] Task: Integrate the tool into the main toolbar or inspector.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Create `SmartAdjustmentsToolView` with "Set Reference" and "Apply" buttons. fc89673
+- [x] Task: Add "Exposure" and "White Balance" checkboxes for selective application. fc89673
+- [x] Task: Integrate the tool into the main toolbar or inspector. fc89673
+- [x] Task: Commit Phase 3 & Build Check. fc89673
 
 ### Phase 4: Workflow Automation (CaptureOneUI)
 - [ ] Task: Implement auto-apply logic during import (if a Smart Style is selected).

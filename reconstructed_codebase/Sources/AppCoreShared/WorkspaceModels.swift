@@ -76,6 +76,7 @@ public class WorkspaceManager: ObservableObject {
         let adjustTab = WorkspaceTab(id: "ADJUST", name: "Adjust", iconName: "slider.horizontal.3", tools: [
             ToolConfiguration(id: "Histogram"),
             ToolConfiguration(id: "Exposure"),
+            ToolConfiguration(id: "SmartAdjustments"),
             ToolConfiguration(id: "HDR"),
             ToolConfiguration(id: "Levels")
         ])
