@@ -39,6 +39,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Noise Reduction (Luminance, Color, Detail) and Sharpening (Amount, Radius, Halo Control) engine reconstructed and integrated into the ImageCore pipeline.
 - **Status:** Styles & Presets system reconstructed with hierarchical browser, live hover previews, and stacking support.
 - **Status:** 3-Way Color Balance tool reconstructed with interactive circular wheels, polar coordinate math, and multi-layout support.
+- **Status:** Magic Brush and Smart Masking engine reconstructed with tolerance-based region growing, edge refinement, and AI subject/background segmentation.
 - **Status:** Hierarchical Keywords management reconstructed with centralized library, tree-based taxonomy, and session database persistence.
 
 # Guidelines & Mandates
