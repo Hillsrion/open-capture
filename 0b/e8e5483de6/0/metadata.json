@@ -1,0 +1,36 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "0be8e5483de6",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T00:18:28.539848Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/CaptureOneUI/COImageBrowserView.swift"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "09574f46a889",
+  "checkpoint_transcript_start": 460,
+  "transcript_lines_at_start": 460,
+  "token_usage": {
+    "input_tokens": 1567927,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1513958,
+    "output_tokens": 4870,
+    "api_call_count": 5
+  },
+  "session_metrics": {
+    "turn_count": 10
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T00:18:25.490009Z",
+    "agent_lines": 66,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 66,
+    "agent_percentage": 100
+  }
+}
