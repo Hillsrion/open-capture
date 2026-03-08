@@ -83,12 +83,14 @@ public struct COUISlider: View {
     @Binding var value: Float
     let range: ClosedRange<Float>
     let showLabel: Bool
+    var actionID: String? = nil
     
-    public init(label: String, value: Binding<Float>, range: ClosedRange<Float>, showLabel: Bool = true) {
+    public init(label: String, value: Binding<Float>, range: ClosedRange<Float>, showLabel: Bool = true, actionID: String? = nil) {
         self.label = label
         self._value = value
         self.range = range
         self.showLabel = showLabel
+        self.actionID = actionID
     }
     
     public var body: some View {
@@ -98,6 +100,13 @@ public struct COUISlider: View {
                     Text(label)
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                    
+                    if let actionID = actionID, let shortcut = ShortcutManager.shared.shortcutString(forActionID: actionID) {
+                        Text("[\(shortcut)]")
+                            .font(.system(size: 9, design: .monospaced))
+                            .foregroundColor(.gray.opacity(0.6))
+                    }
+                    
                     Spacer()
                     Text("\(Int(value))")
                         .font(.system(size: 11, design: .monospaced))
