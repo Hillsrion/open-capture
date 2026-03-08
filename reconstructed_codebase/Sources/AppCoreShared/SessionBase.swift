@@ -12,9 +12,18 @@ public class SessionBase: BaseObject {
     
     // MARK: - Folders & Paths
     public var rootFolder: String?
+    public var captureFolder: String?
+    public var selectsFolder: String?
+    public var outputFolder: String?
     public var trashFolder: String?
+    
+    @available(*, deprecated, renamed: "outputFolder")
+    public var processPath: String? {
+        get { outputFolder }
+        set { outputFolder = newValue }
+    }
+    
     public var importFolder: String?
-    public var processPath: String?
     
     // MARK: - State & Metadata
     public var dateCreated: Date?
