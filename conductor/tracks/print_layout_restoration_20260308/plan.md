@@ -29,9 +29,9 @@ Reconstruct the Print Layout Window (UI-012), enabling users to format and layou
 - [x] Task: Commit Phase 3 & Build Check. fc89688
 
 ### Phase 4: Integration & Window Controller (CaptureOneUI / App)
-- [ ] Task: Assemble the `PrintWindowController` integrating the layout view and sidebar.
-- [ ] Task: Add a "Print" button to the main toolbar or file menu to trigger the window.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Assemble the `PrintWindowController` integrating the layout view and sidebar. fc89689
+- [x] Task: Add a "Print" button to the main toolbar or file menu to trigger the window. fc89689
+- [x] Task: Commit Phase 4 & Build Check. fc89689
 
 ## Verification & Testing
 - Test Case: Open Print Window -> Verify default A4/Letter layout is shown.

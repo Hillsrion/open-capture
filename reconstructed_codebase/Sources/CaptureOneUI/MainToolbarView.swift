@@ -9,6 +9,8 @@ public struct MainToolbarView: View {
     @ObservedObject var adjustmentController = AdjustmentToolController.shared // Assuming shared instance or passed down
     @State private var selectedToolID: String = "Select"
     @State private var showingCustomization: Bool = false
+    @State private var showingPrintDialog: Bool = false
+    @State private var selectedVariantsForPrint: [VariantBase] = []
     
     public init() {}
     
@@ -23,6 +25,13 @@ public struct MainToolbarView: View {
                     COToolbarButton(item: item, isSelected: selectedToolID == item.id) {
                         if item.type == .tool {
                             selectedToolID = item.id
+                        } else if item.id == "Print" {
+                            if let variant = adjustmentController.currentVariant {
+                                selectedVariantsForPrint = [variant]
+                            } else {
+                                selectedVariantsForPrint = []
+                            }
+                            showingPrintDialog = true
                         }
                         print("[Toolbar] Executed: \(item.name)")
                     }
@@ -70,6 +79,9 @@ public struct MainToolbarView: View {
         }
         .sheet(isPresented: $showingCustomization) {
             ToolbarCustomizationDialog()
+        }
+        .sheet(isPresented: $showingPrintDialog) {
+            PrintDialog(selectedVariants: $selectedVariantsForPrint)
         }
         .overlay(
             Rectangle()

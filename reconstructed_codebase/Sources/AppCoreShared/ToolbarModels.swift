@@ -49,7 +49,7 @@ public struct ToolbarConfiguration: Codable, Hashable {
             "FLEXIBLE_SPACER",
             "AutoAdjust", "FIXED_SPACER",
             "CopyAdjustments", "ApplyAdjustments", "FIXED_SPACER",
-            "Import", "Capture", "Export"
+            "Import", "Capture", "Export", "Print"
         ])
     }
 }
@@ -76,6 +76,7 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "Import", name: "Import", iconName: "square.and.arrow.down"),
         COToolbarItem(id: "Capture", name: "Capture", iconName: "camera"),
         COToolbarItem(id: "Export", name: "Export", iconName: "square.and.arrow.up"),
+        COToolbarItem(id: "Print", name: "Print", iconName: "printer", type: .action),
         
         // Spacers (Special IDs)
         COToolbarItem(id: "FIXED_SPACER", name: "Space", iconName: "space", type: .spacer),
