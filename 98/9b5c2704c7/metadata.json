@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "989b5c2704c7",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/CaptureOneUI/CullingWindowController.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/InspectorToolTabView.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/ToolRegistry.swift",
+    "reconstructed_codebase/Tests/CaptureOneUITests/ToolRegistryTests.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/98/9b5c2704c7/0/metadata.json",
+      "transcript": "/98/9b5c2704c7/0/full.jsonl",
+      "content_hash": "/98/9b5c2704c7/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
