@@ -18,6 +18,18 @@ final class AppMenuTarget: NSObject {
         }
     }
 
+    @objc func newCatalog(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.newCatalog() }
+    }
+
+    @objc func newSession(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.newSession() }
+    }
+
+    @objc func openDocument(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.openDocument() }
+    }
+
     @objc func printImages(_ sender: Any?) {
         Task { @MainActor in
             AppCommandCenter.shared.presentPrint()
@@ -169,6 +181,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         mainMenu.addItem(fileMenuItem)
         let fileMenu = NSMenu(title: "File")
         fileMenuItem.submenu = fileMenu
+        
+        fileMenu.addItem(withTitle: "New Catalog...", action: #selector(AppMenuTarget.newCatalog(_:)), keyEquivalent: "n").target = menuTarget
+        fileMenu.addItem(withTitle: "New Session...", action: #selector(AppMenuTarget.newSession(_:)), keyEquivalent: "N").target = menuTarget
+        fileMenu.addItem(withTitle: "Open...", action: #selector(AppMenuTarget.openDocument(_:)), keyEquivalent: "o").target = menuTarget
+        
+        // Open Recent is a standard macOS submenu
+        let openRecentItem = NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "")
+        let openRecentMenu = NSMenu(title: "Open Recent")
+        openRecentMenu.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
+        openRecentItem.submenu = openRecentMenu
+        fileMenu.addItem(openRecentItem)
+        
+        fileMenu.addItem(.separator())
         fileMenu.addItem(withTitle: "Import Images...", action: #selector(AppMenuTarget.importImages(_:)), keyEquivalent: "i").target = menuTarget
         fileMenu.addItem(withTitle: "Export Images...", action: #selector(AppMenuTarget.exportImages(_:)), keyEquivalent: "e").target = menuTarget
         fileMenu.addItem(withTitle: "Print...", action: #selector(AppMenuTarget.printImages(_:)), keyEquivalent: "p").target = menuTarget

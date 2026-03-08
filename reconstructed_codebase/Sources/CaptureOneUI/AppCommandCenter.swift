@@ -139,6 +139,18 @@ public final class AppCommandCenter: ObservableObject {
         presentedSheet = .exportImages
     }
 
+    public func newCatalog() {
+        notice = AppNotice(title: "New Catalog", message: "Document creation pipeline is being restored. (UI-213)")
+    }
+
+    public func newSession() {
+        notice = AppNotice(title: "New Session", message: "Document creation pipeline is being restored. (UI-213)")
+    }
+
+    public func openDocument() {
+        notice = AppNotice(title: "Open Document", message: "Document opening pipeline is being restored. (UI-213)")
+    }
+
     public func presentPreferences() {
         presentedSheet = .preferences
     }
