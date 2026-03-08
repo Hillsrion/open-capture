@@ -47,6 +47,11 @@ public struct COViewerView: View {
                                 RepairArrowView(arrow: arrow)
                             }
                         }
+                        
+                        // Annotations Overlay (UI-007)
+                        if let annotations = adjustmentController?.currentVariant?.annotations {
+                            AnnotationsOverlayView(annotations: annotations)
+                        }
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)
