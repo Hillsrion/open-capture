@@ -99,8 +99,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Soft Proofing Engine Restoration**
+- [x] **Track: Soft Proofing Engine Restoration**
   *Link: [./tracks/soft_proofing_restoration_20260308/](./tracks/soft_proofing_restoration_20260308/)*
+
+---
+
+- [~] **Track: EIP Packaging Restoration**
+  *Link: [./tracks/eip_packaging_restoration_20260308/](./tracks/eip_packaging_restoration_20260308/)*
 
 ---
 
