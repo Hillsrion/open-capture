@@ -26,6 +26,33 @@ public struct LibraryToolView: View {
             // Session Albums Section
             COToolSection("Session Albums") {
                 VStack(alignment: .leading, spacing: 4) {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            // TODO: Add proper interaction for Create Album (Phase 2 completion)
+                            let newAlbum = CollectionBase(uuid: UUID().uuidString, context: session.managedObjectContext)
+                            newAlbum.name = "New Album"
+                            session.arrangedUserAlbumCollections.append(newAlbum)
+                        }) {
+                            Image(systemName: "plus")
+                            Text("Create Album")
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.system(size: 10))
+                        
+                        Button(action: {
+                            let newSmartAlbum = SmartAlbum(uuid: UUID().uuidString, context: session.managedObjectContext)
+                            newSmartAlbum.name = "New Smart Album"
+                            session.arrangedUserAlbumCollections.append(newSmartAlbum)
+                        }) {
+                            Image(systemName: "plus.gearshape")
+                            Text("Create Smart Album")
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .font(.system(size: 10))
+                    }
+                    .padding(.bottom, 4)
+
                     ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { album in
                         HStack(spacing: 8) {
                             Image(systemName: album is SmartAlbum ? "gearshape.fill" : "photo.on.rectangle")
@@ -35,6 +62,14 @@ public struct LibraryToolView: View {
                             Spacer()
                         }
                         .padding(.vertical, 2)
+                        .contextMenu {
+                            Button("Rename...") {}
+                            Button("Remove") {
+                                if let idx = session.arrangedUserAlbumCollections.firstIndex(where: { $0.uuid == album.uuid }) {
+                                    session.arrangedUserAlbumCollections.remove(at: idx)
+                                }
+                            }
+                        }
                     }
                 }
                 .padding(.vertical, 4)
