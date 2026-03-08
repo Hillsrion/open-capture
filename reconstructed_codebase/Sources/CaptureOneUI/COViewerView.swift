@@ -14,6 +14,7 @@ public struct COViewerView: View {
     
     let image: ImageBase?
     let adjustmentController: AdjustmentToolController?
+    @ObservedObject var liveView = LiveViewEngine.shared
     @State private var renderedImage: NSImage?
     @State private var maskImage: NSImage?
     @State private var zoomLevel: Double = 1.0 // Inferred from ViewerZoomViewController
@@ -24,7 +25,11 @@ public struct COViewerView: View {
             ZStack {
                 CaptureOneTheme.Colors.applicationBackground
                 
-                if let nsImage = renderedImage {
+                if liveView.isActive, let frame = liveView.currentFrame {
+                    Image(nsImage: frame)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                } else if let nsImage = renderedImage {
                     ZStack {
                         Image(nsImage: nsImage)
                             .resizable()
