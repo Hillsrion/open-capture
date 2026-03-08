@@ -15,6 +15,7 @@ public struct COViewerView: View {
     let image: ImageBase?
     let adjustmentController: AdjustmentToolController?
     @State private var renderedImage: NSImage?
+    @State private var maskImage: NSImage?
     @State private var zoomLevel: Double = 1.0 // Inferred from ViewerZoomViewController
     
     public var body: some View {
@@ -24,10 +25,29 @@ public struct COViewerView: View {
                 CaptureOneTheme.Colors.applicationBackground
                 
                 if let nsImage = renderedImage {
-                    Image(nsImage: nsImage)
-                        .resizable()
-                        .scaleEffect(zoomLevel)
-                        .aspectRatio(contentMode: .fit)
+                    ZStack {
+                        Image(nsImage: nsImage)
+                            .resizable()
+                            .scaleEffect(zoomLevel)
+                            .aspectRatio(contentMode: .fit)
+                        
+                        // Mask Overlay (Red tint)
+                        if let mask = maskImage {
+                            Image(nsImage: mask)
+                                .resizable()
+                                .scaleEffect(zoomLevel)
+                                .aspectRatio(contentMode: .fit)
+                                .opacity(0.5)
+                                .colorMultiply(.red)
+                        }
+                    }
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { gesture in
+                                // Logic: If Magic Brush is active, call engine
+                                print("[UI] Brushing at: \(gesture.location)")
+                            }
+                    )
                 } else {
                     ProgressView().tint(.white)
                 }

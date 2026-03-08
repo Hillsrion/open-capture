@@ -1,9 +1,10 @@
 import Foundation
+import ImageCore
 
 /// Reconstructed Base class for Layer entities in AppCoreShared.
 /// Based on _TtC12AppCoreShared9LayerBase metadata.
 
-public class LayerBase: BaseObject {
+public class LayerBase: BaseObject, ICMaskableLayer {
     
     public enum LayerType: Int {
         case background = 0
@@ -18,6 +19,10 @@ public class LayerBase: BaseObject {
     public var opacity: Float // 0.0 to 1.0
     public var isVisible: Bool
     public var type: LayerType
+    
+    public var isMagicBrush: Bool {
+        return self is VariantMagicBrushLayer
+    }
     
     // MARK: - Internal Row State
     public var mcLayer: MCAdjLayer?

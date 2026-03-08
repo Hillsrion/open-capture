@@ -32,7 +32,7 @@ public struct POColorBalanceControl: View {
                     Circle()
                         .fill(
                             AngularGradient(gradient: Gradient(colors: [
-                                .red, .yellow, .green, .cyan, .blue, .magenta, .red
+                                .red, .yellow, .green, .cyan, .blue, .purple, .red
                             ]), center: .center, angle: .degrees(-90))
                         )
                         .opacity(0.8)
@@ -82,7 +82,7 @@ public struct POColorBalanceControl: View {
                 Spacer()
                 
                 Text("\(Int(value.hue))° \(Int(value.saturation))% \(Int(value.brightness))")
-                    .font(.system(size: 9, weight: .monospaced))
+                    .font(.system(size: 9, design: .monospaced))
                     .foregroundColor(CaptureOneTheme.Colors.textSecondary)
             }
             .padding(.horizontal, 4)

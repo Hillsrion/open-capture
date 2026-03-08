@@ -9,7 +9,7 @@ public class SubjectMaskingEngine {
     
     /// Reconstructed logic for "Select Subject".
     /// Uses CoreML model subjectMaskingFP16.
-    public func selectSubject(for image: ImageBase, completion: @escaping ([Float]?) -> Void) {
+    public func selectSubject(for image: ICImageMetadataProvider, completion: @escaping ([Float]?) -> Void) {
         print("[AI] Running Select Subject for \(image.displayName)")
         
         // Simulation of CoreML inference
@@ -33,7 +33,7 @@ public class SubjectMaskingEngine {
     }
     
     /// Reconstructed logic for "Select Background".
-    public func selectBackground(for image: ImageBase, completion: @escaping ([Float]?) -> Void) {
+    public func selectBackground(for image: ICImageMetadataProvider, completion: @escaping ([Float]?) -> Void) {
         selectSubject(for: image) { subjectMask in
             guard let subjectMask = subjectMask else {
                 completion(nil)

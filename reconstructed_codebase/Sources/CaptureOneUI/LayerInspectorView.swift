@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed Layers Inspector Tool.
 /// Based on _TtC10CaptureOne18LayersInspectorView metadata.

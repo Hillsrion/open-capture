@@ -113,6 +113,19 @@ public class ImageCorePipeline {
         // ...
     }
     
+    /// Reconstructed logic for mask generation (Manual & AI-based).
+    public func processMask(input: RawImageRep, layer: ICMaskableLayer, outputMask: inout [Float]) {
+        if layer.isMagicBrush {
+            print("[ImageCore] Generating Magic Brush Mask for \(layer.name)")
+            // 1. Sample color/luma at starting point
+            // 2. Call MagicBrushEngine.growMask
+            // 3. Call MagicBrushEngine.refineEdges
+        } else {
+            // Standard manual brushing or linear/radial gradient
+            print("[ImageCore] Processing standard mask for \(layer.name)")
+        }
+    }
+    
     /// High-level function to render a variant to a file.
     /// Based on _ICP_ProcessToFile binary entry point.
     public func processToFile(input: RawImageRep, settings: IC_ProcessSettings, exportSettings: IC_ExportSettings, destination: String) {

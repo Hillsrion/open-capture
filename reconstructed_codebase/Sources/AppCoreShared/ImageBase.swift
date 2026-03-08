@@ -1,8 +1,9 @@
 import Foundation
+import ImageCore
 
 /// Reconstructed Base class for Image entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
-public class ImageBase: BaseObject {
+public class ImageBase: BaseObject, ICImageMetadataProvider {
     
     // MARK: - Properties (Core Identity)
     public let imageUUID: String
