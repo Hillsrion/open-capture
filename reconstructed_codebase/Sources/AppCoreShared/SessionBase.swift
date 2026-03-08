@@ -50,6 +50,19 @@ public class SessionBase: BaseObject {
         super.init(managedObjectContext: context)
     }
     
+    /// Reconstructed logic for hydrating a session from database info.
+    public init(dictionary: [String: Any], context: ObjectContext?) {
+        self.documentUUID = dictionary["ZDOCUMENTUUID"] as? String ?? UUID().uuidString
+        self.documentType = dictionary["ZDOCUMENTTYPE"] as? Int16 ?? 0
+        self.captureFolder = dictionary["ZCAPTUREFOLDER"] as? String
+        self.selectsFolder = dictionary["ZSELECTSFOLDER"] as? String
+        self.outputFolder = dictionary["ZOUTPUTFOLDER"] as? String
+        self.trashFolder = dictionary["ZTRASHFOLDER"] as? String
+        self.isDirty = false
+        self.readOnly = false
+        super.init(managedObjectContext: context)
+    }
+    
     // MARK: - Methods (Stubs)
     
     public func backup(to location: URL) {

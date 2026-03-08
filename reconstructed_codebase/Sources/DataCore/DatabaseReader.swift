@@ -103,4 +103,29 @@ public class DatabaseReader {
         sqlite3_finalize(statement)
         return settings
     }
+    
+    /// Reconstructed logic for fetching session metadata from ZDOCUMENTCONTENT.
+    public func fetchSessionInfo() throws -> [String: Any] {
+        let query = "SELECT ZDOCUMENTUUID, ZDOCUMENTTYPE, ZCAPTUREFOLDER, ZSELECTSFOLDER, ZOUTPUTFOLDER, ZTRASHFOLDER FROM ZDOCUMENTCONTENT LIMIT 1;"
+        var statement: OpaquePointer?
+        var info: [String: Any] = [:]
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            if sqlite3_step(statement) == SQLITE_ROW {
+                if let uuid = sqlite3_column_text(statement, 0) {
+                    info["ZDOCUMENTUUID"] = String(cString: uuid)
+                }
+                info["ZDOCUMENTTYPE"] = sqlite3_column_int(statement, 1)
+                
+                if let path = sqlite3_column_text(statement, 2) { info["ZCAPTUREFOLDER"] = String(cString: path) }
+                if let path = sqlite3_column_text(statement, 3) { info["ZSELECTSFOLDER"] = String(cString: path) }
+                if let path = sqlite3_column_text(statement, 4) { info["ZOUTPUTFOLDER"] = String(cString: path) }
+                if let path = sqlite3_column_text(statement, 5) { info["ZTRASHFOLDER"] = String(cString: path) }
+            }
+        }
+        sqlite3_finalize(statement)
+        return info
+    }
 }
