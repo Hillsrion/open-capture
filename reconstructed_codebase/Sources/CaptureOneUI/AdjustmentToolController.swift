@@ -72,6 +72,12 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var sharpThreshold: Double = 1.0
     @Published public var sharpHalo: Double = 0.0
 
+    // Film Grain (ENG-008)
+    @Published public var filmGrainAmount: Double = 0.0
+    @Published public var filmGrainDensity: Double = 50.0
+    @Published public var filmGrainGranularity: Double = 50.0
+    @Published public var filmGrainType: IC_FilmGrainType = .fine
+
     // Color Balance (UI-003)
     @Published public var cbShadow: ColorBalanceValue = .neutral
     @Published public var cbMidtone: ColorBalanceValue = .neutral

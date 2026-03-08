@@ -211,6 +211,27 @@ public struct IC_SharpeningSettings {
     }
 }
 
+public enum IC_FilmGrainType: Int32 {
+    case fine = 0
+    case silverRich = 1
+    case soft = 2
+    case cubic = 3
+}
+
+public struct IC_FilmGrainSettings {
+    public var amount: Double
+    public var density: Double
+    public var granularity: Double
+    public var filmType: IC_FilmGrainType
+    
+    public init() {
+        self.amount = 0.0
+        self.density = 50.0
+        self.granularity = 50.0
+        self.filmType = .fine
+    }
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32
@@ -247,6 +268,9 @@ public struct IC_ProcessSettings {
     // Sharpening (ENG-007)
     public var sharpening: IC_SharpeningSettings
     
+    // Film Grain (ENG-008)
+    public var filmGrain: IC_FilmGrainSettings
+    
     // Local Adjustments (Layers)
     public var localAdjustments: [IC_LocalAdjustmentSettings]
 
@@ -277,6 +301,7 @@ public struct IC_ProcessSettings {
         self.colorCorrectionList = IC_ColorCorrectionList()
         self.noiseReduction = IC_NoiseReductionSettings()
         self.sharpening = IC_SharpeningSettings()
+        self.filmGrain = IC_FilmGrainSettings()
         self.localAdjustments = []
         self.lensCorrection = IC_LensCorrectionSettings()
         self.geometry = IC_GeometryAdjustments()
