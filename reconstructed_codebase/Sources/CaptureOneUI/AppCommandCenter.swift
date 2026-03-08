@@ -42,6 +42,8 @@ public final class AppCommandCenter: ObservableObject {
     public var recipeManager: OutputRecipeManager = OutputRecipeManager.shared
     public var batchQueue: BatchQueue = BatchQueue()
     public var session: SessionBase?
+    /// Retained context for the current document — prevents premature deallocation
+    private var documentContext: ObjectContext?
 
     private let adjustmentController = AdjustmentToolController.shared
     private let workspaceManager = WorkspaceManager.shared
@@ -137,12 +139,14 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func newCatalog() {
-        let session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: ObjectContext())
+        let ctx = ObjectContext()
+        documentContext = ctx
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: ctx)
         session.name = "Untitled Catalog"
         
         let recipeManager = OutputRecipeManager.shared
         if recipeManager.recipes.isEmpty {
-            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ctx))
         }
         
         configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
@@ -150,12 +154,14 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func newSession() {
-        let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ObjectContext())
+        let ctx = ObjectContext()
+        documentContext = ctx
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ctx)
         session.name = "Untitled Session"
         
         let recipeManager = OutputRecipeManager.shared
         if recipeManager.recipes.isEmpty {
-            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ctx))
         }
         
         configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
