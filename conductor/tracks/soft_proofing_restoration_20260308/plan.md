@@ -18,10 +18,10 @@ Reconstruct the Soft Proofing Engine (ENG-011), enabling the simulation of outpu
 - [x] Task: Commit Phase 1 & Build Check. fc89679
 
 ### Phase 2: Soft Proofing Logic (ImageCore)
-- [ ] Task: Implement the `SoftProofingKernel` using `CoreImage`'s `colorSpace` transformations.
-- [ ] Task: Implement Gamut Warning logic (highlighting out-of-gamut colors in neon).
-- [ ] Task: Add `isSoftProofingEnabled` and `targetProfile` to `IC_ProcessSettings`.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Implement the `SoftProofingKernel` using `CoreImage`'s `colorSpace` transformations. fc89680
+- [x] Task: Implement Gamut Warning logic (highlighting out-of-gamut colors in neon). fc89680
+- [x] Task: Add `isSoftProofingEnabled` and `targetProfile` to `IC_ProcessSettings`. fc89680
+- [x] Task: Commit Phase 2 & Build Check. fc89680
 
 ### Phase 3: UI Integration (CaptureOneUI)
 - [ ] Task: Add Soft Proofing toggle to the `MainToolbarView`.

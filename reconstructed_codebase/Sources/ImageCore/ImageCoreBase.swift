@@ -308,6 +308,11 @@ public struct IC_ProcessSettings {
     
     // Vignetting (Inferred from ConvertToFromVignettingAdjustments)
     public var vignetting: IC_VignettingAdjustments
+    
+    // Soft Proofing (ENG-011)
+    public var isSoftProofingEnabled: Bool
+    public var proofingProfileID: String?
+    public var showGamutWarning: Bool
 
     public init(version: Int32 = 1600) {
         self.engineVersion = version
@@ -332,6 +337,9 @@ public struct IC_ProcessSettings {
         self.lensCorrection = IC_LensCorrectionSettings()
         self.geometry = IC_GeometryAdjustments()
         self.vignetting = IC_VignettingAdjustments()
+        self.isSoftProofingEnabled = false
+        self.proofingProfileID = nil
+        self.showGamutWarning = false
     }
 }
 /// Base protocol for all image processing operations.
