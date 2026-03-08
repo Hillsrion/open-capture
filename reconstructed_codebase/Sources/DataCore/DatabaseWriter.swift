@@ -54,4 +54,24 @@ public class DatabaseWriter {
         }
         sqlite3_finalize(statement)
     }
+    
+    /// Reconstructed logic for updating an image's path (e.g., during move to selects/trash).
+    public func updateImagePath(imageUUID: String, newPath: String) throws {
+        let query = "UPDATE ZIMAGE SET ZSIDECARPATH = ? WHERE ZIMAGEUUID = ?;"
+        var statement: OpaquePointer?
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (newPath as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (imageUUID as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(statement) != SQLITE_DONE {
+                let error = String(cString: sqlite3_errmsg(db))
+                sqlite3_finalize(statement)
+                throw NSError(domain: "DataCore", code: 7, userInfo: [NSLocalizedDescriptionKey: error])
+            }
+        }
+        sqlite3_finalize(statement)
+    }
 }
