@@ -10,8 +10,11 @@ public struct COImageBrowserView: View {
     @Binding var predicate: COFilterPredicate
     @Binding var selectedVariant: VariantBase?
     
-    // Zoom state (based on ImageBrowserZoomLevelStore)
+    // Zoom state
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
+    
+    // Interaction state (based on ImageBrowserInteractor)
+    @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"
 
     public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
@@ -73,17 +76,28 @@ public struct COImageBrowserView: View {
             
             Divider().background(Color.black)
             
-            // MARK: - Grid
+            // MARK: - Main Grid
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 25) {
                     ForEach(filteredImages, id: \.imageUUID) { image in
+                        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
+                        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
+                        
                         COImageBrowserCell(
                             image: image,
-                            isSelected: selectedVariant?.variantUUID == image.primaryVariant?.variantUUID,
+                            isSelected: isSelected,
+                            isPrimary: isPrimary,
                             size: CGFloat(zoomStore.thumbnailSize)
                         )
                         .onTapGesture {
-                            selectedVariant = image.primaryVariant
+                            handleTap(on: image)
+                        }
+                        .contextMenu {
+                            Button("Move to Selects") { /* Logic */ }
+                            Button("Move to Trash") { /* Logic */ }
+                            Divider()
+                            Button("Copy Adjustments") { /* Logic */ }
+                            Button("Apply Adjustments") { /* Logic */ }
                         }
                     }
                 }
@@ -91,14 +105,33 @@ public struct COImageBrowserView: View {
             }
         }
         .background(CaptureOneTheme.Colors.browserBackground)
+        .onAppear {
+            interactor.updateDataSource(with: images)
+        }
+        .onChange(of: images) { newImages in
+            interactor.updateDataSource(with: newImages)
+        }
+    }
+    
+    private func handleTap(on image: ImageBase) {
+        guard let variant = image.primaryVariant else { return }
+        
+        // Detect modifiers (simulated for SwiftUI macOS)
+        let isCmdPressed = NSEvent.modifierFlags.contains(.command)
+        let isShiftPressed = NSEvent.modifierFlags.contains(.shift)
+        
+        interactor.select(variant: variant, isMultiSelect: isCmdPressed, isRangeSelect: isShiftPressed)
+        
+        // Update the primary selected variant for the rest of the app
+        selectedVariant = variant
     }
 }
 
 /// Reconstructed high-fidelity Browser Cell (UI-005).
-/// Based on visual analysis of v16.5 cell and _TtC10CaptureOne30ImageBrowserImageContainerView.
 public struct COImageBrowserCell: View {
     let image: ImageBase
     let isSelected: Bool
+    let isPrimary: Bool
     let size: CGFloat
     
     @State private var thumbnail: NSImage?
@@ -108,12 +141,12 @@ public struct COImageBrowserCell: View {
             ZStack(alignment: .center) {
                 // 1. Selection & Background
                 Rectangle()
-                    .fill(isSelected ? CaptureOneTheme.Colors.activeHighlight.opacity(0.1) : CaptureOneTheme.Colors.histogramBackground)
+                    .fill(isPrimary ? CaptureOneTheme.Colors.activeHighlight.opacity(0.1) : (isSelected ? Color.white.opacity(0.05) : CaptureOneTheme.Colors.histogramBackground))
                     .aspectRatio(1.0, contentMode: .fit)
                     .overlay(
                         RoundedRectangle(cornerRadius: 3)
-                            .stroke(isSelected ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1), 
-                                    lineWidth: isSelected ? 2.5 : 0.5)
+                            .stroke(isPrimary ? CaptureOneTheme.Colors.activeHighlight : (isSelected ? Color.white.opacity(0.4) : Color.white.opacity(0.1)), 
+                                    lineWidth: isPrimary ? 2.5 : (isSelected ? 1.5 : 0.5))
                     )
                 
                 // 2. High-Quality Thumbnail
@@ -121,43 +154,29 @@ public struct COImageBrowserCell: View {
                     Image(nsImage: thumb)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(isSelected ? 6 : 4)
+                        .padding(isPrimary ? 6 : 4)
                         .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
                 } else {
                     ProgressView().scaleEffect(0.6)
                 }
                 
-                // 3. Overlays (Metadata & State)
+                // 3. Overlays
                 VStack {
                     HStack(alignment: .top) {
-                        // Color Tag (v16.5 vertical bar style)
                         if let variant = image.primaryVariant, variant.colorTag != .none {
                             Rectangle()
                                 .fill(colorForTag(variant.colorTag))
                                 .frame(width: 5, height: 18)
                                 .cornerRadius(1.5)
                         }
-                        
                         Spacer()
-                        
-                        // Indicators
-                        VStack(alignment: .trailing, spacing: 4) {
-                            if image.isOffline {
-                                Image(systemName: "bolt.horizontal.circle.fill")
-                                    .foregroundColor(.orange)
-                                    .font(.system(size: 11))
-                            }
-                            if image.isMovie {
-                                Image(systemName: "play.circle.fill")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 11))
-                            }
+                        if image.isOffline {
+                            Image(systemName: "bolt.horizontal.circle.fill")
+                                .foregroundColor(.orange)
+                                .font(.system(size: 11))
                         }
                     }
-                    
                     Spacer()
-                    
-                    // Rating Stars
                     if let variant = image.primaryVariant, variant.rating > 0 {
                         HStack(spacing: 1.5) {
                             ForEach(0..<variant.rating, id: \.self) { _ in
@@ -176,19 +195,11 @@ public struct COImageBrowserCell: View {
             }
             .frame(width: size, height: size)
             
-            // 4. Label (Filename + Extension)
-            VStack(spacing: 1) {
-                Text(image.displayName)
-                    .font(.system(size: 10, weight: isSelected ? .bold : .regular))
-                    .foregroundColor(isSelected ? .white : CaptureOneTheme.Colors.textSecondary)
-                    .lineLimit(1)
-                
-                // Optional index or small info
-                Text("\(image.imageUUID.prefix(4))")
-                    .font(.system(size: 8))
-                    .foregroundColor(.gray.opacity(0.6))
-            }
-            .frame(width: size)
+            Text(image.displayName)
+                .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
+                .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
+                .lineLimit(1)
+                .frame(width: size)
         }
         .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
