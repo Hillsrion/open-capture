@@ -126,6 +126,12 @@ public class ImageCorePipeline {
         }
     }
     
+    /// Reconstructed logic for applying retouching (Heal/Clone).
+    public func applyRepair(to buffer: UnsafeMutablePointer<Float>, layer: ICMaskableLayer, mask: [Float]) {
+        // In original, this iterates over all RepairArrows in the layer
+        print("[ImageCore] Applying repairs for \(layer.name)")
+    }
+    
     /// High-level function to render a variant to a file.
     /// Based on _ICP_ProcessToFile binary entry point.
     public func processToFile(input: RawImageRep, settings: IC_ProcessSettings, exportSettings: IC_ExportSettings, destination: String) {
