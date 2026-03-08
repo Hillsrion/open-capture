@@ -36,6 +36,10 @@ final class AppMenuTarget: NSObject {
         }
     }
 
+    @objc func openLivePreview(_ sender: Any?) {
+        Task { @MainActor in AppCommandCenter.shared.openLivePreview() }
+    }
+
     @objc func showPreferences(_ sender: Any?) {
         Task { @MainActor in
             AppCommandCenter.shared.presentPreferences()
@@ -193,6 +197,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowMenuItem.submenu = windowMenu
         windowMenu.addItem(withTitle: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
         windowMenu.addItem(withTitle: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
+        windowMenu.addItem(.separator())
+        windowMenu.addItem(withTitle: "Live View", action: #selector(AppMenuTarget.openLivePreview(_:)), keyEquivalent: "l").target = menuTarget
         NSApp.windowsMenu = windowMenu
 
         let helpMenuItem = NSMenuItem()

@@ -94,11 +94,7 @@ public final class AppCommandCenter: ObservableObject {
             workspaceManager.activeWorkspace.chromeState.browserDisplayState =
                 workspaceManager.activeWorkspace.chromeState.browserDisplayState == .hidden ? .shown : .hidden
         case "Live":
-            workspaceManager.setSelectedPaletteID("CaptureToolTab")
-            notice = AppNotice(
-                title: "Capture One Live",
-                message: "The dedicated Capture One Live window is still being restored."
-            )
+            openLivePreview()
         case "SelfServe", "Tips":
             showTips()
         default:
@@ -168,6 +164,14 @@ public final class AppCommandCenter: ObservableObject {
 
     public func openDocument() {
         notice = AppNotice(title: "Open Document", message: "Document opening pipeline is being restored. (UI-213)")
+    }
+    
+    public func openLivePreview() {
+        guard let session = session else {
+            notice = AppNotice(title: "No Session", message: "A session must be open before launching Live View.")
+            return
+        }
+        COWindowManager.shared.openLivePreview(for: session)
     }
 
     public func presentPreferences() {
