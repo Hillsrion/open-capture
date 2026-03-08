@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "21ec2e3c0048",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T01:19:14.970793Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/archive/heal_clone_restoration_20260308/plan.md",
+    "conductor/archive/heal_clone_restoration_20260308/spec.md",
+    "conductor/tracks/styles_presets_restoration_20260308/plan.md",
+    "conductor/tracks/styles_presets_restoration_20260308/spec.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "006088836d94",
+  "checkpoint_transcript_start": 757,
+  "transcript_lines_at_start": 757,
+  "token_usage": {
+    "input_tokens": 185115,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 183812,
+    "output_tokens": 235,
+    "api_call_count": 1
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T01:19:11.387193Z",
+    "agent_lines": 57,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 57,
+    "agent_percentage": 100
+  }
+}
