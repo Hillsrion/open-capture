@@ -37,6 +37,8 @@ Status vocabulary used below:
 | WS-103 | Culling window shell restoration | High | `DONE-RECENT` | Dedicated CullingShellController loads cullingwindow.tools presets. |
 | UI-205 | Capture palette parity | High | `DONE-RECENT` | All Capture palette tools now have stub views. |
 | UI-206 | Settings palette parity | High | `DONE-RECENT` | BaseCharacteristics and Settings tools restored. |
+| UI-207 | Top chrome parity | High | `DONE-RECENT` | Native NSToolbar replaces SwiftUI fake toolbar strip on document window. |
+| UI-210 | Tool header and context-menu parity | High | `DONE-RECENT` | Per-tool Copy/Apply/Reset in ellipsis menu; help/reset/style actions functional. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -48,10 +50,8 @@ These are the highest-value gaps because they are visible in the main session UX
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| UI-207 | Top chrome parity | High | High | `PARTIAL` | The shell now has a real menu bar and wired toolbar actions, but the top area is still a custom SwiftUI strip inside the content view, not a decompiled-faithful native titlebar/`NSToolbar` with full item inventory and document-title behavior. |
 | UI-208 | Import / export window fidelity | High | High | `PARTIAL` | `Import` and `Export` now open sheets, but they are still simplified SwiftUI panels rather than full importer/exporter windows with the original browser, sidebars, and command coverage. |
 | UI-209 | Viewer chrome parity | High | Med | `PARTIAL` | `Before/After`, grid, focus mask, proofing, and warning toggles now exist, but the viewer toolbar/readout strip still does not match Capture One in structure, overlays, and indicators. |
-| UI-210 | Tool header and context-menu parity | High | Med | `PARTIAL` | Headers now expose working help/reset/style/menu controls plus pin/remove/size actions, but per-tool icon contracts, layer-specific mask submenus, and exact Capture One header layouts are still incomplete. |
 | UI-216 | Session upgrade dialog parity | Med | Med | `TODO` | Localized strings and disassembly show a dedicated upgrade confirmation dialog for old sessions with `Cancel` and highlighted `Upgrade`, plus backup messaging; there is no document-upgrade prompt or workflow in the reconstructed app. |
 
 ---
@@ -143,5 +143,6 @@ The project tracking itself now needs correction so the repository stops oversta
 
 If work resumes immediately, the highest-value sequence is:
 
-1. `WS-101` to `WS-106`: Start addressing real window shell fidelity.
-2. `UI-207` to `UI-210`: Fix top chrome and tool headers across palettes.
+1. `TOOL-306`: Remove last placeholder tools from the registry.
+2. `UI-208` to `UI-209`: Fix import/export and viewer chrome.
+3. `WS-104` to `WS-106`: Address remaining workspace fidelity.
