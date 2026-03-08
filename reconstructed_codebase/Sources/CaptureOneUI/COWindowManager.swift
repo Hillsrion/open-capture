@@ -11,7 +11,11 @@ public final class COWindowManager {
     public static let shared = COWindowManager()
     
     private var documentWindows: [String: NSWindow] = [:]
-    private var windowDelegates: [String: NSWindowDelegate] = [:]
+    private var windowDelegates: [String: DocumentWindowDelegate] = [:]
+    private var livePreviewWindowDelegate: LivePreviewWindowDelegate?
+    
+    // Live Preview window
+    private var livePreviewWindowController: NSWindowController?
     private var startWindow: NSWindow?
     
     private init() {}
@@ -128,6 +132,27 @@ public final class COWindowManager {
             showStartWindow()
         }
     }
+    
+    public func openLivePreview(for session: SessionBase) {
+        if let existingController = livePreviewWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+        
+        let controller = LivePreviewWindowController(session: session)
+        self.livePreviewWindowController = controller
+        
+        guard let window = controller.window else { return }
+        let delegate = LivePreviewWindowDelegate(manager: self)
+        self.livePreviewWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+    
+    public func removeLivePreviewWindow() {
+        livePreviewWindowController = nil
+        livePreviewWindowDelegate = nil
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -141,5 +166,17 @@ fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
         manager.removeDocumentWindow(id: sessionID)
+    }
+}
+
+fileprivate class LivePreviewWindowDelegate: NSObject, NSWindowDelegate {
+    let manager: COWindowManager
+    
+    init(manager: COWindowManager) {
+        self.manager = manager
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        manager.removeLivePreviewWindow()
     }
 }
