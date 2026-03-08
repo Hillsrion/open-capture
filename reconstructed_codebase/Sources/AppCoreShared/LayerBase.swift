@@ -20,6 +20,9 @@ public class LayerBase: BaseObject, ICMaskableLayer {
     public var isVisible: Bool
     public var type: LayerType
     
+    // MARK: - Repair Arrows (UI-006)
+    public var repairArrows: [RepairArrow] = []
+    
     public var isMagicBrush: Bool {
         return self is VariantMagicBrushLayer
     }

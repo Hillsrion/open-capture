@@ -103,4 +103,12 @@ public class VariantBase: BaseObject {
         self.isModified = false
         didChangeValue(forKey: "isModified")
     }
+    
+    /// Adds a repair arrow to the active layer if it's a heal/clone layer.
+    public func addRepairArrow(source: CGPoint, destination: CGPoint, type: RepairArrow.ArrowType) {
+        guard let active = activeLayer, (active.type == .heal || active.type == .clone) else { return }
+        let arrow = RepairArrow(source: source, destination: destination, type: type)
+        active.repairArrows.append(arrow)
+        isModified = true
+    }
 }
