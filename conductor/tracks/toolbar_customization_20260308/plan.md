@@ -24,10 +24,10 @@ Reconstruct the customizable toolbar system (INT-001), enabling users to add, re
 - [x] Task: Commit Phase 2 & Build Check. fc89676
 
 ### Phase 3: Customization Engine (CaptureOneUI)
-- [ ] Task: Implement the `ToolbarCustomizationDialog` (Grid of available items).
-- [ ] Task: Implement drag-and-drop logic for reordering and adding/removing items.
-- [ ] Task: Add "Reset to Default" functionality.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Implement the `ToolbarCustomizationDialog` (Grid of available items). fc89677
+- [x] Task: Implement drag-and-drop logic for reordering and adding/removing items. fc89677
+- [x] Task: Add "Reset to Default" functionality. fc89677
+- [x] Task: Commit Phase 3 & Build Check. fc89677
 
 ### Phase 4: Integration (CaptureOneApp)
 - [ ] Task: Integrate the new toolbar into the main application window.
