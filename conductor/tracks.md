@@ -74,10 +74,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Import Engine Restoration**
-  *Link: [./tracks/import_engine_restoration_20260308/](./tracks/import_engine_restoration_20260308/)*
+- [x] **Track: Session Folders Logic**
+  *Link: [./tracks/session_folders_restoration_20260308/](./tracks/session_folders_restoration_20260308/)*
 
 ---
+
+
 
 
 
