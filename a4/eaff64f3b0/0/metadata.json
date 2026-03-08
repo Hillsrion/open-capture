@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "a4eaff64f3b0",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T02:16:01.27777Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/CaptureOneUI/COViewerView.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/CameraSettingsTool.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewEngine.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewOverlayView.swift",
+    "conductor/tracks/styles_presets_restoration_20260308/plan.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "edacaa169e76",
+  "checkpoint_transcript_start": 1025,
+  "transcript_lines_at_start": 1025,
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T02:15:57.255532Z",
+    "agent_lines": 130,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 130,
+    "agent_percentage": 100
+  }
+}
