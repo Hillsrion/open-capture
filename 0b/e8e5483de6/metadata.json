@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "0be8e5483de6",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/CaptureOneUI/COImageBrowserView.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0b/e8e5483de6/0/metadata.json",
+      "transcript": "/0b/e8e5483de6/0/full.jsonl",
+      "content_hash": "/0b/e8e5483de6/0/content_hash.txt",
+      "prompt": "/0b/e8e5483de6/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1567927,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1513958,
+    "output_tokens": 4870,
+    "api_call_count": 5
+  }
+}
