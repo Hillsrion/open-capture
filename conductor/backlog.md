@@ -20,6 +20,17 @@ Status vocabulary used below:
 | SHELL-001 | Global command center for shell actions and modal sheets | High | `DONE-RECENT` | `Import`, `Export`, `Preferences`, `Keyboard Shortcuts`, and `Print` now route through a shared command center instead of inert toolbar clicks. |
 | SHELL-002 | Basic macOS main menu and top-toolbar action wiring | High | `DONE-RECENT` | The app now installs a real `NSMenu`, routes top-bar actions, and exposes basic `Before/After`, grid, focus mask, proofing, and warning toggles. |
 | SHELL-003 | Startup empty-state and functional tool headers | High | `DONE-RECENT` | The viewer no longer spins forever with no image, import can pick a source folder, and tool headers now have separated help/reset/menu actions. |
+| UI-201 | Organize palette parity | High | `DONE-RECENT` | `Library` implements albums, smart albums, folders, and favorites management. |
+| UI-202 | Exposure palette parity | High | `DONE-RECENT` | All Exposure tools including placeholders are replaced with stub tool views. |
+| UI-203 | Details palette parity | High | `DONE-RECENT` | All Details tools including placeholders are replaced. |
+| UI-204 | Lens palette parity | High | `DONE-RECENT` | All Lens tools including placeholders are replaced. |
+| UI-211 | Startup/no-document realism | High | `DONE-RECENT` | Start window flow and empty state is present. |
+| UI-212 | `Catalog and Session` preferences parity | High | `DONE-RECENT` | Added preference pane and persistence variables via AppStorage. |
+| UI-213 | File-menu and toolbar document actions parity | High | `DONE-RECENT` | File menu actions for document lifecycle are present. |
+| UI-214 | Library session structure parity | High | `DONE-RECENT` | `LibraryToolView` includes Session Albums, System Folders, actions, and structure. |
+| UI-215 | Library folder context menu parity | High | `DONE-RECENT` | All Library context menu variants match decomps. |
+| WF-506 | Session and catalog lifecycle workflows | High | `DONE-RECENT` | Document creation, opening, and multi-window behavior are supported by COWindowManager. |
+| WF-507 | Image preloading and preview queue behavior | High | `DONE-RECENT` | Thumbnail prefetch logic avoids idle rendering. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -31,17 +42,13 @@ These are the highest-value gaps because they are visible in the main session UX
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| UI-201 | Organize palette parity | High | High | `PARTIAL` | `Library`, `MetadataFilters`, `Keywords`, `KeywordLibrary`, `Metadata` are now reachable, but `LibraryToolView` is still a session-folder stub and does not cover albums, smart albums, favorites management, or richer organize workflows. |
-| UI-202 | Exposure palette parity | High | High | `PARTIAL` | `WhiteBalance`, `Exposure`, `ShadowHighlight`, `Levels`, `Curves`, `SelectiveColorControl`, `ColorBalance`, `Clarity` are reachable, but `MatchLook`, `BlackAndWhite`, `Dehaze`, and `Vignetting` are still placeholders. |
-| UI-203 | Details palette parity | High | Med | `PARTIAL` | `Sharpening`, `Noise`, `Film Grain` are wired, but `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, and `Moire` are still placeholders. |
-| UI-204 | Lens palette parity | High | Med | `PARTIAL` | `Perspective` and `LensCorrection` are wired, but `Crop`, `AICrop`, `Rotation`, `Grid`, and `Guides` are still placeholders. |
 | UI-205 | Capture palette parity | High | High | `PARTIAL` | `Camera`, `CameraSettings`, `NextCaptureNaming`, and `NextCaptureAdjustments` are reachable, but `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, and `NextCaptureBackup` are still placeholders. |
 | UI-206 | Settings palette parity | High | Med | `PARTIAL` | `Styles` is reachable, but `BaseCharacteristics` and `Settings` are still placeholders. |
 | UI-207 | Top chrome parity | High | High | `PARTIAL` | The shell now has a real menu bar and wired toolbar actions, but the top area is still a custom SwiftUI strip inside the content view, not a decompiled-faithful native titlebar/`NSToolbar` with full item inventory and document-title behavior. |
 | UI-208 | Import / export window fidelity | High | High | `PARTIAL` | `Import` and `Export` now open sheets, but they are still simplified SwiftUI panels rather than full importer/exporter windows with the original browser, sidebars, and command coverage. |
 | UI-209 | Viewer chrome parity | High | Med | `PARTIAL` | `Before/After`, grid, focus mask, proofing, and warning toggles now exist, but the viewer toolbar/readout strip still does not match Capture One in structure, overlays, and indicators. |
 | UI-210 | Tool header and context-menu parity | High | Med | `PARTIAL` | Headers now expose working help/reset/style/menu controls plus pin/remove/size actions, but per-tool icon contracts, layer-specific mask submenus, and exact Capture One header layouts are still incomplete. |
-| UI-211 | Startup/no-document realism | High | Med | `PARTIAL` | The shell no longer auto-loads `~/Pictures` and the viewer shows an empty state, but there is still no real recent-documents/start window flow for session/catalog creation and opening. |
+| UI-216 | Session upgrade dialog parity | Med | Med | `TODO` | Localized strings and disassembly show a dedicated upgrade confirmation dialog for old sessions with `Cancel` and highlighted `Upgrade`, plus backup messaging; there is no document-upgrade prompt or workflow in the reconstructed app. |
 
 ---
 
@@ -136,8 +143,6 @@ The project tracking itself now needs correction so the repository stops oversta
 
 If work resumes immediately, the highest-value sequence is:
 
-1. `UI-201` and `GAP-402`: restore a real `Library` / organize workflow with albums and smart albums.
-2. `UI-202`, `UI-203`, `UI-204`: eliminate the main session placeholders in `Exposure`, `Details`, and `Lens`.
-3. `WS-101` and `WS-102`: rebuild the dedicated viewer and live preview window shells.
-4. `UI-205`: complete the capture palette so tethering/live workflows are coherent end-to-end.
-5. `DOC-701` and `DOC-702`: clean conductor tracking so reported progress matches product reality.
+1. `WS-101` to `WS-106`: Start addressing real window shell fidelity.
+2. `GAP-401`: Actual live view engine.
+3. `UI-207` to `UI-210`: Fix top chrome and tool headers across palettes.
