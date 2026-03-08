@@ -108,6 +108,19 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
             liveViewState = .active
         }
     }
+
+    /// Reconstructed fetching logic for the next Live View frame (TETH-002).
+    /// Based on disassembly of -[P1CaptureCore_Camera getNextLiveViewImage].
+    public func getNextLiveViewImage() -> P1CaptureCore_LiveViewImage? {
+        guard liveViewState == .active else { return nil }
+        // Simulated: In the real framework, this pulls from a ring buffer
+        // populated by the PTP background thread.
+        return P1CaptureCore_LiveViewImage(
+            data: nil, // Data is nil for mock, UI will generate visuals
+            timestamp: Date().timeIntervalSince1970,
+            focus: Int.random(in: 0...2)
+        )
+    }
 }
 
 /// Reconstructed discovery service for PTP devices.

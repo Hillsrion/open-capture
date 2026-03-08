@@ -80,7 +80,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | UI-010 | **Styles & Presets Browser** (Live preview on hover, brush styles) | High | Med | ✅ Done |
 | UI-011 | **Dynamic Tokens System** (Drag-and-drop naming tags) | High | High | ✅ Done |
 | UI-012 | **Print Layout Window** (Margins, multi-image grids) | Low | High | ⏳ Pending |
-| UI-013 | **Workspace Manager** (Save/Load panel states, dual monitor) | Med | High | ⏳ Pending |
+| UI-013 | **Workspace Manager** (Save/Load panel states, dual monitor) | Med | High | ✅ Done |
 
 ---
 
