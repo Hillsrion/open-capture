@@ -2,18 +2,19 @@ import SwiftUI
 import AppCoreShared
 import DataCore
 
-/// Reconstructed high-performance Image Browser for Capture One (UI-005).
-/// Based on disassembly of _TtC10CaptureOne32ImageBrowserSettingsWithGrouping and BrowserInteractor.
+/// Reconstructed high-performance Grid View Browser (UI-005).
+/// Based on disassembly of _TtC10CaptureOne22ImageBrowserInteractor and Related Metadata.
 public struct COImageBrowserView: View {
 
     @Binding var images: [ImageBase]
     @Binding var predicate: COFilterPredicate
     @Binding var selectedVariant: VariantBase?
     
+    // Zoom state (based on ImageBrowserZoomLevelStore)
     @State private var thumbnailSize: CGFloat = 160
     @State private var sortOrder: String = "filename"
 
-    public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>, onSelect: ((ImageBase) -> Void)? = nil) {
+    public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
         self._images = images
         self._predicate = predicate
         self._selectedVariant = selectedVariant
@@ -34,20 +35,19 @@ public struct COImageBrowserView: View {
         }
     }
     
-    // Dynamic column calculation based on thumbnail size
     private var columns: [GridItem] {
         [GridItem(.adaptive(minimum: thumbnailSize, maximum: thumbnailSize * 1.5), spacing: 15)]
     }
     
     public var body: some View {
         VStack(spacing: 0) {
-            // MARK: - Browser Toolbar
+            // MARK: - Browser Header / Toolbar
             HStack(spacing: 15) {
-                Text("Images").font(.caption).bold()
+                Text("\(filteredImages.count) images").font(.system(size: 11)).foregroundColor(.gray)
                 
                 Spacer()
                 
-                // Zoom Slider (based on ImageBrowserZoomLevelStore)
+                // Zoom Slider
                 HStack(spacing: 6) {
                     Image(systemName: "photo").font(.system(size: 8))
                     Slider(value: $thumbnailSize, in: 80...400)
@@ -68,14 +68,14 @@ public struct COImageBrowserView: View {
                 .menuStyle(BorderlessButtonMenuStyle())
             }
             .padding(.horizontal, 12)
-            .frame(height: 30)
+            .frame(height: 32)
             .background(CaptureOneTheme.Colors.panelBackground)
             
             Divider().background(Color.black)
             
-            // MARK: - Grid
+            // MARK: - Main Grid
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
+                LazyVGrid(columns: columns, spacing: 25) {
                     ForEach(filteredImages, id: \.imageUUID) { image in
                         COImageBrowserCell(
                             image: image,
@@ -87,15 +87,15 @@ public struct COImageBrowserView: View {
                         }
                     }
                 }
-                .padding(15)
+                .padding(20)
             }
         }
         .background(CaptureOneTheme.Colors.browserBackground)
     }
 }
 
-/// Reconstructed high-fidelity Browser Cell (CORE-005).
-/// Based on disassembly of _TtC10CaptureOne30ImageBrowserImageContainerView.
+/// Reconstructed high-fidelity Browser Cell (UI-005).
+/// Based on visual analysis of v16.5 cell and _TtC10CaptureOne30ImageBrowserImageContainerView.
 public struct COImageBrowserCell: View {
     let image: ImageBase
     let isSelected: Bool
@@ -104,72 +104,93 @@ public struct COImageBrowserCell: View {
     @State private var thumbnail: NSImage?
     
     public var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 8) {
             ZStack(alignment: .center) {
-                // Background/Border Container
+                // 1. Selection & Background
                 Rectangle()
-                    .fill(CaptureOneTheme.Colors.histogramBackground)
+                    .fill(isSelected ? CaptureOneTheme.Colors.activeHighlight.opacity(0.1) : CaptureOneTheme.Colors.histogramBackground)
                     .aspectRatio(1.0, contentMode: .fit)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 2)
+                        RoundedRectangle(cornerRadius: 3)
                             .stroke(isSelected ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1), 
-                                    lineWidth: isSelected ? 2 : 0.5)
+                                    lineWidth: isSelected ? 2.5 : 0.5)
                     )
                 
-                // Thumbnail
+                // 2. High-Quality Thumbnail
                 if let thumb = thumbnail {
                     Image(nsImage: thumb)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .padding(isSelected ? 4 : 2)
+                        .padding(isSelected ? 6 : 4)
+                        .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
                 } else {
-                    ProgressView().scaleEffect(0.5)
+                    ProgressView().scaleEffect(0.6)
                 }
                 
-                // Overlays
+                // 3. Overlays (Metadata & State)
                 VStack {
-                    HStack {
-                        // Color Tag
+                    HStack(alignment: .top) {
+                        // Color Tag (v16.5 vertical bar style)
                         if let variant = image.primaryVariant, variant.colorTag != .none {
                             Rectangle()
                                 .fill(colorForTag(variant.colorTag))
-                                .frame(width: 4, height: 12)
-                                .cornerRadius(1)
+                                .frame(width: 5, height: 18)
+                                .cornerRadius(1.5)
                         }
+                        
                         Spacer()
-                        // Offline indicator
-                        if image.isOffline {
-                            Image(systemName: "bolt.horizontal.circle.fill")
-                                .foregroundColor(.orange)
-                                .font(.system(size: 10))
+                        
+                        // Indicators
+                        VStack(alignment: .trailing, spacing: 4) {
+                            if image.isOffline {
+                                Image(systemName: "bolt.horizontal.circle.fill")
+                                    .foregroundColor(.orange)
+                                    .font(.system(size: 11))
+                            }
+                            if image.isMovie {
+                                Image(systemName: "play.circle.fill")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 11))
+                            }
                         }
                     }
+                    
                     Spacer()
-                    // Rating
+                    
+                    // Rating Stars
                     if let variant = image.primaryVariant, variant.rating > 0 {
-                        HStack(spacing: 1) {
+                        HStack(spacing: 1.5) {
                             ForEach(0..<variant.rating, id: \.self) { _ in
                                 Image(systemName: "star.fill")
-                                    .font(.system(size: 7))
+                                    .font(.system(size: 8))
                                     .foregroundColor(.yellow)
                             }
                         }
-                        .padding(2)
-                        .background(Color.black.opacity(0.6))
-                        .cornerRadius(2)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 2)
+                        .background(Color.black.opacity(0.7))
+                        .cornerRadius(3)
                     }
                 }
-                .padding(6)
+                .padding(8)
             }
             .frame(width: size, height: size)
             
-            // Label
-            Text(image.displayName)
-                .font(.system(size: 10))
-                .foregroundColor(isSelected ? .white : .gray)
-                .lineLimit(1)
-                .frame(width: size)
+            // 4. Label (Filename + Extension)
+            VStack(spacing: 1) {
+                Text(image.displayName)
+                    .font(.system(size: 10, weight: isSelected ? .bold : .regular))
+                    .foregroundColor(isSelected ? .white : CaptureOneTheme.Colors.textSecondary)
+                    .lineLimit(1)
+                
+                // Optional index or small info
+                Text("\(image.imageUUID.prefix(4))")
+                    .font(.system(size: 8))
+                    .foregroundColor(.gray.opacity(0.6))
+            }
+            .frame(width: size)
         }
+        .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
     }
     
@@ -187,7 +208,7 @@ public struct COImageBrowserCell: View {
     }
     
     private func loadThumbnail() {
-        ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 400, height: 400)) { thumb in
+        ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 512, height: 512)) { thumb in
             self.thumbnail = thumb
         }
     }
