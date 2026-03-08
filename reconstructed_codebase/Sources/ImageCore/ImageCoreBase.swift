@@ -160,14 +160,22 @@ public struct IC_ExportSettings {
 public struct IC_GeometryAdjustments {
     public var cropRect: CGRect
     public var rotation: Double
-    public var keystoneX: Double
-    public var keystoneY: Double
+    public var keystoneTiltX: Double
+    public var keystoneTiltY: Double
+    public var keystoneAmount: Double
+    public var keystoneAspect: Double
+    public var keystoneSkew: Double
+    public var keystoneFocalLength: Double
     
     public init() {
         self.cropRect = .zero
         self.rotation = 0.0
-        self.keystoneX = 0.0
-        self.keystoneY = 0.0
+        self.keystoneTiltX = 0.0
+        self.keystoneTiltY = 0.0
+        self.keystoneAmount = 0.0
+        self.keystoneAspect = 0.0
+        self.keystoneSkew = 0.0
+        self.keystoneFocalLength = 35.0
     }
 }
 

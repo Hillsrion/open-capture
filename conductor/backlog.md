@@ -58,8 +58,8 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | :--- | :--- | :--- | :--- | :--- |
 | TETH-001 | **Camera Control API** (PTP/MTP protocol integration) | High | Med | ✅ Done |
 | TETH-002 | **Live View Engine** (Real-time video feed & overlay) | High | High | ✅ Done |
-| TETH-003 | **Next Capture Naming & Adjustments** (Auto-apply) | Med | Med | ⏳ Pending |
-| TETH-004 | **Focus Mask** (Real-time sharpness overlay) | Med | High | ⏳ Pending |
+| TETH-003 | **Next Capture Naming & Adjustments** (Auto-apply) | Med | Med | ✅ Done |
+| TETH-004 | **Focus Mask** (Real-time sharpness overlay) | Med | High | ✅ Done |
 
 ---
 

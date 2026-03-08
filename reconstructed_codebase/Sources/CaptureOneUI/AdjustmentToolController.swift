@@ -55,6 +55,15 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var lensShiftX: Float = 0.0
     @Published public var lensShiftY: Float = 0.0
     @Published public var clipDistortedEdges: Bool = false
+    
+    // Keystone State (AI-003)
+    @Published public var keystoneTiltX: Double = 0.0
+    @Published public var keystoneTiltY: Double = 0.0
+    @Published public var keystoneAmount: Double = 0.0
+    @Published public var keystoneAspect: Double = 0.0
+    @Published public var keystoneSkew: Double = 0.0
+    @Published public var keystoneFocalLength: Double = 35.0
+    
     @Published public var chromaticAberration: Bool = false
     @Published public var diffraction: Bool = false
     @Published public var isLCCActive: Bool = false
@@ -132,6 +141,12 @@ public class AdjustmentToolController: ObservableObject {
             $diffraction.map { _ in }.eraseToAnyPublisher(),
             $isLCCActive.map { _ in }.eraseToAnyPublisher(),
             $lccProfileUUID.map { _ in }.eraseToAnyPublisher(),
+            $keystoneTiltX.map { _ in }.eraseToAnyPublisher(),
+            $keystoneTiltY.map { _ in }.eraseToAnyPublisher(),
+            $keystoneAmount.map { _ in }.eraseToAnyPublisher(),
+            $keystoneAspect.map { _ in }.eraseToAnyPublisher(),
+            $keystoneSkew.map { _ in }.eraseToAnyPublisher(),
+            $keystoneFocalLength.map { _ in }.eraseToAnyPublisher(),
             $nrLuminance.map { _ in }.eraseToAnyPublisher(),
             $nrDetails.map { _ in }.eraseToAnyPublisher(),
             $nrColor.map { _ in }.eraseToAnyPublisher(),
@@ -312,6 +327,14 @@ public class AdjustmentToolController: ObservableObject {
         self.isLCCActive = (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false
         self.lccProfileUUID = mc.objectForKey("ZLCC_PROFILE_UUID") as? String
         
+        // Keystone
+        self.keystoneTiltX = getDouble("ZKEYSTONE_TILTX", 0.0)
+        self.keystoneTiltY = getDouble("ZKEYSTONE_TILTY", 0.0)
+        self.keystoneAmount = getDouble("ZKEYSTONE_AMOUNT", 0.0)
+        self.keystoneAspect = getDouble("ZKEYSTONE_ASPECT", 0.0)
+        self.keystoneSkew = getDouble("ZKEYSTONE_SKEW", 0.0)
+        self.keystoneFocalLength = getDouble("ZKEYSTONE_FOCALLENGTH", 35.0)
+        
         // Noise Reduction
         self.nrLuminance = getDouble("ZNR_LUMINANCE", 50.0)
         self.nrDetails = getDouble("ZNR_DETAILS", 50.0)
@@ -417,6 +440,13 @@ public class AdjustmentToolController: ObservableObject {
         mc.setObject(isLCCActive, forKey: "ZLCC_ACTIVE")
         mc.setObject(lccProfileUUID, forKey: "ZLCC_PROFILE_UUID")
         
+        mc.setObject(keystoneTiltX, forKey: "ZKEYSTONE_TILTX")
+        mc.setObject(keystoneTiltY, forKey: "ZKEYSTONE_TILTY")
+        mc.setObject(keystoneAmount, forKey: "ZKEYSTONE_AMOUNT")
+        mc.setObject(keystoneAspect, forKey: "ZKEYSTONE_ASPECT")
+        mc.setObject(keystoneSkew, forKey: "ZKEYSTONE_SKEW")
+        mc.setObject(keystoneFocalLength, forKey: "ZKEYSTONE_FOCALLENGTH")
+        
         mc.setObject(levelsBlackPoint, forKey: "ZLEVELS_BLACK")
         mc.setObject(levelsWhitePoint, forKey: "ZLEVELS_WHITE")
         mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
@@ -459,6 +489,12 @@ public class AdjustmentToolController: ObservableObject {
         
         settings.geometry.cropRect = .zero // Inferred: logic for mapping variant crop to IC_GeometryAdjustments
         settings.geometry.rotation = 0.0
+        settings.geometry.keystoneTiltX = keystoneTiltX
+        settings.geometry.keystoneTiltY = keystoneTiltY
+        settings.geometry.keystoneAmount = keystoneAmount
+        settings.geometry.keystoneAspect = keystoneAspect
+        settings.geometry.keystoneSkew = keystoneSkew
+        settings.geometry.keystoneFocalLength = keystoneFocalLength
         
         settings.levelsShadow = levelsBlackPoint
         settings.levelsHighlight = levelsWhitePoint
