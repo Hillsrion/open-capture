@@ -72,6 +72,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Restoration of Export Engine & Process Recipes**
   *Link: [./tracks/export_engine_restoration_20260308/](./tracks/export_engine_restoration_20260308/)*
 
+---
+
+- [x] **Track: Hierarchical Keywords Restoration**
+  *Link: [./tracks/hierarchical_keywords_restoration_20260308/](./tracks/hierarchical_keywords_restoration_20260308/)*
+
+---
+
 
 
 
