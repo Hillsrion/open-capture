@@ -89,8 +89,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Smart Adjustments Restoration**
+- [x] **Track: Smart Adjustments Restoration**
   *Link: [./tracks/smart_adjustments_restoration_20260308/](./tracks/smart_adjustments_restoration_20260308/)*
+
+---
+
+- [~] **Track: Toolbar & Customization Restoration**
+  *Link: [./tracks/toolbar_customization_20260308/](./tracks/toolbar_customization_20260308/)*
 
 ---
 

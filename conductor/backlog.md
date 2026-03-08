@@ -46,7 +46,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | AI-001 | **Magic Brush / Eraser** (Luma/Color tolerance masking) | Med | High | ✅ Done |
-| AI-002 | **Smart Adjustments** (Face-based Expo/WB matching) | Med | Very High | ⏳ Pending |
+| AI-002 | **Smart Adjustments** (Face-based Expo/WB matching) | Med | Very High | ✅ Done |
 | AI-003 | **Auto Keystone** (Perspective correction via OpenCV) | Med | High | ✅ Done |
 
 ---

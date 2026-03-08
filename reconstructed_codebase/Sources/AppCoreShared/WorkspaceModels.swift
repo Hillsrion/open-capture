@@ -34,6 +34,7 @@ public struct Workspace: Codable, Identifiable {
     public var leftSidebarTabs: [WorkspaceTab]
     public var rightSidebarTabs: [WorkspaceTab]
     public var sidebarWidth: Double = 300.0
+    public var toolbarConfiguration: ToolbarConfiguration = .defaultConfiguration // INT-001
     
     public init(id: String = UUID().uuidString, name: String, left: [WorkspaceTab] = [], right: [WorkspaceTab] = []) {
         self.id = id
