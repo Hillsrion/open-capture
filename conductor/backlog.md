@@ -90,7 +90,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | Task ID | Feature | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | INT-001 | **Toolbar & Customization** (Drag & drop tool icons) | Med | Med | ⏳ Pending |
-| INT-002 | **Keyboard Shortcuts System** (C1 legacy shortcuts map) | High | Low | ⏳ Pending |
+| INT-002 | **Keyboard Shortcuts System** (C1 legacy shortcuts map) | High | Low | ✅ Done |
 | INT-003 | **Plugin Host Architecture** (PluginCore bridging) | Low | High | ⏳ Pending |
 | INT-004 | **AppleScript Automation** (Scripting dictionary, batch jobs) | Low | High | ⏳ Pending |
 | INT-005 | **Hardware Controllers** (Tangent, Loupedeck API mappings) | Low | High | ⏳ Pending |
