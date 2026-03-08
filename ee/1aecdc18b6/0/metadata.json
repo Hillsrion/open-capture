@@ -1,0 +1,38 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "ee1aecdc18b6",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T03:01:43.958437Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/tracks/eip_packaging_restoration_20260308/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/BatchJob.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/OutputRecipe.swift"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "edacaa169e76",
+  "checkpoint_transcript_start": 1025,
+  "transcript_lines_at_start": 1025,
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T03:01:39.779679Z",
+    "agent_lines": 0,
+    "human_added": 34,
+    "human_modified": 4,
+    "human_removed": 0,
+    "total_committed": 34,
+    "agent_percentage": 0
+  }
+}
