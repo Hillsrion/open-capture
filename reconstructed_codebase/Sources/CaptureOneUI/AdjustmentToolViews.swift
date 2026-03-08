@@ -162,17 +162,7 @@ public struct StyleInspectorTool: View {
                     .padding(.bottom, 4)
                     
                     List(styleManager.getStyleTree(), children: \.children) { item in
-                        HStack {
-                            Image(systemName: item.isFolder ? "folder.fill" : "slider.horizontal.3")
-                                .font(.system(size: 10))
-                                .foregroundColor(item.isFolder ? .gray : CaptureOneTheme.Colors.activeHighlight)
-                            
-                            Text(item.name)
-                                .font(.system(size: 11))
-                            
-                            Spacer()
-                        }
-                        .padding(.vertical, 2)
+                        StyleWithShortcutTableCellView(item: item)
                         .contentShape(Rectangle())
                         .onHover { isHovering in
                             if !item.isFolder, let style = item.style {

@@ -151,7 +151,7 @@ public class AdjustmentToolController: ObservableObject {
                 // Simplified: Capture key adjustment values
                 let keys = ["ZEXPOSURE", "ZCONTRAST", "ZBRIGHTNESS", "ZSATURATION", "ZKELVIN", "ZTINT"]
                 for key in keys {
-                    originalSettings?[key] = mc.objectForKey(key)
+                    originalSettings?[key] = mc.objectForKey(key) ?? getDefaultValue(for: key)
                 }
             }
             
@@ -212,7 +212,7 @@ public class AdjustmentToolController: ObservableObject {
         self.tint = 0.0
     }
     
-    private func applyAdjustmentValue(_ value: Any, forKey key: String) {
+    private func applyAdjustmentValue(_ value: Any?, forKey key: String) {
         // Map dictionary keys to published properties
         switch key {
         case "ZEXPOSURE": exposure = (value as? Float) ?? Float(value as? Double ?? 0.0)
@@ -222,6 +222,13 @@ public class AdjustmentToolController: ObservableObject {
         case "ZKELVIN": kelvin = (value as? Float) ?? Float(value as? Double ?? 5000.0)
         case "ZTINT": tint = (value as? Float) ?? Float(value as? Double ?? 0.0)
         default: break
+        }
+    }
+    
+    private func getDefaultValue(for key: String) -> Any {
+        switch key {
+        case "ZKELVIN": return 5000.0
+        default: return 0.0
         }
     }
     

@@ -32,7 +32,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ✅ Done |
 | ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ✅ Done |
 | ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ✅ Done |
-| ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ⏳ Pending |
+| ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ✅ Done |
 | ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ⏳ Pending |
 | ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ✅ Done |
 | ENG-010 | **HDR Merge & Panorama Stitch** (32-bit DNG generation) | Low | Very High | ⏳ Pending |
