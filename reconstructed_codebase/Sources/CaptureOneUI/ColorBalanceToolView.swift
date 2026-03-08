@@ -53,33 +53,39 @@ public struct ColorBalanceToolView: View {
                         SingleColorWheelView(mode: layoutMode, controller: controller)
                     }
                 }
-                .frame(minHeight: 200)
+                .frame(minHeight: 220)
             }
         }
     }
 }
 
-/// Placeholder for 3-Way layout.
+/// 3-Way layout implementation.
 struct ThreeWayColorView: View {
     @ObservedObject var controller: AdjustmentToolController
     var body: some View {
-        HStack(spacing: 10) {
-            Text("Shadow Wheel").font(.caption).foregroundColor(.gray)
-            Text("Midtone Wheel").font(.caption).foregroundColor(.gray)
-            Text("Highlight Wheel").font(.caption).foregroundColor(.gray)
+        HStack(spacing: 15) {
+            POColorBalanceControl(value: $controller.cbShadow, title: "Shadow")
+            POColorBalanceControl(value: $controller.cbMidtone, title: "Midtone")
+            POColorBalanceControl(value: $controller.cbHighlight, title: "Highlight")
         }
     }
 }
 
-/// Placeholder for Single wheel layout.
+/// Single wheel layout implementation.
 struct SingleColorWheelView: View {
     let mode: ColorWheelLayoutMode
     @ObservedObject var controller: AdjustmentToolController
+    
     var body: some View {
         VStack {
-            Text("\(mode.displayName) Color Wheel")
-                .font(.headline)
-            Spacer()
+            switch mode {
+            case .master: POColorBalanceControl(value: $controller.cbMaster, title: "Master")
+            case .shadow: POColorBalanceControl(value: $controller.cbShadow, title: "Shadow")
+            case .midtone: POColorBalanceControl(value: $controller.cbMidtone, title: "Midtone")
+            case .highlight: POColorBalanceControl(value: $controller.cbHighlight, title: "Highlight")
+            default: EmptyView()
+            }
         }
+        .frame(maxWidth: 200)
     }
 }

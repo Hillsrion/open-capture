@@ -13,7 +13,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ✅ Done |
 | CORE-003 | **Variant Cloning** (Logic for creating new variants) | High | Low | ✅ Done |
 | CORE-004 | **Session/Catalog Switching** (Hot-swapping databases) | High | Med | ✅ Done |
-| CORE-005 | **Hierarchical Keywords** (Taxonomy tree management) | Med | High | ⏳ Pending |
+| CORE-005 | **Hierarchical Keywords** (Taxonomy tree management) | Med | High | ✅ Done |
 | CORE-006 | **EIP Packaging** (Zipping RAW + adjustments into .eip) | Low | Med | ⏳ Pending |
 | CORE-007 | **Import Engine** (Card ingest, renaming, backup, apply styles) | High | High | ✅ Done |
 | CORE-008 | **Session Folders Logic** (Capture, Selects, Output, Trash routing) | High | Low | ✅ Done |

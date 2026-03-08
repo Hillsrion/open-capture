@@ -208,6 +208,7 @@ public struct CullingView: View {
                                 LibraryToolView(session: session)
                                 FilterToolView(predicate: $adjustmentController.activePredicate)
                             } else if selectedToolTab == "COLOR" {
+                                ColorBalanceToolView(controller: adjustmentController)
                                 WhiteBalanceToolView(
                                     kelvin: $adjustmentController.kelvin,
                                     tint: $adjustmentController.tint

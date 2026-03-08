@@ -72,6 +72,12 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var sharpThreshold: Double = 1.0
     @Published public var sharpHalo: Double = 0.0
 
+    // Color Balance (UI-003)
+    @Published public var cbShadow: ColorBalanceValue = .neutral
+    @Published public var cbMidtone: ColorBalanceValue = .neutral
+    @Published public var cbHighlight: ColorBalanceValue = .neutral
+    @Published public var cbMaster: ColorBalanceValue = .neutral
+
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
     @Published public var previewingStyle: Style?
