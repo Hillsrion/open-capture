@@ -8,7 +8,10 @@
     "conductor/backlog.md",
     "conductor/tracks.md",
     "conductor/tracks/styles_presets_restoration_20260308/plan.md",
-    "conductor/tracks/styles_presets_restoration_20260308/spec.md"
+    "conductor/tracks/styles_presets_restoration_20260308/spec.md",
+    "reconstructed_codebase/Sources/AppCoreShared/CameraModels.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewEngine.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/LiveViewFrameLoop.swift"
   ],
   "sessions": [
     {
@@ -16,13 +19,19 @@
       "transcript": "/a9/91626ad3ba/0/full.jsonl",
       "content_hash": "/a9/91626ad3ba/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/a9/91626ad3ba/1/metadata.json",
+      "transcript": "/a9/91626ad3ba/1/full.jsonl",
+      "content_hash": "/a9/91626ad3ba/1/content_hash.txt",
+      "prompt": "/a9/91626ad3ba/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 269754882,
+    "input_tokens": 270622814,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 245862261,
-    "output_tokens": 441268,
-    "api_call_count": 1000
+    "cache_read_tokens": 246622145,
+    "output_tokens": 446437,
+    "api_call_count": 1038
   }
 }
