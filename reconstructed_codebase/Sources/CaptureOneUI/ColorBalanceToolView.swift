@@ -1,14 +1,14 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
-/// Reconstructed enum for Color Wheel layout modes.
 public enum ColorWheelLayoutMode: Int, CaseIterable {
     case master = 0
     case threeWay = 1
     case shadow = 2
     case midtone = 3
     case highlight = 4
-    
+
     public var displayName: String {
         switch self {
         case .master: return "Master"
@@ -20,32 +20,19 @@ public enum ColorWheelLayoutMode: Int, CaseIterable {
     }
 }
 
-/// Reconstructed high-fidelity Color Balance tool (UI-003).
 public struct ColorBalanceToolView: View {
     @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject private var workspaceManager = WorkspaceManager.shared
     @State private var layoutMode: ColorWheelLayoutMode = .threeWay
-    
+
+    private let toolID = "ColorBalance"
+    private let selectedTabKey = "ColorBalanceInspectorToolSelectedTab"
+
     public var body: some View {
         COToolSection("Color Balance") {
-            VStack(spacing: 12) {
-                // Layout Switcher (Tabs)
-                HStack(spacing: 0) {
-                    ForEach(ColorWheelLayoutMode.allCases, id: \.self) { mode in
-                        Button(action: { layoutMode = mode }) {
-                            Text(mode.displayName.uppercased())
-                                .font(.system(size: 9, weight: .bold))
-                                .padding(.vertical, 4)
-                                .frame(maxWidth: .infinity)
-                                .background(layoutMode == mode ? Color.white.opacity(0.1) : Color.clear)
-                                .foregroundColor(layoutMode == mode ? CaptureOneTheme.Colors.activeHighlight : .gray)
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                    }
-                }
-                .background(Color.black.opacity(0.2))
-                .cornerRadius(4)
-                
-                // Active View based on LayoutMode
+            VStack(spacing: 14) {
+                tabStrip
+
                 Group {
                     if layoutMode == .threeWay {
                         ThreeWayColorView(controller: controller)
@@ -53,39 +40,99 @@ public struct ColorBalanceToolView: View {
                         SingleColorWheelView(mode: layoutMode, controller: controller)
                     }
                 }
-                .frame(minHeight: 220)
+                .frame(maxWidth: .infinity, minHeight: 230)
+            }
+            .onAppear(perform: restoreLayoutMode)
+            .onChange(of: layoutMode) { newValue in
+                workspaceManager.setToolStateValue(String(newValue.rawValue), toolID: toolID, key: selectedTabKey)
             }
         }
     }
-}
 
-/// 3-Way layout implementation.
-struct ThreeWayColorView: View {
-    @ObservedObject var controller: AdjustmentToolController
-    var body: some View {
-        HStack(spacing: 15) {
-            POColorBalanceControl(value: $controller.cbShadow, title: "Shadow")
-            POColorBalanceControl(value: $controller.cbMidtone, title: "Midtone")
-            POColorBalanceControl(value: $controller.cbHighlight, title: "Highlight")
+    private var tabStrip: some View {
+        HStack(spacing: 0) {
+            ForEach(ColorWheelLayoutMode.allCases, id: \.self) { mode in
+                Button(action: { layoutMode = mode }) {
+                    Text(mode.displayName)
+                        .font(.system(size: 11, weight: .medium))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .foregroundColor(layoutMode == mode ? CaptureOneTheme.Colors.activeHighlight : CaptureOneTheme.Colors.textSecondary)
+                        .background(layoutMode == mode ? Color.white.opacity(0.06) : Color.clear)
+                }
+                .buttonStyle(.plain)
+            }
         }
+        .background(Color.black.opacity(0.2))
+        .clipShape(RoundedRectangle(cornerRadius: 4))
+    }
+
+    private func restoreLayoutMode() {
+        guard
+            let persisted = workspaceManager.toolStateValue(toolID: toolID, key: selectedTabKey),
+            let raw = Int(persisted),
+            let mode = ColorWheelLayoutMode(rawValue: raw)
+        else {
+            return
+        }
+
+        layoutMode = mode
     }
 }
 
-/// Single wheel layout implementation.
-struct SingleColorWheelView: View {
+private struct ThreeWayColorView: View {
+    @ObservedObject var controller: AdjustmentToolController
+
+    var body: some View {
+        VStack(spacing: 14) {
+            POColorBalanceControl(
+                value: $controller.cbMidtone,
+                title: "Midtone",
+                wheelDiameter: 112
+            )
+
+            HStack(alignment: .top, spacing: 30) {
+                POColorBalanceControl(
+                    value: $controller.cbShadow,
+                    title: "Shadow",
+                    wheelDiameter: 92
+                )
+
+                POColorBalanceControl(
+                    value: $controller.cbHighlight,
+                    title: "Highlight",
+                    wheelDiameter: 92
+                )
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+}
+
+private struct SingleColorWheelView: View {
     let mode: ColorWheelLayoutMode
     @ObservedObject var controller: AdjustmentToolController
-    
+
     var body: some View {
         VStack {
             switch mode {
-            case .master: POColorBalanceControl(value: $controller.cbMaster, title: "Master")
-            case .shadow: POColorBalanceControl(value: $controller.cbShadow, title: "Shadow")
-            case .midtone: POColorBalanceControl(value: $controller.cbMidtone, title: "Midtone")
-            case .highlight: POColorBalanceControl(value: $controller.cbHighlight, title: "Highlight")
-            default: EmptyView()
+            case .master:
+                POColorBalanceControl(
+                    value: $controller.cbMaster,
+                    title: "Master",
+                    wheelDiameter: 116,
+                    lightnessControlDisabled: true
+                )
+            case .shadow:
+                POColorBalanceControl(value: $controller.cbShadow, title: "Shadow", wheelDiameter: 116)
+            case .midtone:
+                POColorBalanceControl(value: $controller.cbMidtone, title: "Midtone", wheelDiameter: 116)
+            case .highlight:
+                POColorBalanceControl(value: $controller.cbHighlight, title: "Highlight", wheelDiameter: 116)
+            case .threeWay:
+                EmptyView()
             }
         }
-        .frame(maxWidth: 200)
+        .frame(maxWidth: .infinity)
     }
 }

@@ -142,6 +142,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $contrast.map { _ in }.eraseToAnyPublisher(),
             $brightness.map { _ in }.eraseToAnyPublisher(),
             $saturation.map { _ in }.eraseToAnyPublisher(),
+            $cbMaster.map { _ in }.eraseToAnyPublisher(),
+            $cbShadow.map { _ in }.eraseToAnyPublisher(),
+            $cbMidtone.map { _ in }.eraseToAnyPublisher(),
+            $cbHighlight.map { _ in }.eraseToAnyPublisher(),
             $kelvin.map { _ in }.eraseToAnyPublisher(),
             $tint.map { _ in }.eraseToAnyPublisher(),
             $highlights.map { _ in }.eraseToAnyPublisher(),
@@ -310,6 +314,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         } else {
             source = mc
         }
+        let colorBalanceSource = source as? ColorBalanceStorageContainer
         
         func getFloat(_ key: String, _ defaultVal: Float) -> Float {
             if let mcSource = source as? MCVariant {
@@ -338,6 +343,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.clarityAmount = getFloat("ZCLARITY_AMOUNT", 0.0)
         self.structureAmount = getFloat("ZSTRUCTURE_AMOUNT", 0.0)
         self.clarityMethod = Int(getFloat("ZCLARITY_METHOD", 0.0))
+        let colorBalanceSettings = ColorBalanceStorage.settings(from: colorBalanceSource)
+        self.cbMaster = colorBalanceSettings.master
+        self.cbShadow = colorBalanceSettings.shadow
+        self.cbMidtone = colorBalanceSettings.midtone
+        self.cbHighlight = colorBalanceSettings.highlight
         
         // WB and other tools are usually global or per-layer depending on tool
         self.kelvin = (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0
@@ -408,6 +418,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     /// Triggers a re-render via ImageCorePipeline when adjustments change.
     public func commitChanges(to variant: VariantBase?) {
         guard let variant = variant, let mc = variant.mcVariant else { return }
+        let colorBalanceSettings = ColorBalanceStorage.normalizedSettings(
+            ColorBalanceSettings(
+                master: cbMaster,
+                shadow: cbShadow,
+                midtone: cbMidtone,
+                highlight: cbHighlight
+            )
+        )
+        cbMaster = colorBalanceSettings.master
         
         // 1. Update active layer/global properties
         if let activeLayer = variant.activeLayer, activeLayer.type != .background {
@@ -433,6 +452,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             activeLayer.mcLayer?.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
             activeLayer.mcLayer?.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
             activeLayer.mcLayer?.setObject(sharpHalo, forKey: "ZSHARP_HALO")
+            ColorBalanceStorage.apply(colorBalanceSettings, to: activeLayer.mcLayer)
         } else {
             mc.setObject(exposure, forKey: "ZEXPOSURE")
             mc.setObject(contrast, forKey: "ZCONTRAST")
@@ -455,6 +475,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             mc.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
             mc.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
             mc.setObject(sharpHalo, forKey: "ZSHARP_HALO")
+            ColorBalanceStorage.apply(colorBalanceSettings, to: mc)
         }
         
         // 2. Global updates
@@ -502,6 +523,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.saturation = (mc.objectForKey("ZSATURATION") as? Double) ?? 0.0
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
+        settings.colorBalance = ColorBalanceStorage.settings(from: mc)
         
         settings.lensCorrection.distortion = lensDistortion
         settings.lensCorrection.lightFalloff = lensLightFalloff
@@ -567,6 +589,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                 localAdj.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
                 localAdj.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
                 localAdj.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
+                localAdj.colorBalance = ColorBalanceStorage.settings(from: mcLayer)
                 localAdj.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
                 localAdj.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
                 localAdj.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)

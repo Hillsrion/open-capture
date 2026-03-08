@@ -110,6 +110,7 @@ public struct IC_LocalAdjustmentSettings {
     public var contrast: Float
     public var brightness: Float
     public var saturation: Float
+    public var colorBalance: ColorBalanceSettings
     public var clarity: IC_ClaritySettings
     public var maskUUID: String?
     
@@ -119,6 +120,7 @@ public struct IC_LocalAdjustmentSettings {
         self.contrast = 0.0
         self.brightness = 0.0
         self.saturation = 0.0
+        self.colorBalance = ColorBalanceSettings()
         self.clarity = IC_ClaritySettings()
     }
 }
@@ -271,6 +273,7 @@ public struct IC_ProcessSettings {
     // White Balance
     public var whiteBalanceTemperature: Double
     public var whiteBalanceTint: Double
+    public var colorBalance: ColorBalanceSettings
 
     // Levels (Reconstructed from shadow/highlight/midtone fields)
     public var levelsShadow: Float
@@ -322,6 +325,7 @@ public struct IC_ProcessSettings {
         self.brightness = 0.0
         self.whiteBalanceTemperature = 5000.0
         self.whiteBalanceTint = 0.0
+        self.colorBalance = ColorBalanceSettings()
         self.levelsShadow = 0.0
         self.levelsHighlight = 1.0
         self.levelsMidtone = 1.0

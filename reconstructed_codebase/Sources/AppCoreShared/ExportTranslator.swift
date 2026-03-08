@@ -20,6 +20,7 @@ public class ExportTranslator {
             
             processSettings.whiteBalanceTemperature = (mc.objectForKey("ZWB_TEMP") as? Double) ?? 5000.0
             processSettings.whiteBalanceTint = (mc.objectForKey("ZWB_TINT") as? Double) ?? 0.0
+            processSettings.colorBalance = ColorBalanceStorage.settings(from: mc)
         }
         
         // 2. Translate Export specific settings from Recipe

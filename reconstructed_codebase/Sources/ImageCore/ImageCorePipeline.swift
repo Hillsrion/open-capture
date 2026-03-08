@@ -33,7 +33,10 @@ public class ImageCorePipeline {
         // Using Accelerate framework to mimic low-level instructions like ld4.16b/st3.16b.
         
         let pixelCount = Int(input.sensorSize.width * input.sensorSize.height)
-        var floatBuffer = [Float](repeating: 0.0, count: pixelCount)
+        var floatBuffer = [Float](repeating: 0.5, count: pixelCount)
+        var red = [Float](repeating: 0.5, count: pixelCount)
+        var green = [Float](repeating: 0.5, count: pixelCount)
+        var blue = [Float](repeating: 0.5, count: pixelCount)
         
         // --- Lens Correction (ENG-006) ---
         
@@ -60,6 +63,11 @@ public class ImageCorePipeline {
             let profile = IC_LCCProfile(cameraModel: "Unknown", size: input.sensorSize, uniformityMap: [])
             LCCManager.shared.apply(profile: profile, to: &floatBuffer, count: pixelCount)
         }
+
+        // --- Color Balance (UI-003) ---
+        if !ColorBalanceKernel.isNeutral(settings.colorBalance) {
+            ColorBalanceKernel.apply(to: &red, green: &green, blue: &blue, settings: settings.colorBalance)
+        }
         
         // --- Layer Blending Simulation (ENG-005) ---
         for localAdj in settings.localAdjustments {
@@ -67,6 +75,9 @@ public class ImageCorePipeline {
             // 1. Create temporary buffer for layer adjustments
             // 2. Apply adjustments to temp buffer
             // 3. Blend temp buffer into output using mask and opacity
+            if !ColorBalanceKernel.isNeutral(localAdj.colorBalance) {
+                ColorBalanceKernel.apply(to: &red, green: &green, blue: &blue, settings: localAdj.colorBalance)
+            }
         }
         
         // --- Detail Refinement (ENG-007) ---
@@ -112,6 +123,10 @@ public class ImageCorePipeline {
         // --- Film Grain (ENG-008) ---
         if settings.filmGrain.amount > 0 {
             FilmGrainKernel.apply(to: &floatBuffer, count: pixelCount, settings: settings.filmGrain)
+        }
+
+        for index in 0..<pixelCount {
+            floatBuffer[index] = (red[index] + green[index] + blue[index]) / 3.0
         }
         
         // Finalize: Copy floatBuffer back to output (simplified cast)

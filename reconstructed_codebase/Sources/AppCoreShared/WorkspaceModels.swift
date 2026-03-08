@@ -35,6 +35,7 @@ public struct Workspace: Codable, Identifiable {
     public var rightSidebarTabs: [WorkspaceTab]
     public var sidebarWidth: Double = 300.0
     public var toolbarConfiguration: ToolbarConfiguration = .defaultConfiguration // INT-001
+    public var toolState: [String: String] = [:]
     
     public init(id: String = UUID().uuidString, name: String, left: [WorkspaceTab] = [], right: [WorkspaceTab] = []) {
         self.id = id
@@ -47,6 +48,7 @@ public struct Workspace: Codable, Identifiable {
 /// Reconstructed manager for workspace presets and persistence.
 public class WorkspaceManager: ObservableObject {
     public static let shared = WorkspaceManager()
+    public static var persistenceDirectoryOverride: URL?
     
     @Published public var activeWorkspace: Workspace
     
@@ -67,10 +69,49 @@ public class WorkspaceManager: ObservableObject {
     }
     
     private func getPersistenceURL(for name: String) -> URL {
-        let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
-        let dir = paths[0].appendingPathComponent("CaptureOne/Workspaces", isDirectory: true)
+        let dir: URL
+        if let override = WorkspaceManager.persistenceDirectoryOverride {
+            dir = override
+        } else {
+            let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+            dir = paths[0].appendingPathComponent("CaptureOne/Workspaces", isDirectory: true)
+        }
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent("\(name).coworkspace")
+    }
+
+    public func loadWorkspace(named name: String) {
+        let url = getPersistenceURL(for: name)
+        guard let data = try? Data(contentsOf: url) else {
+            activeWorkspace = WorkspaceManager.createDefaultWorkspace()
+            activeWorkspace.name = name
+            return
+        }
+
+        guard let decoded = try? JSONDecoder().decode(Workspace.self, from: data) else {
+            activeWorkspace = WorkspaceManager.createDefaultWorkspace()
+            activeWorkspace.name = name
+            return
+        }
+
+        activeWorkspace = decoded
+    }
+
+    public func toolStateValue(toolID: String, key: String) -> String? {
+        activeWorkspace.toolState["\(toolID).\(key)"]
+    }
+
+    public func setToolStateValue(_ value: String?, toolID: String, key: String, autosave: Bool = true) {
+        let compositeKey = "\(toolID).\(key)"
+        if let value {
+            activeWorkspace.toolState[compositeKey] = value
+        } else {
+            activeWorkspace.toolState.removeValue(forKey: compositeKey)
+        }
+
+        if autosave {
+            saveWorkspace()
+        }
     }
     
     public static func createDefaultWorkspace() -> Workspace {
