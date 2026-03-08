@@ -1,4 +1,5 @@
 import Foundation
+import ImageCore
 
 /// Reconstructed Data Model for a Style (UI-010).
 /// A Style is a collection of adjustments that can be applied to a variant.

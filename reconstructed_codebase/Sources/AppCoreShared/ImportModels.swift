@@ -35,6 +35,11 @@ public struct ImportSettings {
     public var excludeDuplicates: Bool = true
     
     public var styleUUIDs: [String] = []
+    
+    // Smart Adjustments (AI-002)
+    public var smartStyleUUID: String? = nil
+    public var smartReferenceVariantUUID: String? = nil
+    
     public var metadata: ImportMetadata = ImportMetadata()
     
     public init() {}

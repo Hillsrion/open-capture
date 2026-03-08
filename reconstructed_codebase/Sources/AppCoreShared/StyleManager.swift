@@ -1,4 +1,5 @@
 import Foundation
+import ImageCore
 
 /// Reconstructed hierarchical item for the Styles Browser (UI-010).
 public struct StyleTreeItem: Identifiable {

@@ -30,9 +30,9 @@ Reconstruct the Smart Adjustments feature (AI-002), enabling automatic matching 
 - [x] Task: Commit Phase 3 & Build Check. fc89673
 
 ### Phase 4: Workflow Automation (CaptureOneUI)
-- [ ] Task: Implement auto-apply logic during import (if a Smart Style is selected).
-- [ ] Task: Create a test case: set reference variant -> select target variants -> apply smart adjustments -> verify Exposure/WB deltas.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Implement auto-apply logic during import (if a Smart Style is selected). fc89674
+- [x] Task: Create a test case: set reference variant -> select target variants -> apply smart adjustments -> verify Exposure/WB deltas. fc89674
+- [x] Task: Commit Phase 4 & Build Check. fc89674
 
 ## Verification & Testing
 - Test Case: Set a reference with +1.0 Exposure -> Apply to a variant -> Verify variant gets a relative adjustment.

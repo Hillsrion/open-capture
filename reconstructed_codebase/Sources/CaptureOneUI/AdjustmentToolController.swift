@@ -554,14 +554,14 @@ public class AdjustmentToolController: ObservableObject {
     public func setSmartReference() {
         guard let variant = currentVariant else { return }
         print("[Smart] Setting reference for \(variant.variantUUID)")
-        self.smartReference = SmartAdjustmentsEngine.analyzeVariant(variant)
+        self.smartReference = SmartAdjustmentsHelper.analyzeVariant(variant)
     }
     
     public func applySmartAdjustments(to variants: [VariantBase]) {
         guard let reference = smartReference else { return }
         
         for variant in variants {
-            let targetRef = SmartAdjustmentsEngine.analyzeVariant(variant)
+            let targetRef = SmartAdjustmentsHelper.analyzeVariant(variant)
             let deltas = SmartAdjustmentsEngine.calculateDeltas(reference: reference, target: targetRef)
             
             if let mc = variant.mcVariant {

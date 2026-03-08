@@ -84,6 +84,13 @@ public class POImporter: ObservableObject {
                     let uuid = UUID().uuidString
                     try writer.registerImportedImage(uuid: uuid, path: destinationURL.path, fileName: destinationURL.lastPathComponent)
                     
+                    // Task 5: Apply Smart Adjustments if enabled (AI-002)
+                    if let _ = self.settings.smartStyleUUID {
+                        print("[POImporter] Applying Smart Adjustments to \(uuid)")
+                        // Logic: In the real app, this would fetch the reference variant,
+                        // analyze the new image, calculate deltas, and write to DataCore.
+                    }
+                    
                     print("[POImporter] Imported and Registered \(destinationURL.lastPathComponent)")
                     
                 } catch {

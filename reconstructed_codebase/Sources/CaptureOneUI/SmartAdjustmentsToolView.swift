@@ -25,7 +25,11 @@ public struct SmartAdjustmentsToolView: View {
                     Button("Set Reference") {
                         controller.setSmartReference()
                     }
-                    .buttonStyle(CaptureOneTheme.Styles.SecondaryButton())
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.white.opacity(0.1))
+                    .cornerRadius(4)
                 }
                 .font(.system(size: 11))
                 

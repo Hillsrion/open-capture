@@ -43,7 +43,11 @@ public struct KeystoneToolView: View {
                         // Logic: Trigger KeystoneEngine.detectGuidelines
                         print("[UI] Triggering Auto Keystone")
                     }
-                    .buttonStyle(CaptureOneTheme.Styles.SecondaryButton())
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.white.opacity(0.1))
+                    .cornerRadius(4)
                     
                     Spacer()
                     
