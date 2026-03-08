@@ -69,12 +69,24 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     /// Triggers the camera shutter.
     public func shutterRelease() {
         print("[Capture] Shutter release triggered for \(name)")
+        
+        // Auto-pause Live View during capture (ENG-002)
+        let wasLiveViewActive = (liveViewState == .active)
+        if wasLiveViewActive {
+            pauseLiveView()
+        }
+        
         isCapturing = true
         
         // Simulate capture delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isCapturing = false
             print("[Capture] Image captured.")
+            
+            // Auto-resume Live View after capture (ENG-002)
+            if wasLiveViewActive {
+                self.resumeLiveView()
+            }
         }
     }
     

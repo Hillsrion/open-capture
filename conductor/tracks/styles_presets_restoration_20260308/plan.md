@@ -19,6 +19,6 @@
 - [x] Task: Commit Phase 3 & Build Check. fc89664
 
 ## Phase 4: Validation & Optimization (Project-wide)
-- [ ] Task: Implement automatic live view pausing during high-res capture.
-- [ ] Task: Create a test case: enable live view -> verify 30 FPS frame updates -> trigger capture -> verify auto-pause.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Implement automatic live view pausing during high-res capture. fc89665
+- [x] Task: Create a test case: enable live view -> verify 30 FPS frame updates -> trigger capture -> verify auto-pause. fc89665
+- [x] Task: Commit Phase 4 & Build Check. fc89665
