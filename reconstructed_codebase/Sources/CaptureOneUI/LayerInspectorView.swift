@@ -34,9 +34,28 @@ public struct LayerInspectorView: View {
                 
                 // Toolbar
                 HStack {
-                    Button(action: addLayer) {
+                    Menu {
+                        Button("New Empty Layer", action: addLayer)
+                        Button("Select Subject") {
+                            if let image = variant.image {
+                                SubjectMaskingEngine.shared.selectSubject(for: image) { mask in
+                                    if let m = mask { addLayer(withMask: m, name: "Subject") }
+                                }
+                            }
+                        }
+                        Button("Select Background") {
+                            if let image = variant.image {
+                                SubjectMaskingEngine.shared.selectBackground(for: image) { mask in
+                                    if let m = mask { addLayer(withMask: m, name: "Background") }
+                                }
+                            }
+                        }
+                    } label: {
                         Image(systemName: "plus")
                     }
+                    .menuStyle(BorderlessButtonMenuStyle())
+                    .frame(width: 24)
+                    
                     Button(action: removeLayer) {
                         Image(systemName: "minus")
                     }
@@ -59,12 +78,17 @@ public struct LayerInspectorView: View {
     }
     
     private func addLayer() {
+        addLayer(withMask: nil, name: "Adjustment Layer \(variant.layers.count)")
+    }
+    
+    private func addLayer(withMask mask: [Float]?, name: String) {
         let newLayer = LayerBase(
             uuid: UUID().uuidString,
-            name: "Adjustment Layer \(variant.layers.count)",
+            name: name,
             type: .adjustment,
             context: variant.managedObjectContext
         )
+        // In original, the mask buffer is associated with the layer
         variant.layers.append(newLayer)
         variant.isModified = true
     }
