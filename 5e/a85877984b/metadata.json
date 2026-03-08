@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "5ea85877984b",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/hierarchical_keywords_restoration_20260308/plan.md",
+    "conductor/tracks/hierarchical_keywords_restoration_20260308/spec.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/5e/a85877984b/0/metadata.json",
+      "transcript": "/5e/a85877984b/0/full.jsonl",
+      "content_hash": "/5e/a85877984b/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 146821871,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 132328293,
+    "output_tokens": 253724,
+    "api_call_count": 609
+  }
+}
