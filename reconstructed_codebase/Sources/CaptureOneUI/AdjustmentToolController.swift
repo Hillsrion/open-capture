@@ -6,7 +6,7 @@ import Combine
 
 /// Reconstructed controller for managing adjustment tool states.
 /// Bridges the UI sliders to the underlying MCVariant settings.
-public class AdjustmentToolController: ObservableObject {
+public class AdjustmentToolController: ObservableObject, HardwareActionDelegate {
     public static let shared = AdjustmentToolController()
     
     @Published public var currentVariant: VariantBase? {
@@ -614,5 +614,25 @@ public class AdjustmentToolController: ObservableObject {
         }
         
         refreshToolValues()
+    }
+    
+    // MARK: - Hardware Controllers (INT-005)
+    
+    public func handleHardwareAction(actionID: String, delta: Double) {
+        // Ensure we execute on the main thread since we are mutating @Published properties
+        DispatchQueue.main.async {
+            switch actionID {
+            case "adjustExposure":
+                self.exposure = max(-4.0, min(4.0, self.exposure + Float(delta)))
+            case "adjustContrast":
+                self.contrast = max(-50.0, min(50.0, self.contrast + Float(delta)))
+            case "adjustKelvin":
+                self.kelvin = max(800.0, min(14000.0, self.kelvin + Float(delta)))
+            default:
+                print("[AdjustmentToolController] Unhandled hardware action: \(actionID)")
+            }
+            // The @Published state change will automatically trigger `commitChanges()`
+            // because of the Combine observers setup in `init()`.
+        }
     }
 }
