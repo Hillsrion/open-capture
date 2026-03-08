@@ -29,9 +29,9 @@ Reconstruct the AppleScript Automation bridge (INT-004), enabling external scrip
 - [x] Task: Commit Phase 3 & Build Check. fc89696
 
 ### Phase 4: AppleScript Commands (AppCoreShared)
-- [ ] Task: Implement a custom script command (e.g., `process` or `export`) taking a variant as an argument.
-- [ ] Task: Create a test case: write a sample AppleScript string -> execute via `NSAppleScript` -> verify variant state changes.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Implement a custom script command (e.g., `process` or `export`) taking a variant as an argument. fc89697
+- [x] Task: Create a test case: write a sample AppleScript string -> execute via `NSAppleScript` -> verify variant state changes. fc89697
+- [x] Task: Commit Phase 4 & Build Check. fc89697
 
 ## Verification & Testing
 - Test Case: Run `tell application "CaptureOneReconstructed" to get name of document 1` -> Verify it returns the session name.

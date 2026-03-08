@@ -32,6 +32,11 @@
     
     <suite name="Capture One Suite" code="COne" description="Capture One specific classes and commands.">
         
+        <command name="process" code="COneprcs" description="Process a variant.">
+            <cocoa class="ProcessCommand"/>
+            <direct-parameter type="variant" description="The variant to process."/>
+        </command>
+        
         <class name="variant" code="cVar" description="An image variant with adjustments.">
             <cocoa class="VariantBase"/>
             <property name="name" code="pnam" type="text" access="r" description="The name of the variant.">
