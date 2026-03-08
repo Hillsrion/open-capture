@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="Capture One Reconstructed Dictionary">
+    
+    <suite name="Standard Suite" code="????" description="Common classes and commands for all applications.">
+        
+        <class name="application" code="capp" description="The application's top-level scripting object.">
+            <cocoa class="NSApplication"/>
+            <property name="name" code="pnam" type="text" access="r" description="The name of the application."/>
+            <property name="version" code="vers" type="text" access="r" description="The version number of the application."/>
+            
+            <element type="document" access="r">
+                <cocoa key="orderedDocuments"/>
+            </element>
+        </class>
+        
+        <class name="document" code="docu" description="A Capture One document (Session or Catalog).">
+            <cocoa class="SessionBase"/>
+            <property name="name" code="pnam" type="text" access="r" description="The name of the document.">
+                <cocoa key="documentName"/>
+            </property>
+            <property name="path" code="ppth" type="text" access="r" description="The file path of the document.">
+                <cocoa key="documentPath"/>
+            </property>
+            
+            <element type="variant" access="r">
+                <cocoa key="scriptingVariants"/>
+            </element>
+        </class>
+        
+    </suite>
+    
+    <suite name="Capture One Suite" code="COne" description="Capture One specific classes and commands.">
+        
+        <class name="variant" code="cVar" description="An image variant with adjustments.">
+            <cocoa class="VariantBase"/>
+            <property name="name" code="pnam" type="text" access="r" description="The name of the variant.">
+                <cocoa key="name"/>
+            </property>
+            <property name="rating" code="cRat" type="integer" description="The star rating of the variant (0-5).">
+                <cocoa key="rating"/>
+            </property>
+            <property name="color tag" code="cTag" type="integer" description="The color tag index of the variant.">
+                <cocoa key="scriptingColorTag"/>
+            </property>
+        </class>
+        
+    </suite>
+</dictionary>
