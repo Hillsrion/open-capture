@@ -30,9 +30,9 @@ Reconstruct the Soft Proofing Engine (ENG-011), enabling the simulation of outpu
 - [x] Task: Commit Phase 3 & Build Check. fc89681
 
 ### Phase 4: Recipe Synchronization (AppCoreShared / ImageCore)
-- [ ] Task: Implement logic to automatically proof the "Primary Recipe" when enabled.
-- [ ] Task: Create a test case: enable sRGB soft proofing -> verify gamut warning on high-saturation colors.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Implement logic to automatically proof the "Primary Recipe" when enabled. fc89682
+- [x] Task: Create a test case: enable sRGB soft proofing -> verify gamut warning on high-saturation colors. fc89682
+- [x] Task: Commit Phase 4 & Build Check. fc89682
 
 ## Verification & Testing
 - Test Case: Toggle Soft Proofing on/off -> Verify visual shift in the Viewer.

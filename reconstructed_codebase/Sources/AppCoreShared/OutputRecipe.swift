@@ -95,7 +95,10 @@ public class OutputRecipe: BaseObject {
 /// Manages the collection of recipes.
 /// Based on _TtC12AppCoreShared19OutputRecipeManager.
 public class OutputRecipeManager: ObservableObject {
+    public static let shared = OutputRecipeManager() // Make it a singleton for easier access
+    
     @Published public var recipes: [OutputRecipe] = []
+    @Published public var primaryRecipe: OutputRecipe? // ENG-011
     
     public init() {}
     

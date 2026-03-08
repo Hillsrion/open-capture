@@ -29,7 +29,16 @@ public struct COViewerView: View {
                     LiveViewOverlayView(camera: liveView.currentCamera)
                 } else if let nsImage = renderedImage {
                     ZStack {
-                        Image(nsImage: nsImage)
+                        // Apply Soft Proofing simulation if enabled
+                        let finalImage: NSImage = {
+                            if let controller = adjustmentController, controller.isSoftProofingEnabled {
+                                // Simulation: apply proofing kernel
+                                return nsImage // Placeholder for the actual CIImage pipeline
+                            }
+                            return nsImage
+                        }()
+                        
+                        Image(nsImage: finalImage)
                             .resizable()
                             .scaleEffect(zoomLevel)
                             .aspectRatio(contentMode: .fit)

@@ -117,6 +117,22 @@ public class AdjustmentToolController: ObservableObject {
     
     public init() {
         setupChangeObservers()
+        setupRecipeSync()
+    }
+    
+    private func setupRecipeSync() {
+        // Automatically update proofing profile when primary recipe changes
+        OutputRecipeManager.shared.$primaryRecipe
+            .sink { [weak self] recipe in
+                if let recipe = recipe {
+                    // Map recipe profile string to internal ID
+                    // This is a simplification: in reality it might need mapping
+                    self?.isUpdatingFromModel = true
+                    self?.proofingProfileID = recipe.iccProfile
+                    self?.isUpdatingFromModel = false
+                }
+            }
+            .store(in: &cancellables)
     }
     
     private func setupChangeObservers() {
