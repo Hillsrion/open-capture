@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "b197c247c27a",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/AppCoreShared/AnnotationsModels.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/VariantBase.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/b1/97c247c27a/0/metadata.json",
+      "transcript": "/b1/97c247c27a/0/full.jsonl",
+      "content_hash": "/b1/97c247c27a/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 3068909,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2837490,
+    "output_tokens": 6039,
+    "api_call_count": 14
+  }
+}
