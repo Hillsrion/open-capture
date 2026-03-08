@@ -33,6 +33,8 @@ public class ImageBase: BaseObject, ICImageMetadataProvider {
     public var aperture: Double { (mcImage?.objectForKey("ZAPERTURE") as? Double) ?? 0.0 }
     public var shutter: Double { (mcImage?.objectForKey("ZSHUTTER") as? Double) ?? 0.0 }
     public var focalLength: Int { (mcImage?.objectForKey("ZFOCALLENGTH") as? Int) ?? 0 }
+    public var pixelWidth: Int { (mcImage?.objectForKey("ZWIDTH") as? Int) ?? 0 }
+    public var pixelHeight: Int { (mcImage?.objectForKey("ZHEIGHT") as? Int) ?? 0 }
     
     // MARK: - Capabilities (Inferred from MOImage metadata)
     @objc public var canApplyLensCorrection: Bool {

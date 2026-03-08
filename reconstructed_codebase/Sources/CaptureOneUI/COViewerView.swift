@@ -184,37 +184,138 @@ public struct COViewerView: View {
 }
 
 /// Reconstructed Bottom Bar for the Viewer.
-/// Based on 'viewerBarView' and 'viewerZoomControl' properties.
+/// Based on 'viewerBarView', 'viewerZoomControl', and 'colorReadoutsMenuItem' properties.
 struct COViewerBarView: View {
     @Binding var zoomLevel: Double
-    
+    @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var adjustmentController = AdjustmentToolController.shared
+
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             // Zoom Control
-            HStack(spacing: 10) {
+            HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass")
+                    .font(.system(size: 11))
+                    .foregroundColor(.gray)
                 Slider(value: $zoomLevel, in: 0.1...4.0)
-                    .frame(width: 150)
+                    .frame(width: 100)
                 Text("\(Int(zoomLevel * 100))%")
                     .font(.system(size: 10, design: .monospaced))
+                    .foregroundColor(.white)
+                    .frame(width: 36, alignment: .trailing)
             }
-            
+            .padding(.horizontal, 8)
+
+            Divider().frame(height: 16)
+
+            // Image info readout
+            HStack(spacing: 12) {
+                if let variant = adjustmentController.currentVariant {
+                    Text(variant.image?.path.split(separator: "/").last.map(String.init) ?? "—")
+                        .font(.system(size: 10))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+
+                    Text(imageDimensions(for: variant.image))
+                        .font(.system(size: 10, design: .monospaced))
+                        .foregroundColor(.gray)
+
+                    Text(colorSpace(for: variant.image))
+                        .font(.system(size: 10))
+                        .foregroundColor(.gray)
+                } else {
+                    Text("No selection")
+                        .font(.system(size: 10))
+                        .foregroundColor(.gray)
+                }
+            }
+            .padding(.horizontal, 8)
+
             Spacer()
-            
-            // Display Mode Toggle (Inferred from viewerDisplayMode)
-            HStack(spacing: 15) {
+
+            // Color Tag quick buttons
+            HStack(spacing: 4) {
+                ForEach(colorTags, id: \.0) { tag, color in
+                    Circle()
+                        .fill(color)
+                        .frame(width: 10, height: 10)
+                        .overlay(
+                            Circle().stroke(Color.white.opacity(0.3), lineWidth: 0.5)
+                        )
+                        .onTapGesture {
+                            if let ct = VariantBase.ColorTag(rawValue: tag) {
+                                adjustmentController.currentVariant?.colorTag = ct
+                            }
+                        }
+                }
+            }
+            .padding(.horizontal, 6)
+
+            Divider().frame(height: 16)
+
+            // Rating stars
+            HStack(spacing: 2) {
+                ForEach(0..<5) { index in
+                    Image(systemName: index < currentRating ? "star.fill" : "star")
+                        .font(.system(size: 10))
+                        .foregroundColor(index < currentRating ? CaptureOneTheme.Colors.activeHighlight : .gray)
+                        .onTapGesture {
+                            adjustmentController.currentVariant?.rating = index + 1
+                        }
+                }
+            }
+            .padding(.horizontal, 8)
+
+            Divider().frame(height: 16)
+
+            // Display Mode Toggle
+            HStack(spacing: 10) {
                 Button(action: {}) {
                     Image(systemName: "square.grid.2x2")
+                        .font(.system(size: 12))
                 }
+                .buttonStyle(.plain)
                 Button(action: {}) {
                     Image(systemName: "rectangle.split.3x1")
+                        .font(.system(size: 12))
                 }
+                .buttonStyle(.plain)
             }
+            .foregroundColor(.gray)
+            .padding(.horizontal, 8)
         }
-        .padding(.horizontal, 15)
-        .frame(height: 35)
+        .padding(.horizontal, 8)
+        .frame(height: 30)
         .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
         .foregroundColor(.white)
+    }
+
+    private var currentRating: Int {
+        adjustmentController.currentVariant?.rating ?? 0
+    }
+
+    private var colorTags: [(Int, Color)] {
+        [
+            (0, Color.gray.opacity(0.4)),
+            (1, Color.red),
+            (2, Color.orange),
+            (3, Color.yellow),
+            (4, Color.green),
+            (5, Color.blue),
+            (6, Color.purple)
+        ]
+    }
+
+    private func imageDimensions(for image: ImageBase?) -> String {
+        guard let image = image else { return "" }
+        let w = image.pixelWidth > 0 ? image.pixelWidth : 6000
+        let h = image.pixelHeight > 0 ? image.pixelHeight : 4000
+        return "\(w) × \(h)"
+    }
+
+    private func colorSpace(for image: ImageBase?) -> String {
+        guard image != nil else { return "" }
+        return "sRGB" // Placeholder — actual color space from ICC profile
     }
 }
 
