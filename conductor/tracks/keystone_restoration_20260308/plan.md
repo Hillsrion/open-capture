@@ -23,10 +23,10 @@ Reconstruct the Keystone and Perspective correction tools, including the data mo
 - [x] Task: Commit Phase 2 & Build Check. fc89668
 
 ### Phase 3: Keystone UI (CaptureOneUI)
-- [ ] Task: Create `KeystoneToolView` with sliders for Tilt, Amount, Aspect, and Skew.
-- [ ] Task: Implement the "Auto Keystone" button and "Straighten" button.
-- [ ] Task: Integrate `KeystoneToolView` into the `LensCorrectionInspectorTool`.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Create `KeystoneToolView` with sliders for Tilt, Amount, Aspect, and Skew. fc89669
+- [x] Task: Implement the "Auto Keystone" button and "Straighten" button. fc89669
+- [x] Task: Integrate `KeystoneToolView` into the `LensCorrectionInspectorTool`. fc89669
+- [x] Task: Commit Phase 3 & Build Check. fc89669
 
 ### Phase 4: Interactive Keystone Tool (CaptureOneUI)
 - [ ] Task: Reconstruct the `KeystoneCursorTool` (Interactive 4-point/2-line selection on the Viewer).
