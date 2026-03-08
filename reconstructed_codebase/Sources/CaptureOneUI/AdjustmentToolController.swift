@@ -59,6 +59,28 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var lensShiftY: Float = 0.0
     @Published public var clipDistortedEdges: Bool = false
     
+    // Black & White (UI-202)
+    @Published public var blackAndWhiteEnabled: Bool = false
+    @Published public var bwRed: Double = 0.0
+    @Published public var bwYellow: Double = 0.0
+    @Published public var bwGreen: Double = 0.0
+    @Published public var bwCyan: Double = 0.0
+    @Published public var bwBlue: Double = 0.0
+    @Published public var bwMagenta: Double = 0.0
+    
+    // Dehaze & Vignetting (UI-202)
+    @Published public var dehazeAmount: Double = 0.0
+    @Published public var vignettingAmount: Double = 0.0
+    @Published public var vignettingMethod: Int = 0
+    
+    // Moire (UI-203)
+    @Published public var moireAmount: Double = 0.0
+    @Published public var moirePattern: Double = 0.0
+    
+    // Crop & Rotation (UI-204)
+    @Published public var cropRect: CGRect = .zero
+    @Published public var rotationAngle: Double = 0.0
+    
     // Keystone State (AI-003)
     @Published public var keystoneTiltX: Double = 0.0
     @Published public var keystoneTiltY: Double = 0.0
@@ -192,7 +214,22 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $sharpRadius.map { _ in }.eraseToAnyPublisher(),
             $sharpThreshold.map { _ in }.eraseToAnyPublisher(),
             $sharpHalo.map { _ in }.eraseToAnyPublisher(),
-            $stackStyles.map { _ in }.eraseToAnyPublisher()
+            $stackStyles.map { _ in }.eraseToAnyPublisher(),
+            
+            $blackAndWhiteEnabled.map { _ in }.eraseToAnyPublisher(),
+            $bwRed.map { _ in }.eraseToAnyPublisher(),
+            $bwYellow.map { _ in }.eraseToAnyPublisher(),
+            $bwGreen.map { _ in }.eraseToAnyPublisher(),
+            $bwCyan.map { _ in }.eraseToAnyPublisher(),
+            $bwBlue.map { _ in }.eraseToAnyPublisher(),
+            $bwMagenta.map { _ in }.eraseToAnyPublisher(),
+            $dehazeAmount.map { _ in }.eraseToAnyPublisher(),
+            $vignettingAmount.map { _ in }.eraseToAnyPublisher(),
+            $vignettingMethod.map { _ in }.eraseToAnyPublisher(),
+            $moireAmount.map { _ in }.eraseToAnyPublisher(),
+            $moirePattern.map { _ in }.eraseToAnyPublisher(),
+            $cropRect.map { _ in }.eraseToAnyPublisher(),
+            $rotationAngle.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -358,6 +395,26 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.whites = (mc.objectForKey("ZWHITES") as? Float) ?? 0.0
         self.blacks = (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0
         
+        self.blackAndWhiteEnabled = (mc.objectForKey("ZBW_ENABLED") as? Bool) ?? false
+        self.bwRed = getDouble("ZBW_RED", 0.0)
+        self.bwYellow = getDouble("ZBW_YELLOW", 0.0)
+        self.bwGreen = getDouble("ZBW_GREEN", 0.0)
+        self.bwCyan = getDouble("ZBW_CYAN", 0.0)
+        self.bwBlue = getDouble("ZBW_BLUE", 0.0)
+        self.bwMagenta = getDouble("ZBW_MAGENTA", 0.0)
+        
+        self.dehazeAmount = getDouble("ZDEHAZE_AMOUNT", 0.0)
+        self.vignettingAmount = getDouble("ZVIGNETTING_AMOUNT", 0.0)
+        self.vignettingMethod = Int(getDouble("ZVIGNETTING_METHOD", 0.0))
+        
+        self.moireAmount = getDouble("ZMOIRE_AMOUNT", 0.0)
+        self.moirePattern = getDouble("ZMOIRE_PATTERN", 0.0)
+        
+        if let rect = mc.objectForKey("ZCROP_RECT") as? CGRect {
+            self.cropRect = rect
+        }
+        self.rotationAngle = getDouble("ZROTATION_ANGLE", 0.0)
+        
         // Lens Correction
         self.lensDistortion = getDouble("ZLENS_DISTORTION", 0.0)
         self.lensSharpnessFalloff = getDouble("ZLENS_SHARPNESS_FALLOFF", 0.0)
@@ -486,6 +543,24 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(whites, forKey: "ZWHITES")
         mc.setObject(blacks, forKey: "ZBLACKS")
         
+        mc.setObject(blackAndWhiteEnabled, forKey: "ZBW_ENABLED")
+        mc.setObject(bwRed, forKey: "ZBW_RED")
+        mc.setObject(bwYellow, forKey: "ZBW_YELLOW")
+        mc.setObject(bwGreen, forKey: "ZBW_GREEN")
+        mc.setObject(bwCyan, forKey: "ZBW_CYAN")
+        mc.setObject(bwBlue, forKey: "ZBW_BLUE")
+        mc.setObject(bwMagenta, forKey: "ZBW_MAGENTA")
+        
+        mc.setObject(dehazeAmount, forKey: "ZDEHAZE_AMOUNT")
+        mc.setObject(vignettingAmount, forKey: "ZVIGNETTING_AMOUNT")
+        mc.setObject(vignettingMethod, forKey: "ZVIGNETTING_METHOD")
+        
+        mc.setObject(moireAmount, forKey: "ZMOIRE_AMOUNT")
+        mc.setObject(moirePattern, forKey: "ZMOIRE_PATTERN")
+        
+        mc.setObject(cropRect, forKey: "ZCROP_RECT")
+        mc.setObject(rotationAngle, forKey: "ZROTATION_ANGLE")
+        
         mc.setObject(lensShiftX, forKey: "ZLENS_SHIFT_X")
         mc.setObject(lensShiftY, forKey: "ZLENS_SHIFT_Y")
         mc.setObject(clipDistortedEdges, forKey: "ZCLIP_DISTORTED_EDGES")
@@ -542,8 +617,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.sharpening.threshold = sharpThreshold
         settings.sharpening.haloControl = sharpHalo
         
-        settings.geometry.cropRect = .zero // Inferred: logic for mapping variant crop to IC_GeometryAdjustments
-        settings.geometry.rotation = 0.0
+        settings.geometry.cropRect = cropRect // Use the state variable since it's published now
+        settings.geometry.rotation = rotationAngle
         settings.geometry.keystoneTiltX = keystoneTiltX
         settings.geometry.keystoneTiltY = keystoneTiltY
         settings.geometry.keystoneAmount = keystoneAmount
