@@ -3,7 +3,7 @@
   "checkpoint_id": "1e90715de5b1",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/plugin_host_restoration_20260308/plan.md",
     "reconstructed_codebase/Sources/CaptureOneUI/PluginsPreferencesView.swift"
@@ -14,13 +14,19 @@
       "transcript": "/1e/90715de5b1/0/full.jsonl",
       "content_hash": "/1e/90715de5b1/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/1e/90715de5b1/1/metadata.json",
+      "transcript": "/1e/90715de5b1/1/full.jsonl",
+      "content_hash": "/1e/90715de5b1/1/content_hash.txt",
+      "prompt": "/1e/90715de5b1/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 52370449,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 46455395,
+    "output_tokens": 93648,
+    "api_call_count": 388
   }
 }
