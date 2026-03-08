@@ -3,7 +3,7 @@
   "checkpoint_id": "21eb9662ae43",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/print_layout_restoration_20260308/plan.md",
     "reconstructed_codebase/Sources/CaptureOneUI/PrintLayoutView.swift",
@@ -15,13 +15,19 @@
       "transcript": "/21/eb9662ae43/0/full.jsonl",
       "content_hash": "/21/eb9662ae43/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/21/eb9662ae43/1/metadata.json",
+      "transcript": "/21/eb9662ae43/1/full.jsonl",
+      "content_hash": "/21/eb9662ae43/1/content_hash.txt",
+      "prompt": "/21/eb9662ae43/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 45385375,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 40333763,
+    "output_tokens": 85121,
+    "api_call_count": 357
   }
 }

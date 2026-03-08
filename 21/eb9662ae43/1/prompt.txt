@@ -1,0 +1,56 @@
+quand tu as fini une track passe a la suivante
+
+---
+
+reprends
+
+---
+
+@conductor/backlog.md has been stripped of some sections some commits away
+--- Content from referenced files ---
+Content from @conductor/backlog.md:
+# Capture One Reconstruction Backlog
+
+This backlog tracks all features and modules required to reach a 100% high-fidelity reconstruction of Capture One Pro (v16.5).
+
+---
+
+## 🟢 1. Core Data & Management (AppCoreShared / DataCore)
+*Status: ~75% Complete*
+
+| Task ID | Feature | Priority | Complexity | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| CORE-001 | **Smart Albums & Advanced Filters** (SQL for ratings, tags, EXIF) | High | Med | ✅ Done |
+| CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ✅ Done |
+| CORE-003 | **Variant Cloning** (Logic for creating new variants) | High | Low | ✅ Done |
+| CORE-004 | **Session/Catalog Switching** (Hot-swapping databases) | High | Med | ✅ Done |
+| CORE-005 | **Hierarchical Keywords** (Taxonomy tree management) | Med | High | ✅ Done |
+| CORE-006 | **EIP Packaging** (Zipping RAW + adjustments into .eip) | Low | Med | ✅ Done |
+| CORE-007 | **Import Engine** (Card ingest, renaming, backup, apply styles) | High | High | ✅ Done |
+| CORE-008 | **Session Folders Logic** (Capture, Selects, Output, Trash routing) | High | Low | ✅ Done |
+| CORE-009 | **Rating & Color Tagging** (Stars and Color labels data models) | High | Low | ✅ Done |
+
+---
+
+## 🟡 2. Image Processing Engine (ImageCore / Metal)
+*Status: ~25% Complete*
+
+| Task ID | Feature | Priority | Complexity | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| ENG-001 | **Bipolar Adjustments** (Exposure, Contrast kernels) | High | Low | ✅ Done |
+| ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ✅ Done |
+| ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ✅ Done |
+| ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ✅ Done |
+| ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ✅ Done |
+| ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ✅ Done |
+| ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ✅ Done |
+| ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ✅ Done |
+| ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ✅ Done |
+| ENG-010 | **HDR Merge & Panorama Stitch** (32-bit DNG generation) | Low | Very High | ✅ Done |
+| ENG-011 | **Soft Proofing Engine** (ICC profile simulation for print/web) | Med | High | ✅ Done |
+| CORE-006 | **EIP Packaging** (Zipping RAW + adjustments into .eip) | Low | Med | ✅ Done |
+--- End of content ---
+
+---
+
+check that one 7d0b071b23c5237a9d849feb78d972a9938ad612
