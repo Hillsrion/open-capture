@@ -309,7 +309,11 @@ public final class AppCommandCenter: ObservableObject {
         )
     }
 
-    @Published public private(set) var copiedToolAdjustments: (toolID: String, style: Style)?
+    public struct ToolAdjustmentClip {
+        public let toolID: String
+        public let style: Style
+    }
+    public private(set) var copiedToolAdjustments: ToolAdjustmentClip?
 
     public func copyAdjustmentsForTool(_ toolID: String) {
         guard let style = snapshotCurrentAdjustments(name: "\(toolID) Copy") else {
@@ -319,7 +323,7 @@ public final class AppCommandCenter: ObservableObject {
             )
             return
         }
-        copiedToolAdjustments = (toolID: toolID, style: style)
+        copiedToolAdjustments = ToolAdjustmentClip(toolID: toolID, style: style)
     }
 
     public func pasteAdjustmentsForTool(_ toolID: String) {

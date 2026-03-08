@@ -25,12 +25,17 @@ public class OutputRecipe: BaseObject {
     
     public init(name: String, recipe: MCRecipe, context: ObjectContext) {
         self.mcRecipe = recipe
+        self._name = name
         super.init(managedObjectContext: context)
-        self.name = name
     }
     
-    public var name: String = "Untitled Recipe" {
-        didSet { notifyChange() }
+    private var _name: String = "Untitled Recipe"
+    public var name: String {
+        get { _name }
+        set {
+            _name = newValue
+            notifyChange()
+        }
     }
     
     public var format: FileFormat {
