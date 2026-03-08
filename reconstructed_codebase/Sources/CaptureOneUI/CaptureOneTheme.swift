@@ -104,6 +104,18 @@ public struct COToolSection<Content: View>: View {
 
                     Divider()
 
+                    Button("Copy \(title) Adjustments") {
+                        commands.copyAdjustmentsForTool(toolID)
+                    }
+                    Button("Apply \(title) Adjustments") {
+                        commands.pasteAdjustmentsForTool(toolID)
+                    }
+                    Button("Reset \(title)") {
+                        commands.resetTool(toolID)
+                    }
+
+                    Divider()
+
                     Button("Auto Size") {
                         workspaceManager.setToolSizeOption(nil, for: toolID)
                     }

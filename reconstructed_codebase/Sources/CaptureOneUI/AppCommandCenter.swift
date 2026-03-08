@@ -303,6 +303,37 @@ public final class AppCommandCenter: ObservableObject {
         )
     }
 
+    @Published public private(set) var copiedToolAdjustments: (toolID: String, style: Style)?
+
+    public func copyAdjustmentsForTool(_ toolID: String) {
+        guard let style = snapshotCurrentAdjustments(name: "\(toolID) Copy") else {
+            notice = AppNotice(
+                title: "Nothing to Copy",
+                message: "Select an image before copying \(toolID) adjustments."
+            )
+            return
+        }
+        copiedToolAdjustments = (toolID: toolID, style: style)
+    }
+
+    public func pasteAdjustmentsForTool(_ toolID: String) {
+        guard let copied = copiedToolAdjustments else {
+            notice = AppNotice(
+                title: "Clipboard Empty",
+                message: "Copy \(toolID) adjustments first."
+            )
+            return
+        }
+        guard adjustmentController.currentVariant != nil else {
+            notice = AppNotice(
+                title: "No Selection",
+                message: "Select an image before applying copied adjustments."
+            )
+            return
+        }
+        adjustmentController.applyStyle(copied.style)
+    }
+
     public func resetTool(_ toolID: String) {
         switch toolID {
         case "Exposure":
