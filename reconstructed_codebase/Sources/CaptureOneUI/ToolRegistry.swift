@@ -70,11 +70,11 @@ public enum ToolRegistry {
         case "NextCaptureAdjustments":
             return .adapter { _ in AnyView(NextCaptureAdjustmentsToolView()) }
         case "NextCaptureLocation":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(NextCaptureLocationToolView(config: context.config)) }
         case "NextCaptureMetadata":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(NextCaptureMetadataToolView(config: context.config)) }
         case "NextCaptureKeywords":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(NextCaptureKeywordsToolView(config: context.config)) }
         case "LivePreviewComposition":
             return .implemented { _ in AnyView(LivePreviewCompositionToolView()) }
         case "LivePreviewAdjustments":
@@ -84,15 +84,15 @@ public enum ToolRegistry {
         case "Normalize":
             return .implemented { _ in AnyView(NormalizeToolView()) }
         case "NextCaptureBackup":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(NextCaptureBackupToolView(config: context.config)) }
         case "Overlay":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(OverlayToolView(config: context.config)) }
         case "LiveForStudio":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(LiveForStudioToolView(config: context.config)) }
         case "CameraFocus":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(CameraFocusToolView(config: context.config)) }
         case "ExposureEvaluation":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(ExposureEvaluationToolView(adjustmentController: context.adjustmentController, config: context.config)) }
         case "Histogram":
             return .implemented { _ in AnyView(HistogramToolView()) }
         case "LocalAdjustments":
@@ -248,11 +248,11 @@ public enum ToolRegistry {
         case "Guides":
             return .implemented { _ in AnyView(GuidesToolView()) }
         case "BaseCharacteristics":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(BaseCharacteristicsToolView(config: context.config)) }
         case "Styles":
             return .implemented { context in AnyView(StyleInspectorTool(controller: context.adjustmentController)) }
         case "Settings":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(SettingsToolView(config: context.config)) }
         case "Navigator":
             return .implemented { _ in AnyView(NavigatorToolView()) }
         case "Focus":
