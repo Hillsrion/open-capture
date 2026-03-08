@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "be0e44f20144",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T01:25:00.195171Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/archive/film_grain_restoration_20260308/plan.md",
+    "conductor/archive/film_grain_restoration_20260308/spec.md",
+    "conductor/tracks/noise_sharpening_restoration_20260308/plan.md",
+    "conductor/tracks/noise_sharpening_restoration_20260308/spec.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "006088836d94",
+  "checkpoint_transcript_start": 799,
+  "transcript_lines_at_start": 799,
+  "token_usage": {
+    "input_tokens": 212332,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 210351,
+    "output_tokens": 233,
+    "api_call_count": 1
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T01:24:56.526069Z",
+    "agent_lines": 58,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 58,
+    "agent_percentage": 100
+  }
+}
