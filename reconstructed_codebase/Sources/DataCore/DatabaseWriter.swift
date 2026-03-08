@@ -97,4 +97,29 @@ public class DatabaseWriter {
         }
         sqlite3_finalize(statement)
     }
+    
+    /// Reconstructed logic for creating a new keyword entry.
+    public func createKeyword(uuid: String, name: String, parentPK: Int?) throws {
+        let query = "INSERT INTO ZKEYWORD (ZUUID, ZNAME, ZPARENT) VALUES (?, ?, ?);"
+        var statement: OpaquePointer?
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (uuid as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (name as NSString).utf8String, -1, nil)
+            if let parent = parentPK {
+                sqlite3_bind_int(statement, 3, Int32(parent))
+            } else {
+                sqlite3_bind_null(statement, 3)
+            }
+            
+            if sqlite3_step(statement) != SQLITE_DONE {
+                let error = String(cString: sqlite3_errmsg(db))
+                sqlite3_finalize(statement)
+                throw NSError(domain: "DataCore", code: 9, userInfo: [NSLocalizedDescriptionKey: error])
+            }
+        }
+        sqlite3_finalize(statement)
+    }
 }

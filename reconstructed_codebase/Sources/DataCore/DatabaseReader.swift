@@ -128,4 +128,26 @@ public class DatabaseReader {
         sqlite3_finalize(statement)
         return info
     }
+    
+    /// Reconstructed logic for fetching all keywords from ZKEYWORD.
+    public func fetchAllKeywords() throws -> [[String: Any]] {
+        let query = "SELECT ZUUID, ZNAME, ZPARENT, Z_PK FROM ZKEYWORD;"
+        var statement: OpaquePointer?
+        var results: [[String: Any]] = []
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            while sqlite3_step(statement) == SQLITE_ROW {
+                var row: [String: Any] = [:]
+                if let uuid = sqlite3_column_text(statement, 0) { row["ZUUID"] = String(cString: uuid) }
+                if let name = sqlite3_column_text(statement, 1) { row["ZNAME"] = String(cString: name) }
+                row["ZPARENT"] = sqlite3_column_int(statement, 2)
+                row["Z_PK"] = sqlite3_column_int(statement, 3)
+                results.append(row)
+            }
+        }
+        sqlite3_finalize(statement)
+        return results
+    }
 }
