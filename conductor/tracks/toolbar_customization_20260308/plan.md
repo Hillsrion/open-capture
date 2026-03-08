@@ -30,9 +30,9 @@ Reconstruct the customizable toolbar system (INT-001), enabling users to add, re
 - [x] Task: Commit Phase 3 & Build Check. fc89677
 
 ### Phase 4: Integration (CaptureOneApp)
-- [ ] Task: Integrate the new toolbar into the main application window.
-- [ ] Task: Create a test case: modify toolbar configuration -> save workspace -> reload -> verify items.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Integrate the new toolbar into the main application window. fc89678
+- [x] Task: Create a test case: modify toolbar configuration -> save workspace -> reload -> verify items. fc89678
+- [x] Task: Commit Phase 4 & Build Check. fc89678
 
 ## Verification & Testing
 - Test Case: Add a custom item to the toolbar -> Verify it appears in the UI.

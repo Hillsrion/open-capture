@@ -88,48 +88,8 @@ public struct CullingView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            // MARK: - 1. Top Toolbar (Grouped Icons)
-            HStack(spacing: 20) {
-                HStack(spacing: 12) {
-                    ToolbarButton(icon: "arrow.down.doc", label: "Import")
-                    ToolbarButton(icon: "arrow.up.doc", label: "Export")
-                    ToolbarButton(icon: "square.grid.2x2", label: "Cull")
-                }
-                
-                Spacer()
-                
-                HStack(spacing: 15) {
-                    ToolbarActionIcon(systemName: "arrow.counterclockwise") // Reset
-                    ToolbarActionIcon(systemName: "arrow.uturn.backward") // Undo
-                    ToolbarActionIcon(systemName: "arrow.uturn.forward") // Redo
-                    ToolbarActionIcon(systemName: "magicmouse") // Auto
-                }
-                
-                Spacer()
-                
-                // Cursor Tools Group
-                HStack(spacing: 8) {
-                    ToolbarCursorIcon(systemName: "cursorarrow", isSelected: true)
-                    ToolbarCursorIcon(systemName: "hand.raised", isSelected: false)
-                    ToolbarCursorIcon(systemName: "loupe", isSelected: false)
-                    ToolbarCursorIcon(systemName: "crop", isSelected: false)
-                    ToolbarCursorIcon(systemName: "arrow.triangle.2.circlepath", isSelected: false)
-                }
-                .padding(4)
-                .background(Color.white.opacity(0.05))
-                .cornerRadius(6)
-                
-                Spacer()
-                
-                HStack(spacing: 12) {
-                    ToolbarButton(icon: "sidebar.left", label: "Before")
-                    ToolbarButton(icon: "grid", label: "Grid")
-                    ToolbarButton(icon: "exclamationmark.triangle", label: "Exp. Warning")
-                }
-            }
-            .padding(.horizontal, 15)
-            .frame(height: 55)
-            .background(CaptureOneTheme.Colors.toolbarBackground)
+            // MARK: - 1. Top Toolbar (Dynamic & Customizable - INT-001)
+            MainToolbarView()
             
             Divider().background(Color.black)
             

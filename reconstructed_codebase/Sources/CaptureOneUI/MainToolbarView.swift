@@ -6,6 +6,7 @@ import AppCoreShared
 public struct MainToolbarView: View {
     @ObservedObject var workspaceManager = WorkspaceManager.shared
     @State private var selectedToolID: String = "Select"
+    @State private var showingCustomization: Bool = false
     
     public init() {}
     
@@ -29,6 +30,14 @@ public struct MainToolbarView: View {
         .padding(.horizontal, 10)
         .frame(height: 40)
         .background(CaptureOneTheme.Colors.toolbarBackground)
+        .contextMenu {
+            Button("Customize Toolbar...") {
+                showingCustomization = true
+            }
+        }
+        .sheet(isPresented: $showingCustomization) {
+            ToolbarCustomizationDialog()
+        }
         .overlay(
             Rectangle()
                 .fill(CaptureOneTheme.Colors.separator)
