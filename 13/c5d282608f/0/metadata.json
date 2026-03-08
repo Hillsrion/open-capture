@@ -1,0 +1,41 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "13c5d282608f",
+  "session_id": "7a21bfa7-fb45-471f-8f28-dff72addf8e6",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T03:43:49.110833Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/applescript_automation_20260308/plan.md",
+    "reconstructed_codebase/Sources/CaptureOneApp/ApplicationScripting.swift",
+    "reconstructed_codebase/Sources/CaptureOneApp/CaptureOne.sdef",
+    "reconstructed_codebase/Sources/CaptureOneApp/Info.plist"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "edacaa169e76",
+  "checkpoint_transcript_start": 1025,
+  "transcript_lines_at_start": 1025,
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T03:43:44.682716Z",
+    "agent_lines": 0,
+    "human_added": 124,
+    "human_modified": 2,
+    "human_removed": 0,
+    "total_committed": 124,
+    "agent_percentage": 0
+  }
+}
