@@ -15,6 +15,7 @@ public class POImporter: ObservableObject {
     
     @Published public private(set) var status: ImportStatus = .idle
     @Published public var discoveredURLs: [URL] = []
+    @Published public private(set) var sourceURL: URL?
     
     private let scanner = ImportSourceScanner()
     public var settings = ImportSettings()
@@ -25,6 +26,7 @@ public class POImporter: ObservableObject {
     /// Scans a source URL for supportable images.
     public func scanSource(url: URL) {
         status = .scanning
+        sourceURL = url
         
         // In original, this is done on a background queue.
         DispatchQueue.global(qos: .userInitiated).async {

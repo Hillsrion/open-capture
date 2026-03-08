@@ -79,7 +79,7 @@ These tools are now honestly exposed as missing. They should be treated as concr
 | TOOL-303 | `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, `Moire` | High | High | `PLACEHOLDER` |
 | TOOL-304 | `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, `NextCaptureBackup` | High | High | `DONE-RECENT` |
 | TOOL-305 | `BaseCharacteristics`, `Settings` | Med | Med | `DONE-RECENT` |
-| TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `PLACEHOLDER` |
+| TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `DONE-RECENT` |
 | TOOL-307 | `LivePreviewComposition`, `LivePreviewAdjustments`, `LivePreviewInfoTool`, `Normalize` | Med | Med | `PLACEHOLDER` |
 
 The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/ToolRegistry.swift).
