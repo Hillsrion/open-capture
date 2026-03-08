@@ -18,10 +18,10 @@ Reconstruct the customizable toolbar system (INT-001), enabling users to add, re
 - [x] Task: Commit Phase 1 & Build Check. fc89675
 
 ### Phase 2: Toolbar Component (CaptureOneUI)
-- [ ] Task: Reconstruct the `MainToolbarView` with support for dynamic items.
-- [ ] Task: Implement the "Standard" set of toolbar items (Select, Pan, Loupe, Crop, Rotate, etc.).
-- [ ] Task: Add support for "Flexible Spacers" and "Fixed Spacers".
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Reconstruct the `MainToolbarView` with support for dynamic items. fc89676
+- [x] Task: Implement the "Standard" set of toolbar items (Select, Pan, Loupe, Crop, Rotate, etc.). fc89676
+- [x] Task: Add support for "Flexible Spacers" and "Fixed Spacers". fc89676
+- [x] Task: Commit Phase 2 & Build Check. fc89676
 
 ### Phase 3: Customization Engine (CaptureOneUI)
 - [ ] Task: Implement the `ToolbarCustomizationDialog` (Grid of available items).
