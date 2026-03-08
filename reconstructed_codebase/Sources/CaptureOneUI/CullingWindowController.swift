@@ -82,10 +82,6 @@ public struct CullingView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            MainToolbarView()
-            
-            Divider().background(Color.black)
-            
             workspaceBody
         }
         .background(CaptureOneTheme.Colors.applicationBackground)

@@ -121,6 +121,14 @@ public final class COWindowManager {
         )
         
         window.contentView = NSHostingView(rootView: contentView)
+        
+        // Attach native NSToolbar (UI-207)
+        let config = WorkspaceManager.shared.activeWorkspace.toolbarConfiguration
+        let nativeToolbar = CONativeToolbar(configuration: config, commands: AppCommandCenter.shared)
+        window.toolbar = nativeToolbar
+        window.titleVisibility = .visible
+        window.titlebarAppearsTransparent = false
+        
         let delegate = DocumentWindowDelegate(manager: self, sessionID: session.documentUUID)
         windowDelegates[session.documentUUID] = delegate
         window.delegate = delegate
