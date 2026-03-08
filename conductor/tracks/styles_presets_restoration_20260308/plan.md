@@ -16,10 +16,10 @@
 - [x] Task: Implement drag-and-drop tool reordering within a tab. a5707cb
 - [x] Task: Add the ability to add/remove specific tool inspectors to a tab. a5707cb
 - [x] Task: Implement floating tool window support (simulated). a5707cb
-- [~] Task: Commit Phase 3 & Build Check.
+- [x] Task: Commit Phase 3 & Build Check. de5b6dd
 
 ## Phase 4: Persistence & Validation (CaptureOneUI / AppCoreShared)
-- [ ] Task: Implement workspace JSON serialization and local file persistence.
-- [ ] Task: Bind the UI to persist tool collapsed states automatically.
-- [ ] Task: Create a test case: switch workspace -> verify tool order -> restart -> verify layout recovery.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Implement workspace JSON serialization and local file persistence. a5707cb
+- [x] Task: Bind the UI to persist tool collapsed states automatically. a5707cb
+- [x] Task: Create a test case: switch workspace -> verify tool order -> restart -> verify layout recovery. a5707cb
+- [x] Task: Commit Phase 4 & Build Check. a5707cb

@@ -53,6 +53,25 @@ public class WorkspaceManager: ObservableObject {
         self.activeWorkspace = WorkspaceManager.createDefaultWorkspace()
     }
     
+    /// Reconstructed logic for persisting workspace configuration.
+    public func saveWorkspace() {
+        do {
+            let data = try JSONEncoder().encode(activeWorkspace)
+            let url = getPersistenceURL(for: activeWorkspace.name)
+            try data.write(to: url)
+            print("[Workspace] Saved workspace: \(activeWorkspace.name)")
+        } catch {
+            print("[Workspace] Failed to save workspace: \(error)")
+        }
+    }
+    
+    private func getPersistenceURL(for name: String) -> URL {
+        let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+        let dir = paths[0].appendingPathComponent("CaptureOne/Workspaces", isDirectory: true)
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("\(name).coworkspace")
+    }
+    
     public static func createDefaultWorkspace() -> Workspace {
         let adjustTab = WorkspaceTab(id: "ADJUST", name: "Adjust", iconName: "slider.horizontal.3", tools: [
             ToolConfiguration(id: "Histogram"),
