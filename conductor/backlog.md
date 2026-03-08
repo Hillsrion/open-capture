@@ -31,7 +31,7 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 | ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ✅ Done |
 | ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ✅ Done |
 | ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ✅ Done |
-| ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ⏳ Pending |
+| ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ✅ Done |
 | ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ⏳ Pending |
 | ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ⏳ Pending |
 | ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ✅ Done |
@@ -98,4 +98,4 @@ This backlog tracks all features and modules required to reach a 100% high-fidel
 ---
 
 ## 🚀 Active Focus
-Currently working on **ENG-006** (Lens Correction) within the `lens_correction_restoration` track.
+Selecting next priority track from the backlog...

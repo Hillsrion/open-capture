@@ -77,11 +77,22 @@ class ImportTests: XCTestCase {
     func testPOImporterFullFlow() {
         let importer = POImporter()
         let tmpDir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-        try? FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)
-        defer { try? FileManager.default.removeItem(at: tmpDir) }
+        let destDir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         
-        let file1 = tmpDir.appendingPathComponent("test.jpg")
+        try? FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)
+        try? FileManager.default.createDirectory(at: destDir, withIntermediateDirectories: true)
+        
+        defer { 
+            try? FileManager.default.removeItem(at: tmpDir)
+            try? FileManager.default.removeItem(at: destDir)
+        }
+        
+        let file1 = tmpDir.appendingPathComponent("dsc001.jpg")
         try? "test".write(to: file1, atomically: true, encoding: .utf8)
+        
+        importer.settings.destinationFolderType = .customFolder
+        importer.settings.destinationCustomPath = destDir.path
+        importer.settings.namingFormat = "Imported_[Image Name]"
         
         let expectation = XCTestExpectation(description: "Import completion")
         
@@ -96,6 +107,10 @@ class ImportTests: XCTestCase {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 if case .completed(let count) = importer.status {
                     XCTAssertEqual(count, 1)
+                    
+                    // Verify file existence with new name
+                    let expectedDest = destDir.appendingPathComponent("Imported_dsc001.jpg")
+                    XCTAssertTrue(FileManager.default.fileExists(atPath: expectedDest.path))
                     
                     // Verify database registration
                     let reader = DataCoreManager.shared.reader()

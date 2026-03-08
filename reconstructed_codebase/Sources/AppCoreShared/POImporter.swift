@@ -48,19 +48,30 @@ public class POImporter: ObservableObject {
             var importedCount = 0
             let total = Float(itemsToImport.count)
             
+            let evaluator = TokenEvaluator()
+            var sequence = 1
+            
             for url in itemsToImport {
-                // Task 3: Implement file copying logic
+                // Task 3: Implement file copying logic with token-based renaming
+                let context = TokenEvaluator.Context(
+                    imageName: url.deletingPathExtension().lastPathComponent,
+                    date: Date(),
+                    sequence: sequence,
+                    jobName: self.settings.metadata.jobName
+                )
+                
+                let newFileName = evaluator.evaluate(format: self.settings.namingFormat, context: context)
                 let destinationURL: URL
+                
                 if self.settings.destinationFolderType == .insideCatalog {
                     // Placeholder for catalog path resolution
-                    destinationURL = url 
+                    destinationURL = url.deletingLastPathComponent().appendingPathComponent(newFileName).appendingPathExtension(url.pathExtension)
                 } else {
                     let customPathURL = URL(fileURLWithPath: self.settings.destinationCustomPath)
-                    destinationURL = customPathURL.appendingPathComponent(url.lastPathComponent)
+                    destinationURL = customPathURL.appendingPathComponent(newFileName).appendingPathExtension(url.pathExtension)
                 }
                 
                 do {
-                    // In a real app, we would rename based on tokens here
                     if destinationURL != url {
                         if !FileManager.default.fileExists(atPath: destinationURL.deletingLastPathComponent().path) {
                             try FileManager.default.createDirectory(at: destinationURL.deletingLastPathComponent(), withIntermediateDirectories: true)
@@ -73,12 +84,13 @@ public class POImporter: ObservableObject {
                     let uuid = UUID().uuidString
                     try writer.registerImportedImage(uuid: uuid, path: destinationURL.path, fileName: destinationURL.lastPathComponent)
                     
-                    print("[POImporter] Imported and Registered \(url.lastPathComponent)")
+                    print("[POImporter] Imported and Registered \(destinationURL.lastPathComponent)")
                     
                 } catch {
                     print("[POImporter] Failed to import \(url.lastPathComponent): \(error)")
                 }
                 
+                sequence += 1
                 importedCount += 1
                 let progress = Float(importedCount) / total
                 
