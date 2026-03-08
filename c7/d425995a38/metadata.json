@@ -3,7 +3,7 @@
   "checkpoint_id": "c7d425995a38",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 2,
   "files_touched": [
     ".vscode/settings.json",
     "conductor/tracks/eip_packaging_restoration_20260308/plan.md",
@@ -19,13 +19,19 @@
       "transcript": "/c7/d425995a38/0/full.jsonl",
       "content_hash": "/c7/d425995a38/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/c7/d425995a38/1/metadata.json",
+      "transcript": "/c7/d425995a38/1/full.jsonl",
+      "content_hash": "/c7/d425995a38/1/content_hash.txt",
+      "prompt": "/c7/d425995a38/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 36100199,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 31785687,
+    "output_tokens": 74906,
+    "api_call_count": 312
   }
 }
