@@ -326,8 +326,14 @@ public enum ToolRegistry {
                     selectedVariant: context.adjustmentController.currentVariant
                 ))
             }
-        case "ImporterFilters", "ImportFileInfo", "FaceFocus", "TimeBasedGrouping":
-            return .unavailable(toolID)
+        case "ImporterFilters":
+            return .implemented { context in AnyView(ImporterFiltersToolView(config: context.config)) }
+        case "ImportFileInfo":
+            return .implemented { context in AnyView(ImportFileInfoToolView(config: context.config)) }
+        case "FaceFocus":
+            return .implemented { context in AnyView(FaceFocusToolView(config: context.config)) }
+        case "TimeBasedGrouping":
+            return .implemented { context in AnyView(TimeBasedGroupingToolView(config: context.config)) }
         default:
             return .unavailable(toolID)
         }
