@@ -39,6 +39,12 @@ public struct BrowserOverlayView: View {
                             .font(.system(size: 11))
                             .shadow(radius: 1)
                     }
+                    if (image.path as NSString).pathExtension.lowercased() == "eip" {
+                        Image(systemName: "archivebox.fill") // EIP Indicator (CORE-006)
+                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
+                            .font(.system(size: 10))
+                            .shadow(radius: 1)
+                    }
                     if let v = variant, v.isModified {
                         Image(systemName: "pencil.circle.fill")
                             .foregroundColor(.white)

@@ -109,6 +109,16 @@ struct ImportSettingsSidebar: View {
                     .font(.system(size: 11))
                 }
                 
+                // EIP Handling (CORE-006)
+                COToolSection("Options") {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Toggle("Pack as EIP", isOn: $importer.settings.alwaysPackAsEIP)
+                            .font(.system(size: 11))
+                        Toggle("Unpack EIP", isOn: $importer.settings.alwaysUnpackEIP)
+                            .font(.system(size: 11))
+                    }
+                }
+                
                 Spacer()
             }
             .padding(10)

@@ -92,9 +92,22 @@ struct RecipeRow: View {
             VStack(alignment: .leading) {
                 Text(recipe.name)
                     .font(.system(size: 12))
-                Text("\(recipe.format.rawValue) - \(recipe.iccProfile)")
-                    .font(.system(size: 10))
-                    .foregroundColor(.secondary)
+                
+                HStack(spacing: 8) {
+                    Text("\(recipe.format.rawValue) - \(recipe.iccProfile)")
+                        .font(.system(size: 10))
+                        .foregroundColor(.secondary)
+                    
+                    if recipe.format == .dng || recipe.format == .jpeg { // Mock: Assuming RAW/DNG can be EIP
+                        Toggle("EIP", isOn: Binding(
+                            get: { recipe.packAsEIP },
+                            set: { recipe.packAsEIP = $0 }
+                        ))
+                        .toggleStyle(.checkbox)
+                        .font(.system(size: 9))
+                        .foregroundColor(.secondary)
+                    }
+                }
             }
             Spacer()
         }

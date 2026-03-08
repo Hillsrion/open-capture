@@ -30,10 +30,10 @@ Reconstruct the EIP (Enhanced Image Package) system (CORE-006), enabling the con
 - [x] Task: Commit Phase 3 & Build Check. fc89685
 
 ### Phase 4: UI & Tool Integration (CaptureOneUI)
-- [ ] Task: Add "Pack as EIP" checkbox to the Export and Import dialogs.
-- [ ] Task: Implement visual indicator for EIP files in the `Grid View Browser`.
-- [ ] Task: Create a test case: pack variant as EIP -> verify contents -> unpack -> verify adjustments are intact.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Add "Pack as EIP" checkbox to the Export and Import dialogs. fc89686
+- [x] Task: Implement visual indicator for EIP files in the `Grid View Browser`. fc89686
+- [x] Task: Create a test case: pack variant as EIP -> verify contents -> unpack -> verify adjustments are intact. fc89686
+- [x] Task: Commit Phase 4 & Build Check. fc89686
 
 ## Verification & Testing
 - Test Case: Pack a Nikon .NEF with masks as EIP -> Verify resulting file structure.
