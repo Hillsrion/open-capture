@@ -18,15 +18,15 @@ Reconstruct the Print Layout Window (UI-012), enabling users to format and layou
 - [x] Task: Commit Phase 1 & Build Check. fc89687
 
 ### Phase 2: Core Print Layout UI (CaptureOneUI)
-- [ ] Task: Implement `PrintLayoutView` using `Canvas` or `GeometryReader` to draw the paper bounds and image cells.
-- [ ] Task: Implement drag-and-drop or selection logic to place images into cells.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Implement `PrintLayoutView` using `Canvas` or `GeometryReader` to draw the paper bounds and image cells. fc89688
+- [x] Task: Implement drag-and-drop or selection logic to place images into cells. fc89688
+- [x] Task: Commit Phase 2 & Build Check. fc89688
 
 ### Phase 3: Settings Sidebar (CaptureOneUI)
-- [ ] Task: Create `PrintSettingsSidebar` with controls for margins (Top, Bottom, Left, Right).
-- [ ] Task: Add controls for grid layout (Rows, Columns, Spacing).
-- [ ] Task: Wire the sidebar controls to update the `PrintTemplate` in real-time.
-- [ ] Task: Commit Phase 3 & Build Check.
+- [x] Task: Create `PrintSettingsSidebar` with controls for margins (Top, Bottom, Left, Right). fc89688
+- [x] Task: Add controls for grid layout (Rows, Columns, Spacing). fc89688
+- [x] Task: Wire the sidebar controls to update the `PrintTemplate` in real-time. fc89688
+- [x] Task: Commit Phase 3 & Build Check. fc89688
 
 ### Phase 4: Integration & Window Controller (CaptureOneUI / App)
 - [ ] Task: Assemble the `PrintWindowController` integrating the layout view and sidebar.
