@@ -36,12 +36,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let adjustmentController = AdjustmentToolController()
         let recipeManager = OutputRecipeManager.defaultManager()
         let batchQueue = BatchQueue()
+        let mockSession = SessionBase(documentUUID: "system-session", type: 0, context: nil)
         
         let contentView = CullingView(
             browser: browser,
             adjustmentController: adjustmentController,
             recipeManager: recipeManager,
-            batchQueue: batchQueue
+            batchQueue: batchQueue,
+            session: mockSession
         )
         window.contentView = NSHostingView(rootView: contentView)
         

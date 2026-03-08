@@ -20,6 +20,7 @@ public class CullingWindowController: NSWindowController {
     public var adjustmentController = AdjustmentToolController()
     public var recipeManager = OutputRecipeManager.defaultManager()
     public var batchQueue = BatchQueue()
+    public var session: SessionBase?
     
     public override init(window: NSWindow?) {
         super.init(window: window)
@@ -40,6 +41,10 @@ public class CullingWindowController: NSWindowController {
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
         
+        // Initialize a mock session for the UI
+        session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: context)
+        session?.rootFolder = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.path
+        
         // Add a default recipe
         recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: context))
         
@@ -54,7 +59,8 @@ public class CullingWindowController: NSWindowController {
             browser: browser,
             adjustmentController: adjustmentController,
             recipeManager: recipeManager,
-            batchQueue: batchQueue
+            batchQueue: batchQueue,
+            session: session ?? SessionBase(documentUUID: "mock", type: 0, context: context)
         )
         window?.contentView = NSHostingView(rootView: contentView)
     }
@@ -67,15 +73,17 @@ public struct CullingView: View {
     @ObservedObject var adjustmentController: AdjustmentToolController
     @ObservedObject var recipeManager: OutputRecipeManager
     @ObservedObject var batchQueue: BatchQueue
+    @ObservedObject var session: SessionBase
     
     @State private var selectedImage: ImageBase?
     @State private var selectedToolTab: String = "ADJUST"
     
-    public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue) {
+    public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
         self.browserWrapper = BrowserWrapper(browser: browser)
         self.adjustmentController = adjustmentController
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
+        self.session = session
         self._selectedImage = State(initialValue: browser.dataSource.first)
     }
     
@@ -194,6 +202,7 @@ public struct CullingView: View {
                                     MetadataInspectorView(image: selectedImage)
                                 }
                             } else if selectedToolTab == "LIBRARY" {
+                                LibraryToolView(session: session)
                                 FilterToolView(predicate: $adjustmentController.activePredicate)
                             } else if selectedToolTab == "COLOR" {
                                 WhiteBalanceToolView(
