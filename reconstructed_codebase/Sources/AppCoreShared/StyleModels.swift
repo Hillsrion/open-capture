@@ -6,11 +6,13 @@ public struct Style: Identifiable, Codable {
     public let id: UUID
     public let name: String
     public let adjustments: [String: AnyCodable] // Reconstructed as AnyCodable for flexibility
+    public var smartAdjustmentsDescriptor: SmartAdjustmentsDescriptor? // AI-002
     
-    public init(id: UUID = UUID(), name: String, adjustments: [String: AnyCodable]) {
+    public init(id: UUID = UUID(), name: String, adjustments: [String: AnyCodable], smartAdjustments: SmartAdjustmentsDescriptor? = nil) {
         self.id = id
         self.name = name
         self.adjustments = adjustments
+        self.smartAdjustmentsDescriptor = smartAdjustments
     }
 }
 

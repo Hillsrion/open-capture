@@ -35,7 +35,11 @@ public class StyleManager: ObservableObject {
             Style(name: "Teal & Orange", adjustments: ["ZKELVIN": AnyCodable(6500.0), "ZTINT": AnyCodable(10.0)])
         ])
         
-        self.builtInStyles = StylePack(name: "Built-in Styles", childPacks: [bwPack, cinematicPack])
+        let smartPack = StylePack(name: "Smart Adjustments", styles: [
+            Style(name: "Smart Portrait Match", adjustments: [:], smartAdjustments: SmartAdjustmentsDescriptor(exposureEnabled: true, whiteBalanceEnabled: true))
+        ])
+        
+        self.builtInStyles = StylePack(name: "Built-in Styles", childPacks: [bwPack, cinematicPack, smartPack])
         self.userStyles = StylePack(name: "User Styles")
     }
     

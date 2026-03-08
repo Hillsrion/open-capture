@@ -84,8 +84,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Keystone & Perspective Tools Restoration**
+- [x] **Track: Keystone & Perspective Tools Restoration**
   *Link: [./tracks/keystone_restoration_20260308/](./tracks/keystone_restoration_20260308/)*
+
+---
+
+- [~] **Track: Smart Adjustments Restoration**
+  *Link: [./tracks/smart_adjustments_restoration_20260308/](./tracks/smart_adjustments_restoration_20260308/)*
 
 ---
 
