@@ -94,8 +94,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Toolbar & Customization Restoration**
+- [x] **Track: Toolbar & Customization Restoration**
   *Link: [./tracks/toolbar_customization_20260308/](./tracks/toolbar_customization_20260308/)*
+
+---
+
+- [~] **Track: Soft Proofing Engine Restoration**
+  *Link: [./tracks/soft_proofing_restoration_20260308/](./tracks/soft_proofing_restoration_20260308/)*
 
 ---
 
