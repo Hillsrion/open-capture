@@ -3,10 +3,10 @@ import CoreGraphics
 
 /// Reconstructed Data Model for Heal/Clone repair arrows (UI-006).
 /// Based on disassembly of RepairArrow.
-public class RepairArrow: Identifiable, Codable {
+public class RepairArrow: Identifiable, Codable, ObservableObject {
     public let id: String
-    public var sourcePoint: CGPoint
-    public var destinationPoint: CGPoint
+    @Published public var sourcePoint: CGPoint
+    @Published public var destinationPoint: CGPoint
     public var type: ArrowType
     
     public enum ArrowType: Int, Codable {
