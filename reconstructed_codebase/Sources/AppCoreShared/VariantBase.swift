@@ -68,6 +68,9 @@ public class VariantBase: BaseObject {
     // MARK: - Metadata (ENG-005)
     public var keywords: [KeywordEntry] = []
     
+    // MARK: - Annotations (UI-007)
+    public var annotations: MCAnnotations = MCAnnotations()
+    
     // MARK: - Capabilities (Inferred from MOVariant metadata)
     @objc public var canApplyLensCorrection: Bool {
         return image?.canApplyLensCorrection ?? false
