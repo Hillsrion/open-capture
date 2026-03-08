@@ -144,6 +144,46 @@ public struct DetailInspectorTool: View {
     }
 }
 
+/// Reconstructed high-fidelity Styles & Presets tool (UI-010).
+public struct StyleInspectorTool: View {
+    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var styleManager = StyleManager.shared
+    
+    public var body: some View {
+        VStack(spacing: 0) {
+            COToolSection("Styles & Presets") {
+                List(styleManager.getStyleTree(), children: \.children) { item in
+                    HStack {
+                        Image(systemName: item.isFolder ? "folder.fill" : "slider.horizontal.3")
+                            .font(.system(size: 10))
+                            .foregroundColor(item.isFolder ? .gray : CaptureOneTheme.Colors.activeHighlight)
+                        
+                        Text(item.name)
+                            .font(.system(size: 11))
+                        
+                        Spacer()
+                    }
+                    .padding(.vertical, 2)
+                    .contentShape(Rectangle())
+                    .onHover { isHovering in
+                        if !item.isFolder, let style = item.style {
+                            controller.temporarilyApplyStyle(isHovering ? style : nil)
+                        }
+                    }
+                    .onTapGesture {
+                        if !item.isFolder, let style = item.style {
+                            // Task: Implement permanent applyStyle in Phase 3
+                            print("[UI] Style clicked: \(style.name)")
+                        }
+                    }
+                }
+                .listStyle(SidebarListStyle())
+                .frame(minHeight: 300)
+            }
+        }
+    }
+}
+
 /// Reconstructed high-fidelity Histogram tool.
 public struct HistogramToolView: View {
     public init() {}

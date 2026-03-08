@@ -186,6 +186,9 @@ public struct CullingView: View {
                                         whites: $adjustmentController.whites,
                                         blacks: $adjustmentController.blacks
                                     )
+                                    
+                                    StyleInspectorTool(controller: adjustmentController)
+                                    
                                     POLevelsControl(
                                         blackPoint: $adjustmentController.levelsBlackPoint,
                                         whitePoint: $adjustmentController.levelsWhitePoint,

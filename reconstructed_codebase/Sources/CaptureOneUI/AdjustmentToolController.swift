@@ -72,6 +72,10 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var sharpThreshold: Double = 1.0
     @Published public var sharpHalo: Double = 0.0
 
+    // Live Preview State (UI-010)
+    private var originalSettings: [String: Any]?
+    @Published public var previewingStyle: Style?
+
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
     
@@ -132,6 +136,58 @@ public class AdjustmentToolController: ObservableObject {
                 self.commitChanges(to: self.currentVariant)
             }
             .store(in: &cancellables)
+    }
+    
+    /// Temporarily applies a style for live preview (hover).
+    public func temporarilyApplyStyle(_ style: Style?) {
+        guard let variant = currentVariant, let mc = variant.mcVariant else { return }
+        
+        if let style = style {
+            // 1. Capture original state if not already captured
+            if originalSettings == nil {
+                originalSettings = [:]
+                // Simplified: Capture key adjustment values
+                let keys = ["ZEXPOSURE", "ZCONTRAST", "ZBRIGHTNESS", "ZSATURATION", "ZKELVIN", "ZTINT"]
+                for key in keys {
+                    originalSettings?[key] = mc.objectForKey(key)
+                }
+            }
+            
+            // 2. Apply style adjustments
+            isUpdatingFromModel = true
+            for (key, val) in style.adjustments {
+                applyAdjustmentValue(val.value, forKey: key)
+            }
+            isUpdatingFromModel = false
+            
+            previewingStyle = style
+            commitChanges(to: variant)
+        } else {
+            // 3. Revert to original state
+            if let original = originalSettings {
+                isUpdatingFromModel = true
+                for (key, val) in original {
+                    applyAdjustmentValue(val, forKey: key)
+                }
+                isUpdatingFromModel = false
+                originalSettings = nil
+            }
+            previewingStyle = nil
+            commitChanges(to: variant)
+        }
+    }
+    
+    private func applyAdjustmentValue(_ value: Any, forKey key: String) {
+        // Map dictionary keys to published properties
+        switch key {
+        case "ZEXPOSURE": exposure = (value as? Float) ?? Float(value as? Double ?? 0.0)
+        case "ZCONTRAST": contrast = (value as? Float) ?? Float(value as? Double ?? 0.0)
+        case "ZBRIGHTNESS": brightness = (value as? Float) ?? Float(value as? Double ?? 0.0)
+        case "ZSATURATION": saturation = (value as? Float) ?? Float(value as? Double ?? 0.0)
+        case "ZKELVIN": kelvin = (value as? Float) ?? Float(value as? Double ?? 5000.0)
+        case "ZTINT": tint = (value as? Float) ?? Float(value as? Double ?? 0.0)
+        default: break
+        }
     }
     
     /// Binds the controller to a specific variant.
