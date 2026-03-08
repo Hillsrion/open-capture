@@ -7,6 +7,7 @@ import AppCoreShared
 public struct LiveViewOverlayView: View {
     @ObservedObject var liveView = LiveViewEngine.shared
     let camera: P1CaptureCore_Camera?
+    @State private var showFocusMask: Bool = true // TETH-004
     
     public init(camera: P1CaptureCore_Camera?) {
         self.camera = camera
@@ -15,34 +16,45 @@ public struct LiveViewOverlayView: View {
     public var body: some View {
         ZStack {
             if let frame = liveView.currentFrame {
-                Image(nsImage: frame)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .overlay(
-                        GeometryReader { geo in
-                            ZStack {
-                                // Reconstructed Aspect Ratio Overlay (TETH-003)
-                                // Based on cropMatchesCurrentCameraCrop
-                                if let cam = camera, !cropMatches(for: frame, camera: cam) {
-                                    Color.black.opacity(0.4)
-                                        .mask(
-                                            Rectangle()
-                                                .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.8)
-                                                .background(Color.white)
-                                                .compositingGroup()
-                                                .luminanceToAlpha()
-                                        )
-                                }
-                                
-                                // Focus Indicators
-                                // In the real app, these are driven by focusStatus and focusMeter
-                                focusIndicator(in: geo.size)
-                                
-                                // Grid Lines (Inferred from metadata)
-                                GridOverlayView()
+                ZStack {
+                    Image(nsImage: frame)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    
+                    // Focus Mask Overlay (TETH-004)
+                    if showFocusMask {
+                        FocusMaskOverlay(image: frame)
+                            .blendMode(.screen)
+                    }
+                }
+                .overlay(
+                    GeometryReader { geo in
+                        ZStack {
+                            // Reconstructed Aspect Ratio Overlay (TETH-003)
+                            // Based on cropMatchesCurrentCameraCrop
+                            if let cam = camera, !cropMatches(for: frame, camera: cam) {
+                                Color.black.opacity(0.4)
+                                    .mask(
+                                        Rectangle()
+                                            .frame(width: geo.size.width * 0.8, height: geo.size.height * 0.8)
+                                            .background(Color.white)
+                                            .compositingGroup()
+                                            .luminanceToAlpha()
+                                    )
                             }
+                            
+                            // Focus Indicators
+                            // In the real app, these are driven by focusStatus and focusMeter
+                            focusIndicator(in: geo.size)
+                            
+                            // Grid Lines (Inferred from metadata)
+                            GridOverlayView()
+                            
+                            // Focus Mask Toggle (UI hint)
+                            focusMaskToggle
                         }
-                    )
+                    }
+                )
             } else {
                 VStack {
                     ProgressView()
@@ -69,6 +81,47 @@ public struct LiveViewOverlayView: View {
             .stroke(Color.green, lineWidth: 1)
             .frame(width: 100, height: 100)
             .position(x: size.width / 2, y: size.height / 2)
+    }
+    
+    private var focusMaskToggle: some View {
+        Button(action: { showFocusMask.toggle() }) {
+            Image(systemName: showFocusMask ? "eye.fill" : "eye.slash.fill")
+                .foregroundColor(.white)
+                .padding(8)
+                .background(Color.black.opacity(0.5))
+                .clipShape(Circle())
+        }
+        .position(x: 30, y: 30)
+    }
+}
+
+/// Reconstructed Focus Mask engine (TETH-004).
+/// Simulates high-frequency edge detection.
+struct FocusMaskOverlay: View {
+    let image: NSImage
+    
+    var body: some View {
+        // In a real app, this would be a Metal shader or CoreImage filter
+        // detecting high-frequency content (Sobel/Laplacian).
+        // Here we simulate it by overlaying a tinted version of the focus area.
+        GeometryReader { geo in
+            Canvas { context, size in
+                // Mock: Draw "sharp" areas in green
+                // This is a placeholder for the actual GPU-based focus mask.
+                context.fill(Path(CGRect(x: size.width/2 - 50, y: size.height/2 - 50, width: 100, height: 100)), with: .color(.green.opacity(0.4)))
+                
+                // Add some "noise" to simulate real-time mask jitter
+                for _ in 0...10 {
+                    let rect = CGRect(
+                        x: CGFloat.random(in: 0...size.width),
+                        y: CGFloat.random(in: 0...size.height),
+                        width: 10,
+                        height: 10
+                    )
+                    context.fill(Path(rect), with: .color(.green.opacity(0.3)))
+                }
+            }
+        }
     }
 }
 

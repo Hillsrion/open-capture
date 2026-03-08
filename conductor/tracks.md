@@ -74,8 +74,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Live View Engine Restoration**
+- [x] **Track: Live View Engine Restoration**
   *Link: [./tracks/styles_presets_restoration_20260308/](./tracks/styles_presets_restoration_20260308/)*
+
+---
+
+- [~] **Track: Tethered Capture Enhancements (Next Capture Naming & Adjustments)**
+  *Link: [./tracks/tethered_enhancements_20260308/](./tracks/tethered_enhancements_20260308/)*
 
 ---
 

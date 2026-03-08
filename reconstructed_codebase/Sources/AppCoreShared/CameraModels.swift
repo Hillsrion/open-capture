@@ -44,6 +44,23 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     @Published public var liveViewState: LiveViewState = .off
     @Published public var properties: [P1CaptureCore_Property] = []
     
+    // MARK: - Next Capture Naming (TETH-003)
+    @Published public var namingFormat: String = "[Camera]_[Counter]"
+    @Published public var namingCounter: Int = 1
+    
+    public enum NextCaptureAdjustments: String, Codable {
+        case copyFromLast = "Copy from Last"
+        case copyFromPrimary = "Copy from Primary"
+        case specificStyle = "Specific Style"
+        case neutral = "Neutral"
+    }
+    @Published public var nextCaptureAdjustments: NextCaptureAdjustments = .copyFromLast
+    
+    public var nextCaptureName: String {
+        let tokens = CaptureNamingFormatter.parse(formatString: namingFormat)
+        return CaptureNamingFormatter.format(tokens: tokens, cameraName: name, counter: namingCounter)
+    }
+    
     public init(id: String, name: String) {
         self.id = id
         self.name = name
@@ -81,7 +98,10 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
         // Simulate capture delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isCapturing = false
-            print("[Capture] Image captured.")
+            print("[Capture] Image captured: \(self.nextCaptureName)")
+            
+            // Increment naming counter (TETH-003)
+            self.namingCounter += 1
             
             // Auto-resume Live View after capture (ENG-002)
             if wasLiveViewActive {

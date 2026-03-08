@@ -68,6 +68,9 @@ public struct CameraSettingsTool: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     
+                    // 2.75 Next Capture Settings (TETH-003)
+                    NextCaptureSettingsTool(camera: camera)
+                    
                     // 3. Capture Button
                     Button(action: { camera.shutterRelease() }) {
                         HStack {
