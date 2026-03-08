@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "c7d425995a38",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    ".vscode/settings.json",
+    "conductor/tracks/eip_packaging_restoration_20260308/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/ImportModels.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/POImporter.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/ToolbarModels.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/MainToolbarView.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/ToolbarCustomizationDialog.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/c7/d425995a38/0/metadata.json",
+      "transcript": "/c7/d425995a38/0/full.jsonl",
+      "content_hash": "/c7/d425995a38/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
