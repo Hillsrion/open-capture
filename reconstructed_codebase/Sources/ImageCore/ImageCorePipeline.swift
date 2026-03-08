@@ -109,6 +109,11 @@ public class ImageCorePipeline {
             // (Finalize merging RGB back omitted for simulation)
         }
         
+        // --- Film Grain (ENG-008) ---
+        if settings.filmGrain.amount > 0 {
+            FilmGrainKernel.apply(to: &floatBuffer, count: pixelCount, settings: settings.filmGrain)
+        }
+        
         // Finalize: Copy floatBuffer back to output (simplified cast)
         // ...
     }
