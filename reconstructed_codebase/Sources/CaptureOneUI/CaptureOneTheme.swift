@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import AppCoreShared
 
 /// Reconstructed visual theme for Capture One (High Fidelity).
 /// Based on version 16.5.9.7 and visual analysis of the reference UI.

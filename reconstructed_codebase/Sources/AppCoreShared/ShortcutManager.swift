@@ -17,6 +17,25 @@ public class ShortcutManager: ObservableObject {
         actionRegistry[id] = action
     }
     
+    /// Reconstructed logic for persisting custom shortcuts.
+    public func saveActiveSet() {
+        do {
+            let data = try JSONEncoder().encode(activeSet)
+            let url = getPersistenceURL(for: activeSet.name)
+            try data.write(to: url)
+            print("[ShortcutManager] Saved set: \(activeSet.name)")
+        } catch {
+            print("[ShortcutManager] Failed to save set: \(error)")
+        }
+    }
+    
+    private func getPersistenceURL(for name: String) -> URL {
+        let paths = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+        let dir = paths[0].appendingPathComponent("CaptureOne/Shortcuts", isDirectory: true)
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("\(name).coshortcuts")
+    }
+    
     /// Triggers the action associated with a shortcut if it exists.
     public func handleShortcut(_ shortcut: KeyboardShortcut) -> Bool {
         if let match = activeSet.shortcuts.first(where: { $0.key == shortcut.key && $0.modifiers == shortcut.modifiers }) {
