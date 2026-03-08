@@ -247,6 +247,19 @@ public struct CullingView: View {
             ShortcutEditorSheet()
         case .print:
             PrintSheetHost()
+        case .sessionUpgrade:
+            if let session = commands.session {
+                SessionUpgradeDialog(
+                    session: session,
+                    onUpgrade: {
+                        commands.performUpgrade()
+                        commands.presentedSheet = nil
+                    },
+                    onCancel: {
+                        commands.presentedSheet = nil
+                    }
+                )
+            }
         }
     }
 }

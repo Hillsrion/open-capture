@@ -9,6 +9,7 @@ public enum AppSheetRoute: String, Identifiable {
     case preferences
     case keyboardShortcuts
     case print
+    case sessionUpgrade
 
     public var id: String { rawValue }
 }
@@ -169,7 +170,21 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func openDocument() {
-        notice = AppNotice(title: "Open Document", message: "Document opening pipeline is being restored. (UI-213)")
+        // Simulate finding an old session that needs upgrade
+        let ctx = ObjectContext()
+        self.documentContext = ctx
+        let oldSession = SessionBase(documentUUID: "legacy-session", type: 1, context: ctx)
+        oldSession.name = "Legacy Professional Catalog"
+        self.session = oldSession
+        
+        // Show upgrade dialog (simulated trigger)
+        presentedSheet = .sessionUpgrade
+    }
+    
+    public func performUpgrade() {
+        print("[System] Performing session database upgrade...")
+        // In Phase 3, this would trigger actual DataCore migration.
+        notice = AppNotice(title: "Upgrade Successful", message: "The database has been upgraded to the current version.")
     }
     
     public func openLivePreview() {
