@@ -141,20 +141,46 @@ struct SessionFolderRow: View {
             
             Divider()
             
+            Button("New inside \"\(type.defaultName)\"...") {}
+            Button("Rename \"\(type.defaultName)\"...") {}
+            
+            Divider()
+            
+            Button("Sort Albums and Favorites by Name") {}
+            Button("Remove from Favorites") {}
+            
+            Divider()
+
             Button(action: {
-                if let p = path {
-                    SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .capture, in: session)
-                }
-            }) {
-                Text("Set as Capture Folder")
-            }
+                if let p = path { SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .capture, in: session) }
+            }) { Text("Set as Capture Folder") }
             
             Button(action: {
-                if let p = path {
-                    SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .selects, in: session)
-                }
-            }) {
-                Text("Set as Selects Folder")
+                if let p = path { SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .selects, in: session) }
+            }) { Text("Set as Selects Folder") }
+            
+            Button(action: {
+                if let p = path { SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .output, in: session) }
+            }) { Text("Set as Output Folder") }
+            
+            Button(action: {
+                if let p = path { SessionFolderManager.shared.setAsSystemFolder(url: URL(fileURLWithPath: p), type: .trash, in: session) }
+            }) { Text("Set as Trash Folder") }
+            
+            Divider()
+            
+            Button("Import...") { AppCommandCenter.shared.presentImport() }
+            Button("Export...") { AppCommandCenter.shared.presentExport() }
+            
+            Divider()
+            
+            Button("Show in Library") {}
+            Button("Show in Finder") {}
+            Button("Show Info") {}
+            
+            if type == .trash {
+                Divider()
+                Button("Empty Session Trash") {}
             }
         }
     }
