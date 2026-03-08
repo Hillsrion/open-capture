@@ -18,10 +18,10 @@ Reconstruct the Smart Adjustments feature (AI-002), enabling automatic matching 
 - [x] Task: Commit Phase 1 & Build Check. fc89671
 
 ### Phase 2: Core Matching Logic (ImageCore)
-- [ ] Task: Reconstruct the `SmartAdjustmentsEngine` (Calculating Exposure/WB deltas).
-- [ ] Task: Implement face detection simulation (mocking the reference point).
-- [ ] Task: Implement the "Apply Smart Adjustments" logic (Applying deltas to target variants).
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Reconstruct the `SmartAdjustmentsEngine` (Calculating Exposure/WB deltas). fc89672
+- [x] Task: Implement face detection simulation (mocking the reference point). fc89672
+- [x] Task: Implement the "Apply Smart Adjustments" logic (Applying deltas to target variants). fc89672
+- [x] Task: Commit Phase 2 & Build Check. fc89672
 
 ### Phase 3: UI & Tool Integration (CaptureOneUI)
 - [ ] Task: Create `SmartAdjustmentsToolView` with "Set Reference" and "Apply" buttons.
