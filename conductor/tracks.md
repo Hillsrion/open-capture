@@ -137,7 +137,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Workspace Parity - Document Lifecycle & Preferences (UI-212, UI-213, WF-506, WF-507, UI-211)**
+- [x] **Track: Workspace Parity - Document Lifecycle & Preferences (UI-212, UI-213, WF-506, WF-507, UI-211)**
   *Link: [./tracks/document_lifecycle_20260308/](./tracks/document_lifecycle_20260308/)*
 
 ---
