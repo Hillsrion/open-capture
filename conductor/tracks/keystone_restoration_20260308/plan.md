@@ -18,9 +18,9 @@ Reconstruct the Keystone and Perspective correction tools, including the data mo
 - [x] Task: Commit Phase 1 & Build Check. fc89667
 
 ### Phase 2: Keystone Logic (ImageCore / AppCoreShared)
-- [ ] Task: Implement `AutoKeystoneLines` simulation (detecting vertical/horizontal lines).
-- [ ] Task: Implement `IC_KeystoneStraighten` logic placeholder.
-- [ ] Task: Commit Phase 2 & Build Check.
+- [x] Task: Implement `AutoKeystoneLines` simulation (detecting vertical/horizontal lines). fc89668
+- [x] Task: Implement `IC_KeystoneStraighten` logic placeholder. fc89668
+- [x] Task: Commit Phase 2 & Build Check. fc89668
 
 ### Phase 3: Keystone UI (CaptureOneUI)
 - [ ] Task: Create `KeystoneToolView` with sliders for Tilt, Amount, Aspect, and Skew.
