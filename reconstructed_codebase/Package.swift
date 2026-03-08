@@ -57,7 +57,7 @@ let package = Package(
         ),
         .testTarget(
             name: "CaptureOneUITests",
-            dependencies: ["CaptureOneUI"],
+            dependencies: ["CaptureOneUI", "AppCoreShared", "DataCore"],
             path: "Tests/CaptureOneUITests"
         )
     ]

@@ -88,8 +88,8 @@ public struct CullingView: View {
         .preferredColorScheme(.dark)
         .onAppear {
             commands.configure(session: session, recipeManager: recipeManager, batchQueue: batchQueue)
-            if recipeManager.recipes.isEmpty {
-                recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+            if recipeManager.recipes.isEmpty, let ctx = session.managedObjectContext {
+                recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ctx))
             }
             NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
                 if handleShortcut(event) { return nil }

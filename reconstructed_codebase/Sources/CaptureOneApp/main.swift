@@ -127,8 +127,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 1.6 Setup Hardware Controllers (INT-005)
         HardwareControllerManager.shared.actionDelegate = AdjustmentToolController.shared
         
-        // 2. Setup Context
-        let _ = ObjectContext()
+        // 2. Setup Context — context is now created per-document in newCatalog/newSession
         
         NSApp.mainMenu = buildMainMenu()
 

@@ -45,7 +45,8 @@ public class BatchQueue: ObservableObject {
         let formatExt = recipe.format.rawValue.lowercased()
         let fullPath = outputFolder.appendingPathComponent("\(fileName).\(formatExt)").path
         
-        let job = BatchJob(variant: variant, recipe: recipe, destinationPath: fullPath, context: ObjectContext())
+        let ctx = variant.managedObjectContext ?? ObjectContext()
+        let job = BatchJob(variant: variant, recipe: recipe, destinationPath: fullPath, context: ctx)
         pendingJobs.append(job)
         
         // Auto-start if not busy
