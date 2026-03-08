@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "cf07066452dc",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/backlog.md",
+    "conductor/tracks.md",
+    "conductor/tracks/soft_proofing_restoration_20260308/plan.md",
+    "reconstructed_codebase/Sources/ImageCore/ICCManager.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/cf/07066452dc/0/metadata.json",
+      "transcript": "/cf/07066452dc/0/full.jsonl",
+      "content_hash": "/cf/07066452dc/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
