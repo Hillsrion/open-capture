@@ -27,9 +27,9 @@ Reconstruct the Plugin Host Architecture (INT-003) from `PluginCore`, enabling t
 - [x] Task: Commit Phase 3 & Build Check. fc89692
 
 ### Phase 4: Integration (CaptureOneApp)
-- [ ] Task: Initialize `COPluginManager.shared` at app launch.
-- [ ] Task: Create a test case: verify `COPluginManager` detects a mocked `.coplugin` bundle and successfully parses its metadata.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Initialize `COPluginManager.shared` at app launch. fc89693
+- [x] Task: Create a test case: verify `COPluginManager` detects a mocked `.coplugin` bundle and successfully parses its metadata. fc89693
+- [x] Task: Commit Phase 4 & Build Check. fc89693
 
 ## Verification & Testing
 - Test Case: Drop a mock `.coplugin` into the application support directory -> Verify `PluginManager` loads it.

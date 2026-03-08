@@ -16,6 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = B2CIdentityManager.shared
         let _ = LicenseInfo()
         
+        // 1.5 Setup Plugins (INT-003)
+        COPluginManager.shared.discoverPlugins()
+        
         // 2. Setup Context
         let _ = ObjectContext()
 
