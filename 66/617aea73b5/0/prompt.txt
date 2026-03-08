@@ -1,0 +1,1 @@
+fais une review complete de l'app. je vois notamment que les sliders et gestion des couleurs/lumiere n'est pas rangée comme dans capture one. le tool advanced color editor n'est pas implémenté et il manque les menus mac os pour l'app
