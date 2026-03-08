@@ -75,6 +75,14 @@ public enum ToolRegistry {
             return .unavailable(toolID)
         case "NextCaptureKeywords":
             return .unavailable(toolID)
+        case "LivePreviewComposition":
+            return .implemented { _ in AnyView(LivePreviewCompositionToolView()) }
+        case "LivePreviewAdjustments":
+            return .implemented { _ in AnyView(LivePreviewAdjustmentsToolView()) }
+        case "LivePreviewInfoTool":
+            return .implemented { _ in AnyView(LivePreviewInfoToolView()) }
+        case "Normalize":
+            return .implemented { _ in AnyView(NormalizeToolView()) }
         case "NextCaptureBackup":
             return .unavailable(toolID)
         case "Overlay":
@@ -318,8 +326,7 @@ public enum ToolRegistry {
                     selectedVariant: context.adjustmentController.currentVariant
                 ))
             }
-        case "ImporterFilters", "ImportFileInfo", "FaceFocus", "TimeBasedGrouping",
-             "LivePreviewComposition", "LivePreviewAdjustments", "LivePreviewInfoTool", "Normalize":
+        case "ImporterFilters", "ImportFileInfo", "FaceFocus", "TimeBasedGrouping":
             return .unavailable(toolID)
         default:
             return .unavailable(toolID)
