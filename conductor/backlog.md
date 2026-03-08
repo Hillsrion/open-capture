@@ -39,6 +39,8 @@ Status vocabulary used below:
 | UI-206 | Settings palette parity | High | `DONE-RECENT` | BaseCharacteristics and Settings tools restored. |
 | UI-207 | Top chrome parity | High | `DONE-RECENT` | Native NSToolbar replaces SwiftUI fake toolbar strip on document window. |
 | UI-210 | Tool header and context-menu parity | High | `DONE-RECENT` | Per-tool Copy/Apply/Reset in ellipsis menu; help/reset/style actions functional. |
+| UI-208 | Import / export window fidelity | High | `DONE-RECENT` | Three-panel layout with source browser tree, grid, and file info strip. |
+| UI-209 | Viewer chrome parity | High | `DONE-RECENT` | COViewerBarView now shows filename, dimensions, color space, color tags, rating stars. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -50,8 +52,6 @@ These are the highest-value gaps because they are visible in the main session UX
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| UI-208 | Import / export window fidelity | High | High | `PARTIAL` | `Import` and `Export` now open sheets, but they are still simplified SwiftUI panels rather than full importer/exporter windows with the original browser, sidebars, and command coverage. |
-| UI-209 | Viewer chrome parity | High | Med | `PARTIAL` | `Before/After`, grid, focus mask, proofing, and warning toggles now exist, but the viewer toolbar/readout strip still does not match Capture One in structure, overlays, and indicators. |
 | UI-216 | Session upgrade dialog parity | Med | Med | `TODO` | Localized strings and disassembly show a dedicated upgrade confirmation dialog for old sessions with `Cancel` and highlighted `Upgrade`, plus backup messaging; there is no document-upgrade prompt or workflow in the reconstructed app. |
 
 ---
