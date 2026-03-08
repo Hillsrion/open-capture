@@ -1,0 +1,145 @@
+import Cocoa
+import SwiftUI
+import AppCoreShared
+import DataCore
+import ImageCore
+
+/// Reconstructed Document Manager for handling multiple Session workspaces.
+/// Coordinates between AppKit window lifecycle and the restored SwiftUI shell.
+@MainActor
+public final class COWindowManager {
+    public static let shared = COWindowManager()
+    
+    private var documentWindows: [String: NSWindow] = [:]
+    private var windowDelegates: [String: NSWindowDelegate] = [:]
+    private var startWindow: NSWindow?
+    
+    private init() {}
+    
+    public func showStartWindow() {
+        if let window = startWindow {
+            window.makeKeyAndOrderFront(nil)
+            return
+        }
+        
+        // A minimal "Recent Documents" / Start window matching UI-211 requirements
+        let view = VStack(spacing: 32) {
+            Image(systemName: "camera.aperture")
+                .font(.system(size: 64))
+                .foregroundColor(.gray)
+                
+            Text("Capture One Reconstructed")
+                .font(.system(size: 24, weight: .light))
+                
+            VStack(spacing: 8) {
+                Button("New Catalog...") {
+                    AppCommandCenter.shared.newCatalog()
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                
+                Button("New Session...") {
+                    AppCommandCenter.shared.newSession()
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                
+                Button("Open Document...") {
+                    AppCommandCenter.shared.openDocument()
+                }
+                .buttonStyle(.plain)
+                .foregroundColor(.accentColor)
+                .padding(.top, 8)
+            }
+        }
+        .frame(width: 600, height: 450)
+        .background(CaptureOneTheme.Colors.applicationBackground)
+        .preferredColorScheme(.dark)
+        
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 600, height: 450),
+            styleMask: [.titled, .closable, .fullSizeContentView],
+            backing: .buffered,
+            defer: false
+        )
+        window.center()
+        window.title = "Welcome to Capture One"
+        window.titlebarAppearsTransparent = true
+        window.isMovableByWindowBackground = true
+        window.contentView = NSHostingView(rootView: view)
+        window.delegate = NSApp.delegate as? NSWindowDelegate
+        window.identifier = NSUserInterfaceItemIdentifier("StartWindow")
+        
+        self.startWindow = window
+        window.makeKeyAndOrderFront(nil)
+    }
+    
+    public func openDocumentWindow(for session: SessionBase) {
+        if let existing = documentWindows[session.documentUUID] {
+            existing.makeKeyAndOrderFront(nil)
+            return
+        }
+        
+        // Hide start window if open
+        startWindow?.close()
+        startWindow = nil
+        
+        // Needs a real viewer creation here
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 1200, height: 800),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered,
+            defer: false
+        )
+        window.center()
+        window.title = session.name ?? "Untitled \(session.documentType == 0 ? "Session" : "Catalog")"
+        window.titleVisibility = .hidden
+        window.titlebarAppearsTransparent = true
+        window.toolbarStyle = .unifiedCompact
+        window.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
+        
+        // In a real flow, these would be bound to the document
+        let browser = CImageBrowser()
+        let adjustmentController = AdjustmentToolController.shared
+        let recipeManager = OutputRecipeManager.shared
+        let batchQueue = BatchQueue()
+        
+        let contentView = CullingView(
+            browser: browser,
+            adjustmentController: adjustmentController,
+            recipeManager: recipeManager,
+            batchQueue: batchQueue,
+            session: session
+        )
+        
+        window.contentView = NSHostingView(rootView: contentView)
+        let delegate = DocumentWindowDelegate(manager: self, sessionID: session.documentUUID)
+        windowDelegates[session.documentUUID] = delegate
+        window.delegate = delegate
+        
+        documentWindows[session.documentUUID] = window
+        window.makeKeyAndOrderFront(nil)
+    }
+    
+    public func removeDocumentWindow(id: String) {
+        documentWindows.removeValue(forKey: id)
+        windowDelegates.removeValue(forKey: id)
+        if documentWindows.isEmpty {
+            showStartWindow()
+        }
+    }
+}
+
+fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
+    let manager: COWindowManager
+    let sessionID: String
+    
+    init(manager: COWindowManager, sessionID: String) {
+        self.manager = manager
+        self.sessionID = sessionID
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        manager.removeDocumentWindow(id: sessionID)
+    }
+}

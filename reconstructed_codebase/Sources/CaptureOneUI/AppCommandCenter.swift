@@ -1,6 +1,7 @@
 import SwiftUI
 import AppKit
 import AppCoreShared
+import DataCore
 
 public enum AppSheetRoute: String, Identifiable {
     case importImages
@@ -140,11 +141,29 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func newCatalog() {
-        notice = AppNotice(title: "New Catalog", message: "Document creation pipeline is being restored. (UI-213)")
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: ObjectContext())
+        session.name = "Untitled Catalog"
+        
+        let recipeManager = OutputRecipeManager.shared
+        if recipeManager.recipes.isEmpty {
+            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+        }
+        
+        configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
+        COWindowManager.shared.openDocumentWindow(for: session)
     }
 
     public func newSession() {
-        notice = AppNotice(title: "New Session", message: "Document creation pipeline is being restored. (UI-213)")
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ObjectContext())
+        session.name = "Untitled Session"
+        
+        let recipeManager = OutputRecipeManager.shared
+        if recipeManager.recipes.isEmpty {
+            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
+        }
+        
+        configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
+        COWindowManager.shared.openDocumentWindow(for: session)
     }
 
     public func openDocument() {

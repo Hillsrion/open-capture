@@ -117,44 +117,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 2. Setup Context
         let _ = ObjectContext()
-
-        // 3. Create the Window
-        print("[System] Creating Window...")
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1200, height: 800),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, 
-            defer: false)
         
-        window.center()
-        window.title = "Untitled Catalog"
-        window.titleVisibility = .hidden
-        window.titlebarAppearsTransparent = true
-        window.toolbarStyle = .unifiedCompact
-        window.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
         NSApp.mainMenu = buildMainMenu()
-        
-        // 4. Setup Browser Data Source and Adjustment Controller
-        let browser = CImageBrowser()
-        let adjustmentController = AdjustmentToolController.shared
-        let recipeManager = OutputRecipeManager.shared
-        let batchQueue = BatchQueue()
-        let mockSession = SessionBase(documentUUID: "system-session", type: 1, context: nil)
-        mockSession.name = "Untitled Catalog"
-        if recipeManager.recipes.isEmpty {
-            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ObjectContext()))
-        }
-        
-        let contentView = CullingView(
-            browser: browser,
-            adjustmentController: adjustmentController,
-            recipeManager: recipeManager,
-            batchQueue: batchQueue,
-            session: mockSession
-        )
-        window.contentView = NSHostingView(rootView: contentView)
-        
-        window.makeKeyAndOrderFront(nil)
+
+        // 3. Document Lifecycle parity (UI-211)
+        print("[System] Showing Start Window...")
+        COWindowManager.shared.showStartWindow()
         
         // Ensure app comes to front
         NSApp.activate(ignoringOtherApps: true)
@@ -163,7 +131,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
+        return false // Return to start window on last document close
     }
 
     private func buildMainMenu() -> NSMenu {
