@@ -44,6 +44,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Procedural Film Grain engine reconstructed with luminance-weighted noise generation and multiple film types (Fine, Silver Rich, Soft, Cubic).
 - **Status:** Annotations system reconstructed with interactive drawing layer, freehand strokes, and text notes supported on the viewer.
 - **Status:** HDR Merge and Panorama Stitch engine reconstructed with feature-based alignment, 32-bit linear DNG generation, and seamless blending math.
+- **Status:** Camera Control API reconstructed with PTP protocol support, discovery browser, remote property management, and 30 FPS live view engine.
 - **Status:** Keyboard Shortcuts system reconstructed with dynamic mapping, conflict detection, and real-time UI/tooltip integration.
 - **Status:** Hierarchical Keywords management reconstructed with centralized library, tree-based taxonomy, and session database persistence.
 
