@@ -4,7 +4,7 @@ import Foundation
 /// Provides integration with ObjectContext and KVO-based change tracking.
 public class BaseObject: NSObject, ObservableObject {
     
-    public weak var managedObjectContext: ObjectContext?
+    public var managedObjectContext: ObjectContext?
     
     public init(managedObjectContext context: ObjectContext?) {
         self.managedObjectContext = context

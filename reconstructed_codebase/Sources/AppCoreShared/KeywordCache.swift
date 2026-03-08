@@ -15,6 +15,7 @@ public class DocumentKeywordCache: ObservableObject {
     
     /// Loads all keywords from the session database.
     public func loadFromDatabase() {
+        guard DataCoreManager.shared.db != nil else { return }
         do {
             let reader = DataCoreManager.shared.reader()
             let rows = try reader.fetchAllKeywords()
