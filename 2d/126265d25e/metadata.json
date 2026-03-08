@@ -3,7 +3,7 @@
   "checkpoint_id": "2d126265d25e",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/toolbar_customization_20260308/plan.md",
     "reconstructed_codebase/Sources/CaptureOneUI/MainToolbarView.swift"
@@ -14,13 +14,19 @@
       "transcript": "/2d/126265d25e/0/full.jsonl",
       "content_hash": "/2d/126265d25e/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/2d/126265d25e/1/metadata.json",
+      "transcript": "/2d/126265d25e/1/full.jsonl",
+      "content_hash": "/2d/126265d25e/1/content_hash.txt",
+      "prompt": "/2d/126265d25e/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 20633617,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 18430854,
+    "output_tokens": 46876,
+    "api_call_count": 222
   }
 }
