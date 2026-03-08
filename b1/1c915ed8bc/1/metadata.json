@@ -1,0 +1,37 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "b11c915ed8bc",
+  "session_id": "b84bdb03-56b5-48f3-bc85-10e4ed8e5780",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-08T02:27:39.158386Z",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "reconstructed_codebase/Sources/ImageCore/KeystoneKernels.swift",
+    "conductor/tracks/keystone_restoration_20260308/plan.md"
+  ],
+  "agent": "Gemini CLI",
+  "model": "gemini-3-flash-preview",
+  "turn_id": "f0874ff052a4",
+  "checkpoint_transcript_start": 125,
+  "transcript_lines_at_start": 125,
+  "token_usage": {
+    "input_tokens": 465382,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 451271,
+    "output_tokens": 1175,
+    "api_call_count": 4
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-08T02:27:38.889456Z",
+    "agent_lines": 73,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 73,
+    "agent_percentage": 100
+  }
+}
