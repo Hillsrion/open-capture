@@ -29,9 +29,9 @@ Reconstruct the Keystone and Perspective correction tools, including the data mo
 - [x] Task: Commit Phase 3 & Build Check. fc89669
 
 ### Phase 4: Interactive Keystone Tool (CaptureOneUI)
-- [ ] Task: Reconstruct the `KeystoneCursorTool` (Interactive 4-point/2-line selection on the Viewer).
-- [ ] Task: Implement rendering of keystone selection lines in `COViewerView`.
-- [ ] Task: Commit Phase 4 & Build Check.
+- [x] Task: Reconstruct the `KeystoneCursorTool` (Interactive 4-point/2-line selection on the Viewer). fc89670
+- [x] Task: Implement rendering of keystone selection lines in `COViewerView`. fc89670
+- [x] Task: Commit Phase 4 & Build Check. fc89670
 
 ## Verification & Testing
 - Test Case: Adjust Keystone Tilt X -> Verify `IC_ProcessSettings` updates correctly.

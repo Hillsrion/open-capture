@@ -63,6 +63,7 @@ public class AdjustmentToolController: ObservableObject {
     @Published public var keystoneAspect: Double = 0.0
     @Published public var keystoneSkew: Double = 0.0
     @Published public var keystoneFocalLength: Double = 35.0
+    @Published public var keystonePoints: KeystonePoints? = nil // TETH-004
     
     @Published public var chromaticAberration: Bool = false
     @Published public var diffraction: Bool = false

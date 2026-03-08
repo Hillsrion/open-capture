@@ -55,6 +55,11 @@ public struct COViewerView: View {
                         if let annotations = adjustmentController?.currentVariant?.annotations {
                             AnnotationsOverlayView(annotations: annotations)
                         }
+                        
+                        // Keystone Interactive Overlay (UI-006)
+                        if let points = adjustmentController?.keystonePoints {
+                            KeystoneOverlayView(points: points)
+                        }
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -159,5 +164,43 @@ struct COViewerBarView: View {
         .frame(height: 35)
         .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
         .foregroundColor(.white)
+    }
+}
+
+/// Reconstructed Interactive Keystone UI (UI-006).
+struct KeystoneOverlayView: View {
+    let points: KeystonePoints
+    
+    var body: some View {
+        GeometryReader { geo in
+            ZStack {
+                // Lines
+                Path { path in
+                    path.move(to: denormalize(points.p0, in: geo.size))
+                    path.addLine(to: denormalize(points.p1, in: geo.size))
+                    
+                    path.move(to: denormalize(points.p2, in: geo.size))
+                    path.addLine(to: denormalize(points.p3, in: geo.size))
+                }
+                .stroke(CaptureOneTheme.Colors.activeHighlight, lineWidth: 2)
+                
+                // Control Handles
+                handle(at: points.p0, in: geo.size)
+                handle(at: points.p1, in: geo.size)
+                handle(at: points.p2, in: geo.size)
+                handle(at: points.p3, in: geo.size)
+            }
+        }
+    }
+    
+    private func handle(at point: CGPoint, in size: CGSize) -> some View {
+        Circle()
+            .fill(CaptureOneTheme.Colors.activeHighlight)
+            .frame(width: 8, height: 8)
+            .position(denormalize(point, in: size))
+    }
+    
+    private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
+        return CGPoint(x: point.x * size.width, y: point.y * size.height)
     }
 }
