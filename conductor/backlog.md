@@ -1,101 +1,143 @@
 # Capture One Reconstruction Backlog
 
-This backlog tracks all features and modules required to reach a 100% high-fidelity reconstruction of Capture One Pro (v16.5).
+This backlog replaces the earlier optimistic summary. It tracks what is still missing in the product surface after the recent workspace/palette reconstruction, with the decompiled `Default.plist` and reachable UI behavior as the source of truth.
+
+Status vocabulary used below:
+- `TODO`: not implemented
+- `PARTIAL`: present in code but incomplete, weakly wired, or visibly different from Capture One
+- `PLACEHOLDER`: reachable in the UI only through `UnavailableToolView`
+- `DONE-RECENT`: recently closed and kept here only for context when it unblocks adjacent work
 
 ---
 
-## 🟢 1. Core Data & Management (AppCoreShared / DataCore)
-*Status: ~75% Complete*
+## Recently Closed
 
-| Task ID | Feature | Priority | Complexity | Status |
+| Task ID | Feature | Priority | Status | Notes |
 | :--- | :--- | :--- | :--- | :--- |
-| CORE-001 | **Smart Albums & Advanced Filters** (SQL for ratings, tags, EXIF) | High | Med | ✅ Done |
-| CORE-002 | **Metadata Sync** (XMP Sidecar support, EXIF/IPTC) | Med | Med | ✅ Done |
-| CORE-003 | **Variant Cloning** (Logic for creating new variants) | High | Low | ✅ Done |
-| CORE-004 | **Session/Catalog Switching** (Hot-swapping databases) | High | Med | ✅ Done |
-| CORE-005 | **Hierarchical Keywords** (Taxonomy tree management) | Med | High | ✅ Done |
-| CORE-006 | **EIP Packaging** (Zipping RAW + adjustments into .eip) | Low | Med | ✅ Done |
-| CORE-007 | **Import Engine** (Card ingest, renaming, backup, apply styles) | High | High | ✅ Done |
-| CORE-008 | **Session Folders Logic** (Capture, Selects, Output, Trash routing) | High | Low | ✅ Done |
-| CORE-009 | **Rating & Color Tagging** (Stars and Color labels data models) | High | Low | ✅ Done |
+| WS-001 | Load workspace presets from decompiled `Default.plist` | High | `DONE-RECENT` | Session/viewer/live preview/culling palette taxonomy now comes from the plist, not from synthetic tabs. |
+| WS-002 | Restore session palette shell (`Organize`, `Capture`, `Lens`, `Settings`, `Exposure`, `Details`) | High | `DONE-RECENT` | Session opens on `OrganizeToolTab`; fixed vs scrollable tool areas are restored. |
+| WS-003 | Central tool registry for decompiled tool IDs | High | `DONE-RECENT` | Existing tools are routed centrally; missing ones now surface as explicit placeholders. |
+| SHELL-001 | Global command center for shell actions and modal sheets | High | `DONE-RECENT` | `Import`, `Export`, `Preferences`, `Keyboard Shortcuts`, and `Print` now route through a shared command center instead of inert toolbar clicks. |
+| SHELL-002 | Basic macOS main menu and top-toolbar action wiring | High | `DONE-RECENT` | The app now installs a real `NSMenu`, routes top-bar actions, and exposes basic `Before/After`, grid, focus mask, proofing, and warning toggles. |
+| SHELL-003 | Startup empty-state and functional tool headers | High | `DONE-RECENT` | The viewer no longer spins forever with no image, import can pick a source folder, and tool headers now have separated help/reset/menu actions. |
+
+These items are no longer backlog candidates unless regressions are found.
 
 ---
 
-## 🟡 2. Image Processing Engine (ImageCore / Metal)
-*Status: ~25% Complete*
+## P0. Reachable But Still Wrong In Primary Workflows
 
-| Task ID | Feature | Priority | Complexity | Status |
+These are the highest-value gaps because they are visible in the main session UX and contradict what the decompiled workspace now exposes.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| UI-201 | Organize palette parity | High | High | `PARTIAL` | `Library`, `MetadataFilters`, `Keywords`, `KeywordLibrary`, `Metadata` are now reachable, but `LibraryToolView` is still a session-folder stub and does not cover albums, smart albums, favorites management, or richer organize workflows. |
+| UI-202 | Exposure palette parity | High | High | `PARTIAL` | `WhiteBalance`, `Exposure`, `ShadowHighlight`, `Levels`, `Curves`, `SelectiveColorControl`, `ColorBalance`, `Clarity` are reachable, but `MatchLook`, `BlackAndWhite`, `Dehaze`, and `Vignetting` are still placeholders. |
+| UI-203 | Details palette parity | High | Med | `PARTIAL` | `Sharpening`, `Noise`, `Film Grain` are wired, but `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, and `Moire` are still placeholders. |
+| UI-204 | Lens palette parity | High | Med | `PARTIAL` | `Perspective` and `LensCorrection` are wired, but `Crop`, `AICrop`, `Rotation`, `Grid`, and `Guides` are still placeholders. |
+| UI-205 | Capture palette parity | High | High | `PARTIAL` | `Camera`, `CameraSettings`, `NextCaptureNaming`, and `NextCaptureAdjustments` are reachable, but `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, and `NextCaptureBackup` are still placeholders. |
+| UI-206 | Settings palette parity | High | Med | `PARTIAL` | `Styles` is reachable, but `BaseCharacteristics` and `Settings` are still placeholders. |
+| UI-207 | Top chrome parity | High | High | `PARTIAL` | The shell now has a real menu bar and wired toolbar actions, but the top area is still a custom SwiftUI strip inside the content view, not a decompiled-faithful native titlebar/`NSToolbar` with full item inventory and document-title behavior. |
+| UI-208 | Import / export window fidelity | High | High | `PARTIAL` | `Import` and `Export` now open sheets, but they are still simplified SwiftUI panels rather than full importer/exporter windows with the original browser, sidebars, and command coverage. |
+| UI-209 | Viewer chrome parity | High | Med | `PARTIAL` | `Before/After`, grid, focus mask, proofing, and warning toggles now exist, but the viewer toolbar/readout strip still does not match Capture One in structure, overlays, and indicators. |
+| UI-210 | Tool header and context-menu parity | High | Med | `PARTIAL` | Headers now expose working help/reset/style/menu controls plus pin/remove/size actions, but per-tool icon contracts, layer-specific mask submenus, and exact Capture One header layouts are still incomplete. |
+| UI-211 | Startup/no-document realism | High | Med | `PARTIAL` | The shell no longer auto-loads `~/Pictures` and the viewer shows an empty state, but there is still no real recent-documents/start window flow for session/catalog creation and opening. |
+
+---
+
+## P0. Window Shells And Workspace Fidelity Still Missing
+
+The session window is no longer synthetic, but the rest of the workspace family is not yet restored as actual window behavior.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| WS-101 | Viewer window shell restoration | High | High | `TODO` | `viewerwindow.tools` presets load, but there is no dedicated viewer shell reproducing the viewer window layout, palette switching, and browser/tool visibility behavior from the plist. |
+| WS-102 | Live preview window shell restoration | High | High | `TODO` | `livepreviewwindow` presets and tool IDs load, but the actual live preview window UI is not rebuilt around them. |
+| WS-103 | Culling window shell restoration | High | High | `TODO` | `cullingwindow.tools` presets load, but there is no dedicated culling shell exposing `TimeBasedGrouping`, `FaceFocus`, `ImporterFilters`, and `ImportFileInfo` as intended. |
+| WS-104 | Exporter / importer / print workspace chrome fidelity | Med | Med | `TODO` | Window chrome states from `exporterwindow`, `importerwindow`, and `printwindow` are not yet used to drive dedicated shells consistently. |
+| WS-105 | Palette undocking / redocking / floating panels | High | Very High | `TODO` | Current session shell reproduces palette order, not the tool-window behavior and persistence implied by `tool-windows` and Capture One workspace editing. |
+| WS-106 | Multi-monitor workspace behavior | High | Very High | `TODO` | Recent workspace fixes did not restore real multi-monitor placement and full-screen behavior per window/palette family. |
+
+---
+
+## P1. Placeholder Tool Inventory Exposed By The New Registry
+
+These tools are now honestly exposed as missing. They should be treated as concrete backlog, not hidden behind old “done” track labels.
+
+| Task ID | Tool IDs | Priority | Complexity | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| ENG-001 | **Bipolar Adjustments** (Exposure, Contrast kernels) | High | Low | ✅ Done |
-| ENG-002 | **Levels & Curves Math** (Spline interpolation kernels) | High | High | ✅ Done |
-| ENG-003 | **Clarity & Structure** (Classic, Punch, Natural algorithms) | High | High | ✅ Done |
-| ENG-004 | **Advanced Color Editor & Skin Tone** (Hue/Sat masking) | High | Very High | ✅ Done |
-| ENG-005 | **Layer Blending Engine** (Alpha masking & composition) | High | Very High | ✅ Done |
-| ENG-006 | **Lens Correction** (Distortion, CA, Light Falloff, LCC) | Med | High | ✅ Done |
-| ENG-007 | **Noise Reduction & Sharpening** (Luma, Color, Halo) | Med | High | ✅ Done |
-| ENG-008 | **Film Grain Generator** (Procedural GPU noise) | Low | Med | ✅ Done |
-| ENG-009 | **Export Engine** (Process Recipes, Watermarks, Resizing) | High | High | ✅ Done |
-| ENG-010 | **HDR Merge & Panorama Stitch** (32-bit DNG generation) | Low | Very High | ✅ Done |
-| ENG-011 | **Soft Proofing Engine** (ICC profile simulation for print/web) | Med | High | ✅ Done |
+| TOOL-301 | `MatchLook`, `BlackAndWhite`, `Dehaze`, `Vignetting` | High | Med | `PLACEHOLDER` |
+| TOOL-302 | `Crop`, `AICrop`, `Rotation`, `Grid`, `Guides` | High | Med | `PLACEHOLDER` |
+| TOOL-303 | `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, `Moire` | High | High | `PLACEHOLDER` |
+| TOOL-304 | `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, `NextCaptureBackup` | High | High | `PLACEHOLDER` |
+| TOOL-305 | `BaseCharacteristics`, `Settings` | Med | Med | `PLACEHOLDER` |
+| TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `PLACEHOLDER` |
+| TOOL-307 | `LivePreviewComposition`, `LivePreviewAdjustments`, `LivePreviewInfoTool`, `Normalize` | Med | Med | `PLACEHOLDER` |
+
+The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/ToolRegistry.swift).
 
 ---
 
-## 🟣 3. Smart & AI Features (ModelCore / OpenCV)
-*Status: 0% Complete*
+## P1. Features Marked “Done” But Still Only Partial In Product Terms
 
-| Task ID | Feature | Priority | Complexity | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| AI-001 | **Magic Brush / Eraser** (Luma/Color tolerance masking) | Med | High | ✅ Done |
-| AI-002 | **Smart Adjustments** (Face-based Expo/WB matching) | Med | Very High | ✅ Done |
-| AI-003 | **Auto Keystone** (Perspective correction via OpenCV) | Med | High | ✅ Done |
+These are the misleading areas where backend or isolated UI work exists, but the integrated app still falls short.
 
----
-
-## 📷 4. Tethering & Capture (P1CaptureCore)
-*Status: 0% Complete*
-
-| Task ID | Feature | Priority | Complexity | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| TETH-001 | **Camera Control API** (PTP/MTP protocol integration) | High | Med | ✅ Done |
-| TETH-002 | **Live View Engine** (Real-time video feed & overlay) | High | High | ✅ Done |
-| TETH-003 | **Next Capture Naming & Adjustments** (Auto-apply) | Med | Med | ✅ Done |
-| TETH-004 | **Focus Mask** (Real-time sharpness overlay) | Med | High | ✅ Done |
+| Task ID | Track Area | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| GAP-401 | Live View restoration | High | High | `PARTIAL` | `Live View Engine Restoration` is marked done in `tracks.md`, but the track link is wrong and the dedicated live preview window/shell is not restored. |
+| GAP-402 | Smart albums and organize workflows | High | High | `PARTIAL` | Data and predicates exist, but album/smart album management is not restored in the main `Library` UX. |
+| GAP-403 | Metadata sync UX | Med | Med | `PARTIAL` | Basic metadata views are reachable, but editable metadata grouping, richer IPTC workflows, and XMP-facing UI parity are still shallow. |
+| GAP-404 | Layers and local adjustments UX | High | High | `PARTIAL` | Layers exist, but the full `LocalAdjustmentsToolTab`/brush-tool inspector flow from the plist is not rebuilt. |
+| GAP-405 | Export engine vs exporter UX | Med | Med | `PARTIAL` | Export recipes and batch queue exist, but exporter-specific shells and per-tool recipe editors are still adapters over a generic export view. |
+| GAP-406 | Tethering workflows | High | High | `PARTIAL` | PTP models and some capture tools exist, but the complete capture/live/studio workflow in the decompiled workspaces is not restored. |
 
 ---
 
-## 🔵 5. User Interface (CaptureOneUI)
-*Status: ~25% Complete*
+## P1. Workflow-Level Gaps Still Visible In Testing
 
-| Task ID | Feature | Priority | Complexity | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| UI-001 | **High-Fidelity Sliders** (Thin track, bipolar mode) | High | Low | ✅ Done |
-| UI-002 | **Curves Interactive Widget** (Bezier point editor) | High | High | ✅ Done |
-| UI-003 | **Color Wheels UI** (360° color picker interface) | Med | High | ✅ Done |
-| UI-004 | **Layer Inspector** (Layer stack, opacity, visibility) | High | Med | ✅ Done |
-| UI-005 | **Grid View Browser** (Lazy loading, resizable thumbnails, list view) | High | High | ✅ Done |
-| UI-006 | **Heal / Clone Brush Tools** (Source point selection UI) | Med | High | ✅ Done |
-| UI-007 | **Annotations View** (Drawing layer on top of viewer) | Low | Med | ✅ Done |
-| UI-008 | **Import Dialog** (Source selection, naming format, backup) | High | Med | ✅ Done |
-| UI-009 | **Rating & Tagging Overlays** (Stars/Colors on thumbnails) | High | Low | ✅ Done |
-| UI-010 | **Styles & Presets Browser** (Live preview on hover, brush styles) | High | Med | ✅ Done |
-| UI-011 | **Dynamic Tokens System** (Drag-and-drop naming tags) | High | High | ✅ Done |
-| UI-012 | **Print Layout Window** (Margins, multi-image grids) | Low | High | ✅ Done |
-| UI-013 | **Workspace Manager** (Save/Load panel states, dual monitor) | Med | High | ✅ Done |
+These are not single widgets; they affect user acceptance because the reconstructed app still feels unlike Capture One in daily use.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| WF-501 | Browser mode parity | High | Med | `PARTIAL` | Grid browsing works, but full parity for list/filmstrip modes, sorting variants, and browser toolbar behavior still needs validation and likely completion. |
+| WF-502 | Palette persistence fidelity | High | Med | `PARTIAL` | Palette selection and some tool state persist, but broader collapsed groups, size options, and workspace editing fidelity remain incomplete. |
+| WF-503 | Tool placement fidelity | High | High | `PARTIAL` | The top-level palette order now matches the plist, but many underlying tools still use adapters or simplified UI instead of true Capture One control contracts. |
+| WF-504 | Session startup realism | Med | Med | `PARTIAL` | The app opens on `Organize`, but the mocked session/bootstrap flow still does not reflect actual recent sessions/catalog selection behavior. |
+| WF-505 | Keyboard / command routing across restored palettes | Med | Med | `PARTIAL` | Shortcut infrastructure exists, but per-tool and per-window command routing is not yet validated against the restored workspace structure. |
 
 ---
 
-## 🔴 6. Integration & Ecosystem
-*Status: ~25% Complete*
+## P2. Technical Debt Created By Earlier Reconstruction Phases
 
-| Task ID | Feature | Priority | Complexity | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| INT-001 | **Toolbar & Customization** (Drag & drop tool icons) | Med | Med | ✅ Done |
-| INT-002 | **Keyboard Shortcuts System** (C1 legacy shortcuts map) | High | Low | ✅ Done |
-| INT-003 | **Plugin Host Architecture** (PluginCore bridging) | Low | High | ✅ Done |
-| INT-004 | **AppleScript Automation** (Scripting dictionary, batch jobs) | Low | High | ✅ Done |
-| INT-005 | **Hardware Controllers** (Tangent, Loupedeck API mappings) | Low | High | ✅ Done |
+These items are lower priority than visible workflow gaps, but they are now blocking accuracy and maintainability.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TD-601 | Split adapter views into true plist tool boundaries | Med | High | `TODO` | Several routed tools are still wrappers over larger composite views instead of one ID = one real tool contract. |
+| TD-602 | Remove legacy workspace compatibility path once unused | Low | Med | `TODO` | `WorkspaceTab` and legacy decoding still exist for compatibility; they should be retired after migration is stable. |
+| TD-603 | Resource packaging for workspace presets | Low | Low | `TODO` | `Default.plist` is loaded from source-path fallback logic; it should become an explicit package/bundle resource. |
+| TD-604 | Add UI snapshot / structural coverage for restored palettes | Med | Med | `TODO` | Current tests validate decoding and registry coverage, but not visual composition or palette ordering in rendered views. |
 
 ---
 
-## 🚀 Active Focus
-Selecting next priority track from the backlog...
+## P2. Conductor / Tracking Hygiene
+
+The project tracking itself now needs correction so the repository stops overstating completion.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| DOC-701 | Reconcile `tracks.md` with actual UI reachability | High | Low | `TODO` | Several tracks remain checked as done even though their product surface is still partial or placeholder-based. |
+| DOC-702 | Fix incorrect Live View track link | High | Low | `TODO` | `Track: Live View Engine Restoration` points to `styles_presets_restoration_20260308` instead of a live-view track. |
+| DOC-703 | Add backlog-to-track linkage for the new workspace debt | Med | Low | `TODO` | The backlog now reflects missing work, but the track registry still lacks explicit follow-up tracks for palette/window completion. |
+
+---
+
+## Recommended Next Focus
+
+If work resumes immediately, the highest-value sequence is:
+
+1. `UI-201` and `GAP-402`: restore a real `Library` / organize workflow with albums and smart albums.
+2. `UI-202`, `UI-203`, `UI-204`: eliminate the main session placeholders in `Exposure`, `Details`, and `Lens`.
+3. `WS-101` and `WS-102`: rebuild the dedicated viewer and live preview window shells.
+4. `UI-205`: complete the capture palette so tethering/live workflows are coherent end-to-end.
+5. `DOC-701` and `DOC-702`: clean conductor tracking so reported progress matches product reality.
