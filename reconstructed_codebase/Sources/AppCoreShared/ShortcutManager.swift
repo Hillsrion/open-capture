@@ -33,6 +33,11 @@ public class ShortcutManager: ObservableObject {
         activeSet.shortcuts.first { $0.actionID == id }?.displayString
     }
     
+    /// Checks for overlapping shortcuts.
+    public func hasConflict(for shortcut: KeyboardShortcut) -> String? {
+        activeSet.shortcuts.first { $0.key == shortcut.key && $0.modifiers == shortcut.modifiers }?.actionID
+    }
+    
     // MARK: - Predefined Sets
     
     public static func createDefaultSet() -> ShortcutSet {
