@@ -232,6 +232,24 @@ public struct IC_FilmGrainSettings {
     }
 }
 
+public struct IC_HDRMergeSettings: Codable {
+    public var autoAlign: Bool = true
+    public var deghosting: Double = 0.0 // 0.0 to 100.0
+    public init() {}
+}
+
+public struct IC_PanoramaMergeSettings: Codable {
+    public enum ProjectionType: Int, Codable {
+        case spherical = 0
+        case cylindrical = 1
+        case perspective = 2
+        case panini = 3
+    }
+    public var projection: ProjectionType = .cylindrical
+    public var autoCrop: Bool = true
+    public init() {}
+}
+
 /// Represents the comprehensive settings for image processing.
 public struct IC_ProcessSettings {
     public var engineVersion: Int32

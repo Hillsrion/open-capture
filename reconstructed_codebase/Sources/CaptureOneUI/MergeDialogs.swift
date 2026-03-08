@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed high-fidelity HDR Merge Dialog (ENG-010).
 public struct HDRMergeDialog: View {
