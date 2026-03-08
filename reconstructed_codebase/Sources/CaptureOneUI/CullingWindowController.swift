@@ -74,6 +74,7 @@ public struct CullingView: View {
     @ObservedObject var recipeManager: OutputRecipeManager
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
     
     @State private var selectedToolTab: String = "ADJUST"
     
@@ -137,99 +138,13 @@ public struct CullingView: View {
                 
                 // MARK: - Left Sidebar (Vertical Tool Tabs)
                 VStack(spacing: 0) {
-                    // Tool Tab Bar
-                    HStack(spacing: 0) {
-                        VToolTab(icon: "folder", label: "LIBRARY", isSelected: selectedToolTab == "LIBRARY") { selectedToolTab = "LIBRARY" }
-                        VToolTab(icon: "magnifyingglass", label: "DETAILS", isSelected: selectedToolTab == "DETAILS") { selectedToolTab = "DETAILS" }
-                        VToolTab(icon: "skew", label: "SHAPE", isSelected: selectedToolTab == "SHAPE") { selectedToolTab = "SHAPE" }
-                        VToolTab(icon: "slider.horizontal.3", label: "ADJUST", isSelected: selectedToolTab == "ADJUST") { selectedToolTab = "ADJUST" }
-                        VToolTab(icon: "circle.recircle", label: "COLOR", isSelected: selectedToolTab == "COLOR") { selectedToolTab = "COLOR" }
-                        VToolTab(icon: "arrow.up.doc", label: "EXPORT", isSelected: selectedToolTab == "EXPORT") { selectedToolTab = "EXPORT" }
-                    }
-                    .frame(height: 50)
-                    .background(Color.black.opacity(0.4))
+                    InspectorToolTabView(selectedTabID: $selectedToolTab)
                     
-                    // Tool Content
-                    ScrollView {
-                        VStack(spacing: 0) {
-                            HistogramToolView()
-                            
-                            COToolSection("Layers & Masks") {
-                                Text("Background Layer").font(.system(size: 11)).foregroundColor(.gray)
-                            }
-                            
-                            if selectedToolTab == "ADJUST" {
-                                VStack(spacing: 0) {
-                                    if let variant = adjustmentController.currentVariant {
-                                        LayerInspectorView(variant: variant)
-                                            .onChange(of: variant.activeLayerIndex) { _ in
-                                                adjustmentController.refreshToolValues()
-                                            }
-                                    }
-                                    
-                                    ExposureToolView(
-                                        exposure: $adjustmentController.exposure,
-                                        contrast: $adjustmentController.contrast,
-                                        brightness: $adjustmentController.brightness,
-                                        saturation: $adjustmentController.saturation
-                                    )
-                                    
-                                    ClarityToolView(
-                                        amount: $adjustmentController.clarityAmount,
-                                        structure: $adjustmentController.structureAmount,
-                                        method: $adjustmentController.clarityMethod
-                                    )
-                                    
-                                    HDRToolView(
-                                        highlights: $adjustmentController.highlights,
-                                        shadows: $adjustmentController.shadows,
-                                        whites: $adjustmentController.whites,
-                                        blacks: $adjustmentController.blacks
-                                    )
-                                    
-                                    StyleInspectorTool(controller: adjustmentController)
-                                    
-                                    POLevelsControl(
-                                        blackPoint: $adjustmentController.levelsBlackPoint,
-                                        whitePoint: $adjustmentController.levelsWhitePoint,
-                                        midtone: $adjustmentController.levelsMidtone,
-                                        targetBlack: $adjustmentController.levelsTargetBlack,
-                                        targetWhite: $adjustmentController.levelsTargetWhite
-                                    )
-
-                                    FilmGrainToolView(controller: adjustmentController)
-
-                                    if let current = adjustmentController.currentVariant {
-                                        AnnotationsInspectorTool(variant: current)
-                                    }
-
-                                    MetadataInspectorView(image: adjustmentController.currentVariant?.image)
-                                }
-                            } else if selectedToolTab == "DETAILS" {
-                                DetailInspectorTool(controller: adjustmentController)
-                            } else if selectedToolTab == "LIBRARY" {
-                                LibraryToolView(session: session)
-                                FilterToolView(predicate: $adjustmentController.activePredicate)
-                            } else if selectedToolTab == "COLOR" {
-                                ColorBalanceToolView(controller: adjustmentController)
-                                WhiteBalanceToolView(
-                                    kelvin: $adjustmentController.kelvin,
-                                    tint: $adjustmentController.tint
-                                )
-                                AdvancedColorEditorView(controller: adjustmentController)
-                            } else if selectedToolTab == "EXPORT" {
-                                ExportView(
-                                    recipeManager: recipeManager,
-                                    batchQueue: batchQueue,
-                                    selectedVariant: adjustmentController.currentVariant
-                                )
-                            } else {
-                                Text("Other Tools").foregroundColor(.gray).padding()
-                            }
-                        }
+                    if let activeTab = workspaceManager.activeWorkspace.leftSidebarTabs.first(where: { $0.id == selectedToolTab }) {
+                        InspectorToolLayout(tab: activeTab, adjustmentController: adjustmentController)
                     }
                 }
-                .frame(width: 300)
+                .frame(width: workspaceManager.activeWorkspace.sidebarWidth)
                 .background(CaptureOneTheme.Colors.panelBackground)
                 
                 Divider().background(Color.black)
