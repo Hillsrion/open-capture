@@ -180,11 +180,11 @@ public enum ToolRegistry {
         case "Vignetting":
             return .implemented { context in AnyView(VignettingToolView(controller: context.adjustmentController)) }
         case "Crop":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(CropToolView(controller: context.adjustmentController)) }
         case "AICrop":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(AICropToolView()) }
         case "Rotation":
-            return .unavailable(toolID)
+            return .implemented { context in AnyView(RotationToolView(controller: context.adjustmentController)) }
         case "Perspective":
             return .adapter { context in
                 AnyView(KeystoneToolView(
@@ -236,9 +236,9 @@ public enum ToolRegistry {
                 ))
             }
         case "Grid":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(GridToolView()) }
         case "Guides":
-            return .unavailable(toolID)
+            return .implemented { _ in AnyView(GuidesToolView()) }
         case "BaseCharacteristics":
             return .unavailable(toolID)
         case "Styles":
