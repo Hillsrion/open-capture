@@ -37,6 +37,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Session Folder management reconstructed, including path resolution for Capture/Selects/Output/Trash and routing logic.
 - **Status:** High-performance Grid Browser reconstructed with resizable thumbnails, multi-selection interactor, and high-fidelity overlays.
 - **Status:** Noise Reduction (Luminance, Color, Detail) and Sharpening (Amount, Radius, Halo Control) engine reconstructed and integrated into the ImageCore pipeline.
+- **Status:** Styles & Presets system reconstructed with hierarchical browser, live hover previews, and stacking support.
 
 # Guidelines & Mandates
 - **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.
