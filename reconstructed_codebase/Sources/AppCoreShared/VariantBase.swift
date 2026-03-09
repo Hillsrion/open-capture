@@ -8,6 +8,19 @@ public class VariantBase: BaseObject {
     public let variantUUID: String
     public var tempUUID: String?
     
+    // MARK: - Core Data Row IDs (Reconstructed from v16.5)
+    public var adjustmentLayerRowID: Int64 = 0
+    public var defaultLayerRowID: Int64 = 0
+    public var combinedSettingsRowID: Int64 = 0
+    public var image_rowid: UInt64 = 0
+    
+    // MARK: - Geometry & Layout
+    public var canvasSize: CGSize = .zero
+    
+    // MARK: - Relationships
+    public var collectionLinks: [Any]? // MOCollectionLink placeholder
+    public var primaryInCollections: [Any]?
+    
     // MARK: - Internal Row State (Placeholders)
     internal var row: Any?
     

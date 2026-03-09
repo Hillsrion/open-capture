@@ -42,29 +42,9 @@ Status vocabulary used below:
 | UI-208 | Import / export window fidelity | High | `DONE-RECENT` | Three-panel layout with source browser tree, grid, and file info strip. |
 | UI-209 | Viewer chrome parity | High | `DONE-RECENT` | COViewerBarView now shows filename, dimensions, color space, color tags, rating stars. |
 | UI-216 | Session upgrade dialog parity | Med | `DONE-RECENT` | Added high-fidelity upgrade dialog with strings from disassembly, warning icons, and mock upgrade workflow. |
-
-These items are no longer backlog candidates unless regressions are found.
-
----
-
-## P0. Reachable But Still Wrong In Primary Workflows
-
-These are the highest-value gaps because they are visible in the main session UX and contradict what the decompiled workspace now exposes.
-
-| Task ID | Feature | Priority | Complexity | Status | Gap |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-
----
-
-## P0. Window Shells And Workspace Fidelity Still Missing
-
-The session window is no longer synthetic, but the rest of the workspace family is not yet restored as actual window behavior.
-
-| Task ID | Feature | Priority | Complexity | Status | Gap |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| WS-104 | Exporter / importer / print workspace chrome fidelity | Med | Med | `TODO` | Window chrome states from `exporterwindow`, `importerwindow`, and `printwindow` are not yet used to drive dedicated shells consistently. |
-| WS-105 | Palette undocking / redocking / floating panels | High | Very High | `TODO` | Current session shell reproduces palette order, not the tool-window behavior and persistence implied by `tool-windows` and Capture One workspace editing. |
-| WS-106 | Multi-monitor workspace behavior | High | Very High | `TODO` | Recent workspace fixes did not restore real multi-monitor placement and full-screen behavior per window/palette family. |
+| WS-104 | Exporter / importer / print workspace chrome fidelity | Med | `DONE-RECENT` | Replaced SwiftUI sheets with dedicated NSWindowControllers loading .importerwindow, .exporterwindow, and .printwindow presets. |
+| WS-105 | Palette undocking / redocking / floating panels | High | `DONE-RECENT` | Implemented FloatingToolWindowController and FloatingPaletteWindowController; undocking triggered via pip icon or drag. |
+| WS-106 | Multi-monitor workspace behavior | High | `DONE-RECENT` | Added window frame persistence to WorkspaceChromeState, allowing windows to reopen where they were last placed. |
 
 ---
 
@@ -143,6 +123,6 @@ The project tracking itself now needs correction so the repository stops oversta
 
 If work resumes immediately, the highest-value sequence is:
 
-1. `TOOL-306`: Remove last placeholder tools from the registry.
-2. `UI-208` to `UI-209`: Fix import/export and viewer chrome.
-3. `WS-104` to `WS-106`: Address remaining workspace fidelity.
+1. `TOOL-301` to `TOOL-303`: Remove remaining placeholder tools (`MatchLook`, `Crop`, `Navigator`, etc.).
+2. `GAP-402` to `GAP-406`: Deepen functional integration for smart albums, metadata, and layers.
+3. `WF-501` to `WF-505`: Validate and fix workflow-level gaps like browser modes and shortcut routing.

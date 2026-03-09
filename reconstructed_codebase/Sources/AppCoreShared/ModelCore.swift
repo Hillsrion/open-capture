@@ -18,6 +18,7 @@ public class MCImage: NSObject {
 /// Reconstructed Base class for Adjustment Layers in ModelCore.
 public class MCAdjLayer: NSObject {
     public var properties: [String: Any] = [:]
+    public var layerKey: String?
     
     public init(dictionary: [String: Any]) {
         self.properties = dictionary
@@ -37,6 +38,10 @@ public class MCAdjLayer: NSObject {
     }
 }
 
+public class MCSidecarsTracker: NSObject {
+    // Stub for tracking sidecar changes
+}
+
 /// Reconstructed Base class for Variant settings in ModelCore.
 /// Handles the layer stack, styles, and non-destructive adjustments.
 public class MCVariant: NSObject {
@@ -48,7 +53,21 @@ public class MCVariant: NSObject {
         super.init()
     }
     
+    public static func variantWithDictionary(_ dictionary: [String: Any]) -> MCVariant {
+        return MCVariant(dictionary: dictionary)
+    }
+    
+    public func cloneWithDictionary(_ dictionary: [String: Any]) -> MCVariant {
+        let clone = MCVariant(dictionary: dictionary)
+        clone.layers = self.layers
+        return clone
+    }
+    
     public func objectForKey(_ key: String) -> Any? {
+        return properties[key]
+    }
+    
+    public func objectForKeyedSubscript(_ key: String) -> Any? {
         return properties[key]
     }
     
@@ -60,13 +79,14 @@ public class MCVariant: NSObject {
         }
     }
     
-    public func variantByAddingStyle(_ style: Any) -> MCVariant {
-        // Implementation logic recovery: 
-        // Create a copy and merge style properties
-        let newVariant = MCVariant(dictionary: self.properties)
-        newVariant.layers = self.layers
+    public func variantByAddingStyle(_ style: Any, sidecarsTracker: MCSidecarsTracker? = nil) -> MCVariant {
+        let newVariant = cloneWithDictionary(self.properties)
         // Style merge logic here
         return newVariant
+    }
+    
+    public func layerObjectForLayerKey(_ key: String, sidecarsTracker: MCSidecarsTracker? = nil) -> MCAdjLayer? {
+        return layers.first { $0.layerKey == key }
     }
 }
 

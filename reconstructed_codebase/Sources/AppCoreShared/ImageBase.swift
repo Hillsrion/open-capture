@@ -28,6 +28,12 @@ public class ImageBase: BaseObject, ICImageMetadataProvider {
     public var isCloud: Bool
     public var isCloudOnly: Bool
     
+    // MARK: - Reconstructed State (v16.5)
+    public var isInsideCatalog: Bool = true
+    public var gpsLatitude: Double = 0.0
+    public var gpsAltitude: Double = 0.0
+    public var rawFileQuickHash: String?
+    
     // EXIF Properties (mapped from ZIMAGE or ZMETADATA)
     public var iso: Int { (mcImage?.objectForKey("ZISO") as? Int) ?? 0 }
     public var aperture: Double { (mcImage?.objectForKey("ZAPERTURE") as? Double) ?? 0.0 }

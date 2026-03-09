@@ -152,8 +152,13 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: High-Fidelity Workspace Chrome & Shell Restoration (WS-104, WS-105, WS-106)**
+- [x] **Track: High-Fidelity Workspace Chrome & Shell Restoration (WS-104, WS-105, WS-106)**
   *Link: [./tracks/workspace_chrome_fidelity_20260309/](./tracks/workspace_chrome_fidelity_20260309/)*
+
+---
+
+- [ ] **Track: Architecture Alignment with Capture One 2 (v16.5+)**
+  *Link: [./tracks/v2_architecture_alignment_20260309/](./tracks/v2_architecture_alignment_20260309/)*
 
 
 
