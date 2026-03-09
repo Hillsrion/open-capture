@@ -169,7 +169,7 @@ public struct CullingView: View {
 
     private var toolsSidebar: some View {
         VStack(spacing: 0) {
-            InspectorToolTabView(selectedTabID: selectedPaletteBinding)
+            InspectorToolTabView(selectedTabID: selectedPaletteBinding, context: inspectorContext)
 
             if let activePalette = workspaceManager.activeWorkspace.activePalette() {
                 InspectorToolLayout(palette: activePalette, context: inspectorContext)

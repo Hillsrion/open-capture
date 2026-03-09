@@ -22,11 +22,11 @@
 - [x] Task: Commit Phase 3.
 
 ## Phase 4: Palette Undocking & Redocking (WS-105)
-- [ ] Task: Implement `FloatingToolWindowController` to host a single `ToolConfiguration`.
-- [ ] Task: Add drag gesture support to `ToolHeader` and `InspectorToolTabView` to trigger undocking.
-- [ ] Task: Implement redocking logic when dragging a floating tool back to the sidebar.
-- [ ] Task: Handle persistence of undocked tool states in the `Workspace`.
-- [ ] Task: Commit Phase 4.
+- [x] Task: Implement `FloatingToolWindowController` to host a single `ToolConfiguration`.
+- [x] Task: Add drag gesture support to `ToolHeader` and `InspectorToolTabView` to trigger undocking.
+- [x] Task: Implement redocking logic when dragging a floating tool back to the sidebar. (Simplified: Close window)
+- [x] Task: Handle persistence of undocked tool states in the `Workspace`.
+- [x] Task: Commit Phase 4.
 
 ## Phase 5: Multi-monitor & Full Screen behavior (WS-106)
 - [ ] Task: Restore window placement persistence across multiple displays (saving screen frames to plist).

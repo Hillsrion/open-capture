@@ -27,9 +27,11 @@ public struct InspectorToolContext {
 public struct InspectorToolTabView: View {
     @ObservedObject var workspaceManager = WorkspaceManager.shared
     @Binding var selectedTabID: String
+    let context: InspectorToolContext
 
-    public init(selectedTabID: Binding<String>) {
+    public init(selectedTabID: Binding<String>, context: InspectorToolContext) {
         self._selectedTabID = selectedTabID
+        self.context = context
     }
 
     public var body: some View {
@@ -53,6 +55,19 @@ public struct InspectorToolTabView: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundColor(selectedTabID == palette.id ? .white : .gray)
+                .contextMenu {
+                    Button("Float Palette") {
+                        COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
+                    }
+                }
+                .gesture(
+                    DragGesture(minimumDistance: 30)
+                        .onEnded { value in
+                            if abs(value.translation.width) > 50 || abs(value.translation.height) > 50 {
+                                COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
+                            }
+                        }
+                )
             }
         }
         .frame(height: 44)

@@ -62,8 +62,19 @@ public struct COToolSection<Content: View>: View {
                         Text(title.uppercased())
                             .font(.system(size: 11, weight: .bold))
                     }
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(PlainButtonStyle())
+                .gesture(
+                    DragGesture(minimumDistance: 30)
+                        .onEnded { value in
+                            if abs(value.translation.width) > 50 || abs(value.translation.height) > 50 {
+                                if let session = commands.session {
+                                    COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                                }
+                            }
+                        }
+                )
 
                 Spacer()
 
@@ -73,6 +84,12 @@ public struct COToolSection<Content: View>: View {
 
                 toolHeaderButton(systemName: "arrow.uturn.backward.circle") {
                     commands.resetTool(toolID)
+                }
+
+                toolHeaderButton(systemName: "pip.fill") {
+                    if let session = commands.session {
+                        COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                    }
                 }
 
                 Menu {
@@ -100,6 +117,12 @@ public struct COToolSection<Content: View>: View {
                 Menu {
                     Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
                         workspaceManager.moveTool(toolID, toPinnedArea: !isPinned)
+                    }
+
+                    Button("Float Tool") {
+                        if let session = commands.session {
+                            COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                        }
                     }
 
                     Divider()

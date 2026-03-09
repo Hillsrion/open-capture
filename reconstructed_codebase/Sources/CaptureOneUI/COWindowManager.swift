@@ -26,6 +26,10 @@ public final class COWindowManager {
     private var importerWindowController: NSWindowController?
     private var exporterWindowController: NSWindowController?
     private var printWindowController: NSWindowController?
+    private var floatingToolControllers: [String: FloatingToolWindowController] = [:]
+    private var floatingToolDelegates: [String: FloatingToolWindowDelegate] = [:]
+    private var floatingPaletteControllers: [String: FloatingPaletteWindowController] = [:]
+    private var floatingPaletteDelegates: [String: FloatingPaletteWindowDelegate] = [:]
     private var startWindow: NSWindow?
     
     private init() {}
@@ -284,6 +288,50 @@ public final class COWindowManager {
         printWindowController = nil
         printWindowDelegate = nil
     }
+
+    // MARK: - Floating Tools (WS-105)
+
+    public func openFloatingToolWindow(toolID: String, toolName: String, session: SessionBase) {
+        if let existingController = floatingToolControllers[toolID] {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+
+        let controller = FloatingToolWindowController(toolID: toolID, toolName: toolName, session: session)
+        self.floatingToolControllers[toolID] = controller
+
+        guard let window = controller.window else { return }
+        let delegate = FloatingToolWindowDelegate(manager: self, toolID: toolID)
+        self.floatingToolDelegates[toolID] = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    public func removeFloatingToolWindow(id: String) {
+        floatingToolControllers.removeValue(forKey: id)
+        floatingToolDelegates.removeValue(forKey: id)
+    }
+
+    public func openFloatingPaletteWindow(palette: WorkspacePaletteDefinition, context: InspectorToolContext) {
+        if let existingController = floatingPaletteControllers[palette.id] {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+
+        let controller = FloatingPaletteWindowController(palette: palette, context: context)
+        self.floatingPaletteControllers[palette.id] = controller
+
+        guard let window = controller.window else { return }
+        let delegate = FloatingPaletteWindowDelegate(manager: self, paletteID: palette.id)
+        self.floatingPaletteDelegates[palette.id] = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    public func removeFloatingPaletteWindow(id: String) {
+        floatingPaletteControllers.removeValue(forKey: id)
+        floatingPaletteDelegates.removeValue(forKey: id)
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -342,5 +390,33 @@ fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
         case .print:
             manager.removePrintWindow()
         }
+    }
+}
+
+fileprivate class FloatingToolWindowDelegate: NSObject, NSWindowDelegate {
+    let manager: COWindowManager
+    let toolID: String
+    
+    init(manager: COWindowManager, toolID: String) {
+        self.manager = manager
+        self.toolID = toolID
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        manager.removeFloatingToolWindow(id: toolID)
+    }
+}
+
+fileprivate class FloatingPaletteWindowDelegate: NSObject, NSWindowDelegate {
+    let manager: COWindowManager
+    let paletteID: String
+    
+    init(manager: COWindowManager, paletteID: String) {
+        self.manager = manager
+        self.paletteID = paletteID
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        manager.removeFloatingPaletteWindow(id: paletteID)
     }
 }
