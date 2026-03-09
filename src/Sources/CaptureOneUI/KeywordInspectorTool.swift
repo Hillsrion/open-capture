@@ -12,7 +12,7 @@ public struct KeywordInspectorTool: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            COToolSection("Keywords", toolID: "KeywordLibrary") {
+            COToolSection("Keyword Library", toolID: "KeywordLibrary") {
                 VStack(spacing: 8) {
                     // Search / Add Field
                     HStack {
