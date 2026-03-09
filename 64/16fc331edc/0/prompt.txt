@@ -1,0 +1,2485 @@
+ok, on va faire ça petit a petit, crée un programme qui va passer petit à petit sur chacune de ces pages en sauvegardant l'html dans un premier temps, regarde mon skill d'extraction de doc @skills/c1-doc-spec-extractor/SKILL.md. attention ces fichiers ne doivent pas être versionnés. je déciderai quoi en faire apres
+--- Content from referenced files ---
+Content from @skills/c1-doc-spec-extractor/SKILL.md:
+---
+name: c1-doc-spec-extractor
+description: Analyzes Capture One User Guide to extract UI specifications, button placements, options, and commands to deduce features and update the project backlog. Use when the user needs to ensure the reconstructed codebase matches the official documentation's UI layout and functionality.
+---
+
+# Capture One Documentation Spec Extractor
+
+This skill provides a systematic workflow for crawling the Capture One User Guide to extract high-fidelity UI specifications.
+
+## Workflow
+
+1.  **Crawl Root URL**: Start at `https://support.captureone.com/hc/en-us/categories/360000279017-User-guide`.
+2.  **Identify Sections**: Extract all section links (e.g., "User Interface", "Working with Colors", "Exposure and Contrast").
+3.  **Extract Article Content**: For each section, visit all articles.
+    -   **Extract Textual Specs**: Identify UI elements (buttons, sliders, fields), their locations (e.g., "Exposure tool in the Exposure tool tab"), and their associated options.
+    -   **Identify Images**: Capture URLs of screenshots that show UI layouts.
+    -   **YouTube Video Processing**: If a YouTube video is embedded:
+        -   **Extract Transcript**: Use available tools or web search to retrieve the video's transcript.
+        -   **Identify Key Frames**: Based on the transcript, identify timestamps where specific UI elements or workflows are demonstrated.
+        -   **Visual Context**: Use the transcript and description to document UI placements that might be missing from static images.
+4.  **Deduce Features**: map extracted UI items to functional commands and underlying logic (e.g., "Reset button" -> `resetCommand`).
+5.  **Identify Gaps**: Compare the extracted specs with:
+    -   Existing codebase (especially `src/Sources/CaptureOneUI/`).
+    -   The current `@conductor/backlog.md`.
+6.  **Update Backlog**: Add missing UI items and functional gaps to `conductor/backlog.md` with high precision.
+
+## Extraction Template
+
+For each UI tool/area, aim to extract:
+
+-   **ID**: Internal ID if guessable, or descriptive name.
+-   **Parent Container**: Tool Tab, Palette, or Toolbar.
+-   **Elements**: List of buttons, sliders, menus.
+-   **Sub-options**: Dropdowns, checkboxes, or hidden menus.
+-   **Visual Reference**: Link to the image illustrating this tool.
+
+## Tools to Use
+
+-   `web_fetch`: To retrieve content from URLs.
+-   `grep_search` / `read_file`: To inspect the existing codebase for parity checks.
+-   `generalist`: Delegate the large-scale crawling and summarization to the generalist sub-agent to preserve main session context.
+--- End of content ---
+
+---
+
+oui
+
+---
+
+fais les tous
+
+---
+
+il n'y a pas des centaines. regarde la dedans : <div id="main-content" class="section-tree">
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/34053125806237-Negative-Film-scanning">Negative Film scanning</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/33917623779229-Negative-Film-Conversion" class="article-list-link">Negative Film Conversion</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/31174896826653-Retouching-Tools">Retouching Tools</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31234371381917-Retouch-Face-Selector-Tool" class="article-list-link">Retouch Face Selector Tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/27336176639133-Retouch-Face-Skin-tool" class="article-list-link">Retouch Face Skin tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31234409628189-Retouch-Eyes-Tool" class="article-list-link">Retouch Eyes Tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31234408180893-Retouch-Teeth-Tool" class="article-list-link">Retouch Teeth Tool</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000661617-Getting-Started">Getting Started</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item article-promoted">
+                    <div class="article-list-title">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="icon-star" title="Promoted article">
+                          <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"></path>
+                        </svg>
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Capture One System Requirements and OS compatibility</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/27689044261661-Capture-One-Beta-Program" class="article-list-link">Capture One Beta Program</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4412589936657-Capture-One-Quick-Guide" class="article-list-link">Capture One - Quick Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/17932082795037-About-Capture-One-Studio" class="article-list-link">About Capture One Studio</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002470258-Download-install-and-update-Capture-One" class="article-list-link">Download, install, and update Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/18120324362141-About-Live-for-Studio" class="article-list-link">About Live for Studio</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000661617-Getting-Started" class="see-all-articles">
+                  See all 7 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000662757-User-Interface">User Interface</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002468797-User-interface-overview" class="article-list-link">User interface overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002468897-The-Viewer-overview" class="article-list-link">The Viewer overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002474018-The-Browser-overview" class="article-list-link">The Browser overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002470117-Workspace-layouts" class="article-list-link">Workspace layouts</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/18155251834013-Client-Viewers-Studio" class="article-list-link">Client Viewers (Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/14268729457565-My-Capture-One" class="article-list-link">My Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000662757-User-Interface" class="see-all-articles">
+                  See all 25 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000856077-Workflow-Basics">Workflow Basics</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item article-promoted">
+                    <div class="article-list-title">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="icon-star" title="Promoted article">
+                          <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"></path>
+                        </svg>
+                      
+                      <a href="/hc/en-us/articles/30041173920029-Sessions-vs-Catalogs-in-Capture-One-how-they-work-and-where-to-store-them" class="article-list-link">Sessions vs Catalogs in Capture One: how they work and where to store them</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item article-promoted">
+                    <div class="article-list-title">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="icon-star" title="Promoted article">
+                          <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"></path>
+                        </svg>
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">How Catalog and Session backups work in Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31348568482077-PSB-format-support" class="article-list-link">PSB format support</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">The way Capture One works with RAW files</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002478437-The-concept-of-variants-in-Capture-One" class="article-list-link">The concept of variants in Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002481017-Compare-Variant-Pro-Studio" class="article-list-link">Compare Variant (Pro, Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000856077-Workflow-Basics" class="see-all-articles">
+                  See all 31 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000668917-Catalogs">Catalogs</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360003108698-Complete-Guide-to-Using-Catalogs" class="article-list-link">Complete Guide to Using Catalogs</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002492617-Importing-images-into-a-Catalog" class="article-list-link">Importing images into a Catalog</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360008801138-How-to-Import-an-Aperture-Library-into-Capture-One" class="article-list-link">How to Import an Aperture Library into Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360006595157-How-to-Import-a-Lightroom-Catalog-into-Capture-One" class="article-list-link">How to Import a Lightroom Catalog into Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002519558-Creating-and-saving-a-Catalog-on-a-network-drive" class="article-list-link">Creating and saving a Catalog on a network drive</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002519598-Importing-and-storing-images-on-a-network-drive" class="article-list-link">Importing and storing images on a network drive</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000668917-Catalogs" class="see-all-articles">
+                  See all 8 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000869837-Sessions">Sessions</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360003115137-The-Complete-Guide-to-Sessions-in-Capture-One" class="article-list-link">The Complete Guide to Sessions in Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002521938-Importing-images-into-a-Session" class="article-list-link">Importing images into a Session</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002523438-Accessing-images-stored-on-a-network-drive-Sessions" class="article-list-link">Accessing images stored on a network drive (Sessions)</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000671717-Library">Library</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002797618-Library-Tool" class="article-list-link">Library Tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002523577-Folders-in-Catalogs" class="article-list-link">Folders in Catalogs</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002525898-Folders-in-Sessions" class="article-list-link">Folders in Sessions</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002524037-Album-folders" class="article-list-link">Album folders</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002524157-Selects-Folder-and-Selects-Collection" class="article-list-link">Selects Folder and Selects Collection</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002524197-Smart-Albums" class="article-list-link">Smart Albums</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000671717-Library" class="see-all-articles">
+                  See all 13 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000860177-Preferences-Settings">Preferences/Settings</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002487238-Preferences-Settings-overview" class="article-list-link">Preferences/Settings overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002484097-Capture-One-Preferences-Settings-The-General-tab" class="article-list-link">Capture One Preferences/Settings: The General tab</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002484197-Capture-One-Preferences-Settings-The-Appearance-tab" class="article-list-link">Capture One Preferences/Settings: The Appearance tab</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002484457-Capture-One-Preferences-Settings-Image-tab" class="article-list-link">Capture One Preferences/Settings: Image tab</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002487678-Capture-One-Preferences-Settings-The-Capture-tab" class="article-list-link">Capture One Preferences/Settings: The Capture tab</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002487738-Capture-One-Preferences-Settings-The-Color-tab" class="article-list-link">Capture One Preferences/Settings: The Color tab</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000860177-Preferences-Settings" class="see-all-articles">
+                  See all 13 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000689177-Lens-Correction">Lens Correction</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002582318-The-Lens-Correction-tool" class="article-list-link">The Lens Correction tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002582378-Applying-a-specific-lens-profile" class="article-list-link">Applying a specific lens profile</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002579817-Applying-a-generic-lens-profile" class="article-list-link">Applying a generic lens profile</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002579977-Chromatic-aberration-and-purple-fringing" class="article-list-link">Chromatic aberration and purple fringing</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002582658-Removing-chromatic-aberration" class="article-list-link">Removing chromatic aberration</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002583158-Removing-purple-fringing" class="article-list-link">Removing purple fringing</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000689177-Lens-Correction" class="see-all-articles">
+                  See all 27 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000689717-Composition">Composition</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/32023401020573-Fujifilm-in-camera-crop-support" class="article-list-link">Fujifilm in-camera crop support</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/18155069152797-AI-Crop-Pro-Studio" class="article-list-link">AI Crop (Pro, Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002582997-The-Crop-Tool" class="article-list-link">The Crop Tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002585718-Cropping-images" class="article-list-link">Cropping images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002585778-Displaying-Grid-while-cropping" class="article-list-link">Displaying Grid while cropping</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002583057-Adding-a-custom-aspect-ratio" class="article-list-link">Adding a custom aspect ratio</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000689717-Composition" class="see-all-articles">
+                  See all 22 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000690697-Working-with-Colors">Working with Colors</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/33593506104605-E-commerce-ICC-profiles-Studio" class="article-list-link">E-commerce ICC profiles (Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Understanding ProStandard profiles</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4414354567825-DJI-Drone-DNG-Color-Lens-correction-in-Capture-One" class="article-list-link">DJI Drone DNG Color &amp; Lens correction in Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002588917-The-Base-Characteristics-panel-overview" class="article-list-link">The Base Characteristics panel overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002593678-Selecting-an-alternative-ICC-profile" class="article-list-link">Selecting an alternative ICC profile</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002593758-Selecting-an-alternative-tone-curve" class="article-list-link">Selecting an alternative tone curve</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000690697-Working-with-Colors" class="see-all-articles">
+                  See all 60 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000693537-Exposure-and-Contrast">Exposure and Contrast</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002609238-Auto-adjustments" class="article-list-link">Auto adjustments</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002785697-Exposure" class="article-list-link">Exposure</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002602077-Adjusting-exposure-in-the-Exposure-tool" class="article-list-link">Adjusting exposure in the Exposure tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002609938-Adjusting-brightness-in-the-Exposure-tool" class="article-list-link">Adjusting brightness in the Exposure tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002602177-Adjusting-contrast-in-the-Exposure-tool" class="article-list-link">Adjusting contrast in the Exposure tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002602197-Adjusting-saturation-in-the-Exposure-tool" class="article-list-link">Adjusting saturation in the Exposure tool</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000693537-Exposure-and-Contrast" class="see-all-articles">
+                  See all 32 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000694377-Details">Details</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002606817-Overview-of-sharpening-workflow" class="article-list-link">Overview of sharpening workflow</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002615478-Checking-focus-and-sharpness" class="article-list-link">Checking focus and sharpness</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002606917-Adjusting-sharpening-in-the-Sharpening-tool" class="article-list-link">Adjusting sharpening in the Sharpening tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002606937-Saving-settings-as-new-defaults-in-the-Sharpening-tool" class="article-list-link">Saving settings as new defaults in the Sharpening tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002606977-Saving-settings-as-user-presets-in-the-Sharpening-tool" class="article-list-link">Saving settings as user presets in the Sharpening tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002606997-Sharpening-an-image-using-predefined-settings" class="article-list-link">Sharpening an image using predefined settings</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000694377-Details" class="see-all-articles">
+                  See all 15 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000695538-Layer-Adjustments">Layer Adjustments</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Copying layers options — Skip, Add, or Replace</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/32398712990237-Export-masks-from-Capture-One-to-Photoshop" class="article-list-link">Export masks from Capture One to Photoshop</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31021514753053-Combine-Masks" class="article-list-link">Combine Masks</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/14055231933853-AI-Masking" class="article-list-link">AI Masking</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/5363647129757-Magic-Eraser" class="article-list-link">Magic Eraser</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002601658-Overview-of-Layers-and-Masks" class="article-list-link">Overview of Layers and Masks</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000695538-Layer-Adjustments" class="see-all-articles">
+                  See all 45 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/7650073956125-Smart-Adjustments">Smart Adjustments</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/22188770298269-Match-Look-Tool" class="article-list-link">Match Look Tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/7129920998045-Smart-Adjustments" class="article-list-link">Smart Adjustments</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/7298645429149-Smart-Styles" class="article-list-link">Smart Styles</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000690717-Histograms">Histograms</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002589878-About-histograms" class="article-list-link">About histograms</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002597757-The-Exposure-Evaluation-panel" class="article-list-link">The Exposure Evaluation panel</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002597797-About-the-exposure-meter-in-Exposure-Evaluation" class="article-list-link">About the exposure meter in Exposure Evaluation</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Determining optimal exposure with RAW and RGB files</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000694318-Styles-and-Presets">Styles and Presets</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/29030106099485-Styles-vs-Presets-What-s-the-Difference" class="article-list-link">Styles vs. Presets: What's the Difference?</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/11141477023773-Change-of-built-in-Styles-in-Capture-One-23-16-2-0" class="article-list-link">Change of built-in Styles in Capture One 23 (16.2.0)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/7789383631389-Advanced-Styles" class="article-list-link">Advanced Styles</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/7517957831197-Styles-in-Layers" class="article-list-link">Styles in Layers</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002611797-An-overview-of-Styles" class="article-list-link">An overview of Styles</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002611857-Applying-a-Style" class="article-list-link">Applying a Style</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000694318-Styles-and-Presets" class="see-all-articles">
+                  See all 20 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/4410022337681-HDR-Merging">HDR Merging</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4410014730257-HDR-merging-overview" class="article-list-link">HDR merging overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4413050020113-HDR-Merging-Best-Practice" class="article-list-link">HDR Merging Best Practice</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/4410014696465-Panorama-Stitching">Panorama Stitching</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4410022364433-Panorama-Stitching-overview" class="article-list-link">Panorama Stitching overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4413050000785-Panorama-Stitching-Best-Practice" class="article-list-link">Panorama Stitching Best Practice</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000860038-Customization">Customization</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/22189195526429-Cloud-Settings-All-in-One-Studio" class="article-list-link">Cloud Settings (All in One, Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002490858-Customizing-toolbar" class="article-list-link">Customizing toolbar</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002491618-Customizing-user-interface" class="article-list-link">Customizing user interface</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002491798-Saving-a-personal-workspace" class="article-list-link">Saving a personal workspace</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002491858-Modifying-the-window-size-of-tools" class="article-list-link">Modifying the window size of tools</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002490977-Changing-default-settings-in-tools" class="article-list-link">Changing default settings in tools</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000860038-Customization" class="see-all-articles">
+                  See all 7 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000669658-File-Naming">File Naming</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002528857-Adopting-tokens-in-naming-dialogs" class="article-list-link">Adopting tokens in naming dialogs</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002531698-Naming-folders-and-files-dynamically" class="article-list-link">Naming folders and files dynamically</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002529097-Name-files-when-capturing" class="article-list-link">Name files when capturing</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002529417-Name-files-when-importing-images" class="article-list-link">Name files when importing images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002529857-Change-naming-settings" class="article-list-link">Change naming settings</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002529957-Create-custom-naming-presets" class="article-list-link">Create custom naming presets</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000669658-File-Naming" class="see-all-articles">
+                  See all 10 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000670758-Creating-Image-Copies">Creating Image Copies</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/7185952899869-Splitting-Variants-in-Albums" class="article-list-link">Splitting Variants in Albums</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002534838-Creating-copies-of-variants" class="article-list-link">Creating copies of variants</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002536118-Creating-a-copy-of-the-original-image-New-Variant" class="article-list-link">Creating a copy of the original image (New Variant)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002533237-Creating-a-copy-of-the-selected-image-Clone-Variant" class="article-list-link">Creating a copy of the selected image (Clone Variant)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002533397-Variant-groups-overview" class="article-list-link">Variant groups overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002533497-Opening-and-closing-variant-groups" class="article-list-link">Opening and closing variant groups</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000670758-Creating-Image-Copies" class="see-all-articles">
+                  See all 7 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360005888237-Exporting-Images">Exporting Images</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/21230910200477-Content-Credentials-All-in-One-Studio" class="article-list-link">Content Credentials (All in One, Studio)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4403021653649-Export-overview" class="article-list-link">Export overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360021057158-Export-Recipes" class="article-list-link">Export Recipes</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4406101439633-Cross-Recipe-Tokens-tool" class="article-list-link">Cross Recipe Tokens tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360020905077-Location-tool" class="article-list-link">Location tool</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360020905117-Naming-tool" class="article-list-link">Naming tool</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360005888237-Exporting-Images" class="see-all-articles">
+                  See all 13 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000674317-Sequences">Sequences</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002537258-An-overview-of-sequences" class="article-list-link">An overview of sequences</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002535137-Tokens-and-dynamic-locations" class="article-list-link">Tokens and dynamic locations</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002535197-Sequence-ID-and-Sequence-Info-in-Metadata" class="article-list-link">Sequence ID and Sequence Info in Metadata</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002535317-Creating-sequence-sub-folders-on-import" class="article-list-link">Creating sequence sub-folders on import</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002535457-Naming-a-sequence-on-import" class="article-list-link">Naming a sequence on import</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002535617-Naming-a-sequence-when-tethered" class="article-list-link">Naming a sequence when tethered</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000674317-Sequences" class="see-all-articles">
+                  See all 16 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000676417-Keywords-and-Metadata">Keywords and Metadata</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Change capture time –&nbsp;modifying EXIF data</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/5333146130845-GPS-location-data" class="article-list-link">GPS location data</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4598030895005-How-to-delete-Metadata-saved-suggestions" class="article-list-link">How to delete Metadata saved suggestions</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002544178-Keywords-overview" class="article-list-link">Keywords overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002544218-Creating-and-applying-keywords-to-images" class="article-list-link">Creating and applying keywords to images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002544258-Removing-keywords-from-images" class="article-list-link">Removing keywords from images</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000676417-Keywords-and-Metadata" class="see-all-articles">
+                  See all 20 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000673298-Deleting-Images">Deleting Images</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002546757-Deleting-images-and-variants-in-general" class="article-list-link">Deleting images and variants in general</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002547197-Deleting-images-and-their-variants-from-Collections" class="article-list-link">Deleting images and their variants from Collections</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002546518-Deleting-images-and-variants-from-the-Session-Trash" class="article-list-link">Deleting images and variants from the Session Trash</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002547417-Deleting-images-and-variants-from-the-Catalog-Trash" class="article-list-link">Deleting images and variants from the Catalog Trash</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002547457-Deleting-images-and-variants-immediately" class="article-list-link">Deleting images and variants immediately</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002547497-Deleting-offline-images-and-variants" class="article-list-link">Deleting offline images and variants</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000673298-Deleting-Images" class="see-all-articles">
+                  See all 7 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360005808377-Capture-One-Live">Capture One Live</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4403611619985-Capture-One-Live-overview" class="article-list-link">Capture One Live overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4404366517393-Capture-One-Live-FAQ" class="article-list-link">Capture One Live FAQ</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Capture One Live troubleshooting</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Quick Start Guide for Capture One Live</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4411313408913-How-do-I-share-a-selection-of-photos" class="article-list-link">How do I share a selection of photos? </a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000860078-Keyboard-Shortcuts">Keyboard Shortcuts</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/10917697304733-Adding-Custom-Shortcuts" class="article-list-link">Adding Custom Shortcuts</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002490637-Keyboard-shortcut-sets" class="article-list-link">Keyboard shortcut sets</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002490757-Creating-a-custom-shortcut-set" class="article-list-link">Creating a custom shortcut set</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Editing keyboard shortcuts</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002490857-Assigning-shortcuts-to-Cursor-Tools" class="article-list-link">Assigning shortcuts to Cursor Tools</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002494678-Copying-a-shortcut-set" class="article-list-link">Copying a shortcut set</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000860078-Keyboard-Shortcuts" class="see-all-articles">
+                  See all 9 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000685637-Capture-Pilot">Capture Pilot</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002574498-Capture-Pilot-overview" class="article-list-link">Capture Pilot overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002575858-Browse-images-in-Capture-Pilot" class="article-list-link">Browse images in Capture Pilot</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002573057-Setup-a-direct-ad-hoc-connection-with-Phase-One-IQ3-2-based-system-camera" class="article-list-link">Setup a direct (ad-hoc) connection with Phase One IQ3/2 based system camera</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Live View using a Phase One IQ3 100/50MP or IQ250 digital back</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002573097-Shooting-remotely-from-Capture-Pilot-Camera-Control-using-a-Phase-One-system-camera" class="article-list-link">Shooting remotely from Capture Pilot (Camera Control) using a Phase One system camera</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002573117-Setup-a-direct-ad-hoc-connection-with-an-Alpa-A-series-system-camera" class="article-list-link">Setup a direct (ad-hoc) connection with an Alpa A-series system camera</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000685637-Capture-Pilot" class="see-all-articles">
+                  See all 8 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000698197-Annotating-Images">Annotating Images</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002637338-Annotating-images" class="article-list-link">Annotating images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002626757-Sketching-on-images" class="article-list-link">Sketching on images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002626817-Adjusting-the-cursor-size-when-annotating-images" class="article-list-link">Adjusting the cursor size when annotating images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002637458-Copying-annotations-between-images" class="article-list-link">Copying annotations between images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002626837-Displaying-and-hiding-annotations" class="article-list-link">Displaying and hiding annotations</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002626877-Searching-for-annotated-images" class="article-list-link">Searching for annotated images</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000698197-Annotating-Images" class="see-all-articles">
+                  See all 9 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000698577-External-Editing">External Editing</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/11019291187997-How-to-access-your-Catalog-images-outside-of-Capture-One" class="article-list-link">How to access your Catalog images outside of Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002627457-About-external-editing" class="article-list-link">About external editing</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002638138-Using-plugins-for-external-editing" class="article-list-link">Using plugins for external editing</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002638238-Making-image-adjustments-with-an-external-editor" class="article-list-link">Making image adjustments with an external editor</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002627737-Opening-images-in-an-external-editor" class="article-list-link">Opening images in an external editor</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000700277-Processing-Variants">Processing Variants</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002645918-Proofing-profiles" class="article-list-link">Proofing profiles</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002633697-Process-Recipes-and-Export-Recipes" class="article-list-link">Process Recipes and Export Recipes</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002633717-Processing-image-variants-using-recipes" class="article-list-link">Processing image variants using recipes</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002646058-Processing-multiple-file-formats-simultaneously" class="article-list-link">Processing multiple file formats simultaneously</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002634057-Verifying-recipe-settings" class="article-list-link">Verifying recipe settings</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002646358-Proofing-recipes" class="article-list-link">Proofing recipes</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000700277-Processing-Variants" class="see-all-articles">
+                  See all 45 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000701577-Plugins">Plugins</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Edit Background with Photoroom API (All in One and Studio in Sessions)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Glass Integration (macOS)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/10918782953885-Frame-io-integration-with-Capture-One" class="article-list-link">Frame.io integration with Capture One</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002652598-Publishing-images" class="article-list-link">Publishing images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002659738-Plugins-for-publishing-images" class="article-list-link">Plugins for publishing images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002659798-Installing-a-plugin-for-publishing-images" class="article-list-link">Installing a plugin for publishing images</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000701577-Plugins" class="see-all-articles">
+                  See all 7 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000703698-Contact-Sheets">Contact Sheets</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31355885087517-Contact-Sheets" class="article-list-link">Contact Sheets</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000703758-Printing-Images">Printing Images</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002660538-Printing-images" class="article-list-link">Printing images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002648217-Templates-for-printing-images" class="article-list-link">Templates for printing images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002660558-Managing-custom-print-templates" class="article-list-link">Managing custom print templates</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002660578-Units-and-Guides-in-the-Print-dialog-box" class="article-list-link">Units and Guides in the Print dialog box</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002660598-Adjusting-the-layout-in-the-Print-dialog-box" class="article-list-link">Adjusting the layout in the Print dialog box</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002648257-Adjusting-image-settings-in-the-Print-dialog-box" class="article-list-link">Adjusting image settings in the Print dialog box</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000703758-Printing-Images" class="see-all-articles">
+                  See all 13 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000704017-LAB-Readouts">LAB Readouts</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002653077-The-capture-process-overview" class="article-list-link">The capture process overview</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002666258-Lab-and-CIE-XYZ-color-spaces" class="article-list-link">Lab and CIE XYZ color spaces</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002666338-Standard-observer" class="article-list-link">Standard observer</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002666398-Light-source" class="article-list-link">Light source</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002653437-Metamerism" class="article-list-link">Metamerism</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002667658-Lab-coordinates-in-a-processed-image" class="article-list-link">Lab coordinates in a processed image</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000704017-LAB-Readouts" class="see-all-articles">
+                  See all 22 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000704038-Capture-One-Cultural-Heritage-CH">Capture One Cultural Heritage (CH)</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002649677-About-Capture-One-Cultural-Heritage" class="article-list-link">About Capture One Cultural Heritage</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002650137-Cultural-Heritage-workspaces" class="article-list-link">Cultural Heritage workspaces</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002663278-Auto-Crop-tool-in-Capture-One-CH" class="article-list-link">Auto Crop tool in Capture One CH</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002663418-Applying-Auto-Crop-to-a-single-image" class="article-list-link">Applying Auto Crop to a single image</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002650577-Applying-Auto-Crop-to-multiple-images" class="article-list-link">Applying Auto Crop to multiple images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Auto Crop confidence feedback for Roll Film</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000704038-Capture-One-Cultural-Heritage-CH" class="see-all-articles">
+                  See all 32 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000707138-Capture-One-Enterprise">Capture One Enterprise</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Deploying company.config Using Jamf Pro</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002671937-About-Capture-One-Enterprise" class="article-list-link">About Capture One Enterprise</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/15580158882333-Managing-Users-and-Multi-User-Access-Management-Studio-for-Teams-and-Studio-for-Enterprise" class="article-list-link">Managing Users and Multi User Access Management (Studio for Teams and Studio for Enterprise)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002663277-Barcode-Scanner-Tool-Studio-for-Enterprise" class="article-list-link">Barcode Scanner Tool (Studio for Enterprise)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Configuring the Barcode scanner (Studio for Enterprise)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002675938-Using-the-Barcode-scanner-tool-Studio-for-Enterprise" class="article-list-link">Using the Barcode scanner tool (Studio for Enterprise)</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000707138-Capture-One-Enterprise" class="see-all-articles">
+                  See all 21 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/REDACTED">Fujifilm RAW Converter</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/REDACTED" class="article-list-link">Fujifilm RAW Converter</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360000698858-Exporting-Images-in-version-up-to-Capture-One-21-14-2">Exporting Images in version up to Capture One 21 (14.2)</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/31378354428061-Web-Contact-Sheet-Legacy" class="article-list-link">Web Contact Sheet (Legacy)</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002639458-Overview-of-exporting-images" class="article-list-link">Overview of exporting images</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002629217-File-formats-for-processing-and-export" class="article-list-link">File formats for processing and export</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002639978-Exporting-originals" class="article-list-link">Exporting originals</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002640058-Exporting-DNG-files" class="article-list-link">Exporting DNG files</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360002529597-Name-output-files-when-processing-images" class="article-list-link">Name output files when processing images</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360000698858-Exporting-Images-in-version-up-to-Capture-One-21-14-2" class="see-all-articles">
+                  See all 11 articles
+                </a>
+              
+            
+          </section>
+        
+          <section class="section">
+            <h2 class="section-tree-title">
+              <a href="/hc/en-us/sections/360002086918-User-Guides-in-PDF">User Guides in PDF</a>
+            </h2>
+            
+            
+              <ul id="article-list-holder" class="article-list" style="flex-direction: column; align-items: center;">
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/4413858775441-Capture-One-22-User-Guide" class="article-list-link">Capture One 22 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360016309678-Capture-One-21-User-Guide" class="article-list-link">Capture One 21 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360008019917-Capture-One-20-User-Guide" class="article-list-link">Capture One 20 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360007003898-Capture-One-12-User-Guide" class="article-list-link">Capture One 12 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360006962757-Capture-One-11-User-Guide" class="article-list-link">Capture One 11 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+                  <li class="article-list-item">
+                    <div class="article-list-title">
+                      
+                      <a href="/hc/en-us/articles/360006962817-Capture-One-10-User-Guide" class="article-list-link">Capture One 10 User Guide</a>
+                      
+                    </div>
+                  </li>
+                
+              </ul>
+              
+                <a href="/hc/en-us/sections/360002086918-User-Guides-in-PDF" class="see-all-articles">
+                  See all 12 articles
+                </a>
+              
+            
+          </section>
+        
+      </div> tu prends tout ceux qui vont nous aider a extraire les features et specs du logiciel. quand tu vois un see all, tu vas sur le lien ou pointe le see all et tu prends la liste d'articles sur la page ou il pointe qui est dans .article-list
+
+---
+
+yes
+
+---
+
+les fichiers dont tu parles sont vides de contenu
