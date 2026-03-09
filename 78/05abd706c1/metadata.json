@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "7805abd706c1",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/tracks/workspace_chrome_fidelity_20260309/plan.md",
+    "reconstructed_codebase/Sources/CaptureOneUI/COWindowManager.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/CaptureOneTheme.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/CullingWindowController.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/FloatingPaletteWindowController.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/FloatingToolWindowController.swift",
+    "reconstructed_codebase/Sources/CaptureOneUI/InspectorToolTabView.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/78/05abd706c1/0/metadata.json",
+      "transcript": "/78/05abd706c1/0/full.jsonl",
+      "content_hash": "/78/05abd706c1/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
