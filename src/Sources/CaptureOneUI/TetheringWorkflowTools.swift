@@ -139,6 +139,23 @@ public struct ExposureEvaluationToolView: View {
     }
 }
 
+/// Reconstructed Normalize tool (ui-205).
+public struct NormalizeToolView: View {
+    public init() {}
+    public var body: some View {
+        COToolSection("Normalize", toolID: "Normalize") {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Pick an area to define baseline exposure/color.").font(.system(size: 10)).foregroundColor(.gray)
+                Button(action: {}) {
+                    Text("Apply Normalization").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+            }
+            .padding(.vertical, 4)
+        }
+    }
+}
+
 /// Reconstructed Next Capture Location (GAP-406).
 public struct NextCaptureLocationToolView: View {
     @State private var location: String = "Capture Folder"

@@ -59,7 +59,7 @@ struct ImportSettingsSidebar: View {
         ScrollView {
             VStack(spacing: 1) {
                 // Import From (Source)
-                COToolSection("Import From") {
+                COToolSection("Import From", toolID: "ImportFrom") {
                     VStack(alignment: .leading, spacing: 10) {
                         Button(action: {
                             let panel = NSOpenPanel()
@@ -90,7 +90,7 @@ struct ImportSettingsSidebar: View {
                 }
                 
                 // Destination
-                COToolSection("Import To") {
+                COToolSection("Import To", toolID: "ImportTo") {
                     VStack(alignment: .leading, spacing: 8) {
                         Picker("", selection: $importer.settings.destinationFolderType) {
                             Text("Current Location").tag(ImportSettings.DestinationFolderType.currentLocation)
@@ -103,7 +103,7 @@ struct ImportSettingsSidebar: View {
                 }
                 
                 // Naming
-                COToolSection("Naming") {
+                COToolSection("Naming", toolID: "ImportNaming") {
                     VStack(alignment: .leading, spacing: 8) {
                         TextField("Format", text: $importer.settings.namingFormat)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -116,7 +116,7 @@ struct ImportSettingsSidebar: View {
                 }
                 
                 // Metadata
-                COToolSection("Metadata") {
+                COToolSection("Metadata", toolID: "ImportMetadata") {
                     VStack(alignment: .leading, spacing: 8) {
                         TextField("Job Name", text: $importer.settings.metadata.jobName)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -132,7 +132,7 @@ struct ImportSettingsSidebar: View {
                 }
                 
                 // EIP Handling (CORE-006)
-                COToolSection("Options") {
+                COToolSection("Options", toolID: "ImportOptions") {
                     VStack(alignment: .leading, spacing: 8) {
                         Toggle("Pack as EIP", isOn: $importer.settings.alwaysPackAsEIP)
                             .font(.system(size: 11))

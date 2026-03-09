@@ -62,7 +62,7 @@ public enum ToolRegistry {
                 AnyView(MetadataInspectorView(image: context.adjustmentController.currentVariant?.image))
             }
         case "Camera":
-            return .implemented { _ in AnyView(CameraSummaryToolView()) }
+            return .implemented { _ in AnyView(CameraSettingsTool()) }
         case "CameraSettings":
             return .implemented { _ in AnyView(CameraSettingsTool()) }
         case "NextCaptureNaming":
@@ -76,21 +76,21 @@ public enum ToolRegistry {
         case "NextCaptureKeywords":
             return .implemented { context in AnyView(NextCaptureKeywordsToolView(config: context.config)) }
         case "LivePreviewComposition":
-            return .implemented { _ in AnyView(LivePreviewCompositionToolView()) }
+            return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewComposition")) }
         case "LivePreviewAdjustments":
-            return .implemented { _ in AnyView(LivePreviewAdjustmentsToolView()) }
+            return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewAdjustments")) }
         case "LivePreviewInfoTool":
-            return .implemented { _ in AnyView(LivePreviewInfoToolView()) }
+            return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewInfoTool")) }
         case "Normalize":
             return .implemented { _ in AnyView(NormalizeToolView()) }
         case "NextCaptureBackup":
             return .implemented { context in AnyView(NextCaptureBackupToolView(config: context.config)) }
         case "Overlay":
-            return .implemented { context in AnyView(OverlayToolView(config: context.config)) }
+            return .implemented { _ in AnyView(OverlayToolView()) }
         case "LiveForStudio":
-            return .implemented { context in AnyView(LiveForStudioToolView(config: context.config)) }
+            return .implemented { _ in AnyView(LiveForStudioToolView()) }
         case "CameraFocus":
-            return .implemented { context in AnyView(CameraFocusToolView(config: context.config)) }
+            return .implemented { context in AnyView(UnavailableToolView(toolID: "CameraFocus")) }
         case "ExposureEvaluation":
             return .implemented { context in AnyView(ExposureEvaluationToolView(adjustmentController: context.adjustmentController, config: context.config)) }
         case "Histogram":
@@ -361,7 +361,7 @@ public struct UnavailableToolView: View {
     }
 
     public var body: some View {
-        COToolSection(toolID) {
+        COToolSection(toolID, toolID: toolID) {
             VStack(alignment: .leading, spacing: 6) {
                 Text("Restoration pending")
                     .font(.system(size: 11, weight: .semibold))
@@ -425,102 +425,6 @@ private struct LocalAdjustmentsToolView: View {
             LayerInspectorView(variant: variant)
         } else {
             UnavailableToolView(toolID: "LocalAdjustments")
-        }
-    }
-}
-
-private struct CameraSummaryToolView: View {
-    @ObservedObject private var browser = PtpDeviceBrowser.shared
-
-    var body: some View {
-        COToolSection("Camera") {
-            VStack(alignment: .leading, spacing: 8) {
-                if browser.availableCameras.isEmpty {
-                    Text("No camera connected")
-                        .font(.system(size: 11))
-                        .foregroundColor(.gray)
-                } else {
-                    ForEach(browser.availableCameras) { camera in
-                        HStack {
-                            Image(systemName: "camera.fill")
-                                .font(.system(size: 10))
-                                .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                            Text(camera.name)
-                                .font(.system(size: 11))
-                            Spacer()
-                            Text(camera.isConnected ? "Connected" : "Ready")
-                                .font(.system(size: 10))
-                                .foregroundColor(.gray)
-                        }
-                    }
-                }
-            }
-            .onAppear {
-                browser.startDiscovery()
-                browser.availableCameras.forEach { $0.open() }
-            }
-        }
-    }
-}
-
-private struct NextCaptureNamingToolView: View {
-    @ObservedObject private var browser = PtpDeviceBrowser.shared
-
-    var body: some View {
-        if let camera = browser.availableCameras.first {
-            COToolSection("Next Capture Naming") {
-                VStack(spacing: 8) {
-                    TextField("Format", text: Binding(
-                        get: { camera.namingFormat },
-                        set: { camera.namingFormat = $0 }
-                    ))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.system(size: 11, design: .monospaced))
-                    HStack {
-                        Text("Counter")
-                            .font(.system(size: 11))
-                        TextField("", value: Binding(
-                            get: { camera.namingCounter },
-                            set: { camera.namingCounter = $0 }
-                        ), formatter: NumberFormatter())
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(width: 56)
-                        Spacer()
-                    }
-                    Text(camera.nextCaptureName)
-                        .font(.system(size: 10))
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-            }
-        } else {
-            UnavailableToolView(toolID: "NextCaptureNaming")
-                .onAppear { browser.startDiscovery() }
-        }
-    }
-}
-
-private struct NextCaptureAdjustmentsToolView: View {
-    @ObservedObject private var browser = PtpDeviceBrowser.shared
-
-    var body: some View {
-        if let camera = browser.availableCameras.first {
-            COToolSection("Next Capture Adjustments") {
-                Picker("Adjustments", selection: Binding(
-                    get: { camera.nextCaptureAdjustments },
-                    set: { camera.nextCaptureAdjustments = $0 }
-                )) {
-                    Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
-                    Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
-                    Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
-                }
-                .pickerStyle(MenuPickerStyle())
-                .font(.system(size: 11))
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        } else {
-            UnavailableToolView(toolID: "NextCaptureAdjustments")
-                .onAppear { browser.startDiscovery() }
         }
     }
 }

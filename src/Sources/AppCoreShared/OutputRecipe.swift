@@ -2,7 +2,8 @@ import Foundation
 
 /// High-level wrapper for an export recipe.
 /// Based on _TtC12AppCoreShared12OutputRecipe metadata.
-public class OutputRecipe: BaseObject {
+public class OutputRecipe: BaseObject, Identifiable {
+    public var id: String { name }
     public let mcRecipe: MCRecipe
     
     public enum FileFormat: String, Codable, CaseIterable {

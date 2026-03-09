@@ -2,9 +2,6 @@ import SwiftUI
 import AppCoreShared
 import DataCore
 
-/// Reconstructed high-fidelity Metadata Filter Tool (GAP-402).
-/// Based on _TtC10CaptureOne18MetadataFilterTool metadata.
-
 public struct FilterToolView: View {
     @Binding var predicate: COFilterPredicate
     @State private var isShowingFilterDialog = false
@@ -16,84 +13,109 @@ public struct FilterToolView: View {
     public var body: some View {
         COToolSection("Filters", toolID: "MetadataFilters") {
             VStack(alignment: .leading, spacing: 8) {
-                // Active Filters Summary
-                if hasActiveFilters {
-                    HStack {
-                        Circle().fill(CaptureOneTheme.Colors.activeHighlight).frame(width: 6, height: 6)
-                        Text("Filters Active").font(.system(size: 10, weight: .semibold))
-                        Spacer()
-                        Button("Clear All") {
-                            predicate = COFilterPredicate()
-                        }
-                        .buttonStyle(.plain)
-                        .font(.system(size: 10))
-                        .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                    }
-                    .padding(.bottom, 4)
-                }
+                activeFiltersHeader
                 
-                // Ratings Filter Row
                 VStack(alignment: .leading, spacing: 4) {
                     Text("RATING").font(.system(size: 9, weight: .bold)).foregroundColor(.gray)
-                    ForEach((0...5).reversed(), id: \.self) { rating in
-                        filterRow(
-                            label: rating == 0 ? "No Rating" : "\(rating) Stars",
-                            count: 0, // Stub for numeric indicator
-                            isActive: predicate.minRating == rating && (predicate.maxRating == rating || predicate.maxRating == nil),
-                            onTap: {
-                                if predicate.minRating == rating {
-                                    predicate.minRating = nil
-                                    predicate.maxRating = nil
-                                } else {
-                                    predicate.minRating = Int16(rating)
-                                    predicate.maxRating = Int16(rating)
-                                }
-                            }
-                        )
-                    }
+                    ratingRow(value: 5)
+                    ratingRow(value: 4)
+                    ratingRow(value: 3)
+                    ratingRow(value: 2)
+                    ratingRow(value: 1)
+                    ratingRow(value: 0)
                 }
                 
-                // Color Tags Filter Row
                 VStack(alignment: .leading, spacing: 4) {
                     Text("COLOR TAG").font(.system(size: 9, weight: .bold)).foregroundColor(.gray)
-                    ForEach(VariantBase.ColorTag.allCases.filter { $0 != .none }, id: \.self) { tag in
-                        filterRow(
-                            label: tag.displayName,
-                            count: 0, // Stub
-                            isActive: predicate.colorTags?.contains(tag.rawValue) ?? false,
-                            onTap: {
-                                var tags = predicate.colorTags ?? []
-                                if let idx = tags.firstIndex(of: tag.rawValue) {
-                                    tags.remove(at: idx)
-                                } else {
-                                    tags.append(tag.rawValue)
-                                }
-                                predicate.colorTags = tags.isEmpty ? nil : tags
-                            },
-                            tagColor: colorForTag(tag)
-                        )
-                    }
+                    colorTagRow(tag: .red, name: "Red")
+                    colorTagRow(tag: .orange, name: "Orange")
+                    colorTagRow(tag: .yellow, name: "Yellow")
+                    colorTagRow(tag: .green, name: "Green")
+                    colorTagRow(tag: .blue, name: "Blue")
+                    colorTagRow(tag: .purple, name: "Purple")
+                    colorTagRow(tag: .pink, name: "Pink")
                 }
                 
                 Divider().background(Color.white.opacity(0.05))
                 
-                Button(action: { isShowingFilterDialog = true }) {
-                    HStack {
-                        Spacer()
-                        Text("Show/Hide Filters...")
-                            .font(.system(size: 10))
-                        Spacer()
-                    }
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
+                showHideButton
             }
             .padding(.vertical, 4)
         }
     }
     
+    private var activeFiltersHeader: some View {
+        Group {
+            if hasActiveFilters {
+                HStack {
+                    Circle().fill(CaptureOneTheme.Colors.activeHighlight).frame(width: 6, height: 6)
+                    Text("Filters Active").font(.system(size: 10, weight: .semibold))
+                    Spacer()
+                    Button("Clear All") { predicate = COFilterPredicate() }
+                        .buttonStyle(.plain)
+                        .font(.system(size: 10))
+                        .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
+                }
+                .padding(.bottom, 4)
+            }
+        }
+    }
+    
+    private func ratingRow(value: Int) -> some View {
+        let isMatch = predicate.minRating == value
+        return filterRow(
+            label: value == 0 ? "No Rating" : "\(value) Stars",
+            count: 0,
+            isActive: isMatch,
+            onTap: { toggleRating(value) }
+        )
+    }
+    
+    private func colorTagRow(tag: VariantBase.ColorTag, name: String) -> some View {
+        let isActive = predicate.colorTags?.contains(tag.rawValue) ?? false
+        return filterRow(
+            label: name,
+            count: 0,
+            isActive: isActive,
+            onTap: { toggleColorTag(tag.rawValue) },
+            tagColor: colorForTag(tag)
+        )
+    }
+    
     private var hasActiveFilters: Bool {
         predicate.minRating != nil || (predicate.colorTags?.isEmpty == false) || predicate.searchText != nil
+    }
+    
+    private func toggleRating(_ r: Int) {
+        if predicate.minRating == r {
+            predicate.minRating = nil
+            predicate.maxRating = nil
+        } else {
+            predicate.minRating = r
+            predicate.maxRating = r
+        }
+    }
+    
+    private func toggleColorTag(_ tagValue: Int) {
+        var tags = predicate.colorTags ?? []
+        if let idx = tags.firstIndex(of: tagValue) {
+            tags.remove(at: idx)
+        } else {
+            tags.append(tagValue)
+        }
+        predicate.colorTags = tags.isEmpty ? nil : tags
+    }
+    
+    private var showHideButton: some View {
+        Button(action: { isShowingFilterDialog = true }) {
+            HStack {
+                Spacer()
+                Text("Show/Hide Filters...").font(.system(size: 10))
+                Spacer()
+            }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
     }
     
     private func filterRow(label: String, count: Int, isActive: Bool, onTap: @escaping () -> Void, tagColor: Color? = nil) -> some View {
@@ -105,16 +127,9 @@ public struct FilterToolView: View {
                     .font(.system(size: 10))
                     .foregroundColor(isActive ? CaptureOneTheme.Colors.activeHighlight : .gray)
             }
-            
-            Text(label)
-                .font(.system(size: 11))
-                .foregroundColor(isActive ? .white : .white.opacity(0.7))
-            
+            Text(label).font(.system(size: 11)).foregroundColor(isActive ? .white : .white.opacity(0.7))
             Spacer()
-            
-            Text("\(count)")
-                .font(.system(size: 10, design: .monospaced))
-                .foregroundColor(.gray)
+            Text("\(count)").font(.system(size: 10, design: .monospaced)).foregroundColor(.gray)
         }
         .padding(.vertical, 2)
         .contentShape(Rectangle())
@@ -131,21 +146,6 @@ public struct FilterToolView: View {
         case .blue: return .blue
         case .purple: return .purple
         case .pink: return .pink
-        }
-    }
-}
-
-extension VariantBase.ColorTag {
-    var displayName: String {
-        switch self {
-        case .none: return "None"
-        case .red: return "Red"
-        case .orange: return "Orange"
-        case .yellow: return "Yellow"
-        case .green: return "Green"
-        case .blue: return "Blue"
-        case .purple: return "Purple"
-        case .pink: return "Pink"
         }
     }
 }

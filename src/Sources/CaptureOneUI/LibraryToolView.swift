@@ -93,7 +93,7 @@ public struct LibraryToolView: View {
             }
             
             // System Folders
-            COToolSection("System Folders") {
+            COToolSection("System Folders", toolID: "SystemFolders") {
                 VStack(alignment: .leading, spacing: 0) {
                     ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { path in
                         LibraryRow(title: (path as NSString).lastPathComponent, icon: "folder.fill", count: 0, isSelected: selectedCollectionUUID == path)

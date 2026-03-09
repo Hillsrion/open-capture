@@ -297,7 +297,7 @@ public struct COImageBrowserCell: View {
     
     @State private var thumbnail: NSImage?
     
-    public body: some View {
+    public var body: some View {
         VStack(spacing: 6) {
             ZStack(alignment: .center) {
                 // 1. Selection & Background

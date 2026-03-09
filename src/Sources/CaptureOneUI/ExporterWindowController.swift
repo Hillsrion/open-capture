@@ -59,7 +59,7 @@ fileprivate struct ExporterRootView: View {
             selectedVariant: selectedVariant
         )
         .background(CaptureOneTheme.Colors.applicationBackground)
-        .preferredColorScheme(.dark)
-        .edgesIgnoringSafeArea(.top)
+        .preferredColorScheme(ColorScheme.dark)
+        .edgesIgnoringSafeArea(Edge.Set.top)
     }
 }

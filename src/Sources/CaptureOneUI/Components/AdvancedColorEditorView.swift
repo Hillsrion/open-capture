@@ -26,43 +26,27 @@ public struct AdvancedColorEditorView: View {
                 .labelsHidden()
                 .scaleEffect(0.9)
                 
-                Group {
-                    switch selectedTab {
-                    case 1:
-                        advancedTab
-                    case 2:
-                        skinToneTab
-                    default:
-                        basicTab
-                    }
-                }
+                tabContent
             }
             .padding(.vertical, 4)
+        }
+    }
+    
+    @ViewBuilder
+    private var tabContent: some View {
+        if selectedTab == 1 {
+            advancedTab
+        } else if selectedTab == 2 {
+            skinToneTab
+        } else {
+            basicTab
         }
     }
     
     // MARK: - Basic Tab
     private var basicTab: some View {
         VStack(spacing: 8) {
-            // Simulated Color Wheel
-            ZStack {
-                Circle().fill(
-                    AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .cyan, .blue, .magenta, .red]), center: .center)
-                )
-                .frame(width: 120, height: 120)
-                .opacity(0.8)
-                .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 1))
-                
-                // Color sector indicators
-                ForEach(0..<8) { i in
-                    Circle()
-                        .fill(Color.white)
-                        .frame(width: 4, height: 4)
-                        .offset(y: -50)
-                        .rotationEffect(.degrees(Double(i) * 45))
-                }
-            }
-            .padding(.vertical, 8)
+            colorWheelView
             
             VStack(spacing: 6) {
                 sliderRow(label: "Hue", value: .constant(0), range: -30...30)
@@ -70,6 +54,27 @@ public struct AdvancedColorEditorView: View {
                 sliderRow(label: "Light", value: .constant(0), range: -100...100)
             }
         }
+    }
+    
+    private var colorWheelView: some View {
+        ZStack {
+            Circle().fill(
+                AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .cyan, .blue, .purple, .red]), center: .center)
+            )
+            .frame(width: 120, height: 120)
+            .opacity(0.8)
+            .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 1))
+            
+            // Color sector indicators
+            ForEach(0..<8) { i in
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 4, height: 4)
+                    .offset(y: -50)
+                    .rotationEffect(.degrees(Double(i) * 45))
+            }
+        }
+        .padding(.vertical, 8)
     }
     
     // MARK: - Advanced Tab
@@ -82,18 +87,7 @@ public struct AdvancedColorEditorView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.vertical, 20)
             } else {
-                List {
-                    ForEach(controller.colorCorrections, id: \.id) { correction in
-                        HStack {
-                            Circle().fill(Color.red).frame(width: 10, height: 10)
-                            Text("Correction \(correction.id.prefix(4))").font(.system(size: 11))
-                            Spacer()
-                            Toggle("", isOn: .constant(true)).labelsHidden().controlSize(.small)
-                        }
-                    }
-                }
-                .frame(height: 100)
-                .listStyle(.plain)
+                correctionList
             }
             
             HStack {
@@ -104,6 +98,31 @@ public struct AdvancedColorEditorView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+    
+    private var correctionList: some View {
+        ScrollView {
+            VStack(spacing: 1) {
+                ForEach(controller.colorCorrections, id: \.id) { correction in
+                    correctionRow(for: correction)
+                }
+            }
+        }
+        .frame(height: 100)
+        .background(Color.black.opacity(0.2))
+        .cornerRadius(4)
+    }
+    
+    private func correctionRow(for correction: IC_ColorCorrection) -> some View {
+        HStack {
+            Circle().fill(Color.red).frame(width: 10, height: 10)
+            Text("Correction \(String(correction.id.uuidString.prefix(4)))").font(.system(size: 11))
+            Spacer()
+            Toggle("", isOn: .constant(true)).labelsHidden().controlSize(.small)
+        }
+        .padding(.horizontal, 8)
+        .frame(height: 24)
+        .background(Color.white.opacity(0.05))
     }
     
     // MARK: - Skin Tone Tab

@@ -53,7 +53,8 @@ public struct IC_ClaritySettings {
     }
 }
 
-public struct IC_ColorCorrection: Codable {
+public struct IC_ColorCorrection: Codable, Identifiable {
+    public let id: UUID
     public var hueRotation: Float
     public var saturationChange: Float
     public var lightnessChange: Float
@@ -80,6 +81,7 @@ public struct IC_ColorCorrection: Codable {
     public var isInverted: Bool
     
     public init() {
+        self.id = UUID()
         hueRotation = 0.0
         saturationChange = 0.0
         lightnessChange = 0.0

@@ -1,5 +1,13 @@
 import Foundation
 
+#if !SWIFT_PACKAGE
+extension Bundle {
+    static var module: Bundle {
+        return Bundle(for: DefaultWorkspacePresetLoader.self)
+    }
+}
+#endif
+
 public final class DefaultWorkspacePresetLoader {
     public init() {}
 
@@ -27,6 +35,7 @@ public final class DefaultWorkspacePresetLoader {
     }
 
     private func plistURL() throws -> URL {
+        // Now using proper SPM module bundle
         if let bundled = Bundle.module.url(forResource: "Default", withExtension: "plist", subdirectory: "Resources/Workspaces") {
             return bundled
         }
@@ -78,12 +87,15 @@ public final class DefaultWorkspacePresetLoader {
         return paletteIDs.map { paletteID in
             let fixedTools = parseToolConfigurations(rawPalette: fixedRoot[paletteID])
             let scrolledTools = parseToolConfigurations(rawPalette: scrolledRoot[paletteID])
-            let metadata = paletteMetadata(for: paletteID)
+
+            let name: String
+            let icon: String
+            (name, icon) = paletteInfo(for: paletteID)
 
             return WorkspacePaletteDefinition(
                 id: paletteID,
-                name: metadata.name,
-                iconName: metadata.icon,
+                name: name,
+                iconName: icon,
                 fixedTools: fixedTools,
                 scrolledTools: scrolledTools
             )
@@ -91,129 +103,40 @@ public final class DefaultWorkspacePresetLoader {
     }
 
     private func parseToolConfigurations(rawPalette: Any?) -> [ToolConfiguration] {
-        guard let palette = rawPalette as? [Any], palette.count >= 3 else {
-            return []
-        }
-
-        let ids = palette[0] as? [String] ?? []
-        let collapsedIndices = Set((palette[1] as? [Int]) ?? [])
-        let states = palette[2] as? [[String: Any]] ?? []
-
-        return ids.enumerated().map { index, toolID in
-            let rawState = index < states.count ? states[index] : [:]
-            let sizeOption = intValue(rawState["sizeOption"])
-            let height = numberValue(for: "height", in: rawState)
-            let state = rawState.reduce(into: [String: WorkspaceStoredValue]()) { result, pair in
-                guard pair.key != "sizeOption", pair.key != "height", let stored = WorkspaceStoredValue(any: pair.value) else {
-                    return
-                }
-                result[pair.key] = stored
-            }
-
-            return ToolConfiguration(
-                id: toolID,
-                isCollapsed: collapsedIndices.contains(index),
-                height: height,
-                sizeOption: sizeOption,
-                state: state
-            )
+        guard let toolIDs = rawPalette as? [String] else { return [] }
+        return toolIDs.map { id in
+            ToolConfiguration(id: id)
         }
     }
 
-    private func paletteMetadata(for paletteID: String) -> (name: String, icon: String) {
-        switch paletteID {
-        case "OrganizeToolTab": return ("Library", "books.vertical.fill")
+    private func paletteInfo(for id: String) -> (String, String) {
+        switch id {
+        case "LibraryToolTab": return ("Library", "folder.fill")
         case "CaptureToolTab": return ("Capture", "camera.fill")
-        case "LensToolTab": return ("Lens", "camera.metering.matrix")
-        case "SettingsToolTab": return ("Settings", "gearshape.fill")
-        case "ExposureToolTab": return ("Exposure", "dial.medium.fill")
-        case "DetailsToolTab": return ("Details", "slider.horizontal.3")
-        case "QuickToolTab": return ("Quick", "bolt.fill")
+        case "ExposureToolTab": return ("Exposure", "sun.max.fill")
         case "ColorToolTab": return ("Color", "paintpalette.fill")
-        case "CompositionToolTab": return ("Composition", "crop")
-        case "MetaDataToolTab": return ("Metadata", "info.circle.fill")
-        case "ExportToolTab": return ("Export", "square.and.arrow.up.fill")
+        case "DetailsToolTab": return ("Details", "magnifyingglass")
+        case "LensToolTab": return ("Lens", "scope")
         case "LocalAdjustmentsToolTab": return ("Layers", "square.stack.3d.up.fill")
-        case "BlackWhiteToolTab": return ("B&W", "circle.lefthalf.filled")
-        case "LivePreviewToolTab": return ("Live", "video.fill")
-        case "CullingWindowToolTab": return ("Culling", "rectangle.grid.1x2.fill")
-        default: return (paletteID, "square.grid.2x2")
+        case "MetadataToolTab": return ("Metadata", "info.circle.fill")
+        case "OutputToolTab": return ("Output", "arrow.up.doc.fill")
+        case "QuickToolTab": return ("Quick", "bolt.fill")
+        default: return (id, "wrench.fill")
         }
     }
 
-    private func normalizedToolbarIdentifier(_ itemID: String) -> String? {
-        switch itemID {
-        case "NSToolbarSpaceItem":
-            return "FIXED_SPACER"
-        case "NSToolbarFlexibleSpaceItem":
-            return "FLEXIBLE_SPACER"
-        case "ImportItem":
-            return "Import"
-        case "CaptureItem":
-            return "Capture"
-        case "ExportVariantsItem":
-            return "Export"
-        case "CullingItem":
-            return "Culling"
-        case "CaptureOneLiveToolbarItem":
-            return "Live"
-        case "RotateItem":
-            return "Rotate"
-        case "AutoAdjustItem":
-            return "AutoAdjust"
-        case "PrintItem":
-            return "Print"
-        case "ResetAdjustmentsItem":
-            return "Reset"
-        case "UndoRedoItem":
-            return "UndoRedo"
-        case "EditPrimaryOnlyItem":
-            return "EditSelected"
-        case "CursorToolItem":
-            return "CursorTools"
-        case "ActivitiesProgressItem":
-            return "Activity"
-        case "BeforeAfterItem":
-            return "BeforeAfter"
-        case "AlignmentItem":
-            return "Grid"
-        case "ExposureWarningItem":
-            return "ExposureWarning"
-        case "RecipeProofingItem":
-            return "Proofing"
-        case "FocusMaskItem":
-            return "FocusMask"
-        case "AdjustmentsItem":
-            return "ApplyAdjustments"
-        case "SelfServeItem":
-            return "SelfServe"
-        case "TipsItem":
-            return "Tips"
-        default:
-            return nil
-        }
+    private func normalizedToolbarIdentifier(_ id: String) -> String? {
+        if id.contains("NSToolbarFlexibleSpaceItem") { return "FlexibleSpace" }
+        if id.contains("NSToolbarSpaceItem") { return "Space" }
+        
+        let components = id.components(separatedBy: ".")
+        return components.last
     }
 
     private func numberValue(for key: String, in dict: [String: Any]) -> Double? {
-        if let value = dict[key] as? Double {
-            return value
-        }
-        if let value = dict[key] as? Int {
-            return Double(value)
-        }
-        if let value = dict[key] as? Float {
-            return Double(value)
-        }
-        return nil
-    }
-
-    private func intValue(_ raw: Any?) -> Int? {
-        if let raw = raw as? Int {
-            return raw
-        }
-        if let raw = raw as? Double {
-            return Int(raw)
-        }
+        if let val = dict[key] as? Double { return val }
+        if let val = dict[key] as? Float { return Double(val) }
+        if let val = dict[key] as? Int { return Double(val) }
         return nil
     }
 }

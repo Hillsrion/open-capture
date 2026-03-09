@@ -39,12 +39,14 @@ public class DocumentKeywordCache: ObservableObject {
     
     /// Assigns a keyword to a variant (simulated logic).
     public func assignKeyword(_ keyword: KeywordEntry, to variant: VariantBase) {
-        // In original, this adds to MCAdjLayerKeyMetadataContentKeywords serialized list
         var current = variant.keywords
         if !current.contains(where: { $0.id == keyword.id }) {
             current.append(keyword)
             variant.keywords = current
-            variant.isModified = true
         }
+    }
+
+    public func removeKeyword(_ keyword: KeywordEntry, from variant: VariantBase) {
+        variant.keywords.removeAll { $0.id == keyword.id }
     }
 }

@@ -13,7 +13,7 @@ public struct PrintSettingsSidebar: View {
         ScrollView {
             VStack(spacing: 1) {
                 // Templates
-                COToolSection("Templates") {
+                COToolSection("Templates", toolID: "PrintTemplates") {
                     Picker("", selection: $manager.currentTemplate.name) {
                         ForEach(manager.templates, id: \.name) { template in
                             Text(template.name).tag(template.name)
@@ -28,7 +28,7 @@ public struct PrintSettingsSidebar: View {
                 }
                 
                 // Layout (Margins)
-                COToolSection("Margins") {
+                COToolSection("Margins", toolID: "PrintMargins") {
                     VStack(spacing: 8) {
                         HStack {
                             Text("Top")
@@ -67,7 +67,7 @@ public struct PrintSettingsSidebar: View {
                 }
                 
                 // Grid
-                COToolSection("Grid") {
+                COToolSection("Grid", toolID: "PrintGrid") {
                     VStack(spacing: 8) {
                         HStack {
                             Text("Rows")
@@ -96,7 +96,7 @@ public struct PrintSettingsSidebar: View {
                 }
                 
                 // Color Profile
-                COToolSection("Color Profile") {
+                COToolSection("Color Profile", toolID: "PrintColorProfile") {
                     VStack(alignment: .leading, spacing: 8) {
                         Picker("Profile", selection: $manager.currentSettings.iccProfileID) {
                             Text("Printer Managed").tag("Printer Managed")

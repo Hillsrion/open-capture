@@ -79,12 +79,12 @@ public struct KeywordsAssignmentToolView: View {
     
     private func addKeyword() {
         guard let variant = context.adjustmentController.currentVariant, !newKeywordText.isEmpty else { return }
-        let keyword = Keyword(id: UUID().uuidString, name: newKeywordText)
+        let keyword = KeywordEntry(name: newKeywordText)
         context.keywordCache.assignKeyword(keyword, to: variant)
         newKeywordText = ""
     }
     
-    private func keywordTag(_ keyword: Keyword, variant: VariantBase) -> some View {
+    private func keywordTag(_ keyword: KeywordEntry, variant: VariantBase) -> some View {
         HStack(spacing: 4) {
             Text(keyword.name)
                 .font(.system(size: 10))

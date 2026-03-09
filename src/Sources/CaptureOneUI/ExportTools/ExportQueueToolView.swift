@@ -21,7 +21,7 @@ public struct ExportQueueToolView: View {
                         }
                         ProgressView(value: active.progress)
                             .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                        Text(active.destinationPath.lastPathComponent)
+                        Text((active.destinationPath as NSString).lastPathComponent)
                             .font(.system(size: 10))
                             .foregroundColor(.gray)
                     }

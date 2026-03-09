@@ -8,7 +8,7 @@ public struct ShortcutEditorView: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            COToolSection("Keyboard Shortcuts") {
+            COToolSection("Keyboard Shortcuts", toolID: "KeyboardShortcuts") {
                 VStack(spacing: 8) {
                     // Set Picker
                     HStack {

@@ -3,7 +3,9 @@ import ImageCore
 
 /// Reconstructed Base class for Image entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
-public class ImageBase: BaseObject, ICImageMetadataProvider {
+public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
+    
+    public var id: String { imageUUID }
     
     // MARK: - Properties (Core Identity)
     public let imageUUID: String

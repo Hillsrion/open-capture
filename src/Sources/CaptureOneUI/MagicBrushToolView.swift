@@ -12,7 +12,7 @@ public struct MagicBrushToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Magic Brush Settings") {
+        COToolSection("Magic Brush Settings", toolID: "MagicBrush") {
             VStack(spacing: 10) {
                 COUISlider(label: "Size", value: Binding(get: { Float(settings.size) }, set: { settings.size = Double($0) }), range: 1...100)
                 COUISlider(label: "Tolerance", value: Binding(get: { Float(settings.tolerance) }, set: { settings.tolerance = Double($0) }), range: 1...100)

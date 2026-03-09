@@ -130,7 +130,7 @@ public struct AICropToolView: View {
                     Button(action: {
                         // AI Subject Crop Stub
                     }) {
-                        Label("Subject", systemName: "person.fill")
+                        Label("Subject", systemImage: "person.fill")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.bordered)
@@ -138,7 +138,7 @@ public struct AICropToolView: View {
                     Button(action: {
                         // AI Face Crop Stub
                     }) {
-                        Label("Face", systemName: "face.smiling")
+                        Label("Face", systemImage: "face.smiling")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.bordered)
