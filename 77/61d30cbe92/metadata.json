@@ -23418,13 +23418,19 @@
       "transcript": "/77/61d30cbe92/0/full.jsonl",
       "content_hash": "/77/61d30cbe92/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/77/61d30cbe92/1/metadata.json",
+      "transcript": "/77/61d30cbe92/1/full.jsonl",
+      "content_hash": "/77/61d30cbe92/1/content_hash.txt",
+      "prompt": "/77/61d30cbe92/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 1604788,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 1122231,
+    "output_tokens": 7899,
+    "api_call_count": 39
   }
 }
