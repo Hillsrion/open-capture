@@ -5,24 +5,58 @@ import DataCore
 // MARK: - Match Look (UI-202)
 public struct MatchLookToolView: View {
     @StateObject private var viewModel = MatchLookViewModel()
+    @ObservedObject var controller = AdjustmentToolController.shared
     
     public init() {}
     
     public var body: some View {
-        COToolSection("Match Look") {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Match exposure and color between images.")
-                    .font(.system(size: 10))
-                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+        COToolSection("Match Look", toolID: "MatchLook") {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Text("Impact")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    Slider(value: $controller.matchLookImpact, in: 0...100)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Text("\(Int(controller.matchLookImpact))")
+                        .font(.system(size: 11, design: .monospaced))
+                        .frame(width: 30, alignment: .trailing)
+                }
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Reference")
+                            .font(.system(size: 10))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        Text(viewModel.selectedReferenceVariant?.name ?? "None Set")
+                            .font(.system(size: 11, weight: .medium))
+                    }
+                    Spacer()
+                    Button("Set Reference") {
+                        // Stub: Pick primary variant
+                        viewModel.selectedReferenceVariant = controller.currentVariant
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                }
+                .padding(6)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(4)
                 
                 Button(action: {
                     viewModel.matchExposureAndColor(to: [])
                 }) {
-                    Text(viewModel.isMatching ? "Matching..." : "Match")
-                        .frame(maxWidth: .infinity)
+                    HStack {
+                        if viewModel.isMatching {
+                            ProgressView().controlSize(.small).scaleEffect(0.6)
+                        }
+                        Text(viewModel.isMatching ? "Matching..." : "Apply Match")
+                    }
+                    .frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.bordered)
-                .disabled(viewModel.isMatching)
+                .buttonStyle(.borderedProminent)
+                .tint(CaptureOneTheme.Colors.activeHighlight)
+                .disabled(viewModel.isMatching || viewModel.selectedReferenceVariant == nil)
             }
             .padding(.vertical, 4)
         }
@@ -32,20 +66,18 @@ public struct MatchLookToolView: View {
 // MARK: - Black & White (UI-202)
 public struct BlackAndWhiteToolView: View {
     @ObservedObject var controller: AdjustmentToolController
+    @State private var isSplitTonesExpanded: Bool = false
     
     public init(controller: AdjustmentToolController) {
         self.controller = controller
     }
     
     public var body: some View {
-        COToolSection("Black & White") {
+        COToolSection("Black & White", toolID: "BlackAndWhite") {
             VStack(spacing: 12) {
-                Toggle("Enable Black & White", isOn: Binding(
-                    get: { controller.blackAndWhiteEnabled },
-                    set: { controller.blackAndWhiteEnabled = $0 }
-                ))
-                .font(.system(size: 11))
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Toggle("Enable Black & White", isOn: $controller.blackAndWhiteEnabled)
+                    .font(.system(size: 11))
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 if controller.blackAndWhiteEnabled {
                     Divider().background(Color.white.opacity(0.1))
@@ -57,6 +89,27 @@ public struct BlackAndWhiteToolView: View {
                         sliderRow(label: "Cyan", value: $controller.bwCyan)
                         sliderRow(label: "Blue", value: $controller.bwBlue)
                         sliderRow(label: "Magenta", value: $controller.bwMagenta)
+                    }
+                    
+                    VStack(spacing: 8) {
+                        Button(action: { withAnimation { isSplitTonesExpanded.toggle() } }) {
+                            HStack {
+                                Image(systemName: isSplitTonesExpanded ? "chevron.down" : "chevron.right")
+                                    .font(.system(size: 8, weight: .bold))
+                                Text("Split Tones")
+                                    .font(.system(size: 11, weight: .semibold))
+                                Spacer()
+                            }
+                        }
+                        .buttonStyle(.plain)
+                        
+                        if isSplitTonesExpanded {
+                            VStack(spacing: 10) {
+                                toneSection(title: "Highlights", hue: $controller.bwSplitToneHighlightHue, sat: $controller.bwSplitToneHighlightSaturation)
+                                toneSection(title: "Shadows", hue: $controller.bwSplitToneShadowHue, sat: $controller.bwSplitToneShadowSaturation)
+                            }
+                            .padding(.leading, 14)
+                        }
                     }
                 }
             }
@@ -71,9 +124,30 @@ public struct BlackAndWhiteToolView: View {
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 .frame(width: 50, alignment: .leading)
             Slider(value: value, in: -100...100)
+                .accentColor(CaptureOneTheme.Colors.activeHighlight)
             Text("\(Int(value.wrappedValue))")
                 .font(.system(size: 11, design: .monospaced))
                 .frame(width: 30, alignment: .trailing)
+        }
+    }
+    
+    private func toneSection(title: String, hue: Binding<Double>, sat: Binding<Double>) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title.uppercased())
+                .font(.system(size: 9, weight: .bold))
+                .foregroundColor(.gray)
+            
+            HStack {
+                Text("Hue").font(.system(size: 10)).foregroundColor(.gray).frame(width: 30, alignment: .leading)
+                Slider(value: hue, in: 0...360)
+                Text("\(Int(hue.wrappedValue))°").font(.system(size: 10, design: .monospaced)).frame(width: 35, alignment: .trailing)
+            }
+            
+            HStack {
+                Text("Sat").font(.system(size: 10)).foregroundColor(.gray).frame(width: 30, alignment: .leading)
+                Slider(value: sat, in: 0...100)
+                Text("\(Int(sat.wrappedValue))").font(.system(size: 10, design: .monospaced)).frame(width: 35, alignment: .trailing)
+            }
         }
     }
 }
@@ -87,17 +161,15 @@ public struct DehazeToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Dehaze") {
+        COToolSection("Dehaze", toolID: "Dehaze") {
             VStack(spacing: 8) {
                 HStack {
                     Text("Amount")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                         .frame(width: 60, alignment: .leading)
-                    Slider(value: Binding(
-                        get: { controller.dehazeAmount },
-                        set: { controller.dehazeAmount = $0 }
-                    ), in: 0...100)
+                    Slider(value: $controller.dehazeAmount, in: -100...100)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
                     Text("\(Int(controller.dehazeAmount))")
                         .font(.system(size: 11, design: .monospaced))
                         .frame(width: 30, alignment: .trailing)
@@ -107,9 +179,13 @@ public struct DehazeToolView: View {
                     Text("Shadow Tone")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                    Spacer()
-                    ColorPicker("", selection: .constant(.gray)) // Mock shadow tone color picker
-                        .labelsHidden()
+                        .frame(width: 80, alignment: .leading)
+                    Slider(value: $controller.dehazeShadowToneHue, in: 0...360)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Circle()
+                        .fill(Color(hue: controller.dehazeShadowToneHue/360.0, saturation: 0.5, brightness: 0.8))
+                        .frame(width: 14, height: 14)
+                        .overlay(Circle().stroke(Color.white.opacity(0.2), lineWidth: 1))
                 }
             }
             .padding(.vertical, 4)
@@ -126,17 +202,14 @@ public struct VignettingToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Vignetting") {
+        COToolSection("Vignetting", toolID: "Vignetting") {
             VStack(spacing: 8) {
                 HStack {
                     Text("Method")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                     Spacer()
-                    Picker("", selection: Binding(
-                        get: { controller.vignettingMethod },
-                        set: { controller.vignettingMethod = $0 }
-                    )) {
+                    Picker("", selection: $controller.vignettingMethod) {
                         Text("Circular").tag(0)
                         Text("Elliptic").tag(1)
                     }
@@ -150,10 +223,8 @@ public struct VignettingToolView: View {
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                         .frame(width: 60, alignment: .leading)
-                    Slider(value: Binding(
-                        get: { controller.vignettingAmount },
-                        set: { controller.vignettingAmount = $0 }
-                    ), in: -4...4)
+                    Slider(value: $controller.vignettingAmount, in: -4...4)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
                     Text(String(format: "%.1f", controller.vignettingAmount))
                         .font(.system(size: 11, design: .monospaced))
                         .frame(width: 30, alignment: .trailing)

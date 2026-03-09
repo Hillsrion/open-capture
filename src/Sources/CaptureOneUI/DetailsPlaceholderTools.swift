@@ -4,67 +4,119 @@ import DataCore
 
 // MARK: - Navigator (UI-203)
 public struct NavigatorToolView: View {
+    @ObservedObject var controller = AdjustmentToolController.shared
+
     public init() {}
-    
+
     public var body: some View {
-        COToolSection("Navigator") {
-            VStack {
-                ZStack {
-                    Rectangle()
-                        .fill(Color.black.opacity(0.3))
-                        .aspectRatio(1.5, contentMode: .fit)
-                    
-                    VStack {
-                        Image(systemName: "photo")
-                            .font(.system(size: 24))
-                            .foregroundColor(.gray)
-                        Text("No Image")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
+        COToolSection("Navigator", toolID: "Navigator") {
+            VStack(spacing: 4) {
+                GeometryReader { geo in
+                    ZStack(alignment: .topLeading) {
+                        // Simulated Thumbnail
+                        Rectangle()
+                            .fill(Color.black.opacity(0.3))
+
+                        // Viewport rectangle
+                        Rectangle()
+                            .stroke(Color.red, lineWidth: 1)
+                            .background(Color.red.opacity(0.1))
+                            .frame(
+                                width: geo.size.width * controller.viewportRect.width,
+                                height: geo.size.height * controller.viewportRect.height
+                            )
+                            .offset(
+                                x: geo.size.width * controller.viewportRect.origin.x,
+                                y: geo.size.height * controller.viewportRect.origin.y
+                            )
+                            .gesture(
+                                DragGesture()
+                                    .onChanged { value in
+                                        let newX = max(0, min(1.0 - controller.viewportRect.width, Double(value.location.x / geo.size.width) - Double(controller.viewportRect.width / 2)))
+                                        let newY = max(0, min(1.0 - controller.viewportRect.height, Double(value.location.y / geo.size.height) - Double(controller.viewportRect.height / 2)))
+                                        controller.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                    }
+                            )
                     }
                 }
-                .cornerRadius(4)
-                
+                .aspectRatio(1.5, contentMode: .fit)
+                .cornerRadius(2)
+
                 HStack {
-                    Text("Fit")
-                        .font(.system(size: 10))
-                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    Button("Fit") {
+                        controller.zoomLevel = 0.0 // Simulated "Fit"
+                        controller.viewportRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+                    }
+                    .font(.system(size: 10))
+                    .buttonStyle(.plain)
+                    .foregroundColor(controller.zoomLevel == 0 ? CaptureOneTheme.Colors.activeHighlight : CaptureOneTheme.Colors.textSecondary)
+
                     Spacer()
-                    Text("100%")
-                        .font(.system(size: 10))
+
+                    Text("\(Int(controller.zoomLevel * 100))%")
+                        .font(.system(size: 10, design: .monospaced))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 }
-                .padding(.horizontal, 4)
-                .padding(.top, 4)
+                .padding(.horizontal, 2)
             }
-            .padding(.vertical, 4)
         }
     }
 }
 
 // MARK: - Focus (UI-203)
 public struct FocusToolView: View {
+    @ObservedObject var controller = AdjustmentToolController.shared
+    
     public init() {}
     
     public var body: some View {
-        COToolSection("Focus") {
-            VStack {
+        COToolSection("Focus", toolID: "Focus") {
+            VStack(spacing: 8) {
                 ZStack {
                     Rectangle()
                         .fill(Color.black.opacity(0.3))
                         .aspectRatio(1.0, contentMode: .fit)
                         .frame(maxWidth: .infinity)
                     
+                    // Simulated zoom preview at focus point
                     VStack {
                         Image(systemName: "viewfinder")
-                            .font(.system(size: 24))
-                            .foregroundColor(.gray)
-                        Text("100% Focus")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
+                            .font(.system(size: 32))
+                            .foregroundColor(.white.opacity(0.2))
                     }
                 }
                 .cornerRadius(4)
+                
+                HStack {
+                    Picker("", selection: $controller.focusAIMode) {
+                        Text("None").tag(0)
+                        Text("Center to Eye").tag(1)
+                        Text("Center to Face").tag(2)
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .font(.system(size: 11))
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        // TODO: Activate Focus Point Picker cursor tool
+                    }) {
+                        Image(systemName: "scope")
+                            .font(.system(size: 14))
+                    }
+                    .buttonStyle(.plain)
+                }
+                
+                HStack {
+                    Text("\(Int(controller.focusZoomLevel * 100))%")
+                        .font(.system(size: 11, design: .monospaced))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        .frame(width: 40, alignment: .leading)
+                    
+                    Slider(value: $controller.focusZoomLevel, in: 0.25...16.0)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                }
             }
             .padding(.vertical, 4)
         }
@@ -73,42 +125,119 @@ public struct FocusToolView: View {
 
 // MARK: - Spot Removal (UI-203)
 public struct SpotRemovalToolView: View {
+    @ObservedObject var controller = AdjustmentToolController.shared
+    
     public init() {}
     
     public var body: some View {
-        COToolSection("Spot Removal") {
+        COToolSection("Spot Removal", toolID: "SpotRemoval") {
             VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("Type")
-                        .font(.system(size: 11))
-                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                    Spacer()
-                    Picker("", selection: .constant(0)) {
-                        Text("Dust").tag(0)
-                        Text("Spot").tag(1)
+                if let selectedID = controller.selectedSpotID,
+                   let index = controller.spots.firstIndex(where: { $0.id == selectedID }) {
+                    
+                    VStack(spacing: 8) {
+                        HStack {
+                            Text("Type")
+                                .font(.system(size: 11))
+                                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                            Spacer()
+                            Picker("", selection: Binding(
+                                get: { controller.spots[index].type },
+                                set: { controller.spots[index].type = $0 }
+                            )) {
+                                Text("Dust").tag(0)
+                                Text("Spot").tag(1)
+                            }
+                            .pickerStyle(.menu)
+                            .labelsHidden()
+                            .frame(width: 80)
+                        }
+                        
+                        HStack {
+                            Text("Radius")
+                                .font(.system(size: 11))
+                                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                            Spacer()
+                            Slider(value: Binding(
+                                get: { controller.spots[index].radius },
+                                set: { controller.spots[index].radius = $0 }
+                            ), in: 1...100)
+                            .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                            .frame(width: 80)
+                        }
                     }
-                    .pickerStyle(.menu)
-                    .labelsHidden()
-                    .frame(width: 80)
+                    .padding(6)
+                    .background(Color.white.opacity(0.05))
+                    .cornerRadius(4)
                 }
                 
-                List {
-                    Text("No spots added")
-                        .font(.system(size: 11))
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.vertical, 8)
+                VStack(spacing: 0) {
+                    ScrollView {
+                        VStack(spacing: 1) {
+                            if controller.spots.isEmpty {
+                                Text("No spots added")
+                                    .font(.system(size: 11))
+                                    .foregroundColor(.gray)
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                    .padding(.vertical, 8)
+                            } else {
+                                ForEach(controller.spots) { spot in
+                                    HStack {
+                                        Text(spot.type == 0 ? "Dust" : "Spot")
+                                            .font(.system(size: 11))
+                                        Spacer()
+                                        Text("\(Int(spot.radius))px")
+                                            .font(.system(size: 10, design: .monospaced))
+                                            .foregroundColor(.gray)
+                                    }
+                                    .padding(.horizontal, 8)
+                                    .frame(height: 24)
+                                    .background(controller.selectedSpotID == spot.id ? CaptureOneTheme.Colors.activeHighlight.opacity(0.3) : Color.clear)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture {
+                                        controller.selectedSpotID = spot.id
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .frame(height: 80)
+                    .background(Color.black.opacity(0.2))
+                    .cornerRadius(4)
+                    
+                    HStack(spacing: 0) {
+                        Button(action: {
+                            let newSpot = SpotItem()
+                            controller.spots.append(newSpot)
+                            controller.selectedSpotID = newSpot.id
+                        }) {
+                            Image(systemName: "plus")
+                                .font(.system(size: 10, weight: .bold))
+                                .frame(width: 24, height: 20)
+                        }
+                        .buttonStyle(.plain)
+                        .background(Color.white.opacity(0.05))
+                        
+                        Divider().frame(height: 20)
+                        
+                        Button(action: {
+                            if let selectedID = controller.selectedSpotID {
+                                controller.spots.removeAll(where: { $0.id == selectedID })
+                                controller.selectedSpotID = controller.spots.last?.id
+                            }
+                        }) {
+                            Image(systemName: "minus")
+                                .font(.system(size: 10, weight: .bold))
+                                .frame(width: 24, height: 20)
+                        }
+                        .buttonStyle(.plain)
+                        .background(Color.white.opacity(0.05))
+                        .disabled(controller.selectedSpotID == nil)
+                        
+                        Spacer()
+                    }
+                    .background(Color.white.opacity(0.02))
                 }
-                .frame(height: 60)
-                .listStyle(.plain)
-                .background(Color.black.opacity(0.2))
-                .cornerRadius(4)
-                
-                HStack {
-                    Button(action: {}) { Image(systemName: "plus") }
-                    Button(action: {}) { Image(systemName: "minus") }
-                }
-                .buttonStyle(.plain)
             }
             .padding(.vertical, 4)
         }
@@ -120,7 +249,7 @@ public struct LensColorCorrectionsToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Lens Correction") {
+        COToolSection("Lens Correction", toolID: "LensColorCorrections") {
             VStack(spacing: 8) {
                 HStack {
                     Text("Purple Fringing")
@@ -147,7 +276,7 @@ public struct MoireToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Moiré") {
+        COToolSection("Moiré", toolID: "Moire") {
             VStack(spacing: 8) {
                 HStack {
                     Text("Amount")
