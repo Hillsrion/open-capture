@@ -98,21 +98,6 @@ public struct ToolConfiguration: Codable, Identifiable, Hashable {
     }
 }
 
-/// Legacy compatibility wrapper for older tab-based workspace state.
-public struct WorkspaceTab: Codable, Identifiable, Hashable {
-    public let id: String
-    public var name: String
-    public var iconName: String
-    public var tools: [ToolConfiguration]
-
-    public init(id: String, name: String, iconName: String, tools: [ToolConfiguration] = []) {
-        self.id = id
-        self.name = name
-        self.iconName = iconName
-        self.tools = tools
-    }
-}
-
 public enum WorkspaceWindowKind: String, Codable, CaseIterable {
     case session
     case viewer
@@ -256,14 +241,6 @@ public struct Workspace: Codable, Identifiable {
         set { chromeState.toolsWidth = newValue }
     }
 
-    public var leftSidebarTabs: [WorkspaceTab] {
-        palettes.map { WorkspaceTab(id: $0.id, name: $0.name, iconName: $0.iconName, tools: $0.allTools) }
-    }
-
-    public var rightSidebarTabs: [WorkspaceTab] {
-        []
-    }
-
     public func activePalette() -> WorkspacePaletteDefinition? {
         palettes.first(where: { $0.id == selectedPaletteID }) ?? palettes.first
     }
@@ -276,16 +253,7 @@ public struct Workspace: Codable, Identifiable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case windowKind
-        case palettes
-        case chromeState
-        case toolbarConfiguration
-        case toolState
-        case leftSidebarTabs
-        case sidebarWidth
-        case isBundleWorkspace
+        case id, name, windowKind, palettes, chromeState, toolbarConfiguration, toolState, isBundleWorkspace
     }
 
     public init(from decoder: Decoder) throws {
@@ -296,31 +264,9 @@ public struct Workspace: Codable, Identifiable {
         windowKind = try container.decodeIfPresent(WorkspaceWindowKind.self, forKey: .windowKind) ?? .session
         toolbarConfiguration = try container.decodeIfPresent(ToolbarConfiguration.self, forKey: .toolbarConfiguration) ?? .defaultConfiguration
         isBundleWorkspace = try container.decodeIfPresent(Bool.self, forKey: .isBundleWorkspace) ?? false
-
-        if let decodedPalettes = try container.decodeIfPresent([WorkspacePaletteDefinition].self, forKey: .palettes) {
-            palettes = decodedPalettes
-        } else {
-            let legacyTabs = try container.decodeIfPresent([WorkspaceTab].self, forKey: .leftSidebarTabs) ?? []
-            palettes = legacyTabs.map {
-                WorkspacePaletteDefinition(id: $0.id, name: $0.name, iconName: $0.iconName, fixedTools: $0.tools)
-            }
-        }
-
-        if let decodedChrome = try container.decodeIfPresent(WorkspaceChromeState.self, forKey: .chromeState) {
-            chromeState = decodedChrome
-        } else {
-            var legacyChrome = WorkspaceChromeState()
-            legacyChrome.toolsWidth = try container.decodeIfPresent(Double.self, forKey: .sidebarWidth) ?? 300.0
-            legacyChrome.selectedToolPaletteID = palettes.first?.id
-            chromeState = legacyChrome
-        }
-
-        if let decodedToolState = try? container.decode([String: WorkspaceStoredValue].self, forKey: .toolState) {
-            toolState = decodedToolState
-        } else {
-            let legacyToolState = try container.decodeIfPresent([String: String].self, forKey: .toolState) ?? [:]
-            toolState = legacyToolState.mapValues(WorkspaceStoredValue.string)
-        }
+        palettes = try container.decodeIfPresent([WorkspacePaletteDefinition].self, forKey: .palettes) ?? []
+        chromeState = try container.decodeIfPresent(WorkspaceChromeState.self, forKey: .chromeState) ?? WorkspaceChromeState()
+        toolState = try container.decodeIfPresent([String: WorkspaceStoredValue].self, forKey: .toolState) ?? [:]
 
         if chromeState.selectedToolPaletteID == nil {
             chromeState.selectedToolPaletteID = palettes.first?.id
