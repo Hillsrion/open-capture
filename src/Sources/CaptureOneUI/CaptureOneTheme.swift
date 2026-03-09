@@ -39,23 +39,29 @@ public struct CaptureOneTheme {
 public struct COToolSection<Content: View>: View {
     let title: String
     let toolID: String
-    @State var isExpanded: Bool = true
-    @ObservedObject private var commands = AppCommandCenter.shared
     @ObservedObject private var workspaceManager = WorkspaceManager.shared
+    @ObservedObject private var commands = AppCommandCenter.shared
     @ObservedObject private var styleManager = StyleManager.shared
     let content: Content
     
-    public init(_ title: String, toolID: String? = nil, isExpanded: Bool = true, @ViewBuilder content: () -> Content) {
+    public init(_ title: String, toolID: String, @ViewBuilder content: () -> Content) {
         self.title = title
-        self.toolID = toolID ?? title
-        self._isExpanded = State(initialValue: isExpanded)
+        self.toolID = toolID
         self.content = content()
+    }
+    
+    private var isExpanded: Bool {
+        !workspaceManager.isToolCollapsed(toolID)
     }
     
     public var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 6) {
-                Button(action: { withAnimation { isExpanded.toggle() } }) {
+                Button(action: {
+                    withAnimation {
+                        workspaceManager.setToolCollapsed(isExpanded, for: toolID)
+                    }
+                }) {
                     HStack(spacing: 6) {
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
                             .font(.system(size: 8, weight: .bold))

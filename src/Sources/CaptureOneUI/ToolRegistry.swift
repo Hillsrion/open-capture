@@ -45,30 +45,30 @@ public enum ToolRegistry {
     private static func entry(for toolID: String) -> ToolEntry {
         switch toolID {
         case "Library":
-            return .adapter { context in AnyView(LibraryToolView(session: context.session)) }
+            return .implemented { context in AnyView(LibraryToolView(session: context.session)) }
         case "MetadataFilters":
-            return .adapter { context in
+            return .implemented { context in
                 AnyView(FilterToolView(predicate: Binding(
                     get: { context.adjustmentController.activePredicate },
                     set: { context.adjustmentController.activePredicate = $0 }
                 )))
             }
         case "Keywords":
-            return .adapter { context in AnyView(KeywordsAssignmentToolView(context: context)) }
+            return .implemented { context in AnyView(KeywordsAssignmentToolView(context: context)) }
         case "KeywordLibrary":
             return .implemented { context in AnyView(KeywordInspectorTool(cache: context.keywordCache)) }
         case "Metadata":
-            return .adapter { context in
+            return .implemented { context in
                 AnyView(MetadataInspectorView(image: context.adjustmentController.currentVariant?.image))
             }
         case "Camera":
-            return .adapter { _ in AnyView(CameraSummaryToolView()) }
+            return .implemented { _ in AnyView(CameraSummaryToolView()) }
         case "CameraSettings":
             return .implemented { _ in AnyView(CameraSettingsTool()) }
         case "NextCaptureNaming":
-            return .adapter { _ in AnyView(NextCaptureNamingToolView()) }
+            return .implemented { _ in AnyView(NextCaptureNamingToolView()) }
         case "NextCaptureAdjustments":
-            return .adapter { _ in AnyView(NextCaptureAdjustmentsToolView()) }
+            return .implemented { _ in AnyView(NextCaptureAdjustmentsToolView()) }
         case "NextCaptureLocation":
             return .implemented { context in AnyView(NextCaptureLocationToolView(config: context.config)) }
         case "NextCaptureMetadata":
@@ -96,9 +96,9 @@ public enum ToolRegistry {
         case "Histogram":
             return .implemented { _ in AnyView(HistogramToolView()) }
         case "LocalAdjustments":
-            return .adapter { context in AnyView(LocalAdjustmentsToolView(context: context)) }
+            return .implemented { context in AnyView(LocalAdjustmentsToolView(context: context)) }
         case "StyleBrushes":
-            return .implemented { context in AnyView(StyleInspectorTool(controller: context.adjustmentController)) }
+            return .implemented { _ in AnyView(BrushSettingsToolView()) }
         case "MatchLook":
             return .implemented { _ in AnyView(MatchLookToolView()) }
         case "WhiteBalance":
@@ -136,7 +136,7 @@ public enum ToolRegistry {
                 ))
             }
         case "ShadowHighlight":
-            return .adapter { context in
+            return .implemented { context in
                 AnyView(HDRToolView(
                     highlights: Binding(
                         get: { context.adjustmentController.highlights },
@@ -161,7 +161,7 @@ public enum ToolRegistry {
         case "Curves":
             return .implemented { context in AnyView(CurvesInspectorToolView(controller: context.adjustmentController)) }
         case "SelectiveColorControl":
-            return .adapter { context in AnyView(AdvancedColorEditorView(controller: context.adjustmentController)) }
+            return .implemented { context in AnyView(AdvancedColorEditorView(controller: context.adjustmentController)) }
         case "ColorBalance":
             return .implemented { context in AnyView(ColorBalanceToolView(controller: context.adjustmentController)) }
         case "BlackAndWhite":
@@ -194,28 +194,14 @@ public enum ToolRegistry {
         case "Rotation":
             return .implemented { context in AnyView(RotationToolView(controller: context.adjustmentController)) }
         case "Perspective":
-            return .adapter { context in
+            return .implemented { context in
                 AnyView(KeystoneToolView(
-                    tiltX: Binding(
-                        get: { context.adjustmentController.keystoneTiltX },
-                        set: { context.adjustmentController.keystoneTiltX = $0 }
-                    ),
-                    tiltY: Binding(
-                        get: { context.adjustmentController.keystoneTiltY },
-                        set: { context.adjustmentController.keystoneTiltY = $0 }
-                    ),
-                    amount: Binding(
-                        get: { context.adjustmentController.keystoneAmount },
-                        set: { context.adjustmentController.keystoneAmount = $0 }
-                    ),
-                    aspect: Binding(
-                        get: { context.adjustmentController.keystoneAspect },
-                        set: { context.adjustmentController.keystoneAspect = $0 }
-                    ),
-                    skew: Binding(
-                        get: { context.adjustmentController.keystoneSkew },
-                        set: { context.adjustmentController.keystoneSkew = $0 }
-                    )
+                    tiltX: Binding(get: { context.adjustmentController.keystoneTiltX }, set: { context.adjustmentController.keystoneTiltX = $0 }),
+                    tiltY: Binding(get: { context.adjustmentController.keystoneTiltY }, set: { context.adjustmentController.keystoneTiltY = $0 }),
+                    amount: Binding(get: { context.adjustmentController.keystoneAmount }, set: { context.adjustmentController.keystoneAmount = $0 }),
+                    aspect: Binding(get: { context.adjustmentController.keystoneAspect }, set: { context.adjustmentController.keystoneAspect = $0 }),
+                    skew: Binding(get: { context.adjustmentController.keystoneSkew }, set: { context.adjustmentController.keystoneSkew = $0 }),
+                    focalLength: Binding(get: { context.adjustmentController.keystoneFocalLength }, set: { context.adjustmentController.keystoneFocalLength = $0 })
                 ))
             }
         case "LensCorrection":
@@ -244,9 +230,9 @@ public enum ToolRegistry {
                 ))
             }
         case "Grid":
-            return .implemented { _ in AnyView(GridToolView()) }
+            return .implemented { context in AnyView(GridToolView(controller: context.adjustmentController)) }
         case "Guides":
-            return .implemented { _ in AnyView(GuidesToolView()) }
+            return .implemented { context in AnyView(GuidesToolView(controller: context.adjustmentController)) }
         case "BaseCharacteristics":
             return .implemented { context in AnyView(BaseCharacteristicsToolView(config: context.config)) }
         case "Styles":
@@ -308,7 +294,7 @@ public enum ToolRegistry {
         case "Moire":
             return .implemented { context in AnyView(MoireToolView(controller: context.adjustmentController)) }
         case "Annotations":
-            return .adapter { context in
+            return .implemented { context in
                 if let variant = context.adjustmentController.currentVariant {
                     return AnyView(AnnotationsInspectorTool(variant: variant))
                 }
@@ -319,7 +305,7 @@ public enum ToolRegistry {
         case "ExportDialogRecipeList", "ExportLocation", "ExportNaming", "FormatAndSize", "OutputAdjustments",
              "Watermark", "OutputMetadata", "ExportProcess", "OutputContentCredentials", "ExportQueue",
              "OutputCrossRecipeTokensInspectorTool":
-            return .adapter { context in
+            return .implemented { context in
                 AnyView(ExportView(
                     recipeManager: context.recipeManager,
                     batchQueue: context.batchQueue,
@@ -431,57 +417,6 @@ private struct LocalAdjustmentsToolView: View {
             LayerInspectorView(variant: variant)
         } else {
             UnavailableToolView(toolID: "LocalAdjustments")
-        }
-    }
-}
-
-private struct KeywordsAssignmentToolView: View {
-    let context: ToolRegistryContext
-
-    var body: some View {
-        COToolSection("Keywords") {
-            if let variant = context.adjustmentController.currentVariant {
-                VStack(alignment: .leading, spacing: 8) {
-                    if variant.keywords.isEmpty {
-                        Text("No keywords assigned")
-                            .font(.system(size: 11))
-                            .foregroundColor(.gray)
-                    } else {
-                        ForEach(variant.keywords, id: \.id) { keyword in
-                            HStack {
-                                Image(systemName: "tag.fill")
-                                    .font(.system(size: 10))
-                                    .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                                Text(keyword.name)
-                                    .font(.system(size: 11))
-                                Spacer()
-                            }
-                        }
-                    }
-
-                    Divider().background(Color.white.opacity(0.1))
-
-                    ForEach(context.keywordCache.library.keywords.prefix(5), id: \.id) { keyword in
-                        Button(action: {
-                            context.keywordCache.assignKeyword(keyword, to: variant)
-                        }) {
-                            HStack {
-                                Text(keyword.name)
-                                    .font(.system(size: 11))
-                                Spacer()
-                                Image(systemName: "plus.circle")
-                                    .font(.system(size: 10))
-                            }
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-            } else {
-                Text("Select an image to manage assigned keywords.")
-                    .font(.system(size: 11))
-                    .foregroundColor(.gray)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
         }
     }
 }

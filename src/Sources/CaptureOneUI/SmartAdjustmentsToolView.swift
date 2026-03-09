@@ -10,7 +10,7 @@ public struct SmartAdjustmentsToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Smart Adjustments") {
+        COToolSection("Smart Adjustments", toolID: "SmartAdjustments") {
             VStack(spacing: 12) {
                 // 1. Reference Status
                 HStack {

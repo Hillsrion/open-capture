@@ -12,7 +12,7 @@ public struct FilmGrainToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Film Grain") {
+        COToolSection("Film Grain", toolID: "Film Grain") {
             VStack(spacing: 10) {
                 // Film Type Picker
                 Picker("", selection: $controller.filmGrainType) {

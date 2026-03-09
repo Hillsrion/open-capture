@@ -13,7 +13,7 @@ public struct AnnotationsInspectorTool: View {
     }
     
     public var body: some View {
-        COToolSection("Annotations") {
+        COToolSection("Annotations", toolID: "Annotations") {
             VStack(spacing: 10) {
                 Toggle("Always Show Annotations", isOn: $alwaysShow)
                     .toggleStyle(POCheckboxStyle())

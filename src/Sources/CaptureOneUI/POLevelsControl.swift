@@ -23,7 +23,7 @@ public struct POLevelsControl: View {
     }
     
     public var body: some View {
-        COToolSection("Levels") {
+        COToolSection("Levels", toolID: "Levels") {
             VStack(spacing: 8) {
                 // Channel Selector
                 Picker("Channel", selection: $selectedChannel) {

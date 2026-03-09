@@ -20,7 +20,7 @@ public struct LensCorrectionToolView: View {
     }
     
     public var body: some View {
-        COToolSection("Lens Correction") {
+        COToolSection("Lens Correction", toolID: "LensCorrection") {
             VStack(spacing: 8) {
                 // Profile Selector
                 HStack {
@@ -71,7 +71,7 @@ public struct LCCToolView: View {
     }
     
     public var body: some View {
-        COToolSection("LCC") {
+        COToolSection("LCC", toolID: "LCC") {
             VStack(spacing: 8) {
                 HStack {
                     Text("Active").font(.system(size: 11))

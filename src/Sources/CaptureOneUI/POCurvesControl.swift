@@ -15,7 +15,7 @@ public struct POCurvesControl: View {
     }
     
     public var body: some View {
-        COToolSection("Curve") {
+        COToolSection("Curve", toolID: "Curves") {
             VStack(spacing: 8) {
                 // Channel Selector
                 Picker("Channel", selection: $selectedChannel) {

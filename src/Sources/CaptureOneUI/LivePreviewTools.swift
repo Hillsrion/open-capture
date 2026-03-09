@@ -7,7 +7,7 @@ public struct LivePreviewCompositionToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Live View Composition") {
+        COToolSection("Live View Composition", toolID: "LivePreviewComposition") {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Text("Orientation")
@@ -53,7 +53,7 @@ public struct LivePreviewAdjustmentsToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Live View Adjustments") {
+        COToolSection("Live View Adjustments", toolID: "LivePreviewAdjustments") {
             VStack(alignment: .leading, spacing: 12) {
                 HStack {
                     Text("White Balance")
@@ -98,7 +98,7 @@ public struct LivePreviewInfoToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Live View Info") {
+        COToolSection("Live View Info", toolID: "LivePreviewInfoTool") {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Text("Camera")
@@ -136,7 +136,7 @@ public struct NormalizeToolView: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Normalize") {
+        COToolSection("Normalize", toolID: "Normalize") {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Pick an area to define baseline exposure/color.")
                     .font(.system(size: 10))

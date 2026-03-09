@@ -13,7 +13,7 @@ public struct MetadataInspectorView: View {
     }
     
     public var body: some View {
-        COToolSection("Metadata") {
+        COToolSection("Metadata", toolID: "Metadata") {
             VStack(alignment: .leading, spacing: 12) {
                 // EXIF Section
                 VStack(alignment: .leading, spacing: 4) {

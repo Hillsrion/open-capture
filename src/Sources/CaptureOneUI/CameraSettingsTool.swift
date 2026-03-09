@@ -10,7 +10,7 @@ public struct CameraSettingsTool: View {
     public init() {}
     
     public var body: some View {
-        COToolSection("Camera Settings") {
+        COToolSection("Camera Settings", toolID: "CameraSettings") {
             VStack(spacing: 12) {
                 // 1. Camera Selector
                 HStack {
