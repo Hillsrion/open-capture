@@ -1,7 +1,9 @@
 import SwiftUI
 import AppCoreShared
 
-/// Reconstructed high-fidelity Camera Settings tool (TETH-001).
+/// Reconstructed high-fidelity Camera Settings tool (GAP-406).
+/// Matches Capture One 16.7.4 with summary bar and evaluation meter.
+
 public struct CameraSettingsTool: View {
     @ObservedObject var browser = PtpDeviceBrowser.shared
     @ObservedObject var liveView = LiveViewEngine.shared
@@ -12,79 +14,78 @@ public struct CameraSettingsTool: View {
     public var body: some View {
         COToolSection("Camera Settings", toolID: "CameraSettings") {
             VStack(spacing: 12) {
-                // 1. Camera Selector
-                HStack {
-                    Image(systemName: "camera.fill").font(.system(size: 10))
-                    Picker("", selection: $selectedCamera) {
-                        Text("No Camera").tag(nil as P1CaptureCore_Camera?)
-                        ForEach(browser.availableCameras) { cam in
-                            Text(cam.name).tag(cam as P1CaptureCore_Camera?)
+                // 1. Camera Selector & Summary
+                VStack(spacing: 8) {
+                    HStack {
+                        Image(systemName: "camera.fill").font(.system(size: 10))
+                        Picker("", selection: $selectedCamera) {
+                            Text("No Camera").tag(nil as P1CaptureCore_Camera?)
+                            ForEach(browser.availableCameras) { cam in
+                                Text(cam.name).tag(cam as P1CaptureCore_Camera?)
+                            }
                         }
+                        .pickerStyle(MenuPickerStyle())
+                        .font(.system(size: 11))
                     }
-                    .pickerStyle(MenuPickerStyle())
-                    .font(.system(size: 11))
+                    
+                    if let camera = selectedCamera {
+                        CameraSummaryBar(camera: camera)
+                    }
                 }
                 
                 if let camera = selectedCamera {
-                    // 2. Camera Properties
-                    VStack(spacing: 8) {
+                    // 2. Exposure Evaluation Meter
+                    ExposureEvaluationMeter(value: camera.exposureEvaluation)
+                    
+                    // 3. Camera Properties (Aperture, Shutter, ISO)
+                    VStack(spacing: 1) {
                         ForEach(camera.properties) { prop in
-                            HStack {
-                                Text(prop.name).font(.system(size: 11)).foregroundColor(.gray)
-                                Spacer()
-                                Menu(prop.currentValue) {
-                                    ForEach(prop.availableValues, id: \.self) { val in
-                                        Button(val) {
-                                            // Logic: Update camera property
-                                        }
-                                    }
-                                }
-                                .font(.system(size: 11, weight: .bold))
-                            }
+                            PropertyRow(property: prop)
                         }
                     }
-                    .padding(8)
                     .background(Color.black.opacity(0.2))
                     .cornerRadius(4)
                     
-                    // 2.5 Live View (TETH-001)
-                    Button(action: {
-                        if liveView.isActive {
-                            liveView.stop()
-                        } else {
-                            liveView.start(for: camera)
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: "video.fill")
-                            Text(liveView.isActive ? "STOP LIVE VIEW" : "LIVE VIEW")
+                    // 4. Capture Controls
+                    HStack(spacing: 8) {
+                        // AF Button
+                        Button(action: { }) {
+                            Text("AF")
                                 .font(.system(size: 11, weight: .bold))
+                                .frame(width: 40, height: 32)
+                                .background(Color.white.opacity(0.1))
+                                .cornerRadius(4)
                         }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 8)
-                        .background(liveView.isActive ? Color.orange : Color.gray.opacity(0.3))
-                        .foregroundColor(.white)
-                        .cornerRadius(4)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    // 2.75 Next Capture Settings (TETH-003)
-                    NextCaptureSettingsTool(camera: camera)
-                    
-                    // 3. Capture Button
-                    Button(action: { camera.shutterRelease() }) {
-                        HStack {
-                            Image(systemName: camera.isCapturing ? "stop.fill" : "record.circle.fill")
-                            Text(camera.isCapturing ? "CAPTURING..." : "CAPTURE")
-                                .font(.system(size: 12, weight: .bold))
+                        .buttonStyle(.plain)
+                        
+                        // Capture Button
+                        Button(action: { camera.shutterRelease() }) {
+                            HStack {
+                                Image(systemName: camera.isCapturing ? "stop.fill" : "record.circle.fill")
+                                Text(camera.isCapturing ? "CAPTURING..." : "CAPTURE")
+                                    .font(.system(size: 12, weight: .bold))
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: 32)
+                            .background(camera.isCapturing ? Color.red : CaptureOneTheme.Colors.activeHighlight)
+                            .foregroundColor(.white)
+                            .cornerRadius(4)
                         }
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 10)
-                        .background(camera.isCapturing ? Color.red : CaptureOneTheme.Colors.activeHighlight)
-                        .foregroundColor(.white)
-                        .cornerRadius(6)
+                        .buttonStyle(.plain)
+                        
+                        // Live View Toggle
+                        Button(action: {
+                            if liveView.isActive { liveView.stop() }
+                            else { liveView.start(for: camera) }
+                        }) {
+                            Image(systemName: "video.fill")
+                                .font(.system(size: 12))
+                                .frame(width: 40, height: 32)
+                                .background(liveView.isActive ? Color.orange : Color.white.opacity(0.1))
+                                .foregroundColor(.white)
+                                .cornerRadius(4)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(PlainButtonStyle())
                 } else {
                     Text("Connect a camera to start tethering.")
                         .font(.system(size: 11))
@@ -93,6 +94,7 @@ public struct CameraSettingsTool: View {
                         .padding(.vertical, 20)
                 }
             }
+            .padding(.vertical, 4)
         }
         .onAppear { 
             browser.startDiscovery() 
@@ -101,5 +103,79 @@ public struct CameraSettingsTool: View {
                 first.open()
             }
         }
+    }
+}
+
+struct CameraSummaryBar: View {
+    @ObservedObject var camera: P1CaptureCore_Camera
+    
+    var body: some View {
+        HStack {
+            Label("\(camera.batteryLevel)%", systemImage: "battery.75")
+            Spacer()
+            Label(camera.storageCapacity, systemImage: "externaldrive.fill")
+        }
+        .font(.system(size: 9))
+        .foregroundColor(.gray)
+        .padding(.horizontal, 4)
+    }
+}
+
+struct ExposureEvaluationMeter: View {
+    let value: Float // -4 to +4 EV
+    
+    var body: some View {
+        VStack(spacing: 2) {
+            ZStack {
+                Rectangle().fill(Color.white.opacity(0.1)).frame(height: 4)
+                
+                // Scale ticks
+                HStack(spacing: 0) {
+                    ForEach(-4...4, id: \.self) { i in
+                        Rectangle().fill(Color.gray).frame(width: 1, height: i == 0 ? 8 : 4)
+                        if i < 4 { Spacer() }
+                    }
+                }
+                
+                // Indicator
+                Circle()
+                    .fill(CaptureOneTheme.Colors.activeHighlight)
+                    .frame(width: 8, height: 8)
+                    .offset(x: CGFloat(value / 4.0) * 60) // Simple mapping
+            }
+            .frame(height: 12)
+            
+            HStack {
+                Text("-4").tag(-4)
+                Spacer()
+                Text("0").tag(0)
+                Spacer()
+                Text("+4").tag(4)
+            }
+            .font(.system(size: 8, design: .monospaced))
+            .foregroundColor(.gray)
+        }
+    }
+}
+
+struct PropertyRow: View {
+    let property: P1CaptureCore_Property
+    
+    var body: some View {
+        HStack {
+            Text(property.name)
+                .font(.system(size: 11))
+                .foregroundColor(.gray)
+            Spacer()
+            Menu(property.currentValue) {
+                ForEach(property.availableValues, id: \.self) { val in
+                    Button(val) { }
+                }
+            }
+            .font(.system(size: 11, weight: .bold))
+            .foregroundColor(.white)
+        }
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
     }
 }

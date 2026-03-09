@@ -38,6 +38,12 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     @Published public var isConnected: Bool = false
     @Published public var isCapturing: Bool = false
     
+    // Status properties (GAP-406)
+    @Published public var batteryLevel: Int = 85
+    @Published public var storageCapacity: String = "14.2 GB"
+    @Published public var exposureEvaluation: Float = 0.0
+    @Published public var focusMode: Int = 0 // 0: AF-S, 1: AF-C, 2: Manual
+    
     public enum LiveViewState {
         case off, starting, active, paused
     }
