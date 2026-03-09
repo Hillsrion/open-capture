@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.5.0",
+  "checkpoint_id": "4bc11074dc86",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 0,
+  "files_touched": [
+    "conductor/tracks/v2_architecture_alignment_20260309/plan.md",
+    "reconstructed_codebase/Sources/AppCoreShared/BrushSettingsManager.swift",
+    "reconstructed_codebase/Sources/AppCoreShared/SearchManager.swift"
+  ],
+  "sessions": [
+    {
+      "metadata": "/4b/c11074dc86/0/metadata.json",
+      "transcript": "/4b/c11074dc86/0/full.jsonl",
+      "content_hash": "/4b/c11074dc86/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0,
+    "api_call_count": 0
+  }
+}
