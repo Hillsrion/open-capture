@@ -6,5 +6,5 @@ dsdump
 *.log
 RawDumps/
 RawDumps copy/
-reconstructed_codebase/.build/
-reconstructed_codebase/.swiftpm/
+src/.build/
+src/.swiftpm/

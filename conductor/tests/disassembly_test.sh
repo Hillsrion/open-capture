@@ -5,7 +5,7 @@ set -e
 
 # Run the disassembly script for the main binary only.
 # Temporarily modify dump_source.sh to exit after disassembling the main binary for testing.
-cd reconstructed_codebase
+cd src
 cp dump_source.sh dump_source_test.sh
 sed -i '' '/# Frameworks/,$d' dump_source_test.sh
 chmod +x dump_source_test.sh

@@ -4,7 +4,7 @@
 set -e
 
 # Run the header dump script for the main binary only.
-cd reconstructed_codebase
+cd src
 cp dump_headers.sh dump_headers_test.sh
 sed -i '' '/# Frameworks/,$d' dump_headers_test.sh
 chmod +x dump_headers_test.sh

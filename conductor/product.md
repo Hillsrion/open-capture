@@ -50,7 +50,7 @@ The goal of this project is to reverse-engineer and reconstruct the full source 
 - **Status:** Hierarchical Keywords management reconstructed with centralized library, tree-based taxonomy, and session database persistence.
 
 # Guidelines & Mandates
-- **Documentation:** Technical documentation in `reconstructed_codebase/docs/`.
+- **Documentation:** Technical documentation in `src/docs/`.
 - **Token Reporting:** Regular "Session Token Reports" in `docs/token_usage.md`.
 - **Git Hygiene:** Commit regularly and provide detailed descriptions in git to preserve context and history.
 - **Skill Creation:** Formalize repetitive reverse-engineering tasks into Gemini CLI skills.

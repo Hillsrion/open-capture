@@ -62,7 +62,7 @@ These tools are now honestly exposed as missing. They should be treated as concr
 | TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `DONE-RECENT` |
 | TOOL-307 | `LivePreviewComposition`, `LivePreviewAdjustments`, `LivePreviewInfoTool`, `Normalize` | Med | Med | `PLACEHOLDER` |
 
-The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/ToolRegistry.swift).
+The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/src/Sources/CaptureOneUI/ToolRegistry.swift).
 
 ---
 

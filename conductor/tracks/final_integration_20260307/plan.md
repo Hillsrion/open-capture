@@ -1,7 +1,7 @@
 # Implementation Plan: Final Integration and Compilation of Reconstructed Frameworks
 
 ## Phase 1: Swift Package Setup [checkpoint: 408cdfa]
-- [x] Task: Initialize the `Package.swift` file at the root of `reconstructed_codebase/`. 22aee31
+- [x] Task: Initialize the `Package.swift` file at the root of `src/`. 22aee31
 - [x] Task: Create the SPM directory structure (`Sources/`, `Tests/`). 22aee31
 - [x] Task: Move existing source files to their respective target directories in `Sources/`. 22aee31
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Swift Package Setup' (Protocol in workflow.md) 22aee31

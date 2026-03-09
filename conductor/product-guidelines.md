@@ -13,7 +13,7 @@
 ## Code Organization: Bundle-Parity Structure
 - **Directory Structure:** Reconstructed source code MUST match the original `.app` bundle structure and framework boundaries (e.g., `Headers/Frameworks/ImageCore/`, `Source/Main/`).
 - **Module Boundaries:** Maintain clear isolation between reconstructed frameworks as they appear in the original binary.
-- **Consistency:** Ensure that the file layout in the `reconstructed_codebase/` remains consistent with the original application's organization.
+- **Consistency:** Ensure that the file layout in the `src/` remains consistent with the original application's organization.
 
 ## Context Retention: Clean Reconstruction
 - **Source Code Hygiene:** The final reconstructed source files should be "clean" and free of massive assembly or intermediate pseudo-code blocks.

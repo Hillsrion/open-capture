@@ -20,7 +20,7 @@ This skill provides a systematic workflow for crawling the Capture One User Guid
         -   **Visual Context**: Use the transcript and description to document UI placements that might be missing from static images.
 4.  **Deduce Features**: map extracted UI items to functional commands and underlying logic (e.g., "Reset button" -> `resetCommand`).
 5.  **Identify Gaps**: Compare the extracted specs with:
-    -   Existing codebase (especially `reconstructed_codebase/Sources/CaptureOneUI/`).
+    -   Existing codebase (especially `src/Sources/CaptureOneUI/`).
     -   The current `@conductor/backlog.md`.
 6.  **Update Backlog**: Add missing UI items and functional gaps to `conductor/backlog.md` with high precision.
 

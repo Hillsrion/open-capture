@@ -4,7 +4,7 @@ This file contains foundational mandates for the Capture One reconstruction proj
 
 ## 1. Documentation Standards
 - **Content:** Write "real" technical documentation (architectural overviews, module interactions, reconstructed API references) instead of just action summaries.
-- **Location:** Documentation should be stored in `reconstructed_codebase/docs/`.
+- **Location:** Documentation should be stored in `src/docs/`.
 - **Frequency:** Update documentation alongside every major phase or significant module extraction.
 - **Tone:** Professional, senior-engineer level technical documentation.
 
@@ -14,7 +14,7 @@ This file contains foundational mandates for the Capture One reconstruction proj
     - Estimated tokens processed in tool calls (especially `read_file`, `grep_search`, `run_shell_command`).
     - Estimated output tokens.
     - Context usage trends.
-- **Storage:** Maintain a log at `reconstructed_codebase/docs/token_usage.md`.
+- **Storage:** Maintain a log at `src/docs/token_usage.md`.
 
 ## 3. Skill Management
 - **Action:** If a specific workflow or complex reverse-engineering task becomes repetitive, use the `skill-creator` tool to formalize it into a Gemini CLI skill.

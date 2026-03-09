@@ -4,12 +4,12 @@
 Restore dedicated macOS window shells for Importer, Exporter, and Print workflows, replacing the current simplified SwiftUI sheets. This fulfills `WS-104` and prepares the infrastructure for floating panels (`WS-105`) and multi-monitor support (`WS-106`), matching the architecture of the decompiled `ImporterWindowController`, `ExporterWindowController`, and `PrintWindowController`.
 
 ## Key Files & Context
-- `reconstructed_codebase/Sources/CaptureOneUI/COWindowManager.swift`: Central registry for window controllers.
-- `reconstructed_codebase/Sources/CaptureOneUI/AppCommandCenter.swift`: Routing for shell actions.
-- `reconstructed_codebase/Sources/AppCoreShared/WorkspaceModels.swift`: `WorkspaceWindowKind` enum.
-- `reconstructed_codebase/Sources/CaptureOneUI/ImportDialog.swift`: Existing importer UI to be hosted in the new shell.
-- `reconstructed_codebase/Sources/CaptureOneUI/ExportView.swift`: Existing exporter UI.
-- `reconstructed_codebase/Sources/CaptureOneUI/PrintWindowController.swift`: (Currently a view, to be converted to a real NSWindowController).
+- `src/Sources/CaptureOneUI/COWindowManager.swift`: Central registry for window controllers.
+- `src/Sources/CaptureOneUI/AppCommandCenter.swift`: Routing for shell actions.
+- `src/Sources/AppCoreShared/WorkspaceModels.swift`: `WorkspaceWindowKind` enum.
+- `src/Sources/CaptureOneUI/ImportDialog.swift`: Existing importer UI to be hosted in the new shell.
+- `src/Sources/CaptureOneUI/ExportView.swift`: Existing exporter UI.
+- `src/Sources/CaptureOneUI/PrintWindowController.swift`: (Currently a view, to be converted to a real NSWindowController).
 
 ## Success Criteria
 1. `Import Images...` opens a dedicated `NSWindow` instead of a sheet.

@@ -17,7 +17,7 @@ This track focuses on integrating the reconstructed modules (`AppCoreShared`, `I
 - **Reproducibility:** Ensure the build is reproducible in a standard macOS/Swift environment.
 
 ## Acceptance Criteria
-- A valid `Package.swift` file at the root of `reconstructed_codebase/`.
+- A valid `Package.swift` file at the root of `src/`.
 - Successful execution of `swift build` without errors.
 - Successful execution of `swift test` for all integrated test suites.
 
