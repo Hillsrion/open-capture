@@ -224,6 +224,7 @@ public struct Workspace: Codable, Identifiable {
     public var chromeState: WorkspaceChromeState
     public var toolbarConfiguration: ToolbarConfiguration = .defaultConfiguration
     public var toolState: [String: WorkspaceStoredValue] = [:]
+    public var isBundleWorkspace: Bool = false
 
     public init(
         id: String = UUID().uuidString,
@@ -231,7 +232,8 @@ public struct Workspace: Codable, Identifiable {
         windowKind: WorkspaceWindowKind,
         palettes: [WorkspacePaletteDefinition] = [],
         chromeState: WorkspaceChromeState = WorkspaceChromeState(),
-        toolbarConfiguration: ToolbarConfiguration = .defaultConfiguration
+        toolbarConfiguration: ToolbarConfiguration = .defaultConfiguration,
+        isBundleWorkspace: Bool = false
     ) {
         self.id = id
         self.name = name
@@ -239,6 +241,7 @@ public struct Workspace: Codable, Identifiable {
         self.palettes = palettes
         self.chromeState = chromeState
         self.toolbarConfiguration = toolbarConfiguration
+        self.isBundleWorkspace = isBundleWorkspace
     }
 
     public var selectedPaletteID: String {
@@ -279,6 +282,7 @@ public struct Workspace: Codable, Identifiable {
         case toolState
         case leftSidebarTabs
         case sidebarWidth
+        case isBundleWorkspace
     }
 
     public init(from decoder: Decoder) throws {
@@ -288,6 +292,7 @@ public struct Workspace: Codable, Identifiable {
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? "Default"
         windowKind = try container.decodeIfPresent(WorkspaceWindowKind.self, forKey: .windowKind) ?? .session
         toolbarConfiguration = try container.decodeIfPresent(ToolbarConfiguration.self, forKey: .toolbarConfiguration) ?? .defaultConfiguration
+        isBundleWorkspace = try container.decodeIfPresent(Bool.self, forKey: .isBundleWorkspace) ?? false
 
         if let decodedPalettes = try container.decodeIfPresent([WorkspacePaletteDefinition].self, forKey: .palettes) {
             palettes = decodedPalettes
@@ -328,18 +333,55 @@ public struct Workspace: Codable, Identifiable {
         try container.encode(chromeState, forKey: .chromeState)
         try container.encode(toolbarConfiguration, forKey: .toolbarConfiguration)
         try container.encode(toolState, forKey: .toolState)
+        try container.encode(isBundleWorkspace, forKey: .isBundleWorkspace)
+    }
+}
+
+/// Reconstructed model for window and palette coordination (v16.5+).
+public class WorkspaceLayout: Codable {
+    public weak var workspaceManager: WorkspaceManager?
+    
+    public init(manager: WorkspaceManager?) {
+        self.workspaceManager = manager
     }
 }
 
 /// Reconstructed manager for workspace presets and persistence.
-public class WorkspaceManager: ObservableObject {
+public class WorkspaceManager: ObservableObject, Codable {
     public static let shared = WorkspaceManager()
     public static var persistenceDirectoryOverride: URL?
 
     @Published public var activeWorkspace: Workspace
+    @Published public var allWorkspaces: [Workspace] = []
+    
+    public var systemWorkspacesAsMenu: [Workspace] {
+        return allWorkspaces.filter { $0.isBundleWorkspace }
+    }
+
+    public var allWorkspacesAsMenu: [Workspace] {
+        return allWorkspaces
+    }
 
     private init() {
         self.activeWorkspace = WorkspaceManager.createDefaultWorkspace()
+        self.allWorkspaces = [self.activeWorkspace]
+    }
+    
+    enum CodingKeys: CodingKey {
+        case activeWorkspace
+        case allWorkspaces
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        activeWorkspace = try container.decode(Workspace.self, forKey: .activeWorkspace)
+        allWorkspaces = try container.decode([Workspace].self, forKey: .allWorkspaces)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(activeWorkspace, forKey: .activeWorkspace)
+        try container.encode(allWorkspaces, forKey: .allWorkspaces)
     }
 
     public func saveWorkspace() {
