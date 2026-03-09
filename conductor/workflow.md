@@ -2,12 +2,13 @@
 
 ## Guiding Principles
 
-1. **The Plan is the Source of Truth:** All work must be tracked in `plan.md`
-2. **The Tech Stack is Deliberate:** Changes to the tech stack must be documented in `tech-stack.md` *before* implementation
-3. **Test-Driven Development:** Write unit tests before implementing functionality
-4. **High Code Coverage:** Aim for >80% code coverage for all modules
-5. **User Experience First:** Every decision should prioritize user experience
-6. **Non-Interactive & CI-Aware:** Prefer non-interactive commands. Use `CI=true` for watch-mode tools (tests, linters) to ensure single execution.
+1. **Notion is the Source of Truth:** The [Open C1 Notion Database](https://www.notion.so/31e0db11ba3780e68c37fd79aa53984d) is the primary source of truth for the backlog, feature specifications, and task prioritization.
+2. **The Plan is the Tactical Guide:** Detailed implementation steps for the current track must be tracked in `plan.md`.
+3. **The Tech Stack is Deliberate:** Changes to the tech stack must be documented in `tech-stack.md` *before* implementation.
+4. **Test-Driven Development:** Write unit tests before implementing functionality
+5. **High Code Coverage:** Aim for >80% code coverage for all modules
+6. **User Experience First:** Every decision should prioritize user experience
+7. **Non-Interactive & CI-Aware:** Prefer non-interactive commands. Use `CI=true` for watch-mode tools (tests, linters) to ensure single execution.
 
 ## Task Workflow
 
