@@ -11,4 +11,9 @@ src/.swiftpm/
 .entire/
 .ruby-lsp/
 .vscode/
-docs_raw/
+\n# Skill Data (non-versioned)
+skills/c1-doc-spec-extractor/scripts/*.txt
+skills/c1-doc-spec-extractor/scripts/*.json
+skills/c1-doc-spec-extractor/scripts/*.html
+\n# Local Skill Documentation Data
+skills/c1-doc-spec-extractor/docs_raw/

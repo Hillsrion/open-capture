@@ -64,6 +64,115 @@ These tools are now honestly exposed as missing. They should be treated as concr
 
 The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/src/Sources/CaptureOneUI/ToolRegistry.swift).
 
+### Deduced UI Specifications for Placeholders
+
+Based on official documentation extraction (`docs_raw/specs.html`), the following UI specs must be implemented when replacing these placeholders:
+
+#### `Focus` (TOOL-303)
+*   **Parent Container**: Refine Tool Tab (default), but can be un-docked.
+*   **Elements**:
+    *   Preview area displaying image at output quality (default 100% zoom).
+    *   Zoom level slider/dropdown (25%, 33%, 50%, 67%, 100% up to 1600%).
+    *   **Pick Focus Point Cursor Tool** (magnifying glass icon) to select focus area from the main Viewer.
+*   **Sub-options (Focus Area AI)**: Dropdown for AI face detection modes: `Center to Eye`, `Center to Face`, `None`.
+
+#### `Navigator` (TOOL-303)
+*   **Parent Container**: Details Tool Tab (default), but can be un-docked.
+*   **Elements**:
+    *   Thumbnail of the selected image.
+    *   Draggable white rectangular frame depicting the current main Viewer zoom level.
+*   **Sub-options**: Action menu (`...`) containing magnification presets like `Zoom Viewer 100%`.
+
+#### `MatchLook` (TOOL-301)
+*   **Behavior**: Transfers the look of a reference image to other photos using AI, replicating it via existing Capture One tools.
+*   **Sub-options**:
+    *   Actions: `Set Match Look Reference`, `Apply Match Look`.
+    *   Supports Custom Presets (which include the reference image, selected adjustments, and Impact level).
+
+#### `Crop` (TOOL-302)
+*   **Behavior**: Aspect Ratios are per-variant, not global.
+*   **Elements (Mask settings)**:
+    *   `Show Mask` toggle.
+    *   `Opacity` and `Brightness` sliders for the area outside the crop.
+    *   Options for `Frame`, `Label`, and `Handles`.
+
+#### `Import Window Placeholders` (`ImporterFilters`, `ImportFileInfo` - TOOL-306)
+*   **Behavior**: Modal or dedicated window for importing images.
+*   **Left Panel Elements**:
+    *   **Import From**:
+        *   `Source` dropdown ("Choose Folder...").
+        *   Checkboxes: `Include Subfolders`, `Exclude Duplicates`.
+    *   **Import To**:
+        *   `Destination` dropdown ("Current Location", "Add to Catalog").
+        *   `Collection` dropdown ("Recent Imports Only").
+        *   `Space Left` label.
+    *   **Collapsible Sections**: `Backup To`, `Naming`, `Metadata`, `Adjustments`, `File Info`. Each section has a `?` and `...` menu on the right.
+*   **Bottom Toolbar**:
+    *   `Import Collection` dropdown ("Open Collection When Import Starts").
+    *   Checkboxes: `Eject Card`, `Erase Images After Copying`.
+    *   Buttons: `Cancel`, `Import All` (Orange primary button).
+
+#### `Preferences / Settings` (Global Window)
+*   **Structure**: Tabbed window with icons: `General`, `Appearance`, `Image`, `Capture`, `Color`, `Exposure`, `Crop`, `Focus`, `Notifications`, `Warnings`, `Update`, `Plugins`.
+*   **General Tab Sections**:
+    *   **Viewer**: `Zoom with scroll wheel` (Checkbox).
+    *   **Browser**: `Default Sort By` (Dropdown), `Default Sort Direction` (Dropdown).
+    *   **Tool Tabs**: `Scroll wheel changes slider value` (Checkbox).
+    *   **Catalog and Session**: `Open in new window` (Checkbox).
+    *   **Recent Captures Collection**: `Create` (Dropdown: "After more than 1 hour of inactivity").
+    *   **Importing**: `Open importer when detecting card from digital camera` (Checkbox).
+    *   **Groups Navigation**: `Navigation` (Dropdown: "Images ↓↑ Groups ←→").
+    *   **Hardware Acceleration**: `Display` (Dropdown: Auto/Never), `Processing` (Dropdown: Auto/Never/CPU).
+    *   **Activities**: `Automatically show window` (Checkbox).
+    *   **Resource Hub**: `Show on Startup` (Checkbox).
+    *   **Tooltips**: `Show enhanced tooltips` (Checkbox).
+    *   **Favorites**: `Adding Previous Session Folder` (Dropdown).
+    *   **Catalog Backup**: `Remind on close` (Dropdown), `Location` (Field + Browse).
+*   **Appearance Tab**: `Color` dropdown for Viewer background, `Margin` slider (3px to 40px).
+
+#### `Adjustment Tool Placeholders` (TOOL-301 to TOOL-305)
+*   **`BlackAndWhite`**:
+    *   `Enable Black & White` checkbox.
+    *   Sliders: `Red`, `Yellow`, `Green`, `Cyan`, `Blue`, `Magenta`.
+    *   `Split Tones` section: `Hue` and `Saturation` for Highlights and Shadows.
+*   **`Dehaze`**:
+    *   `Amount` slider (-100 to 100).
+    *   `Shadow Tone` picker/color patch.
+*   **`Vignetting`**:
+    *   `Amount` slider.
+    *   `Method` dropdown: `Elliptic`, `Circular`.
+*   **`SpotRemoval`**:
+    *   `Type` dropdown: `Dust`, `Spot`.
+    *   `Radius` slider.
+    *   Counter for number of spots.
+*   **`Moire`**:
+    *   `Amount` slider.
+    *   `Pattern` slider.
+*   **`Normalize`**:
+    *   `Pick Normalize Color` picker.
+    *   Checkboxes for `Apply Exposure` and `Apply White Balance`.
+
+#### `Library Tool & Organization` (GAP-402, GAP-405, GAP-406)
+*   **Session Hierarchy (Capture One 16.6.0+)**:
+    *   `Shortcuts` section (formerly Session Folders): Contains `Capture`, `Selects`, `Output`, `Trash`.
+    *   `Session Folders` section: Shows full folder hierarchy. Right-click any folder to set as Capture/Selects/Output/Trash.
+    *   `+` button menu: `Add folder inside` and `Add multiple folders inside` (opens Session Builder).
+    *   `System Folders`: Displays system-level folders and generates local cache.
+*   **Catalog Hierarchy**:
+    *   `Catalog Collections`: Default virtual folders like All Images, Recent Imports, Trash.
+    *   `User Collections`: `Projects`, `Groups`, and `Albums`.
+    *   `Folders`: Physical locations (In Catalog, Macintosh HD, external drives).
+*   **Albums**:
+    *   Creation: `File -> New Collection -> New Album`, or `+` icon in User Collections/Session Albums, or `...` (Action menu) -> `New -> New Album`.
+*   **Selects Collection / Folder**:
+    *   Sessions: Move via toolbar icon or `Cmd+J` / `Ctrl+J`.
+    *   Catalogs: Right-click an Album or Folder and choose `Set as Selects Collection`.
+*   **Filters Tool**:
+    *   Displays numeric indicators next to criteria (e.g., star ratings, color tags).
+    *   Action menu (`...`) -> `Show/Hide Filters...` opens the `Metadata Filter` dialog to enable/disable specific filters.
+    *   Multi-select: Hold `Cmd` (Mac) or `Ctrl` (Win) to check multiple items at once.
+    *   Active filters show an orange dot. Click to deactivate.
+
 ---
 
 ## P1. Features Marked “Done” But Still Only Partial In Product Terms
