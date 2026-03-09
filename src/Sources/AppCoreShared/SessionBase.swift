@@ -10,6 +10,10 @@ public class SessionBase: BaseObject {
     public var name: String?
     public var documentType: Int16 // 0 for Session, 1 for Catalog (inferred)
     
+    public var isCatalog: Bool {
+        return documentType == 1
+    }
+    
     // MARK: - Folders & Paths
     public var rootFolder: String?
     public var captureFolder: String?

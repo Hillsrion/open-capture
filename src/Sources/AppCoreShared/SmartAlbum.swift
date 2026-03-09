@@ -12,6 +12,7 @@ public class SmartAlbum: CollectionBase {
     public override init(uuid: String, context: ObjectContext?) {
         super.init(uuid: uuid, context: context)
         self.isVariantBased = true
+        self.isSmartAlbum = true
     }
     
     /// Reconstructed logic for fetching variants from a Smart Album.
