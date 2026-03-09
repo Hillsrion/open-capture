@@ -236,8 +236,6 @@ public struct CullingView: View {
             AppPreferencesView()
         case .keyboardShortcuts:
             ShortcutEditorSheet()
-        case .print:
-            PrintSheetHost()
         case .sessionUpgrade:
             if let session = commands.session {
                 SessionUpgradeDialog(
@@ -342,17 +340,5 @@ private struct ShortcutEditorSheet: View {
         .frame(minWidth: 720, minHeight: 420)
         .background(CaptureOneTheme.Colors.panelBackground)
         .foregroundColor(.white)
-    }
-}
-
-private struct PrintSheetHost: View {
-    @ObservedObject private var adjustmentController = AdjustmentToolController.shared
-    @State private var selectedVariants: [VariantBase] = []
-
-    var body: some View {
-        PrintDialog(selectedVariants: $selectedVariants)
-            .onAppear {
-                selectedVariants = adjustmentController.currentVariant.map { [$0] } ?? []
-            }
     }
 }

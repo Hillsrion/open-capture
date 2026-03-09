@@ -6,7 +6,6 @@ import DataCore
 public enum AppSheetRoute: String, Identifiable {
     case preferences
     case keyboardShortcuts
-    case print
     case sessionUpgrade
 
     public var id: String { rawValue }
@@ -229,7 +228,7 @@ public final class AppCommandCenter: ObservableObject {
             )
             return
         }
-        presentedSheet = .print
+        COWindowManager.shared.openPrintWindow()
     }
 
     public func resetAdjustments() {

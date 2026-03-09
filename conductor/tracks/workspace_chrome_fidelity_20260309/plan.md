@@ -15,11 +15,11 @@
 - [x] Task: Commit Phase 2.
 
 ## Phase 3: Dedicated Print Shell (WS-104)
-- [ ] Task: Convert `PrintWindowController.swift` into a real `NSWindowController` wrapping `PrintDialog`.
-- [ ] Task: Add `openPrintWindow()` to `COWindowManager`.
-- [ ] Task: Update `AppCommandCenter.presentPrint()` to use the new window controller.
-- [ ] Task: Verify workspace preset `.printwindow` is correctly applied.
-- [ ] Task: Commit Phase 3.
+- [x] Task: Convert `PrintWindowController.swift` into a real `NSWindowController` wrapping `PrintDialog`.
+- [x] Task: Add `openPrintWindow()` to `COWindowManager`.
+- [x] Task: Update `AppCommandCenter.presentPrint()` to use the new window controller.
+- [x] Task: Verify workspace preset `.printwindow` is correctly applied.
+- [x] Task: Commit Phase 3.
 
 ## Phase 4: Palette Undocking & Redocking (WS-105)
 - [ ] Task: Implement `FloatingToolWindowController` to host a single `ToolConfiguration`.

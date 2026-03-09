@@ -1,5 +1,54 @@
+import Cocoa
 import SwiftUI
 import AppCoreShared
+
+/// Standalone Window Controller for the Print workflow (WS-104).
+/// Reconstructs the dedicated window shell instead of using a sheet.
+public class PrintWindowController: NSWindowController {
+    
+    private var workspace: Workspace
+    
+    public init() {
+        // Request the specific print window workspace preset
+        self.workspace = WorkspaceManager.createWorkspace(windowKind: .print, name: "Print")
+        
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 1100, height: 800),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered,
+            defer: false
+        )
+        window.title = "Print"
+        window.center()
+        window.titlebarAppearsTransparent = true
+        window.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
+        
+        super.init(window: window)
+        
+        let contentView = PrintRootView(workspace: workspace)
+        window.contentView = NSHostingView(rootView: contentView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+fileprivate struct PrintRootView: View {
+    @ObservedObject private var adjustmentController = AdjustmentToolController.shared
+    @State private var selectedVariants: [VariantBase] = []
+    let workspace: Workspace
+    
+    var body: some View {
+        PrintDialog(selectedVariants: $selectedVariants)
+            .background(CaptureOneTheme.Colors.applicationBackground)
+            .preferredColorScheme(.dark)
+            .edgesIgnoringSafeArea(.top)
+            .onAppear {
+                selectedVariants = adjustmentController.currentVariant.map { [$0] } ?? []
+            }
+    }
+}
 
 /// Reconstructed Print Window / Dialog (UI-012).
 public struct PrintDialog: View {
@@ -41,14 +90,24 @@ public struct PrintDialog: View {
                 Spacer()
                 
                 Button("Cancel") {
-                    dismiss()
+                    // If hosted in a window, we should close the window.
+                    // If hosted in a sheet, dismiss works.
+                    if let window = NSApp.keyWindow, window.title == "Print" {
+                        window.close()
+                    } else {
+                        dismiss()
+                    }
                 }
                 .buttonStyle(PlainButtonStyle())
                 .padding(.horizontal, 10)
                 
                 Button(action: {
                     print("[Print] Executing print job for \(selectedVariants.count) variants.")
-                    dismiss()
+                    if let window = NSApp.keyWindow, window.title == "Print" {
+                        window.close()
+                    } else {
+                        dismiss()
+                    }
                 }) {
                     Text("Print...")
                         .padding(.horizontal, 20)

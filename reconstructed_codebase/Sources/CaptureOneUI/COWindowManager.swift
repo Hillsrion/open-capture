@@ -17,6 +17,7 @@ public final class COWindowManager {
     private var cullingWindowDelegate: AuxiliaryWindowDelegate?
     private var importerWindowDelegate: AuxiliaryWindowDelegate?
     private var exporterWindowDelegate: AuxiliaryWindowDelegate?
+    private var printWindowDelegate: AuxiliaryWindowDelegate?
     
     // Auxiliary windows
     private var livePreviewWindowController: NSWindowController?
@@ -24,6 +25,7 @@ public final class COWindowManager {
     private var cullingWindowController: NSWindowController?
     private var importerWindowController: NSWindowController?
     private var exporterWindowController: NSWindowController?
+    private var printWindowController: NSWindowController?
     private var startWindow: NSWindow?
     
     private init() {}
@@ -259,6 +261,29 @@ public final class COWindowManager {
         exporterWindowController = nil
         exporterWindowDelegate = nil
     }
+
+    // MARK: - Print Window (WS-104)
+
+    public func openPrintWindow() {
+        if let existingController = printWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+
+        let controller = PrintWindowController()
+        self.printWindowController = controller
+
+        guard let window = controller.window else { return }
+        let delegate = AuxiliaryWindowDelegate(manager: self, kind: .print)
+        self.printWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    public func removePrintWindow() {
+        printWindowController = nil
+        printWindowDelegate = nil
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -292,6 +317,7 @@ enum AuxiliaryWindowKind {
     case culling
     case importer
     case exporter
+    case print
 }
 
 fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
@@ -313,6 +339,8 @@ fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
             manager.removeImporterWindow()
         case .exporter:
             manager.removeExporterWindow()
+        case .print:
+            manager.removePrintWindow()
         }
     }
 }
