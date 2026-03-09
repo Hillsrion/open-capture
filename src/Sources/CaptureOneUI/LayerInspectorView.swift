@@ -7,7 +7,9 @@ import ImageCore
 
 public struct LayerInspectorView: View {
     @ObservedObject var variant: VariantBase
+    @ObservedObject var controller = AdjustmentToolController.shared
     @State private var selectedLayerIndex: Int = 0
+    @State private var isRefineExpanded: Bool = false
     
     public init(variant: VariantBase) {
         self.variant = variant
@@ -17,6 +19,26 @@ public struct LayerInspectorView: View {
     public var body: some View {
         COToolSection("Layers", toolID: "LocalAdjustments") {
             VStack(spacing: 8) {
+                // Mask Visibility Toolbar (16.7.4 style)
+                HStack(spacing: 12) {
+                    maskModeButton(mode: 0, icon: "eye.slash", tooltip: "Never Show Mask")
+                    maskModeButton(mode: 1, icon: "eye.fill", tooltip: "Always Show Mask")
+                    maskModeButton(mode: 2, icon: "paintbrush.fill", tooltip: "Only When Brushing")
+                    maskModeButton(mode: 3, icon: "circle.lefthalf.filled", tooltip: "Grayscale Mask")
+                    
+                    Spacer()
+                    
+                    Picker("", selection: $controller.maskColorIndex) {
+                        Image(systemName: "circle.fill").foregroundColor(.red).tag(0)
+                        Image(systemName: "circle.fill").foregroundColor(.green).tag(1)
+                        Image(systemName: "circle.fill").foregroundColor(.blue).tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 60)
+                    .scaleEffect(0.8)
+                }
+                .padding(.horizontal, 4)
+                
                 // Layer Stack
                 VStack(spacing: 1) {
                     ForEach(variant.layers.indices.reversed(), id: \.self) { index in
@@ -27,6 +49,16 @@ public struct LayerInspectorView: View {
                         .onTapGesture {
                             selectedLayerIndex = index
                             variant.activeLayerIndex = index
+                        }
+                        .contextMenu {
+                            Button("Invert Mask") { /* controller.invertMask(for: variant.layers[index]) */ }
+                            Button("Fill Mask") { /* controller.fillMask(for: variant.layers[index]) */ }
+                            Button("Clear Mask") { /* controller.clearMask(for: variant.layers[index]) */ }
+                            Divider()
+                            Button("Refine Edge...") { isRefineExpanded = true }
+                            Button("Copy Mask from Layer...") { }
+                            Divider()
+                            Button("Delete Layer", role: .destructive) { removeLayer() }
                         }
                     }
                 }
@@ -39,6 +71,7 @@ public struct LayerInspectorView: View {
                         Button("New Empty Layer", action: addLayer)
                         Button("New Heal Layer") { addLayer(type: .heal) }
                         Button("New Clone Layer") { addLayer(type: .clone) }
+                        Divider()
                         Button("Select Subject") {
                             if let image = variant.image {
                                 SubjectMaskingEngine.shared.selectSubject(for: image) { mask in
@@ -55,29 +88,81 @@ public struct LayerInspectorView: View {
                         }
                     } label: {
                         Image(systemName: "plus")
+                            .font(.system(size: 12, weight: .bold))
                     }
                     .menuStyle(BorderlessButtonMenuStyle())
                     .frame(width: 24)
                     
                     Button(action: removeLayer) {
                         Image(systemName: "minus")
+                            .font(.system(size: 12, weight: .bold))
                     }
+                    .disabled(variant.layers.count <= 1 || selectedLayerIndex == 0) // Can't delete background
+                    
                     Spacer()
                     
                     if let activeLayer = variant.activeLayer {
-                        HStack {
-                            Text("Opacity").font(.system(size: 10)).foregroundColor(.gray)
+                        HStack(spacing: 4) {
+                            Text("\(Int(activeLayer.opacity * 100))")
+                                .font(.system(size: 10, design: .monospaced))
+                                .foregroundColor(.gray)
+                                .frame(width: 20)
                             Slider(value: Binding(
                                 get: { Double(activeLayer.opacity) },
                                 set: { activeLayer.opacity = Float($0); variant.isModified = true }
                             ), in: 0...1)
-                            .frame(width: 80)
+                            .frame(width: 60)
                         }
+                    }
+                }
+                .padding(.top, 4)
+                
+                // Refine Section (GAP-404)
+                VStack(spacing: 4) {
+                    Button(action: { withAnimation { isRefineExpanded.toggle() } }) {
+                        HStack {
+                            Image(systemName: isRefineExpanded ? "chevron.down" : "chevron.right")
+                                .font(.system(size: 8, weight: .bold))
+                            Text("Refine Mask")
+                                .font(.system(size: 11, weight: .semibold))
+                            Spacer()
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    
+                    if isRefineExpanded {
+                        VStack(spacing: 8) {
+                            HStack {
+                                Text("Refine Edge").font(.system(size: 10)).foregroundColor(.gray).frame(width: 65, alignment: .leading)
+                                Slider(value: $controller.maskRefineEdge, in: 0...100)
+                                    .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                                Text("\(Int(controller.maskRefineEdge))").font(.system(size: 10, design: .monospaced)).frame(width: 25, alignment: .trailing)
+                            }
+                            
+                            HStack {
+                                Text("Feather").font(.system(size: 10)).foregroundColor(.gray).frame(width: 65, alignment: .leading)
+                                Slider(value: $controller.maskFeather, in: 0...100)
+                                    .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                                Text("\(Int(controller.maskFeather))").font(.system(size: 10, design: .monospaced)).frame(width: 25, alignment: .trailing)
+                            }
+                        }
+                        .padding(.leading, 12)
+                        .padding(.top, 4)
                     }
                 }
                 .padding(.top, 4)
             }
         }
+    }
+    
+    private func maskModeButton(mode: Int, icon: String, tooltip: String) -> some View {
+        Button(action: { controller.maskVisibilityMode = mode }) {
+            Image(systemName: icon)
+                .font(.system(size: 12))
+                .foregroundColor(controller.maskVisibilityMode == mode ? CaptureOneTheme.Colors.activeHighlight : .gray)
+        }
+        .buttonStyle(.plain)
+        .help(tooltip)
     }
     
     private func addLayer() {
