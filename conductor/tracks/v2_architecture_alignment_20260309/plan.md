@@ -13,10 +13,10 @@
 - [x] Task: Commit Phase 2.
 
 ## Phase 3: UI Architecture Refinement (CaptureOneUI)
-- [ ] Task: Create `COUIView` and `COUIContentView` as base SwiftUI/AppKit bridge classes.
-- [ ] Task: Refactor `MatchLookToolView` to use `MatchLookViewModel`.
-- [ ] Task: Refactor `COImageBrowserView` to utilize `ImageBrowserInteractor`.
-- [ ] Task: Commit Phase 3.
+- [x] Task: Create `COUIView` and `COUIContentView` as base SwiftUI/AppKit bridge classes.
+- [x] Task: Refactor `MatchLookToolView` to use `MatchLookViewModel`.
+- [x] Task: Refactor `COImageBrowserView` to utilize `ImageBrowserInteractor`.
+- [x] Task: Commit Phase 3.
 
 ## Phase 4: Missing Managers & Logic
 - [ ] Task: Reconstruct `SearchManager` stub for filter tool logic.

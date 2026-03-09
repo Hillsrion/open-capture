@@ -4,6 +4,8 @@ import DataCore
 
 // MARK: - Match Look (UI-202)
 public struct MatchLookToolView: View {
+    @StateObject private var viewModel = MatchLookViewModel()
+    
     public init() {}
     
     public var body: some View {
@@ -14,12 +16,13 @@ public struct MatchLookToolView: View {
                     .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 
                 Button(action: {
-                    // Stub for Match Look triggering
+                    viewModel.matchExposureAndColor(to: [])
                 }) {
-                    Text("Match")
+                    Text(viewModel.isMatching ? "Matching..." : "Match")
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
+                .disabled(viewModel.isMatching)
             }
             .padding(.vertical, 4)
         }
