@@ -8,3 +8,7 @@ RawDumps/
 RawDumps copy/
 src/.build/
 src/.swiftpm/
+.entire/
+.ruby-lsp/
+.vscode/
+docs_raw/
