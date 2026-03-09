@@ -16,12 +16,14 @@ public final class COWindowManager {
     private var viewerWindowDelegate: AuxiliaryWindowDelegate?
     private var cullingWindowDelegate: AuxiliaryWindowDelegate?
     private var importerWindowDelegate: AuxiliaryWindowDelegate?
+    private var exporterWindowDelegate: AuxiliaryWindowDelegate?
     
     // Auxiliary windows
     private var livePreviewWindowController: NSWindowController?
     private var viewerWindowController: NSWindowController?
     private var cullingWindowController: NSWindowController?
     private var importerWindowController: NSWindowController?
+    private var exporterWindowController: NSWindowController?
     private var startWindow: NSWindow?
     
     private init() {}
@@ -234,6 +236,29 @@ public final class COWindowManager {
         importerWindowController = nil
         importerWindowDelegate = nil
     }
+
+    // MARK: - Exporter Window (WS-104)
+
+    public func openExporterWindow(recipeManager: OutputRecipeManager, batchQueue: BatchQueue, selectedVariant: VariantBase?) {
+        if let existingController = exporterWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+
+        let controller = ExporterWindowController(recipeManager: recipeManager, batchQueue: batchQueue, selectedVariant: selectedVariant)
+        self.exporterWindowController = controller
+
+        guard let window = controller.window else { return }
+        let delegate = AuxiliaryWindowDelegate(manager: self, kind: .exporter)
+        self.exporterWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    public func removeExporterWindow() {
+        exporterWindowController = nil
+        exporterWindowDelegate = nil
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -266,6 +291,7 @@ enum AuxiliaryWindowKind {
     case viewer
     case culling
     case importer
+    case exporter
 }
 
 fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
@@ -285,6 +311,8 @@ fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
             manager.removeCullingWindow()
         case .importer:
             manager.removeImporterWindow()
+        case .exporter:
+            manager.removeExporterWindow()
         }
     }
 }

@@ -232,13 +232,6 @@ public struct CullingView: View {
     @ViewBuilder
     private func sheetView(for route: AppSheetRoute) -> some View {
         switch route {
-        case .exportImages:
-            ExportView(
-                recipeManager: recipeManager,
-                batchQueue: batchQueue,
-                selectedVariant: adjustmentController.currentVariant
-            )
-            .frame(minWidth: 720, minHeight: 480)
         case .preferences:
             AppPreferencesView()
         case .keyboardShortcuts:

@@ -4,7 +4,6 @@ import AppCoreShared
 import DataCore
 
 public enum AppSheetRoute: String, Identifiable {
-    case exportImages
     case preferences
     case keyboardShortcuts
     case print
@@ -135,7 +134,11 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func presentExport() {
-        presentedSheet = .exportImages
+        COWindowManager.shared.openExporterWindow(
+            recipeManager: recipeManager,
+            batchQueue: batchQueue,
+            selectedVariant: adjustmentController.currentVariant
+        )
     }
 
     public func newCatalog() {

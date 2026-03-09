@@ -8,11 +8,11 @@
 - [x] Task: Commit Phase 1.
 
 ## Phase 2: Dedicated Exporter Shell (WS-104)
-- [ ] Task: Create `ExporterWindowController.swift` as an `NSWindowController` wrapping `ExportView`.
-- [ ] Task: Add `openExporterWindow()` to `COWindowManager`.
-- [ ] Task: Update `AppCommandCenter.presentExport()` to use the new window controller.
-- [ ] Task: Verify workspace preset `.exporterwindow` is correctly applied.
-- [ ] Task: Commit Phase 2.
+- [x] Task: Create `ExporterWindowController.swift` as an `NSWindowController` wrapping `ExportView`.
+- [x] Task: Add `openExporterWindow()` to `COWindowManager`.
+- [x] Task: Update `AppCommandCenter.presentExport()` to use the new window controller.
+- [x] Task: Verify workspace preset `.exporterwindow` is correctly applied.
+- [x] Task: Commit Phase 2.
 
 ## Phase 3: Dedicated Print Shell (WS-104)
 - [ ] Task: Convert `PrintWindowController.swift` into a real `NSWindowController` wrapping `PrintDialog`.
