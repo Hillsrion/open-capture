@@ -302,15 +302,23 @@ public enum ToolRegistry {
             }
         case "SmartAdjustments":
             return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
-        case "ExportDialogRecipeList", "ExportLocation", "ExportNaming", "FormatAndSize", "OutputAdjustments",
-             "Watermark", "OutputMetadata", "ExportProcess", "OutputContentCredentials", "ExportQueue",
-             "OutputCrossRecipeTokensInspectorTool":
+        case "ExportDialogRecipeList":
+            return .implemented { context in AnyView(ExportRecipesToolView(recipeManager: context.recipeManager)) }
+        case "ExportLocation":
+            return .implemented { context in AnyView(ExportLocationToolView(recipeManager: context.recipeManager)) }
+        case "ExportNaming":
+            return .implemented { _ in AnyView(ExportNamingToolView()) }
+        case "FormatAndSize":
+            return .implemented { context in AnyView(ExportFormatToolView(recipeManager: context.recipeManager)) }
+        case "OutputMetadata":
+            return .implemented { _ in AnyView(ExportMetadataToolView()) }
+        case "Watermark":
+            return .implemented { _ in AnyView(ExportWatermarkToolView()) }
+        case "ExportQueue":
+            return .implemented { context in AnyView(ExportQueueToolView(batchQueue: context.batchQueue)) }
+        case "OutputAdjustments", "ExportProcess", "OutputContentCredentials", "OutputCrossRecipeTokensInspectorTool":
             return .implemented { context in
-                AnyView(ExportView(
-                    recipeManager: context.recipeManager,
-                    batchQueue: context.batchQueue,
-                    selectedVariant: context.adjustmentController.currentVariant
-                ))
+                AnyView(UnavailableToolView(toolID: toolID))
             }
         case "ImporterFilters":
             return .implemented { context in AnyView(ImporterFiltersToolView(config: context.config)) }

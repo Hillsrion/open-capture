@@ -54,7 +54,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Restoration of Layers & Masking Engine (Alpha Blending, Opacity)**
+- [x] **Track: Restoration of Layers & Masking Engine (Alpha Blending, Opacity, GAP-404)**
   *Link: [./tracks/layers_masking_restoration_20260307/](./tracks/layers_masking_restoration_20260307/)*
 
 ---
@@ -79,7 +79,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Tethered Capture Enhancements (Next Capture Naming & Adjustments)**
+- [x] **Track: Tethered Capture Enhancements (Next Capture Naming & Adjustments, GAP-406)**
   *Link: [./tracks/tethered_enhancements_20260308/](./tracks/tethered_enhancements_20260308/)*
 
 ---
@@ -142,7 +142,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Workspace Parity - Exposure, Details, Lens Tools (UI-202, UI-203, UI-204)**
+- [x] **Track: Workspace Parity - Exposure, Details, Lens Tools (UI-202, UI-203, UI-204, TOOL-301, TOOL-302, TOOL-303)**
   *Link: [./tracks/tool_placeholders_20260308/](./tracks/tool_placeholders_20260308/)*
 
 ---
@@ -152,12 +152,12 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: High-Fidelity Workspace Chrome & Shell Restoration (WS-104, WS-105, WS-106)**
+- [x] **Track: High-Fidelity Workspace Chrome & Shell Restoration (WS-104, WS-105, WS-106, WF-501, WF-502, WF-503)**
   *Link: [./tracks/workspace_chrome_fidelity_20260309/](./tracks/workspace_chrome_fidelity_20260309/)*
 
 ---
 
-- [ ] **Track: Architecture Alignment with Capture One 2 (v16.5+)**
+- [/] **Track: Architecture Alignment with Capture One (v16.7.4+)**
   *Link: [./tracks/v2_architecture_alignment_20260309/](./tracks/v2_architecture_alignment_20260309/)*
 
 

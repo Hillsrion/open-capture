@@ -56,6 +56,13 @@ public struct InspectorToolTabView: View {
                 .buttonStyle(.plain)
                 .foregroundColor(selectedTabID == palette.id ? .white : .gray)
                 .contextMenu {
+                    Button("Expand All Tools") {
+                        workspaceManager.expandAllTools(in: palette.id)
+                    }
+                    Button("Collapse All Tools") {
+                        workspaceManager.collapseAllTools(in: palette.id)
+                    }
+                    Divider()
                     Button("Float Palette") {
                         COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
                     }
@@ -135,6 +142,24 @@ struct ToolContainer: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: resolvedHeight)
+        .contextMenu {
+            let isPinned = WorkspaceManager.shared.activeWorkspace.activePalette()?.fixedTools.contains(where: { $0.id == config.id }) ?? false
+            
+            Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
+                WorkspaceManager.shared.moveTool(config.id, toPinnedArea: !isPinned)
+            }
+            
+            Button("Remove Tool") {
+                WorkspaceManager.shared.removeTool(config.id)
+            }
+            
+            Divider()
+            
+            Button("Auto Size") { WorkspaceManager.shared.setToolSizeOption(nil, for: config.id) }
+            Button("Small Size") { WorkspaceManager.shared.setToolSizeOption(1, for: config.id) }
+            Button("Medium Size") { WorkspaceManager.shared.setToolSizeOption(2, for: config.id) }
+            Button("Large Size") { WorkspaceManager.shared.setToolSizeOption(3, for: config.id) }
+        }
     }
 
     private var resolvedHeight: CGFloat? {
