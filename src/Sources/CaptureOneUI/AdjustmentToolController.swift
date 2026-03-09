@@ -4,6 +4,34 @@ import ImageCore
 import DataCore
 import Combine
 
+// Spot Removal State (UI-203)
+public struct SpotItem: Identifiable, Codable {
+    public let id: UUID
+    public var type: Int // 0: Dust, 1: Spot
+    public var center: CGPoint
+    public var radius: Double
+    
+    public init(id: UUID = UUID(), type: Int = 0, center: CGPoint = CGPoint(x: 0.5, y: 0.5), radius: Double = 10.0) {
+        self.id = id
+        self.type = type
+        self.center = center
+        self.radius = radius
+    }
+}
+
+// Composition State (UI-204)
+public struct GuideItem: Identifiable, Codable {
+    public let id: UUID
+    public var position: Double // 0.0 to 1.0
+    public var isVertical: Bool
+    
+    public init(id: UUID = UUID(), position: Double, isVertical: Bool) {
+        self.id = id
+        self.position = position
+        self.isVertical = isVertical
+    }
+}
+
 /// Reconstructed controller for managing adjustment tool states.
 /// Bridges the UI sliders to the underlying MCVariant settings.
 public class AdjustmentToolController: ObservableObject, HardwareActionDelegate {
@@ -28,6 +56,19 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var shadows: Float = 0.0
     @Published public var whites: Float = 0.0
     @Published public var blacks: Float = 0.0
+    
+    // Navigator State (UI-203)
+    @Published public var zoomLevel: Float = 1.0
+    @Published public var viewportRect: CGRect = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
+    
+    // Focus State (UI-203)
+    @Published public var focusZoomLevel: Float = 1.0
+    @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    @Published public var focusAIMode: Int = 0 // 0: None, 1: Eye, 2: Face
+    
+    // Spot Removal State (UI-203)
+    @Published public var spots: [SpotItem] = []
+    @Published public var selectedSpotID: UUID?
     
     // Levels State
     @Published public var levelsBlackPoint: Float = 0.0
@@ -67,11 +108,20 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var bwCyan: Double = 0.0
     @Published public var bwBlue: Double = 0.0
     @Published public var bwMagenta: Double = 0.0
+    @Published public var bwSplitToneHighlightHue: Double = 0.0
+    @Published public var bwSplitToneHighlightSaturation: Double = 0.0
+    @Published public var bwSplitToneShadowHue: Double = 0.0
+    @Published public var bwSplitToneShadowSaturation: Double = 0.0
     
     // Dehaze & Vignetting (UI-202)
     @Published public var dehazeAmount: Double = 0.0
+    @Published public var dehazeShadowToneHue: Double = 0.0
     @Published public var vignettingAmount: Double = 0.0
     @Published public var vignettingMethod: Int = 0
+    
+    // Match Look (TOOL-301)
+    @Published public var matchLookImpact: Float = 100.0
+    @Published public var matchLookReferenceVariantID: String? = nil
     
     // Moire (UI-203)
     @Published public var moireAmount: Double = 0.0
@@ -80,6 +130,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Crop & Rotation (UI-204)
     @Published public var cropRect: CGRect = .zero
     @Published public var rotationAngle: Double = 0.0
+    @Published public var cropRatioIndex: Int = 0
+    @Published public var cropShowMask: Bool = true
+    @Published public var cropMaskOpacity: Double = 50.0
+    @Published public var cropMaskBrightness: Double = 0.0
+    
+    // Grid & Guides (UI-204)
+    @Published public var gridTypeIndex: Int = 0
+    @Published public var gridColorIndex: Int = 0 // 0: White, 1: Gray, 2: Black, 3: Amber
+    @Published public var guides: [GuideItem] = []
     
     // Keystone State (AI-003)
     @Published public var keystoneTiltX: Double = 0.0
@@ -99,6 +158,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var isSoftProofingEnabled: Bool = false
     @Published public var proofingProfileID: String = "sRGB"
     @Published public var showGamutWarning: Bool = false
+    
+    // Masking Preferences (GAP-404)
+    @Published public var maskVisibilityMode: Int = 2 // 0: Never, 1: Always, 2: Only When Brushing, 3: Grayscale
+    @Published public var maskColorIndex: Int = 0 // 0: Red, 1: Green, 2: Blue
+    @Published public var maskRefineEdge: Double = 0.0
+    @Published public var maskFeather: Double = 0.0
     
     @Published public var chromaticAberration: Bool = false
     @Published public var diffraction: Bool = false
@@ -200,6 +265,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $isSoftProofingEnabled.map { _ in }.eraseToAnyPublisher(),
             $proofingProfileID.map { _ in }.eraseToAnyPublisher(),
             $showGamutWarning.map { _ in }.eraseToAnyPublisher(),
+            $maskVisibilityMode.map { _ in }.eraseToAnyPublisher(),
+            $maskColorIndex.map { _ in }.eraseToAnyPublisher(),
+            $maskRefineEdge.map { _ in }.eraseToAnyPublisher(),
+            $maskFeather.map { _ in }.eraseToAnyPublisher(),
             $keystoneTiltX.map { _ in }.eraseToAnyPublisher(),
             $keystoneTiltY.map { _ in }.eraseToAnyPublisher(),
             $keystoneAmount.map { _ in }.eraseToAnyPublisher(),
@@ -223,13 +292,33 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $bwCyan.map { _ in }.eraseToAnyPublisher(),
             $bwBlue.map { _ in }.eraseToAnyPublisher(),
             $bwMagenta.map { _ in }.eraseToAnyPublisher(),
+            $bwSplitToneHighlightHue.map { _ in }.eraseToAnyPublisher(),
+            $bwSplitToneHighlightSaturation.map { _ in }.eraseToAnyPublisher(),
+            $bwSplitToneShadowHue.map { _ in }.eraseToAnyPublisher(),
+            $bwSplitToneShadowSaturation.map { _ in }.eraseToAnyPublisher(),
             $dehazeAmount.map { _ in }.eraseToAnyPublisher(),
+            $dehazeShadowToneHue.map { _ in }.eraseToAnyPublisher(),
             $vignettingAmount.map { _ in }.eraseToAnyPublisher(),
             $vignettingMethod.map { _ in }.eraseToAnyPublisher(),
+            $matchLookImpact.map { _ in }.eraseToAnyPublisher(),
+            $matchLookReferenceVariantID.map { _ in }.eraseToAnyPublisher(),
             $moireAmount.map { _ in }.eraseToAnyPublisher(),
             $moirePattern.map { _ in }.eraseToAnyPublisher(),
             $cropRect.map { _ in }.eraseToAnyPublisher(),
-            $rotationAngle.map { _ in }.eraseToAnyPublisher()
+            $rotationAngle.map { _ in }.eraseToAnyPublisher(),
+            $zoomLevel.map { _ in }.eraseToAnyPublisher(),
+            $viewportRect.map { _ in }.eraseToAnyPublisher(),
+            $focusZoomLevel.map { _ in }.eraseToAnyPublisher(),
+            $focusPoint.map { _ in }.eraseToAnyPublisher(),
+            $focusAIMode.map { _ in }.eraseToAnyPublisher(),
+            $spots.map { _ in }.eraseToAnyPublisher(),
+            $cropRatioIndex.map { _ in }.eraseToAnyPublisher(),
+            $cropShowMask.map { _ in }.eraseToAnyPublisher(),
+            $cropMaskOpacity.map { _ in }.eraseToAnyPublisher(),
+            $cropMaskBrightness.map { _ in }.eraseToAnyPublisher(),
+            $gridTypeIndex.map { _ in }.eraseToAnyPublisher(),
+            $gridColorIndex.map { _ in }.eraseToAnyPublisher(),
+            $guides.map { _ in }.eraseToAnyPublisher()
         ]
         
         Publishers.MergeMany(publishers)
@@ -402,10 +491,18 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.bwCyan = getDouble("ZBW_CYAN", 0.0)
         self.bwBlue = getDouble("ZBW_BLUE", 0.0)
         self.bwMagenta = getDouble("ZBW_MAGENTA", 0.0)
+        self.bwSplitToneHighlightHue = getDouble("ZBW_ST_HL_HUE", 0.0)
+        self.bwSplitToneHighlightSaturation = getDouble("ZBW_ST_HL_SAT", 0.0)
+        self.bwSplitToneShadowHue = getDouble("ZBW_ST_SH_HUE", 0.0)
+        self.bwSplitToneShadowSaturation = getDouble("ZBW_ST_SH_SAT", 0.0)
         
         self.dehazeAmount = getDouble("ZDEHAZE_AMOUNT", 0.0)
+        self.dehazeShadowToneHue = getDouble("ZDEHAZE_SHADOW_HUE", 0.0)
         self.vignettingAmount = getDouble("ZVIGNETTING_AMOUNT", 0.0)
         self.vignettingMethod = Int(getDouble("ZVIGNETTING_METHOD", 0.0))
+        
+        self.matchLookImpact = Float(getDouble("ZMATCH_LOOK_IMPACT", 100.0))
+        self.matchLookReferenceVariantID = mc.objectForKey("ZMATCH_LOOK_REF_ID") as? String
         
         self.moireAmount = getDouble("ZMOIRE_AMOUNT", 0.0)
         self.moirePattern = getDouble("ZMOIRE_PATTERN", 0.0)
@@ -459,6 +556,39 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
         }
         
+        if let data = mc.objectForKey("ZSPOTS") as? Data,
+           let decoded = try? JSONDecoder().decode([SpotItem].self, from: data) {
+            self.spots = decoded
+        } else {
+            self.spots = []
+        }
+        
+        self.zoomLevel = (mc.objectForKey("ZZOOM_LEVEL") as? Float) ?? 1.0
+        if let vRect = mc.objectForKey("ZVIEWPORT_RECT") as? CGRect {
+            self.viewportRect = vRect
+        }
+        
+        self.focusZoomLevel = (mc.objectForKey("ZFOCUS_ZOOM") as? Float) ?? 1.0
+        if let fPoint = mc.objectForKey("ZFOCUS_POINT") as? CGPoint {
+            self.focusPoint = fPoint
+        }
+        self.focusAIMode = (mc.objectForKey("ZFOCUS_AI_MODE") as? Int) ?? 0
+
+        self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
+        self.cropShowMask = (mc.objectForKey("ZCROP_SHOW_MASK") as? Bool) ?? true
+        self.cropMaskOpacity = (mc.objectForKey("ZCROP_MASK_OPACITY") as? Double) ?? 50.0
+        self.cropMaskBrightness = (mc.objectForKey("ZCROP_MASK_BRIGHTNESS") as? Double) ?? 0.0
+        
+        self.gridTypeIndex = (mc.objectForKey("ZGRID_TYPE") as? Int) ?? 0
+        self.gridColorIndex = (mc.objectForKey("ZGRID_COLOR") as? Int) ?? 0
+        
+        if let data = mc.objectForKey("ZGUIDES") as? Data,
+           let decoded = try? JSONDecoder().decode([GuideItem].self, from: data) {
+            self.guides = decoded
+        } else {
+            self.guides = []
+        }
+
         if let data = mc.objectForKey("ZCOLOR_CORRECTIONS") as? Data,
            let decoded = try? JSONDecoder().decode([IC_ColorCorrection].self, from: data) {
             self.colorCorrections = decoded
@@ -468,6 +598,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         self.rating = (mc.objectForKey("ZRATING") as? Int) ?? 0
         self.colorTag = VariantBase.ColorTag(rawValue: (mc.objectForKey("ZCOLOR_TAG") as? Int) ?? 0) ?? .none
+        
+        // Masking Preferences (GAP-404)
+        self.maskVisibilityMode = (mc.objectForKey("ZMASK_VISIBILITY_MODE") as? Int) ?? 2
+        self.maskColorIndex = (mc.objectForKey("ZMASK_COLOR_INDEX") as? Int) ?? 0
+        self.maskRefineEdge = getDouble("ZMASK_REFINE_EDGE", 0.0)
+        self.maskFeather = getDouble("ZMASK_FEATHER", 0.0)
         
         self.isUpdatingFromModel = false
     }
@@ -550,10 +686,20 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(bwCyan, forKey: "ZBW_CYAN")
         mc.setObject(bwBlue, forKey: "ZBW_BLUE")
         mc.setObject(bwMagenta, forKey: "ZBW_MAGENTA")
+        mc.setObject(bwSplitToneHighlightHue, forKey: "ZBW_ST_HL_HUE")
+        mc.setObject(bwSplitToneHighlightSaturation, forKey: "ZBW_ST_HL_SAT")
+        mc.setObject(bwSplitToneShadowHue, forKey: "ZBW_ST_SH_HUE")
+        mc.setObject(bwSplitToneShadowSaturation, forKey: "ZBW_ST_SH_SAT")
         
         mc.setObject(dehazeAmount, forKey: "ZDEHAZE_AMOUNT")
+        mc.setObject(dehazeShadowToneHue, forKey: "ZDEHAZE_SHADOW_HUE")
         mc.setObject(vignettingAmount, forKey: "ZVIGNETTING_AMOUNT")
         mc.setObject(vignettingMethod, forKey: "ZVIGNETTING_METHOD")
+        
+        mc.setObject(Double(matchLookImpact), forKey: "ZMATCH_LOOK_IMPACT")
+        if let refID = matchLookReferenceVariantID {
+            mc.setObject(refID, forKey: "ZMATCH_LOOK_REF_ID")
+        }
         
         mc.setObject(moireAmount, forKey: "ZMOIRE_AMOUNT")
         mc.setObject(moirePattern, forKey: "ZMOIRE_PATTERN")
@@ -582,6 +728,30 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
         mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
         mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
+        
+        mc.setObject(zoomLevel, forKey: "ZZOOM_LEVEL")
+        mc.setObject(viewportRect, forKey: "ZVIEWPORT_RECT")
+        mc.setObject(focusZoomLevel, forKey: "ZFOCUS_ZOOM")
+        mc.setObject(focusPoint, forKey: "ZFOCUS_POINT")
+        mc.setObject(focusAIMode, forKey: "ZFOCUS_AI_MODE")
+        if let encodedSpots = try? JSONEncoder().encode(spots) {
+            mc.setObject(encodedSpots, forKey: "ZSPOTS")
+        }
+        
+        mc.setObject(cropRatioIndex, forKey: "ZCROP_RATIO")
+        mc.setObject(cropShowMask, forKey: "ZCROP_SHOW_MASK")
+        mc.setObject(cropMaskOpacity, forKey: "ZCROP_MASK_OPACITY")
+        mc.setObject(cropMaskBrightness, forKey: "ZCROP_MASK_BRIGHTNESS")
+        mc.setObject(gridTypeIndex, forKey: "ZGRID_TYPE")
+        mc.setObject(gridColorIndex, forKey: "ZGRID_COLOR")
+        if let encodedGuides = try? JSONEncoder().encode(guides) {
+            mc.setObject(encodedGuides, forKey: "ZGUIDES")
+        }
+        
+        mc.setObject(maskVisibilityMode, forKey: "ZMASK_VISIBILITY_MODE")
+        mc.setObject(maskColorIndex, forKey: "ZMASK_COLOR_INDEX")
+        mc.setObject(maskRefineEdge, forKey: "ZMASK_REFINE_EDGE")
+        mc.setObject(maskFeather, forKey: "ZMASK_FEATHER")
         
         if let encoded = try? JSONEncoder().encode(colorCorrections) {
             mc.setObject(encoded, forKey: "ZCOLOR_CORRECTIONS")
