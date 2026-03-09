@@ -1,0 +1,207 @@
+## 1.0 SYSTEM DIRECTIVE
+You are an AI agent. Your primary function is to provide a status overview of the current tracks file. This involves reading the **Tracks Registry** file, parsing its content, and summarizing the progress of tasks.
+
+CRITICAL: You must validate the success of every tool call. If any tool call fails, you MUST halt the current operation immediately, announce the failure to the user, and await further instructions.
+
+---
+
+## 1.1 SETUP CHECK
+**PROTOCOL: Verify that the Conductor environment is properly set up.**
+
+1.  **Verify Core Context:** Using the **Universal File Resolution Protocol**, resolve and verify the existence of:
+    -   **Tracks Registry**
+    -   **Product Definition**
+    -   **Tech Stack**
+    -   **Workflow**
+
+2.  **Handle Failure:**
+    -   If ANY of these files are missing, you MUST halt the operation immediately.
+    -   Announce: "Conductor is not set up. Please run `/conductor:setup` to set up the environment."
+    -   Do NOT proceed to Status Overview Protocol.
+
+---
+
+## 2.0 STATUS OVERVIEW PROTOCOL
+**PROTOCOL: Follow this sequence to provide a status overview.**
+
+### 2.1 Read Project Plan
+1.  **Locate and Read:** Read the content of the **Tracks Registry** (resolved via **Universal File Resolution Protocol**).
+2.  **Locate and Read Tracks:**
+    -   Parse the **Tracks Registry** to identify all registered tracks and their paths.
+        *   **Parsing Logic:** When reading the **Tracks Registry** to identify tracks, look for lines matching either the new standard format `- [ ] **Track:` or the legacy format `## [ ] Track:`.
+    -   For each track, resolve and read its **Implementation Plan** (using **Universal File Resolution Protocol** via the track's index file).
+
+### 2.2 Parse and Summarize Plan
+1.  **Parse Content:**
+    -   Identify major project phases/sections (e.g., top-level markdown headings).
+    -   Identify individual tasks and their current status (e.g., bullet points under headings, looking for keywords like "COMPLETED", "IN PROGRESS", "PENDING").
+2.  **Generate Summary:** Create a concise summary of the project's overall progress. This should include:
+    -   The total number of major phases.
+    -   The total number of tasks.
+    -   The number of tasks completed, in progress, and pending.
+
+### 2.3 Present Status Overview
+1.  **Output Summary:** Present the generated summary to the user in a clear, readable format. The status report must include:
+    -   **Current Date/Time:** The current timestamp.
+    -   **Project Status:** A high-level summary of progress (e.g., "On Track", "Behind Schedule", "Blocked").
+    -   **Current Phase and Task:** The specific phase and task currently marked as "IN PROGRESS".
+    -   **Next Action Needed:** The next task listed as "PENDING".
+    -   **Blockers:** Any items explicitly marked as blockers in the plan.
+    -   **Phases (total):** The total number of major phases.
+    -   **Tasks (total):** The total number of tasks.
+    -   **Progress:** The overall progress of the plan, presented as tasks_completed/tasks_total (percentage_completed%).
+
+---
+
+i've done some work outside the conductor workflow even though the agents took it into account and modified the @conductor/backlog.md, they didnt always used tracks to work, resume the project implementation (and look into the last git commits to locate yourself)
+--- Content from referenced files ---
+Content from @conductor/backlog.md:
+# Capture One Reconstruction Backlog
+
+This backlog replaces the earlier optimistic summary. It tracks what is still missing in the product surface after the recent workspace/palette reconstruction, with the decompiled `Default.plist` and reachable UI behavior as the source of truth.
+
+Status vocabulary used below:
+- `TODO`: not implemented
+- `PARTIAL`: present in code but incomplete, weakly wired, or visibly different from Capture One
+- `PLACEHOLDER`: reachable in the UI only through `UnavailableToolView`
+- `DONE-RECENT`: recently closed and kept here only for context when it unblocks adjacent work
+
+---
+
+## Recently Closed
+
+| Task ID | Feature | Priority | Status | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| WS-001 | Load workspace presets from decompiled `Default.plist` | High | `DONE-RECENT` | Session/viewer/live preview/culling palette taxonomy now comes from the plist, not from synthetic tabs. |
+| WS-002 | Restore session palette shell (`Organize`, `Capture`, `Lens`, `Settings`, `Exposure`, `Details`) | High | `DONE-RECENT` | Session opens on `OrganizeToolTab`; fixed vs scrollable tool areas are restored. |
+| WS-003 | Central tool registry for decompiled tool IDs | High | `DONE-RECENT` | Existing tools are routed centrally; missing ones now surface as explicit placeholders. |
+| SHELL-001 | Global command center for shell actions and modal sheets | High | `DONE-RECENT` | `Import`, `Export`, `Preferences`, `Keyboard Shortcuts`, and `Print` now route through a shared command center instead of inert toolbar clicks. |
+| SHELL-002 | Basic macOS main menu and top-toolbar action wiring | High | `DONE-RECENT` | The app now installs a real `NSMenu`, routes top-bar actions, and exposes basic `Before/After`, grid, focus mask, proofing, and warning toggles. |
+| SHELL-003 | Startup empty-state and functional tool headers | High | `DONE-RECENT` | The viewer no longer spins forever with no image, import can pick a source folder, and tool headers now have separated help/reset/menu actions. |
+| UI-201 | Organize palette parity | High | `DONE-RECENT` | `Library` implements albums, smart albums, folders, and favorites management. |
+| UI-202 | Exposure palette parity | High | `DONE-RECENT` | All Exposure tools including placeholders are replaced with stub tool views. |
+| UI-203 | Details palette parity | High | `DONE-RECENT` | All Details tools including placeholders are replaced. |
+| UI-204 | Lens palette parity | High | `DONE-RECENT` | All Lens tools including placeholders are replaced. |
+| UI-211 | Startup/no-document realism | High | `DONE-RECENT` | Start window flow and empty state is present. |
+| UI-212 | `Catalog and Session` preferences parity | High | `DONE-RECENT` | Added preference pane and persistence variables via AppStorage. |
+| UI-213 | File-menu and toolbar document actions parity | High | `DONE-RECENT` | File menu actions for document lifecycle are present. |
+| UI-214 | Library session structure parity | High | `DONE-RECENT` | `LibraryToolView` includes Session Albums, System Folders, actions, and structure. |
+| UI-215 | Library folder context menu parity | High | `DONE-RECENT` | All Library context menu variants match decomps. |
+| WF-506 | Session and catalog lifecycle workflows | High | `DONE-RECENT` | Document creation, opening, and multi-window behavior are supported by COWindowManager. |
+| WF-507 | Image preloading and preview queue behavior | High | `DONE-RECENT` | Thumbnail prefetch logic avoids idle rendering. |
+| GAP-401 | Actual live view engine | High | `DONE-RECENT` | Restored standalone live preview window, custom Workspace loading, tool views, and menu hooks. |
+| WS-101 | Viewer window shell restoration | High | `DONE-RECENT` | Dedicated ViewerWindowController loads viewerwindow.tools presets. |
+| WS-102 | Live preview window shell restoration | High | `DONE-RECENT` | Validated LivePreviewWindowController correctly loads .livePreview preset. |
+| WS-103 | Culling window shell restoration | High | `DONE-RECENT` | Dedicated CullingShellController loads cullingwindow.tools presets. |
+| UI-205 | Capture palette parity | High | `DONE-RECENT` | All Capture palette tools now have stub views. |
+| UI-206 | Settings palette parity | High | `DONE-RECENT` | BaseCharacteristics and Settings tools restored. |
+| UI-207 | Top chrome parity | High | `DONE-RECENT` | Native NSToolbar replaces SwiftUI fake toolbar strip on document window. |
+| UI-210 | Tool header and context-menu parity | High | `DONE-RECENT` | Per-tool Copy/Apply/Reset in ellipsis menu; help/reset/style actions functional. |
+| UI-208 | Import / export window fidelity | High | `DONE-RECENT` | Three-panel layout with source browser tree, grid, and file info strip. |
+| UI-209 | Viewer chrome parity | High | `DONE-RECENT` | COViewerBarView now shows filename, dimensions, color space, color tags, rating stars. |
+
+These items are no longer backlog candidates unless regressions are found.
+
+---
+
+## P0. Reachable But Still Wrong In Primary Workflows
+
+These are the highest-value gaps because they are visible in the main session UX and contradict what the decompiled workspace now exposes.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| UI-216 | Session upgrade dialog parity | Med | Med | `TODO` | Localized strings and disassembly show a dedicated upgrade confirmation dialog for old sessions with `Cancel` and highlighted `Upgrade`, plus backup messaging; there is no document-upgrade prompt or workflow in the reconstructed app. |
+
+---
+
+## P0. Window Shells And Workspace Fidelity Still Missing
+
+The session window is no longer synthetic, but the rest of the workspace family is not yet restored as actual window behavior.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| WS-104 | Exporter / importer / print workspace chrome fidelity | Med | Med | `TODO` | Window chrome states from `exporterwindow`, `importerwindow`, and `printwindow` are not yet used to drive dedicated shells consistently. |
+| WS-105 | Palette undocking / redocking / floating panels | High | Very High | `TODO` | Current session shell reproduces palette order, not the tool-window behavior and persistence implied by `tool-windows` and Capture One workspace editing. |
+| WS-106 | Multi-monitor workspace behavior | High | Very High | `TODO` | Recent workspace fixes did not restore real multi-monitor placement and full-screen behavior per window/palette family. |
+
+---
+
+## P1. Placeholder Tool Inventory Exposed By The New Registry
+
+These tools are now honestly exposed as missing. They should be treated as concrete backlog, not hidden behind old “done” track labels.
+
+| Task ID | Tool IDs | Priority | Complexity | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| TOOL-301 | `MatchLook`, `BlackAndWhite`, `Dehaze`, `Vignetting` | High | Med | `PLACEHOLDER` |
+| TOOL-302 | `Crop`, `AICrop`, `Rotation`, `Grid`, `Guides` | High | Med | `PLACEHOLDER` |
+| TOOL-303 | `Navigator`, `Focus`, `SpotRemoval`, `LensColorCorrections`, `Moire` | High | High | `PLACEHOLDER` |
+| TOOL-304 | `ExposureEvaluation`, `CameraFocus`, `NextCaptureLocation`, `Overlay`, `LiveForStudio`, `NextCaptureMetadata`, `NextCaptureKeywords`, `NextCaptureBackup` | High | High | `DONE-RECENT` |
+| TOOL-305 | `BaseCharacteristics`, `Settings` | Med | Med | `DONE-RECENT` |
+| TOOL-306 | `ImporterFilters`, `ImportFileInfo`, `FaceFocus`, `TimeBasedGrouping` | Med | High | `DONE-RECENT` |
+| TOOL-307 | `LivePreviewComposition`, `LivePreviewAdjustments`, `LivePreviewInfoTool`, `Normalize` | Med | Med | `PLACEHOLDER` |
+
+The registry source of truth for these placeholders is [ToolRegistry.swift](/Users/ismaelsebbane/dev/lab/capture-uncompile/reconstructed_codebase/Sources/CaptureOneUI/ToolRegistry.swift).
+
+---
+
+## P1. Features Marked “Done” But Still Only Partial In Product Terms
+
+These are the misleading areas where backend or isolated UI work exists, but the integrated app still falls short.
+
+| Task ID | Track Area | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| GAP-402 | Smart albums and organize workflows | High | High | `PARTIAL` | Data and predicates exist, but album/smart album management is not restored in the main `Library` UX. |
+| GAP-403 | Metadata sync UX | Med | Med | `PARTIAL` | Basic metadata views are reachable, but editable metadata grouping, richer IPTC workflows, and XMP-facing UI parity are still shallow. |
+| GAP-404 | Layers and local adjustments UX | High | High | `PARTIAL` | Layers exist, but the full `LocalAdjustmentsToolTab`/brush-tool inspector flow from the plist is not rebuilt. |
+| GAP-405 | Export engine vs exporter UX | Med | Med | `PARTIAL` | Export recipes and batch queue exist, but exporter-specific shells and per-tool recipe editors are still adapters over a generic export view. |
+| GAP-406 | Tethering workflows | High | High | `PARTIAL` | PTP models and some capture tools exist, but the complete capture/live/studio workflow in the decompiled workspaces is not restored. |
+
+---
+
+## P1. Workflow-Level Gaps Still Visible In Testing
+
+These are not single widgets; they affect user acceptance because the reconstructed app still feels unlike Capture One in daily use.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| WF-501 | Browser mode parity | High | Med | `PARTIAL` | Grid browsing works, but full parity for list/filmstrip modes, sorting variants, and browser toolbar behavior still needs validation and likely completion. |
+| WF-502 | Palette persistence fidelity | High | Med | `PARTIAL` | Palette selection and some tool state persist, but broader collapsed groups, size options, and workspace editing fidelity remain incomplete. |
+| WF-503 | Tool placement fidelity | High | High | `PARTIAL` | The top-level palette order now matches the plist, but many underlying tools still use adapters or simplified UI instead of true Capture One control contracts. |
+| WF-504 | Session startup realism | Med | Med | `PARTIAL` | The app opens on `Organize`, but the mocked session/bootstrap flow still does not reflect actual recent sessions/catalog selection behavior. |
+| WF-505 | Keyboard / command routing across restored palettes | Med | Med | `PARTIAL` | Shortcut infrastructure exists, but per-tool and per-window command routing is not yet validated against the restored workspace structure. |
+
+---
+
+## P2. Technical Debt Created By Earlier Reconstruction Phases
+
+These items are lower priority than visible workflow gaps, but they are now blocking accuracy and maintainability.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TD-601 | Split adapter views into true plist tool boundaries | Med | High | `TODO` | Several routed tools are still wrappers over larger composite views instead of one ID = one real tool contract. |
+| TD-602 | Remove legacy workspace compatibility path once unused | Low | Med | `TODO` | `WorkspaceTab` and legacy decoding still exist for compatibility; they should be retired after migration is stable. |
+| TD-603 | Resource packaging for workspace presets | Low | Low | `TODO` | `Default.plist` is loaded from source-path fallback logic; it should become an explicit package/bundle resource. |
+| TD-604 | Add UI snapshot / structural coverage for restored palettes | Med | Med | `TODO` | Current tests validate decoding and registry coverage, but not visual composition or palette ordering in rendered views. |
+
+---
+
+## P2. Conductor / Tracking Hygiene
+
+The project tracking itself now needs correction so the repository stops overstating completion.
+
+| Task ID | Feature | Priority | Complexity | Status | Gap |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| DOC-701 | Reconcile `tracks.md` with actual UI reachability | High | Low | `TODO` | Several tracks remain checked as done even though their product surface is still partial or placeholder-based. |
+| DOC-702 | Fix incorrect Live View track link | High | Low | `TODO` | `Track: Live View Engine Restoration` points to `styles_presets_restoration_20260308` instead of a live-view track. |
+| DOC-703 | Add backlog-to-track linkage for the new workspace debt | Med | Low | `TODO` | The backlog now reflects missing work, but the track registry still lacks explicit follow-up tracks for palette/window completion. |
+
+---
+
+## Recommended Next Focus
+
+If work resumes immediately, the highest-value sequence is:
+
+1. `TOOL-306`: Remove last placeholder tools from the registry.
+2. `UI-208` to `UI-209`: Fix import/export and viewer chrome.
+3. `WS-104` to `WS-106`: Address remaining workspace fidelity.
+--- End of content ---

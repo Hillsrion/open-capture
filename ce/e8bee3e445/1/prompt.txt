@@ -1,0 +1,9 @@
+"I want to search the web for current information. Can you help me search for recent news about artificial intelligence breakthroughs?"
+
+---
+
+"I want to search the web for current information. Can you help me search for recent news about artificial intelligence breakthroughs?"
+
+---
+
+utilise le skill web_search_advanced_exa pour chercher le markup de cette page et de toutes les sous pages relatives a de la doc sur https://support.captureone.com/hc/en-us/categories/360000279017-User-guide
