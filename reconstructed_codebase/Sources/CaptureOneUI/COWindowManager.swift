@@ -15,11 +15,13 @@ public final class COWindowManager {
     private var livePreviewWindowDelegate: LivePreviewWindowDelegate?
     private var viewerWindowDelegate: AuxiliaryWindowDelegate?
     private var cullingWindowDelegate: AuxiliaryWindowDelegate?
+    private var importerWindowDelegate: AuxiliaryWindowDelegate?
     
     // Auxiliary windows
     private var livePreviewWindowController: NSWindowController?
     private var viewerWindowController: NSWindowController?
     private var cullingWindowController: NSWindowController?
+    private var importerWindowController: NSWindowController?
     private var startWindow: NSWindow?
     
     private init() {}
@@ -211,6 +213,27 @@ public final class COWindowManager {
         cullingWindowController = nil
         cullingWindowDelegate = nil
     }
+
+    public func openImporterWindow(importer: POImporter) {
+        if let existingController = importerWindowController {
+            existingController.window?.makeKeyAndOrderFront(nil)
+            return
+        }
+
+        let controller = ImporterWindowController(importer: importer)
+        self.importerWindowController = controller
+
+        guard let window = controller.window else { return }
+        let delegate = AuxiliaryWindowDelegate(manager: self, kind: .importer)
+        self.importerWindowDelegate = delegate
+        window.delegate = delegate
+        window.makeKeyAndOrderFront(nil)
+    }
+
+    public func removeImporterWindow() {
+        importerWindowController = nil
+        importerWindowDelegate = nil
+    }
 }
 
 fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
@@ -242,6 +265,7 @@ fileprivate class LivePreviewWindowDelegate: NSObject, NSWindowDelegate {
 enum AuxiliaryWindowKind {
     case viewer
     case culling
+    case importer
 }
 
 fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
@@ -259,6 +283,8 @@ fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
             manager.removeViewerWindow()
         case .culling:
             manager.removeCullingWindow()
+        case .importer:
+            manager.removeImporterWindow()
         }
     }
 }

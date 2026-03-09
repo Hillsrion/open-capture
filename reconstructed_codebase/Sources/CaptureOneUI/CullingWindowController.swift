@@ -232,8 +232,6 @@ public struct CullingView: View {
     @ViewBuilder
     private func sheetView(for route: AppSheetRoute) -> some View {
         switch route {
-        case .importImages:
-            ImportDialog(importer: commands.importer)
         case .exportImages:
             ExportView(
                 recipeManager: recipeManager,

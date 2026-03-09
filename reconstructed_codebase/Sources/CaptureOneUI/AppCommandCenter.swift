@@ -4,7 +4,6 @@ import AppCoreShared
 import DataCore
 
 public enum AppSheetRoute: String, Identifiable {
-    case importImages
     case exportImages
     case preferences
     case keyboardShortcuts
@@ -132,7 +131,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func presentImport() {
         importer = POImporter()
-        presentedSheet = .importImages
+        COWindowManager.shared.openImporterWindow(importer: importer)
     }
 
     public func presentExport() {

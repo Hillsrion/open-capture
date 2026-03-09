@@ -41,6 +41,7 @@ Status vocabulary used below:
 | UI-210 | Tool header and context-menu parity | High | `DONE-RECENT` | Per-tool Copy/Apply/Reset in ellipsis menu; help/reset/style actions functional. |
 | UI-208 | Import / export window fidelity | High | `DONE-RECENT` | Three-panel layout with source browser tree, grid, and file info strip. |
 | UI-209 | Viewer chrome parity | High | `DONE-RECENT` | COViewerBarView now shows filename, dimensions, color space, color tags, rating stars. |
+| UI-216 | Session upgrade dialog parity | Med | `DONE-RECENT` | Added high-fidelity upgrade dialog with strings from disassembly, warning icons, and mock upgrade workflow. |
 
 These items are no longer backlog candidates unless regressions are found.
 
@@ -52,7 +53,6 @@ These are the highest-value gaps because they are visible in the main session UX
 
 | Task ID | Feature | Priority | Complexity | Status | Gap |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| UI-216 | Session upgrade dialog parity | Med | Med | `TODO` | Localized strings and disassembly show a dedicated upgrade confirmation dialog for old sessions with `Cancel` and highlighted `Upgrade`, plus backup messaging; there is no document-upgrade prompt or workflow in the reconstructed app. |
 
 ---
 

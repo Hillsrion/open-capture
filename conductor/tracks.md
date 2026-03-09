@@ -150,6 +150,11 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Window Shell Restoration (WS-101, WS-102, WS-103)**
   *Link: [./tracks/window_shells_restoration_20260308/](./tracks/window_shells_restoration_20260308/)*
 
+---
+
+- [ ] **Track: High-Fidelity Workspace Chrome & Shell Restoration (WS-104, WS-105, WS-106)**
+  *Link: [./tracks/workspace_chrome_fidelity_20260309/](./tracks/workspace_chrome_fidelity_20260309/)*
+
 
 
 
