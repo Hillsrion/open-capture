@@ -1,8 +1,10 @@
 Capture One.app/
+Capture One 2.app/
 dsdump
 .DS_Store
 .build/
 *.log
 RawDumps/
+RawDumps copy/
 reconstructed_codebase/.build/
 reconstructed_codebase/.swiftpm/
