@@ -27,19 +27,8 @@ public final class DefaultWorkspacePresetLoader {
     }
 
     private func plistURL() throws -> URL {
-        if let bundled = Bundle.main.url(forResource: "Default", withExtension: "plist", subdirectory: "Contents/Resources/Workspaces") {
+        if let bundled = Bundle.module.url(forResource: "Default", withExtension: "plist", subdirectory: "Resources/Workspaces") {
             return bundled
-        }
-
-        let sourceURL = URL(fileURLWithPath: #filePath)
-        let repositoryRoot = sourceURL
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-        let fallback = repositoryRoot
-            .appendingPathComponent("Contents/Resources/Workspaces/Default.plist", isDirectory: false)
-        if FileManager.default.fileExists(atPath: fallback.path) {
-            return fallback
         }
 
         throw WorkspacePresetError.missingPlist

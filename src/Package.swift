@@ -28,7 +28,8 @@ let package = Package(
         .target(
             name: "AppCoreShared",
             dependencies: ["DataCore", "ImageCore"],
-            path: "Sources/AppCoreShared"
+            path: "Sources/AppCoreShared",
+            resources: [.copy("../../Contents/Resources")]
         ),
         .target(
             name: "ImageCore",
