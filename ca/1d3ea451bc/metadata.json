@@ -3,7 +3,7 @@
   "checkpoint_id": "ca1d3ea451bc",
   "strategy": "manual-commit",
   "branch": "main",
-  "checkpoints_count": 0,
+  "checkpoints_count": 1,
   "files_touched": [
     "conductor/tracks/v2_architecture_alignment_20260309/plan.md",
     "reconstructed_codebase/Sources/AppCoreShared/WorkspaceModels.swift"
@@ -14,13 +14,19 @@
       "transcript": "/ca/1d3ea451bc/0/full.jsonl",
       "content_hash": "/ca/1d3ea451bc/0/content_hash.txt",
       "prompt": ""
+    },
+    {
+      "metadata": "/ca/1d3ea451bc/1/metadata.json",
+      "transcript": "/ca/1d3ea451bc/1/full.jsonl",
+      "content_hash": "/ca/1d3ea451bc/1/content_hash.txt",
+      "prompt": "/ca/1d3ea451bc/1/prompt.txt"
     }
   ],
   "token_usage": {
-    "input_tokens": 0,
+    "input_tokens": 1604788,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 0,
-    "output_tokens": 0,
-    "api_call_count": 0
+    "cache_read_tokens": 1122231,
+    "output_tokens": 7899,
+    "api_call_count": 39
   }
 }
