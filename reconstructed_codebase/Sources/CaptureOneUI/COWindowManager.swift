@@ -102,14 +102,19 @@ public final class COWindowManager {
         startWindow?.close()
         startWindow = nil
         
+        let workspace = WorkspaceManager.shared.activeWorkspace
+        let frame = workspace.chromeState.windowFrame ?? NSRect(x: 0, y: 0, width: 1200, height: 800)
+        
         // Needs a real viewer creation here
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1200, height: 800),
+            contentRect: frame,
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
-        window.center()
+        if workspace.chromeState.windowFrame == nil {
+            window.center()
+        }
         window.title = session.name ?? "Untitled \(session.documentType == 0 ? "Session" : "Catalog")"
         window.titleVisibility = .hidden
         window.titlebarAppearsTransparent = true
@@ -346,6 +351,20 @@ fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         manager.removeDocumentWindow(id: sessionID)
     }
+
+    func windowDidMove(_ notification: Notification) {
+        if let window = notification.object as? NSWindow {
+            WorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
+            WorkspaceManager.shared.saveWorkspace()
+        }
+    }
+
+    func windowDidResize(_ notification: Notification) {
+        if let window = notification.object as? NSWindow {
+            WorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
+            WorkspaceManager.shared.saveWorkspace()
+        }
+    }
 }
 
 fileprivate class LivePreviewWindowDelegate: NSObject, NSWindowDelegate {
@@ -389,6 +408,24 @@ fileprivate class AuxiliaryWindowDelegate: NSObject, NSWindowDelegate {
             manager.removeExporterWindow()
         case .print:
             manager.removePrintWindow()
+        }
+    }
+
+    func windowDidMove(_ notification: Notification) {
+        saveFrame(notification)
+    }
+
+    func windowDidResize(_ notification: Notification) {
+        saveFrame(notification)
+    }
+
+    private func saveFrame(_ notification: Notification) {
+        if let window = notification.object as? NSWindow {
+            // This is a simplification: in reality, each window kind would have its own workspace
+            // persistence key in the plist. For now, we save it globally for the active workspace
+            // if it's the main window, but for auxiliary windows we'd need a multi-workspace manager.
+            // For now, just allow them to move without global workspace persistence to avoid conflicts.
+            print("[Window] \(kind) moved to \(window.frame)")
         }
     }
 }

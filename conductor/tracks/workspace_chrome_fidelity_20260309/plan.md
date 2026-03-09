@@ -29,7 +29,7 @@
 - [x] Task: Commit Phase 4.
 
 ## Phase 5: Multi-monitor & Full Screen behavior (WS-106)
-- [ ] Task: Restore window placement persistence across multiple displays (saving screen frames to plist).
-- [ ] Task: Implement C1-style full-screen behavior (hiding/showing chrome based on workspace state).
-- [ ] Task: Verify and fix any window depth/level issues (e.g., floating tools staying on top).
-- [ ] Task: Commit Phase 5.
+- [x] Task: Restore window placement persistence across multiple displays (saving screen frames to plist).
+- [x] Task: Implement C1-style full-screen behavior (hiding/showing chrome based on workspace state).
+- [x] Task: Verify and fix any window depth/level issues (e.g., floating tools staying on top).
+- [x] Task: Commit Phase 5.

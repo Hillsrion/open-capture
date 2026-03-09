@@ -172,6 +172,7 @@ public enum WorkspaceBrowserPosition: String, Codable {
 }
 
 public struct WorkspaceChromeState: Codable, Hashable {
+    public var windowFrame: CGRect?
     public var selectedToolPaletteID: String?
     public var toolsPosition: WorkspaceToolsPosition = .left
     public var toolsDisplayState: WorkspaceDisplayState = .shown
