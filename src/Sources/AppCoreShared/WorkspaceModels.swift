@@ -525,12 +525,15 @@ public class WorkspaceManager: ObservableObject, Codable {
 
     public static func createWorkspace(windowKind: WorkspaceWindowKind, name: String? = nil) -> Workspace {
         let loader = DefaultWorkspacePresetLoader()
-        if var workspace = try? loader.makeWorkspace(windowKind: windowKind, name: name ?? "Default") {
+        do {
+            var workspace = try loader.makeWorkspace(windowKind: windowKind, name: name ?? "Default")
             workspace.name = name ?? workspace.name
+            print("[WorkspaceManager] Created workspace from preset with \(workspace.palettes.count) palettes")
             return workspace
+        } catch {
+            print("[WorkspaceManager] Failed to load workspace preset: \(error)")
+            return fallbackWorkspace(windowKind: windowKind, name: name ?? "Default")
         }
-
-        return fallbackWorkspace(windowKind: windowKind, name: name ?? "Default")
     }
 
     public static func createSimplifiedWorkspace() -> Workspace {
@@ -565,6 +568,8 @@ public class WorkspaceManager: ObservableObject, Codable {
         var chrome = WorkspaceChromeState()
         chrome.selectedToolPaletteID = exposurePalette.id
         chrome.toolsWidth = 362.0
-        return Workspace(name: name, windowKind: windowKind, palettes: [exposurePalette], chromeState: chrome)
+        let ws = Workspace(name: name, windowKind: windowKind, palettes: [exposurePalette], chromeState: chrome)
+        print("[WorkspaceManager] Created fallback workspace with \(ws.palettes.count) palettes")
+        return ws
     }
 }

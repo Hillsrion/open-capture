@@ -9,7 +9,7 @@ public class MatchLookViewModel: ObservableObject {
     
     public var selectedReferenceVariant: VariantBase? {
         didSet {
-            controller.matchLookReferenceVariantID = selectedReferenceVariant?.uuid
+            controller.matchLookReferenceVariantID = selectedReferenceVariant?.variantUUID
         }
     }
     

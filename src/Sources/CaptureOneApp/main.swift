@@ -132,8 +132,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.mainMenu = buildMainMenu()
 
         // 3. Document Lifecycle parity (UI-211)
-        print("[System] Showing Start Window...")
-        COWindowManager.shared.showStartWindow()
+        if ProcessInfo.processInfo.environment["CAPTUREONE_BYPASS_START"] == "1" {
+            print("[System] Bypassing Start Window, creating New Catalog...")
+            AppCommandCenter.shared.newCatalog()
+        } else {
+            print("[System] Showing Start Window...")
+            COWindowManager.shared.showStartWindow()
+        }
         
         // Ensure app comes to front
         NSApp.activate(ignoringOtherApps: true)
@@ -229,5 +234,7 @@ autoreleasepool {
     app.delegate = delegate
     
     print("[System] Booting...")
-    app.run()
+    withExtendedLifetime(delegate) {
+        app.run()
+    }
 }

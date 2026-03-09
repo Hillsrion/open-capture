@@ -39,6 +39,12 @@ public final class DefaultWorkspacePresetLoader {
         if let bundled = Bundle.module.url(forResource: "Default", withExtension: "plist", subdirectory: "Resources/Workspaces") {
             return bundled
         }
+        if let bundled = Bundle.module.url(forResource: "Default", withExtension: "plist", subdirectory: "Workspaces") {
+            return bundled
+        }
+        if let bundled = Bundle.module.url(forResource: "Default", withExtension: "plist") {
+            return bundled
+        }
 
         throw WorkspacePresetError.missingPlist
     }
@@ -103,10 +109,13 @@ public final class DefaultWorkspacePresetLoader {
     }
 
     private func parseToolConfigurations(rawPalette: Any?) -> [ToolConfiguration] {
-        guard let toolIDs = rawPalette as? [String] else { return [] }
-        return toolIDs.map { id in
-            ToolConfiguration(id: id)
+        if let toolIDs = rawPalette as? [String] {
+            return toolIDs.map { ToolConfiguration(id: $0) }
+        } else if let paletteArray = rawPalette as? [Any],
+                  let toolIDs = paletteArray.first as? [String] {
+            return toolIDs.map { ToolConfiguration(id: $0) }
         }
+        return []
     }
 
     private func paletteInfo(for id: String) -> (String, String) {

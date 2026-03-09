@@ -10,11 +10,6 @@ public struct BrushSettingsToolView: View {
     public init() {}
     
     public var body: some View {
-        let settings = Binding(
-            get: { manager.brushSettingsForCursorTool(manager.activeBrushTool) ?? BrushSettings() },
-            set: { _ in } // Managed via individual property bindings
-        )
-        
         COToolSection("Brush Settings", toolID: "BrushSettings") {
             VStack(spacing: 10) {
                 // Tool Picker (Draw / Erase / Heal / Clone)

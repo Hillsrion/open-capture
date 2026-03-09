@@ -56,7 +56,7 @@ public class VariantBase: BaseObject {
         }
     }
     
-    public enum ColorTag: Int {
+    public enum ColorTag: Int, Codable, CaseIterable {
         case none = 0
         case red = 1
         case orange = 2

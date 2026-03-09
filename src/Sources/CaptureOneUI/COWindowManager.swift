@@ -80,6 +80,7 @@ public final class COWindowManager {
             backing: .buffered,
             defer: false
         )
+        window.isReleasedWhenClosed = false
         window.center()
         window.title = "Welcome to Capture One"
         window.titlebarAppearsTransparent = true
@@ -112,6 +113,7 @@ public final class COWindowManager {
             backing: .buffered,
             defer: false
         )
+        window.isReleasedWhenClosed = false
         if workspace.chromeState.windowFrame == nil {
             window.center()
         }
