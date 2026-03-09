@@ -19,6 +19,6 @@
 - [x] Task: Commit Phase 3.
 
 ## Phase 4: Missing Managers & Logic
-- [ ] Task: Reconstruct `SearchManager` stub for filter tool logic.
-- [ ] Task: Reconstruct `BrushSettingsManager` stub for cursor tool coordination.
-- [ ] Task: Commit Phase 4.
+- [x] Task: Reconstruct `SearchManager` stub for filter tool logic.
+- [x] Task: Reconstruct `BrushSettingsManager` stub for cursor tool coordination.
+- [x] Task: Commit Phase 4.
