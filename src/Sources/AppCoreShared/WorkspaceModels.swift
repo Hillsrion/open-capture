@@ -181,6 +181,9 @@ public struct WorkspaceChromeState: Codable, Hashable {
     public var browserPosition: WorkspaceBrowserPosition = .portrait
     public var browserWidth: Double = 200.0
     public var browserHeight: Double = 184.0
+    public var browserMode: Int = 0 // 0: Grid, 1: Filmstrip, 2: List
+    public var browserLabelsShown: Bool = true
+    public var browserThumbnailAspectRatio: Int = 0 // 0: Square, 1: Original
     public var viewerShown: Bool = true
     public var viewerToolbarShown: Bool = true
     public var fullScreen: Bool = false
@@ -507,6 +510,67 @@ public class WorkspaceManager: ObservableObject, Codable {
         }
         activeWorkspace.palettes[paletteIndex] = palette
         setToolStateValue(sizeOption.map(String.init), toolID: toolID, key: "sizeOption", autosave: autosave)
+    }
+
+    public func isToolCollapsed(_ toolID: String) -> Bool {
+        // 1. Check override in toolState
+        if let value = toolStateValue(toolID: toolID, key: "isCollapsed") {
+            return value == "true"
+        }
+        
+        // 2. Check layout definition
+        for palette in activeWorkspace.palettes {
+            if let tool = palette.allTools.first(where: { $0.id == toolID }) {
+                return tool.isCollapsed
+            }
+        }
+        
+        return false
+    }
+
+    public func setToolCollapsed(_ collapsed: Bool, for toolID: String, autosave: Bool = true) {
+        // Update all occurrences in all palettes
+        for (pIdx, palette) in activeWorkspace.palettes.enumerated() {
+            var updatedPalette = palette
+            var modified = false
+            
+            for (tIdx, tool) in palette.fixedTools.enumerated() {
+                if tool.id == toolID {
+                    updatedPalette.fixedTools[tIdx].isCollapsed = collapsed
+                    modified = true
+                }
+            }
+            for (tIdx, tool) in palette.scrolledTools.enumerated() {
+                if tool.id == toolID {
+                    updatedPalette.scrolledTools[tIdx].isCollapsed = collapsed
+                    modified = true
+                }
+            }
+            
+            if modified {
+                activeWorkspace.palettes[pIdx] = updatedPalette
+            }
+        }
+        
+        setToolStateValue(collapsed ? "true" : "false", toolID: toolID, key: "isCollapsed", autosave: autosave)
+    }
+
+    public func expandAllTools(in paletteID: String) {
+        guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == paletteID }) else { return }
+        let palette = activeWorkspace.palettes[paletteIndex]
+        for tool in palette.allTools {
+            setToolCollapsed(false, for: tool.id, autosave: false)
+        }
+        saveWorkspace()
+    }
+
+    public func collapseAllTools(in paletteID: String) {
+        guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == paletteID }) else { return }
+        let palette = activeWorkspace.palettes[paletteIndex]
+        for tool in palette.allTools {
+            setToolCollapsed(true, for: tool.id, autosave: false)
+        }
+        saveWorkspace()
     }
 
     public static func createDefaultWorkspace() -> Workspace {

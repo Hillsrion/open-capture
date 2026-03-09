@@ -8,18 +8,16 @@ public class CImageBrowser: ObservableObject {
     public init() {}
 }
 
-/// Reconstructed high-performance Grid View Browser (UI-005).
-/// Based on disassembly of _TtC10CaptureOne22ImageBrowserInteractor and Related Metadata.
+/// Reconstructed high-performance Multi-Mode Browser (WF-501).
+/// Matches Capture One 16.7.4 specifications for Grid, Filmstrip, and List modes.
 public struct COImageBrowserView: View {
 
     @Binding var images: [ImageBase]
     @Binding var predicate: COFilterPredicate
     @Binding var selectedVariant: VariantBase?
     
-    // Zoom state
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
-    
-    // Interaction state (based on ImageBrowserInteractor)
     @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"
 
@@ -44,110 +42,248 @@ public struct COImageBrowserView: View {
         }
     }
     
+    public var body: some View {
+        VStack(spacing: 0) {
+            browserToolbar
+            
+            Divider().background(Color.black)
+            
+            // Mode Dispatcher
+            Group {
+                switch workspaceManager.activeWorkspace.chromeState.browserMode {
+                case 1: // Filmstrip
+                    COBrowserFilmstripView(
+                        images: filteredImages,
+                        selectedVariant: $selectedVariant,
+                        interactor: interactor,
+                        zoomStore: zoomStore
+                    )
+                case 2: // List
+                    COBrowserListView(
+                        images: filteredImages,
+                        selectedVariant: $selectedVariant,
+                        interactor: interactor
+                    )
+                default: // Grid
+                    COBrowserGridView(
+                        images: filteredImages,
+                        selectedVariant: $selectedVariant,
+                        interactor: interactor,
+                        zoomStore: zoomStore
+                    )
+                }
+            }
+            
+            Divider().background(Color.black)
+            browserFooter
+        }
+        .background(CaptureOneTheme.Colors.browserBackground)
+        .onAppear { interactor.updateDataSource(with: images) }
+        .onChange(of: images) { newImages in interactor.updateDataSource(with: newImages) }
+    }
+    
+    // MARK: - Toolbar
+    private var browserToolbar: some View {
+        HStack(spacing: 12) {
+            // Mode Switcher
+            Picker("", selection: Binding(
+                get: { workspaceManager.activeWorkspace.chromeState.browserMode },
+                set: { workspaceManager.activeWorkspace.chromeState.browserMode = $0; workspaceManager.saveWorkspace() }
+            )) {
+                Image(systemName: "square.grid.3x3.fill").tag(0)
+                Image(systemName: "rectangle.grid.1x2.fill").tag(1)
+                Image(systemName: "list.bullet").tag(2)
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 100)
+            .scaleEffect(0.8)
+            
+            Spacer()
+            
+            // Zoom Slider (Only for Grid/Filmstrip)
+            if workspaceManager.activeWorkspace.chromeState.browserMode != 2 {
+                HStack(spacing: 6) {
+                    Image(systemName: "photo").font(.system(size: 8))
+                    Slider(value: $zoomStore.thumbnailSize, in: 80...400)
+                        .frame(width: 80)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Image(systemName: "photo").font(.system(size: 12))
+                }
+            }
+            
+            // Labels Toggle
+            Button(action: { 
+                workspaceManager.activeWorkspace.chromeState.browserLabelsShown.toggle()
+                workspaceManager.saveWorkspace()
+            }) {
+                Image(systemName: workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? "text.bubble.fill" : "text.bubble")
+                    .font(.system(size: 12))
+                    .foregroundColor(workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? CaptureOneTheme.Colors.activeHighlight : .gray)
+            }
+            .buttonStyle(.plain)
+            .help("Show/Hide Labels")
+            
+            // Sort Menu
+            Menu {
+                Button("Filename") { sortOrder = "filename" }
+                Button("Rating") { sortOrder = "rating" }
+                Button("Color Tag") { sortOrder = "colorTag" }
+                Button("Date") { sortOrder = "date" }
+            } label: {
+                Label(sortOrder.capitalized, systemImage: "arrow.up.arrow.down")
+                    .font(.system(size: 11))
+            }
+            .menuStyle(BorderlessButtonMenuStyle())
+        }
+        .padding(.horizontal, 10)
+        .frame(height: 32)
+        .background(CaptureOneTheme.Colors.panelBackground)
+    }
+    
+    private var browserFooter: some View {
+        HStack {
+            if let selected = selectedVariant,
+               let index = images.firstIndex(where: { $0.primaryVariant?.variantUUID == selected.variantUUID }) {
+                Text("\(index + 1) of \(images.count)")
+            } else {
+                Text("\(images.count) images")
+            }
+            Spacer()
+        }
+        .font(.system(size: 10))
+        .foregroundColor(.gray)
+        .padding(.horizontal, 12)
+        .frame(height: 22)
+        .background(CaptureOneTheme.Colors.panelBackground)
+    }
+}
+
+// MARK: - Grid View
+struct COBrowserGridView: View {
+    let images: [ImageBase]
+    @Binding var selectedVariant: VariantBase?
+    @ObservedObject var interactor: ImageBrowserInteractor
+    @ObservedObject var zoomStore: ImageBrowserZoomLevelStore
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    
     private var columns: [GridItem] {
         [GridItem(.adaptive(minimum: CGFloat(zoomStore.thumbnailSize), maximum: CGFloat(zoomStore.thumbnailSize) * 1.5), spacing: 15)]
     }
     
-    public var body: some View {
-        VStack(spacing: 0) {
-            // MARK: - Browser Header / Toolbar
-            HStack(spacing: 15) {
-                Text("\(filteredImages.count) images").font(.system(size: 11)).foregroundColor(.gray)
-                
-                Spacer()
-                
-                // Zoom Slider
-                HStack(spacing: 6) {
-                    Image(systemName: "photo").font(.system(size: 8))
-                    Slider(value: $zoomStore.thumbnailSize, in: 80...400)
-                        .frame(width: 100)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                    Image(systemName: "photo").font(.system(size: 12))
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 25) {
+                ForEach(images, id: \.imageUUID) { image in
+                    cell(for: image)
                 }
-                
-                // Sort Menu
-                Menu {
-                    Button("Filename") { sortOrder = "filename" }
-                    Button("Rating") { sortOrder = "rating" }
-                    Button("Date") { sortOrder = "date" }
-                } label: {
-                    Label(sortOrder.capitalized, systemImage: "arrow.up.arrow.down")
-                        .font(.system(size: 11))
-                }
-                .menuStyle(BorderlessButtonMenuStyle())
             }
-            .padding(.horizontal, 12)
-            .frame(height: 32)
-            .background(CaptureOneTheme.Colors.panelBackground)
-            
-            Divider().background(Color.black)
-            
-            // MARK: - Main Grid
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 25) {
-                    ForEach(filteredImages, id: \.imageUUID) { image in
-                        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
-                        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
-                        
-                        COImageBrowserCell(
-                            image: image,
-                            isSelected: isSelected,
-                            isPrimary: isPrimary,
-                            size: CGFloat(zoomStore.thumbnailSize)
-                        )
-                        .onTapGesture {
-                            handleTap(on: image)
-                        }
-                        .contextMenu {
-                            Button("Move to Selects") { /* Logic */ }
-                            Button("Move to Trash") { /* Logic */ }
-                            Divider()
-                            Button("Copy Adjustments") { /* Logic */ }
-                            Button("Apply Adjustments") { /* Logic */ }
-                        }
-                    }
-                }
-                .padding(20)
-            }
-            
-            Divider().background(Color.black)
-            
-            // MARK: - Browser Footer
-            HStack {
-                if let selected = selectedVariant,
-                   let index = images.firstIndex(where: { $0.primaryVariant?.variantUUID == selected.variantUUID }) {
-                    Text("\(index + 1) of \(images.count)")
-                } else {
-                    Text("\(images.count) images")
-                }
-                Spacer()
-            }
-            .font(.system(size: 10))
-            .foregroundColor(.gray)
-            .padding(.horizontal, 12)
-            .frame(height: 22)
-            .background(CaptureOneTheme.Colors.panelBackground)
+            .padding(20)
         }
-        .background(CaptureOneTheme.Colors.browserBackground)
-        .onAppear {
-            interactor.updateDataSource(with: images)
-        }
-        .onChange(of: images) { newImages in
-            interactor.updateDataSource(with: newImages)
-        }
+    }
+    
+    private func cell(for image: ImageBase) -> some View {
+        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
+        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
+        
+        return COImageBrowserCell(
+            image: image,
+            isSelected: isSelected,
+            isPrimary: isPrimary,
+            size: CGFloat(zoomStore.thumbnailSize),
+            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown
+        )
+        .onTapGesture { handleTap(on: image) }
     }
     
     private func handleTap(on image: ImageBase) {
         guard let variant = image.primaryVariant else { return }
-        
-        // Detect modifiers (simulated for SwiftUI macOS)
         let isCmdPressed = NSEvent.modifierFlags.contains(.command)
         let isShiftPressed = NSEvent.modifierFlags.contains(.shift)
-        
         interactor.select(variant: variant, isMultiSelect: isCmdPressed, isRangeSelect: isShiftPressed)
-        
-        // Update the primary selected variant for the rest of the app
         selectedVariant = variant
+    }
+}
+
+// MARK: - Filmstrip View
+struct COBrowserFilmstripView: View {
+    let images: [ImageBase]
+    @Binding var selectedVariant: VariantBase?
+    @ObservedObject var interactor: ImageBrowserInteractor
+    @ObservedObject var zoomStore: ImageBrowserZoomLevelStore
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: true) {
+            HStack(spacing: 15) {
+                ForEach(images, id: \.imageUUID) { image in
+                    cell(for: image)
+                }
+            }
+            .padding(.horizontal, 15)
+            .padding(.vertical, 10)
+        }
+        .frame(maxHeight: CGFloat(zoomStore.thumbnailSize) + 40)
+    }
+    
+    private func cell(for image: ImageBase) -> some View {
+        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
+        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
+        
+        return COImageBrowserCell(
+            image: image,
+            isSelected: isSelected,
+            isPrimary: isPrimary,
+            size: CGFloat(zoomStore.thumbnailSize),
+            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown
+        )
+        .onTapGesture {
+            guard let variant = image.primaryVariant else { return }
+            interactor.select(variant: variant, isMultiSelect: false, isRangeSelect: false)
+            selectedVariant = variant
+        }
+    }
+}
+
+// MARK: - List View
+struct COBrowserListView: View {
+    let images: [ImageBase]
+    @Binding var selectedVariant: VariantBase?
+    @ObservedObject var interactor: ImageBrowserInteractor
+    
+    var body: some View {
+        Table(images, selection: Binding(
+            get: { Set(interactor.selectedVariants) },
+            set: { _ in } // Managed via interactor logic if needed
+        )) {
+            TableColumn("Name", value: \.displayName)
+            TableColumn("Rating") { image in
+                Text("\(image.primaryVariant?.rating ?? 0) ★")
+                    .foregroundColor(.yellow)
+            }
+            TableColumn("Color") { image in
+                Circle().fill(colorForTag(image.primaryVariant?.colorTag ?? .none))
+                    .frame(width: 10, height: 10)
+            }
+            TableColumn("Type") { image in
+                Text(image.path.hasSuffix(".ARW") || image.path.hasSuffix(".IIQ") ? "RAW" : "JPEG")
+                    .font(.system(size: 10, design: .monospaced))
+            }
+        }
+        .tableStyle(.inset)
+        .font(.system(size: 11))
+    }
+    
+    private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
+        switch tag {
+        case .none: return .clear
+        case .red: return .red
+        case .orange: return .orange
+        case .yellow: return .yellow
+        case .green: return .green
+        case .blue: return .blue
+        case .purple: return .purple
+        case .pink: return .pink
+        }
     }
 }
 
@@ -157,11 +293,12 @@ public struct COImageBrowserCell: View {
     let isSelected: Bool
     let isPrimary: Bool
     let size: CGFloat
+    let showLabel: Bool
     
     @State private var thumbnail: NSImage?
     
-    public var body: some View {
-        VStack(spacing: 8) {
+    public body: some View {
+        VStack(spacing: 6) {
             ZStack(alignment: .center) {
                 // 1. Selection & Background
                 Rectangle()
@@ -189,11 +326,13 @@ public struct COImageBrowserCell: View {
             }
             .frame(width: size, height: size)
             
-            Text(image.displayName)
-                .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
-                .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
-                .lineLimit(1)
-                .frame(width: size)
+            if showLabel {
+                Text(image.displayName)
+                    .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
+                    .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
+                    .lineLimit(1)
+                    .frame(width: size)
+            }
         }
         .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
