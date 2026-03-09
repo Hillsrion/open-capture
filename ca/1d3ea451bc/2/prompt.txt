@@ -1,0 +1,46 @@
+à la racine. j'ai récupéré la dernière version de Capture One, il faudrait la décompiler comme tu l'as fait au début du projet. et actualiser les fichiers décompilés dans RawDumps
+
+---
+
+attention le bon fichier à décompiler là c'est Capture One 2, pas Capture One
+
+---
+
+j'ai supprimé les dossiers Source et Headers, il faut totalement les reconstituer car on ne sait pas ce qui a changé. relance le script
+
+---
+
+ok, maintenant je veux que tu refasses une passe sur tout ce qui à été implémenté jusque là pour voir si il y a des différences qu'on devrait améliorer dans ce qu'on a déjà (check les commits et la branche entire/checkpoints/v1 qui a capturé beaucoup de chats qui ont eu lieu
+
+---
+
+attends. je peux te donner la décompilation de l'ancienne version si ça aide. regarde dans RawDumps\ copy/
+
+---
+
+fais attention a ne pas commit le code décompilé ou les .app
+
+---
+
+retire les fichiers qui n'ont rien a faire dans le versionning de ton précédent commit d'abord
+
+---
+
+réecris l'historique git pour enlever les fichiers décompilés, ils ont rien a faire la bas
+
+---
+
+apparamment git-filter-repo est bcp plus rapide
+
+---
+
+Important (beaucoup oublient ça)
+
+Après le nettoyage, pour récupérer réellement l’espace disque :
+
+rm -rf .git/refs/original
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+
+
+Est-ce que c'est vrai ?
