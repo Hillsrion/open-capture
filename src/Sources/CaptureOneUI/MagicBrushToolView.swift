@@ -1,19 +1,29 @@
 import SwiftUI
 import AppCoreShared
 
-/// Reconstructed high-fidelity Magic Brush settings tool (AI-001).
+/// Reconstructed high-fidelity Magic Brush & Eraser settings tool (UI-204).
 /// Based on disassembly of MagicBrushSettingsToolController.
 public struct MagicBrushToolView: View {
     @ObservedObject var settings: MagicBrushSettings
     @State private var linkBrushAndEraser: Bool = true
+    @State private var activeTab: Int = 0 // 0: Brush, 1: Eraser
     
     public init(settings: MagicBrushSettings) {
         self.settings = settings
     }
     
     public var body: some View {
-        COToolSection("Magic Brush Settings", toolID: "MagicBrush") {
+        COToolSection("Magic Brush", toolID: "MagicBrush") {
             VStack(spacing: 10) {
+                if !linkBrushAndEraser {
+                    Picker("", selection: $activeTab) {
+                        Text("Brush").tag(0)
+                        Text("Eraser").tag(1)
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                }
+                
                 COUISlider(label: "Size", value: Binding(get: { Float(settings.size) }, set: { settings.size = Double($0) }), range: 1...100)
                 COUISlider(label: "Tolerance", value: Binding(get: { Float(settings.tolerance) }, set: { settings.tolerance = Double($0) }), range: 1...100)
                 COUISlider(label: "Refine Edge", value: Binding(get: { Float(settings.refineEdge) }, set: { settings.refineEdge = Double($0) }), range: 0...100)
@@ -33,6 +43,7 @@ public struct MagicBrushToolView: View {
                         .frame(maxWidth: .infinity)
                         .padding(6)
                         .background(CaptureOneTheme.Colors.activeHighlight)
+                        .foregroundColor(.black)
                         .cornerRadius(4)
                 }
                 .buttonStyle(PlainButtonStyle())

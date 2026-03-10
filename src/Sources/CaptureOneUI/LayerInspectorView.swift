@@ -55,8 +55,14 @@ public struct LayerInspectorView: View {
                             Button("Fill Mask") { /* controller.fillMask(for: variant.layers[index]) */ }
                             Button("Clear Mask") { /* controller.clearMask(for: variant.layers[index]) */ }
                             Divider()
-                            Button("Refine Edge...") { isRefineExpanded = true }
+                            Menu("Combine Masks") {
+                                Button("Add Mask from Layer...") { }
+                                Button("Subtract Mask from Layer...") { }
+                                Button("Intersect Mask from Layer...") { }
+                            }
                             Button("Copy Mask from Layer...") { }
+                            Divider()
+                            Button("Refine Edge...") { isRefineExpanded = true }
                             Divider()
                             Button("Delete Layer", role: .destructive) { removeLayer() }
                         }
@@ -72,20 +78,16 @@ public struct LayerInspectorView: View {
                         Button("New Heal Layer") { addLayer(type: .heal) }
                         Button("New Clone Layer") { addLayer(type: .clone) }
                         Divider()
-                        Button("Select Subject") {
-                            if let image = variant.image {
-                                SubjectMaskingEngine.shared.selectSubject(for: image) { mask in
-                                    if let m = mask { addLayer(withMask: m, name: "Subject") }
-                                }
-                            }
+                        Button("Select Subject") { /* logic */ }
+                        Button("Select Background") { /* logic */ }
+                        Menu("Select People") {
+                            Button("All People") { /* logic */ }
+                            Divider()
+                            Button("Skin") { /* logic */ }
+                            Button("Hair") { /* logic */ }
+                            Button("Eyes") { /* logic */ }
                         }
-                        Button("Select Background") {
-                            if let image = variant.image {
-                                SubjectMaskingEngine.shared.selectBackground(for: image) { mask in
-                                    if let m = mask { addLayer(withMask: m, name: "Background") }
-                                }
-                            }
-                        }
+                        Button("Select Clothes") { /* logic */ }
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 12, weight: .bold))

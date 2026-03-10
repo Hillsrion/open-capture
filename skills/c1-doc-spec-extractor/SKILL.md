@@ -5,40 +5,48 @@ description: Analyzes Capture One User Guide (online or local specs.html) to ext
 
 # Capture One Documentation Spec Extractor
 
-This skill provides a systematic workflow for crawling or parsing the Capture One User Guide to extract high-fidelity UI specifications.
+This skill provides a systematic workflow for crawling or parsing the Capture One User Guide to extract high-fidelity UI specifications, bypassing Cloudflare restrictions when necessary.
 
 ## Workflows
 
-### 1. Web Crawling Workflow
-1.  **Crawl Root URL**: Start at `https://support.captureone.com/hc/en-us/categories/360000279017-User-guide`.
-2.  **Identify Sections**: Extract all section links.
-3.  **Extract Article Content**: For each section, visit all articles.
-    -   **Extract Textual Specs**: Identify UI elements (buttons, sliders, fields) and their locations.
-    -   **Identify Images**: Capture URLs of screenshots.
+### 1. Exa-based Deep Extraction (Recommended for Online)
+Use this when direct crawling via `web_fetch` is blocked by Cloudflare (403).
+1.  **Construct Targeted Queries**: Use `web_search_exa` with `livecrawl: 'preferred'` and `numResults: 10`.
+    -   *Query Pattern*: `site:support.captureone.com "Feature Name" OR "Tool Name"`.
+2.  **Batch Processing**: Group similar features (e.g., "AI Masking" + "Subject Selection") to maximize context usage.
+3.  **Content Refinement**: Extract raw text, identifying UI hierarchies (Sliders, Buttons, Dropdowns) even without HTML.
+4.  **Visual Search**: Use `google_web_search` specifically for "Capture One [Feature] interface screenshot" to find visual references.
 
-### 2. Local Parsing Workflow (Recommended for speed)
+### 2. Local Parsing Workflow
 Use this when a local `docs_raw/specs.html` containing a dump of the User Guide is available.
 1.  **Run Parser**: Execute `python3 scripts/parse_local_specs.py docs_raw/specs.html docs_raw/`.
 2.  **Inspect Extracted Files**: Individual articles will be saved as `docs_raw/Local_*.html`.
-3.  **Analyze**: Process these files as if they were crawled.
 
-### 3. Analysis and Integration (Common to both)
-1.  **YouTube Video Processing**: If a YouTube video is embedded, extract transcript and identify key frames for UI demonstration.
-2.  **Deduce Features**: Map extracted UI items to functional commands and underlying logic (e.g., "Reset button" -> `resetCommand`).
-3.  **Identify Gaps**: Compare extracted specs with existing codebase and `@conductor/backlog.md`.
-4.  **Update Backlog**: Add missing UI items and functional gaps to `conductor/backlog.md`.
+### 3. Analysis and Notion Integration
+1.  **Deduce Features**: Map extracted UI items to functional commands and underlying logic (e.g., "Reset button" -> `resetCommand`).
+2.  **Codebase Parity**: Use `grep_search` on `RawDumps/` to find matching symbols/classes (e.g., `AICropInspectorTool`).
+3.  **Ticket Generation (Notion)**: Create entries in the "Open C1 Backlog" database.
+    -   **Title**: Clear feature name.
+    -   **TaskID**: Follow `UI-204-X` or `AI-204-X` pattern.
+    -   **ACTUAL RAW EXA TEXT**: You MUST include a section with the literal, unedited text retrieved by Exa for the specific feature. DO NOT summarize or rewrite this part.
+    -   **Implementation Plan**: Add a detailed Markdown plan in the page body covering:
+        -   Reference Management.
+        -   Engine Integration (ImageCore).
+        -   UI Components (SwiftUI).
+        -   High-Fidelity Visuals.
 
 ## Extraction Template
 
 For each UI tool/area, aim to extract:
--   **ID**: Internal ID if guessable, or descriptive name.
--   **Parent Container**: Tool Tab, Palette, or Toolbar.
+-   **ID**: Internal ID from symbols (e.g., `_geometryKeystoneAmountKey`).
+-   **Parent Container**: Tool Tab (Shape, Lens, Adjust, etc.).
 -   **Elements**: List of buttons, sliders, menus.
--   **Sub-options**: Dropdowns, checkboxes, or hidden menus.
+-   **Special States**: Studio-only features, Pro-only modes.
 -   **Visual Reference**: Link/path to the image illustrating this tool.
 
 ## Tools to Use
--   `web_fetch` / `web_search_exa`: For crawling.
--   `scripts/parse_local_specs.py`: For local parsing.
--   `grep_search` / `read_file`: For codebase parity checks.
--   `generalist`: Delegate large-scale crawling or parsing.
+-   `web_search_exa`: Primary tool for Cloudflare bypass.
+-   `google_web_search`: For finding interface screenshots.
+-   `notion_search` / `add_database_entry`: For backlog management.
+-   `grep_search`: For identifying decompiled symbols.
+-   `generalist`: Delegate large-scale data harvesting.

@@ -6,6 +6,7 @@ import DataCore
 public struct CropToolView: View {
     @ObservedObject var controller: AdjustmentToolController
     @State private var isMaskExpanded: Bool = false
+    @State private var isAdvancedExpanded: Bool = false
     
     public init(controller: AdjustmentToolController) {
         self.controller = controller
@@ -28,6 +29,12 @@ public struct CropToolView: View {
                         Text("3x2").tag(5)
                         Text("5x4").tag(6)
                         Text("7x5").tag(7)
+                        if !controller.customRatios.isEmpty {
+                            Divider()
+                            ForEach(controller.customRatios, id: \.self) { ratio in
+                                Text(ratio).tag(ratio.hashValue)
+                            }
+                        }
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
@@ -66,45 +73,34 @@ public struct CropToolView: View {
                 Divider().background(Color.white.opacity(0.05))
                 
                 VStack(spacing: 8) {
-                    Button(action: { withAnimation { isMaskExpanded.toggle() } }) {
-                        HStack {
-                            Image(systemName: isMaskExpanded ? "chevron.down" : "chevron.right")
-                                .font(.system(size: 8, weight: .bold))
-                            Text("Mask Settings")
-                                .font(.system(size: 11, weight: .semibold))
-                            Spacer()
-                        }
-                    }
-                    .buttonStyle(.plain)
+                    disclosureButton(title: "Mask Settings", isExpanded: $isMaskExpanded)
                     
                     if isMaskExpanded {
                         VStack(spacing: 8) {
                             Toggle("Show Mask", isOn: $controller.cropShowMask)
                                 .font(.system(size: 11))
                             
-                            HStack {
-                                Text("Opacity")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                                    .frame(width: 60, alignment: .leading)
-                                Slider(value: $controller.cropMaskOpacity, in: 0...100)
-                                    .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                                Text("\(Int(controller.cropMaskOpacity))")
-                                    .font(.system(size: 11, design: .monospaced))
-                                    .frame(width: 30, alignment: .trailing)
-                            }
+                            sliderRow(label: "Opacity", value: $controller.cropMaskOpacity, range: 0...100)
+                            sliderRow(label: "Brightness", value: $controller.cropMaskBrightness, range: -100...100)
+                        }
+                        .padding(.leading, 14)
+                    }
+                    
+                    disclosureButton(title: "Advanced", isExpanded: $isAdvancedExpanded)
+                    
+                    if isAdvancedExpanded {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Toggle("Respect Fujifilm In-Camera Crop", isOn: $controller.respectFujifilmInCameraCrop)
+                                .font(.system(size: 11))
                             
-                            HStack {
-                                Text("Brightness")
-                                    .font(.system(size: 11))
-                                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                                    .frame(width: 60, alignment: .leading)
-                                Slider(value: $controller.cropMaskBrightness, in: -100...100)
-                                    .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                                Text("\(Int(controller.cropMaskBrightness))")
-                                    .font(.system(size: 11, design: .monospaced))
-                                    .frame(width: 30, alignment: .trailing)
+                            Button(action: {
+                                // Add custom ratio logic
+                            }) {
+                                Label("Add Custom Ratio...", systemImage: "plus.rectangle.on.rectangle")
+                                    .font(.system(size: 10))
                             }
+                            .buttonStyle(.plain)
+                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
                         }
                         .padding(.leading, 14)
                     }
@@ -113,37 +109,81 @@ public struct CropToolView: View {
             .padding(.vertical, 4)
         }
     }
+    
+    private func disclosureButton(title: String, isExpanded: Binding<Bool>) -> some View {
+        Button(action: { withAnimation { isExpanded.wrappedValue.toggle() } }) {
+            HStack {
+                Image(systemName: isExpanded.wrappedValue ? "chevron.down" : "chevron.right")
+                    .font(.system(size: 8, weight: .bold))
+                Text(title)
+                    .font(.system(size: 11, weight: .semibold))
+                Spacer()
+            }
+        }
+        .buttonStyle(.plain)
+    }
+    
+    private func sliderRow(label: String, value: Binding<Double>, range: ClosedRange<Double>) -> some View {
+        HStack {
+            Text(label)
+                .font(.system(size: 11))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 60, alignment: .leading)
+            Slider(value: value, in: range)
+                .accentColor(CaptureOneTheme.Colors.activeHighlight)
+            Text("\(Int(value.wrappedValue))")
+                .font(.system(size: 11, design: .monospaced))
+                .frame(width: 30, alignment: .trailing)
+        }
+    }
 }
 
 // MARK: - AI Crop (UI-204)
 public struct AICropToolView: View {
-    public init() {}
+    @ObservedObject var controller: AdjustmentToolController
+    
+    public init(controller: AdjustmentToolController) {
+        self.controller = controller
+    }
     
     public var body: some View {
         COToolSection("AI Crop", toolID: "AICrop") {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Auto crop to subject or face.")
-                    .font(.system(size: 10))
-                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                HStack {
+                    Text("Mode")
+                        .font(.system(size: 11))
+                    Spacer()
+                    Picker("", selection: $controller.focusAIMode) {
+                        Text("Auto").tag(0)
+                        Text("Subject").tag(1)
+                        Text("Face").tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 150)
+                }
                 
                 HStack(spacing: 8) {
                     Button(action: {
-                        // AI Subject Crop Stub
+                        // Set Reference logic
                     }) {
-                        Label("Subject", systemImage: "person.fill")
+                        Label("Set Reference", systemImage: "pin.fill")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.bordered)
                     
                     Button(action: {
-                        // AI Face Crop Stub
+                        // Apply AI Crop logic
                     }) {
-                        Label("Face", systemImage: "face.smiling")
+                        Label("Apply", systemImage: "magicmouse.fill")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.bordered)
                 }
                 .controlSize(.small)
+                
+                Text("Align composition automatically using reference image.")
+                    .font(.system(size: 9))
+                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
             }
             .padding(.vertical, 4)
         }
@@ -189,13 +229,13 @@ public struct RotationToolView: View {
                     
                     HStack(spacing: 4) {
                         Button(action: {
-                            // Flip Horizontal logic stub
+                            // Flip Horizontal
                         }) {
                             Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right")
                                 .frame(width: 24, height: 24)
                         }
                         Button(action: {
-                            // Flip Vertical logic stub
+                            // Flip Vertical
                         }) {
                             Image(systemName: "arrow.up.and.down.righttriangle.up.righttriangle.down")
                                 .frame(width: 24, height: 24)
@@ -223,8 +263,13 @@ public struct GridToolView: View {
     public var body: some View {
         COToolSection("Grid", toolID: "Grid") {
             VStack(spacing: 10) {
-                Toggle("Show Grid", isOn: $commands.showGridOverlay)
-                    .font(.system(size: 11))
+                HStack {
+                    Toggle("Show Grid", isOn: $commands.showGridOverlay)
+                        .font(.system(size: 11))
+                    Spacer()
+                    Toggle("Follow Crop", isOn: $controller.gridFollowCrop)
+                        .font(.system(size: 11))
+                }
                 
                 HStack {
                     Text("Type")
@@ -241,6 +286,31 @@ public struct GridToolView: View {
                     .frame(width: 120)
                 }
                 
+                if controller.gridTypeIndex == 2 { // Fibonacci Spiral
+                    HStack(spacing: 12) {
+                        Text("Spiral Controls")
+                            .font(.system(size: 10))
+                            .foregroundColor(.gray)
+                        Spacer()
+                        
+                        Button(action: { controller.gridFibonacciClockwise.toggle() }) {
+                            Image(systemName: "arrow.clockwise")
+                                .padding(4)
+                                .background(controller.gridFibonacciClockwise ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1))
+                                .cornerRadius(4)
+                        }
+                        
+                        Button(action: { controller.gridFibonacciMirror.toggle() }) {
+                            Image(systemName: "arrow.left.and.right")
+                                .padding(4)
+                                .background(controller.gridFibonacciMirror ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1))
+                                .cornerRadius(4)
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    .imageScale(.small)
+                }
+                
                 HStack {
                     Text("Color")
                         .font(.system(size: 11))
@@ -251,6 +321,8 @@ public struct GridToolView: View {
                         Text("Gray").tag(1)
                         Text("Black").tag(2)
                         Text("Amber").tag(3)
+                        Text("Red").tag(4)
+                        Text("Cyan").tag(5)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
@@ -314,7 +386,7 @@ public struct GuidesToolView: View {
                                             .font(.system(size: 10))
                                             .foregroundColor(.gray)
                                         Text(guide.isVertical ? "Vertical" : "Horizontal")
-                                            .font(.system(size: 11))
+                                            .font(.system(size: 11) )
                                         Spacer()
                                         Text("\(Int(guide.position * 100))%")
                                             .font(.system(size: 10, design: .monospaced))

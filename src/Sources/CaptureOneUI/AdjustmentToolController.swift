@@ -80,7 +80,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Curves State
     @Published public var curvesPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
     
-    // Rating & Color Tag
+    // Base Characteristics (UI-204)
+    @Published public var iccProfile: String = "Generic RGB"
+    @Published public var toneCurve: String = "Auto"
+    @Published public var engineVersion: String = "Capture One 16"
+    @Published public var isProStandard: Bool = false
+    
+    // Color Editor (UI-204)
+    @Published public var colorEditorMode: Int = 0 // 0: Basic, 1: Advanced, 2: Skin Tone
+    @Published public var directColorEditorEnabled: Bool = false
+    
+    // Ratings & Color Tag
     @Published public var rating: Int = 0
     @Published public var colorTag: VariantBase.ColorTag = .none
     
@@ -134,10 +144,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var cropShowMask: Bool = true
     @Published public var cropMaskOpacity: Double = 50.0
     @Published public var cropMaskBrightness: Double = 0.0
+    @Published public var respectFujifilmInCameraCrop: Bool = true
+    @Published public var customRatios: [String] = []
     
     // Grid & Guides (UI-204)
     @Published public var gridTypeIndex: Int = 0
     @Published public var gridColorIndex: Int = 0 // 0: White, 1: Gray, 2: Black, 3: Amber
+    @Published public var gridFollowCrop: Bool = true
+    @Published public var gridFibonacciClockwise: Bool = false
+    @Published public var gridFibonacciMirror: Bool = false
     @Published public var guides: [GuideItem] = []
     
     // Keystone State (AI-003)

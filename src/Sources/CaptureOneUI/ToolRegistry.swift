@@ -99,8 +99,12 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(LocalAdjustmentsToolView(context: context)) }
         case "StyleBrushes":
             return .implemented { _ in AnyView(BrushSettingsToolView()) }
+        case "LumaRange":
+            return .implemented { context in AnyView(LumaRangeToolView(controller: context.adjustmentController)) }
         case "MatchLook":
-            return .implemented { _ in AnyView(MatchLookToolView()) }
+            return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
+        case "SmartAdjustments":
+            return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
         case "WhiteBalance":
             return .implemented { context in
                 AnyView(WhiteBalanceToolView(
@@ -117,33 +121,21 @@ public enum ToolRegistry {
         case "Exposure":
             return .implemented { context in
                 AnyView(ExposureToolView(
-                    exposure: Binding(
-                        get: { context.adjustmentController.exposure },
-                        set: { context.adjustmentController.exposure = $0 }
-                    ),
-                    contrast: Binding(
-                        get: { context.adjustmentController.contrast },
-                        set: { context.adjustmentController.contrast = $0 }
-                    ),
-                    brightness: Binding(
-                        get: { context.adjustmentController.brightness },
-                        set: { context.adjustmentController.brightness = $0 }
-                    ),
-                    saturation: Binding(
-                        get: { context.adjustmentController.saturation },
-                        set: { context.adjustmentController.saturation = $0 }
-                    )
+                    exposure: Binding(get: { context.adjustmentController.exposure }, set: { context.adjustmentController.exposure = $0 }),
+                    contrast: Binding(get: { context.adjustmentController.contrast }, set: { context.adjustmentController.contrast = $0 }),
+                    brightness: Binding(get: { context.adjustmentController.brightness }, set: { context.adjustmentController.brightness = $0 }),
+                    saturation: Binding(get: { context.adjustmentController.saturation }, set: { context.adjustmentController.saturation = $0 })
                 ))
             }
         case "ShadowHighlight":
             return .implemented { context in
                 AnyView(HDRToolView(
-                    highlights: Binding(
-                        get: { context.adjustmentController.highlights },
-                        set: { context.adjustmentController.highlights = $0 }
-                    ),
-                    shadows: Binding(
-                        get: { context.adjustmentController.shadows },
+                    highlights: Binding(get: { context.adjustmentController.highlights }, set: { context.adjustmentController.highlights = $0 }),
+                    shadows: Binding(get: { context.adjustmentController.shadows }, set: { context.adjustmentController.shadows = $0 }),
+                    whites: Binding(get: { context.adjustmentController.whites }, set: { context.adjustmentController.whites = $0 }),
+                    blacks: Binding(get: { context.adjustmentController.blacks }, set: { context.adjustmentController.blacks = $0 })
+                ))
+            }
                         set: { context.adjustmentController.shadows = $0 }
                     ),
                     whites: Binding(
@@ -190,7 +182,7 @@ public enum ToolRegistry {
         case "Crop":
             return .implemented { context in AnyView(CropToolView(controller: context.adjustmentController)) }
         case "AICrop":
-            return .implemented { _ in AnyView(AICropToolView()) }
+            return .implemented { context in AnyView(AICropToolView(controller: context.adjustmentController)) }
         case "Rotation":
             return .implemented { context in AnyView(RotationToolView(controller: context.adjustmentController)) }
         case "Perspective":
@@ -234,7 +226,7 @@ public enum ToolRegistry {
         case "Guides":
             return .implemented { context in AnyView(GuidesToolView(controller: context.adjustmentController)) }
         case "BaseCharacteristics":
-            return .implemented { context in AnyView(BaseCharacteristicsToolView(config: context.config)) }
+            return .implemented { context in AnyView(BaseCharacteristicsToolView(controller: context.adjustmentController)) }
         case "Styles":
             return .implemented { context in AnyView(StyleInspectorTool(controller: context.adjustmentController)) }
         case "Settings":
@@ -246,43 +238,19 @@ public enum ToolRegistry {
         case "Sharpening":
             return .implemented { context in
                 AnyView(SharpeningToolView(
-                    amount: Binding(
-                        get: { context.adjustmentController.sharpAmount },
-                        set: { context.adjustmentController.sharpAmount = $0 }
-                    ),
-                    radius: Binding(
-                        get: { context.adjustmentController.sharpRadius },
-                        set: { context.adjustmentController.sharpRadius = $0 }
-                    ),
-                    threshold: Binding(
-                        get: { context.adjustmentController.sharpThreshold },
-                        set: { context.adjustmentController.sharpThreshold = $0 }
-                    ),
-                    halo: Binding(
-                        get: { context.adjustmentController.sharpHalo },
-                        set: { context.adjustmentController.sharpHalo = $0 }
-                    )
+                    amount: Binding(get: { context.adjustmentController.sharpAmount }, set: { context.adjustmentController.sharpAmount = $0 }),
+                    radius: Binding(get: { context.adjustmentController.sharpRadius }, set: { context.adjustmentController.sharpRadius = $0 }),
+                    threshold: Binding(get: { context.adjustmentController.sharpThreshold }, set: { context.adjustmentController.sharpThreshold = $0 }),
+                    halo: Binding(get: { context.adjustmentController.sharpHalo }, set: { context.adjustmentController.sharpHalo = $0 })
                 ))
             }
         case "Noise":
             return .implemented { context in
                 AnyView(NoiseReductionToolView(
-                    luminance: Binding(
-                        get: { context.adjustmentController.nrLuminance },
-                        set: { context.adjustmentController.nrLuminance = $0 }
-                    ),
-                    details: Binding(
-                        get: { context.adjustmentController.nrDetails },
-                        set: { context.adjustmentController.nrDetails = $0 }
-                    ),
-                    color: Binding(
-                        get: { context.adjustmentController.nrColor },
-                        set: { context.adjustmentController.nrColor = $0 }
-                    ),
-                    singlePixel: Binding(
-                        get: { context.adjustmentController.nrSinglePixel },
-                        set: { context.adjustmentController.nrSinglePixel = $0 }
-                    )
+                    luminance: Binding(get: { context.adjustmentController.nrLuminance }, set: { context.adjustmentController.nrLuminance = $0 }),
+                    details: Binding(get: { context.adjustmentController.nrDetails }, set: { context.adjustmentController.nrDetails = $0 }),
+                    color: Binding(get: { context.adjustmentController.nrColor }, set: { context.adjustmentController.nrColor = $0 }),
+                    singlePixel: Binding(get: { context.adjustmentController.nrSinglePixel }, set: { context.adjustmentController.nrSinglePixel = $0 })
                 ))
             }
         case "Film Grain":
