@@ -102,7 +102,9 @@ fileprivate struct ViewerRootView: View {
             // View toggles
             HStack(spacing: 4) {
                 viewerToolbarIcon("rectangle.on.rectangle.square", label: "Before/After")
+                viewerToolbarIcon("eyeglasses", label: "Recipe Proofing")
                 viewerToolbarIcon("exclamationmark.triangle", label: "Exposure Warning")
+                viewerToolbarIcon("triangle.fill", label: "Gamut Warning") // Inverted triangle often used for gamut
                 viewerToolbarIcon("camera.metering.spot", label: "Focus Mask")
             }
             

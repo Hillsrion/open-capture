@@ -123,18 +123,56 @@ public struct FocusToolView: View {
     }
 }
 
-// MARK: - Spot Removal (UI-203)
+// MARK: - Spot Removal (UI-204)
 public struct SpotRemovalToolView: View {
     @ObservedObject var controller = AdjustmentToolController.shared
-    
+
     public init() {}
-    
+
     public var body: some View {
         COToolSection("Spot Removal", toolID: "SpotRemoval") {
             VStack(alignment: .leading, spacing: 8) {
+                // Global Controls
+                HStack(spacing: 8) {
+                    Button(action: {
+                        // AI Auto Dust Removal logic
+                    }) {
+                        VStack(spacing: 4) {
+                            Image(systemName: "sparkles")
+                                .font(.system(size: 14))
+                            Text("Auto Dust")
+                                .font(.system(size: 9))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 40)
+                        .background(CaptureOneTheme.Colors.activeHighlight)
+                        .foregroundColor(.black)
+                        .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
+
+                    Button(action: {
+                        controller.spots.removeAll()
+                    }) {
+                        VStack(spacing: 4) {
+                            Image(systemName: "trash")
+                                .font(.system(size: 14))
+                            Text("Clear All")
+                                .font(.system(size: 9))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 40)
+                        .background(Color.white.opacity(0.05))
+                        .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                Divider().background(Color.white.opacity(0.1))
+
                 if let selectedID = controller.selectedSpotID,
                    let index = controller.spots.firstIndex(where: { $0.id == selectedID }) {
-                    
+
                     VStack(spacing: 8) {
                         HStack {
                             Text("Type")
@@ -148,34 +186,35 @@ public struct SpotRemovalToolView: View {
                                 Text("Dust").tag(0)
                                 Text("Spot").tag(1)
                             }
-                            .pickerStyle(.menu)
+                            .pickerStyle(.segmented)
                             .labelsHidden()
-                            .frame(width: 80)
+                            .frame(width: 100)
                         }
-                        
+
                         HStack {
                             Text("Radius")
                                 .font(.system(size: 11))
                                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                            Spacer()
+                                .frame(width: 40, alignment: .leading)
                             Slider(value: Binding(
                                 get: { controller.spots[index].radius },
                                 set: { controller.spots[index].radius = $0 }
                             ), in: 1...100)
                             .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                            .frame(width: 80)
+                            Text("\(Int(controller.spots[index].radius))")
+                                .font(.system(size: 10, design: .monospaced))
+                                .frame(width: 30, alignment: .trailing)
                         }
                     }
                     .padding(6)
                     .background(Color.white.opacity(0.05))
                     .cornerRadius(4)
                 }
-                
+
                 VStack(spacing: 0) {
                     ScrollView {
                         VStack(spacing: 1) {
-                            if controller.spots.isEmpty {
-                                Text("No spots added")
+                            if controller.spots.isEmpty {                                Text("No spots added")
                                     .font(.system(size: 11))
                                     .foregroundColor(.gray)
                                     .frame(maxWidth: .infinity, alignment: .center)

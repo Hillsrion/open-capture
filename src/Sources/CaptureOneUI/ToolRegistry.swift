@@ -95,18 +95,26 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(ExposureEvaluationToolView(adjustmentController: context.adjustmentController, config: context.config)) }
         case "Histogram":
             return .implemented { _ in AnyView(HistogramToolView()) }
+        case "ColorReadouts":
+            return .implemented { _ in AnyView(ColorReadoutsToolView()) }
         case "LocalAdjustments":
             return .implemented { context in AnyView(LocalAdjustmentsToolView(context: context)) }
+        case "FocusMask":
+            return .implemented { _ in AnyView(FocusMaskToolView()) }
         case "StyleBrushes":
             return .implemented { _ in AnyView(BrushSettingsToolView()) }
         case "LumaRange":
             return .implemented { context in AnyView(LumaRangeToolView(controller: context.adjustmentController)) }
         case "MatchLook":
             return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
+        case "RetouchFaces":
+            return .implemented { context in AnyView(RetouchFaceSkinToolView(controller: context.adjustmentController)) }
         case "SmartAdjustments":
             return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
         case "ProcessSummary":
             return .implemented { _ in AnyView(ProcessSummaryToolView()) }
+        case "OutputCrossRecipeTokensInspectorTool":
+            return .implemented { _ in AnyView(CrossRecipeTokensToolView()) }
         case "ProcessHistory":
             return .implemented { _ in AnyView(ProcessHistoryToolView()) }
         case "WhiteBalance":
