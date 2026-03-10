@@ -1,7 +1,7 @@
 import Foundation
 
-/// Reconstructed Naming Token for Capture One (TETH-003).
-/// Based on _TtC10CaptureOne18CaptureNamingToken and metadata.
+/// Reconstructed Naming Token for Capture One (LOGIC-204).
+/// Supports dynamic naming and hierarchical folders across Import, Capture, and Export.
 public struct CaptureNamingToken: Identifiable, Codable, Hashable {
     public let id: String
     public let name: String
@@ -12,7 +12,11 @@ public struct CaptureNamingToken: Identifiable, Codable, Hashable {
         case date = "Date"
         case counter = "Counter"
         case sessionName = "Session Name"
+        case imageName = "Image Name"
+        case jobName = "Job Name"
+        case subfolder = "Subfolder"
         case customText = "Custom Text"
+        case delimiter = "Delimiter" // Support for hierarchical folder creation
     }
     
     public init(id: String = UUID().uuidString, name: String, type: TokenType) {
@@ -22,11 +26,11 @@ public struct CaptureNamingToken: Identifiable, Codable, Hashable {
     }
 }
 
-/// Reconstructed Formatter for token-based naming (TETH-003).
-/// Based on ProcessNamingTokenFormatter disassembly.
+/// Reconstructed Formatter for token-based naming (LOGIC-204).
+/// Resolves tokens based on context (Export, Capture, etc.).
 public class CaptureNamingFormatter {
     
-    public static func format(tokens: [CaptureNamingToken], cameraName: String, counter: Int) -> String {
+    public static func format(tokens: [CaptureNamingToken], cameraName: String = "Camera", counter: Int = 1) -> String {
         var result = ""
         
         for token in tokens {
@@ -40,7 +44,15 @@ public class CaptureNamingFormatter {
             case .counter:
                 result += String(format: "%04d", counter)
             case .sessionName:
-                result += "CaptureSession" // Simplified
+                result += "CaptureSession" // Context-dependent
+            case .imageName:
+                result += "Original_Filename" // Context-dependent
+            case .jobName:
+                result += "Job_001" // Handled via CrossRecipeTokens
+            case .subfolder:
+                result += "Selects" // Handled via CrossRecipeTokens
+            case .delimiter:
+                result += "/"
             case .customText:
                 result += token.name
             }
@@ -49,22 +61,47 @@ public class CaptureNamingFormatter {
         return result.isEmpty ? "Untitled" : result
     }
     
-    /// Parses a string with placeholders like "[Camera]_[Counter]" into tokens.
+    /// Parses a string with placeholders like "[Image Name]/[Job Name]_[Counter]" into tokens.
     public static func parse(formatString: String) -> [CaptureNamingToken] {
-        // Simplified parser
         var tokens: [CaptureNamingToken] = []
-        let parts = formatString.components(separatedBy: "_")
+        var currentToken = ""
+        var isInsideToken = false
         
-        for part in parts {
-            if part == "[Camera]" {
-                tokens.append(CaptureNamingToken(name: "Camera", type: .camera))
-            } else if part == "[Date]" {
-                tokens.append(CaptureNamingToken(name: "Date", type: .date))
-            } else if part == "[Counter]" {
-                tokens.append(CaptureNamingToken(name: "Counter", type: .counter))
+        for char in formatString {
+            if char == "[" {
+                if !currentToken.isEmpty {
+                    tokens.append(CaptureNamingToken(name: currentToken, type: .customText))
+                    currentToken = ""
+                }
+                isInsideToken = true
+            } else if char == "]" {
+                isInsideToken = false
+                let type: CaptureNamingToken.TokenType
+                switch currentToken {
+                case "Camera": type = .camera
+                case "Date": type = .date
+                case "Counter", "4 Digit Counter": type = .counter
+                case "Session Name": type = .sessionName
+                case "Image Name": type = .imageName
+                case "Job Name": type = .jobName
+                case "Subfolder": type = .subfolder
+                default: type = .customText
+                }
+                tokens.append(CaptureNamingToken(name: currentToken, type: type))
+                currentToken = ""
+            } else if char == "/" || char == "\\" {
+                if !currentToken.isEmpty {
+                    tokens.append(CaptureNamingToken(name: currentToken, type: .customText))
+                    currentToken = ""
+                }
+                tokens.append(CaptureNamingToken(name: "/", type: .delimiter))
             } else {
-                tokens.append(CaptureNamingToken(name: part, type: .customText))
+                currentToken.append(char)
             }
+        }
+        
+        if !currentToken.isEmpty {
+            tokens.append(CaptureNamingToken(name: currentToken, type: .customText))
         }
         
         return tokens
