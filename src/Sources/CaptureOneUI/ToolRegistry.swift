@@ -296,7 +296,9 @@ public enum ToolRegistry {
             return .implemented { _ in AnyView(ExportWatermarkToolView()) }
         case "ExportQueue":
             return .implemented { context in AnyView(ExportQueueToolView(batchQueue: context.batchQueue)) }
-        case "OutputAdjustments", "ExportProcess", "OutputContentCredentials", "OutputCrossRecipeTokensInspectorTool":
+        case "OutputContentCredentials":
+            return .implemented { _ in AnyView(ExportContentCredentialsToolView()) }
+        case "OutputAdjustments", "ExportProcess":
             return .implemented { context in
                 AnyView(UnavailableToolView(toolID: toolID))
             }

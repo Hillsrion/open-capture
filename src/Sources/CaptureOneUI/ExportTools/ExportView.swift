@@ -23,9 +23,12 @@ public struct ExportView: View {
                 ExportFormatToolView(recipeManager: recipeManager)
                 ExportMetadataToolView()
                 ExportWatermarkToolView()
+                ExportContentCredentialsToolView()
                 ExportQueueToolView(batchQueue: batchQueue)
                 
                 Spacer(minLength: 20)
+                
+                ProcessSummaryToolView()
                 
                 Button(action: {
                     // Logic to trigger batch export
