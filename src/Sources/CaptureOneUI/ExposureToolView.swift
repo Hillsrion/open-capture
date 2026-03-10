@@ -18,40 +18,13 @@ public struct ExposureToolView: View {
     
     public var body: some View {
         COToolSection("Exposure", toolID: "Exposure") {
-            VStack(spacing: 8) {
-                exposureSlider(label: "Exposure", value: $exposure, range: -4...4, step: 0.01, format: "%.2f")
-                exposureSlider(label: "Contrast", value: $contrast, range: -50...50)
-                exposureSlider(label: "Brightness", value: $brightness, range: -50...50)
-                exposureSlider(label: "Saturation", value: $saturation, range: -100...100)
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        // Auto exposure logic
-                    }) {
-                        Image(systemName: "a.circle.fill")
-                            .font(.system(size: 14))
-                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                    }
-                    .buttonStyle(.plain)
-                }
-                .padding(.top, 4)
+            VStack(spacing: 6) {
+                COToolValueSlider(label: "Exposure", value: $exposure, range: -4...4, decimalPlaces: 2)
+                COToolValueSlider(label: "Contrast", value: $contrast, range: -50...50, decimalPlaces: 0)
+                COToolValueSlider(label: "Brightness", value: $brightness, range: -50...50, decimalPlaces: 0)
+                COToolValueSlider(label: "Saturation", value: $saturation, range: -100...100, decimalPlaces: 0)
             }
             .padding(.vertical, 4)
-        }
-    }
-    
-    private func exposureSlider(label: String, value: Binding<Float>, range: ClosedRange<Float>, step: Float = 1.0, format: String = "%.0f") -> some View {
-        HStack {
-            Text(label)
-                .font(.system(size: 11))
-                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(width: 65, alignment: .leading)
-            Slider(value: value, in: range, step: step)
-                .accentColor(CaptureOneTheme.Colors.activeHighlight)
-            Text(String(format: format, value.wrappedValue))
-                .font(.system(size: 10, design: .monospaced))
-                .frame(width: 35, alignment: .trailing)
         }
     }
 }

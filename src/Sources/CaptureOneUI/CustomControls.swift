@@ -66,17 +66,17 @@ public struct POSliderControl: View {
     }
     
     public var body: some View {
-        VStack(spacing: 2) {
-            HStack(alignment: .center) {
-                Text(label)
-                    .font(.system(size: 11))
-                    .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-                Spacer()
-                InspectorTextField(label: label, value: $value)
-            }
+        HStack(alignment: .center, spacing: 8) {
+            Text(label)
+                .font(.system(size: 11))
+                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                .frame(width: 85, alignment: .leading)
             
             COUISlider(label: "", value: $value, range: range, showLabel: false)
+            
+            InspectorTextField(label: label, value: $value)
         }
+        .frame(height: 20)
     }
 }
 

@@ -18,22 +18,13 @@ public struct SharpeningToolView: View {
     
     public var body: some View {
         COToolSection("Sharpening", toolID: "Sharpening") {
-            VStack(spacing: 8) {
-                detailSlider(label: "Amount", value: $amount, range: 0...1000)
-                detailSlider(label: "Radius", value: $radius, range: 0.1...2.5, format: "%.1f")
-                detailSlider(label: "Threshold", value: $threshold, range: 0...10, format: "%.1f")
-                detailSlider(label: "Halo", value: $halo, range: 0...100)
+            VStack(spacing: 6) {
+                COToolValueSlider(label: "Amount", value: $amount, range: 0...1000, decimalPlaces: 0)
+                COToolValueSlider(label: "Radius", value: $radius, range: 0.1...2.5, decimalPlaces: 1)
+                COToolValueSlider(label: "Threshold", value: $threshold, range: 0...10, decimalPlaces: 1)
+                COToolValueSlider(label: "Halo", value: $halo, range: 0...100, decimalPlaces: 0)
             }
             .padding(.vertical, 4)
-        }
-    }
-    
-    private func detailSlider(label: String, value: Binding<Double>, range: ClosedRange<Double>, format: String = "%.0f") -> some View {
-        HStack {
-            Text(label).font(.system(size: 11)).foregroundColor(.gray).frame(width: 65, alignment: .leading)
-            Slider(value: value, in: range)
-                .accentColor(CaptureOneTheme.Colors.activeHighlight)
-            Text(String(format: format, value.wrappedValue)).font(.system(size: 10, design: .monospaced)).frame(width: 30, alignment: .trailing)
         }
     }
 }

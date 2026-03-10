@@ -28,9 +28,10 @@ public struct ClarityToolView: View {
                 .labelsHidden()
                 
                 // Sliders
-                POSliderControl(label: "Clarity", value: $amount, range: -100...100)
-                POSliderControl(label: "Structure", value: $structure, range: -100...100)
+                COToolValueSlider(label: "Clarity", value: $amount, range: -100...100, decimalPlaces: 0)
+                COToolValueSlider(label: "Structure", value: $structure, range: -100...100, decimalPlaces: 0)
             }
+            .padding(.vertical, 4)
         }
     }
 }

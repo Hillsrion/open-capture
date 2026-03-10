@@ -56,7 +56,7 @@ public struct COToolSection<Content: View>: View {
     
     public var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 6) {
+            HStack(spacing: 0) {
                 Button(action: {
                     withAnimation {
                         workspaceManager.setToolCollapsed(isExpanded, for: toolID)
@@ -64,132 +64,45 @@ public struct COToolSection<Content: View>: View {
                 }) {
                     HStack(spacing: 6) {
                         Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
-                            .font(.system(size: 8, weight: .bold))
+                            .font(.system(size: 7, weight: .black))
                         Text(title.uppercased())
-                            .font(.system(size: 11, weight: .bold))
+                            .font(.system(size: 10, weight: .bold))
                     }
+                    .padding(.leading, 6)
+                    .frame(maxHeight: .infinity)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(PlainButtonStyle())
-                .gesture(
-                    DragGesture(minimumDistance: 30)
-                        .onEnded { value in
-                            if abs(value.translation.width) > 50 || abs(value.translation.height) > 50 {
-                                if let session = commands.session {
-                                    COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
-                                }
-                            }
-                        }
-                )
 
                 Spacer()
 
-                toolHeaderButton(systemName: "questionmark.circle") {
-                    commands.showHelp(for: toolID)
-                }
-
-                Menu {
-                    Button("Save User Preset...") { /* logic */ }
-                    Button("Save as Style...") { /* logic */ }
-                    Divider()
-                    Button("Stack Presets") { /* logic */ }
-                    Divider()
-                    Button("Manage Presets...") { /* logic */ }
-                } label: {
-                    Image(systemName: "line.3.horizontal")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundColor(CaptureOneTheme.Colors.iconNormal)
-                }
-                .menuStyle(BorderlessButtonMenuStyle())
-                .frame(width: 16)
-
-                toolHeaderButton(systemName: "arrow.counterclockwise") {
-                    commands.resetTool(toolID)
-                }
-
-                toolHeaderButton(systemName: "pip.fill") {
-                    if let session = commands.session {
-                        COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
-                    }
-                }
-
-                Menu {
-                    Button("Save Adjustments as Style...") {
-                        commands.saveCurrentAdjustmentsAsStyle(toolID: toolID)
+                // MARK: - Action Group (Aligned Right)
+                HStack(spacing: 4) {
+                    toolHeaderButton(systemName: "questionmark.circle") {
+                        commands.showHelp(for: toolID)
                     }
 
-                    if !styleManager.allStyles().isEmpty {
-                        Menu("Apply Adjustments From") {
-                            ForEach(styleManager.allStyles()) { style in
-                                Button(style.name) {
-                                    commands.applyStyle(style)
-                                }
-                            }
-                        }
-                    }
-                } label: {
-                    Image(systemName: "square.and.arrow.down")
-                        .font(.system(size: 11))
-                        .frame(width: 18, height: 18)
-                }
-                .menuStyle(BorderlessButtonMenuStyle())
-                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                    presetMenu
 
-                Menu {
-                    Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
-                        workspaceManager.moveTool(toolID, toPinnedArea: !isPinned)
+                    toolHeaderButton(systemName: "arrow.counterclockwise") {
+                        commands.resetTool(toolID)
                     }
 
-                    Button("Float Tool") {
+                    toolHeaderButton(systemName: "pip.fill") {
                         if let session = commands.session {
                             COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
                         }
                     }
 
-                    Divider()
+                    styleMenu
 
-                    Button("Copy \(title) Adjustments") {
-                        commands.copyAdjustmentsForTool(toolID)
-                    }
-                    Button("Apply \(title) Adjustments") {
-                        commands.pasteAdjustmentsForTool(toolID)
-                    }
-                    Button("Reset \(title)") {
-                        commands.resetTool(toolID)
-                    }
-
-                    Divider()
-
-                    Button("Auto Size") {
-                        workspaceManager.setToolSizeOption(nil, for: toolID)
-                    }
-                    Button("Small Size") {
-                        workspaceManager.setToolSizeOption(1, for: toolID)
-                    }
-                    Button("Medium Size") {
-                        workspaceManager.setToolSizeOption(2, for: toolID)
-                    }
-                    Button("Large Size") {
-                        workspaceManager.setToolSizeOption(3, for: toolID)
-                    }
-
-                    Divider()
-
-                    Button("Remove Tool") {
-                        workspaceManager.removeTool(toolID)
-                    }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                        .font(.system(size: 11))
-                        .frame(width: 18, height: 18)
+                    ellipsisMenu
                 }
-                .menuStyle(BorderlessButtonMenuStyle())
-                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                .padding(.trailing, 4)
             }
             .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-            .padding(.horizontal, 8)
-            .frame(height: 28)
-            .background(Color.white.opacity(0.05))
+            .frame(height: 24)
+            .background(Color.white.opacity(0.06))
             
             if isExpanded {
                 content
@@ -209,15 +122,219 @@ public struct COToolSection<Content: View>: View {
     private func toolHeaderButton(systemName: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: systemName)
-                .font(.system(size: 11))
-                .frame(width: 18, height: 18)
+                .font(.system(size: 10))
+                .frame(width: 20, height: 20)
         }
         .buttonStyle(.plain)
-        .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+    }
+
+    private var presetMenu: some View {
+        Menu {
+            Button("Save User Preset...") { /* logic */ }
+            Button("Save as Style...") { /* logic */ }
+            Divider()
+            Button("Stack Presets") { /* logic */ }
+            Divider()
+            Button("Manage Presets...") { /* logic */ }
+        } label: {
+            Image(systemName: "line.3.horizontal")
+                .font(.system(size: 9, weight: .bold))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 20, height: 20)
+        }
+        .menuStyle(BorderlessButtonMenuStyle())
+    }
+
+    private var styleMenu: some View {
+        Menu {
+            Button("Save Adjustments as Style...") {
+                commands.saveCurrentAdjustmentsAsStyle(toolID: toolID)
+            }
+
+            if !styleManager.allStyles().isEmpty {
+                Menu("Apply Adjustments From") {
+                    ForEach(styleManager.allStyles()) { style in
+                        Button(style.name) {
+                            commands.applyStyle(style)
+                        }
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "square.and.arrow.down")
+                .font(.system(size: 10))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 20, height: 20)
+        }
+        .menuStyle(BorderlessButtonMenuStyle())
+    }
+
+    private var ellipsisMenu: some View {
+        Menu {
+            Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
+                workspaceManager.moveTool(toolID, toPinnedArea: !isPinned)
+            }
+
+            Button("Float Tool") {
+                if let session = commands.session {
+                    COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                }
+            }
+
+            Divider()
+
+            Button("Copy \(title) Adjustments") {
+                commands.copyAdjustmentsForTool(toolID)
+            }
+            Button("Apply \(title) Adjustments") {
+                commands.pasteAdjustmentsForTool(toolID)
+            }
+            Button("Reset \(title)") {
+                commands.resetTool(toolID)
+            }
+
+            Divider()
+
+            Button("Auto Size") { workspaceManager.setToolSizeOption(nil, for: toolID) }
+            Button("Small Size") { workspaceManager.setToolSizeOption(1, for: toolID) }
+            Button("Medium Size") { workspaceManager.setToolSizeOption(2, for: toolID) }
+            Button("Large Size") { workspaceManager.setToolSizeOption(3, for: toolID) }
+
+            Divider()
+
+            Button("Remove Tool") {
+                workspaceManager.removeTool(toolID)
+            }
+        } label: {
+            Image(systemName: "ellipsis")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 20, height: 20)
+        }
+        .menuStyle(BorderlessButtonMenuStyle())
     }
 }
 
-/// The high-fidelity C1 Slider
+/// The high-fidelity C1 Slider with precise numeric input (UI-205)
+public struct COToolValueSlider: View {
+    let label: String
+    @Binding var value: Double
+    let range: ClosedRange<Double>
+    let decimalPlaces: Int
+    
+    @State private var textValue: String = ""
+    @FocusState private var isFocused: Bool
+    
+    public init(label: String, value: Binding<Double>, range: ClosedRange<Double>, decimalPlaces: Int = 1) {
+        self.label = label
+        self._value = value
+        self.range = range
+        self.decimalPlaces = decimalPlaces
+    }
+    
+    public init(label: String, value: Binding<Float>, range: ClosedRange<Float>, decimalPlaces: Int = 1) {
+        self.label = label
+        self._value = Binding(
+            get: { Double(value.wrappedValue) },
+            set: { value.wrappedValue = Float($0) }
+        )
+        self.range = Double(range.lowerBound)...Double(range.upperBound)
+        self.decimalPlaces = decimalPlaces
+    }
+    
+    public var body: some View {
+        VStack(spacing: 4) {
+            HStack(alignment: .center, spacing: 8) {
+                Text(label)
+                    .font(.system(size: 11))
+                    .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                    .frame(width: 85, alignment: .leading)
+                
+                sliderTrack
+                
+                TextField("", text: $textValue)
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 11, design: .monospaced))
+                    .multilineTextAlignment(.trailing)
+                    .frame(width: 45, height: 18)
+                    .background(isFocused ? Color.black.opacity(0.3) : Color.clear)
+                    .cornerRadius(2)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 2)
+                            .stroke(isFocused ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1), lineWidth: 0.5)
+                    )
+                    .focused($isFocused)
+                    .onSubmit {
+                        updateValueFromText()
+                    }
+                    .onChange(of: isFocused) { focused in
+                        if !focused { updateValueFromText() }
+                    }
+            }
+        }
+        .onAppear { syncText() }
+        .onChange(of: value) { _ in if !isFocused { syncText() } }
+    }
+    
+    private var sliderTrack: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                // Track background
+                Capsule()
+                    .fill(Color.white.opacity(0.12))
+                    .frame(height: 2)
+                
+                // Active track (Bipolar support)
+                let currentPercent = CGFloat((value - range.lowerBound) / (range.upperBound - range.lowerBound))
+                
+                if range.contains(0) {
+                    let centerPercent = CGFloat(-range.lowerBound / (range.upperBound - range.lowerBound))
+                    let width = abs(currentPercent - centerPercent) * geo.size.width
+                    let startX = min(centerPercent, currentPercent) * geo.size.width
+                    
+                    Capsule()
+                        .fill(CaptureOneTheme.Colors.activeHighlight)
+                        .frame(width: width, height: 2)
+                        .offset(x: startX)
+                } else {
+                    Capsule()
+                        .fill(CaptureOneTheme.Colors.activeHighlight)
+                        .frame(width: currentPercent * geo.size.width, height: 2)
+                }
+                
+                // Knob
+                Circle()
+                    .fill(Color(white: 0.9))
+                    .frame(width: 10, height: 10)
+                    .shadow(color: .black.opacity(0.4), radius: 1, x: 0, y: 1)
+                    .offset(x: currentPercent * geo.size.width - 5)
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { gesture in
+                                let percent = min(max(0, Double(gesture.location.x / geo.size.width)), 1.0)
+                                self.value = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+                            }
+                    )
+            }
+            .frame(maxHeight: .infinity)
+        }
+        .frame(height: 18)
+    }
+    
+    private func syncText() {
+        textValue = String(format: "%.\(decimalPlaces)f", value)
+    }
+    
+    private func updateValueFromText() {
+        if let newValue = Double(textValue) {
+            self.value = min(max(newValue, range.lowerBound), range.upperBound)
+        }
+        syncText()
+    }
+}
+
+/// The high-fidelity C1 Slider (Old version, kept for compatibility if needed)
 public struct COUISlider: View {
     let label: String
     @Binding var value: Float

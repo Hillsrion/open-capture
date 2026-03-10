@@ -18,40 +18,13 @@ public struct HDRToolView: View {
     
     public var body: some View {
         COToolSection("High Dynamic Range", toolID: "ShadowHighlight") {
-            VStack(spacing: 8) {
-                hdrSlider(label: "Highlights", value: $highlights, range: -100...100)
-                hdrSlider(label: "Shadows", value: $shadows, range: -100...100)
-                hdrSlider(label: "Whites", value: $whites, range: -100...100)
-                hdrSlider(label: "Blacks", value: $blacks, range: -100...100)
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        // Auto HDR logic
-                    }) {
-                        Image(systemName: "a.circle.fill")
-                            .font(.system(size: 14))
-                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                    }
-                    .buttonStyle(.plain)
-                }
-                .padding(.top, 4)
+            VStack(spacing: 6) {
+                COToolValueSlider(label: "Highlights", value: $highlights, range: -100...100, decimalPlaces: 0)
+                COToolValueSlider(label: "Shadows", value: $shadows, range: -100...100, decimalPlaces: 0)
+                COToolValueSlider(label: "Whites", value: $whites, range: -100...100, decimalPlaces: 0)
+                COToolValueSlider(label: "Blacks", value: $blacks, range: -100...100, decimalPlaces: 0)
             }
             .padding(.vertical, 4)
-        }
-    }
-    
-    private func hdrSlider(label: String, value: Binding<Float>, range: ClosedRange<Float>) -> some View {
-        HStack {
-            Text(label)
-                .font(.system(size: 11))
-                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(width: 65, alignment: .leading)
-            Slider(value: value, in: range)
-                .accentColor(CaptureOneTheme.Colors.activeHighlight)
-            Text("\(Int(value.wrappedValue))")
-                .font(.system(size: 10, design: .monospaced))
-                .frame(width: 30, alignment: .trailing)
         }
     }
 }

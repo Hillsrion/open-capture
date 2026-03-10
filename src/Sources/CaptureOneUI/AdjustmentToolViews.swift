@@ -45,8 +45,8 @@ public struct WhiteBalanceToolView: View {
                     .frame(width: 80)
                 }
                 
-                POSliderControl(label: "Kelvin", value: $kelvin, range: 2000...50000)
-                POSliderControl(label: "Tint", value: $tint, range: -150...150)
+                COToolValueSlider(label: "Kelvin", value: $kelvin, range: 2000...50000, decimalPlaces: 0)
+                COToolValueSlider(label: "Tint", value: $tint, range: -150...150, decimalPlaces: 1)
             }
         }
     }

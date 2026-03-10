@@ -35,10 +35,10 @@ public struct LumaRangeToolView: View {
                         .stroke(Color.white.opacity(0.2), lineWidth: 1)
                 )
                 
-                VStack(spacing: 8) {
+                VStack(spacing: 6) {
                     lumaSlider(label: "Range", start: $rangeStart, end: $rangeEnd, range: 0...100)
-                    lumaSlider(label: "Falloff Start", value: $falloffStart, range: 0...100)
-                    lumaSlider(label: "Falloff End", value: $falloffEnd, range: 0...100)
+                    COToolValueSlider(label: "Falloff Start", value: $falloffStart, range: 0...100, decimalPlaces: 0)
+                    COToolValueSlider(label: "Falloff End", value: $falloffEnd, range: 0...100, decimalPlaces: 0)
                 }
                 
                 Divider().background(Color.white.opacity(0.05))
