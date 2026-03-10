@@ -236,6 +236,10 @@ public struct CullingView: View {
             AppPreferencesView()
         case .keyboardShortcuts:
             ShortcutEditorSheet()
+        case .newCatalog:
+            CONewCatalogView()
+        case .newSession:
+            CONewSessionView()
         case .sessionUpgrade:
             if let session = commands.session {
                 SessionUpgradeDialog(

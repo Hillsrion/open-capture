@@ -7,6 +7,8 @@ public enum AppSheetRoute: String, Identifiable {
     case preferences
     case keyboardShortcuts
     case sessionUpgrade
+    case newCatalog
+    case newSession
 
     public var id: String { rawValue }
 }
@@ -141,25 +143,23 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func newCatalog() {
-        let ctx = ObjectContext()
-        documentContext = ctx
-        let session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: ctx)
-        session.name = "Untitled Catalog"
-        
-        let recipeManager = OutputRecipeManager.shared
-        if recipeManager.recipes.isEmpty {
-            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ctx))
-        }
-        
-        configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
-        COWindowManager.shared.openDocumentWindow(for: session)
+        presentedSheet = .newCatalog
     }
 
     public func newSession() {
+        presentedSheet = .newSession
+    }
+
+    public func createCatalog(name: String, location: URL) {
+        let catalogPath = location.appendingPathComponent("\(name).cocatalog").path
+        print("[CommandCenter] Creating New Catalog: \(name) at \(catalogPath)")
+        
+        CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: catalogPath, isCatalog: true)
+        
         let ctx = ObjectContext()
         documentContext = ctx
-        let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ctx)
-        session.name = "Untitled Session"
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: ctx)
+        session.name = name
         
         let recipeManager = OutputRecipeManager.shared
         if recipeManager.recipes.isEmpty {
@@ -167,19 +167,94 @@ public final class AppCommandCenter: ObservableObject {
         }
         
         configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
+        print("[CommandCenter] Catalog configured, opening window...")
         COWindowManager.shared.openDocumentWindow(for: session)
+        presentedSheet = nil
+    }
+
+    public func createSession(name: String, location: URL, subfolders: [String: String]) {
+        let sessionRoot = location.appendingPathComponent(name)
+        let sessionPath = sessionRoot.appendingPathComponent("\(name).cosession").path
+        print("[CommandCenter] Creating New Session: \(name) at \(sessionPath)")
+        
+        CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: sessionPath, isCatalog: false)
+        
+        // 1. Create directory scaffold
+        let fm = FileManager.default
+        do {
+            try fm.createDirectory(at: sessionRoot, withIntermediateDirectories: true)
+            for folderName in subfolders.values {
+                try fm.createDirectory(at: sessionRoot.appendingPathComponent(folderName), withIntermediateDirectories: true)
+            }
+            // Create dummy .cosession file
+            let sessionFile = sessionRoot.appendingPathComponent("\(name).cosession")
+            try "Capture One Session".write(to: sessionFile, atomically: true, encoding: .utf8)
+        } catch {
+            notice = AppNotice(title: "Creation Error", message: "Failed to create session folder structure: \(error.localizedDescription)")
+            return
+        }
+
+        let ctx = ObjectContext()
+        documentContext = ctx
+        let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ctx)
+        session.name = name
+        
+        let recipeManager = OutputRecipeManager.shared
+        if recipeManager.recipes.isEmpty {
+            recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: ctx))
+        }
+        
+        configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
+        print("[CommandCenter] Session configured, opening window...")
+        COWindowManager.shared.openDocumentWindow(for: session)
+        presentedSheet = nil
+    }
+
+    public func openDocument(at url: URL) {
+        print("[CommandCenter] Opening document at: \(url.path)")
+        
+        let isCatalog = url.pathExtension == "cocatalog"
+        let name = url.deletingPathExtension().lastPathComponent
+        CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: url.path, isCatalog: isCatalog)
+        
+        Task { @MainActor in
+            let ctx = ObjectContext()
+            self.documentContext = ctx
+            let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 0 : 1, context: ctx)
+            session.name = name
+            
+            self.configure(session: session, recipeManager: OutputRecipeManager.shared, batchQueue: BatchQueue())
+            COWindowManager.shared.openDocumentWindow(for: session)
+        }
     }
 
     public func openDocument() {
-        // Simulate finding an old session that needs upgrade
-        let ctx = ObjectContext()
-        self.documentContext = ctx
-        let oldSession = SessionBase(documentUUID: "legacy-session", type: 1, context: ctx)
-        oldSession.name = "Legacy Professional Catalog"
-        self.session = oldSession
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.canChooseFiles = true
+        panel.allowedContentTypes = [.init(filenameExtension: "cocatalog")!, .init(filenameExtension: "cosession")!]
         
-        // Show upgrade dialog (simulated trigger)
-        presentedSheet = .sessionUpgrade
+        panel.begin { response in
+            if response == .OK, let url = panel.url {
+                print("[CommandCenter] Opening document at: \(url.path)")
+                
+                let isCatalog = url.pathExtension == "cocatalog"
+                let name = url.deletingPathExtension().lastPathComponent
+                CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: url.path, isCatalog: isCatalog)
+                
+                // Logic to load and open the document window
+                Task { @MainActor in
+                    let ctx = ObjectContext()
+                    self.documentContext = ctx
+                    let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 0 : 1, context: ctx)
+                    session.name = name
+                    
+                    self.configure(session: session, recipeManager: OutputRecipeManager.shared, batchQueue: BatchQueue())
+                    COWindowManager.shared.openDocumentWindow(for: session)
+                }
+            }
+        }
     }
     
     public func performUpgrade() {

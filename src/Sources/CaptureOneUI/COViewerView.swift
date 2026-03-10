@@ -91,7 +91,7 @@ public struct COViewerView: View {
                         }
                     }
                 } else {
-                    ViewerEmptyStateView()
+                    COViewerEmptyStateView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -319,34 +319,23 @@ struct COViewerBarView: View {
     }
 }
 
-private struct ViewerEmptyStateView: View {
+public struct COViewerEmptyStateView: View {
+    public init() {}
     @ObservedObject private var commands = AppCommandCenter.shared
 
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 14) {
             Image(systemName: "photo.on.rectangle.angled")
-                .font(.system(size: 42))
+                .font(.system(size: 64))
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
 
             Text("No image selected")
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.white)
 
-            Text("Open a session, import images, or pick a variant from the browser.")
-                .font(.system(size: 12))
+            Text("Pick a variant from the browser or import new images.")
+                .font(.system(size: 13))
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-
-            HStack(spacing: 10) {
-                Button("Import Images...") {
-                    commands.presentImport()
-                }
-                .buttonStyle(.borderedProminent)
-
-                Button("Preferences") {
-                    commands.presentPreferences()
-                }
-                .buttonStyle(.bordered)
-            }
         }
         .padding(24)
     }

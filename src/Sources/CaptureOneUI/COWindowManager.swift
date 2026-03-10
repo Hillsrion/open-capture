@@ -40,42 +40,10 @@ public final class COWindowManager {
             return
         }
         
-        // A minimal "Recent Documents" / Start window matching UI-211 requirements
-        let view = VStack(spacing: 32) {
-            Image(systemName: "camera.aperture")
-                .font(.system(size: 64))
-                .foregroundColor(.gray)
-                
-            Text("Capture One Reconstructed")
-                .font(.system(size: 24, weight: .light))
-                
-            VStack(spacing: 8) {
-                Button("New Catalog...") {
-                    AppCommandCenter.shared.newCatalog()
-                }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                
-                Button("New Session...") {
-                    AppCommandCenter.shared.newSession()
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.large)
-                
-                Button("Open Document...") {
-                    AppCommandCenter.shared.openDocument()
-                }
-                .buttonStyle(.plain)
-                .foregroundColor(.accentColor)
-                .padding(.top, 8)
-            }
-        }
-        .frame(width: 600, height: 450)
-        .background(CaptureOneTheme.Colors.applicationBackground)
-        .preferredColorScheme(.dark)
+        let view = COStartWindowView()
         
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 600, height: 450),
+            contentRect: NSRect(x: 0, y: 0, width: 700, height: 450),
             styleMask: [.titled, .closable, .fullSizeContentView],
             backing: .buffered,
             defer: false
