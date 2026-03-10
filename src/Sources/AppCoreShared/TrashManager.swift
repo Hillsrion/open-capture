@@ -25,19 +25,18 @@ public class TrashManager {
                 print("Catalog Mode: Marked \(variant.image?.displayName ?? "Unknown") as trashed (Read-Only).")
             } else {
                 // Session Logic: Move physical file and sidecars to the Session Trash folder
-                guard let image = variant.image, let url = image.fileURL else { continue }
+                guard let image = variant.image else { continue }
+                let url = URL(fileURLWithPath: image.path)
                 
-                let trashFolder = session.trashFolderURL
+                guard let trashPath = session.trashFolder else { continue }
+                let trashFolder = URL(fileURLWithPath: trashPath)
                 let destination = trashFolder.appendingPathComponent(url.lastPathComponent)
+                _ = destination // Suppress unused warning
                 
-                do {
-                    // Simulated move
-                    // try FileManager.default.moveItem(at: url, to: destination)
-                    // Move .cos, .comask, etc.
-                    print("Session Mode: Moved \(url.lastPathComponent) to physical Trash folder.")
-                } catch {
-                    print("Failed to move file to trash: \(error)")
-                }
+                // Simulated move
+                // try FileManager.default.moveItem(at: url, to: destination)
+                // Move .cos, .comask, etc.
+                print("Session Mode: Moved \(url.lastPathComponent) to physical Trash folder.")
             }
             
             // Mark as read-only to prevent further edits
@@ -50,17 +49,17 @@ public class TrashManager {
         print("WARNING: Permanently deleting \(variants.count) files from disk.")
         
         for variant in variants {
-            guard let image = variant.image, let url = image.fileURL else { continue }
+            guard let image = variant.image else { continue }
+            let url = URL(fileURLWithPath: image.path)
             
-            do {
-                // Simulated deletion
-                // try FileManager.default.removeItem(at: url)
-                print("Deleted file: \(url.lastPathComponent)")
-                
-                // Remove from ObjectContext
-                variant.image?.deleteFromManagedObjectContext(keepImageSettings: false)
-            } catch {
-                print("Failed to delete file: \(error)")
+            // Simulated deletion
+            // try FileManager.default.removeItem(at: url)
+            print("Deleted file: \(url.lastPathComponent)")
+            
+            // Remove from ObjectContext
+            if let context = variant.managedObjectContext {
+                context.addToDeleted(image)
+                context.addToDeleted(variant)
             }
         }
     }

@@ -25,7 +25,7 @@ public struct MatchLookToolView: View {
                         .stroke(Color.white.opacity(0.1), style: StrokeStyle(lineWidth: 1, dash: [4]))
                         .background(Color.black.opacity(0.2))
                     
-                    if let refID = controller.matchLookReferenceVariantID, isReferenceSet {
+                    if controller.matchLookReferenceVariantID != nil, isReferenceSet {
                         VStack(spacing: 4) {
                             Image(systemName: "photo.fill")
                                 .font(.system(size: 20))

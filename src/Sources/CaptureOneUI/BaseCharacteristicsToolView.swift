@@ -48,7 +48,7 @@ public struct BaseCharacteristicsToolView: View {
                             .background(Color.white.opacity(0.05))
                             .cornerRadius(4)
                         }
-                        .menuStyle(.plain)
+                        .menuStyle(BorderlessButtonMenuStyle())
                         
                         if controller.isProStandard {
                             Image(systemName: "checkmark.seal.fill")
@@ -85,7 +85,7 @@ public struct BaseCharacteristicsToolView: View {
                         .background(Color.white.opacity(0.05))
                         .cornerRadius(4)
                     }
-                    .menuStyle(.plain)
+                    .menuStyle(BorderlessButtonMenuStyle())
                 }
                 
                 Divider().background(Color.white.opacity(0.05))

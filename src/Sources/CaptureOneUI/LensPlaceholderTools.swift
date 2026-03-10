@@ -138,58 +138,6 @@ public struct CropToolView: View {
     }
 }
 
-// MARK: - AI Crop (UI-204)
-public struct AICropToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
-    
-    public init(controller: AdjustmentToolController) {
-        self.controller = controller
-    }
-    
-    public var body: some View {
-        COToolSection("AI Crop", toolID: "AICrop") {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    Text("Mode")
-                        .font(.system(size: 11))
-                    Spacer()
-                    Picker("", selection: $controller.focusAIMode) {
-                        Text("Auto").tag(0)
-                        Text("Subject").tag(1)
-                        Text("Face").tag(2)
-                    }
-                    .pickerStyle(.segmented)
-                    .frame(width: 150)
-                }
-                
-                HStack(spacing: 8) {
-                    Button(action: {
-                        // Set Reference logic
-                    }) {
-                        Label("Set Reference", systemImage: "pin.fill")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.bordered)
-                    
-                    Button(action: {
-                        // Apply AI Crop logic
-                    }) {
-                        Label("Apply", systemImage: "magicmouse.fill")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.bordered)
-                }
-                .controlSize(.small)
-                
-                Text("Align composition automatically using reference image.")
-                    .font(.system(size: 9))
-                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-            }
-            .padding(.vertical, 4)
-        }
-    }
-}
-
 // MARK: - Rotation & Flip (UI-204)
 public struct RotationToolView: View {
     @ObservedObject var controller: AdjustmentToolController

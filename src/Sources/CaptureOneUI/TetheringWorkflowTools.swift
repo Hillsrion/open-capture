@@ -123,22 +123,6 @@ public struct NextCaptureAdjustmentsToolView: View {
     }
 }
 
-/// Reconstructed Exposure Evaluation Tool (GAP-406).
-public struct ExposureEvaluationToolView: View {
-    @ObservedObject var browser = PtpDeviceBrowser.shared
-    public init(adjustmentController: AdjustmentToolController, config: ToolConfiguration) {}
-    public var body: some View {
-        COToolSection("Exposure Evaluation", toolID: "ExposureEvaluation") {
-            VStack(spacing: 8) {
-                if let camera = browser.availableCameras.first {
-                    ExposureEvaluationMeter(value: camera.exposureEvaluation)
-                }
-            }
-            .padding(.vertical, 4)
-        }
-    }
-}
-
 /// Reconstructed Normalize tool (ui-205).
 public struct NormalizeToolView: View {
     public init() {}

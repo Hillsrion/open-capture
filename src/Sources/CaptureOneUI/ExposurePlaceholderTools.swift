@@ -2,67 +2,6 @@ import SwiftUI
 import AppCoreShared
 import DataCore
 
-// MARK: - Match Look (UI-202)
-public struct MatchLookToolView: View {
-    @StateObject private var viewModel = MatchLookViewModel()
-    @ObservedObject var controller = AdjustmentToolController.shared
-    
-    public init() {}
-    
-    public var body: some View {
-        COToolSection("Match Look", toolID: "MatchLook") {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack {
-                    Text("Impact")
-                        .font(.system(size: 11))
-                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                    Slider(value: $controller.matchLookImpact, in: 0...100)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                    Text("\(Int(controller.matchLookImpact))")
-                        .font(.system(size: 11, design: .monospaced))
-                        .frame(width: 30, alignment: .trailing)
-                }
-                
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Reference")
-                            .font(.system(size: 10))
-                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        Text(viewModel.selectedReferenceVariant?.name ?? "None Set")
-                            .font(.system(size: 11, weight: .medium))
-                    }
-                    Spacer()
-                    Button("Set Reference") {
-                        // Stub: Pick primary variant
-                        viewModel.selectedReferenceVariant = controller.currentVariant
-                    }
-                    .buttonStyle(.bordered)
-                    .controlSize(.small)
-                }
-                .padding(6)
-                .background(Color.white.opacity(0.05))
-                .cornerRadius(4)
-                
-                Button(action: {
-                    viewModel.matchExposureAndColor(to: [])
-                }) {
-                    HStack {
-                        if viewModel.isMatching {
-                            ProgressView().controlSize(.small).scaleEffect(0.6)
-                        }
-                        Text(viewModel.isMatching ? "Matching..." : "Apply Match")
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(CaptureOneTheme.Colors.activeHighlight)
-                .disabled(viewModel.isMatching || viewModel.selectedReferenceVariant == nil)
-            }
-            .padding(.vertical, 4)
-        }
-    }
-}
-
 // MARK: - Black & White (UI-202)
 public struct BlackAndWhiteToolView: View {
     @ObservedObject var controller: AdjustmentToolController

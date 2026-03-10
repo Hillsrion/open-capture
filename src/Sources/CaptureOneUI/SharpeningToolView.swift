@@ -4,12 +4,12 @@ import AppCoreShared
 /// Reconstructed Sharpening tool (UI-204).
 /// Provides high-fidelity capture and creative sharpening.
 public struct SharpeningToolView: View {
-    @Binding var amount: Float
-    @Binding var radius: Float
-    @Binding var threshold: Float
-    @Binding var halo: Float
+    @Binding var amount: Double
+    @Binding var radius: Double
+    @Binding var threshold: Double
+    @Binding var halo: Double
     
-    public init(amount: Binding<Float>, radius: Binding<Float>, threshold: Binding<Float>, halo: Binding<Float>) {
+    public init(amount: Binding<Double>, radius: Binding<Double>, threshold: Binding<Double>, halo: Binding<Double>) {
         self._amount = amount
         self._radius = radius
         self._threshold = threshold
@@ -28,7 +28,7 @@ public struct SharpeningToolView: View {
         }
     }
     
-    private func detailSlider(label: String, value: Binding<Float>, range: ClosedRange<Float>, format: String = "%.0f") -> some View {
+    private func detailSlider(label: String, value: Binding<Double>, range: ClosedRange<Double>, format: String = "%.0f") -> some View {
         HStack {
             Text(label).font(.system(size: 11)).foregroundColor(.gray).frame(width: 65, alignment: .leading)
             Slider(value: value, in: range)

@@ -1,31 +1,7 @@
 import SwiftUI
 import AppCoreShared
 
-/// Reconstructed high-fidelity Exposure tool.
-public struct ExposureToolView: View {
-    @Binding var exposure: Float
-    @Binding var contrast: Float
-    @Binding var brightness: Float
-    @Binding var saturation: Float
-    
-    public init(exposure: Binding<Float>, contrast: Binding<Float>, brightness: Binding<Float>, saturation: Binding<Float>) {
-        self._exposure = exposure
-        self._contrast = contrast
-        self._brightness = brightness
-        self._saturation = saturation
-    }
-    
-    public var body: some View {
-        COToolSection("Exposure", toolID: "Exposure") {
-            VStack(spacing: 8) {
-                POSliderControl(label: "Exposure", value: $exposure, range: -4...4)
-                POSliderControl(label: "Contrast", value: $contrast, range: -50...50)
-                POSliderControl(label: "Brightness", value: $brightness, range: -50...50)
-                POSliderControl(label: "Saturation", value: $saturation, range: -100...100)
-            }
-        }
-    }
-}
+
 
 /// Reconstructed high-fidelity White Balance tool.
 public struct WhiteBalanceToolView: View {
@@ -76,31 +52,7 @@ public struct WhiteBalanceToolView: View {
     }
 }
 
-/// Reconstructed high-fidelity HDR tool.
-public struct HDRToolView: View {
-    @Binding var highlights: Float
-    @Binding var shadows: Float
-    @Binding var whites: Float
-    @Binding var blacks: Float
-    
-    public init(highlights: Binding<Float>, shadows: Binding<Float>, whites: Binding<Float>, blacks: Binding<Float>) {
-        self._highlights = highlights
-        self._shadows = shadows
-        self._whites = whites
-        self._blacks = blacks
-    }
-    
-    public var body: some View {
-        COToolSection("High Dynamic Range", toolID: "ShadowHighlight") {
-            VStack(spacing: 8) {
-                POSliderControl(label: "Highlights", value: $highlights, range: 0...100)
-                POSliderControl(label: "Shadows", value: $shadows, range: 0...100)
-                POSliderControl(label: "Whites", value: $whites, range: 0...100)
-                POSliderControl(label: "Blacks", value: $blacks, range: 0...100)
-            }
-        }
-    }
-}
+
 
 /// The integrated Lens Correction and LCC tools in the sidebar.
 public struct LensCorrectionInspectorTool: View {
@@ -121,7 +73,8 @@ public struct LensCorrectionInspectorTool: View {
                 tiltY: $controller.keystoneTiltY,
                 amount: $controller.keystoneAmount,
                 aspect: $controller.keystoneAspect,
-                skew: $controller.keystoneSkew
+                skew: $controller.keystoneSkew,
+                focalLength: $controller.keystoneFocalLength
             )
             
             LCCToolView(isLCCActive: $controller.isLCCActive)

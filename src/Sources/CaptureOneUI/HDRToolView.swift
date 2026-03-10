@@ -10,10 +10,10 @@ public struct HDRToolView: View {
     @Binding var blacks: Float
     
     public init(highlights: Binding<Float>, shadows: Binding<Float>, whites: Binding<Float>, blacks: Binding<Float>) {
-        self._highlights: Binding<Float> = highlights
-        self._shadows: Binding<Float> = shadows
-        self._whites: Binding<Float> = whites
-        self._blacks: Binding<Float> = blacks
+        self._highlights = highlights
+        self._shadows = shadows
+        self._whites = whites
+        self._blacks = blacks
     }
     
     public var body: some View {

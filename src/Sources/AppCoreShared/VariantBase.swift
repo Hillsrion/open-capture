@@ -25,17 +25,18 @@ public class VariantBase: BaseObject {
     internal var row: Any?
     
     // MARK: - State Flags
-    @objc public var isModified: Bool {
+    @objc public var isModified: Bool = false {
         willSet { willChangeValue(forKey: "isModified") }
         didSet { didChangeValue(forKey: "isModified") }
     }
 
-    @objc public var isReadOnly: Bool {
+    @objc public var isReadOnly: Bool = false {
         willSet { willChangeValue(forKey: "isReadOnly") }
         didSet { didChangeValue(forKey: "isReadOnly") }
     }
 
-    public var isLoading: Bool    public var isProxyReady: Bool
+    public var isLoading: Bool
+    public var isProxyReady: Bool
     public var isAlive: Bool
     
     // MARK: - Relationships

@@ -4,12 +4,12 @@ import AppCoreShared
 /// Reconstructed Noise Reduction tool (UI-204).
 /// Provides high-fidelity luminance and color noise removal.
 public struct NoiseReductionToolView: View {
-    @Binding var luminance: Float
-    @Binding var details: Float
-    @Binding var color: Float
-    @Binding var singlePixel: Float
+    @Binding var luminance: Double
+    @Binding var details: Double
+    @Binding var color: Double
+    @Binding var singlePixel: Double
     
-    public init(luminance: Binding<Float>, details: Binding<Float>, color: Binding<Float>, singlePixel: Binding<Float>) {
+    public init(luminance: Binding<Double>, details: Binding<Double>, color: Binding<Double>, singlePixel: Binding<Double>) {
         self._luminance = luminance
         self._details = details
         self._color = color
@@ -28,7 +28,7 @@ public struct NoiseReductionToolView: View {
         }
     }
     
-    private func noiseSlider(label: String, value: Binding<Float>, range: ClosedRange<Float>) -> some View {
+    private func noiseSlider(label: String, value: Binding<Double>, range: ClosedRange<Double>) -> some View {
         HStack {
             Text(label).font(.system(size: 11)).foregroundColor(.gray).frame(width: 75, alignment: .leading)
             Slider(value: value, in: range)

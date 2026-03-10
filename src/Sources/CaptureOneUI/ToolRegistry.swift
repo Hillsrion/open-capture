@@ -148,18 +148,6 @@ public enum ToolRegistry {
                     blacks: Binding(get: { context.adjustmentController.blacks }, set: { context.adjustmentController.blacks = $0 })
                 ))
             }
-                        set: { context.adjustmentController.shadows = $0 }
-                    ),
-                    whites: Binding(
-                        get: { context.adjustmentController.whites },
-                        set: { context.adjustmentController.whites = $0 }
-                    ),
-                    blacks: Binding(
-                        get: { context.adjustmentController.blacks },
-                        set: { context.adjustmentController.blacks = $0 }
-                    )
-                ))
-            }
         case "Levels":
             return .implemented { context in AnyView(LevelsInspectorToolView(controller: context.adjustmentController)) }
         case "Curves":
@@ -280,8 +268,6 @@ public enum ToolRegistry {
                 }
                 return AnyView(UnavailableToolView(toolID: "Annotations"))
             }
-        case "SmartAdjustments":
-            return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
         case "ExportDialogRecipeList":
             return .implemented { context in AnyView(ExportRecipesToolView(recipeManager: context.recipeManager)) }
         case "ExportLocation":

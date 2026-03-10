@@ -10,10 +10,10 @@ public struct ExposureToolView: View {
     @Binding var saturation: Float
     
     public init(exposure: Binding<Float>, contrast: Binding<Float>, brightness: Binding<Float>, saturation: Binding<Float>) {
-        self._exposure: Binding<Float> = exposure
-        self._contrast: Binding<Float> = contrast
-        self._brightness: Binding<Float> = brightness
-        self._saturation: Binding<Float> = saturation
+        self._exposure = exposure
+        self._contrast = contrast
+        self._brightness = brightness
+        self._saturation = saturation
     }
     
     public var body: some View {

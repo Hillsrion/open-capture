@@ -14,15 +14,13 @@ public class VariantManager {
     public func createNewVariant(from sourceVariant: VariantBase) -> VariantBase? {
         guard let sourceImage = sourceVariant.image else { return nil }
         
-        let newVariant = VariantBase()
-        // newVariant.tempUUID = UUID().uuidString
-        newVariant.image = sourceImage
-        newVariant.mcVariant = MCVariant() // Fresh settings
+        let newVariant = VariantBase(variantUUID: UUID().uuidString, image: sourceImage, context: sourceVariant.managedObjectContext)
+        newVariant.mcVariant = MCVariant(dictionary: [:]) // Fresh settings
         
         // Link to the same VariantGroup if it exists
         addToGroup(variant: newVariant, alongside: sourceVariant)
         
-        print("Created New Variant for \(sourceImage.displayName ?? "Unknown")")
+        print("Created New Variant for \(sourceImage.displayName)")
         return newVariant
     }
     
@@ -30,8 +28,7 @@ public class VariantManager {
     public func createCloneVariant(from sourceVariant: VariantBase) -> VariantBase? {
         guard let sourceImage = sourceVariant.image else { return nil }
         
-        let cloneVariant = VariantBase()
-        cloneVariant.image = sourceImage
+        let cloneVariant = VariantBase(variantUUID: UUID().uuidString, image: sourceImage, context: sourceVariant.managedObjectContext)
         
         // Deep copy settings (simulate MCVariant copy)
         // cloneVariant.mcVariant = sourceVariant.mcVariant?.copy() as? MCVariant
@@ -40,7 +37,7 @@ public class VariantManager {
         
         addToGroup(variant: cloneVariant, alongside: sourceVariant)
         
-        print("Created Clone Variant for \(sourceImage.displayName ?? "Unknown")")
+        print("Created Clone Variant for \(sourceImage.displayName)")
         return cloneVariant
     }
     
@@ -59,6 +56,6 @@ public class VariantManager {
     /// Toggles the expanded/collapsed state of a variant group in the Browser.
     public func toggleGroupExpansion(for image: ImageBase) {
         // Logic: Updates a transient UI state flag for the image's variant group.
-        print("Toggled stack expansion for \(image.displayName ?? "Unknown")")
+        print("Toggled stack expansion for \(image.displayName)")
     }
 }

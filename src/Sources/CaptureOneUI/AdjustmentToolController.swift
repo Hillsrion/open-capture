@@ -384,6 +384,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
     }
     
+    /// Feature: Styles in Layers
+    public func applyStyleToNewLayer(_ style: Style) {
+        print("Applying style \(style.name) to a new layer")
+        currentVariant?.isModified = true
+    }
+    
     /// Permanently applies a style to the current variant.
     public func applyStyle(_ style: Style) {
         guard let variant = currentVariant else { return }

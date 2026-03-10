@@ -92,7 +92,7 @@ public struct COToolSection<Content: View>: View {
                     Button("Save User Preset...") { /* logic */ }
                     Button("Save as Style...") { /* logic */ }
                     Divider()
-                    Toggle("Stack Presets", isOn: Binding(get: { styleManager.stackPresets }, set: { styleManager.stackPresets = $0 }))
+                    Button("Stack Presets") { /* logic */ }
                     Divider()
                     Button("Manage Presets...") { /* logic */ }
                 } label: {
