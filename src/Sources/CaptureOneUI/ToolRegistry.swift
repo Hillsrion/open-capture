@@ -105,6 +105,10 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
         case "SmartAdjustments":
             return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
+        case "ProcessSummary":
+            return .implemented { _ in AnyView(ProcessSummaryToolView()) }
+        case "ProcessHistory":
+            return .implemented { _ in AnyView(ProcessHistoryToolView()) }
         case "WhiteBalance":
             return .implemented { context in
                 AnyView(WhiteBalanceToolView(

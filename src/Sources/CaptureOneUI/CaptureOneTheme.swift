@@ -88,7 +88,22 @@ public struct COToolSection<Content: View>: View {
                     commands.showHelp(for: toolID)
                 }
 
-                toolHeaderButton(systemName: "arrow.uturn.backward.circle") {
+                Menu {
+                    Button("Save User Preset...") { /* logic */ }
+                    Button("Save as Style...") { /* logic */ }
+                    Divider()
+                    Toggle("Stack Presets", isOn: Binding(get: { styleManager.stackPresets }, set: { styleManager.stackPresets = $0 }))
+                    Divider()
+                    Button("Manage Presets...") { /* logic */ }
+                } label: {
+                    Image(systemName: "line.3.horizontal")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(CaptureOneTheme.Colors.iconNormal)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
+                .frame(width: 16)
+
+                toolHeaderButton(systemName: "arrow.counterclockwise") {
                     commands.resetTool(toolID)
                 }
 
