@@ -29,9 +29,13 @@ public class VariantBase: BaseObject {
         willSet { willChangeValue(forKey: "isModified") }
         didSet { didChangeValue(forKey: "isModified") }
     }
-    
-    public var isLoading: Bool
-    public var isProxyReady: Bool
+
+    @objc public var isReadOnly: Bool {
+        willSet { willChangeValue(forKey: "isReadOnly") }
+        didSet { didChangeValue(forKey: "isReadOnly") }
+    }
+
+    public var isLoading: Bool    public var isProxyReady: Bool
     public var isAlive: Bool
     
     // MARK: - Relationships
