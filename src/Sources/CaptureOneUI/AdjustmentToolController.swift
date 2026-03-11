@@ -75,6 +75,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var aiCropReferencePoint: Int = 0 // 0: Center, 1: Top, 2: Eyes
     @Published public var aiCropLockAspect: Bool = true
     
+    // Styles State (UI-204)
+    @Published public var stackStyles: Bool = false
+    @Published public var styleOpacity: Double = 100.0 // 0 to 100
+    
     // Spot Removal State (UI-203)
     @Published public var spots: [SpotItem] = []
     @Published public var selectedSpotID: UUID?
@@ -411,8 +415,20 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     
     /// Feature: Styles in Layers
     public func applyStyleToNewLayer(_ style: Style) {
-        print("Applying style \(style.name) to a new layer")
-        currentVariant?.isModified = true
+        guard let variant = currentVariant else { return }
+        print("[AdjustmentToolController] Applying Style \(style.name) to New Layer")
+        
+        let newLayer = LayerBase(
+            uuid: UUID().uuidString,
+            name: style.name,
+            type: .adjustment,
+            context: variant.managedObjectContext
+        )
+        variant.layers.append(newLayer)
+        variant.activeLayerIndex = variant.layers.count - 1
+        variant.isModified = true
+        
+        // In original, this creates an IC_ColorCorrection layer or sets adjustment values on the layer
     }
     
     /// Permanently applies a style to the current variant.
@@ -627,6 +643,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.aiCropShowGuides = (mc.objectForKey("ZAI_CROP_SHOW_GUIDES") as? Bool) ?? true
         self.aiCropReferencePoint = (mc.objectForKey("ZAI_CROP_REF_POINT") as? Int) ?? 0
         self.aiCropLockAspect = (mc.objectForKey("ZAI_CROP_LOCK_ASPECT") as? Bool) ?? true
+        
+        self.stackStyles = (mc.objectForKey("ZSTACK_STYLES") as? Bool) ?? false
+        self.styleOpacity = (mc.objectForKey("ZSTYLE_OPACITY") as? Double) ?? 100.0
 
         self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
         self.cropShowMask = (mc.objectForKey("ZCROP_SHOW_MASK") as? Bool) ?? true
@@ -796,6 +815,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(aiCropShowGuides, forKey: "ZAI_CROP_SHOW_GUIDES")
         mc.setObject(aiCropReferencePoint, forKey: "ZAI_CROP_REF_POINT")
         mc.setObject(aiCropLockAspect, forKey: "ZAI_CROP_LOCK_ASPECT")
+
+        mc.setObject(stackStyles, forKey: "ZSTACK_STYLES")
+        mc.setObject(styleOpacity, forKey: "ZSTYLE_OPACITY")
 
         if let encodedSpots = try? JSONEncoder().encode(spots) {
             mc.setObject(encodedSpots, forKey: "ZSPOTS")

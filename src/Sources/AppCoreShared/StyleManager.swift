@@ -39,8 +39,13 @@ public class StyleManager: ObservableObject {
         let smartPack = StylePack(name: "Smart Adjustments", styles: [
             Style(name: "Smart Portrait Match", adjustments: [:], smartAdjustments: SmartAdjustmentsDescriptor(exposureEnabled: true, whiteBalanceEnabled: true))
         ])
+
+        let filmPack = StylePack(name: "Film Styles", styles: [
+            Style(name: "Kodak Portra 160", adjustments: ["ZSATURATION": AnyCodable(5.0), "ZCONTRAST": AnyCodable(10.0)]),
+            Style(name: "Fuji 400H", adjustments: ["ZSATURATION": AnyCodable(2.0), "ZCONTRAST": AnyCodable(5.0)])
+        ])
         
-        self.builtInStyles = StylePack(name: "Built-in Styles", childPacks: [bwPack, cinematicPack, smartPack])
+        self.builtInStyles = StylePack(name: "Built-in Styles", childPacks: [bwPack, cinematicPack, smartPack, filmPack])
         self.userStyles = StylePack(name: "User Styles")
     }
     

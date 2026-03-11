@@ -147,7 +147,6 @@ public struct StyleInspectorTool: View {
                                     if let style = item.style { controller.applyStyle(style) }
                                 }
                                 Button("Apply to New Layer") {
-                                    // Feature: Styles in Layers
                                     if let style = item.style { controller.applyStyleToNewLayer(style) }
                                 }
                                 Divider()
@@ -162,8 +161,28 @@ public struct StyleInspectorTool: View {
                         }
                     }
                     .listStyle(SidebarListStyle())
-                    .frame(minHeight: 300)
+                    .frame(minHeight: 250)
+                    .background(Color.black.opacity(0.1))
+                    .cornerRadius(4)
+
+                    // Style Opacity (UI-204)
+                    VStack(spacing: 4) {
+                        HStack {
+                            Text("Opacity")
+                                .font(.system(size: 11))
+                                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                            Spacer()
+                            Slider(value: $controller.styleOpacity, in: 0...100)
+                                .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                                .frame(width: 120)
+                            Text("\(Int(controller.styleOpacity))%")
+                                .font(.system(size: 10, design: .monospaced))
+                                .frame(width: 35, alignment: .trailing)
+                        }
+                    }
+                    .padding(.top, 4)
                 }
+                .padding(.vertical, 4)
             }
         }
     }
