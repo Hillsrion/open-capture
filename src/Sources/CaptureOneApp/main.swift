@@ -162,6 +162,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         Task { @MainActor in AppCommandCenter.shared.redo() }
     }
 
+    @objc func selectWorkspace(_ sender: NSMenuItem) {
+        let name = sender.title
+        Task { @MainActor in
+            WorkspaceManager.shared.loadWorkspace(named: name)
+        }
+    }
+
+    @objc func saveWorkspace(_ sender: Any?) {
+        let panel = NSSavePanel()
+        panel.title = "Save Workspace"
+        panel.nameFieldStringValue = WorkspaceManager.shared.activeWorkspace.name
+        if panel.runModal() == .OK, let name = panel.url?.lastPathComponent.replacingOccurrences(of: ".coworkspace", with: "") {
+            Task { @MainActor in
+                WorkspaceManager.shared.activeWorkspace.name = name
+                WorkspaceManager.shared.saveWorkspace()
+            }
+        }
+    }
+
     // MARK: - Menu Builder
 
     private func buildMainMenu() -> NSMenu {
@@ -223,6 +242,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         windowMenu.addItem(withTitle: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
         windowMenu.addItem(withTitle: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
         windowMenu.addItem(.separator())
+        
+        let workspaceItem = NSMenuItem(title: "Workspace", action: nil, keyEquivalent: "")
+        let workspaceMenu = NSMenu(title: "Workspace")
+        workspaceItem.submenu = workspaceMenu
+        
+        // Populate with available workspaces (Mocked for now, in real app would list files in Application Support)
+        let defaultWS = ["Default", "Simplified", "Wedding", "Dual Monitor"]
+        for ws in defaultWS {
+            let item = workspaceMenu.addItem(withTitle: ws, action: #selector(selectWorkspace(_:)), keyEquivalent: "")
+            item.target = self
+            if WorkspaceManager.shared.activeWorkspace.name == ws {
+                item.state = .on
+            }
+        }
+        
+        workspaceMenu.addItem(.separator())
+        workspaceMenu.addItem(withTitle: "Save Workspace...", action: #selector(saveWorkspace(_:)), keyEquivalent: "").target = self
+        
+        windowMenu.addItem(workspaceItem)
+        windowMenu.addItem(.separator())
+        
         windowMenu.addItem(withTitle: "Live View", action: #selector(openLivePreview(_:)), keyEquivalent: "l").target = self
         windowMenu.addItem(withTitle: "New Viewer", action: #selector(openViewerWindow(_:)), keyEquivalent: "V").target = self
         windowMenu.addItem(withTitle: "Culling", action: #selector(openCullingWindow(_:)), keyEquivalent: "").target = self
