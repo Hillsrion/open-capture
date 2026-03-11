@@ -13,7 +13,6 @@ public class MOCollection: CollectionBase {
 
 public class MOFolderCollection: MOCollection {
     
-    public var folderPath: String?
     public private(set) var images: [ImageBase] = []
     
     // MARK: - File System Synchronization

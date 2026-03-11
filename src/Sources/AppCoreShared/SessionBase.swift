@@ -15,11 +15,21 @@ public class SessionBase: BaseObject {
     }
     
     // MARK: - Folders & Paths
-    public var rootFolder: String?
-    public var captureFolder: String?
-    public var selectsFolder: String?
-    public var outputFolder: String?
-    public var trashFolder: String?
+    public var rootFolder: String? {
+        didSet { notifyChange() }
+    }
+    public var captureFolder: String? {
+        didSet { notifyChange() }
+    }
+    public var selectsFolder: String? {
+        didSet { notifyChange() }
+    }
+    public var outputFolder: String? {
+        didSet { notifyChange() }
+    }
+    public var trashFolder: String? {
+        didSet { notifyChange() }
+    }
     
     @available(*, deprecated, renamed: "outputFolder")
     public var processPath: String? {

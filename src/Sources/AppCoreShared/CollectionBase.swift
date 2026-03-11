@@ -8,6 +8,7 @@ public class CollectionBase: BaseObject {
     public let uuid: String
     public var name: String?
     public var itemCount: Int = 0
+    public var folderPath: String?
     
     // MARK: - State & Metadata
     public var isVariantBased: Bool

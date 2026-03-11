@@ -139,8 +139,16 @@ public struct LibraryToolView: View {
             sectionHeaderWithAddRemove(title: "Session Favorites")
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(session.arrangedUserFavouriteCollections, id: \.uuid) { fav in
-                    LibraryRow(title: fav.name ?? "Favorite", icon: "star", count: 0, isSelected: selectedCollectionUUID == fav.uuid)
+                    LibraryRow(title: fav.name ?? "Favorite", icon: iconForFolder(path: fav.folderPath ?? ""), count: 0, isSelected: selectedCollectionUUID == fav.uuid)
                         .onTapGesture { selectedCollectionUUID = fav.uuid }
+                        .contextMenu {
+                            if let path = fav.folderPath {
+                                Button("Set as Capture Folder") { session.captureFolder = path }
+                                Button("Set as Selects Folder") { session.selectsFolder = path }
+                                Button("Set as Output Folder") { session.outputFolder = path }
+                                Button("Set as Session Trash Folder") { session.trashFolder = path }
+                            }
+                        }
                 }
             }
             
@@ -153,7 +161,7 @@ public struct LibraryToolView: View {
                     .padding(.leading, 12)
                 
                 ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { path in
-                    LibraryRow(title: (path as NSString).lastPathComponent, icon: "folder", count: 0, isSelected: selectedCollectionUUID == path)
+                    LibraryRow(title: (path as NSString).lastPathComponent, icon: iconForFolder(path: path), count: 0, isSelected: selectedCollectionUUID == path)
                         .onTapGesture { selectedCollectionUUID = path }
                         .padding(.leading, 24)
                         .contextMenu {
@@ -210,6 +218,14 @@ public struct LibraryToolView: View {
     }
     
     // MARK: - Helpers
+    private func iconForFolder(path: String) -> String {
+        if path == session.captureFolder { return "camera" }
+        if path == session.selectsFolder { return "checkmark.circle" }
+        if path == session.outputFolder { return "gearshape" }
+        if path == session.trashFolder { return "trash" }
+        return "folder"
+    }
+
     private func sectionHeaderWithAddRemove(title: String) -> some View {
         HStack {
             Image(systemName: "chevron.right")
