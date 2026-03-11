@@ -76,9 +76,14 @@ public struct COViewerView: View {
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)
-                            .onChanged { gesture in
-                                // Logic: If Magic Brush is active, call engine
-                                print("[UI] Brushing at: \(gesture.location)")
+                            .onEnded { gesture in
+                                let toolID = commands.selectedCursorToolID
+                                if toolID == "Heal" {
+                                    adjustmentController?.addRepairArrow(at: gesture.location, type: .heal)
+                                } else if toolID == "Clone" {
+                                    adjustmentController?.addRepairArrow(at: gesture.location, type: .clone)
+                                }
+                                print("[UI] Clicked at: \(gesture.location) with tool \(toolID)")
                             }
                     )
                     .overlay(alignment: .topLeading) {

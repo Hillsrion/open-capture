@@ -51,6 +51,10 @@ public struct LayerInspectorView: View {
                             variant.activeLayerIndex = index
                         }
                         .contextMenu {
+                            if variant.layers[index].type == .heal || variant.layers[index].type == .clone {
+                                Button("Reset Retouching") { controller.resetRetouching() }
+                                Divider()
+                            }
                             Button("Invert Mask") { /* controller.invertMask(for: variant.layers[index]) */ }
                             Button("Fill Mask") { /* controller.fillMask(for: variant.layers[index]) */ }
                             Button("Clear Mask") { /* controller.clearMask(for: variant.layers[index]) */ }

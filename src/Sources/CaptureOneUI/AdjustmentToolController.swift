@@ -946,6 +946,29 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
     }
 
+    // MARK: - Retouching (ENG-005)
+    
+    public func addRepairArrow(at destination: CGPoint, type: RepairArrow.ArrowType) {
+        guard let variant = currentVariant, let image = variant.image else { return }
+        guard let activeLayer = variant.activeLayer, (activeLayer.type == .heal || activeLayer.type == .clone) else {
+            print("[AdjustmentToolController] Cannot add repair arrow to non-retouch layer")
+            return
+        }
+        
+        let source = RetouchEngine.shared.autoPickSource(for: destination, in: image)
+        let arrow = RepairArrow(source: source, destination: destination, type: type)
+        activeLayer.repairArrows.append(arrow)
+        variant.isModified = true
+        print("[AdjustmentToolController] Added \(type) repair arrow to \(activeLayer.name)")
+    }
+    
+    public func resetRetouching() {
+        guard let variant = currentVariant, let activeLayer = variant.activeLayer else { return }
+        activeLayer.repairArrows.removeAll()
+        variant.isModified = true
+        print("[AdjustmentToolController] Reset retouching for \(activeLayer.name)")
+    }
+
     // MARK: - Hardware Controllers (INT-005)
     
     public func handleHardwareAction(actionID: String, delta: Double) {
