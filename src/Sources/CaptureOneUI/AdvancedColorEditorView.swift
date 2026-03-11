@@ -135,9 +135,9 @@ public struct AdvancedColorEditorView: View {
                 Text("Uniformity")
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                colorSlider(label: "Hue", value: .constant(0), range: 0...100)
-                colorSlider(label: "Saturation", value: .constant(0), range: 0...100)
-                colorSlider(label: "Lightness", value: .constant(0), range: 0...100)
+                colorSlider(label: "Hue", value: Binding(get: { Double(controller.skinHueUniformity) }, set: { controller.skinHueUniformity = Float($0) }), range: 0...100)
+                colorSlider(label: "Saturation", value: Binding(get: { Double(controller.skinSatUniformity) }, set: { controller.skinSatUniformity = Float($0) }), range: 0...100)
+                colorSlider(label: "Lightness", value: Binding(get: { Double(controller.skinLumaUniformity) }, set: { controller.skinLumaUniformity = Float($0) }), range: 0...100)
             }
         }
     }

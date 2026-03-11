@@ -102,6 +102,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Advanced Color Editor
     @Published public var colorCorrections: [IC_ColorCorrection] = []
     
+    // Skin Tone Uniformity
+    @Published public var skinHueUniformity: Float = 0.0
+    @Published public var skinSatUniformity: Float = 0.0
+    @Published public var skinLumaUniformity: Float = 0.0
+    
     // Lens Correction (ENG-006)
     @Published public var lensDistortion: Double = 0.0
     @Published public var lensSharpnessFalloff: Double = 0.0
