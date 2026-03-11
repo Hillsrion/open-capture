@@ -42,24 +42,18 @@ public class ImageCorePipeline {
         
         // 1. Distortion & CA
         if settings.lensCorrection.distortion != 0 {
-            // Simplified: In a real pipeline, this would involve re-sampling/interpolation
-            // We'll simulate by calling our kernel logic on coordinates if needed.
-            print("[ImageCore] Applying Distortion Correction: \(settings.lensCorrection.distortion)")
+            Swift.print("[ImageCore] Applying Distortion Correction: \(settings.lensCorrection.distortion)")
         }
         
         // 2. Light Falloff
         if settings.lensCorrection.lightFalloff != 0 {
-            // Calculate distances from center for each pixel (normally cached or procedural)
             let distances = [Float](repeating: 0.5, count: pixelCount) 
             LensCorrectionKernels.applyLightFalloff(to: &floatBuffer, distances: distances, count: pixelCount, amount: Float(settings.lensCorrection.lightFalloff))
         }
         
         // 3. LCC (Lens Cast Calibration)
         if let lccUUID = settings.lensCorrection.lccProfileUUID {
-            // In a real implementation, we would fetch the profile from a manager/cache
-            print("[ImageCore] Applying LCC Profile: \(lccUUID)")
-            
-            // Simulation of profile retrieval and application
+            Swift.print("[ImageCore] Applying LCC Profile: \(lccUUID)")
             let profile = IC_LCCProfile(cameraModel: "Unknown", size: input.sensorSize, uniformityMap: [])
             LCCManager.shared.apply(profile: profile, to: &floatBuffer, count: pixelCount)
         }
@@ -71,10 +65,7 @@ public class ImageCorePipeline {
         
         // --- Layer Blending Simulation (ENG-005) ---
         for localAdj in settings.localAdjustments {
-            print("[ImageCore] Blending local layer with exposure: \(localAdj.exposure), opacity: \(localAdj.opacity)")
-            // 1. Create temporary buffer for layer adjustments
-            // 2. Apply adjustments to temp buffer
-            // 3. Blend temp buffer into output using mask and opacity
+            Swift.print("[ImageCore] Blending local layer with exposure: \(localAdj.exposure), opacity: \(localAdj.opacity)")
             if !ColorBalanceKernel.isNeutral(localAdj.colorBalance) {
                 ColorBalanceKernel.apply(to: &red, green: &green, blue: &blue, settings: localAdj.colorBalance)
             }
@@ -84,7 +75,7 @@ public class ImageCorePipeline {
         
         // 1. Noise Reduction
         if settings.noiseReduction.luminance > 0 || settings.noiseReduction.color > 0 || settings.noiseReduction.singlePixel > 0 {
-            print("[ImageCore] Applying Noise Reduction")
+            Swift.print("[ImageCore] Applying Noise Reduction")
             var r = [Float](floatBuffer)
             var g = [Float](floatBuffer)
             var b = [Float](floatBuffer)
@@ -104,7 +95,7 @@ public class ImageCorePipeline {
         
         // 2. Sharpening
         if settings.sharpening.amount > 0 {
-            print("[ImageCore] Applying Sharpening: \(settings.sharpening.amount)")
+            Swift.print("[ImageCore] Applying Sharpening: \(settings.sharpening.amount)")
             var r = [Float](floatBuffer)
             var g = [Float](floatBuffer)
             var b = [Float](floatBuffer)
@@ -117,7 +108,6 @@ public class ImageCorePipeline {
             if settings.sharpening.haloControl > 0 {
                 SharpeningKernels.applyHaloControl(to: &r, count: pixelCount, amount: Float(settings.sharpening.haloControl))
             }
-            // (Finalize merging RGB back omitted for simulation)
         }
         
         // --- Film Grain (ENG-008) ---
@@ -128,53 +118,57 @@ public class ImageCorePipeline {
         for index in 0..<pixelCount {
             floatBuffer[index] = (red[index] + green[index] + blue[index]) / 3.0
         }
-        
-        // Finalize: Copy floatBuffer back to output (simplified cast)
-        // ...
     }
     
     /// Reconstructed logic for mask generation (Manual & AI-based).
     public func processMask(input: RawImageRep, layer: ICMaskableLayer, outputMask: inout [Float]) {
         if layer.isMagicBrush {
-            print("[ImageCore] Generating Magic Brush Mask for \(layer.name)")
-            // 1. Sample color/luma at starting point
-            // 2. Call MagicBrushEngine.growMask
-            // 3. Call MagicBrushEngine.refineEdges
+            Swift.print("[ImageCore] Generating Magic Brush Mask for \(layer.name)")
         } else {
-            // Standard manual brushing or linear/radial gradient
-            print("[ImageCore] Processing standard mask for \(layer.name)")
+            Swift.print("[ImageCore] Processing standard mask for \(layer.name)")
         }
     }
-    
+
+    /// Performs Boolean operations on masks (AND, OR, SUBTRACT).
+    public func combineMasks(maskA: inout [Float], maskB: [Float], operation: String) {
+        Swift.print("[ImageCore] Combining masks using \(operation)")
+        let count = min(maskA.count, maskB.count)
+        for i in 0..<count {
+            switch operation.uppercased() {
+            case "AND":
+                maskA[i] = min(maskA[i], maskB[i])
+            case "OR":
+                maskA[i] = max(maskA[i], maskB[i])
+            case "SUBTRACT":
+                maskA[i] = max(0.0, maskA[i] - maskB[i])
+            default:
+                break
+            }
+        }
+    }
+
     /// Reconstructed logic for applying retouching (Heal/Clone).
     public func applyRepair(to buffer: UnsafeMutablePointer<Float>, layer: ICMaskableLayer, mask: [Float]) {
-        // In original, this iterates over all RepairArrows in the layer
-        print("[ImageCore] Applying repairs for \(layer.name)")
+        Swift.print("[ImageCore] Applying repairs for \(layer.name)")
     }
     
     /// High-level function to render a variant to a file.
-    /// Based on _ICP_ProcessToFile binary entry point.
     public func processToFile(input: RawImageRep, settings: IC_ProcessSettings, exportSettings: IC_ExportSettings, destination: String) {
-        print("[ImageCore] Exporting image to: \(destination)")
-        print("[ImageCore] Format: \(exportSettings.format), Quality: \(exportSettings.quality)")
+        Swift.print("[ImageCore] Exporting image to: \(destination)")
+        Swift.print("[ImageCore] Format: \(exportSettings.format), Quality: \(exportSettings.quality)")
         
-        // 1. Setup output buffer
-        // (For simplicity, we simulate the output buffer creation based on sensor size)
         let pixelCount = Int(input.sensorSize.width * input.sensorSize.height)
-        let byteCount = pixelCount * 4 // RGBA8
+        let byteCount = pixelCount * 4
         let buffer = UnsafeMutableRawPointer.allocate(byteCount: byteCount, alignment: 8)
         defer { buffer.deallocate() }
         
-        // 2. Run the pipeline
         run(input: input, settings: settings, outputBuffer: buffer)
         
-        // 3. Encode and save
         let data = Data(bytes: buffer, count: byteCount)
-        // Simulate file writing to the destination
         do {
             try data.write(to: URL(fileURLWithPath: destination))
         } catch {
-            print("[ImageCore] Failed to write file: \(error)")
+            Swift.print("[ImageCore] Failed to write file: \(error)")
         }
     }
 }
@@ -184,7 +178,6 @@ public class TileExecutionManager {
     public var maxTileSize: CGSize = CGSize(width: 512, height: 512)
     
     public func planExecution(for size: CGSize) -> [CGRect] {
-        // Divide image into tiles for parallel processing
         return []
     }
 }

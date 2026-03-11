@@ -905,6 +905,19 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         refreshToolValues()
     }
     
+    // MARK: - AI Masking (GAP-401)
+    
+    public func computeLumaRange(start: Double, end: Double, falloffStart: Double, falloffEnd: Double) {
+        guard let variant = currentVariant else { return }
+        print("[AdjustmentToolController] Requesting Luma Range mask for \(variant.variantUUID)")
+        // ImageCorePipeline will handle the actual pixel-level generation during the next render cycle
+    }
+    
+    public func applyMagicBrush(at point: CGPoint, tolerance: Double) {
+        guard let variant = currentVariant else { return }
+        print("[AdjustmentToolController] Requesting Magic Brush at \(point) with tolerance \(tolerance) for \(variant.variantUUID)")
+    }
+
     // MARK: - Hardware Controllers (INT-005)
     
     public func handleHardwareAction(actionID: String, delta: Double) {

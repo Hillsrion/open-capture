@@ -51,7 +51,7 @@ public struct LumaRangeToolView: View {
                     Spacer()
                     
                     Button("Apply") {
-                        // computeLumaRangeWithParameters integration
+                        controller.computeLumaRange(start: rangeStart, end: rangeEnd, falloffStart: falloffStart, falloffEnd: falloffEnd)
                     }
                     .font(.system(size: 10, weight: .bold))
                     .padding(.horizontal, 12)
