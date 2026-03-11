@@ -18,14 +18,23 @@ public struct ClarityToolView: View {
         COToolSection("Clarity", toolID: "Clarity") {
             VStack(spacing: 8) {
                 // Method Selector
-                Picker("Method", selection: $method) {
-                    Text("Classic").tag(0)
-                    Text("Punch").tag(1)
-                    Text("Neutral").tag(2)
-                    Text("Natural").tag(3)
+                HStack {
+                    Text("Method")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    Spacer()
+                    Picker("", selection: $method) {
+                        Text("Classic").tag(0)
+                        Text("Punch").tag(1)
+                        Text("Neutral").tag(2)
+                        Text("Natural").tag(3)
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 100)
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .labelsHidden()
+                
+                Divider().background(Color.white.opacity(0.05))
                 
                 // Sliders
                 COToolValueSlider(label: "Clarity", value: $amount, range: -100...100, decimalPlaces: 0)
