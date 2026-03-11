@@ -20,6 +20,7 @@ public struct COImageBrowserView: View {
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
     @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"
+    @State private var groupingMode: String = "none"
 
     public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
         self._images = images
@@ -131,6 +132,17 @@ public struct COImageBrowserView: View {
                 Button("Date") { sortOrder = "date" }
             } label: {
                 Label(sortOrder.capitalized, systemImage: "arrow.up.arrow.down")
+                    .font(.system(size: 11))
+            }
+            .menuStyle(BorderlessButtonMenuStyle())
+            
+            // Grouping Menu (Cull View Feature)
+            Menu {
+                Button("None") { groupingMode = "none" }
+                Button("By Date") { groupingMode = "date" }
+                Button("By Similarity") { groupingMode = "similarity" }
+            } label: {
+                Label("Group: \(groupingMode.capitalized)", systemImage: "rectangle.3.group")
                     .font(.system(size: 11))
             }
             .menuStyle(BorderlessButtonMenuStyle())
@@ -323,6 +335,22 @@ public struct COImageBrowserCell: View {
                 
                 // 3. Overlays
                 BrowserOverlayView(variant: image.primaryVariant, image: image)
+                
+                // 4. Face Focus (Cull View AI)
+                if AppCommandCenter.shared.showFocusMask {
+                    ZStack {
+                        Circle()
+                            .stroke(Color.green, lineWidth: 1)
+                            .frame(width: size * 0.3, height: size * 0.3)
+                        Image(systemName: "person.fill.viewfinder")
+                            .font(.system(size: 8))
+                            .foregroundColor(.green)
+                            .offset(y: -size * 0.15)
+                    }
+                    .background(Color.black.opacity(0.4))
+                    .clipShape(Circle())
+                    .position(x: size * 0.8, y: size * 0.2)
+                }
             }
             .frame(width: size, height: size)
             
