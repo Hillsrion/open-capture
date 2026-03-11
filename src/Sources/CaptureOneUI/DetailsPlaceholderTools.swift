@@ -72,26 +72,46 @@ public struct FocusToolView: View {
     public var body: some View {
         COToolSection("Focus", toolID: "Focus") {
             VStack(spacing: 8) {
+                // Interactive Focus Preview Area
                 ZStack {
                     Rectangle()
                         .fill(Color.black.opacity(0.3))
                         .aspectRatio(1.0, contentMode: .fit)
                         .frame(maxWidth: .infinity)
                     
-                    // Simulated zoom preview at focus point
-                    VStack {
+                    if let variant = controller.currentVariant, let _ = variant.image {
+                        // Simulated Zoomed Preview
                         Image(systemName: "viewfinder")
-                            .font(.system(size: 32))
-                            .foregroundColor(.white.opacity(0.2))
+                            .font(.system(size: 48))
+                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight.opacity(0.5))
+                        
+                        Text("100% Preview at Focus Point")
+                            .font(.system(size: 9))
+                            .foregroundColor(.gray)
+                            .offset(y: 40)
+                    } else {
+                        VStack {
+                            Image(systemName: "viewfinder")
+                                .font(.system(size: 32))
+                                .foregroundColor(.white.opacity(0.2))
+                        }
                     }
                 }
                 .cornerRadius(4)
+                .contentShape(Rectangle())
+                .gesture(
+                    DragGesture(minimumDistance: 0)
+                        .onChanged { value in
+                            // Logic: Move focus point
+                            print("[UI] Moving focus point to: \(value.location)")
+                        }
+                )
                 
                 HStack {
                     Picker("", selection: $controller.focusAIMode) {
-                        Text("None").tag(0)
                         Text("Center to Eye").tag(1)
                         Text("Center to Face").tag(2)
+                        Text("Manual").tag(0)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
@@ -100,10 +120,12 @@ public struct FocusToolView: View {
                     Spacer()
                     
                     Button(action: {
-                        // TODO: Activate Focus Point Picker cursor tool
+                        // Activate Focus Point Picker cursor tool
+                        AppCommandCenter.shared.selectedCursorToolID = "FocusPicker"
                     }) {
                         Image(systemName: "scope")
                             .font(.system(size: 14))
+                            .foregroundColor(AppCommandCenter.shared.selectedCursorToolID == "FocusPicker" ? CaptureOneTheme.Colors.activeHighlight : .white)
                     }
                     .buttonStyle(.plain)
                 }
@@ -116,6 +138,13 @@ public struct FocusToolView: View {
                     
                     Slider(value: $controller.focusZoomLevel, in: 0.25...16.0)
                         .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    
+                    Button("100%") {
+                        controller.focusZoomLevel = 1.0
+                    }
+                    .font(.system(size: 10))
+                    .buttonStyle(.bordered)
+                    .controlSize(.mini)
                 }
             }
             .padding(.vertical, 4)
