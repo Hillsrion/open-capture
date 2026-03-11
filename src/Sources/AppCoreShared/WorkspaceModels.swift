@@ -544,7 +544,7 @@ public class WorkspaceManager: ObservableObject, Codable {
         let libraryPalette = WorkspacePaletteDefinition(
             id: "LibraryToolTab", name: "Library", iconName: "folder.fill",
             fixedTools: [ToolConfiguration(id: "Library")],
-            scrolledTools: [ToolConfiguration(id: "MetadataFilters"), ToolConfiguration(id: "Keywords"), ToolConfiguration(id: "KeywordLibrary"), ToolConfiguration(id: "Metadata")]
+            scrolledTools: [ToolConfiguration(id: "MetadataFilters"), ToolConfiguration(id: "Keywords"), ToolConfiguration(id: "KeywordLibrary"), ToolConfiguration(id: "Metadata"), ToolConfiguration(id: "BatchRename")]
         )
         
         let capturePalette = WorkspacePaletteDefinition(

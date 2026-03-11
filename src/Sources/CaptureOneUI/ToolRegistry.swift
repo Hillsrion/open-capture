@@ -46,6 +46,8 @@ public enum ToolRegistry {
         switch toolID {
         case "Library":
             return .implemented { context in AnyView(LibraryToolView(session: context.session)) }
+        case "BatchRename":
+            return .implemented { context in AnyView(BatchRenameToolView()) }
         case "MetadataFilters":
             return .implemented { context in
                 AnyView(FilterToolView(predicate: Binding(
