@@ -105,7 +105,9 @@ private struct CursorToolsToolbarGroup: View {
         ("Loupe", "magnifyingglass"),
         ("Crop", "crop"),
         ("Rotate", "rotate.right"),
-        ("Keystone", "rectangle.distorted")
+        ("Keystone", "rectangle.distorted"),
+        ("Annotate", "pencil.tip"),
+        ("EraseAnnotation", "eraser.fill")
     ]
 
     var body: some View {

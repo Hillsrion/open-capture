@@ -82,6 +82,9 @@ public struct COViewerView: View {
                                     adjustmentController?.addRepairArrow(at: gesture.location, type: .heal)
                                 } else if toolID == "Clone" {
                                     adjustmentController?.addRepairArrow(at: gesture.location, type: .clone)
+                                } else {
+                                    // Tool not handled by viewer root
+                                    return
                                 }
                                 print("[UI] Clicked at: \(gesture.location) with tool \(toolID)")
                             }

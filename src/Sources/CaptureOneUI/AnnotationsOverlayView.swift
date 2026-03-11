@@ -4,8 +4,14 @@ import AppCoreShared
 /// Reconstructed high-fidelity Annotations overlay (UI-007).
 public struct AnnotationsOverlayView: View {
     @ObservedObject var annotations: MCAnnotations
+    @ObservedObject var commands = AppCommandCenter.shared
     @State private var currentLine: MCAnnotationsLine?
-    @State private var activeTool: AnnotationTool = .pen
+    
+    private var activeTool: AnnotationTool {
+        if commands.selectedCursorToolID == "Annotate" { return .pen }
+        if commands.selectedCursorToolID == "EraseAnnotation" { return .eraser }
+        return .pen // Default
+    }
     
     public enum AnnotationTool {
         case pen, eraser, note
@@ -40,13 +46,14 @@ public struct AnnotationsOverlayView: View {
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { gesture in
-                        if activeTool == .pen {
+                        let tool = commands.selectedCursorToolID
+                        if tool == "Annotate" {
                             if currentLine == nil {
                                 currentLine = MCAnnotationsLine(points: [gesture.location])
                             } else {
                                 currentLine?.points.append(gesture.location)
                             }
-                        } else if activeTool == .eraser {
+                        } else if tool == "EraseAnnotation" {
                             // Logic: Remove line if point is near any stroke
                             annotations.lines.removeAll { line in
                                 line.points.contains { pt in
