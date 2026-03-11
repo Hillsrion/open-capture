@@ -70,8 +70,16 @@ public struct BatchRenameToolView: View {
                 }
                 
                 Button(action: {
-                    // Execute rename logic
-                    print("[BatchRename] Executing rename with method \(method)")
+                    let tokens = CaptureNamingFormatter.parse(formatString: formatText)
+                    let browser = AppCommandCenter.shared.browser
+                    
+                    // Logic: Iterate over all images in browser (for prototype)
+                    for (index, image) in browser.dataSource.enumerated() {
+                        if let variant = image.primaryVariant {
+                            CaptureNamingFormatter.renameVariant(variant, tokens: tokens, counter: index + 1)
+                        }
+                    }
+                    print("[BatchRename] Executed rename with method \(method) on \(browser.dataSource.count) items")
                 }) {
                     Text("Rename")
                         .font(.system(size: 11, weight: .bold))

@@ -61,6 +61,15 @@ public class CaptureNamingFormatter {
         return result.isEmpty ? "Untitled" : result
     }
     
+    public static func renameVariant(_ variant: VariantBase, tokens: [CaptureNamingToken], counter: Int) {
+        let newName = format(tokens: tokens, counter: counter)
+        print("[Naming] Renaming \(variant.variantUUID) to \(newName)")
+        if let mc = variant.mcVariant {
+            mc.setObject(newName, forKey: "ZNAME")
+        }
+        variant.isModified = true
+    }
+    
     /// Parses a string with placeholders like "[Image Name]/[Job Name]_[Counter]" into tokens.
     public static func parse(formatString: String) -> [CaptureNamingToken] {
         var tokens: [CaptureNamingToken] = []
