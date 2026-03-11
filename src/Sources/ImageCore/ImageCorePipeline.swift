@@ -71,6 +71,15 @@ public class ImageCorePipeline {
             }
         }
         
+        // --- HDR Tone Mapping (ENG-009) ---
+        if settings.hdr.highlights != 0 || settings.hdr.shadows != 0 || settings.hdr.whites != 0 || settings.hdr.blacks != 0 {
+            HDRTonalRemappingEngine.shared.apply(to: &floatBuffer, 
+                                                 highlights: Float(settings.hdr.highlights), 
+                                                 shadows: Float(settings.hdr.shadows), 
+                                                 whites: Float(settings.hdr.whites), 
+                                                 blacks: Float(settings.hdr.blacks))
+        }
+
         // --- Detail Refinement (ENG-007) ---
         
         // 1. Noise Reduction

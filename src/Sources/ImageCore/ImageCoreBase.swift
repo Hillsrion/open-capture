@@ -250,6 +250,20 @@ public struct IC_HDRMergeSettings: Codable {
     public init() {}
 }
 
+public struct IC_HDRSettings {
+    public var highlights: Double
+    public var shadows: Double
+    public var whites: Double
+    public var blacks: Double
+    
+    public init() {
+        self.highlights = 0.0
+        self.shadows = 0.0
+        self.whites = 0.0
+        self.blacks = 0.0
+    }
+}
+
 public struct IC_PanoramaMergeSettings: Codable {
     public enum ProjectionType: Int, Codable {
         case spherical = 0
@@ -289,7 +303,10 @@ public struct IC_ProcessSettings {
     
     // Clarity & Structure (ENG-003)
     public var clarity: IC_ClaritySettings
-    
+
+    // HDR (High Dynamic Range) (ENG-009)
+    public var hdr: IC_HDRSettings
+
     // Advanced Color Editor (ENG-004)
     public var colorCorrectionList: IC_ColorCorrectionList
     
@@ -335,6 +352,7 @@ public struct IC_ProcessSettings {
         self.levelsTargetHighlight = 1.0
         self.gradationCurves = ICGradationCurves()
         self.clarity = IC_ClaritySettings()
+        self.hdr = IC_HDRSettings()
         self.colorCorrectionList = IC_ColorCorrectionList()
         self.noiseReduction = IC_NoiseReductionSettings()
         self.sharpening = IC_SharpeningSettings()
