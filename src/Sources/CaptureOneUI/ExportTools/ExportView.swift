@@ -1,4 +1,5 @@
 import SwiftUI
+import Cocoa
 import AppCoreShared
 
 /// Reconstructed composite view for the Export Window (TD-601).
@@ -30,18 +31,31 @@ public struct ExportView: View {
                 
                 ProcessSummaryToolView()
                 
-                Button(action: {
-                    // Logic to trigger batch export
-                }) {
-                    Text("Export \(recipeManager.activeRecipes.count) Variants")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 8)
+                HStack(spacing: 8) {
+                    Button(action: {
+                        let path = recipeManager.activeRecipes.first?.outputFolder ?? "/Users/Shared/Capture One/Output"
+                        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path)
+                    }) {
+                        Image(systemName: "folder")
+                            .font(.system(size: 16))
+                            .frame(height: 32)
+                    }
+                    .buttonStyle(.bordered)
+                    .help("Instant Preview")
+
+                    Button(action: {
+                        // Logic to trigger batch export
+                    }) {
+                        Text("Export \(recipeManager.activeRecipes.count) Variants")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 8)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(CaptureOneTheme.Colors.activeHighlight)
+                    .disabled(recipeManager.activeRecipes.isEmpty)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(CaptureOneTheme.Colors.activeHighlight)
                 .padding(16)
-                .disabled(recipeManager.activeRecipes.isEmpty)
             }
         }
         .background(CaptureOneTheme.Colors.panelBackground)

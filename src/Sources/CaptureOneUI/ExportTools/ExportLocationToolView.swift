@@ -39,11 +39,20 @@ public struct ExportLocationToolView: View {
                     }
                 }
                 
-                Text("Sample: /Users/Shared/Capture One/Output/")
+                Text("Sample: \(samplePath)")
                     .font(.system(size: 9))
                     .foregroundColor(.gray)
             }
             .padding(.vertical, 4)
+        }
+    }
+    
+    private var samplePath: String {
+        let base = recipeManager.activeRecipes.first?.outputFolder ?? "/Users/Shared/Capture One/Output"
+        if subFolder.isEmpty {
+            return base
+        } else {
+            return "\(base)/\(subFolder)"
         }
     }
 }
