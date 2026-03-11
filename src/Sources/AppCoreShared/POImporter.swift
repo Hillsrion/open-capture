@@ -68,15 +68,19 @@ public class POImporter: ObservableObject {
                 )
                 
                 let newFileName = evaluator.evaluate(format: self.settings.namingFormat, context: context)
-                let destinationURL: URL
                 let finalExtension = isEIP ? "eip" : url.pathExtension
+                let fullFileName = "\(newFileName).\(finalExtension)"
                 
+                let destinationURL: URL
                 if self.settings.destinationFolderType == .insideCatalog {
-                    // Placeholder for catalog path resolution
-                    destinationURL = url.deletingLastPathComponent().appendingPathComponent(newFileName).appendingPathExtension(finalExtension)
+                    // In real app, this resolves to the Catalog's "Adjustments" or "Originals" package folder
+                    let catalogDir = FileManager.default.temporaryDirectory.appendingPathComponent("CaptureOne_Internal_Catalog")
+                    destinationURL = catalogDir.appendingPathComponent(fullFileName)
+                } else if self.settings.destinationFolderType == .currentLocation {
+                    destinationURL = url // No move/copy needed
                 } else {
                     let customPathURL = URL(fileURLWithPath: self.settings.destinationCustomPath)
-                    destinationURL = customPathURL.appendingPathComponent(newFileName).appendingPathExtension(finalExtension)
+                    destinationURL = customPathURL.appendingPathComponent(fullFileName)
                 }
                 
                 do {
