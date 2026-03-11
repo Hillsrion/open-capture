@@ -3,18 +3,30 @@ import AppCoreShared
 
 /// Reconstructed high-fidelity Export Metadata tool (TD-601).
 public struct ExportMetadataToolView: View {
-    @State private var includeCopyright: Bool = true
-    @State private var includeGPS: Bool = false
-    @State private var includeCameraSettings: Bool = true
+    @ObservedObject var recipeManager = OutputRecipeManager.shared
     
     public init() {}
     
     public var body: some View {
         COToolSection("Metadata", toolID: "OutputMetadata") {
             VStack(alignment: .leading, spacing: 8) {
-                Toggle("Include Copyright", isOn: $includeCopyright)
-                Toggle("Include GPS", isOn: $includeGPS)
-                Toggle("Include Camera Settings", isOn: $includeCameraSettings)
+                if let recipe = recipeManager.primaryRecipe ?? recipeManager.recipes.first {
+                    Toggle("Include Copyright", isOn: .constant(true))
+                    Toggle("Include GPS", isOn: .constant(false))
+                    Toggle("Include Camera Settings", isOn: .constant(true))
+                    
+                    Divider().background(Color.white.opacity(0.05))
+                    
+                    Toggle("Include Annotations", isOn: Binding(get: { recipe.includeAnnotations }, set: { recipe.includeAnnotations = $0 }))
+                    
+                    if recipe.includeAnnotations {
+                        Toggle("Annotations as a Layer", isOn: Binding(get: { recipe.annotationsAsLayer }, set: { recipe.annotationsAsLayer = $0 }))
+                            .padding(.leading, 12)
+                            .disabled(recipe.format != .psd && recipe.format != .tiff)
+                    }
+                } else {
+                    Text("No recipe selected").font(.system(size: 10)).foregroundColor(.gray)
+                }
                 
                 Divider().background(Color.white.opacity(0.05))
                 

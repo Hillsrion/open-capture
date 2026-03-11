@@ -105,6 +105,23 @@ public class OutputRecipe: BaseObject, Identifiable {
             notifyChange()
         }
     }
+    
+    // Annotations Support (UI-204)
+    public var includeAnnotations: Bool {
+        get { return mcRecipe.objectForKey("MCRecipeKeyIncludeAnnotations") as? Bool ?? false }
+        set {
+            mcRecipe.setObject(newValue, forKey: "MCRecipeKeyIncludeAnnotations")
+            notifyChange()
+        }
+    }
+    
+    public var annotationsAsLayer: Bool {
+        get { return mcRecipe.objectForKey("MCRecipeKeyAnnotationsAsLayer") as? Bool ?? false }
+        set {
+            mcRecipe.setObject(newValue, forKey: "MCRecipeKeyAnnotationsAsLayer")
+            notifyChange()
+        }
+    }
 }
 
 /// Manages the collection of recipes.
