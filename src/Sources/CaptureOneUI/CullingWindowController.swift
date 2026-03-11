@@ -81,6 +81,7 @@ public struct CullingView: View {
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
         self.browser = browser
+        self.adjustmentController = adjustmentController
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
         self.session = session
