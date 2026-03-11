@@ -397,7 +397,10 @@ public class WorkspaceManager: ObservableObject, Codable {
 
     public func setSelectedPaletteID(_ paletteID: String, autosave: Bool = true) {
         objectWillChange.send()
-        activeWorkspace.chromeState.selectedToolPaletteID = paletteID
+        var updatedWorkspace = activeWorkspace
+        updatedWorkspace.chromeState.selectedToolPaletteID = paletteID
+        activeWorkspace = updatedWorkspace
+        
         if autosave {
             saveWorkspace()
         }
