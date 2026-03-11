@@ -44,7 +44,11 @@ public struct ExportView: View {
                     .help("Instant Preview")
 
                     Button(action: {
-                        // Logic to trigger batch export
+                        guard let variant = selectedVariant else { return }
+                        for recipe in recipeManager.activeRecipes {
+                            let folder = URL(fileURLWithPath: recipe.outputFolder ?? "/Users/Shared/Capture One/Output")
+                            batchQueue.addJob(variant: variant, recipe: recipe, outputFolder: folder)
+                        }
                     }) {
                         Text("Export \(recipeManager.activeRecipes.count) Variants")
                             .font(.headline)

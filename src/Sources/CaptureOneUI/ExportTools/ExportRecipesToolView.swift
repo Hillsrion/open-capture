@@ -28,9 +28,16 @@ public struct ExportRecipesToolView: View {
                 .cornerRadius(4)
                 
                 HStack(spacing: 0) {
-                    Button(action: { }) { Image(systemName: "plus").font(.system(size: 10, weight: .bold)).frame(width: 24, height: 20) }
+                    Button(action: { 
+                        let newRecipe = OutputRecipe(name: "New Recipe", format: .jpeg)
+                        recipeManager.recipes.append(newRecipe)
+                    }) { Image(systemName: "plus").font(.system(size: 10, weight: .bold)).frame(width: 24, height: 20) }
                     Divider().frame(height: 20)
-                    Button(action: { }) { Image(systemName: "minus").font(.system(size: 10, weight: .bold)).frame(width: 24, height: 20) }
+                    Button(action: {
+                        if let last = recipeManager.recipes.last {
+                            recipeManager.recipes.removeAll { $0.id == last.id }
+                        }
+                    }) { Image(systemName: "minus").font(.system(size: 10, weight: .bold)).frame(width: 24, height: 20) }
                     Spacer()
                 }
                 .buttonStyle(.plain)
