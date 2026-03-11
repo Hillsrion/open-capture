@@ -57,11 +57,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         if ext == "cosessiondb" || ext == "cocatalogdb" {
             Task { @MainActor in
                 print("[System] Loading database at: \(url.path)")
-                // Load the session/catalog into the shared SessionManager
-                SessionManager.shared.loadSession(at: url)
+                // Load the session/catalog into the shared AppCommandCenter
+                AppCommandCenter.shared.openDocument(at: url)
                 
                 // Ensure the main window is visible
-                if let window = COWindowManager.shared.mainWindow {
+                if let window = NSApp.mainWindow {
                     window.makeKeyAndOrderFront(nil)
                 }
             }

@@ -40,7 +40,7 @@ public struct CameraSettingsTool: View {
                     // 3. Camera Properties (Aperture, Shutter, ISO)
                     VStack(spacing: 1) {
                         ForEach(camera.properties) { prop in
-                            PropertyRow(property: prop)
+                            PropertyRow(property: prop, camera: camera)
                         }
                     }
                     .background(Color.black.opacity(0.2))
@@ -160,6 +160,7 @@ struct ExposureEvaluationMeter: View {
 
 struct PropertyRow: View {
     let property: P1CaptureCore_Property
+    let camera: P1CaptureCore_Camera
     
     var body: some View {
         HStack {
@@ -169,7 +170,7 @@ struct PropertyRow: View {
             Spacer()
             Menu(property.currentValue) {
                 ForEach(property.availableValues, id: \.self) { val in
-                    Button(val) { }
+                    Button(val) { camera.setPropertyValue(propertyID: property.id, value: val) }
                 }
             }
             .font(.system(size: 11, weight: .bold))

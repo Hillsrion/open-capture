@@ -116,6 +116,13 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
         }
     }
     
+    public func setPropertyValue(propertyID: String, value: String) {
+        if let index = properties.firstIndex(where: { $0.id == propertyID }) {
+            properties[index].currentValue = value
+            print("[Capture] Sent PTP command to set \(properties[index].name) to \(value) for \(name)")
+        }
+    }
+    
     public func open() { isConnected = true }
     public func close() { isConnected = false }
     
