@@ -46,6 +46,31 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         return false // Return to start window on last document close
     }
 
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        print("[System] Received request to open file: \(filename)")
+        let url = URL(fileURLWithPath: filename)
+        
+        // Add to recent documents
+        NSDocumentController.shared.noteNewRecentDocumentURL(url)
+        
+        let ext = url.pathExtension.lowercased()
+        if ext == "cosessiondb" || ext == "cocatalogdb" {
+            Task { @MainActor in
+                print("[System] Loading database at: \(url.path)")
+                // Load the session/catalog into the shared SessionManager
+                SessionManager.shared.loadSession(at: url)
+                
+                // Ensure the main window is visible
+                if let window = COWindowManager.shared.mainWindow {
+                    window.makeKeyAndOrderFront(nil)
+                }
+            }
+            return true
+        }
+        
+        return false
+    }
+
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
         return true
     }

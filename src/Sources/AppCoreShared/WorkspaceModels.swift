@@ -524,16 +524,7 @@ public class WorkspaceManager: ObservableObject, Codable {
     }
 
     public static func createWorkspace(windowKind: WorkspaceWindowKind, name: String? = nil) -> Workspace {
-        let loader = DefaultWorkspacePresetLoader()
-        do {
-            var workspace = try loader.makeWorkspace(windowKind: windowKind, name: name ?? "Default")
-            workspace.name = name ?? workspace.name
-            print("[WorkspaceManager] Created workspace from preset with \(workspace.palettes.count) palettes")
-            return workspace
-        } catch {
-            print("[WorkspaceManager] Failed to load workspace preset: \(error)")
-            return fallbackWorkspace(windowKind: windowKind, name: name ?? "Default")
-        }
+        return fallbackWorkspace(windowKind: windowKind, name: name ?? "Default")
     }
 
     public static func createSimplifiedWorkspace() -> Workspace {
@@ -550,26 +541,53 @@ public class WorkspaceManager: ObservableObject, Codable {
     }
 
     private static func fallbackWorkspace(windowKind: WorkspaceWindowKind, name: String) -> Workspace {
-        let exposurePalette = WorkspacePaletteDefinition(
-            id: "ExposureToolTab",
-            name: "Exposure",
-            iconName: "dial.medium.fill",
-            fixedTools: [ToolConfiguration(id: "Histogram"), ToolConfiguration(id: "LocalAdjustments")],
-            scrolledTools: [
-                ToolConfiguration(id: "WhiteBalance"),
-                ToolConfiguration(id: "Exposure"),
-                ToolConfiguration(id: "ShadowHighlight"),
-                ToolConfiguration(id: "Levels"),
-                ToolConfiguration(id: "Curves"),
-                ToolConfiguration(id: "ColorBalance"),
-                ToolConfiguration(id: "Clarity")
-            ]
+        let libraryPalette = WorkspacePaletteDefinition(
+            id: "LibraryToolTab", name: "Library", iconName: "folder.fill",
+            fixedTools: [ToolConfiguration(id: "Library")],
+            scrolledTools: [ToolConfiguration(id: "MetadataFilters"), ToolConfiguration(id: "Keywords"), ToolConfiguration(id: "KeywordLibrary"), ToolConfiguration(id: "Metadata")]
         )
+        
+        let capturePalette = WorkspacePaletteDefinition(
+            id: "CaptureToolTab", name: "Capture", iconName: "camera.fill",
+            fixedTools: [ToolConfiguration(id: "Camera"), ToolConfiguration(id: "CameraFocus")],
+            scrolledTools: [ToolConfiguration(id: "CameraSettings"), ToolConfiguration(id: "NextCaptureNaming"), ToolConfiguration(id: "NextCaptureLocation"), ToolConfiguration(id: "NextCaptureAdjustments"), ToolConfiguration(id: "Overlay"), ToolConfiguration(id: "LiveForStudio"), ToolConfiguration(id: "NextCaptureMetadata"), ToolConfiguration(id: "NextCaptureKeywords"), ToolConfiguration(id: "NextCaptureBackup")]
+        )
+        
+        let colorPalette = WorkspacePaletteDefinition(
+            id: "ColorToolTab", name: "Color", iconName: "paintpalette.fill",
+            fixedTools: [ToolConfiguration(id: "Histogram"), ToolConfiguration(id: "LocalAdjustments")],
+            scrolledTools: [ToolConfiguration(id: "BaseCharacteristics"), ToolConfiguration(id: "WhiteBalance"), ToolConfiguration(id: "SelectiveColorControl"), ToolConfiguration(id: "ColorBalance"), ToolConfiguration(id: "BlackAndWhite"), ToolConfiguration(id: "Normalize")]
+        )
+        
+        let exposurePalette = WorkspacePaletteDefinition(
+            id: "ExposureToolTab", name: "Exposure", iconName: "sun.max.fill",
+            fixedTools: [ToolConfiguration(id: "Histogram"), ToolConfiguration(id: "LocalAdjustments")],
+            scrolledTools: [ToolConfiguration(id: "SmartAdjustments"), ToolConfiguration(id: "StyleBrushes"), ToolConfiguration(id: "MatchLook"), ToolConfiguration(id: "Exposure"), ToolConfiguration(id: "ShadowHighlight"), ToolConfiguration(id: "Levels"), ToolConfiguration(id: "Curves"), ToolConfiguration(id: "Clarity"), ToolConfiguration(id: "Dehaze")]
+        )
+        
+        let lensPalette = WorkspacePaletteDefinition(
+            id: "LensToolTab", name: "Lens", iconName: "scope",
+            fixedTools: [ToolConfiguration(id: "LensCorrection")],
+            scrolledTools: [ToolConfiguration(id: "Crop"), ToolConfiguration(id: "AICrop"), ToolConfiguration(id: "Rotation"), ToolConfiguration(id: "Perspective"), ToolConfiguration(id: "Vignetting"), ToolConfiguration(id: "Grid"), ToolConfiguration(id: "Guides")]
+        )
+        
+        let detailsPalette = WorkspacePaletteDefinition(
+            id: "DetailsToolTab", name: "Details", iconName: "magnifyingglass",
+            fixedTools: [ToolConfiguration(id: "Navigator"), ToolConfiguration(id: "Focus")],
+            scrolledTools: [ToolConfiguration(id: "Sharpening"), ToolConfiguration(id: "Noise"), ToolConfiguration(id: "Film Grain"), ToolConfiguration(id: "SpotRemoval"), ToolConfiguration(id: "LensColorCorrections"), ToolConfiguration(id: "Moire")]
+        )
+        
+        let exportPalette = WorkspacePaletteDefinition(
+            id: "ExportToolTab", name: "Export", iconName: "arrow.up.doc.fill",
+            fixedTools: [ToolConfiguration(id: "ExportDialogRecipeList")],
+            scrolledTools: [ToolConfiguration(id: "ExportLocation"), ToolConfiguration(id: "ExportNaming"), ToolConfiguration(id: "FormatAndSize"), ToolConfiguration(id: "OutputAdjustments"), ToolConfiguration(id: "Watermark"), ToolConfiguration(id: "OutputMetadata"), ToolConfiguration(id: "ExportProcess"), ToolConfiguration(id: "OutputContentCredentials"), ToolConfiguration(id: "ExportQueue")]
+        )
+
         var chrome = WorkspaceChromeState()
         chrome.selectedToolPaletteID = exposurePalette.id
         chrome.toolsWidth = 362.0
-        let ws = Workspace(name: name, windowKind: windowKind, palettes: [exposurePalette], chromeState: chrome)
-        print("[WorkspaceManager] Created fallback workspace with \(ws.palettes.count) palettes")
+        let ws = Workspace(name: name, windowKind: windowKind, palettes: [libraryPalette, capturePalette, colorPalette, exposurePalette, lensPalette, detailsPalette, exportPalette], chromeState: chrome)
+        print("[WorkspaceManager] Created hardcoded precise workspace with \(ws.palettes.count) palettes")
         return ws
     }
 }
