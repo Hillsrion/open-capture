@@ -45,9 +45,6 @@ public class SessionFolderManager {
     
     /// Resolves the physical path for a session system folder.
     public func resolvePath(for type: SessionFolderType, in session: SessionBase) -> URL? {
-        guard let root = session.rootFolder else { return nil }
-        let rootURL = URL(fileURLWithPath: root)
-        
         // In original, the specific path is often stored in the Session record.
         // We fallback to default if not set.
         let path: String?
@@ -61,6 +58,9 @@ public class SessionFolderManager {
         if let explicitPath = path {
             return URL(fileURLWithPath: explicitPath)
         }
+        
+        guard let root = session.rootFolder else { return nil }
+        let rootURL = URL(fileURLWithPath: root)
         
         return rootURL.appendingPathComponent(type.defaultName)
     }

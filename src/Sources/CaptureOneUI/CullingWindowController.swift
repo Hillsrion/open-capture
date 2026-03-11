@@ -16,7 +16,6 @@ public class BrowserWrapper: ObservableObject {
 public class CullingWindowController: NSWindowController {
     
     public var cullingCollection: MOFolderCollection?
-    public var browser = CImageBrowser()
     public var adjustmentController = AdjustmentToolController()
     public var recipeManager = OutputRecipeManager.defaultManager()
     public var batchQueue = BatchQueue()
@@ -43,18 +42,26 @@ public class CullingWindowController: NSWindowController {
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
         
         // Start from an empty shell instead of pretending a session is already loaded.
-        session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: context)
-        session?.name = "Untitled Catalog"
+        session = SessionBase(documentUUID: UUID().uuidString, type: 0, context: context)
+        session?.name = "Untitled Session"
+        
+        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path ?? "/"
+        session?.rootFolder = documentsPath
+        
+        // Ensure default folders exist in memory
+        session?.captureFolder = FileManager.default.urls(for: .picturesDirectory, in: .userDomainMask).first?.appendingPathComponent("Capture").path
         
         // Add a default recipe
         recipeManager.addRecipe(OutputRecipe(name: "JPEG 80%", recipe: MCRecipe(dictionary: [:]), context: context))
         
+        AppCommandCenter.shared.configure(session: session!, recipeManager: recipeManager, batchQueue: batchQueue)
+        
         let contentView = CullingView(
-            browser: browser,
+            browser: AppCommandCenter.shared.browser,
             adjustmentController: adjustmentController,
             recipeManager: recipeManager,
             batchQueue: batchQueue,
-            session: session ?? SessionBase(documentUUID: "mock", type: 0, context: context)
+            session: session!
         )
         window?.contentView = NSHostingView(rootView: contentView)
     }
@@ -63,7 +70,7 @@ public class CullingWindowController: NSWindowController {
 /// High-Fidelity Reconstructed Culling View matching v16.5 aesthetic.
 public struct CullingView: View {
     
-    @ObservedObject var browserWrapper: BrowserWrapper
+    @ObservedObject var browser: CImageBrowser
     @ObservedObject var adjustmentController = AdjustmentToolController.shared
     @ObservedObject var recipeManager: OutputRecipeManager
     @ObservedObject var batchQueue: BatchQueue
@@ -73,7 +80,7 @@ public struct CullingView: View {
     @StateObject private var keywordCache: DocumentKeywordCache
     
     public init(browser: CImageBrowser, adjustmentController: AdjustmentToolController, recipeManager: OutputRecipeManager, batchQueue: BatchQueue, session: SessionBase) {
-        self.browserWrapper = BrowserWrapper(browser: browser)
+        self.browser = browser
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
         self.session = session
@@ -213,7 +220,7 @@ public struct CullingView: View {
 
     private var browserPanePortrait: some View {
         COImageBrowserView(
-            images: $browserWrapper.browser.dataSource,
+            images: $browser.dataSource,
             predicate: $adjustmentController.activePredicate,
             selectedVariant: $adjustmentController.currentVariant
         )
@@ -222,7 +229,7 @@ public struct CullingView: View {
 
     private var browserPaneLandscape: some View {
         COImageBrowserView(
-            images: $browserWrapper.browser.dataSource,
+            images: $browser.dataSource,
             predicate: $adjustmentController.activePredicate,
             selectedVariant: $adjustmentController.currentVariant
         )

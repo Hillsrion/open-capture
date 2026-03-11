@@ -38,6 +38,7 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var editSelectedOnly: Bool = true
     @Published public private(set) var importer = POImporter()
     @Published public private(set) var copiedAdjustments: Style?
+    @Published public var browser = CImageBrowser()
 
     public var recipeManager: OutputRecipeManager = OutputRecipeManager.shared
     public var batchQueue: BatchQueue = BatchQueue()
@@ -58,6 +59,24 @@ public final class AppCommandCenter: ObservableObject {
         self.session = session
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
+    }
+
+    public func selectSessionFolder(type: SessionFolderType) {
+        guard let session = session else { return }
+        guard let url = SessionFolderManager.shared.resolvePath(for: type, in: session) else { return }
+        
+        print("[CommandCenter] Selecting folder: \(url.path)")
+        
+        let context = session.managedObjectContext ?? ObjectContext()
+        let collection = MOFolderCollection(uuid: UUID().uuidString, context: context)
+        collection.updateWithFolderPath(url.path, clear: true, synchronizeFS: true)
+        
+        self.browser.dataSource = collection.images
+        
+        // Auto-select first image if available
+        if let firstImage = collection.images.first {
+            adjustmentController.currentVariant = firstImage.primaryVariant
+        }
     }
 
     public func handleToolbarAction(_ itemID: String) {
@@ -198,6 +217,7 @@ public final class AppCommandCenter: ObservableObject {
         documentContext = ctx
         let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ctx)
         session.name = name
+        session.rootFolder = sessionRoot.path
         
         let recipeManager = OutputRecipeManager.shared
         if recipeManager.recipes.isEmpty {
@@ -205,6 +225,8 @@ public final class AppCommandCenter: ObservableObject {
         }
         
         configure(session: session, recipeManager: recipeManager, batchQueue: BatchQueue())
+        selectSessionFolder(type: .capture) // Auto-load Capture folder
+
         print("[CommandCenter] Session configured, opening window...")
         COWindowManager.shared.openDocumentWindow(for: session)
         presentedSheet = nil
@@ -222,8 +244,14 @@ public final class AppCommandCenter: ObservableObject {
             self.documentContext = ctx
             let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 0 : 1, context: ctx)
             session.name = name
+            if !isCatalog {
+                session.rootFolder = url.deletingLastPathComponent().path
+            }
             
             self.configure(session: session, recipeManager: OutputRecipeManager.shared, batchQueue: BatchQueue())
+            if !isCatalog {
+                self.selectSessionFolder(type: .capture)
+            }
             COWindowManager.shared.openDocumentWindow(for: session)
         }
     }
