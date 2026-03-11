@@ -122,6 +122,10 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
             print("[Capture] Sent PTP command to set \(properties[index].name) to \(value) for \(name)")
         }
     }
+
+    public func nudgeFocus(step: Int) {
+        print("[Capture] Sent PTP command to nudge focus by \(step) for \(name)")
+    }
     
     public func open() { isConnected = true }
     public func close() { isConnected = false }

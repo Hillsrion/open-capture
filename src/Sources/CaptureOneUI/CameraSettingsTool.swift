@@ -46,18 +46,32 @@ public struct CameraSettingsTool: View {
                     .background(Color.black.opacity(0.2))
                     .cornerRadius(4)
                     
-                    // 4. Capture Controls
+                    // 4. Focus Controls (GAP-401)
                     HStack(spacing: 8) {
-                        // AF Button
+                        Button(action: { camera.nudgeFocus(step: -2) }) {
+                            Image(systemName: "chevron.backward.2").frame(width: 28, height: 24).background(Color.white.opacity(0.1)).cornerRadius(4)
+                        }
+                        Button(action: { camera.nudgeFocus(step: -1) }) {
+                            Image(systemName: "chevron.backward").frame(width: 28, height: 24).background(Color.white.opacity(0.1)).cornerRadius(4)
+                        }
                         Button(action: { }) {
                             Text("AF")
                                 .font(.system(size: 11, weight: .bold))
-                                .frame(width: 40, height: 32)
+                                .frame(maxWidth: .infinity, minHeight: 24)
                                 .background(Color.white.opacity(0.1))
                                 .cornerRadius(4)
                         }
-                        .buttonStyle(.plain)
-                        
+                        Button(action: { camera.nudgeFocus(step: 1) }) {
+                            Image(systemName: "chevron.forward").frame(width: 28, height: 24).background(Color.white.opacity(0.1)).cornerRadius(4)
+                        }
+                        Button(action: { camera.nudgeFocus(step: 2) }) {
+                            Image(systemName: "chevron.forward.2").frame(width: 28, height: 24).background(Color.white.opacity(0.1)).cornerRadius(4)
+                        }
+                    }
+                    .buttonStyle(.plain)
+
+                    // 5. Capture Controls
+                    HStack(spacing: 8) {
                         // Capture Button
                         Button(action: { camera.shutterRelease() }) {
                             HStack {

@@ -54,6 +54,21 @@ fileprivate struct LivePreviewRootView: View {
                     Button(action: {}) { Image(systemName: "hand.draw") }
                     Button(action: {}) { Image(systemName: "eyedropper") }
                     Button(action: {}) { Image(systemName: "video") }
+                    
+                    Divider().frame(height: 16)
+                    
+                    // Live View Interactive Controls
+                    Button(action: {}) { Image(systemName: "playpause.fill") }.help("Pause/Play Live View")
+                    Button(action: {}) { Image(systemName: "square.grid.3x3") }.help("Overlay Toggle")
+                    
+                    Divider().frame(height: 16)
+                    
+                    // Focus Meter
+                    ProgressView(value: 0.7)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .green))
+                        .frame(width: 100)
+                        .help("Focus Meter")
+                        
                     Spacer()
                     Button("Capture") {
                         // Trigger capture action
