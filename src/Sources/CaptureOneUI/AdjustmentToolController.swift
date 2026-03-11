@@ -79,6 +79,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var stackStyles: Bool = false
     @Published public var styleOpacity: Double = 100.0 // 0 to 100
     
+    // Smart Adjustments State (AI-204)
+    @Published public var smartExposureEnabled: Bool = true
+    @Published public var smartWhiteBalanceEnabled: Bool = true
+    @Published public var smartReference: SmartAdjustmentsReference? = nil
+    
     // Spot Removal State (UI-203)
     @Published public var spots: [SpotItem] = []
     @Published public var selectedSpotID: UUID?
