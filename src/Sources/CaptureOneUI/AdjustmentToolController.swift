@@ -193,9 +193,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var keystonePoints: KeystonePoints? = nil // TETH-004
     
     // Smart Adjustments (AI-002)
-    @Published public var smartReference: SmartAdjustmentsReference? = nil
-    @Published public var smartExposureEnabled: Bool = true
-    @Published public var smartWhiteBalanceEnabled: Bool = true
     
     // Soft Proofing (ENG-011)
     @Published public var isSoftProofingEnabled: Bool = false
@@ -240,7 +237,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
     @Published public var previewingStyle: Style?
-    @Published public var stackStyles: Bool = false
 
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()

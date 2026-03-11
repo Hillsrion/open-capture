@@ -29,7 +29,9 @@ public struct ExportRecipesToolView: View {
                 
                 HStack(spacing: 0) {
                     Button(action: { 
-                        let newRecipe = OutputRecipe(name: "New Recipe", format: .jpeg)
+                        // In real app, this would use the current document's context
+                        let newRecipe = OutputRecipe(name: "New Recipe", recipe: MCRecipe(dictionary: [:]), context: ObjectContext())
+                        newRecipe.format = .jpeg
                         recipeManager.recipes.append(newRecipe)
                     }) { Image(systemName: "plus").font(.system(size: 10, weight: .bold)).frame(width: 24, height: 20) }
                     Divider().frame(height: 20)
