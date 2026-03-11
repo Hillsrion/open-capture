@@ -90,6 +90,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var colorEditorMode: Int = 0 // 0: Basic, 1: Advanced, 2: Skin Tone
     @Published public var directColorEditorEnabled: Bool = false
     
+    // Negative Film (UI-202)
+    @Published public var negativeFilmEnabled: Bool = false
+    @Published public var negativeFilmType: Int = 0 // 0: B&W, 1: Color
+    
     // Ratings & Color Tag
     @Published public var rating: Int = 0
     @Published public var colorTag: VariantBase.ColorTag = .none

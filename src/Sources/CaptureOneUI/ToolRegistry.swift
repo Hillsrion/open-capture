@@ -160,6 +160,8 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(ColorBalanceToolView(controller: context.adjustmentController)) }
         case "BlackAndWhite":
             return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController)) }
+        case "NegativeFilm":
+            return .implemented { context in AnyView(NegativeFilmToolView(controller: context.adjustmentController)) }
         case "Clarity":
             return .implemented { context in
                 AnyView(ClarityToolView(

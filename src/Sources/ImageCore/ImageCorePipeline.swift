@@ -38,6 +38,17 @@ public class ImageCorePipeline {
         var green = [Float](repeating: 0.5, count: pixelCount)
         var blue = [Float](repeating: 0.5, count: pixelCount)
         
+        // --- Negative Film Inversion (UI-202) ---
+        if settings.negativeFilm.isEnabled {
+            Swift.print("[ImageCore] Inverting Negative Film (Type: \(settings.negativeFilm.filmType))")
+            for i in 0..<pixelCount {
+                floatBuffer[i] = 1.0 - floatBuffer[i]
+                red[i] = 1.0 - red[i]
+                green[i] = 1.0 - green[i]
+                blue[i] = 1.0 - blue[i]
+            }
+        }
+
         // --- Lens Correction (ENG-006) ---
         
         // 1. Distortion & CA

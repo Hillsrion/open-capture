@@ -264,6 +264,16 @@ public struct IC_HDRSettings {
     }
 }
 
+public struct IC_NegativeFilmSettings {
+    public var isEnabled: Bool
+    public var filmType: Int32 // 0: B&W, 1: Color
+    
+    public init() {
+        self.isEnabled = false
+        self.filmType = 0
+    }
+}
+
 public struct IC_PanoramaMergeSettings: Codable {
     public enum ProjectionType: Int, Codable {
         case spherical = 0
@@ -306,6 +316,9 @@ public struct IC_ProcessSettings {
 
     // HDR (High Dynamic Range) (ENG-009)
     public var hdr: IC_HDRSettings
+
+    // Negative Film (UI-202)
+    public var negativeFilm: IC_NegativeFilmSettings
 
     // Advanced Color Editor (ENG-004)
     public var colorCorrectionList: IC_ColorCorrectionList
@@ -353,6 +366,7 @@ public struct IC_ProcessSettings {
         self.gradationCurves = ICGradationCurves()
         self.clarity = IC_ClaritySettings()
         self.hdr = IC_HDRSettings()
+        self.negativeFilm = IC_NegativeFilmSettings()
         self.colorCorrectionList = IC_ColorCorrectionList()
         self.noiseReduction = IC_NoiseReductionSettings()
         self.sharpening = IC_SharpeningSettings()
