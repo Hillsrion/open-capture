@@ -74,7 +74,8 @@ public struct LensCorrectionInspectorTool: View {
                 amount: $controller.keystoneAmount,
                 aspect: $controller.keystoneAspect,
                 skew: $controller.keystoneSkew,
-                focalLength: $controller.keystoneFocalLength
+                focalLength: $controller.keystoneFocalLength,
+                autoAction: { controller.autoKeystone() }
             )
             
             LCCToolView(isLCCActive: $controller.isLCCActive)

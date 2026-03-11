@@ -197,7 +197,8 @@ public enum ToolRegistry {
                     amount: Binding(get: { context.adjustmentController.keystoneAmount }, set: { context.adjustmentController.keystoneAmount = $0 }),
                     aspect: Binding(get: { context.adjustmentController.keystoneAspect }, set: { context.adjustmentController.keystoneAspect = $0 }),
                     skew: Binding(get: { context.adjustmentController.keystoneSkew }, set: { context.adjustmentController.keystoneSkew = $0 }),
-                    focalLength: Binding(get: { context.adjustmentController.keystoneFocalLength }, set: { context.adjustmentController.keystoneFocalLength = $0 })
+                    focalLength: Binding(get: { context.adjustmentController.keystoneFocalLength }, set: { context.adjustmentController.keystoneFocalLength = $0 }),
+                    autoAction: { context.adjustmentController.autoKeystone() }
                 ))
             }
         case "LensCorrection":

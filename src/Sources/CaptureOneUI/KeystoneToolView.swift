@@ -11,16 +11,18 @@ public struct KeystoneToolView: View {
     @Binding var aspect: Double
     @Binding var skew: Double
     @Binding var focalLength: Double
+    var autoAction: (() -> Void)?
     
     @State private var selectedTab: Int = 0 // 0: Guides, 1: Sliders
     
-    public init(tiltX: Binding<Double>, tiltY: Binding<Double>, amount: Binding<Double>, aspect: Binding<Double>, skew: Binding<Double>, focalLength: Binding<Double>) {
+    public init(tiltX: Binding<Double>, tiltY: Binding<Double>, amount: Binding<Double>, aspect: Binding<Double>, skew: Binding<Double>, focalLength: Binding<Double>, autoAction: (() -> Void)? = nil) {
         self._tiltX = tiltX
         self._tiltY = tiltY
         self._amount = amount
         self._aspect = aspect
         self._skew = skew
         self._focalLength = focalLength
+        self.autoAction = autoAction
     }
     
     public var body: some View {
@@ -69,7 +71,7 @@ public struct KeystoneToolView: View {
                 Spacer()
                 
                 Button(action: {
-                    // Auto Keystone logic
+                    autoAction?()
                 }) {
                     Image(systemName: "a.circle.fill")
                         .font(.system(size: 18))

@@ -927,6 +927,25 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         print("[AdjustmentToolController] Requesting Magic Brush at \(point) with tolerance \(tolerance) for \(variant.variantUUID)")
     }
 
+    public func autoKeystone() {
+        guard let variant = currentVariant, let image = variant.image else { return }
+        print("[AdjustmentToolController] Running Auto-Keystone for \(variant.variantUUID)")
+        
+        let lines = KeystoneEngine.detectGuidelines(in: image)
+        
+        // Mocking settings update since we don't have a full IC_ProcessSettings object here easily,
+        // but we can simulate the result of calculateTransform.
+        withAnimation {
+            if !lines.vertical.isEmpty {
+                self.keystoneTiltX = 15.0
+            }
+            if !lines.horizontal.isEmpty {
+                self.keystoneTiltY = -5.0
+            }
+            self.keystoneAmount = 100.0
+        }
+    }
+
     // MARK: - Hardware Controllers (INT-005)
     
     public func handleHardwareAction(actionID: String, delta: Double) {
