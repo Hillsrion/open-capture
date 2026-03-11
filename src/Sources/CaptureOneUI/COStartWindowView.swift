@@ -61,9 +61,10 @@ public struct COStartWindowView: View {
                                 .onTapGesture {
                                     selectedDocumentID = doc.id
                                 }
-                                .onTapGesture(count: 2) {
+                                .simultaneousGesture(TapGesture(count: 2).onEnded {
+                                    selectedDocumentID = doc.id // Ensure selected
                                     openSelected()
-                                }
+                                })
                         }
                     }
                 }

@@ -38,23 +38,23 @@ public struct InspectorToolTabView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
                 ForEach(workspaceManager.activeWorkspace.palettes) { palette in
-                    Button(action: { selectedTabID = palette.id }) {
-                        VStack(spacing: 3) {
-                            Image(systemName: palette.iconName)
-                                .font(.system(size: 14))
-                            Text(palette.name)
-                                .font(.system(size: 8, weight: .semibold))
-                                .lineLimit(1)
+                    VStack(spacing: 3) {
+                        Image(systemName: palette.iconName)
+                            .font(.system(size: 14))
+                        Text(palette.name)
+                            .font(.system(size: 8, weight: .semibold))
+                            .lineLimit(1)
 
-                            Rectangle()
-                                .fill(selectedTabID == palette.id ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
-                                .frame(height: 2)
-                        }
-                        .frame(minWidth: 50, maxWidth: .infinity)
-                        .padding(.top, 6)
-                        .contentShape(Rectangle())
+                        Rectangle()
+                            .fill(selectedTabID == palette.id ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                            .frame(height: 2)
                     }
-                    .buttonStyle(.plain)
+                    .frame(minWidth: 50, maxWidth: .infinity)
+                    .padding(.top, 6)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedTabID = palette.id
+                    }
                     .foregroundColor(selectedTabID == palette.id ? .white : .gray)
                     .contextMenu {
                         Button("Expand All Tools") {
