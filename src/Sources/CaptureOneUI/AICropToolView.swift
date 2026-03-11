@@ -35,7 +35,7 @@ public struct AICropToolView: View {
                         Text("Reference Point")
                             .font(.system(size: 10))
                             .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        Picker("", selection: .constant(0)) {
+                        Picker("", selection: $controller.aiCropReferencePoint) {
                             Text("Center").tag(0)
                             Text("Top").tag(1)
                             Text("Eyes").tag(2)
@@ -51,7 +51,7 @@ public struct AICropToolView: View {
                         Text("Aspect")
                             .font(.system(size: 10))
                             .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        Toggle("Lock", isOn: .constant(true))
+                        Toggle("Lock", isOn: $controller.aiCropLockAspect)
                             .font(.system(size: 10))
                             .toggleStyle(.button)
                             .frame(height: 22)
@@ -92,6 +92,11 @@ public struct AICropToolView: View {
                     .buttonStyle(.plain)
                 }
                 
+                // Visualization Toggle
+                Toggle("Show AI Guides", isOn: $controller.aiCropShowGuides)
+                    .font(.system(size: 11))
+                    .padding(.top, 4)
+
                 // Margins Section (Studio)
                 VStack(spacing: 4) {
                     Button(action: { withAnimation { isMarginsExpanded.toggle() } }) {
@@ -107,10 +112,10 @@ public struct AICropToolView: View {
                     
                     if isMarginsExpanded {
                         VStack(spacing: 8) {
-                            marginSlider(label: "Top", value: .constant(10), range: 0...100)
-                            marginSlider(label: "Bottom", value: .constant(10), range: 0...100)
-                            marginSlider(label: "Left", value: .constant(10), range: 0...100)
-                            marginSlider(label: "Right", value: .constant(10), range: 0...100)
+                            marginSlider(label: "Top", value: $controller.aiCropTopMargin, range: 0...100)
+                            marginSlider(label: "Bottom", value: $controller.aiCropBottomMargin, range: 0...100)
+                            marginSlider(label: "Left", value: $controller.aiCropLeftMargin, range: 0...100)
+                            marginSlider(label: "Right", value: $controller.aiCropRightMargin, range: 0...100)
                         }
                         .padding(.leading, 12)
                         .padding(.top, 4)

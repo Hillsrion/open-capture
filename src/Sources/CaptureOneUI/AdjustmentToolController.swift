@@ -66,6 +66,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     @Published public var focusAIMode: Int = 0 // 0: None, 1: Eye, 2: Face
     
+    // AI Crop Studio State (UI-204)
+    @Published public var aiCropTopMargin: Double = 10.0
+    @Published public var aiCropBottomMargin: Double = 10.0
+    @Published public var aiCropLeftMargin: Double = 10.0
+    @Published public var aiCropRightMargin: Double = 10.0
+    @Published public var aiCropShowGuides: Bool = true
+    @Published public var aiCropReferencePoint: Int = 0 // 0: Center, 1: Top, 2: Eyes
+    @Published public var aiCropLockAspect: Bool = true
+    
     // Spot Removal State (UI-203)
     @Published public var spots: [SpotItem] = []
     @Published public var selectedSpotID: UUID?
@@ -335,6 +344,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $focusZoomLevel.map { _ in }.eraseToAnyPublisher(),
             $focusPoint.map { _ in }.eraseToAnyPublisher(),
             $focusAIMode.map { _ in }.eraseToAnyPublisher(),
+            $aiCropTopMargin.map { _ in }.eraseToAnyPublisher(),
+            $aiCropBottomMargin.map { _ in }.eraseToAnyPublisher(),
+            $aiCropLeftMargin.map { _ in }.eraseToAnyPublisher(),
+            $aiCropRightMargin.map { _ in }.eraseToAnyPublisher(),
+            $aiCropShowGuides.map { _ in }.eraseToAnyPublisher(),
+            $aiCropReferencePoint.map { _ in }.eraseToAnyPublisher(),
+            $aiCropLockAspect.map { _ in }.eraseToAnyPublisher(),
             $spots.map { _ in }.eraseToAnyPublisher(),
             $cropRatioIndex.map { _ in }.eraseToAnyPublisher(),
             $cropShowMask.map { _ in }.eraseToAnyPublisher(),
@@ -603,6 +619,14 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.focusPoint = fPoint
         }
         self.focusAIMode = (mc.objectForKey("ZFOCUS_AI_MODE") as? Int) ?? 0
+        
+        self.aiCropTopMargin = (mc.objectForKey("ZAI_CROP_TOP") as? Double) ?? 10.0
+        self.aiCropBottomMargin = (mc.objectForKey("ZAI_CROP_BOTTOM") as? Double) ?? 10.0
+        self.aiCropLeftMargin = (mc.objectForKey("ZAI_CROP_LEFT") as? Double) ?? 10.0
+        self.aiCropRightMargin = (mc.objectForKey("ZAI_CROP_RIGHT") as? Double) ?? 10.0
+        self.aiCropShowGuides = (mc.objectForKey("ZAI_CROP_SHOW_GUIDES") as? Bool) ?? true
+        self.aiCropReferencePoint = (mc.objectForKey("ZAI_CROP_REF_POINT") as? Int) ?? 0
+        self.aiCropLockAspect = (mc.objectForKey("ZAI_CROP_LOCK_ASPECT") as? Bool) ?? true
 
         self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
         self.cropShowMask = (mc.objectForKey("ZCROP_SHOW_MASK") as? Bool) ?? true
@@ -764,6 +788,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(focusZoomLevel, forKey: "ZFOCUS_ZOOM")
         mc.setObject(focusPoint, forKey: "ZFOCUS_POINT")
         mc.setObject(focusAIMode, forKey: "ZFOCUS_AI_MODE")
+        
+        mc.setObject(aiCropTopMargin, forKey: "ZAI_CROP_TOP")
+        mc.setObject(aiCropBottomMargin, forKey: "ZAI_CROP_BOTTOM")
+        mc.setObject(aiCropLeftMargin, forKey: "ZAI_CROP_LEFT")
+        mc.setObject(aiCropRightMargin, forKey: "ZAI_CROP_RIGHT")
+        mc.setObject(aiCropShowGuides, forKey: "ZAI_CROP_SHOW_GUIDES")
+        mc.setObject(aiCropReferencePoint, forKey: "ZAI_CROP_REF_POINT")
+        mc.setObject(aiCropLockAspect, forKey: "ZAI_CROP_LOCK_ASPECT")
+
         if let encodedSpots = try? JSONEncoder().encode(spots) {
             mc.setObject(encodedSpots, forKey: "ZSPOTS")
         }
