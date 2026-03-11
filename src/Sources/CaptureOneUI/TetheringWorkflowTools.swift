@@ -151,7 +151,15 @@ public struct NextCaptureLocationToolView: View {
                 Spacer()
                 Menu(location) {
                     Button("Capture Folder") { location = "Capture Folder" }
-                    Button("Choose Folder...") { }
+                    Button("Choose Folder...") {
+                        let panel = NSOpenPanel()
+                        panel.canChooseFiles = false
+                        panel.canChooseDirectories = true
+                        panel.allowsMultipleSelection = false
+                        if panel.runModal() == .OK {
+                            location = panel.url?.path ?? location
+                        }
+                    }
                 }
                 .font(.system(size: 11, weight: .bold))
             }

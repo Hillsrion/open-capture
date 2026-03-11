@@ -104,7 +104,11 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
         // Simulate capture delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.isCapturing = false
-            print("[Capture] Image captured: \(self.nextCaptureName)")
+            let imageName = self.nextCaptureName
+            print("[Capture] Image captured: \(imageName)")
+            
+            // Automation: Apply Next Capture Adjustments (GAP-401)
+            self.applyNextCaptureAdjustments(for: imageName)
             
             // Increment naming counter (TETH-003)
             self.namingCounter += 1
@@ -114,6 +118,12 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
                 self.resumeLiveView()
             }
         }
+    }
+    
+    private func applyNextCaptureAdjustments(for imageName: String) {
+        print("[Automation] Applying '\(nextCaptureAdjustments.rawValue)' logic to \(imageName)")
+        // In original, this would look up the primary variant or last captured variant
+        // and copy its settings to the new MOVariant created during import.
     }
     
     public func setPropertyValue(propertyID: String, value: String) {
