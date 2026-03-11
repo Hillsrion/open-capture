@@ -35,46 +35,40 @@ public struct InspectorToolTabView: View {
     }
 
     public var body: some View {
-        HStack(spacing: 0) {
-            ForEach(workspaceManager.activeWorkspace.palettes) { palette in
-                Button(action: { selectedTabID = palette.id }) {
-                    VStack(spacing: 3) {
-                        Image(systemName: palette.iconName)
-                            .font(.system(size: 14))
-                        Text(palette.name)
-                            .font(.system(size: 8, weight: .semibold))
-                            .lineLimit(1)
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 0) {
+                ForEach(workspaceManager.activeWorkspace.palettes) { palette in
+                    Button(action: { selectedTabID = palette.id }) {
+                        VStack(spacing: 3) {
+                            Image(systemName: palette.iconName)
+                                .font(.system(size: 14))
+                            Text(palette.name)
+                                .font(.system(size: 8, weight: .semibold))
+                                .lineLimit(1)
 
-                        Rectangle()
-                            .fill(selectedTabID == palette.id ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
-                            .frame(height: 2)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.top, 6)
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .foregroundColor(selectedTabID == palette.id ? .white : .gray)
-                .contextMenu {
-                    Button("Expand All Tools") {
-                        workspaceManager.expandAllTools(in: palette.id)
-                    }
-                    Button("Collapse All Tools") {
-                        workspaceManager.collapseAllTools(in: palette.id)
-                    }
-                    Divider()
-                    Button("Float Palette") {
-                        COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
-                    }
-                }
-                .gesture(
-                    DragGesture(minimumDistance: 30)
-                        .onEnded { value in
-                            if abs(value.translation.width) > 50 || abs(value.translation.height) > 50 {
-                                COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
-                            }
+                            Rectangle()
+                                .fill(selectedTabID == palette.id ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                                .frame(height: 2)
                         }
-                )
+                        .frame(minWidth: 50, maxWidth: .infinity)
+                        .padding(.top, 6)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundColor(selectedTabID == palette.id ? .white : .gray)
+                    .contextMenu {
+                        Button("Expand All Tools") {
+                            workspaceManager.expandAllTools(in: palette.id)
+                        }
+                        Button("Collapse All Tools") {
+                            workspaceManager.collapseAllTools(in: palette.id)
+                        }
+                        Divider()
+                        Button("Float Palette") {
+                            COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
+                        }
+                    }
+                }
             }
         }
         .frame(height: 44)
