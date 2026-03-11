@@ -29,12 +29,22 @@ public struct CropToolView: View {
                         Text("3x2").tag(5)
                         Text("5x4").tag(6)
                         Text("7x5").tag(7)
-                        if !controller.customRatios.isEmpty {
-                            Divider()
-                            ForEach(controller.customRatios, id: \.self) { ratio in
-                                Text(ratio).tag(ratio.hashValue)
-                            }
-                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 120)
+                }
+
+                HStack {
+                    Text("Grid")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    Spacer()
+                    Picker("", selection: $controller.cropGridIndex) {
+                        Text("3x3").tag(0)
+                        Text("Golden Ratio").tag(1)
+                        Text("Center Cross").tag(2)
+                        Text("None").tag(3)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
@@ -43,11 +53,13 @@ public struct CropToolView: View {
                 
                 HStack(spacing: 8) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("\(Int(controller.cropRect.width))")
+                        TextField("", value: Binding(get: { controller.cropRect.width }, set: { controller.cropRect.size.width = $0 }), formatter: NumberFormatter())
+                            .textFieldStyle(PlainTextFieldStyle())
                             .font(.system(size: 11, design: .monospaced))
                             .padding(4)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .background(Color.black.opacity(0.3))
+                            .cornerRadius(2)
                         Text("Width")
                             .font(.system(size: 10))
                             .foregroundColor(CaptureOneTheme.Colors.textSecondary)
@@ -59,11 +71,13 @@ public struct CropToolView: View {
                         .padding(.bottom, 16)
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("\(Int(controller.cropRect.height))")
+                        TextField("", value: Binding(get: { controller.cropRect.height }, set: { controller.cropRect.size.height = $0 }), formatter: NumberFormatter())
+                            .textFieldStyle(PlainTextFieldStyle())
                             .font(.system(size: 11, design: .monospaced))
                             .padding(4)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .background(Color.black.opacity(0.3))
+                            .cornerRadius(2)
                         Text("Height")
                             .font(.system(size: 10))
                             .foregroundColor(CaptureOneTheme.Colors.textSecondary)

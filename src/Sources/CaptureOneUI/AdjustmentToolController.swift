@@ -168,6 +168,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var cropRect: CGRect = .zero
     @Published public var rotationAngle: Double = 0.0
     @Published public var cropRatioIndex: Int = 0
+    @Published public var cropGridIndex: Int = 0 // 0: 3x3, 1: Golden Ratio, etc.
     @Published public var cropShowMask: Bool = true
     @Published public var cropMaskOpacity: Double = 50.0
     @Published public var cropMaskBrightness: Double = 0.0
@@ -362,6 +363,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $aiCropLockAspect.map { _ in }.eraseToAnyPublisher(),
             $spots.map { _ in }.eraseToAnyPublisher(),
             $cropRatioIndex.map { _ in }.eraseToAnyPublisher(),
+            $cropGridIndex.map { _ in }.eraseToAnyPublisher(),
             $cropShowMask.map { _ in }.eraseToAnyPublisher(),
             $cropMaskOpacity.map { _ in }.eraseToAnyPublisher(),
             $cropMaskBrightness.map { _ in }.eraseToAnyPublisher(),
@@ -653,6 +655,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.styleOpacity = (mc.objectForKey("ZSTYLE_OPACITY") as? Double) ?? 100.0
 
         self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
+        self.cropGridIndex = (mc.objectForKey("ZCROP_GRID") as? Int) ?? 0
         self.cropShowMask = (mc.objectForKey("ZCROP_SHOW_MASK") as? Bool) ?? true
         self.cropMaskOpacity = (mc.objectForKey("ZCROP_MASK_OPACITY") as? Double) ?? 50.0
         self.cropMaskBrightness = (mc.objectForKey("ZCROP_MASK_BRIGHTNESS") as? Double) ?? 0.0
@@ -829,6 +832,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
         
         mc.setObject(cropRatioIndex, forKey: "ZCROP_RATIO")
+        mc.setObject(cropGridIndex, forKey: "ZCROP_GRID")
         mc.setObject(cropShowMask, forKey: "ZCROP_SHOW_MASK")
         mc.setObject(cropMaskOpacity, forKey: "ZCROP_MASK_OPACITY")
         mc.setObject(cropMaskBrightness, forKey: "ZCROP_MASK_BRIGHTNESS")
