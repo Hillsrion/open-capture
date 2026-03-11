@@ -1,0 +1,97 @@
+import SwiftUI
+import AppCoreShared
+
+/// Reconstructed Capture One Live tool (ENG-012).
+/// Manages remote sharing sessions and reviewer permissions.
+public struct CaptureOneLiveToolView: View {
+    @ObservedObject var liveManager = CaptureOneLiveManager.shared
+    
+    public init() {}
+    
+    public var body: some View {
+        COToolSection("Capture One Live", toolID: "CaptureOneLive") {
+            VStack(alignment: .leading, spacing: 12) {
+                if !liveManager.isSessionActive {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Share your images with clients or collaborators in real-time.")
+                            .font(.system(size: 10))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        
+                        Button(action: { liveManager.startSession() }) {
+                            Text("Start Sharing")
+                                .font(.system(size: 11, weight: .bold))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(CaptureOneTheme.Colors.activeHighlight)
+                                .foregroundColor(.black)
+                                .cornerRadius(4)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                } else {
+                    activeSessionView
+                }
+                
+                Divider().background(Color.white.opacity(0.05))
+                
+                // Permissions Grid
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Reviewer Permissions")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    
+                    Grid(alignment: .leading, horizontalSpacing: 20, verticalSpacing: 8) {
+                        GridRow {
+                            permissionToggle(label: "Rate", isOn: $liveManager.canRate)
+                            permissionToggle(label: "Color Tag", isOn: $liveManager.canColorTag)
+                        }
+                        GridRow {
+                            permissionToggle(label: "Download", isOn: $liveManager.canDownload)
+                        }
+                    }
+                }
+            }
+            .padding(.vertical, 4)
+        }
+    }
+    
+    private var activeSessionView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Circle().fill(Color.green).frame(width: 8, height: 8)
+                Text("Session Active").font(.system(size: 11, weight: .bold))
+                Spacer()
+                Button("Stop") { liveManager.stopSession() }
+                    .font(.system(size: 10))
+                    .foregroundColor(.red)
+            }
+            
+            if let url = liveManager.sessionURL {
+                HStack {
+                    Text(url)
+                        .font(.system(size: 10, design: .monospaced))
+                        .lineLimit(1)
+                        .padding(6)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(4)
+                    
+                    Button(action: { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(url, forType: .string) }) {
+                        Image(systemName: "doc.on.doc")
+                            .font(.system(size: 10))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            
+            Text("Expires: \(liveManager.expiryDate, style: .date) \(liveManager.expiryDate, style: .time)")
+                .font(.system(size: 9))
+                .foregroundColor(.gray)
+        }
+    }
+    
+    private func permissionToggle(label: String, isOn: Binding<Bool>) -> some View {
+        Toggle(label, isOn: isOn)
+            .toggleStyle(POCheckboxStyle())
+            .font(.system(size: 11))
+    }
+}

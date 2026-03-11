@@ -109,6 +109,8 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(LumaRangeToolView(controller: context.adjustmentController)) }
         case "MatchLook":
             return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
+        case "CaptureOneLive":
+            return .implemented { _ in AnyView(CaptureOneLiveToolView()) }
         case "RetouchFaces":
             return .implemented { context in AnyView(RetouchFaceSkinToolView(controller: context.adjustmentController)) }
         case "SmartAdjustments":
