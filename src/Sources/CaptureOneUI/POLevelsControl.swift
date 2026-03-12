@@ -14,16 +14,19 @@ public struct POLevelsControl: View {
     // Add channel selector state
     @State private var selectedChannel: Int = 0 // 0: RGB, 1: Red, 2: Green, 3: Blue
     
-    public init(blackPoint: Binding<Float>, whitePoint: Binding<Float>, midtone: Binding<Float>, targetBlack: Binding<Float>, targetWhite: Binding<Float>) {
+    public var isNegative: Bool
+    
+    public init(blackPoint: Binding<Float>, whitePoint: Binding<Float>, midtone: Binding<Float>, targetBlack: Binding<Float>, targetWhite: Binding<Float>, isNegative: Bool = false) {
         self._blackPoint = blackPoint
         self._whitePoint = whitePoint
         self._midtone = midtone
         self._targetBlack = targetBlack
         self._targetWhite = targetWhite
+        self.isNegative = isNegative
     }
     
     public var body: some View {
-        COToolSection("Levels", toolID: "Levels") {
+        COToolSection(isNegative ? "Levels (Post-Inversion)" : "Levels", toolID: "Levels") {
             VStack(spacing: 8) {
                 // Channel Selector
                 Picker("Channel", selection: $selectedChannel) {
@@ -117,15 +120,24 @@ public struct POLevelsControl: View {
                         }
                     }
                     .frame(height: 120)
+                    .scaleEffect(x: isNegative ? -1 : 1, y: 1)
                 }
                 
                 // Numerical Input (Numerical readouts)
                 HStack {
-                    Text("\(Int(blackPoint * 255))").font(.system(size: 10, design: .monospaced))
-                    Spacer()
-                    Text(String(format: "%.2f", midtone)).font(.system(size: 10, design: .monospaced))
-                    Spacer()
-                    Text("\(Int(whitePoint * 255))").font(.system(size: 10, design: .monospaced))
+                    if isNegative {
+                        Text("\(Int(whitePoint * 255))").font(.system(size: 10, design: .monospaced))
+                        Spacer()
+                        Text(String(format: "%.2f", midtone)).font(.system(size: 10, design: .monospaced))
+                        Spacer()
+                        Text("\(Int(blackPoint * 255))").font(.system(size: 10, design: .monospaced))
+                    } else {
+                        Text("\(Int(blackPoint * 255))").font(.system(size: 10, design: .monospaced))
+                        Spacer()
+                        Text(String(format: "%.2f", midtone)).font(.system(size: 10, design: .monospaced))
+                        Spacer()
+                        Text("\(Int(whitePoint * 255))").font(.system(size: 10, design: .monospaced))
+                    }
                 }
                 .foregroundColor(.gray)
                 .padding(.horizontal, 4)

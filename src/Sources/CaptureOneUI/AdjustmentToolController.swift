@@ -1006,6 +1006,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
     }
 
+    public func createLCCProfile() {
+        guard let variant = currentVariant else { return }
+        print("[AdjustmentToolController] Creating LCC Profile for \(variant.variantUUID)")
+        // In a real scenario, this would analyze the image and compute the LCC calibration matrix
+        self.lccProfileUUID = UUID().uuidString
+        self.isLCCActive = true
+        self.commitChanges(to: variant)
+    }
+
     // MARK: - Retouching (ENG-005)
     
     public func addRepairArrow(at destination: CGPoint, type: RepairArrow.ArrowType) {

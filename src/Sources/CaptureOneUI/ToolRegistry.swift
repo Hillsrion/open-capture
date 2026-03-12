@@ -378,7 +378,8 @@ private struct LevelsInspectorToolView: View {
             targetWhite: Binding(
                 get: { controller.levelsTargetWhite },
                 set: { controller.levelsTargetWhite = $0 }
-            )
+            ),
+            isNegative: controller.negativeFilmEnabled
         )
     }
 }
@@ -390,7 +391,7 @@ private struct CurvesInspectorToolView: View {
         POCurvesControl(points: Binding(
             get: { controller.curvesPoints },
             set: { controller.curvesPoints = $0 }
-        ))
+        ), isNegative: controller.negativeFilmEnabled)
     }
 }
 

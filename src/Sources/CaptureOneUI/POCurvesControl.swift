@@ -10,12 +10,15 @@ public struct POCurvesControl: View {
     @State private var selectedChannel: Int = 0 // 0: RGB, 1: Luma, 2: Red, 3: Green, 4: Blue
     @State private var draggingIndex: Int? = nil
     
-    public init(points: Binding<[CGPoint]>) {
+    public var isNegative: Bool
+    
+    public init(points: Binding<[CGPoint]>, isNegative: Bool = false) {
         self._points = points
+        self.isNegative = isNegative
     }
     
     public var body: some View {
-        COToolSection("Curve", toolID: "Curves") {
+        COToolSection(isNegative ? "Curve (Post-Inversion)" : "Curve", toolID: "Curves") {
             VStack(spacing: 8) {
                 // Channel Selector
                 Picker("Channel", selection: $selectedChannel) {
@@ -79,6 +82,7 @@ public struct POCurvesControl: View {
                                 )
                         }
                     }
+                    .scaleEffect(x: isNegative ? -1 : 1, y: 1)
                     .gesture(
                         TapGesture()
                             .onEnded {

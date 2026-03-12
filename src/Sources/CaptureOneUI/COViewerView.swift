@@ -74,6 +74,24 @@ public struct COViewerView: View {
                             KeystoneOverlayView(points: points)
                         }
                     }
+                    .contextMenu {
+                        if commands.selectedCursorToolID == "Heal" || commands.selectedCursorToolID == "Clone" {
+                            Button("Auto-Pick Source") {
+                                // Simulate Auto-pick target point
+                                if let arrow = adjustmentController?.currentVariant?.activeLayer?.repairArrows.first, let image = image {
+                                    _ = RetouchEngine.shared.autoPickSource(for: arrow.destination, in: image)
+                                }
+                            }
+                            Button("Reset Retouching") {
+                                adjustmentController?.resetRetouching()
+                            }
+                            Divider()
+                            Button("Brush Settings...") {
+                                // Normally this would spawn a popover at cursor location, for now placeholder
+                                print("[CaptureOneUI] Show Brush Settings popover")
+                            }
+                        }
+                    }
                     .gesture(
                         DragGesture(minimumDistance: 0)
                             .onEnded { gesture in

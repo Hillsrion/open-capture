@@ -75,6 +75,42 @@ public struct LayerInspectorView: View {
                 .background(Color.black.opacity(0.2))
                 .cornerRadius(4)
                 
+                // Heal & Clone Tool Header Buttons
+                if let activeLayer = variant.activeLayer, (activeLayer.type == .heal || activeLayer.type == .clone) {
+                    Divider().background(Color.white.opacity(0.1))
+                    HStack {
+                        Button(action: {
+                            print("[RetouchEngine] Auto-Pick Source triggered")
+                            if let firstArrow = activeLayer.repairArrows.first {
+                                // Simulate calling the engine
+                                _ = RetouchEngine.shared.autoPickSource(for: firstArrow.destination, in: variant.image as Any)
+                            }
+                        }) {
+                            Text("Auto-Pick Source")
+                                .font(.system(size: 11, weight: .medium))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 4)
+                                .background(CaptureOneTheme.Colors.buttonBackground)
+                                .cornerRadius(4)
+                        }
+                        .buttonStyle(.plain)
+                        
+                        Button(action: {
+                            controller.resetRetouching()
+                        }) {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 11, weight: .medium))
+                                .frame(height: 18)
+                                .padding(.horizontal, 6)
+                                .background(CaptureOneTheme.Colors.buttonBackground)
+                                .cornerRadius(4)
+                        }
+                        .buttonStyle(.plain)
+                        .help("Reset All Layers")
+                    }
+                    .padding(.horizontal, 4)
+                }
+                
                 // Toolbar
                 HStack {
                     Menu {

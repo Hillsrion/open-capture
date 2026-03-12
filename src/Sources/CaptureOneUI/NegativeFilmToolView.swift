@@ -5,6 +5,7 @@ import AppCoreShared
 /// Supports inversion and base-tint correction for B&W and Color negatives.
 public struct NegativeFilmToolView: View {
     @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var commandCenter = AppCommandCenter.shared
     
     public init(controller: AdjustmentToolController) {
         self.controller = controller
@@ -34,7 +35,13 @@ public struct NegativeFilmToolView: View {
                         .frame(width: 120)
                     }
                     
-                    Button(action: { /* Logic to enter film-edge picking mode */ }) {
+                    Button(action: {
+                        if commandCenter.selectedCursorToolID == "PickWhitebalanceFilmNegative" {
+                            commandCenter.selectedCursorToolID = "Select"
+                        } else {
+                            commandCenter.selectedCursorToolID = "PickWhitebalanceFilmNegative"
+                        }
+                    }) {
                         HStack {
                             Image(systemName: "eyedropper")
                             Text("Pick White Balance (Film Edge)")
@@ -42,7 +49,8 @@ public struct NegativeFilmToolView: View {
                         .font(.system(size: 11, weight: .medium))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 6)
-                        .background(Color.white.opacity(0.08))
+                        .background(commandCenter.selectedCursorToolID == "PickWhitebalanceFilmNegative" ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.08))
+                        .foregroundColor(commandCenter.selectedCursorToolID == "PickWhitebalanceFilmNegative" ? .black : .white)
                         .cornerRadius(4)
                     }
                     .buttonStyle(.plain)

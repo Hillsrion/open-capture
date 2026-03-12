@@ -364,6 +364,11 @@ public struct COImageBrowserCell: View {
         }
         .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
+        .contextMenu {
+            Button("Create LCC Profile") {
+                AdjustmentToolController.shared.createLCCProfile()
+            }
+        }
     }
     
     private func loadThumbnail() {
