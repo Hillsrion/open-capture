@@ -28,13 +28,14 @@ For a given ticket in `To Verify` or `In Progress` status:
    - If `yt-dlp` fails due to format issues, try with `-f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"`.
    - Download the transcript: `yt-dlp --write-auto-subs --write-subs --sub-langs "en.*" --skip-download --convert-subs srt "https://www.youtube.com/watch?v=<YT_ID>" -o "transcript.srt"`
    - Extract frames locally using `ffmpeg`: `ffmpeg -i "video.mp4" -vf "fps=1" frame_%04d.jpg`
+   - **Crucial Transcript Cross-Referencing**: Do not just look at arbitrary frames. Grep the downloaded transcript (`transcript.srt`) for keywords related to the feature (e.g., `grep -iC 5 "import" transcript.srt`) to identify the exact timestamps where the UI is used. Open the specific frames corresponding to those timestamps.
    - **Important**: Do not commit these frames to git. They are local analytical references to ensure structural fidelity (icons, layout, component order).
 3. **Codebase Audit**: 
    - Use `grep_search` and `glob` to locate the relevant implementation files in `src/Sources/CaptureOneUI/` and `src/Sources/AppCoreShared/` or `DataCore/`.
    - Use `read_file` to analyze the implementation.
 4. **Fidelity Comparison**: Compare the implemented SwiftUI code and business logic against:
    - The spec's textual requirements.
-   - The actual extracted local frames (UI layout, exact text casing, tool position).
+   - The actual extracted local frames via transcript timestamps. **Strict UI Verification:** You must visually verify that the UI is 100% faithful to the original app. This means ensuring that absolutely all options are present, they are placed in the exact same order and position, they are correctly implemented (buttons, dropdowns, checkboxes), and the naming/casing matches perfectly.
    - Decompiled symbols (using `grep_search` in `RawDumps/Headers/`) to ensure correct property names and internal logic mapping.
 5. **Discrepancy Logging**: If differences, missing features (e.g., missing context menu options, missing auto-favorite toggle), or deviations are found, note them in the verification ticket.
 
