@@ -21,14 +21,22 @@ Every verification ticket in the `Spec Verification Tracker` should contain:
 
 ## 3. Verification Process (The Audit Phase)
 For a given ticket in `To Verify` or `In Progress` status:
-1. **Spec Extraction**: Read the detailed content (blocks) of the original spec from the `Global Specs Database`. Extract the UI components, keyboard shortcuts, and logic rules.
-2. **Codebase Audit**: 
+1. **Spec Extraction**: Read the detailed content (blocks) of the original spec from the `Global Specs Database`. Extract the UI components, keyboard shortcuts, and logic rules. Note the `YT_ID` property.
+2. **Visual & Source Verification (Local Reference)**: 
+   - Ensure the `yt-downloader` skill is activated.
+   - Use `yt-dlp` to download the reference video: `mkdir -p .entire/tmp/yt_downloads/frames/<YT_ID> && cd .entire/tmp/yt_downloads/frames/<YT_ID> && yt-dlp "https://www.youtube.com/watch?v=<YT_ID>" -o "video.mp4"`
+   - If `yt-dlp` fails due to format issues, try with `-f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"`.
+   - Download the transcript: `yt-dlp --write-auto-subs --write-subs --sub-langs "en.*" --skip-download --convert-subs srt "https://www.youtube.com/watch?v=<YT_ID>" -o "transcript.srt"`
+   - Extract frames locally using `ffmpeg`: `ffmpeg -i "video.mp4" -vf "fps=1" frame_%04d.jpg`
+   - **Important**: Do not commit these frames to git. They are local analytical references to ensure structural fidelity (icons, layout, component order).
+3. **Codebase Audit**: 
    - Use `grep_search` and `glob` to locate the relevant implementation files in `src/Sources/CaptureOneUI/` and `src/Sources/AppCoreShared/` or `DataCore/`.
    - Use `read_file` to analyze the implementation.
-3. **Fidelity Comparison**: Compare the implemented SwiftUI code and business logic against:
+4. **Fidelity Comparison**: Compare the implemented SwiftUI code and business logic against:
    - The spec's textual requirements.
+   - The actual extracted local frames (UI layout, exact text casing, tool position).
    - Decompiled symbols (using `grep_search` in `RawDumps/Headers/`) to ensure correct property names and internal logic mapping.
-4. **Discrepancy Logging**: If differences, missing features (e.g., missing context menu options, missing auto-favorite toggle), or deviations are found, note them in the verification ticket.
+5. **Discrepancy Logging**: If differences, missing features (e.g., missing context menu options, missing auto-favorite toggle), or deviations are found, note them in the verification ticket.
 
 ## 4. Resolution & Status Updates
 - **Full Compliance**: If the implementation matches the spec and decompiled truth 100%, update the ticket status to `Verified/Done`.
