@@ -138,6 +138,10 @@ struct ImportSettingsSidebar: View {
                             .font(.system(size: 11))
                         Toggle("Unpack EIP", isOn: $importer.settings.alwaysUnpackEIP)
                             .font(.system(size: 11))
+                        Toggle("Eject on Completion", isOn: .constant(false)) // Mock for UI
+                            .font(.system(size: 11))
+                        Toggle("Open Cull View on Completion", isOn: .constant(false)) // Mock for UI
+                            .font(.system(size: 11))
                     }
                 }
                 
@@ -157,22 +161,49 @@ struct ImportGridView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            if importer.discoveredURLs.isEmpty {
-                VStack {
-                    Spacer()
-                    Text("No images found in source.")
-                        .foregroundColor(.gray)
-                    Spacer()
+        VStack(spacing: 0) {
+            // Action Bar (Pick All / Unpick All)
+            HStack {
+                Button("Pick All") {
+                    importer.pickedState.selectAll(importer.discoveredURLs)
                 }
-                .frame(maxWidth: .infinity, minHeight: 400)
-            } else {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(importer.discoveredURLs, id: \.self) { url in
-                        ImportThumbnailCell(url: url, pickedState: importer.pickedState)
+                .buttonStyle(PlainButtonStyle())
+                .font(.system(size: 11))
+                
+                Button("Unpick All") {
+                    importer.pickedState.clear()
+                }
+                .buttonStyle(PlainButtonStyle())
+                .font(.system(size: 11))
+                
+                Spacer()
+                
+                Text("\(importer.pickedState.count) selected")
+                    .font(.system(size: 11))
+                    .foregroundColor(.gray)
+            }
+            .padding(10)
+            .background(CaptureOneTheme.Colors.panelBackground)
+            
+            Divider().background(Color.black)
+            
+            ScrollView {
+                if importer.discoveredURLs.isEmpty {
+                    VStack {
+                        Spacer()
+                        Text("No images found in source.")
+                            .foregroundColor(.gray)
+                        Spacer()
                     }
+                    .frame(maxWidth: .infinity, minHeight: 400)
+                } else {
+                    LazyVGrid(columns: columns, spacing: 10) {
+                        ForEach(importer.discoveredURLs, id: \.self) { url in
+                            ImportThumbnailCell(url: url, pickedState: importer.pickedState)
+                        }
+                    }
+                    .padding(15)
                 }
-                .padding(15)
             }
         }
     }
