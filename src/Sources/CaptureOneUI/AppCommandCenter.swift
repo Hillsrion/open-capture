@@ -361,6 +361,31 @@ public final class AppCommandCenter: ObservableObject {
         adjustmentController.saturation = min(max(adjustmentController.saturation, 5.0), 15.0)
     }
 
+    public func autoAdjustTool(_ toolID: String) {
+        guard adjustmentController.currentVariant != nil else {
+            notice = AppNotice(
+                title: "No Selection",
+                message: "Select an image before running Auto Adjust."
+            )
+            return
+        }
+        
+        // Simple heuristic for Phase 2: just slightly nudge values toward center/neutral
+        // based on the tool's focus area.
+        switch toolID {
+        case "Exposure":
+            adjustmentController.exposure = min(max(adjustmentController.exposure * 1.1, -2.0), 2.0)
+        case "White Balance":
+            adjustmentController.kelvin = 5600
+            adjustmentController.tint = 0
+        case "High Dynamic Range":
+            adjustmentController.highlights = 20
+            adjustmentController.shadows = 20
+        default:
+            autoAdjust()
+        }
+    }
+
     public func copyAdjustments() {
         copiedAdjustments = snapshotCurrentAdjustments(name: "Copied Adjustments")
         guard copiedAdjustments != nil else {

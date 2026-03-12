@@ -58,17 +58,21 @@ public struct COToolSection<Content: View>: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 Button(action: {
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 0.2)) {
                         workspaceManager.setToolCollapsed(isExpanded, for: toolID)
                     }
                 }) {
                     HStack(spacing: 6) {
-                        Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
-                            .font(.system(size: 7, weight: .black))
-                        Text(title.uppercased())
-                            .font(.system(size: 10, weight: .bold))
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 8, weight: .bold))
+                            .rotationEffect(isExpanded ? .degrees(90) : .degrees(0))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        
+                        Text(title)
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(CaptureOneTheme.Colors.textPrimary)
                     }
-                    .padding(.leading, 6)
+                    .padding(.leading, 8)
                     .frame(maxHeight: .infinity)
                     .contentShape(Rectangle())
                 }
@@ -77,36 +81,38 @@ public struct COToolSection<Content: View>: View {
                 Spacer()
 
                 // MARK: - Action Group (Aligned Right)
-                HStack(spacing: 4) {
-                    toolHeaderButton(systemName: "questionmark.circle") {
+                HStack(spacing: 0) {
+                    toolHeaderButton(systemName: "questionmark") {
                         commands.showHelp(for: toolID)
                     }
 
-                    presetMenu
-
-                    toolHeaderButton(systemName: "arrow.counterclockwise") {
-                        commands.resetTool(toolID)
+                    toolHeaderButton(systemName: "wand.and.rays") {
+                        commands.autoAdjustTool(toolID)
                     }
 
-                    toolHeaderButton(systemName: "pip.fill") {
+                    toolHeaderButton(systemName: "arrow.up.left.and.arrow.down.right") {
                         if let session = commands.session {
                             COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
                         }
                     }
 
-                    styleMenu
+                    toolHeaderButton(systemName: "arrow.uturn.backward") {
+                        commands.resetTool(toolID)
+                    }
+
+                    presetMenu
 
                     ellipsisMenu
                 }
                 .padding(.trailing, 4)
             }
-            .foregroundColor(CaptureOneTheme.Colors.textPrimary)
             .frame(height: 24)
-            .background(Color.white.opacity(0.06))
+            .background(Color.white.opacity(0.04))
             
             if isExpanded {
                 content
-                    .padding(8)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 10)
                     .background(CaptureOneTheme.Colors.applicationBackground)
             }
             
@@ -123,7 +129,7 @@ public struct COToolSection<Content: View>: View {
         Button(action: action) {
             Image(systemName: systemName)
                 .font(.system(size: 10))
-                .frame(width: 20, height: 20)
+                .frame(width: 22, height: 22)
         }
         .buttonStyle(.plain)
         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
@@ -139,33 +145,9 @@ public struct COToolSection<Content: View>: View {
             Button("Manage Presets...") { /* logic */ }
         } label: {
             Image(systemName: "line.3.horizontal")
-                .font(.system(size: 9, weight: .bold))
+                .font(.system(size: 10, weight: .bold))
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(width: 20, height: 20)
-        }
-        .menuStyle(BorderlessButtonMenuStyle())
-    }
-
-    private var styleMenu: some View {
-        Menu {
-            Button("Save Adjustments as Style...") {
-                commands.saveCurrentAdjustmentsAsStyle(toolID: toolID)
-            }
-
-            if !styleManager.allStyles().isEmpty {
-                Menu("Apply Adjustments From") {
-                    ForEach(styleManager.allStyles()) { style in
-                        Button(style.name) {
-                            commands.applyStyle(style)
-                        }
-                    }
-                }
-            }
-        } label: {
-            Image(systemName: "square.and.arrow.down")
-                .font(.system(size: 10))
-                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(width: 20, height: 20)
+                .frame(width: 22, height: 22)
         }
         .menuStyle(BorderlessButtonMenuStyle())
     }
@@ -210,13 +192,14 @@ public struct COToolSection<Content: View>: View {
             Image(systemName: "ellipsis")
                 .font(.system(size: 10, weight: .bold))
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(width: 20, height: 20)
+                .frame(width: 22, height: 22)
         }
         .menuStyle(BorderlessButtonMenuStyle())
     }
 }
 
 /// The high-fidelity C1 Slider with precise numeric input (UI-205)
+/// Supports dragging, mouse scroll, and arrow keys.
 public struct COToolValueSlider: View {
     let label: String
     @Binding var value: Double
@@ -225,6 +208,7 @@ public struct COToolValueSlider: View {
     
     @State private var textValue: String = ""
     @FocusState private var isFocused: Bool
+    @State private var isHovered: Bool = false
     
     public init(label: String, value: Binding<Double>, range: ClosedRange<Double>, decimalPlaces: Int = 1) {
         self.label = label
@@ -244,34 +228,57 @@ public struct COToolValueSlider: View {
     }
     
     public var body: some View {
-        VStack(spacing: 4) {
-            HStack(alignment: .center, spacing: 8) {
-                Text(label)
-                    .font(.system(size: 11))
-                    .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-                    .frame(width: 85, alignment: .leading)
-                
-                sliderTrack
-                
-                TextField("", text: $textValue)
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 11, design: .monospaced))
-                    .multilineTextAlignment(.trailing)
-                    .frame(width: 45, height: 18)
-                    .background(isFocused ? Color.black.opacity(0.3) : Color.clear)
-                    .cornerRadius(2)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 2)
-                            .stroke(isFocused ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1), lineWidth: 0.5)
-                    )
-                    .focused($isFocused)
-                    .onSubmit {
-                        updateValueFromText()
+        HStack(alignment: .center, spacing: 8) {
+            Text(label)
+                .font(.system(size: 11))
+                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                .frame(width: 85, alignment: .leading)
+            
+            sliderTrack
+                .onContinuousHover { phase in
+                    switch phase {
+                    case .active(_): isHovered = true
+                    case .ended: isHovered = false
                     }
-                    .onChange(of: isFocused) { focused in
-                        if !focused { updateValueFromText() }
+                }
+                .modifier(ScrollWheelModifier { event in
+                    if isHovered || isFocused {
+                        let step = (range.upperBound - range.lowerBound) / 100.0
+                        let delta = Double(event.scrollingDeltaY) * step * 0.2
+                        self.updateValue(value + delta)
                     }
-            }
+                })
+            
+            TextField("", text: $textValue)
+                .textFieldStyle(.plain)
+                .font(.system(size: 11, design: .monospaced))
+                .multilineTextAlignment(.trailing)
+                .frame(width: 45, height: 18)
+                .background(isFocused ? Color.black.opacity(0.3) : Color.black.opacity(0.15))
+                .cornerRadius(2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 2)
+                        .stroke(isFocused ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.1), lineWidth: 0.5)
+                )
+                .focused($isFocused)
+                .onSubmit {
+                    updateValueFromText()
+                }
+                .onChange(of: isFocused) { focused in
+                    if !focused { updateValueFromText() }
+                }
+                .background(
+                    Group {
+                        if isFocused {
+                            KeyEventView(onArrowKey: { key, isLarge in
+                                let stepCount = isLarge ? 10.0 : 1.0
+                                let stepValue = (range.upperBound - range.lowerBound) / 100.0
+                                let change = (key == .up ? 1.0 : -1.0) * stepValue * stepCount
+                                self.updateValue(value + change)
+                            })
+                        }
+                    }
+                )
         }
         .onAppear { syncText() }
         .onChange(of: value) { _ in if !isFocused { syncText() } }
@@ -313,7 +320,7 @@ public struct COToolValueSlider: View {
                         DragGesture(minimumDistance: 0)
                             .onChanged { gesture in
                                 let percent = min(max(0, Double(gesture.location.x / geo.size.width)), 1.0)
-                                self.value = range.lowerBound + percent * (range.upperBound - range.lowerBound)
+                                self.updateValue(range.lowerBound + percent * (range.upperBound - range.lowerBound))
                             }
                     )
             }
@@ -322,15 +329,91 @@ public struct COToolValueSlider: View {
         .frame(height: 18)
     }
     
+    private func updateValue(_ newValue: Double) {
+        self.value = min(max(newValue, range.lowerBound), range.upperBound)
+    }
+    
     private func syncText() {
         textValue = String(format: "%.\(decimalPlaces)f", value)
     }
     
     private func updateValueFromText() {
         if let newValue = Double(textValue) {
-            self.value = min(max(newValue, range.lowerBound), range.upperBound)
+            updateValue(newValue)
         }
         syncText()
+    }
+}
+
+// MARK: - Event Handling Helpers
+
+struct ScrollWheelModifier: ViewModifier {
+    let action: (NSEvent) -> Void
+    
+    func body(content: Content) -> some View {
+        content.overlay(
+            ScrollWheelRepresentable(action: action)
+        )
+    }
+}
+
+struct ScrollWheelRepresentable: NSViewRepresentable {
+    let action: (NSEvent) -> Void
+    
+    func makeNSView(context: Context) -> NSView {
+        let view = ScrollWheelView()
+        view.action = action
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
+class ScrollWheelView: NSView {
+    var action: ((NSEvent) -> Void)?
+    
+    override func scrollWheel(with event: NSEvent) {
+        action?(event)
+    }
+    
+    override var acceptsFirstResponder: Bool { false }
+}
+
+struct KeyEventView: NSViewRepresentable {
+    enum ArrowKey { case up, down }
+    let onArrowKey: (ArrowKey, Bool) -> Void
+    
+    func makeNSView(context: Context) -> NSView {
+        let view = KeyCaptureView()
+        view.onArrowKey = onArrowKey
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
+class KeyCaptureView: NSView {
+    var onArrowKey: ((KeyEventView.ArrowKey, Bool) -> Void)?
+    
+    override var acceptsFirstResponder: Bool { true }
+    
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        if window != nil {
+            window?.makeFirstResponder(self)
+        }
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        let isShift = event.modifierFlags.contains(.shift)
+        switch event.keyCode {
+        case 126: // Up
+            onArrowKey?(.up, isShift)
+        case 125: // Down
+            onArrowKey?(.down, isShift)
+        default:
+            super.keyDown(with: event)
+        }
     }
 }
 
