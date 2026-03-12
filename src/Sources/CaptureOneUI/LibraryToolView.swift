@@ -143,10 +143,11 @@ public struct LibraryToolView: View {
                         .onTapGesture { selectedCollectionUUID = fav.uuid }
                         .contextMenu {
                             if let path = fav.folderPath {
-                                Button("Set as Capture Folder") { session.captureFolder = path }
-                                Button("Set as Selects Folder") { session.selectsFolder = path }
-                                Button("Set as Output Folder") { session.outputFolder = path }
-                                Button("Set as Session Trash Folder") { session.trashFolder = path }
+                                let url = URL(fileURLWithPath: path)
+                                Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
+                                Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
+                                Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
+                                Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
                             }
                         }
                 }
@@ -171,16 +172,16 @@ public struct LibraryToolView: View {
                             Button("Import") { }
                             Button("Export") { }
                             Divider()
-                            Button("Set as Capture Folder") { commands.session?.captureFolder = path }
-                            Button("Set as Selects Folder") { commands.session?.selectsFolder = path }
-                            Button("Set as Output Folder") { commands.session?.outputFolder = path }
-                            Button("Set as Session Trash Folder") { commands.session?.trashFolder = path }
+                            let url = URL(fileURLWithPath: path)
+                            Button("Set as Capture Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: s) } }
+                            Button("Set as Selects Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: s) } }
+                            Button("Set as Output Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: s) } }
+                            Button("Set as Session Trash Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: s) } }
                             Divider()
                             Button("Show in Library") { }
                             Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
                             Button("Show Info") { }
                             Divider()
-                            Button("Move to System Trash") { }
                         }
                 }
             }

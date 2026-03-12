@@ -13,7 +13,15 @@ public struct CONewSessionView: View {
     @State private var outputFolder: String = "Output"
     @State private var trashFolder: String = "Trash"
     
+    @State private var autoFavorite: Bool = true
+    
+    let evaluator = TokenEvaluator()
+    
     public init() {}
+    
+    private var tokenContext: TokenEvaluator.Context {
+        TokenEvaluator.Context(imageName: "Image", date: Date(), sequence: 1, jobName: name.isEmpty ? "Untitled" : name)
+    }
     
     public var body: some View {
         VStack(spacing: 0) {
@@ -48,11 +56,26 @@ public struct CONewSessionView: View {
                     }
                 }
                 
-                Section(header: Text("Subfolders")) {
-                    TextField("Capture Folder:", text: $captureFolder)
-                    TextField("Selects Folder:", text: $selectsFolder)
-                    TextField("Output Folder:", text: $outputFolder)
-                    TextField("Trash Folder:", text: $trashFolder)
+                Section(header: Text("Subfolders Matrix")) {
+                    HStack(alignment: .top, spacing: 16) {
+                        VStack(alignment: .trailing, spacing: 12) {
+                            Text("Capture Folder:")
+                            Text("Selects Folder:")
+                            Text("Output Folder:")
+                            Text("Trash Folder:")
+                        }
+                        .padding(.top, 4)
+                        
+                        VStack(spacing: 8) {
+                            folderField($captureFolder)
+                            folderField($selectsFolder)
+                            folderField($outputFolder)
+                            folderField($trashFolder)
+                        }
+                    }
+                    
+                    Toggle("Auto-add specific folders to Session Favorites", isOn: $autoFavorite)
+                        .padding(.top, 8)
                 }
             }
             .padding()
@@ -80,6 +103,20 @@ public struct CONewSessionView: View {
         .preferredColorScheme(.dark)
     }
     
+    @ViewBuilder
+    private func folderField(_ binding: Binding<String>) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            TextField("", text: binding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            if binding.wrappedValue.contains("[") {
+                Text("Preview: " + evaluator.evaluate(format: binding.wrappedValue, context: tokenContext))
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+        }
+    }
+    
     private func selectLocation() {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false
@@ -100,6 +137,6 @@ public struct CONewSessionView: View {
             "Output": outputFolder,
             "Trash": trashFolder
         ]
-        commands.createSession(name: name, location: location, subfolders: subfolders)
+        commands.createSession(name: name, location: location, subfolders: subfolders, autoFavorite: autoFavorite)
     }
 }

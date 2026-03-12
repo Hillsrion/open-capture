@@ -191,18 +191,27 @@ public final class AppCommandCenter: ObservableObject {
         presentedSheet = nil
     }
 
-    public func createSession(name: String, location: URL, subfolders: [String: String]) {
+    public func createSession(name: String, location: URL, subfolders: [String: String], autoFavorite: Bool = false) {
         let sessionRoot = location.appendingPathComponent(name)
         let sessionPath = sessionRoot.appendingPathComponent("\(name).cosession").path
         print("[CommandCenter] Creating New Session: \(name) at \(sessionPath)")
         
         CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: sessionPath, isCatalog: false)
         
+        let evaluator = TokenEvaluator()
+        let tokenContext = TokenEvaluator.Context(imageName: "Image", date: Date(), sequence: 1, jobName: name)
+        
+        // Evaluate the dynamic subfolder names
+        var evaluatedSubfolders: [String: String] = [:]
+        for (key, format) in subfolders {
+            evaluatedSubfolders[key] = evaluator.evaluate(format: format, context: tokenContext)
+        }
+        
         // 1. Create directory scaffold
         let fm = FileManager.default
         do {
             try fm.createDirectory(at: sessionRoot, withIntermediateDirectories: true)
-            for folderName in subfolders.values {
+            for folderName in evaluatedSubfolders.values {
                 try fm.createDirectory(at: sessionRoot.appendingPathComponent(folderName), withIntermediateDirectories: true)
             }
             // Create dummy .cosession file
@@ -218,6 +227,21 @@ public final class AppCommandCenter: ObservableObject {
         let session = SessionBase(documentUUID: UUID().uuidString, type: 1, context: ctx)
         session.name = name
         session.rootFolder = sessionRoot.path
+        
+        // Assign the actual evaluated folder paths back to session
+        if let cap = evaluatedSubfolders["Capture"] { session.captureFolder = sessionRoot.appendingPathComponent(cap).path }
+        if let sel = evaluatedSubfolders["Selects"] { session.selectsFolder = sessionRoot.appendingPathComponent(sel).path }
+        if let out = evaluatedSubfolders["Output"] { session.outputFolder = sessionRoot.appendingPathComponent(out).path }
+        if let tra = evaluatedSubfolders["Trash"] { session.trashFolder = sessionRoot.appendingPathComponent(tra).path }
+        
+        if autoFavorite {
+            for folderName in evaluatedSubfolders.values {
+                let fav = CollectionBase(uuid: UUID().uuidString, context: ctx)
+                fav.name = folderName
+                fav.folderPath = sessionRoot.appendingPathComponent(folderName).path
+                session.arrangedUserFavouriteCollections.append(fav)
+            }
+        }
         
         let recipeManager = OutputRecipeManager.shared
         if recipeManager.recipes.isEmpty {
