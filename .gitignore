@@ -9,6 +9,7 @@ RawDumps copy/
 src/.build/
 src/.swiftpm/
 .entire/
+.agent/
 .ruby-lsp/
 .vscode/
 \n# Skill Data (non-versioned)
