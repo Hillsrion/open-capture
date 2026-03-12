@@ -88,7 +88,7 @@ public struct LibraryToolView: View {
                             selectedCollectionUUID = "capture"
                             commands.selectSessionFolder(type: .capture)
                         }
-                    LibraryRow(title: "Selects Folder", icon: "checkmark.circle", count: selectedCollectionUUID == "selects" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "selects")
+                    LibraryRow(title: "Selects Folder", icon: "star", count: selectedCollectionUUID == "selects" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "selects")
                         .onTapGesture { 
                             selectedCollectionUUID = "selects"
                             commands.selectSessionFolder(type: .selects)
@@ -221,7 +221,7 @@ public struct LibraryToolView: View {
     // MARK: - Helpers
     private func iconForFolder(path: String) -> String {
         if path == session.captureFolder { return "camera" }
-        if path == session.selectsFolder { return "checkmark.circle" }
+        if path == session.selectsFolder { return "star" }
         if path == session.outputFolder { return "gearshape" }
         if path == session.trashFolder { return "trash" }
         return "folder"
