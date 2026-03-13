@@ -19,16 +19,20 @@ public class LiveViewEngine: ObservableObject {
         print("[LiveView] Starting engine for \(camera.name)")
         self.currentCamera = camera
         isActive = true
-        
+
         // Reconstructed Phase 2 Task: High-speed fetching loop
         frameLoop = LiveViewFrameLoop(camera: camera) { [weak self] frame in
             self?.currentFrame = frame
         }
-        
+
         camera.startLiveView()
         frameLoop?.start()
-    }
-    
+
+        // Ensure Live View window opens
+        DispatchQueue.main.async {
+            AppCommandCenter.shared.openLivePreview()
+        }
+    }    
     public func stop() {
         print("[LiveView] Stopping engine")
         isActive = false

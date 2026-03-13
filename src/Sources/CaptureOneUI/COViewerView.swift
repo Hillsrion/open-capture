@@ -27,9 +27,7 @@ public struct COViewerView: View {
             ZStack {
                 CaptureOneTheme.Colors.applicationBackground
                 
-                if liveView.isActive {
-                    LiveViewOverlayView(camera: liveView.currentCamera)
-                } else if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
+                if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
                     HStack(spacing: 1) {
                         viewerImageView(sourceImage)
                         viewerImageView(renderedImage)
@@ -79,7 +77,7 @@ public struct COViewerView: View {
                             Button("Auto-Pick Source") {
                                 // Simulate Auto-pick target point
                                 if let arrow = adjustmentController?.currentVariant?.activeLayer?.repairArrows.first, let image = image {
-                                    _ = RetouchEngine.shared.autoPickSource(for: arrow.destination, in: image)
+                                    _ = RetouchEngine.shared.autoPickSource(for: arrow.destinationPoint, in: image)
                                 }
                             }
                             Button("Reset Retouching") {

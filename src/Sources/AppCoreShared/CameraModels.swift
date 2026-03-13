@@ -85,7 +85,8 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
         properties = [
             P1CaptureCore_Property(id: "ISO", name: "ISO", current: "100", available: ["100", "200", "400", "800", "1600"]),
             P1CaptureCore_Property(id: "Shutter", name: "Shutter Speed", current: "1/125", available: ["1/60", "1/125", "1/250", "1/500"]),
-            P1CaptureCore_Property(id: "Aperture", name: "Aperture", current: "f/5.6", available: ["f/2.8", "f/4", "f/5.6", "f/8", "f/11"])
+            P1CaptureCore_Property(id: "Aperture", name: "Aperture", current: "f/5.6", available: ["f/2.8", "f/4", "f/5.6", "f/8", "f/11"]),
+            P1CaptureCore_Property(id: "WB", name: "White Balance", current: "Auto", available: ["Auto", "Daylight", "Shade", "Cloudy", "Tungsten", "Fluorescent", "Flash", "Custom"])
         ]
     }
     

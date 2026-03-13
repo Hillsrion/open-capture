@@ -83,7 +83,7 @@ public struct LayerInspectorView: View {
                             print("[RetouchEngine] Auto-Pick Source triggered")
                             if let firstArrow = activeLayer.repairArrows.first {
                                 // Simulate calling the engine
-                                _ = RetouchEngine.shared.autoPickSource(for: firstArrow.destination, in: variant.image as Any)
+                                _ = RetouchEngine.shared.autoPickSource(for: firstArrow.destinationPoint, in: variant.image as Any)
                             }
                         }) {
                             Text("Auto-Pick Source")
