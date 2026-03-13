@@ -62,6 +62,12 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     }
     @Published public var nextCaptureAdjustments: NextCaptureAdjustments = .copyFromLast
 
+    // Next Capture Adjustments Additional Settings
+    @Published public var nextCaptureICCProfile: String = "Default"
+    @Published public var nextCaptureOrientation: String = "0"
+    @Published public var applyMetadata: Bool = false
+    @Published public var selectedStylePreset: String = "None"
+
     // Auto-Sync Metadata
     @Published public var autoSyncIPTC: Bool = false
     @Published public var autoSyncKeywords: Bool = false

@@ -113,16 +113,60 @@ public struct NextCaptureAdjustmentsToolView: View {
         COToolSection("Next Capture Adjustments", toolID: "NextCaptureAdjustments") {
             if let camera = browser.availableCameras.first {
                 VStack(alignment: .leading, spacing: 8) {
+                    // All Other Dropdown
                     HStack {
                         Text("All Other").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
                         Picker("", selection: Binding(get: { camera.nextCaptureAdjustments }, set: { camera.nextCaptureAdjustments = $0 })) {
                             Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
                             Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
-                            Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
+                            Text("Defaults").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
                         }
                         .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
                     }
+                    
+                    // ICC Profile Dropdown
+                    HStack {
+                        Text("ICC Profile").font(.system(size: 11)).foregroundColor(.gray)
+                        Spacer()
+                        Picker("", selection: Binding(get: { camera.nextCaptureICCProfile }, set: { camera.nextCaptureICCProfile = $0 })) {
+                            Text("Default").tag("Default")
+                            Text("sRGB").tag("sRGB")
+                            Text("Adobe RGB").tag("Adobe RGB")
+                        }
+                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                    }
+                    
+                    // Orientation Dropdown
+                    HStack {
+                        Text("Orientation").font(.system(size: 11)).foregroundColor(.gray)
+                        Spacer()
+                        Picker("", selection: Binding(get: { camera.nextCaptureOrientation }, set: { camera.nextCaptureOrientation = $0 })) {
+                            Text("0").tag("0")
+                            Text("90").tag("90")
+                            Text("180").tag("180")
+                            Text("270").tag("270")
+                        }
+                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                    }
+                    
+                    // Style Dropdown
+                    HStack {
+                        Text("Style").font(.system(size: 11)).foregroundColor(.gray)
+                        Spacer()
+                        Picker("", selection: Binding(get: { camera.selectedStylePreset }, set: { camera.selectedStylePreset = $0 })) {
+                            Text("None").tag("None")
+                            Text("Cinematic").tag("Cinematic")
+                            Text("B&W High Contrast").tag("B&W High Contrast")
+                        }
+                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                    }
+
+                    // Metadata Checkbox
+                    Toggle("Metadata", isOn: Binding(get: { camera.applyMetadata }, set: { camera.applyMetadata = $0 }))
+                        .font(.system(size: 11))
+                        
+                    // Auto-Crop Checkbox
                     Toggle("Auto-Crop", isOn: Binding(get: { camera.autoCropEnabled }, set: { camera.autoCropEnabled = $0 }))
                         .font(.system(size: 11))
                 }
