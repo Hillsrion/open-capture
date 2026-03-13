@@ -58,7 +58,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var blacks: Float = 0.0
     
     // Navigator State (UI-203)
-    @Published public var zoomLevel: Float = 1.0
+    @Published public var zoomLevel: Double = 1.0
     @Published public var viewportRect: CGRect = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
     
     // Focus State (UI-203)
@@ -628,7 +628,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.spots = []
         }
         
-        self.zoomLevel = (mc.objectForKey("ZZOOM_LEVEL") as? Float) ?? 1.0
+        if let zoom = mc.objectForKey("ZZOOM_LEVEL") as? Double {
+            self.zoomLevel = zoom
+        } else if let zoomFloat = mc.objectForKey("ZZOOM_LEVEL") as? Float {
+            self.zoomLevel = Double(zoomFloat)
+        } else {
+            self.zoomLevel = 1.0
+        }
         if let vRect = mc.objectForKey("ZVIEWPORT_RECT") as? CGRect {
             self.viewportRect = vRect
         }

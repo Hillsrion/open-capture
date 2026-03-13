@@ -19,124 +19,149 @@ public struct COViewerView: View {
     @State private var renderedImage: NSImage?
     @State private var sourceImage: NSImage?
     @State private var maskImage: NSImage?
-    @State private var zoomLevel: Double = 1.0 // Inferred from ViewerZoomViewController
+    
+    @State private var dragStartOrigin: CGPoint? = nil
     
     public var body: some View {
-        VStack(spacing: 0) {
-            // MARK: - Main Rendering Area
-            ZStack {
-                CaptureOneTheme.Colors.applicationBackground
-                
-                if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
-                    HStack(spacing: 1) {
-                        viewerImageView(sourceImage)
-                        viewerImageView(renderedImage)
-                    }
-                    .overlay(alignment: .topLeading) {
-                        ViewerModeBadge(text: "Before / After")
-                            .padding(12)
-                    }
-                    .overlay {
-                        if commands.showGridOverlay {
-                            ViewerGridOverlay()
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // MARK: - Main Rendering Area
+                ZStack {
+                    CaptureOneTheme.Colors.applicationBackground
+                    
+                    if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
+                        HStack(spacing: 1) {
+                            viewerImageView(sourceImage)
+                            viewerImageView(renderedImage)
                         }
-                    }
-                } else if let nsImage = renderedImage {
-                    ZStack {
-                        viewerImageView(nsImage)
-                        
-                        // Mask Overlay (Red tint)
-                        if let mask = maskImage {
-                            Image(nsImage: mask)
-                                .resizable()
-                                .scaleEffect(zoomLevel)
-                                .aspectRatio(contentMode: .fit)
-                                .opacity(0.5)
-                                .colorMultiply(.red)
+                        .overlay(alignment: .topLeading) {
+                            ViewerModeBadge(text: "Before / After")
+                                .padding(12)
                         }
-                        
-                        // Repair Arrows Overlay (UI-006)
-                        if let active = adjustmentController?.currentVariant?.activeLayer {
-                            ForEach(active.repairArrows) { arrow in
-                                RepairArrowView(arrow: arrow)
+                        .overlay {
+                            if commands.showGridOverlay {
+                                ViewerGridOverlay()
                             }
                         }
-                        
-                        // Annotations Overlay (UI-007)
-                        if let annotations = adjustmentController?.currentVariant?.annotations {
-                            AnnotationsOverlayView(annotations: annotations)
-                        }
-                        
-                        // Keystone Interactive Overlay (UI-006)
-                        if let points = adjustmentController?.keystonePoints {
-                            KeystoneOverlayView(points: points)
-                        }
-                    }
-                    .contextMenu {
-                        if commands.selectedCursorToolID == "Heal" || commands.selectedCursorToolID == "Clone" {
-                            Button("Auto-Pick Source") {
-                                // Simulate Auto-pick target point
-                                if let arrow = adjustmentController?.currentVariant?.activeLayer?.repairArrows.first, let image = image {
-                                    _ = RetouchEngine.shared.autoPickSource(for: arrow.destinationPoint, in: image)
+                    } else if let nsImage = renderedImage {
+                        ZStack {
+                            viewerImageView(nsImage)
+                            
+                            // Mask Overlay (Red tint)
+                            if let mask = maskImage {
+                                Image(nsImage: mask)
+                                    .resizable()
+                                    .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
+                                    .aspectRatio(contentMode: .fit)
+                                    .opacity(0.5)
+                                    .colorMultiply(.red)
+                            }
+                            
+                            // Repair Arrows Overlay (UI-006)
+                            if let active = adjustmentController?.currentVariant?.activeLayer {
+                                ForEach(active.repairArrows) { arrow in
+                                    RepairArrowView(arrow: arrow)
                                 }
                             }
-                            Button("Reset Retouching") {
-                                adjustmentController?.resetRetouching()
+                            
+                            // Annotations Overlay (UI-007)
+                            if let annotations = adjustmentController?.currentVariant?.annotations {
+                                AnnotationsOverlayView(annotations: annotations)
                             }
-                            Divider()
-                            Button("Brush Settings...") {
-                                // Normally this would spawn a popover at cursor location, for now placeholder
-                                print("[CaptureOneUI] Show Brush Settings popover")
+                            
+                            // Keystone Interactive Overlay (UI-006)
+                            if let points = adjustmentController?.keystonePoints {
+                                KeystoneOverlayView(points: points)
                             }
                         }
-                    }
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged { gesture in
-                                if commands.selectedCursorToolID == "Pan" {
-                                    // Panning logic: modify viewportRect
-                                    let deltaX = gesture.translation.width / 1000.0 // Arbitrary scaling factor
-                                    let deltaY = gesture.translation.height / 1000.0
-                                    
-                                    // Only pan if zoomed in
-                                    if zoomLevel > 1.0 {
-                                        let currentViewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
-                                        let newX = max(0, min(1.0 - currentViewport.width, currentViewport.origin.x - deltaX))
-                                        let newY = max(0, min(1.0 - currentViewport.height, currentViewport.origin.y - deltaY))
-                                        adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                        .onHover { inside in
+                            if inside && commands.selectedCursorToolID == "Pan" {
+                                NSCursor.openHand.push()
+                            } else {
+                                NSCursor.pop()
+                            }
+                        }
+                        .contextMenu {
+                            if commands.selectedCursorToolID == "Heal" || commands.selectedCursorToolID == "Clone" {
+                                Button("Auto-Pick Source") {
+                                    // Simulate Auto-pick target point
+                                    if let arrow = adjustmentController?.currentVariant?.activeLayer?.repairArrows.first, let image = image {
+                                        _ = RetouchEngine.shared.autoPickSource(for: arrow.destinationPoint, in: image)
                                     }
                                 }
-                            }
-                            .onEnded { gesture in
-                                let toolID = commands.selectedCursorToolID
-                                if toolID == "Heal" {
-                                    adjustmentController?.addRepairArrow(at: gesture.location, type: .heal)
-                                } else if toolID == "Clone" {
-                                    adjustmentController?.addRepairArrow(at: gesture.location, type: .clone)
-                                } else {
-                                    // Tool not handled by viewer root
-                                    return
+                                Button("Reset Retouching") {
+                                    adjustmentController?.resetRetouching()
                                 }
-                                print("[UI] Clicked at: \(gesture.location) with tool \(toolID)")
+                                Divider()
+                                Button("Brush Settings...") {
+                                    // Normally this would spawn a popover at cursor location, for now placeholder
+                                    print("[CaptureOneUI] Show Brush Settings popover")
+                                }
                             }
-                    )
-                    .overlay(alignment: .topLeading) {
-                        viewerStatusBadges
-                            .padding(12)
-                    }
-                    .overlay {
-                        if commands.showGridOverlay {
-                            ViewerGridOverlay()
                         }
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { gesture in
+                                    if commands.selectedCursorToolID == "Pan" {
+                                        if dragStartOrigin == nil {
+                                            dragStartOrigin = adjustmentController?.viewportRect.origin
+                                            NSCursor.closedHand.push()
+                                        }
+                                        
+                                        guard let start = dragStartOrigin, let zoom = adjustmentController?.zoomLevel else { return }
+                                        
+                                        // Panning logic: modify viewportRect
+                                        // Normalized delta = pixel delta / viewer size / zoom
+                                        let deltaX = gesture.translation.width / geo.size.width / zoom
+                                        let deltaY = gesture.translation.height / geo.size.height / zoom
+                                        
+                                        if zoom > 1.0 {
+                                            let currentViewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+                                            let newX = max(0, min(1.0 - currentViewport.width, start.x - deltaX))
+                                            let newY = max(0, min(1.0 - currentViewport.height, start.y - deltaY))
+                                            adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                        }
+                                    }
+                                }
+                                .onEnded { gesture in
+                                    if commands.selectedCursorToolID == "Pan" {
+                                        dragStartOrigin = nil
+                                        NSCursor.pop()
+                                    }
+                                    
+                                    let toolID = commands.selectedCursorToolID
+                                    if toolID == "Heal" {
+                                        adjustmentController?.addRepairArrow(at: gesture.location, type: .heal)
+                                    } else if toolID == "Clone" {
+                                        adjustmentController?.addRepairArrow(at: gesture.location, type: .clone)
+                                    } else {
+                                        // Tool not handled by viewer root
+                                        return
+                                    }
+                                    print("[UI] Clicked at: \(gesture.location) with tool \(toolID)")
+                                }
+                        )
+                        .overlay(alignment: .topLeading) {
+                            viewerStatusBadges
+                                .padding(12)
+                        }
+                        .overlay {
+                            if commands.showGridOverlay {
+                                ViewerGridOverlay()
+                            }
+                        }
+                    } else {
+                        COViewerEmptyStateView()
                     }
-                } else {
-                    COViewerEmptyStateView()
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                // MARK: - COViewerBarView (Reconstructed from metadata)
+                COViewerBarView(zoomLevel: Binding(
+                    get: { adjustmentController?.zoomLevel ?? 1.0 },
+                    set: { adjustmentController?.zoomLevel = $0 }
+                ))
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
-            // MARK: - COViewerBarView (Reconstructed from metadata)
-            COViewerBarView(zoomLevel: $zoomLevel)
         }
         .onAppear {
             render()
@@ -202,7 +227,7 @@ public struct COViewerView: View {
     private func viewerImageView(_ image: NSImage) -> some View {
         Image(nsImage: image)
             .resizable()
-            .scaleEffect(zoomLevel)
+            .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
             .aspectRatio(contentMode: .fit)
     }
 

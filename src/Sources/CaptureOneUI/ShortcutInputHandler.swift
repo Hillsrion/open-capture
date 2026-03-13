@@ -118,32 +118,47 @@ public class ShortcutInputHandler {
     }
     
     private func handleScroll(_ event: NSEvent) -> NSEvent? {
-        guard let speedEditKey = activeSpeedEditKey else { return event }
-        
         // deltaY > 0 means scrolling up (increase), deltaY < 0 means scrolling down (decrease)
         let delta = Float(event.deltaY)
         guard delta != 0 else { return event }
         
         let controller = AdjustmentToolController.shared
-        let sensitivity: Float = 1.0 // Could be tied to AppPreferences
         
-        // Dispatch to adjustment
-        switch speedEditKey {
-        case "Exposure": controller.exposure = max(-4.0, min(4.0, controller.exposure + (delta * sensitivity * 0.1)))
-        case "Contrast": controller.contrast = max(-50, min(50, controller.contrast + (delta * sensitivity)))
-        case "Brightness": controller.brightness = max(-50, min(50, controller.brightness + (delta * sensitivity)))
-        case "Saturation": controller.saturation = max(-100, min(100, controller.saturation + (delta * sensitivity)))
-        case "Highlights": controller.highlights = max(-100, min(100, controller.highlights + (delta * sensitivity)))
-        case "Shadows": controller.shadows = max(-100, min(100, controller.shadows + (delta * sensitivity)))
-        case "Whites": controller.whites = max(-100, min(100, controller.whites + (delta * sensitivity)))
-        case "Blacks": controller.blacks = max(-100, min(100, controller.blacks + (delta * sensitivity)))
-        default: break
+        if let speedEditKey = activeSpeedEditKey {
+            let sensitivity: Float = 1.0 // Could be tied to AppPreferences
+            
+            // Dispatch to adjustment
+            switch speedEditKey {
+            case "Exposure": controller.exposure = max(-4.0, min(4.0, controller.exposure + (delta * sensitivity * 0.1)))
+            case "Contrast": controller.contrast = max(-50, min(50, controller.contrast + (delta * sensitivity)))
+            case "Brightness": controller.brightness = max(-50, min(50, controller.brightness + (delta * sensitivity)))
+            case "Saturation": controller.saturation = max(-100, min(100, controller.saturation + (delta * sensitivity)))
+            case "Highlights": controller.highlights = max(-100, min(100, controller.highlights + (delta * sensitivity)))
+            case "Shadows": controller.shadows = max(-100, min(100, controller.shadows + (delta * sensitivity)))
+            case "Whites": controller.whites = max(-100, min(100, controller.whites + (delta * sensitivity)))
+            case "Blacks": controller.blacks = max(-100, min(100, controller.blacks + (delta * sensitivity)))
+            default: break
+            }
+            
+            // Show temporary HUD overlay for Speed Edit (simulated)
+            print("Speed Edit: \(speedEditKey) adjusted by \(delta)")
+            return nil // Consume scroll event
+        } else {
+            // Scroll wheel Zoom logic (linked to Pan tool or general viewer focus)
+            // deltaY > 0: Scroll Up -> Zoom In
+            let zoomSensitivity: Double = 0.05
+            let currentZoom = controller.zoomLevel
+            let newZoom = max(0.1, min(4.0, currentZoom + (Double(delta) * zoomSensitivity)))
+            
+            if newZoom != currentZoom {
+                Task { @MainActor in
+                    controller.zoomLevel = newZoom
+                }
+                return nil // Consume scroll event
+            }
         }
         
-        // Show temporary HUD overlay for Speed Edit (simulated)
-        print("Speed Edit: \(speedEditKey) adjusted by \(delta)")
-        
-        return nil // Consume scroll event
+        return event
     }
     
     public func stopMonitoring() {
