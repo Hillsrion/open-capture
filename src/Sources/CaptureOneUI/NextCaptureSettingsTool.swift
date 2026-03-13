@@ -45,10 +45,10 @@ public struct NextCaptureSettingsTool: View {
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(.gray)
                 
-                Picker("Adjustments", selection: $camera.nextCaptureAdjustments) {
-                    Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
-                    Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
-                    Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
+                Picker("Adjustments", selection: $camera.nextCaptureAdjustmentsOther) {
+                    Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromLast)
+                    Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromPrimary)
+                    Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.neutral)
                 }
                 .pickerStyle(MenuPickerStyle())
                 .font(.system(size: 11))

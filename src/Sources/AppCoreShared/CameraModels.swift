@@ -54,19 +54,19 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     @Published public var namingFormat: String = "[Camera]_[Counter]"
     @Published public var namingCounter: Int = 1
     
-    public enum NextCaptureAdjustments: String, Codable {
+    public enum NextCaptureAdjustmentsOther: String, Codable {
         case copyFromLast = "Copy from Last"
         case copyFromPrimary = "Copy from Primary"
         case specificStyle = "Specific Style"
-        case neutral = "Neutral"
+        case neutral = "Defaults"
     }
-    @Published public var nextCaptureAdjustments: NextCaptureAdjustments = .copyFromLast
+    @Published public var nextCaptureAdjustmentsOther: NextCaptureAdjustmentsOther = .copyFromLast
 
     // Next Capture Adjustments Additional Settings
-    @Published public var nextCaptureICCProfile: String = "Default"
-    @Published public var nextCaptureOrientation: String = "0"
-    @Published public var applyMetadata: Bool = false
-    @Published public var selectedStylePreset: String = "None"
+    @Published public var nextCaptureAdjustmentsICCProfile: String = "Default"
+    @Published public var nextCaptureAdjustmentsOrientation: String = "0"
+    @Published public var nextCaptureAdjustmentsMetadata: Bool = false
+    @Published public var nextCaptureAdjustmentsOtherStyleUUIDs: String = "None"
 
     // Auto-Sync Metadata
     @Published public var autoSyncIPTC: Bool = false
@@ -139,7 +139,7 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     }
     
     private func applyNextCaptureAdjustments(for imageName: String) {
-        print("[Automation] Applying '\(nextCaptureAdjustments.rawValue)' logic to \(imageName)")
+        print("[Automation] Applying '\(nextCaptureAdjustmentsOther.rawValue)' logic to \(imageName)")
         // In original, this would look up the primary variant or last captured variant
         // and copy its settings to the new MOVariant created during import.
     }

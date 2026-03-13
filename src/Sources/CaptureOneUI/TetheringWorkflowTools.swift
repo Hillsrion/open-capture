@@ -117,10 +117,10 @@ public struct NextCaptureAdjustmentsToolView: View {
                     HStack {
                         Text("All Other").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustments }, set: { camera.nextCaptureAdjustments = $0 })) {
-                            Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
-                            Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
-                            Text("Defaults").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
+                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOther }, set: { camera.nextCaptureAdjustmentsOther = $0 })) {
+                            Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromLast)
+                            Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromPrimary)
+                            Text("Defaults").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.neutral)
                         }
                         .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
                     }
@@ -129,7 +129,7 @@ public struct NextCaptureAdjustmentsToolView: View {
                     HStack {
                         Text("ICC Profile").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureICCProfile }, set: { camera.nextCaptureICCProfile = $0 })) {
+                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsICCProfile }, set: { camera.nextCaptureAdjustmentsICCProfile = $0 })) {
                             Text("Default").tag("Default")
                             Text("sRGB").tag("sRGB")
                             Text("Adobe RGB").tag("Adobe RGB")
@@ -141,7 +141,7 @@ public struct NextCaptureAdjustmentsToolView: View {
                     HStack {
                         Text("Orientation").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureOrientation }, set: { camera.nextCaptureOrientation = $0 })) {
+                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOrientation }, set: { camera.nextCaptureAdjustmentsOrientation = $0 })) {
                             Text("0").tag("0")
                             Text("90").tag("90")
                             Text("180").tag("180")
@@ -154,7 +154,7 @@ public struct NextCaptureAdjustmentsToolView: View {
                     HStack {
                         Text("Style").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
-                        Picker("", selection: Binding(get: { camera.selectedStylePreset }, set: { camera.selectedStylePreset = $0 })) {
+                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOtherStyleUUIDs }, set: { camera.nextCaptureAdjustmentsOtherStyleUUIDs = $0 })) {
                             Text("None").tag("None")
                             Text("Cinematic").tag("Cinematic")
                             Text("B&W High Contrast").tag("B&W High Contrast")
@@ -163,7 +163,7 @@ public struct NextCaptureAdjustmentsToolView: View {
                     }
 
                     // Metadata Checkbox
-                    Toggle("Metadata", isOn: Binding(get: { camera.applyMetadata }, set: { camera.applyMetadata = $0 }))
+                    Toggle("Metadata", isOn: Binding(get: { camera.nextCaptureAdjustmentsMetadata }, set: { camera.nextCaptureAdjustmentsMetadata = $0 }))
                         .font(.system(size: 11))
                         
                     // Auto-Crop Checkbox
