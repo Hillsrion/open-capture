@@ -242,7 +242,9 @@ public struct Workspace: Codable, Identifiable {
     }
 
     public func activePalette() -> WorkspacePaletteDefinition? {
-        palettes.first(where: { $0.id == selectedPaletteID }) ?? palettes.first
+        let palette = palettes.first(where: { $0.id == selectedPaletteID }) ?? palettes.first
+        print("[Workspace] activePalette lookup for '\(selectedPaletteID)' -> found: \(palette?.id ?? "nil")")
+        return palette
     }
 
     public func defaultToolStateValue(toolID: String, key: String) -> WorkspaceStoredValue? {
@@ -296,6 +298,7 @@ public class WorkspaceLayout: Codable {
 }
 
 /// Reconstructed manager for workspace presets and persistence.
+@MainActor
 public class WorkspaceManager: ObservableObject, Codable {
     public static let shared = WorkspaceManager()
     public static var persistenceDirectoryOverride: URL?
@@ -396,10 +399,12 @@ public class WorkspaceManager: ObservableObject, Codable {
     }
 
     public func setSelectedPaletteID(_ paletteID: String, autosave: Bool = true) {
+        print("[WorkspaceManager] setSelectedPaletteID called with: \(paletteID)")
         objectWillChange.send()
         var updatedWorkspace = activeWorkspace
         updatedWorkspace.chromeState.selectedToolPaletteID = paletteID
         activeWorkspace = updatedWorkspace
+        print("[WorkspaceManager] activeWorkspace.selectedPaletteID is now: \(activeWorkspace.selectedPaletteID)")
         
         if autosave {
             saveWorkspace()

@@ -8,6 +8,7 @@ import CaptureOneUI
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     var window: NSWindow!
 
+    @MainActor
     func applicationDidFinishLaunching(_ notification: Notification) {
         print("[System] App launched. Initializing...")
         
@@ -77,14 +78,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     // MARK: - Menu Actions
 
+    @MainActor
     @objc func importImages(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.presentImport() }
     }
 
+    @MainActor
     @objc func exportImages(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.presentExport() }
     }
 
+    @MainActor
     @objc func newCatalog(_ sender: Any?) {
         print("[Menu] New Catalog clicked")
         Task { @MainActor in 
@@ -93,6 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         }
     }
 
+    @MainActor
     @objc func newSession(_ sender: Any?) {
         print("[Menu] New Session clicked")
         Task { @MainActor in 
@@ -101,67 +106,83 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         }
     }
 
+    @MainActor
     @objc func openDocument(_ sender: Any?) {
         print("[Menu] Open Document clicked")
         Task { @MainActor in AppCommandCenter.shared.openDocument() }
     }
 
+    @MainActor
     @objc func printImages(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.presentPrint() }
     }
 
+    @MainActor
     @objc func openLivePreview(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.openLivePreview() }
     }
 
+    @MainActor
     @objc func openViewerWindow(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.openViewerWindow() }
     }
 
+    @MainActor
     @objc func openCullingWindow(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.openCullingWindow() }
     }
 
+    @MainActor
     @objc func showPreferences(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.presentPreferences() }
     }
 
+    @MainActor
     @objc func showKeyboardShortcuts(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.presentKeyboardShortcuts() }
     }
 
+    @MainActor
     @objc func toggleBeforeAfter(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.beforeAfterEnabled.toggle() }
     }
 
+    @MainActor
     @objc func toggleExposureWarning(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.showExposureWarning.toggle() }
     }
 
+    @MainActor
     @objc func toggleFocusMask(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.showFocusMask.toggle() }
     }
 
+    @MainActor
     @objc func toggleProofing(_ sender: Any?) {
         Task { @MainActor in AdjustmentToolController.shared.isSoftProofingEnabled.toggle() }
     }
 
+    @MainActor
     @objc func toggleGrid(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.showGridOverlay.toggle() }
     }
 
+    @MainActor
     @objc func showTips(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.showTips() }
     }
 
+    @MainActor
     @objc func undo(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.undo() }
     }
 
+    @MainActor
     @objc func redo(_ sender: Any?) {
         Task { @MainActor in AppCommandCenter.shared.redo() }
     }
 
+    @MainActor
     @objc func selectWorkspace(_ sender: NSMenuItem) {
         let name = sender.title
         Task { @MainActor in
@@ -169,6 +190,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         }
     }
 
+    @MainActor
     @objc func saveWorkspace(_ sender: Any?) {
         let panel = NSSavePanel()
         panel.title = "Save Workspace"
@@ -183,6 +205,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     // MARK: - Menu Builder
 
+    @MainActor
     private func buildMainMenu() -> NSMenu {
         let mainMenu = NSMenu()
 
