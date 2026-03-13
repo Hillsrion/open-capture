@@ -26,6 +26,15 @@ public struct CameraSettingsTool: View {
                         }
                         .pickerStyle(MenuPickerStyle())
                         .font(.system(size: 11))
+                        
+                        Spacer()
+                        
+                        if let camera = selectedCamera, camera.isConnected {
+                            Circle()
+                                .fill(Color.green)
+                                .frame(width: 8, height: 8)
+                                .help("Camera Connected")
+                        }
                     }
                     
                     if let camera = selectedCamera {
