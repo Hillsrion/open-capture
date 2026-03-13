@@ -36,6 +36,14 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var showExposureWarning: Bool = false
     @Published public var showFocusMask: Bool = false
     @Published public var editSelectedOnly: Bool = true
+    
+    // Adjustments Clipboard State
+    @Published public var clipboardAutoSelectAdjusted: Bool = true
+    @Published public var clipboardExposureSelected: Bool = true
+    @Published public var clipboardColorSelected: Bool = true
+    @Published public var clipboardDetailsSelected: Bool = true
+    @Published public var clipboardLayersSelected: Bool = true
+    
     @Published public private(set) var importer = POImporter()
     @Published public private(set) var copiedAdjustments: Style?
     @Published public var browser = CImageBrowser()
@@ -555,14 +563,24 @@ public final class AppCommandCenter: ObservableObject {
             return nil
         }
 
-        let adjustments: [String: AnyCodable] = [
-            "ZEXPOSURE": AnyCodable(Double(adjustmentController.exposure)),
-            "ZCONTRAST": AnyCodable(Double(adjustmentController.contrast)),
-            "ZBRIGHTNESS": AnyCodable(Double(adjustmentController.brightness)),
-            "ZSATURATION": AnyCodable(Double(adjustmentController.saturation)),
-            "ZKELVIN": AnyCodable(Double(adjustmentController.kelvin)),
-            "ZTINT": AnyCodable(Double(adjustmentController.tint))
-        ]
+        var adjustments: [String: AnyCodable] = [:]
+        
+        // Simple mapping based on the Tool Categories
+        if clipboardExposureSelected {
+            adjustments["ZEXPOSURE"] = AnyCodable(Double(adjustmentController.exposure))
+            adjustments["ZCONTRAST"] = AnyCodable(Double(adjustmentController.contrast))
+            adjustments["ZBRIGHTNESS"] = AnyCodable(Double(adjustmentController.brightness))
+        }
+        
+        if clipboardColorSelected {
+            adjustments["ZSATURATION"] = AnyCodable(Double(adjustmentController.saturation))
+            adjustments["ZKELVIN"] = AnyCodable(Double(adjustmentController.kelvin))
+            adjustments["ZTINT"] = AnyCodable(Double(adjustmentController.tint))
+        }
+        
+        // Return nil if nothing is selected
+        guard !adjustments.isEmpty else { return nil }
+
         return Style(name: name, adjustments: adjustments)
     }
 }

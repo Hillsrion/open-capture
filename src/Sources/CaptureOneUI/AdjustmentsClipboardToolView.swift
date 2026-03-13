@@ -4,13 +4,6 @@ import AppCoreShared
 /// Reconstructed high-fidelity Adjustments Clipboard tool.
 public struct AdjustmentsClipboardToolView: View {
     @ObservedObject var commands = AppCommandCenter.shared
-    @State private var autoSelectAdjusted: Bool = true
-    
-    // Checkbox states for tool categories
-    @State private var exposureSelected: Bool = true
-    @State private var colorSelected: Bool = true
-    @State private var detailsSelected: Bool = true
-    @State private var layersSelected: Bool = true
     
     public init(config: ToolConfiguration) {}
     public init() {}
@@ -19,7 +12,7 @@ public struct AdjustmentsClipboardToolView: View {
         COToolSection("Adjustments Clipboard", toolID: "AdjustmentsClipboard") {
             VStack(alignment: .leading, spacing: 8) {
                 // Auto-Select Checkbox
-                Toggle("Autoselect Adjusted", isOn: $autoSelectAdjusted)
+                Toggle("Autoselect Adjusted", isOn: $commands.clipboardAutoSelectAdjusted)
                     .font(.system(size: 11))
                     .padding(.bottom, 4)
                 
@@ -28,20 +21,20 @@ public struct AdjustmentsClipboardToolView: View {
                 // Select All / None Buttons
                 HStack(spacing: 12) {
                     Button("Select All") {
-                        exposureSelected = true
-                        colorSelected = true
-                        detailsSelected = true
-                        layersSelected = true
+                        commands.clipboardExposureSelected = true
+                        commands.clipboardColorSelected = true
+                        commands.clipboardDetailsSelected = true
+                        commands.clipboardLayersSelected = true
                     }
                     .buttonStyle(.plain)
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
                     
                     Button("Select None") {
-                        exposureSelected = false
-                        colorSelected = false
-                        detailsSelected = false
-                        layersSelected = false
+                        commands.clipboardExposureSelected = false
+                        commands.clipboardColorSelected = false
+                        commands.clipboardDetailsSelected = false
+                        commands.clipboardLayersSelected = false
                     }
                     .buttonStyle(.plain)
                     .font(.system(size: 10, weight: .bold))
@@ -54,10 +47,10 @@ public struct AdjustmentsClipboardToolView: View {
                 
                 // Tool Hierarchy (Simplified for spec)
                 VStack(alignment: .leading, spacing: 6) {
-                    Toggle("Exposure", isOn: $exposureSelected).font(.system(size: 11))
-                    Toggle("Color", isOn: $colorSelected).font(.system(size: 11))
-                    Toggle("Details", isOn: $detailsSelected).font(.system(size: 11))
-                    Toggle("Layers", isOn: $layersSelected).font(.system(size: 11))
+                    Toggle("Exposure", isOn: $commands.clipboardExposureSelected).font(.system(size: 11))
+                    Toggle("Color", isOn: $commands.clipboardColorSelected).font(.system(size: 11))
+                    Toggle("Details", isOn: $commands.clipboardDetailsSelected).font(.system(size: 11))
+                    Toggle("Layers", isOn: $commands.clipboardLayersSelected).font(.system(size: 11))
                 }
                 
                 HStack {
