@@ -85,6 +85,8 @@ public enum ToolRegistry {
             return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewAdjustments")) }
         case "LivePreviewInfoTool":
             return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewInfoTool")) }
+        case "AdjustmentsClipboard":
+            return .implemented { context in AnyView(AdjustmentsClipboardToolView(config: context.config)) }
         case "Normalize":
             return .implemented { _ in AnyView(NormalizeToolView()) }
         case "NextCaptureBackup":

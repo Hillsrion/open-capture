@@ -566,7 +566,7 @@ public class WorkspaceManager: ObservableObject, Codable {
         let exposurePalette = WorkspacePaletteDefinition(
             id: "ExposureToolTab", name: "Exposure", iconName: "sun.max.fill",
             fixedTools: [ToolConfiguration(id: "Histogram"), ToolConfiguration(id: "LocalAdjustments")],
-            scrolledTools: [ToolConfiguration(id: "SmartAdjustments"), ToolConfiguration(id: "StyleBrushes"), ToolConfiguration(id: "MatchLook"), ToolConfiguration(id: "Exposure"), ToolConfiguration(id: "ShadowHighlight"), ToolConfiguration(id: "Levels"), ToolConfiguration(id: "Curves"), ToolConfiguration(id: "Clarity"), ToolConfiguration(id: "Dehaze")]
+            scrolledTools: [ToolConfiguration(id: "AdjustmentsClipboard"), ToolConfiguration(id: "SmartAdjustments"), ToolConfiguration(id: "StyleBrushes"), ToolConfiguration(id: "MatchLook"), ToolConfiguration(id: "Exposure"), ToolConfiguration(id: "ShadowHighlight"), ToolConfiguration(id: "Levels"), ToolConfiguration(id: "Curves"), ToolConfiguration(id: "Clarity"), ToolConfiguration(id: "Dehaze")]
         )
         
         let lensPalette = WorkspacePaletteDefinition(
