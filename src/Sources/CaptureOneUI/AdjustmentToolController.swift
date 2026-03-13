@@ -61,6 +61,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var zoomLevel: Double = 1.0
     @Published public var viewportRect: CGRect = CGRect(x: 0.25, y: 0.25, width: 0.5, height: 0.5)
     
+    // Multi-view sync (Pan Cursor Tool spec)
+    @Published public var multiViewPanning: Bool = false
+    
     // Focus State (UI-203)
     @Published public var focusZoomLevel: Float = 1.0
     @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)

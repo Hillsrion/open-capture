@@ -196,21 +196,55 @@ struct PropertyRow: View {
     let property: P1CaptureCore_Property
     let camera: P1CaptureCore_Camera
     
+    @State private var dragOffset: CGFloat = 0
+    
     var body: some View {
         HStack {
             Text(property.name)
                 .font(.system(size: 11))
                 .foregroundColor(.gray)
             Spacer()
-            Menu(property.currentValue) {
-                ForEach(property.availableValues, id: \.self) { val in
-                    Button(val) { camera.setPropertyValue(propertyID: property.id, value: val) }
+            
+            HStack(spacing: 4) {
+                Menu(property.currentValue) {
+                    ForEach(property.availableValues, id: \.self) { val in
+                        Button(val) { camera.setPropertyValue(propertyID: property.id, value: val) }
+                    }
                 }
+                .font(.system(size: 11, weight: .bold))
+                .foregroundColor(.white)
+                .frame(minWidth: 60, alignment: .trailing)
+                .gesture(
+                    DragGesture()
+                        .onChanged { gesture in
+                            dragOffset = gesture.translation.width
+                        }
+                        .onEnded { gesture in
+                            let threshold: CGFloat = 20
+                            if gesture.translation.width > threshold {
+                                cycleValue(direction: 1)
+                            } else if gesture.translation.width < -threshold {
+                                cycleValue(direction: -1)
+                            }
+                            dragOffset = 0
+                        }
+                )
             }
-            .font(.system(size: 11, weight: .bold))
-            .foregroundColor(.white)
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 6)
+    }
+    
+    private func cycleValue(direction: Int) {
+        let values = property.availableValues
+        guard let currentIndex = values.firstIndex(of: property.currentValue) else { return }
+        
+        var nextIndex = currentIndex + direction
+        if nextIndex < 0 { nextIndex = 0 }
+        if nextIndex >= values.count { nextIndex = values.count - 1 }
+        
+        if nextIndex != currentIndex {
+            camera.setPropertyValue(propertyID: property.id, value: values[nextIndex])
+        }
     }
 }

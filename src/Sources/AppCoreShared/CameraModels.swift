@@ -87,6 +87,7 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
 
     // Next Capture Keywords
     @Published public var nextCaptureKeywords: String = ""
+    @Published public var nextCaptureKeywordsRemaining: Int = 0
 
     public var nextCaptureName: String {        let tokens = CaptureNamingFormatter.parse(formatString: namingFormat)
         return CaptureNamingFormatter.format(tokens: tokens, cameraName: name, counter: namingCounter)

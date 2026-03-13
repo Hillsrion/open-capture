@@ -19,16 +19,21 @@ public class ShortcutInputHandler {
     
     private init() {}
     
-    /// Starts monitoring local key and scroll events for the application.
     public func startMonitoring() {
         // Prevent duplicate monitors
         stopMonitoring()
         
         keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
+            if event.modifierFlags.contains(.shift) {
+                AdjustmentToolController.shared.multiViewPanning = true
+            }
             return self?.handleKeyDown(event) ?? event
         }
         
         keyUpMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyUp) { [weak self] event in
+            if !event.modifierFlags.contains(.shift) {
+                AdjustmentToolController.shared.multiViewPanning = false
+            }
             return self?.handleKeyUp(event) ?? event
         }
         

@@ -249,11 +249,23 @@ public struct NextCaptureKeywordsToolView: View {
     public var body: some View {
         COToolSection("Next Capture Keywords", toolID: "NextCaptureKeywords") {
             if let camera = browser.availableCameras.first {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Keywords").font(.system(size: 10)).foregroundColor(.gray)
-                    TextField("Enter keywords...", text: Binding(get: { camera.nextCaptureKeywords }, set: { camera.nextCaptureKeywords = $0 }))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .font(.system(size: 11))
+                VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Keywords").font(.system(size: 10)).foregroundColor(.gray)
+                        TextField("Enter keywords...", text: Binding(get: { camera.nextCaptureKeywords }, set: { camera.nextCaptureKeywords = $0 }))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.system(size: 11))
+                    }
+                    
+                    HStack {
+                        Text("Apply to next").font(.system(size: 11))
+                        TextField("", value: Binding(get: { camera.nextCaptureKeywordsRemaining }, set: { camera.nextCaptureKeywordsRemaining = $0 }), formatter: NumberFormatter())
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 40)
+                            .font(.system(size: 11, design: .monospaced))
+                        Text("images").font(.system(size: 11))
+                        Spacer()
+                    }
                 }
                 .padding(.vertical, 4)
             } else {

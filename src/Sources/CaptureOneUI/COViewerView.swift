@@ -119,7 +119,13 @@ public struct COViewerView: View {
                                             let currentViewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
                                             let newX = max(0, min(1.0 - currentViewport.width, start.x - deltaX))
                                             let newY = max(0, min(1.0 - currentViewport.height, start.y - deltaY))
-                                            adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                            
+                                            if adjustmentController?.multiViewPanning == true {
+                                                // Sync across all instances via singleton
+                                                AdjustmentToolController.shared.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                            } else {
+                                                adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                            }
                                         }
                                     }
                                 }
