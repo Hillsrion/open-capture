@@ -32,65 +32,76 @@ public struct POCurvesControl: View {
                 .labelsHidden()
                 
                 // Curve Editor View
-                GeometryReader { geometry in
-                    ZStack {
-                        CaptureOneTheme.Colors.histogramBackground
-                            .cornerRadius(4)
-                        
-                        // Grid
-                        Path { path in
-                            let stepX = geometry.size.width / 4
-                            let stepY = geometry.size.height / 4
-                            for i in 1..<4 {
-                                path.move(to: CGPoint(x: CGFloat(i) * stepX, y: 0))
-                                path.addLine(to: CGPoint(x: CGFloat(i) * stepX, y: geometry.size.height))
-                                
-                                path.move(to: CGPoint(x: 0, y: CGFloat(i) * stepY))
-                                path.addLine(to: CGPoint(x: geometry.size.width, y: CGFloat(i) * stepY))
-                            }
-                        }
-                        .stroke(Color.gray.opacity(0.2), lineWidth: 1)
-                        
-                        // Interpolated Spline line
-                        Path { path in
-                            let sortedPoints = points.sorted { $0.x < $1.x }
-                            guard let first = sortedPoints.first else { return }
+                VStack(spacing: 4) {
+                    GeometryReader { geometry in
+                        ZStack {
+                            CaptureOneTheme.Colors.histogramBackground
+                                .cornerRadius(4)
                             
-                            path.move(to: pointToView(first, in: geometry.size))
-                            for pt in sortedPoints.dropFirst() {
-                                path.addLine(to: pointToView(pt, in: geometry.size))
+                            // Grid
+                            Path { path in
+                                let stepX = geometry.size.width / 4
+                                let stepY = geometry.size.height / 4
+                                for i in 1..<4 {
+                                    path.move(to: CGPoint(x: CGFloat(i) * stepX, y: 0))
+                                    path.addLine(to: CGPoint(x: CGFloat(i) * stepX, y: geometry.size.height))
+                                    
+                                    path.move(to: CGPoint(x: 0, y: CGFloat(i) * stepY))
+                                    path.addLine(to: CGPoint(x: geometry.size.width, y: CGFloat(i) * stepY))
+                                }
+                            }
+                            .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+                            
+                            // Interpolated Spline line
+                            Path { path in
+                                let sortedPoints = points.sorted { $0.x < $1.x }
+                                guard let first = sortedPoints.first else { return }
+                                
+                                path.move(to: pointToView(first, in: geometry.size))
+                                for pt in sortedPoints.dropFirst() {
+                                    path.addLine(to: pointToView(pt, in: geometry.size))
+                                }
+                            }
+                            .stroke(CaptureOneTheme.Colors.textPrimary, lineWidth: 1.5)
+                            
+                            // Control Points
+                            ForEach(points.indices, id: \.self) { index in
+                                Circle()
+                                    .fill(CaptureOneTheme.Colors.activeHighlight)
+                                    .frame(width: 8, height: 8)
+                                    .position(pointToView(points[index], in: geometry.size))
+                                    .gesture(
+                                        DragGesture()
+                                            .onChanged { value in
+                                                draggingIndex = index
+                                                updatePoint(at: index, with: value.location, in: geometry.size)
+                                            }
+                                            .onEnded { _ in
+                                                draggingIndex = nil
+                                                sortPoints()
+                                            }
+                                    )
                             }
                         }
-                        .stroke(CaptureOneTheme.Colors.textPrimary, lineWidth: 1.5)
-                        
-                        // Control Points
-                        ForEach(points.indices, id: \.self) { index in
-                            Circle()
-                                .fill(CaptureOneTheme.Colors.activeHighlight)
-                                .frame(width: 8, height: 8)
-                                .position(pointToView(points[index], in: geometry.size))
-                                .gesture(
-                                    DragGesture()
-                                        .onChanged { value in
-                                            draggingIndex = index
-                                            updatePoint(at: index, with: value.location, in: geometry.size)
-                                        }
-                                        .onEnded { _ in
-                                            draggingIndex = nil
-                                            sortPoints()
-                                        }
-                                )
-                        }
+                        .scaleEffect(x: isNegative ? -1 : 1, y: 1)
+                        .gesture(
+                            TapGesture()
+                                .onEnded {
+                                    // Add new point (simplified)
+                                }
+                        )
                     }
-                    .scaleEffect(x: isNegative ? -1 : 1, y: 1)
-                    .gesture(
-                        TapGesture()
-                            .onEnded {
-                                // Add new point (simplified)
-                            }
-                    )
+                    .frame(height: 180)
+                    
+                    // Labels
+                    HStack {
+                        Text(isNegative ? "255" : "0")
+                        Spacer()
+                        Text(isNegative ? "0" : "255")
+                    }
+                    .font(.system(size: 9, design: .monospaced))
+                    .foregroundColor(.gray)
                 }
-                .frame(height: 180)
             }
         }
     }

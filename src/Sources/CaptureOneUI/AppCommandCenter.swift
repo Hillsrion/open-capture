@@ -67,6 +67,14 @@ public final class AppCommandCenter: ObservableObject {
         self.session = session
         self.recipeManager = recipeManager
         self.batchQueue = batchQueue
+        
+        // Register shortcuts
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.heal") { [weak self] in
+            self?.selectedCursorToolID = "Heal"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.clone") { [weak self] in
+            self?.selectedCursorToolID = "Clone"
+        }
     }
 
     public func selectSessionFolder(type: SessionFolderType) {
@@ -89,7 +97,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func handleToolbarAction(_ itemID: String) {
         switch itemID {
-        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone":
+        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone":
             selectedCursorToolID = itemID
         case "Import":
             presentImport()
@@ -101,6 +109,8 @@ public final class AppCommandCenter: ObservableObject {
             resetAdjustments()
         case "AutoAdjust":
             autoAdjust()
+        case "ConvertNegative":
+            adjustmentController.negativeFilmEnabled.toggle()
         case "CopyAdjustments":
             copyAdjustments()
         case "ApplyAdjustments":

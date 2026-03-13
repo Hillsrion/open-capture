@@ -134,6 +134,10 @@ public struct IC_LensCorrectionSettings {
     public var chromaticAberration: Bool
     public var diffraction: Bool
     public var lccProfileUUID: String?
+    public var lccLightFalloffEnabled: Bool
+    public var lccLightFalloffAmount: Double
+    public var lccDustRemovalEnabled: Bool
+    public var lccUniformityEnabled: Bool
     
     public init() {
         self.distortion = 0.0
@@ -142,6 +146,10 @@ public struct IC_LensCorrectionSettings {
         self.chromaticAberration = false
         self.diffraction = false
         self.lccProfileUUID = nil
+        self.lccLightFalloffEnabled = true
+        self.lccLightFalloffAmount = 100.0
+        self.lccDustRemovalEnabled = true
+        self.lccUniformityEnabled = true
     }
 }
 

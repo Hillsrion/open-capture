@@ -560,7 +560,7 @@ public class WorkspaceManager: ObservableObject, Codable {
         let colorPalette = WorkspacePaletteDefinition(
             id: "ColorToolTab", name: "Color", iconName: "paintpalette.fill",
             fixedTools: [ToolConfiguration(id: "Histogram"), ToolConfiguration(id: "LocalAdjustments")],
-            scrolledTools: [ToolConfiguration(id: "BaseCharacteristics"), ToolConfiguration(id: "WhiteBalance"), ToolConfiguration(id: "SelectiveColorControl"), ToolConfiguration(id: "ColorBalance"), ToolConfiguration(id: "BlackAndWhite"), ToolConfiguration(id: "Normalize")]
+            scrolledTools: [ToolConfiguration(id: "BaseCharacteristics"), ToolConfiguration(id: "WhiteBalance"), ToolConfiguration(id: "SelectiveColorControl"), ToolConfiguration(id: "ColorBalance"), ToolConfiguration(id: "NegativeFilm"), ToolConfiguration(id: "BlackAndWhite"), ToolConfiguration(id: "Normalize")]
         )
         
         let exposurePalette = WorkspacePaletteDefinition(

@@ -212,6 +212,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var diffraction: Bool = false
     @Published public var isLCCActive: Bool = false
     @Published public var lccProfileUUID: String? = nil
+    @Published public var lccLightFalloffEnabled: Bool = true
+    @Published public var lccLightFalloffAmount: Double = 100.0
+    @Published public var lccDustRemovalEnabled: Bool = true
+    @Published public var lccUniformityEnabled: Bool = true
 
     // Noise Reduction (ENG-007)
     @Published public var nrLuminance: Double = 50.0
@@ -247,6 +251,27 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public init() {
         setupChangeObservers()
         setupRecipeSync()
+        setupNegativeFilmSync()
+    }
+    
+    private func setupNegativeFilmSync() {
+        $negativeFilmEnabled
+            .dropFirst()
+            .sink { [weak self] enabled in
+                guard let self = self else { return }
+                // Automatically switch Curves to Negative preset (diagonal 1,1 to 0,0)
+                // if they are currently at default (0,0 to 1,1)
+                if enabled {
+                    if self.curvesPoints == [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)] {
+                        self.curvesPoints = [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)]
+                    }
+                } else {
+                    if self.curvesPoints == [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)] {
+                        self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
     
     private func setupRecipeSync() {
@@ -304,6 +329,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $diffraction.map { _ in }.eraseToAnyPublisher(),
             $isLCCActive.map { _ in }.eraseToAnyPublisher(),
             $lccProfileUUID.map { _ in }.eraseToAnyPublisher(),
+            $lccLightFalloffEnabled.map { _ in }.eraseToAnyPublisher(),
+            $lccLightFalloffAmount.map { _ in }.eraseToAnyPublisher(),
+            $lccDustRemovalEnabled.map { _ in }.eraseToAnyPublisher(),
+            $lccUniformityEnabled.map { _ in }.eraseToAnyPublisher(),
             $isSoftProofingEnabled.map { _ in }.eraseToAnyPublisher(),
             $proofingProfileID.map { _ in }.eraseToAnyPublisher(),
             $showGamutWarning.map { _ in }.eraseToAnyPublisher(),
@@ -361,6 +390,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $aiCropReferencePoint.map { _ in }.eraseToAnyPublisher(),
             $aiCropLockAspect.map { _ in }.eraseToAnyPublisher(),
             $spots.map { _ in }.eraseToAnyPublisher(),
+            $negativeFilmEnabled.map { _ in }.eraseToAnyPublisher(),
+            $negativeFilmType.map { _ in }.eraseToAnyPublisher(),
             $cropRatioIndex.map { _ in }.eraseToAnyPublisher(),
             $cropGridIndex.map { _ in }.eraseToAnyPublisher(),
             $cropShowMask.map { _ in }.eraseToAnyPublisher(),
@@ -591,6 +622,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.diffraction = (mc.objectForKey("ZDIFFRACTION") as? Bool) ?? false
         self.isLCCActive = (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false
         self.lccProfileUUID = mc.objectForKey("ZLCC_PROFILE_UUID") as? String
+        self.lccLightFalloffEnabled = (mc.objectForKey("ZLCC_LIGHTFALLOFF_ENABLED") as? Bool) ?? true
+        self.lccLightFalloffAmount = (mc.objectForKey("ZLCC_LIGHTFALLOFF_AMOUNT") as? Double) ?? 100.0
+        self.lccDustRemovalEnabled = (mc.objectForKey("ZLCC_DUSTREMOVAL_ENABLED") as? Bool) ?? true
+        self.lccUniformityEnabled = (mc.objectForKey("ZLCC_UNIFORMITY_ENABLED") as? Bool) ?? true
         
         // Keystone
         self.keystoneTiltX = getDouble("ZKEYSTONE_TILTX", 0.0)
@@ -800,6 +835,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(diffraction, forKey: "ZDIFFRACTION")
         mc.setObject(isLCCActive, forKey: "ZLCC_ACTIVE")
         mc.setObject(lccProfileUUID, forKey: "ZLCC_PROFILE_UUID")
+        mc.setObject(lccLightFalloffEnabled, forKey: "ZLCC_LIGHTFALLOFF_ENABLED")
+        mc.setObject(lccLightFalloffAmount, forKey: "ZLCC_LIGHTFALLOFF_AMOUNT")
+        mc.setObject(lccDustRemovalEnabled, forKey: "ZLCC_DUSTREMOVAL_ENABLED")
+        mc.setObject(lccUniformityEnabled, forKey: "ZLCC_UNIFORMITY_ENABLED")
         
         mc.setObject(keystoneTiltX, forKey: "ZKEYSTONE_TILTX")
         mc.setObject(keystoneTiltY, forKey: "ZKEYSTONE_TILTY")
@@ -875,6 +914,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.lensCorrection.chromaticAberration = chromaticAberration
         settings.lensCorrection.diffraction = diffraction
         settings.lensCorrection.lccProfileUUID = lccProfileUUID
+        settings.lensCorrection.lccLightFalloffEnabled = lccLightFalloffEnabled
+        settings.lensCorrection.lccLightFalloffAmount = lccLightFalloffAmount
+        settings.lensCorrection.lccDustRemovalEnabled = lccDustRemovalEnabled
+        settings.lensCorrection.lccUniformityEnabled = lccUniformityEnabled
         
         settings.noiseReduction.luminance = nrLuminance
         settings.noiseReduction.details = nrDetails
@@ -1018,10 +1061,14 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func createLCCProfile() {
         guard let variant = currentVariant else { return }
         print("[AdjustmentToolController] Creating LCC Profile for \(variant.variantUUID)")
-        // In a real scenario, this would analyze the image and compute the LCC calibration matrix
-        self.lccProfileUUID = UUID().uuidString
-        self.isLCCActive = true
-        self.commitChanges(to: variant)
+        
+        // Simulate engine analysis
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.lccProfileUUID = UUID().uuidString
+            self.isLCCActive = true
+            self.commitChanges(to: variant)
+            print("[AdjustmentToolController] LCC Profile Created and Applied.")
+        }
     }
 
     // MARK: - Retouching (ENG-005)

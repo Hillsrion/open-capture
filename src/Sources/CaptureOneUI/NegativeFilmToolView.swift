@@ -4,12 +4,10 @@ import AppCoreShared
 /// Reconstructed Negative Film tool (UI-202).
 /// Supports inversion and base-tint correction for B&W and Color negatives.
 public struct NegativeFilmToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var controller = AdjustmentToolController.shared
     @ObservedObject var commandCenter = AppCommandCenter.shared
     
-    public init(controller: AdjustmentToolController) {
-        self.controller = controller
-    }
+    public init() {}
     
     public var body: some View {
         COToolSection("Negative Film", toolID: "NegativeFilm") {

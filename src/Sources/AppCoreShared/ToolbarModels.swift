@@ -45,7 +45,7 @@ public struct ToolbarConfiguration: Codable, Hashable {
     public static var defaultConfiguration: ToolbarConfiguration {
         return ToolbarConfiguration(itemIDs: [
             "Import", "Export", "Capture", "FIXED_SPACER",
-            "Reset", "UndoRedo", "AutoAdjust", "FIXED_SPACER",
+            "Reset", "UndoRedo", "AutoAdjust", "ConvertNegative", "FIXED_SPACER",
             "CursorTools", "FLEXIBLE_SPACER",
             "BeforeAfter", "Grid", "ExposureWarning", "Proofing", "FocusMask", "FIXED_SPACER",
             "CopyAdjustments", "ApplyAdjustments", "EditSelected", "Print"
@@ -64,9 +64,12 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "Straighten", name: "Straighten", iconName: "line.diagonal", type: .tool),
         COToolbarItem(id: "Rotate", name: "Rotate", iconName: "rotate.right", type: .tool),
         COToolbarItem(id: "Keystone", name: "Keystone", iconName: "rectangle.distorted", type: .tool),
+        COToolbarItem(id: "Heal", name: "Heal", iconName: "bandage", type: .tool),
+        COToolbarItem(id: "Clone", name: "Clone", iconName: "person.2.fill", type: .tool),
         
         // Actions
         COToolbarItem(id: "AutoAdjust", name: "Auto Adjust", iconName: "wand.and.stars"),
+        COToolbarItem(id: "ConvertNegative", name: "Convert Negative", iconName: "film.stack"),
         COToolbarItem(id: "CopyAdjustments", name: "Copy Adjustments", iconName: "arrow.up.doc"),
         COToolbarItem(id: "ApplyAdjustments", name: "Apply Adjustments", iconName: "arrow.down.doc"),
         COToolbarItem(id: "Reset", name: "Reset", iconName: "arrow.counterclockwise"),

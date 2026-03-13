@@ -75,8 +75,13 @@ public struct COViewerView: View {
                             }
                         }
                         .onHover { inside in
-                            if inside && commands.selectedCursorToolID == "Pan" {
-                                NSCursor.openHand.push()
+                            if inside {
+                                let tool = commands.selectedCursorToolID
+                                if tool == "Pan" {
+                                    NSCursor.openHand.push()
+                                } else if tool == "PickWhitebalanceFilmNegative" {
+                                    NSCursor.crosshair.push() // closest to eyedropper in standard cursors
+                                }
                             } else {
                                 NSCursor.pop()
                             }
@@ -140,6 +145,12 @@ public struct COViewerView: View {
                                         adjustmentController?.addRepairArrow(at: gesture.location, type: .heal)
                                     } else if toolID == "Clone" {
                                         adjustmentController?.addRepairArrow(at: gesture.location, type: .clone)
+                                    } else if toolID == "PickWhitebalanceFilmNegative" {
+                                        // Specific logic for film edge WB
+                                        print("[UI] Picking Film Edge WB at \(gesture.location)")
+                                        adjustmentController?.kelvin = 3200 // Mock neutralization
+                                        adjustmentController?.tint = 10
+                                        commands.selectedCursorToolID = "Select"
                                     } else {
                                         // Tool not handled by viewer root
                                         return
@@ -197,6 +208,13 @@ public struct COViewerView: View {
             // Simulation: Apply basic CI adjustments to the thumbnail
             let ciImage = CIImage(data: thumb.tiffRepresentation!)!
             var filtered = ciImage
+            
+            // --- Negative Film Inversion (UI-202) ---
+            if controller.negativeFilmEnabled {
+                filtered = filtered.applyingFilter("CIColorInvert")
+            }
+            
+            filtered = filtered
                 .applyingFilter("CIExposureAdjust", parameters: ["inputEV": controller.exposure])
                 .applyingFilter("CIColorControls", parameters: [
                     "inputContrast": 1.0 + controller.contrast / 100.0,

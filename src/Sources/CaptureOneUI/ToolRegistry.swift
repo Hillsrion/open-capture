@@ -87,6 +87,8 @@ public enum ToolRegistry {
             return .implemented { _ in AnyView(UnavailableToolView(toolID: "LivePreviewInfoTool")) }
         case "AdjustmentsClipboard":
             return .implemented { context in AnyView(AdjustmentsClipboardToolView(config: context.config)) }
+        case "NegativeFilm":
+            return .implemented { _ in AnyView(NegativeFilmToolView()) }
         case "Normalize":
             return .implemented { _ in AnyView(NormalizeToolView()) }
         case "NextCaptureBackup":
@@ -166,8 +168,6 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(ColorBalanceToolView(controller: context.adjustmentController)) }
         case "BlackAndWhite":
             return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController)) }
-        case "NegativeFilm":
-            return .implemented { context in AnyView(NegativeFilmToolView(controller: context.adjustmentController)) }
         case "Clarity":
             return .implemented { context in
                 AnyView(ClarityToolView(
