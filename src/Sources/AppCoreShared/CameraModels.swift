@@ -61,9 +61,19 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
         case neutral = "Neutral"
     }
     @Published public var nextCaptureAdjustments: NextCaptureAdjustments = .copyFromLast
-    
-    public var nextCaptureName: String {
-        let tokens = CaptureNamingFormatter.parse(formatString: namingFormat)
+
+    // Auto-Sync Metadata
+    @Published public var autoSyncIPTC: Bool = false
+    @Published public var autoSyncKeywords: Bool = false
+    @Published public var autoSyncRatings: Bool = false
+
+    // Auto-Crop
+    @Published public var autoCropEnabled: Bool = false
+
+    // Next Capture Keywords
+    @Published public var nextCaptureKeywords: String = ""
+
+    public var nextCaptureName: String {        let tokens = CaptureNamingFormatter.parse(formatString: namingFormat)
         return CaptureNamingFormatter.format(tokens: tokens, cameraName: name, counter: namingCounter)
     }
     

@@ -112,12 +112,20 @@ public struct NextCaptureAdjustmentsToolView: View {
     public var body: some View {
         COToolSection("Next Capture Adjustments", toolID: "NextCaptureAdjustments") {
             if let camera = browser.availableCameras.first {
-                Picker("", selection: Binding(get: { camera.nextCaptureAdjustments }, set: { camera.nextCaptureAdjustments = $0 })) {
-                    Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
-                    Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
-                    Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text("All Other").font(.system(size: 11)).foregroundColor(.gray)
+                        Spacer()
+                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustments }, set: { camera.nextCaptureAdjustments = $0 })) {
+                            Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromLast)
+                            Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustments.copyFromPrimary)
+                            Text("Neutral").tag(P1CaptureCore_Camera.NextCaptureAdjustments.neutral)
+                        }
+                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                    }
+                    Toggle("Auto-Crop", isOn: Binding(get: { camera.autoCropEnabled }, set: { camera.autoCropEnabled = $0 }))
+                        .font(.system(size: 11))
                 }
-                .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
             }
         }
     }
@@ -169,20 +177,44 @@ public struct NextCaptureLocationToolView: View {
 
 /// Reconstructed Next Capture Metadata (GAP-406).
 public struct NextCaptureMetadataToolView: View {
+    @ObservedObject var browser = PtpDeviceBrowser.shared
     public init(config: ToolConfiguration) {}
     public var body: some View {
         COToolSection("Next Capture Metadata", toolID: "NextCaptureMetadata") {
-            Text("Metadata will be applied to the next capture.").font(.system(size: 10)).foregroundColor(.gray)
+            if let camera = browser.availableCameras.first {
+                VStack(alignment: .leading, spacing: 6) {
+                    Toggle("IPTC", isOn: Binding(get: { camera.autoSyncIPTC }, set: { camera.autoSyncIPTC = $0 }))
+                        .font(.system(size: 11))
+                    Toggle("Keywords", isOn: Binding(get: { camera.autoSyncKeywords }, set: { camera.autoSyncKeywords = $0 }))
+                        .font(.system(size: 11))
+                    Toggle("Ratings & Color Tags", isOn: Binding(get: { camera.autoSyncRatings }, set: { camera.autoSyncRatings = $0 }))
+                        .font(.system(size: 11))
+                }
+                .padding(.vertical, 4)
+            } else {
+                Text("Metadata will be applied to the next capture.").font(.system(size: 10)).foregroundColor(.gray)
+            }
         }
     }
 }
 
 /// Reconstructed Next Capture Keywords (GAP-406).
 public struct NextCaptureKeywordsToolView: View {
+    @ObservedObject var browser = PtpDeviceBrowser.shared
     public init(config: ToolConfiguration) {}
     public var body: some View {
         COToolSection("Next Capture Keywords", toolID: "NextCaptureKeywords") {
-            Text("Keywords for next capture.").font(.system(size: 10)).foregroundColor(.gray)
+            if let camera = browser.availableCameras.first {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Keywords").font(.system(size: 10)).foregroundColor(.gray)
+                    TextField("Enter keywords...", text: Binding(get: { camera.nextCaptureKeywords }, set: { camera.nextCaptureKeywords = $0 }))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .font(.system(size: 11))
+                }
+                .padding(.vertical, 4)
+            } else {
+                Text("Keywords for next capture.").font(.system(size: 10)).foregroundColor(.gray)
+            }
         }
     }
 }
