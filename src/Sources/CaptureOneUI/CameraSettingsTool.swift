@@ -134,13 +134,24 @@ struct CameraSummaryBar: View {
     
     var body: some View {
         HStack {
-            Label("\(camera.batteryLevel)%", systemImage: "battery.75")
+            if camera.isVirtualBattery {
+                Label("AC Power", systemImage: "powerplug.fill")
+            } else {
+                Label("\(camera.batteryLevel)%", systemImage: batteryIcon)
+            }
             Spacer()
             Label(camera.storageCapacity, systemImage: "externaldrive.fill")
         }
         .font(.system(size: 9))
         .foregroundColor(.gray)
         .padding(.horizontal, 4)
+    }
+    
+    private var batteryIcon: String {
+        if camera.batteryLevel > 80 { return "battery.100" }
+        if camera.batteryLevel > 50 { return "battery.75" }
+        if camera.batteryLevel > 20 { return "battery.25" }
+        return "battery.0"
     }
 }
 

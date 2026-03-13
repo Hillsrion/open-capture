@@ -40,9 +40,18 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     
     // Status properties (GAP-406)
     @Published public var batteryLevel: Int = 85
+    @Published public var isVirtualBattery: Bool = false
     @Published public var storageCapacity: String = "14.2 GB"
     @Published public var exposureEvaluation: Float = 0.0
     @Published public var focusMode: Int = 0 // 0: AF-S, 1: AF-C, 2: Manual
+    
+    // Live View Alignment (GAP-401)
+    @Published public var supportsFocusMetering: Bool = true
+    @Published public var focusMeterValue: Float = 0.0
+    @Published public var isLiveViewDOFEnabled: Bool = true
+    @Published public var isLiveViewDOFOn: Bool = false
+    @Published public var isLiveViewColorOn: Bool = true
+    @Published public var showsLiveViewGrid: Bool = false
     
     public enum LiveViewState {
         case off, starting, active, paused
@@ -190,10 +199,15 @@ public class P1CaptureCore_Camera: ObservableObject, Identifiable, Hashable {
     /// Based on disassembly of -[P1CaptureCore_Camera getNextLiveViewImage].
     public func getNextLiveViewImage() -> P1CaptureCore_LiveViewImage? {
         guard liveViewState == .active else { return nil }
+        
+        // Update mock focus meter
+        DispatchQueue.main.async {
+            self.focusMeterValue = Float.random(in: 0.1...0.9)
+        }
+        
         // Simulated: In the real framework, this pulls from a ring buffer
-        // populated by the PTP background thread.
         return P1CaptureCore_LiveViewImage(
-            data: nil, // Data is nil for mock, UI will generate visuals
+            data: nil,
             timestamp: Date().timeIntervalSince1970,
             focus: Int.random(in: 0...2)
         )

@@ -51,7 +51,6 @@ fileprivate struct LivePreviewRootView: View {
     @State private var overlayImageURL: URL?
     @State private var overlayOpacity: Double = 0.5
     @State private var isOverlayEnabled: Bool = false
-    @State private var isDepthOfFieldPreviewEnabled: Bool = false
     @State private var isDropTarget: Bool = false
     
     var body: some View {
@@ -65,52 +64,56 @@ fileprivate struct LivePreviewRootView: View {
                     
                     Divider().frame(height: 16)
                     
-                    // Pause/Play Live View
-                    Button(action: {
-                        if liveView.isActive {
-                            liveView.stop()
-                        } else if let cam = browser.availableCameras.first {
-                            liveView.start(for: cam)
-                        }
-                    }) {
-                        Image(systemName: liveView.isActive ? "pause.fill" : "play.fill")
-                    }
-                    .buttonStyle(.plain)
-                    .help("Pause/Play Live View")
-                    
-                    // Overlay Toggle
-                    Button(action: { isOverlayEnabled.toggle() }) {
-                        Image(systemName: isOverlayEnabled ? "square.3.layers.3d.down.right" : "square.grid.3x3.fill")
-                            .foregroundColor(isOverlayEnabled ? CaptureOneTheme.Colors.activeHighlight : .white)
-                    }
-                    .buttonStyle(.plain)
-                    .help("Overlay Toggle")
-                    
-                    // DOF Preview
-                    Button(action: { isDepthOfFieldPreviewEnabled.toggle() }) {
-                        Image(systemName: isDepthOfFieldPreviewEnabled ? "aperture" : "camera.aperture")
-                            .foregroundColor(isDepthOfFieldPreviewEnabled ? CaptureOneTheme.Colors.activeHighlight : .white)
-                    }
-                    .buttonStyle(.plain)
-                    .help("Depth of Field Preview")
-                    
-                    Divider().frame(height: 16)
-                    
-                    // Focus Meter
-                    HStack(spacing: 4) {
-                        Image(systemName: "scope")
-                        ProgressView(value: liveView.isActive ? 0.8 : 0.0) // Mock value
-                            .progressViewStyle(LinearProgressViewStyle(tint: .green))
-                            .frame(width: 100)
-                    }
-                    .help("Focus Meter")
-                        
-                    Spacer()
-                    
                     if let camera = browser.availableCameras.first {
+                        // Pause/Play Live View
+                        Button(action: {
+                            if liveView.isActive {
+                                liveView.stop()
+                            } else {
+                                liveView.start(for: camera)
+                            }
+                        }) {
+                            Image(systemName: liveView.isActive ? "pause.fill" : "play.fill")
+                        }
+                        .buttonStyle(.plain)
+                        .help("Pause/Play Live View")
+                        
+                        // Overlay Toggle
+                        Button(action: { isOverlayEnabled.toggle() }) {
+                            Image(systemName: isOverlayEnabled ? "square.3.layers.3d.down.right" : "square.grid.3x3.fill")
+                                .foregroundColor(isOverlayEnabled ? CaptureOneTheme.Colors.activeHighlight : .white)
+                        }
+                        .buttonStyle(.plain)
+                        .help("Overlay Toggle")
+                        
+                        // DOF Preview
+                        Button(action: { camera.isLiveViewDOFOn.toggle() }) {
+                            Image(systemName: camera.isLiveViewDOFOn ? "aperture" : "camera.aperture")
+                                .foregroundColor(camera.isLiveViewDOFOn ? CaptureOneTheme.Colors.activeHighlight : .white)
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(!camera.isLiveViewDOFEnabled)
+                        .help("Depth of Field Preview")
+                        
+                        Divider().frame(height: 16)
+                        
+                        // Focus Meter
+                        HStack(spacing: 4) {
+                            Image(systemName: "scope")
+                            ProgressView(value: camera.focusMeterValue)
+                                .progressViewStyle(LinearProgressViewStyle(tint: .green))
+                                .frame(width: 100)
+                        }
+                        .opacity(camera.supportsFocusMetering ? 1.0 : 0.3)
+                        .help(camera.supportsFocusMetering ? "Focus Meter" : "Focus Meter Not Supported")
+                            
+                        Spacer()
+                        
                         Button("Capture") {
                             camera.shutterRelease()
                         }.buttonStyle(.borderedProminent)
+                    } else {
+                        Spacer()
                     }
                 }
                 .padding(.horizontal, 12)
