@@ -92,6 +92,21 @@ public struct COViewerView: View {
                     }
                     .gesture(
                         DragGesture(minimumDistance: 0)
+                            .onChanged { gesture in
+                                if commands.selectedCursorToolID == "Pan" {
+                                    // Panning logic: modify viewportRect
+                                    let deltaX = gesture.translation.width / 1000.0 // Arbitrary scaling factor
+                                    let deltaY = gesture.translation.height / 1000.0
+                                    
+                                    // Only pan if zoomed in
+                                    if zoomLevel > 1.0 {
+                                        let currentViewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+                                        let newX = max(0, min(1.0 - currentViewport.width, currentViewport.origin.x - deltaX))
+                                        let newY = max(0, min(1.0 - currentViewport.height, currentViewport.origin.y - deltaY))
+                                        adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                                    }
+                                }
+                            }
                             .onEnded { gesture in
                                 let toolID = commands.selectedCursorToolID
                                 if toolID == "Heal" {

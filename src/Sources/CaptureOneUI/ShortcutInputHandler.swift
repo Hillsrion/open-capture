@@ -13,10 +13,17 @@ public class ShortcutInputHandler {
     // Speed Edit state
     private var activeSpeedEditKey: String? = nil
     
+    // Pan Tool state
+    private var isSpaceBarPressed: Bool = false
+    private var previousCursorToolID: String? = nil
+    
     private init() {}
     
     /// Starts monitoring local key and scroll events for the application.
     public func startMonitoring() {
+        // Prevent duplicate monitors
+        stopMonitoring()
+        
         keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             return self?.handleKeyDown(event) ?? event
         }
@@ -32,6 +39,19 @@ public class ShortcutInputHandler {
     
     private func handleKeyDown(_ event: NSEvent) -> NSEvent? {
         guard let chars = event.charactersIgnoringModifiers?.lowercased() else { return event }
+        
+        // Temporary Pan Tool (Spacebar)
+        if chars == " " && !event.isARepeat {
+            isSpaceBarPressed = true
+            Task { @MainActor in
+                let commands = AppCommandCenter.shared
+                if commands.selectedCursorToolID != "Pan" {
+                    self.previousCursorToolID = commands.selectedCursorToolID
+                    commands.selectedCursorToolID = "Pan"
+                }
+            }
+            return nil
+        }
         
         // Speed Edit Keys (Default Capture One mapping)
         if !event.isARepeat {
@@ -64,6 +84,18 @@ public class ShortcutInputHandler {
     
     private func handleKeyUp(_ event: NSEvent) -> NSEvent? {
         guard let chars = event.charactersIgnoringModifiers?.lowercased() else { return event }
+        
+        // Temporary Pan Tool Release
+        if chars == " " {
+            isSpaceBarPressed = false
+            if let prev = previousCursorToolID {
+                Task { @MainActor in
+                    AppCommandCenter.shared.selectedCursorToolID = prev
+                }
+                previousCursorToolID = nil
+            }
+            return nil
+        }
         
         let releasedKey: String?
         switch chars {
