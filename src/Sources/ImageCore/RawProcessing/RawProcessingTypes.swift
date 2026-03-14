@@ -71,6 +71,65 @@ public struct IC_KeystoneRaw {
     }
 }
 
+public struct IC_Clarity {
+    public var amount: Float
+    public var method: Float
+    public var type: Int32
+    
+    public init(amount: Float = 0.0, method: Float = 0.0, type: Int32 = 0) {
+        self.amount = amount
+        self.method = method
+        self.type = type
+    }
+}
+
+public struct IC_Moire {
+    public var amount: Float
+    public var type: Int32
+    
+    public init(amount: Float = 0.0, type: Int32 = 0) {
+        self.amount = amount
+        self.type = type
+    }
+}
+
+/// Settings specific to a Local Adjustment Layer.
+public struct IC_LocalAdjustSettings {
+    public var exposure: Float
+    public var contrast: Float
+    public var brightness: Float
+    public var saturation: Float
+    public var kelvin: Float
+    
+    public var clarity: IC_Clarity
+    public var moire: IC_Moire
+    
+    public init() {
+        self.exposure = 0.0
+        self.contrast = 0.0
+        self.brightness = 0.0
+        self.saturation = 0.0
+        self.kelvin = 0.0
+        self.clarity = IC_Clarity()
+        self.moire = IC_Moire()
+    }
+}
+
+/// Configuration for a single Local Adjustment Layer.
+public struct IC_LocalAdjustCfg {
+    public var layerId: UInt32
+    public var settings: IC_LocalAdjustSettings
+    public var opacity: Float
+    public var isVisible: Bool
+    
+    public init(layerId: UInt32 = 0) {
+        self.layerId = layerId
+        self.settings = IC_LocalAdjustSettings()
+        self.opacity = 1.0
+        self.isVisible = true
+    }
+}
+
 /// The master structure for development settings.
 /// Mimics the internal IC_ProcessSettings from ImageProcessing.framework.
 public struct IC_ProcessSettings {
@@ -97,6 +156,9 @@ public struct IC_ProcessSettings {
     // Geometry
     public var keystone: IC_KeystoneRaw
     
+    // Local Adjustments (v16.7 parity: array of 16 layers)
+    public var localAdjustments: [IC_LocalAdjustCfg]
+    
     // Color (v16.7 additions)
     public var colorBalanceShadows: IC_RGB32
     public var colorBalanceMidtones: IC_RGB32
@@ -116,6 +178,7 @@ public struct IC_ProcessSettings {
         self.sharpeningAmount = 100.0
         self.denoise = IC_Denoise()
         self.keystone = IC_KeystoneRaw()
+        self.localAdjustments = (0..<16).map { IC_LocalAdjustCfg(layerId: UInt32($0)) }
         self.colorBalanceShadows = IC_RGB32()
         self.colorBalanceMidtones = IC_RGB32()
         self.colorBalanceHighlights = IC_RGB32()
