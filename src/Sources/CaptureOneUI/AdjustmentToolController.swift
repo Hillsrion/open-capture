@@ -527,6 +527,48 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         refreshToolValues()
     }
     
+    // MARK: - RAW Engine Bridge (IMG-003)
+    
+    /// Converts the current UI adjustment state into a low-level IC_ProcessSettings object.
+    /// This is the "Bridge" between the UI and the RAW rendering engine.
+    public func toProcessSettings() -> IC_ProcessSettings {
+        var settings = IC_ProcessSettings()
+        
+        // Global Adjustments
+        settings.exposure = self.exposure
+        settings.contrast = self.contrast
+        settings.brightness = self.brightness
+        settings.saturation = self.saturation
+        settings.kelvin = self.kelvin
+        settings.tint = self.tint
+        settings.highlight = self.highlights
+        settings.shadow = self.shadows
+        settings.white = self.whites
+        settings.black = self.blacks
+        
+        // Details
+        settings.sharpeningAmount = 100.0 // Default
+        settings.denoise.amount = 50.0 // Default
+        
+        // Layers (Local Adjustments)
+        if let variant = currentVariant {
+            for (index, layer) in variant.layers.enumerated() {
+                if index < 16 {
+                    var localCfg = IC_LocalAdjustCfg(layerId: UInt32(index))
+                    localCfg.opacity = Float(layer.opacity / 100.0)
+                    localCfg.isVisible = true // In original, checked via ZVISIBLE
+                    
+                    // Note: Here we would map layer-specific sliders to localCfg.settings
+                    // localCfg.settings.exposure = ...
+                    
+                    settings.localAdjustments[index] = localCfg
+                }
+            }
+        }
+        
+        return settings
+    }
+    
     public func refreshToolValues() {
         guard let variant = currentVariant, let mc = variant.mcVariant else { return }
         

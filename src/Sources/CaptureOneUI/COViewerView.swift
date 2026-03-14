@@ -192,11 +192,12 @@ public struct COViewerView: View {
     }
     
     private func render() {
-        guard let image = image else {
+        guard let image = image, let url = URL(string: image.path) else {
             sourceImage = nil
             renderedImage = nil
             return
         }
+        
         ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
             guard let thumb = thumb, let controller = adjustmentController else {
                 self.sourceImage = thumb
@@ -205,45 +206,21 @@ public struct COViewerView: View {
             }
             self.sourceImage = thumb
             
-            // Simulation: Apply basic CI adjustments to the thumbnail
-            let ciImage = CIImage(data: thumb.tiffRepresentation!)!
-            var filtered = ciImage
+            // --- NEW: Using Reconstructed RAW Engine (IMG-003) ---
             
-            // --- Negative Film Inversion (UI-202) ---
-            if controller.negativeFilmEnabled {
-                filtered = filtered.applyingFilter("CIColorInvert")
+            // 1. Get process settings from UI state
+            let settings = controller.toProcessSettings()
+            
+            // 2. Perform development via shared engine
+            // In a real scenario, we would pass the actual RAW URL. 
+            // For the lab, developImage handles fallback if URL is just a path.
+            if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: settings) {
+                let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
+                
+                DispatchQueue.main.async {
+                    self.renderedImage = finalNSImage
+                }
             }
-            
-            filtered = filtered
-                .applyingFilter("CIExposureAdjust", parameters: ["inputEV": controller.exposure])
-                .applyingFilter("CIColorControls", parameters: [
-                    "inputContrast": 1.0 + controller.contrast / 100.0,
-                    "inputBrightness": controller.brightness / 100.0,
-                    "inputSaturation": 1.0 + controller.saturation / 100.0
-                ])
-            
-            // --- Lens Correction Simulation (ENG-006) ---
-            if controller.lensDistortion != 0 {
-                let radius = max(ciImage.extent.width, ciImage.extent.height)
-                filtered = filtered.applyingFilter("CIBumpDistortion", parameters: [
-                    "inputCenter": CIVector(x: ciImage.extent.midX, y: ciImage.extent.midY),
-                    "inputRadius": radius,
-                    "inputScale": controller.lensDistortion / 100.0
-                ])
-            }
-            
-            if controller.lensLightFalloff != 0 {
-                filtered = filtered.applyingFilter("CIVignette", parameters: [
-                    "inputIntensity": controller.lensLightFalloff / 100.0,
-                    "inputRadius": 1.0
-                ])
-            }
-            
-            let rep = NSCIImageRep(ciImage: filtered)
-            let finalImage = NSImage(size: rep.size)
-            finalImage.addRepresentation(rep)
-            
-            self.renderedImage = finalImage
         }
     }
 
