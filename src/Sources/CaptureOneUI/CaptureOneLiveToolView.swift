@@ -12,10 +12,37 @@ public struct CaptureOneLiveToolView: View {
         COToolSection("Capture One Live", toolID: "CaptureOneLive") {
             VStack(alignment: .leading, spacing: 12) {
                 if !liveManager.isSessionActive {
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Text("Share your images with clients or collaborators in real-time.")
                             .font(.system(size: 10))
                             .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        
+                        VStack(spacing: 6) {
+                            HStack {
+                                Text("Duration").font(.system(size: 11)).foregroundColor(.gray)
+                                Spacer()
+                                Picker("", selection: $liveManager.sessionDurationIndex) {
+                                    Text("24 Hours").tag(0)
+                                    Text("1 Week").tag(1)
+                                    Text("1 Month").tag(2)
+                                }
+                                .pickerStyle(.menu)
+                                .labelsHidden()
+                                .frame(width: 100)
+                            }
+                            
+                            HStack {
+                                Text("Password").font(.system(size: 11)).foregroundColor(.gray)
+                                Spacer()
+                                SecureField("Optional", text: $liveManager.sessionPassword)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .font(.system(size: 10))
+                                    .frame(width: 100)
+                            }
+                        }
+                        .padding(8)
+                        .background(Color.white.opacity(0.02))
+                        .cornerRadius(4)
                         
                         Button(action: { liveManager.startSession() }) {
                             Text("Start Sharing")

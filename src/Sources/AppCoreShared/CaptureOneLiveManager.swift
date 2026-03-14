@@ -26,6 +26,10 @@ public class CaptureOneLiveManager: ObservableObject {
     @Published public var connectedUsersCount: Int = 0
     @Published public var activityLog: [ActivityLogEntry] = []
     
+    // Session Settings (GAP-406)
+    @Published public var sessionDurationIndex: Int = 0 // 0: 24h, 1: 1 week, etc.
+    @Published public var sessionPassword: String = ""
+    
     public init() {}
     
     public func startSession() {
