@@ -25,9 +25,13 @@ public class RawImageEngine {
         print("[Engine] Developing RAW: \(url.lastPathComponent)")
         
         // 1. RAW Loading (Improved for CR3/Modern formats)
-        // C1 Parity: Using CGImageSource allows better compatibility with modern RAW
-        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
-              let sourceImage = extractSourceImage(from: source) else {
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
+            print("[Engine] Failed to create ImageSource for \(url.path)")
+            return createPlaceholderImage()?.cgImage
+        }
+        
+        guard let sourceImage = extractSourceImage(from: source) else {
+            print("[Engine] Failed to extract source image from \(url.lastPathComponent)")
             return createPlaceholderImage()?.cgImage
         }
         
@@ -204,13 +208,19 @@ public class RawImageEngine {
         let options: [CFString: Any] = [
             kCGImageSourceCreateThumbnailFromImageAlways: true,
             kCGImageSourceCreateThumbnailWithTransform: true,
-            kCGImageSourceThumbnailMaxPixelSize: 4096
+            kCGImageSourceThumbnailMaxPixelSize: 4096,
+            kCGImageSourceShouldCache: true
         ]
         
-        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary) else {
-            return nil
+        // Try index 0 (standard) and index 1 (sometimes used for full-size previews in CR3)
+        for index in 0...1 {
+            if let cgImage = CGImageSourceCreateThumbnailAtIndex(source, index, options as CFDictionary) {
+                print("[Engine] Successfully extracted image at index \(index)")
+                return CIImage(cgImage: cgImage)
+            }
         }
-        return CIImage(cgImage: cgImage)
+        
+        return nil
     }
     
     private func createPlaceholderImage() -> CIImage? {

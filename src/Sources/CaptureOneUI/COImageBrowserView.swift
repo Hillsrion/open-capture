@@ -30,10 +30,17 @@ public struct COImageBrowserView: View {
     }
 
     private var filteredImages: [ImageBase] {
-        // Use the reconstructed SearchManager for centralized filtering
+        // Collect all primary variants
+        let allVariants = images.compactMap { $0.primaryVariant }
+        
+        // Filter via SearchManager
+        let filteredVariants = searchManager.filter(allVariants)
+        
+        // Map back to images
+        let filteredVariantIDs = Set(filteredVariants.map { $0.variantUUID })
         return images.filter { image in
-            guard let variant = image.primaryVariant else { return true }
-            return searchManager.filter([variant]).count > 0
+            guard let primary = image.primaryVariant else { return false }
+            return filteredVariantIDs.contains(primary.variantUUID)
         }
     }
     public var body: some View {
