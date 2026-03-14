@@ -66,12 +66,38 @@ public struct NavigatorToolView: View {
 // MARK: - Focus (UI-203)
 public struct FocusToolView: View {
     @ObservedObject var controller = AdjustmentToolController.shared
+    @ObservedObject var commands = AppCommandCenter.shared
     
     public init() {}
     
     public var body: some View {
         COToolSection("Focus", toolID: "Focus") {
             VStack(spacing: 8) {
+                HStack {
+                    // Focus Mask Toggle
+                    Button(action: { commands.showFocusMask.toggle() }) {
+                        Image(systemName: "scope")
+                            .font(.system(size: 14))
+                            .foregroundColor(commands.showFocusMask ? CaptureOneTheme.Colors.activeHighlight : .white)
+                    }
+                    .buttonStyle(.plain)
+                    .help("Toggle Focus Mask")
+                    
+                    Spacer()
+                    
+                    // Action Menu
+                    Menu {
+                        Button("Sync Focus Point") {
+                            controller.syncFocusPoint()
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.system(size: 14))
+                    }
+                    .menuStyle(.borderlessButton)
+                    .frame(width: 20)
+                }
+
                 // Interactive Focus Preview Area
                 ZStack {
                     Rectangle()
@@ -81,14 +107,17 @@ public struct FocusToolView: View {
                     
                     if let variant = controller.currentVariant, let _ = variant.image {
                         // Simulated Zoomed Preview
-                        Image(systemName: "viewfinder")
-                            .font(.system(size: 48))
-                            .foregroundColor(CaptureOneTheme.Colors.activeHighlight.opacity(0.5))
+                        let zoomStr = controller.focusZoomIndex == 0 ? "100%" : (controller.focusZoomIndex == 1 ? "200%" : "400%")
                         
-                        Text("100% Preview at Focus Point")
-                            .font(.system(size: 9))
-                            .foregroundColor(.gray)
-                            .offset(y: 40)
+                        VStack(spacing: 4) {
+                            Image(systemName: "viewfinder")
+                                .font(.system(size: 48))
+                                .foregroundColor(CaptureOneTheme.Colors.activeHighlight.opacity(0.5))
+                            
+                            Text("\(zoomStr) Preview at Focus Point")
+                                .font(.system(size: 9))
+                                .foregroundColor(.gray)
+                        }
                     } else {
                         VStack {
                             Image(systemName: "viewfinder")
@@ -102,8 +131,8 @@ public struct FocusToolView: View {
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
-                            // Logic: Move focus point
-                            print("[UI] Moving focus point to: \(value.location)")
+                            // Logic: Move focus point (normalized)
+                            controller.focusPoint = CGPoint(x: value.location.x / 200, y: value.location.y / 200) // Simulated size
                         }
                 )
                 
@@ -119,32 +148,33 @@ public struct FocusToolView: View {
                     
                     Spacer()
                     
+                    // Pick Focus Point (Eyedropper)
                     Button(action: {
-                        // Activate Focus Point Picker cursor tool
-                        AppCommandCenter.shared.selectedCursorToolID = "FocusPicker"
+                        commands.selectedCursorToolID = commands.selectedCursorToolID == "FocusPicker" ? "Select" : "FocusPicker"
                     }) {
-                        Image(systemName: "scope")
+                        Image(systemName: "eyedropper.halffull")
                             .font(.system(size: 14))
-                            .foregroundColor(AppCommandCenter.shared.selectedCursorToolID == "FocusPicker" ? CaptureOneTheme.Colors.activeHighlight : .white)
+                            .foregroundColor(commands.selectedCursorToolID == "FocusPicker" ? CaptureOneTheme.Colors.activeHighlight : .white)
                     }
                     .buttonStyle(.plain)
+                    .help("Pick Focus Point")
                 }
                 
                 HStack {
-                    Text("\(Int(controller.focusZoomLevel * 100))%")
-                        .font(.system(size: 11, design: .monospaced))
+                    Text("Zoom")
+                        .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        .frame(width: 40, alignment: .leading)
                     
-                    Slider(value: $controller.focusZoomLevel, in: 0.25...16.0)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Spacer()
                     
-                    Button("100%") {
-                        controller.focusZoomLevel = 1.0
+                    Picker("", selection: $controller.focusZoomIndex) {
+                        Text("100%").tag(0)
+                        Text("200%").tag(1)
+                        Text("400%").tag(2)
                     }
-                    .font(.system(size: 10))
-                    .buttonStyle(.bordered)
-                    .controlSize(.mini)
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 80)
                 }
             }
             .padding(.vertical, 4)

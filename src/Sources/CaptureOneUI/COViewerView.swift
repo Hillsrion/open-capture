@@ -68,6 +68,13 @@ public struct COViewerView: View {
                             ViewerGridOverlay()
                         }
                         
+                        // Focus Mask Overlay (TETH-004)
+                        if commands.showFocusMask, let nsImage = renderedImage {
+                            FocusMaskOverlay(image: nsImage)
+                                .blendMode(.screen)
+                                .allowsHitTesting(false)
+                        }
+                        
                         // Mask Overlay (Red tint)
                         if let mask = maskImage {
                             Image(nsImage: mask)
@@ -262,6 +269,12 @@ public struct COViewerView: View {
                                             performRotation(gesture: gesture, in: geo.size)
                                         }
                                         
+                                    } else if commands.selectedCursorToolID == "FocusPicker" {
+                                        let controller = adjustmentController ?? AdjustmentToolController.shared
+                                        controller.focusPoint = CGPoint(
+                                            x: max(0, min(1, gesture.location.x / geo.size.width)),
+                                            y: max(0, min(1, gesture.location.y / geo.size.height))
+                                        )
                                     } else if commands.selectedCursorToolID == "Rotate" {
                                         performRotation(gesture: gesture, in: geo.size)
                                     }

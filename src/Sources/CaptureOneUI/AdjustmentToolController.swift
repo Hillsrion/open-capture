@@ -206,6 +206,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var overlayPath: String = ""
     @Published public var overlayOffset: CGPoint = .zero
     
+    // Focus Tool State (UI-203)
+    @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+    @Published public var focusZoomIndex: Int = 0 // 0: 100%, 1: 200%, 2: 400%
+    @Published public var focusAIMode: Int = 0 // 0: Manual, 1: Eye, 2: Face
+    @Published public var focusZoomLevel: Double = 1.0 // Legacy/Flexible support
+    
     // Smart Adjustments (AI-002)
     
     // Soft Proofing (ENG-011)
@@ -1221,6 +1227,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
 
     public func centerOverlay() {
         self.overlayOffset = .zero
+    }
+
+    public func syncFocusPoint() {
+        print("[AdjustmentToolController] Syncing focus point across selected images.")
+        // In a real implementation, this would iterate through selected variants 
+        // and copy the focusPoint property.
     }
 
     // MARK: - Hardware Controllers (INT-005)
