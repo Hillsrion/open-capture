@@ -242,6 +242,20 @@ public final class AppCommandCenter: ObservableObject {
         adjustmentController.flipVertical.toggle()
         print("[Command] Flip Vertical: \(adjustmentController.flipVertical) for \(variant.image?.displayName ?? "")")
     }
+    
+    // MARK: - Specialized Tool Modes (WF-503)
+    
+    public func setKeystoneMode(_ mode: Int) {
+        // 0: Vertical, 1: Horizontal, 2: 4-Point
+        print("[Command] Keystone Mode set to: \(mode)")
+        selectedCursorToolID = "Keystone"
+    }
+    
+    public func setPickerTool(_ type: String) {
+        // "WB", "Levels", "Curves", "ColorEditor"
+        print("[Command] Picker Tool active: \(type)")
+        selectedCursorToolID = "Picker_\(type)"
+    }
 
     public func presentImport() {
         importer = POImporter()

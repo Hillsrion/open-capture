@@ -102,11 +102,7 @@ private struct CursorToolsToolbarGroup: View {
     private let tools: [(String, String)] = [
         ("Select", "cursorarrow"),
         ("Pan", "hand.raised"),
-        ("Loupe", "magnifyingglass"),
-        // Crop is now handled by CropToolbarGroup
-        ("Keystone", "rectangle.distorted"),
-        ("Annotate", "pencil.tip"),
-        ("EraseAnnotation", "eraser.fill")
+        ("Loupe", "magnifyingglass")
     ]
 
     var body: some View {
@@ -119,10 +115,54 @@ private struct CursorToolsToolbarGroup: View {
                     commands.handleToolbarAction(toolID)
                 }
             }
+            PickerToolbarGroup()
             CropToolbarGroup()
             RotateToolbarGroup()
+            KeystoneToolbarGroup()
+            
+            HStack(spacing: 2) {
+                IconOnlyToolbarButton(systemName: "pencil.tip", isSelected: commands.selectedCursorToolID == "Annotate") { commands.handleToolbarAction("Annotate") }
+                IconOnlyToolbarButton(systemName: "eraser.fill", isSelected: commands.selectedCursorToolID == "EraseAnnotation") { commands.handleToolbarAction("EraseAnnotation") }
+            }
         }
         .padding(.horizontal, 4)
+    }
+}
+
+private struct PickerToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        IconOnlyToolbarButton(
+            systemName: "eyedropper",
+            isSelected: commands.selectedCursorToolID.contains("Picker")
+        ) {
+            commands.setPickerTool("WB")
+        }
+        .contextMenu {
+            Button("Pick White Balance") { commands.setPickerTool("WB") }
+            Button("Pick Levels") { commands.setPickerTool("Levels") }
+            Button("Pick Curves") { commands.setPickerTool("Curves") }
+            Button("Pick Color Correction") { commands.setPickerTool("ColorEditor") }
+        }
+    }
+}
+
+private struct KeystoneToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        IconOnlyToolbarButton(
+            systemName: "rectangle.distorted",
+            isSelected: commands.selectedCursorToolID == "Keystone"
+        ) {
+            commands.handleToolbarAction("Keystone")
+        }
+        .contextMenu {
+            Button("Keystone Vertical") { commands.setKeystoneMode(0) }
+            Button("Keystone Horizontal") { commands.setKeystoneMode(1) }
+            Button("Keystone 4-Point") { commands.setKeystoneMode(2) }
+        }
     }
 }
 
