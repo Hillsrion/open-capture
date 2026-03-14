@@ -79,8 +79,8 @@ public struct COImageBrowserView: View {
             browserFooter
         }
         .background(CaptureOneTheme.Colors.browserBackground)
-        .onAppear { interactor.updateDataSource(with: images) }
-        .onChange(of: images) { newImages in interactor.updateDataSource(with: newImages) }
+        .onAppear { interactor.updateDataSource(with: browser.dataSource) }
+        .onChange(of: browser.dataSource) { newImages in interactor.updateDataSource(with: newImages) }
     }
     
     // MARK: - Toolbar
