@@ -70,6 +70,13 @@ public struct InspectorToolTabView: View {
                     Button("Float Palette") {
                         COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
                     }
+                    Divider()
+                    Button("Add Tool Tab") {
+                        // Logic to add a new palette (e.g. customized)
+                    }
+                    Button("Remove Tool Tab", role: .destructive) {
+                        workspaceManager.removePalette(palette.id)
+                    }
                 }
             }
         }
