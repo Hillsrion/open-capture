@@ -66,7 +66,7 @@ public struct HDRToolView: View {
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 .frame(width: 60, alignment: .leading)
             
-            Slider(value: value, in: 0...100)
+            Slider(value: value, in: -100...100)
                 .accentColor(CaptureOneTheme.Colors.activeHighlight)
             
             Text(String(format: "%.0f", value.wrappedValue))
