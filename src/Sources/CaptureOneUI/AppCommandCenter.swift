@@ -232,13 +232,15 @@ public final class AppCommandCenter: ObservableObject {
     }
     
     public func flipHorizontal() {
-        // Logic to toggle horizontal flip in IC_ProcessSettings
-        print("[Command] Flip Horizontal requested")
+        guard let variant = adjustmentController.currentVariant else { return }
+        adjustmentController.flipHorizontal.toggle()
+        print("[Command] Flip Horizontal: \(adjustmentController.flipHorizontal) for \(variant.image?.displayName ?? "")")
     }
     
     public func flipVertical() {
-        // Logic to toggle vertical flip in IC_ProcessSettings
-        print("[Command] Flip Vertical requested")
+        guard let variant = adjustmentController.currentVariant else { return }
+        adjustmentController.flipVertical.toggle()
+        print("[Command] Flip Vertical: \(adjustmentController.flipVertical) for \(variant.image?.displayName ?? "")")
     }
 
     public func presentImport() {

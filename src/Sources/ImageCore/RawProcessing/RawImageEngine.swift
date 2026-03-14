@@ -51,6 +51,14 @@ public class RawImageEngine {
             output = wbFilter.outputImage ?? output
         }
         
+        // B.5 Flip & Rotation (UI-204 Parity)
+        if settings.flipHorizontal {
+            output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -output.extent.width, y: 0))
+        }
+        if settings.flipVertical {
+            output = output.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -output.extent.height))
+        }
+        
         // C. Saturation
         if let colorFilter = CIFilter(name: "CIColorControls") {
             colorFilter.setValue(output, forKey: kCIInputImageKey)

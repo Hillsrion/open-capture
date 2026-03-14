@@ -170,6 +170,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Crop & Rotation (UI-204)
     @Published public var cropRect: CGRect = .zero
     @Published public var rotationAngle: Double = 0.0
+    @Published public var flipHorizontal: Bool = false
+    @Published public var flipVertical: Bool = false
     @Published public var cropRatioIndex: Int = 0
     @Published public var cropGridIndex: Int = 0 // 0: 3x3, 1: Golden Ratio, etc.
     @Published public var cropShowMask: Bool = true
@@ -573,6 +575,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         // Color Balance (IMG-004)
         settings.colorBalance = ColorBalanceStorage.settings(from: currentVariant?.mcVariant)
+        
+        // Geometry
+        settings.keystone.vertical = Float(self.keystoneVertical)
+        settings.keystone.horizontal = Float(self.keystoneHorizontal)
+        settings.flipHorizontal = self.flipHorizontal
+        settings.flipVertical = self.flipVertical
         
         // Details
         settings.sharpeningAmount = 100.0 // Default

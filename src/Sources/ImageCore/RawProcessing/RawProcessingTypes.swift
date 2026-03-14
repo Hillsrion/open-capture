@@ -157,6 +157,8 @@ public struct IC_ProcessSettings {
     
     // Geometry
     public var keystone: IC_KeystoneRaw
+    public var flipHorizontal: Bool
+    public var flipVertical: Bool
     
     // Color Grading (IMG-004)
     public var colorBalance: ColorBalanceSettings
@@ -183,6 +185,8 @@ public struct IC_ProcessSettings {
         self.sharpeningAmount = 100.0
         self.denoise = IC_Denoise()
         self.keystone = IC_KeystoneRaw()
+        self.flipHorizontal = false
+        self.flipVertical = false
         self.colorBalance = ColorBalanceSettings()
         self.localAdjustments = (0..<16).map { IC_LocalAdjustCfg(layerId: UInt32($0)) }
         self.colorBalanceShadows = IC_RGB32()
