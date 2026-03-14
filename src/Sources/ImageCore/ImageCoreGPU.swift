@@ -13,8 +13,9 @@ public class ImageCoreGPU {
     private var pipelineCache: [String: MTLComputePipelineState] = [:]
     
     private init() {
-        self.device = MTLCreateSystemDefaultDevice()
-        self.commandQueue = self.device?.makeCommandQueue()
+        let device = MTLCreateSystemDefaultDevice()
+        self.device = device
+        self.commandQueue = device?.makeCommandQueue()
         loadCaptureOneLibrary()
     }
     

@@ -23,7 +23,7 @@ public struct KeywordInspectorTool: View {
                         
                         if !searchText.isEmpty {
                             Button(action: {
-                                let _ = cache.library.addKeyword(name: searchText)
+                                cache.library.addKeyword(at: searchText)
                                 searchText = ""
                             }) {
                                 Image(systemName: "plus.circle.fill")
@@ -36,16 +36,13 @@ public struct KeywordInspectorTool: View {
                     .background(Color.black.opacity(0.2))
                     .cornerRadius(4)
                     
-                    // Hierarchical List
-                    let treeItems = cache.library.keywords.filter { $0.parentID == nil }.compactMap { root in
-                        mapEntryToTree(root)
-                    }
-                    
-                    let filteredItems = searchText.isEmpty ? treeItems : treeItems.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+                    // Hierarchical List using new KeywordLibrary structure
+                    let rootKeywords = cache.library.rootKeywords
+                    let filteredItems = searchText.isEmpty ? rootKeywords : rootKeywords.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
                     
                     List(filteredItems, children: \.children) { item in
                         HStack {
-                            Image(systemName: item.children != nil ? "folder.fill" : "tag.fill")
+                            Image(systemName: (item.children != nil && !item.children!.isEmpty) ? "folder.fill" : "tag.fill")
                                 .font(.system(size: 10))
                                 .foregroundColor(.gray)
                             
@@ -65,11 +62,5 @@ public struct KeywordInspectorTool: View {
                 }
             }
         }
-    }
-    
-    private func mapEntryToTree(_ entry: KeywordEntry) -> StyleTreeItem {
-        let children = cache.library.children(of: entry)
-        let childItems = children.isEmpty ? nil : children.map { mapEntryToTree($0) }
-        return StyleTreeItem(name: entry.name, isFolder: !children.isEmpty, children: childItems)
     }
 }

@@ -24,13 +24,14 @@ public class DocumentKeywordCache: ObservableObject {
             for row in rows {
                 if let uuid = row["ZUUID"] as? String,
                    let name = row["ZNAME"] as? String {
-                    let entry = KeywordEntry(id: uuid, name: name, parentID: row["ZPARENT"] as? String)
+                    // Reconstructed: parent logic would require re-linking after all entries are loaded
+                    let entry = KeywordEntry(id: uuid, name: name, parent: nil)
                     entries.append(entry)
                 }
             }
             
             DispatchQueue.main.async {
-                self.library.keywords = entries
+                self.library.rootKeywords = entries
             }
         } catch {
             print("[KeywordCache] Failed to load keywords: \(error)")

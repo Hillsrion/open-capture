@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 /// Reconstructed Low-level types for RAW Processing (IMG-001).
 /// Based on ImageProcessing.framework v16.7 headers.
@@ -43,6 +44,10 @@ public struct IC_Denoise {
     public var method: Int32
     public var amount: Float
     public var reserved: [Int8] // Original: [1024c]
+    public var luminance: Float = 0.0
+    public var color: Float = 0.0
+    public var singlePixel: Float = 0.0
+    public var details: Float = 0.0
     
     public init() {
         self.method = 0
@@ -60,6 +65,16 @@ public struct IC_KeystoneRaw {
     public var reserved2: Float
     public var flags: UInt32
     
+    // Compatibility fields for pipeline
+    public var keystoneTiltX: Float = 0.0
+    public var keystoneTiltY: Float = 0.0
+    public var keystoneAmount: Float = 0.0
+    public var keystoneAspect: Float = 0.0
+    public var keystoneSkew: Float = 0.0
+    public var keystoneFocalLength: Float = 35.0
+    public var rotation: Double = 0.0
+    public var cropRect: CGRect = .zero
+    
     public init() {
         self.horizontal = 0.0
         self.vertical = 0.0
@@ -76,6 +91,10 @@ public struct IC_Clarity {
     public var method: Float
     public var type: Int32
     
+    // Compatibility for pipeline
+    public var structureAmount: Float = 0.0
+    public var clarityMethod: Int32 = 0
+    
     public init(amount: Float = 0.0, method: Float = 0.0, type: Int32 = 0) {
         self.amount = amount
         self.method = method
@@ -90,6 +109,76 @@ public struct IC_Moire {
     public init(amount: Float = 0.0, type: Int32 = 0) {
         self.amount = amount
         self.type = type
+    }
+}
+
+public struct IC_HDRSettings {
+    public var highlights: Float = 0.0
+    public var shadows: Float = 0.0
+    public var whites: Float = 0.0
+    public var blacks: Float = 0.0
+    public var amount: Float = 0.0 // Added for filmGrain compatibility
+    public init() {}
+}
+
+public struct IC_Sharpening {
+    public var amount: Float = 0.0
+    public var radius: Float = 0.0
+    public var threshold: Float = 0.0
+    public var haloControl: Float = 0.0
+    public init() {}
+}
+
+public struct IC_NegativeFilmSettings {
+    public var isEnabled: Bool = false
+    public var filmType: Int32 = 0
+    public init() {}
+}
+
+public struct IC_LensCorrectionSettings {
+    public var distortion: Float = 0.0
+    public var lightFalloff: Float = 0.0
+    public var sharpnessFalloff: Float = 0.0
+    public var chromaticAberration: Bool = false
+    public var diffraction: Bool = false
+    public var lccProfileUUID: String? = nil
+    public var lccLightFalloffEnabled: Bool = true
+    public var lccLightFalloffAmount: Float = 100.0
+    public var lccDustRemovalEnabled: Bool = true
+    public var lccUniformityEnabled: Bool = true
+    public init() {}
+}
+
+public struct IC_FilmGrainSettings {
+    public var amount: Float = 0.0
+    public var size: Float = 0.0
+    public var granularity: Float = 0.0
+    public var type: Int32 = 0
+    public init() {}
+}
+
+public struct ICGradationCurves {
+    public var curveX = ICCurve()
+    public var curveR = ICCurve()
+    public var curveG = ICCurve()
+    public var curveB = ICCurve()
+    public var curveL = ICCurve()
+    public init() {}
+}
+
+public struct IC_ExportSettings {
+    public var format: Int32 // 0: JPEG, 1: TIFF, 2: PNG, 3: PSD, 4: DNG
+    public var quality: Int32
+    public var iccProfilePath: String?
+    public var bitsPerChannel: Int32
+    public var compression: Int32
+    
+    public init() {
+        self.format = 0
+        self.quality = 80
+        self.iccProfilePath = nil
+        self.bitsPerChannel = 8
+        self.compression = 0
     }
 }
 
@@ -123,6 +212,10 @@ public struct IC_LocalAdjustCfg {
     public var isVisible: Bool
     public var maskData: [Float]? // Reconstructed: Pointer/Buffer to the actual mask
     
+    // Compatibility for pipeline
+    public var exposure: Float { settings.exposure }
+    public var colorBalance: ColorBalanceSettings { ColorBalanceSettings() }
+    
     public init(layerId: UInt32 = 0) {
         self.layerId = layerId
         self.settings = IC_LocalAdjustSettings()
@@ -135,6 +228,8 @@ public struct IC_LocalAdjustCfg {
 /// The master structure for development settings.
 /// Mimics the internal IC_ProcessSettings from ImageProcessing.framework.
 public struct IC_ProcessSettings {
+    public var engineVersion: Int32 = 1600
+    
     // Basic Development
     public var exposure: Float
     public var contrast: Float
@@ -145,18 +240,70 @@ public struct IC_ProcessSettings {
     public var kelvin: Float
     public var tint: Float
     
+    // Compatibility fields for old pipeline
+    public var whiteBalanceTemperature: Double {
+        get { Double(kelvin) }
+        set { kelvin = Float(newValue) }
+    }
+    public var whiteBalanceTint: Double {
+        get { Double(tint) }
+        set { tint = Float(newValue) }
+    }
+    
     // High Dynamic Range
-    public var highlight: Float
-    public var shadow: Float
-    public var white: Float
-    public var black: Float
+    public var highlight: Float {
+        get { hdr.highlights }
+        set { hdr.highlights = newValue }
+    }
+    public var shadow: Float {
+        get { hdr.shadows }
+        set { hdr.shadows = newValue }
+    }
+    public var white: Float {
+        get { hdr.whites }
+        set { hdr.whites = newValue }
+    }
+    public var black: Float {
+        get { hdr.blacks }
+        set { hdr.blacks = newValue }
+    }
+    
+    public var hdr = IC_HDRSettings()
     
     // Details
-    public var sharpeningAmount: Float
-    public var denoise: IC_Denoise
+    public var sharpening = IC_Sharpening()
+    public var noiseReduction = IC_Denoise()
+    public var negativeFilm = IC_NegativeFilmSettings()
+    public var lensCorrection = IC_LensCorrectionSettings()
+    public var filmGrain = IC_FilmGrainSettings()
+    public var gradationCurves = ICGradationCurves()
+    public var clarity = IC_Clarity()
+    public var colorCorrectionList = IC_ColorCorrectionList()
+    
+    // Levels (Compatibility)
+    public var levelsShadow: Float = 0.0
+    public var levelsHighlight: Float = 1.0
+    public var levelsMidtone: Float = 1.0
+    public var levelsTargetShadow: Float = 0.0
+    public var levelsTargetHighlight: Float = 1.0
+    
+    // Legacy support
+    public var sharpeningAmount: Float {
+        get { sharpening.amount }
+        set { sharpening.amount = newValue }
+    }
+    public var denoise: IC_Denoise {
+        get { noiseReduction }
+        set { noiseReduction = newValue }
+    }
     
     // Geometry
     public var keystone: IC_KeystoneRaw
+    public var geometry: IC_KeystoneRaw {
+        get { keystone }
+        set { keystone = newValue }
+    }
+    
     public var flipHorizontal: Bool
     public var flipVertical: Bool
     
@@ -171,6 +318,11 @@ public struct IC_ProcessSettings {
     public var colorBalanceMidtones: IC_RGB32
     public var colorBalanceHighlights: IC_RGB32
     
+    // Additional compatibility fields
+    public var isSoftProofingEnabled: Bool = false
+    public var proofingProfileID: String? = nil
+    public var showGamutWarning: Bool = false
+    
     public init() {
         self.exposure = 0.0
         self.contrast = 0.0
@@ -178,12 +330,6 @@ public struct IC_ProcessSettings {
         self.saturation = 0.0
         self.kelvin = 5000.0
         self.tint = 0.0
-        self.highlight = 0.0
-        self.shadow = 0.0
-        self.white = 0.0
-        self.black = 0.0
-        self.sharpeningAmount = 100.0
-        self.denoise = IC_Denoise()
         self.keystone = IC_KeystoneRaw()
         self.flipHorizontal = false
         self.flipVertical = false

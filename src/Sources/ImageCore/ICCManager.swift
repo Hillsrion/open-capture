@@ -57,10 +57,10 @@ public class ICCManager {
     
     private func loadStandardProfiles() {
         // Built-in high-fidelity presets
-        addProfile(ICCProfile(id: "sRGB", name: "sRGB IEC61966-2.1", data: nil, type: .output))
-        addProfile(ICCProfile(id: "AdobeRGB", name: "Adobe RGB (1998)", data: nil, type: .output))
-        addProfile(ICCProfile(id: "ProPhoto", name: "ProPhoto RGB", data: nil, type: .output))
-        addProfile(ICCProfile(id: "DisplayP3", name: "Display P3", data: nil, type: .output))
+        addProfile(ICCProfile(id: "sRGB", name: "sRGB IEC61966-2.1", type: .output, data: nil))
+        addProfile(ICCProfile(id: "AdobeRGB", name: "Adobe RGB (1998)", type: .output, data: nil))
+        addProfile(ICCProfile(id: "ProPhoto", name: "ProPhoto RGB", type: .output, data: nil))
+        addProfile(ICCProfile(id: "DisplayP3", name: "Display P3", type: .output, data: nil))
     }
     
     private func scanSystemProfiles() {
@@ -90,7 +90,7 @@ public class ICCManager {
                     // In a real reconstruction, we would parse the ICC header 
                     // to get the real internal name and type.
                     let name = fileURL.deletingPathExtension().lastPathComponent
-                    let profile = ICCProfile(id: fileURL.path, name: name, data: data, type: .output)
+                    let profile = ICCProfile(id: fileURL.path, name: name, type: .output, data: data)
                     addProfile(profile)
                 }
             }
@@ -114,8 +114,7 @@ public class ColorTransformEngine {
         }
         
         // 1. Create vImage converter
-        var info = vImage_Converter()
-        // ... Logic to create converter using vImageCreateConverterAndTranscodeWithColorSync
+        // var info = vImageConverter() // vImageConverter is an opaque ref in Swift, logic would involve vImageCreateConverter...
         
         print("[Color] Transforming buffer from \(source.name) to \(target.name)")
     }

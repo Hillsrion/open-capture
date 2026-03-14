@@ -13,10 +13,10 @@ public class ExportTranslator {
         
         // 1. Translate Basic Adjustments from Variant's MCVariant
         if let mc = variant.mcVariant {
-            processSettings.exposure = (mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0
-            processSettings.contrast = (mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0
-            processSettings.brightness = (mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0
-            processSettings.saturation = (mc.objectForKey("ZSATURATION") as? Double) ?? 0.0
+            processSettings.exposure = Float((mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0)
+            processSettings.contrast = Float((mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0)
+            processSettings.brightness = Float((mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0)
+            processSettings.saturation = Float((mc.objectForKey("ZSATURATION") as? Double) ?? 0.0)
             
             processSettings.whiteBalanceTemperature = (mc.objectForKey("ZWB_TEMP") as? Double) ?? 5000.0
             processSettings.whiteBalanceTint = (mc.objectForKey("ZWB_TINT") as? Double) ?? 0.0

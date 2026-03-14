@@ -1,7 +1,9 @@
 import Foundation
+import CoreGraphics
 
 /// Reconstructed Base interfaces for ImageCore processing engine.
 /// Translates C++ ABI patterns into idiomatic Swift.
+
 public struct ICCurvePoint {
     public var x: Float
     public var y: Float
@@ -12,7 +14,7 @@ public struct ICCurvePoint {
 }
 
 public struct ICCurve {
-    public var points: [ICCurvePoint] // Fixed size of 16 in original, we use array for Swift ease
+    public var points: [ICCurvePoint] 
     public var count: Int32
     public var startPoint: ICCurvePoint
     public var endPoint: ICCurvePoint
@@ -22,34 +24,6 @@ public struct ICCurve {
         self.count = 0
         self.startPoint = ICCurvePoint(x: 0, y: 0)
         self.endPoint = ICCurvePoint(x: 1, y: 1)
-    }
-}
-
-public struct ICGradationCurves {
-    public var curveX: ICCurve // RGB / Combined
-    public var curveR: ICCurve
-    public var curveG: ICCurve
-    public var curveB: ICCurve
-    public var curveL: ICCurve // Luma
-
-    public init() {
-        self.curveX = ICCurve()
-        self.curveR = ICCurve()
-        self.curveG = ICCurve()
-        self.curveB = ICCurve()
-        self.curveL = ICCurve()
-    }
-}
-
-public struct IC_ClaritySettings {
-    public var amount: Float
-    public var structureAmount: Float
-    public var clarityMethod: Int32 // 0: Classic, 1: Punch, 2: Neutral, 3: Natural
-    
-    public init() {
-        self.amount = 0.0
-        self.structureAmount = 0.0
-        self.clarityMethod = 0
     }
 }
 
@@ -98,136 +72,11 @@ public struct IC_ColorCorrection: Codable, Identifiable {
 
 public struct IC_ColorCorrectionList {
     public var count: UInt32
-    public var corrections: [IC_ColorCorrection] // Up to 35 based on binary dump
+    public var corrections: [IC_ColorCorrection]
     
     public init() {
         self.count = 0
         self.corrections = Array(repeating: IC_ColorCorrection(), count: 35)
-    }
-}
-
-public struct IC_LocalAdjustmentSettings {
-    public var opacity: Float
-    public var exposure: Float
-    public var contrast: Float
-    public var brightness: Float
-    public var saturation: Float
-    public var colorBalance: ColorBalanceSettings
-    public var clarity: IC_ClaritySettings
-    public var maskUUID: String?
-    
-    public init() {
-        self.opacity = 1.0
-        self.exposure = 0.0
-        self.contrast = 0.0
-        self.brightness = 0.0
-        self.saturation = 0.0
-        self.colorBalance = ColorBalanceSettings()
-        self.clarity = IC_ClaritySettings()
-    }
-}
-
-public struct IC_LensCorrectionSettings {
-    public var distortion: Double
-    public var lightFalloff: Double
-    public var sharpnessFalloff: Double
-    public var chromaticAberration: Bool
-    public var diffraction: Bool
-    public var lccProfileUUID: String?
-    public var lccLightFalloffEnabled: Bool
-    public var lccLightFalloffAmount: Double
-    public var lccDustRemovalEnabled: Bool
-    public var lccUniformityEnabled: Bool
-    
-    public init() {
-        self.distortion = 0.0
-        self.lightFalloff = 0.0
-        self.sharpnessFalloff = 0.0
-        self.chromaticAberration = false
-        self.diffraction = false
-        self.lccProfileUUID = nil
-        self.lccLightFalloffEnabled = true
-        self.lccLightFalloffAmount = 100.0
-        self.lccDustRemovalEnabled = true
-        self.lccUniformityEnabled = true
-    }
-}
-
-public struct IC_ExportSettings {
-    public var format: Int32 // 0: JPEG, 1: TIFF, 2: PNG, 3: PSD, 4: DNG
-    public var quality: Int32
-    public var iccProfilePath: String?
-    public var bitsPerChannel: Int32
-    public var compression: Int32
-    
-    public init() {
-        self.format = 0
-        self.quality = 80
-        self.iccProfilePath = nil
-        self.bitsPerChannel = 8
-        self.compression = 0
-    }
-}
-
-public struct IC_GeometryAdjustments {
-    public var cropRect: CGRect
-    public var rotation: Double
-    public var keystoneTiltX: Double
-    public var keystoneTiltY: Double
-    public var keystoneAmount: Double
-    public var keystoneAspect: Double
-    public var keystoneSkew: Double
-    public var keystoneFocalLength: Double
-    
-    public init() {
-        self.cropRect = .zero
-        self.rotation = 0.0
-        self.keystoneTiltX = 0.0
-        self.keystoneTiltY = 0.0
-        self.keystoneAmount = 0.0
-        self.keystoneAspect = 0.0
-        self.keystoneSkew = 0.0
-        self.keystoneFocalLength = 35.0
-    }
-}
-
-public struct IC_VignettingAdjustments {
-    public var amount: Double
-    public var midpoint: Double
-    public var roundness: Double
-    
-    public init() {
-        self.amount = 0.0
-        self.midpoint = 50.0
-        self.roundness = 0.0
-    }
-}
-
-public struct IC_NoiseReductionSettings {
-    public var luminance: Double
-    public var details: Double
-    public var color: Double
-    public var singlePixel: Double
-    
-    public init() {
-        self.luminance = 50.0
-        self.details = 50.0
-        self.color = 50.0
-        self.singlePixel = 0.0
-    }
-}
-
-public struct IC_SharpeningSettings {
-    public var amount: Double
-    public var radius: Double
-    public var threshold: Double
-    public var haloControl: Double
-    
-    public init() {
-        self.amount = 100.0
-        self.radius = 0.8
-        self.threshold = 1.0
-        self.haloControl = 0.0
     }
 }
 
@@ -238,48 +87,10 @@ public enum IC_FilmGrainType: Int32 {
     case cubic = 3
 }
 
-public struct IC_FilmGrainSettings {
-    public var amount: Double
-    public var density: Double
-    public var granularity: Double
-    public var filmType: IC_FilmGrainType
-    
-    public init() {
-        self.amount = 0.0
-        self.density = 50.0
-        self.granularity = 50.0
-        self.filmType = .fine
-    }
-}
-
 public struct IC_HDRMergeSettings: Codable {
     public var autoAlign: Bool = true
     public var deghosting: Double = 0.0 // 0.0 to 100.0
     public init() {}
-}
-
-public struct IC_HDRSettings {
-    public var highlights: Double
-    public var shadows: Double
-    public var whites: Double
-    public var blacks: Double
-    
-    public init() {
-        self.highlights = 0.0
-        self.shadows = 0.0
-        self.whites = 0.0
-        self.blacks = 0.0
-    }
-}
-
-public struct IC_NegativeFilmSettings {
-    public var isEnabled: Bool
-    public var filmType: Int32 // 0: B&W, 1: Color
-    
-    public init() {
-        self.isEnabled = false
-        self.filmType = 0
-    }
 }
 
 public struct IC_PanoramaMergeSettings: Codable {
@@ -294,100 +105,6 @@ public struct IC_PanoramaMergeSettings: Codable {
     public init() {}
 }
 
-/// Represents the comprehensive settings for image processing.
-public struct IC_ProcessSettings {
-    public var engineVersion: Int32
-
-    // Core Adjustments
-    public var exposure: Double
-    public var contrast: Double
-    public var saturation: Double
-    public var brightness: Double
-
-    // White Balance
-    public var whiteBalanceTemperature: Double
-    public var whiteBalanceTint: Double
-    public var colorBalance: ColorBalanceSettings
-
-    // Levels (Reconstructed from shadow/highlight/midtone fields)
-    public var levelsShadow: Float
-    public var levelsHighlight: Float
-    public var levelsMidtone: Float
-    public var levelsTargetShadow: Float
-    public var levelsTargetHighlight: Float
-
-    // Gradation Curves (High-Fidelity)
-    public var gradationCurves: ICGradationCurves
-    
-    // Clarity & Structure (ENG-003)
-    public var clarity: IC_ClaritySettings
-
-    // HDR (High Dynamic Range) (ENG-009)
-    public var hdr: IC_HDRSettings
-
-    // Negative Film (UI-202)
-    public var negativeFilm: IC_NegativeFilmSettings
-
-    // Advanced Color Editor (ENG-004)
-    public var colorCorrectionList: IC_ColorCorrectionList
-    
-    // Noise Reduction (ENG-007)
-    public var noiseReduction: IC_NoiseReductionSettings
-    
-    // Sharpening (ENG-007)
-    public var sharpening: IC_SharpeningSettings
-    
-    // Film Grain (ENG-008)
-    public var filmGrain: IC_FilmGrainSettings
-    
-    // Local Adjustments (Layers)
-    public var localAdjustments: [IC_LocalAdjustmentSettings]
-
-    // Lens Correction (ENG-006)
-    public var lensCorrection: IC_LensCorrectionSettings
-
-    // Geometry (Inferred from ConvertToFromGeometryAdjustments)
-    public var geometry: IC_GeometryAdjustments
-    
-    // Vignetting (Inferred from ConvertToFromVignettingAdjustments)
-    public var vignetting: IC_VignettingAdjustments
-    
-    // Soft Proofing (ENG-011)
-    public var isSoftProofingEnabled: Bool
-    public var proofingProfileID: String?
-    public var showGamutWarning: Bool
-
-    public init(version: Int32 = 1600) {
-        self.engineVersion = version
-        self.exposure = 0.0
-        self.contrast = 0.0
-        self.saturation = 0.0
-        self.brightness = 0.0
-        self.whiteBalanceTemperature = 5000.0
-        self.whiteBalanceTint = 0.0
-        self.colorBalance = ColorBalanceSettings()
-        self.levelsShadow = 0.0
-        self.levelsHighlight = 1.0
-        self.levelsMidtone = 1.0
-        self.levelsTargetShadow = 0.0
-        self.levelsTargetHighlight = 1.0
-        self.gradationCurves = ICGradationCurves()
-        self.clarity = IC_ClaritySettings()
-        self.hdr = IC_HDRSettings()
-        self.negativeFilm = IC_NegativeFilmSettings()
-        self.colorCorrectionList = IC_ColorCorrectionList()
-        self.noiseReduction = IC_NoiseReductionSettings()
-        self.sharpening = IC_SharpeningSettings()
-        self.filmGrain = IC_FilmGrainSettings()
-        self.localAdjustments = []
-        self.lensCorrection = IC_LensCorrectionSettings()
-        self.geometry = IC_GeometryAdjustments()
-        self.vignetting = IC_VignettingAdjustments()
-        self.isSoftProofingEnabled = false
-        self.proofingProfileID = nil
-        self.showGamutWarning = false
-    }
-}
 /// Base protocol for all image processing operations.
 public protocol ICImageOperation {
     var name: String { get }

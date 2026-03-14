@@ -18,14 +18,14 @@ public class SmartAdjustmentsHelper {
     /// In original, this uses FaceDetection and MatchLook models.
     public static func analyzeVariant(_ variant: VariantBase) -> SmartAdjustmentsReference {
         // 1. Detect faces if present
-        if let faceDetector = self.faceDetector {
+        if self.faceDetector != nil {
             // Placeholder: Run face detection on variant thumbnail/raw
             // Original logic extracts skin tone regions for matching
             print("[AI] Detecting faces for Smart Adjustments reference...")
         }
         
         // 2. Extract luma/color characteristics using MatchLook
-        if let lookMatcher = self.lookMatcher {
+        if self.lookMatcher != nil {
             print("[AI] Analyzing look with MatchLookModel...")
             // Placeholder: Perform inference to get normalized look parameters
         }

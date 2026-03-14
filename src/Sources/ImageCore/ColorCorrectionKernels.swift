@@ -102,22 +102,22 @@ public struct ColorCorrectionKernels {
                     
                     // MARK: - Skin Tone Uniformity (Homogeneity) (COL-004)
                     // Pulls the current HSL towards the slice's center HSL based on uniformity sliders.
-                    if let uniformity = corr.uniformity {
-                        // Hue Uniformity
-                        let targetHue = (corr.lowHue + corr.highHue) / 2.0
-                        let hueDiff = h - targetHue
-                        h -= hueDiff * (uniformity.hue / 100.0) * weight
-                        
-                        // Saturation Uniformity
-                        let targetSat = (corr.lowSaturation + corr.highSaturation) / 2.0
-                        let satDiff = s - targetSat
-                        s -= satDiff * (uniformity.saturation / 100.0) * weight
-                        
-                        // Lightness Uniformity
-                        let targetLuma = 0.5 // Default target lightness for skin
-                        let lumaDiff = l - targetLuma
-                        l -= lumaDiff * (uniformity.lightness / 100.0) * weight
-                    }
+                    // C1 Parity: Using homogeneity fields discovered in ImageCoreBase
+                    
+                    // Hue Uniformity
+                    let targetHue = (corr.lowHue + corr.highHue) / 2.0
+                    let hueDiff = h - targetHue
+                    h -= hueDiff * (corr.homogeneityHue / 100.0) * weight
+                    
+                    // Saturation Uniformity
+                    let targetSat = (corr.lowSaturation + corr.highSaturation) / 2.0
+                    let satDiff = s - targetSat
+                    s -= satDiff * (corr.homogeneitySaturation / 100.0) * weight
+                    
+                    // Lightness Uniformity
+                    let targetLuma: Float = 0.5 // Default target lightness for skin
+                    let lumaDiff = l - targetLuma
+                    l -= lumaDiff * (corr.homogeneityLightness / 100.0) * weight
                 }
                 
                 // 4. Convert back

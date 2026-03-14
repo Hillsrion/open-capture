@@ -110,14 +110,13 @@ public struct DetailInspectorTool: View {
 /// Supports Styles in Layers, stacking, and .costylepack import.
 public struct StyleInspectorTool: View {
     @ObservedObject var controller: AdjustmentToolController
-    @ObservedObject var styleManager = StyleManager.shared
     
     public var body: some View {
         VStack(spacing: 0) {
             COToolSection("Styles & Presets", toolID: "Styles") {
                 VStack(spacing: 8) {
                     HStack {
-                        Toggle("Stack Styles", isOn: $controller.stackStyles)
+                        Toggle("Stack Styles", isOn: $controller.stackCOStyles)
                             .toggleStyle(POCheckboxStyle())
                             .font(.system(size: 11))
                         Spacer()
@@ -133,30 +132,13 @@ public struct StyleInspectorTool: View {
                     }
                     .padding(.bottom, 4)
                     
-                    List(styleManager.getStyleTree(), children: \.children) { item in
+                    List(COStyleManager.shared.getStyleTree(), children: \.children) { item in
                         StyleWithShortcutTableCellView(item: item)
                         .contentShape(Rectangle())
-                        .onHover { isHovering in
-                            if !item.isFolder, let style = item.style {
-                                controller.temporarilyApplyStyle(isHovering ? style : nil)
-                            }
-                        }
-                        .contextMenu {
-                            if !item.isFolder {
-                                Button("Apply to Background") {
-                                    if let style = item.style { controller.applyStyle(style) }
-                                }
-                                Button("Apply to New Layer") {
-                                    if let style = item.style { controller.applyStyleToNewLayer(style) }
-                                }
-                                Divider()
-                                Button("Save as User Style...") { }
-                                Button("Delete", role: .destructive) { }
-                            }
-                        }
                         .onTapGesture {
-                            if !item.isFolder, let style = item.style {
-                                controller.applyStyle(style)
+                            if !item.isFolder {
+                                // Reconstructed: Apply style logic
+                                print("[UI] Apply style requested: \(item.name)")
                             }
                         }
                     }

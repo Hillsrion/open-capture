@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import CoreGraphics
 import ImageCore
 
 /// Reconstructed Camera Device model (TETH-001).

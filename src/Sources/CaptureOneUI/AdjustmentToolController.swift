@@ -78,8 +78,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var aiCropReferencePoint: Int = 0 // 0: Center, 1: Top, 2: Eyes
     @Published public var aiCropLockAspect: Bool = true
     
-    // Styles State (UI-204)
-    @Published public var stackStyles: Bool = false
+    // COStyles State (UI-204)
+    @Published public var stackCOStyles: Bool = false
     @Published public var styleOpacity: Double = 100.0 // 0 to 100
     
     // Smart Adjustments State (AI-204)
@@ -172,6 +172,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var rotationAngle: Double = 0.0
     @Published public var flipHorizontal: Bool = false
     @Published public var flipVertical: Bool = false
+    @Published public var keystoneVertical: Double = 0.0
+    @Published public var keystoneHorizontal: Double = 0.0
     @Published public var cropRatioIndex: Int = 0
     @Published public var cropGridIndex: Int = 0 // 0: 3x3, 1: Golden Ratio, etc.
     @Published public var cropShowMask: Bool = true
@@ -245,7 +247,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
 
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
-    @Published public var previewingStyle: Style?
+    @Published public var previewingCOStyle: COStyle?
 
     // Filtering State
     @Published public var activePredicate: COFilterPredicate = COFilterPredicate()
@@ -356,7 +358,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $sharpRadius.map { _ in }.eraseToAnyPublisher(),
             $sharpThreshold.map { _ in }.eraseToAnyPublisher(),
             $sharpHalo.map { _ in }.eraseToAnyPublisher(),
-            $stackStyles.map { _ in }.eraseToAnyPublisher(),
+            $stackCOStyles.map { _ in }.eraseToAnyPublisher(),
             
             $blackAndWhiteEnabled.map { _ in }.eraseToAnyPublisher(),
             $bwRed.map { _ in }.eraseToAnyPublisher(),
@@ -414,7 +416,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     }
     
     /// Temporarily applies a style for live preview (hover).
-    public func temporarilyApplyStyle(_ style: Style?) {
+    public func temporarilyApplyCOStyle(_ style: COStyle?) {
         guard let variant = currentVariant, let mc = variant.mcVariant else { return }
         
         if let style = style {
@@ -431,11 +433,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             // 2. Apply style adjustments
             isUpdatingFromModel = true
             for (key, val) in style.adjustments {
-                applyAdjustmentValue(val.value, forKey: key)
+                applyAdjustmentValue(val, forKey: key)
             }
             isUpdatingFromModel = false
             
-            previewingStyle = style
+            previewingCOStyle = style
             commitChanges(to: variant)
         } else {
             // 3. Revert to original state
@@ -447,15 +449,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                 isUpdatingFromModel = false
                 originalSettings = nil
             }
-            previewingStyle = nil
+            previewingCOStyle = nil
             commitChanges(to: variant)
         }
     }
     
-    /// Feature: Styles in Layers
-    public func applyStyleToNewLayer(_ style: Style) {
+    /// Feature: COStyles in Layers
+    public func applyCOStyleToNewLayer(_ style: COStyle) {
         guard let variant = currentVariant else { return }
-        print("[AdjustmentToolController] Applying Style \(style.name) to New Layer")
+        print("[AdjustmentToolController] Applying COStyle \(style.name) to New Layer")
         
         let newLayer = LayerBase(
             uuid: UUID().uuidString,
@@ -471,11 +473,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     }
     
     /// Permanently applies a style to the current variant.
-    public func applyStyle(_ style: Style) {
+    public func applyCOStyle(_ style: COStyle) {
         guard let variant = currentVariant else { return }
         
         // 1. If not stacking, reset to neutral first (simulated)
-        if !stackStyles {
+        if !stackCOStyles {
             resetToNeutral()
         }
         
@@ -488,10 +490,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         // 3. Clear preview state since it's now permanent
         originalSettings = nil
-        previewingStyle = nil
+        previewingCOStyle = nil
         
         commitChanges(to: variant)
-        print("[Adjustment] Style applied: \(style.name)")
+        print("[Adjustment] COStyle applied: \(style.name)")
     }
     
     public func resetToNeutral() {
@@ -770,7 +772,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.aiCropReferencePoint = (mc.objectForKey("ZAI_CROP_REF_POINT") as? Int) ?? 0
         self.aiCropLockAspect = (mc.objectForKey("ZAI_CROP_LOCK_ASPECT") as? Bool) ?? true
         
-        self.stackStyles = (mc.objectForKey("ZSTACK_STYLES") as? Bool) ?? false
+        self.stackCOStyles = (mc.objectForKey("ZSTACK_STYLES") as? Bool) ?? false
         self.styleOpacity = (mc.objectForKey("ZSTYLE_OPACITY") as? Double) ?? 100.0
 
         self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
@@ -947,7 +949,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(aiCropReferencePoint, forKey: "ZAI_CROP_REF_POINT")
         mc.setObject(aiCropLockAspect, forKey: "ZAI_CROP_LOCK_ASPECT")
 
-        mc.setObject(stackStyles, forKey: "ZSTACK_STYLES")
+        mc.setObject(stackCOStyles, forKey: "ZSTACK_STYLES")
         mc.setObject(styleOpacity, forKey: "ZSTYLE_OPACITY")
 
         if let encodedSpots = try? JSONEncoder().encode(spots) {
@@ -979,49 +981,49 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         // 3. Map to ImageCore settings
         var settings = IC_ProcessSettings()
-        settings.exposure = (mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0
-        settings.contrast = (mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0
-        settings.brightness = (mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0
-        settings.saturation = (mc.objectForKey("ZSATURATION") as? Double) ?? 0.0
+        settings.exposure = Float((mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0)
+        settings.contrast = Float((mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0)
+        settings.brightness = Float((mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0)
+        settings.saturation = Float((mc.objectForKey("ZSATURATION") as? Double) ?? 0.0)
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
         settings.colorBalance = ColorBalanceStorage.settings(from: mc)
         
-        settings.lensCorrection.distortion = lensDistortion
-        settings.lensCorrection.lightFalloff = lensLightFalloff
-        settings.lensCorrection.sharpnessFalloff = lensSharpnessFalloff
+        settings.lensCorrection.distortion = Float(lensDistortion)
+        settings.lensCorrection.lightFalloff = Float(lensLightFalloff)
+        settings.lensCorrection.sharpnessFalloff = Float(lensSharpnessFalloff)
         settings.lensCorrection.chromaticAberration = chromaticAberration
         settings.lensCorrection.diffraction = diffraction
         settings.lensCorrection.lccProfileUUID = lccProfileUUID
         settings.lensCorrection.lccLightFalloffEnabled = lccLightFalloffEnabled
-        settings.lensCorrection.lccLightFalloffAmount = lccLightFalloffAmount
+        settings.lensCorrection.lccLightFalloffAmount = Float(lccLightFalloffAmount)
         settings.lensCorrection.lccDustRemovalEnabled = lccDustRemovalEnabled
         settings.lensCorrection.lccUniformityEnabled = lccUniformityEnabled
         
-        settings.noiseReduction.luminance = nrLuminance
-        settings.noiseReduction.details = nrDetails
-        settings.noiseReduction.color = nrColor
-        settings.noiseReduction.singlePixel = nrSinglePixel
+        settings.noiseReduction.luminance = Float(nrLuminance)
+        settings.noiseReduction.details = Float(nrDetails)
+        settings.noiseReduction.color = Float(nrColor)
+        settings.noiseReduction.singlePixel = Float(nrSinglePixel)
         
-        settings.sharpening.amount = sharpAmount
-        settings.sharpening.radius = sharpRadius
-        settings.sharpening.threshold = sharpThreshold
-        settings.sharpening.haloControl = sharpHalo
+        settings.sharpening.amount = Float(sharpAmount)
+        settings.sharpening.radius = Float(sharpRadius)
+        settings.sharpening.threshold = Float(sharpThreshold)
+        settings.sharpening.haloControl = Float(sharpHalo)
         
         settings.geometry.cropRect = cropRect // Use the state variable since it's published now
         settings.geometry.rotation = rotationAngle
-        settings.geometry.keystoneTiltX = keystoneTiltX
-        settings.geometry.keystoneTiltY = keystoneTiltY
-        settings.geometry.keystoneAmount = keystoneAmount
-        settings.geometry.keystoneAspect = keystoneAspect
-        settings.geometry.keystoneSkew = keystoneSkew
-        settings.geometry.keystoneFocalLength = keystoneFocalLength
+        settings.geometry.keystoneTiltX = Float(keystoneTiltX)
+        settings.geometry.keystoneTiltY = Float(keystoneTiltY)
+        settings.geometry.keystoneAmount = Float(keystoneAmount)
+        settings.geometry.keystoneAspect = Float(keystoneAspect)
+        settings.geometry.keystoneSkew = Float(keystoneSkew)
+        settings.geometry.keystoneFocalLength = Float(keystoneFocalLength)
         
-        settings.levelsShadow = levelsBlackPoint
-        settings.levelsHighlight = levelsWhitePoint
-        settings.levelsMidtone = levelsMidtone
-        settings.levelsTargetShadow = levelsTargetBlack
-        settings.levelsTargetHighlight = levelsTargetWhite
+        settings.levelsShadow = Float(levelsBlackPoint)
+        settings.levelsHighlight = Float(levelsWhitePoint)
+        settings.levelsMidtone = Float(levelsMidtone)
+        settings.levelsTargetShadow = Float(levelsTargetBlack)
+        settings.levelsTargetHighlight = Float(levelsTargetWhite)
         
         var curveX = ICCurve()
         curveX.count = Int32(min(curvesPoints.count, 16))
@@ -1047,20 +1049,24 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.showGamutWarning = showGamutWarning
         
         // 4. Map Local Adjustments (Layers)
-        for layer in variant.layers where layer.type != .background {
-            var localAdj = IC_LocalAdjustmentSettings()
-            localAdj.opacity = layer.opacity
+        for (index, layer) in variant.layers.enumerated() where layer.type != .background {
+            var localCfg = IC_LocalAdjustCfg(layerId: UInt32(index))
+            localCfg.opacity = Float(layer.opacity / 100.0)
+            localCfg.isVisible = true
+            
             if let mcLayer = layer.mcLayer {
-                localAdj.exposure = (mcLayer.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
-                localAdj.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
-                localAdj.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
-                localAdj.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
-                localAdj.colorBalance = ColorBalanceStorage.settings(from: mcLayer)
-                localAdj.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
-                localAdj.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
-                localAdj.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
+                localCfg.settings.exposure = (mcLayer.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
+                localCfg.settings.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
+                localCfg.settings.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
+                localCfg.settings.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
+                // localCfg.settings.colorBalance = ColorBalanceStorage.settings(from: mcLayer)
+                localCfg.settings.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
+                localCfg.settings.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
+                localCfg.settings.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
             }
-            settings.localAdjustments.append(localAdj)
+            if index < 16 {
+                settings.localAdjustments[index] = localCfg
+            }
         }
         
         // 5. Trigger pipeline execution

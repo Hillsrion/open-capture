@@ -165,7 +165,7 @@ public class RawImageEngine {
         return CIImage(bitmapData: data,
                        bytesPerRow: width * MemoryLayout<Float>.size,
                        size: size,
-                       format: .f, // Float format for grayscale
+                       format: .RGBAf, // Float format for grayscale
                        colorSpace: nil)
     }
     

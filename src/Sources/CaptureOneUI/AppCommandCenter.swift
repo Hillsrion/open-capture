@@ -45,7 +45,7 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var clipboardLayersSelected: Bool = true
     
     @Published public private(set) var importer = POImporter()
-    @Published public private(set) var copiedAdjustments: Style?
+    @Published public private(set) var copiedAdjustments: COStyle?
     @Published public var browser = CImageBrowser()
 
     public var recipeManager: OutputRecipeManager = OutputRecipeManager.shared
@@ -563,10 +563,10 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        adjustmentController.applyStyle(copiedAdjustments)
+        adjustmentController.applyCOStyle(copiedAdjustments)
     }
 
-    public func saveCurrentAdjustmentsAsStyle(toolID: String) {
+    public func saveCurrentAdjustmentsAsCOStyle(toolID: String) {
         guard let style = snapshotCurrentAdjustments(name: "\(toolID) Snapshot") else {
             notice = AppNotice(
                 title: "Nothing to Save",
@@ -575,15 +575,15 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        StyleManager.shared.objectWillChange.send()
-        StyleManager.shared.userStyles.styles.append(style)
+        COStyleManager.shared.objectWillChange.send()
+        COStyleManager.shared.userCOStyles.styles.append(style)
         notice = AppNotice(
-            title: "Style Saved",
-            message: "\"\(style.name)\" was added to User Styles."
+            title: "COStyle Saved",
+            message: "\"\(style.name)\" was added to User COStyles."
         )
     }
 
-    public func applyStyle(_ style: Style) {
+    public func applyCOStyle(_ style: COStyle) {
         guard adjustmentController.currentVariant != nil else {
             notice = AppNotice(
                 title: "No Selection",
@@ -592,7 +592,7 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        adjustmentController.applyStyle(style)
+        adjustmentController.applyCOStyle(style)
     }
 
     public func showHelp(for toolID: String) {
@@ -604,7 +604,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public struct ToolAdjustmentClip {
         public let toolID: String
-        public let style: Style
+        public let style: COStyle
     }
     public private(set) var copiedToolAdjustments: ToolAdjustmentClip?
 
@@ -634,7 +634,7 @@ public final class AppCommandCenter: ObservableObject {
             )
             return
         }
-        adjustmentController.applyStyle(copied.style)
+        adjustmentController.applyCOStyle(copied.style)
     }
 
     public func resetTool(_ toolID: String) {
@@ -675,7 +675,7 @@ public final class AppCommandCenter: ObservableObject {
         }
     }
 
-    private func snapshotCurrentAdjustments(name: String) -> Style? {
+    private func snapshotCurrentAdjustments(name: String) -> COStyle? {
         guard adjustmentController.currentVariant != nil else {
             return nil
         }
@@ -698,6 +698,6 @@ public final class AppCommandCenter: ObservableObject {
         // Return nil if nothing is selected
         guard !adjustments.isEmpty else { return nil }
 
-        return Style(name: name, adjustments: adjustments)
+        return COStyle(name: name, adjustments: adjustments)
     }
 }

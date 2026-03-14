@@ -52,7 +52,7 @@ public struct KeywordsAssignmentToolView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("SUGGESTIONS").font(.system(size: 9, weight: .bold)).foregroundColor(.gray)
                         VStack(alignment: .leading, spacing: 2) {
-                            ForEach(context.keywordCache.library.keywords.prefix(5), id: \.id) { keyword in
+                            ForEach(context.keywordCache.library.rootKeywords.prefix(5), id: \.id) { keyword in
                                 Button(action: { context.keywordCache.assignKeyword(keyword, to: variant) }) {
                                     HStack {
                                         Text(keyword.name).font(.system(size: 11))

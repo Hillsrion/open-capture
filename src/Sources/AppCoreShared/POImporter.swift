@@ -103,8 +103,7 @@ public class POImporter: ObservableObject {
                     
                     // Reconstructed: Unpack EIP if requested (CORE-006)
                     if isEIP && self.settings.alwaysUnpackEIP {
-                        let archiver = EIPArchive(path: destinationURL)
-                        try archiver.extract(to: destinationURL.deletingPathExtension())
+                        _ = try EIPManager.shared.unpackEIP(at: destinationURL, destinationFolder: destinationURL.deletingLastPathComponent())
                         print("[POImporter] Unpacked EIP contents for \(destinationURL.lastPathComponent)")
                     }
                     

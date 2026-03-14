@@ -97,8 +97,8 @@ private struct KeywordRow: View {
             
             Spacer()
             
-            if !keyword.children.isEmpty {
-                Text("\(keyword.children.count)")
+            if !(keyword.children?.isEmpty ?? true) {
+                Text("\(keyword.children?.count ?? 0)")
                     .font(.system(size: 9))
                     .foregroundColor(.gray)
                     .padding(.horizontal, 4)
@@ -107,17 +107,5 @@ private struct KeywordRow: View {
             }
         }
         .padding(.vertical, 2)
-    }
-}
-
-/// Custom C1-style checkbox
-struct CheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button(action: { configuration.isOn.toggle() }) {
-            Image(systemName: configuration.isOn ? "checkmark.square.fill" : "square")
-                .font(.system(size: 12))
-                .foregroundColor(configuration.isOn ? .orange : .gray)
-        }
-        .buttonStyle(.plain)
     }
 }

@@ -41,7 +41,7 @@ public struct COToolSection<Content: View>: View {
     let toolID: String
     @ObservedObject private var workspaceManager = WorkspaceManager.shared
     @ObservedObject private var commands = AppCommandCenter.shared
-    @ObservedObject private var styleManager = StyleManager.shared
+    @ObservedObject private var styleManager = COStyleManager.shared
     let content: Content
     
     public init(_ title: String, toolID: String, @ViewBuilder content: () -> Content) {

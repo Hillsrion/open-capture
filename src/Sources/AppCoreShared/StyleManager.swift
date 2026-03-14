@@ -3,10 +3,11 @@ import Combine
 
 /// Reconstructed Style Manager (STY-002).
 /// Mimics _TtC13AppCoreShared13StylesManager protocol implementations.
-public class StyleManager: ObservableObject {
-    public static let shared = StyleManager()
+public class COStyleManager: ObservableObject {
+    public static let shared = COStyleManager()
     
     @Published public var stylePacks: [StylePack] = []
+    @Published public var userCOStyles: StylePack = StylePack(name: "User Styles", styles: [])
     
     private init() {
         loadBuiltinStyles()
@@ -30,16 +31,26 @@ public class StyleManager: ObservableObject {
         }
     }
     
+    /// Returns a hierarchical tree representation of styles for UI display.
+    public func getStyleTree() -> [StyleTreeItem] {
+        var items: [StyleTreeItem] = []
+        
+        for pack in stylePacks {
+            let styleItems = pack.styles.map { StyleTreeItem(name: $0.name, isFolder: false) }
+            items.append(StyleTreeItem(name: pack.name, isFolder: true, children: styleItems))
+        }
+        
+        return items
+    }
+    
     /// Applies a style's adjustments to a variant.
     /// This bridges STY-001 to the variant's metadata properties.
     public func applyStyle(_ style: COStyle, to variant: VariantBase) {
         print("[Style] Applying style: \(style.name) to \(variant.image?.displayName ?? "Unknown")")
         
         // In original C1, this updates the internal ZADJUSTMENT database table
-        for (key, value) in style.adjustments {
-            // Map common keys to DB properties (simplified for lab)
-            let dbKey = mapToDatabaseKey(key)
-            variant.mcVariant?.setObject(value, forKey: dbKey)
+        for (key, val) in style.adjustments {
+            variant.mcVariant?.setObject(val.value, forKey: key)
         }
         
         // Update local object state if needed
@@ -48,41 +59,25 @@ public class StyleManager: ObservableObject {
     
     private func parseStyle(at url: URL) -> COStyle? {
         // Capture One .costyle files are XML. 
-        // For our reconstruction, we use a simplified XML/Plist parser.
-        guard let data = try? Data(contentsOf: url) else { return nil }
-        
-        // Simulation of pugixml parsing
-        // In a real scenario, we'd use XMLParser or a custom wrapper
+        guard (try? Data(contentsOf: url)) != nil else { return nil }
         return COStyle(name: url.deletingPathExtension().lastPathComponent, adjustments: [:])
-    }
-    
-    private func mapToDatabaseKey(_ key: String) -> String {
-        switch key.lowercased() {
-        case "exposure": return "ZEXPOSURE"
-        case "contrast": return "ZCONTRAST"
-        case "brightness": return "ZBRIGHTNESS"
-        case "saturation": return "ZSATURATION"
-        case "kelvin": return "ZKELVIN"
-        case "tint": return "ZTINT"
-        default: return "Z\(key.uppercased())"
-        }
     }
     
     private func loadBuiltinStyles() {
         // Simulation of factory styles
-        let b&w = COStyle(name: "B&W High Contrast", category: "Built-in", adjustments: [
-            "Exposure": "0.2",
-            "Contrast": "20",
-            "Saturation": "-100"
+        let bw = COStyle(name: "B&W High Contrast", category: "Built-in", adjustments: [
+            "ZEXPOSURE": AnyCodable(0.2),
+            "ZCONTRAST": AnyCodable(20.0),
+            "ZSATURATION": AnyCodable(-100.0)
         ])
         
         let landscape = COStyle(name: "Landscape Vivid", category: "Built-in", adjustments: [
-            "Contrast": "10",
-            "Saturation": "15"
+            "ZCONTRAST": AnyCodable(10.0),
+            "ZSATURATION": AnyCodable(15.0)
         ])
         
         self.stylePacks = [
-            StylePack(name: "Factory Styles", styles: [b&w, landscape])
+            StylePack(name: "Factory Styles", styles: [bw, landscape])
         ]
     }
 }

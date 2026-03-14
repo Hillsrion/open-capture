@@ -8,11 +8,9 @@ public struct COStyle: Identifiable, Codable {
     public var category: String
     
     /// The map of adjustments stored in the style.
-    /// Key: The property name (e.g., "Exposure", "Contrast")
-    /// Value: The value as a string (as stored in XML)
-    public var adjustments: [String: String]
+    public var adjustments: [String: AnyCodable]
     
-    public init(name: String, category: String = "User Styles", adjustments: [String: String] = [:]) {
+    public init(name: String, category: String = "User Styles", adjustments: [String: AnyCodable] = [:]) {
         self.name = name
         self.category = category
         self.adjustments = adjustments

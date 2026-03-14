@@ -17,6 +17,7 @@ public struct COImageBrowserView: View {
     @Binding var selectedVariant: VariantBase?
     
     @ObservedObject var searchManager = SearchManager.shared
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
     @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"

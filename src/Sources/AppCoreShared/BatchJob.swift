@@ -96,10 +96,10 @@ public class BatchQueue: ObservableObject {
         let archiveURL = URL(fileURLWithPath: job.destinationPath).deletingPathExtension().appendingPathExtension("eip")
         
         // Gather sidecars (Simulation)
-        let sidecars: [URL] = [] // In real app, this would find .cos, masks, etc.
+        // In real app, this would find .cos, masks, etc.
         
         do {
-            try EIPArchive.create(at: archiveURL, rawURL: rawURL, sidecars: sidecars)
+            try EIPManager.shared.packToEIP(rawURL: rawURL, settingsURL: nil, iccURL: nil, outputURL: archiveURL)
             print("[Batch] EIP Packed: \(archiveURL.lastPathComponent)")
             
             // Clean up the temporary exported file if it was just a sidecar for EIP

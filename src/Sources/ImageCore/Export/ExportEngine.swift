@@ -48,7 +48,7 @@ public class ExportEngine {
         case .jpeg: type = .jpeg
         case .tiff: type = .tiff
         case .png:  type = .png
-        case .psd:  type = .psd // Note: PSD writing usually requires specialized libraries, here simplified
+        case .psd:  type = UTType(importedAs: "com.adobe.photoshop-image") // Reconstructed: Handle PSD via UTI string
         }
         
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL, type.identifier as CFString, 1, nil) else {

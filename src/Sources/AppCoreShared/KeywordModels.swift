@@ -7,7 +7,7 @@ public class KeywordEntry: Identifiable, Codable, ObservableObject {
     public let id: String
     @Published public var name: String
     public var parent: KeywordEntry?
-    @Published public var children: [KeywordEntry] = []
+    @Published public var children: [KeywordEntry]? = nil
     
     public init(id: String = UUID().uuidString, name: String, parent: KeywordEntry? = nil) {
         self.id = id
@@ -58,12 +58,14 @@ public class KeywordLibrary: ObservableObject {
         var lastParent: KeywordEntry? = nil
         
         for component in components {
-            if let existing = (lastParent?.children ?? rootKeywords).first(where: { $0.name == component }) {
+            let currentChildren = lastParent?.children ?? rootKeywords
+            if let existing = currentChildren.first(where: { $0.name == component }) {
                 lastParent = existing
             } else {
                 let newKeyword = KeywordEntry(name: component, parent: lastParent)
                 if let parent = lastParent {
-                    parent.children.append(newKeyword)
+                    if parent.children == nil { parent.children = [] }
+                    parent.children?.append(newKeyword)
                 } else {
                     rootKeywords.append(newKeyword)
                 }

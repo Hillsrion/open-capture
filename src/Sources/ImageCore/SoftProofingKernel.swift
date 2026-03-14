@@ -26,7 +26,7 @@ public class SoftProofingOperation: ICImageOperation {
         // to the target ICC profile's space.
         
         var processedImage = ciImage
-        if let profileID = targetProfileID, let colorSpace = ICCManager.shared.colorSpace(for: profileID) {
+        if let profileID = targetProfileID, let colorSpace = ICCManager.shared.profile(for: profileID)?.colorSpace {
             // Simulate proofing by converting to target space and back
             processedImage = ciImage.matchedToColorSpace(colorSpace) ?? ciImage
         }

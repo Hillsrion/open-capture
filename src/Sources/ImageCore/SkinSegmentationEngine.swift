@@ -1,6 +1,5 @@
 import Foundation
 import CoreML
-import ImageCore
 
 /// Reconstructed AI Skin Segmentation engine (AI-002).
 /// Uses FaceMaskingModel to isolate skin regions for uniformity adjustments.
