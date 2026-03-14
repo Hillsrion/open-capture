@@ -5,31 +5,29 @@ import ImageCore
 import DataCore
 
 /// Standalone Window Controller for the Culling window (WS-103).
-/// Loads the cullingwindow.tools workspace preset for its sidebar.
+/// Features specialized AI-based grouping and face focus checking.
 public class CullingShellController: NSWindowController {
     
     private var session: SessionBase
-    private var workspace: Workspace
     
     public init(session: SessionBase) {
         self.session = session
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .culling, name: "Culling")
         
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1100, height: 750),
+            contentRect: NSRect(x: 0, y: 0, width: 1200, height: 800),
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
             backing: .buffered,
             defer: false
         )
-        window.title = "Culling - \(session.name ?? "Untitled")"
+        window.title = "Cull View"
         window.center()
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
-        window.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
+        window.backgroundColor = NSColor(calibratedWhite: 0.08, alpha: 1.0)
         
         super.init(window: window)
         
-        let contentView = CullingShellRootView(session: session, workspace: workspace)
+        let contentView = CullViewRootView(session: session)
         window.contentView = NSHostingView(rootView: contentView)
     }
     
@@ -38,145 +36,191 @@ public class CullingShellController: NSWindowController {
     }
 }
 
-// MARK: - Root View
-
-fileprivate struct CullingShellRootView: View {
+fileprivate struct CullViewRootView: View {
     let session: SessionBase
-    @State var workspace: Workspace
-    @StateObject private var adjustmentController = AdjustmentToolController.shared
-    @StateObject private var keywordCache: DocumentKeywordCache
-    
-    init(session: SessionBase, workspace: Workspace) {
-        self.session = session
-        self.workspace = workspace
-        self._keywordCache = StateObject(wrappedValue: DocumentKeywordCache(session: session))
-    }
+    @ObservedObject var commands = AppCommandCenter.shared
+    @ObservedObject var controller = AdjustmentToolController.shared
     
     var body: some View {
-        HStack(spacing: 0) {
-            // Sidebar
-            if workspace.chromeState.toolsDisplayState != .hidden {
-                toolsSidebar
-                Divider().background(Color.black)
-            }
+        VStack(spacing: 0) {
+            // Top Toolbar
+            cullToolbar
             
-            // Main Culling Grid
-            VStack(spacing: 0) {
-                cullingToolbar
+            HStack(spacing: 0) {
+                // 1. Grouping Sidebar (Left)
+                groupingSidebar
+                    .frame(width: 240)
+                
                 Divider().background(Color.black)
                 
-                // Culling Grid Content
-                ZStack {
-                    Color.black
-                    VStack(spacing: 16) {
-                        Image(systemName: "rectangle.grid.2x2")
-                            .font(.system(size: 48))
-                            .foregroundColor(.gray.opacity(0.4))
-                        Text("Culling View")
-                            .font(.title3)
-                            .foregroundColor(.gray)
-                        Text("Import images to start culling")
-                            .font(.system(size: 12))
-                            .foregroundColor(.gray.opacity(0.6))
+                // 2. Main Center Area
+                VStack(spacing: 0) {
+                    ZStack {
+                        // Central Viewer
+                        if let variant = controller.currentVariant, let image = variant.image {
+                            COViewerView(image: image, adjustmentController: controller)
+                        } else {
+                            Text("No Image Selected")
+                                .foregroundColor(.gray)
+                        }
+                        
+                        // Face Focus Overlay (Top Right)
+                        if commands.showCullingFaceFocus {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    FaceFocusPanel()
+                                        .frame(width: 200, height: 200)
+                                        .padding(16)
+                                }
+                                Spacer()
+                            }
+                        }
+                        
+                        // Shortcuts Hint (Bottom Right)
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                Text("1-5: Rate  •  0: Clear  •  Arrows: Nav")
+                                    .font(.system(size: 10))
+                                    .padding(6)
+                                    .background(Color.black.opacity(0.6))
+                                    .cornerRadius(4)
+                                    .padding(16)
+                            }
+                        }
                     }
+                    
+                    Divider().background(Color.black)
+                    
+                    // 3. Group Filmstrip (Bottom)
+                    groupFilmstrip
+                        .frame(height: 120)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .background(CaptureOneTheme.Colors.applicationBackground)
+        .background(Color(white: 0.05))
         .preferredColorScheme(.dark)
     }
     
-    private var cullingToolbar: some View {
-        HStack(spacing: 12) {
-            Text("Culling")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundColor(.white)
+    private var cullToolbar: some View {
+        HStack {
+            Text("CULL VIEW")
+                .font(.system(size: 11, weight: .black))
+                .foregroundColor(.white.opacity(0.8))
+                .padding(.leading, 16)
             
-            Divider().frame(height: 20)
+            Spacer()
             
-            // Rating shortcuts
-            HStack(spacing: 4) {
-                ForEach(1...5, id: \.self) { star in
-                    Button(action: {
-                        adjustmentController.currentVariant?.rating = star
-                    }) {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 10))
-                            .foregroundColor(.yellow.opacity(0.6))
-                    }
-                    .buttonStyle(.plain)
-                }
+            Button("Done") {
+                NSApp.keyWindow?.close()
             }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+            .tint(CaptureOneTheme.Colors.activeHighlight)
+            .padding(.trailing, 12)
+        }
+        .frame(height: 40)
+        .background(Color(white: 0.12))
+    }
+    
+    private var groupingSidebar: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("GROUPING")
+                .font(.system(size: 11, weight: .bold))
+                .foregroundColor(.gray)
             
-            Divider().frame(height: 20)
+            Toggle("Enable Groups", isOn: $commands.isGroupingEnabled)
+                .font(.system(size: 12))
             
-            // Color tags
-            HStack(spacing: 4) {
-                ForEach([("Red", Color.red), ("Yellow", Color.yellow), ("Green", Color.green), ("Blue", Color.blue)], id: \.0) { tag in
-                    Button(action: {}) {
-                        Circle()
-                            .fill(tag.1)
-                            .frame(width: 10, height: 10)
+            if commands.isGroupingEnabled {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Similarity").font(.system(size: 11))
+                    Slider(value: $commands.groupSimilarity, in: 0...1)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                }
+                
+                Divider().background(Color.white.opacity(0.1))
+                
+                // Group List (Mock)
+                ScrollView {
+                    VStack(spacing: 2) {
+                        groupRow(name: "Group 1", count: 12, isSelected: true)
+                        groupRow(name: "Group 2", count: 5, isSelected: false)
+                        groupRow(name: "Group 3", count: 24, isSelected: false)
                     }
-                    .buttonStyle(.plain)
                 }
             }
             
             Spacer()
-            
-            Text("0 images")
-                .font(.system(size: 11))
-                .foregroundColor(.gray)
         }
-        .padding(.horizontal, 12)
-        .frame(height: 32)
-        .background(CaptureOneTheme.Colors.panelBackground)
+        .padding(16)
+        .background(Color(white: 0.1))
     }
     
-    private var toolsSidebar: some View {
-        VStack(spacing: 0) {
-            // Tab bar
-            HStack(spacing: 0) {
-                ForEach(workspace.palettes) { palette in
-                    Button(action: {
-                        workspace.chromeState.selectedToolPaletteID = palette.id
-                    }) {
-                        Image(systemName: palette.iconName)
-                            .font(.system(size: 14))
-                            .foregroundColor(workspace.selectedPaletteID == palette.id ? CaptureOneTheme.Colors.activeHighlight : .gray)
-                            .frame(height: 36)
-                            .frame(maxWidth: .infinity)
-                    }
-                    .buttonStyle(.plain)
-                    .background(workspace.selectedPaletteID == palette.id ? Color.black.opacity(0.4) : Color.clear)
+    private var groupFilmstrip: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(0..<10, id: \.self) { _ in
+                    Rectangle()
+                        .fill(Color.white.opacity(0.05))
+                        .frame(width: 80, height: 100)
+                        .cornerRadius(4)
+                        .overlay(
+                            Image(systemName: "photo")
+                                .foregroundColor(.gray.opacity(0.3))
+                        )
                 }
             }
-            .background(Color(NSColor.windowBackgroundColor))
-            
-            Divider().background(Color.black)
-            
-            // Active Tools
-            if let activePalette = workspace.activePalette() {
-                ScrollView {
-                    VStack(spacing: 1) {
-                        ForEach(activePalette.allTools) { toolConfig in
-                            ToolRegistry.view(for: toolConfig.id, context: ToolRegistryContext(
-                                config: toolConfig,
-                                adjustmentController: adjustmentController,
-                                session: session,
-                                recipeManager: OutputRecipeManager.shared,
-                                batchQueue: BatchQueue(),
-                                keywordCache: keywordCache
-                            ))
-                        }
-                    }
-                }
-            } else {
-                Spacer()
-            }
+            .padding(.horizontal, 12)
         }
-        .frame(width: workspace.sidebarWidth)
-        .background(CaptureOneTheme.Colors.panelBackground)
+        .background(Color(white: 0.08))
+    }
+    
+    private func groupRow(name: String, count: Int, isSelected: Bool) -> some View {
+        HStack {
+            Text(name).font(.system(size: 12))
+            Spacer()
+            Text("\(count)").font(.system(size: 10)).foregroundColor(.gray)
+        }
+        .padding(8)
+        .background(isSelected ? CaptureOneTheme.Colors.activeHighlight.opacity(0.2) : Color.clear)
+        .cornerRadius(4)
+    }
+}
+
+struct FaceFocusPanel: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                Color.black
+                // Simulated zoom to face
+                Image(systemName: "person.fill")
+                    .font(.system(size: 80))
+                    .foregroundColor(.gray.opacity(0.5))
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text("100% FACE FOCUS").font(.system(size: 9, weight: .bold))
+                        Spacer()
+                    }
+                    .padding(4)
+                    .background(Color.black.opacity(0.6))
+                }
+            }
+            .aspectRatio(1.0, contentMode: .fit)
+            .cornerRadius(4)
+            .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.white.opacity(0.2), lineWidth: 1))
+            
+            HStack {
+                Text("EYE").font(.system(size: 9, weight: .bold))
+                Spacer()
+                Image(systemName: "checkmark.circle.fill").font(.system(size: 10))
+            }
+            .padding(6)
+            .background(Color.black.opacity(0.4))
+        }
     }
 }

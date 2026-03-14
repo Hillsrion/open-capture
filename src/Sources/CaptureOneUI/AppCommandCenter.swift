@@ -45,6 +45,11 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var autoAdjustHDR: Bool = true
     @Published public var autoAdjustLevels: Bool = true
     
+    // Cull View State (WS-103)
+    @Published public var isGroupingEnabled: Bool = false
+    @Published public var groupSimilarity: Double = 0.5
+    @Published public var showCullingFaceFocus: Bool = true
+    
     // Adjustments Clipboard State
     @Published public var clipboardAutoSelectAdjusted: Bool = true
     @Published public var clipboardExposureSelected: Bool = true
@@ -537,6 +542,12 @@ public final class AppCommandCenter: ObservableObject {
 
     public func presentKeyboardShortcuts() {
         presentedSheet = .keyboardShortcuts
+    }
+
+    public func openCullingWindow() {
+        let shell = CullingShellController(session: self.session)
+        shell.showWindow(nil)
+        print("[AppCommandCenter] Opened Cull View")
     }
 
     public func presentPrint() {
