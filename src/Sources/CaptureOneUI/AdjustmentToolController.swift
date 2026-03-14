@@ -212,6 +212,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var focusAIMode: Int = 0 // 0: Manual, 1: Eye, 2: Face
     @Published public var focusZoomLevel: Double = 1.0 // Legacy/Flexible support
     
+    // Exposure Warning Preferences (UI-204)
+    @Published public var exposureHighlightThreshold: Double = 250.0
+    @Published public var exposureShadowThreshold: Double = 0.0
+    @Published public var exposureHighlightColor: Color = .red
+    @Published public var exposureShadowColor: Color = .blue
+    
     // Smart Adjustments (AI-002)
     
     // Soft Proofing (ENG-011)

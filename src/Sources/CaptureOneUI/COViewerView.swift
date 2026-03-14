@@ -68,6 +68,11 @@ public struct COViewerView: View {
                             ViewerGridOverlay()
                         }
                         
+                        // Exposure Warning Overlay (UI-204)
+                        if commands.showExposureWarning, let nsImage = renderedImage {
+                            ExposureWarningOverlay(image: nsImage)
+                        }
+                        
                         // Focus Mask Overlay (TETH-004)
                         if commands.showFocusMask, let nsImage = renderedImage {
                             FocusMaskOverlay(image: nsImage)

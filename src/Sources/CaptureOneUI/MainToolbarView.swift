@@ -59,7 +59,8 @@ public struct MainToolbarView: View {
         default:
             COToolbarButton(
                 item: item,
-                isSelected: commands.selectedCursorToolID == item.id || toolbarToggleSelection(item.id)
+                isSelected: commands.selectedCursorToolID == item.id || toolbarToggleSelection(item.id),
+                activeColor: item.id == "ExposureWarning" ? .orange : CaptureOneTheme.Colors.activeHighlight
             ) {
                 commands.handleToolbarAction(item.id)
             }
@@ -351,6 +352,7 @@ private struct IconOnlyToolbarButton: View {
 struct COToolbarButton: View {
     let item: COToolbarItem
     let isSelected: Bool
+    var activeColor: Color = CaptureOneTheme.Colors.activeHighlight
     let action: () -> Void
     
     var body: some View {
@@ -359,7 +361,7 @@ struct COToolbarButton: View {
                 Image(systemName: item.iconName)
                     .font(.system(size: 18))
                     .frame(width: 32, height: 32)
-                    .background(isSelected ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                    .background(isSelected ? activeColor : Color.clear)
                     .foregroundColor(isSelected ? .white : CaptureOneTheme.Colors.iconNormal)
                     .cornerRadius(4)
             }

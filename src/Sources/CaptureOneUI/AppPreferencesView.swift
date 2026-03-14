@@ -22,6 +22,9 @@ public struct AppPreferencesView: View {
                 switch selection {
                 case .general:
                     GeneralPreferencesPane()
+                case .exposure:
+                    ExposurePreferencesPane()
+                        .padding(16)
                 case .shortcuts:
                     ShortcutEditorView()
                         .padding(16)
@@ -54,6 +57,7 @@ public struct AppPreferencesView: View {
 
 private enum PreferencesSection: CaseIterable {
     case general
+    case exposure
     case shortcuts
     case catalogAndSession
     case plugins
@@ -62,6 +66,8 @@ private enum PreferencesSection: CaseIterable {
         switch self {
         case .general:
             return "General"
+        case .exposure:
+            return "Exposure"
         case .shortcuts:
             return "Shortcuts"
         case .catalogAndSession:
@@ -86,6 +92,55 @@ private struct GeneralPreferencesPane: View {
             Toggle("Show Focus Mask", isOn: $commands.showFocusMask)
             Toggle("Edit Selected Only", isOn: $commands.editSelectedOnly)
 
+            Spacer()
+        }
+        .padding(20)
+    }
+}
+
+private struct ExposurePreferencesPane: View {
+    @ObservedObject private var controller = AdjustmentToolController.shared
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            Text("Exposure Warnings")
+                .font(.title3.weight(.semibold))
+            
+            VStack(alignment: .leading, spacing: 16) {
+                // Highlights
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Highlight Warning").font(.headline)
+                    HStack {
+                        Slider(value: $controller.exposureHighlightThreshold, in: 155...255)
+                            .accentColor(.red)
+                        Text("\(Int(controller.exposureHighlightThreshold))")
+                            .font(.system(size: 11, design: .monospaced))
+                            .frame(width: 30)
+                    }
+                    ColorPicker("Highlight Color", selection: $controller.exposureHighlightColor)
+                        .font(.system(size: 11))
+                }
+                
+                Divider().background(Color.white.opacity(0.1))
+                
+                // Shadows
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Shadow Warning").font(.headline)
+                    HStack {
+                        Slider(value: $controller.exposureShadowThreshold, in: 0...100)
+                            .accentColor(.blue)
+                        Text("\(Int(controller.exposureShadowThreshold))")
+                            .font(.system(size: 11, design: .monospaced))
+                            .frame(width: 30)
+                    }
+                    ColorPicker("Shadow Color", selection: $controller.exposureShadowColor)
+                        .font(.system(size: 11))
+                }
+            }
+            .padding(16)
+            .background(Color.white.opacity(0.03))
+            .cornerRadius(8)
+            
             Spacer()
         }
         .padding(20)
