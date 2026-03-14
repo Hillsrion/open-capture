@@ -284,10 +284,13 @@ public final class AppCommandCenter: ObservableObject {
         Task { @MainActor in
             let ctx = ObjectContext()
             self.documentContext = ctx
-            let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 0 : 1, context: ctx)
+            let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 1 : 0, context: ctx)
             session.name = name
+            
             if !isCatalog {
-                session.rootFolder = url.deletingLastPathComponent().path
+                let root = url.deletingLastPathComponent()
+                session.rootFolder = root.path
+                self.resolveStandardFolders(for: session, at: root)
             }
             
             self.configure(session: session, recipeManager: OutputRecipeManager.shared, batchQueue: BatchQueue())
@@ -296,6 +299,13 @@ public final class AppCommandCenter: ObservableObject {
             }
             COWindowManager.shared.openDocumentWindow(for: session)
         }
+    }
+
+    private func resolveStandardFolders(for session: SessionBase, at root: URL) {
+        session.captureFolder = root.appendingPathComponent("Capture").path
+        session.selectsFolder = root.appendingPathComponent("Selects").path
+        session.outputFolder = root.appendingPathComponent("Output").path
+        session.trashFolder = root.appendingPathComponent("Trash").path
     }
 
     public func openDocument() {
@@ -317,8 +327,14 @@ public final class AppCommandCenter: ObservableObject {
                 Task { @MainActor in
                     let ctx = ObjectContext()
                     self.documentContext = ctx
-                    let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 0 : 1, context: ctx)
+                    let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 1 : 0, context: ctx)
                     session.name = name
+                    
+                    if !isCatalog {
+                        let root = url.deletingLastPathComponent()
+                        session.rootFolder = root.path
+                        self.resolveStandardFolders(for: session, at: root)
+                    }
                     
                     self.configure(session: session, recipeManager: OutputRecipeManager.shared, batchQueue: BatchQueue())
                     COWindowManager.shared.openDocumentWindow(for: session)

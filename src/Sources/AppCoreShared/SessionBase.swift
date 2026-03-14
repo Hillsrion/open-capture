@@ -8,7 +8,7 @@ public class SessionBase: BaseObject {
     // MARK: - Properties (Core Identity)
     public let documentUUID: String
     public var name: String?
-    public var documentType: Int16 // 0 for Session, 1 for Catalog (inferred)
+    public var documentType: Int16 // 0 for Session, 1 for Catalog
     
     public var isCatalog: Bool {
         return documentType == 1
