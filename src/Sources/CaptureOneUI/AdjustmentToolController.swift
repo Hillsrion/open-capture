@@ -1211,6 +1211,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
     }
 
+    public func applyKeystone() {
+        guard let variant = currentVariant else { return }
+        print("[AdjustmentToolController] Applying manual keystone correction.")
+        // Finalize warp based on current guidelines/points
+        self.commitChanges(to: variant)
+    }
+
     public func createLCCProfile() {
         guard let variant = currentVariant else { return }
         print("[AdjustmentToolController] Creating LCC Profile for \(variant.variantUUID)")

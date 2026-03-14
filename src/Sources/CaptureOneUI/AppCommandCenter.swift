@@ -158,7 +158,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func handleToolbarAction(_ itemID: String) {
         switch itemID {
-        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor", "DrawMask", "EraseMask":
+        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "KeystoneVertical", "KeystoneHorizontal", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor", "DrawMask", "EraseMask":
             self.selectedCursorToolID = itemID
         case "AutoAdjust":
             presentImport()

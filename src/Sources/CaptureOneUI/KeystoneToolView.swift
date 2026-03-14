@@ -3,43 +3,30 @@ import AppCoreShared
 import ImageCore
 
 /// Reconstructed high-fidelity Keystone tool (UI-204).
-/// Features a tabbed interface for interactive Guides and manual Sliders.
+/// Provides manual sliders and activation for interactive guides.
 public struct KeystoneToolView: View {
-    @Binding var tiltX: Double
-    @Binding var tiltY: Double
-    @Binding var amount: Double
-    @Binding var aspect: Double
-    @Binding var skew: Double
-    @Binding var focalLength: Double
-    var autoAction: (() -> Void)?
+    @ObservedObject var controller = AdjustmentToolController.shared
+    @ObservedObject var commands = AppCommandCenter.shared
     
-    @State private var selectedTab: Int = 0 // 0: Guides, 1: Sliders
-    
-    public init(tiltX: Binding<Double>, tiltY: Binding<Double>, amount: Binding<Double>, aspect: Binding<Double>, skew: Binding<Double>, focalLength: Binding<Double>, autoAction: (() -> Void)? = nil) {
-        self._tiltX = tiltX
-        self._tiltY = tiltY
-        self._amount = amount
-        self._aspect = aspect
-        self._skew = skew
-        self._focalLength = focalLength
-        self.autoAction = autoAction
-    }
+    public init() {}
     
     public var body: some View {
         COToolSection("Keystone", toolID: "Perspective") {
             VStack(spacing: 12) {
-                // Tab Picker
-                Picker("", selection: $selectedTab) {
-                    Text("Guides").tag(0)
-                    Text("Sliders").tag(1)
+                // Mode Buttons
+                HStack(spacing: 8) {
+                    keystoneModeButton(id: "KeystoneVertical", icon: "rectangle.portrait", label: "Vertical")
+                    keystoneModeButton(id: "KeystoneHorizontal", icon: "rectangle", label: "Horizontal")
+                    keystoneModeButton(id: "Keystone", icon: "square", label: "All")
+                    Spacer()
                 }
-                .pickerStyle(.segmented)
-                .labelsHidden()
                 
-                if selectedTab == 0 {
-                    guidesTabView
-                } else {
-                    slidersTabView
+                VStack(spacing: 6) {
+                    keystoneSlider(label: "Tilt X", value: $controller.keystoneTiltX, range: -45...45)
+                    keystoneSlider(label: "Tilt Y", value: $controller.keystoneTiltY, range: -45...45)
+                    keystoneSlider(label: "Amount", value: $controller.keystoneAmount, range: 0...100)
+                    keystoneSlider(label: "Aspect", value: $controller.keystoneAspect, range: -50...100)
+                    keystoneSlider(label: "Skew", value: $controller.keystoneSkew, range: -50...50)
                 }
                 
                 Divider().background(Color.white.opacity(0.05))
@@ -49,69 +36,32 @@ public struct KeystoneToolView: View {
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                     Spacer()
-                    TextField("", value: $focalLength, formatter: NumberFormatter())
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("", value: $controller.keystoneFocalLength, formatter: NumberFormatter())
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(4)
                         .frame(width: 50)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(2)
                         .font(.system(size: 11, design: .monospaced))
                 }
+                
+                Button(action: {
+                    controller.applyKeystone()
+                }) {
+                    Text("Apply")
+                        .font(.system(size: 11, weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .background(CaptureOneTheme.Colors.activeHighlight)
+                        .foregroundColor(.black)
+                        .cornerRadius(4)
+                }
+                .buttonStyle(.plain)
+                .padding(.top, 4)
             }
             .padding(.vertical, 4)
         }
     }
-    
-    // MARK: - Tab Views
-    
-    private var guidesTabView: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 8) {
-                keystoneTypeButton(icon: "rectangle.portrait", label: "Vertical", tag: 0)
-                keystoneTypeButton(icon: "rectangle", label: "Horizontal", tag: 1)
-                keystoneTypeButton(icon: "square", label: "All", tag: 2)
-                
-                Spacer()
-                
-                Button(action: {
-                    autoAction?()
-                }) {
-                    Image(systemName: "a.circle.fill")
-                        .font(.system(size: 18))
-                        .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                }
-                .buttonStyle(.plain)
-                .help("Auto Adjust")
-            }
-            
-            Text("Click icons to place guides on the image.")
-                .font(.system(size: 10))
-                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Button(action: {
-                // Apply guides logic
-            }) {
-                Text("Apply")
-                    .font(.system(size: 11, weight: .bold))
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 6)
-                    .background(CaptureOneTheme.Colors.activeHighlight)
-                    .foregroundColor(.black)
-                    .cornerRadius(4)
-            }
-            .buttonStyle(.plain)
-        }
-    }
-    
-    private var slidersTabView: some View {
-        VStack(spacing: 6) {
-            keystoneSlider(label: "Tilt X", value: $tiltX, range: -45...45)
-            keystoneSlider(label: "Tilt Y", value: $tiltY, range: -45...45)
-            keystoneSlider(label: "Amount", value: $amount, range: 0...100)
-            keystoneSlider(label: "Aspect", value: $aspect, range: -50...100) // Anamorphic support
-            keystoneSlider(label: "Skew", value: $skew, range: -50...50)
-        }
-    }
-    
-    // MARK: - Components
     
     private func keystoneSlider(label: String, value: Binding<Double>, range: ClosedRange<Double>) -> some View {
         HStack {
@@ -127,9 +77,9 @@ public struct KeystoneToolView: View {
         }
     }
     
-    private func keystoneTypeButton(icon: String, label: String, tag: Int) -> some View {
+    private func keystoneModeButton(id: String, icon: String, label: String) -> some View {
         Button(action: {
-            // Activate Guide Tool logic
+            commands.selectedCursorToolID = commands.selectedCursorToolID == id ? "Select" : id
         }) {
             VStack(spacing: 4) {
                 Image(systemName: icon)
@@ -138,7 +88,8 @@ public struct KeystoneToolView: View {
                     .font(.system(size: 9))
             }
             .frame(width: 54, height: 40)
-            .background(Color.white.opacity(0.05))
+            .background(commands.selectedCursorToolID == id ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.05))
+            .foregroundColor(commands.selectedCursorToolID == id ? .black : .white)
             .cornerRadius(4)
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
