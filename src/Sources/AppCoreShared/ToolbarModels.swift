@@ -76,7 +76,7 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "UndoRedo", name: "Undo / Redo", iconName: "arrow.uturn.backward.circle", type: .group),
         COToolbarItem(id: "CursorTools", name: "Cursor Tools", iconName: "cursorarrow", type: .group),
         COToolbarItem(id: "Activity", name: "Activity", iconName: "clock.arrow.circlepath", type: .group),
-        COToolbarItem(id: "BeforeAfter", name: "Before / After", iconName: "rectangle.split.2x1"),
+        COToolbarItem(id: "BeforeAfter", name: "Before / After", iconName: "square.on.square"),
         COToolbarItem(id: "Grid", name: "Grid", iconName: "square.grid.3x3"),
         COToolbarItem(id: "ExposureWarning", name: "Exposure Warning", iconName: "exclamationmark.triangle"),
         COToolbarItem(id: "FocusMask", name: "Focus Mask", iconName: "scope"),

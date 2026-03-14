@@ -23,6 +23,7 @@ public struct COViewerView: View {
     @State private var dragStartOrigin: CGPoint? = nil
     @State private var activeCropZone: CropRectHitboxCalculator.InteractionZone = .none
     @State private var cropStartRect: CGRect = .zero
+    @State private var isLongPressingBefore: Bool = false
     
     public var body: some View {
         GeometryReader { geo in
@@ -31,62 +32,91 @@ public struct COViewerView: View {
                 ZStack {
                     CaptureOneTheme.Colors.applicationBackground
                     
-                    if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
-                        HStack(spacing: 1) {
-                            viewerImageView(sourceImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
-                            viewerImageView(renderedImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
-                        }
-                        .overlay(alignment: .topLeading) {
-                            ViewerModeBadge(text: "Before / After")
-                                .padding(12)
-                        }
-                        .overlay {
-                            if commands.showGridOverlay {
-                                ViewerGridOverlay()
-                            }
-                        }
-                    } else if let nsImage = renderedImage {
-                        ZStack {
-                            viewerImageView(nsImage, size: geo.size)
-                            
-                            // Mask Overlay (Red tint)
-                            if let mask = maskImage {
-                                Image(nsImage: mask)
-                                    .resizable()
-                                    .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
-                                    .aspectRatio(contentMode: .fit)
-                                    .opacity(0.5)
-                                    .colorMultiply(.red)
-                            }
-                            
-                            // Repair Arrows Overlay (UI-006)
-                            if let active = adjustmentController?.currentVariant?.activeLayer {
-                                ForEach(active.repairArrows) { arrow in
-                                    RepairArrowView(arrow: arrow)
+                    if let sourceImage, let renderedImage {
+                        if commands.beforeAfterEnabled && !isLongPressingBefore {
+                            if commands.beforeAfterMode == 1 {
+                                // Split Screen Mode
+                                BeforeAfterSplitView(
+                                    beforeImage: sourceImage,
+                                    afterImage: renderedImage,
+                                    splitPosition: $commands.beforeAfterSplitPosition,
+                                    viewerSize: geo.size
+                                )
+                            } else {
+                                // Side-by-side (Legacy/Multi-view support)
+                                HStack(spacing: 1) {
+                                    viewerImageView(sourceImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
+                                    viewerImageView(renderedImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
                                 }
                             }
-                            
-                            // Annotations Overlay (UI-007)
-                            if let annotations = adjustmentController?.currentVariant?.annotations {
-                                AnnotationsOverlayView(annotations: annotations)
-                            }
-                            
-                            // Keystone Interactive Overlay (UI-006)
-                            if let points = adjustmentController?.keystonePoints {
-                                KeystoneOverlayView(points: points)
-                            }
-                            
-                            // Composition Overlay (GAP-406)
-                            if let controller = adjustmentController {
-                                CompositionOverlayView(controller: controller)
-                            }
-                            
-                            // Crop Overlay (UI-204)
-                            if let controller = adjustmentController, commands.selectedCursorToolID == "Crop" {
-                                CropOverlayView(controller: controller, viewerSize: geo.size)
+                        } else {
+                            // Single View (Standard or Temporary Before via Long Press)
+                            let imageToShow = (isLongPressingBefore) ? sourceImage : renderedImage
+                            viewerImageView(imageToShow, size: geo.size)
+                        }
+                    }
+                    
+                    // --- Overlays ---
+                    Group {
+                        if commands.beforeAfterEnabled && !isLongPressingBefore {
+                            ViewerModeBadge(text: commands.beforeAfterMode == 1 ? "Split Screen" : "Before / After")
+                                .padding(12)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        }
+                        
+                        if commands.showGridOverlay {
+                            ViewerGridOverlay()
+                        }
+                        
+                        // Mask Overlay (Red tint)
+                        if let mask = maskImage {
+                            Image(nsImage: mask)
+                                .resizable()
+                                .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
+                                .aspectRatio(contentMode: .fit)
+                                .opacity(0.5)
+                                .colorMultiply(.red)
+                        }
+                        
+                        // Repair Arrows Overlay (UI-006)
+                        if let active = adjustmentController?.currentVariant?.activeLayer {
+                            ForEach(active.repairArrows) { arrow in
+                                RepairArrowView(arrow: arrow)
                             }
                         }
-                        .onHover { inside in
+                        
+                        // Annotations Overlay (UI-007)
+                        if let annotations = adjustmentController?.currentVariant?.annotations {
+                            AnnotationsOverlayView(annotations: annotations)
+                        }
+                        
+                        // Keystone Interactive Overlay (UI-006)
+                        if let points = adjustmentController?.keystonePoints {
+                            KeystoneOverlayView(points: points)
+                        }
+                        
+                        // Composition Overlay (GAP-406)
+                        if let controller = adjustmentController {
+                            CompositionOverlayView(controller: controller)
+                        }
+                        
+                        // Crop Overlay (UI-204)
+                        if let controller = adjustmentController, commands.selectedCursorToolID == "Crop" {
+                            CropOverlayView(controller: controller, viewerSize: geo.size)
+                        }
+                    }
+                }
+                .contentShape(Rectangle())
+                .simultaneousGesture(
+                    LongPressGesture(minimumDuration: 0.1)
+                        .onChanged { value in
+                            isLongPressingBefore = value
+                        }
+                        .onEnded { _ in
+                            isLongPressingBefore = false
+                        }
+                )
+                .onHover { inside in
                             if inside {
                                 let tool = commands.selectedCursorToolID
                                 if tool == "Pan" {
@@ -615,5 +645,52 @@ struct KeystoneOverlayView: View {
     
     private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
         return CGPoint(x: point.x * size.width, y: point.y * size.height)
+    }
+}
+
+struct BeforeAfterSplitView: View {
+    let beforeImage: NSImage
+    let afterImage: NSImage
+    @Binding var splitPosition: Double
+    let viewerSize: CGSize
+    
+    var body: some View {
+        ZStack {
+            // After Image (Full background)
+            Image(nsImage: afterImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            // Before Image (Clipped)
+            Image(nsImage: beforeImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .mask(
+                    HStack(spacing: 0) {
+                        Rectangle()
+                            .frame(width: viewerSize.width * CGFloat(splitPosition))
+                        Spacer(minLength: 0)
+                    }
+                )
+            
+            // Draggable Divider
+            Rectangle()
+                .fill(Color.white)
+                .frame(width: 1)
+                .overlay(
+                    Circle()
+                        .fill(Color.white)
+                        .frame(width: 24, height: 24)
+                        .shadow(radius: 2)
+                        .overlay(Image(systemName: "arrow.left.and.right").font(.system(size: 10)).foregroundColor(.black))
+                )
+                .position(x: viewerSize.width * CGFloat(splitPosition), y: viewerSize.height / 2)
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            splitPosition = Double(max(0, min(1, value.location.x / viewerSize.width)))
+                        }
+                )
+        }
     }
 }

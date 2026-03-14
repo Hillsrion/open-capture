@@ -32,6 +32,8 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var notice: AppNotice?
     @Published public var selectedCursorToolID: String = "Select"
     @Published public var beforeAfterEnabled: Bool = false
+    @Published public var beforeAfterMode: Int = 0 // 0: Full View, 1: Split Screen
+    @Published public var beforeAfterSplitPosition: Double = 0.5
     @Published public var showGridOverlay: Bool = false
     @Published public var showExposureWarning: Bool = false
     @Published public var showFocusMask: Bool = false
@@ -92,6 +94,9 @@ public final class AppCommandCenter: ObservableObject {
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.clone") { [weak self] in
             self?.selectedCursorToolID = "Clone"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.beforeAfter") { [weak self] in
+            self?.beforeAfterEnabled.toggle()
         }
         
         // MARK: - Browser Mode Actions (WF-501)

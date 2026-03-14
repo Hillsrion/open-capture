@@ -54,6 +54,8 @@ public struct MainToolbarView: View {
             ActivityToolbarGroup()
         case "Proofing":
             ProofingToolbarGroup()
+        case "BeforeAfter":
+            BeforeAfterToolbarGroup()
         default:
             COToolbarButton(
                 item: item,
@@ -233,6 +235,39 @@ private struct RotateToolbarGroup: View {
                 .buttonStyle(.plain)
             }
             .cornerRadius(4)
+        }
+    }
+}
+
+private struct BeforeAfterToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        COToolbarButton(
+            item: COToolbarItemRegistry.item(for: "BeforeAfter")!,
+            isSelected: commands.beforeAfterEnabled
+        ) {
+            commands.handleToolbarAction("BeforeAfter")
+        }
+        .contextMenu {
+            Button(action: {
+                commands.beforeAfterMode = 0
+                commands.beforeAfterEnabled = true
+            }) {
+                HStack {
+                    Text("Full View")
+                    if commands.beforeAfterMode == 0 { Image(systemName: "checkmark") }
+                }
+            }
+            Button(action: {
+                commands.beforeAfterMode = 1
+                commands.beforeAfterEnabled = true
+            }) {
+                HStack {
+                    Text("Split Screen")
+                    if commands.beforeAfterMode == 1 { Image(systemName: "checkmark") }
+                }
+            }
         }
     }
 }
