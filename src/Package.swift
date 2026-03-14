@@ -11,14 +11,20 @@ let package = Package(
         .library(name: "AppCoreShared", targets: ["AppCoreShared"]),
         .library(name: "ImageCore", targets: ["ImageCore"]),
         .library(name: "DataCore", targets: ["DataCore"]),
+        .library(name: "Cloud", targets: ["Cloud"]),
         .library(name: "CaptureOneUI", targets: ["CaptureOneUI"])
     ],
     dependencies: [],
     targets: [
         .executableTarget(
             name: "CaptureOneApp",
-            dependencies: ["AppCoreShared", "DataCore", "ImageCore", "CaptureOneUI"],
+            dependencies: ["AppCoreShared", "DataCore", "ImageCore", "CaptureOneUI", "Cloud"],
             path: "Sources/CaptureOneApp"
+        ),
+        .target(
+            name: "Cloud",
+            dependencies: [],
+            path: "Sources/Cloud"
         ),
         .target(
             name: "DataCore",
@@ -34,7 +40,8 @@ let package = Package(
         .target(
             name: "ImageCore",
             dependencies: [],
-            path: "Sources/ImageCore"
+            path: "Sources/ImageCore",
+            resources: [.copy("Resources")]
         ),
         .target(
             name: "CaptureOneUI",

@@ -19,3 +19,5 @@ skills/c1-doc-spec-extractor/scripts/*.html
 \n# Local Skill Documentation Data
 skills/c1-doc-spec-extractor/docs_raw/
 .env
+*.mlmodelc/
+*.mlmodelc
