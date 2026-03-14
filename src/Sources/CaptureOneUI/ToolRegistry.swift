@@ -65,10 +65,8 @@ public enum ToolRegistry {
             return .implemented { context in
                 AnyView(MetadataInspectorView(image: context.adjustmentController.currentVariant?.image))
             }
-        case "Camera":
-            return .implemented { _ in AnyView(CameraSettingsTool()) }
-        case "CameraSettings":
-            return .implemented { _ in AnyView(CameraSettingsTool()) }
+        case "Camera", "CameraSettings":
+            return .implemented { _ in AnyView(CameraToolView()) }
         case "NextCaptureNaming":
             return .implemented { _ in AnyView(NextCaptureNamingToolView()) }
         case "NextCaptureAdjustments":

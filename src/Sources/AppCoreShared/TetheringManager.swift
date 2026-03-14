@@ -12,9 +12,11 @@ public class CameraDevice: Identifiable, ObservableObject {
     
     @Published public var iso: String = "100"
     @Published public var shutterSpeed: String = "1/125"
-    @Published public var aperture: String = "f/8.0"
+    @Published public var aperture: String = "8.0"
+    @Published public var whiteBalance: String = "Auto"
     @Published public var batteryLevel: Double = 1.0
     @Published public var isLiveViewActive: Bool = false
+    @Published public var isCapturing: Bool = false
     
     public init(id: String, model: String, manufacturer: String) {
         self.id = id
@@ -26,7 +28,14 @@ public class CameraDevice: Identifiable, ObservableObject {
     /// Mimics P1CaptureCore_Camera::Capture.
     public func capture() {
         print("[Camera] Triggering capture on \(modelName) (\(id))")
-        // Implementation would send USB PTP command
+        isCapturing = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.isCapturing = false
+        }
+    }
+    
+    public func autoFocus() {
+        print("[Camera] Triggering AF motor on \(modelName)")
     }
 }
 
@@ -52,6 +61,7 @@ public class TetheringManager: ObservableObject {
     
     @Published public var connectedCameras: [CameraDevice] = []
     @Published public var selectedCamera: CameraDevice?
+    @Published public var isConnecting: Bool = false
     
     public let liveView = LiveViewStream()
     
@@ -63,6 +73,16 @@ public class TetheringManager: ObservableObject {
     /// Starts scanning for USB/Network cameras.
     public func startScanning() {
         print("[Tethering] Scanning for cameras...")
+    }
+    
+    public func discoverNetworkCameras() {
+        isConnecting = true
+        print("[Tethering] Discovering network cameras via PTP/IP...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.isConnecting = false
+            let mock = CameraDevice(id: "W-001", model: "Nikon Z9 (Wireless)", manufacturer: "Nikon")
+            self.connectedCameras.append(mock)
+        }
     }
     
     private func simulateCameraConnection() {
