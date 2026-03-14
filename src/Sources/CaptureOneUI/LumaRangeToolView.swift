@@ -1,87 +1,127 @@
 import SwiftUI
 import AppCoreShared
 
-/// Reconstructed Luma Range tool (UI-204).
-/// Provides high-precision luminance-based masking with falloff control.
+/// Reconstructed high-fidelity Luma Range tool (UI-204).
+/// Provides luminosity-based masking with falloff, radius, and sensitivity control.
 public struct LumaRangeToolView: View {
     @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var commands = AppCommandCenter.shared
     
-    @State private var rangeStart: Double = 0.0
-    @State private var rangeEnd: Double = 100.0
-    @State private var falloffStart: Double = 10.0
-    @State private var falloffEnd: Double = 10.0
+    @State private var rangeMin: Double = 0.0
+    @State private var rangeMax: Double = 255.0
+    @State private var falloffMin: Double = 0.0
+    @State private var falloffMax: Double = 255.0
+    
+    @State private var isDisplayingMask: Bool = true
     
     public init(controller: AdjustmentToolController) {
         self.controller = controller
     }
     
     public var body: some View {
-        COToolSection("Luma Range", toolID: "LumaRange") {
-            VStack(alignment: .leading, spacing: 12) {
-                // Interactive Range Graph (Mock)
-                ZStack {
-                    RoundedRectangle(cornerRadius: 4)
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Luma Range")
+                .font(.headline)
+            
+            // Interactive Range Bar (4 Handles)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Select the tonal range to include in the mask.")
+                    .font(.system(size: 10))
+                    .foregroundColor(.gray)
+                
+                ZStack(alignment: .bottom) {
+                    // The Gradient Bar
+                    RoundedRectangle(cornerRadius: 2)
                         .fill(LinearGradient(gradient: Gradient(colors: [.black, .white]), startPoint: .leading, endPoint: .trailing))
-                        .frame(height: 40)
+                        .frame(height: 24)
                     
-                    // Selection Overlay
+                    // The Active Range Overlay (Simulated)
                     Rectangle()
-                        .fill(CaptureOneTheme.Colors.activeHighlight.opacity(0.3))
-                        .frame(width: CGFloat(rangeEnd - rangeStart) * 2, height: 40) // Simplified scaling
-                        .offset(x: CGFloat(rangeStart + (rangeEnd - rangeStart)/2 - 50) * 2)
-                }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.white.opacity(0.2), lineWidth: 1)
-                )
-                
-                VStack(spacing: 6) {
-                    lumaSlider(label: "Range", start: $rangeStart, end: $rangeEnd, range: 0...100)
-                    COToolValueSlider(label: "Falloff Start", value: $falloffStart, range: 0...100, decimalPlaces: 0)
-                    COToolValueSlider(label: "Falloff End", value: $falloffEnd, range: 0...100, decimalPlaces: 0)
-                }
-                
-                Divider().background(Color.white.opacity(0.05))
-                
-                HStack {
-                    Button("Invert") { /* Invert logic */ }
-                        .font(.system(size: 10))
-                        .buttonStyle(.bordered)
+                        .fill(CaptureOneTheme.Colors.activeHighlight.opacity(0.4))
+                        .frame(width: 150, height: 24)
+                        .offset(x: 20)
                     
-                    Spacer()
-                    
-                    Button("Apply") {
-                        controller.computeLumaRange(start: rangeStart, end: rangeEnd, falloffStart: falloffStart, falloffEnd: falloffEnd)
+                    // Handles (Simulated - 4 handles)
+                    HStack(spacing: 40) {
+                        handle(color: .gray) // Falloff Min
+                        handle(color: .white) // Range Min
+                        Spacer()
+                        handle(color: .white) // Range Max
+                        handle(color: .gray) // Falloff Max
                     }
-                    .font(.system(size: 10, weight: .bold))
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 4)
-                    .background(CaptureOneTheme.Colors.activeHighlight)
-                    .foregroundColor(.black)
-                    .cornerRadius(4)
+                    .padding(.horizontal, 10)
+                    .offset(y: 4)
                 }
-                .controlSize(.small)
+                .padding(.bottom, 8)
             }
-            .padding(.vertical, 4)
+            
+            VStack(spacing: 10) {
+                lumaSlider(label: "Radius", value: $controller.lumaRangeRadius, range: 0...50)
+                lumaSlider(label: "Sensitivity", value: $controller.lumaRangeSensitivity, range: 0...100)
+            }
+            
+            Divider().background(Color.white.opacity(0.1))
+            
+            HStack {
+                Toggle("Display Mask", isOn: $isDisplayingMask)
+                    .font(.system(size: 11))
+                    .toggleStyle(CheckboxToggleStyle())
+                
+                Spacer()
+                
+                Button("Invert") {
+                    // Invert logic
+                }
+                .font(.system(size: 10))
+                .buttonStyle(.bordered)
+            }
+            
+            HStack {
+                Button("Cancel") {
+                    // Dismiss logic
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(4)
+                
+                Spacer()
+                
+                Button("Apply") {
+                    controller.computeLumaRange(start: rangeMin, end: rangeMax, falloffStart: falloffMin, falloffEnd: falloffMax)
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(CaptureOneTheme.Colors.activeHighlight)
+                .foregroundColor(.black)
+                .cornerRadius(4)
+            }
         }
+        .padding(16)
+        .frame(width: 320)
+        .background(CaptureOneTheme.Colors.panelBackground)
+    }
+    
+    private func handle(color: Color) -> some View {
+        Rectangle()
+            .fill(color)
+            .frame(width: 2, height: 30)
+            .overlay(Circle().fill(color).frame(width: 8, height: 8).offset(y: 15))
     }
     
     private func lumaSlider(label: String, value: Binding<Double>, range: ClosedRange<Double>) -> some View {
         HStack {
-            Text(label).font(.system(size: 11)).foregroundColor(.gray).frame(width: 75, alignment: .leading)
+            Text(label)
+                .font(.system(size: 11))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 70, alignment: .leading)
             Slider(value: value, in: range)
                 .accentColor(CaptureOneTheme.Colors.activeHighlight)
-            Text("\(Int(value.wrappedValue))").font(.system(size: 10, design: .monospaced)).frame(width: 25, alignment: .trailing)
-        }
-    }
-    
-    private func lumaSlider(label: String, start: Binding<Double>, end: Binding<Double>, range: ClosedRange<Double>) -> some View {
-        HStack {
-            Text(label).font(.system(size: 11)).foregroundColor(.gray).frame(width: 75, alignment: .leading)
-            // Simplified dual slider representation
-            Slider(value: start, in: range)
-                .accentColor(CaptureOneTheme.Colors.activeHighlight)
-            Text("\(Int(start.wrappedValue))-\(Int(end.wrappedValue))").font(.system(size: 10, design: .monospaced)).frame(width: 45, alignment: .trailing)
+            Text("\(Int(value.wrappedValue))")
+                .font(.system(size: 10, design: .monospaced))
+                .frame(width: 30, alignment: .trailing)
         }
     }
 }

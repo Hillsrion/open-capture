@@ -10,6 +10,7 @@ public struct LayerInspectorView: View {
     @State private var selectedLayerIndex: Int = 0
     @State private var isRefineExpanded: Bool = false
     @State private var isCombineMasksPresented: Bool = false
+    @State private var isLumaRangePresented: Bool = false
     
     public init(variant: VariantBase) {
         self.variant = variant
@@ -40,6 +41,21 @@ public struct LayerInspectorView: View {
                     .pickerStyle(.segmented)
                     .frame(width: 60)
                     .scaleEffect(0.8)
+                    
+                    Button(action: {
+                        isLumaRangePresented = true
+                    }) {
+                        Text("Luma Range...")
+                            .font(.system(size: 10, weight: .semibold))
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 3)
+                            .background(Color.white.opacity(0.1))
+                            .cornerRadius(4)
+                    }
+                    .buttonStyle(.plain)
+                    .popover(isPresented: $isLumaRangePresented) {
+                        LumaRangeToolView(controller: controller)
+                    }
                 }
                 .padding(.horizontal, 4)
                 

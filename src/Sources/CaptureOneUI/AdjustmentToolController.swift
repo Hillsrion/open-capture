@@ -223,6 +223,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var currentLinearGradient: LinearGradientMask? = nil
     @Published public var currentRadialGradient: RadialGradientMask? = nil
     
+    // Luma Range State (UI-204)
+    @Published public var lumaRangeRadius: Double = 5.0
+    @Published public var lumaRangeSensitivity: Double = 50.0
+    
     // Smart Adjustments (AI-002)
     
     // Soft Proofing (ENG-011)
