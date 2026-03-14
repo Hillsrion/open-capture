@@ -59,8 +59,73 @@ public class RawImageEngine {
             output = colorFilter.outputImage ?? output
         }
         
+        // 2.5 Local Adjustments Pipeline (LAY-001)
+        // Mimics Capture One's layer stack (up to 16 layers)
+        for layerCfg in settings.localAdjustments where layerCfg.isVisible && layerCfg.opacity > 0 {
+            output = applyLayer(layerCfg, to: output, baseImage: sourceImage)
+        }
+        
         // 3. Render to Final Buffer
         return context.createCGImage(output, from: output.extent)
+    }
+    
+    /// Applies a local adjustment layer using masking and alpha blending.
+    private func applyLayer(_ layer: IC_LocalAdjustCfg, to currentImage: CIImage, baseImage: CIImage) -> CIImage {
+        // 1. Create the adjusted version of the image for this layer
+        var layerAdjusted = currentImage
+        let s = layer.settings
+        
+        // Apply local exposure
+        if s.exposure != 0, let filter = CIFilter(name: "CIExposureAdjust") {
+            filter.setValue(layerAdjusted, forKey: kCIInputImageKey)
+            filter.setValue(s.exposure, forKey: kCIInputEVKey)
+            layerAdjusted = filter.outputImage ?? layerAdjusted
+        }
+        
+        // 2. Generate/Retrieve the Mask (Simulation)
+        // In original, this would be a high-res grayscale buffer from IC_LocalAdjustCfg
+        let mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
+        
+        // 3. Blend using the mask and layer opacity
+        if let blendFilter = CIFilter(name: "CIBlendWithAlphaMask") {
+            blendFilter.setValue(layerAdjusted, forKey: kCIInputImageKey) // Foreground (Adjusted)
+            blendFilter.setValue(currentImage, forKey: kCIInputBackgroundImageKey) // Background (Current)
+            
+            // Adjust mask intensity by layer opacity
+            var alphaMask = mask
+            if layer.opacity < 1.0, let opacityFilter = CIFilter(name: "CIColorControls") {
+                opacityFilter.setValue(alphaMask, forKey: kCIInputImageKey)
+                opacityFilter.setValue(layer.opacity, forKey: "inputBrightness") // Simplified opacity mapping
+                alphaMask = opacityFilter.outputImage ?? alphaMask
+            }
+            
+            blendFilter.setValue(alphaMask, forKey: kCIInputMaskImageKey)
+            return blendFilter.outputImage ?? currentImage
+        }
+        
+        return currentImage
+    }
+    
+    private func createSimulationMask(for layerId: UInt32, extent: CGRect) -> CIImage {
+        // Generates different dummy masks based on layer ID for visual testing
+        if layerId % 2 == 0 {
+            // Radial Gradient (Center)
+            return CIFilter(name: "CIRadialGradient", parameters: [
+                "inputCenter": CIVector(x: extent.midX, y: extent.midY),
+                "inputRadius0": extent.width * 0.1,
+                "inputRadius1": extent.width * 0.3,
+                "inputColor0": CIColor.white,
+                "inputColor1": CIColor.clear
+            ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
+        } else {
+            // Linear Gradient (Top to Bottom)
+            return CIFilter(name: "CILinearGradient", parameters: [
+                "inputPoint0": CIVector(x: 0, y: extent.height),
+                "inputPoint1": CIVector(x: 0, y: extent.height * 0.6),
+                "inputColor0": CIColor.white,
+                "inputColor1": CIColor.clear
+            ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
+        }
     }
     
     /// Placeholder for high-performance Metal rendering (C1 Parity).
