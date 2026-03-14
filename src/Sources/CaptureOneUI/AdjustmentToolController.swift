@@ -155,7 +155,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     
     // Dehaze & Vignetting (UI-202)
     @Published public var dehazeAmount: Double = 0.0
-    @Published public var dehazeShadowToneHue: Double = 0.0
+    @Published public var dehazeColor: Color = .gray
     @Published public var vignettingAmount: Double = 0.0
     @Published public var vignettingMethod: Int = 0
     
@@ -1244,6 +1244,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func resetVignetting() {
         self.vignettingAmount = 0.0
         self.vignettingMethod = 0
+        self.commitChanges(to: currentVariant)
+    }
+
+    public func resetDehaze() {
+        self.dehazeAmount = 0.0
+        self.dehazeColor = .gray
         self.commitChanges(to: currentVariant)
     }
 

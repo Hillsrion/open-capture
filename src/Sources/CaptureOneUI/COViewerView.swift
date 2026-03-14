@@ -280,6 +280,10 @@ public struct COViewerView: View {
                                             x: max(0, min(1, gesture.location.x / geo.size.width)),
                                             y: max(0, min(1, gesture.location.y / geo.size.height))
                                         )
+                                    } else if commands.selectedCursorToolID == "DehazePicker" {
+                                        let controller = adjustmentController ?? AdjustmentToolController.shared
+                                        // Simplified color picking: Use a dummy color or logic to simulate picking
+                                        controller.dehazeColor = .cyan // Simulated picked color
                                     } else if commands.selectedCursorToolID == "Rotate" {
                                         performRotation(gesture: gesture, in: geo.size)
                                     }
@@ -295,6 +299,10 @@ public struct COViewerView: View {
                                     if commands.selectedCursorToolID == "Crop" {
                                         activeCropZone = .none
                                         cropStartRect = .zero
+                                    }
+                                    
+                                    if commands.selectedCursorToolID == "FocusPicker" || commands.selectedCursorToolID == "DehazePicker" {
+                                        commands.selectedCursorToolID = "Select"
                                     }
                                     
                                     let toolID = commands.selectedCursorToolID

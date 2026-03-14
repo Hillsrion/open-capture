@@ -108,3 +108,74 @@ public struct LevelsToolView: View {
         }
     }
 }
+
+// MARK: - Dehaze (UI-202)
+public struct DehazeToolView: View {
+    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var commands = AppCommandCenter.shared
+    
+    public init(controller: AdjustmentToolController) {
+        self.controller = controller
+    }
+    
+    public var body: some View {
+        COToolSection("Dehaze", toolID: "Dehaze") {
+            VStack(spacing: 8) {
+                HStack {
+                    Spacer()
+                    // Action Menu
+                    Menu {
+                        Button("Reset") {
+                            controller.resetDehaze()
+                        }
+                        Button("Copy to clipboard") {
+                            // Copy logic
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.system(size: 14))
+                    }
+                    .menuStyle(.borderlessButton)
+                    .frame(width: 20)
+                }
+
+                HStack {
+                    Text("Amount")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        .frame(width: 60, alignment: .leading)
+                    Slider(value: $controller.dehazeAmount, in: -100...100)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Text("\(Int(controller.dehazeAmount))")
+                        .font(.system(size: 11, design: .monospaced))
+                        .frame(width: 30, alignment: .trailing)
+                }
+                
+                HStack {
+                    Text("Shadow Tone")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    
+                    Spacer()
+                    
+                    // Shadow Tone Color Patch
+                    RoundedRectangle(cornerRadius: 2)
+                        .fill(controller.dehazeColor)
+                        .frame(width: 24, height: 14)
+                        .overlay(RoundedRectangle(cornerRadius: 2).stroke(Color.white.opacity(0.2), lineWidth: 0.5))
+                    
+                    // Pick Shadow Tone (Eyedropper)
+                    Button(action: {
+                        commands.selectedCursorToolID = commands.selectedCursorToolID == "DehazePicker" ? "Select" : "DehazePicker"
+                    }) {
+                        Image(systemName: "eyedropper.halffull")
+                            .font(.system(size: 12))
+                            .foregroundColor(commands.selectedCursorToolID == "DehazePicker" ? CaptureOneTheme.Colors.activeHighlight : .white)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.vertical, 4)
+        }
+    }
+}
