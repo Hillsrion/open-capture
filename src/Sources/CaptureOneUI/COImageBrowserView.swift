@@ -12,7 +12,7 @@ public class CImageBrowser: ObservableObject {
 /// Matches Capture One 16.7.4 specifications for Grid, Filmstrip, and List modes.
 public struct COImageBrowserView: View {
 
-    @Binding var images: [ImageBase]
+    @ObservedObject var browser: CImageBrowser
     @Binding var predicate: COFilterPredicate
     @Binding var selectedVariant: VariantBase?
     
@@ -23,22 +23,22 @@ public struct COImageBrowserView: View {
     @State private var sortOrder: String = "filename"
     @State private var groupingMode: String = "none"
 
-    public init(images: Binding<[ImageBase]>, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
-        self._images = images
+    public init(browser: CImageBrowser, predicate: Binding<COFilterPredicate>, selectedVariant: Binding<VariantBase?>) {
+        self.browser = browser
         self._predicate = predicate
         self._selectedVariant = selectedVariant
     }
 
     private var filteredImages: [ImageBase] {
-        // Collect all primary variants
-        let allVariants = images.compactMap { $0.primaryVariant }
+        // Collect all primary variants from the browser's data source
+        let allVariants = browser.dataSource.compactMap { $0.primaryVariant }
         
         // Filter via SearchManager
         let filteredVariants = searchManager.filter(allVariants)
         
         // Map back to images
         let filteredVariantIDs = Set(filteredVariants.map { $0.variantUUID })
-        return images.filter { image in
+        return browser.dataSource.filter { image in
             guard let primary = image.primaryVariant else { return false }
             return filteredVariantIDs.contains(primary.variantUUID)
         }

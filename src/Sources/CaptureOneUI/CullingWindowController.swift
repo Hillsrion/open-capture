@@ -221,7 +221,7 @@ public struct CullingView: View {
 
     private var browserPanePortrait: some View {
         COImageBrowserView(
-            images: $browser.dataSource,
+            browser: commands.browser,
             predicate: $adjustmentController.activePredicate,
             selectedVariant: $adjustmentController.currentVariant
         )
@@ -230,13 +230,12 @@ public struct CullingView: View {
 
     private var browserPaneLandscape: some View {
         COImageBrowserView(
-            images: $browser.dataSource,
+            browser: commands.browser,
             predicate: $adjustmentController.activePredicate,
             selectedVariant: $adjustmentController.currentVariant
         )
         .frame(height: workspaceManager.activeWorkspace.chromeState.browserHeight)
     }
-
     @ViewBuilder
     private func sheetView(for route: AppSheetRoute) -> some View {
         switch route {
