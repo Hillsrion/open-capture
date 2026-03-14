@@ -9,9 +9,9 @@ public class SubjectMaskingEngine {
     private var model: SubjectMaskingFP16?
     
     private init() {
-        // Attempt to load the model
+        // Attempt to load the model with optimized configuration
         do {
-            self.model = try SubjectMaskingFP16()
+            self.model = try SubjectMaskingFP16(configuration: AIConfiguration.default)
             print("[AI] SubjectMaskingFP16 model loaded successfully.")
         } catch {
             print("[AI] Warning: Could not load subjectMaskingFP16. Fallback to simulation. Error: \(error)")

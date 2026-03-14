@@ -7,11 +7,11 @@ import ImageCore
 public class SmartAdjustmentsHelper {
     
     private static var faceDetector: FaceDetectionFP16? = {
-        return try? FaceDetectionFP16(variant: "640")
+        return try? FaceDetectionFP16(variant: "640", configuration: AIConfiguration.default)
     }()
     
     private static var lookMatcher: MatchLookModel? = {
-        return try? MatchLookModel(variant: .exposure)
+        return try? MatchLookModel(variant: .exposure, configuration: AIConfiguration.default)
     }()
     
     /// Analyzes a variant to extract reference data using AI models.
