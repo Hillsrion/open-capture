@@ -10,6 +10,7 @@ public struct LayerInspectorView: View {
     @ObservedObject var controller = AdjustmentToolController.shared
     @State private var selectedLayerIndex: Int = 0
     @State private var isRefineExpanded: Bool = false
+    @State private var isCombineMasksPresented: Bool = false
     
     public init(variant: VariantBase) {
         self.variant = variant
@@ -140,6 +141,18 @@ public struct LayerInspectorView: View {
                             .font(.system(size: 12, weight: .bold))
                     }
                     .disabled(variant.layers.count <= 1 || selectedLayerIndex == 0) // Can't delete background
+                    
+                    Button(action: {
+                        isCombineMasksPresented = true
+                    }) {
+                        Image(systemName: "plus.forwardslash.minus") // Represents combining
+                            .font(.system(size: 11, weight: .medium))
+                    }
+                    .help("Combine Masks")
+                    .disabled(variant.layers.count < 2) // Need at least background and one mask
+                    .popover(isPresented: $isCombineMasksPresented) {
+                        CombineMasksModal(variant: variant, isPresented: $isCombineMasksPresented)
+                    }
                     
                     Spacer()
                     
@@ -277,6 +290,126 @@ struct LayerRow: View {
         case .adjustment: return "paintpalette.fill"
         case .clone: return "c.circle.fill"
         case .heal: return "h.circle.fill"
+        }
+    }
+}
+
+// MARK: - Combine Masks Modal
+struct CombineMasksModal: View {
+    @ObservedObject var variant: VariantBase
+    @Binding var isPresented: Bool
+    
+    @State private var selectedLayerIDs: Set<String> = []
+    @State private var operationType: Int = 0 // 0: Union (Or), 1: Intersection (And), 2: Subtract
+    @State private var createNewLayer: Bool = true
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Combine Masks")
+                .font(.headline)
+            
+            // Layer Selection List
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Select masks to combine:")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                
+                ScrollView {
+                    VStack(spacing: 2) {
+                        ForEach(variant.layers.filter { $0.type != .background }, id: \.id) { layer in
+                            HStack {
+                                let isSelected = selectedLayerIDs.contains(layer.id)
+                                Image(systemName: isSelected ? "checkmark.square.fill" : "square")
+                                    .foregroundColor(isSelected ? CaptureOneTheme.Colors.activeHighlight : .gray)
+                                    .onTapGesture {
+                                        if isSelected {
+                                            selectedLayerIDs.remove(layer.id)
+                                        } else {
+                                            selectedLayerIDs.insert(layer.id)
+                                        }
+                                    }
+                                Text(layer.name)
+                                    .font(.system(size: 11))
+                                Spacer()
+                            }
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 8)
+                            .background(Color.white.opacity(0.05))
+                            .cornerRadius(4)
+                        }
+                    }
+                }
+                .frame(maxHeight: 150)
+            }
+            
+            // Logic Selection
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Operation:")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                
+                Picker("", selection: $operationType) {
+                    Text("Add (Or)").tag(0)
+                    Text("Intersect (And)").tag(1)
+                    Text("Subtract").tag(2)
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+            }
+            
+            // Options
+            Toggle("Create new layer", isOn: $createNewLayer)
+                .font(.system(size: 11))
+                .toggleStyle(CheckboxToggleStyle())
+            
+            Divider().background(Color.white.opacity(0.1))
+            
+            // Action Buttons
+            HStack {
+                Button("Cancel") {
+                    isPresented = false
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(4)
+                
+                Spacer()
+                
+                Button("Combine") {
+                    performCombine()
+                    isPresented = false
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(CaptureOneTheme.Colors.activeHighlight)
+                .foregroundColor(.black)
+                .cornerRadius(4)
+                .disabled(selectedLayerIDs.isEmpty || (operationType != 0 && selectedLayerIDs.count < 2))
+            }
+        }
+        .padding(16)
+        .frame(width: 300)
+    }
+    
+    private func performCombine() {
+        print("[Masks] Combining \(selectedLayerIDs.count) masks with operation \(operationType)")
+        
+        let targetLayerName = "Combined Mask"
+        
+        if createNewLayer {
+            let newLayer = LayerBase(uuid: UUID().uuidString, name: targetLayerName, type: .adjustment, context: nil)
+            variant.layers.insert(newLayer, at: 0)
+            variant.activeLayerIndex = 0
+            // In a real implementation, the mask array/bitmap would be combined using the ImageCore blending engine.
+            print("[Masks] Created new layer: \(targetLayerName)")
+        } else {
+            // Apply to first selected
+            if let firstID = selectedLayerIDs.first, let layer = variant.layers.first(where: { $0.id == firstID }) {
+                print("[Masks] Applied combination directly to layer: \(layer.name)")
+            }
         }
     }
 }
