@@ -75,6 +75,20 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.clone") { [weak self] in
             self?.selectedCursorToolID = "Clone"
         }
+        
+        // MARK: - Browser Mode Actions (WF-501)
+        ShortcutManager.shared.registerAction(id: "com.captureone.browser.grid") { [weak self] in
+            self?.workspaceManager.activeWorkspace.chromeState.browserMode = 0
+            self?.workspaceManager.saveWorkspace()
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.browser.filmstrip") { [weak self] in
+            self?.workspaceManager.activeWorkspace.chromeState.browserMode = 1
+            self?.workspaceManager.saveWorkspace()
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.browser.list") { [weak self] in
+            self?.workspaceManager.activeWorkspace.chromeState.browserMode = 2
+            self?.workspaceManager.saveWorkspace()
+        }
     }
 
     public func selectSessionFolder(type: SessionFolderType) {

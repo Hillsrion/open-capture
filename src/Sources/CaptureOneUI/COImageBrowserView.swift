@@ -91,6 +91,29 @@ public struct COImageBrowserView: View {
             .frame(width: 100)
             .scaleEffect(0.8)
             
+            // Search Field (WF-501)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 10))
+                    .foregroundColor(.gray)
+                TextField("Search", text: $searchManager.criteria.searchText)
+                    .font(.system(size: 11))
+                    .textFieldStyle(.plain)
+                    .frame(width: 120)
+                
+                if !searchManager.criteria.searchText.isEmpty {
+                    Button(action: { searchManager.criteria.searchText = "" }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 10))
+                            .foregroundColor(.gray)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(4)
+            .background(Color.white.opacity(0.05))
+            .cornerRadius(4)
+            
             Spacer()
             
             // Zoom Slider (Only for Grid/Filmstrip)

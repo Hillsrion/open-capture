@@ -68,7 +68,9 @@ public class ShortcutManager: ObservableObject {
             KeyboardShortcut(key: "3", modifiers: [], actionID: "com.captureone.rate.3"),
             KeyboardShortcut(key: "4", modifiers: [], actionID: "com.captureone.rate.4"),
             KeyboardShortcut(key: "5", modifiers: [], actionID: "com.captureone.rate.5"),
-            KeyboardShortcut(key: "g", modifiers: .command, actionID: "com.captureone.group"),
+            KeyboardShortcut(key: "g", modifiers: [], actionID: "com.captureone.browser.grid"),
+            KeyboardShortcut(key: "f", modifiers: [], actionID: "com.captureone.browser.filmstrip"),
+            KeyboardShortcut(key: "l", modifiers: [], actionID: "com.captureone.browser.list"),
             KeyboardShortcut(key: "q", modifiers: [], actionID: "com.captureone.tool.heal"),
             KeyboardShortcut(key: "s", modifiers: [], actionID: "com.captureone.tool.clone")
         ]
