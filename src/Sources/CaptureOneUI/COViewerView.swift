@@ -79,6 +79,9 @@ public struct COViewerView: View {
                                 let tool = commands.selectedCursorToolID
                                 if tool == "Pan" {
                                     NSCursor.openHand.push()
+                                } else if tool == "Rotate" {
+                                    // Simulation of rotateFreehandCursor
+                                    NSCursor.crosshair.push() 
                                 } else if tool == "PickWhitebalanceFilmNegative" {
                                     NSCursor.crosshair.push() // closest to eyedropper in standard cursors
                                 }
@@ -131,6 +134,22 @@ public struct COViewerView: View {
                                             } else {
                                                 adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
                                             }
+                                        }
+                                    } else if commands.selectedCursorToolID == "Rotate" {
+                                        // Rotate Freehand Logic (UI-204 Parity)
+                                        let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
+                                        let startPoint = gesture.startLocation
+                                        let currentPoint = gesture.location
+                                        
+                                        // Calculate angles relative to center
+                                        let angleStart = atan2(startPoint.y - center.y, startPoint.x - center.x)
+                                        let angleCurrent = atan2(currentPoint.y - center.y, currentPoint.x - center.x)
+                                        
+                                        let deltaAngle = (angleCurrent - angleStart) * 180.0 / .pi
+                                        
+                                        // Update controller (incremental update)
+                                        if let controller = adjustmentController {
+                                            controller.rotationAngle += Double(deltaAngle) * 0.1 // Scaled for smoother control
                                         }
                                     }
                                 }
