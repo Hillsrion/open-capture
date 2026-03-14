@@ -1,83 +1,88 @@
 import Foundation
-import ImageCore
+import Combine
 
-/// Reconstructed hierarchical item for the Styles Browser (UI-010).
-public struct StyleTreeItem: Identifiable {
-    public let id: String
-    public let name: String
-    public let isFolder: Bool
-    public var children: [StyleTreeItem]?
-    public let style: Style?
-    
-    public init(name: String, isFolder: Bool, children: [StyleTreeItem]? = nil, style: Style? = nil) {
-        self.id = style?.id.uuidString ?? UUID().uuidString
-        self.name = name
-        self.isFolder = isFolder
-        self.children = children
-        self.style = style
-    }
-}
-
-/// Reconstructed central manager for Styles & Presets (AppCoreShared).
+/// Reconstructed Style Manager (STY-002).
+/// Mimics _TtC13AppCoreShared13StylesManager protocol implementations.
 public class StyleManager: ObservableObject {
     public static let shared = StyleManager()
     
-    @Published public var builtInStyles: StylePack
-    @Published public var userStyles: StylePack
+    @Published public var stylePacks: [StylePack] = []
     
-    public init() {
-        // Mocking some default styles based on v16.5 built-ins
-        let bwPack = StylePack(name: "Black & White", styles: [
-            Style(name: "B&W High Contrast", adjustments: ["ZCONTRAST": AnyCodable(50.0), "ZSATURATION": AnyCodable(-100.0)]),
-            Style(name: "B&W Soft", adjustments: ["ZCONTRAST": AnyCodable(-20.0), "ZSATURATION": AnyCodable(-100.0)])
-        ])
-        
-        let cinematicPack = StylePack(name: "Cinematic", styles: [
-            Style(name: "Teal & Orange", adjustments: ["ZKELVIN": AnyCodable(6500.0), "ZTINT": AnyCodable(10.0)])
-        ])
-        
-        let smartPack = StylePack(name: "Smart Adjustments", styles: [
-            Style(name: "Smart Portrait Match", adjustments: [:], smartAdjustments: SmartAdjustmentsDescriptor(exposureEnabled: true, whiteBalanceEnabled: true))
-        ])
-
-        let filmPack = StylePack(name: "Film Styles", styles: [
-            Style(name: "Kodak Portra 160", adjustments: ["ZSATURATION": AnyCodable(5.0), "ZCONTRAST": AnyCodable(10.0)]),
-            Style(name: "Fuji 400H", adjustments: ["ZSATURATION": AnyCodable(2.0), "ZCONTRAST": AnyCodable(5.0)])
-        ])
-        
-        self.builtInStyles = StylePack(name: "Built-in Styles", childPacks: [bwPack, cinematicPack, smartPack, filmPack])
-        self.userStyles = StylePack(name: "User Styles")
+    private init() {
+        loadBuiltinStyles()
     }
     
-    /// Returns the full tree for the browser.
-    public func getStyleTree() -> [StyleTreeItem] {
-        return [
-            mapPackToTree(builtInStyles),
-            mapPackToTree(userStyles)
+    /// Scans the application bundle or user folder for .costyle files.
+    public func loadStyles(from url: URL) {
+        let fileManager = FileManager.default
+        guard let files = try? fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil) else { return }
+        
+        var styles: [COStyle] = []
+        for file in files where file.pathExtension == "costyle" {
+            if let style = parseStyle(at: file) {
+                styles.append(style)
+            }
+        }
+        
+        if !styles.isEmpty {
+            let pack = StylePack(name: url.lastPathComponent, styles: styles)
+            stylePacks.append(pack)
+        }
+    }
+    
+    /// Applies a style's adjustments to a variant.
+    /// This bridges STY-001 to the variant's metadata properties.
+    public func applyStyle(_ style: COStyle, to variant: VariantBase) {
+        print("[Style] Applying style: \(style.name) to \(variant.image?.displayName ?? "Unknown")")
+        
+        // In original C1, this updates the internal ZADJUSTMENT database table
+        for (key, value) in style.adjustments {
+            // Map common keys to DB properties (simplified for lab)
+            let dbKey = mapToDatabaseKey(key)
+            variant.mcVariant?.setObject(value, forKey: dbKey)
+        }
+        
+        // Update local object state if needed
+        variant.objectWillChange.send()
+    }
+    
+    private func parseStyle(at url: URL) -> COStyle? {
+        // Capture One .costyle files are XML. 
+        // For our reconstruction, we use a simplified XML/Plist parser.
+        guard let data = try? Data(contentsOf: url) else { return nil }
+        
+        // Simulation of pugixml parsing
+        // In a real scenario, we'd use XMLParser or a custom wrapper
+        return COStyle(name: url.deletingPathExtension().lastPathComponent, adjustments: [:])
+    }
+    
+    private func mapToDatabaseKey(_ key: String) -> String {
+        switch key.lowercased() {
+        case "exposure": return "ZEXPOSURE"
+        case "contrast": return "ZCONTRAST"
+        case "brightness": return "ZBRIGHTNESS"
+        case "saturation": return "ZSATURATION"
+        case "kelvin": return "ZKELVIN"
+        case "tint": return "ZTINT"
+        default: return "Z\(key.uppercased())"
+        }
+    }
+    
+    private func loadBuiltinStyles() {
+        // Simulation of factory styles
+        let b&w = COStyle(name: "B&W High Contrast", category: "Built-in", adjustments: [
+            "Exposure": "0.2",
+            "Contrast": "20",
+            "Saturation": "-100"
+        ])
+        
+        let landscape = COStyle(name: "Landscape Vivid", category: "Built-in", adjustments: [
+            "Contrast": "10",
+            "Saturation": "15"
+        ])
+        
+        self.stylePacks = [
+            StylePack(name: "Factory Styles", styles: [b&w, landscape])
         ]
-    }
-
-    public func allStyles() -> [Style] {
-        collectStyles(from: builtInStyles) + collectStyles(from: userStyles)
-    }
-    
-    private func mapPackToTree(_ pack: StylePack) -> StyleTreeItem {
-        var children: [StyleTreeItem] = []
-        
-        // Add sub-packs
-        for childPack in pack.childPacks {
-            children.append(mapPackToTree(childPack))
-        }
-        
-        // Add styles
-        for style in pack.styles {
-            children.append(StyleTreeItem(name: style.name, isFolder: false, style: style))
-        }
-        
-        return StyleTreeItem(name: pack.name, isFolder: true, children: children)
-    }
-
-    private func collectStyles(from pack: StylePack) -> [Style] {
-        pack.styles + pack.childPacks.flatMap(collectStyles(from:))
     }
 }
