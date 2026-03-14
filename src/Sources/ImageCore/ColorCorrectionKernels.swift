@@ -100,8 +100,24 @@ public struct ColorCorrectionKernels {
                     l += (corr.lightnessChange / 100.0) * weight
                     l = max(0.0, min(1.0, l))
                     
-                    // Note: Homogeneity (Skin Tone) logic goes here in a full implementation.
-                    // It pulls the current HSL towards the target deviceRGB HSL based on homogeneity sliders.
+                    // MARK: - Skin Tone Uniformity (Homogeneity) (COL-004)
+                    // Pulls the current HSL towards the slice's center HSL based on uniformity sliders.
+                    if let uniformity = corr.uniformity {
+                        // Hue Uniformity
+                        let targetHue = (corr.lowHue + corr.highHue) / 2.0
+                        let hueDiff = h - targetHue
+                        h -= hueDiff * (uniformity.hue / 100.0) * weight
+                        
+                        // Saturation Uniformity
+                        let targetSat = (corr.lowSaturation + corr.highSaturation) / 2.0
+                        let satDiff = s - targetSat
+                        s -= satDiff * (uniformity.saturation / 100.0) * weight
+                        
+                        // Lightness Uniformity
+                        let targetLuma = 0.5 // Default target lightness for skin
+                        let lumaDiff = l - targetLuma
+                        l -= lumaDiff * (uniformity.lightness / 100.0) * weight
+                    }
                 }
                 
                 // 4. Convert back
