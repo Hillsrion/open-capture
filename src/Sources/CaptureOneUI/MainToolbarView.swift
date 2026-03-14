@@ -104,7 +104,6 @@ private struct CursorToolsToolbarGroup: View {
         ("Pan", "hand.raised"),
         ("Loupe", "magnifyingglass"),
         ("Crop", "crop"),
-        ("Rotate", "rotate.right"),
         ("Keystone", "rectangle.distorted"),
         ("Annotate", "pencil.tip"),
         ("EraseAnnotation", "eraser.fill")
@@ -120,8 +119,54 @@ private struct CursorToolsToolbarGroup: View {
                     commands.handleToolbarAction(toolID)
                 }
             }
+            RotateToolbarGroup()
         }
         .padding(.horizontal, 4)
+    }
+}
+
+private struct RotateToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        HStack(spacing: 2) {
+            // Main Rotate Tool (Freehand/Straighten)
+            IconOnlyToolbarButton(
+                systemName: "rotate.right",
+                isSelected: commands.selectedCursorToolID == "Rotate" || commands.selectedCursorToolID == "Straighten"
+            ) {
+                commands.handleToolbarAction("Rotate")
+            }
+            .contextMenu {
+                Button("Rotate Freehand") { commands.handleToolbarAction("Rotate") }
+                Button("Straighten") { commands.handleToolbarAction("Straighten") }
+                Divider()
+                Button("Flip Horizontal") { commands.flipHorizontal() }
+                Button("Flip Vertical") { commands.flipVertical() }
+            }
+            
+            // Quick 90 Degree Buttons (C1 Parity)
+            HStack(spacing: 0) {
+                Button(action: commands.rotateLeft) {
+                    Image(systemName: "rotate.left")
+                        .font(.system(size: 10))
+                        .frame(width: 20, height: 28)
+                        .background(Color.white.opacity(0.03))
+                }
+                .buttonStyle(.plain)
+                
+                Divider().frame(height: 14).background(Color.gray.opacity(0.2))
+                
+                Button(action: commands.rotateRight) {
+                    Image(systemName: "rotate.right")
+                        .font(.system(size: 10))
+                        .frame(width: 20, height: 28)
+                        .background(Color.white.opacity(0.03))
+                }
+                .buttonStyle(.plain)
+            }
+            .cornerRadius(4)
+        }
     }
 }
 

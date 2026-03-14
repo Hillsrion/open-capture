@@ -216,6 +216,30 @@ public final class AppCommandCenter: ObservableObject {
             selectNextVariant()
         }
     }
+    
+    // MARK: - Image Transformations (UI-204)
+    
+    public func rotateLeft() {
+        guard let variant = adjustmentController.currentVariant else { return }
+        adjustmentController.rotationAngle -= 90
+        print("[Command] Rotated Left: \(variant.image?.displayName ?? "")")
+    }
+    
+    public func rotateRight() {
+        guard let variant = adjustmentController.currentVariant else { return }
+        adjustmentController.rotationAngle += 90
+        print("[Command] Rotated Right: \(variant.image?.displayName ?? "")")
+    }
+    
+    public func flipHorizontal() {
+        // Logic to toggle horizontal flip in IC_ProcessSettings
+        print("[Command] Flip Horizontal requested")
+    }
+    
+    public func flipVertical() {
+        // Logic to toggle vertical flip in IC_ProcessSettings
+        print("[Command] Flip Vertical requested")
+    }
 
     public func presentImport() {
         importer = POImporter()
