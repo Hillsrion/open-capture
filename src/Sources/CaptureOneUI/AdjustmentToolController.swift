@@ -220,6 +220,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     
     // Masking State (UI-204)
     @Published public var currentLinearGradient: LinearGradientMask? = nil
+    @Published public var currentRadialGradient: RadialGradientMask? = nil
     
     // Smart Adjustments (AI-002)
     
@@ -1259,6 +1260,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func commitLinearGradient(_ gradient: LinearGradientMask) {
         guard let variant = currentVariant, let activeLayer = variant.activeLayer else { return }
         activeLayer.linearGradient = gradient
+        variant.isModified = true
+        self.commitChanges(to: variant)
+    }
+
+    public func commitRadialGradient(_ gradient: RadialGradientMask) {
+        guard let variant = currentVariant, let activeLayer = variant.activeLayer else { return }
+        activeLayer.radialGradient = gradient
         variant.isModified = true
         self.commitChanges(to: variant)
     }

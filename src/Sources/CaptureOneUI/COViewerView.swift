@@ -111,6 +111,15 @@ public struct COViewerView: View {
                             }
                         }
                         
+                        // Radial Gradient Overlay (UI-204)
+                        if commands.selectedCursorToolID == "DrawRadialGradient" || commands.selectedCursorToolID == "Select" {
+                            if let drawingGradient = adjustmentController?.currentRadialGradient {
+                                RadialGradientMaskOverlay(gradient: drawingGradient, viewerSize: geo.size)
+                            } else if let savedGradient = adjustmentController?.currentVariant?.activeLayer?.radialGradient {
+                                RadialGradientMaskOverlay(gradient: savedGradient, viewerSize: geo.size)
+                            }
+                        }
+                        
                         // Keystone Interactive Overlay (UI-006)
                         if let points = adjustmentController?.keystonePoints {
                             KeystoneOverlayView(points: points)
@@ -145,6 +154,8 @@ public struct COViewerView: View {
                                 } else if tool == "MoveOverlay" {
                                     NSCursor.resizeUpDown.push() // closest to move icon in std cursors
                                 } else if tool == "DrawLinearGradient" {
+                                    NSCursor.crosshair.push()
+                                } else if tool == "DrawRadialGradient" {
                                     NSCursor.crosshair.push()
                                 } else if tool == "Crop" {
                                     // Logic for dynamic cursor based on crop zones could be added here
@@ -322,6 +333,43 @@ public struct COViewerView: View {
                                         }
                                         
                                         controller.currentLinearGradient = LinearGradientMask(start: start, end: end)
+                                    } else if commands.selectedCursorToolID == "DrawRadialGradient" {
+                                        let controller = adjustmentController ?? AdjustmentToolController.shared
+                                        
+                                        let start = CGPoint(x: gesture.startLocation.x / geo.size.width, y: gesture.startLocation.y / geo.size.height)
+                                        let current = CGPoint(x: gesture.location.x / geo.size.width, y: gesture.location.y / geo.size.height)
+                                        
+                                        let flags = NSEvent.modifierFlags
+                                        
+                                        var center = start
+                                        var width = abs(current.x - start.x) * 2
+                                        var height = abs(current.y - start.y) * 2
+                                        
+                                        if flags.contains(.option) {
+                                            // Scale from center (start is center)
+                                            width = abs(current.x - start.x) * 2
+                                            height = abs(current.y - start.y) * 2
+                                        } else {
+                                            // Start is edge, current is opposite edge
+                                            center = CGPoint(x: (start.x + current.x) / 2, y: (start.y + current.y) / 2)
+                                            width = abs(current.x - start.x)
+                                            height = abs(current.y - start.y)
+                                        }
+                                        
+                                        if flags.contains(.shift) {
+                                            // Perfect circle
+                                            let maxDim = max(width, height)
+                                            width = maxDim
+                                            height = maxDim
+                                        }
+                                        
+                                        // Simplified rotation: 0 degrees for basic draw
+                                        controller.currentRadialGradient = RadialGradientMask(
+                                            center: center,
+                                            radius: CGSize(width: width, height: height),
+                                            rotation: 0,
+                                            feather: 0.2 // Default feather
+                                        )
                                     } else if commands.selectedCursorToolID == "Rotate" {
                                         performRotation(gesture: gesture, in: geo.size)
                                     }
@@ -342,8 +390,12 @@ public struct COViewerView: View {
                                     if commands.selectedCursorToolID == "DrawLinearGradient" {
                                         if let controller = adjustmentController, let gradient = controller.currentLinearGradient {
                                             controller.commitLinearGradient(gradient)
-                                            // Keep tool active as in C1, but clear current preview (or keep it if it's editing the existing)
-                                            // controller.currentLinearGradient = nil
+                                        }
+                                    }
+                                    
+                                    if commands.selectedCursorToolID == "DrawRadialGradient" {
+                                        if let controller = adjustmentController, let gradient = controller.currentRadialGradient {
+                                            controller.commitRadialGradient(gradient)
                                         }
                                     }
                                     

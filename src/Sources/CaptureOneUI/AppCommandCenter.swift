@@ -98,6 +98,9 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.linearGradient") { [weak self] in
             self?.selectedCursorToolID = "DrawLinearGradient"
         }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.radialGradient") { [weak self] in
+            self?.selectedCursorToolID = "DrawRadialGradient"
+        }
         ShortcutManager.shared.registerAction(id: "com.captureone.beforeAfter") { [weak self] in
             self?.beforeAfterEnabled.toggle()
         }
@@ -137,7 +140,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func handleToolbarAction(_ itemID: String) {
         switch itemID {
-        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone", "DrawLinearGradient":
+        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient":
             self.selectedCursorToolID = itemID
         case "AutoAdjust":
             presentImport()
