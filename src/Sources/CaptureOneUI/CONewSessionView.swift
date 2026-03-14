@@ -53,6 +53,7 @@ public struct CONewSessionView: View {
                     Picker("Template:", selection: $template) {
                         Text("None").tag("None")
                         Text("Default").tag("Default")
+                        Text("E-commerce").tag("E-commerce")
                     }
                 }
                 
@@ -83,7 +84,21 @@ public struct CONewSessionView: View {
             Divider()
             
             HStack {
+                Button("Save as Template") {
+                    let subfolders = [
+                        "Capture": captureFolder,
+                        "Selects": selectsFolder,
+                        "Output": outputFolder,
+                        "Trash": trashFolder
+                    ]
+                    commands.saveSessionAsTemplate(name: template == "None" ? "Custom" : template, subfolders: subfolders)
+                }
+                .buttonStyle(.plain)
+                .font(.system(size: 11))
+                .foregroundColor(.gray)
+                
                 Spacer()
+                
                 Button("Cancel") {
                     commands.presentedSheet = nil
                 }

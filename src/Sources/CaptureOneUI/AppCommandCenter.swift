@@ -437,6 +437,11 @@ public final class AppCommandCenter: ObservableObject {
         presentedSheet = nil
     }
 
+    public func saveSessionAsTemplate(name: String, subfolders: [String: String]) {
+        print("[AppCommandCenter] Saving Session Template: \(name).cosessiontemplate")
+        // In a real implementation, this would write a JSON/Plist to Application Support/Capture One/Templates
+    }
+
     public func openDocument(at url: URL) {
         print("[CommandCenter] Opening document at: \(url.path)")
         
