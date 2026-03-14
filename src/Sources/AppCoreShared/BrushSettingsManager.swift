@@ -16,6 +16,7 @@ public struct BrushSettings {
     public var opacity: Float = 100.0
     public var flow: Float = 100.0
     public var penPressureEnabled: Bool = false
+    public var autoMaskEnabled: Bool = false
     
     public init() {}
 }

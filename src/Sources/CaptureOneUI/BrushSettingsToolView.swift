@@ -44,6 +44,13 @@ public struct BrushSettingsToolView: View {
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 }
                 .toggleStyle(CheckboxToggleStyle())
+                
+                Toggle(isOn: binding(for: \.autoMaskEnabled)) {
+                    Text("Auto Mask")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                }
+                .toggleStyle(CheckboxToggleStyle())
             }
             .padding(.vertical, 4)
         }
