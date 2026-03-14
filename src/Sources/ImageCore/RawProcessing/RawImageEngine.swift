@@ -24,13 +24,13 @@ public class RawImageEngine {
     public func developImage(at url: URL, with settings: IC_ProcessSettings) -> CGImage? {
         print("[Engine] Developing RAW: \(url.lastPathComponent)")
         
-        // 1. RAW Loading (Simulation)
-        // In original, this would use CRawImageRep to extract Bayer data
-        guard let sourceImage = CIImage(contentsOf: url) ?? createPlaceholderImage() else {
-            return nil
+        // 1. RAW Loading (Improved for CR3/Modern formats)
+        // C1 Parity: Using CGImageSource allows better compatibility with modern RAW
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+              let sourceImage = extractSourceImage(from: source) else {
+            return createPlaceholderImage()?.cgImage
         }
         
-        // 2. Apply Pipeline (Simplified parity with C1 pipeline)
         var output = sourceImage
         
         // A. Exposure & Contrast
@@ -199,9 +199,28 @@ public class RawImageEngine {
         print("[Engine] High-speed Metal render pass requested.")
     }
     
+    private func extractSourceImage(from source: CGImageSource) -> CIImage? {
+        // Attempt to get a high-res preview or the developed RAW
+        let options: [CFString: Any] = [
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceThumbnailMaxPixelSize: 4096
+        ]
+        
+        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary) else {
+            return nil
+        }
+        return CIImage(cgImage: cgImage)
+    }
+    
     private func createPlaceholderImage() -> CIImage? {
         // Returns a neutral gray image if the RAW file can't be read in simulation
-        let color = CIColor(red: 0.5, green: 0.5, blue: 0.5)
+        let color = CIColor(red: 0.2, green: 0.2, blue: 0.2) // Darker gray for better contrast
         return CIImage(color: color).cropped(to: CGRect(x: 0, y: 0, width: 1024, height: 1024))
+    }
+    
+    /// Utility to get CGImage from CIImage for the develops call
+    private func cgImage(from ciImage: CIImage) -> CGImage? {
+        return context.createCGImage(ciImage, from: ciImage.extent)
     }
 }

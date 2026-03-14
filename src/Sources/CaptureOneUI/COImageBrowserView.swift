@@ -293,12 +293,18 @@ struct COBrowserListView: View {
                     .frame(width: 10, height: 10)
             }
             TableColumn("Type") { image in
-                Text(image.path.hasSuffix(".ARW") || image.path.hasSuffix(".IIQ") ? "RAW" : "JPEG")
+                Text(isRaw(image.path) ? "RAW" : "JPEG")
                     .font(.system(size: 10, design: .monospaced))
             }
         }
         .tableStyle(.inset)
         .font(.system(size: 11))
+    }
+    
+    private func isRaw(_ path: String) -> Bool {
+        let ext = path.lowercased()
+        let rawExts = ["arw", "cr2", "cr3", "nef", "nrw", "orf", "raf", "rw2", "pef", "dng", "iiq"]
+        return rawExts.contains { ext.hasSuffix($0) }
     }
     
     private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
