@@ -120,6 +120,23 @@ public class ShortcutInputHandler {
             return nil
         }
         
+        // Brush Adjustments (Portrait Workflow Spec)
+        if chars == "[" || chars == "]" {
+            let increment: Float = event.modifierFlags.contains(.shift) ? 0 : (chars == "]" ? 5 : -5)
+            let hardnessIncrement: Float = event.modifierFlags.contains(.shift) ? (chars == "]" ? 10 : -10) : 0
+            
+            Task { @MainActor in
+                let manager = BrushSettingsManager.shared
+                if increment != 0 {
+                    manager.drawBrushSettings.size = max(1, min(500, manager.drawBrushSettings.size + increment))
+                }
+                if hardnessIncrement != 0 {
+                    manager.drawBrushSettings.hardness = max(0, min(100, manager.drawBrushSettings.hardness + hardnessIncrement))
+                }
+            }
+            return nil
+        }
+        
         // Speed Edit Keys (Default Capture One mapping)
         if !event.isARepeat {
             switch chars {
