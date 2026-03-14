@@ -24,10 +24,15 @@ public struct POColorBalanceControl: View {
     public var body: some View {
         VStack(spacing: 8) {
             HStack(alignment: .center, spacing: 8) {
+                if !lightnessControlDisabled {
+                    CurvedLightnessSlider(value: $value.brightness, height: wheelDiameter, isLuminance: true)
+                        .frame(width: 26, height: wheelDiameter)
+                }
+
                 ColorBalanceWheelSurface(value: $value, diameter: wheelDiameter)
 
                 if !lightnessControlDisabled {
-                    CurvedLightnessSlider(value: $value.brightness, height: wheelDiameter)
+                    CurvedLightnessSlider(value: $value.saturation, height: wheelDiameter, isLuminance: false)
                         .frame(width: 26, height: wheelDiameter)
                 }
             }
@@ -146,8 +151,11 @@ private struct ColorBalanceWheelSurface: View {
 private struct CurvedLightnessSlider: View {
     @Binding var value: Double
     let height: CGFloat
+    let isLuminance: Bool
 
-    private let range = -100.0...100.0
+    private var range: ClosedRange<Double> {
+        isLuminance ? -100.0...100.0 : 0.0...100.0
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -155,16 +163,16 @@ private struct CurvedLightnessSlider: View {
             let tickY = tickPosition(in: sliderRect)
 
             ZStack {
-                ArcTrackShape()
+                ArcTrackShape(isLeft: isLuminance)
                     .stroke(Color.white.opacity(0.45), style: StrokeStyle(lineWidth: 3, lineCap: .round))
 
-                ArcTrackShape(inset: 0.8)
+                ArcTrackShape(isLeft: isLuminance, inset: 0.8)
                     .stroke(Color.black.opacity(0.45), style: StrokeStyle(lineWidth: 1, lineCap: .round))
 
                 Rectangle()
                     .fill(CaptureOneTheme.Colors.activeHighlight)
                     .frame(width: 8, height: 2)
-                    .offset(x: -3, y: tickY)
+                    .offset(x: isLuminance ? -3 : 3, y: tickY)
             }
             .contentShape(Rectangle())
             .gesture(
@@ -176,7 +184,7 @@ private struct CurvedLightnessSlider: View {
             .simultaneousGesture(
                 TapGesture(count: 2)
                     .onEnded {
-                        value = 0
+                        value = isLuminance ? 0 : 0 // Saturation reset is also 0
                     }
             )
         }
@@ -197,17 +205,23 @@ private struct CurvedLightnessSlider: View {
 }
 
 private struct ArcTrackShape: Shape {
+    var isLeft: Bool = true
     var inset: CGFloat = 0
 
     func path(in rect: CGRect) -> Path {
         let radius = min(rect.width, rect.height) / 2 - 4 - inset
-        let center = CGPoint(x: rect.midX - 4, y: rect.midY)
+        let centerX = isLeft ? rect.midX - 4 : rect.midX + 4
+        let center = CGPoint(x: centerX, y: rect.midY)
         var path = Path()
+        
+        let startAngle: Angle = isLeft ? .degrees(-65) : .degrees(115)
+        let endAngle: Angle = isLeft ? .degrees(65) : .degrees(245)
+        
         path.addArc(
             center: center,
             radius: radius,
-            startAngle: .degrees(-65),
-            endAngle: .degrees(65),
+            startAngle: startAngle,
+            endAngle: endAngle,
             clockwise: false
         )
         return path
