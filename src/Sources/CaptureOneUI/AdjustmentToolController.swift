@@ -256,6 +256,23 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         setupChangeObservers()
         setupRecipeSync()
         setupNegativeFilmSync()
+        setupZoomViewportSync()
+    }
+    
+    private func setupZoomViewportSync() {
+        $zoomLevel
+            .sink { [weak self] zoom in
+                guard let self = self else { return }
+                let size = 1.0 / max(0.1, zoom)
+                let current = self.viewportRect
+                // Keep the center of the viewport same if possible
+                let centerX = current.origin.x + current.width / 2
+                let centerY = current.origin.y + current.height / 2
+                let newOriginX = max(0, min(1.0 - size, centerX - size / 2))
+                let newOriginY = max(0, min(1.0 - size, centerY - size / 2))
+                self.viewportRect = CGRect(x: newOriginX, y: newOriginY, width: size, height: size)
+            }
+            .store(in: &cancellables)
     }
     
     private func setupNegativeFilmSync() {
@@ -1177,6 +1194,22 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         activeLayer.repairArrows.removeAll()
         variant.isModified = true
         print("[AdjustmentToolController] Reset retouching for \(activeLayer.name)")
+    }
+
+    public func resetCrop() {
+        self.cropRect = .zero
+        // Also reset ratio index to Unconstrained if needed, or keep it. 
+        // Capture One usually keeps the ratio but clears the box.
+        self.commitChanges(to: currentVariant)
+    }
+
+    public func invertCrop() {
+        let current = self.cropRect
+        guard current != .zero else { return }
+        
+        // Swap width and height
+        self.cropRect = CGRect(x: current.minX, y: current.minY, width: current.height, height: current.width)
+        self.commitChanges(to: currentVariant)
     }
 
     // MARK: - Hardware Controllers (INT-005)

@@ -21,6 +21,8 @@ public struct COViewerView: View {
     @State private var maskImage: NSImage?
     
     @State private var dragStartOrigin: CGPoint? = nil
+    @State private var activeCropZone: CropRectHitboxCalculator.InteractionZone = .none
+    @State private var cropStartRect: CGRect = .zero
     
     public var body: some View {
         GeometryReader { geo in
@@ -31,8 +33,8 @@ public struct COViewerView: View {
                     
                     if commands.beforeAfterEnabled, let sourceImage, let renderedImage {
                         HStack(spacing: 1) {
-                            viewerImageView(sourceImage)
-                            viewerImageView(renderedImage)
+                            viewerImageView(sourceImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
+                            viewerImageView(renderedImage, size: CGSize(width: geo.size.width / 2, height: geo.size.height))
                         }
                         .overlay(alignment: .topLeading) {
                             ViewerModeBadge(text: "Before / After")
@@ -45,7 +47,7 @@ public struct COViewerView: View {
                         }
                     } else if let nsImage = renderedImage {
                         ZStack {
-                            viewerImageView(nsImage)
+                            viewerImageView(nsImage, size: geo.size)
                             
                             // Mask Overlay (Red tint)
                             if let mask = maskImage {
@@ -73,12 +75,20 @@ public struct COViewerView: View {
                             if let points = adjustmentController?.keystonePoints {
                                 KeystoneOverlayView(points: points)
                             }
+                            
+                            // Crop Overlay (UI-204)
+                            if let controller = adjustmentController, commands.selectedCursorToolID == "Crop" {
+                                CropOverlayView(controller: controller, viewerSize: geo.size)
+                            }
                         }
                         .onHover { inside in
                             if inside {
                                 let tool = commands.selectedCursorToolID
                                 if tool == "Pan" {
                                     NSCursor.openHand.push()
+                                } else if tool == "Crop" {
+                                    // Logic for dynamic cursor based on crop zones could be added here
+                                    NSCursor.crosshair.push()
                                 } else if tool == "Rotate" {
                                     // Simulation of rotateFreehandCursor
                                     NSCursor.crosshair.push() 
@@ -104,6 +114,17 @@ public struct COViewerView: View {
                                 Button("Brush Settings...") {
                                     // Normally this would spawn a popover at cursor location, for now placeholder
                                     print("[CaptureOneUI] Show Brush Settings popover")
+                                }
+                            }
+                        }
+                        .onTapGesture(count: 2) {
+                            if let controller = adjustmentController {
+                                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                    if controller.zoomLevel > 1.0 {
+                                        controller.zoomLevel = 1.0 // Fit to screen
+                                    } else {
+                                        controller.zoomLevel = 2.0 // 100% Zoom (assuming 1.0 is Fit and 2.0 is roughly 100% depending on image size)
+                                    }
                                 }
                             }
                         }
@@ -135,28 +156,78 @@ public struct COViewerView: View {
                                                 adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
                                             }
                                         }
-                                    } else if commands.selectedCursorToolID == "Rotate" {
-                                        // Rotate Freehand Logic (UI-204 Parity)
-                                        let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
-                                        let startPoint = gesture.startLocation
-                                        let currentPoint = gesture.location
+                                    } else if commands.selectedCursorToolID == "Crop" {
+                                        let controller = adjustmentController ?? AdjustmentToolController.shared
                                         
-                                        // Calculate angles relative to center
-                                        let angleStart = atan2(startPoint.y - center.y, startPoint.x - center.x)
-                                        let angleCurrent = atan2(currentPoint.y - center.y, currentPoint.x - center.x)
-                                        
-                                        let deltaAngle = (angleCurrent - angleStart) * 180.0 / .pi
-                                        
-                                        // Update controller (incremental update)
-                                        if let controller = adjustmentController {
-                                            controller.rotationAngle += Double(deltaAngle) * 0.1 // Scaled for smoother control
+                                        if activeCropZone == .none {
+                                            // Initialize interaction
+                                            let denormalized = CGRect(x: controller.cropRect.minX * geo.size.width,
+                                                                      y: controller.cropRect.minY * geo.size.height,
+                                                                      width: controller.cropRect.width * geo.size.width,
+                                                                      height: controller.cropRect.height * geo.size.height)
+                                            activeCropZone = CropRectHitboxCalculator.sharedInstance.interactionZone(at: gesture.startLocation, for: denormalized)
+                                            cropStartRect = controller.cropRect
+                                            
+                                            if controller.cropRect == .zero {
+                                                activeCropZone = .resizeBottomRight
+                                                cropStartRect = CGRect(x: gesture.startLocation.x / geo.size.width,
+                                                                       y: gesture.startLocation.y / geo.size.height,
+                                                                       width: 0, height: 0)
+                                            }
                                         }
+                                        
+                                        let dx = gesture.translation.width / geo.size.width
+                                        let dy = gesture.translation.height / geo.size.height
+                                        
+                                        var newRect = cropStartRect
+                                        switch activeCropZone {
+                                        case .move:
+                                            newRect.origin.x += dx
+                                            newRect.origin.y += dy
+                                        case .resizeBottomRight:
+                                            newRect.size.width += dx
+                                            newRect.size.height += dy
+                                        case .resizeTopLeft:
+                                            newRect.origin.x += dx
+                                            newRect.origin.y += dy
+                                            newRect.size.width -= dx
+                                            newRect.size.height -= dy
+                                        // ... other zones could be implemented here
+                                        default:
+                                            // Fallback for simple implementation: update size from start
+                                            if controller.cropRect == .zero || activeCropZone == .none {
+                                                newRect.size.width = dx
+                                                newRect.size.height = dy
+                                            }
+                                        }
+                                        
+                                        // Constrain to image bounds (0...1)
+                                        newRect.origin.x = max(0, min(1.0, newRect.origin.x))
+                                        newRect.origin.y = max(0, min(1.0, newRect.origin.y))
+                                        newRect.size.width = max(0, min(1.0 - newRect.origin.x, newRect.size.width))
+                                        newRect.size.height = max(0, min(1.0 - newRect.origin.y, newRect.size.height))
+                                        
+                                        controller.cropRect = newRect
+                                        
+                                        // Handle rotation if in rotate zone
+                                        if activeCropZone == .rotateTopLeft || activeCropZone == .rotateTopRight ||
+                                           activeCropZone == .rotateBottomLeft || activeCropZone == .rotateBottomRight {
+                                            performRotation(gesture: gesture, in: geo.size)
+                                        }
+                                        
+                                    } else if commands.selectedCursorToolID == "Rotate" {
+                                        performRotation(gesture: gesture, in: geo.size)
                                     }
                                 }
                                 .onEnded { gesture in
                                     if commands.selectedCursorToolID == "Pan" {
                                         dragStartOrigin = nil
                                         NSCursor.pop()
+                                    }
+                                    
+                                    if commands.selectedCursorToolID == "Crop" {
+                                        activeCropZone = .none
+                                        cropStartRect = .zero
                                     }
                                     
                                     let toolID = commands.selectedCursorToolID
@@ -244,12 +315,42 @@ public struct COViewerView: View {
         }
     }
 
+    private func performRotation(gesture: DragGesture.Value, in size: CGSize) {
+        let center = CGPoint(x: size.width / 2, y: size.height / 2)
+        let startPoint = gesture.startLocation
+        let currentPoint = gesture.location
+        
+        // Calculate angles relative to center
+        let angleStart = atan2(startPoint.y - center.y, startPoint.x - center.x)
+        let angleCurrent = atan2(currentPoint.y - center.y, currentPoint.x - center.x)
+        
+        let deltaAngle = (angleCurrent - angleStart) * 180.0 / .pi
+        
+        // Update controller (incremental update)
+        if let controller = adjustmentController {
+            controller.rotationAngle += Double(deltaAngle) * 0.1 // Scaled for smoother control
+        }
+    }
+
     @ViewBuilder
-    private func viewerImageView(_ image: NSImage) -> some View {
-        Image(nsImage: image)
+    private func viewerImageView(_ nsImage: NSImage, size: CGSize) -> some View {
+        let zoom = adjustmentController?.zoomLevel ?? 1.0
+        let viewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+        
+        // Offset logic:
+        // viewport.origin is the normalized top-left of the visible area.
+        // We want to shift the image so that this point is at the top-left of the viewer.
+        // Since scaleEffect scales from the center, we calculate the shift from center.
+        
+        let offsetX = (0.5 - (viewport.origin.x + viewport.width / 2)) * size.width * zoom
+        let offsetY = (0.5 - (viewport.origin.y + viewport.height / 2)) * size.height * zoom
+
+        Image(nsImage: nsImage)
             .resizable()
-            .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
             .aspectRatio(contentMode: .fit)
+            .scaleEffect(zoom)
+            .offset(x: offsetX, y: offsetY)
+            .clipped()
     }
 
     @ViewBuilder

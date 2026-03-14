@@ -69,6 +69,24 @@ public final class AppCommandCenter: ObservableObject {
         self.batchQueue = batchQueue
         
         // Register shortcuts
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.select") { [weak self] in
+            self?.selectedCursorToolID = "Select"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.pan") { [weak self] in
+            self?.selectedCursorToolID = "Pan"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.loupe") { [weak self] in
+            self?.selectedCursorToolID = "Loupe"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.crop") { [weak self] in
+            self?.selectedCursorToolID = "Crop"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.rotate") { [weak self] in
+            self?.selectedCursorToolID = "Rotate"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.keystone") { [weak self] in
+            self?.selectedCursorToolID = "Keystone"
+        }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.heal") { [weak self] in
             self?.selectedCursorToolID = "Heal"
         }
@@ -229,6 +247,11 @@ public final class AppCommandCenter: ObservableObject {
         guard let variant = adjustmentController.currentVariant else { return }
         adjustmentController.rotationAngle += 90
         print("[Command] Rotated Right: \(variant.image?.displayName ?? "")")
+    }
+    
+    public func applyCrop() {
+        self.selectedCursorToolID = "Select"
+        print("[AppCommandCenter] Crop Applied")
     }
     
     public func flipHorizontal() {

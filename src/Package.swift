@@ -24,7 +24,7 @@ let package = Package(
             dependencies: ["AppCoreShared", "DataCore", "ImageCore", "CaptureOneUI", "Cloud"],
             path: "Sources/CaptureOneApp",
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .target(
@@ -32,7 +32,7 @@ let package = Package(
             dependencies: [],
             path: "Sources/Cloud",
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .target(
@@ -40,7 +40,7 @@ let package = Package(
             dependencies: [],
             path: "Sources/DataCore",
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .target(
@@ -49,7 +49,7 @@ let package = Package(
             path: "Sources/AppCoreShared",
             resources: [.copy("Resources")],
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .target(
@@ -58,7 +58,7 @@ let package = Package(
             path: "Sources/ImageCore",
             resources: [.copy("Resources")],
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .target(
@@ -66,7 +66,7 @@ let package = Package(
             dependencies: ["AppCoreShared", "ImageCore", "DataCore"],
             path: "Sources/CaptureOneUI",
             plugins: [
-                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint")
             ]
         ),
         .testTarget(

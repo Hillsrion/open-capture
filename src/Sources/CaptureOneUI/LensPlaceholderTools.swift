@@ -24,16 +24,37 @@ public struct CropToolView: View {
                         Text("Unconstrained").tag(0)
                         Text("Original").tag(1)
                         Text("1x1 (Square)").tag(2)
-                        Text("4x3").tag(3)
-                        Text("16x9").tag(4)
-                        Text("3x2").tag(5)
-                        Text("5x4").tag(6)
-                        Text("7x5").tag(7)
+                        Text("4x5 (8x10)").tag(3)
+                        Text("4x3").tag(4)
+                        Text("16x9").tag(5)
+                        Text("3x2").tag(6)
+                        Text("5x4").tag(7)
+                        Text("7x5").tag(8)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
                     .frame(width: 120)
                 }
+                
+                HStack(spacing: 8) {
+                    Button(action: { controller.resetCrop() }) {
+                        Text("Reset")
+                            .font(.system(size: 11))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 4)
+                            .background(Color.white.opacity(0.05))
+                            .cornerRadius(4)
+                    }
+                    Button(action: { controller.invertCrop() }) {
+                        Text("Invert")
+                            .font(.system(size: 11))
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 4)
+                            .background(Color.white.opacity(0.05))
+                            .cornerRadius(4)
+                    }
+                }
+                .buttonStyle(.plain)
 
                 HStack {
                     Text("Grid")

@@ -9,6 +9,7 @@ public class ShortcutInputHandler {
     private var keyDownMonitor: Any?
     private var keyUpMonitor: Any?
     private var scrollMonitor: Any?
+    private var flagsMonitor: Any?
     
     // Speed Edit state
     private var activeSpeedEditKey: String? = nil
@@ -23,17 +24,18 @@ public class ShortcutInputHandler {
         // Prevent duplicate monitors
         stopMonitoring()
         
-        keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
-            if event.modifierFlags.contains(.shift) {
-                AdjustmentToolController.shared.multiViewPanning = true
+        flagsMonitor = NSEvent.addLocalMonitorForEvents(matching: .flagsChanged) { [weak self] event in
+            Task { @MainActor in
+                AdjustmentToolController.shared.multiViewPanning = event.modifierFlags.contains(.shift)
             }
+            return event
+        }
+        
+        keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             return self?.handleKeyDown(event) ?? event
         }
         
         keyUpMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyUp) { [weak self] event in
-            if !event.modifierFlags.contains(.shift) {
-                AdjustmentToolController.shared.multiViewPanning = false
-            }
             return self?.handleKeyUp(event) ?? event
         }
         
@@ -58,17 +60,25 @@ public class ShortcutInputHandler {
             return nil
         }
         
+        // Apply Crop (Enter)
+        if chars == "\r" {
+            Task { @MainActor in
+                AppCommandCenter.shared.applyCrop()
+            }
+            return nil
+        }
+        
         // Speed Edit Keys (Default Capture One mapping)
         if !event.isARepeat {
             switch chars {
-            case "q": activeSpeedEditKey = "Exposure"; return nil
-            case "w": activeSpeedEditKey = "Contrast"; return nil
-            case "e": activeSpeedEditKey = "Brightness"; return nil
-            case "r": activeSpeedEditKey = "Saturation"; return nil
-            case "a": activeSpeedEditKey = "Highlights"; return nil
-            case "s": activeSpeedEditKey = "Shadows"; return nil
-            case "d": activeSpeedEditKey = "Whites"; return nil
-            case "f": activeSpeedEditKey = "Blacks"; return nil
+            case "q": activeSpeedEditKey = "Exposure"
+            case "w": activeSpeedEditKey = "Contrast"
+            case "e": activeSpeedEditKey = "Brightness"
+            case "r": activeSpeedEditKey = "Saturation"
+            case "a": activeSpeedEditKey = "Highlights"
+            case "s": activeSpeedEditKey = "Shadows"
+            case "d": activeSpeedEditKey = "Whites"
+            case "f": activeSpeedEditKey = "Blacks"
             default: break
             }
         }
@@ -81,7 +91,7 @@ public class ShortcutInputHandler {
         )
         
         if ShortcutManager.shared.handleShortcut(shortcut) {
-            return nil // Handled
+            return nil // Handled by ShortcutManager
         }
         
         return event
@@ -149,17 +159,22 @@ public class ShortcutInputHandler {
             print("Speed Edit: \(speedEditKey) adjusted by \(delta)")
             return nil // Consume scroll event
         } else {
-            // Scroll wheel Zoom logic (linked to Pan tool or general viewer focus)
-            // deltaY > 0: Scroll Up -> Zoom In
-            let zoomSensitivity: Double = 0.05
-            let currentZoom = controller.zoomLevel
-            let newZoom = max(0.1, min(4.0, currentZoom + (Double(delta) * zoomSensitivity)))
+            // Scroll wheel Zoom logic
+            // In Capture One, scroll zooms when Pan tool is active OR Option is held
+            let isOptionHeld = event.modifierFlags.contains(.option)
+            let isPanTool = AppCommandCenter.shared.selectedCursorToolID == "Pan"
             
-            if newZoom != currentZoom {
-                Task { @MainActor in
-                    controller.zoomLevel = newZoom
+            if isPanTool || isOptionHeld {
+                let zoomSensitivity: Double = 0.05
+                let currentZoom = controller.zoomLevel
+                let newZoom = max(0.1, min(4.0, currentZoom + (Double(delta) * zoomSensitivity)))
+                
+                if newZoom != currentZoom {
+                    Task { @MainActor in
+                        controller.zoomLevel = newZoom
+                    }
+                    return nil // Consume scroll event
                 }
-                return nil // Consume scroll event
             }
         }
         
@@ -170,5 +185,6 @@ public class ShortcutInputHandler {
         if let km = keyDownMonitor { NSEvent.removeMonitor(km) }
         if let ku = keyUpMonitor { NSEvent.removeMonitor(ku) }
         if let sm = scrollMonitor { NSEvent.removeMonitor(sm) }
+        if let fm = flagsMonitor { NSEvent.removeMonitor(fm) }
     }
 }
