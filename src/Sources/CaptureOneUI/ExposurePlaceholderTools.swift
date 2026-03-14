@@ -122,24 +122,6 @@ public struct DehazeToolView: View {
         COToolSection("Dehaze", toolID: "Dehaze") {
             VStack(spacing: 8) {
                 HStack {
-                    Spacer()
-                    // Action Menu
-                    Menu {
-                        Button("Reset") {
-                            controller.resetDehaze()
-                        }
-                        Button("Copy to clipboard") {
-                            // Copy logic
-                        }
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                            .font(.system(size: 14))
-                    }
-                    .menuStyle(.borderlessButton)
-                    .frame(width: 20)
-                }
-
-                HStack {
                     Text("Amount")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)

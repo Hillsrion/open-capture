@@ -173,6 +173,8 @@ public struct StyleInspectorTool: View {
 /// Reconstructed high-fidelity Histogram tool (ENG-204).
 /// Simulates ICHistogramRenderer with RGB and Luma channels.
 public struct HistogramToolView: View {
+    @ObservedObject var controller = AdjustmentToolController.shared
+    @ObservedObject var commands = AppCommandCenter.shared
     @State private var showChannels: Bool = true
     
     public init() {}
@@ -192,23 +194,31 @@ public struct HistogramToolView: View {
                 
                 // Dynamic Histogram Canvas
                 Canvas { context, size in
+                    let shift = CGFloat(controller.exposure * 10.0 + Float(controller.brightness) * 0.5)
+                    
                     // Simulate Luma Channel
                     var lumaPath = Path()
                     lumaPath.move(to: CGPoint(x: 0, y: size.height))
-                    lumaPath.addCurve(to: CGPoint(x: size.width, y: size.height), control1: CGPoint(x: size.width * 0.3, y: size.height * 0.1), control2: CGPoint(x: size.width * 0.7, y: size.height * 0.4))
+                    lumaPath.addCurve(to: CGPoint(x: size.width, y: size.height), 
+                                      control1: CGPoint(x: size.width * 0.3 + shift, y: size.height * 0.1), 
+                                      control2: CGPoint(x: size.width * 0.7 + shift, y: size.height * 0.4))
                     context.fill(lumaPath, with: .color(Color.gray.opacity(0.4)))
                     
                     if showChannels {
                         // Simulate Red Channel
                         var redPath = Path()
                         redPath.move(to: CGPoint(x: 0, y: size.height))
-                        redPath.addCurve(to: CGPoint(x: size.width, y: size.height), control1: CGPoint(x: size.width * 0.2, y: size.height * 0.2), control2: CGPoint(x: size.width * 0.8, y: size.height * 0.6))
+                        redPath.addCurve(to: CGPoint(x: size.width, y: size.height), 
+                                         control1: CGPoint(x: size.width * 0.2 + shift, y: size.height * 0.2), 
+                                         control2: CGPoint(x: size.width * 0.8 + shift, y: size.height * 0.6))
                         context.stroke(redPath, with: .color(Color.red.opacity(0.8)), lineWidth: 1)
                         
                         // Simulate Blue Channel
                         var bluePath = Path()
                         bluePath.move(to: CGPoint(x: 0, y: size.height))
-                        bluePath.addCurve(to: CGPoint(x: size.width, y: size.height), control1: CGPoint(x: size.width * 0.4, y: size.height * 0.3), control2: CGPoint(x: size.width * 0.6, y: size.height * 0.2))
+                        bluePath.addCurve(to: CGPoint(x: size.width, y: size.height), 
+                                          control1: CGPoint(x: size.width * 0.4 + shift, y: size.height * 0.3), 
+                                          control2: CGPoint(x: size.width * 0.6 + shift, y: size.height * 0.2))
                         context.stroke(bluePath, with: .color(Color.blue.opacity(0.8)), lineWidth: 1)
                     }
                 }
@@ -221,20 +231,20 @@ public struct HistogramToolView: View {
                 
                 // Shadow & Highlight Warning Toggles
                 HStack {
-                    Button(action: { /* Toggle Shadow Warning */ }) {
+                    Button(action: { commands.showExposureWarning.toggle() }) {
                         Image(systemName: "triangle.fill")
                             .font(.system(size: 8))
                             .rotationEffect(.degrees(180))
-                            .foregroundColor(.blue)
+                            .foregroundColor(commands.showExposureWarning ? .blue : .gray)
                     }
                     .buttonStyle(.plain)
                     
                     Spacer()
                     
-                    Button(action: { /* Toggle Highlight Warning */ }) {
+                    Button(action: { commands.showExposureWarning.toggle() }) {
                         Image(systemName: "triangle.fill")
                             .font(.system(size: 8))
-                            .foregroundColor(.red)
+                            .foregroundColor(commands.showExposureWarning ? .red : .gray)
                     }
                     .buttonStyle(.plain)
                 }

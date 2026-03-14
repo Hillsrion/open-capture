@@ -96,6 +96,14 @@ public struct COToolSection<Content: View>: View {
                         }
                     }
 
+                    toolHeaderButton(systemName: "arrow.up.doc") {
+                        commands.copyAdjustments(toolID)
+                    }
+
+                    toolHeaderButton(systemName: "arrow.down.doc") {
+                        commands.pasteAdjustmentsForTool(toolID)
+                    }
+
                     toolHeaderButton(systemName: "arrow.uturn.backward") {
                         commands.resetTool(toolID)
                     }
