@@ -84,7 +84,14 @@ public class RawImageEngine {
         
         // 2. Generate/Retrieve the Mask (Simulation)
         // In original, this would be a high-res grayscale buffer from IC_LocalAdjustCfg
-        let mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
+        let mask: CIImage
+        if let realData = layer.maskData {
+            // NEW: Use real AI-generated mask data
+            mask = createCIImage(from: realData, size: currentImage.extent.size)
+        } else {
+            // Fallback to simulated masks
+            mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
+        }
         
         // 3. Blend using the mask and layer opacity
         if let blendFilter = CIFilter(name: "CIBlendWithAlphaMask") {
@@ -104,6 +111,23 @@ public class RawImageEngine {
         }
         
         return currentImage
+    }
+    
+    private func createCIImage(from maskData: [Float], size: CGSize) -> CIImage {
+        let width = Int(size.width)
+        let height = Int(size.height)
+        
+        // Ensure data size matches expected extent (simplified check)
+        guard maskData.count >= width * height else {
+            return CIImage.empty()
+        }
+        
+        let data = Data(bytes: maskData, count: maskData.count * MemoryLayout<Float>.size)
+        return CIImage(bitmapData: data,
+                       bytesPerRow: width * MemoryLayout<Float>.size,
+                       size: size,
+                       format: .f, // Float format for grayscale
+                       colorSpace: nil)
     }
     
     private func createSimulationMask(for layerId: UInt32, extent: CGRect) -> CIImage {

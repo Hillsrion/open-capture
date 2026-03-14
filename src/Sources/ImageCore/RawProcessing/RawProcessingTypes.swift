@@ -121,12 +121,14 @@ public struct IC_LocalAdjustCfg {
     public var settings: IC_LocalAdjustSettings
     public var opacity: Float
     public var isVisible: Bool
+    public var maskData: [Float]? // Reconstructed: Pointer/Buffer to the actual mask
     
     public init(layerId: UInt32 = 0) {
         self.layerId = layerId
         self.settings = IC_LocalAdjustSettings()
         self.opacity = 1.0
         self.isVisible = true
+        self.maskData = nil
     }
 }
 

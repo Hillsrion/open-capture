@@ -20,6 +20,11 @@ public class LayerBase: BaseObject, ICMaskableLayer {
     public var isVisible: Bool
     public var type: LayerType
     
+    // MARK: - Mask Data (AI-001)
+    /// The grayscale mask data for this layer.
+    /// In original C1, this is an ICMask object pointing to a GPU texture.
+    public var mask: [Float]?
+    
     // MARK: - Repair Arrows (UI-006)
     public var repairArrows: [RepairArrow] = []
     

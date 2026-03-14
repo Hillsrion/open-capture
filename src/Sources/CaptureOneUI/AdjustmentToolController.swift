@@ -527,6 +527,31 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         refreshToolValues()
     }
     
+    // MARK: - AI Masking Actions (AI-001)
+    
+    /// Triggers the AI Subject Masking for the currently active layer.
+    public func runSubjectMasking() {
+        guard let variant = currentVariant, 
+              let activeLayer = variant.activeLayer as? LayerBase,
+              let image = variant.image else { return }
+        
+        print("[AI] Requesting Subject Mask for layer: \(activeLayer.name)")
+        
+        SubjectMaskingEngine.shared.selectSubject(for: image) { [weak self] mask in
+            guard let self = self, let mask = mask else { return }
+            
+            // 1. Store the mask in the layer
+            activeLayer.mask = mask
+            
+            // 2. Trigger UI Refresh
+            DispatchQueue.main.async {
+                self.objectWillChange.send()
+                self.refreshToolValues() // Re-develop with new mask
+                print("[AI] Subject Mask applied to layer: \(activeLayer.name)")
+            }
+        }
+    }
+    
     // MARK: - RAW Engine Bridge (IMG-003)
     
     /// Converts the current UI adjustment state into a low-level IC_ProcessSettings object.
@@ -557,6 +582,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                     var localCfg = IC_LocalAdjustCfg(layerId: UInt32(index))
                     localCfg.opacity = Float(layer.opacity / 100.0)
                     localCfg.isVisible = true // In original, checked via ZVISIBLE
+                    localCfg.maskData = (layer as? LayerBase)?.mask // NEW: Pass the AI mask
                     
                     // Note: Here we would map layer-specific sliders to localCfg.settings
                     // localCfg.settings.exposure = ...
