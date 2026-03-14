@@ -533,7 +533,24 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func resetAdjustments() {
-        adjustmentController.resetToNeutral()
+        let isAltHeld = NSEvent.modifierFlags.contains(.option)
+        
+        // Safety Modal Logic (UI-806)
+        if !editSelectedOnly {
+            let alert = NSAlert()
+            alert.messageText = "Reset Adjustments"
+            alert.informativeText = "Are you sure you want to reset all adjustments on the selected images?"
+            alert.addButton(withTitle: "Reset All")
+            alert.addButton(withTitle: "Cancel")
+            alert.alertStyle = .warning
+            
+            if alert.runModal() == .alertSecondButtonReturn {
+                return // User cancelled
+            }
+        }
+        
+        adjustmentController.resetToNeutral(includeComposition: !isAltHeld)
+        print("[AppCommandCenter] Global Reset (Include Composition: \(!isAltHeld))")
     }
 
     public func showTips() {
@@ -744,6 +761,14 @@ public final class AppCommandCenter: ObservableObject {
             adjustmentController.nrDetails = 50
             adjustmentController.nrColor = 50
             adjustmentController.nrSinglePixel = 0
+        case "Vignetting":
+            adjustmentController.vignettingAmount = 0
+            adjustmentController.vignettingMethod = 0
+        case "Dehaze":
+            adjustmentController.dehazeAmount = 0
+            adjustmentController.dehazeColor = .gray
+        case "Crop":
+            adjustmentController.cropRect = .zero
         default:
             adjustmentController.resetToNeutral()
         }

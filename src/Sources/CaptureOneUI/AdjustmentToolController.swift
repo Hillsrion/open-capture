@@ -537,13 +537,39 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         print("[Adjustment] COStyle applied: \(style.name)")
     }
     
-    public func resetToNeutral() {
+    public func resetToNeutral(includeComposition: Bool = true) {
         self.exposure = 0.0
         self.contrast = 0.0
         self.brightness = 0.0
         self.saturation = 0.0
         self.kelvin = 5000.0
         self.tint = 0.0
+        
+        self.highlights = 0.0
+        self.shadows = 0.0
+        self.whites = 0.0
+        self.blacks = 0.0
+        
+        self.clarityAmount = 0.0
+        self.structureAmount = 0.0
+        
+        self.sharpAmount = 100.0
+        self.sharpRadius = 0.8
+        self.sharpThreshold = 1.0
+        
+        self.nrLuminance = 50.0
+        self.nrDetails = 50.0
+        self.nrColor = 50.0
+        
+        self.vignettingAmount = 0.0
+        self.dehazeAmount = 0.0
+        
+        if includeComposition {
+            self.cropRect = .zero
+            self.rotationAngle = 0.0
+        }
+        
+        self.commitChanges(to: currentVariant)
     }
     
     private func applyAdjustmentValue(_ value: Any?, forKey key: String) {
