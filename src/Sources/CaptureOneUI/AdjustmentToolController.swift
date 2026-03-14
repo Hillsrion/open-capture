@@ -1241,6 +1241,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         // and copy the focusPoint property.
     }
 
+    public func resetVignetting() {
+        self.vignettingAmount = 0.0
+        self.vignettingMethod = 0
+        self.commitChanges(to: currentVariant)
+    }
+
     // MARK: - Hardware Controllers (INT-005)
     
     public func handleHardwareAction(actionID: String, delta: Double) {

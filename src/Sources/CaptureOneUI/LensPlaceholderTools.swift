@@ -400,3 +400,63 @@ public struct GuidesToolView: View {
         }
     }
 }
+
+// MARK: - Vignetting (UI-202)
+public struct VignettingToolView: View {
+    @ObservedObject var controller: AdjustmentToolController
+    
+    public init(controller: AdjustmentToolController) {
+        self.controller = controller
+    }
+    
+    public var body: some View {
+        COToolSection("Vignetting", toolID: "Vignetting") {
+            VStack(spacing: 8) {
+                HStack {
+                    Spacer()
+                    // Action Menu
+                    Menu {
+                        Button("Reset") {
+                            controller.resetVignetting()
+                        }
+                        Button("Copy to clipboard") {
+                            // Copy logic
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .font(.system(size: 14))
+                    }
+                    .menuStyle(.borderlessButton)
+                    .frame(width: 20)
+                }
+
+                HStack {
+                    Text("Method")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    Spacer()
+                    Picker("", selection: $controller.vignettingMethod) {
+                        Text("Circular").tag(0)
+                        Text("Elliptic").tag(1)
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .frame(width: 100)
+                }
+                
+                HStack {
+                    Text("Amount")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        .frame(width: 60, alignment: .leading)
+                    Slider(value: $controller.vignettingAmount, in: -4...4)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                    Text(String(format: "%.1f", controller.vignettingAmount))
+                        .font(.system(size: 11, design: .monospaced))
+                        .frame(width: 30, alignment: .trailing)
+                }
+            }
+            .padding(.vertical, 4)
+        }
+    }
+}
