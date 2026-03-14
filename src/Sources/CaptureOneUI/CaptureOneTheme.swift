@@ -196,6 +196,13 @@ public struct COToolSection<Content: View>: View {
             Button("Remove Tool") {
                 workspaceManager.removeTool(toolID)
             }
+            
+            if toolID == "ColorEditor" {
+                Divider()
+                Button("Create Mask from Selection") {
+                    // Logic to turn color range into a layer mask
+                }
+            }
         } label: {
             Image(systemName: "ellipsis")
                 .font(.system(size: 10, weight: .bold))

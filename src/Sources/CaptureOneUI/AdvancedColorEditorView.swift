@@ -102,12 +102,43 @@ public struct AdvancedColorEditorView: View {
                 .font(.system(size: 10))
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
             
+            // Color Wheel Simulation
+            ZStack {
+                Circle()
+                    .stroke(LinearGradient(gradient: Gradient(colors: [.red, .yellow, .green, .cyan, .blue, .magenta, .red]), startPoint: .top, endPoint: .bottom), lineWidth: 20)
+                    .frame(width: 120, height: 120)
+                
+                // Active Slice (Simulation)
+                Path { path in
+                    path.addArc(center: CGPoint(x: 60, y: 60), radius: 60, startAngle: .degrees(-30), endAngle: .degrees(30), clockwise: false)
+                }
+                .stroke(Color.white, lineWidth: 2)
+                .frame(width: 120, height: 120)
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.vertical, 8)
+
             // Mock Color Range List
             VStack(spacing: 1) {
                 colorRangeRow(name: "Selected Range", color: .red, isActive: true)
             }
             .background(Color.black.opacity(0.2))
             .cornerRadius(4)
+            
+            HStack {
+                Toggle("View selected color range", isOn: .constant(false))
+                    .font(.system(size: 10))
+                    .toggleStyle(CheckboxToggleStyle())
+                
+                Spacer()
+                
+                Button(action: { /* Invert logic */ }) {
+                    Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right")
+                        .font(.system(size: 10))
+                }
+                .buttonStyle(.bordered)
+                .help("Invert Selection")
+            }
             
             VStack(spacing: 6) {
                 colorSlider(label: "Hue", value: .constant(5.0), range: -30...30)
