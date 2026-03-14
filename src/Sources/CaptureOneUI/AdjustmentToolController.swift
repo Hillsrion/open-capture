@@ -1257,6 +1257,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.commitChanges(to: currentVariant)
     }
 
+    public func autoLevels() {
+        print("[AdjustmentToolController] Auto Levels triggered.")
+        // Simulation: adjust points to standard 0-255 range if needed
+        self.commitChanges(to: currentVariant)
+    }
+
     public func commitLinearGradient(_ gradient: LinearGradientMask) {
         guard let variant = currentVariant, let activeLayer = variant.activeLayer else { return }
         activeLayer.linearGradient = gradient

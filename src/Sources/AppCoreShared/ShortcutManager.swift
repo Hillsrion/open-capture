@@ -68,9 +68,10 @@ public class ShortcutManager: ObservableObject {
             KeyboardShortcut(key: "3", modifiers: [], actionID: "com.captureone.rate.3"),
             KeyboardShortcut(key: "4", modifiers: [], actionID: "com.captureone.rate.4"),
             KeyboardShortcut(key: "5", modifiers: [], actionID: "com.captureone.rate.5"),
-            KeyboardShortcut(key: "g", modifiers: [], actionID: "com.captureone.browser.grid"),
+            KeyboardShortcut(key: "g", modifiers: [], actionID: "com.captureone.tool.linearGradient"),
+            KeyboardShortcut(key: "m", modifiers: [], actionID: "com.captureone.mask.toggleVisibility"),
+            KeyboardShortcut(key: "v", modifiers: [.command, .shift], actionID: "com.captureone.applyAdjustments"),
             KeyboardShortcut(key: "f", modifiers: [], actionID: "com.captureone.browser.filmstrip"),
-            KeyboardShortcut(key: "l", modifiers: [], actionID: "com.captureone.tool.linearGradient"),
             KeyboardShortcut(key: "t", modifiers: [], actionID: "com.captureone.tool.radialGradient"),
             KeyboardShortcut(key: "h", modifiers: [], actionID: "com.captureone.tool.pan"),
             KeyboardShortcut(key: "v", modifiers: [], actionID: "com.captureone.tool.select"),
@@ -80,7 +81,8 @@ public class ShortcutManager: ObservableObject {
             KeyboardShortcut(key: "k", modifiers: [], actionID: "com.captureone.tool.keystone"),
             KeyboardShortcut(key: "y", modifiers: [], actionID: "com.captureone.beforeAfter"),
             KeyboardShortcut(key: "q", modifiers: [], actionID: "com.captureone.tool.heal"),
-            KeyboardShortcut(key: "s", modifiers: [], actionID: "com.captureone.tool.clone")
+            KeyboardShortcut(key: "s", modifiers: [], actionID: "com.captureone.tool.clone"),
+            KeyboardShortcut(key: "d", modifiers: [], actionID: "com.captureone.tool.directColorEditor")
         ]
         return ShortcutSet(name: "Default", shortcuts: shortcuts)
     }
@@ -88,7 +90,7 @@ public class ShortcutManager: ObservableObject {
     public static func createLightroomSet() -> ShortcutSet {
         let shortcuts = [
             KeyboardShortcut(key: "e", modifiers: [], actionID: "com.captureone.library.export"),
-            KeyboardShortcut(key: "d", modifiers: [], actionID: "com.captureone.develop"),
+            KeyboardShortcut(key: "d", modifiers: [], actionID: "com.captureone.tool.directColorEditor"),
             KeyboardShortcut(key: "r", modifiers: [], actionID: "com.captureone.crop")
         ]
         return ShortcutSet(name: "Lightroom Legacy", shortcuts: shortcuts)

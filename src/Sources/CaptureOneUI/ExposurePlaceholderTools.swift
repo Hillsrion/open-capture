@@ -98,7 +98,7 @@ public struct LevelsToolView: View {
                     )
                 
                 HStack {
-                    Button("Auto") { }
+                    Button("Auto") { controller.autoLevels() }
                         .buttonStyle(.bordered)
                         .controlSize(.small)
                     Spacer()

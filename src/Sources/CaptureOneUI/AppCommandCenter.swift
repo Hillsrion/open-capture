@@ -95,11 +95,20 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.clone") { [weak self] in
             self?.selectedCursorToolID = "Clone"
         }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.directColorEditor") { [weak self] in
+            self?.selectedCursorToolID = "DirectColorEditor"
+        }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.linearGradient") { [weak self] in
             self?.selectedCursorToolID = "DrawLinearGradient"
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.radialGradient") { [weak self] in
             self?.selectedCursorToolID = "DrawRadialGradient"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.mask.toggleVisibility") { [weak self] in
+            self?.toggleMaskVisibility()
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.applyAdjustments") { [weak self] in
+            self?.pasteAdjustments()
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.beforeAfter") { [weak self] in
             self?.beforeAfterEnabled.toggle()
@@ -140,7 +149,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func handleToolbarAction(_ itemID: String) {
         switch itemID {
-        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient":
+        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor":
             self.selectedCursorToolID = itemID
         case "AutoAdjust":
             presentImport()
@@ -669,6 +678,31 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
         adjustmentController.applyCOStyle(copied.style)
+    }
+
+    public func toggleMaskVisibility() {
+        // Cycle: Always (1) -> Never (0) -> Always (1)
+        // (Simplified cycle for the 'M' shortcut)
+        if adjustmentController.maskVisibilityMode == 1 {
+            adjustmentController.maskVisibilityMode = 0
+        } else {
+            adjustmentController.maskVisibilityMode = 1
+        }
+        print("[AppCommandCenter] Mask Visibility: \(adjustmentController.maskVisibilityMode == 1 ? "Always" : "Never")")
+    }
+
+    public func pasteAdjustments() {
+        // General paste: Apply from global clipboard
+        // For now, reuse the most recently copied tool adjustments as a fallback
+        if let clip = copiedToolAdjustments {
+            adjustmentController.applyCOStyle(clip.style)
+            print("[AppCommandCenter] Applied adjustments from \(clip.toolID)")
+        } else {
+            notice = AppNotice(
+                title: "Clipboard Empty",
+                message: "No adjustments found in clipboard to apply."
+            )
+        }
     }
 
     public func resetTool(_ toolID: String) {

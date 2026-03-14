@@ -37,11 +37,13 @@ public struct AdvancedColorEditorView: View {
                 
                 // Footer: Direct Color Editor & Color Picker
                 HStack {
-                    Button(action: { controller.directColorEditorEnabled.toggle() }) {
+                    Button(action: { 
+                        AppCommandCenter.shared.selectedCursorToolID = AppCommandCenter.shared.selectedCursorToolID == "DirectColorEditor" ? "Select" : "DirectColorEditor"
+                    }) {
                         Image(systemName: "cursorarrow.and.square.on.square.dashed")
                             .font(.system(size: 14))
                             .padding(6)
-                            .background(controller.directColorEditorEnabled ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.05))
+                            .background(AppCommandCenter.shared.selectedCursorToolID == "DirectColorEditor" ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.05))
                             .cornerRadius(4)
                     }
                     .buttonStyle(.plain)
@@ -49,14 +51,17 @@ public struct AdvancedColorEditorView: View {
                     
                     Spacer()
                     
-                    Button(action: { /* Pick color logic */ }) {
+                    Button(action: { 
+                        AppCommandCenter.shared.selectedCursorToolID = AppCommandCenter.shared.selectedCursorToolID == "PickColorEditor" ? "Select" : "PickColorEditor"
+                    }) {
                         Image(systemName: "eyedropper")
                             .font(.system(size: 12))
                             .padding(6)
-                            .background(Color.white.opacity(0.05))
+                            .background(AppCommandCenter.shared.selectedCursorToolID == "PickColorEditor" ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.05))
                             .cornerRadius(4)
                     }
                     .buttonStyle(.plain)
+                    .help("Color Editor Picker")
                 }
             }
             .padding(.vertical, 4)
