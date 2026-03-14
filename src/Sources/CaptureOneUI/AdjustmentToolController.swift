@@ -218,6 +218,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var exposureHighlightColor: Color = .red
     @Published public var exposureShadowColor: Color = .blue
     
+    // Masking State (UI-204)
+    @Published public var currentLinearGradient: LinearGradientMask? = nil
+    
     // Smart Adjustments (AI-002)
     
     // Soft Proofing (ENG-011)
@@ -1251,6 +1254,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.dehazeAmount = 0.0
         self.dehazeColor = .gray
         self.commitChanges(to: currentVariant)
+    }
+
+    public func commitLinearGradient(_ gradient: LinearGradientMask) {
+        guard let variant = currentVariant, let activeLayer = variant.activeLayer else { return }
+        activeLayer.linearGradient = gradient
+        variant.isModified = true
+        self.commitChanges(to: variant)
     }
 
     // MARK: - Hardware Controllers (INT-005)

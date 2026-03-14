@@ -66,6 +66,7 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "Keystone", name: "Keystone", iconName: "rectangle.distorted", type: .tool),
         COToolbarItem(id: "Heal", name: "Heal", iconName: "bandage", type: .tool),
         COToolbarItem(id: "Clone", name: "Clone", iconName: "person.2.fill", type: .tool),
+        COToolbarItem(id: "DrawLinearGradient", name: "Linear Gradient", iconName: "line.diagonal", type: .tool),
         
         // Actions
         COToolbarItem(id: "AutoAdjust", name: "Auto Adjust", iconName: "wand.and.stars"),

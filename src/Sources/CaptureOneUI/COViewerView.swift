@@ -102,6 +102,15 @@ public struct COViewerView: View {
                             AnnotationsOverlayView(annotations: annotations)
                         }
                         
+                        // Linear Gradient Overlay (UI-204)
+                        if commands.selectedCursorToolID == "DrawLinearGradient" || commands.selectedCursorToolID == "Select" {
+                            if let drawingGradient = adjustmentController?.currentLinearGradient {
+                                LinearGradientMaskOverlay(gradient: drawingGradient, viewerSize: geo.size)
+                            } else if let savedGradient = adjustmentController?.currentVariant?.activeLayer?.linearGradient {
+                                LinearGradientMaskOverlay(gradient: savedGradient, viewerSize: geo.size)
+                            }
+                        }
+                        
                         // Keystone Interactive Overlay (UI-006)
                         if let points = adjustmentController?.keystonePoints {
                             KeystoneOverlayView(points: points)
@@ -135,6 +144,8 @@ public struct COViewerView: View {
                                     NSCursor.openHand.push()
                                 } else if tool == "MoveOverlay" {
                                     NSCursor.resizeUpDown.push() // closest to move icon in std cursors
+                                } else if tool == "DrawLinearGradient" {
+                                    NSCursor.crosshair.push()
                                 } else if tool == "Crop" {
                                     // Logic for dynamic cursor based on crop zones could be added here
                                     NSCursor.crosshair.push()
@@ -284,6 +295,33 @@ public struct COViewerView: View {
                                         let controller = adjustmentController ?? AdjustmentToolController.shared
                                         // Simplified color picking: Use a dummy color or logic to simulate picking
                                         controller.dehazeColor = .cyan // Simulated picked color
+                                    } else if commands.selectedCursorToolID == "DrawLinearGradient" {
+                                        let controller = adjustmentController ?? AdjustmentToolController.shared
+                                        
+                                        var start = CGPoint(x: gesture.startLocation.x / geo.size.width, y: gesture.startLocation.y / geo.size.height)
+                                        var end = CGPoint(x: gesture.location.x / geo.size.width, y: gesture.location.y / geo.size.height)
+                                        
+                                        // Modifiers
+                                        let flags = NSEvent.modifierFlags
+                                        
+                                        if flags.contains(.shift) {
+                                            // Snap to 45 degrees
+                                            let dx = end.x - start.x
+                                            let dy = end.y - start.y
+                                            let angle = atan2(dy, dx)
+                                            let snappedAngle = round(angle / (.pi / 4)) * (.pi / 4)
+                                            let dist = sqrt(dx*dx + dy*dy)
+                                            end = CGPoint(x: start.x + cos(snappedAngle) * dist, y: start.y + sin(snappedAngle) * dist)
+                                        }
+                                        
+                                        if flags.contains(.option) { // Alt key
+                                            // Symmetrical from center (start is center)
+                                            let dx = end.x - start.x
+                                            let dy = end.y - start.y
+                                            start = CGPoint(x: start.x - dx, y: start.y - dy)
+                                        }
+                                        
+                                        controller.currentLinearGradient = LinearGradientMask(start: start, end: end)
                                     } else if commands.selectedCursorToolID == "Rotate" {
                                         performRotation(gesture: gesture, in: geo.size)
                                     }
@@ -299,6 +337,14 @@ public struct COViewerView: View {
                                     if commands.selectedCursorToolID == "Crop" {
                                         activeCropZone = .none
                                         cropStartRect = .zero
+                                    }
+                                    
+                                    if commands.selectedCursorToolID == "DrawLinearGradient" {
+                                        if let controller = adjustmentController, let gradient = controller.currentLinearGradient {
+                                            controller.commitLinearGradient(gradient)
+                                            // Keep tool active as in C1, but clear current preview (or keep it if it's editing the existing)
+                                            // controller.currentLinearGradient = nil
+                                        }
                                     }
                                     
                                     if commands.selectedCursorToolID == "FocusPicker" || commands.selectedCursorToolID == "DehazePicker" {
