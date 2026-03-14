@@ -30,17 +30,17 @@ public class FaceDetectionFP16Output: MLFeatureProvider {
     
     /// Bounding box coordinates
     public var bbox: MLMultiArray {
-        return try! provider.featureValue(for: "bbox")!.multiArrayValue!
+        return provider.featureValue(for: "bbox")!.multiArrayValue!
     }
     
     /// Confidence scores
     public var confidence: MLMultiArray {
-        return try! provider.featureValue(for: "confidence")!.multiArrayValue!
+        return provider.featureValue(for: "confidence")!.multiArrayValue!
     }
     
     /// Facial landmarks
     public var landmark: MLMultiArray {
-        return try! provider.featureValue(for: "landmark")!.multiArrayValue!
+        return provider.featureValue(for: "landmark")!.multiArrayValue!
     }
     
     public var featureNames: Set<String> {
@@ -63,9 +63,11 @@ public class FaceDetectionFP16 {
     
     /// Reconstructed URL logic pointing to the bundle.
     /// Original bundle contains -640 and -1080 variants.
-    public class func urlOfModelInThisBundle(variant: String = "640") -> URL {
-        let bundle = Bundle(for: self)
-        return bundle.url(forResource: "FaceDetectionFP16-\(variant)", withExtension: "mlmodelc")!
+    public class func urlOfModelInThisBundle(variant: String = "640") -> URL? {
+        let bundle = Bundle.module
+        let resourceName = "FaceDetectionFP16-\(variant)"
+        return bundle.url(forResource: resourceName, withExtension: "mlmodelc") ??
+               bundle.url(forResource: "Resources/\(resourceName)", withExtension: "mlmodelc")
     }
     
     public init(model: MLModel) {
@@ -73,7 +75,10 @@ public class FaceDetectionFP16 {
     }
     
     public convenience init(variant: String = "640", configuration: MLModelConfiguration = MLModelConfiguration()) throws {
-        try self.init(contentsOf: type(of: self).urlOfModelInThisBundle(variant: variant), configuration: configuration)
+        guard let url = type(of: self).urlOfModelInThisBundle(variant: variant) else {
+            throw NSError(domain: "ImageCore.AI", code: 404, userInfo: [NSLocalizedDescriptionKey: "FaceDetectionFP16-\(variant).mlmodelc not found in bundle."])
+        }
+        try self.init(contentsOf: url, configuration: configuration)
     }
     
     public convenience init(contentsOf url: URL, configuration: MLModelConfiguration = MLModelConfiguration()) throws {

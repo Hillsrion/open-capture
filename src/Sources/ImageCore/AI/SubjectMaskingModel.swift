@@ -29,31 +29,31 @@ public class SubjectMaskingFP16Output: MLFeatureProvider {
     public let provider: MLFeatureProvider
     
     public var output1: MLMultiArray {
-        return try! provider.featureValue(for: "output1")!.multiArrayValue!
+        return provider.featureValue(for: "output1")!.multiArrayValue!
     }
     
     public var output2: MLMultiArray {
-        return try! provider.featureValue(for: "output2")!.multiArrayValue!
+        return provider.featureValue(for: "output2")!.multiArrayValue!
     }
     
     public var output3: MLMultiArray {
-        return try! provider.featureValue(for: "output3")!.multiArrayValue!
+        return provider.featureValue(for: "output3")!.multiArrayValue!
     }
     
     public var output4: MLMultiArray {
-        return try! provider.featureValue(for: "output4")!.multiArrayValue!
+        return provider.featureValue(for: "output4")!.multiArrayValue!
     }
     
     public var output5: MLMultiArray {
-        return try! provider.featureValue(for: "output5")!.multiArrayValue!
+        return provider.featureValue(for: "output5")!.multiArrayValue!
     }
     
     public var output6: MLMultiArray {
-        return try! provider.featureValue(for: "output6")!.multiArrayValue!
+        return provider.featureValue(for: "output6")!.multiArrayValue!
     }
     
     public var output7: MLMultiArray {
-        return try! provider.featureValue(for: "output7")!.multiArrayValue!
+        return provider.featureValue(for: "output7")!.multiArrayValue!
     }
     
     public var featureNames: Set<String> {
@@ -75,9 +75,11 @@ public class SubjectMaskingFP16 {
     public let model: MLModel
     
     /// Reconstructed URL logic pointing to the bundle.
-    public class var urlOfModelInThisBundle: URL {
-        let bundle = Bundle(for: self)
-        return bundle.url(forResource: "subjectMaskingFP16", withExtension: "mlmodelc")!
+    public class var urlOfModelInThisBundle: URL? {
+        let bundle = Bundle.module
+        // Try direct access or inside Resources subfolder (depending on SPM copy behavior)
+        return bundle.url(forResource: "subjectMaskingFP16", withExtension: "mlmodelc") ?? 
+               bundle.url(forResource: "Resources/subjectMaskingFP16", withExtension: "mlmodelc")
     }
     
     public init(model: MLModel) {
@@ -85,7 +87,10 @@ public class SubjectMaskingFP16 {
     }
     
     public convenience init(configuration: MLModelConfiguration = MLModelConfiguration()) throws {
-        try self.init(contentsOf: type(of: self).urlOfModelInThisBundle, configuration: configuration)
+        guard let url = type(of: self).urlOfModelInThisBundle else {
+            throw NSError(domain: "ImageCore.AI", code: 404, userInfo: [NSLocalizedDescriptionKey: "subjectMaskingFP16.mlmodelc not found in bundle."])
+        }
+        try self.init(contentsOf: url, configuration: configuration)
     }
     
     public convenience init(contentsOf url: URL, configuration: MLModelConfiguration = MLModelConfiguration()) throws {

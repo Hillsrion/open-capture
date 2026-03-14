@@ -36,7 +36,7 @@ public class FaceMaskingModelOutput: MLFeatureProvider {
     
     /// Resulting segmentation mask
     public var output: MLMultiArray {
-        return try! provider.featureValue(for: "output")!.multiArrayValue!
+        return provider.featureValue(for: "output")!.multiArrayValue!
     }
     
     public var featureNames: Set<String> {
@@ -62,13 +62,13 @@ public class FaceMaskingModel {
         return bundle.url(forResource: "FaceMaskingModel", withExtension: "mlmodelc")!
     }
     
-    public init(model: MTLModel) {
+    public init(model: MLModel) {
         self.model = model as! MLModel
     }
     
     public convenience init(configuration: MLModelConfiguration = AIConfiguration.default) throws {
         let model = try MLModel(contentsOf: type(of: self).urlOfModelInThisBundle, configuration: configuration)
-        self.init(model: model as! MTLModel)
+        self.init(model: model as! MLModel)
     }
     
     public func prediction(input: FaceMaskingModelInput) throws -> FaceMaskingModelOutput {
