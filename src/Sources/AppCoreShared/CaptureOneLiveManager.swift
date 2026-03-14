@@ -15,17 +15,35 @@ public class CaptureOneLiveManager: ObservableObject {
     @Published public var canColorTag: Bool = true
     @Published public var canDownload: Bool = false
     
+    // Live Collaboration State
+    public struct ActivityLogEntry: Identifiable {
+        public let id = UUID()
+        public let timestamp: Date
+        public let user: String
+        public let action: String
+    }
+    
+    @Published public var connectedUsersCount: Int = 0
+    @Published public var activityLog: [ActivityLogEntry] = []
+    
     public init() {}
     
     public func startSession() {
         print("[Live] Starting remote sharing session...")
         isSessionActive = true
         sessionURL = "https://live.captureone.com/s/ABC-123-XYZ"
+        connectedUsersCount = 3 // Simulated clients
+        activityLog = [
+            ActivityLogEntry(timestamp: Date().addingTimeInterval(-120), user: "Client A", action: "Rated image 5 stars"),
+            ActivityLogEntry(timestamp: Date().addingTimeInterval(-60), user: "Art Director", action: "Tagged image green (Select)")
+        ]
     }
     
     public func stopSession() {
         print("[Live] Stopping remote sharing session.")
         isSessionActive = false
         sessionURL = nil
+        connectedUsersCount = 0
+        activityLog.removeAll()
     }
 }

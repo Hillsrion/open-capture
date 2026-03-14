@@ -86,6 +86,46 @@ public struct CaptureOneLiveToolView: View {
             Text("Expires: \(liveManager.expiryDate, style: .date) \(liveManager.expiryDate, style: .time)")
                 .font(.system(size: 9))
                 .foregroundColor(.gray)
+                
+            Divider().background(Color.white.opacity(0.1))
+            
+            // User Count & Activity Log
+            HStack {
+                Image(systemName: "person.2.fill")
+                    .font(.system(size: 10))
+                    .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
+                Text("\(liveManager.connectedUsersCount) Connected")
+                    .font(.system(size: 11, weight: .bold))
+            }
+            .padding(.top, 4)
+            
+            if !liveManager.activityLog.isEmpty {
+                Text("Activity Log")
+                    .font(.system(size: 10, weight: .semibold))
+                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    .padding(.top, 4)
+                    
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(liveManager.activityLog.prefix(3)) { log in
+                        HStack(alignment: .top, spacing: 4) {
+                            Text(log.timestamp, style: .time)
+                                .font(.system(size: 9))
+                                .foregroundColor(.gray)
+                                .frame(width: 45, alignment: .leading)
+                            VStack(alignment: .leading, spacing: 1) {
+                                Text(log.user)
+                                    .font(.system(size: 10, weight: .semibold))
+                                Text(log.action)
+                                    .font(.system(size: 10))
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                }
+                .padding(6)
+                .background(Color.black.opacity(0.2))
+                .cornerRadius(4)
+            }
         }
     }
     
