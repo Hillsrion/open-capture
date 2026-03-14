@@ -22,6 +22,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         // 1.5.5 Preheat AI Models (AI-OPT)
         AIPreheatManager.shared.preheatAllModels()
         
+        // 1.5.6 Start Input Monitoring (INT-002)
+        ShortcutInputHandler.shared.startMonitoring()
+        
         // 1.6 Setup Hardware Controllers (INT-005)
         HardwareControllerManager.shared.actionDelegate = AdjustmentToolController.shared
         
