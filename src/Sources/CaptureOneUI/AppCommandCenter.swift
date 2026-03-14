@@ -165,6 +165,43 @@ public final class AppCommandCenter: ObservableObject {
             )
         }
     }
+    
+    // MARK: - Culling & Selection (WF-502)
+    
+    public func selectNextVariant() {
+        let items = browser.dataSource
+        guard !items.isEmpty, let current = adjustmentController.currentVariant?.image else { return }
+        if let index = items.firstIndex(where: { $0.id == current.id }), index < items.count - 1 {
+            adjustmentController.currentVariant = items[index + 1].primaryVariant
+        }
+    }
+    
+    public func selectPreviousVariant() {
+        let items = browser.dataSource
+        guard !items.isEmpty, let current = adjustmentController.currentVariant?.image else { return }
+        if let index = items.firstIndex(where: { $0.id == current.id }), index > 0 {
+            adjustmentController.currentVariant = items[index - 1].primaryVariant
+        }
+    }
+    
+    public func setRating(_ rating: Int) {
+        guard let variant = adjustmentController.currentVariant else { return }
+        variant.rating = rating
+        
+        // Auto-Advance logic (Parity with C1 default behavior)
+        if UserDefaults.standard.bool(forKey: "COAutoAdvanceAfterVariantRating") {
+            selectNextVariant()
+        }
+    }
+    
+    public func setColorTag(_ tag: VariantBase.ColorTag) {
+        guard let variant = adjustmentController.currentVariant else { return }
+        variant.colorTag = tag
+        
+        if UserDefaults.standard.bool(forKey: "COAutoAdvanceAfterVariantRating") {
+            selectNextVariant()
+        }
+    }
 
     public func presentImport() {
         importer = POImporter()

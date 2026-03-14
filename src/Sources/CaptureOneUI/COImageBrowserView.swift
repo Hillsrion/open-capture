@@ -16,7 +16,7 @@ public struct COImageBrowserView: View {
     @Binding var predicate: COFilterPredicate
     @Binding var selectedVariant: VariantBase?
     
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var searchManager = SearchManager.shared
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
     @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"
@@ -27,22 +27,14 @@ public struct COImageBrowserView: View {
         self._predicate = predicate
         self._selectedVariant = selectedVariant
     }
-    
+
     private var filteredImages: [ImageBase] {
+        // Use the reconstructed SearchManager for centralized filtering
         return images.filter { image in
             guard let variant = image.primaryVariant else { return true }
-            if let min = predicate.minRating, variant.rating < min { return false }
-            if let max = predicate.maxRating, variant.rating > max { return false }
-            if let tags = predicate.colorTags, !tags.isEmpty {
-                if !tags.contains(variant.colorTag.rawValue) { return false }
-            }
-            if let text = predicate.searchText, !text.isEmpty {
-                if !image.displayName.localizedCaseInsensitiveContains(text) { return false }
-            }
-            return true
+            return searchManager.filter([variant]).count > 0
         }
     }
-    
     public var body: some View {
         VStack(spacing: 0) {
             browserToolbar
