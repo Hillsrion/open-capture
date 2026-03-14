@@ -103,7 +103,7 @@ private struct CursorToolsToolbarGroup: View {
         ("Select", "cursorarrow"),
         ("Pan", "hand.raised"),
         ("Loupe", "magnifyingglass"),
-        ("Crop", "crop"),
+        // Crop is now handled by CropToolbarGroup
         ("Keystone", "rectangle.distorted"),
         ("Annotate", "pencil.tip"),
         ("EraseAnnotation", "eraser.fill")
@@ -119,9 +119,36 @@ private struct CursorToolsToolbarGroup: View {
                     commands.handleToolbarAction(toolID)
                 }
             }
+            CropToolbarGroup()
             RotateToolbarGroup()
         }
         .padding(.horizontal, 4)
+    }
+}
+
+private struct CropToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var controller = AdjustmentToolController.shared
+
+    var body: some View {
+        IconOnlyToolbarButton(
+            systemName: "crop",
+            isSelected: commands.selectedCursorToolID == "Crop"
+        ) {
+            commands.handleToolbarAction("Crop")
+        }
+        .contextMenu {
+            Section("Aspect Ratio") {
+                Button("Unconstrained") { controller.cropRatioIndex = 0 }
+                Button("Original") { controller.cropRatioIndex = 1 }
+                Button("1:1 (Square)") { controller.cropRatioIndex = 2 }
+                Button("4:5 (8x10)") { controller.cropRatioIndex = 3 }
+                Button("2:3 (4x6)") { controller.cropRatioIndex = 4 }
+                Button("16:9") { controller.cropRatioIndex = 5 }
+            }
+            Divider()
+            Button("Reset Crop") { controller.cropRect = .zero }
+        }
     }
 }
 
