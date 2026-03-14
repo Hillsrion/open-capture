@@ -178,19 +178,20 @@ public struct COImageBrowserView: View {
     private var browserFooter: some View {
         HStack {
             if let selected = selectedVariant,
-               let index = images.firstIndex(where: { $0.primaryVariant?.variantUUID == selected.variantUUID }) {
-                Text("\(index + 1) of \(images.count)")
+               let index = browser.dataSource.firstIndex(where: { $0.primaryVariant?.variantUUID == selected.variantUUID }) {
+                Text("\(index + 1) of \(browser.dataSource.count)")
             } else {
-                Text("\(images.count) images")
+                Text("\(browser.dataSource.count) images")
             }
             Spacer()
         }
         .font(.system(size: 10))
-        .foregroundColor(.gray)
-        .padding(.horizontal, 12)
-        .frame(height: 22)
-        .background(CaptureOneTheme.Colors.panelBackground)
+        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 4)
+        .background(CaptureOneTheme.Colors.browserBackground)
     }
+
 }
 
 // MARK: - Grid View
