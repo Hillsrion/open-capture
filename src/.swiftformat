@@ -1,0 +1,15 @@
+--indent 4
+--allman false
+--commas always
+--comments indent
+--decimalgrouping 3,3
+--ifdef indent
+--importgrouping alpha
+--linebreaks lf
+--maxwidth 200
+--ranges no-space
+--semicolons never
+--stripunusedargs always
+--trimwhitespace always
+--wraparguments before-first
+--wrapcollections before-first

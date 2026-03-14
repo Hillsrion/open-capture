@@ -14,39 +14,60 @@ let package = Package(
         .library(name: "Cloud", targets: ["Cloud"]),
         .library(name: "CaptureOneUI", targets: ["CaptureOneUI"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/realm/SwiftLint", from: "0.54.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.52.11")
+    ],
     targets: [
         .executableTarget(
             name: "CaptureOneApp",
             dependencies: ["AppCoreShared", "DataCore", "ImageCore", "CaptureOneUI", "Cloud"],
-            path: "Sources/CaptureOneApp"
+            path: "Sources/CaptureOneApp",
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .target(
             name: "Cloud",
             dependencies: [],
-            path: "Sources/Cloud"
+            path: "Sources/Cloud",
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .target(
             name: "DataCore",
             dependencies: [],
-            path: "Sources/DataCore"
+            path: "Sources/DataCore",
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .target(
             name: "AppCoreShared",
             dependencies: ["DataCore", "ImageCore"],
             path: "Sources/AppCoreShared",
-            resources: [.copy("Resources")]
+            resources: [.copy("Resources")],
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .target(
             name: "ImageCore",
             dependencies: [],
             path: "Sources/ImageCore",
-            resources: [.copy("Resources")]
+            resources: [.copy("Resources")],
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .target(
             name: "CaptureOneUI",
             dependencies: ["AppCoreShared", "ImageCore", "DataCore"],
-            path: "Sources/CaptureOneUI"
+            path: "Sources/CaptureOneUI",
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .testTarget(
             name: "AppCoreSharedTests",
