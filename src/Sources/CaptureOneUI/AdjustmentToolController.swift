@@ -86,6 +86,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var smartExposureEnabled: Bool = true
     @Published public var smartWhiteBalanceEnabled: Bool = true
     @Published public var smartReference: SmartAdjustmentsReference? = nil
+    @Published public var smartReferenceVariantID: String? = nil
     
     // Spot Removal State (UI-203)
     @Published public var spots: [SpotItem] = []
@@ -1122,6 +1123,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         guard let variant = currentVariant else { return }
         print("[Smart] Setting reference for \(variant.variantUUID)")
         self.smartReference = SmartAdjustmentsHelper.analyzeVariant(variant)
+        self.smartReferenceVariantID = variant.id
     }
     
     public func applySmartAdjustments(to variants: [VariantBase]) {
