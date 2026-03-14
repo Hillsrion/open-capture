@@ -110,6 +110,9 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.annotate") { [weak self] in
             self?.selectedCursorToolID = "Annotate"
         }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.magicBrush") { [weak self] in
+            self?.selectedCursorToolID = "DrawMagicBrush"
+        }
         ShortcutManager.shared.registerAction(id: "com.captureone.cullView") { [weak self] in
             self?.openCullingWindow()
         }
@@ -161,7 +164,7 @@ public final class AppCommandCenter: ObservableObject {
 
     public func handleToolbarAction(_ itemID: String) {
         switch itemID {
-        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "KeystoneVertical", "KeystoneHorizontal", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor", "DrawMask", "EraseMask", "Annotate", "EraseAnnotation":
+        case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "KeystoneVertical", "KeystoneHorizontal", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor", "DrawMask", "EraseMask", "Annotate", "EraseAnnotation", "DrawMagicBrush", "EraseMagicBrush":
             self.selectedCursorToolID = itemID
         case "AutoAdjust":
             presentImport()

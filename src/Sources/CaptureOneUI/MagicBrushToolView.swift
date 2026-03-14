@@ -2,11 +2,10 @@ import SwiftUI
 import AppCoreShared
 
 /// Reconstructed high-fidelity Magic Brush & Eraser settings tool (UI-204).
-/// Based on disassembly of MagicBrushSettingsToolController.
+/// Matches Capture One 16.7.4 visual standards and logic.
 public struct MagicBrushToolView: View {
     @ObservedObject var settings: MagicBrushSettings
-    @State private var linkBrushAndEraser: Bool = true
-    @State private var activeTab: Int = 0 // 0: Brush, 1: Eraser
+    @ObservedObject var brushManager = BrushSettingsManager.shared
     
     public init(settings: MagicBrushSettings) {
         self.settings = settings
@@ -15,39 +14,46 @@ public struct MagicBrushToolView: View {
     public var body: some View {
         COToolSection("Magic Brush", toolID: "MagicBrush") {
             VStack(spacing: 10) {
-                if !linkBrushAndEraser {
-                    Picker("", selection: $activeTab) {
-                        Text("Brush").tag(0)
-                        Text("Eraser").tag(1)
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
+                // Main Sliders
+                VStack(spacing: 8) {
+                    sliderRow(label: "Size", value: $settings.size, range: 1...100, unit: "px")
+                    sliderRow(label: "Tolerance", value: $settings.tolerance, range: 1...100, unit: "%")
+                    sliderRow(label: "Refine Edge", value: $settings.refineEdge, range: 0...100, unit: "%")
+                    sliderRow(label: "Opacity", value: $settings.opacity, range: 1...100, unit: "%")
+                    sliderRow(label: "Flow", value: $settings.flow, range: 1...100, unit: "%")
                 }
                 
-                COUISlider(label: "Size", value: Binding(get: { Float(settings.size) }, set: { settings.size = Double($0) }), range: 1...100)
-                COUISlider(label: "Tolerance", value: Binding(get: { Float(settings.tolerance) }, set: { settings.tolerance = Double($0) }), range: 1...100)
-                COUISlider(label: "Refine Edge", value: Binding(get: { Float(settings.refineEdge) }, set: { settings.refineEdge = Double($0) }), range: 0...100)
-                COUISlider(label: "Opacity", value: Binding(get: { Float(settings.opacity) }, set: { settings.opacity = Double($0) }), range: 1...100)
+                Divider().background(Color.white.opacity(0.05))
                 
-                Divider().background(Color.white.opacity(0.1))
-                
-                Toggle("Link Brush and Eraser", isOn: $linkBrushAndEraser)
-                    .toggleStyle(POCheckboxStyle())
-                    .font(.system(size: 11))
-                
-                Button(action: {
-                    // Logic for sample color selection
-                }) {
-                    Text("Sample Color")
-                        .font(.system(size: 11, weight: .medium))
-                        .frame(maxWidth: .infinity)
-                        .padding(6)
-                        .background(CaptureOneTheme.Colors.activeHighlight)
-                        .foregroundColor(.black)
-                        .cornerRadius(4)
+                VStack(alignment: .leading, spacing: 8) {
+                    Toggle("Sample Entire Photo", isOn: $settings.sampleEntirePhoto)
+                        .toggleStyle(CheckboxToggleStyle())
+                        .font(.system(size: 11))
+                    
+                    Toggle("Link Brush and Eraser", isOn: $brushManager.linkBrushSettings)
+                        .toggleStyle(CheckboxToggleStyle())
+                        .font(.system(size: 11))
                 }
-                .buttonStyle(PlainButtonStyle())
+                .padding(.top, 2)
             }
+            .padding(.vertical, 4)
+        }
+    }
+    
+    private func sliderRow(label: String, value: Binding<Double>, range: ClosedRange<Double>, unit: String) -> some View {
+        HStack {
+            Text(label)
+                .font(.system(size: 11))
+                .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 70, alignment: .leading)
+            
+            Slider(value: value, in: range)
+                .accentColor(CaptureOneTheme.Colors.activeHighlight)
+            
+            Text("\(Int(value.wrappedValue))\(unit)")
+                .font(.system(size: 10, design: .monospaced))
+                .foregroundColor(.white)
+                .frame(width: 45, alignment: .trailing)
         }
     }
 }

@@ -72,6 +72,7 @@ public class ShortcutManager: ObservableObject {
             KeyboardShortcut(key: "m", modifiers: [], actionID: "com.captureone.mask.toggleVisibility"),
             KeyboardShortcut(key: "j", modifiers: .command, actionID: "com.captureone.cullView"),
             KeyboardShortcut(key: "j", modifiers: [], actionID: "com.captureone.tool.annotate"),
+            KeyboardShortcut(key: "w", modifiers: [], actionID: "com.captureone.tool.magicBrush"),
             KeyboardShortcut(key: "b", modifiers: [], actionID: "com.captureone.tool.drawMask"),
             KeyboardShortcut(key: "e", modifiers: [], actionID: "com.captureone.tool.eraseMask"),
             KeyboardShortcut(key: "v", modifiers: [.command, .shift], actionID: "com.captureone.applyAdjustments"),
