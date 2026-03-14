@@ -7,13 +7,31 @@ public class ImageCoreGPU {
     
     public static let shared = ImageCoreGPU()
     
-    public let device: MTLDevice?
+    @Published public var device: MTLDevice?
     public let commandQueue: MTLCommandQueue?
+    private var library: MTLLibrary?
     private var pipelineCache: [String: MTLComputePipelineState] = [:]
     
     private init() {
         self.device = MTLCreateSystemDefaultDevice()
         self.commandQueue = self.device?.makeCommandQueue()
+        loadCaptureOneLibrary()
+    }
+    
+    private func loadCaptureOneLibrary() {
+        guard let device = device else { return }
+        let bundle = Bundle.module // In SPM, resources are accessed via Bundle.module
+        if let url = bundle.url(forResource: "captureone", withExtension: "metallib") {
+            do {
+                self.library = try device.makeLibrary(URL: url)
+                print("[ImageCoreGPU] Successfully loaded original C1 Metal library.")
+            } catch {
+                print("[ImageCoreGPU] Error loading C1 library: \(error)")
+            }
+        } else {
+            print("[ImageCoreGPU] Warning: captureone.metallib not found. Falling back to default.")
+            self.library = device.makeDefaultLibrary()
+        }
     }
     
     /// Reconstructed kernel dispatching logic.
@@ -47,13 +65,10 @@ public class ImageCoreGPU {
             return cached
         }
         
-        guard let device = device else { return nil }
+        guard let device = device, let library = library else { return nil }
         
-        // 1. Load default library
-        let library = device.makeDefaultLibrary()
-        
-        // 2. Load function
-        guard let function = library?.makeFunction(name: kernelName) else {
+        // 1. Load function from original C1 library
+        guard let function = library.makeFunction(name: kernelName) else {
             print("[ImageCoreGPU] Failed to find kernel: \(kernelName)")
             return nil
         }

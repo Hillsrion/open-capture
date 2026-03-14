@@ -47,3 +47,24 @@ public struct AdjustmentKernels {
         }
     }
 }
+
+/// Bridge to original Capture One Metal Compute Kernels (IMG-GPU-001).
+public struct NativeAdjustmentKernels {
+    
+    /// Applies original Capture One Film Grain.
+    /// Uses one of the 10 passes discovered in captureone.metallib.
+    public static func applyFilmGrain(input: MTLBuffer, output: MTLBuffer, size: CGSize, type: Int) {
+        let kernelName = "Grains_PASS_ID\(min(max(type, 0), 9))"
+        let threads = MTLSize(width: Int(size.width), height: Int(size.height), depth: 1)
+        
+        ImageCoreGPU.shared.dispatchKernel(name: kernelName, inputs: [input], output: output, threads: threads)
+    }
+    
+    /// Applies high-quality resampling using EWA Tensor kernel.
+    public static func resample(input: MTLBuffer, output: MTLBuffer, targetSize: CGSize) {
+        let kernelName = "Resample_EWA_TENSOR0_RADIUS5"
+        let threads = MTLSize(width: Int(targetSize.width), height: Int(targetSize.height), depth: 1)
+        
+        ImageCoreGPU.shared.dispatchKernel(name: kernelName, inputs: [input], output: output, threads: threads)
+    }
+}
