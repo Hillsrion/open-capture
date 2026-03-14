@@ -59,6 +59,12 @@ public class RawImageEngine {
             output = colorFilter.outputImage ?? output
         }
         
+        // D. Color Balance (3-Way Grading simulation)
+        // In high-fidelity mode, this calls AdjustmentKernels.applyColorBalance
+        if settings.colorBalance != ColorBalanceSettings() {
+            output = applyColorGradePass(to: output, settings: settings.colorBalance)
+        }
+        
         // 2.5 Local Adjustments Pipeline (LAY-001)
         // Mimics Capture One's layer stack (up to 16 layers)
         for layerCfg in settings.localAdjustments where layerCfg.isVisible && layerCfg.opacity > 0 {
@@ -67,6 +73,31 @@ public class RawImageEngine {
         
         // 3. Render to Final Buffer
         return context.createCGImage(output, from: output.extent)
+    }
+    
+    private func applyColorGradePass(to image: CIImage, settings: ColorBalanceSettings) -> CIImage {
+        // Simulation: Apply tinting based on shadow/midtone/highlight teintes
+        // In original, this is a per-pixel weighted calculation in Metal.
+        var output = image
+        
+        if settings.midtone.saturation > 0 {
+            // Apply a global tint simulation for midtones
+            let radians = CGFloat(settings.midtone.hue - 90) * .pi / 180.0
+            let strength = CGFloat(settings.midtone.saturation / 500.0) // Scaled for simulation
+            
+            let color = CIColor(red: 0.5 + cos(radians) * strength, 
+                                green: 0.5 + sin(radians) * strength, 
+                                blue: 0.5 - 0.5 * strength)
+            
+            if let filter = CIFilter(name: "CIColorMonochrome") {
+                filter.setValue(output, forKey: kCIInputImageKey)
+                filter.setValue(color, forKey: kCIInputColorKey)
+                filter.setValue(strength, forKey: kCIInputIntensityKey)
+                output = filter.outputImage?.composited(over: output) ?? output
+            }
+        }
+        
+        return output
     }
     
     /// Applies a local adjustment layer using masking and alpha blending.

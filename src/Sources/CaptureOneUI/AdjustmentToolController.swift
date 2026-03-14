@@ -571,6 +571,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.white = self.whites
         settings.black = self.blacks
         
+        // Color Balance (IMG-004)
+        settings.colorBalance = ColorBalanceStorage.settings(from: currentVariant?.mcVariant)
+        
         // Details
         settings.sharpeningAmount = 100.0 // Default
         settings.denoise.amount = 50.0 // Default

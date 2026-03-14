@@ -46,6 +46,48 @@ public struct AdjustmentKernels {
             b[i] = luma + (b[i] - luma) * saturation
         }
     }
+    
+    // MARK: - Color Balance (3-Way Grading)
+    
+    /// Applies 3-way color balance (Shadows, Midtones, Highlights).
+    /// Mimics C1's high-fidelity color grading algorithm.
+    public static func applyColorBalance(r: UnsafeMutablePointer<Float>, g: UnsafeMutablePointer<Float>, b: UnsafeMutablePointer<Float>, count: Int, settings: ColorBalanceSettings) {
+        for i in 0..<count {
+            let luma = 0.299 * r[i] + 0.587 * g[i] + 0.114 * b[i]
+            
+            // 1. Calculate weights for each region
+            let shadowWeight = pow(max(0, 1.0 - luma), 2.0)
+            let highlightWeight = pow(max(0, luma), 2.0)
+            let midtoneWeight = 1.0 - shadowWeight - highlightWeight
+            
+            // 2. Apply adjustments per region
+            applyRegionAdjustment(r: &r[i], g: &g[i], b: &b[i], weight: shadowWeight, val: settings.shadow)
+            applyRegionAdjustment(r: &r[i], g: &g[i], b: &b[i], weight: midtoneWeight, val: settings.midtone)
+            applyRegionAdjustment(r: &r[i], g: &g[i], b: &b[i], weight: highlightWeight, val: settings.highlight)
+        }
+    }
+    
+    private static func applyRegionAdjustment(r: inout Float, g: inout Float, b: inout Float, weight: Float, val: ColorBalanceValue) {
+        guard weight > 0 else { return }
+        
+        // Convert polar (Hue/Sat) to RGB offset
+        let radians = Float(val.hue - 90) * .pi / 180.0
+        let strength = Float(val.saturation / 100.0) * weight
+        
+        let dr = cos(radians) * strength
+        let dg = sin(radians) * strength
+        let db = -0.5 * strength // Simplified luminance-preserving blue offset
+        
+        r += dr
+        g += dg
+        b += db
+        
+        // Apply brightness/luminance
+        let brightShift = Float(val.brightness / 100.0) * weight
+        r += brightShift
+        g += brightShift
+        b += brightShift
+    }
 }
 
 /// Bridge to original Capture One Metal Compute Kernels (IMG-GPU-001).
