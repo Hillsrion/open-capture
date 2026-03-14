@@ -39,6 +39,12 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var showFocusMask: Bool = false
     @Published public var editSelectedOnly: Bool = true
     
+    // Auto Adjust Configuration (UI-204)
+    @Published public var autoAdjustExposure: Bool = true
+    @Published public var autoAdjustWhiteBalance: Bool = true
+    @Published public var autoAdjustHDR: Bool = true
+    @Published public var autoAdjustLevels: Bool = true
+    
     // Adjustments Clipboard State
     @Published public var clipboardAutoSelectAdjusted: Bool = true
     @Published public var clipboardExposureSelected: Bool = true
@@ -118,6 +124,9 @@ public final class AppCommandCenter: ObservableObject {
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.radialGradient") { [weak self] in
             self?.selectedCursorToolID = "DrawRadialGradient"
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.autoAdjust") { [weak self] in
+            self?.autoAdjust()
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.mask.toggleVisibility") { [weak self] in
             self?.toggleMaskVisibility()
@@ -578,11 +587,29 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        // Keep the current implementation simple but visible until the
-        // decompiled auto-adjust pipeline is restored.
-        adjustmentController.exposure = min(max(adjustmentController.exposure == 0 ? 0.15 : adjustmentController.exposure * 0.7, -1.0), 1.0)
-        adjustmentController.contrast = min(max(adjustmentController.contrast, 10.0), 20.0)
-        adjustmentController.saturation = min(max(adjustmentController.saturation, 5.0), 15.0)
+        print("[AppCommandCenter] Global Auto-Adjust triggered.")
+        
+        if autoAdjustWhiteBalance {
+            adjustmentController.kelvin = 5600
+            adjustmentController.tint = 10
+        }
+        
+        if autoAdjustExposure {
+            // Slight nudge based on current values or reset to reasonable start
+            adjustmentController.exposure = 0.15
+            adjustmentController.contrast = 15.0
+        }
+        
+        if autoAdjustHDR {
+            adjustmentController.highlights = 10
+            adjustmentController.shadows = 5
+        }
+        
+        if autoAdjustLevels {
+            adjustmentController.autoLevels()
+        }
+        
+        adjustmentController.commitChanges(to: adjustmentController.currentVariant)
     }
 
     public func autoAdjustTool(_ toolID: String) {

@@ -56,6 +56,8 @@ public struct MainToolbarView: View {
             ProofingToolbarGroup()
         case "BeforeAfter":
             BeforeAfterToolbarGroup()
+        case "AutoAdjust":
+            AutoAdjustToolbarGroup()
         default:
             COToolbarButton(
                 item: item,
@@ -236,6 +238,25 @@ private struct RotateToolbarGroup: View {
                 .buttonStyle(.plain)
             }
             .cornerRadius(4)
+        }
+    }
+}
+
+private struct AutoAdjustToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        COToolbarButton(
+            item: COToolbarItemRegistry.item(for: "AutoAdjust")!,
+            isSelected: false
+        ) {
+            commands.handleToolbarAction("AutoAdjust")
+        }
+        .contextMenu {
+            Toggle("White Balance", isOn: $commands.autoAdjustWhiteBalance)
+            Toggle("Exposure", isOn: $commands.autoAdjustExposure)
+            Toggle("High Dynamic Range", isOn: $commands.autoAdjustHDR)
+            Toggle("Levels", isOn: $commands.autoAdjustLevels)
         }
     }
 }

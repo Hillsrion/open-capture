@@ -77,6 +77,8 @@ public class ShortcutManager: ObservableObject {
             KeyboardShortcut(key: "e", modifiers: [], actionID: "com.captureone.tool.eraseMask"),
             KeyboardShortcut(key: "v", modifiers: [.command, .shift], actionID: "com.captureone.applyAdjustments"),
             KeyboardShortcut(key: "f", modifiers: [], actionID: "com.captureone.browser.filmstrip"),
+            KeyboardShortcut(key: "l", modifiers: .command, actionID: "com.captureone.autoAdjust"),
+            KeyboardShortcut(key: "l", modifiers: [], actionID: "com.captureone.tool.linearGradient"),
             KeyboardShortcut(key: "t", modifiers: [], actionID: "com.captureone.tool.radialGradient"),
             KeyboardShortcut(key: "h", modifiers: [], actionID: "com.captureone.tool.pan"),
             KeyboardShortcut(key: "v", modifiers: [], actionID: "com.captureone.tool.select"),
