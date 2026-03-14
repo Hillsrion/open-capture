@@ -32,6 +32,10 @@ public class BrushSettingsManager: ObservableObject {
     
     @Published public var activeBrushTool: CursorToolType = .drawMask
     
+    // Style Brushes State
+    @Published public var linkBrushSettings: Bool = false
+    @Published public var activeStyleBrush: String? = nil
+    
     private init() {}
     
     public func brushSettingsForCursorTool(_ tool: CursorToolType) -> BrushSettings? {

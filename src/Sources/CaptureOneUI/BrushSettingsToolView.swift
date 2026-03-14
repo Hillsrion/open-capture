@@ -37,6 +37,13 @@ public struct BrushSettingsToolView: View {
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 }
                 .toggleStyle(CheckboxToggleStyle())
+                
+                Toggle(isOn: $manager.linkBrushSettings) {
+                    Text("Link Brush Settings")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                }
+                .toggleStyle(CheckboxToggleStyle())
             }
             .padding(.vertical, 4)
         }
