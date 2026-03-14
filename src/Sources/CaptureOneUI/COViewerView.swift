@@ -99,7 +99,11 @@ public struct COViewerView: View {
                         
                         // Annotations Overlay (UI-007)
                         if let annotations = adjustmentController?.currentVariant?.annotations {
-                            AnnotationsOverlayView(annotations: annotations)
+                            let tool = commands.selectedCursorToolID
+                            if tool == "Annotate" || tool == "EraseAnnotation" || tool == "Select" {
+                                AnnotationsOverlayView(annotations: annotations)
+                                    .allowsHitTesting(tool == "Annotate" || tool == "EraseAnnotation")
+                            }
                         }
                         
                         // Linear Gradient Overlay (UI-204)
