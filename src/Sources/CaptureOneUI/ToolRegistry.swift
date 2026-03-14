@@ -94,8 +94,7 @@ public enum ToolRegistry {
         case "NextCaptureBackup":
             return .implemented { context in AnyView(NextCaptureBackupToolView(config: context.config)) }
         case "Overlay":
-            return .implemented { _ in AnyView(OverlayToolView()) }
-        case "LiveForStudio":
+            return .implemented { context in AnyView(OverlayToolView(controller: context.adjustmentController)) }        case "LiveForStudio":
             return .implemented { _ in AnyView(LiveForStudioToolView()) }
         case "CameraFocus":
             return .implemented { context in AnyView(UnavailableToolView(toolID: "CameraFocus")) }

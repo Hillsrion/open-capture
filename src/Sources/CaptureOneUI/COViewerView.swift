@@ -76,6 +76,11 @@ public struct COViewerView: View {
                                 KeystoneOverlayView(points: points)
                             }
                             
+                            // Composition Overlay (GAP-406)
+                            if let controller = adjustmentController {
+                                CompositionOverlayView(controller: controller)
+                            }
+                            
                             // Crop Overlay (UI-204)
                             if let controller = adjustmentController, commands.selectedCursorToolID == "Crop" {
                                 CropOverlayView(controller: controller, viewerSize: geo.size)
@@ -86,6 +91,8 @@ public struct COViewerView: View {
                                 let tool = commands.selectedCursorToolID
                                 if tool == "Pan" {
                                     NSCursor.openHand.push()
+                                } else if tool == "MoveOverlay" {
+                                    NSCursor.resizeUpDown.push() // closest to move icon in std cursors
                                 } else if tool == "Crop" {
                                     // Logic for dynamic cursor based on crop zones could be added here
                                     NSCursor.crosshair.push()
@@ -156,6 +163,16 @@ public struct COViewerView: View {
                                                 adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
                                             }
                                         }
+                                    } else if commands.selectedCursorToolID == "MoveOverlay" {
+                                        if dragStartOrigin == nil {
+                                            dragStartOrigin = adjustmentController?.overlayOffset
+                                        }
+                                        guard let start = dragStartOrigin else { return }
+                                        
+                                        adjustmentController?.overlayOffset = CGPoint(
+                                            x: start.x + gesture.translation.width,
+                                            y: start.y + gesture.translation.height
+                                        )
                                     } else if commands.selectedCursorToolID == "Crop" {
                                         let controller = adjustmentController ?? AdjustmentToolController.shared
                                         
@@ -220,9 +237,11 @@ public struct COViewerView: View {
                                     }
                                 }
                                 .onEnded { gesture in
-                                    if commands.selectedCursorToolID == "Pan" {
+                                    if commands.selectedCursorToolID == "Pan" || commands.selectedCursorToolID == "MoveOverlay" {
                                         dragStartOrigin = nil
-                                        NSCursor.pop()
+                                        if commands.selectedCursorToolID == "Pan" {
+                                            NSCursor.pop()
+                                        }
                                     }
                                     
                                     if commands.selectedCursorToolID == "Crop" {

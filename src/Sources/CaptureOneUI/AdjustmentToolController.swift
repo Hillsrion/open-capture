@@ -199,6 +199,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var keystoneFocalLength: Double = 35.0
     @Published public var keystonePoints: KeystonePoints? = nil // TETH-004
     
+    // Overlay Tool State (GAP-406)
+    @Published public var showOverlay: Bool = false
+    @Published public var overlayOpacity: Double = 50.0
+    @Published public var overlayScale: Double = 100.0
+    @Published public var overlayPath: String = ""
+    @Published public var overlayOffset: CGPoint = .zero
+    
     // Smart Adjustments (AI-002)
     
     // Soft Proofing (ENG-011)
@@ -1210,6 +1217,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         // Swap width and height
         self.cropRect = CGRect(x: current.minX, y: current.minY, width: current.height, height: current.width)
         self.commitChanges(to: currentVariant)
+    }
+
+    public func centerOverlay() {
+        self.overlayOffset = .zero
     }
 
     // MARK: - Hardware Controllers (INT-005)

@@ -3,31 +3,73 @@ import AppCoreShared
 
 /// Reconstructed high-fidelity Overlay tool (GAP-406).
 public struct OverlayToolView: View {
-    @State private var showOverlay: Bool = false
-    @State private var opacity: Double = 50.0
-    @State private var scale: Double = 100.0
-    @State private var followCrop: Bool = true
-    @State private var imagePath: String = ""
+    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var commands = AppCommandCenter.shared
     
-    public init(config: ToolConfiguration) {}
-    public init() {}
+    public init(controller: AdjustmentToolController) {
+        self.controller = controller
+    }
     
+    public init() {
+        self.controller = AdjustmentToolController.shared
+    }
+
     public var body: some View {
         COToolSection("Overlay", toolID: "Overlay") {
             VStack(spacing: 10) {
                 HStack {
-                    Toggle("Show Overlay", isOn: $showOverlay)
+                    Toggle("Show Overlay", isOn: $controller.showOverlay)
                         .font(.system(size: 11))
                     Spacer()
-                    Button("Choose...") { }
+                    
+                    Button(action: {
+                        let panel = NSOpenPanel()
+                        panel.allowsMultipleSelection = false
+                        panel.canChooseDirectories = false
+                        panel.allowedContentTypes = [.image, .pdf]
+                        if panel.runModal() == .OK {
+                            controller.overlayPath = panel.url?.path ?? ""
+                            controller.showOverlay = true
+                        }
+                    }) {
+                        Text("Choose...")
+                            .font(.system(size: 10))
+                    }
                     .buttonStyle(.bordered)
                     .controlSize(.small)
                 }
                 
-                VStack(spacing: 8) {
-                    overlaySlider(label: "Opacity", value: $opacity, range: 0...100)
-                    overlaySlider(label: "Scale", value: $scale, range: 1...200)
-                    Toggle("Follow Crop", isOn: $followCrop)
+                HStack(spacing: 8) {
+                    // Move Overlay Tool Toggle
+                    Button(action: { 
+                        commands.selectedCursorToolID = commands.selectedCursorToolID == "MoveOverlay" ? "Select" : "MoveOverlay"
+                    }) {
+                        Image(systemName: "arrow.up.and.down.and.arrow.left.and.right")
+                            .frame(width: 24, height: 24)
+                            .background(commands.selectedCursorToolID == "MoveOverlay" ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.05))
+                            .cornerRadius(4)
+                    }
+                    .help("Move Overlay Tool")
+                    
+                    // Center Overlay (Crosshair)
+                    Button(action: { controller.centerOverlay() }) {
+                        Image(systemName: "scope")
+                            .frame(width: 24, height: 24)
+                            .background(Color.white.opacity(0.05))
+                            .cornerRadius(4)
+                    }
+                    .help("Center Overlay")
+                    
+                    Spacer()
+                }
+                .buttonStyle(.plain)
+                .imageScale(.small)
+
+                VStack(spacing: 6) {
+                    overlaySlider(label: "Opacity", value: $controller.overlayOpacity, range: 0...100)
+                    overlaySlider(label: "Scale", value: $controller.overlayScale, range: 1...200)
+                    
+                    Toggle("Follow Crop", isOn: $controller.gridFollowCrop)
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
