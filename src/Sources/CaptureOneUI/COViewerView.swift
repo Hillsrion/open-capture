@@ -211,11 +211,12 @@ public struct COViewerView: View {
     }
     
     private func render() {
-        guard let image = image, let url = URL(string: image.path) else {
+        guard let image = image else {
             sourceImage = nil
             renderedImage = nil
             return
         }
+        let url = URL(fileURLWithPath: image.path)
         
         ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
             guard let thumb = thumb, let controller = adjustmentController else {
