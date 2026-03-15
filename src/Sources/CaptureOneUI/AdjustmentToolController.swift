@@ -216,6 +216,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var gridFibonacciMirror: Bool = false
     @Published public var guides: [GuideItem] = []
     
+    private func updateIfChanged<T: Equatable>(_ property: inout T, _ newValue: T) {
+        if property != newValue {
+            property = newValue
+        }
+    }
+    
     // Keystone State (AI-003)
     @Published public var keystoneTiltX: Double = 0.0
     @Published public var keystoneTiltY: Double = 0.0
@@ -784,127 +790,128 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         }
         
         // 2. Map properties back to published floats
-        self.exposure = getFloat("ZEXPOSURE", 0.0)
-        self.contrast = getFloat("ZCONTRAST", 0.0)
-        self.brightness = getFloat("ZBRIGHTNESS", 0.0)
-        self.saturation = getFloat("ZSATURATION", 0.0)
+        updateIfChanged(&exposure, getFloat("ZEXPOSURE", 0.0))
+        updateIfChanged(&contrast, getFloat("ZCONTRAST", 0.0))
+        updateIfChanged(&brightness, getFloat("ZBRIGHTNESS", 0.0))
+        updateIfChanged(&saturation, getFloat("ZSATURATION", 0.0))
         
-        self.clarityAmount = getFloat("ZCLARITY_AMOUNT", 0.0)
-        self.structureAmount = getFloat("ZSTRUCTURE_AMOUNT", 0.0)
-        self.clarityMethod = Int(getFloat("ZCLARITY_METHOD", 0.0))
+        updateIfChanged(&clarityAmount, getFloat("ZCLARITY_AMOUNT", 0.0))
+        updateIfChanged(&structureAmount, getFloat("ZSTRUCTURE_AMOUNT", 0.0))
+        updateIfChanged(&clarityMethod, Int(getFloat("ZCLARITY_METHOD", 0.0)))
+        
         let colorBalanceSettings = ColorBalanceStorage.settings(from: colorBalanceSource)
-        self.cbMaster = colorBalanceSettings.master
-        self.cbShadow = colorBalanceSettings.shadow
-        self.cbMidtone = colorBalanceSettings.midtone
-        self.cbHighlight = colorBalanceSettings.highlight
+        updateIfChanged(&cbMaster, colorBalanceSettings.master)
+        updateIfChanged(&cbShadow, colorBalanceSettings.shadow)
+        updateIfChanged(&cbMidtone, colorBalanceSettings.midtone)
+        updateIfChanged(&cbHighlight, colorBalanceSettings.highlight)
         
         // WB and other tools are usually global or per-layer depending on tool
-        self.kelvin = (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0
-        self.tint = (mc.objectForKey("ZTINT") as? Float) ?? 0.0
+        updateIfChanged(&kelvin, (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0)
+        updateIfChanged(&tint, (mc.objectForKey("ZTINT") as? Float) ?? 0.0)
         
-        self.highlights = (mc.objectForKey("ZHIGHLIGHTS") as? Float) ?? 0.0
-        self.shadows = (mc.objectForKey("ZSHADOWS") as? Float) ?? 0.0
-        self.whites = (mc.objectForKey("ZWHITES") as? Float) ?? 0.0
-        self.blacks = (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0
+        updateIfChanged(&highlights, (mc.objectForKey("ZHIGHLIGHTS") as? Float) ?? 0.0)
+        updateIfChanged(&shadows, (mc.objectForKey("ZSHADOWS") as? Float) ?? 0.0)
+        updateIfChanged(&whites, (mc.objectForKey("ZWHITES") as? Float) ?? 0.0)
+        updateIfChanged(&blacks, (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0)
         
-        self.blackAndWhiteEnabled = (mc.objectForKey("ZBW_ENABLED") as? Bool) ?? false
-        self.bwRed = getDouble("ZBW_RED", 0.0)
-        self.bwYellow = getDouble("ZBW_YELLOW", 0.0)
-        self.bwGreen = getDouble("ZBW_GREEN", 0.0)
-        self.bwCyan = getDouble("ZBW_CYAN", 0.0)
-        self.bwBlue = getDouble("ZBW_BLUE", 0.0)
-        self.bwMagenta = getDouble("ZBW_MAGENTA", 0.0)
-        self.bwSplitToneHighlightHue = getDouble("ZBW_ST_HL_HUE", 0.0)
-        self.bwSplitToneHighlightSaturation = getDouble("ZBW_ST_HL_SAT", 0.0)
-        self.bwSplitToneShadowHue = getDouble("ZBW_ST_SH_HUE", 0.0)
-        self.bwSplitToneShadowSaturation = getDouble("ZBW_ST_SH_SAT", 0.0)
+        updateIfChanged(&blackAndWhiteEnabled, (mc.objectForKey("ZBW_ENABLED") as? Bool) ?? false)
+        updateIfChanged(&bwRed, getDouble("ZBW_RED", 0.0))
+        updateIfChanged(&bwYellow, getDouble("ZBW_YELLOW", 0.0))
+        updateIfChanged(&bwGreen, getDouble("ZBW_GREEN", 0.0))
+        updateIfChanged(&bwCyan, getDouble("ZBW_CYAN", 0.0))
+        updateIfChanged(&bwBlue, getDouble("ZBW_BLUE", 0.0))
+        updateIfChanged(&bwMagenta, getDouble("ZBW_MAGENTA", 0.0))
+        updateIfChanged(&bwSplitToneHighlightHue, getDouble("ZBW_ST_HL_HUE", 0.0))
+        updateIfChanged(&bwSplitToneHighlightSaturation, getDouble("ZBW_ST_HL_SAT", 0.0))
+        updateIfChanged(&bwSplitToneShadowHue, getDouble("ZBW_ST_SH_HUE", 0.0))
+        updateIfChanged(&bwSplitToneShadowSaturation, getDouble("ZBW_ST_SH_SAT", 0.0))
         
-        self.dehazeAmount = getDouble("ZDEHAZE_AMOUNT", 0.0)
-        self.dehazeShadowToneHue = getDouble("ZDEHAZE_SHADOW_HUE", 0.0)
-        self.vignettingAmount = getDouble("ZVIGNETTING_AMOUNT", 0.0)
-        self.vignettingMethod = Int(getDouble("ZVIGNETTING_METHOD", 0.0))
+        updateIfChanged(&dehazeAmount, getDouble("ZDEHAZE_AMOUNT", 0.0))
+        updateIfChanged(&dehazeShadowToneHue, getDouble("ZDEHAZE_SHADOW_HUE", 0.0))
+        updateIfChanged(&vignettingAmount, getDouble("ZVIGNETTING_AMOUNT", 0.0))
+        updateIfChanged(&vignettingMethod, Int(getDouble("ZVIGNETTING_METHOD", 0.0)))
         
-        self.matchLookImpact = Float(getDouble("ZMATCH_LOOK_IMPACT", 100.0))
-        self.matchLookReferenceVariantID = mc.objectForKey("ZMATCH_LOOK_REF_ID") as? String
+        updateIfChanged(&matchLookImpact, Float(getDouble("ZMATCH_LOOK_IMPACT", 100.0)))
+        updateIfChanged(&matchLookReferenceVariantID, mc.objectForKey("ZMATCH_LOOK_REF_ID") as? String)
         
-        self.moireAmount = getDouble("ZMOIRE_AMOUNT", 0.0)
-        self.moirePattern = getDouble("ZMOIRE_PATTERN", 0.0)
+        updateIfChanged(&moireAmount, getDouble("ZMOIRE_AMOUNT", 0.0))
+        updateIfChanged(&moirePattern, getDouble("ZMOIRE_PATTERN", 0.0))
         
         if let rect = mc.objectForKey("ZCROP_RECT") as? CGRect {
-            self.cropRect = rect
+            updateIfChanged(&cropRect, rect)
         }
-        self.rotationAngle = getDouble("ZROTATION_ANGLE", 0.0)
+        updateIfChanged(&rotationAngle, getDouble("ZROTATION_ANGLE", 0.0))
         
         // Lens Correction
-        self.lensDistortion = getDouble("ZLENS_DISTORTION", 0.0)
-        self.lensSharpnessFalloff = getDouble("ZLENS_SHARPNESS_FALLOFF", 0.0)
-        self.lensLightFalloff = getDouble("ZLENS_LIGHT_FALLOFF", 0.0)
-        self.lensShiftX = getFloat("ZLENS_SHIFT_X", 0.0)
-        self.lensShiftY = getFloat("ZLENS_SHIFT_Y", 0.0)
-        self.clipDistortedEdges = (mc.objectForKey("ZCLIP_DISTORTED_EDGES") as? Bool) ?? false
-        self.chromaticAberration = (mc.objectForKey("ZCHROMATIC_ABERRATION") as? Bool) ?? false
-        self.diffraction = (mc.objectForKey("ZDIFFRACTION") as? Bool) ?? false
-        self.isLCCActive = (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false
-        self.lccProfileUUID = mc.objectForKey("ZLCC_PROFILE_UUID") as? String
-        self.lccLightFalloffEnabled = (mc.objectForKey("ZLCC_LIGHTFALLOFF_ENABLED") as? Bool) ?? true
-        self.lccLightFalloffAmount = (mc.objectForKey("ZLCC_LIGHTFALLOFF_AMOUNT") as? Double) ?? 100.0
-        self.lccDustRemovalEnabled = (mc.objectForKey("ZLCC_DUSTREMOVAL_ENABLED") as? Bool) ?? true
-        self.lccUniformityEnabled = (mc.objectForKey("ZLCC_UNIFORMITY_ENABLED") as? Bool) ?? true
+        updateIfChanged(&lensDistortion, getDouble("ZLENS_DISTORTION", 0.0))
+        updateIfChanged(&lensSharpnessFalloff, getDouble("ZLENS_SHARPNESS_FALLOFF", 0.0))
+        updateIfChanged(&lensLightFalloff, getDouble("ZLENS_LIGHT_FALLOFF", 0.0))
+        updateIfChanged(&lensShiftX, getFloat("ZLENS_SHIFT_X", 0.0))
+        updateIfChanged(&lensShiftY, getFloat("ZLENS_SHIFT_Y", 0.0))
+        updateIfChanged(&clipDistortedEdges, (mc.objectForKey("ZCLIP_DISTORTED_EDGES") as? Bool) ?? false)
+        updateIfChanged(&chromaticAberration, (mc.objectForKey("ZCHROMATIC_ABERRATION") as? Bool) ?? false)
+        updateIfChanged(&diffraction, (mc.objectForKey("ZDIFFRACTION") as? Bool) ?? false)
+        updateIfChanged(&isLCCActive, (mc.objectForKey("ZLCC_ACTIVE") as? Bool) ?? false)
+        updateIfChanged(&lccProfileUUID, mc.objectForKey("ZLCC_PROFILE_UUID") as? String)
+        updateIfChanged(&lccLightFalloffEnabled, (mc.objectForKey("ZLCC_LIGHTFALLOFF_ENABLED") as? Bool) ?? true)
+        updateIfChanged(&lccLightFalloffAmount, (mc.objectForKey("ZLCC_LIGHTFALLOFF_AMOUNT") as? Double) ?? 100.0)
+        updateIfChanged(&lccDustRemovalEnabled, (mc.objectForKey("ZLCC_DUSTREMOVAL_ENABLED") as? Bool) ?? true)
+        updateIfChanged(&lccUniformityEnabled, (mc.objectForKey("ZLCC_UNIFORMITY_ENABLED") as? Bool) ?? true)
         
         // Keystone
-        self.keystoneTiltX = getDouble("ZKEYSTONE_TILTX", 0.0)
-        self.keystoneTiltY = getDouble("ZKEYSTONE_TILTY", 0.0)
-        self.keystoneAmount = getDouble("ZKEYSTONE_AMOUNT", 0.0)
-        self.keystoneAspect = getDouble("ZKEYSTONE_ASPECT", 0.0)
-        self.keystoneSkew = getDouble("ZKEYSTONE_SKEW", 0.0)
-        self.keystoneFocalLength = getDouble("ZKEYSTONE_FOCALLENGTH", 35.0)
+        updateIfChanged(&keystoneTiltX, getDouble("ZKEYSTONE_TILTX", 0.0))
+        updateIfChanged(&keystoneTiltY, getDouble("ZKEYSTONE_TILTY", 0.0))
+        updateIfChanged(&keystoneAmount, getDouble("ZKEYSTONE_AMOUNT", 0.0))
+        updateIfChanged(&keystoneAspect, getDouble("ZKEYSTONE_ASPECT", 0.0))
+        updateIfChanged(&keystoneSkew, getDouble("ZKEYSTONE_SKEW", 0.0))
+        updateIfChanged(&keystoneFocalLength, getDouble("ZKEYSTONE_FOCALLENGTH", 35.0))
         
         // Noise Reduction
-        self.nrLuminance = getDouble("ZNR_LUMINANCE", 50.0)
-        self.nrDetails = getDouble("ZNR_DETAILS", 50.0)
-        self.nrColor = getDouble("ZNR_COLOR", 50.0)
-        self.nrSinglePixel = getDouble("ZNR_SINGLE_PIXEL", 0.0)
+        updateIfChanged(&nrLuminance, getDouble("ZNR_LUMINANCE", 50.0))
+        updateIfChanged(&nrDetails, getDouble("ZNR_DETAILS", 50.0))
+        updateIfChanged(&nrColor, getDouble("ZNR_COLOR", 50.0))
+        updateIfChanged(&nrSinglePixel, getDouble("ZNR_SINGLE_PIXEL", 0.0))
         
         // Sharpening
-        self.sharpAmount = getDouble("ZSHARP_AMOUNT", 100.0)
-        self.sharpRadius = getDouble("ZSHARP_RADIUS", 0.8)
-        self.sharpThreshold = getDouble("ZSHARP_THRESHOLD", 1.0)
-        self.sharpHalo = getDouble("ZSHARP_HALO", 0.0)
+        updateIfChanged(&sharpAmount, getDouble("ZSHARP_AMOUNT", 100.0))
+        updateIfChanged(&sharpRadius, getDouble("ZSHARP_RADIUS", 0.8))
+        updateIfChanged(&sharpThreshold, getDouble("ZSHARP_THRESHOLD", 1.0))
+        updateIfChanged(&sharpHalo, getDouble("ZSHARP_HALO", 0.0))
         
         // Levels (RGB)
-        self.levelsBlackPointRGB = (mc.objectForKey("ZLEVELS_BLACK_RGB") as? Float) ?? 0.0
-        self.levelsWhitePointRGB = (mc.objectForKey("ZLEVELS_WHITE_RGB") as? Float) ?? 1.0
-        self.levelsMidtoneRGB = (mc.objectForKey("ZLEVELS_MIDTONE_RGB") as? Float) ?? 1.0
-        self.levelsTargetBlackRGB = (mc.objectForKey("ZLEVELS_TBLACK_RGB") as? Float) ?? 0.0
-        self.levelsTargetWhiteRGB = (mc.objectForKey("ZLEVELS_TWHITE_RGB") as? Float) ?? 1.0
+        updateIfChanged(&levelsBlackPointRGB, (mc.objectForKey("ZLEVELS_BLACK_RGB") as? Float) ?? 0.0)
+        updateIfChanged(&levelsWhitePointRGB, (mc.objectForKey("ZLEVELS_WHITE_RGB") as? Float) ?? 1.0)
+        updateIfChanged(&levelsMidtoneRGB, (mc.objectForKey("ZLEVELS_MIDTONE_RGB") as? Float) ?? 1.0)
+        updateIfChanged(&levelsTargetBlackRGB, (mc.objectForKey("ZLEVELS_TBLACK_RGB") as? Float) ?? 0.0)
+        updateIfChanged(&levelsTargetWhiteRGB, (mc.objectForKey("ZLEVELS_TWHITE_RGB") as? Float) ?? 1.0)
         
         // Levels (Red)
-        self.levelsBlackPointR = (mc.objectForKey("ZLEVELS_BLACK_R") as? Float) ?? 0.0
-        self.levelsWhitePointR = (mc.objectForKey("ZLEVELS_WHITE_R") as? Float) ?? 1.0
-        self.levelsMidtoneR = (mc.objectForKey("ZLEVELS_MIDTONE_R") as? Float) ?? 1.0
-        self.levelsTargetBlackR = (mc.objectForKey("ZLEVELS_TBLACK_R") as? Float) ?? 0.0
-        self.levelsTargetWhiteR = (mc.objectForKey("ZLEVELS_TWHITE_R") as? Float) ?? 1.0
+        updateIfChanged(&levelsBlackPointR, (mc.objectForKey("ZLEVELS_BLACK_R") as? Float) ?? 0.0)
+        updateIfChanged(&levelsWhitePointR, (mc.objectForKey("ZLEVELS_WHITE_R") as? Float) ?? 1.0)
+        updateIfChanged(&levelsMidtoneR, (mc.objectForKey("ZLEVELS_MIDTONE_R") as? Float) ?? 1.0)
+        updateIfChanged(&levelsTargetBlackR, (mc.objectForKey("ZLEVELS_TBLACK_R") as? Float) ?? 0.0)
+        updateIfChanged(&levelsTargetWhiteR, (mc.objectForKey("ZLEVELS_TWHITE_R") as? Float) ?? 1.0)
         
         // Levels (Green)
-        self.levelsBlackPointG = (mc.objectForKey("ZLEVELS_BLACK_G") as? Float) ?? 0.0
-        self.levelsWhitePointG = (mc.objectForKey("ZLEVELS_WHITE_G") as? Float) ?? 1.0
-        self.levelsMidtoneG = (mc.objectForKey("ZLEVELS_MIDTONE_G") as? Float) ?? 1.0
-        self.levelsTargetBlackG = (mc.objectForKey("ZLEVELS_TBLACK_G") as? Float) ?? 0.0
-        self.levelsTargetWhiteG = (mc.objectForKey("ZLEVELS_TWHITE_G") as? Float) ?? 1.0
+        updateIfChanged(&levelsBlackPointG, (mc.objectForKey("ZLEVELS_BLACK_G") as? Float) ?? 0.0)
+        updateIfChanged(&levelsWhitePointG, (mc.objectForKey("ZLEVELS_WHITE_G") as? Float) ?? 1.0)
+        updateIfChanged(&levelsMidtoneG, (mc.objectForKey("ZLEVELS_MIDTONE_G") as? Float) ?? 1.0)
+        updateIfChanged(&levelsTargetBlackG, (mc.objectForKey("ZLEVELS_TBLACK_G") as? Float) ?? 0.0)
+        updateIfChanged(&levelsTargetWhiteG, (mc.objectForKey("ZLEVELS_TWHITE_G") as? Float) ?? 1.0)
         
         // Levels (Blue)
-        self.levelsBlackPointB = (mc.objectForKey("ZLEVELS_BLACK_B") as? Float) ?? 0.0
-        self.levelsWhitePointB = (mc.objectForKey("ZLEVELS_WHITE_B") as? Float) ?? 1.0
-        self.levelsMidtoneB = (mc.objectForKey("ZLEVELS_MIDTONE_B") as? Float) ?? 1.0
-        self.levelsTargetBlackB = (mc.objectForKey("ZLEVELS_TBLACK_B") as? Float) ?? 0.0
-        self.levelsTargetWhiteB = (mc.objectForKey("ZLEVELS_TWHITE_B") as? Float) ?? 1.0
+        updateIfChanged(&levelsBlackPointB, (mc.objectForKey("ZLEVELS_BLACK_B") as? Float) ?? 0.0)
+        updateIfChanged(&levelsWhitePointB, (mc.objectForKey("ZLEVELS_WHITE_B") as? Float) ?? 1.0)
+        updateIfChanged(&levelsMidtoneB, (mc.objectForKey("ZLEVELS_MIDTONE_B") as? Float) ?? 1.0)
+        updateIfChanged(&levelsTargetBlackB, (mc.objectForKey("ZLEVELS_TBLACK_B") as? Float) ?? 0.0)
+        updateIfChanged(&levelsTargetWhiteB, (mc.objectForKey("ZLEVELS_TWHITE_B") as? Float) ?? 1.0)
         
-        self.curvesPointsRGB = (mc.objectForKey("ZCURVE_POINTS_RGB") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        self.curvesPointsLuma = (mc.objectForKey("ZCURVE_POINTS_LUMA") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        self.curvesPointsRed = (mc.objectForKey("ZCURVE_POINTS_RED") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        self.curvesPointsGreen = (mc.objectForKey("ZCURVE_POINTS_GREEN") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        self.curvesPointsBlue = (mc.objectForKey("ZCURVE_POINTS_BLUE") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        self.curvesSelectedChannel = (mc.objectForKey("ZCURVE_SELECTED_CHANNEL") as? Int) ?? 0
+        updateIfChanged(&curvesPointsRGB, (mc.objectForKey("ZCURVE_POINTS_RGB") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
+        updateIfChanged(&curvesPointsLuma, (mc.objectForKey("ZCURVE_POINTS_LUMA") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
+        updateIfChanged(&curvesPointsRed, (mc.objectForKey("ZCURVE_POINTS_RED") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
+        updateIfChanged(&curvesPointsGreen, (mc.objectForKey("ZCURVE_POINTS_GREEN") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
+        updateIfChanged(&curvesPointsBlue, (mc.objectForKey("ZCURVE_POINTS_BLUE") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
+        updateIfChanged(&curvesSelectedChannel, (mc.objectForKey("ZCURVE_SELECTED_CHANNEL") as? Int) ?? 0)
         
         if let data = mc.objectForKey("ZSPOTS") as? Data,
            let decoded = try? JSONDecoder().decode([SpotItem].self, from: data) {
@@ -978,7 +985,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     
     /// Triggers a re-render via ImageCorePipeline when adjustments change.
     public func commitChanges(to variant: VariantBase?) {
-        guard let variant = variant, let mc = variant.mcVariant else { return }
+        guard let variant = variant, let mc = variant.mcVariant, !isUpdatingFromModel else { return }
+        
         let colorBalanceSettings = ColorBalanceStorage.normalizedSettings(
             ColorBalanceSettings(
                 master: cbMaster,
