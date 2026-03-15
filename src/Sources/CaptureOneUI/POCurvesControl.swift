@@ -67,14 +67,12 @@ public struct POCurvesControl: View {
                         ZStack {
                             CaptureOneTheme.Colors.histogramBackground
                                 .cornerRadius(4)
-                                .gesture(
-                                    DragGesture(minimumDistance: 0)
-                                        .onEnded { value in
-                                            if draggingIndex == nil {
-                                                addPoint(at: value.location, in: geometry.size)
-                                            }
-                                        }
-                                )
+                                .contentShape(Rectangle())
+                                .onTapGesture { location in
+                                    // Add point on tap if not clicking a handle
+                                    // (Points are rendered on top, so they'll catch their own gestures first)
+                                    addPoint(at: location, in: geometry.size)
+                                }
                             
                             // Grid
                             Path { path in
@@ -229,7 +227,7 @@ private struct ControlPointView: View {
             .frame(width: isDragging ? 12 : 8, height: isDragging ? 12 : 8)
             .position(pointToView(point, in: geometry.size))
             .shadow(radius: isDragging ? 2 : 0)
-            .gesture(
+            .simultaneousGesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
                         onDragChanged(value.location)

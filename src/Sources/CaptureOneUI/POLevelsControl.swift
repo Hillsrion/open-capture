@@ -209,7 +209,7 @@ private struct OutputBar: View {
                         .offset(y: isTargetBlack ? -6 : 6)
                 )
                 .position(x: 6, y: CGFloat(1.0 - value) * 120)
-                .gesture(DragGesture().onChanged { val in
+                .simultaneousGesture(DragGesture(minimumDistance: 0).onChanged { val in
                     let newVal = Float(1.0 - (val.location.y / 120))
                     if isTargetBlack {
                         value = min(max(0.0, newVal), targetOther - 0.05)
@@ -237,7 +237,7 @@ private struct InputHandles: View {
                 .fill(CaptureOneTheme.Colors.textSecondary)
                 .frame(width: 8, height: 8)
                 .position(x: CGFloat(midtonePosition()) * geometry.size.width, y: geometry.size.height - 5)
-                .gesture(DragGesture().onChanged { value in
+                .simultaneousGesture(DragGesture(minimumDistance: 0).onChanged { value in
                     let newMidX = Float(value.location.x / geometry.size.width)
                     let normalizedPos = (newMidX - blackPoint) / max(0.001, whitePoint - blackPoint)
                     let clampedPos = min(max(0.1, normalizedPos), 0.9)
@@ -265,7 +265,7 @@ private struct InputHandles: View {
                 .font(.system(size: 10))
                 .foregroundColor(CaptureOneTheme.Colors.textPrimary)
                 .position(x: CGFloat(value) * geometry.size.width, y: geometry.size.height - 5)
-                .gesture(DragGesture().onChanged { val in
+                .simultaneousGesture(DragGesture(minimumDistance: 0).onChanged { val in
                     let newVal = Float(val.location.x / geometry.size.width)
                     value = min(max(range.lowerBound, newVal), range.upperBound)
                 })
