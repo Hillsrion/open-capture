@@ -291,6 +291,7 @@ internal final class OperationChainBuilder {
     private let geometry = GeometryOperation()
     private let colorControls = ColorControlsOperation()
     private let colorGrading = ColorGradingOperation()
+    private let colorLUT = ColorLUTOperation()
     private let localAdjustments = LocalAdjustmentsOperation()
     
     func buildChain(_ parameters: SImageOperationAllParameters) -> [ImageOperation] {
@@ -303,7 +304,11 @@ internal final class OperationChainBuilder {
         if shouldApplyColorControls(settings) { chain.append(colorControls) }
         
         if parameters.quality != .display {
-            if shouldApplyColorGrading(settings) { chain.append(colorGrading) }
+            if shouldApplyColorLUT(settings) {
+                chain.append(colorLUT)
+            } else if shouldApplyColorGrading(settings) {
+                chain.append(colorGrading)
+            }
             if shouldApplyLocalAdjustments(settings) { chain.append(localAdjustments) }
         }
         
@@ -328,6 +333,17 @@ internal final class OperationChainBuilder {
     
     private func shouldApplyColorGrading(_ settings: IC_ProcessSettings) -> Bool {
         settings.colorBalance != ColorBalanceSettings()
+    }
+    
+    private func shouldApplyColorLUT(_ settings: IC_ProcessSettings) -> Bool {
+        if settings.colorBalance != ColorBalanceSettings() { return true }
+        if settings.colorCorrectionList.count > 0 { return true }
+        if settings.gradationCurves.curveX.count > 1 { return true }
+        if settings.gradationCurves.curveL.count > 1 { return true }
+        if settings.gradationCurves.curveR.count > 1 { return true }
+        if settings.gradationCurves.curveG.count > 1 { return true }
+        if settings.gradationCurves.curveB.count > 1 { return true }
+        return false
     }
     
     private func shouldApplyLocalAdjustments(_ settings: IC_ProcessSettings) -> Bool {

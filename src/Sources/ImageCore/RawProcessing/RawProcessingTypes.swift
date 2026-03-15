@@ -244,6 +244,31 @@ public struct IC_LevelsSettings {
     public init() {}
 }
 
+/// Processing quality tiers used to build dynamic operation chains.
+public enum IC_ProcessQuality: Int32 {
+    case display = 0
+    case render = 1
+    case export = 2
+}
+
+/// Aggregates parameters used when building an operation chain.
+public struct SImageOperationAllParameters {
+    public var settings: IC_ProcessSettings
+    public var quality: IC_ProcessQuality
+    public var isInteractive: Bool
+    public var viewport: CGRect?
+    
+    public init(settings: IC_ProcessSettings,
+                quality: IC_ProcessQuality,
+                isInteractive: Bool = false,
+                viewport: CGRect? = nil) {
+        self.settings = settings
+        self.quality = quality
+        self.isInteractive = isInteractive
+        self.viewport = viewport
+    }
+}
+
 public struct IC_ProcessSettings {
     public var engineVersion: Int32 = 1600
     
