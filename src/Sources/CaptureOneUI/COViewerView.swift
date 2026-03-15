@@ -40,7 +40,12 @@ public struct COViewerView: View {
         }
         .onAppear { render() }
         .onChange(of: image?.id) { _ in render() }
-        .onReceive(Just(adjustmentController).compactMap { $0?.objectWillChange }.flatMap { $0 }) { _ in
+        .onReceive(
+            Just(adjustmentController)
+                .compactMap { $0?.objectWillChange }
+                .flatMap { $0 }
+                .throttle(for: .milliseconds(60), scheduler: RunLoop.main, latest: true)
+        ) { _ in
             render()
         }
     }

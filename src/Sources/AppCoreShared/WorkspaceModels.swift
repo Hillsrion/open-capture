@@ -243,7 +243,6 @@ public struct Workspace: Codable, Identifiable {
 
     public func activePalette() -> WorkspacePaletteDefinition? {
         let palette = palettes.first(where: { $0.id == selectedPaletteID }) ?? palettes.first
-        print("[Workspace] activePalette lookup for '\(selectedPaletteID)' -> found: \(palette?.id ?? "nil")")
         return palette
     }
 
