@@ -31,10 +31,10 @@ public class RawImageEngine {
     /// Main entry point for developing a RAW image.
     /// Mimics the behavior of ImageProcessing.framework's development methods.
     public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CIImage? {
-        guard let resolvedPipeline = proxyCache.pipeline(for: url, context: context) { [weak self] in
+        guard let resolvedPipeline = proxyCache.pipeline(for: url, context: context, loader: { [weak self] in
             guard let self = self else { return nil }
             return self.loadSourceImage(from: url)
-        } else {
+        }) else {
             return createPlaceholderImage()
         }
         let output = resolvedPipeline.process(settings: settings, isLiveDrag: isLiveDrag)

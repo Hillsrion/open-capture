@@ -97,7 +97,7 @@ internal final class ProxyCache {
     
     private func estimateCost(for image: CIImage) -> Int {
         let extent = image.extent
-        guard extent.isFinite, extent.width > 0, extent.height > 0 else { return 0 }
+        guard !extent.isInfinite, !extent.isNull, extent.width > 0, extent.height > 0 else { return 0 }
         let pixels = Int(extent.width * extent.height)
         let bytesPerPixel = 8 // RGBAh
         return pixels * bytesPerPixel

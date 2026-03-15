@@ -16,6 +16,7 @@ public struct COViewerView: View {
     let adjustmentController: AdjustmentToolController?
     @ObservedObject var liveView = LiveViewEngine.shared
     @ObservedObject var commands = AppCommandCenter.shared
+    @StateObject private var renderCoalescer = RenderCoalescer()
     @State private var renderedImage: NSImage?
     @State private var sourceImage: NSImage?
     @State private var maskImage: NSImage?
@@ -39,15 +40,14 @@ public struct COViewerView: View {
                 ))
             }
         }
-        .onAppear { render() }
-        .onChange(of: image?.id) { _ in render() }
+        .onAppear { requestCoalescedRender(forceQuality: .render) }
+        .onChange(of: image?.id) { _ in requestCoalescedRender(forceQuality: .render) }
         .onReceive(
             Just(adjustmentController)
                 .compactMap { $0?.objectWillChange }
                 .flatMap { $0 }
-                .throttle(for: .milliseconds(33), scheduler: RunLoop.main, latest: true) // ~30fps live preview
         ) { _ in
-            render()
+            requestCoalescedRender(forceQuality: nil)
         }
     }
     
@@ -377,24 +377,46 @@ public struct COViewerView: View {
 
     @State private var renderedCIImage: CIImage? = nil
 
-    private func render() {
+    private func requestCoalescedRender(forceQuality: IC_ProcessQuality?) {
         guard let image = image else {
             renderedImage = nil; renderedCIImage = nil; sourceImage = nil; lastLoadedURL = nil; return
         }
         let url = URL(fileURLWithPath: image.path)
-        let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil) || (adjustmentController?.isInteracting == true)
+        let imagePath = image.path
+        let viewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+        let isInteracting = dragStartOrigin != nil
+            || activeCropZone != .none
+            || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil)
+            || (adjustmentController?.isInteracting == true)
+        let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
+        
+        let renderBlock: (IC_ProcessSettings, IC_ProcessQuality) -> Void = { settings, quality in
+            self.performRender(url: url, imagePath: imagePath, settings: settings, quality: quality)
+        }
+        
+        if let forced = forceQuality {
+            renderBlock(updatedSettings, forced)
+        } else {
+            renderCoalescer.submit(settings: updatedSettings,
+                                   viewport: viewport,
+                                   isInteracting: isInteracting,
+                                   render: renderBlock)
+        }
+    }
+    
+    private func performRender(url: URL, imagePath: String, settings: IC_ProcessSettings, quality: IC_ProcessQuality) {
+        let isLiveDrag = quality == .display
         let supportsMetal = COMTRView.supportsMetal
         
         if sourceImage == nil || lastLoadedURL != url {
-            ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
+            ThumbnailManager.shared.requestThumbnail(for: imagePath, size: CGSize(width: 2000, height: 2000)) { thumb in
                 guard let thumb = thumb else {
                     self.sourceImage = nil; self.renderedImage = nil; self.renderedCIImage = nil; return
                 }
                 self.sourceImage = thumb
                 self.lastLoadedURL = url
                 
-                let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
-                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: settings, isLiveDrag: isLiveDrag) {
                     if supportsMetal {
                         DispatchQueue.main.async { self.renderedCIImage = developedCIImage; self.renderedImage = nil }
                     } else {
@@ -410,8 +432,7 @@ public struct COViewerView: View {
             // Fast path: thumbnail already loaded, image is in proxy cache
             // objectWillChange fires before properties update. Delay by 1 tick to read new settings.
             DispatchQueue.main.async {
-                let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
-                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: settings, isLiveDrag: isLiveDrag) {
                     if supportsMetal {
                         self.renderedCIImage = developedCIImage
                         self.renderedImage = nil

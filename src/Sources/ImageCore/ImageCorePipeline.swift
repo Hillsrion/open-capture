@@ -176,7 +176,7 @@ public class ImageCorePipeline {
                 let dstRow = (tile.y + row) * outputStride
                 let srcRow = row * tileWidth
                 outputPtr.advanced(by: dstRow + tile.x)
-                    .assign(from: base.advanced(by: srcRow), count: tileWidth)
+                    .update(from: base.advanced(by: srcRow), count: tileWidth)
             }
         }
     }
