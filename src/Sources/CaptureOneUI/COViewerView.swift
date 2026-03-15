@@ -87,6 +87,7 @@ public struct COViewerView: View {
                 BeforeAfterSplitView(
                     beforeImage: sourceNS,
                     afterImage: renderedNS ?? sourceNS,
+                    afterCIImage: renderedCI,
                     splitPosition: $commands.beforeAfterSplitPosition,
                     viewerSize: size
                 )
@@ -115,11 +116,11 @@ public struct COViewerView: View {
             }
             
             if commands.showExposureWarning {
-                ExposureWarningOverlay(image: renderedImage ?? NSImage())
+                ExposureWarningOverlay(image: renderedImage ?? sourceImage ?? NSImage())
             }
             
             if commands.showFocusMask {
-                FocusMaskOverlay(image: renderedImage ?? NSImage())
+                FocusMaskOverlay(image: renderedImage ?? sourceImage ?? NSImage())
                     .blendMode(.screen)
                     .allowsHitTesting(false)
             }
@@ -382,6 +383,7 @@ public struct COViewerView: View {
         }
         let url = URL(fileURLWithPath: image.path)
         let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil) || (adjustmentController?.isInteracting == true)
+        let supportsMetal = COMTRView.supportsMetal
         
         if sourceImage == nil || lastLoadedURL != url {
             ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
@@ -393,10 +395,15 @@ public struct COViewerView: View {
                 
                 let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
                 if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
-                    DispatchQueue.main.async { self.renderedCIImage = developedCIImage }
+                    if supportsMetal {
+                        DispatchQueue.main.async { self.renderedCIImage = developedCIImage; self.renderedImage = nil }
+                    } else {
+                        let fallback = developedCIImage.toNSImage()
+                        DispatchQueue.main.async { self.renderedImage = fallback ?? thumb; self.renderedCIImage = nil }
+                    }
                 } else {
                     // Fallback to NSImage if CIImage fails (though it shouldn't)
-                    DispatchQueue.main.async { self.renderedImage = thumb }
+                    DispatchQueue.main.async { self.renderedImage = thumb; self.renderedCIImage = nil }
                 }
             }
         } else {
@@ -405,7 +412,13 @@ public struct COViewerView: View {
             DispatchQueue.main.async {
                 let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
                 if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
-                    self.renderedCIImage = developedCIImage
+                    if supportsMetal {
+                        self.renderedCIImage = developedCIImage
+                        self.renderedImage = nil
+                    } else {
+                        self.renderedImage = developedCIImage.toNSImage() ?? self.sourceImage
+                        self.renderedCIImage = nil
+                    }
                 }
             }
         }
@@ -431,10 +444,12 @@ public struct COViewerView: View {
         let offsetY = (0.5 - (viewport.origin.y + viewport.height / 2)) * size.height * zoom
         
         Group {
-            if let ciImage = ciImage {
+            if let ciImage = ciImage, COMTRView.supportsMetal {
                 COMTRView(image: ciImage)
             } else if let nsImage = nsImage {
                 Image(nsImage: nsImage).resizable().aspectRatio(contentMode: .fit)
+            } else if let ciImage = ciImage, let fallback = ciImage.toNSImage() {
+                Image(nsImage: fallback).resizable().aspectRatio(contentMode: .fit)
             } else {
                 Color.clear
             }
@@ -539,10 +554,19 @@ struct KeystoneOverlayView: View {
 }
 
 struct BeforeAfterSplitView: View {
-    let beforeImage: NSImage; let afterImage: NSImage; @Binding var splitPosition: Double; let viewerSize: CGSize
+    let beforeImage: NSImage
+    let afterImage: NSImage
+    let afterCIImage: CIImage?
+    @Binding var splitPosition: Double
+    let viewerSize: CGSize
     var body: some View {
         ZStack {
-            Image(nsImage: afterImage).resizable().aspectRatio(contentMode: .fit)
+            if let afterCIImage = afterCIImage, COMTRView.supportsMetal {
+                COMTRView(image: afterCIImage)
+                    .frame(width: viewerSize.width, height: viewerSize.height)
+            } else {
+                Image(nsImage: afterImage).resizable().aspectRatio(contentMode: .fit)
+            }
             Image(nsImage: beforeImage).resizable().aspectRatio(contentMode: .fit)
                 .mask(HStack(spacing: 0) {
                     Rectangle().frame(width: viewerSize.width * CGFloat(splitPosition))
@@ -562,5 +586,13 @@ struct BeforeAfterSplitView: View {
 extension CropRectHitboxCalculator.InteractionZone {
     var isRotation: Bool {
         return self == .rotateTopLeft || self == .rotateTopRight || self == .rotateBottomLeft || self == .rotateBottomRight
+    }
+}
+
+private extension CIImage {
+    func toNSImage() -> NSImage? {
+        let context = CIContext()
+        guard let cgImage = context.createCGImage(self, from: self.extent) else { return nil }
+        return NSImage(cgImage: cgImage, size: NSSize(width: self.extent.width, height: self.extent.height))
     }
 }

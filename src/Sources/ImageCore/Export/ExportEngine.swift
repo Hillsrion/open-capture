@@ -3,14 +3,29 @@ import CoreGraphics
 import ImageIO
 import CoreImage
 import UniformTypeIdentifiers
+import Metal
 
 /// Reconstructed Export Engine (EXP-003).
 /// Coordinates RAW development and file writing for final output.
 public class ExportEngine {
     
     public static let shared = ExportEngine()
+    private let context: CIContext
     
-    private init() {}
+    private init() {
+        let options: [CIContextOption: Any] = [
+            .workingFormat: CIFormat.RGBAh,
+            .workingColorSpace: CGColorSpaceCreateDeviceRGB(),
+            .cacheIntermediates: false,
+            .useSoftwareRenderer: false
+        ]
+        
+        if let device = MTLCreateSystemDefaultDevice() {
+            self.context = CIContext(mtlDevice: device, options: options)
+        } else {
+            self.context = CIContext(options: options)
+        }
+    }
     
     /// Exports a single RAW image using development settings and a recipe.
     /// Mimics CatalogWriter::WriteExportedImages from DataCore.
@@ -24,7 +39,6 @@ public class ExportEngine {
         }
         
         // Convert CIImage to CGImage for export (Readback is acceptable for final export)
-        let context = CIContext()
         guard let developedImage = context.createCGImage(developedCIImage, from: developedCIImage.extent) else {
             completion(.failure(NSError(domain: "ExportEngine", code: 2, userInfo: [NSLocalizedDescriptionKey: "Failed to render final image for export."])))
             return

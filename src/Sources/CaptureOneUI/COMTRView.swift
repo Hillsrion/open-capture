@@ -3,6 +3,8 @@ import MetalKit
 import CoreImage
 
 public struct COMTRView: NSViewRepresentable {
+    private static let sharedDevice = MTLCreateSystemDefaultDevice()
+    public static var supportsMetal: Bool { sharedDevice != nil }
     public var image: CIImage?
     
     public init(image: CIImage?) {
@@ -25,7 +27,13 @@ public struct COMTRView: NSViewRepresentable {
                 .useSoftwareRenderer: false
             ]
             
-            self.context = CIContext(mtlDevice: device ?? MTLCreateSystemDefaultDevice()!, options: options)
+            if let device = device {
+                self.context = CIContext(mtlDevice: device, options: options)
+            } else {
+                var softwareOptions = options
+                softwareOptions[.useSoftwareRenderer] = true
+                self.context = CIContext(options: softwareOptions)
+            }
             super.init()
         }
         
@@ -64,12 +72,12 @@ public struct COMTRView: NSViewRepresentable {
     }
     
     public func makeCoordinator() -> Coordinator {
-        return Coordinator(device: MTLCreateSystemDefaultDevice())
+        return Coordinator(device: Self.sharedDevice)
     }
     
     public func makeNSView(context: Context) -> MTKView {
         let mtkView = MTKView()
-        mtkView.device = MTLCreateSystemDefaultDevice()
+        mtkView.device = Self.sharedDevice
         mtkView.delegate = context.coordinator
         mtkView.framebufferOnly = false // Required for CoreImage CIContext rendering
         mtkView.clearColor = MTLClearColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)

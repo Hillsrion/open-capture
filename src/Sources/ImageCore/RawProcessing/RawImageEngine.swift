@@ -15,6 +15,7 @@ public class RawImageEngine {
     private let maxCacheSize = 5
     private var activePipelines: [URL: RenderPipeline] = [:]
     private var lruList: [URL] = []
+    private let cacheQueue = DispatchQueue(label: "ImageCore.RawImageEngine.cache")
     
     private init() {
         // In original C1, this would be a Metal-backed context shared with the viewer
@@ -36,17 +37,19 @@ public class RawImageEngine {
     /// Main entry point for developing a RAW image.
     /// Mimics the behavior of ImageProcessing.framework's development methods.
     public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CIImage? {
-        let pipeline: RenderPipeline
+        var pipeline: RenderPipeline?
         
-        if let existing = activePipelines[url] {
-            pipeline = existing
-            
-            // Update LRU position
-            if let index = lruList.firstIndex(of: url) {
-                lruList.remove(at: index)
-                lruList.append(url)
+        cacheQueue.sync {
+            if let existing = activePipelines[url] {
+                pipeline = existing
+                if let index = lruList.firstIndex(of: url) {
+                    lruList.remove(at: index)
+                    lruList.append(url)
+                }
             }
-        } else {
+        }
+        
+        if pipeline == nil {
             print("[Engine] Loading RAW into Proxy Cache: \(url.lastPathComponent)")
             
             // 1. RAW Loading (Improved for CR3/Modern formats)
@@ -60,21 +63,31 @@ public class RawImageEngine {
                 return createPlaceholderImage()
             }
             
-            pipeline = RenderPipeline(sourceImage: extracted, context: self.context)
+            let newPipeline = RenderPipeline(sourceImage: extracted, context: self.context)
             
-            // Evict oldest if cache is full
-            if lruList.count >= maxCacheSize {
-                let oldestUrl = lruList.removeFirst()
-                activePipelines.removeValue(forKey: oldestUrl)
-                print("[Engine] Evicted \(oldestUrl.lastPathComponent) from Proxy Cache (LRU)")
+            cacheQueue.sync {
+                if let existing = activePipelines[url] {
+                    pipeline = existing
+                    if let index = lruList.firstIndex(of: url) {
+                        lruList.remove(at: index)
+                        lruList.append(url)
+                    }
+                } else {
+                    if lruList.count >= maxCacheSize {
+                        let oldestUrl = lruList.removeFirst()
+                        activePipelines.removeValue(forKey: oldestUrl)
+                        print("[Engine] Evicted \(oldestUrl.lastPathComponent) from Proxy Cache (LRU)")
+                    }
+                    
+                    activePipelines[url] = newPipeline
+                    lruList.append(url)
+                    pipeline = newPipeline
+                }
             }
-            
-            // Store in proxy cache to guarantee 30fps/60fps playback during slider drag
-            activePipelines[url] = pipeline
-            lruList.append(url)
         }
         
-        let output = pipeline.process(settings: settings, isLiveDrag: isLiveDrag)
+        guard let resolvedPipeline = pipeline else { return nil }
+        let output = resolvedPipeline.process(settings: settings, isLiveDrag: isLiveDrag)
         
         // 3. Return CIImage directly to avoid CPU Readback
         return output
@@ -85,6 +98,7 @@ public class RawImageEngine {
     private class RenderPipeline {
         let sourceImage: CIImage
         private let context: CIContext
+        private let processQueue = DispatchQueue(label: "ImageCore.RenderPipeline.process")
         
         // Operation Chains
         private var displayChain: [ImageOperation] = []
@@ -113,14 +127,16 @@ public class RawImageEngine {
         }
         
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool) -> CIImage {
-            let chain = isLiveDrag ? displayChain : fullRenderChain
-            var output = sourceImage
-            
-            for operation in chain {
-                output = operation.execute(input: output, settings: settings)
+            processQueue.sync {
+                let chain = isLiveDrag ? displayChain : fullRenderChain
+                var output = sourceImage
+                
+                for operation in chain {
+                    output = operation.execute(input: output, settings: settings)
+                }
+                
+                return output
             }
-            
-            return output
         }
     }
     
@@ -282,4 +298,3 @@ internal class LocalAdjustmentsOperation: ImageOperation {
         }
     }
 }
-
