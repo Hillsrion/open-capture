@@ -163,7 +163,7 @@ public struct StyleInspectorTool: View {
 }
 
 /// Reconstructed high-fidelity Histogram tool (ENG-204).
-/// Simulates ICHistogramRenderer with RGB and Luma channels.
+/// Displays real-time POHistogram with channel overlays.
 public struct HistogramToolView: View {
     @ObservedObject var controller = AdjustmentToolController.shared
     @ObservedObject var commands = AppCommandCenter.shared
@@ -174,7 +174,7 @@ public struct HistogramToolView: View {
     public var body: some View {
         COToolSection("Histogram", toolID: "Histogram") {
             VStack(spacing: 6) {
-                // Exposure info header
+                // Exposure info header (Mock metadata for now)
                 HStack {
                     Text("ISO 400").font(.system(size: 9))
                     Spacer()
@@ -185,40 +185,29 @@ public struct HistogramToolView: View {
                 .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                 
                 // Dynamic Histogram Canvas
-                Canvas { context, size in
-                    let shift = CGFloat(controller.exposure * 10.0 + Float(controller.brightness) * 0.5)
+                ZStack {
+                    CaptureOneTheme.Colors.histogramBackground
+                        .cornerRadius(2)
                     
-                    // Simulate Luma Channel
-                    var lumaPath = Path()
-                    lumaPath.move(to: CGPoint(x: 0, y: size.height))
-                    lumaPath.addCurve(to: CGPoint(x: size.width, y: size.height), 
-                                      control1: CGPoint(x: size.width * 0.3 + shift, y: size.height * 0.1), 
-                                      control2: CGPoint(x: size.width * 0.7 + shift, y: size.height * 0.4))
-                    context.fill(lumaPath, with: .color(Color.gray.opacity(0.4)))
+                    // Luma Channel (Gray)
+                    HistogramPath(data: controller.currentHistogram.luminance)
+                        .fill(Color.gray.opacity(0.4))
                     
                     if showChannels {
-                        // Simulate Red Channel
-                        var redPath = Path()
-                        redPath.move(to: CGPoint(x: 0, y: size.height))
-                        redPath.addCurve(to: CGPoint(x: size.width, y: size.height), 
-                                         control1: CGPoint(x: size.width * 0.2 + shift, y: size.height * 0.2), 
-                                         control2: CGPoint(x: size.width * 0.8 + shift, y: size.height * 0.6))
-                        context.stroke(redPath, with: .color(Color.red.opacity(0.8)), lineWidth: 1)
-                        
-                        // Simulate Blue Channel
-                        var bluePath = Path()
-                        bluePath.move(to: CGPoint(x: 0, y: size.height))
-                        bluePath.addCurve(to: CGPoint(x: size.width, y: size.height), 
-                                          control1: CGPoint(x: size.width * 0.4 + shift, y: size.height * 0.3), 
-                                          control2: CGPoint(x: size.width * 0.6 + shift, y: size.height * 0.2))
-                        context.stroke(bluePath, with: .color(Color.blue.opacity(0.8)), lineWidth: 1)
+                        // RGB Overlays
+                        HistogramPath(data: controller.currentHistogram.red)
+                            .stroke(Color.red.opacity(0.6), lineWidth: 1)
+                        HistogramPath(data: controller.currentHistogram.green)
+                            .stroke(Color.green.opacity(0.6), lineWidth: 1)
+                        HistogramPath(data: controller.currentHistogram.blue)
+                            .stroke(Color.blue.opacity(0.6), lineWidth: 1)
                     }
                 }
                 .frame(height: 100)
-                .background(CaptureOneTheme.Colors.histogramBackground)
-                .cornerRadius(2)
                 .onTapGesture {
-                    showChannels.toggle()
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        showChannels.toggle()
+                    }
                 }
                 
                 // Shadow & Highlight Warning Toggles
@@ -243,5 +232,23 @@ public struct HistogramToolView: View {
                 .padding(.horizontal, 4)
             }
         }
+    }
+}
+
+private struct HistogramPath: Shape {
+    let data: [Float]
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        guard !data.isEmpty else { return path }
+        
+        path.move(to: CGPoint(x: 0, y: rect.height))
+        for i in 0..<data.count {
+            let x = CGFloat(i) / CGFloat(data.count - 1) * rect.width
+            let y = rect.height - CGFloat(data[i]) * rect.height
+            path.addLine(to: CGPoint(x: x, y: y))
+        }
+        path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        return path
     }
 }

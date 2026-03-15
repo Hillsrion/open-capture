@@ -10,18 +10,30 @@ public struct POLevelsControl: View {
     @Binding var midtone: Float
     @Binding var targetBlack: Float
     @Binding var targetWhite: Float
+    @Binding var histogram: POHistogram
     
-    // Add channel selector state
-    @State private var selectedChannel: Int = 0 // 0: RGB, 1: Red, 2: Green, 3: Blue
+    // Add channel selector state (Binding to sync with Controller)
+    @Binding var selectedChannel: Int // 0: RGB, 1: Red, 2: Green, 3: Blue
     
     public var isNegative: Bool
     
-    public init(blackPoint: Binding<Float>, whitePoint: Binding<Float>, midtone: Binding<Float>, targetBlack: Binding<Float>, targetWhite: Binding<Float>, isNegative: Bool = false) {
+    public init(
+        blackPoint: Binding<Float>,
+        whitePoint: Binding<Float>,
+        midtone: Binding<Float>,
+        targetBlack: Binding<Float>,
+        targetWhite: Binding<Float>,
+        histogram: Binding<POHistogram>,
+        selectedChannel: Binding<Int>,
+        isNegative: Bool = false
+    ) {
         self._blackPoint = blackPoint
         self._whitePoint = whitePoint
         self._midtone = midtone
         self._targetBlack = targetBlack
         self._targetWhite = targetWhite
+        self._histogram = histogram
+        self._selectedChannel = selectedChannel
         self.isNegative = isNegative
     }
     
@@ -41,82 +53,25 @@ public struct POLevelsControl: View {
                 // Interactive Histogram and Output Bar
                 HStack(spacing: 4) {
                     // Output bar (Vertical)
-                    ZStack(alignment: .bottom) {
-                        LinearGradient(gradient: Gradient(colors: [.black, .white]), startPoint: .bottom, endPoint: .top)
-                            .frame(width: 12)
-                            .cornerRadius(2)
-                        
-                        // Output Black Handle
-                        Color.clear
-                            .overlay(
-                                Rectangle().fill(Color.white).frame(height: 2).offset(y: -6)
-                            )
-                            .position(x: 6, y: CGFloat(1.0 - targetBlack) * 120)
-                            .gesture(DragGesture().onChanged { value in
-                                let newVal = Float(1.0 - (value.location.y / 120))
-                                targetBlack = min(max(0.0, newVal), targetWhite - 0.05)
-                            })
-
-                        // Output White Handle
-                        Color.clear
-                            .overlay(
-                                Rectangle().fill(Color.white).frame(height: 2).offset(y: 6)
-                            )
-                            .position(x: 6, y: CGFloat(1.0 - targetWhite) * 120)
-                            .gesture(DragGesture().onChanged { value in
-                                let newVal = Float(1.0 - (value.location.y / 120))
-                                targetWhite = max(min(1.0, newVal), targetBlack + 0.05)
-                            })
-                    }
-                    .frame(width: 12, height: 120)
-                    .background(Color.black.opacity(0.3))
+                    OutputBar(targetBlack: $targetBlack, targetWhite: $targetWhite)
+                        .frame(width: 12, height: 120)
 
                     GeometryReader { geometry in
                         ZStack {
                             CaptureOneTheme.Colors.histogramBackground
                                 .cornerRadius(4)
                             
-                            // Fake Histogram
-                            Path { path in
-                                path.move(to: CGPoint(x: 0, y: geometry.size.height))
-                                path.addCurve(to: CGPoint(x: geometry.size.width, y: geometry.size.height), control1: CGPoint(x: geometry.size.width * 0.3, y: 0), control2: CGPoint(x: geometry.size.width * 0.7, y: geometry.size.height * 0.5))
-                            }
-                            .fill(Color.gray.opacity(0.3))
+                            // Real Histogram
+                            HistogramView(histogram: histogram, channel: selectedChannel)
+                                .opacity(0.4)
                             
                             // Input Handles (Black, Mid, White)
-                            ZStack {
-                                // Black point handle
-                                Image(systemName: "arrowtriangle.up.fill")
-                                    .font(.system(size: 10))
-                                    .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-                                    .position(x: CGFloat(blackPoint) * geometry.size.width, y: geometry.size.height - 5)
-                                    .gesture(DragGesture().onChanged { value in
-                                        let newBP = Float(value.location.x / geometry.size.width)
-                                        blackPoint = min(max(0.0, newBP), whitePoint - 0.05)
-                                    })
-                                
-                                // Midtone handle
-                                Image(systemName: "circle.fill")
-                                    .font(.system(size: 8))
-                                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                                    .position(x: CGFloat(midtonePosition()) * geometry.size.width, y: geometry.size.height - 5)
-                                    .gesture(DragGesture().onChanged { value in
-                                        let newMidX = Float(value.location.x / geometry.size.width)
-                                        let normalizedPos = (newMidX - blackPoint) / max(0.001, whitePoint - blackPoint)
-                                        let clampedPos = min(max(0.1, normalizedPos), 0.9)
-                                        midtone = Float(pow(Double(clampedPos) / 0.5, -1.0))
-                                    })
-                                
-                                // White point handle
-                                Image(systemName: "arrowtriangle.up")
-                                    .font(.system(size: 10))
-                                    .foregroundColor(CaptureOneTheme.Colors.textPrimary)
-                                    .position(x: CGFloat(whitePoint) * geometry.size.width, y: geometry.size.height - 5)
-                                    .gesture(DragGesture().onChanged { value in
-                                        let newWP = Float(value.location.x / geometry.size.width)
-                                        whitePoint = max(min(1.0, newWP), blackPoint + 0.05)
-                                    })
-                            }
+                            InputHandles(
+                                blackPoint: $blackPoint,
+                                whitePoint: $whitePoint,
+                                midtone: $midtone,
+                                geometry: geometry
+                            )
                         }
                     }
                     .frame(height: 120)
@@ -124,31 +79,174 @@ public struct POLevelsControl: View {
                 }
                 
                 // Numerical Input (Numerical readouts)
-                HStack {
-                    if isNegative {
-                        Text("\(Int(whitePoint * 255))").font(.system(size: 10, design: .monospaced))
-                        Spacer()
-                        Text(String(format: "%.2f", midtone)).font(.system(size: 10, design: .monospaced))
-                        Spacer()
-                        Text("\(Int(blackPoint * 255))").font(.system(size: 10, design: .monospaced))
-                    } else {
-                        Text("\(Int(blackPoint * 255))").font(.system(size: 10, design: .monospaced))
-                        Spacer()
-                        Text(String(format: "%.2f", midtone)).font(.system(size: 10, design: .monospaced))
-                        Spacer()
-                        Text("\(Int(whitePoint * 255))").font(.system(size: 10, design: .monospaced))
-                    }
-                }
-                .foregroundColor(.gray)
-                .padding(.horizontal, 4)
+                LevelsReadouts(
+                    blackPoint: blackPoint,
+                    whitePoint: whitePoint,
+                    midtone: midtone,
+                    isNegative: isNegative
+                )
             }
+        }
+    }
+}
+
+private struct HistogramView: View {
+    let histogram: POHistogram
+    let channel: Int // 0: RGB/Luma, 1: Red, 2: Green, 3: Blue
+    
+    var body: some View {
+        Canvas { context, size in
+            let data: [Float]
+            let color: Color
+            
+            switch channel {
+            case 1: data = histogram.red; color = .red
+            case 2: data = histogram.green; color = .green
+            case 3: data = histogram.blue; color = .blue
+            default: data = histogram.luminance; color = .gray
+            }
+            
+            var path = Path()
+            path.move(to: CGPoint(x: 0, y: size.height))
+            
+            for i in 0..<data.count {
+                let x = CGFloat(i) / CGFloat(data.count - 1) * size.width
+                let y = size.height - CGFloat(data[i]) * size.height
+                path.addLine(to: CGPoint(x: x, y: y))
+            }
+            
+            path.addLine(to: CGPoint(x: size.width, y: size.height))
+            path.closeSubpath()
+            
+            context.fill(path, with: .color(color.opacity(0.6)))
+        }
+    }
+}
+
+private struct OutputBar: View {
+    @Binding var targetBlack: Float
+    @Binding var targetWhite: Float
+    
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            LinearGradient(gradient: Gradient(colors: [.black, .white]), startPoint: .bottom, endPoint: .top)
+                .cornerRadius(2)
+                .background(Color.black.opacity(0.3))
+            
+            // Output Black Handle
+            Handle(value: $targetBlack, isVertical: true, isTargetBlack: true, targetOther: targetWhite)
+            
+            // Output White Handle
+            Handle(value: $targetWhite, isVertical: true, isTargetBlack: false, targetOther: targetBlack)
+        }
+    }
+    
+    struct Handle: View {
+        @Binding var value: Float
+        let isVertical: Bool
+        let isTargetBlack: Bool
+        let targetOther: Float
+        
+        var body: some View {
+            Color.clear
+                .overlay(
+                    Rectangle().fill(Color.white).frame(height: 2)
+                        .offset(y: isTargetBlack ? -6 : 6)
+                )
+                .position(x: 6, y: CGFloat(1.0 - value) * 120)
+                .gesture(DragGesture().onChanged { val in
+                    let newVal = Float(1.0 - (val.location.y / 120))
+                    if isTargetBlack {
+                        value = min(max(0.0, newVal), targetOther - 0.05)
+                    } else {
+                        value = max(min(1.0, newVal), targetOther + 0.05)
+                    }
+                })
+        }
+    }
+}
+
+private struct InputHandles: View {
+    @Binding var blackPoint: Float
+    @Binding var whitePoint: Float
+    @Binding var midtone: Float
+    let geometry: GeometryProxy
+    
+    var body: some View {
+        ZStack {
+            // Black point handle
+            HandleTriangle(value: $blackPoint, range: 0...(whitePoint - 0.05), geometry: geometry, fill: true)
+            
+            // Midtone handle
+            Circle()
+                .fill(CaptureOneTheme.Colors.textSecondary)
+                .frame(width: 8, height: 8)
+                .position(x: CGFloat(midtonePosition()) * geometry.size.width, y: geometry.size.height - 5)
+                .gesture(DragGesture().onChanged { value in
+                    let newMidX = Float(value.location.x / geometry.size.width)
+                    let normalizedPos = (newMidX - blackPoint) / max(0.001, whitePoint - blackPoint)
+                    let clampedPos = min(max(0.1, normalizedPos), 0.9)
+                    midtone = Float(pow(Double(clampedPos) / 0.5, -1.0))
+                })
+            
+            // White point handle
+            HandleTriangle(value: $whitePoint, range: (blackPoint + 0.05)...1.0, geometry: geometry, fill: false)
         }
     }
     
     private func midtonePosition() -> Float {
-        // Map gamma to visual 0..1 between black and white point
-        // gamma = 1.0 -> 0.5
         let visualPos = Float(pow(0.5, Double(midtone)))
         return blackPoint + visualPos * (whitePoint - blackPoint)
     }
+    
+    struct HandleTriangle: View {
+        @Binding var value: Float
+        let range: ClosedRange<Float>
+        let geometry: GeometryProxy
+        let fill: Bool
+        
+        var body: some View {
+            Image(systemName: fill ? "arrowtriangle.up.fill" : "arrowtriangle.up")
+                .font(.system(size: 10))
+                .foregroundColor(CaptureOneTheme.Colors.textPrimary)
+                .position(x: CGFloat(value) * geometry.size.width, y: geometry.size.height - 5)
+                .gesture(DragGesture().onChanged { val in
+                    let newVal = Float(val.location.x / geometry.size.width)
+                    value = min(max(range.lowerBound, newVal), range.upperBound)
+                })
+        }
+    }
 }
+
+private struct LevelsReadouts: View {
+    let blackPoint: Float
+    let whitePoint: Float
+    let midtone: Float
+    let isNegative: Bool
+    
+    var body: some View {
+        HStack {
+            if isNegative {
+                readout("\(Int(whitePoint * 255))")
+                Spacer()
+                readout(String(format: "%.2f", midtone))
+                Spacer()
+                readout("\(Int(blackPoint * 255))")
+            } else {
+                readout("\(Int(blackPoint * 255))")
+                Spacer()
+                readout(String(format: "%.2f", midtone))
+                Spacer()
+                readout("\(Int(whitePoint * 255))")
+            }
+        }
+        .padding(.horizontal, 4)
+    }
+    
+    func readout(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 10, design: .monospaced))
+            .foregroundColor(.gray)
+    }
+}
+

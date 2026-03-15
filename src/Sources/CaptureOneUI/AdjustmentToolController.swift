@@ -94,6 +94,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var levelsTargetBlack: Float = 0.0
     @Published public var levelsTargetWhite: Float = 1.0
     
+    // Histogram State
+    @Published public var currentHistogram: POHistogram = .empty()
+    
     // Curves State
     @Published public var curvesPointsRGB: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
     @Published public var curvesPointsLuma: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
@@ -703,6 +706,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         guard let variant = currentVariant, let mc = variant.mcVariant else { return }
         
         self.isUpdatingFromModel = true
+        
+        // Update Histogram from current variant
+        self.currentHistogram = HistogramKernels.generatePOHistogram(fromImage: variant)
         
         // 1. Determine active source (Layer or Global)
         let source: Any?

@@ -334,26 +334,13 @@ private struct LevelsInspectorToolView: View {
 
     var body: some View {
         POLevelsControl(
-            blackPoint: Binding(
-                get: { controller.levelsBlackPoint },
-                set: { controller.levelsBlackPoint = $0 }
-            ),
-            whitePoint: Binding(
-                get: { controller.levelsWhitePoint },
-                set: { controller.levelsWhitePoint = $0 }
-            ),
-            midtone: Binding(
-                get: { controller.levelsMidtone },
-                set: { controller.levelsMidtone = $0 }
-            ),
-            targetBlack: Binding(
-                get: { controller.levelsTargetBlack },
-                set: { controller.levelsTargetBlack = $0 }
-            ),
-            targetWhite: Binding(
-                get: { controller.levelsTargetWhite },
-                set: { controller.levelsTargetWhite = $0 }
-            ),
+            blackPoint: $controller.levelsBlackPoint,
+            whitePoint: $controller.levelsWhitePoint,
+            midtone: $controller.levelsMidtone,
+            targetBlack: $controller.levelsTargetBlack,
+            targetWhite: $controller.levelsTargetWhite,
+            histogram: $controller.currentHistogram,
+            selectedChannel: $controller.curvesSelectedChannel,
             isNegative: controller.negativeFilmEnabled
         )
     }
