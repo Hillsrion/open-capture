@@ -19,6 +19,7 @@ public struct COViewerView: View {
     @State private var renderedImage: NSImage?
     @State private var sourceImage: NSImage?
     @State private var maskImage: NSImage?
+    @State private var lastLoadedURL: URL? = nil
     
     @State private var dragStartOrigin: CGPoint? = nil
     @State private var activeCropZone: CropRectHitboxCalculator.InteractionZone = .none
@@ -372,18 +373,33 @@ public struct COViewerView: View {
 
     private func render() {
         guard let image = image else {
-            renderedImage = nil; sourceImage = nil; return
+            renderedImage = nil; sourceImage = nil; lastLoadedURL = nil; return
         }
         let url = URL(fileURLWithPath: image.path)
-        ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
-            guard let thumb = thumb, let controller = adjustmentController else {
-                self.sourceImage = thumb; self.renderedImage = thumb; return
+        let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil)
+        
+        let processSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
+        
+        if sourceImage == nil || lastLoadedURL != url {
+            ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
+                guard let thumb = thumb else {
+                    self.sourceImage = nil; self.renderedImage = nil; return
+                }
+                self.sourceImage = thumb
+                self.lastLoadedURL = url
+                
+                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: processSettings, isLiveDrag: isLiveDrag) {
+                    let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
+                    DispatchQueue.main.async { self.renderedImage = finalNSImage }
+                } else {
+                    DispatchQueue.main.async { self.renderedImage = thumb }
+                }
             }
-            self.sourceImage = thumb
-            let settings = controller.toProcessSettings()
-            if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: settings) {
+        } else {
+            // Fast path: thumbnail already loaded, image is in proxy cache
+            if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: processSettings, isLiveDrag: isLiveDrag) {
                 let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
-                DispatchQueue.main.async { self.renderedImage = finalNSImage }
+                self.renderedImage = finalNSImage
             }
         }
     }
