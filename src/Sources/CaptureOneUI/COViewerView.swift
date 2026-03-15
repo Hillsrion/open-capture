@@ -56,8 +56,8 @@ public struct COViewerView: View {
         ZStack {
             CaptureOneTheme.Colors.applicationBackground.ignoresSafeArea()
             
-            if let sourceImage, let renderedImage {
-                imageContent(source: sourceImage, rendered: renderedImage, size: size)
+            if sourceImage != nil {
+                imageContent(sourceNS: sourceImage!, renderedNS: renderedImage, renderedCI: renderedCIImage, size: size)
                 overlays(size: size)
             } else {
                 COViewerEmptyStateView()
@@ -81,24 +81,27 @@ public struct COViewerView: View {
     }
     
     @ViewBuilder
-    private func imageContent(source: NSImage, rendered: NSImage, size: CGSize) -> some View {
+    private func imageContent(sourceNS: NSImage, renderedNS: NSImage?, renderedCI: CIImage?, size: CGSize) -> some View {
         if commands.beforeAfterEnabled && !isLongPressingBefore {
             if commands.beforeAfterMode == 1 {
                 BeforeAfterSplitView(
-                    beforeImage: source,
-                    afterImage: rendered,
+                    beforeImage: sourceNS,
+                    afterImage: renderedNS ?? sourceNS,
                     splitPosition: $commands.beforeAfterSplitPosition,
                     viewerSize: size
                 )
             } else {
                 HStack(spacing: 1) {
-                    viewerImageView(source, size: CGSize(width: size.width / 2, height: size.height))
-                    viewerImageView(rendered, size: CGSize(width: size.width / 2, height: size.height))
+                    viewerImageView(nsImage: sourceNS, ciImage: nil, size: CGSize(width: size.width / 2, height: size.height))
+                    viewerImageView(nsImage: renderedNS, ciImage: renderedCI, size: CGSize(width: size.width / 2, height: size.height))
                 }
             }
         } else {
-            let imageToShow = isLongPressingBefore ? source : rendered
-            viewerImageView(imageToShow, size: size)
+            if isLongPressingBefore {
+                viewerImageView(nsImage: sourceNS, ciImage: nil, size: size)
+            } else {
+                viewerImageView(nsImage: renderedNS, ciImage: renderedCI, size: size)
+            }
         }
     }
     
@@ -371,9 +374,11 @@ public struct COViewerView: View {
         controller.currentRadialGradient = RadialGradientMask(center: center, radius: CGSize(width: width, height: height), rotation: 0, feather: 0.2)
     }
 
+    @State private var renderedCIImage: CIImage? = nil
+
     private func render() {
         guard let image = image else {
-            renderedImage = nil; sourceImage = nil; lastLoadedURL = nil; return
+            renderedImage = nil; renderedCIImage = nil; sourceImage = nil; lastLoadedURL = nil; return
         }
         let url = URL(fileURLWithPath: image.path)
         let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil) || (adjustmentController?.isInteracting == true)
@@ -381,16 +386,16 @@ public struct COViewerView: View {
         if sourceImage == nil || lastLoadedURL != url {
             ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
                 guard let thumb = thumb else {
-                    self.sourceImage = nil; self.renderedImage = nil; return
+                    self.sourceImage = nil; self.renderedImage = nil; self.renderedCIImage = nil; return
                 }
                 self.sourceImage = thumb
                 self.lastLoadedURL = url
                 
                 let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
-                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
-                    let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
-                    DispatchQueue.main.async { self.renderedImage = finalNSImage }
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
+                    DispatchQueue.main.async { self.renderedCIImage = developedCIImage }
                 } else {
+                    // Fallback to NSImage if CIImage fails (though it shouldn't)
                     DispatchQueue.main.async { self.renderedImage = thumb }
                 }
             }
@@ -399,9 +404,8 @@ public struct COViewerView: View {
             // objectWillChange fires before properties update. Delay by 1 tick to read new settings.
             DispatchQueue.main.async {
                 let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
-                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
-                    let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
-                    self.renderedImage = finalNSImage
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
+                    self.renderedCIImage = developedCIImage
                 }
             }
         }
@@ -420,12 +424,22 @@ public struct COViewerView: View {
     }
 
     @ViewBuilder
-    private func viewerImageView(_ nsImage: NSImage, size: CGSize) -> some View {
+    private func viewerImageView(nsImage: NSImage?, ciImage: CIImage?, size: CGSize) -> some View {
         let zoom = adjustmentController?.zoomLevel ?? 1.0
         let viewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
         let offsetX = (0.5 - (viewport.origin.x + viewport.width / 2)) * size.width * zoom
         let offsetY = (0.5 - (viewport.origin.y + viewport.height / 2)) * size.height * zoom
-        Image(nsImage: nsImage).resizable().aspectRatio(contentMode: .fit).scaleEffect(zoom).offset(x: offsetX, y: offsetY).clipped()
+        
+        Group {
+            if let ciImage = ciImage {
+                COMTRView(image: ciImage)
+            } else if let nsImage = nsImage {
+                Image(nsImage: nsImage).resizable().aspectRatio(contentMode: .fit)
+            } else {
+                Color.clear
+            }
+        }
+        .scaleEffect(zoom).offset(x: offsetX, y: offsetY).clipped()
     }
 
     @ViewBuilder

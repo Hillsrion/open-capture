@@ -2,6 +2,7 @@ import Foundation
 import AppKit
 import Combine
 import ImageCore
+import CoreImage
 
 /// Reconstructed Preview Priority level (ENG-009).
 public enum PreviewPriority: Int, Comparable {
@@ -91,9 +92,14 @@ public class PreviewManager: ObservableObject {
         // Simulate high-res development time (0.5s to 2s depending on complexity)
         Thread.sleep(forTimeInterval: Double.random(in: 0.5...1.5))
         
-        if let result = RawImageEngine.shared.developImage(at: url, with: settings) {
-            saveToCache(result, for: path)
-            updateJobStatus(path, status: .completed)
+        if let resultCI = RawImageEngine.shared.developImage(at: url, with: settings) {
+            let context = CIContext()
+            if let result = context.createCGImage(resultCI, from: resultCI.extent) {
+                saveToCache(result, for: path)
+                updateJobStatus(path, status: .completed)
+            } else {
+                updateJobStatus(path, status: .failed("Render failed"))
+            }
         } else {
             updateJobStatus(path, status: .failed("Development failed"))
         }

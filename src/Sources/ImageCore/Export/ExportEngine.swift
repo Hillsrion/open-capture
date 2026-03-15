@@ -1,6 +1,7 @@
 import Foundation
 import CoreGraphics
 import ImageIO
+import CoreImage
 import UniformTypeIdentifiers
 
 /// Reconstructed Export Engine (EXP-003).
@@ -17,8 +18,15 @@ public class ExportEngine {
         print("[Export] Starting export for \(url.lastPathComponent) using recipe: \(recipe.name)")
         
         // 1. Develop the RAW image to its final high-res state
-        guard let developedImage = RawImageEngine.shared.developImage(at: url, with: settings) else {
+        guard let developedCIImage = RawImageEngine.shared.developImage(at: url, with: settings) else {
             completion(.failure(NSError(domain: "ExportEngine", code: 1, userInfo: [NSLocalizedDescriptionKey: "Failed to develop image for export."])))
+            return
+        }
+        
+        // Convert CIImage to CGImage for export (Readback is acceptable for final export)
+        let context = CIContext()
+        guard let developedImage = context.createCGImage(developedCIImage, from: developedCIImage.extent) else {
+            completion(.failure(NSError(domain: "ExportEngine", code: 2, userInfo: [NSLocalizedDescriptionKey: "Failed to render final image for export."])))
             return
         }
         

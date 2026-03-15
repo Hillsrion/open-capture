@@ -27,7 +27,7 @@ public class RawImageEngine {
     
     /// Main entry point for developing a RAW image.
     /// Mimics the behavior of ImageProcessing.framework's development methods.
-    public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CGImage? {
+    public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CIImage? {
         let pipeline: RenderPipeline
         
         if let existing = activePipelines[url] {
@@ -44,12 +44,12 @@ public class RawImageEngine {
             // 1. RAW Loading (Improved for CR3/Modern formats)
             guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
                 print("[Engine] Failed to create ImageSource for \(url.path)")
-                return createPlaceholderImage()?.cgImage
+                return createPlaceholderImage()
             }
             
             guard let extracted = extractSourceImage(from: source) else {
                 print("[Engine] Failed to extract source image from \(url.lastPathComponent)")
-                return createPlaceholderImage()?.cgImage
+                return createPlaceholderImage()
             }
             
             pipeline = RenderPipeline(sourceImage: extracted)
@@ -68,8 +68,8 @@ public class RawImageEngine {
         
         let output = pipeline.process(settings: settings, isLiveDrag: isLiveDrag)
         
-        // 3. Render to Final Buffer
-        return context.createCGImage(output, from: output.extent)
+        // 3. Return CIImage directly to avoid CPU Readback
+        return output
     }
     
     /// Encapsulates a persistent CoreImage graph to avoid rebuilding CIFilters during 60fps drag events
