@@ -381,6 +381,11 @@ public struct IC_ProcessSettings {
     public var proofingProfileID: String? = nil
     public var showGamutWarning: Bool = false
     
+    // Color management
+    public var inputProfileID: String? = nil
+    public var outputProfileID: String? = nil
+    public var toneCurveID: String = "Auto"
+    
     public init() {
         self.exposure = 0.0
         self.contrast = 0.0

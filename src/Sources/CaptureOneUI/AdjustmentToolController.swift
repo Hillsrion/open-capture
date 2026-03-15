@@ -760,6 +760,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.flipHorizontal = self.flipHorizontal
         settings.flipVertical = self.flipVertical
         
+        // Color management
+        settings.outputProfileID = self.iccProfile
+        settings.toneCurveID = self.toneCurve
+        
         // Details
         settings.sharpeningAmount = 100.0 // Default
         settings.denoise.amount = 50.0 // Default

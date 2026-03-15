@@ -252,10 +252,16 @@ internal final class OperationChainBuilder {
     private let exposure = ExposureOperation()
     private let whiteBalance = WhiteBalanceOperation()
     private let geometry = GeometryOperation()
+    private let iccInput = ICCInputOperation()
+    private let filmCurve = FilmCurveOperation()
     private let colorControls = ColorControlsOperation()
     private let colorGrading = ColorGradingOperation()
     private let colorLUT = ColorLUTOperation()
+    private let hdrOperation = HDROperation()
+    private let noiseReduction = NoiseReductionOperation()
+    private let sharpen = SharpenOperation()
     private let localAdjustments = LocalAdjustmentsOperation()
+    private let iccOutput = ICCOutputOperation()
     
     func buildChain(_ parameters: SImageOperationAllParameters) -> [ImageOperation] {
         let settings = parameters.settings
@@ -263,6 +269,8 @@ internal final class OperationChainBuilder {
         
         if shouldApplyExposure(settings) { chain.append(exposure) }
         if shouldApplyWhiteBalance(settings) { chain.append(whiteBalance) }
+        if shouldApplyICCInput(settings) { chain.append(iccInput) }
+        if shouldApplyFilmCurve(settings) { chain.append(filmCurve) }
         if shouldApplyGeometry(settings) { chain.append(geometry) }
         if shouldApplyColorControls(settings) { chain.append(colorControls) }
         
@@ -272,7 +280,11 @@ internal final class OperationChainBuilder {
             } else if shouldApplyColorGrading(settings) {
                 chain.append(colorGrading)
             }
+            if shouldApplyHDR(settings) { chain.append(hdrOperation) }
+            if shouldApplyNoiseReduction(settings) { chain.append(noiseReduction) }
+            if shouldApplySharpen(settings) { chain.append(sharpen) }
             if shouldApplyLocalAdjustments(settings) { chain.append(localAdjustments) }
+            if shouldApplyICCOutput(settings) { chain.append(iccOutput) }
         }
         
         return chain
@@ -307,6 +319,30 @@ internal final class OperationChainBuilder {
         if settings.gradationCurves.curveG.count > 1 { return true }
         if settings.gradationCurves.curveB.count > 1 { return true }
         return false
+    }
+    
+    private func shouldApplyICCInput(_ settings: IC_ProcessSettings) -> Bool {
+        settings.inputProfileID != nil
+    }
+    
+    private func shouldApplyICCOutput(_ settings: IC_ProcessSettings) -> Bool {
+        settings.outputProfileID != nil
+    }
+    
+    private func shouldApplyFilmCurve(_ settings: IC_ProcessSettings) -> Bool {
+        settings.toneCurveID.lowercased() != "linear"
+    }
+    
+    private func shouldApplyHDR(_ settings: IC_ProcessSettings) -> Bool {
+        settings.hdr.highlights != 0 || settings.hdr.shadows != 0 || settings.hdr.whites != 0 || settings.hdr.blacks != 0
+    }
+    
+    private func shouldApplyNoiseReduction(_ settings: IC_ProcessSettings) -> Bool {
+        settings.noiseReduction.luminance > 0 || settings.noiseReduction.color > 0 || settings.noiseReduction.singlePixel > 0
+    }
+    
+    private func shouldApplySharpen(_ settings: IC_ProcessSettings) -> Bool {
+        settings.sharpening.amount > 0
     }
     
     private func shouldApplyLocalAdjustments(_ settings: IC_ProcessSettings) -> Bool {
