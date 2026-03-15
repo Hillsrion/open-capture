@@ -9,13 +9,7 @@ public class RawImageEngine {
     
     public static let shared = RawImageEngine()
     private let context: CIContext
-    
-    // Proxy Cache: Stores the active RenderPipelines per URL to simulate C1's VRAM proxy architecture
-    // Implemented as an LRU Cache to prevent VRAM/RAM leaks.
-    private let maxCacheSize = 5
-    private var activePipelines: [URL: RenderPipeline] = [:]
-    private var lruList: [URL] = []
-    private let cacheQueue = DispatchQueue(label: "ImageCore.RawImageEngine.cache")
+    private let proxyCache = ProxyCache()
     
     private init() {
         // In original C1, this would be a Metal-backed context shared with the viewer
@@ -37,56 +31,12 @@ public class RawImageEngine {
     /// Main entry point for developing a RAW image.
     /// Mimics the behavior of ImageProcessing.framework's development methods.
     public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CIImage? {
-        var pipeline: RenderPipeline?
-        
-        cacheQueue.sync {
-            if let existing = activePipelines[url] {
-                pipeline = existing
-                if let index = lruList.firstIndex(of: url) {
-                    lruList.remove(at: index)
-                    lruList.append(url)
-                }
-            }
+        guard let resolvedPipeline = proxyCache.pipeline(for: url, context: context) { [weak self] in
+            guard let self = self else { return nil }
+            return self.loadSourceImage(from: url)
+        } else {
+            return createPlaceholderImage()
         }
-        
-        if pipeline == nil {
-            print("[Engine] Loading RAW into Proxy Cache: \(url.lastPathComponent)")
-            
-            // 1. RAW Loading (Improved for CR3/Modern formats)
-            guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
-                print("[Engine] Failed to create ImageSource for \(url.path)")
-                return createPlaceholderImage()
-            }
-            
-            guard let extracted = extractSourceImage(from: source) else {
-                print("[Engine] Failed to extract source image from \(url.lastPathComponent)")
-                return createPlaceholderImage()
-            }
-            
-            let newPipeline = RenderPipeline(sourceImage: extracted, context: self.context)
-            
-            cacheQueue.sync {
-                if let existing = activePipelines[url] {
-                    pipeline = existing
-                    if let index = lruList.firstIndex(of: url) {
-                        lruList.remove(at: index)
-                        lruList.append(url)
-                    }
-                } else {
-                    if lruList.count >= maxCacheSize {
-                        let oldestUrl = lruList.removeFirst()
-                        activePipelines.removeValue(forKey: oldestUrl)
-                        print("[Engine] Evicted \(oldestUrl.lastPathComponent) from Proxy Cache (LRU)")
-                    }
-                    
-                    activePipelines[url] = newPipeline
-                    lruList.append(url)
-                    pipeline = newPipeline
-                }
-            }
-        }
-        
-        guard let resolvedPipeline = pipeline else { return nil }
         let output = resolvedPipeline.process(settings: settings, isLiveDrag: isLiveDrag)
         
         // 3. Return CIImage directly to avoid CPU Readback
@@ -95,7 +45,7 @@ public class RawImageEngine {
     
     /// Encapsulates a persistent CoreImage graph to avoid rebuilding CIFilters during 60fps drag events.
     /// Reconstructed to use a modular OperationChain architecture (C1 Secret Sauce parity).
-    private class RenderPipeline {
+    final class RenderPipeline {
         let sourceImage: CIImage
         private let context: CIContext
         private let processQueue = DispatchQueue(label: "ImageCore.RenderPipeline.process")
@@ -140,6 +90,19 @@ public class RawImageEngine {
             }
         }
         return nil
+    }
+    
+    private func loadSourceImage(from url: URL) -> CIImage? {
+        print("[Engine] Loading RAW into Proxy Cache: \(url.lastPathComponent)")
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
+            print("[Engine] Failed to create ImageSource for \(url.path)")
+            return nil
+        }
+        guard let extracted = extractSourceImage(from: source) else {
+            print("[Engine] Failed to extract source image from \(url.lastPathComponent)")
+            return nil
+        }
+        return extracted
     }
     
     private func createPlaceholderImage() -> CIImage? {
