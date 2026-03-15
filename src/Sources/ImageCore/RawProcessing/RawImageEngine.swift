@@ -60,7 +60,7 @@ public class RawImageEngine {
                 return createPlaceholderImage()
             }
             
-            pipeline = RenderPipeline(sourceImage: extracted)
+            pipeline = RenderPipeline(sourceImage: extracted, context: self.context)
             
             // Evict oldest if cache is full
             if lruList.count >= maxCacheSize {
@@ -80,148 +80,51 @@ public class RawImageEngine {
         return output
     }
     
-    /// Encapsulates a persistent CoreImage graph to avoid rebuilding CIFilters during 60fps drag events
+    /// Encapsulates a persistent CoreImage graph to avoid rebuilding CIFilters during 60fps drag events.
+    /// Reconstructed to use a modular OperationChain architecture (C1 Secret Sauce parity).
     private class RenderPipeline {
         let sourceImage: CIImage
+        private let context: CIContext
         
-        private let exposureFilter = CIFilter(name: "CIExposureAdjust")!
-        private let wbFilter = CIFilter(name: "CITemperatureAndTint")!
-        private let colorFilter = CIFilter(name: "CIColorControls")!
-        private let midtoneTintFilter = CIFilter(name: "CIColorMonochrome")!
-        private let layerBlendFilter = CIFilter(name: "CIBlendWithAlphaMask")!
-        private let layerExposureFilter = CIFilter(name: "CIExposureAdjust")!
-        private let layerOpacityFilter = CIFilter(name: "CIColorControls")!
+        // Operation Chains
+        private var displayChain: [ImageOperation] = []
+        private var fullRenderChain: [ImageOperation] = []
         
-        init(sourceImage: CIImage) {
+        init(sourceImage: CIImage, context: CIContext) {
             self.sourceImage = sourceImage
+            self.context = context
+            buildChains()
+        }
+        
+        private func buildChains() {
+            // 1. Basic Display Chain (Ultra-fast, 60fps+)
+            displayChain = [
+                ExposureOperation(),
+                WhiteBalanceOperation(),
+                GeometryOperation(),
+                ColorControlsOperation()
+            ]
+            
+            // 2. Full Render Chain (High Fidelity)
+            fullRenderChain = displayChain + [
+                ColorGradingOperation(),
+                LocalAdjustmentsOperation()
+            ]
         }
         
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool) -> CIImage {
+            let chain = isLiveDrag ? displayChain : fullRenderChain
             var output = sourceImage
             
-            // --- Display Pipeline (Temps réel - 60fps) ---
-            
-            // A. Exposure & Contrast
-            exposureFilter.setValue(output, forKey: kCIInputImageKey)
-            exposureFilter.setValue(settings.exposure, forKey: kCIInputEVKey)
-            output = exposureFilter.outputImage ?? output
-            
-            // B. White Balance (Kelvin/Tint simulation)
-            wbFilter.setValue(output, forKey: kCIInputImageKey)
-            let neutral = CIVector(x: 6500, y: 0)
-            let target = CIVector(x: CGFloat(settings.kelvin), y: CGFloat(settings.tint))
-            wbFilter.setValue(neutral, forKey: "inputNeutral")
-            wbFilter.setValue(target, forKey: "inputTargetNeutral")
-            output = wbFilter.outputImage ?? output
-            
-            // B.5 Flip & Rotation (UI-204 Parity)
-            if settings.flipHorizontal {
-                output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -output.extent.width, y: 0))
-            }
-            if settings.flipVertical {
-                output = output.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -output.extent.height))
-            }
-            
-            // C. Saturation
-            colorFilter.setValue(output, forKey: kCIInputImageKey)
-            colorFilter.setValue(1.0 + settings.saturation, forKey: kCIInputSaturationKey)
-            colorFilter.setValue(1.0 + settings.contrast, forKey: kCIInputContrastKey)
-            output = colorFilter.outputImage ?? output
-            
-            // D. Color Balance (3-Way Grading simulation)
-            if settings.colorBalance != ColorBalanceSettings() && settings.colorBalance.midtone.saturation > 0 {
-                let radians = CGFloat(settings.colorBalance.midtone.hue - 90) * .pi / 180.0
-                let strength = CGFloat(settings.colorBalance.midtone.saturation / 500.0) // Scaled for simulation
-                let color = CIColor(red: 0.5 + cos(radians) * strength, 
-                                    green: 0.5 + sin(radians) * strength, 
-                                    blue: 0.5 - 0.5 * strength)
-                
-                midtoneTintFilter.setValue(output, forKey: kCIInputImageKey)
-                midtoneTintFilter.setValue(color, forKey: kCIInputColorKey)
-                midtoneTintFilter.setValue(strength, forKey: kCIInputIntensityKey)
-                output = midtoneTintFilter.outputImage?.composited(over: output) ?? output
-            }
-            
-            // --- Render Pipeline (Haute Fidélité) ---
-            // Bypass heavy operations during live drag to guarantee 60fps
-            if !isLiveDrag {
-                // 2.5 Local Adjustments Pipeline (LAY-001)
-                for layerCfg in settings.localAdjustments where layerCfg.isVisible && layerCfg.opacity > 0 {
-                    output = applyLayer(layerCfg, to: output, baseImage: sourceImage)
-                }
+            for operation in chain {
+                output = operation.execute(input: output, settings: settings)
             }
             
             return output
         }
-        
-        /// Applies a local adjustment layer using masking and alpha blending.
-        private func applyLayer(_ layer: IC_LocalAdjustCfg, to currentImage: CIImage, baseImage: CIImage) -> CIImage {
-            var layerAdjusted = currentImage
-            let s = layer.settings
-            
-            if s.exposure != 0 {
-                layerExposureFilter.setValue(layerAdjusted, forKey: kCIInputImageKey)
-                layerExposureFilter.setValue(s.exposure, forKey: kCIInputEVKey)
-                layerAdjusted = layerExposureFilter.outputImage ?? layerAdjusted
-            }
-            
-            let mask: CIImage
-            if let realData = layer.maskData {
-                mask = createCIImage(from: realData, size: currentImage.extent.size)
-            } else {
-                mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
-            }
-            
-            layerBlendFilter.setValue(layerAdjusted, forKey: kCIInputImageKey)
-            layerBlendFilter.setValue(currentImage, forKey: kCIInputBackgroundImageKey)
-            
-            var alphaMask = mask
-            if layer.opacity < 1.0 {
-                layerOpacityFilter.setValue(alphaMask, forKey: kCIInputImageKey)
-                layerOpacityFilter.setValue(layer.opacity, forKey: "inputBrightness")
-                alphaMask = layerOpacityFilter.outputImage ?? alphaMask
-            }
-            
-            layerBlendFilter.setValue(alphaMask, forKey: kCIInputMaskImageKey)
-            return layerBlendFilter.outputImage ?? currentImage
-        }
-        
-        private func createCIImage(from maskData: [Float], size: CGSize) -> CIImage {
-            let width = Int(size.width)
-            let height = Int(size.height)
-            guard maskData.count >= width * height else { return CIImage.empty() }
-            let data = Data(bytes: maskData, count: maskData.count * MemoryLayout<Float>.size)
-            return CIImage(bitmapData: data,
-                           bytesPerRow: width * MemoryLayout<Float>.size,
-                           size: size,
-                           format: .RGBAf,
-                           colorSpace: nil)
-        }
-        
-        private func createSimulationMask(for layerId: UInt32, extent: CGRect) -> CIImage {
-            if layerId % 2 == 0 {
-                return CIFilter(name: "CIRadialGradient", parameters: [
-                    "inputCenter": CIVector(x: extent.midX, y: extent.midY),
-                    "inputRadius0": extent.width * 0.1,
-                    "inputRadius1": extent.width * 0.3,
-                    "inputColor0": CIColor.white,
-                    "inputColor1": CIColor.clear
-                ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
-            } else {
-                return CIFilter(name: "CILinearGradient", parameters: [
-                    "inputPoint0": CIVector(x: 0, y: extent.height),
-                    "inputPoint1": CIVector(x: 0, y: extent.height * 0.6),
-                    "inputColor0": CIColor.white,
-                    "inputColor1": CIColor.clear
-                ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
-            }
-        }
     }
     
-    /// Placeholder for high-performance Metal rendering (C1 Parity).
-    public func renderToMetal(texture: MTLTexture, settings: IC_ProcessSettings, commandBuffer: MTLCommandBuffer) {
-        print("[Engine] High-speed Metal render pass requested.")
-    }
+    // MARK: - Internal Helpers
     
     private func extractSourceImage(from source: CGImageSource) -> CIImage? {
         let options: [CFString: Any] = [
@@ -242,6 +145,141 @@ public class RawImageEngine {
     private func createPlaceholderImage() -> CIImage? {
         let color = CIColor(red: 0.2, green: 0.2, blue: 0.2)
         return CIImage(color: color).cropped(to: CGRect(x: 0, y: 0, width: 1024, height: 1024))
+    }
+}
+
+// MARK: - Operation Chain Infrastructure
+
+internal protocol ImageOperation {
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage
+}
+
+internal class ExposureOperation: ImageOperation {
+    private let filter = CIFilter(name: "CIExposureAdjust")!
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        filter.setValue(input, forKey: kCIInputImageKey)
+        filter.setValue(settings.exposure, forKey: kCIInputEVKey)
+        return filter.outputImage ?? input
+    }
+}
+
+internal class WhiteBalanceOperation: ImageOperation {
+    private let filter = CIFilter(name: "CITemperatureAndTint")!
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        filter.setValue(input, forKey: kCIInputImageKey)
+        let neutral = CIVector(x: 6500, y: 0)
+        let target = CIVector(x: CGFloat(settings.kelvin), y: CGFloat(settings.tint))
+        filter.setValue(neutral, forKey: "inputNeutral")
+        filter.setValue(target, forKey: "inputTargetNeutral")
+        return filter.outputImage ?? input
+    }
+}
+
+internal class GeometryOperation: ImageOperation {
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        var output = input
+        if settings.flipHorizontal {
+            output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -output.extent.width, y: 0))
+        }
+        if settings.flipVertical {
+            output = output.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -output.extent.height))
+        }
+        return output
+    }
+}
+
+internal class ColorControlsOperation: ImageOperation {
+    private let filter = CIFilter(name: "CIColorControls")!
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        filter.setValue(input, forKey: kCIInputImageKey)
+        filter.setValue(1.0 + settings.saturation, forKey: kCIInputSaturationKey)
+        filter.setValue(1.0 + settings.contrast, forKey: kCIInputContrastKey)
+        return filter.outputImage ?? input
+    }
+}
+
+internal class ColorGradingOperation: ImageOperation {
+    private let filter = CIFilter(name: "CIColorMonochrome")!
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        guard settings.colorBalance != ColorBalanceSettings() && settings.colorBalance.midtone.saturation > 0 else { return input }
+        
+        let radians = CGFloat(settings.colorBalance.midtone.hue - 90) * .pi / 180.0
+        let strength = CGFloat(settings.colorBalance.midtone.saturation / 500.0)
+        let color = CIColor(red: 0.5 + cos(radians) * strength, 
+                            green: 0.5 + sin(radians) * strength, 
+                            blue: 0.5 - 0.5 * strength)
+        
+        filter.setValue(input, forKey: kCIInputImageKey)
+        filter.setValue(color, forKey: kCIInputColorKey)
+        filter.setValue(strength, forKey: kCIInputIntensityKey)
+        return filter.outputImage?.composited(over: input) ?? input
+    }
+}
+
+internal class LocalAdjustmentsOperation: ImageOperation {
+    private let layerBlendFilter = CIFilter(name: "CIBlendWithAlphaMask")!
+    private let layerExposureFilter = CIFilter(name: "CIExposureAdjust")!
+    private let layerOpacityFilter = CIFilter(name: "CIColorControls")!
+    
+    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+        var output = input
+        for layerCfg in settings.localAdjustments where layerCfg.isVisible && layerCfg.opacity > 0 {
+            output = applyLayer(layerCfg, to: output, baseImage: input)
+        }
+        return output
+    }
+    
+    private func applyLayer(_ layer: IC_LocalAdjustCfg, to currentImage: CIImage, baseImage: CIImage) -> CIImage {
+        var layerAdjusted = currentImage
+        let s = layer.settings
+        
+        if s.exposure != 0 {
+            layerExposureFilter.setValue(layerAdjusted, forKey: kCIInputImageKey)
+            layerExposureFilter.setValue(s.exposure, forKey: kCIInputEVKey)
+            layerAdjusted = layerExposureFilter.outputImage ?? layerAdjusted
+        }
+        
+        let mask: CIImage
+        if let realData = layer.maskData {
+            mask = createCIImage(from: realData, size: currentImage.extent.size)
+        } else {
+            mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
+        }
+        
+        layerBlendFilter.setValue(layerAdjusted, forKey: kCIInputImageKey)
+        layerBlendFilter.setValue(currentImage, forKey: kCIInputBackgroundImageKey)
+        
+        var alphaMask = mask
+        if layer.opacity < 1.0 {
+            layerOpacityFilter.setValue(alphaMask, forKey: kCIInputImageKey)
+            layerOpacityFilter.setValue(layer.opacity, forKey: "inputBrightness")
+            alphaMask = layerOpacityFilter.outputImage ?? alphaMask
+        }
+        
+        layerBlendFilter.setValue(alphaMask, forKey: kCIInputMaskImageKey)
+        return layerBlendFilter.outputImage ?? currentImage
+    }
+    
+    private func createCIImage(from maskData: [Float], size: CGSize) -> CIImage {
+        let width = Int(size.width); let height = Int(size.height)
+        guard maskData.count >= width * height else { return CIImage.empty() }
+        let data = Data(bytes: maskData, count: maskData.count * MemoryLayout<Float>.size)
+        return CIImage(bitmapData: data, bytesPerRow: width * MemoryLayout<Float>.size, size: size, format: .RGBAf, colorSpace: nil)
+    }
+    
+    private func createSimulationMask(for layerId: UInt32, extent: CGRect) -> CIImage {
+        if layerId % 2 == 0 {
+            return CIFilter(name: "CIRadialGradient", parameters: [
+                "inputCenter": CIVector(x: extent.midX, y: extent.midY),
+                "inputRadius0": extent.width * 0.1, "inputRadius1": extent.width * 0.3,
+                "inputColor0": CIColor.white, "inputColor1": CIColor.clear
+            ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
+        } else {
+            return CIFilter(name: "CILinearGradient", parameters: [
+                "inputPoint0": CIVector(x: 0, y: extent.height), "inputPoint1": CIVector(x: 0, y: extent.height * 0.6),
+                "inputColor0": CIColor.white, "inputColor1": CIColor.clear
+            ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
+        }
     }
 }
 
