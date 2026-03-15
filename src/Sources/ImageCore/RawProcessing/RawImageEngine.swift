@@ -99,36 +99,20 @@ public class RawImageEngine {
         let sourceImage: CIImage
         private let context: CIContext
         private let processQueue = DispatchQueue(label: "ImageCore.RenderPipeline.process")
-        
-        // Operation Chains
-        private var displayChain: [ImageOperation] = []
-        private var fullRenderChain: [ImageOperation] = []
+        private let chainBuilder = OperationChainBuilder()
         
         init(sourceImage: CIImage, context: CIContext) {
             self.sourceImage = sourceImage
             self.context = context
-            buildChains()
-        }
-        
-        private func buildChains() {
-            // 1. Basic Display Chain (Ultra-fast, 60fps+)
-            displayChain = [
-                ExposureOperation(),
-                WhiteBalanceOperation(),
-                GeometryOperation(),
-                ColorControlsOperation()
-            ]
-            
-            // 2. Full Render Chain (High Fidelity)
-            fullRenderChain = displayChain + [
-                ColorGradingOperation(),
-                LocalAdjustmentsOperation()
-            ]
         }
         
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool) -> CIImage {
             processQueue.sync {
-                let chain = isLiveDrag ? displayChain : fullRenderChain
+                let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
+                let parameters = SImageOperationAllParameters(settings: settings,
+                                                              quality: quality,
+                                                              isInteractive: isLiveDrag)
+                let chain = chainBuilder.buildChain(parameters)
                 var output = sourceImage
                 
                 for operation in chain {
@@ -295,6 +279,69 @@ internal class LocalAdjustmentsOperation: ImageOperation {
                 "inputPoint0": CIVector(x: 0, y: extent.height), "inputPoint1": CIVector(x: 0, y: extent.height * 0.6),
                 "inputColor0": CIColor.white, "inputColor1": CIColor.clear
             ])?.outputImage?.cropped(to: extent) ?? CIImage.empty()
+        }
+    }
+}
+
+// MARK: - Dynamic OperationChain Builder
+
+internal final class OperationChainBuilder {
+    private let exposure = ExposureOperation()
+    private let whiteBalance = WhiteBalanceOperation()
+    private let geometry = GeometryOperation()
+    private let colorControls = ColorControlsOperation()
+    private let colorGrading = ColorGradingOperation()
+    private let localAdjustments = LocalAdjustmentsOperation()
+    
+    func buildChain(_ parameters: SImageOperationAllParameters) -> [ImageOperation] {
+        let settings = parameters.settings
+        var chain: [ImageOperation] = []
+        
+        if shouldApplyExposure(settings) { chain.append(exposure) }
+        if shouldApplyWhiteBalance(settings) { chain.append(whiteBalance) }
+        if shouldApplyGeometry(settings) { chain.append(geometry) }
+        if shouldApplyColorControls(settings) { chain.append(colorControls) }
+        
+        if parameters.quality != .display {
+            if shouldApplyColorGrading(settings) { chain.append(colorGrading) }
+            if shouldApplyLocalAdjustments(settings) { chain.append(localAdjustments) }
+        }
+        
+        return chain
+    }
+    
+    private func shouldApplyExposure(_ settings: IC_ProcessSettings) -> Bool {
+        settings.exposure != 0
+    }
+    
+    private func shouldApplyWhiteBalance(_ settings: IC_ProcessSettings) -> Bool {
+        settings.kelvin != 5000.0 || settings.tint != 0.0
+    }
+    
+    private func shouldApplyGeometry(_ settings: IC_ProcessSettings) -> Bool {
+        settings.flipHorizontal || settings.flipVertical
+    }
+    
+    private func shouldApplyColorControls(_ settings: IC_ProcessSettings) -> Bool {
+        settings.saturation != 0 || settings.contrast != 0
+    }
+    
+    private func shouldApplyColorGrading(_ settings: IC_ProcessSettings) -> Bool {
+        settings.colorBalance != ColorBalanceSettings()
+    }
+    
+    private func shouldApplyLocalAdjustments(_ settings: IC_ProcessSettings) -> Bool {
+        settings.localAdjustments.contains { layer in
+            guard layer.isVisible, layer.opacity > 0 else { return false }
+            if layer.maskData != nil { return true }
+            if layer.settings.exposure != 0 { return true }
+            if layer.settings.contrast != 0 { return true }
+            if layer.settings.brightness != 0 { return true }
+            if layer.settings.saturation != 0 { return true }
+            if layer.settings.kelvin != 0 { return true }
+            if layer.settings.clarity.amount != 0 { return true }
+            if layer.settings.moire.amount != 0 { return true }
+            return false
         }
     }
 }
