@@ -227,6 +227,23 @@ public struct IC_LocalAdjustCfg {
 
 /// The master structure for development settings.
 /// Mimics the internal IC_ProcessSettings from ImageProcessing.framework.
+public struct IC_Levels {
+    public var shadow: Float = 0.0
+    public var highlight: Float = 1.0
+    public var midtone: Float = 1.0
+    public var targetShadow: Float = 0.0
+    public var targetHighlight: Float = 1.0
+    public init() {}
+}
+
+public struct IC_LevelsSettings {
+    public var levelsRGB = IC_Levels()
+    public var levelsR = IC_Levels()
+    public var levelsG = IC_Levels()
+    public var levelsB = IC_Levels()
+    public init() {}
+}
+
 public struct IC_ProcessSettings {
     public var engineVersion: Int32 = 1600
     
@@ -277,15 +294,31 @@ public struct IC_ProcessSettings {
     public var lensCorrection = IC_LensCorrectionSettings()
     public var filmGrain = IC_FilmGrainSettings()
     public var gradationCurves = ICGradationCurves()
+    public var levels = IC_LevelsSettings()
     public var clarity = IC_Clarity()
     public var colorCorrectionList = IC_ColorCorrectionList()
     
     // Levels (Compatibility)
-    public var levelsShadow: Float = 0.0
-    public var levelsHighlight: Float = 1.0
-    public var levelsMidtone: Float = 1.0
-    public var levelsTargetShadow: Float = 0.0
-    public var levelsTargetHighlight: Float = 1.0
+    public var levelsShadow: Float {
+        get { levels.levelsRGB.shadow }
+        set { levels.levelsRGB.shadow = newValue }
+    }
+    public var levelsHighlight: Float {
+        get { levels.levelsRGB.highlight }
+        set { levels.levelsRGB.highlight = newValue }
+    }
+    public var levelsMidtone: Float {
+        get { levels.levelsRGB.midtone }
+        set { levels.levelsRGB.midtone = newValue }
+    }
+    public var levelsTargetShadow: Float {
+        get { levels.levelsRGB.targetShadow }
+        set { levels.levelsRGB.targetShadow = newValue }
+    }
+    public var levelsTargetHighlight: Float {
+        get { levels.levelsRGB.targetHighlight }
+        set { levels.levelsRGB.targetHighlight = newValue }
+    }
     
     // Legacy support
     public var sharpeningAmount: Float {

@@ -6,39 +6,93 @@ import ImageCore
 /// Manages Black Point, White Point, and Midtone (Gamma) adjustment via dragging.
 
 public struct POLevelsControl: View {
-    @Binding var blackPoint: Float
-    @Binding var whitePoint: Float
-    @Binding var midtone: Float
-    @Binding var targetBlack: Float
-    @Binding var targetWhite: Float
-    @Binding var histogram: POHistogram
+    @Binding var blackPointRGB: Float
+    @Binding var whitePointRGB: Float
+    @Binding var midtoneRGB: Float
+    @Binding var targetBlackRGB: Float
+    @Binding var targetWhiteRGB: Float
     
-    // Add channel selector state (Binding to sync with Controller)
+    @Binding var blackPointR: Float
+    @Binding var whitePointR: Float
+    @Binding var midtoneR: Float
+    @Binding var targetBlackR: Float
+    @Binding var targetWhiteR: Float
+    
+    @Binding var blackPointG: Float
+    @Binding var whitePointG: Float
+    @Binding var midtoneG: Float
+    @Binding var targetBlackG: Float
+    @Binding var targetWhiteG: Float
+    
+    @Binding var blackPointB: Float
+    @Binding var whitePointB: Float
+    @Binding var midtoneB: Float
+    @Binding var targetBlackB: Float
+    @Binding var targetWhiteB: Float
+    
+    @Binding var histogram: POHistogram
     @Binding var selectedChannel: Int // 0: RGB, 1: Red, 2: Green, 3: Blue
     
     public var isNegative: Bool
     
     public init(
-        blackPoint: Binding<Float>,
-        whitePoint: Binding<Float>,
-        midtone: Binding<Float>,
-        targetBlack: Binding<Float>,
-        targetWhite: Binding<Float>,
+        blackPointRGB: Binding<Float>, whitePointRGB: Binding<Float>, midtoneRGB: Binding<Float>, targetBlackRGB: Binding<Float>, targetWhiteRGB: Binding<Float>,
+        blackPointR: Binding<Float>, whitePointR: Binding<Float>, midtoneR: Binding<Float>, targetBlackR: Binding<Float>, targetWhiteR: Binding<Float>,
+        blackPointG: Binding<Float>, whitePointG: Binding<Float>, midtoneG: Binding<Float>, targetBlackG: Binding<Float>, targetWhiteG: Binding<Float>,
+        blackPointB: Binding<Float>, whitePointB: Binding<Float>, midtoneB: Binding<Float>, targetBlackB: Binding<Float>, targetWhiteB: Binding<Float>,
         histogram: Binding<POHistogram>,
         selectedChannel: Binding<Int>,
         isNegative: Bool = false
     ) {
-        self._blackPoint = blackPoint
-        self._whitePoint = whitePoint
-        self._midtone = midtone
-        self._targetBlack = targetBlack
-        self._targetWhite = targetWhite
+        self._blackPointRGB = blackPointRGB
+        self._whitePointRGB = whitePointRGB
+        self._midtoneRGB = midtoneRGB
+        self._targetBlackRGB = targetBlackRGB
+        self._targetWhiteRGB = targetWhiteRGB
+        
+        self._blackPointR = blackPointR
+        self._whitePointR = whitePointR
+        self._midtoneR = midtoneR
+        self._targetBlackR = targetBlackR
+        self._targetWhiteR = targetWhiteR
+        
+        self._blackPointG = blackPointG
+        self._whitePointG = whitePointG
+        self._midtoneG = midtoneG
+        self._targetBlackG = targetBlackG
+        self._targetWhiteG = targetWhiteG
+        
+        self._blackPointB = blackPointB
+        self._whitePointB = whitePointB
+        self._midtoneB = midtoneB
+        self._targetBlackB = targetBlackB
+        self._targetWhiteB = targetWhiteB
+        
         self._histogram = histogram
         self._selectedChannel = selectedChannel
         self.isNegative = isNegative
     }
     
+    private struct CurrentChannelBindings {
+        var black: Binding<Float>
+        var white: Binding<Float>
+        var mid: Binding<Float>
+        var tBlack: Binding<Float>
+        var tWhite: Binding<Float>
+    }
+    
+    private var currentBindings: CurrentChannelBindings {
+        switch selectedChannel {
+        case 1: return CurrentChannelBindings(black: $blackPointR, white: $whitePointR, mid: $midtoneR, tBlack: $targetBlackR, tWhite: $targetWhiteR)
+        case 2: return CurrentChannelBindings(black: $blackPointG, white: $whitePointG, mid: $midtoneG, tBlack: $targetBlackG, tWhite: $targetWhiteG)
+        case 3: return CurrentChannelBindings(black: $blackPointB, white: $whitePointB, mid: $midtoneB, tBlack: $targetBlackB, tWhite: $targetWhiteB)
+        default: return CurrentChannelBindings(black: $blackPointRGB, white: $whitePointRGB, mid: $midtoneRGB, tBlack: $targetBlackRGB, tWhite: $targetWhiteRGB)
+        }
+    }
+    
     public var body: some View {
+        let b = currentBindings
+        
         COToolSection(isNegative ? "Levels (Post-Inversion)" : "Levels", toolID: "Levels") {
             VStack(spacing: 8) {
                 // Channel Selector
@@ -54,7 +108,7 @@ public struct POLevelsControl: View {
                 // Interactive Histogram and Output Bar
                 HStack(spacing: 4) {
                     // Output bar (Vertical)
-                    OutputBar(targetBlack: $targetBlack, targetWhite: $targetWhite)
+                    OutputBar(targetBlack: b.tBlack, targetWhite: b.tWhite)
                         .frame(width: 12, height: 120)
 
                     GeometryReader { geometry in
@@ -68,9 +122,9 @@ public struct POLevelsControl: View {
                             
                             // Input Handles (Black, Mid, White)
                             InputHandles(
-                                blackPoint: $blackPoint,
-                                whitePoint: $whitePoint,
-                                midtone: $midtone,
+                                blackPoint: b.black,
+                                whitePoint: b.white,
+                                midtone: b.mid,
                                 geometry: geometry
                             )
                         }
@@ -81,9 +135,9 @@ public struct POLevelsControl: View {
                 
                 // Numerical Input (Numerical readouts)
                 LevelsReadouts(
-                    blackPoint: blackPoint,
-                    whitePoint: whitePoint,
-                    midtone: midtone,
+                    blackPoint: b.black.wrappedValue,
+                    whitePoint: b.white.wrappedValue,
+                    midtone: b.mid.wrappedValue,
                     isNegative: isNegative
                 )
             }

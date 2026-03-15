@@ -87,12 +87,33 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var spots: [SpotItem] = []
     @Published public var selectedSpotID: UUID?
     
-    // Levels State
-    @Published public var levelsBlackPoint: Float = 0.0
-    @Published public var levelsWhitePoint: Float = 1.0
-    @Published public var levelsMidtone: Float = 1.0
-    @Published public var levelsTargetBlack: Float = 0.0
-    @Published public var levelsTargetWhite: Float = 1.0
+    // Levels State (RGB)
+    @Published public var levelsBlackPointRGB: Float = 0.0
+    @Published public var levelsWhitePointRGB: Float = 1.0
+    @Published public var levelsMidtoneRGB: Float = 1.0
+    @Published public var levelsTargetBlackRGB: Float = 0.0
+    @Published public var levelsTargetWhiteRGB: Float = 1.0
+    
+    // Levels State (Red)
+    @Published public var levelsBlackPointR: Float = 0.0
+    @Published public var levelsWhitePointR: Float = 1.0
+    @Published public var levelsMidtoneR: Float = 1.0
+    @Published public var levelsTargetBlackR: Float = 0.0
+    @Published public var levelsTargetWhiteR: Float = 1.0
+    
+    // Levels State (Green)
+    @Published public var levelsBlackPointG: Float = 0.0
+    @Published public var levelsWhitePointG: Float = 1.0
+    @Published public var levelsMidtoneG: Float = 1.0
+    @Published public var levelsTargetBlackG: Float = 0.0
+    @Published public var levelsTargetWhiteG: Float = 1.0
+    
+    // Levels State (Blue)
+    @Published public var levelsBlackPointB: Float = 0.0
+    @Published public var levelsWhitePointB: Float = 1.0
+    @Published public var levelsMidtoneB: Float = 1.0
+    @Published public var levelsTargetBlackB: Float = 0.0
+    @Published public var levelsTargetWhiteB: Float = 1.0
     
     // Histogram State
     @Published public var currentHistogram: POHistogram = .empty()
@@ -307,6 +328,16 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             .store(in: &cancellables)
     }
     
+    private func mapLevels(black: Float, white: Float, midtone: Float, tBlack: Float, tWhite: Float) -> IC_Levels {
+        var l = IC_Levels()
+        l.shadow = black
+        l.highlight = white
+        l.midtone = midtone
+        l.targetShadow = tBlack
+        l.targetHighlight = tWhite
+        return l
+    }
+    
     private func mapCurve(_ pts: [CGPoint]) -> ICCurve {
         var curve = ICCurve()
         curve.count = Int32(min(pts.count, 16))
@@ -368,11 +399,26 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $shadows.map { _ in }.eraseToAnyPublisher(),
             $whites.map { _ in }.eraseToAnyPublisher(),
             $blacks.map { _ in }.eraseToAnyPublisher(),
-            $levelsBlackPoint.map { _ in }.eraseToAnyPublisher(),
-            $levelsWhitePoint.map { _ in }.eraseToAnyPublisher(),
-            $levelsMidtone.map { _ in }.eraseToAnyPublisher(),
-            $levelsTargetBlack.map { _ in }.eraseToAnyPublisher(),
-            $levelsTargetWhite.map { _ in }.eraseToAnyPublisher(),
+            $levelsBlackPointRGB.map { _ in }.eraseToAnyPublisher(),
+            $levelsWhitePointRGB.map { _ in }.eraseToAnyPublisher(),
+            $levelsMidtoneRGB.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetBlackRGB.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetWhiteRGB.map { _ in }.eraseToAnyPublisher(),
+            $levelsBlackPointR.map { _ in }.eraseToAnyPublisher(),
+            $levelsWhitePointR.map { _ in }.eraseToAnyPublisher(),
+            $levelsMidtoneR.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetBlackR.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetWhiteR.map { _ in }.eraseToAnyPublisher(),
+            $levelsBlackPointG.map { _ in }.eraseToAnyPublisher(),
+            $levelsWhitePointG.map { _ in }.eraseToAnyPublisher(),
+            $levelsMidtoneG.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetBlackG.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetWhiteG.map { _ in }.eraseToAnyPublisher(),
+            $levelsBlackPointB.map { _ in }.eraseToAnyPublisher(),
+            $levelsWhitePointB.map { _ in }.eraseToAnyPublisher(),
+            $levelsMidtoneB.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetBlackB.map { _ in }.eraseToAnyPublisher(),
+            $levelsTargetWhiteB.map { _ in }.eraseToAnyPublisher(),
             $curvesPointsRGB.map { _ in }.eraseToAnyPublisher(),
             $curvesPointsLuma.map { _ in }.eraseToAnyPublisher(),
             $curvesPointsRed.map { _ in }.eraseToAnyPublisher(),
@@ -825,11 +871,33 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.sharpThreshold = getDouble("ZSHARP_THRESHOLD", 1.0)
         self.sharpHalo = getDouble("ZSHARP_HALO", 0.0)
         
-        self.levelsBlackPoint = (mc.objectForKey("ZLEVELS_BLACK") as? Float) ?? 0.0
-        self.levelsWhitePoint = (mc.objectForKey("ZLEVELS_WHITE") as? Float) ?? 1.0
-        self.levelsMidtone = (mc.objectForKey("ZLEVELS_MIDTONE") as? Float) ?? 1.0
-        self.levelsTargetBlack = (mc.objectForKey("ZLEVELS_TARGET_BLACK") as? Float) ?? 0.0
-        self.levelsTargetWhite = (mc.objectForKey("ZLEVELS_TARGET_WHITE") as? Float) ?? 1.0
+        // Levels (RGB)
+        self.levelsBlackPointRGB = (mc.objectForKey("ZLEVELS_BLACK_RGB") as? Float) ?? 0.0
+        self.levelsWhitePointRGB = (mc.objectForKey("ZLEVELS_WHITE_RGB") as? Float) ?? 1.0
+        self.levelsMidtoneRGB = (mc.objectForKey("ZLEVELS_MIDTONE_RGB") as? Float) ?? 1.0
+        self.levelsTargetBlackRGB = (mc.objectForKey("ZLEVELS_TBLACK_RGB") as? Float) ?? 0.0
+        self.levelsTargetWhiteRGB = (mc.objectForKey("ZLEVELS_TWHITE_RGB") as? Float) ?? 1.0
+        
+        // Levels (Red)
+        self.levelsBlackPointR = (mc.objectForKey("ZLEVELS_BLACK_R") as? Float) ?? 0.0
+        self.levelsWhitePointR = (mc.objectForKey("ZLEVELS_WHITE_R") as? Float) ?? 1.0
+        self.levelsMidtoneR = (mc.objectForKey("ZLEVELS_MIDTONE_R") as? Float) ?? 1.0
+        self.levelsTargetBlackR = (mc.objectForKey("ZLEVELS_TBLACK_R") as? Float) ?? 0.0
+        self.levelsTargetWhiteR = (mc.objectForKey("ZLEVELS_TWHITE_R") as? Float) ?? 1.0
+        
+        // Levels (Green)
+        self.levelsBlackPointG = (mc.objectForKey("ZLEVELS_BLACK_G") as? Float) ?? 0.0
+        self.levelsWhitePointG = (mc.objectForKey("ZLEVELS_WHITE_G") as? Float) ?? 1.0
+        self.levelsMidtoneG = (mc.objectForKey("ZLEVELS_MIDTONE_G") as? Float) ?? 1.0
+        self.levelsTargetBlackG = (mc.objectForKey("ZLEVELS_TBLACK_G") as? Float) ?? 0.0
+        self.levelsTargetWhiteG = (mc.objectForKey("ZLEVELS_TWHITE_G") as? Float) ?? 1.0
+        
+        // Levels (Blue)
+        self.levelsBlackPointB = (mc.objectForKey("ZLEVELS_BLACK_B") as? Float) ?? 0.0
+        self.levelsWhitePointB = (mc.objectForKey("ZLEVELS_WHITE_B") as? Float) ?? 1.0
+        self.levelsMidtoneB = (mc.objectForKey("ZLEVELS_MIDTONE_B") as? Float) ?? 1.0
+        self.levelsTargetBlackB = (mc.objectForKey("ZLEVELS_TBLACK_B") as? Float) ?? 0.0
+        self.levelsTargetWhiteB = (mc.objectForKey("ZLEVELS_TWHITE_B") as? Float) ?? 1.0
         
         self.curvesPointsRGB = (mc.objectForKey("ZCURVE_POINTS_RGB") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
         self.curvesPointsLuma = (mc.objectForKey("ZCURVE_POINTS_LUMA") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
@@ -1026,11 +1094,33 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(keystoneSkew, forKey: "ZKEYSTONE_SKEW")
         mc.setObject(keystoneFocalLength, forKey: "ZKEYSTONE_FOCALLENGTH")
         
-        mc.setObject(levelsBlackPoint, forKey: "ZLEVELS_BLACK")
-        mc.setObject(levelsWhitePoint, forKey: "ZLEVELS_WHITE")
-        mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
-        mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
-        mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
+        // Levels RGB
+        mc.setObject(levelsBlackPointRGB, forKey: "ZLEVELS_BLACK_RGB")
+        mc.setObject(levelsWhitePointRGB, forKey: "ZLEVELS_WHITE_RGB")
+        mc.setObject(levelsMidtoneRGB, forKey: "ZLEVELS_MIDTONE_RGB")
+        mc.setObject(levelsTargetBlackRGB, forKey: "ZLEVELS_TBLACK_RGB")
+        mc.setObject(levelsTargetWhiteRGB, forKey: "ZLEVELS_TWHITE_RGB")
+        
+        // Levels Red
+        mc.setObject(levelsBlackPointR, forKey: "ZLEVELS_BLACK_R")
+        mc.setObject(levelsWhitePointR, forKey: "ZLEVELS_WHITE_R")
+        mc.setObject(levelsMidtoneR, forKey: "ZLEVELS_MIDTONE_R")
+        mc.setObject(levelsTargetBlackR, forKey: "ZLEVELS_TBLACK_R")
+        mc.setObject(levelsTargetWhiteR, forKey: "ZLEVELS_TWHITE_R")
+        
+        // Levels Green
+        mc.setObject(levelsBlackPointG, forKey: "ZLEVELS_BLACK_G")
+        mc.setObject(levelsWhitePointG, forKey: "ZLEVELS_WHITE_G")
+        mc.setObject(levelsMidtoneG, forKey: "ZLEVELS_MIDTONE_G")
+        mc.setObject(levelsTargetBlackG, forKey: "ZLEVELS_TBLACK_G")
+        mc.setObject(levelsTargetWhiteG, forKey: "ZLEVELS_TWHITE_G")
+        
+        // Levels Blue
+        mc.setObject(levelsBlackPointB, forKey: "ZLEVELS_BLACK_B")
+        mc.setObject(levelsWhitePointB, forKey: "ZLEVELS_WHITE_B")
+        mc.setObject(levelsMidtoneB, forKey: "ZLEVELS_MIDTONE_B")
+        mc.setObject(levelsTargetBlackB, forKey: "ZLEVELS_TBLACK_B")
+        mc.setObject(levelsTargetWhiteB, forKey: "ZLEVELS_TWHITE_B")
         
         mc.setObject(curvesPointsRGB, forKey: "ZCURVE_POINTS_RGB")
         mc.setObject(curvesPointsLuma, forKey: "ZCURVE_POINTS_LUMA")
@@ -1123,11 +1213,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.geometry.keystoneSkew = Float(keystoneSkew)
         settings.geometry.keystoneFocalLength = Float(keystoneFocalLength)
         
-        settings.levelsShadow = Float(levelsBlackPoint)
-        settings.levelsHighlight = Float(levelsWhitePoint)
-        settings.levelsMidtone = Float(levelsMidtone)
-        settings.levelsTargetShadow = Float(levelsTargetBlack)
-        settings.levelsTargetHighlight = Float(levelsTargetWhite)
+        // Map all 4 levels channels
+        settings.levels.levelsRGB = mapLevels(black: levelsBlackPointRGB, white: levelsWhitePointRGB, midtone: levelsMidtoneRGB, tBlack: levelsTargetBlackRGB, tWhite: levelsTargetWhiteRGB)
+        settings.levels.levelsR = mapLevels(black: levelsBlackPointR, white: levelsWhitePointR, midtone: levelsMidtoneR, tBlack: levelsTargetBlackR, tWhite: levelsTargetWhiteR)
+        settings.levels.levelsG = mapLevels(black: levelsBlackPointG, white: levelsWhitePointG, midtone: levelsMidtoneG, tBlack: levelsTargetBlackG, tWhite: levelsTargetWhiteG)
+        settings.levels.levelsB = mapLevels(black: levelsBlackPointB, white: levelsWhitePointB, midtone: levelsMidtoneB, tBlack: levelsTargetBlackB, tWhite: levelsTargetWhiteB)
         
         // Map all 5 curves
         settings.gradationCurves.curveX = mapCurve(curvesPointsRGB)
