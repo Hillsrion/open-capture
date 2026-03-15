@@ -16,7 +16,16 @@ public struct COMTRView: NSViewRepresentable {
         
         init(device: MTLDevice?) {
             self.commandQueue = device?.makeCommandQueue()
-            self.context = CIContext(mtlDevice: device ?? MTLCreateSystemDefaultDevice()!, options: [.cacheIntermediates: false])
+            
+            // Setting workingFormat to .RGBAh (16-bit float) for high-precision live viewer
+            let options: [CIContextOption: Any] = [
+                .workingFormat: CIFormat.RGBAh,
+                .workingColorSpace: CGColorSpaceCreateDeviceRGB(),
+                .cacheIntermediates: false,
+                .useSoftwareRenderer: false
+            ]
+            
+            self.context = CIContext(mtlDevice: device ?? MTLCreateSystemDefaultDevice()!, options: options)
             super.init()
         }
         

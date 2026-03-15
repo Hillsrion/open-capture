@@ -547,9 +547,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             }
             .store(in: &cancellables)
             
-        // Track interacting state: set false after 200ms of no changes
+        // Track interacting state: set false after 100ms of no changes (Snappy/Nervous transition)
         mergedPublishers
-            .debounce(for: .milliseconds(200), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(100), scheduler: RunLoop.main)
             .sink { [weak self] _ in
                 self?.isInteracting = false
             }

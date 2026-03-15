@@ -18,10 +18,18 @@ public class RawImageEngine {
     
     private init() {
         // In original C1, this would be a Metal-backed context shared with the viewer
+        // Setting workingFormat to .RGBAh (16-bit float) to match C1's high-precision pipeline (IMG-002)
+        let options: [CIContextOption: Any] = [
+            .workingFormat: CIFormat.RGBAh,
+            .workingColorSpace: CGColorSpaceCreateDeviceRGB(),
+            .cacheIntermediates: false,
+            .useSoftwareRenderer: false
+        ]
+        
         if let device = MTLCreateSystemDefaultDevice() {
-            self.context = CIContext(mtlDevice: device)
+            self.context = CIContext(mtlDevice: device, options: options)
         } else {
-            self.context = CIContext()
+            self.context = CIContext(options: options)
         }
     }
     
