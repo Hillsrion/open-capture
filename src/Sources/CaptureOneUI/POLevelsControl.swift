@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed `POLevelsControl` interactive histogram widget.
 /// Manages Black Point, White Point, and Midtone (Gamma) adjustment via dragging.

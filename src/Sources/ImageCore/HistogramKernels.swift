@@ -1,6 +1,5 @@
 import Foundation
 import Accelerate
-import AppCoreShared
 
 /// Reconstructed Histogram generation logic.
 /// Based on `CHistogram` and `ICHistsogramRenderer` disassembly.
