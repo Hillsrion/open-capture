@@ -44,7 +44,7 @@ public struct COViewerView: View {
             Just(adjustmentController)
                 .compactMap { $0?.objectWillChange }
                 .flatMap { $0 }
-                .throttle(for: .milliseconds(60), scheduler: RunLoop.main, latest: true)
+                .throttle(for: .milliseconds(33), scheduler: RunLoop.main, latest: true) // ~30fps live preview
         ) { _ in
             render()
         }
