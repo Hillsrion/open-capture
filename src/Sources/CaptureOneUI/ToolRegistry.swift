@@ -138,23 +138,9 @@ public enum ToolRegistry {
                 ))
             }
         case "Exposure":
-            return .implemented { context in
-                AnyView(ExposureToolView(
-                    exposure: Binding(get: { context.adjustmentController.exposure }, set: { context.adjustmentController.exposure = $0 }),
-                    contrast: Binding(get: { context.adjustmentController.contrast }, set: { context.adjustmentController.contrast = $0 }),
-                    brightness: Binding(get: { context.adjustmentController.brightness }, set: { context.adjustmentController.brightness = $0 }),
-                    saturation: Binding(get: { context.adjustmentController.saturation }, set: { context.adjustmentController.saturation = $0 })
-                ))
-            }
+            return .implemented { context in AnyView(ExposureToolView(controller: context.adjustmentController)) }
         case "ShadowHighlight":
-            return .implemented { context in
-                AnyView(HDRToolView(
-                    highlights: Binding(get: { context.adjustmentController.highlights }, set: { context.adjustmentController.highlights = $0 }),
-                    shadows: Binding(get: { context.adjustmentController.shadows }, set: { context.adjustmentController.shadows = $0 }),
-                    whites: Binding(get: { context.adjustmentController.whites }, set: { context.adjustmentController.whites = $0 }),
-                    blacks: Binding(get: { context.adjustmentController.blacks }, set: { context.adjustmentController.blacks = $0 })
-                ))
-            }
+            return .implemented { context in AnyView(HDRToolView(controller: context.adjustmentController)) }
         case "Levels":
             return .implemented { context in AnyView(LevelsInspectorToolView(controller: context.adjustmentController)) }
         case "Curves":
@@ -193,17 +179,7 @@ public enum ToolRegistry {
         case "Rotation":
             return .implemented { context in AnyView(RotationToolView(controller: context.adjustmentController)) }
         case "Perspective":
-            return .implemented { context in
-                AnyView(KeystoneToolView(
-                    tiltX: Binding(get: { context.adjustmentController.keystoneTiltX }, set: { context.adjustmentController.keystoneTiltX = $0 }),
-                    tiltY: Binding(get: { context.adjustmentController.keystoneTiltY }, set: { context.adjustmentController.keystoneTiltY = $0 }),
-                    amount: Binding(get: { context.adjustmentController.keystoneAmount }, set: { context.adjustmentController.keystoneAmount = $0 }),
-                    aspect: Binding(get: { context.adjustmentController.keystoneAspect }, set: { context.adjustmentController.keystoneAspect = $0 }),
-                    skew: Binding(get: { context.adjustmentController.keystoneSkew }, set: { context.adjustmentController.keystoneSkew = $0 }),
-                    focalLength: Binding(get: { context.adjustmentController.keystoneFocalLength }, set: { context.adjustmentController.keystoneFocalLength = $0 }),
-                    autoAction: { context.adjustmentController.autoKeystone() }
-                ))
-            }
+            return .implemented { _ in AnyView(KeystoneToolView()) }
         case "LensCorrection":
             return .implemented { context in
                 AnyView(LensCorrectionToolView(
@@ -387,10 +363,15 @@ private struct CurvesInspectorToolView: View {
     @ObservedObject var controller: AdjustmentToolController
 
     var body: some View {
-        POCurvesControl(points: Binding(
-            get: { controller.curvesPoints },
-            set: { controller.curvesPoints = $0 }
-        ), isNegative: controller.negativeFilmEnabled)
+        POCurvesControl(
+            pointsRGB: $controller.curvesPointsRGB,
+            pointsLuma: $controller.curvesPointsLuma,
+            pointsRed: $controller.curvesPointsRed,
+            pointsGreen: $controller.curvesPointsGreen,
+            pointsBlue: $controller.curvesPointsBlue,
+            selectedChannel: $controller.curvesSelectedChannel,
+            isNegative: controller.negativeFilmEnabled
+        )
     }
 }
 

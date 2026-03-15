@@ -4,6 +4,7 @@ import AppCoreShared
 
 /// Reconstructed global keyboard event listener and Speed Edit engine (INT-002, UI-204).
 /// Based on disassembly of keyboardShortcutsMonitor and SpeedEdit controller.
+@MainActor
 public class ShortcutInputHandler {
     public static let shared = ShortcutInputHandler()
     private var keyDownMonitor: Any?

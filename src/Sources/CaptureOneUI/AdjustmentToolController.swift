@@ -64,11 +64,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Multi-view sync (Pan Cursor Tool spec)
     @Published public var multiViewPanning: Bool = false
     
-    // Focus State (UI-203)
-    @Published public var focusZoomLevel: Float = 1.0
-    @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
-    @Published public var focusAIMode: Int = 0 // 0: None, 1: Eye, 2: Face
-    
     // AI Crop Studio State (UI-204)
     @Published public var aiCropTopMargin: Double = 10.0
     @Published public var aiCropBottomMargin: Double = 10.0
@@ -100,7 +95,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var levelsTargetWhite: Float = 1.0
     
     // Curves State
-    @Published public var curvesPoints: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesPointsRGB: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesPointsLuma: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesPointsRed: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesPointsGreen: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesPointsBlue: [CGPoint] = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+    @Published public var curvesSelectedChannel: Int = 0 // 0: RGB, 1: Luma, 2: Red, 3: Green, 4: Blue
     
     // Base Characteristics (UI-204)
     @Published public var iccProfile: String = "Generic RGB"
@@ -156,6 +156,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     
     // Dehaze & Vignetting (UI-202)
     @Published public var dehazeAmount: Double = 0.0
+    @Published public var dehazeShadowToneHue: Double = 0.0
     @Published public var dehazeColor: Color = .gray
     @Published public var vignettingAmount: Double = 0.0
     @Published public var vignettingMethod: Int = 0
@@ -303,6 +304,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             .store(in: &cancellables)
     }
     
+    private func mapCurve(_ pts: [CGPoint]) -> ICCurve {
+        var curve = ICCurve()
+        curve.count = Int32(min(pts.count, 16))
+        for i in 0..<Int(curve.count) {
+            curve.points[i] = ICCurvePoint(x: Float(pts[i].x), y: Float(pts[i].y))
+        }
+        return curve
+    }
+    
     private func setupNegativeFilmSync() {
         $negativeFilmEnabled
             .dropFirst()
@@ -311,12 +321,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                 // Automatically switch Curves to Negative preset (diagonal 1,1 to 0,0)
                 // if they are currently at default (0,0 to 1,1)
                 if enabled {
-                    if self.curvesPoints == [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)] {
-                        self.curvesPoints = [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)]
+                    if self.curvesPointsRGB == [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)] {
+                        self.curvesPointsRGB = [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)]
                     }
                 } else {
-                    if self.curvesPoints == [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)] {
-                        self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+                    if self.curvesPointsRGB == [CGPoint(x: 0.0, y: 1.0), CGPoint(x: 1.0, y: 0.0)] {
+                        self.curvesPointsRGB = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
                     }
                 }
             }
@@ -360,7 +370,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $levelsMidtone.map { _ in }.eraseToAnyPublisher(),
             $levelsTargetBlack.map { _ in }.eraseToAnyPublisher(),
             $levelsTargetWhite.map { _ in }.eraseToAnyPublisher(),
-            $curvesPoints.map { _ in }.eraseToAnyPublisher(),
+            $curvesPointsRGB.map { _ in }.eraseToAnyPublisher(),
+            $curvesPointsLuma.map { _ in }.eraseToAnyPublisher(),
+            $curvesPointsRed.map { _ in }.eraseToAnyPublisher(),
+            $curvesPointsGreen.map { _ in }.eraseToAnyPublisher(),
+            $curvesPointsBlue.map { _ in }.eraseToAnyPublisher(),
+            $curvesSelectedChannel.map { _ in }.eraseToAnyPublisher(),
             $rating.map { _ in }.eraseToAnyPublisher(),
             $colorTag.map { _ in }.eraseToAnyPublisher(),
             $activePredicate.map { _ in }.eraseToAnyPublisher(),
@@ -417,7 +432,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $bwSplitToneShadowHue.map { _ in }.eraseToAnyPublisher(),
             $bwSplitToneShadowSaturation.map { _ in }.eraseToAnyPublisher(),
             $dehazeAmount.map { _ in }.eraseToAnyPublisher(),
-            $dehazeShadowToneHue.map { _ in }.eraseToAnyPublisher(),
+            $dehazeColor.map { _ in }.eraseToAnyPublisher(),
             $vignettingAmount.map { _ in }.eraseToAnyPublisher(),
             $vignettingMethod.map { _ in }.eraseToAnyPublisher(),
             $matchLookImpact.map { _ in }.eraseToAnyPublisher(),
@@ -431,6 +446,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             $focusZoomLevel.map { _ in }.eraseToAnyPublisher(),
             $focusPoint.map { _ in }.eraseToAnyPublisher(),
             $focusAIMode.map { _ in }.eraseToAnyPublisher(),
+            $lumaRangeRadius.map { _ in }.eraseToAnyPublisher(),
+            $lumaRangeSensitivity.map { _ in }.eraseToAnyPublisher(),
+            $showOverlay.map { _ in }.eraseToAnyPublisher(),
+            $overlayOpacity.map { _ in }.eraseToAnyPublisher(),
+            $overlayScale.map { _ in }.eraseToAnyPublisher(),
             $aiCropTopMargin.map { _ in }.eraseToAnyPublisher(),
             $aiCropBottomMargin.map { _ in }.eraseToAnyPublisher(),
             $aiCropLeftMargin.map { _ in }.eraseToAnyPublisher(),
@@ -805,11 +825,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.levelsTargetBlack = (mc.objectForKey("ZLEVELS_TARGET_BLACK") as? Float) ?? 0.0
         self.levelsTargetWhite = (mc.objectForKey("ZLEVELS_TARGET_WHITE") as? Float) ?? 1.0
         
-        if let curvePts = mc.objectForKey("ZCURVE_POINTS") as? [CGPoint] {
-            self.curvesPoints = curvePts
-        } else {
-            self.curvesPoints = [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
-        }
+        self.curvesPointsRGB = (mc.objectForKey("ZCURVE_POINTS_RGB") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        self.curvesPointsLuma = (mc.objectForKey("ZCURVE_POINTS_LUMA") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        self.curvesPointsRed = (mc.objectForKey("ZCURVE_POINTS_RED") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        self.curvesPointsGreen = (mc.objectForKey("ZCURVE_POINTS_GREEN") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        self.curvesPointsBlue = (mc.objectForKey("ZCURVE_POINTS_BLUE") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)]
+        self.curvesSelectedChannel = (mc.objectForKey("ZCURVE_SELECTED_CHANNEL") as? Int) ?? 0
         
         if let data = mc.objectForKey("ZSPOTS") as? Data,
            let decoded = try? JSONDecoder().decode([SpotItem].self, from: data) {
@@ -829,7 +850,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.viewportRect = vRect
         }
         
-        self.focusZoomLevel = (mc.objectForKey("ZFOCUS_ZOOM") as? Float) ?? 1.0
+        self.focusZoomLevel = Double((mc.objectForKey("ZFOCUS_ZOOM") as? Float) ?? 1.0)
         if let fPoint = mc.objectForKey("ZFOCUS_POINT") as? CGPoint {
             self.focusPoint = fPoint
         }
@@ -1004,7 +1025,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mc.setObject(levelsMidtone, forKey: "ZLEVELS_MIDTONE")
         mc.setObject(levelsTargetBlack, forKey: "ZLEVELS_TARGET_BLACK")
         mc.setObject(levelsTargetWhite, forKey: "ZLEVELS_TARGET_WHITE")
-        mc.setObject(curvesPoints, forKey: "ZCURVE_POINTS")
+        
+        mc.setObject(curvesPointsRGB, forKey: "ZCURVE_POINTS_RGB")
+        mc.setObject(curvesPointsLuma, forKey: "ZCURVE_POINTS_LUMA")
+        mc.setObject(curvesPointsRed, forKey: "ZCURVE_POINTS_RED")
+        mc.setObject(curvesPointsGreen, forKey: "ZCURVE_POINTS_GREEN")
+        mc.setObject(curvesPointsBlue, forKey: "ZCURVE_POINTS_BLUE")
+        mc.setObject(curvesSelectedChannel, forKey: "ZCURVE_SELECTED_CHANNEL")
         
         mc.setObject(zoomLevel, forKey: "ZZOOM_LEVEL")
         mc.setObject(viewportRect, forKey: "ZVIEWPORT_RECT")
@@ -1096,12 +1123,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.levelsTargetShadow = Float(levelsTargetBlack)
         settings.levelsTargetHighlight = Float(levelsTargetWhite)
         
-        var curveX = ICCurve()
-        curveX.count = Int32(min(curvesPoints.count, 16))
-        for i in 0..<Int(curveX.count) {
-            curveX.points[i] = ICCurvePoint(x: Float(curvesPoints[i].x), y: Float(curvesPoints[i].y))
-        }
-        settings.gradationCurves.curveX = curveX
+        // Map all 5 curves
+        settings.gradationCurves.curveX = mapCurve(curvesPointsRGB)
+        settings.gradationCurves.curveL = mapCurve(curvesPointsLuma)
+        settings.gradationCurves.curveR = mapCurve(curvesPointsRed)
+        settings.gradationCurves.curveG = mapCurve(curvesPointsGreen)
+        settings.gradationCurves.curveB = mapCurve(curvesPointsBlue)
         
         settings.clarity.amount = clarityAmount
         settings.clarity.structureAmount = structureAmount
@@ -1153,7 +1180,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         guard let variant = currentVariant else { return }
         print("[Smart] Setting reference for \(variant.variantUUID)")
         self.smartReference = SmartAdjustmentsHelper.analyzeVariant(variant)
-        self.smartReferenceVariantID = variant.id
+        self.smartReferenceVariantID = variant.variantUUID
     }
     
     public func applySmartAdjustments(to variants: [VariantBase]) {

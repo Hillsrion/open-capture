@@ -7,7 +7,7 @@ public struct ShortcutEditorView: View {
     @State private var recordingActionID: String? = nil
     @State private var searchText: String = ""
     
-    var filteredShortcuts: [KeyboardShortcut] {
+    var filteredShortcuts: [AppCoreShared.KeyboardShortcut] {
         if searchText.isEmpty {
             return manager.activeSet.shortcuts
         }
@@ -17,7 +17,7 @@ public struct ShortcutEditorView: View {
         }
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(spacing: 0) {
             COToolSection("Keyboard Shortcuts", toolID: "KeyboardShortcuts") {
                 VStack(spacing: 8) {

@@ -35,53 +35,56 @@ public struct InspectorToolTabView: View {
     }
 
     public var body: some View {
-        let selectedID = workspaceManager.activeWorkspace.selectedPaletteID
-        let _ = print("[UI] InspectorToolTabView rendering. Selected: \(selectedID)")
-        
         HStack(spacing: 0) {
             ForEach(workspaceManager.activeWorkspace.palettes) { palette in
-                let isSelected = (selectedID == palette.id)
-                VStack(spacing: 3) {
-                    Image(systemName: palette.iconName)
-                        .font(.system(size: 14))
-                    Text(palette.name)
-                        .font(.system(size: 8, weight: .semibold))
-                        .lineLimit(1)
-
-                    Rectangle()
-                        .fill(isSelected ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
-                        .frame(height: 2)
-                }
-                .frame(width: 54, height: 44)
-                .background(Color.white.opacity(0.001)) // Essential for hit-testing transparent areas
-                .onTapGesture {
-                    print("[UI] InspectorToolTabView click: \(palette.id)")
-                    workspaceManager.setSelectedPaletteID(palette.id)
-                }
-                .foregroundColor(isSelected ? .white : .gray)
-                .contextMenu {
-                    Button("Expand All Tools") {
-                        workspaceManager.expandAllTools(in: palette.id)
-                    }
-                    Button("Collapse All Tools") {
-                        workspaceManager.collapseAllTools(in: palette.id)
-                    }
-                    Divider()
-                    Button("Float Palette") {
-                        COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
-                    }
-                    Divider()
-                    Button("Add Tool Tab") {
-                        // Logic to add a new palette (e.g. customized)
-                    }
-                    Button("Remove Tool Tab", role: .destructive) {
-                        workspaceManager.removePalette(palette.id)
-                    }
-                }
+                PaletteTabItem(palette: palette, context: context)
             }
         }
         .frame(height: 44)
         .background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar)
+    }
+}
+
+private struct PaletteTabItem: View {
+    let palette: WorkspacePaletteDefinition
+    let context: InspectorToolContext
+    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    
+    var body: some View {
+        let isSelected = (workspaceManager.activeWorkspace.selectedPaletteID == palette.id)
+        VStack(spacing: 3) {
+            Image(systemName: palette.iconName)
+                .font(.system(size: 14))
+            Text(palette.name)
+                .font(.system(size: 8, weight: .semibold))
+                .lineLimit(1)
+
+            Rectangle()
+                .fill(isSelected ? CaptureOneTheme.Colors.activeHighlight : Color.clear)
+                .frame(height: 2)
+        }
+        .frame(width: 54, height: 44)
+        .background(Color.white.opacity(0.001))
+        .onTapGesture {
+            workspaceManager.setSelectedPaletteID(palette.id)
+        }
+        .foregroundColor(isSelected ? .white : .gray)
+        .contextMenu {
+            Button("Expand All Tools") {
+                workspaceManager.expandAllTools(in: palette.id)
+            }
+            Button("Collapse All Tools") {
+                workspaceManager.collapseAllTools(in: palette.id)
+            }
+            Divider()
+            Button("Float Palette") {
+                COWindowManager.shared.openFloatingPaletteWindow(palette: palette, context: context)
+            }
+            Divider()
+            Button("Remove Tool Tab", role: .destructive) {
+                workspaceManager.removePalette(palette.id)
+            }
+        }
     }
 }
 
@@ -96,7 +99,6 @@ public struct InspectorToolLayout: View {
     }
 
     public var body: some View {
-        let _ = print("[UI] InspectorToolLayout rendering palette: \(palette.id) with \(palette.allTools.count) tools")
         VStack(spacing: 0) {
             if !palette.fixedTools.isEmpty {
                 VStack(spacing: 1) {

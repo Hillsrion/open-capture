@@ -61,7 +61,8 @@ public struct LayerInspectorView: View {
                 
                 // Layer Stack
                 VStack(spacing: 1) {
-                    ForEach(variant.layers.indices.reversed(), id: \.self) { index in
+                    let reversedIndices = Array(variant.layers.indices.reversed())
+                    ForEach(reversedIndices, id: \.self) { index in
                         let layer = variant.layers[index]
                         LayerRow(
                             layer: layer,
@@ -183,7 +184,7 @@ public struct LayerInspectorView: View {
 }
 
 private struct LayerRow: View {
-    let layer: LayerBase
+    @ObservedObject var layer: LayerBase
     let isSelected: Bool
     
     var body: some View {
@@ -233,6 +234,10 @@ struct CombineMasksModal: View {
     @State private var operationType: Int = 0 // 0: Union (Or), 1: Intersection (And), 2: Subtract
     @State private var createNewLayer: Bool = true
     
+    private var nonBackgroundLayers: [LayerBase] {
+        variant.layers.filter { $0.type != .background }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Combine Masks")
@@ -246,7 +251,7 @@ struct CombineMasksModal: View {
                 
                 ScrollView {
                     VStack(spacing: 2) {
-                        ForEach(variant.layers.filter { $0.type != .background }, id: \.id) { layer in
+                        ForEach(nonBackgroundLayers) { layer in
                             HStack {
                                 let isSelected = selectedLayerIDs.contains(layer.id)
                                 Image(systemName: isSelected ? "checkmark.square.fill" : "square")
@@ -335,8 +340,11 @@ struct CombineMasksModal: View {
             variant.activeLayerIndex = 0
             print("[Masks] Created new layer: \(targetLayerName)")
         } else {
-            if let firstID = selectedLayerIDs.first, let layer = variant.layers.first(where: { $0.id == firstID }) {
-                print("[Masks] Applied combination directly to layer: \(layer.name)")
+            if let firstID = selectedLayerIDs.first {
+                let layers = variant.layers
+                if let layer = layers.first(where: { $0.id == firstID }) {
+                    print("[Masks] Applied combination directly to layer: \(layer.name)")
+                }
             }
         }
     }

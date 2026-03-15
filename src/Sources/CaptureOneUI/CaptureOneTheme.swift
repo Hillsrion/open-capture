@@ -97,7 +97,7 @@ public struct COToolSection<Content: View>: View {
                     }
 
                     toolHeaderButton(systemName: "arrow.up.doc") {
-                        commands.copyAdjustments(toolID)
+                        commands.copyAdjustmentsForTool(toolID)
                     }
 
                     toolHeaderButton(systemName: "arrow.down.doc") {

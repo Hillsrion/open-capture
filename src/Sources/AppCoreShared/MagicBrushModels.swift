@@ -34,11 +34,6 @@ public class VariantMagicBrushLayer: LayerBase {
     public override init(uuid: String, name: String, type: LayerType, context: ObjectContext?) {
         super.init(uuid: uuid, name: name, type: type, context: context)
     }
-    
-    // Decodable support if needed
-    required init(from decoder: Decoder) throws {
-        try super.init(from: decoder)
-    }
 }
 
 /// Reconstructed Infrastructure for AI Model management.

@@ -105,7 +105,7 @@ public struct AdvancedColorEditorView: View {
             // Color Wheel Simulation
             ZStack {
                 Circle()
-                    .stroke(LinearGradient(gradient: Gradient(colors: [.red, .yellow, .green, .cyan, .blue, .magenta, .red]), startPoint: .top, endPoint: .bottom), lineWidth: 20)
+                    .stroke(LinearGradient(gradient: Gradient(colors: [.red, .yellow, .green, .cyan, .blue, .purple, .red]), startPoint: .top, endPoint: .bottom), lineWidth: 20)
                     .frame(width: 120, height: 120)
                 
                 // Active Slice (Simulation)

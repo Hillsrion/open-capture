@@ -451,6 +451,16 @@ public class WorkspaceManager: ObservableObject, Codable {
         }
     }
 
+    public func removePalette(_ paletteID: String, autosave: Bool = true) {
+        activeWorkspace.palettes.removeAll { $0.id == paletteID }
+        if activeWorkspace.chromeState.selectedToolPaletteID == paletteID {
+            activeWorkspace.chromeState.selectedToolPaletteID = activeWorkspace.palettes.first?.id
+        }
+        if autosave {
+            saveWorkspace()
+        }
+    }
+
     public func setToolSizeOption(_ sizeOption: Int?, for toolID: String, autosave: Bool = true) {
         guard let paletteIndex = activeWorkspace.palettes.firstIndex(where: { $0.id == activeWorkspace.selectedPaletteID }) else {
             return

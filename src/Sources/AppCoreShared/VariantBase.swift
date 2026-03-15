@@ -2,7 +2,9 @@ import Foundation
 
 /// Reconstructed Base class for Variant entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
-public class VariantBase: BaseObject {
+public class VariantBase: BaseObject, Identifiable {
+    
+    public var id: String { variantUUID }
     
     // MARK: - Properties (Core Identity)
     public let variantUUID: String

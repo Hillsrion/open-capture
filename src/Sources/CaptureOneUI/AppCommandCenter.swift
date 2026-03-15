@@ -180,7 +180,7 @@ public final class AppCommandCenter: ObservableObject {
         switch itemID {
         case "Select", "Pan", "Loupe", "Crop", "Straighten", "Rotate", "Keystone", "KeystoneVertical", "KeystoneHorizontal", "Heal", "Clone", "DrawLinearGradient", "DrawRadialGradient", "DirectColorEditor", "PickColorEditor", "DrawMask", "EraseMask", "Annotate", "EraseAnnotation", "DrawMagicBrush", "EraseMagicBrush":
             self.selectedCursorToolID = itemID
-        case "AutoAdjust":
+        case "Import":
             presentImport()
         case "Export":
             presentExport()
@@ -539,6 +539,7 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
         COWindowManager.shared.openCullingWindow(for: session)
+        print("[AppCommandCenter] Opened Cull View")
     }
 
     public func presentPreferences() {
@@ -547,12 +548,6 @@ public final class AppCommandCenter: ObservableObject {
 
     public func presentKeyboardShortcuts() {
         presentedSheet = .keyboardShortcuts
-    }
-
-    public func openCullingWindow() {
-        let shell = CullingShellController(session: self.session)
-        shell.showWindow(nil)
-        print("[AppCommandCenter] Opened Cull View")
     }
 
     public func presentPrint() {

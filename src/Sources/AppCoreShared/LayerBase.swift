@@ -4,7 +4,9 @@ import ImageCore
 /// Reconstructed Base class for Layer entities in AppCoreShared.
 /// Based on _TtC12AppCoreShared9LayerBase metadata.
 
-public class LayerBase: BaseObject, ICMaskableLayer {
+public class LayerBase: BaseObject, ICMaskableLayer, Identifiable {
+    
+    public var id: String { uuid }
     
     public enum LayerType: Int {
         case background = 0
@@ -66,4 +68,11 @@ public struct RadialGradientMask: Codable {
     public var radius: CGSize  // Normalized
     public var rotation: Double // Degrees
     public var feather: Double  // 0.0 to 1.0
+    
+    public init(center: CGPoint, radius: CGSize, rotation: Double, feather: Double) {
+        self.center = center
+        self.radius = radius
+        self.rotation = rotation
+        self.feather = feather
+    }
 }
