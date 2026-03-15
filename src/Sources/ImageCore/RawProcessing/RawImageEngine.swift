@@ -11,7 +11,10 @@ public class RawImageEngine {
     private let context: CIContext
     
     // Proxy Cache: Stores the active RenderPipelines per URL to simulate C1's VRAM proxy architecture
+    // Implemented as an LRU Cache to prevent VRAM/RAM leaks.
+    private let maxCacheSize = 5
     private var activePipelines: [URL: RenderPipeline] = [:]
+    private var lruList: [URL] = []
     
     private init() {
         // In original C1, this would be a Metal-backed context shared with the viewer
@@ -29,6 +32,12 @@ public class RawImageEngine {
         
         if let existing = activePipelines[url] {
             pipeline = existing
+            
+            // Update LRU position
+            if let index = lruList.firstIndex(of: url) {
+                lruList.remove(at: index)
+                lruList.append(url)
+            }
         } else {
             print("[Engine] Loading RAW into Proxy Cache: \(url.lastPathComponent)")
             
@@ -44,8 +53,17 @@ public class RawImageEngine {
             }
             
             pipeline = RenderPipeline(sourceImage: extracted)
+            
+            // Evict oldest if cache is full
+            if lruList.count >= maxCacheSize {
+                let oldestUrl = lruList.removeFirst()
+                activePipelines.removeValue(forKey: oldestUrl)
+                print("[Engine] Evicted \(oldestUrl.lastPathComponent) from Proxy Cache (LRU)")
+            }
+            
             // Store in proxy cache to guarantee 30fps/60fps playback during slider drag
             activePipelines[url] = pipeline
+            lruList.append(url)
         }
         
         let output = pipeline.process(settings: settings, isLiveDrag: isLiveDrag)
