@@ -994,6 +994,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func commitChanges(to variant: VariantBase?) {
         guard let variant = variant, let mc = variant.mcVariant, !isUpdatingFromModel else { return }
         
+        self.isUpdatingFromModel = true
+        defer { self.isUpdatingFromModel = false }
+        
         let colorBalanceSettings = ColorBalanceStorage.normalizedSettings(
             ColorBalanceSettings(
                 master: cbMaster,
@@ -1002,7 +1005,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                 highlight: cbHighlight
             )
         )
-        cbMaster = colorBalanceSettings.master
+        updateIfChanged(&cbMaster, colorBalanceSettings.master)
         
         // 1. Update active layer/global properties
         if let activeLayer = variant.activeLayer, activeLayer.type != .background {
