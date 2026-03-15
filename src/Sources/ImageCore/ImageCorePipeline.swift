@@ -19,20 +19,48 @@ public class ImageCorePipeline {
     
     /// Entry point for processing a RAW image buffer.
     /// Based on disassembly of MultiImaging::RunProcessPipeline.
-    public func run(input: RawImageRep, settings: IC_ProcessSettings, outputBuffer: UnsafeMutableRawPointer) {
+    public func run(input: RawImageRep, settings: IC_ProcessSettings, outputBuffer: UnsafeMutableRawPointer, outputBufferLength: Int? = nil) {
         // Logic recovery:
         // 1. Determine optimal tile size based on sensor size and hardware.
         // 2. Iterate over tiles using a concurrent queue or TileExecutionManager.
         // 3. For each tile, apply the adjustment stack.
+        let imageSize = input.sensorSize
+        let manager = TileExecutionManager()
+        let plan = manager.planExecution(for: imageSize, viewport: nil)
         
-        processTile(input: input, settings: settings, output: outputBuffer)
+        let width = max(1, Int(imageSize.width))
+        let height = max(1, Int(imageSize.height))
+        let requiredBytes = width * height * MemoryLayout<Float>.size
+        let canWriteOutput = outputBufferLength.map { $0 >= requiredBytes } ?? false
+        
+        let queue = DispatchQueue(label: "ImageCore.TileExecutor", attributes: .concurrent)
+        let group = DispatchGroup()
+        let semaphore = DispatchSemaphore(value: manager.maxConcurrentTiles)
+        
+        for tile in plan.tiles {
+            semaphore.wait()
+            group.enter()
+            queue.async {
+                self.processTile(input: input,
+                                 settings: settings,
+                                 tile: tile,
+                                 output: canWriteOutput ? outputBuffer : nil,
+                                 outputStride: width)
+                semaphore.signal()
+                group.leave()
+            }
+        }
+        
+        group.wait()
     }
     
-    private func processTile(input: RawImageRep, settings: IC_ProcessSettings, output: UnsafeMutableRawPointer) {
+    private func processTile(input: RawImageRep, settings: IC_ProcessSettings, tile: TileRegion, output: UnsafeMutableRawPointer?, outputStride: Int) {
         // NEON/SIMD optimized logic inferred from disassembly:
         // Using Accelerate framework to mimic low-level instructions like ld4.16b/st3.16b.
         
-        let pixelCount = Int(input.sensorSize.width * input.sensorSize.height)
+        let tileWidth = max(1, tile.width)
+        let tileHeight = max(1, tile.height)
+        let pixelCount = tileWidth * tileHeight
         var floatBuffer = [Float](repeating: 0.5, count: pixelCount)
         var red = [Float](repeating: 0.5, count: pixelCount)
         var green = [Float](repeating: 0.5, count: pixelCount)
@@ -138,6 +166,19 @@ public class ImageCorePipeline {
         for index in 0..<pixelCount {
             floatBuffer[index] = (red[index] + green[index] + blue[index]) / 3.0
         }
+        
+        guard let output = output else { return }
+        
+        let outputPtr = output.assumingMemoryBound(to: Float.self)
+        floatBuffer.withUnsafeBufferPointer { buffer in
+            guard let base = buffer.baseAddress else { return }
+            for row in 0..<tileHeight {
+                let dstRow = (tile.y + row) * outputStride
+                let srcRow = row * tileWidth
+                outputPtr.advanced(by: dstRow + tile.x)
+                    .assign(from: base.advanced(by: srcRow), count: tileWidth)
+            }
+        }
     }
     
     /// Reconstructed logic for mask generation (Manual & AI-based).
@@ -182,7 +223,7 @@ public class ImageCorePipeline {
         let buffer = UnsafeMutableRawPointer.allocate(byteCount: byteCount, alignment: 8)
         defer { buffer.deallocate() }
         
-        run(input: input, settings: settings, outputBuffer: buffer)
+        run(input: input, settings: settings, outputBuffer: buffer, outputBufferLength: byteCount)
         
         let data = Data(bytes: buffer, count: byteCount)
         do {
@@ -196,8 +237,70 @@ public class ImageCorePipeline {
 /// Reconstructed Tile Execution Manager.
 public class TileExecutionManager {
     public var maxTileSize: CGSize = CGSize(width: 512, height: 512)
+    public var minTileSize: CGSize = CGSize(width: 128, height: 128)
+    public var tileOverlap: Int = 0
+    public var maxConcurrentTiles: Int = max(1, ProcessInfo.processInfo.activeProcessorCount)
     
-    public func planExecution(for size: CGSize) -> [CGRect] {
-        return []
+    public func planExecution(for size: CGSize, viewport: CGRect?) -> TileExecutionPlan {
+        let imageWidth = max(1, Int(size.width))
+        let imageHeight = max(1, Int(size.height))
+        
+        let maxW = max(1, Int(maxTileSize.width))
+        let maxH = max(1, Int(maxTileSize.height))
+        let tileWidth = min(maxW, imageWidth)
+        let tileHeight = min(maxH, imageHeight)
+        
+        let columns = Int(ceil(Double(imageWidth) / Double(tileWidth)))
+        let rows = Int(ceil(Double(imageHeight) / Double(tileHeight)))
+        
+        let viewportPixels = viewport
+        var tiles: [TileRegion] = []
+        tiles.reserveCapacity(columns * rows)
+        
+        for row in 0..<rows {
+            for col in 0..<columns {
+                let x = col * tileWidth
+                let y = row * tileHeight
+                let w = min(tileWidth, imageWidth - x)
+                let h = min(tileHeight, imageHeight - y)
+                
+                let rect = CGRect(x: x, y: y, width: w, height: h)
+                if let viewportPixels = viewportPixels, !rect.intersects(viewportPixels) {
+                    continue
+                }
+                
+                let region = TileRegion(x: x, y: y, width: w, height: h, row: row, column: col)
+                tiles.append(region)
+            }
+        }
+        
+        return TileExecutionPlan(tiles: tiles,
+                                 tileSize: CGSize(width: tileWidth, height: tileHeight),
+                                 imageSize: size,
+                                 viewport: viewportPixels,
+                                 rows: rows,
+                                 columns: columns)
     }
+}
+
+public struct TileRegion: Hashable {
+    public let x: Int
+    public let y: Int
+    public let width: Int
+    public let height: Int
+    public let row: Int
+    public let column: Int
+    
+    public var rect: CGRect {
+        CGRect(x: x, y: y, width: width, height: height)
+    }
+}
+
+public struct TileExecutionPlan {
+    public let tiles: [TileRegion]
+    public let tileSize: CGSize
+    public let imageSize: CGSize
+    public let viewport: CGRect?
+    public let rows: Int
+    public let columns: Int
 }
