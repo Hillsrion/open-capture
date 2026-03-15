@@ -378,8 +378,6 @@ public struct COViewerView: View {
         let url = URL(fileURLWithPath: image.path)
         let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil)
         
-        let processSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
-        
         if sourceImage == nil || lastLoadedURL != url {
             ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
                 guard let thumb = thumb else {
@@ -388,7 +386,8 @@ public struct COViewerView: View {
                 self.sourceImage = thumb
                 self.lastLoadedURL = url
                 
-                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: processSettings, isLiveDrag: isLiveDrag) {
+                let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
+                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
                     let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
                     DispatchQueue.main.async { self.renderedImage = finalNSImage }
                 } else {
@@ -397,9 +396,13 @@ public struct COViewerView: View {
             }
         } else {
             // Fast path: thumbnail already loaded, image is in proxy cache
-            if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: processSettings, isLiveDrag: isLiveDrag) {
-                let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
-                self.renderedImage = finalNSImage
+            // objectWillChange fires before properties update. Delay by 1 tick to read new settings.
+            DispatchQueue.main.async {
+                let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
+                if let developedCGImage = RawImageEngine.shared.developImage(at: url, with: updatedSettings, isLiveDrag: isLiveDrag) {
+                    let finalNSImage = NSImage(cgImage: developedCGImage, size: NSSize(width: developedCGImage.width, height: developedCGImage.height))
+                    self.renderedImage = finalNSImage
+                }
             }
         }
     }
