@@ -304,6 +304,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var cbHighlight: ColorBalanceValue = .neutral
     @Published public var cbMaster: ColorBalanceValue = .neutral
 
+    @Published public var isInteracting: Bool = false
+    
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
     @Published public var previewingCOStyle: COStyle?
@@ -533,7 +535,28 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($guides.map { _ in }.eraseToAnyPublisher())
         ]
         
-        Publishers.MergeMany(publishers)
+        let mergedPublishers = Publishers.MergeMany(publishers).share()
+        
+        // Track interacting state: set true on any change
+        mergedPublishers
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                if !self.isInteracting {
+                    self.isInteracting = true
+                }
+            }
+            .store(in: &cancellables)
+            
+        // Track interacting state: set false after 200ms of no changes
+        mergedPublishers
+            .debounce(for: .milliseconds(200), scheduler: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.isInteracting = false
+            }
+            .store(in: &cancellables)
+            
+        // Commit changes to the model (16ms throttle/debounce for 60fps)
+        mergedPublishers
             .debounce(for: .milliseconds(16), scheduler: RunLoop.main) // ~60fps
             .sink { [weak self] _ in
                 guard let self = self else { return }

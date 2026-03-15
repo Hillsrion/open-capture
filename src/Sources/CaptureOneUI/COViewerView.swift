@@ -376,7 +376,7 @@ public struct COViewerView: View {
             renderedImage = nil; sourceImage = nil; lastLoadedURL = nil; return
         }
         let url = URL(fileURLWithPath: image.path)
-        let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil)
+        let isLiveDrag = dragStartOrigin != nil || activeCropZone != .none || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil) || (adjustmentController?.isInteracting == true)
         
         if sourceImage == nil || lastLoadedURL != url {
             ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 2000, height: 2000)) { thumb in
