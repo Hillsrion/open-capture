@@ -87,12 +87,16 @@ public class RawImageEngine {
                 if isLiveDrag, let viewport,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     let base = displayBaseImage(scale: displayScale)
+                    let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
                     return tileExecutor.render(image: output,
                                                baseImage: base,
                                                viewport: viewportPixels,
                                                fullSize: extent.size,
                                                overlap: overlap,
-                                               waitForCompletion: false)
+                                               waitForCompletion: false,
+                                               cacheKey: settingsKey,
+                                               quality: quality,
+                                               scale: displayScale)
                 }
 
                 let finalImage = tileExecutor.render(image: output,
@@ -129,6 +133,63 @@ public class RawImageEngine {
                 return 16
             }
             return 0
+        }
+        
+        private func settingsCacheKey(for settings: IC_ProcessSettings,
+                                      quality: IC_ProcessQuality,
+                                      scale: CGFloat) -> Int {
+            var hasher = Hasher()
+            hasher.combine(Int(quality.rawValue))
+            hasher.combine(Double(scale).bitPattern)
+            hasher.combine(settings.exposure.bitPattern)
+            hasher.combine(settings.contrast.bitPattern)
+            hasher.combine(settings.brightness.bitPattern)
+            hasher.combine(settings.saturation.bitPattern)
+            hasher.combine(settings.kelvin.bitPattern)
+            hasher.combine(settings.tint.bitPattern)
+            hasher.combine(settings.flipHorizontal)
+            hasher.combine(settings.flipVertical)
+            hasher.combine(settings.hdr.highlights.bitPattern)
+            hasher.combine(settings.hdr.shadows.bitPattern)
+            hasher.combine(settings.hdr.whites.bitPattern)
+            hasher.combine(settings.hdr.blacks.bitPattern)
+            hasher.combine(settings.sharpening.amount.bitPattern)
+            hasher.combine(settings.sharpening.radius.bitPattern)
+            hasher.combine(settings.sharpening.threshold.bitPattern)
+            hasher.combine(settings.noiseReduction.luminance.bitPattern)
+            hasher.combine(settings.noiseReduction.color.bitPattern)
+            hasher.combine(settings.noiseReduction.singlePixel.bitPattern)
+            hasher.combine(settings.noiseReduction.details.bitPattern)
+            hasher.combine(settings.clarity.amount.bitPattern)
+            hasher.combine(settings.filmGrain.amount.bitPattern)
+            hasher.combine(settings.filmGrain.size.bitPattern)
+            hasher.combine(settings.colorBalance.shadows.hue.bitPattern)
+            hasher.combine(settings.colorBalance.shadows.saturation.bitPattern)
+            hasher.combine(settings.colorBalance.midtone.hue.bitPattern)
+            hasher.combine(settings.colorBalance.midtone.saturation.bitPattern)
+            hasher.combine(settings.colorBalance.highlight.hue.bitPattern)
+            hasher.combine(settings.colorBalance.highlight.saturation.bitPattern)
+            hasher.combine(settings.gradationCurves.curveX.points.count)
+            hasher.combine(settings.gradationCurves.curveR.points.count)
+            hasher.combine(settings.gradationCurves.curveG.points.count)
+            hasher.combine(settings.gradationCurves.curveB.points.count)
+            hasher.combine(settings.gradationCurves.curveL.points.count)
+            hasher.combine(settings.colorCorrectionList.count)
+            hasher.combine(settings.localAdjustments.count)
+            for layer in settings.localAdjustments where layer.isVisible && layer.opacity > 0 {
+                hasher.combine(layer.opacity.bitPattern)
+                hasher.combine(layer.settings.exposure.bitPattern)
+                hasher.combine(layer.settings.contrast.bitPattern)
+                hasher.combine(layer.settings.brightness.bitPattern)
+                hasher.combine(layer.settings.saturation.bitPattern)
+                hasher.combine(layer.settings.kelvin.bitPattern)
+                hasher.combine(layer.settings.clarity.amount.bitPattern)
+                hasher.combine(layer.settings.moire.amount.bitPattern)
+                if let mask = layer.maskData {
+                    hasher.combine(mask.count)
+                }
+            }
+            return hasher.finalize()
         }
 
         private func displayScaleFactor(for viewport: CGRect?) -> CGFloat {
