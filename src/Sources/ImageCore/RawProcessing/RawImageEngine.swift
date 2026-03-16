@@ -55,6 +55,7 @@ public class RawImageEngine {
         private let chainBuilder = OperationChainBuilder()
         private let tileExecutor: TileGPUExecutor
         private var lastFullRender: CIImage?
+        private var displayBaseCache: (scale: CGFloat, sourceID: ObjectIdentifier, image: CIImage)?
         
         init(sourceImage: CIImage, context: CIContext) {
             self.sourceImage = sourceImage
@@ -65,11 +66,15 @@ public class RawImageEngine {
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool, viewport: CGRect?) -> CIImage {
             processQueue.sync {
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
+                let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
                 let parameters = SImageOperationAllParameters(settings: settings,
                                                               quality: quality,
                                                               isInteractive: isLiveDrag)
                 let chain = chainBuilder.buildChain(parameters)
                 var output = sourceImage
+                if displayScale < 1 {
+                    output = output.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
+                }
                 
                 for operation in chain {
                     output = operation.execute(input: output, settings: settings)
@@ -77,10 +82,11 @@ public class RawImageEngine {
 
                 let extent = output.extent
                 guard !extent.isEmpty, !extent.isNull else { return output }
-                let overlap = overlapPixels(for: settings)
+                let overlap = Int(round(CGFloat(overlapPixels(for: settings)) * displayScale))
 
-                if isLiveDrag, let viewport, let base = lastFullRender,
+                if isLiveDrag, let viewport,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
+                    let base = displayBaseImage(scale: displayScale)
                     return tileExecutor.render(image: output,
                                                baseImage: base,
                                                viewport: viewportPixels,
@@ -96,6 +102,7 @@ public class RawImageEngine {
                                                      overlap: overlap)
                 if !isLiveDrag {
                     lastFullRender = finalImage
+                    displayBaseCache = nil
                 }
                 return finalImage
             }
@@ -122,6 +129,31 @@ public class RawImageEngine {
                 return 16
             }
             return 0
+        }
+
+        private func displayScaleFactor(for viewport: CGRect?) -> CGFloat {
+            guard let viewport else { return 1 }
+            let clamped = viewport.intersection(CGRect(x: 0, y: 0, width: 1, height: 1))
+            guard !clamped.isNull, clamped.width > 0, clamped.height > 0 else { return 1 }
+            let area = clamped.width * clamped.height
+            if area >= CGFloat(0.64) { return 0.5 }
+            if area >= CGFloat(0.36) { return 0.66 }
+            if area >= CGFloat(0.16) { return 0.75 }
+            return 1
+        }
+
+        private func displayBaseImage(scale: CGFloat) -> CIImage? {
+            guard let base = lastFullRender else { return nil }
+            if scale >= 1 { return base }
+            let sourceID = ObjectIdentifier(base)
+            if let cached = displayBaseCache,
+               cached.scale == scale,
+               cached.sourceID == sourceID {
+                return cached.image
+            }
+            let scaled = base.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+            displayBaseCache = (scale: scale, sourceID: sourceID, image: scaled)
+            return scaled
         }
     }
     
