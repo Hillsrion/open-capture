@@ -8,6 +8,10 @@ internal final class TileGPUExecutor {
     private let commandQueue: MTLCommandQueue?
     private let tileManager = TileExecutionManager()
     private let colorSpace = CGColorSpaceCreateDeviceRGB()
+    private var baseTexture: MTLTexture?
+    private var workingTexture: MTLTexture?
+    private var cachedSize: CGSize = .zero
+    private var cachedBaseID: ObjectIdentifier?
     
     init(context: CIContext) {
         self.context = context
@@ -20,37 +24,108 @@ internal final class TileGPUExecutor {
                 viewport: CGRect?,
                 fullSize: CGSize) -> CIImage {
         guard let device = device else { return image }
-        let width = max(1, Int(fullSize.width))
-        let height = max(1, Int(fullSize.height))
+        let width = max(1, Int(fullSize.width.rounded(.up)))
+        let height = max(1, Int(fullSize.height.rounded(.up)))
+        
+        guard let textures = ensureTextures(device: device, width: width, height: height) else { return image }
+        
+        guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return image }
+        
+        let fullRect = CGRect(origin: .zero, size: CGSize(width: width, height: height))
+        if let baseImage = baseImage {
+            let baseID = ObjectIdentifier(baseImage)
+            if cachedBaseID != baseID {
+                context.render(baseImage,
+                               to: textures.base,
+                               commandBuffer: commandBuffer,
+                               bounds: fullRect,
+                               colorSpace: colorSpace)
+                cachedBaseID = baseID
+            }
+            if let blit = commandBuffer.makeBlitCommandEncoder() {
+                blit.copy(from: textures.base,
+                          sourceSlice: 0,
+                          sourceLevel: 0,
+                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
+                          sourceSize: MTLSize(width: width, height: height, depth: 1),
+                          to: textures.working,
+                          destinationSlice: 0,
+                          destinationLevel: 0,
+                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
+                blit.endEncoding()
+            }
+            
+            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: viewport)
+            for tile in plan.tiles {
+                let tileRect = tile.rect
+                let tileImage = image.cropped(to: tileRect)
+                context.render(tileImage,
+                               to: textures.working,
+                               commandBuffer: commandBuffer,
+                               bounds: tileRect,
+                               colorSpace: colorSpace)
+            }
+        } else {
+            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: nil)
+            for tile in plan.tiles {
+                let tileRect = tile.rect
+                let tileImage = image.cropped(to: tileRect)
+                context.render(tileImage,
+                               to: textures.base,
+                               commandBuffer: commandBuffer,
+                               bounds: tileRect,
+                               colorSpace: colorSpace)
+            }
+            if let blit = commandBuffer.makeBlitCommandEncoder() {
+                blit.copy(from: textures.base,
+                          sourceSlice: 0,
+                          sourceLevel: 0,
+                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
+                          sourceSize: MTLSize(width: width, height: height, depth: 1),
+                          to: textures.working,
+                          destinationSlice: 0,
+                          destinationLevel: 0,
+                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
+                blit.endEncoding()
+            }
+        }
+        
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+        
+        if baseImage == nil {
+            guard let outputImage = CIImage(mtlTexture: textures.base, options: [.colorSpace: colorSpace]) else {
+                return image
+            }
+            cachedBaseID = ObjectIdentifier(outputImage)
+            return outputImage.cropped(to: fullRect)
+        }
+        
+        guard let outputImage = CIImage(mtlTexture: textures.working, options: [.colorSpace: colorSpace]) else {
+            return image
+        }
+        return outputImage.cropped(to: fullRect)
+    }
+
+    private func ensureTextures(device: MTLDevice, width: Int, height: Int) -> (base: MTLTexture, working: MTLTexture)? {
+        if let baseTexture = baseTexture,
+           let workingTexture = workingTexture,
+           cachedSize.width == CGFloat(width),
+           cachedSize.height == CGFloat(height) {
+            return (base: baseTexture, working: workingTexture)
+        }
         
         let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba16Float,
                                                                   width: width,
                                                                   height: height,
                                                                   mipmapped: false)
         descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
-        guard let texture = device.makeTexture(descriptor: descriptor) else { return image }
-        
-        guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return image }
-        
-        let fullRect = CGRect(origin: .zero, size: fullSize)
-        if let baseImage = baseImage {
-            context.render(baseImage, to: texture, commandBuffer: commandBuffer, bounds: fullRect, colorSpace: colorSpace)
-        }
-        
-        let plan = tileManager.planExecution(for: fullSize, viewport: viewport)
-        for tile in plan.tiles {
-            let tileRect = tile.rect
-            let tileImage = image.cropped(to: tileRect)
-            context.render(tileImage, to: texture, commandBuffer: commandBuffer, bounds: tileRect, colorSpace: colorSpace)
-        }
-        
-        commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
-        
-        guard let outputImage = CIImage(mtlTexture: texture, options: [.colorSpace: colorSpace]) else {
-            return image
-        }
-        
-        return outputImage.cropped(to: fullRect)
+        guard let base = device.makeTexture(descriptor: descriptor),
+              let working = device.makeTexture(descriptor: descriptor) else { return nil }
+        baseTexture = base
+        workingTexture = working
+        cachedSize = CGSize(width: width, height: height)
+        cachedBaseID = nil
+        return (base: base, working: working)
     }
 }
