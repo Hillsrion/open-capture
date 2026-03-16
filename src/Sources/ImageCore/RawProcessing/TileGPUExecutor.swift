@@ -10,6 +10,8 @@ internal final class TileGPUExecutor {
     private let colorSpace = CGColorSpaceCreateDeviceRGB()
     private let displayCache = TileResultCache(maxBytes: 256 * 1024 * 1024, maxItems: 512)
     private let renderCache = TileResultCache(maxBytes: 128 * 1024 * 1024, maxItems: 256)
+    private let tilePool: TileTexturePool
+    private let vramMonitor: VRAMMonitor
     private var baseTexture: MTLTexture?
     private var workingTexture: MTLTexture?
     private var cachedSize: CGSize = .zero
@@ -17,9 +19,16 @@ internal final class TileGPUExecutor {
     private var pendingBuffer: MTLCommandBuffer?
     
     init(context: CIContext) {
+        let pool = TileTexturePool()
         self.context = context
         self.device = MTLCreateSystemDefaultDevice()
         self.commandQueue = device?.makeCommandQueue()
+        self.tilePool = pool
+        self.vramMonitor = VRAMMonitor(device: device,
+                                       displayCache: displayCache,
+                                       renderCache: renderCache,
+                                       onWarning: { pool.removeAll() },
+                                       onCritical: { pool.removeAll() })
     }
     
     func render(image: CIImage,
@@ -30,13 +39,15 @@ internal final class TileGPUExecutor {
                 waitForCompletion: Bool = true,
                 cacheKey: Int? = nil,
                 quality: IC_ProcessQuality? = nil,
-                scale: CGFloat = 1) -> CIImage {
+                scale: CGFloat = 1,
+                operationKey: Int = 0) -> CIImage {
         guard let device = device else { return image }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
         let height = max(1, Int(fullSize.height.rounded(.up)))
         
         guard let textures = ensureTextures(device: device, width: width, height: height) else { return image }
+        vramMonitor.enforceBudgets()
         
         if waitForCompletion {
             pendingBuffer?.waitUntilCompleted()
@@ -77,6 +88,7 @@ internal final class TileGPUExecutor {
                    let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
                                                                        quality: quality,
                                                                        scale: scale,
+                                                                       operationKey: operationKey,
                                                                        tile: tile)) {
                     blit(texture: cached,
                          to: textures.working,
@@ -86,7 +98,9 @@ internal final class TileGPUExecutor {
                     continue
                 }
                 
-                guard let tileTexture = makeTileTexture(device: device, size: tileRect.size) else { continue }
+                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
+                var shouldRelease = true
+                defer { if shouldRelease { tilePool.release(tileTexture) } }
                 let tileImage = image.cropped(to: tileRect)
                 let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
                                                                              y: -tileRect.origin.y))
@@ -109,8 +123,10 @@ internal final class TileGPUExecutor {
                                  for: TileResultCache.Key(settingsKey: cacheKey,
                                                           quality: quality,
                                                           scale: scale,
+                                                          operationKey: operationKey,
                                                           tile: tile),
                                  cost: cost)
+                    shouldRelease = false
                 }
             }
         } else {
@@ -123,6 +139,7 @@ internal final class TileGPUExecutor {
                    let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
                                                                        quality: quality,
                                                                        scale: scale,
+                                                                       operationKey: operationKey,
                                                                        tile: tile)) {
                     blit(texture: cached,
                          to: textures.base,
@@ -132,7 +149,9 @@ internal final class TileGPUExecutor {
                     continue
                 }
                 
-                guard let tileTexture = makeTileTexture(device: device, size: tileRect.size) else { continue }
+                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
+                var shouldRelease = true
+                defer { if shouldRelease { tilePool.release(tileTexture) } }
                 let tileImage = image.cropped(to: tileRect)
                 let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
                                                                              y: -tileRect.origin.y))
@@ -155,8 +174,10 @@ internal final class TileGPUExecutor {
                                  for: TileResultCache.Key(settingsKey: cacheKey,
                                                           quality: quality,
                                                           scale: scale,
+                                                          operationKey: operationKey,
                                                           tile: tile),
                                  cost: cost)
+                    shouldRelease = false
                 }
             }
             if let blit = commandBuffer.makeBlitCommandEncoder() {
@@ -202,6 +223,7 @@ internal final class TileGPUExecutor {
                      cacheKey: Int? = nil,
                      quality: IC_ProcessQuality? = nil,
                      scale: CGFloat = 1,
+                     operationKey: Int = 0,
                      tileProvider: (CGRect) -> CIImage) -> CIImage {
         guard let device = device else { return CIImage.empty() }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
@@ -209,6 +231,7 @@ internal final class TileGPUExecutor {
         let height = max(1, Int(fullSize.height.rounded(.up)))
         
         guard let textures = ensureTextures(device: device, width: width, height: height) else { return CIImage.empty() }
+        vramMonitor.enforceBudgets()
         
         if waitForCompletion {
             pendingBuffer?.waitUntilCompleted()
@@ -249,6 +272,7 @@ internal final class TileGPUExecutor {
                    let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
                                                                        quality: quality,
                                                                        scale: scale,
+                                                                       operationKey: operationKey,
                                                                        tile: tile)) {
                     blit(texture: cached,
                          to: textures.working,
@@ -258,7 +282,9 @@ internal final class TileGPUExecutor {
                     continue
                 }
                 
-                guard let tileTexture = makeTileTexture(device: device, size: tileRect.size) else { continue }
+                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
+                var shouldRelease = true
+                defer { if shouldRelease { tilePool.release(tileTexture) } }
                 let tileImage = tileProvider(tileRect)
                 let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
                                                                              y: -tileRect.origin.y))
@@ -281,8 +307,10 @@ internal final class TileGPUExecutor {
                                  for: TileResultCache.Key(settingsKey: cacheKey,
                                                           quality: quality,
                                                           scale: scale,
+                                                          operationKey: operationKey,
                                                           tile: tile),
                                  cost: cost)
+                    shouldRelease = false
                 }
             }
         } else {
@@ -295,6 +323,7 @@ internal final class TileGPUExecutor {
                    let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
                                                                        quality: quality,
                                                                        scale: scale,
+                                                                       operationKey: operationKey,
                                                                        tile: tile)) {
                     blit(texture: cached,
                          to: textures.base,
@@ -304,7 +333,9 @@ internal final class TileGPUExecutor {
                     continue
                 }
                 
-                guard let tileTexture = makeTileTexture(device: device, size: tileRect.size) else { continue }
+                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
+                var shouldRelease = true
+                defer { if shouldRelease { tilePool.release(tileTexture) } }
                 let tileImage = tileProvider(tileRect)
                 let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
                                                                              y: -tileRect.origin.y))
@@ -327,8 +358,10 @@ internal final class TileGPUExecutor {
                                  for: TileResultCache.Key(settingsKey: cacheKey,
                                                           quality: quality,
                                                           scale: scale,
+                                                          operationKey: operationKey,
                                                           tile: tile),
                                  cost: cost)
+                    shouldRelease = false
                 }
             }
             if let blit = commandBuffer.makeBlitCommandEncoder() {
@@ -388,17 +421,6 @@ internal final class TileGPUExecutor {
         case .render: return renderCache
         case .export: return nil
         }
-    }
-    
-    private func makeTileTexture(device: MTLDevice, size: CGSize) -> MTLTexture? {
-        let width = max(1, Int(size.width.rounded(.up)))
-        let height = max(1, Int(size.height.rounded(.up)))
-        let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: .rgba16Float,
-                                                                  width: width,
-                                                                  height: height,
-                                                                  mipmapped: false)
-        descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
-        return device.makeTexture(descriptor: descriptor)
     }
     
     private func blit(texture: MTLTexture,

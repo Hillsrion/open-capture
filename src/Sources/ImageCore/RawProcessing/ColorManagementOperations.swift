@@ -2,7 +2,7 @@ import Foundation
 import CoreImage
 
 internal final class ICCInputOperation: ImageOperation {
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         guard let profileID = settings.inputProfileID,
               let colorSpace = ICCManager.shared.profile(for: profileID)?.colorSpace else { return input }
         return input.matchedToColorSpace(colorSpace) ?? input
@@ -10,7 +10,7 @@ internal final class ICCInputOperation: ImageOperation {
 }
 
 internal final class ICCOutputOperation: ImageOperation {
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         guard let profileID = settings.outputProfileID,
               let colorSpace = ICCManager.shared.profile(for: profileID)?.colorSpace else { return input }
         return input.matchedToColorSpace(colorSpace) ?? input
@@ -59,7 +59,7 @@ internal enum FilmCurvePresets {
 internal final class FilmCurveOperation: ImageOperation {
     private let filter = CIFilter(name: "CIToneCurve")!
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         let preset = FilmCurvePresets.preset(for: settings.toneCurveID)
         filter.setValue(input, forKey: kCIInputImageKey)
         filter.setValue(CIVector(x: preset.p0.x, y: preset.p0.y), forKey: "inputPoint0")
@@ -74,7 +74,7 @@ internal final class FilmCurveOperation: ImageOperation {
 internal final class HDROperation: ImageOperation {
     private let filter = CIFilter(name: "CIHighlightShadowAdjust")!
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         let shadow = clamp01(1.0 + settings.hdr.shadows / 100.0)
         let highlight = clamp01(1.0 - settings.hdr.highlights / 100.0)
@@ -91,7 +91,7 @@ internal final class HDROperation: ImageOperation {
 internal final class NoiseReductionOperation: ImageOperation {
     private let filter = CIFilter(name: "CINoiseReduction")!
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         let luminance = max(0.0, min(1.0, settings.noiseReduction.luminance / 100.0))
         let detail = max(0.0, min(1.0, settings.noiseReduction.details / 100.0))
@@ -104,7 +104,7 @@ internal final class NoiseReductionOperation: ImageOperation {
 internal final class SharpenOperation: ImageOperation {
     private let filter = CIFilter(name: "CISharpenLuminance")!
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         let amount = max(0.0, min(2.0, settings.sharpening.amount / 100.0))
         filter.setValue(amount, forKey: "inputSharpness")

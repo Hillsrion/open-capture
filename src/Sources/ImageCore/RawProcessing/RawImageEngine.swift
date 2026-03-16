@@ -74,8 +74,10 @@ public class RawImageEngine {
                 let chainBuilder = isLiveDrag ? displayChainBuilder : renderChainBuilder
                 let parameters = SImageOperationAllParameters(settings: settings,
                                                               quality: quality,
-                                                              isInteractive: isLiveDrag)
+                                                              isInteractive: isLiveDrag,
+                                                              viewport: viewport)
                 let chain = chainBuilder.buildChain(parameters)
+                let operationKey = operationSignature(for: chain)
                 let sourceForTiles = displayScale < 1
                     ? sourceImage.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
                     : sourceImage
@@ -84,7 +86,7 @@ public class RawImageEngine {
                 let applyChain: (CIImage) -> CIImage = { input in
                     var current = input
                     for operation in chain {
-                        current = operation.execute(input: current, settings: settings)
+                        current = operation.execute(input: current, settings: settings, parameters: parameters)
                     }
                     return current
                 }
@@ -100,7 +102,7 @@ public class RawImageEngine {
                 if isLiveDrag, let viewport,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     let base = displayBaseImage(scale: displayScale)
-                    let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
+                    let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
                     if canTileProcess {
                         return displayExecutor.renderTiles(baseImage: base,
                                                            viewport: viewportPixels,
@@ -110,6 +112,7 @@ public class RawImageEngine {
                                                            cacheKey: settingsKey,
                                                            quality: quality,
                                                            scale: displayScale,
+                                                           operationKey: operationKey,
                                                            tileProvider: { rect in
                             let tileInput = sourceForTiles.cropped(to: rect)
                             return applyChain(tileInput)
@@ -123,14 +126,15 @@ public class RawImageEngine {
                                                       waitForCompletion: false,
                                                       cacheKey: settingsKey,
                                                       quality: quality,
-                                                      scale: displayScale)
+                                                      scale: displayScale,
+                                                      operationKey: operationKey)
                     }
                 }
 
                 if canTileProcess {
                     output = applyChain(output)
                 }
-                let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
+                let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
                 let finalImage = renderExecutor.render(image: output,
                                                        baseImage: nil,
                                                        viewport: nil,
@@ -138,7 +142,8 @@ public class RawImageEngine {
                                                        overlap: overlap,
                                                        cacheKey: renderKey,
                                                        quality: quality,
-                                                       scale: displayScale)
+                                                       scale: displayScale,
+                                                       operationKey: operationKey)
                 if !isLiveDrag {
                     lastRenderImage = finalImage
                     displayBaseCache = nil
@@ -170,12 +175,22 @@ public class RawImageEngine {
             return 0
         }
         
+        private func operationSignature(for chain: [ImageOperation]) -> Int {
+            var hasher = Hasher()
+            for operation in chain {
+                hasher.combine(ObjectIdentifier(type(of: operation)))
+            }
+            return hasher.finalize()
+        }
+        
         private func settingsCacheKey(for settings: IC_ProcessSettings,
                                       quality: IC_ProcessQuality,
-                                      scale: CGFloat) -> Int {
+                                      scale: CGFloat,
+                                      operationKey: Int) -> Int {
             var hasher = Hasher()
             hasher.combine(Int(quality.rawValue))
             hasher.combine(Double(scale).bitPattern)
+            hasher.combine(operationKey)
             hasher.combine(settings.exposure.bitPattern)
             hasher.combine(settings.contrast.bitPattern)
             hasher.combine(settings.brightness.bitPattern)
@@ -293,12 +308,12 @@ public class RawImageEngine {
 // MARK: - Operation Chain Infrastructure
 
 internal protocol ImageOperation {
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage
 }
 
 internal class ExposureOperation: ImageOperation {
     private let filter = CIFilter(name: "CIExposureAdjust")!
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         filter.setValue(settings.exposure, forKey: kCIInputEVKey)
         return filter.outputImage ?? input
@@ -307,7 +322,7 @@ internal class ExposureOperation: ImageOperation {
 
 internal class WhiteBalanceOperation: ImageOperation {
     private let filter = CIFilter(name: "CITemperatureAndTint")!
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         let neutral = CIVector(x: 6500, y: 0)
         let target = CIVector(x: CGFloat(settings.kelvin), y: CGFloat(settings.tint))
@@ -318,7 +333,7 @@ internal class WhiteBalanceOperation: ImageOperation {
 }
 
 internal class GeometryOperation: ImageOperation {
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         var output = input
         if settings.flipHorizontal {
             output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -output.extent.width, y: 0))
@@ -332,7 +347,7 @@ internal class GeometryOperation: ImageOperation {
 
 internal class ColorControlsOperation: ImageOperation {
     private let filter = CIFilter(name: "CIColorControls")!
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         filter.setValue(1.0 + settings.saturation, forKey: kCIInputSaturationKey)
         filter.setValue(1.0 + settings.contrast, forKey: kCIInputContrastKey)
@@ -342,7 +357,7 @@ internal class ColorControlsOperation: ImageOperation {
 
 internal class ColorGradingOperation: ImageOperation {
     private let filter = CIFilter(name: "CIColorMonochrome")!
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         guard settings.colorBalance != ColorBalanceSettings() && settings.colorBalance.midtone.saturation > 0 else { return input }
         
         let radians = CGFloat(settings.colorBalance.midtone.hue - 90) * .pi / 180.0
@@ -363,7 +378,7 @@ internal class LocalAdjustmentsOperation: ImageOperation {
     private let layerExposureFilter = CIFilter(name: "CIExposureAdjust")!
     private let layerOpacityFilter = CIFilter(name: "CIColorControls")!
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         var output = input
         for layerCfg in settings.localAdjustments where layerCfg.isVisible && layerCfg.opacity > 0 {
             output = applyLayer(layerCfg, to: output, baseImage: input)

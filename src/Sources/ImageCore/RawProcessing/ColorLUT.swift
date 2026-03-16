@@ -1,5 +1,6 @@
 import Foundation
 import CoreImage
+import CoreGraphics
 
 internal struct ColorLUT {
     let dimension: Int
@@ -94,22 +95,79 @@ internal struct LUTKey: Hashable {
 
 internal final class ColorLUTOperation: ImageOperation {
     private let filter = CIFilter(name: "CIColorCube")!
-    private let builder = ColorLUTBuilder()
-    private var cachedKey: LUTKey?
-    private var cachedLUT: ColorLUT?
     
-    func execute(input: CIImage, settings: IC_ProcessSettings) -> CIImage {
-        let key = LUTKey(settings: settings)
-        if cachedKey != key || cachedLUT == nil {
-            cachedLUT = builder.build(settings: settings)
-            cachedKey = key
-        }
-        
-        guard let lut = cachedLUT else { return input }
+    func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
+        let lut = ComputeLUTCache.shared.lut(for: settings, parameters: parameters)
         filter.setValue(input, forKey: kCIInputImageKey)
         filter.setValue(lut.dimension, forKey: "inputCubeDimension")
         filter.setValue(lut.data, forKey: "inputCubeData")
         return filter.outputImage ?? input
+    }
+}
+
+internal struct ComputeLUTCacheKey: Hashable {
+    let lutKey: LUTKey
+    let quality: IC_ProcessQuality
+    let viewportBucket: Int
+}
+
+/// Cache for ComputeLUT results keyed by settings + quality + viewport.
+internal final class ComputeLUTCache {
+    static let shared = ComputeLUTCache()
+    
+    private let builder = ColorLUTBuilder()
+    private let queue = DispatchQueue(label: "ImageCore.ComputeLUTCache")
+    private var entries: [ComputeLUTCacheKey: ColorLUT] = [:]
+    private var lru: [ComputeLUTCacheKey] = []
+    private let maxItems: Int
+    
+    init(maxItems: Int = 32) {
+        self.maxItems = maxItems
+    }
+    
+    func lut(for settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> ColorLUT {
+        let key = ComputeLUTCacheKey(lutKey: LUTKey(settings: settings),
+                                     quality: parameters.quality,
+                                     viewportBucket: viewportBucket(for: parameters.viewport))
+        if let cached = queue.sync(execute: {
+            if let cached = entries[key] {
+                touch(key)
+                return cached
+            }
+            return nil
+        }) {
+            return cached
+        }
+        
+        let lut = builder.build(settings: settings)
+        queue.sync {
+            entries[key] = lut
+            touch(key)
+            enforceLimits()
+        }
+        return lut
+    }
+    
+    private func viewportBucket(for rect: CGRect?) -> Int {
+        guard let rect else { return 0 }
+        let clamped = rect.intersection(CGRect(x: 0, y: 0, width: 1, height: 1))
+        guard !clamped.isNull, clamped.width > 0, clamped.height > 0 else { return 0 }
+        let area = clamped.width * clamped.height
+        return Int((area * 20.0).rounded(.toNearestOrAwayFromZero))
+    }
+    
+    private func touch(_ key: ComputeLUTCacheKey) {
+        if let index = lru.firstIndex(of: key) {
+            lru.remove(at: index)
+        }
+        lru.append(key)
+    }
+    
+    private func enforceLimits() {
+        while entries.count > maxItems, let oldest = lru.first {
+            lru.removeFirst()
+            entries.removeValue(forKey: oldest)
+        }
     }
 }
 

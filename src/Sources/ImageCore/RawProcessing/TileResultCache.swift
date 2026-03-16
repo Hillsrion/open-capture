@@ -8,6 +8,7 @@ internal final class TileResultCache {
         let settingsKey: Int
         let quality: IC_ProcessQuality
         let scale: CGFloat
+        let operationKey: Int
         let tile: TileRegion
     }
     
@@ -22,8 +23,8 @@ internal final class TileResultCache {
     private var lru: [Key] = []
     private var currentBytes: Int = 0
     
-    private let maxBytes: Int
-    private let maxItems: Int
+    private var maxBytes: Int
+    private var maxItems: Int
     
     init(maxBytes: Int = 256 * 1024 * 1024, maxItems: Int = 512) {
         self.maxBytes = maxBytes
@@ -55,6 +56,22 @@ internal final class TileResultCache {
             entries.removeAll()
             lru.removeAll()
             currentBytes = 0
+        }
+    }
+    
+    func usageBytes() -> Int {
+        queue.sync { currentBytes }
+    }
+    
+    func trim(toBytes target: Int) {
+        queue.sync {
+            let limit = max(0, target)
+            while currentBytes > limit, let oldest = lru.first {
+                lru.removeFirst()
+                if let removed = entries.removeValue(forKey: oldest) {
+                    currentBytes -= removed.cost
+                }
+            }
         }
     }
     
