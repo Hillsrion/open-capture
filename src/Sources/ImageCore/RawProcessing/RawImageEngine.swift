@@ -70,7 +70,7 @@ public class RawImageEngine {
             processQueue.sync {
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
                 let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
-                let canTileProcess = isLiveDrag && !(settings.flipHorizontal || settings.flipVertical)
+                let canTile = canTileProcess(settings: settings, quality: quality)
                 let chainBuilder = isLiveDrag ? displayChainBuilder : renderChainBuilder
                 let parameters = SImageOperationAllParameters(settings: settings,
                                                               quality: quality,
@@ -78,10 +78,11 @@ public class RawImageEngine {
                                                               viewport: viewport)
                 let chain = chainBuilder.buildChain(parameters)
                 let operationKey = operationSignature(for: chain)
+                
+                // Input for the tiling pipeline (already scaled for display if needed)
                 let sourceForTiles = displayScale < 1
                     ? sourceImage.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
                     : sourceImage
-                var output = sourceForTiles
                 
                 let applyChain: (CIImage) -> CIImage = { input in
                     var current = input
@@ -91,19 +92,15 @@ public class RawImageEngine {
                     return current
                 }
                 
-                if !canTileProcess {
-                    output = applyChain(output)
-                }
-
-                let extent = output.extent
-                guard !extent.isEmpty, !extent.isNull else { return output }
+                let extent = sourceForTiles.extent
+                guard !extent.isEmpty, !extent.isNull else { return sourceForTiles }
                 let overlap = Int(round(CGFloat(overlapPixels(for: settings)) * displayScale))
+                let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
 
                 if isLiveDrag, let viewport,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     let base = displayBaseImage(scale: displayScale)
-                    let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
-                    if canTileProcess {
+                    if canTile {
                         return displayExecutor.renderTiles(baseImage: base,
                                                            viewport: viewportPixels,
                                                            fullSize: extent.size,
@@ -118,7 +115,8 @@ public class RawImageEngine {
                             return applyChain(tileInput)
                         })
                     } else {
-                        return displayExecutor.render(image: output,
+                        let fullProcessed = applyChain(sourceForTiles)
+                        return displayExecutor.render(image: fullProcessed,
                                                       baseImage: base,
                                                       viewport: viewportPixels,
                                                       fullSize: extent.size,
@@ -131,25 +129,48 @@ public class RawImageEngine {
                     }
                 }
 
-                if canTileProcess {
-                    output = applyChain(output)
-                }
-                let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
-                let finalImage = renderExecutor.render(image: output,
+                // Non-interactive Render
+                let finalImage: CIImage
+                if canTile {
+                    finalImage = renderExecutor.renderTiles(baseImage: nil,
+                                                           viewport: nil,
+                                                           fullSize: extent.size,
+                                                           overlap: overlap,
+                                                           cacheKey: settingsKey,
+                                                           quality: quality,
+                                                           scale: displayScale,
+                                                           operationKey: operationKey,
+                                                           tileProvider: { rect in
+                        let tileInput = sourceForTiles.cropped(to: rect)
+                        return applyChain(tileInput)
+                    })
+                } else {
+                    let fullProcessed = applyChain(sourceForTiles)
+                    finalImage = renderExecutor.render(image: fullProcessed,
                                                        baseImage: nil,
                                                        viewport: nil,
                                                        fullSize: extent.size,
                                                        overlap: overlap,
-                                                       cacheKey: renderKey,
+                                                       cacheKey: settingsKey,
                                                        quality: quality,
                                                        scale: displayScale,
                                                        operationKey: operationKey)
+                }
+                
                 if !isLiveDrag {
                     lastRenderImage = finalImage
                     displayBaseCache = nil
                 }
                 return finalImage
             }
+        }
+
+        private func canTileProcess(settings: IC_ProcessSettings, quality: IC_ProcessQuality) -> Bool {
+            // Supported for both .display and .render if no incompatible global transformations are active.
+            if settings.flipHorizontal || settings.flipVertical {
+                return false
+            }
+            return quality == .display || quality == .render
         }
 
         private func pixelViewport(from normalized: CGRect, extent: CGRect) -> CGRect? {
