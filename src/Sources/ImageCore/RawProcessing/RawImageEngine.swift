@@ -99,11 +99,15 @@ public class RawImageEngine {
                                                scale: displayScale)
                 }
 
+                let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
                 let finalImage = tileExecutor.render(image: output,
                                                      baseImage: nil,
                                                      viewport: nil,
                                                      fullSize: extent.size,
-                                                     overlap: overlap)
+                                                     overlap: overlap,
+                                                     cacheKey: renderKey,
+                                                     quality: quality,
+                                                     scale: displayScale)
                 if !isLiveDrag {
                     lastFullRender = finalImage
                     displayBaseCache = nil
@@ -163,8 +167,8 @@ public class RawImageEngine {
             hasher.combine(settings.clarity.amount.bitPattern)
             hasher.combine(settings.filmGrain.amount.bitPattern)
             hasher.combine(settings.filmGrain.size.bitPattern)
-            hasher.combine(settings.colorBalance.shadows.hue.bitPattern)
-            hasher.combine(settings.colorBalance.shadows.saturation.bitPattern)
+            hasher.combine(settings.colorBalance.shadow.hue.bitPattern)
+            hasher.combine(settings.colorBalance.shadow.saturation.bitPattern)
             hasher.combine(settings.colorBalance.midtone.hue.bitPattern)
             hasher.combine(settings.colorBalance.midtone.saturation.bitPattern)
             hasher.combine(settings.colorBalance.highlight.hue.bitPattern)

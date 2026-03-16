@@ -8,7 +8,8 @@ internal final class TileGPUExecutor {
     private let commandQueue: MTLCommandQueue?
     private let tileManager = TileExecutionManager()
     private let colorSpace = CGColorSpaceCreateDeviceRGB()
-    private let tileCache = TileResultCache()
+    private let displayCache = TileResultCache(maxBytes: 256 * 1024 * 1024, maxItems: 512)
+    private let renderCache = TileResultCache(maxBytes: 128 * 1024 * 1024, maxItems: 256)
     private var baseTexture: MTLTexture?
     private var workingTexture: MTLTexture?
     private var cachedSize: CGSize = .zero
@@ -70,10 +71,13 @@ internal final class TileGPUExecutor {
             let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: viewport)
             for tile in plan.tiles {
                 let tileRect = tile.renderRect
-                if let cacheKey, let quality, let cached = tileCache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
-                                                                                                     quality: quality,
-                                                                                                     scale: scale,
-                                                                                                     tile: tile)) {
+                if let cache = cache(for: quality),
+                   let cacheKey,
+                   let quality,
+                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
+                                                                       quality: quality,
+                                                                       scale: scale,
+                                                                       tile: tile)) {
                     blit(texture: cached,
                          to: textures.working,
                          origin: tileRect.origin,
@@ -97,26 +101,63 @@ internal final class TileGPUExecutor {
                      size: tileRect.size,
                      commandBuffer: commandBuffer)
                 
-                if let cacheKey, let quality {
+                if let cache = cache(for: quality),
+                   let cacheKey,
+                   let quality {
                     let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                    tileCache.insert(texture: tileTexture,
-                                     for: TileResultCache.Key(settingsKey: cacheKey,
-                                                              quality: quality,
-                                                              scale: scale,
-                                                              tile: tile),
-                                     cost: cost)
+                    cache.insert(texture: tileTexture,
+                                 for: TileResultCache.Key(settingsKey: cacheKey,
+                                                          quality: quality,
+                                                          scale: scale,
+                                                          tile: tile),
+                                 cost: cost)
                 }
             }
         } else {
             let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: nil)
             for tile in plan.tiles {
                 let tileRect = tile.renderRect
+                if let cache = cache(for: quality),
+                   let cacheKey,
+                   let quality,
+                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
+                                                                       quality: quality,
+                                                                       scale: scale,
+                                                                       tile: tile)) {
+                    blit(texture: cached,
+                         to: textures.base,
+                         origin: tileRect.origin,
+                         size: tileRect.size,
+                         commandBuffer: commandBuffer)
+                    continue
+                }
+                
+                guard let tileTexture = makeTileTexture(device: device, size: tileRect.size) else { continue }
                 let tileImage = image.cropped(to: tileRect)
-                context.render(tileImage,
-                               to: textures.base,
+                let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
+                                                                             y: -tileRect.origin.y))
+                context.render(localImage,
+                               to: tileTexture,
                                commandBuffer: commandBuffer,
-                               bounds: tileRect,
+                               bounds: CGRect(origin: .zero, size: tileRect.size),
                                colorSpace: colorSpace)
+                blit(texture: tileTexture,
+                     to: textures.base,
+                     origin: tileRect.origin,
+                     size: tileRect.size,
+                     commandBuffer: commandBuffer)
+                
+                if let cache = cache(for: quality),
+                   let cacheKey,
+                   let quality {
+                    let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
+                    cache.insert(texture: tileTexture,
+                                 for: TileResultCache.Key(settingsKey: cacheKey,
+                                                          quality: quality,
+                                                          scale: scale,
+                                                          tile: tile),
+                                 cost: cost)
+                }
             }
             if let blit = commandBuffer.makeBlitCommandEncoder() {
                 blit.copy(from: textures.base,
@@ -173,6 +214,15 @@ internal final class TileGPUExecutor {
         cachedSize = CGSize(width: width, height: height)
         cachedBaseID = nil
         return (base: base, working: working)
+    }
+    
+    private func cache(for quality: IC_ProcessQuality?) -> TileResultCache? {
+        guard let quality else { return nil }
+        switch quality {
+        case .display: return displayCache
+        case .render: return renderCache
+        case .export: return nil
+        }
     }
     
     private func makeTileTexture(device: MTLDevice, size: CGSize) -> MTLTexture? {
