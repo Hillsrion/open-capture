@@ -32,7 +32,7 @@ public class HDRTonalRemappingEngine {
             // 1. Highlights Recovery / Compression (Top 25%)
             if luma > 0.75 && highlights != 0 {
                 let weight = pow((luma - 0.75) / 0.25, 1.5)
-                result += (highlights / 100.0) * weight * 0.15
+                result -= (highlights / 100.0) * weight * 0.15
             }
             
             // 2. Shadows Recovery / Compression (Bottom 25%)

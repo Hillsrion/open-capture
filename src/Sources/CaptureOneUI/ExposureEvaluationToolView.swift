@@ -4,8 +4,8 @@ import AppCoreShared
 /// Reconstructed high-fidelity Exposure Evaluation tool (ENG-204).
 /// Provides a raw-data based exposure meter from -1.7 to +2 stops.
 public struct ExposureEvaluationToolView: View {
-    // Simulated meter value (in stops) based on raw data
-    @State private var meterValue: Double = 0.5 
+    // Connect to global adjustment state
+    @ObservedObject var adjustmentController = AdjustmentToolController.shared
     
     public init(adjustmentController: AdjustmentToolController? = nil, config: Any? = nil) {}
     
@@ -27,6 +27,9 @@ public struct ExposureEvaluationToolView: View {
                             .position(x: geometry.size.width / 2, y: 12)
                         
                         // Meter Bar
+                        let baseRawExposure = 0.0 // Simulated base raw value
+                        let meterValue = baseRawExposure + Double(adjustmentController.exposure) + (Double(adjustmentController.brightness) / 50.0)
+                        
                         let normalizedValue = (meterValue + 1.7) / 3.7 // Map [-1.7, 2.0] to [0, 1]
                         let clampedValue = max(0, min(1, normalizedValue))
                         

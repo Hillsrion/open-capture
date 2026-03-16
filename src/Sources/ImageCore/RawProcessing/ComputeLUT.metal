@@ -201,7 +201,9 @@ kernel void compute_3d_lut(
     rgb *= pow(2.0, params.exposure);
     
     // 2. Contrast & Brightness
-    rgb = (rgb - 0.5) * params.contrast + 0.5 + params.brightness;
+    float contrastMultiplier = 1.0 + (params.contrast / 50.0);
+    float brightnessOffset = params.brightness / 100.0;
+    rgb = (rgb - 0.5) * contrastMultiplier + 0.5 + brightnessOffset;
     
     // 3. Color Balance
     rgb = applyColorBalance(rgb, params);
@@ -227,8 +229,9 @@ kernel void compute_3d_lut(
     rgb = applyColorCorrections(rgb, params);
     
     // 5. Saturation
+    float satMultiplier = 1.0 + (params.saturation / 100.0);
     luma = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
-    rgb = luma + (rgb - luma) * params.saturation;
+    rgb = luma + (rgb - luma) * satMultiplier;
     
     outTexture.write(float4(clamp(rgb, 0.0, 1.0), 1.0), gid);
 }

@@ -9,6 +9,10 @@ This skill defines the methodology for high-fidelity reconstruction of Capture O
 - **Sprint Management**: 
   - Set the parent Sprint to `In Progress` when starting the first ticket.
   - Set the parent Sprint to `Done` once the last ticket of that sprint is `Resolved`.
+- **Token Efficiency Rules**:
+  - **Notion Limit**: ALWAYS use `limit: 1` when querying the `Tickets` database to find a specific task to prevent context bloating.
+  - **Notion Fire-and-Forget**: Combine status updates and property changes into a single `mcp_notion_update_page` call. Do not use `get_page` unless you absolutely need the full page content blocks; use properties from the query instead.
+  - **Surgical Reading**: Prefer `grep_search` with `context`, `before`, or `after` parameters instead of `read_file` when investigating Swift files to keep the main orchestrator context clean.
 - **Modes of Operation**:
   - **Normal Mode**: Research -> `enter_plan_mode` -> Update Notion Ticket (Add Plan + Set Status to `In Progress`) -> **Seek User Approval** -> Execute.
   - **Loop Mode**: (Triggered by user request)

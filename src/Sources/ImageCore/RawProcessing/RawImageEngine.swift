@@ -452,8 +452,9 @@ internal class ColorControlsOperation: ImageOperation {
     private let filter = CIFilter(name: "CIColorControls")!
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
-        filter.setValue(1.0 + settings.saturation, forKey: kCIInputSaturationKey)
-        filter.setValue(1.0 + settings.contrast, forKey: kCIInputContrastKey)
+        filter.setValue(1.0 + settings.saturation / 100.0, forKey: kCIInputSaturationKey)
+        filter.setValue(1.0 + settings.contrast / 50.0, forKey: kCIInputContrastKey)
+        filter.setValue(settings.brightness / 100.0, forKey: kCIInputBrightnessKey)
         return filter.outputImage ?? input
     }
 }
@@ -600,7 +601,7 @@ internal final class OperationChainBuilder {
     }
     
     private func shouldApplyColorControls(_ settings: IC_ProcessSettings) -> Bool {
-        settings.saturation != 0 || settings.contrast != 0
+        settings.saturation != 0 || settings.contrast != 0 || settings.brightness != 0
     }
     
     private func shouldApplyColorGrading(_ settings: IC_ProcessSettings) -> Bool {

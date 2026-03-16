@@ -23,27 +23,27 @@ public struct AdjustmentKernels {
     /// Formula inferred: Output = (Input - 0.5) * Contrast + 0.5 + Brightness
     public static func applyContrast(to buffer: UnsafeMutablePointer<Float>, count: Int, contrast: Float, brightness: Float) {
         var pivot: Float = -0.5
-        var contrastVal = contrast
-        var offset: Float = 0.5 + brightness
-        
+        var contrastVal = 1.0 + (contrast / 50.0)
+        var offset: Float = 0.5 + (brightness / 100.0)
+
         // 1. Input - 0.5
         vDSP_vsadd(buffer, 1, &pivot, buffer, 1, vDSP_Length(count))
         // 2. Multiply by Contrast
         vDSP_vsmul(buffer, 1, &contrastVal, buffer, 1, vDSP_Length(count))
         // 3. Add offset (0.5 + brightness)
         vDSP_vsadd(buffer, 1, &offset, buffer, 1, vDSP_Length(count))
-    }
-    
+    }    
     // MARK: - Saturation
     
     /// Reconstructed Saturation adjustment logic.
     /// Uses luminance preservation (Luma = 0.299R + 0.587G + 0.114B)
     public static func applySaturation(r: UnsafeMutablePointer<Float>, g: UnsafeMutablePointer<Float>, b: UnsafeMutablePointer<Float>, count: Int, saturation: Float) {
+        let satMultiplier = 1.0 + (saturation / 100.0)
         for i in 0..<count {
             let luma = 0.299 * r[i] + 0.587 * g[i] + 0.114 * b[i]
-            r[i] = luma + (r[i] - luma) * saturation
-            g[i] = luma + (g[i] - luma) * saturation
-            b[i] = luma + (b[i] - luma) * saturation
+            r[i] = luma + (r[i] - luma) * satMultiplier
+            g[i] = luma + (g[i] - luma) * satMultiplier
+            b[i] = luma + (b[i] - luma) * satMultiplier
         }
     }
     

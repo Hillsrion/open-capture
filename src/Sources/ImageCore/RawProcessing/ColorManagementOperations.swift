@@ -73,21 +73,20 @@ internal final class FilmCurveOperation: ImageOperation {
 
 internal final class HDROperation: ImageOperation {
     private let filter = CIFilter(name: "CIHighlightShadowAdjust")!
-    
+
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
-        let shadow = clamp01(1.0 + settings.hdr.shadows / 100.0)
+        let shadow = clamp01(settings.hdr.shadows / 100.0)
         let highlight = clamp01(1.0 - settings.hdr.highlights / 100.0)
         filter.setValue(shadow, forKey: "inputShadowAmount")
         filter.setValue(highlight, forKey: "inputHighlightAmount")
         return filter.outputImage ?? input
     }
-    
+
     private func clamp01(_ value: Float) -> Float {
         max(0.0, min(1.0, value))
     }
 }
-
 internal final class NoiseReductionOperation: ImageOperation {
     private let filter = CIFilter(name: "CINoiseReduction")!
     
