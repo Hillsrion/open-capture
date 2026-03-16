@@ -22,8 +22,10 @@ internal final class TileGPUExecutor {
     func render(image: CIImage,
                 baseImage: CIImage?,
                 viewport: CGRect?,
-                fullSize: CGSize) -> CIImage {
+                fullSize: CGSize,
+                overlap: Int? = nil) -> CIImage {
         guard let device = device else { return image }
+        if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
         let height = max(1, Int(fullSize.height.rounded(.up)))
         
@@ -57,7 +59,7 @@ internal final class TileGPUExecutor {
             
             let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: viewport)
             for tile in plan.tiles {
-                let tileRect = tile.rect
+                let tileRect = tile.renderRect
                 let tileImage = image.cropped(to: tileRect)
                 context.render(tileImage,
                                to: textures.working,
@@ -68,7 +70,7 @@ internal final class TileGPUExecutor {
         } else {
             let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: nil)
             for tile in plan.tiles {
-                let tileRect = tile.rect
+                let tileRect = tile.renderRect
                 let tileImage = image.cropped(to: tileRect)
                 context.render(tileImage,
                                to: textures.base,

@@ -77,19 +77,22 @@ public class RawImageEngine {
 
                 let extent = output.extent
                 guard !extent.isEmpty, !extent.isNull else { return output }
+                let overlap = overlapPixels(for: settings)
 
                 if isLiveDrag, let viewport, let base = lastFullRender,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     return tileExecutor.render(image: output,
                                                baseImage: base,
                                                viewport: viewportPixels,
-                                               fullSize: extent.size)
+                                               fullSize: extent.size,
+                                               overlap: overlap)
                 }
 
                 let finalImage = tileExecutor.render(image: output,
                                                      baseImage: nil,
                                                      viewport: nil,
-                                                     fullSize: extent.size)
+                                                     fullSize: extent.size,
+                                                     overlap: overlap)
                 if !isLiveDrag {
                     lastFullRender = finalImage
                 }
@@ -106,6 +109,18 @@ public class RawImageEngine {
             let width = clamped.width * extent.width
             let height = clamped.height * extent.height
             return CGRect(x: x, y: y, width: width, height: height)
+        }
+
+        private func overlapPixels(for settings: IC_ProcessSettings) -> Int {
+            if settings.sharpening.amount > 0 { return 16 }
+            if settings.noiseReduction.luminance > 0 || settings.noiseReduction.color > 0 { return 16 }
+            if settings.noiseReduction.singlePixel > 0 || settings.noiseReduction.details > 0 { return 16 }
+            if settings.clarity.amount != 0 { return 16 }
+            if settings.filmGrain.amount != 0 { return 16 }
+            if settings.localAdjustments.contains(where: { $0.settings.clarity.amount != 0 || $0.settings.moire.amount != 0 }) {
+                return 16
+            }
+            return 0
         }
     }
     

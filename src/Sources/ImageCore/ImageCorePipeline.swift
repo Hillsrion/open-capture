@@ -238,7 +238,7 @@ public class ImageCorePipeline {
 public class TileExecutionManager {
     public var maxTileSize: CGSize = CGSize(width: 512, height: 512)
     public var minTileSize: CGSize = CGSize(width: 128, height: 128)
-    public var tileOverlap: Int = 0
+    public var tileOverlap: Int = 16
     public var maxConcurrentTiles: Int = max(1, ProcessInfo.processInfo.activeProcessorCount)
     
     public func planExecution(for size: CGSize, viewport: CGRect?) -> TileExecutionPlan {
@@ -254,6 +254,7 @@ public class TileExecutionManager {
         let rows = Int(ceil(Double(imageHeight) / Double(tileHeight)))
         
         let viewportPixels = viewport
+        let overlap = max(0, tileOverlap)
         var tiles: [TileRegion] = []
         tiles.reserveCapacity(columns * rows)
         
@@ -269,7 +270,15 @@ public class TileExecutionManager {
                     continue
                 }
                 
-                let region = TileRegion(x: x, y: y, width: w, height: h, row: row, column: col)
+                let expanded = rect.insetBy(dx: -CGFloat(overlap), dy: -CGFloat(overlap))
+                let bounded = expanded.intersection(CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight))
+                let region = TileRegion(x: x,
+                                        y: y,
+                                        width: w,
+                                        height: h,
+                                        row: row,
+                                        column: col,
+                                        renderRect: bounded)
                 tiles.append(region)
             }
         }
@@ -279,7 +288,8 @@ public class TileExecutionManager {
                                  imageSize: size,
                                  viewport: viewportPixels,
                                  rows: rows,
-                                 columns: columns)
+                                 columns: columns,
+                                 overlap: overlap)
     }
 }
 
@@ -290,6 +300,7 @@ public struct TileRegion: Hashable {
     public let height: Int
     public let row: Int
     public let column: Int
+    public let renderRect: CGRect
     
     public var rect: CGRect {
         CGRect(x: x, y: y, width: width, height: height)
@@ -303,4 +314,5 @@ public struct TileExecutionPlan {
     public let viewport: CGRect?
     public let rows: Int
     public let columns: Int
+    public let overlap: Int
 }
