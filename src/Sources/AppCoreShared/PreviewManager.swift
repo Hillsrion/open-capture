@@ -3,6 +3,7 @@ import AppKit
 import Combine
 import ImageCore
 import CoreImage
+import Metal
 
 /// Reconstructed Preview Priority level (ENG-009).
 public enum PreviewPriority: Int, Comparable {
@@ -41,10 +42,26 @@ public class PreviewManager: ObservableObject {
     @Published public var totalProgress: Float = 0.0
     
     private let queue = OperationQueue()
+    private let context: CIContext
     private var cancellables = Set<AnyCancellable>()
     
     private init() {
         queue.maxConcurrentOperationCount = ProcessInfo.processInfo.processorCount
+        
+        let options: [CIContextOption: Any] = [
+            .workingFormat: CIFormat.RGBAh,
+            .workingColorSpace: CGColorSpaceCreateDeviceRGB(),
+            .cacheIntermediates: false,
+            .useSoftwareRenderer: false
+        ]
+        if let device = MTLCreateSystemDefaultDevice() {
+            self.context = CIContext(mtlDevice: device, options: options)
+        } else {
+            var softwareOptions = options
+            softwareOptions[.useSoftwareRenderer] = true
+            self.context = CIContext(options: softwareOptions)
+        }
+        
         setupProgressTracking()
     }
     
@@ -93,8 +110,13 @@ public class PreviewManager: ObservableObject {
         Thread.sleep(forTimeInterval: Double.random(in: 0.5...1.5))
         
         if let resultCI = RawImageEngine.shared.developImage(at: url, with: settings) {
-            let context = CIContext()
-            if let result = context.createCGImage(resultCI, from: resultCI.extent) {
+            let outputColorSpace = CGColorSpaceCreateDeviceRGB()
+            let result = context.createCGImage(resultCI,
+                                               from: resultCI.extent,
+                                               format: .RGBAh,
+                                               colorSpace: outputColorSpace)
+                ?? context.createCGImage(resultCI, from: resultCI.extent)
+            if let result {
                 saveToCache(result, for: path)
                 updateJobStatus(path, status: .completed)
             } else {
