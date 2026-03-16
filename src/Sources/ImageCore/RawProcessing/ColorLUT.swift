@@ -6,6 +6,13 @@ import Metal
 internal struct ColorLUT {
     let dimension: Int
     let data: Data
+    let texture: MTLTexture?
+    
+    init(dimension: Int, data: Data, texture: MTLTexture? = nil) {
+        self.dimension = dimension
+        self.data = data
+        self.texture = texture
+    }
 }
 
 internal struct ComputeLUTParams {
@@ -44,6 +51,10 @@ internal struct ComputeLUTParams {
 }
 
 internal struct LUTKey: Hashable {
+    let exposure: Float
+    let contrast: Float
+    let brightness: Float
+    let saturation: Float
     let colorBalance: ColorBalanceSettings
     let curveX: ICCurve
     let curveR: ICCurve
@@ -53,6 +64,10 @@ internal struct LUTKey: Hashable {
     let colorCorrectionList: IC_ColorCorrectionList
     
     init(settings: IC_ProcessSettings) {
+        self.exposure = settings.exposure
+        self.contrast = settings.contrast
+        self.brightness = settings.brightness
+        self.saturation = settings.saturation
         self.colorBalance = settings.colorBalance
         self.curveX = settings.gradationCurves.curveX
         self.curveR = settings.gradationCurves.curveR
@@ -63,6 +78,10 @@ internal struct LUTKey: Hashable {
     }
     
     func hash(into hasher: inout Hasher) {
+        hasher.combine(exposure)
+        hasher.combine(contrast)
+        hasher.combine(brightness)
+        hasher.combine(saturation)
         hashColorBalance(colorBalance, into: &hasher)
         hashCurve(curveX, into: &hasher)
         hashCurve(curveR, into: &hasher)
@@ -141,35 +160,50 @@ internal final class ColorLUTOperation: ImageOperation {
     }
 }
 
-internal struct ComputeLUTCacheKey: Hashable {
-    let lutKey: LUTKey
-    let quality: IC_ProcessQuality
-    let viewportBucket: Int
-}
-
 /// Cache for ComputeLUT results keyed by settings + quality + viewport.
 internal final class ComputeLUTCache {
+    struct Key: Hashable {
+        let lutKey: LUTKey
+        let quality: IC_ProcessQuality
+        let viewportBucket: Int
+    }
+    
+    private struct Entry {
+        let lut: ColorLUT
+        let timestamp: Date
+        var lastAccess: Date
+        var accessCount: Int
+    }
+
     static let shared = ComputeLUTCache()
     
     private let builder = ColorLUTBuilder()
     private let metalBuilder = MetalColorLUTBuilder()
     private let queue = DispatchQueue(label: "ImageCore.ComputeLUTCache")
-    private var entries: [ComputeLUTCacheKey: ColorLUT] = [:]
-    private var lru: [ComputeLUTCacheKey] = []
+    private var entries: [Key: Entry] = [:]
+    private var lru: [Key] = []
     private let maxItems: Int
+    private let ttl: TimeInterval = 600 // 10 minutes
     
     init(maxItems: Int = 32) {
         self.maxItems = maxItems
     }
     
     func lut(for settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> ColorLUT {
-        let key = ComputeLUTCacheKey(lutKey: LUTKey(settings: settings),
-                                     quality: parameters.quality,
-                                     viewportBucket: viewportBucket(for: parameters.viewport))
-        if let cached = queue.sync(execute: {
-            if let cached = entries[key] {
+        let key = Key(lutKey: LUTKey(settings: settings),
+                      quality: parameters.quality,
+                      viewportBucket: viewportBucket(for: parameters.viewport, settings: settings))
+        if let cached = queue.sync(execute: { () -> ColorLUT? in
+            if let entry = entries[key] {
+                if Date().timeIntervalSince(entry.timestamp) > ttl {
+                    entries.removeValue(forKey: key)
+                    if let index = lru.firstIndex(of: key) {
+                        lru.remove(at: index)
+                    }
+                    return nil
+                }
                 touch(key)
-                return cached
+                return entry.lut
             }
             return nil
         }) {
@@ -184,29 +218,60 @@ internal final class ComputeLUTCache {
         }
         
         queue.sync {
-            entries[key] = lut
+            let now = Date()
+            entries[key] = Entry(lut: lut, timestamp: now, lastAccess: now, accessCount: 1)
             touch(key)
             enforceLimits()
         }
         return lut
     }
     
-    private func viewportBucket(for rect: CGRect?) -> Int {
-        guard let rect else { return 0 }
-        let clamped = rect.intersection(CGRect(x: 0, y: 0, width: 1, height: 1))
-        guard !clamped.isNull, clamped.width > 0, clamped.height > 0 else { return 0 }
-        let area = clamped.width * clamped.height
-        return Int((area * 20.0).rounded(.toNearestOrAwayFromZero))
+    private func viewportBucket(for rect: CGRect?, settings: IC_ProcessSettings) -> Int {
+        guard let rect = rect, !isGlobalOnly(settings: settings) else { return 0 }
+        
+        // Round to 5% increments
+        let rx = Int((rect.origin.x * 20).rounded())
+        let ry = Int((rect.origin.y * 20).rounded())
+        let rw = Int((rect.size.width * 20).rounded())
+        let rh = Int((rect.size.height * 20).rounded())
+        
+        var hasher = Hasher()
+        hasher.combine(rx)
+        hasher.combine(ry)
+        hasher.combine(rw)
+        hasher.combine(rh)
+        return hasher.finalize()
+    }
+
+    private func isGlobalOnly(settings: IC_ProcessSettings) -> Bool {
+        // A LUT is viewport-dependent if it contains local color corrections
+        // or if there are visible local adjustment layers
+        let hasLocalCorrections = settings.colorCorrectionList.corrections.prefix(Int(settings.colorCorrectionList.count)).contains { $0.isLocal }
+        let hasVisibleLayers = settings.localAdjustments.contains { $0.isVisible && $0.opacity > 0 }
+        return !hasLocalCorrections && !hasVisibleLayers
     }
     
-    private func touch(_ key: ComputeLUTCacheKey) {
+    private func touch(_ key: Key) {
         if let index = lru.firstIndex(of: key) {
             lru.remove(at: index)
         }
         lru.append(key)
+        entries[key]?.lastAccess = Date()
+        entries[key]?.accessCount += 1
     }
     
     private func enforceLimits() {
+        let now = Date()
+        // TTL Check
+        let expiredKeys = entries.filter { now.timeIntervalSince($0.value.timestamp) > ttl }.map { $0.key }
+        for key in expiredKeys {
+            entries.removeValue(forKey: key)
+            if let index = lru.firstIndex(of: key) {
+                lru.remove(at: index)
+            }
+        }
+
+        // LRU check
         while entries.count > maxItems, let oldest = lru.first {
             lru.removeFirst()
             entries.removeValue(forKey: oldest)
@@ -425,6 +490,6 @@ internal final class MetalColorLUTBuilder {
             Data(buffer: buffer)
         }
         
-        return ColorLUT(dimension: dimension, data: data)
+        return ColorLUT(dimension: dimension, data: data, texture: texture)
     }
 }
