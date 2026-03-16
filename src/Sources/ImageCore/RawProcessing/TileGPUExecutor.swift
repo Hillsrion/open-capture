@@ -225,6 +225,7 @@ internal final class TileGPUExecutor {
                      scale: CGFloat = 1,
                      operationKey: Int = 0,
                      tileProvider: (CGRect) -> CIImage) -> CIImage {
+        print("[TileGPUExecutor] renderTiles called for quality: \(quality != nil ? String(describing: quality!) : "nil")")
         guard let device = device else { return CIImage.empty() }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
