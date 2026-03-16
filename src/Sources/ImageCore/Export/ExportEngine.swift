@@ -38,8 +38,15 @@ public class ExportEngine {
             return
         }
         
-        // Convert CIImage to CGImage for export (Readback is acceptable for final export)
-        guard let developedImage = context.createCGImage(developedCIImage, from: developedCIImage.extent) else {
+        // Convert CIImage to CGImage for export (Readback is acceptable for final export).
+        // Request RGBAh to preserve high-bit-depth data when possible.
+        let outputColorSpace = CGColorSpaceCreateDeviceRGB()
+        let developedImage = context.createCGImage(developedCIImage,
+                                                   from: developedCIImage.extent,
+                                                   format: .RGBAh,
+                                                   colorSpace: outputColorSpace)
+            ?? context.createCGImage(developedCIImage, from: developedCIImage.extent)
+        guard let developedImage else {
             completion(.failure(NSError(domain: "ExportEngine", code: 2, userInfo: [NSLocalizedDescriptionKey: "Failed to render final image for export."])))
             return
         }

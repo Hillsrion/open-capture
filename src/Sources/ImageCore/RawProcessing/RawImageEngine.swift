@@ -30,14 +30,17 @@ public class RawImageEngine {
     
     /// Main entry point for developing a RAW image.
     /// Mimics the behavior of ImageProcessing.framework's development methods.
-    public func developImage(at url: URL, with settings: IC_ProcessSettings, isLiveDrag: Bool = false) -> CIImage? {
+    public func developImage(at url: URL,
+                             with settings: IC_ProcessSettings,
+                             isLiveDrag: Bool = false,
+                             viewport: CGRect? = nil) -> CIImage? {
         guard let resolvedPipeline = proxyCache.pipeline(for: url, context: context, loader: { [weak self] in
             guard let self = self else { return nil }
             return self.loadSourceImage(from: url)
         }) else {
             return createPlaceholderImage()
         }
-        let output = resolvedPipeline.process(settings: settings, isLiveDrag: isLiveDrag)
+        let output = resolvedPipeline.process(settings: settings, isLiveDrag: isLiveDrag, viewport: viewport)
         
         // 3. Return CIImage directly to avoid CPU Readback
         return output
@@ -50,13 +53,16 @@ public class RawImageEngine {
         private let context: CIContext
         private let processQueue = DispatchQueue(label: "ImageCore.RenderPipeline.process")
         private let chainBuilder = OperationChainBuilder()
+        private let tileExecutor: TileGPUExecutor
+        private var lastFullRender: CIImage?
         
         init(sourceImage: CIImage, context: CIContext) {
             self.sourceImage = sourceImage
             self.context = context
+            self.tileExecutor = TileGPUExecutor(context: context)
         }
         
-        func process(settings: IC_ProcessSettings, isLiveDrag: Bool) -> CIImage {
+        func process(settings: IC_ProcessSettings, isLiveDrag: Bool, viewport: CGRect?) -> CIImage {
             processQueue.sync {
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
                 let parameters = SImageOperationAllParameters(settings: settings,
@@ -68,9 +74,38 @@ public class RawImageEngine {
                 for operation in chain {
                     output = operation.execute(input: output, settings: settings)
                 }
-                
-                return output
+
+                let extent = output.extent
+                guard !extent.isEmpty, !extent.isNull else { return output }
+
+                if isLiveDrag, let viewport, let base = lastFullRender,
+                   let viewportPixels = pixelViewport(from: viewport, extent: extent) {
+                    return tileExecutor.render(image: output,
+                                               baseImage: base,
+                                               viewport: viewportPixels,
+                                               fullSize: extent.size)
+                }
+
+                let finalImage = tileExecutor.render(image: output,
+                                                     baseImage: nil,
+                                                     viewport: nil,
+                                                     fullSize: extent.size)
+                if !isLiveDrag {
+                    lastFullRender = finalImage
+                }
+                return finalImage
             }
+        }
+
+        private func pixelViewport(from normalized: CGRect, extent: CGRect) -> CGRect? {
+            let clampRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+            let clamped = normalized.intersection(clampRect)
+            guard !clamped.isNull, clamped.width > 0, clamped.height > 0 else { return nil }
+            let x = clamped.origin.x * extent.width
+            let y = (CGFloat(1) - clamped.origin.y - clamped.height) * extent.height
+            let width = clamped.width * extent.width
+            let height = clamped.height * extent.height
+            return CGRect(x: x, y: y, width: width, height: height)
         }
     }
     

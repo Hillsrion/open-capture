@@ -391,7 +391,11 @@ public struct COViewerView: View {
         let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
         
         let renderBlock: (IC_ProcessSettings, IC_ProcessQuality) -> Void = { settings, quality in
-            self.performRender(url: url, imagePath: imagePath, settings: settings, quality: quality)
+            self.performRender(url: url,
+                               imagePath: imagePath,
+                               settings: settings,
+                               quality: quality,
+                               viewport: viewport)
         }
         
         if let forced = forceQuality {
@@ -404,7 +408,11 @@ public struct COViewerView: View {
         }
     }
     
-    private func performRender(url: URL, imagePath: String, settings: IC_ProcessSettings, quality: IC_ProcessQuality) {
+    private func performRender(url: URL,
+                               imagePath: String,
+                               settings: IC_ProcessSettings,
+                               quality: IC_ProcessQuality,
+                               viewport: CGRect) {
         let isLiveDrag = quality == .display
         let supportsMetal = COMTRView.supportsMetal
         
@@ -416,7 +424,10 @@ public struct COViewerView: View {
                 self.sourceImage = thumb
                 self.lastLoadedURL = url
                 
-                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: settings, isLiveDrag: isLiveDrag) {
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url,
+                                                                             with: settings,
+                                                                             isLiveDrag: isLiveDrag,
+                                                                             viewport: viewport) {
                     if supportsMetal {
                         DispatchQueue.main.async { self.renderedCIImage = developedCIImage; self.renderedImage = nil }
                     } else {
@@ -432,7 +443,10 @@ public struct COViewerView: View {
             // Fast path: thumbnail already loaded, image is in proxy cache
             // objectWillChange fires before properties update. Delay by 1 tick to read new settings.
             DispatchQueue.main.async {
-                if let developedCIImage = RawImageEngine.shared.developImage(at: url, with: settings, isLiveDrag: isLiveDrag) {
+                if let developedCIImage = RawImageEngine.shared.developImage(at: url,
+                                                                             with: settings,
+                                                                             isLiveDrag: isLiveDrag,
+                                                                             viewport: viewport) {
                     if supportsMetal {
                         self.renderedCIImage = developedCIImage
                         self.renderedImage = nil
