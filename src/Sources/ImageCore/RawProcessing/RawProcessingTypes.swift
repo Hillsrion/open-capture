@@ -257,18 +257,20 @@ public struct SImageOperationAllParameters {
     public var quality: IC_ProcessQuality
     public var isInteractive: Bool
     public var viewport: CGRect?
-    
+    public var fullSize: CGSize?
+
     public init(settings: IC_ProcessSettings,
                 quality: IC_ProcessQuality,
                 isInteractive: Bool = false,
-                viewport: CGRect? = nil) {
+                viewport: CGRect? = nil,
+                fullSize: CGSize? = nil) {
         self.settings = settings
         self.quality = quality
         self.isInteractive = isInteractive
         self.viewport = viewport
+        self.fullSize = fullSize
     }
 }
-
 public struct IC_ProcessSettings {
     public var engineVersion: Int32 = 1600
     

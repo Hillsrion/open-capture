@@ -20,7 +20,7 @@ Ce workflow définit la méthodologie de reconstruction de Capture One 16.7, pil
 ### Phase A : Ingestion & Planning
 1. **Extraction** : Analyser les sources (User Guide, YouTube transcripts, Headers).
 2. **Ticket Creation** : Créer le ticket dans Notion avec la section **Demande**.
-3. **Strategy** : Entrer en `plan_mode` et rédiger le **Plan** technique dans le ticket Notion.
+3. **Strategy** : Entrer en `plan_mode`, rédiger le **Plan** technique dans le ticket Notion et passer le statut à `In Progress`.
 4. **Validation (Mode Normal)** : Demander l'approbation du plan à l'utilisateur.
 5. **Autonomie (Mode Loop)** : Exécuter le plan sans validation intermédiaire (sauf doute majeur).
 6. **Sprint Linking** : Associer le ticket au sprint actif.
@@ -33,9 +33,9 @@ Ce workflow définit la méthodologie de reconstruction de Capture One 16.7, pil
 4. **Fidelity Sync** : Vérifier la conformité visuelle via `openc1-spec-manager`.
 
 ### Phase C : Finalisation
-1. **Commits** : Un ou plusieurs commits atomiques incluant l'ID (ex: `[ID-11] feat(engine): implement tile provider logic`).
+1. **Commits** : Un ou plusieurs commits atomiques incluant l'ID (ex: `feat(engine): [ID-11] implement tile provider logic`).
 2. **Resolution Notes** : Renseigner le champ `Resolution Notes` dans Notion.
-3. **Notion Sync** : Passer le statut à `Done` une fois le ticket complété.
+3. **Notion Sync** : Passer le statut à `Resolved` une fois le ticket complété.
 4. **Next Step** : Demander la validation finale du ticket avant de passer au suivant.
 5. **Registry Update** : Mettre à jour l'historique des features dans `src/docs/feature_history.md`.
 

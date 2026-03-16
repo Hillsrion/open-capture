@@ -72,17 +72,21 @@ public class RawImageEngine {
                 let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
                 let canTile = canTileProcess(settings: settings, quality: quality)
                 let chainBuilder = isLiveDrag ? displayChainBuilder : renderChainBuilder
-                let parameters = SImageOperationAllParameters(settings: settings,
-                                                              quality: quality,
-                                                              isInteractive: isLiveDrag,
-                                                              viewport: viewport)
-                let chain = chainBuilder.buildChain(parameters)
-                let operationKey = operationSignature(for: chain)
-                
                 // Input for the tiling pipeline (already scaled for display if needed)
                 let sourceForTiles = displayScale < 1
                     ? sourceImage.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
                     : sourceImage
+                
+                let extent = sourceForTiles.extent
+                guard !extent.isEmpty, !extent.isNull else { return sourceForTiles }
+
+                let parameters = SImageOperationAllParameters(settings: settings,
+                                                              quality: quality,
+                                                              isInteractive: isLiveDrag,
+                                                              viewport: viewport,
+                                                              fullSize: extent.size)
+                let chain = chainBuilder.buildChain(parameters)
+                let operationKey = operationSignature(for: chain)
                 
                 let applyChain: (CIImage) -> CIImage = { input in
                     var current = input
@@ -92,8 +96,6 @@ public class RawImageEngine {
                     return current
                 }
                 
-                let extent = sourceForTiles.extent
-                guard !extent.isEmpty, !extent.isNull else { return sourceForTiles }
                 let overlap = Int(round(CGFloat(overlapPixels(for: settings)) * displayScale))
                 let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
 
@@ -111,7 +113,9 @@ public class RawImageEngine {
                                                            scale: displayScale,
                                                            operationKey: operationKey,
                                                            tileProvider: { rect in
-                            let tileInput = sourceForTiles.cropped(to: rect)
+                            let transform = self.transformForTile(rect: rect, extent: extent.size, settings: settings)
+                            let sourceRect = rect.applying(transform)
+                            let tileInput = sourceForTiles.cropped(to: sourceRect)
                             return applyChain(tileInput)
                         })
                     } else {
@@ -141,7 +145,9 @@ public class RawImageEngine {
                                                            scale: displayScale,
                                                            operationKey: operationKey,
                                                            tileProvider: { rect in
-                        let tileInput = sourceForTiles.cropped(to: rect)
+                        let transform = self.transformForTile(rect: rect, extent: extent.size, settings: settings)
+                        let sourceRect = rect.applying(transform)
+                        let tileInput = sourceForTiles.cropped(to: sourceRect)
                         return applyChain(tileInput)
                     })
                 } else {
@@ -166,11 +172,19 @@ public class RawImageEngine {
         }
 
         private func canTileProcess(settings: IC_ProcessSettings, quality: IC_ProcessQuality) -> Bool {
-            // Supported for both .display and .render if no incompatible global transformations are active.
-            if settings.flipHorizontal || settings.flipVertical {
-                return false
-            }
+            // Supported for both .display and .render. Geometry transformations (flips) are now tile-aware.
             return quality == .display || quality == .render
+        }
+
+        private func transformForTile(rect: CGRect, extent: CGSize, settings: IC_ProcessSettings) -> CGAffineTransform {
+            var transform = CGAffineTransform.identity
+            if settings.flipHorizontal {
+                transform = transform.translatedBy(x: extent.width, y: 0).scaledBy(x: -1, y: 1)
+            }
+            if settings.flipVertical {
+                transform = transform.translatedBy(x: 0, y: extent.height).scaledBy(x: 1, y: -1)
+            }
+            return transform
         }
 
         private func pixelViewport(from normalized: CGRect, extent: CGRect) -> CGRect? {
@@ -356,11 +370,13 @@ internal class WhiteBalanceOperation: ImageOperation {
 internal class GeometryOperation: ImageOperation {
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         var output = input
+        let globalSize = parameters.fullSize ?? input.extent.size
+        
         if settings.flipHorizontal {
-            output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -output.extent.width, y: 0))
+            output = output.transformed(by: CGAffineTransform(scaleX: -1, y: 1).translatedBy(x: -globalSize.width, y: 0))
         }
         if settings.flipVertical {
-            output = output.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -output.extent.height))
+            output = output.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: -globalSize.height))
         }
         return output
     }
