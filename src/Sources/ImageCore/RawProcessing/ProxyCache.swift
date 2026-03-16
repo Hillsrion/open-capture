@@ -5,7 +5,7 @@ import Metal
 
 /// Managed proxy cache that mirrors C1's memory+disk proxy behavior.
 /// Uses LRU eviction by total cost (bytes) and persists proxies to disk.
-internal final class ProxyCache {
+internal final class ProxyCache: MemoryEvictable {
     private struct MemoryItem {
         let pipeline: RawImageEngine.RenderPipeline
         let cost: Int
@@ -27,6 +27,8 @@ internal final class ProxyCache {
         self.maxMemoryBytes = maxMemoryBytes
         self.maxItems = maxItems
         self.diskStore = DiskStore(maxDiskBytes: maxDiskBytes)
+        
+        VRAMMonitor.shared.register(cache: self, priority: 10)
     }
     
     func pipeline(for url: URL, context: CIContext, loader: () -> CIImage?) -> RawImageEngine.RenderPipeline? {
@@ -101,6 +103,28 @@ internal final class ProxyCache {
         let pixels = Int(extent.width * extent.height)
         let bytesPerPixel = 8 // RGBAh
         return pixels * bytesPerPixel
+    }
+    
+    func evict(amount: Int) -> Int {
+        return queue.sync {
+            var freed = 0
+            while freed < amount, let oldest = lru.first {
+                lru.removeFirst()
+                if let removed = memory.removeValue(forKey: oldest) {
+                    freed += removed.cost
+                    currentBytes -= removed.cost
+                }
+            }
+            return freed
+        }
+    }
+    
+    func clearAll() {
+        queue.sync {
+            memory.removeAll()
+            lru.removeAll()
+            currentBytes = 0
+        }
     }
 }
 

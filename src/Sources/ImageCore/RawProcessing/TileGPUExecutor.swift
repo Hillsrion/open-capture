@@ -27,11 +27,7 @@ internal final class TileGPUExecutor {
         self.device = MTLCreateSystemDefaultDevice()
         self.commandQueue = device?.makeCommandQueue()
         self.tilePool = pool
-        self.vramMonitor = VRAMMonitor(device: device,
-                                       displayCache: displayCache,
-                                       renderCache: renderCache,
-                                       onWarning: { pool.removeAll() },
-                                       onCritical: { pool.removeAll() })
+        self.vramMonitor = VRAMMonitor.shared
     }
     
     func render(image: CIImage,
@@ -79,7 +75,7 @@ internal final class TileGPUExecutor {
         let height = max(1, Int(fullSize.height.rounded(.up)))
         
         guard let textures = ensureTextures(device: device, width: width, height: height) else { return CIImage.empty() }
-        vramMonitor.enforceBudgets()
+        vramMonitor.checkBudget(currentUsage: displayCache.usageBytes() + renderCache.usageBytes())
         
         let generationToken = UUID()
         self.currentGenerationToken = generationToken

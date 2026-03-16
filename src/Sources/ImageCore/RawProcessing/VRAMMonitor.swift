@@ -1,68 +1,105 @@
 import Foundation
 import Metal
 
-/// Tracks GPU memory pressure and trims tile caches accordingly.
-internal final class VRAMMonitor {
+public protocol MemoryEvictable: AnyObject {
+    func evict(amount: Int) -> Int
+    func clearAll()
+}
+
+public final class VRAMMonitor {
+    public static let shared = VRAMMonitor()
+    
     private let device: MTLDevice?
-    private weak var displayCache: TileResultCache?
-    private weak var renderCache: TileResultCache?
+    
+    private struct CacheEntry {
+        weak var cache: MemoryEvictable?
+        let priority: Int
+    }
+    private var caches: [CacheEntry] = []
+    
+    public private(set) var budgetBytes: Int = 0
     private let queue = DispatchQueue(label: "ImageCore.VRAMMonitor")
-    private var pressureSource: DispatchSourceMemoryPressure?
-    private let onCritical: (() -> Void)?
-    private let onWarning: (() -> Void)?
+    private var memoryPressureSource: DispatchSourceMemoryPressure?
     
-    init(device: MTLDevice?,
-         displayCache: TileResultCache,
-         renderCache: TileResultCache,
-         onWarning: (() -> Void)? = nil,
-         onCritical: (() -> Void)? = nil) {
+    public init(device: MTLDevice? = MTLCreateSystemDefaultDevice()) {
         self.device = device
-        self.displayCache = displayCache
-        self.renderCache = renderCache
-        self.onCritical = onCritical
-        self.onWarning = onWarning
-        setupPressureSource()
-    }
-    
-    func enforceBudgets() {
-        guard let device else { return }
-        let recommended = Int(device.recommendedMaxWorkingSetSize)
-        let budget = recommended > 0 ? Int(Double(recommended) * 0.6) : 512 * 1024 * 1024
-        let allocated = Int(device.currentAllocatedSize)
-        let displayBytes = displayCache?.usageBytes() ?? 0
-        let renderBytes = renderCache?.usageBytes() ?? 0
         
-        if allocated > budget {
-            trimCaches(factor: 0.5)
-        } else if allocated > Int(Double(budget) * 0.85) {
-            trimCaches(factor: 0.75)
-        } else if (displayBytes + renderBytes) > Int(Double(budget) * 0.35) {
-            trimCaches(factor: 0.9)
+        if let d = device {
+            let isUnified = d.hasUnifiedMemory
+            let recommended = d.recommendedMaxWorkingSetSize
+            
+            // Adjust budget strategy based on architecture
+            if isUnified {
+                budgetBytes = Int(Double(recommended) * 0.7) // Leave room for OS
+            } else {
+                budgetBytes = Int(Double(recommended) * 0.9) // Dedicated GPU can use more
+            }
+        } else {
+            budgetBytes = 1024 * 1024 * 1024 // Fallback 1GB
         }
+        
+        setupMemoryPressureHandler()
     }
     
-    private func setupPressureSource() {
-        let source = DispatchSource.makeMemoryPressureSource(eventMask: [.warning, .critical], queue: queue)
-        source.setEventHandler { [weak self] in
-            guard let self else { return }
+    private func setupMemoryPressureHandler() {
+        memoryPressureSource = DispatchSource.makeMemoryPressureSource(eventMask: [.warning, .critical], queue: queue)
+        memoryPressureSource?.setEventHandler { [weak self] in
+            guard let self = self, let source = self.memoryPressureSource else { return }
             let event = source.data
+            
             if event.contains(.critical) {
-                self.displayCache?.removeAll()
-                self.renderCache?.removeAll()
-                self.onCritical?()
+                self.handleCriticalPressure()
             } else if event.contains(.warning) {
-                self.trimCaches(factor: 0.5)
-                self.onWarning?()
+                self.handleWarningPressure()
             }
         }
-        source.resume()
-        pressureSource = source
+        memoryPressureSource?.resume()
     }
     
-    private func trimCaches(factor: Double) {
-        let displayTarget = Int(Double(displayCache?.usageBytes() ?? 0) * factor)
-        let renderTarget = Int(Double(renderCache?.usageBytes() ?? 0) * factor)
-        displayCache?.trim(toBytes: displayTarget)
-        renderCache?.trim(toBytes: renderTarget)
+    public func register(cache: MemoryEvictable, priority: Int) {
+        queue.async {
+            self.caches.append(CacheEntry(cache: cache, priority: priority))
+            self.caches.sort { $0.priority > $1.priority } // Highest priority to evict first
+        }
+    }
+    
+    public func checkBudget(currentUsage: Int) {
+        queue.async {
+            // Remove nil weak references
+            self.caches.removeAll { $0.cache == nil }
+            
+            if currentUsage > self.budgetBytes {
+                let overage = currentUsage - self.budgetBytes
+                self.performEviction(targetAmount: overage)
+            }
+        }
+    }
+    
+    private func performEviction(targetAmount: Int) {
+        var remainingToEvict = targetAmount
+        for entry in caches {
+            if remainingToEvict <= 0 { break }
+            if let cache = entry.cache {
+                let freed = cache.evict(amount: remainingToEvict)
+                remainingToEvict -= freed
+            }
+        }
+    }
+    
+    private func handleWarningPressure() {
+        queue.async {
+            self.caches.removeAll { $0.cache == nil }
+            let targetAmount = self.budgetBytes / 2
+            self.performEviction(targetAmount: targetAmount)
+        }
+    }
+    
+    private func handleCriticalPressure() {
+        queue.async {
+            self.caches.removeAll { $0.cache == nil }
+            for entry in self.caches {
+                entry.cache?.clearAll()
+            }
+        }
     }
 }

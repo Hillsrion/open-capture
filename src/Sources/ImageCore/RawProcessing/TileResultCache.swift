@@ -28,7 +28,7 @@ public struct CacheStats {
 }
 
 /// Tile-level GPU cache used to avoid re-rendering tiles during interactive updates.
-internal final class TileResultCache {
+internal final class TileResultCache: MemoryEvictable {
     struct Key: Hashable {
         let settingsKey: Int
         let quality: IC_ProcessQuality
@@ -56,6 +56,8 @@ internal final class TileResultCache {
     init(maxBytes: Int = 256 * 1024 * 1024, maxItems: Int = 512) {
         self.maxBytes = maxBytes
         self.maxItems = maxItems
+        
+        VRAMMonitor.shared.register(cache: self, priority: 100)
     }
     
     func texture(for key: Key) -> MTLTexture? {
@@ -163,5 +165,16 @@ internal final class TileResultCache {
         let pixels = max(1, width) * max(1, height)
         let bytesPerPixel = 8 // RGBAh
         return pixels * bytesPerPixel
+    }
+    
+    func evict(amount: Int) -> Int {
+        let start = usageBytes()
+        let target = max(0, start - amount)
+        trim(toBytes: target)
+        return start - usageBytes()
+    }
+    
+    func clearAll() {
+        removeAll()
     }
 }

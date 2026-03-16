@@ -213,7 +213,7 @@ internal final class ColorLUTOperation: ImageOperation {
 }
 
 /// Cache for ComputeLUT results keyed by settings + quality + viewport.
-internal final class ComputeLUTCache {
+internal final class ComputeLUTCache: MemoryEvictable {
     struct Key: Hashable {
         let lutKey: LUTKey
         let quality: IC_ProcessQuality
@@ -239,6 +239,8 @@ internal final class ComputeLUTCache {
     
     init(maxItems: Int = 32) {
         self.maxItems = maxItems
+        
+        VRAMMonitor.shared.register(cache: self, priority: 50)
     }
     
     func lut(for settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> ColorLUT? {
@@ -339,6 +341,27 @@ internal final class ComputeLUTCache {
         while entries.count > maxItems, let oldest = lru.first {
             lru.removeFirst()
             entries.removeValue(forKey: oldest)
+        }
+    }
+    
+    func evict(amount: Int) -> Int {
+        return queue.sync {
+            var freed = 0
+            while freed < amount, let oldest = lru.first {
+                lru.removeFirst()
+                if let removed = entries.removeValue(forKey: oldest) {
+                    let cost = removed.lut.data.count
+                    freed += cost
+                }
+            }
+            return freed
+        }
+    }
+    
+    func clearAll() {
+        queue.sync {
+            entries.removeAll()
+            lru.removeAll()
         }
     }
 }
