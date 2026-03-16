@@ -52,15 +52,18 @@ public class RawImageEngine {
         let sourceImage: CIImage
         private let context: CIContext
         private let processQueue = DispatchQueue(label: "ImageCore.RenderPipeline.process")
-        private let chainBuilder = OperationChainBuilder()
-        private let tileExecutor: TileGPUExecutor
-        private var lastFullRender: CIImage?
+        private let displayChainBuilder = OperationChainBuilder()
+        private let renderChainBuilder = OperationChainBuilder()
+        private let displayExecutor: TileGPUExecutor
+        private let renderExecutor: TileGPUExecutor
+        private var lastRenderImage: CIImage?
         private var displayBaseCache: (scale: CGFloat, sourceID: ObjectIdentifier, image: CIImage)?
         
         init(sourceImage: CIImage, context: CIContext) {
             self.sourceImage = sourceImage
             self.context = context
-            self.tileExecutor = TileGPUExecutor(context: context)
+            self.displayExecutor = TileGPUExecutor(context: context)
+            self.renderExecutor = TileGPUExecutor(context: context)
         }
         
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool, viewport: CGRect?) -> CIImage {
@@ -68,6 +71,7 @@ public class RawImageEngine {
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
                 let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
                 let canTileProcess = isLiveDrag && !(settings.flipHorizontal || settings.flipVertical)
+                let chainBuilder = isLiveDrag ? displayChainBuilder : renderChainBuilder
                 let parameters = SImageOperationAllParameters(settings: settings,
                                                               quality: quality,
                                                               isInteractive: isLiveDrag)
@@ -98,28 +102,28 @@ public class RawImageEngine {
                     let base = displayBaseImage(scale: displayScale)
                     let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
                     if canTileProcess {
-                        return tileExecutor.renderTiles(baseImage: base,
-                                                        viewport: viewportPixels,
-                                                        fullSize: extent.size,
-                                                        overlap: overlap,
-                                                        waitForCompletion: false,
-                                                        cacheKey: settingsKey,
-                                                        quality: quality,
-                                                        scale: displayScale,
-                                                        tileProvider: { rect in
+                        return displayExecutor.renderTiles(baseImage: base,
+                                                           viewport: viewportPixels,
+                                                           fullSize: extent.size,
+                                                           overlap: overlap,
+                                                           waitForCompletion: false,
+                                                           cacheKey: settingsKey,
+                                                           quality: quality,
+                                                           scale: displayScale,
+                                                           tileProvider: { rect in
                             let tileInput = sourceForTiles.cropped(to: rect)
                             return applyChain(tileInput)
                         })
                     } else {
-                        return tileExecutor.render(image: output,
-                                                   baseImage: base,
-                                                   viewport: viewportPixels,
-                                                   fullSize: extent.size,
-                                                   overlap: overlap,
-                                                   waitForCompletion: false,
-                                                   cacheKey: settingsKey,
-                                                   quality: quality,
-                                                   scale: displayScale)
+                        return displayExecutor.render(image: output,
+                                                      baseImage: base,
+                                                      viewport: viewportPixels,
+                                                      fullSize: extent.size,
+                                                      overlap: overlap,
+                                                      waitForCompletion: false,
+                                                      cacheKey: settingsKey,
+                                                      quality: quality,
+                                                      scale: displayScale)
                     }
                 }
 
@@ -127,16 +131,16 @@ public class RawImageEngine {
                     output = applyChain(output)
                 }
                 let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
-                let finalImage = tileExecutor.render(image: output,
-                                                     baseImage: nil,
-                                                     viewport: nil,
-                                                     fullSize: extent.size,
-                                                     overlap: overlap,
-                                                     cacheKey: renderKey,
-                                                     quality: quality,
-                                                     scale: displayScale)
+                let finalImage = renderExecutor.render(image: output,
+                                                       baseImage: nil,
+                                                       viewport: nil,
+                                                       fullSize: extent.size,
+                                                       overlap: overlap,
+                                                       cacheKey: renderKey,
+                                                       quality: quality,
+                                                       scale: displayScale)
                 if !isLiveDrag {
-                    lastFullRender = finalImage
+                    lastRenderImage = finalImage
                     displayBaseCache = nil
                 }
                 return finalImage
@@ -235,7 +239,7 @@ public class RawImageEngine {
         }
 
         private func displayBaseImage(scale: CGFloat) -> CIImage? {
-            guard let base = lastFullRender else { return nil }
+            guard let base = lastRenderImage else { return nil }
             if scale >= 1 { return base }
             let sourceID = ObjectIdentifier(base)
             if let cached = displayBaseCache,
