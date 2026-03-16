@@ -97,7 +97,9 @@ public class RawImageEngine {
                 }
                 
                 let overlap = Int(round(CGFloat(overlapPixels(for: settings)) * displayScale))
-                let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
+                let keyProvider: (TileStage) -> Int = { stage in
+                    self.stageCacheKey(for: settings, stage: stage, quality: quality, scale: displayScale, operationKey: operationKey)
+                }
 
                 let applyStage: (TileStage, [ImageOperation], CIImage) -> CIImage = { stage, chain, input in
                     let stageOps = self.operations(for: stage, in: chain)
@@ -117,7 +119,7 @@ public class RawImageEngine {
                                                            fullSize: extent.size,
                                                            overlap: overlap,
                                                            waitForCompletion: false,
-                                                           settingsKeyProvider: { _ in settingsKey },
+                                                           settingsKeyProvider: keyProvider,
                                                            quality: quality,
                                                            scale: displayScale,
                                                            operationKey: operationKey,
@@ -143,8 +145,7 @@ public class RawImageEngine {
                                                       fullSize: extent.size,
                                                       overlap: overlap,
                                                       waitForCompletion: false,
-                                                      cacheKey: settingsKey,
-                                                      quality: quality,
+                                                      cacheKey: keyProvider(.nr),                                                      quality: quality,
                                                       scale: displayScale,
                                                       operationKey: operationKey)
                     }
@@ -157,7 +158,7 @@ public class RawImageEngine {
                                                            viewport: nil,
                                                            fullSize: extent.size,
                                                            overlap: overlap,
-                                                           settingsKeyProvider: { _ in settingsKey },
+                                                           settingsKeyProvider: keyProvider,
                                                            quality: quality,
                                                            scale: displayScale,
                                                            operationKey: operationKey,
@@ -182,7 +183,7 @@ public class RawImageEngine {
                                                        viewport: nil,
                                                        fullSize: extent.size,
                                                        overlap: overlap,
-                                                       cacheKey: settingsKey,
+                                                       cacheKey: keyProvider(.nr),
                                                        quality: quality,
                                                        scale: displayScale,
                                                        operationKey: operationKey)
@@ -271,36 +272,32 @@ public class RawImageEngine {
             return hasher.finalize()
         }
         
-        private func settingsCacheKey(for settings: IC_ProcessSettings,
-                                      quality: IC_ProcessQuality,
-                                      scale: CGFloat,
-                                      operationKey: Int) -> Int {
+        private func stageCacheKey(for settings: IC_ProcessSettings,
+                                   stage: TileStage,
+                                   quality: IC_ProcessQuality,
+                                   scale: CGFloat,
+                                   operationKey: Int) -> Int {
             var hasher = Hasher()
             hasher.combine(Int(quality.rawValue))
             hasher.combine(Double(scale).bitPattern)
             hasher.combine(operationKey)
+            hasher.combine(settings.flipHorizontal)
+            hasher.combine(settings.flipVertical)
+            
+            // precolor dependencies
             hasher.combine(settings.exposure.bitPattern)
+            hasher.combine(settings.kelvin.bitPattern)
+            hasher.combine(settings.tint.bitPattern)
+            if stage == .precolor { return hasher.finalize() }
+            
+            // lut dependencies (includes precolor)
             hasher.combine(settings.contrast.bitPattern)
             hasher.combine(settings.brightness.bitPattern)
             hasher.combine(settings.saturation.bitPattern)
-            hasher.combine(settings.kelvin.bitPattern)
-            hasher.combine(settings.tint.bitPattern)
-            hasher.combine(settings.flipHorizontal)
-            hasher.combine(settings.flipVertical)
             hasher.combine(settings.hdr.highlights.bitPattern)
             hasher.combine(settings.hdr.shadows.bitPattern)
             hasher.combine(settings.hdr.whites.bitPattern)
             hasher.combine(settings.hdr.blacks.bitPattern)
-            hasher.combine(settings.sharpening.amount.bitPattern)
-            hasher.combine(settings.sharpening.radius.bitPattern)
-            hasher.combine(settings.sharpening.threshold.bitPattern)
-            hasher.combine(settings.noiseReduction.luminance.bitPattern)
-            hasher.combine(settings.noiseReduction.color.bitPattern)
-            hasher.combine(settings.noiseReduction.singlePixel.bitPattern)
-            hasher.combine(settings.noiseReduction.details.bitPattern)
-            hasher.combine(settings.clarity.amount.bitPattern)
-            hasher.combine(settings.filmGrain.amount.bitPattern)
-            hasher.combine(settings.filmGrain.size.bitPattern)
             hasher.combine(settings.colorBalance.shadow.hue.bitPattern)
             hasher.combine(settings.colorBalance.shadow.saturation.bitPattern)
             hasher.combine(settings.colorBalance.midtone.hue.bitPattern)
@@ -313,6 +310,9 @@ public class RawImageEngine {
             hasher.combine(settings.gradationCurves.curveB.points.count)
             hasher.combine(settings.gradationCurves.curveL.points.count)
             hasher.combine(settings.colorCorrectionList.count)
+            if stage == .lut { return hasher.finalize() }
+            
+            // local dependencies (includes lut)
             hasher.combine(settings.localAdjustments.count)
             for layer in settings.localAdjustments where layer.isVisible && layer.opacity > 0 {
                 hasher.combine(layer.opacity.bitPattern)
@@ -327,6 +327,19 @@ public class RawImageEngine {
                     hasher.combine(mask.count)
                 }
             }
+            if stage == .local { return hasher.finalize() }
+            
+            // nr dependencies (includes local)
+            hasher.combine(settings.sharpening.amount.bitPattern)
+            hasher.combine(settings.sharpening.radius.bitPattern)
+            hasher.combine(settings.sharpening.threshold.bitPattern)
+            hasher.combine(settings.noiseReduction.luminance.bitPattern)
+            hasher.combine(settings.noiseReduction.color.bitPattern)
+            hasher.combine(settings.noiseReduction.singlePixel.bitPattern)
+            hasher.combine(settings.noiseReduction.details.bitPattern)
+            hasher.combine(settings.clarity.amount.bitPattern)
+            hasher.combine(settings.filmGrain.amount.bitPattern)
+            hasher.combine(settings.filmGrain.size.bitPattern)
             return hasher.finalize()
         }
 
