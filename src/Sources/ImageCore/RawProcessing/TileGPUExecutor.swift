@@ -28,6 +28,8 @@ internal final class TileGPUExecutor {
         self.commandQueue = device?.makeCommandQueue()
         self.tilePool = pool
         self.vramMonitor = VRAMMonitor.shared
+        
+        self.vramMonitor.register(cache: pool, priority: 75)
     }
     
     func render(image: CIImage,
