@@ -39,6 +39,12 @@ Ce workflow définit la méthodologie de reconstruction de Capture One 16.7, pil
 4. **Next Step** : Demander la validation finale du ticket avant de passer au suivant.
 5. **Registry Update** : Mettre à jour l'historique des features dans `src/docs/feature_history.md`.
 
+### Phase D : Sprint Review
+À la clôture du sprint, une revue par `@codebase_investigator` est déclenchée.
+1. **Fidélité** : Conformité aux headers et symboles originaux.
+2. **Qualité technique** : Utilisation optimale de Metal/CoreImage.
+3. **Parité avec l'Original** : **L'implémentation est-elle aussi qualitative que l'original sur le scope demandé ?** (Performance, robustesse, propreté de l'architecture).
+
 ## 3. Hiérarchie de Vérité (Source of Truth)
 1. **RawDumps/** : La logique binaire et les structures de données originales (Le "Comment").
 2. **Notion Tickets** : Les instructions de reconstruction et le plan validé (Le "Quoi").

@@ -6,13 +6,15 @@ description: Expert workflow for implementing Capture One features from the Noti
 This skill defines the methodology for high-fidelity reconstruction of Capture One 16.7 features. It ensures that every implementation is grounded in the original application's logic and visual standards.
 
 ## 1. Backlog Analysis & Operating Modes
-- **Primary Source**: Query the `Tickets` database (ID: `b970db11-ba37-8351-bf14-01025baf506e`).
+- **Sprint Management**: 
+  - Set the parent Sprint to `In Progress` when starting the first ticket.
+  - Set the parent Sprint to `Done` once the last ticket of that sprint is `Resolved`.
 - **Modes of Operation**:
-  - **Normal Mode**: Research -> `enter_plan_mode` -> Update Notion Ticket -> **Seek User Approval** -> Execute.
+  - **Normal Mode**: Research -> `enter_plan_mode` -> Update Notion Ticket (Add Plan + Set Status to `In Progress`) -> **Seek User Approval** -> Execute.
   - **Loop Mode**: (Triggered by user request)
-    1. Research & Plan: Use `enter_plan_mode` and update Notion.
-    2. **Delegation**: Invoke the `generalist` sub-agent to perform the implementation and validation. Provide the sub-agent with the Notion Plan and relevant file paths.
-    3. Finalization: Review the sub-agent's summary, perform the final commit(s) in the main session, and update Notion status.
+    1. Research & Plan: Use `enter_plan_mode` and update Notion (Add Plan + Set Status to `In Progress`).
+    2. **Delegation**: Invoke the `generalist` sub-agent. **INSTRUCTION**: Instruct the agent to be persistent (up to 15-20 turns) to resolve technical hurdles, but to stop and report if it enters a circular logic or hits a dead end.
+    3. Finalization: Review the sub-agent's summary, perform the final commit(s), and update Notion status to `Resolved`.
     4. **Seek Validation only at the end of the ticket** before the next one.
 - **Sprint Isolation**: Filter by the active `Sprint` relation.
 - **Plan Requirement**: Even in Loop Mode, you MUST enter `enter_plan_mode` and write a technical plan into the Notion ticket BEFORE modifying any code.
@@ -34,11 +36,18 @@ This skill defines the methodology for high-fidelity reconstruction of Capture O
 
 ## 5. Post-Action & Synchronization
 - **Atomic Commits**: You can perform multiple commits for a single large ticket. Every commit MUST include the Ticket ID.
-  - **Format**: `[ID-<number>] <type>(<scope>): <description>`.
+  - **Format**: `<type>(<scope>): [ID-<number>] <description>` (e.g., `feat(ui/engine): [ID-11] implement auto-keystone line detection`).
 - **Notion Update**: 
-  - Set the ticket status to `Done` only after the final implementation and build.
+  - Set the ticket status to `Resolved` only after the final implementation and build.
   - **Resolution Notes**: You MUST update the `Resolution Notes` property in Notion with a summary of the changes (typically a concatenation of your commit descriptions).
 - **Next Loop**: Re-query the sprint backlog for the next `Not started` item.
+
+## 6. Sprint Review Phase
+Once a sprint is complete, invoke `@codebase_investigator` for a deep review.
+**Review Criteria**:
+- **Fidelity**: Does it match C1 16.7 logic/symbols?
+- **Quality**: Is it idiomatic, robust, and performant?
+- **Comparison**: **Is it as good as the original on the requested scope?** Evaluate if the code reflects the engineering standards of a high-end commercial imaging application.
 
 ## Reference Paths
 - **Decompiled Headers**: `RawDumps/Headers/`

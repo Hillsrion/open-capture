@@ -1,10 +1,46 @@
 import Foundation
 import CoreImage
 import CoreGraphics
+import Metal
 
 internal struct ColorLUT {
     let dimension: Int
     let data: Data
+}
+
+internal struct ComputeLUTParams {
+    struct ColorBalanceValue {
+        var hue: Float
+        var saturation: Float
+        var brightness: Float
+        
+        init(_ val: ImageCore.ColorBalanceValue) {
+            self.hue = Float(val.hue)
+            self.saturation = Float(val.saturation)
+            self.brightness = Float(val.brightness)
+        }
+    }
+    
+    var exposure: Float
+    var contrast: Float
+    var brightness: Float
+    var saturation: Float
+    
+    var shadow: ColorBalanceValue
+    var midtone: ColorBalanceValue
+    var highlight: ColorBalanceValue
+    var master: ColorBalanceValue
+    
+    init(settings: IC_ProcessSettings) {
+        self.exposure = settings.exposure
+        self.contrast = settings.contrast
+        self.brightness = settings.brightness
+        self.saturation = settings.saturation
+        self.shadow = ColorBalanceValue(settings.colorBalance.shadow)
+        self.midtone = ColorBalanceValue(settings.colorBalance.midtone)
+        self.highlight = ColorBalanceValue(settings.colorBalance.highlight)
+        self.master = ColorBalanceValue(settings.colorBalance.master)
+    }
 }
 
 internal struct LUTKey: Hashable {
@@ -116,6 +152,7 @@ internal final class ComputeLUTCache {
     static let shared = ComputeLUTCache()
     
     private let builder = ColorLUTBuilder()
+    private let metalBuilder = MetalColorLUTBuilder()
     private let queue = DispatchQueue(label: "ImageCore.ComputeLUTCache")
     private var entries: [ComputeLUTCacheKey: ColorLUT] = [:]
     private var lru: [ComputeLUTCacheKey] = []
@@ -139,7 +176,13 @@ internal final class ComputeLUTCache {
             return cached
         }
         
-        let lut = builder.build(settings: settings)
+        let lut: ColorLUT
+        if let metalLUT = metalBuilder?.build(settings: settings) {
+            lut = metalLUT
+        } else {
+            lut = builder.build(settings: settings)
+        }
+        
         queue.sync {
             entries[key] = lut
             touch(key)
@@ -275,5 +318,113 @@ internal final class ColorLUTBuilder {
     
     private func clamp(_ value: Float) -> Float {
         max(0.0, min(1.0, value))
+    }
+}
+
+internal final class MetalColorLUTBuilder {
+    private let device: MTLDevice
+    private let commandQueue: MTLCommandQueue
+    private let pipelineState: MTLComputePipelineState
+    private let dimension = 33
+    
+    init?() {
+        guard let device = ImageCoreGPU.shared.device,
+              let commandQueue = ImageCoreGPU.shared.commandQueue else { return nil }
+        self.device = device
+        self.commandQueue = commandQueue
+        
+        // Load default library for our custom kernel
+        let library = device.makeDefaultLibrary()
+        guard let function = library?.makeFunction(name: "compute_3d_lut") else {
+            print("[MetalColorLUTBuilder] Failed to find kernel compute_3d_lut")
+            return nil
+        }
+        do {
+            self.pipelineState = try device.makeComputePipelineState(function: function)
+        } catch {
+            print("[MetalColorLUTBuilder] Pipeline setup failed: \(error)")
+            return nil
+        }
+    }
+    
+    func build(settings: IC_ProcessSettings) -> ColorLUT? {
+        let params = ComputeLUTParams(settings: settings)
+        
+        guard let outTexture = create3DTexture(),
+              let curveX = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveX.points, count: Int(settings.gradationCurves.curveX.count))),
+              let curveL = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveL.points, count: Int(settings.gradationCurves.curveL.count))),
+              let curveR = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveR.points, count: Int(settings.gradationCurves.curveR.count))),
+              let curveG = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveG.points, count: Int(settings.gradationCurves.curveG.count))),
+              let curveB = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveB.points, count: Int(settings.gradationCurves.curveB.count))),
+              let commandBuffer = commandQueue.makeCommandBuffer(),
+              let encoder = commandBuffer.makeComputeCommandEncoder() else {
+            return nil
+        }
+        
+        encoder.setComputePipelineState(pipelineState)
+        encoder.setTexture(outTexture, index: 0)
+        
+        var paramsCopy = params
+        encoder.setBytes(&paramsCopy, length: MemoryLayout<ComputeLUTParams>.size, index: 0)
+        
+        encoder.setTexture(curveX, index: 1)
+        encoder.setTexture(curveL, index: 2)
+        encoder.setTexture(curveR, index: 3)
+        encoder.setTexture(curveG, index: 4)
+        encoder.setTexture(curveB, index: 5)
+        
+        let threadgroupSize = MTLSize(width: 8, height: 8, depth: 8)
+        let threadgroups = MTLSize(width: (dimension + threadgroupSize.width - 1) / threadgroupSize.width,
+                                   height: (dimension + threadgroupSize.height - 1) / threadgroupSize.height,
+                                   depth: (dimension + threadgroupSize.depth - 1) / threadgroupSize.depth)
+        
+        encoder.dispatchThreadgroups(threadgroups, threadsPerThreadgroup: threadgroupSize)
+        encoder.endEncoding()
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
+        
+        return readBack(texture: outTexture)
+    }
+    
+    private func create3DTexture() -> MTLTexture? {
+        let desc = MTLTextureDescriptor()
+        desc.textureType = .type3D
+        desc.pixelFormat = .rgba32Float
+        desc.width = dimension
+        desc.height = dimension
+        desc.depth = dimension
+        desc.usage = [.shaderWrite, .shaderRead]
+        return device.makeTexture(descriptor: desc)
+    }
+    
+    private func createCurveTexture(_ data: [Float]) -> MTLTexture? {
+        guard !data.isEmpty else { return nil }
+        let desc = MTLTextureDescriptor()
+        desc.textureType = .type1D
+        desc.pixelFormat = .r32Float
+        desc.width = data.count
+        desc.height = 1
+        desc.depth = 1
+        desc.usage = [.shaderRead]
+        guard let texture = device.makeTexture(descriptor: desc) else { return nil }
+        texture.replace(region: MTLRegionMake1D(0, data.count), mipmapLevel: 0, withBytes: data, bytesPerRow: data.count * 4)
+        return texture
+    }
+    
+    private func readBack(texture: MTLTexture) -> ColorLUT? {
+        var cubeData = [Float](repeating: 0, count: dimension * dimension * dimension * 4)
+        
+        texture.getBytes(&cubeData,
+                         bytesPerRow: dimension * 4 * MemoryLayout<Float>.size,
+                         bytesPerImage: dimension * dimension * 4 * MemoryLayout<Float>.size,
+                         from: MTLRegionMake3D(0, 0, 0, dimension, dimension, dimension),
+                         mipmapLevel: 0,
+                         slice: 0)
+        
+        let data = cubeData.withUnsafeBufferPointer { buffer in
+            Data(buffer: buffer)
+        }
+        
+        return ColorLUT(dimension: dimension, data: data)
     }
 }
