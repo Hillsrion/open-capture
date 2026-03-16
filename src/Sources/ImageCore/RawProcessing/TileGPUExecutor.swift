@@ -17,6 +17,9 @@ internal final class TileGPUExecutor {
     private var cachedSize: CGSize = .zero
     private var cachedBaseID: ObjectIdentifier?
     private var pendingBuffer: MTLCommandBuffer?
+    private var currentGenerationToken = UUID()
+    private let submissionQueue = DispatchQueue(label: "com.imagecore.tilegpu.submission")
+    private let frameGate = DispatchSemaphore(value: 3)
     
     init(context: CIContext) {
         let pool = TileTexturePool()
@@ -41,178 +44,16 @@ internal final class TileGPUExecutor {
                 quality: IC_ProcessQuality? = nil,
                 scale: CGFloat = 1,
                 operationKey: Int = 0) -> CIImage {
-        guard let device = device else { return image }
-        if let overlap = overlap { tileManager.tileOverlap = overlap }
-        let width = max(1, Int(fullSize.width.rounded(.up)))
-        let height = max(1, Int(fullSize.height.rounded(.up)))
-        
-        guard let textures = ensureTextures(device: device, width: width, height: height) else { return image }
-        vramMonitor.enforceBudgets()
-        
-        if waitForCompletion {
-            pendingBuffer?.waitUntilCompleted()
-            pendingBuffer = nil
-        }
-        guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return image }
-        
-        let fullRect = CGRect(origin: .zero, size: CGSize(width: width, height: height))
-        if let baseImage = baseImage {
-            let baseID = ObjectIdentifier(baseImage)
-            if cachedBaseID != baseID {
-                context.render(baseImage,
-                               to: textures.base,
-                               commandBuffer: commandBuffer,
-                               bounds: fullRect,
-                               colorSpace: colorSpace)
-                cachedBaseID = baseID
-            }
-            if let blit = commandBuffer.makeBlitCommandEncoder() {
-                blit.copy(from: textures.base,
-                          sourceSlice: 0,
-                          sourceLevel: 0,
-                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
-                          sourceSize: MTLSize(width: width, height: height, depth: 1),
-                          to: textures.working,
-                          destinationSlice: 0,
-                          destinationLevel: 0,
-                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
-                blit.endEncoding()
-            }
-            
-            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: viewport)
-            for tile in plan.tiles {
-                let tileRect = tile.renderRect
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality,
-                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
-                                                                       quality: quality,
-                                                                       scale: scale,
-                                                                       operationKey: operationKey,
-                                                                       tile: tile)) {
-                    blit(texture: cached,
-                         to: textures.working,
-                         origin: tileRect.origin,
-                         size: tileRect.size,
-                         commandBuffer: commandBuffer)
-                    continue
-                }
-                
-                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
-                var shouldRelease = true
-                defer { if shouldRelease { tilePool.release(tileTexture) } }
-                let tileImage = image.cropped(to: tileRect)
-                let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
-                                                                             y: -tileRect.origin.y))
-                context.render(localImage,
-                               to: tileTexture,
-                               commandBuffer: commandBuffer,
-                               bounds: CGRect(origin: .zero, size: tileRect.size),
-                               colorSpace: colorSpace)
-                blit(texture: tileTexture,
-                     to: textures.working,
-                     origin: tileRect.origin,
-                     size: tileRect.size,
-                     commandBuffer: commandBuffer)
-                
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality {
-                    let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                    cache.insert(texture: tileTexture,
-                                 for: TileResultCache.Key(settingsKey: cacheKey,
-                                                          quality: quality,
-                                                          scale: scale,
-                                                          operationKey: operationKey,
-                                                          tile: tile),
-                                 cost: cost)
-                    shouldRelease = false
-                }
-            }
-        } else {
-            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: nil)
-            for tile in plan.tiles {
-                let tileRect = tile.renderRect
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality,
-                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
-                                                                       quality: quality,
-                                                                       scale: scale,
-                                                                       operationKey: operationKey,
-                                                                       tile: tile)) {
-                    blit(texture: cached,
-                         to: textures.base,
-                         origin: tileRect.origin,
-                         size: tileRect.size,
-                         commandBuffer: commandBuffer)
-                    continue
-                }
-                
-                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
-                var shouldRelease = true
-                defer { if shouldRelease { tilePool.release(tileTexture) } }
-                let tileImage = image.cropped(to: tileRect)
-                let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
-                                                                             y: -tileRect.origin.y))
-                context.render(localImage,
-                               to: tileTexture,
-                               commandBuffer: commandBuffer,
-                               bounds: CGRect(origin: .zero, size: tileRect.size),
-                               colorSpace: colorSpace)
-                blit(texture: tileTexture,
-                     to: textures.base,
-                     origin: tileRect.origin,
-                     size: tileRect.size,
-                     commandBuffer: commandBuffer)
-                
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality {
-                    let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                    cache.insert(texture: tileTexture,
-                                 for: TileResultCache.Key(settingsKey: cacheKey,
-                                                          quality: quality,
-                                                          scale: scale,
-                                                          operationKey: operationKey,
-                                                          tile: tile),
-                                 cost: cost)
-                    shouldRelease = false
-                }
-            }
-            if let blit = commandBuffer.makeBlitCommandEncoder() {
-                blit.copy(from: textures.base,
-                          sourceSlice: 0,
-                          sourceLevel: 0,
-                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
-                          sourceSize: MTLSize(width: width, height: height, depth: 1),
-                          to: textures.working,
-                          destinationSlice: 0,
-                          destinationLevel: 0,
-                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
-                blit.endEncoding()
-            }
-        }
-        
-        commandBuffer.commit()
-        if waitForCompletion {
-            commandBuffer.waitUntilCompleted()
-        } else {
-            pendingBuffer = commandBuffer
-        }
-        
-        if baseImage == nil {
-            guard let outputImage = CIImage(mtlTexture: textures.base, options: [.colorSpace: colorSpace]) else {
-                return image
-            }
-            cachedBaseID = ObjectIdentifier(outputImage)
-            return outputImage.cropped(to: fullRect)
-        }
-        
-        guard let outputImage = CIImage(mtlTexture: textures.working, options: [.colorSpace: colorSpace]) else {
-            return image
-        }
-        return outputImage.cropped(to: fullRect)
+        return renderTiles(baseImage: baseImage,
+                           viewport: viewport,
+                           fullSize: fullSize,
+                           overlap: overlap,
+                           waitForCompletion: waitForCompletion,
+                           cacheKey: cacheKey,
+                           quality: quality,
+                           scale: scale,
+                           operationKey: operationKey,
+                           tileProvider: { image.cropped(to: $0) })
     }
     
     func renderTiles(baseImage: CIImage?,
@@ -224,8 +65,7 @@ internal final class TileGPUExecutor {
                      quality: IC_ProcessQuality? = nil,
                      scale: CGFloat = 1,
                      operationKey: Int = 0,
-                     tileProvider: (CGRect) -> CIImage) -> CIImage {
-        print("[TileGPUExecutor] renderTiles called for quality: \(quality != nil ? String(describing: quality!) : "nil")")
+                     tileProvider: @escaping (CGRect) -> CIImage) -> CIImage {
         guard let device = device else { return CIImage.empty() }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
@@ -234,161 +74,143 @@ internal final class TileGPUExecutor {
         guard let textures = ensureTextures(device: device, width: width, height: height) else { return CIImage.empty() }
         vramMonitor.enforceBudgets()
         
+        let generationToken = UUID()
+        self.currentGenerationToken = generationToken
+        
         if waitForCompletion {
             pendingBuffer?.waitUntilCompleted()
             pendingBuffer = nil
         }
-        guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return CIImage.empty() }
         
         let fullRect = CGRect(origin: .zero, size: CGSize(width: width, height: height))
-        if let baseImage = baseImage {
-            let baseID = ObjectIdentifier(baseImage)
-            if cachedBaseID != baseID {
-                context.render(baseImage,
-                               to: textures.base,
-                               commandBuffer: commandBuffer,
-                               bounds: fullRect,
-                               colorSpace: colorSpace)
-                cachedBaseID = baseID
-            }
-            if let blit = commandBuffer.makeBlitCommandEncoder() {
-                blit.copy(from: textures.base,
-                          sourceSlice: 0,
-                          sourceLevel: 0,
-                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
-                          sourceSize: MTLSize(width: width, height: height, depth: 1),
-                          to: textures.working,
-                          destinationSlice: 0,
-                          destinationLevel: 0,
-                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
-                blit.endEncoding()
+        let plan = tileManager.planExecution(for: fullRect.size, viewport: baseImage == nil ? nil : viewport)
+        let tiles = plan.tiles
+        let batches = stride(from: 0, to: tiles.count, by: 6).map {
+            Array(tiles[$0..<min($0 + 6, tiles.count)])
+        }
+        
+        let work = { [weak self] in
+            guard let self = self else { return }
+            
+            if let baseImage = baseImage {
+                self.frameGate.wait()
+                guard self.currentGenerationToken == generationToken else {
+                    self.frameGate.signal()
+                    return
+                }
+                
+                if let cb = self.commandQueue?.makeCommandBuffer() {
+                    let baseID = ObjectIdentifier(baseImage)
+                    if self.cachedBaseID != baseID {
+                        self.context.render(baseImage, to: textures.base, commandBuffer: cb, bounds: fullRect, colorSpace: self.colorSpace)
+                        self.cachedBaseID = baseID
+                    }
+                    if let blit = cb.makeBlitCommandEncoder() {
+                        blit.copy(from: textures.base,
+                                  sourceSlice: 0, sourceLevel: 0, sourceOrigin: .init(x: 0, y: 0, z: 0),
+                                  sourceSize: .init(width: width, height: height, depth: 1),
+                                  to: textures.working,
+                                  destinationSlice: 0, destinationLevel: 0, destinationOrigin: .init(x: 0, y: 0, z: 0))
+                        blit.endEncoding()
+                    }
+                    cb.addCompletedHandler { _ in self.frameGate.signal() }
+                    cb.commit()
+                    if waitForCompletion { 
+                        cb.waitUntilCompleted() 
+                    } else {
+                        self.pendingBuffer = cb
+                    }
+                } else {
+                    self.frameGate.signal()
+                }
             }
             
-            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: viewport)
-            for tile in plan.tiles {
-                let tileRect = tile.renderRect
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality,
-                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
-                                                                       quality: quality,
-                                                                       scale: scale,
-                                                                       operationKey: operationKey,
-                                                                       tile: tile)) {
-                    blit(texture: cached,
-                         to: textures.working,
-                         origin: tileRect.origin,
-                         size: tileRect.size,
-                         commandBuffer: commandBuffer)
-                    continue
+            let target = baseImage == nil ? textures.base : textures.working
+            for batch in batches {
+                self.frameGate.wait()
+                guard self.currentGenerationToken == generationToken else {
+                    self.frameGate.signal()
+                    return
                 }
                 
-                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
-                var shouldRelease = true
-                defer { if shouldRelease { tilePool.release(tileTexture) } }
-                let tileImage = tileProvider(tileRect)
-                let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
-                                                                             y: -tileRect.origin.y))
-                context.render(localImage,
-                               to: tileTexture,
-                               commandBuffer: commandBuffer,
-                               bounds: CGRect(origin: .zero, size: tileRect.size),
-                               colorSpace: colorSpace)
-                blit(texture: tileTexture,
-                     to: textures.working,
-                     origin: tileRect.origin,
-                     size: tileRect.size,
-                     commandBuffer: commandBuffer)
+                guard let cb = self.commandQueue?.makeCommandBuffer() else {
+                    self.frameGate.signal()
+                    return
+                }
                 
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality {
-                    let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                    cache.insert(texture: tileTexture,
-                                 for: TileResultCache.Key(settingsKey: cacheKey,
-                                                          quality: quality,
-                                                          scale: scale,
-                                                          operationKey: operationKey,
-                                                          tile: tile),
-                                 cost: cost)
-                    shouldRelease = false
+                for tile in batch {
+                    let tileRect = tile.renderRect
+                    if let cache = self.cache(for: quality),
+                       let cacheKey,
+                       let quality,
+                       let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey, quality: quality, scale: scale, operationKey: operationKey, tile: tile)) {
+                        self.blit(texture: cached, to: target, origin: tileRect.origin, size: tileRect.size, commandBuffer: cb)
+                        continue
+                    }
+                    
+                    guard let tileTexture = self.tilePool.acquire(device: device, size: tileRect.size) else { continue }
+                    let tileImage = tileProvider(tileRect)
+                    let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x, y: -tileRect.origin.y))
+                    self.context.render(localImage, to: tileTexture, commandBuffer: cb, bounds: CGRect(origin: .zero, size: tileRect.size), colorSpace: self.colorSpace)
+                    self.blit(texture: tileTexture, to: target, origin: tileRect.origin, size: tileRect.size, commandBuffer: cb)
+                    
+                    if let cache = self.cache(for: quality), let cacheKey, let quality {
+                        let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
+                        cache.insert(texture: tileTexture, for: TileResultCache.Key(settingsKey: cacheKey, quality: quality, scale: scale, operationKey: operationKey, tile: tile), cost: cost)
+                    } else {
+                        self.tilePool.release(tileTexture)
+                    }
+                }
+                
+                cb.addCompletedHandler { _ in self.frameGate.signal() }
+                cb.commit()
+                if waitForCompletion { 
+                    cb.waitUntilCompleted() 
+                } else {
+                    self.pendingBuffer = cb
                 }
             }
-        } else {
-            let plan = tileManager.planExecution(for: CGSize(width: width, height: height), viewport: nil)
-            for tile in plan.tiles {
-                let tileRect = tile.renderRect
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality,
-                   let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey,
-                                                                       quality: quality,
-                                                                       scale: scale,
-                                                                       operationKey: operationKey,
-                                                                       tile: tile)) {
-                    blit(texture: cached,
-                         to: textures.base,
-                         origin: tileRect.origin,
-                         size: tileRect.size,
-                         commandBuffer: commandBuffer)
-                    continue
+            
+            if baseImage == nil {
+                self.frameGate.wait()
+                guard self.currentGenerationToken == generationToken else {
+                    self.frameGate.signal()
+                    return
                 }
-                
-                guard let tileTexture = tilePool.acquire(device: device, size: tileRect.size) else { continue }
-                var shouldRelease = true
-                defer { if shouldRelease { tilePool.release(tileTexture) } }
-                let tileImage = tileProvider(tileRect)
-                let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x,
-                                                                             y: -tileRect.origin.y))
-                context.render(localImage,
-                               to: tileTexture,
-                               commandBuffer: commandBuffer,
-                               bounds: CGRect(origin: .zero, size: tileRect.size),
-                               colorSpace: colorSpace)
-                blit(texture: tileTexture,
-                     to: textures.base,
-                     origin: tileRect.origin,
-                     size: tileRect.size,
-                     commandBuffer: commandBuffer)
-                
-                if let cache = cache(for: quality),
-                   let cacheKey,
-                   let quality {
-                    let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                    cache.insert(texture: tileTexture,
-                                 for: TileResultCache.Key(settingsKey: cacheKey,
-                                                          quality: quality,
-                                                          scale: scale,
-                                                          operationKey: operationKey,
-                                                          tile: tile),
-                                 cost: cost)
-                    shouldRelease = false
+                if let cb = self.commandQueue?.makeCommandBuffer() {
+                    if let blit = cb.makeBlitCommandEncoder() {
+                        blit.copy(from: textures.base,
+                                  sourceSlice: 0, sourceLevel: 0, sourceOrigin: .init(x: 0, y: 0, z: 0),
+                                  sourceSize: .init(width: width, height: height, depth: 1),
+                                  to: textures.working,
+                                  destinationSlice: 0, destinationLevel: 0, destinationOrigin: .init(x: 0, y: 0, z: 0))
+                        blit.endEncoding()
+                    }
+                    cb.addCompletedHandler { _ in self.frameGate.signal() }
+                    cb.commit()
+                    if waitForCompletion { 
+                        cb.waitUntilCompleted() 
+                    } else {
+                        self.pendingBuffer = cb
+                    }
+                } else {
+                    self.frameGate.signal()
                 }
-            }
-            if let blit = commandBuffer.makeBlitCommandEncoder() {
-                blit.copy(from: textures.base,
-                          sourceSlice: 0,
-                          sourceLevel: 0,
-                          sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
-                          sourceSize: MTLSize(width: width, height: height, depth: 1),
-                          to: textures.working,
-                          destinationSlice: 0,
-                          destinationLevel: 0,
-                          destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
-                blit.endEncoding()
             }
         }
         
-        commandBuffer.commit()
         if waitForCompletion {
-            commandBuffer.waitUntilCompleted()
+            work()
         } else {
-            pendingBuffer = commandBuffer
+            submissionQueue.async(execute: work)
         }
         
         guard let outputImage = CIImage(mtlTexture: baseImage == nil ? textures.base : textures.working,
                                         options: [.colorSpace: colorSpace]) else {
             return CIImage.empty()
+        }
+        if baseImage == nil {
+            cachedBaseID = ObjectIdentifier(outputImage)
         }
         return outputImage.cropped(to: fullRect)
     }
