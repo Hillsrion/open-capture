@@ -49,11 +49,17 @@ internal final class TileGPUExecutor {
                            fullSize: fullSize,
                            overlap: overlap,
                            waitForCompletion: waitForCompletion,
-                           cacheKey: cacheKey,
+                           settingsKeyProvider: { _ in cacheKey ?? 0 },
                            quality: quality,
                            scale: scale,
                            operationKey: operationKey,
-                           tileProvider: { image.cropped(to: $0) })
+                           sourceImage: image,
+                           stageProvider: { stage, rect, input in
+                                if stage == .precolor {
+                                    return image.cropped(to: rect)
+                                }
+                                return input
+                           })
     }
     
     func renderTiles(baseImage: CIImage?,
@@ -61,11 +67,12 @@ internal final class TileGPUExecutor {
                      fullSize: CGSize,
                      overlap: Int? = nil,
                      waitForCompletion: Bool = true,
-                     cacheKey: Int? = nil,
+                     settingsKeyProvider: ((TileStage) -> Int)? = nil,
                      quality: IC_ProcessQuality? = nil,
                      scale: CGFloat = 1,
                      operationKey: Int = 0,
-                     tileProvider: @escaping (CGRect) -> CIImage) -> CIImage {
+                     sourceImage: CIImage? = nil,
+                     stageProvider: @escaping (TileStage, CGRect, CIImage) -> CIImage) -> CIImage {
         guard let device = device else { return CIImage.empty() }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
@@ -140,25 +147,51 @@ internal final class TileGPUExecutor {
                 
                 for tile in batch {
                     let tileRect = tile.renderRect
-                    if let cache = self.cache(for: quality),
-                       let cacheKey,
-                       let quality,
-                       let cached = cache.texture(for: TileResultCache.Key(settingsKey: cacheKey, quality: quality, scale: scale, operationKey: operationKey, tile: tile)) {
-                        self.blit(texture: cached, to: target, origin: tileRect.origin, size: tileRect.size, commandBuffer: cb)
-                        continue
+                    var currentTileTexture: MTLTexture? = nil
+                    var currentInputImage: CIImage? = sourceImage?.cropped(to: tileRect)
+                        .transformed(by: CGAffineTransform(translationX: -tileRect.origin.x, y: -tileRect.origin.y))
+                    
+                    let cache = self.cache(for: quality)
+                    
+                    for stage in TileStage.allCases {
+                        let sKey = settingsKeyProvider?(stage) ?? 0
+                        let key = TileResultCache.Key(settingsKey: sKey,
+                                                      quality: quality ?? .display,
+                                                      scale: scale,
+                                                      operationKey: operationKey,
+                                                      tile: tile,
+                                                      stage: stage)
+                        
+                        if let cached = cache?.texture(for: key) {
+                            currentTileTexture = cached
+                            currentInputImage = CIImage(mtlTexture: cached, options: [.colorSpace: self.colorSpace])
+                        } else {
+                            guard let stageTexture = self.tilePool.acquire(device: device, size: tileRect.size) else { break }
+                            let stageInput = currentInputImage ?? CIImage.empty()
+                            let stageOutput = stageProvider(stage, tileRect, stageInput)
+                            
+                            self.context.render(stageOutput,
+                                                to: stageTexture,
+                                                commandBuffer: cb,
+                                                bounds: CGRect(origin: .zero, size: tileRect.size),
+                                                colorSpace: self.colorSpace)
+                            
+                            if let cache = cache, settingsKeyProvider != nil {
+                                let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
+                                cache.insert(texture: stageTexture, for: key, cost: cost)
+                            } else {
+                                if stage == TileStage.allCases.last {
+                                    cb.addCompletedHandler { _ in self.tilePool.release(stageTexture) }
+                                }
+                            }
+                            
+                            currentTileTexture = stageTexture
+                            currentInputImage = CIImage(mtlTexture: stageTexture, options: [.colorSpace: self.colorSpace])
+                        }
                     }
                     
-                    guard let tileTexture = self.tilePool.acquire(device: device, size: tileRect.size) else { continue }
-                    let tileImage = tileProvider(tileRect)
-                    let localImage = tileImage.transformed(by: CGAffineTransform(translationX: -tileRect.origin.x, y: -tileRect.origin.y))
-                    self.context.render(localImage, to: tileTexture, commandBuffer: cb, bounds: CGRect(origin: .zero, size: tileRect.size), colorSpace: self.colorSpace)
-                    self.blit(texture: tileTexture, to: target, origin: tileRect.origin, size: tileRect.size, commandBuffer: cb)
-                    
-                    if let cache = self.cache(for: quality), let cacheKey, let quality {
-                        let cost = TileResultCache.estimateCost(width: Int(tileRect.width), height: Int(tileRect.height))
-                        cache.insert(texture: tileTexture, for: TileResultCache.Key(settingsKey: cacheKey, quality: quality, scale: scale, operationKey: operationKey, tile: tile), cost: cost)
-                    } else {
-                        self.tilePool.release(tileTexture)
+                    if let finalTexture = currentTileTexture {
+                        self.blit(texture: finalTexture, to: target, origin: tileRect.origin, size: tileRect.size, commandBuffer: cb)
                     }
                 }
                 

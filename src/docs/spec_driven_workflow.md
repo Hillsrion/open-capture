@@ -32,18 +32,15 @@ Ce workflow définit la méthodologie de reconstruction de Capture One 16.7, pil
 3. **Validation Locale** : Build (`swift build`) et tests unitaires si applicables.
 4. **Fidelity Sync** : Vérifier la conformité visuelle via `openc1-spec-manager`.
 
-### Phase C : Finalisation
+### Phase C : Finalisation & Revue
 1. **Commits** : Un ou plusieurs commits atomiques incluant l'ID (ex: `feat(engine): [ID-11] implement tile provider logic`).
-2. **Resolution Notes** : Renseigner le champ `Resolution Notes` dans Notion.
-3. **Notion Sync** : Passer le statut à `Resolved` une fois le ticket complété.
-4. **Next Step** : Demander la validation finale du ticket avant de passer au suivant.
-5. **Registry Update** : Mettre à jour l'historique des features dans `src/docs/feature_history.md`.
-
-### Phase D : Sprint Review
-À la clôture du sprint, une revue par `@codebase_investigator` est déclenchée.
-1. **Fidélité** : Conformité aux headers et symboles originaux.
-2. **Qualité technique** : Utilisation optimale de Metal/CoreImage.
-3. **Parité avec l'Original** : **L'implémentation est-elle aussi qualitative que l'original sur le scope demandé ?** (Performance, robustesse, propreté de l'architecture).
+2. **Per-Ticket Review** : Appel à `@codebase_investigator` pour évaluer la fidélité et la parité originale.
+    - *Fast-Fix* : Correction immédiate des défauts mineurs remontés.
+    - *Heavy-Fix* : Création de tickets correctifs si refonte majeure nécessaire.
+3. **Resolution Notes** : Renseigner le champ `Resolution Notes` dans Notion.
+4. **Notion Sync** : Passer le statut à `Resolved` une fois le ticket complété.
+5. **Next Step** : En Mode Loop, passer au ticket suivant. Demander validation uniquement en fin de Sprint.
+6. **Registry Update** : Mettre à jour l'historique des features dans `src/docs/feature_history.md`.
 
 ## 3. Hiérarchie de Vérité (Source of Truth)
 1. **RawDumps/** : La logique binaire et les structures de données originales (Le "Comment").

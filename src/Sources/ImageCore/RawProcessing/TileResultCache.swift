@@ -2,6 +2,31 @@ import Foundation
 import CoreGraphics
 import Metal
 
+import Foundation
+import CoreGraphics
+import Metal
+
+/// Processing stages for tile-level caching.
+public enum TileStage: String, Hashable, CaseIterable {
+    case precolor
+    case lut
+    case local
+    case nr
+}
+
+/// Statistics for cache performance tracking.
+public struct CacheStats {
+    public var hits: [TileStage: Int] = [:]
+    public var misses: [TileStage: Int] = [:]
+    
+    public init() {
+        for stage in TileStage.allCases {
+            hits[stage] = 0
+            misses[stage] = 0
+        }
+    }
+}
+
 /// Tile-level GPU cache used to avoid re-rendering tiles during interactive updates.
 internal final class TileResultCache {
     struct Key: Hashable {
@@ -10,6 +35,7 @@ internal final class TileResultCache {
         let scale: CGFloat
         let operationKey: Int
         let tile: TileRegion
+        let stage: TileStage
     }
     
     private struct Entry {
@@ -22,6 +48,7 @@ internal final class TileResultCache {
     private var entries: [Key: Entry] = [:]
     private var lru: [Key] = []
     private var currentBytes: Int = 0
+    private var stats = CacheStats()
     
     private var maxBytes: Int
     private var maxItems: Int
@@ -33,9 +60,14 @@ internal final class TileResultCache {
     
     func texture(for key: Key) -> MTLTexture? {
         queue.sync {
-            guard let entry = entries[key] else { return nil }
-            touch(key)
-            return entry.texture
+            if let entry = entries[key] {
+                stats.hits[key.stage, default: 0] += 1
+                touch(key)
+                return entry.texture
+            } else {
+                stats.misses[key.stage, default: 0] += 1
+                return nil
+            }
         }
     }
     
@@ -56,7 +88,38 @@ internal final class TileResultCache {
             entries.removeAll()
             lru.removeAll()
             currentBytes = 0
+            stats = CacheStats()
         }
+    }
+
+    func invalidate(settingsKey: Int, from stage: TileStage) {
+        queue.sync {
+            let stagesToInvalidate = TileStage.allCases.filter { s in
+                // Logic: invalidate stages that come after (or are) the affected stage
+                // This assumes a fixed order: precolor -> lut -> local -> nr
+                let order: [TileStage] = [.precolor, .lut, .local, .nr]
+                guard let affectedIndex = order.firstIndex(of: stage),
+                      let currentIndex = order.firstIndex(of: s) else { return false }
+                return currentIndex >= affectedIndex
+            }
+            
+            let keysToRemove = entries.keys.filter { 
+                $0.settingsKey == settingsKey && stagesToInvalidate.contains($0.stage)
+            }
+            
+            for key in keysToRemove {
+                if let removed = entries.removeValue(forKey: key) {
+                    currentBytes -= removed.cost
+                    if let index = lru.firstIndex(of: key) {
+                        lru.remove(at: index)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getStats() -> CacheStats {
+        queue.sync { stats }
     }
     
     func usageBytes() -> Int {

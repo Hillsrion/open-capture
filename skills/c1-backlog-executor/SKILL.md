@@ -37,17 +37,14 @@ This skill defines the methodology for high-fidelity reconstruction of Capture O
 ## 5. Post-Action & Synchronization
 - **Atomic Commits**: You can perform multiple commits for a single large ticket. Every commit MUST include the Ticket ID.
   - **Format**: `<type>(<scope>): [ID-<number>] <description>` (e.g., `feat(ui/engine): [ID-11] implement auto-keystone line detection`).
+- **Ticket Review**: 
+  - Immediately after the implementation builds successfully, invoke `@codebase_investigator` to review the code against Capture One 16.7 fidelity and pro-level quality standards.
+  - **Lightweight Fixes**: If the review finds minor issues (e.g., synchronous blocking, simple math errors), apply the fixes immediately and commit them.
+  - **Heavy Corrections**: If the review uncovers deep architectural flaws, create a corrective ticket using the `c1-ticket-creator` skill and ask the user for guidance.
 - **Notion Update**: 
-  - Set the ticket status to `Resolved` only after the final implementation and build.
-  - **Resolution Notes**: You MUST update the `Resolution Notes` property in Notion with a summary of the changes (typically a concatenation of your commit descriptions).
-- **Next Loop**: Re-query the sprint backlog for the next `Not started` item.
-
-## 6. Sprint Review Phase
-Once a sprint is complete, invoke `@codebase_investigator` for a deep review.
-**Review Criteria**:
-- **Fidelity**: Does it match C1 16.7 logic/symbols?
-- **Quality**: Is it idiomatic, robust, and performant?
-- **Comparison**: **Is it as good as the original on the requested scope?** Evaluate if the code reflects the engineering standards of a high-end commercial imaging application.
+  - Set the ticket status to `Resolved` only after the final implementation, review, and potential lightweight fixes.
+  - **Resolution Notes**: You MUST update the `Resolution Notes` property in Notion with a summary of the changes.
+- **Next Loop**: In Loop Mode, proceed to the next ticket automatically. Seek user validation ONLY at the very end of the sprint or loop scope.
 
 ## Reference Paths
 - **Decompiled Headers**: `RawDumps/Headers/`

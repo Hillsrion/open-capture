@@ -67,7 +67,7 @@ public class RawImageEngine {
         }
         
         func process(settings: IC_ProcessSettings, isLiveDrag: Bool, viewport: CGRect?) -> CIImage {
-            processQueue.sync {
+            processQueue.sync { () -> CIImage in
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
                 let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
                 let canTile = canTileProcess(settings: settings, quality: quality)
@@ -99,6 +99,15 @@ public class RawImageEngine {
                 let overlap = Int(round(CGFloat(overlapPixels(for: settings)) * displayScale))
                 let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale, operationKey: operationKey)
 
+                let applyStage: (TileStage, [ImageOperation], CIImage) -> CIImage = { stage, chain, input in
+                    let stageOps = self.operations(for: stage, in: chain)
+                    var current = input
+                    for op in stageOps {
+                        current = op.execute(input: current, settings: settings, parameters: parameters)
+                    }
+                    return current
+                }
+
                 if isLiveDrag, let viewport,
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     let base = displayBaseImage(scale: displayScale)
@@ -108,17 +117,25 @@ public class RawImageEngine {
                                                            fullSize: extent.size,
                                                            overlap: overlap,
                                                            waitForCompletion: false,
-                                                           cacheKey: settingsKey,
+                                                           settingsKeyProvider: { _ in settingsKey },
                                                            quality: quality,
                                                            scale: displayScale,
                                                            operationKey: operationKey,
-                                                           tileProvider: { rect in
+                                                           sourceImage: sourceForTiles,
+                                                           stageProvider: { stage, rect, input in
                             let transform = self.transformForTile(rect: rect, extent: extent.size, settings: settings)
                             let sourceRect = rect.applying(transform)
-                            let tileInput = sourceForTiles.cropped(to: sourceRect)
-                            return applyChain(tileInput)
+                            let stageInput = (stage == .precolor) ? sourceForTiles.cropped(to: sourceRect) : input
+                            return applyStage(stage, chain, stageInput)
                         })
                     } else {
+                        let applyChain: (CIImage) -> CIImage = { input in
+                            var current = input
+                            for operation in chain {
+                                current = operation.execute(input: current, settings: settings, parameters: parameters)
+                            }
+                            return current
+                        }
                         let fullProcessed = applyChain(sourceForTiles)
                         return displayExecutor.render(image: fullProcessed,
                                                       baseImage: base,
@@ -140,17 +157,25 @@ public class RawImageEngine {
                                                            viewport: nil,
                                                            fullSize: extent.size,
                                                            overlap: overlap,
-                                                           cacheKey: settingsKey,
+                                                           settingsKeyProvider: { _ in settingsKey },
                                                            quality: quality,
                                                            scale: displayScale,
                                                            operationKey: operationKey,
-                                                           tileProvider: { rect in
+                                                           sourceImage: sourceForTiles,
+                                                           stageProvider: { stage, rect, input in
                         let transform = self.transformForTile(rect: rect, extent: extent.size, settings: settings)
                         let sourceRect = rect.applying(transform)
-                        let tileInput = sourceForTiles.cropped(to: sourceRect)
-                        return applyChain(tileInput)
+                        let stageInput = (stage == .precolor) ? sourceForTiles.cropped(to: sourceRect) : input
+                        return applyStage(stage, chain, stageInput)
                     })
                 } else {
+                    let applyChain: (CIImage) -> CIImage = { input in
+                        var current = input
+                        for operation in chain {
+                            current = operation.execute(input: current, settings: settings, parameters: parameters)
+                        }
+                        return current
+                    }
                     let fullProcessed = applyChain(sourceForTiles)
                     finalImage = renderExecutor.render(image: fullProcessed,
                                                        baseImage: nil,
@@ -168,6 +193,34 @@ public class RawImageEngine {
                     displayBaseCache = nil
                 }
                 return finalImage
+            }
+        }
+
+        private func operations(for stage: TileStage, in chain: [ImageOperation]) -> [ImageOperation] {
+            switch stage {
+            case .precolor:
+                return chain.filter { 
+                    $0 is ExposureOperation || 
+                    $0 is WhiteBalanceOperation || 
+                    $0 is ICCInputOperation || 
+                    $0 is FilmCurveOperation || 
+                    $0 is GeometryOperation || 
+                    $0 is ColorControlsOperation 
+                }
+            case .lut:
+                return chain.filter { 
+                    $0 is ColorLUTOperation || 
+                    $0 is ColorGradingOperation || 
+                    $0 is HDROperation 
+                }
+            case .local:
+                return chain.filter { $0 is LocalAdjustmentsOperation }
+            case .nr:
+                return chain.filter { 
+                    $0 is NoiseReductionOperation || 
+                    $0 is SharpenOperation || 
+                    $0 is ICCOutputOperation 
+                }
             }
         }
 
