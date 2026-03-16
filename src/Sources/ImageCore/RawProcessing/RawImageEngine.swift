@@ -85,7 +85,8 @@ public class RawImageEngine {
                                                baseImage: base,
                                                viewport: viewportPixels,
                                                fullSize: extent.size,
-                                               overlap: overlap)
+                                               overlap: overlap,
+                                               waitForCompletion: false)
                 }
 
                 let finalImage = tileExecutor.render(image: output,

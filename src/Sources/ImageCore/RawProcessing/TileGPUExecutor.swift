@@ -12,6 +12,7 @@ internal final class TileGPUExecutor {
     private var workingTexture: MTLTexture?
     private var cachedSize: CGSize = .zero
     private var cachedBaseID: ObjectIdentifier?
+    private var pendingBuffer: MTLCommandBuffer?
     
     init(context: CIContext) {
         self.context = context
@@ -23,7 +24,8 @@ internal final class TileGPUExecutor {
                 baseImage: CIImage?,
                 viewport: CGRect?,
                 fullSize: CGSize,
-                overlap: Int? = nil) -> CIImage {
+                overlap: Int? = nil,
+                waitForCompletion: Bool = true) -> CIImage {
         guard let device = device else { return image }
         if let overlap = overlap { tileManager.tileOverlap = overlap }
         let width = max(1, Int(fullSize.width.rounded(.up)))
@@ -31,6 +33,10 @@ internal final class TileGPUExecutor {
         
         guard let textures = ensureTextures(device: device, width: width, height: height) else { return image }
         
+        if waitForCompletion {
+            pendingBuffer?.waitUntilCompleted()
+            pendingBuffer = nil
+        }
         guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return image }
         
         let fullRect = CGRect(origin: .zero, size: CGSize(width: width, height: height))
@@ -93,7 +99,11 @@ internal final class TileGPUExecutor {
         }
         
         commandBuffer.commit()
-        commandBuffer.waitUntilCompleted()
+        if waitForCompletion {
+            commandBuffer.waitUntilCompleted()
+        } else {
+            pendingBuffer = commandBuffer
+        }
         
         if baseImage == nil {
             guard let outputImage = CIImage(mtlTexture: textures.base, options: [.colorSpace: colorSpace]) else {
