@@ -67,17 +67,26 @@ public class RawImageEngine {
             processQueue.sync {
                 let quality: IC_ProcessQuality = isLiveDrag ? .display : .render
                 let displayScale = isLiveDrag ? displayScaleFactor(for: viewport) : 1
+                let canTileProcess = isLiveDrag && !(settings.flipHorizontal || settings.flipVertical)
                 let parameters = SImageOperationAllParameters(settings: settings,
                                                               quality: quality,
                                                               isInteractive: isLiveDrag)
                 let chain = chainBuilder.buildChain(parameters)
-                var output = sourceImage
-                if displayScale < 1 {
-                    output = output.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
+                let sourceForTiles = displayScale < 1
+                    ? sourceImage.transformed(by: CGAffineTransform(scaleX: displayScale, y: displayScale))
+                    : sourceImage
+                var output = sourceForTiles
+                
+                let applyChain: (CIImage) -> CIImage = { input in
+                    var current = input
+                    for operation in chain {
+                        current = operation.execute(input: current, settings: settings)
+                    }
+                    return current
                 }
                 
-                for operation in chain {
-                    output = operation.execute(input: output, settings: settings)
+                if !canTileProcess {
+                    output = applyChain(output)
                 }
 
                 let extent = output.extent
@@ -88,17 +97,35 @@ public class RawImageEngine {
                    let viewportPixels = pixelViewport(from: viewport, extent: extent) {
                     let base = displayBaseImage(scale: displayScale)
                     let settingsKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
-                    return tileExecutor.render(image: output,
-                                               baseImage: base,
-                                               viewport: viewportPixels,
-                                               fullSize: extent.size,
-                                               overlap: overlap,
-                                               waitForCompletion: false,
-                                               cacheKey: settingsKey,
-                                               quality: quality,
-                                               scale: displayScale)
+                    if canTileProcess {
+                        return tileExecutor.renderTiles(baseImage: base,
+                                                        viewport: viewportPixels,
+                                                        fullSize: extent.size,
+                                                        overlap: overlap,
+                                                        waitForCompletion: false,
+                                                        cacheKey: settingsKey,
+                                                        quality: quality,
+                                                        scale: displayScale,
+                                                        tileProvider: { rect in
+                            let tileInput = sourceForTiles.cropped(to: rect)
+                            return applyChain(tileInput)
+                        })
+                    } else {
+                        return tileExecutor.render(image: output,
+                                                   baseImage: base,
+                                                   viewport: viewportPixels,
+                                                   fullSize: extent.size,
+                                                   overlap: overlap,
+                                                   waitForCompletion: false,
+                                                   cacheKey: settingsKey,
+                                                   quality: quality,
+                                                   scale: displayScale)
+                    }
                 }
 
+                if canTileProcess {
+                    output = applyChain(output)
+                }
                 let renderKey = settingsCacheKey(for: settings, quality: quality, scale: displayScale)
                 let finalImage = tileExecutor.render(image: output,
                                                      baseImage: nil,
