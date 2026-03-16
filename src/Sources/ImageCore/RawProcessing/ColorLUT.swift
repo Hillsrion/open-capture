@@ -38,6 +38,27 @@ internal struct ComputeLUTParams {
     var highlight: ColorBalanceValue
     var master: ColorBalanceValue
     
+    struct ColorCorrection {
+        var hueRotation: Float
+        var saturationChange: Float
+        var lightnessChange: Float
+        var lowHue: Float
+        var highHue: Float
+        var lowSaturation: Float
+        var highSaturation: Float
+        var homogeneityHue: Float
+        var homogeneitySaturation: Float
+        var homogeneityLightness: Float
+    }
+    
+    var correctionCount: Int32
+    var corrections: (
+        ColorCorrection, ColorCorrection, ColorCorrection, ColorCorrection,
+        ColorCorrection, ColorCorrection, ColorCorrection, ColorCorrection,
+        ColorCorrection, ColorCorrection, ColorCorrection, ColorCorrection,
+        ColorCorrection, ColorCorrection, ColorCorrection, ColorCorrection
+    )
+    
     init(settings: IC_ProcessSettings) {
         self.exposure = settings.exposure
         self.contrast = settings.contrast
@@ -47,6 +68,35 @@ internal struct ComputeLUTParams {
         self.midtone = ColorBalanceValue(settings.colorBalance.midtone)
         self.highlight = ColorBalanceValue(settings.colorBalance.highlight)
         self.master = ColorBalanceValue(settings.colorBalance.master)
+        
+        let list = settings.colorCorrectionList
+        self.correctionCount = Int32(min(list.count, 16))
+        
+        let emptyCorr = ColorCorrection(hueRotation: 0, saturationChange: 0, lightnessChange: 0, lowHue: 0, highHue: 0, lowSaturation: 0, highSaturation: 0, homogeneityHue: 0, homogeneitySaturation: 0, homogeneityLightness: 0)
+        var corrs = [emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr, emptyCorr]
+        
+        for i in 0..<Int(self.correctionCount) {
+            let c = list.corrections[i]
+            corrs[i] = ColorCorrection(
+                hueRotation: Float(c.hueRotation),
+                saturationChange: Float(c.saturationChange),
+                lightnessChange: Float(c.lightnessChange),
+                lowHue: Float(c.lowHue),
+                highHue: Float(c.highHue),
+                lowSaturation: Float(c.lowSaturation),
+                highSaturation: Float(c.highSaturation),
+                homogeneityHue: Float(c.homogeneityHue),
+                homogeneitySaturation: Float(c.homogeneitySaturation),
+                homogeneityLightness: Float(c.homogeneityLightness)
+            )
+        }
+        
+        self.corrections = (
+            corrs[0], corrs[1], corrs[2], corrs[3],
+            corrs[4], corrs[5], corrs[6], corrs[7],
+            corrs[8], corrs[9], corrs[10], corrs[11],
+            corrs[12], corrs[13], corrs[14], corrs[15]
+        )
     }
 }
 
@@ -152,7 +202,9 @@ internal final class ColorLUTOperation: ImageOperation {
     private let filter = CIFilter(name: "CIColorCube")!
     
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
-        let lut = ComputeLUTCache.shared.lut(for: settings, parameters: parameters)
+        guard let lut = ComputeLUTCache.shared.lut(for: settings, parameters: parameters) else {
+            return input
+        }
         filter.setValue(input, forKey: kCIInputImageKey)
         filter.setValue(lut.dimension, forKey: "inputCubeDimension")
         filter.setValue(lut.data, forKey: "inputCubeData")
@@ -189,7 +241,7 @@ internal final class ComputeLUTCache {
         self.maxItems = maxItems
     }
     
-    func lut(for settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> ColorLUT {
+    func lut(for settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> ColorLUT? {
         let key = Key(lutKey: LUTKey(settings: settings),
                       quality: parameters.quality,
                       viewportBucket: viewportBucket(for: parameters.viewport, settings: settings))
@@ -211,19 +263,31 @@ internal final class ComputeLUTCache {
         }
         
         let lut: ColorLUT
-        if let metalLUT = metalBuilder?.build(settings: settings) {
-            lut = metalLUT
+        if let metalBuilder = metalBuilder {
+            // Async GPU generation
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                metalBuilder.buildAsync(settings: settings) { metalLUT in
+                    guard let self = self, let finalLUT = metalLUT else { return }
+                    self.queue.sync {
+                        let now = Date()
+                        self.entries[key] = Entry(lut: finalLUT, timestamp: now, lastAccess: now, accessCount: 1)
+                        self.touch(key)
+                        self.enforceLimits()
+                        // In a real app, we would post a Notification here to trigger a UI refresh
+                    }
+                }
+            }
+            return nil // Return nil immediately so the render pipeline doesn't block
         } else {
             lut = builder.build(settings: settings)
+            queue.sync {
+                let now = Date()
+                entries[key] = Entry(lut: lut, timestamp: now, lastAccess: now, accessCount: 1)
+                touch(key)
+                enforceLimits()
+            }
+            return lut
         }
-        
-        queue.sync {
-            let now = Date()
-            entries[key] = Entry(lut: lut, timestamp: now, lastAccess: now, accessCount: 1)
-            touch(key)
-            enforceLimits()
-        }
-        return lut
     }
     
     private func viewportBucket(for rect: CGRect?, settings: IC_ProcessSettings) -> Int {
@@ -410,6 +474,50 @@ internal final class MetalColorLUTBuilder {
             print("[MetalColorLUTBuilder] Pipeline setup failed: \(error)")
             return nil
         }
+    }
+    
+    func buildAsync(settings: IC_ProcessSettings, completion: @escaping (ColorLUT?) -> Void) {
+        let params = ComputeLUTParams(settings: settings)
+        
+        guard let outTexture = create3DTexture(),
+              let curveX = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveX.points, count: Int(settings.gradationCurves.curveX.count))),
+              let curveL = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveL.points, count: Int(settings.gradationCurves.curveL.count))),
+              let curveR = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveR.points, count: Int(settings.gradationCurves.curveR.count))),
+              let curveG = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveG.points, count: Int(settings.gradationCurves.curveG.count))),
+              let curveB = createCurveTexture(CurvesKernels.generateLUT(from: settings.gradationCurves.curveB.points, count: Int(settings.gradationCurves.curveB.count))),
+              let commandBuffer = commandQueue.makeCommandBuffer(),
+              let encoder = commandBuffer.makeComputeCommandEncoder() else {
+            completion(nil)
+            return
+        }
+        
+        encoder.setComputePipelineState(pipelineState)
+        encoder.setTexture(outTexture, index: 0)
+        
+        var paramsCopy = params
+        encoder.setBytes(&paramsCopy, length: MemoryLayout<ComputeLUTParams>.size, index: 0)
+        
+        encoder.setTexture(curveX, index: 1)
+        encoder.setTexture(curveL, index: 2)
+        encoder.setTexture(curveR, index: 3)
+        encoder.setTexture(curveG, index: 4)
+        encoder.setTexture(curveB, index: 5)
+        
+        let threadgroupSize = MTLSize(width: 8, height: 8, depth: 8)
+        let threadgroups = MTLSize(width: (dimension + threadgroupSize.width - 1) / threadgroupSize.width,
+                                   height: (dimension + threadgroupSize.height - 1) / threadgroupSize.height,
+                                   depth: (dimension + threadgroupSize.depth - 1) / threadgroupSize.depth)
+        
+        encoder.dispatchThreadgroups(threadgroups, threadsPerThreadgroup: threadgroupSize)
+        encoder.endEncoding()
+        
+        commandBuffer.addCompletedHandler { [weak self] _ in
+            guard let self = self else { return }
+            let lut = self.readBack(texture: outTexture)
+            completion(lut)
+        }
+        
+        commandBuffer.commit()
     }
     
     func build(settings: IC_ProcessSettings) -> ColorLUT? {
