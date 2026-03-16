@@ -1,6 +1,6 @@
 ---
 name: c1-doc-spec-extractor
-description: Analyzes Capture One User Guide (online or local specs.html) to extract UI specifications, button placements, options, and commands to deduce features and update the project backlog. Use when the user needs to ensure the reconstructed codebase matches the official documentation's UI layout and functionality.
+description: Analyzes Capture One User Guide (online or local specs.html) to extract UI specifications, button placements, options, and commands to deduce features and update the project backlog (Notion Tickets). Use when the user needs to ensure the reconstructed codebase matches the official documentation's UI layout and functionality.
 ---
 
 # Capture One Documentation Spec Extractor
@@ -25,15 +25,14 @@ Use this when a local `docs_raw/specs.html` containing a dump of the User Guide 
 ### 3. Analysis and Notion Integration
 1.  **Deduce Features**: Map extracted UI items to functional commands and underlying logic (e.g., "Reset button" -> `resetCommand`).
 2.  **Codebase Parity**: Use `grep_search` on `RawDumps/` to find matching symbols/classes (e.g., `AICropInspectorTool`).
-3.  **Ticket Generation (Notion)**: Create entries in the "Open C1 Backlog" database.
-    -   **Title**: Clear feature name.
-    -   **TaskID**: Follow `UI-204-X` or `AI-204-X` pattern.
-    -   **ACTUAL RAW EXA TEXT**: You MUST include a section with the literal, unedited text retrieved by Exa for the specific feature. DO NOT summarize or rewrite this part.
-    -   **Implementation Plan**: Add a detailed Markdown plan in the page body covering:
-        -   Reference Management.
-        -   Engine Integration (ImageCore).
-        -   UI Components (SwiftUI).
-        -   High-Fidelity Visuals.
+3.  **Ticket Generation (Notion)**: Create entries in the **Tickets** database (ID: `b970db11-ba37-8351-bf14-01025baf506e`).
+    -   **Issue**: Clear feature name.
+    -   **Type**: Set to `Feature Request` or `Improvement`.
+    -   **Priority**: Based on documentation prominence.
+    -   **Sprints**: Link to the relevant active Sprint (ID: `6360db11-ba37-82bb-bc58-81e475e8da56`).
+    -   **Page Content**: Include the mandatory **Demande** and **Plan** sections.
+        -   **Demande**: Include the literal, unedited text retrieved by Exa/local parser for the specific feature.
+        -   **Plan**: Detailed Markdown plan covering Engine Integration, UI Components, and Visual Fidelity.
 
 ## Extraction Template
 
