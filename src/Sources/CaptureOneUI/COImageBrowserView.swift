@@ -355,8 +355,6 @@ struct COBrowserListView: View {
         )) {
             TableColumn("Name") { image in
                 HStack(spacing: 6) {
-                    colorSquare(for: image.primaryVariant?.colorTag ?? .none, size: 10)
-                    
                     if editingImageID == image.imageUUID {
                         TextField("", text: $editedName, onCommit: {
                             image.renameFile(to: editedName)
@@ -370,6 +368,26 @@ struct COBrowserListView: View {
                                 editedName = image.displayName
                                 editingImageID = image.imageUUID
                             }
+                    }
+                    
+                    Spacer()
+                    
+                    // Interactive Color Square on the right
+                    Button(action: { pickingColorImageID = image.imageUUID }) {
+                        colorSquare(for: image.primaryVariant?.colorTag ?? .none, size: 10)
+                    }
+                    .buttonStyle(.plain)
+                    .popover(isPresented: Binding(
+                        get: { pickingColorImageID == image.imageUUID },
+                        set: { if !$0 { pickingColorImageID = nil } }
+                    )) {
+                        if let variant = image.primaryVariant {
+                            POColorTagPicker(selectedTag: Binding(
+                                get: { variant.colorTag },
+                                set: { variant.colorTag = $0; pickingColorImageID = nil }
+                            ))
+                            .padding(8)
+                        }
                     }
                 }
             }
@@ -481,8 +499,6 @@ public struct COImageBrowserCell: View {
             
             if showLabel {
                 HStack(spacing: 4) {
-                    colorSquare(for: image.primaryVariant?.colorTag ?? .none)
-                    
                     if isEditingName {
                         TextField("", text: $editedName, onCommit: {
                             image.renameFile(to: editedName)
@@ -504,6 +520,23 @@ public struct COImageBrowserCell: View {
                                 editedName = image.displayName
                                 isEditingName = true
                             }
+                    }
+                    
+                    Spacer(minLength: 0)
+                    
+                    // Interactive Color Square on the right
+                    Button(action: { showingColorPicker = true }) {
+                        colorSquare(for: image.primaryVariant?.colorTag ?? .none)
+                    }
+                    .buttonStyle(.plain)
+                    .popover(isPresented: $showingColorPicker) {
+                        if let variant = image.primaryVariant {
+                            POColorTagPicker(selectedTag: Binding(
+                                get: { variant.colorTag },
+                                set: { variant.colorTag = $0; showingColorPicker = false }
+                            ))
+                            .padding(8)
+                        }
                     }
                 }
                 .frame(maxWidth: useFullWidth ? .infinity : size)
@@ -530,15 +563,6 @@ public struct COImageBrowserCell: View {
             }
             .buttonStyle(.plain)
             .frame(width: 20, height: 30) // Clickable area on the top-left
-            .popover(isPresented: $showingColorPicker) {
-                if let variant = image.primaryVariant {
-                    POColorTagPicker(selectedTag: Binding(
-                        get: { variant.colorTag },
-                        set: { variant.colorTag = $0; showingColorPicker = false }
-                    ))
-                    .padding(8)
-                }
-            }
         }
     }
     
