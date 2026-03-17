@@ -85,94 +85,118 @@ public struct COImageBrowserView: View {
     
     // MARK: - Toolbar
     private var browserToolbar: some View {
-        HStack(spacing: 12) {
-            // Mode Switcher
-            Picker("", selection: Binding(
-                get: { workspaceManager.activeWorkspace.chromeState.browserMode },
-                set: { workspaceManager.activeWorkspace.chromeState.browserMode = $0; workspaceManager.saveWorkspace() }
-            )) {
-                Image(systemName: "square.grid.3x3.fill").tag(0)
-                Image(systemName: "rectangle.grid.1x2.fill").tag(1)
-                Image(systemName: "list.bullet").tag(2)
-            }
-            .pickerStyle(.segmented)
-            .frame(width: 100)
-            .scaleEffect(0.8)
-            
-            // Search Field (WF-501)
-            HStack {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 10))
-                    .foregroundColor(.gray)
-                TextField("Search", text: $searchManager.criteria.searchText)
-                    .font(.system(size: 11))
-                    .textFieldStyle(.plain)
-                    .frame(width: 120)
-                
-                if !searchManager.criteria.searchText.isEmpty {
-                    Button(action: { searchManager.criteria.searchText = "" }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.system(size: 10))
-                            .foregroundColor(.gray)
+        GeometryReader { geometry in
+            HStack(spacing: geometry.size.width > 400 ? 12 : 4) {
+                // Mode Switcher - Hide if very narrow
+                if geometry.size.width > 250 {
+                    Picker("", selection: Binding(
+                        get: { workspaceManager.activeWorkspace.chromeState.browserMode },
+                        set: { workspaceManager.activeWorkspace.chromeState.browserMode = $0; workspaceManager.saveWorkspace() }
+                    )) {
+                        Image(systemName: "square.grid.3x3.fill").tag(0)
+                        Image(systemName: "rectangle.grid.1x2.fill").tag(1)
+                        Image(systemName: "list.bullet").tag(2)
                     }
-                    .buttonStyle(.plain)
+                    .pickerStyle(.segmented)
+                    .frame(width: geometry.size.width > 500 ? 100 : 80)
+                    .scaleEffect(0.8)
+                } else {
+                    // Just an icon for current mode if very narrow
+                    Image(systemName: modeIcon(workspaceManager.activeWorkspace.chromeState.browserMode))
+                        .font(.system(size: 12))
+                        .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
+                        .frame(width: 24)
+                }
+                
+                // Search Field (WF-501) - Flexible width
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 10))
+                        .foregroundColor(.gray)
+                    if geometry.size.width > 300 {
+                        TextField("Search", text: $searchManager.criteria.searchText)
+                            .font(.system(size: 11))
+                            .textFieldStyle(.plain)
+                            .frame(maxWidth: 120)
+                    }
+                    
+                    if !searchManager.criteria.searchText.isEmpty {
+                        Button(action: { searchManager.criteria.searchText = "" }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 10))
+                                .foregroundColor(.gray)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(4)
+                .background(Color.white.opacity(0.05))
+                .cornerRadius(4)
+                
+                Spacer(minLength: 0)
+                
+                // Zoom Slider (Only for Grid/Filmstrip) - Hide if narrow
+                if workspaceManager.activeWorkspace.chromeState.browserMode != 2 && geometry.size.width > 350 {
+                    HStack(spacing: 4) {
+                        Image(systemName: "photo").font(.system(size: 8))
+                        Slider(value: $zoomStore.thumbnailSize, in: 80...400)
+                            .frame(width: geometry.size.width > 600 ? 80 : 60)
+                            .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                        Image(systemName: "photo").font(.system(size: 12))
+                    }
+                }
+                
+                // Labels Toggle
+                Button(action: { 
+                    workspaceManager.activeWorkspace.chromeState.browserLabelsShown.toggle()
+                    workspaceManager.saveWorkspace()
+                }) {
+                    Image(systemName: workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? "text.bubble.fill" : "text.bubble")
+                        .font(.system(size: 12))
+                        .foregroundColor(workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? CaptureOneTheme.Colors.activeHighlight : .gray)
+                }
+                .buttonStyle(.plain)
+                
+                // Sort Menu
+                Menu {
+                    Button("Filename") { sortOrder = "filename" }
+                    Button("Rating") { sortOrder = "rating" }
+                    Button("Color Tag") { sortOrder = "colorTag" }
+                    Button("Date") { sortOrder = "date" }
+                } label: {
+                    Image(systemName: "arrow.up.arrow.down")
+                        .font(.system(size: 11))
+                        .foregroundColor(.gray)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
+                .frame(width: 24)
+                
+                // Grouping Menu - Hide if narrow
+                if geometry.size.width > 450 {
+                    Menu {
+                        Button("None") { groupingMode = "none" }
+                        Button("By Date") { groupingMode = "date" }
+                        Button("By Similarity") { groupingMode = "similarity" }
+                    } label: {
+                        Label("Group", systemImage: "rectangle.3.group")
+                            .font(.system(size: 11))
+                    }
+                    .menuStyle(BorderlessButtonMenuStyle())
                 }
             }
-            .padding(4)
-            .background(Color.white.opacity(0.05))
-            .cornerRadius(4)
-            
-            Spacer()
-            
-            // Zoom Slider (Only for Grid/Filmstrip)
-            if workspaceManager.activeWorkspace.chromeState.browserMode != 2 {
-                HStack(spacing: 6) {
-                    Image(systemName: "photo").font(.system(size: 8))
-                    Slider(value: $zoomStore.thumbnailSize, in: 80...400)
-                        .frame(width: 80)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                    Image(systemName: "photo").font(.system(size: 12))
-                }
-            }
-            
-            // Labels Toggle
-            Button(action: { 
-                workspaceManager.activeWorkspace.chromeState.browserLabelsShown.toggle()
-                workspaceManager.saveWorkspace()
-            }) {
-                Image(systemName: workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? "text.bubble.fill" : "text.bubble")
-                    .font(.system(size: 12))
-                    .foregroundColor(workspaceManager.activeWorkspace.chromeState.browserLabelsShown ? CaptureOneTheme.Colors.activeHighlight : .gray)
-            }
-            .buttonStyle(.plain)
-            .help("Show/Hide Labels")
-            
-            // Sort Menu
-            Menu {
-                Button("Filename") { sortOrder = "filename" }
-                Button("Rating") { sortOrder = "rating" }
-                Button("Color Tag") { sortOrder = "colorTag" }
-                Button("Date") { sortOrder = "date" }
-            } label: {
-                Label(sortOrder.capitalized, systemImage: "arrow.up.arrow.down")
-                    .font(.system(size: 11))
-            }
-            .menuStyle(BorderlessButtonMenuStyle())
-            
-            // Grouping Menu (Cull View Feature)
-            Menu {
-                Button("None") { groupingMode = "none" }
-                Button("By Date") { groupingMode = "date" }
-                Button("By Similarity") { groupingMode = "similarity" }
-            } label: {
-                Label("Group: \(groupingMode.capitalized)", systemImage: "rectangle.3.group")
-                    .font(.system(size: 11))
-            }
-            .menuStyle(BorderlessButtonMenuStyle())
+            .padding(.horizontal, 8)
+            .frame(height: 32)
         }
-        .padding(.horizontal, 10)
         .frame(height: 32)
         .background(CaptureOneTheme.Colors.panelBackground)
+    }
+
+    private func modeIcon(_ mode: Int) -> String {
+        switch mode {
+        case 0: return "square.grid.3x3.fill"
+        case 1: return "rectangle.grid.1x2.fill"
+        default: return "list.bullet"
+        }
     }
     
     private var browserFooter: some View {
@@ -203,17 +227,19 @@ struct COBrowserGridView: View {
     @ObservedObject var workspaceManager = WorkspaceManager.shared
     
     private var columns: [GridItem] {
-        [GridItem(.adaptive(minimum: CGFloat(zoomStore.thumbnailSize), maximum: CGFloat(zoomStore.thumbnailSize) * 1.5), spacing: 15)]
+        [GridItem(.adaptive(minimum: CGFloat(zoomStore.thumbnailSize), maximum: CGFloat(zoomStore.thumbnailSize) * 1.2), spacing: 15)]
     }
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 25) {
-                ForEach(images, id: \.imageUUID) { image in
-                    cell(for: image)
+        GeometryReader { geometry in
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 25) {
+                    ForEach(images, id: \.imageUUID) { image in
+                        cell(for: image)
+                    }
                 }
+                .padding(geometry.size.width > 300 ? 20 : 10)
             }
-            .padding(20)
         }
     }
     
@@ -226,7 +252,8 @@ struct COBrowserGridView: View {
             isSelected: isSelected,
             isPrimary: isPrimary,
             size: CGFloat(zoomStore.thumbnailSize),
-            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown
+            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown,
+            useFullWidth: true // New parameter to allow filling the column
         )
         .onTapGesture { handleTap(on: image) }
     }
@@ -336,6 +363,7 @@ public struct COImageBrowserCell: View {
     let isPrimary: Bool
     let size: CGFloat
     let showLabel: Bool
+    var useFullWidth: Bool = false
     
     @State private var thumbnail: NSImage?
     
@@ -382,14 +410,15 @@ public struct COImageBrowserCell: View {
                     .position(x: size * 0.8, y: size * 0.2)
                 }
             }
-            .frame(width: size, height: size)
+            .frame(maxWidth: useFullWidth ? .infinity : size)
+            .aspectRatio(1.0, contentMode: .fit)
             
             if showLabel {
                 Text(image.displayName)
                     .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
                     .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
                     .lineLimit(1)
-                    .frame(width: size)
+                    .frame(maxWidth: useFullWidth ? .infinity : size)
             }
         }
         .contentShape(Rectangle())

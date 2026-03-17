@@ -64,7 +64,7 @@ public struct COMTRView: NSViewRepresentable {
 
             // Create a transform that centers and scales the image correctly
             let transform = CGAffineTransform(scaleX: scale, y: scale)
-                .concatenated(CGAffineTransform(translationX: xOffset, y: yOffset))
+                .concatenating(CGAffineTransform(translationX: xOffset, y: yOffset))
 
             let centeredImage = image.transformed(by: transform)
 

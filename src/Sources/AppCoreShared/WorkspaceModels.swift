@@ -164,7 +164,7 @@ public struct WorkspaceChromeState: Codable, Hashable {
     public var toolsWidth: Double = 305.0
     public var browserDisplayState: WorkspaceDisplayState = .shown
     public var browserPosition: WorkspaceBrowserPosition = .portrait
-    public var browserWidth: Double = 200.0
+    public var browserWidth: Double = 300.0
     public var browserHeight: Double = 184.0
     public var browserMode: Int = 0 // 0: Grid, 1: Filmstrip, 2: List
     public var browserLabelsShown: Bool = true
