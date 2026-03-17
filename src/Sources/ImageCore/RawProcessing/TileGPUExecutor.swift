@@ -166,8 +166,15 @@ internal final class TileGPUExecutor {
                         } else {
                             guard let stageTexture = self.tilePool.acquire(device: device, size: tileRect.size) else { break }
                             let stageInput = currentInputImage ?? CIImage.empty()
-                            let stageOutput = stageProvider(stage, tileRect, stageInput)
+                            var stageOutput = stageProvider(stage, tileRect, stageInput)
                             
+                            // CRITICAL: Translate stageOutput to origin before rendering to stageTexture.
+                            // Core Image renders into the texture's bounds (0, 0, w, h) using the image's own coordinate space.
+                            // If stageOutput.extent.origin is NOT (0,0), we will render the wrong region.
+                            if stageOutput.extent.origin != .zero {
+                                stageOutput = stageOutput.transformed(by: CGAffineTransform(translationX: -stageOutput.extent.origin.x, y: -stageOutput.extent.origin.y))
+                            }
+
                             self.context.render(stageOutput,
                                                 to: stageTexture,
                                                 commandBuffer: cb,
@@ -261,6 +268,16 @@ internal final class TileGPUExecutor {
         descriptor.usage = [.shaderRead, .shaderWrite, .renderTarget]
         guard let base = device.makeTexture(descriptor: descriptor),
               let working = device.makeTexture(descriptor: descriptor) else { return nil }
+        
+        // Clear textures to black to avoid garbage "colored squares" if rendering fails or tiles are skipped.
+        if let cb = commandQueue?.makeCommandBuffer() {
+            let black = CIImage(color: .black).cropped(to: CGRect(x: 0, y: 0, width: width, height: height))
+            context.render(black, to: base, commandBuffer: cb, bounds: black.extent, colorSpace: colorSpace)
+            context.render(black, to: working, commandBuffer: cb, bounds: black.extent, colorSpace: colorSpace)
+            cb.commit()
+            cb.waitUntilCompleted()
+        }
+
         baseTexture = base
         workingTexture = working
         cachedSize = CGSize(width: width, height: height)

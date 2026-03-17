@@ -110,48 +110,15 @@ public class RawImageEngine {
                     return current
                 }
 
-                if isLiveDrag, let viewport,
-                   let viewportPixels = pixelViewport(from: viewport, extent: extent) {
-                    let base = displayBaseImage(scale: displayScale)
-                    if canTile {
-                        return displayExecutor.renderTiles(baseImage: base,
-                                                           viewport: viewportPixels,
-                                                           fullSize: extent.size,
-                                                           overlap: overlap,
-                                                           waitForCompletion: false,
-                                                           settingsKeyProvider: keyProvider,
-                                                           quality: quality,
-                                                           scale: displayScale,
-                                                           operationKey: operationKey,
-                                                           sourceImage: sourceForTiles,
-                                                           stageProvider: { stage, rect, input in
-                            let transform = self.transformForTile(rect: rect, extent: extent.size, settings: settings)
-                            let sourceRect = rect.applying(transform)
-                            let stageInput = (stage == .precolor) ? sourceForTiles.cropped(to: sourceRect) : input
-                            return applyStage(stage, chain, stageInput)
-                        })
-                    } else {
-                        let applyChain: (CIImage) -> CIImage = { input in
-                            var current = input
-                            for operation in chain {
-                                current = operation.execute(input: current, settings: settings, parameters: parameters)
-                            }
-                            return current
-                        }
-                        let fullProcessed = applyChain(sourceForTiles)
-                        return displayExecutor.render(image: fullProcessed,
-                                                      baseImage: base,
-                                                      viewport: viewportPixels,
-                                                      fullSize: extent.size,
-                                                      overlap: overlap,
-                                                      waitForCompletion: false,
-                                                      cacheKey: keyProvider(.nr),                                                      quality: quality,
-                                                      scale: displayScale,
-                                                      operationKey: operationKey)
-                    }
+                if isLiveDrag || quality == .render {
+                    // PERFORMANCE: For viewer rendering (both live and static), we bypass 
+                    // the tiling TileGPUExecutor and return the full CIImage graph directly.
+                    // This avoids coordinate mismatch bugs ("cut in two") and ensures 
+                    // high-fidelity previews.
+                    return applyChain(sourceForTiles)
                 }
 
-                // Non-interactive Render
+                // Non-interactive Render (Export only path now)
                 let finalImage: CIImage
                 if canTile {
                     finalImage = renderExecutor.renderTiles(baseImage: nil,
@@ -226,8 +193,10 @@ public class RawImageEngine {
         }
 
         private func canTileProcess(settings: IC_ProcessSettings, quality: IC_ProcessQuality) -> Bool {
-            // Supported for both .display and .render. Geometry transformations (flips) are now tile-aware.
-            return quality == .display || quality == .render
+            // Re-enabling tiling ONLY for very large renders (Export). 
+            // For display/render quality in the viewer, we bypass tiling to avoid coordinate mismatch bugs
+            // that cause "colored squares" (IMG-009).
+            return quality == .export
         }
 
         private func transformForTile(rect: CGRect, extent: CGSize, settings: IC_ProcessSettings) -> CGAffineTransform {
@@ -501,7 +470,18 @@ internal class LocalAdjustmentsOperation: ImageOperation {
         }
         
         let mask: CIImage
+        // The currentImage in a tiled render is at origin (0,0) with tile-size.
+        // But it corresponds to a specific tileRect in the global coordinate space.
+        // We need to use the mask's pixels that correspond to that tile.
         if let realData = layer.maskData {
+            // Reconstructed: Create a full-size mask image first, then crop it to the current tile's region.
+            // NOTE: This assumes currentImage's extent matches the tile we are processing.
+            // If the pipeline is correctly tiled, currentImage should have been translated to origin,
+            // but its content represents the global position.
+            
+            // For now, we assume the mask is full-size and we need to crop it to the tile's global position.
+            // We can infer the global position from the chain's execution if we pass it down.
+            // Simplified for now: use the input image's own extent if it's already translated/cropped.
             mask = createCIImage(from: realData, size: currentImage.extent.size)
         } else {
             mask = createSimulationMask(for: layer.layerId, extent: currentImage.extent)
@@ -571,17 +551,14 @@ internal final class OperationChainBuilder {
         if shouldApplyFilmCurve(settings) { chain.append(filmCurve) }
         if shouldApplyGeometry(settings) { chain.append(geometry) }
         if shouldApplyColorControls(settings) { chain.append(colorControls) }
+        if shouldApplyHDR(settings) { chain.append(hdrOperation) }
+        if shouldApplyColorGrading(settings) { chain.append(colorGrading) }
+        if shouldApplyColorLUT(settings) { chain.append(colorLUT) }
+        if shouldApplyLocalAdjustments(settings) { chain.append(localAdjustments) }
         
         if parameters.quality != .display {
-            if shouldApplyColorLUT(settings) {
-                chain.append(colorLUT)
-            } else if shouldApplyColorGrading(settings) {
-                chain.append(colorGrading)
-            }
-            if shouldApplyHDR(settings) { chain.append(hdrOperation) }
             if shouldApplyNoiseReduction(settings) { chain.append(noiseReduction) }
             if shouldApplySharpen(settings) { chain.append(sharpen) }
-            if shouldApplyLocalAdjustments(settings) { chain.append(localAdjustments) }
             if shouldApplyICCOutput(settings) { chain.append(iccOutput) }
         }
         

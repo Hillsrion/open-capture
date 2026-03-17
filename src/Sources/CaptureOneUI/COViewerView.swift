@@ -7,13 +7,13 @@ import Combine
 /// Based on _TtC10CaptureOne25ViewerDisplayModeSettings and related metadata.
 public struct COViewerView: View {
     
+    let image: ImageBase?
+    @ObservedObject var adjustmentController: AdjustmentToolController
+    
     public init(image: ImageBase?, adjustmentController: AdjustmentToolController? = nil) {
         self.image = image
-        self.adjustmentController = adjustmentController
+        self.adjustmentController = adjustmentController ?? AdjustmentToolController.shared
     }
-    
-    let image: ImageBase?
-    let adjustmentController: AdjustmentToolController?
     @ObservedObject var liveView = LiveViewEngine.shared
     @ObservedObject var commands = AppCommandCenter.shared
     @StateObject private var renderCoalescer = RenderCoalescer()
@@ -35,19 +35,19 @@ public struct COViewerView: View {
                 
                 // MARK: - COViewerBarView (Reconstructed from metadata)
                 COViewerBarView(zoomLevel: Binding(
-                    get: { adjustmentController?.zoomLevel ?? 1.0 },
-                    set: { adjustmentController?.zoomLevel = $0 }
+                    get: { adjustmentController.zoomLevel },
+                    set: { adjustmentController.zoomLevel = $0 }
                 ))
             }
         }
         .onAppear { requestCoalescedRender(forceQuality: .render) }
         .onChange(of: image?.id) { _ in requestCoalescedRender(forceQuality: .render) }
-        .onReceive(
-            Just(adjustmentController)
-                .compactMap { $0?.objectWillChange }
-                .flatMap { $0 }
-        ) { _ in
-            requestCoalescedRender(forceQuality: nil)
+        .onReceive(adjustmentController.objectWillChange) { _ in
+            // objectWillChange fires BEFORE the property is actually updated.
+            // Dispatch to next runloop cycle to ensure we capture the NEW settings.
+            DispatchQueue.main.async {
+                requestCoalescedRender(forceQuality: nil)
+            }
         }
     }
     
@@ -128,19 +128,19 @@ public struct COViewerView: View {
             if let mask = maskImage {
                 Image(nsImage: mask)
                     .resizable()
-                    .scaleEffect(adjustmentController?.zoomLevel ?? 1.0)
+                    .scaleEffect(adjustmentController.zoomLevel)
                     .aspectRatio(contentMode: .fit)
                     .opacity(0.5)
                     .colorMultiply(.red)
             }
             
-            if let active = adjustmentController?.currentVariant?.activeLayer {
+            if let active = adjustmentController.currentVariant?.activeLayer {
                 ForEach(active.repairArrows) { arrow in
                     RepairArrowView(arrow: arrow)
                 }
             }
             
-            if let annotations = adjustmentController?.currentVariant?.annotations {
+            if let annotations = adjustmentController.currentVariant?.annotations {
                 let tool = commands.selectedCursorToolID
                 if tool == "Annotate" || tool == "EraseAnnotation" || tool == "Select" {
                     AnnotationsOverlayView(annotations: annotations)
@@ -149,31 +149,29 @@ public struct COViewerView: View {
             }
             
             if commands.selectedCursorToolID == "DrawLinearGradient" || commands.selectedCursorToolID == "Select" {
-                if let drawingGradient = adjustmentController?.currentLinearGradient {
+                if let drawingGradient = adjustmentController.currentLinearGradient {
                     LinearGradientMaskOverlay(gradient: drawingGradient, viewerSize: size)
-                } else if let savedGradient = adjustmentController?.currentVariant?.activeLayer?.linearGradient {
+                } else if let savedGradient = adjustmentController.currentVariant?.activeLayer?.linearGradient {
                     LinearGradientMaskOverlay(gradient: savedGradient, viewerSize: size)
                 }
             }
             
             if commands.selectedCursorToolID == "DrawRadialGradient" || commands.selectedCursorToolID == "Select" {
-                if let drawingGradient = adjustmentController?.currentRadialGradient {
+                if let drawingGradient = adjustmentController.currentRadialGradient {
                     RadialGradientMaskOverlay(gradient: drawingGradient, viewerSize: size)
-                } else if let savedGradient = adjustmentController?.currentVariant?.activeLayer?.radialGradient {
+                } else if let savedGradient = adjustmentController.currentVariant?.activeLayer?.radialGradient {
                     RadialGradientMaskOverlay(gradient: savedGradient, viewerSize: size)
                 }
             }
             
-            if let points = adjustmentController?.keystonePoints {
+            if let points = adjustmentController.keystonePoints {
                 KeystoneOverlayView(points: points)
             }
             
-            if let controller = adjustmentController {
-                CompositionOverlayView(controller: controller)
-            }
+            CompositionOverlayView(controller: adjustmentController)
             
-            if let controller = adjustmentController, commands.selectedCursorToolID == "Crop" {
-                CropOverlayView(controller: controller, viewerSize: size)
+            if commands.selectedCursorToolID == "Crop" {
+                CropOverlayView(controller: adjustmentController, viewerSize: size)
             }
         }
     }
@@ -203,21 +201,19 @@ public struct COViewerView: View {
     private var viewerContextMenu: some View {
         if commands.selectedCursorToolID == "Heal" || commands.selectedCursorToolID == "Clone" {
             Button("Auto-Pick Source") {
-                if let arrow = adjustmentController?.currentVariant?.activeLayer?.repairArrows.first, let image = image {
+                if let arrow = adjustmentController.currentVariant?.activeLayer?.repairArrows.first, let image = image {
                     _ = RetouchEngine.shared.autoPickSource(for: arrow.destinationPoint, in: image)
                 }
             }
-            Button("Reset Retouching") { adjustmentController?.resetRetouching() }
+            Button("Reset Retouching") { adjustmentController.resetRetouching() }
             Divider()
             Button("Brush Settings...") { print("[UI] Show Brush Settings") }
         }
     }
     
     private func toggleZoom() {
-        if let controller = adjustmentController {
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                controller.zoomLevel = controller.zoomLevel > 1.0 ? 1.0 : 2.0
-            }
+        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+            adjustmentController.zoomLevel = adjustmentController.zoomLevel > 1.0 ? 1.0 : 2.0
         }
     }
     
@@ -232,9 +228,9 @@ public struct COViewerView: View {
                 } else if tool == "Crop" {
                     handleCropDrag(gesture: gesture, size: size)
                 } else if tool == "FocusPicker" {
-                    adjustmentController?.focusPoint = CGPoint(x: max(0, min(1, gesture.location.x / size.width)), y: max(0, min(1, gesture.location.y / size.height)))
+                    adjustmentController.focusPoint = CGPoint(x: max(0, min(1, gesture.location.x / size.width)), y: max(0, min(1, gesture.location.y / size.height)))
                 } else if tool == "DehazePicker" {
-                    adjustmentController?.dehazeColor = .cyan
+                    adjustmentController.dehazeColor = .cyan
                 } else if tool == "DrawLinearGradient" {
                     handleLinearGradientDrag(gesture: gesture, size: size)
                 } else if tool == "DrawRadialGradient" {
@@ -251,48 +247,49 @@ public struct COViewerView: View {
                 }
                 if tool == "Crop" { activeCropZone = .none; cropStartRect = .zero }
                 if tool == "DrawLinearGradient" {
-                    if let c = adjustmentController, let g = c.currentLinearGradient { c.commitLinearGradient(g) }
+                    if let g = adjustmentController.currentLinearGradient { adjustmentController.commitLinearGradient(g) }
                 }
                 if tool == "DrawRadialGradient" {
-                    if let c = adjustmentController, let g = c.currentRadialGradient { c.commitRadialGradient(g) }
+                    if let g = adjustmentController.currentRadialGradient { adjustmentController.commitRadialGradient(g) }
                 }
                 if ["FocusPicker", "DehazePicker"].contains(tool) { commands.selectedCursorToolID = "Select" }
-                if tool == "Heal" { adjustmentController?.addRepairArrow(at: gesture.location, type: .heal) }
-                else if tool == "Clone" { adjustmentController?.addRepairArrow(at: gesture.location, type: .clone) }
+                if tool == "Heal" { adjustmentController.addRepairArrow(at: gesture.location, type: .heal) }
+                else if tool == "Clone" { adjustmentController.addRepairArrow(at: gesture.location, type: .clone) }
             }
     }
     
     private func handlePanDrag(gesture: DragGesture.Value, size: CGSize) {
         if dragStartOrigin == nil {
-            dragStartOrigin = adjustmentController?.viewportRect.origin
+            dragStartOrigin = adjustmentController.viewportRect.origin
             NSCursor.closedHand.push()
         }
-        guard let start = dragStartOrigin, let zoom = adjustmentController?.zoomLevel else { return }
+        guard let start = dragStartOrigin else { return }
+        let zoom = adjustmentController.zoomLevel
         let deltaX = gesture.translation.width / size.width / zoom
         let deltaY = gesture.translation.height / size.height / zoom
         if zoom > 1.0 {
-            let current = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+            let current = adjustmentController.viewportRect
             let newX = max(0, min(1.0 - current.width, start.x - deltaX))
             let newY = max(0, min(1.0 - current.height, start.y - deltaY))
-            if adjustmentController?.multiViewPanning == true {
+            if adjustmentController.multiViewPanning == true {
                 AdjustmentToolController.shared.viewportRect.origin = CGPoint(x: newX, y: newY)
             } else {
-                adjustmentController?.viewportRect.origin = CGPoint(x: newX, y: newY)
+                adjustmentController.viewportRect.origin = CGPoint(x: newX, y: newY)
             }
         }
     }
     
     private func handleMoveOverlayDrag(gesture: DragGesture.Value) {
-        if dragStartOrigin == nil { dragStartOrigin = adjustmentController?.overlayOffset }
+        if dragStartOrigin == nil { dragStartOrigin = adjustmentController.overlayOffset }
         guard let start = dragStartOrigin else { return }
-        adjustmentController?.overlayOffset = CGPoint(x: start.x + gesture.translation.width, y: start.y + gesture.translation.height)
+        adjustmentController.overlayOffset = CGPoint(x: start.x + gesture.translation.width, y: start.y + gesture.translation.height)
     }
     
     // ... remaining helper methods (handleCropDrag, handleLinearGradientDrag, handleRadialGradientDrag, render, performRotation, viewerImageView, viewerStatusBadges)
     // I'll re-include them in the full file.
     
     private func handleCropDrag(gesture: DragGesture.Value, size: CGSize) {
-        let controller = adjustmentController ?? AdjustmentToolController.shared
+        let controller = adjustmentController
         if activeCropZone == .none {
             let denormalized = CGRect(x: controller.cropRect.minX * size.width,
                                       y: controller.cropRect.minY * size.height,
@@ -332,7 +329,7 @@ public struct COViewerView: View {
     }
     
     private func handleLinearGradientDrag(gesture: DragGesture.Value, size: CGSize) {
-        let controller = adjustmentController ?? AdjustmentToolController.shared
+        let controller = adjustmentController
         var start = CGPoint(x: gesture.startLocation.x / size.width, y: gesture.startLocation.y / size.height)
         var end = CGPoint(x: gesture.location.x / size.width, y: gesture.location.y / size.height)
         let flags = NSEvent.modifierFlags
@@ -353,7 +350,7 @@ public struct COViewerView: View {
     }
     
     private func handleRadialGradientDrag(gesture: DragGesture.Value, size: CGSize) {
-        let controller = adjustmentController ?? AdjustmentToolController.shared
+        let controller = adjustmentController
         let start = CGPoint(x: gesture.startLocation.x / size.width, y: gesture.startLocation.y / size.height)
         let current = CGPoint(x: gesture.location.x / size.width, y: gesture.location.y / size.height)
         let flags = NSEvent.modifierFlags
@@ -383,34 +380,32 @@ public struct COViewerView: View {
         }
         let url = URL(fileURLWithPath: image.path)
         let imagePath = image.path
-        let viewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+        let viewport = adjustmentController.viewportRect
         let isInteracting = dragStartOrigin != nil
             || activeCropZone != .none
-            || (commands.selectedCursorToolID.contains("Draw") && adjustmentController?.currentLinearGradient != nil)
-            || (adjustmentController?.isInteracting == true)
-        let updatedSettings = adjustmentController?.toProcessSettings() ?? IC_ProcessSettings()
+            || (commands.selectedCursorToolID.contains("Draw") && adjustmentController.currentLinearGradient != nil)
+            || (adjustmentController.isInteracting == true)
         
-        let renderBlock: (IC_ProcessSettings, IC_ProcessQuality) -> Void = { settings, quality in
+        let renderBlock: (IC_ProcessQuality) -> Void = { quality in
             self.performRender(url: url,
                                imagePath: imagePath,
-                               settings: settings,
                                quality: quality,
                                viewport: viewport)
         }
         
         if let forced = forceQuality {
-            renderBlock(updatedSettings, forced)
+            renderBlock(forced)
         } else {
-            renderCoalescer.submit(settings: updatedSettings,
+            // We pass a dummy settings object to the coalescer because we now read it fresh inside performRender
+            renderCoalescer.submit(settings: IC_ProcessSettings(),
                                    viewport: viewport,
                                    isInteracting: isInteracting,
-                                   render: renderBlock)
+                                   render: { _, quality in renderBlock(quality) })
         }
     }
     
     private func performRender(url: URL,
                                imagePath: String,
-                               settings: IC_ProcessSettings,
                                quality: IC_ProcessQuality,
                                viewport: CGRect) {
         let isLiveDrag = quality == .display
@@ -424,8 +419,9 @@ public struct COViewerView: View {
                 self.sourceImage = thumb
                 self.lastLoadedURL = url
                 
+                let currentSettings = self.adjustmentController.toProcessSettings()
                 if let developedCIImage = RawImageEngine.shared.developImage(at: url,
-                                                                             with: settings,
+                                                                             with: currentSettings,
                                                                              isLiveDrag: isLiveDrag,
                                                                              viewport: viewport) {
                     if supportsMetal {
@@ -435,16 +431,15 @@ public struct COViewerView: View {
                         DispatchQueue.main.async { self.renderedImage = fallback ?? thumb; self.renderedCIImage = nil }
                     }
                 } else {
-                    // Fallback to NSImage if CIImage fails (though it shouldn't)
                     DispatchQueue.main.async { self.renderedImage = thumb; self.renderedCIImage = nil }
                 }
             }
         } else {
-            // Fast path: thumbnail already loaded, image is in proxy cache
-            // objectWillChange fires before properties update. Delay by 1 tick to read new settings.
+            // Fast path: thumbnail already loaded
             DispatchQueue.main.async {
+                let currentSettings = self.adjustmentController.toProcessSettings()
                 if let developedCIImage = RawImageEngine.shared.developImage(at: url,
-                                                                             with: settings,
+                                                                             with: currentSettings,
                                                                              isLiveDrag: isLiveDrag,
                                                                              viewport: viewport) {
                     if supportsMetal {
@@ -466,15 +461,13 @@ public struct COViewerView: View {
         let angleStart = atan2(startPoint.y - center.y, startPoint.x - center.x)
         let angleCurrent = atan2(currentPoint.y - center.y, currentPoint.x - center.x)
         let deltaAngle = (angleCurrent - angleStart) * 180.0 / .pi
-        if let controller = adjustmentController {
-            controller.rotationAngle += Double(deltaAngle) * 0.1
-        }
+        adjustmentController.rotationAngle += Double(deltaAngle) * 0.1
     }
 
     @ViewBuilder
     private func viewerImageView(nsImage: NSImage?, ciImage: CIImage?, size: CGSize) -> some View {
-        let zoom = adjustmentController?.zoomLevel ?? 1.0
-        let viewport = adjustmentController?.viewportRect ?? CGRect(x: 0, y: 0, width: 1, height: 1)
+        let zoom = adjustmentController.zoomLevel
+        let viewport = adjustmentController.viewportRect
         let offsetX = (0.5 - (viewport.origin.x + viewport.width / 2)) * size.width * zoom
         let offsetY = (0.5 - (viewport.origin.y + viewport.height / 2)) * size.height * zoom
         
@@ -497,8 +490,8 @@ public struct COViewerView: View {
         VStack(alignment: .leading, spacing: 6) {
             if commands.showExposureWarning { ViewerModeBadge(text: "Exposure Warning") }
             if commands.showFocusMask { ViewerModeBadge(text: "Focus Mask") }
-            if let controller = adjustmentController, controller.isSoftProofingEnabled {
-                ViewerModeBadge(text: "Proofing: \(controller.proofingProfileID)")
+            if adjustmentController.isSoftProofingEnabled {
+                ViewerModeBadge(text: "Proofing: \(adjustmentController.proofingProfileID)")
             }
         }
     }

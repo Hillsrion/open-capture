@@ -45,27 +45,41 @@ public struct COMTRView: NSViewRepresentable {
                   let commandBuffer = commandQueue?.makeCommandBuffer() else {
                 return
             }
-            
-            // Calculate aspect fit scale
-            let scaleX = view.drawableSize.width / image.extent.width
-            let scaleY = view.drawableSize.height / image.extent.height
+
+            // Calculate aspect fit scale to avoid stretching (UI-015)
+            let viewSize = view.drawableSize
+            let imageSize = image.extent.size
+
+            let scaleX = viewSize.width / imageSize.width
+            let scaleY = viewSize.height / imageSize.height
             let scale = min(scaleX, scaleY)
-            
-            // Scale
-            let scaledImage = image.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
-            
-            // Center
-            let xOffset = (view.drawableSize.width - scaledImage.extent.width) / 2
-            let yOffset = (view.drawableSize.height - scaledImage.extent.height) / 2
-            let centeredImage = scaledImage.transformed(by: CGAffineTransform(translationX: xOffset, y: yOffset))
-            
+
+            // Scaled size
+            let scaledWidth = imageSize.width * scale
+            let scaledHeight = imageSize.height * scale
+
+            // Center in the drawable
+            let xOffset = (viewSize.width - scaledWidth) / 2
+            let yOffset = (viewSize.height - scaledHeight) / 2
+
+            // Create a transform that centers and scales the image correctly
+            let transform = CGAffineTransform(scaleX: scale, y: scale)
+                .concatenated(CGAffineTransform(translationX: xOffset, y: yOffset))
+
+            let centeredImage = image.transformed(by: transform)
+
+            // Clear the background before rendering the image to avoid ghosting
+            let clearColor = CIColor(red: 0.1, green: 0.1, blue: 0.1)
+            let background = CIImage(color: clearColor).cropped(to: CGRect(origin: .zero, size: viewSize))
+            let finalOutput = centeredImage.composited(over: background)
+
             // Render directly from CIImage to Metal Texture (Zero CPU readback)
-            context.render(centeredImage,
+            context.render(finalOutput,
                            to: drawable.texture,
                            commandBuffer: commandBuffer,
-                           bounds: CGRect(origin: .zero, size: view.drawableSize),
+                           bounds: CGRect(origin: .zero, size: viewSize),
                            colorSpace: CGColorSpaceCreateDeviceRGB())
-                           
+
             commandBuffer.present(drawable)
             commandBuffer.commit()
         }

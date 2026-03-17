@@ -236,8 +236,8 @@ public class ImageCorePipeline {
 
 /// Reconstructed Tile Execution Manager.
 public class TileExecutionManager {
-    public var maxTileSize: CGSize = CGSize(width: 512, height: 512)
-    public var minTileSize: CGSize = CGSize(width: 128, height: 128)
+    public var maxTileSize: CGSize = CGSize(width: 8192, height: 8192)
+    public var minTileSize: CGSize = CGSize(width: 256, height: 256)
     public var tileOverlap: Int = 16
     public var maxConcurrentTiles: Int = max(1, ProcessInfo.processInfo.activeProcessorCount)
     

@@ -712,7 +712,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     /// Triggers the AI Subject Masking for the currently active layer.
     public func runSubjectMasking() {
         guard let variant = currentVariant, 
-              let activeLayer = variant.activeLayer as? LayerBase,
+              let activeLayer = variant.activeLayer,
               let image = variant.image else { return }
         
         print("[AI] Requesting Subject Mask for layer: \(activeLayer.name)")
@@ -775,10 +775,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
                     var localCfg = IC_LocalAdjustCfg(layerId: UInt32(index))
                     localCfg.opacity = Float(layer.opacity / 100.0)
                     localCfg.isVisible = true // In original, checked via ZVISIBLE
-                    localCfg.maskData = (layer as? LayerBase)?.mask // NEW: Pass the AI mask
+                    localCfg.maskData = layer.mask // NEW: Pass the AI mask
                     
-                    // Note: Here we would map layer-specific sliders to localCfg.settings
-                    // localCfg.settings.exposure = ...
+                    if let mcLayer = layer.mcLayer {
+                        localCfg.settings.exposure = (mcLayer.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
+                        localCfg.settings.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
+                        localCfg.settings.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
+                        localCfg.settings.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
+                        localCfg.settings.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
+                        localCfg.settings.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
+                        localCfg.settings.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
+                    }
                     
                     settings.localAdjustments[index] = localCfg
                 }
@@ -806,20 +813,16 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         let colorBalanceSource = source as? ColorBalanceStorageContainer
         
         func getFloat(_ key: String, _ defaultVal: Float) -> Float {
-            if let mcSource = source as? MCVariant {
-                return (mcSource.objectForKey(key) as? Float) ?? defaultVal
-            } else if let mcLayerSource = source as? MCAdjLayer {
-                return (mcLayerSource.objectForKey(key) as? Float) ?? defaultVal
-            }
+            let val = (source as? MCVariant)?.objectForKey(key) ?? (source as? MCAdjLayer)?.objectForKey(key)
+            if let f = val as? Float { return f }
+            if let d = val as? Double { return Float(d) }
             return defaultVal
         }
         
         func getDouble(_ key: String, _ defaultVal: Double) -> Double {
-            if let mcSource = source as? MCVariant {
-                return (mcSource.objectForKey(key) as? Double) ?? defaultVal
-            } else if let mcLayerSource = source as? MCAdjLayer {
-                return (mcLayerSource.objectForKey(key) as? Double) ?? defaultVal
-            }
+            let val = (source as? MCVariant)?.objectForKey(key) ?? (source as? MCAdjLayer)?.objectForKey(key)
+            if let d = val as? Double { return d }
+            if let f = val as? Float { return Double(f) }
             return defaultVal
         }
         
@@ -840,13 +843,13 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         updateIfChanged(&cbHighlight, colorBalanceSettings.highlight)
         
         // WB and other tools are usually global or per-layer depending on tool
-        updateIfChanged(&kelvin, (mc.objectForKey("ZKELVIN") as? Float) ?? 5000.0)
-        updateIfChanged(&tint, (mc.objectForKey("ZTINT") as? Float) ?? 0.0)
+        updateIfChanged(&kelvin, getFloat("ZKELVIN", 5000.0))
+        updateIfChanged(&tint, getFloat("ZTINT", 0.0))
         
-        updateIfChanged(&highlights, (mc.objectForKey("ZHIGHLIGHTS") as? Float) ?? 0.0)
-        updateIfChanged(&shadows, (mc.objectForKey("ZSHADOWS") as? Float) ?? 0.0)
-        updateIfChanged(&whites, (mc.objectForKey("ZWHITES") as? Float) ?? 0.0)
-        updateIfChanged(&blacks, (mc.objectForKey("ZBLACKS") as? Float) ?? 0.0)
+        updateIfChanged(&highlights, getFloat("ZHIGHLIGHTS", 0.0))
+        updateIfChanged(&shadows, getFloat("ZSHADOWS", 0.0))
+        updateIfChanged(&whites, getFloat("ZWHITES", 0.0))
+        updateIfChanged(&blacks, getFloat("ZBLACKS", 0.0))
         
         updateIfChanged(&blackAndWhiteEnabled, (mc.objectForKey("ZBW_ENABLED") as? Bool) ?? false)
         updateIfChanged(&bwRed, getDouble("ZBW_RED", 0.0))
@@ -913,32 +916,32 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         updateIfChanged(&sharpHalo, getDouble("ZSHARP_HALO", 0.0))
         
         // Levels (RGB)
-        updateIfChanged(&levelsBlackPointRGB, (mc.objectForKey("ZLEVELS_BLACK_RGB") as? Float) ?? 0.0)
-        updateIfChanged(&levelsWhitePointRGB, (mc.objectForKey("ZLEVELS_WHITE_RGB") as? Float) ?? 1.0)
-        updateIfChanged(&levelsMidtoneRGB, (mc.objectForKey("ZLEVELS_MIDTONE_RGB") as? Float) ?? 1.0)
-        updateIfChanged(&levelsTargetBlackRGB, (mc.objectForKey("ZLEVELS_TBLACK_RGB") as? Float) ?? 0.0)
-        updateIfChanged(&levelsTargetWhiteRGB, (mc.objectForKey("ZLEVELS_TWHITE_RGB") as? Float) ?? 1.0)
+        updateIfChanged(&levelsBlackPointRGB, getFloat("ZLEVELS_BLACK_RGB", 0.0))
+        updateIfChanged(&levelsWhitePointRGB, getFloat("ZLEVELS_WHITE_RGB", 1.0))
+        updateIfChanged(&levelsMidtoneRGB, getFloat("ZLEVELS_MIDTONE_RGB", 1.0))
+        updateIfChanged(&levelsTargetBlackRGB, getFloat("ZLEVELS_TBLACK_RGB", 0.0))
+        updateIfChanged(&levelsTargetWhiteRGB, getFloat("ZLEVELS_TWHITE_RGB", 1.0))
         
         // Levels (Red)
-        updateIfChanged(&levelsBlackPointR, (mc.objectForKey("ZLEVELS_BLACK_R") as? Float) ?? 0.0)
-        updateIfChanged(&levelsWhitePointR, (mc.objectForKey("ZLEVELS_WHITE_R") as? Float) ?? 1.0)
-        updateIfChanged(&levelsMidtoneR, (mc.objectForKey("ZLEVELS_MIDTONE_R") as? Float) ?? 1.0)
-        updateIfChanged(&levelsTargetBlackR, (mc.objectForKey("ZLEVELS_TBLACK_R") as? Float) ?? 0.0)
-        updateIfChanged(&levelsTargetWhiteR, (mc.objectForKey("ZLEVELS_TWHITE_R") as? Float) ?? 1.0)
+        updateIfChanged(&levelsBlackPointR, getFloat("ZLEVELS_BLACK_R", 0.0))
+        updateIfChanged(&levelsWhitePointR, getFloat("ZLEVELS_WHITE_R", 1.0))
+        updateIfChanged(&levelsMidtoneR, getFloat("ZLEVELS_MIDTONE_R", 1.0))
+        updateIfChanged(&levelsTargetBlackR, getFloat("ZLEVELS_TBLACK_R", 0.0))
+        updateIfChanged(&levelsTargetWhiteR, getFloat("ZLEVELS_TWHITE_R", 1.0))
         
         // Levels (Green)
-        updateIfChanged(&levelsBlackPointG, (mc.objectForKey("ZLEVELS_BLACK_G") as? Float) ?? 0.0)
-        updateIfChanged(&levelsWhitePointG, (mc.objectForKey("ZLEVELS_WHITE_G") as? Float) ?? 1.0)
-        updateIfChanged(&levelsMidtoneG, (mc.objectForKey("ZLEVELS_MIDTONE_G") as? Float) ?? 1.0)
-        updateIfChanged(&levelsTargetBlackG, (mc.objectForKey("ZLEVELS_TBLACK_G") as? Float) ?? 0.0)
-        updateIfChanged(&levelsTargetWhiteG, (mc.objectForKey("ZLEVELS_TWHITE_G") as? Float) ?? 1.0)
+        updateIfChanged(&levelsBlackPointG, getFloat("ZLEVELS_BLACK_G", 0.0))
+        updateIfChanged(&levelsWhitePointG, getFloat("ZLEVELS_WHITE_G", 1.0))
+        updateIfChanged(&levelsMidtoneG, getFloat("ZLEVELS_MIDTONE_G", 1.0))
+        updateIfChanged(&levelsTargetBlackG, getFloat("ZLEVELS_TBLACK_G", 0.0))
+        updateIfChanged(&levelsTargetWhiteG, getFloat("ZLEVELS_TWHITE_G", 1.0))
         
         // Levels (Blue)
-        updateIfChanged(&levelsBlackPointB, (mc.objectForKey("ZLEVELS_BLACK_B") as? Float) ?? 0.0)
-        updateIfChanged(&levelsWhitePointB, (mc.objectForKey("ZLEVELS_WHITE_B") as? Float) ?? 1.0)
-        updateIfChanged(&levelsMidtoneB, (mc.objectForKey("ZLEVELS_MIDTONE_B") as? Float) ?? 1.0)
-        updateIfChanged(&levelsTargetBlackB, (mc.objectForKey("ZLEVELS_TBLACK_B") as? Float) ?? 0.0)
-        updateIfChanged(&levelsTargetWhiteB, (mc.objectForKey("ZLEVELS_TWHITE_B") as? Float) ?? 1.0)
+        updateIfChanged(&levelsBlackPointB, getFloat("ZLEVELS_BLACK_B", 0.0))
+        updateIfChanged(&levelsWhitePointB, getFloat("ZLEVELS_WHITE_B", 1.0))
+        updateIfChanged(&levelsMidtoneB, getFloat("ZLEVELS_MIDTONE_B", 1.0))
+        updateIfChanged(&levelsTargetBlackB, getFloat("ZLEVELS_TBLACK_B", 0.0))
+        updateIfChanged(&levelsTargetWhiteB, getFloat("ZLEVELS_TWHITE_B", 1.0))
         
         updateIfChanged(&curvesPointsRGB, (mc.objectForKey("ZCURVE_POINTS_RGB") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
         updateIfChanged(&curvesPointsLuma, (mc.objectForKey("ZCURVE_POINTS_LUMA") as? [CGPoint]) ?? [CGPoint(x: 0.0, y: 0.0), CGPoint(x: 1.0, y: 1.0)])
@@ -954,39 +957,33 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.spots = []
         }
         
-        if let zoom = mc.objectForKey("ZZOOM_LEVEL") as? Double {
-            self.zoomLevel = zoom
-        } else if let zoomFloat = mc.objectForKey("ZZOOM_LEVEL") as? Float {
-            self.zoomLevel = Double(zoomFloat)
-        } else {
-            self.zoomLevel = 1.0
-        }
+        self.zoomLevel = getDouble("ZZOOM_LEVEL", 1.0)
         if let vRect = mc.objectForKey("ZVIEWPORT_RECT") as? CGRect {
             self.viewportRect = vRect
         }
         
-        self.focusZoomLevel = Double((mc.objectForKey("ZFOCUS_ZOOM") as? Float) ?? 1.0)
+        self.focusZoomLevel = getDouble("ZFOCUS_ZOOM", 1.0)
         if let fPoint = mc.objectForKey("ZFOCUS_POINT") as? CGPoint {
             self.focusPoint = fPoint
         }
         self.focusAIMode = (mc.objectForKey("ZFOCUS_AI_MODE") as? Int) ?? 0
         
-        self.aiCropTopMargin = (mc.objectForKey("ZAI_CROP_TOP") as? Double) ?? 10.0
-        self.aiCropBottomMargin = (mc.objectForKey("ZAI_CROP_BOTTOM") as? Double) ?? 10.0
-        self.aiCropLeftMargin = (mc.objectForKey("ZAI_CROP_LEFT") as? Double) ?? 10.0
-        self.aiCropRightMargin = (mc.objectForKey("ZAI_CROP_RIGHT") as? Double) ?? 10.0
+        self.aiCropTopMargin = getDouble("ZAI_CROP_TOP", 10.0)
+        self.aiCropBottomMargin = getDouble("ZAI_CROP_BOTTOM", 10.0)
+        self.aiCropLeftMargin = getDouble("ZAI_CROP_LEFT", 10.0)
+        self.aiCropRightMargin = getDouble("ZAI_CROP_RIGHT", 10.0)
         self.aiCropShowGuides = (mc.objectForKey("ZAI_CROP_SHOW_GUIDES") as? Bool) ?? true
         self.aiCropReferencePoint = (mc.objectForKey("ZAI_CROP_REF_POINT") as? Int) ?? 0
         self.aiCropLockAspect = (mc.objectForKey("ZAI_CROP_LOCK_ASPECT") as? Bool) ?? true
         
         self.stackCOStyles = (mc.objectForKey("ZSTACK_STYLES") as? Bool) ?? false
-        self.styleOpacity = (mc.objectForKey("ZSTYLE_OPACITY") as? Double) ?? 100.0
+        self.styleOpacity = getDouble("ZSTYLE_OPACITY", 100.0)
 
         self.cropRatioIndex = (mc.objectForKey("ZCROP_RATIO") as? Int) ?? 0
         self.cropGridIndex = (mc.objectForKey("ZCROP_GRID") as? Int) ?? 0
         self.cropShowMask = (mc.objectForKey("ZCROP_SHOW_MASK") as? Bool) ?? true
-        self.cropMaskOpacity = (mc.objectForKey("ZCROP_MASK_OPACITY") as? Double) ?? 50.0
-        self.cropMaskBrightness = (mc.objectForKey("ZCROP_MASK_BRIGHTNESS") as? Double) ?? 0.0
+        self.cropMaskOpacity = getDouble("ZCROP_MASK_OPACITY", 50.0)
+        self.cropMaskBrightness = getDouble("ZCROP_MASK_BRIGHTNESS", 0.0)
         
         self.gridTypeIndex = (mc.objectForKey("ZGRID_TYPE") as? Int) ?? 0
         self.gridColorIndex = (mc.objectForKey("ZGRID_COLOR") as? Int) ?? 0
@@ -1220,10 +1217,14 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         // 3. Map to ImageCore settings
         var settings = IC_ProcessSettings()
-        settings.exposure = Float((mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0)
-        settings.contrast = Float((mc.objectForKey("ZCONTRAST") as? Double) ?? 0.0)
-        settings.brightness = Float((mc.objectForKey("ZBRIGHTNESS") as? Double) ?? 0.0)
-        settings.saturation = Float((mc.objectForKey("ZSATURATION") as? Double) ?? 0.0)
+        settings.exposure = self.exposure
+        settings.contrast = self.contrast
+        settings.brightness = self.brightness
+        settings.saturation = self.saturation
+        settings.highlight = self.highlights
+        settings.shadow = self.shadows
+        settings.white = self.whites
+        settings.black = self.blacks
         settings.whiteBalanceTemperature = Double(kelvin)
         settings.whiteBalanceTint = Double(tint)
         settings.colorBalance = ColorBalanceStorage.settings(from: mc)
@@ -1249,8 +1250,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.sharpening.threshold = Float(sharpThreshold)
         settings.sharpening.haloControl = Float(sharpHalo)
         
-        settings.geometry.cropRect = cropRect // Use the state variable since it's published now
-        settings.geometry.rotation = rotationAngle
+        settings.geometry.cropRect = self.cropRect
+        settings.geometry.rotation = self.rotationAngle
         settings.geometry.keystoneTiltX = Float(keystoneTiltX)
         settings.geometry.keystoneTiltY = Float(keystoneTiltY)
         settings.geometry.keystoneAmount = Float(keystoneAmount)
@@ -1293,23 +1294,27 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             localCfg.opacity = Float(layer.opacity / 100.0)
             localCfg.isVisible = true
             
-            if let mcLayer = layer.mcLayer {
-                localCfg.settings.exposure = (mcLayer.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
-                localCfg.settings.contrast = (mcLayer.objectForKey("ZCONTRAST") as? Float) ?? 0.0
-                localCfg.settings.brightness = (mcLayer.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
-                localCfg.settings.saturation = (mcLayer.objectForKey("ZSATURATION") as? Float) ?? 0.0
-                // localCfg.settings.colorBalance = ColorBalanceStorage.settings(from: mcLayer)
-                localCfg.settings.clarity.amount = (mcLayer.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
-                localCfg.settings.clarity.structureAmount = (mcLayer.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
-                localCfg.settings.clarity.clarityMethod = Int32((mcLayer.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
-            }
+            localCfg.settings.exposure = (layer.mcLayer?.objectForKey("ZEXPOSURE") as? Float) ?? 0.0
+            localCfg.settings.contrast = (layer.mcLayer?.objectForKey("ZCONTRAST") as? Float) ?? 0.0
+            localCfg.settings.brightness = (layer.mcLayer?.objectForKey("ZBRIGHTNESS") as? Float) ?? 0.0
+            localCfg.settings.saturation = (layer.mcLayer?.objectForKey("ZSATURATION") as? Float) ?? 0.0
+            localCfg.settings.clarity.amount = (layer.mcLayer?.objectForKey("ZCLARITY_AMOUNT") as? Float) ?? 0.0
+            localCfg.settings.clarity.structureAmount = (layer.mcLayer?.objectForKey("ZSTRUCTURE_AMOUNT") as? Float) ?? 0.0
+            localCfg.settings.clarity.clarityMethod = Int32((layer.mcLayer?.objectForKey("ZCLARITY_METHOD") as? Int) ?? 0)
+            
             if index < 16 {
                 settings.localAdjustments[index] = localCfg
             }
         }
         
-        // 5. Trigger pipeline execution
-        _ = ImageCorePipeline(mode: .cpu_simd)
+        // 5. Trigger pipeline execution (Simulation)
+        if let image = variant.image {
+            _ = ImageCorePipeline(mode: .cpu_simd)
+            // Note: In a real app, we'd render to a persistent preview buffer
+            // For now, we simulate the trigger.
+            print("[Adjustment] Triggering render for \(variant.variantUUID) at path \(image.path) with exposure: \(settings.exposure)")
+        }
+
         print("[Adjustment] Committing changes for \(variant.variantUUID)")
         
         variant.isModified = true

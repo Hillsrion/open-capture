@@ -77,7 +77,7 @@ internal final class HDROperation: ImageOperation {
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
         let shadow = clamp01(settings.hdr.shadows / 100.0)
-        let highlight = clamp01(1.0 - settings.hdr.highlights / 100.0)
+        let highlight = clamp01(settings.hdr.highlights / 100.0)
         filter.setValue(shadow, forKey: "inputShadowAmount")
         filter.setValue(highlight, forKey: "inputHighlightAmount")
         return filter.outputImage ?? input
