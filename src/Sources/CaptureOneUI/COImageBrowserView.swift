@@ -88,7 +88,7 @@ public struct COImageBrowserView: View {
         GeometryReader { geometry in
             HStack(spacing: geometry.size.width > 400 ? 12 : 4) {
                 // Mode Switcher - Hide if very narrow
-                if geometry.size.width > 250 {
+                if geometry.size.width > 220 {
                     Picker("", selection: Binding(
                         get: { workspaceManager.activeWorkspace.chromeState.browserMode },
                         set: { workspaceManager.activeWorkspace.chromeState.browserMode = $0; workspaceManager.saveWorkspace() }
@@ -98,14 +98,8 @@ public struct COImageBrowserView: View {
                         Image(systemName: "list.bullet").tag(2)
                     }
                     .pickerStyle(.segmented)
-                    .frame(width: geometry.size.width > 500 ? 100 : 80)
+                    .frame(width: geometry.size.width > 300 ? 100 : 80)
                     .scaleEffect(0.8)
-                } else {
-                    // Just an icon for current mode if very narrow
-                    Image(systemName: modeIcon(workspaceManager.activeWorkspace.chromeState.browserMode))
-                        .font(.system(size: 12))
-                        .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                        .frame(width: 24)
                 }
                 
                 // Search Field (WF-501) - Flexible width
@@ -113,7 +107,7 @@ public struct COImageBrowserView: View {
                     Image(systemName: "magnifyingglass")
                         .font(.system(size: 10))
                         .foregroundColor(.gray)
-                    if geometry.size.width > 300 {
+                    if geometry.size.width > 200 {
                         TextField("Search", text: $searchManager.criteria.searchText)
                             .font(.system(size: 11))
                             .textFieldStyle(.plain)
@@ -135,12 +129,12 @@ public struct COImageBrowserView: View {
                 
                 Spacer(minLength: 0)
                 
-                // Zoom Slider (Only for Grid/Filmstrip) - Hide if narrow
-                if workspaceManager.activeWorkspace.chromeState.browserMode != 2 && geometry.size.width > 350 {
+                // Zoom Slider (Only for Grid/Filmstrip) - Lower threshold to 150px
+                if workspaceManager.activeWorkspace.chromeState.browserMode != 2 && geometry.size.width > 150 {
                     HStack(spacing: 4) {
                         Image(systemName: "photo").font(.system(size: 8))
                         Slider(value: $zoomStore.thumbnailSize, in: 80...400)
-                            .frame(width: geometry.size.width > 600 ? 80 : 60)
+                            .frame(width: geometry.size.width > 250 ? 80 : 50)
                             .accentColor(CaptureOneTheme.Colors.activeHighlight)
                         Image(systemName: "photo").font(.system(size: 12))
                     }
@@ -226,14 +220,23 @@ struct COBrowserGridView: View {
     @ObservedObject var zoomStore: ImageBrowserZoomLevelStore
     @ObservedObject var workspaceManager = WorkspaceManager.shared
     
-    private var columns: [GridItem] {
-        [GridItem(.adaptive(minimum: CGFloat(zoomStore.thumbnailSize), maximum: CGFloat(zoomStore.thumbnailSize) * 1.2), spacing: 15)]
+    private func columns(for width: CGFloat) -> [GridItem] {
+        let spacing: CGFloat = 15
+        let padding: CGFloat = width > 300 ? 20 : 10
+        let availableWidth = width - (padding * 2)
+        
+        // Calculate how many items fit based on zoomStore.thumbnailSize
+        // We add spacing to the size for the calculation, then subtract one spacing from the total available
+        let itemSize = CGFloat(zoomStore.thumbnailSize)
+        let columnCount = max(1, Int(floor((availableWidth + spacing) / (itemSize + spacing))))
+        
+        return Array(repeating: GridItem(.flexible(), spacing: spacing), count: columnCount)
     }
     
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 25) {
+                LazyVGrid(columns: columns(for: geometry.size.width), spacing: 25) {
                     ForEach(images, id: \.imageUUID) { image in
                         cell(for: image)
                     }
@@ -253,7 +256,7 @@ struct COBrowserGridView: View {
             isPrimary: isPrimary,
             size: CGFloat(zoomStore.thumbnailSize),
             showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown,
-            useFullWidth: true // New parameter to allow filling the column
+            useFullWidth: true
         )
         .onTapGesture { handleTap(on: image) }
     }

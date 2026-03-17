@@ -162,14 +162,24 @@ public struct CullingView: View {
             if workspaceManager.activeWorkspace.chromeState.toolsDisplayState != .hidden,
                workspaceManager.activeWorkspace.chromeState.toolsPosition == .left {
                 toolsSidebar
-                Divider().background(Color.black)
+                DraggableDivider(
+                    direction: .horizontal,
+                    size: $workspaceManager.activeWorkspace.sidebarWidth,
+                    range: 200...600,
+                    onResize: { workspaceManager.saveWorkspace() }
+                )
             }
 
             mainContentArea
 
             if workspaceManager.activeWorkspace.chromeState.toolsDisplayState != .hidden,
                workspaceManager.activeWorkspace.chromeState.toolsPosition == .right {
-                Divider().background(Color.black)
+                DraggableDivider(
+                    direction: .horizontal,
+                    size: $workspaceManager.activeWorkspace.sidebarWidth,
+                    range: 200...600,
+                    onResize: { workspaceManager.saveWorkspace() }
+                )
                 toolsSidebar
             }
         }
@@ -196,13 +206,23 @@ public struct CullingView: View {
         } else if workspaceManager.activeWorkspace.chromeState.browserPosition == .portrait {
             HStack(spacing: 0) {
                 viewerPane
-                Divider().background(Color.black)
+                DraggableDivider(
+                    direction: .horizontal,
+                    size: $workspaceManager.activeWorkspace.chromeState.browserWidth,
+                    range: 150...800,
+                    onResize: { workspaceManager.saveWorkspace() }
+                )
                 browserPanePortrait
             }
         } else {
             VStack(spacing: 0) {
                 viewerPane
-                Divider().background(Color.black)
+                DraggableDivider(
+                    direction: .vertical,
+                    size: $workspaceManager.activeWorkspace.chromeState.browserHeight,
+                    range: 100...600,
+                    onResize: { workspaceManager.saveWorkspace() }
+                )
                 browserPaneLandscape
             }
         }

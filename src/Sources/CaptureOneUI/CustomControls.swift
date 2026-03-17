@@ -80,14 +80,58 @@ public struct POSliderControl: View {
     }
 }
 
-// Extension to NumberFormatter for C1 style
-extension NumberFormatter {
-    static var coDefault: NumberFormatter {
-        let f = NumberFormatter()
-        f.numberStyle = .decimal
-        f.maximumFractionDigits = 1
-        f.minimumFractionDigits = 0
-        return f
+// MARK: - Draggable Divider (WS-106)
+public struct DraggableDivider: View {
+    public enum Direction {
+        case horizontal
+        case vertical
+    }
+    
+    let direction: Direction
+    @Binding var size: Double
+    let range: ClosedRange<Double>
+    let onResize: (() -> Void)?
+    
+    @State private var isHovering = false
+    
+    public init(direction: Direction, size: Binding<Double>, range: ClosedRange<Double>, onResize: (() -> Void)? = nil) {
+        self.direction = direction
+        self._size = size
+        self.range = range
+        self.onResize = onResize
+    }
+    
+    public var body: some View {
+        Rectangle()
+            .fill(isHovering ? CaptureOneTheme.Colors.activeHighlight : Color.black)
+            .frame(width: direction == .horizontal ? 1 : nil, height: direction == .vertical ? 1 : nil)
+            .frame(width: direction == .horizontal ? 5 : nil, height: direction == .vertical ? 5 : nil)
+            .contentShape(Rectangle())
+            .onHover { hovering in isHovering = hovering }
+            .onContinuousHover { _ in
+                if direction == .horizontal {
+                    NSCursor.resizeLeftRight.set()
+                } else {
+                    NSCursor.resizeUpDown.set()
+                }
+            }
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { value in
+                        let delta = direction == .horizontal ? value.translation.width : value.translation.height
+                        let newSize = (size + Double(delta)).clamped(to: range)
+                        if newSize != size {
+                            size = newSize
+                            onResize?()
+                        }
+                    }
+            )
+    }
+}
+
+extension Comparable {
+    func clamped(to range: ClosedRange<Self>) -> Self {
+        min(max(self, range.lowerBound), range.upperBound)
     }
 }
 
