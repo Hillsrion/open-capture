@@ -218,7 +218,7 @@ func colorSquare(for tag: VariantBase.ColorTag, size: CGFloat = 8) -> some View 
     let color = colorForTag(tag)
     if tag == .none {
         RoundedRectangle(cornerRadius: 1.5)
-            .stroke(Color.white.opacity(0.2), lineWidth: 0.5)
+            .stroke(Color.white.opacity(0.3), lineWidth: 0.8)
             .frame(width: size, height: size)
     } else {
         RoundedRectangle(cornerRadius: 1.5)
@@ -253,8 +253,6 @@ struct COBrowserGridView: View {
         let padding: CGFloat = width > 300 ? 20 : 10
         let availableWidth = width - (padding * 2)
         
-        // Calculate how many items fit based on zoomStore.thumbnailSize
-        // We add spacing to the size for the calculation, then subtract one spacing from the total available
         let itemSize = CGFloat(zoomStore.thumbnailSize)
         let columnCount = max(1, Int(floor((availableWidth + spacing) / (itemSize + spacing))))
         
@@ -266,27 +264,23 @@ struct COBrowserGridView: View {
             ScrollView {
                 LazyVGrid(columns: columns(for: geometry.size.width), spacing: 25) {
                     ForEach(images, id: \.imageUUID) { image in
-                        cell(for: image)
+                        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
+                        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
+                        
+                        COImageBrowserCell(
+                            image: image,
+                            isSelected: isSelected,
+                            isPrimary: isPrimary,
+                            size: CGFloat(zoomStore.thumbnailSize),
+                            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown,
+                            useFullWidth: true,
+                            onTap: { handleTap(on: image) }
+                        )
                     }
                 }
                 .padding(geometry.size.width > 300 ? 20 : 10)
             }
         }
-    }
-    
-    private func cell(for image: ImageBase) -> some View {
-        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
-        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
-        
-        return COImageBrowserCell(
-            image: image,
-            isSelected: isSelected,
-            isPrimary: isPrimary,
-            size: CGFloat(zoomStore.thumbnailSize),
-            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown,
-            useFullWidth: true
-        )
-        .onTapGesture { handleTap(on: image) }
     }
     
     private func handleTap(on image: ImageBase) {
@@ -310,31 +304,27 @@ struct COBrowserFilmstripView: View {
         ScrollView(.horizontal, showsIndicators: true) {
             HStack(spacing: 15) {
                 ForEach(images, id: \.imageUUID) { image in
-                    cell(for: image)
+                    let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
+                    let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
+                    
+                    COImageBrowserCell(
+                        image: image,
+                        isSelected: isSelected,
+                        isPrimary: isPrimary,
+                        size: CGFloat(zoomStore.thumbnailSize),
+                        showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown,
+                        onTap: {
+                            guard let variant = image.primaryVariant else { return }
+                            interactor.select(variant: variant, isMultiSelect: false, isRangeSelect: false)
+                            selectedVariant = variant
+                        }
+                    )
                 }
             }
             .padding(.horizontal, 15)
             .padding(.vertical, 10)
         }
         .frame(maxHeight: CGFloat(zoomStore.thumbnailSize) + 40)
-    }
-    
-    private func cell(for image: ImageBase) -> some View {
-        let isSelected = interactor.selectedVariants.contains(image.primaryVariant?.variantUUID ?? "")
-        let isPrimary = selectedVariant?.variantUUID == image.primaryVariant?.variantUUID
-        
-        return COImageBrowserCell(
-            image: image,
-            isSelected: isSelected,
-            isPrimary: isPrimary,
-            size: CGFloat(zoomStore.thumbnailSize),
-            showLabel: workspaceManager.activeWorkspace.chromeState.browserLabelsShown
-        )
-        .onTapGesture {
-            guard let variant = image.primaryVariant else { return }
-            interactor.select(variant: variant, isMultiSelect: false, isRangeSelect: false)
-            selectedVariant = variant
-        }
     }
 }
 
@@ -375,6 +365,8 @@ struct COBrowserListView: View {
                     // Interactive Color Square on the right
                     Button(action: { pickingColorImageID = image.imageUUID }) {
                         colorSquare(for: image.primaryVariant?.colorTag ?? .none, size: 10)
+                            .padding(4)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .popover(isPresented: Binding(
@@ -438,6 +430,7 @@ public struct COImageBrowserCell: View {
     let size: CGFloat
     let showLabel: Bool
     var useFullWidth: Bool = false
+    var onTap: (() -> Void)? = nil
     
     @State private var thumbnail: NSImage?
     @State private var isEditingName = false
@@ -475,8 +468,14 @@ public struct COImageBrowserCell: View {
                     BrowserOverlayView(variant: nil, image: image)
                 }
                 
-                // 4. Interactive Color Tag Overlay (Invisible but clickable region if no tag)
-                colorTagOverlay
+                // 4. Interactive Color Tag Overlay (Invisible clickable region)
+                GeometryReader { _ in
+                    Button(action: { showingColorPicker = true }) {
+                        Color.clear
+                    }
+                    .buttonStyle(.plain)
+                    .frame(width: 30, height: 30) // Larger hit area top-left
+                }
                 
                 // 5. Face Focus (Cull View AI)
                 if AppCommandCenter.shared.showFocusMask {
@@ -496,6 +495,7 @@ public struct COImageBrowserCell: View {
             }
             .frame(maxWidth: useFullWidth ? .infinity : size)
             .aspectRatio(1.0, contentMode: .fit)
+            .onTapGesture { onTap?() } // Thumbnail area tap
             
             if showLabel {
                 HStack(spacing: 4) {
@@ -520,6 +520,7 @@ public struct COImageBrowserCell: View {
                                 editedName = image.displayName
                                 isEditingName = true
                             }
+                            .onTapGesture(count: 1) { onTap?() } // Label text tap
                     }
                     
                     Spacer(minLength: 0)
@@ -527,6 +528,8 @@ public struct COImageBrowserCell: View {
                     // Interactive Color Square on the right
                     Button(action: { showingColorPicker = true }) {
                         colorSquare(for: image.primaryVariant?.colorTag ?? .none)
+                            .padding(4)
+                            .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .popover(isPresented: $showingColorPicker) {
@@ -542,7 +545,6 @@ public struct COImageBrowserCell: View {
                 .frame(maxWidth: useFullWidth ? .infinity : size)
             }
         }
-        .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
         .contextMenu {
             Button("Rename") {
@@ -553,16 +555,6 @@ public struct COImageBrowserCell: View {
             Button("Create LCC Profile") {
                 AdjustmentToolController.shared.createLCCProfile()
             }
-        }
-    }
-    
-    private var colorTagOverlay: some View {
-        GeometryReader { geometry in
-            Button(action: { showingColorPicker = true }) {
-                Color.clear
-            }
-            .buttonStyle(.plain)
-            .frame(width: 20, height: 30) // Clickable area on the top-left
         }
     }
     
