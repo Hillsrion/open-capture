@@ -10,7 +10,7 @@ public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
     // MARK: - Properties (Core Identity)
     public let imageUUID: String
     public var path: String
-    public var displayName: String
+    @Published public var displayName: String
     public var imageFileName: String
     
     // MARK: - Internal Row State (Placeholders)
@@ -69,8 +69,9 @@ public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
     public init(imageUUID: String, path: String, context: ObjectContext?) {
         self.imageUUID = imageUUID
         self.path = path
-        self.displayName = (path as NSString).lastPathComponent
-        self.imageFileName = self.displayName
+        let name = (path as NSString).lastPathComponent
+        self.displayName = name
+        self.imageFileName = name
         self.isTrashed = false
         self.isOffline = false
         self.isMissing = false

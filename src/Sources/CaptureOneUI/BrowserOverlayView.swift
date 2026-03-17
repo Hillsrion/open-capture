@@ -4,7 +4,7 @@ import AppCoreShared
 /// Reconstructed reusable Overlay for Browser cells (UI-005 / UI-009).
 public struct BrowserOverlayView: View {
     let variant: VariantBase?
-    let image: ImageBase
+    @ObservedObject var image: ImageBase
     
     public init(variant: VariantBase?, image: ImageBase) {
         self.variant = variant
@@ -12,12 +12,37 @@ public struct BrowserOverlayView: View {
     }
     
     public var body: some View {
+        if let v = variant {
+            BrowserOverlayContent(variant: v, image: image)
+        } else {
+            BrowserOverlayContent(variant: nil, image: image)
+        }
+    }
+}
+
+private struct BrowserOverlayContent: View {
+    @ObservedObject var variant: VariantBase
+    @ObservedObject var image: ImageBase
+    
+    init?(variant: VariantBase?, image: ImageBase) {
+        guard let variant = variant else { return nil }
+        self.variant = variant
+        self.image = image
+    }
+    
+    // Fallback for nil variant
+    init(image: ImageBase) {
+        self.variant = VariantBase(variantUUID: "dummy", image: nil, context: nil)
+        self.image = image
+    }
+
+    var body: some View {
         VStack {
             HStack(alignment: .top) {
                 // 1. Color Tag Bar
-                if let v = variant, v.colorTag != .none {
+                if variant.variantUUID != "dummy" && variant.colorTag != .none {
                     Rectangle()
-                        .fill(colorForTag(v.colorTag))
+                        .fill(colorForTag(variant.colorTag))
                         .frame(width: 5, height: 18)
                         .cornerRadius(1.5)
                         .shadow(radius: 1)
@@ -45,7 +70,7 @@ public struct BrowserOverlayView: View {
                             .font(.system(size: 10))
                             .shadow(radius: 1)
                     }
-                    if let v = variant, v.isModified {
+                    if variant.variantUUID != "dummy" && variant.isModified {
                         Image(systemName: "pencil.circle.fill")
                             .foregroundColor(.white)
                             .font(.system(size: 10))
@@ -57,9 +82,9 @@ public struct BrowserOverlayView: View {
             Spacer()
             
             // 3. Rating Stars
-            if let v = variant, v.rating > 0 {
+            if variant.variantUUID != "dummy" && variant.rating > 0 {
                 HStack(spacing: 1.5) {
-                    ForEach(0..<v.rating, id: \.self) { _ in
+                    ForEach(0..<variant.rating, id: \.self) { _ in
                         Image(systemName: "star.fill")
                             .font(.system(size: 8))
                             .foregroundColor(.yellow)

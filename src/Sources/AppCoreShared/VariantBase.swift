@@ -58,6 +58,7 @@ public class VariantBase: BaseObject, Identifiable {
     public var rating: Int {
         get { return (mcVariant?.objectForKey("ZRATING") as? Int) ?? 0 }
         set {
+            objectWillChange.send()
             mcVariant?.setObject(newValue, forKey: "ZRATING")
             isModified = true
         }
@@ -80,6 +81,7 @@ public class VariantBase: BaseObject, Identifiable {
             return ColorTag(rawValue: val) ?? .none
         }
         set {
+            objectWillChange.send()
             mcVariant?.setObject(newValue.rawValue, forKey: "ZCOLOR_TAG")
             isModified = true
         }

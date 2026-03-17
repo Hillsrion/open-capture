@@ -316,19 +316,53 @@ struct COBrowserListView: View {
     @Binding var selectedVariant: VariantBase?
     @ObservedObject var interactor: ImageBrowserInteractor
     
+    @State private var editingImageID: String? = nil
+    @State private var editedName: String = ""
+    @State private var pickingColorImageID: String? = nil
+
     var body: some View {
         Table(images, selection: Binding(
             get: { Set(interactor.selectedVariants) },
             set: { _ in } // Managed via interactor logic if needed
         )) {
-            TableColumn("Name", value: \.displayName)
+            TableColumn("Name") { image in
+                if editingImageID == image.imageUUID {
+                    TextField("", text: $editedName, onCommit: {
+                        image.displayName = editedName
+                        editingImageID = nil
+                    })
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 11))
+                } else {
+                    Text(image.displayName)
+                        .onTapGesture(count: 2) {
+                            editedName = image.displayName
+                            editingImageID = image.imageUUID
+                        }
+                }
+            }
             TableColumn("Rating") { image in
                 Text("\(image.primaryVariant?.rating ?? 0) ★")
                     .foregroundColor(.yellow)
             }
             TableColumn("Color") { image in
-                Circle().fill(colorForTag(image.primaryVariant?.colorTag ?? .none))
-                    .frame(width: 10, height: 10)
+                Button(action: { pickingColorImageID = image.imageUUID }) {
+                    Circle().fill(colorForTag(image.primaryVariant?.colorTag ?? .none))
+                        .frame(width: 10, height: 10)
+                }
+                .buttonStyle(.plain)
+                .popover(isPresented: Binding(
+                    get: { pickingColorImageID == image.imageUUID },
+                    set: { if !$0 { pickingColorImageID = nil } }
+                )) {
+                    if let variant = image.primaryVariant {
+                        POColorTagPicker(selectedTag: Binding(
+                            get: { variant.colorTag },
+                            set: { variant.colorTag = $0; pickingColorImageID = nil }
+                        ))
+                        .padding(8)
+                    }
+                }
             }
             TableColumn("Type") { image in
                 Text(isRaw(image.path) ? "RAW" : "JPEG")
@@ -361,7 +395,7 @@ struct COBrowserListView: View {
 
 /// Reconstructed high-fidelity Browser Cell (UI-005).
 public struct COImageBrowserCell: View {
-    let image: ImageBase
+    @ObservedObject var image: ImageBase
     let isSelected: Bool
     let isPrimary: Bool
     let size: CGFloat
@@ -369,6 +403,9 @@ public struct COImageBrowserCell: View {
     var useFullWidth: Bool = false
     
     @State private var thumbnail: NSImage?
+    @State private var isEditingName = false
+    @State private var editedName = ""
+    @State private var showingColorPicker = false
     
     public var body: some View {
         VStack(spacing: 6) {
@@ -395,9 +432,16 @@ public struct COImageBrowserCell: View {
                 }
                 
                 // 3. Overlays
-                BrowserOverlayView(variant: image.primaryVariant, image: image)
+                if let variant = image.primaryVariant {
+                    BrowserOverlayView(variant: variant, image: image)
+                } else {
+                    BrowserOverlayView(variant: nil, image: image)
+                }
                 
-                // 4. Face Focus (Cull View AI)
+                // 4. Interactive Color Tag Overlay (Invisible but clickable region if no tag)
+                colorTagOverlay
+                
+                // 5. Face Focus (Cull View AI)
                 if AppCommandCenter.shared.showFocusMask {
                     ZStack {
                         Circle()
@@ -417,18 +461,59 @@ public struct COImageBrowserCell: View {
             .aspectRatio(1.0, contentMode: .fit)
             
             if showLabel {
-                Text(image.displayName)
-                    .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
-                    .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
-                    .lineLimit(1)
+                if isEditingName {
+                    TextField("", text: $editedName, onCommit: {
+                        image.displayName = editedName
+                        isEditingName = false
+                    })
+                    .textFieldStyle(.plain)
+                    .font(.system(size: 10))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .background(Color.blue.opacity(0.3))
                     .frame(maxWidth: useFullWidth ? .infinity : size)
+                } else {
+                    Text(image.displayName)
+                        .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
+                        .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
+                        .lineLimit(1)
+                        .frame(maxWidth: useFullWidth ? .infinity : size)
+                        .onTapGesture(count: 2) {
+                            editedName = image.displayName
+                            isEditingName = true
+                        }
+                }
             }
         }
         .contentShape(Rectangle())
         .onAppear { loadThumbnail() }
         .contextMenu {
+            Button("Rename") {
+                editedName = image.displayName
+                isEditingName = true
+            }
+            Divider()
             Button("Create LCC Profile") {
                 AdjustmentToolController.shared.createLCCProfile()
+            }
+        }
+    }
+    
+    private var colorTagOverlay: some View {
+        GeometryReader { geometry in
+            Button(action: { showingColorPicker = true }) {
+                Color.clear
+            }
+            .buttonStyle(.plain)
+            .frame(width: 20, height: 30) // Clickable area on the top-left
+            .popover(isPresented: $showingColorPicker) {
+                if let variant = image.primaryVariant {
+                    POColorTagPicker(selectedTag: Binding(
+                        get: { variant.colorTag },
+                        set: { variant.colorTag = $0; showingColorPicker = false }
+                    ))
+                    .padding(8)
+                }
             }
         }
     }
