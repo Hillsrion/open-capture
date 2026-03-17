@@ -44,7 +44,7 @@ public struct FilterToolView: View {
             .padding(.vertical, 4)
             .onAppear { calculateCounts() }
             .onReceive(commands.browser.$dataSource) { _ in calculateCounts() }
-            .onReceive(NotificationCenter.default.publisher(for: .VariantMetadataDidChange)) { _ in calculateCounts() }
+            .onReceive(NotificationCenter.default.publisher(for: .DCVariantMetadataDidChange)) { _ in calculateCounts() }
         }
     }
     

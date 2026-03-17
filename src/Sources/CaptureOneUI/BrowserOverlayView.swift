@@ -39,14 +39,7 @@ private struct BrowserOverlayContent: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                // 1. Color Tag Bar
-                if variant.variantUUID != "dummy" && variant.colorTag != .none {
-                    Rectangle()
-                        .fill(colorForTag(variant.colorTag))
-                        .frame(width: 5, height: 18)
-                        .cornerRadius(1.5)
-                        .shadow(radius: 1)
-                }
+                // Color Tag Bar removed as requested (now next to filename)
                 
                 Spacer()
                 

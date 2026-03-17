@@ -9,7 +9,29 @@ public class DataCoreManager {
     
     public var db: OpaquePointer?
     
-    private init() {}
+    private init() {
+        observeNotifications()
+    }
+    
+    private func observeNotifications() {
+        NotificationCenter.default.addObserver(forName: .DCVariantMetadataDidChange, object: nil, queue: .main) { notification in
+            guard let userInfo = notification.userInfo,
+                  let uuid = userInfo["uuid"] as? String,
+                  let rating = userInfo["rating"] as? Int,
+                  let colorTag = userInfo["colorTag"] as? Int else { return }
+            
+            do {
+                try self.writer().updateVariantMetadata(
+                    uuid: uuid,
+                    rating: rating,
+                    colorTag: colorTag
+                )
+                print("[DataCore] Persisted metadata for variant \(uuid)")
+            } catch {
+                print("[DataCore] Error persisting metadata: \(error.localizedDescription)")
+            }
+        }
+    }
     
     // MARK: - Document Management
     
@@ -58,4 +80,9 @@ public struct DCVersionInfo {
     public let compatibleVersion: Int
     public let author: String
     public let format: Int
+}
+
+// MARK: - Notifications
+extension Notification.Name {
+    public static let DCVariantMetadataDidChange = Notification.Name("DCVariantMetadataDidChangeNotification")
 }

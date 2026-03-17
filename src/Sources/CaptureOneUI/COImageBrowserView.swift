@@ -344,67 +344,30 @@ struct COBrowserListView: View {
             set: { _ in } // Managed via interactor logic if needed
         )) {
             TableColumn("Name") { image in
-                HStack(spacing: 6) {
-                    if editingImageID == image.imageUUID {
-                        TextField("", text: $editedName, onCommit: {
-                            image.renameFile(to: editedName)
-                            editingImageID = nil
-                        })
-                        .textFieldStyle(.plain)
-                        .font(.system(size: 11))
-                    } else {
-                        Text(image.displayName)
-                            .onTapGesture(count: 2) {
-                                editedName = image.displayName
-                                editingImageID = image.imageUUID
-                            }
+                COBrowserListNameCell(
+                    image: image,
+                    isEditing: editingImageID == image.imageUUID,
+                    editedName: $editedName,
+                    pickingColorImageID: $pickingColorImageID,
+                    onStartEditing: {
+                        editedName = image.displayName
+                        editingImageID = image.imageUUID
+                    },
+                    onCommitEditing: {
+                        image.renameFile(to: editedName)
+                        editingImageID = nil
                     }
-                    
-                    Spacer()
-                    
-                    // Interactive Color Square on the right
-                    Button(action: { pickingColorImageID = image.imageUUID }) {
-                        colorSquare(for: image.primaryVariant?.colorTag ?? .none, size: 10)
-                            .padding(4)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .popover(isPresented: Binding(
-                        get: { pickingColorImageID == image.imageUUID },
-                        set: { if !$0 { pickingColorImageID = nil } }
-                    )) {
-                        if let variant = image.primaryVariant {
-                            POColorTagPicker(selectedTag: Binding(
-                                get: { variant.colorTag },
-                                set: { variant.colorTag = $0; pickingColorImageID = nil }
-                            ))
-                            .padding(8)
-                        }
-                    }
-                }
+                )
             }
             TableColumn("Rating") { image in
-                Text("\(image.primaryVariant?.rating ?? 0) ★")
-                    .foregroundColor(.yellow)
+                COBrowserListRatingCell(variant: image.primaryVariant)
             }
             TableColumn("Color") { image in
-                Button(action: { pickingColorImageID = image.imageUUID }) {
-                    Circle().fill(colorForTag(image.primaryVariant?.colorTag ?? .none))
-                        .frame(width: 10, height: 10)
-                }
-                .buttonStyle(.plain)
-                .popover(isPresented: Binding(
-                    get: { pickingColorImageID == image.imageUUID },
-                    set: { if !$0 { pickingColorImageID = nil } }
-                )) {
-                    if let variant = image.primaryVariant {
-                        POColorTagPicker(selectedTag: Binding(
-                            get: { variant.colorTag },
-                            set: { variant.colorTag = $0; pickingColorImageID = nil }
-                        ))
-                        .padding(8)
-                    }
-                }
+                COBrowserListColorCell(
+                    variant: image.primaryVariant,
+                    isPicking: pickingColorImageID == image.imageUUID,
+                    onTogglePicking: { pickingColorImageID = (pickingColorImageID == image.imageUUID ? nil : image.imageUUID) }
+                )
             }
             TableColumn("Type") { image in
                 Text(isRaw(image.path) ? "RAW" : "JPEG")
@@ -419,6 +382,106 @@ struct COBrowserListView: View {
         let ext = path.lowercased()
         let rawExts = ["arw", "cr2", "cr3", "nef", "nrw", "orf", "raf", "rw2", "pef", "dng", "iiq"]
         return rawExts.contains { ext.hasSuffix($0) }
+    }
+}
+
+// MARK: - List View Subviews (for observation)
+
+struct COBrowserListNameCell: View {
+    @ObservedObject var image: ImageBase
+    let isEditing: Bool
+    @Binding var editedName: String
+    @Binding var pickingColorImageID: String?
+    let onStartEditing: () -> Void
+    let onCommitEditing: () -> Void
+    
+    var body: some View {
+        HStack(spacing: 6) {
+            if isEditing {
+                TextField("", text: $editedName, onCommit: onCommitEditing)
+                .textFieldStyle(.plain)
+                .font(.system(size: 11))
+            } else {
+                Text(image.displayName)
+                    .onTapGesture(count: 2) { onStartEditing() }
+            }
+            
+            Spacer()
+            
+            if let variant = image.primaryVariant {
+                COBrowserColorSquareButton(variant: variant, pickingColorImageID: $pickingColorImageID, imageUUID: image.imageUUID)
+            }
+        }
+    }
+}
+
+struct COBrowserListRatingCell: View {
+    @ObservedObject var variant: VariantBase
+    
+    init?(variant: VariantBase?) {
+        guard let variant = variant else { return nil }
+        self.variant = variant
+    }
+    
+    var body: some View {
+        Text("\(variant.rating) ★")
+            .foregroundColor(.yellow)
+    }
+}
+
+struct COBrowserListColorCell: View {
+    @ObservedObject var variant: VariantBase
+    let isPicking: Bool
+    let onTogglePicking: () -> Void
+    
+    init?(variant: VariantBase?, isPicking: Bool, onTogglePicking: @escaping () -> Void) {
+        guard let variant = variant else { return nil }
+        self.variant = variant
+        self.isPicking = isPicking
+        self.onTogglePicking = onTogglePicking
+    }
+    
+    var body: some View {
+        Button(action: onTogglePicking) {
+            Circle().fill(colorForTag(variant.colorTag))
+                .frame(width: 10, height: 10)
+        }
+        .buttonStyle(.plain)
+        .popover(isPresented: Binding(
+            get: { isPicking },
+            set: { if !$0 { onTogglePicking() } }
+        )) {
+            POColorTagPicker(selectedTag: Binding(
+                get: { variant.colorTag },
+                set: { variant.colorTag = $0; onTogglePicking() }
+            ))
+            .padding(8)
+        }
+    }
+}
+
+struct COBrowserColorSquareButton: View {
+    @ObservedObject var variant: VariantBase
+    @Binding var pickingColorImageID: String?
+    let imageUUID: String
+    
+    var body: some View {
+        Button(action: { pickingColorImageID = imageUUID }) {
+            colorSquare(for: variant.colorTag, size: 10)
+                .padding(4)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .popover(isPresented: Binding(
+            get: { pickingColorImageID == imageUUID },
+            set: { if !$0 { pickingColorImageID = nil } }
+        )) {
+            POColorTagPicker(selectedTag: Binding(
+                get: { variant.colorTag },
+                set: { variant.colorTag = $0; pickingColorImageID = nil }
+            ))
+            .padding(8)
+        }
     }
 }
 
@@ -468,16 +531,7 @@ public struct COImageBrowserCell: View {
                     BrowserOverlayView(variant: nil, image: image)
                 }
                 
-                // 4. Interactive Color Tag Overlay (Invisible clickable region)
-                GeometryReader { _ in
-                    Button(action: { showingColorPicker = true }) {
-                        Color.clear
-                    }
-                    .buttonStyle(.plain)
-                    .frame(width: 30, height: 30) // Larger hit area top-left
-                }
-                
-                // 5. Face Focus (Cull View AI)
+                // 4. Face Focus (Cull View AI)
                 if AppCommandCenter.shared.showFocusMask {
                     ZStack {
                         Circle()
@@ -498,51 +552,23 @@ public struct COImageBrowserCell: View {
             .onTapGesture { onTap?() } // Thumbnail area tap
             
             if showLabel {
-                HStack(spacing: 4) {
-                    if isEditingName {
-                        TextField("", text: $editedName, onCommit: {
-                            image.renameFile(to: editedName)
-                            isEditingName = false
-                        })
-                        .textFieldStyle(.plain)
+                if let variant = image.primaryVariant {
+                    COImageBrowserCellFooter(
+                        image: image,
+                        variant: variant,
+                        isPrimary: isPrimary,
+                        size: size,
+                        useFullWidth: useFullWidth,
+                        isEditingName: $isEditingName,
+                        editedName: $editedName,
+                        showingColorPicker: $showingColorPicker,
+                        onTap: onTap
+                    )
+                } else {
+                    Text(image.displayName)
                         .font(.system(size: 10))
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.white)
-                        .background(Color.blue.opacity(0.3))
-                        .frame(maxWidth: useFullWidth ? .infinity : size)
-                    } else {
-                        Text(image.displayName)
-                            .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
-                            .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
-                            .lineLimit(1)
-                            .frame(maxWidth: useFullWidth ? .infinity : size)
-                            .onTapGesture(count: 2) {
-                                editedName = image.displayName
-                                isEditingName = true
-                            }
-                            .onTapGesture(count: 1) { onTap?() } // Label text tap
-                    }
-                    
-                    Spacer(minLength: 0)
-                    
-                    // Interactive Color Square on the right
-                    Button(action: { showingColorPicker = true }) {
-                        colorSquare(for: image.primaryVariant?.colorTag ?? .none)
-                            .padding(4)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .popover(isPresented: $showingColorPicker) {
-                        if let variant = image.primaryVariant {
-                            POColorTagPicker(selectedTag: Binding(
-                                get: { variant.colorTag },
-                                set: { variant.colorTag = $0; showingColorPicker = false }
-                            ))
-                            .padding(8)
-                        }
-                    }
+                        .foregroundColor(.gray)
                 }
-                .frame(maxWidth: useFullWidth ? .infinity : size)
             }
         }
         .onAppear { loadThumbnail() }
@@ -562,5 +588,62 @@ public struct COImageBrowserCell: View {
         ThumbnailManager.shared.requestThumbnail(for: image.path, size: CGSize(width: 512, height: 512)) { thumb in
             self.thumbnail = thumb
         }
+    }
+}
+
+struct COImageBrowserCellFooter: View {
+    @ObservedObject var image: ImageBase
+    @ObservedObject var variant: VariantBase
+    let isPrimary: Bool
+    let size: CGFloat
+    let useFullWidth: Bool
+    @Binding var isEditingName: Bool
+    @Binding var editedName: String
+    @Binding var showingColorPicker: Bool
+    var onTap: (() -> Void)?
+    
+    var body: some View {
+        HStack(spacing: 4) {
+            if isEditingName {
+                TextField("", text: $editedName, onCommit: {
+                    image.renameFile(to: editedName)
+                    isEditingName = false
+                })
+                .textFieldStyle(.plain)
+                .font(.system(size: 10))
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.white)
+                .background(Color.blue.opacity(0.3))
+                .frame(maxWidth: useFullWidth ? .infinity : size)
+            } else {
+                Text(image.displayName)
+                    .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
+                    .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
+                    .lineLimit(1)
+                    .frame(maxWidth: useFullWidth ? .infinity : size)
+                    .onTapGesture(count: 2) {
+                        editedName = image.displayName
+                        isEditingName = true
+                    }
+                    .onTapGesture(count: 1) { onTap?() }
+            }
+            
+            Spacer(minLength: 0)
+            
+            Button(action: { showingColorPicker = true }) {
+                colorSquare(for: variant.colorTag)
+                    .padding(4)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .popover(isPresented: $showingColorPicker) {
+                POColorTagPicker(selectedTag: Binding(
+                    get: { variant.colorTag },
+                    set: { variant.colorTag = $0; showingColorPicker = false }
+                ))
+                .padding(8)
+            }
+        }
+        .frame(maxWidth: useFullWidth ? .infinity : size)
     }
 }

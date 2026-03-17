@@ -1,4 +1,5 @@
 import Foundation
+import DataCore
 
 /// Reconstructed Base class for Variant entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
@@ -61,7 +62,11 @@ public class VariantBase: BaseObject, Identifiable {
             objectWillChange.send()
             mcVariant?.setObject(newValue, forKey: "ZRATING")
             isModified = true
-            NotificationCenter.default.post(name: .VariantMetadataDidChange, object: self)
+            NotificationCenter.default.post(name: .DCVariantMetadataDidChange, object: nil, userInfo: [
+                "uuid": variantUUID,
+                "rating": newValue,
+                "colorTag": colorTag.rawValue
+            ])
         }
     }
     
@@ -85,7 +90,11 @@ public class VariantBase: BaseObject, Identifiable {
             objectWillChange.send()
             mcVariant?.setObject(newValue.rawValue, forKey: "ZCOLOR_TAG")
             isModified = true
-            NotificationCenter.default.post(name: .VariantMetadataDidChange, object: self)
+            NotificationCenter.default.post(name: .DCVariantMetadataDidChange, object: nil, userInfo: [
+                "uuid": variantUUID,
+                "rating": rating,
+                "colorTag": newValue.rawValue
+            ])
         }
     }
     
@@ -138,9 +147,4 @@ public class VariantBase: BaseObject, Identifiable {
         active.repairArrows.append(arrow)
         isModified = true
     }
-}
-
-// MARK: - Notifications
-extension Notification.Name {
-    public static let VariantMetadataDidChange = Notification.Name("VariantMetadataDidChangeNotification")
 }
