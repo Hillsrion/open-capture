@@ -90,15 +90,18 @@ public struct DraggableDivider: View {
     let direction: Direction
     @Binding var size: Double
     let range: ClosedRange<Double>
-    let onResize: (() -> Void)?
+    let isReversed: Bool // If true, dragging left/up increases size
+    let onResizeEnd: (() -> Void)?
     
     @State private var isHovering = false
+    @State private var initialSize: Double?
     
-    public init(direction: Direction, size: Binding<Double>, range: ClosedRange<Double>, onResize: (() -> Void)? = nil) {
+    public init(direction: Direction, size: Binding<Double>, range: ClosedRange<Double>, isReversed: Bool = false, onResizeEnd: (() -> Void)? = nil) {
         self.direction = direction
         self._size = size
         self.range = range
-        self.onResize = onResize
+        self.isReversed = isReversed
+        self.onResizeEnd = onResizeEnd
     }
     
     public var body: some View {
@@ -118,12 +121,23 @@ public struct DraggableDivider: View {
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
-                        let delta = direction == .horizontal ? value.translation.width : value.translation.height
-                        let newSize = (size + Double(delta)).clamped(to: range)
-                        if newSize != size {
-                            size = newSize
-                            onResize?()
+                        if initialSize == nil {
+                            initialSize = size
                         }
+                        
+                        let translation = direction == .horizontal ? value.translation.width : value.translation.height
+                        let multiplier = isReversed ? -1.0 : 1.0
+                        
+                        if let baseSize = initialSize {
+                            let newSize = (baseSize + Double(translation) * multiplier).clamped(to: range)
+                            if newSize != size {
+                                size = newSize
+                            }
+                        }
+                    }
+                    .onEnded { _ in
+                        initialSize = nil
+                        onResizeEnd?()
                     }
             )
     }
@@ -132,6 +146,17 @@ public struct DraggableDivider: View {
 extension Comparable {
     func clamped(to range: ClosedRange<Self>) -> Self {
         min(max(self, range.lowerBound), range.upperBound)
+    }
+}
+
+// Extension to NumberFormatter for C1 style
+extension NumberFormatter {
+    public static var coDefault: NumberFormatter {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        f.maximumFractionDigits = 1
+        f.minimumFractionDigits = 0
+        return f
     }
 }
 

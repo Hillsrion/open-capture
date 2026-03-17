@@ -166,7 +166,8 @@ public struct CullingView: View {
                     direction: .horizontal,
                     size: $workspaceManager.activeWorkspace.sidebarWidth,
                     range: 200...600,
-                    onResize: { workspaceManager.saveWorkspace() }
+                    isReversed: false,
+                    onResizeEnd: { workspaceManager.saveWorkspace() }
                 )
             }
 
@@ -178,11 +179,13 @@ public struct CullingView: View {
                     direction: .horizontal,
                     size: $workspaceManager.activeWorkspace.sidebarWidth,
                     range: 200...600,
-                    onResize: { workspaceManager.saveWorkspace() }
+                    isReversed: true,
+                    onResizeEnd: { workspaceManager.saveWorkspace() }
                 )
                 toolsSidebar
             }
         }
+        .animation(nil, value: workspaceManager.activeWorkspace.sidebarWidth)
     }
 
     private var toolsSidebar: some View {
@@ -210,10 +213,12 @@ public struct CullingView: View {
                     direction: .horizontal,
                     size: $workspaceManager.activeWorkspace.chromeState.browserWidth,
                     range: 150...800,
-                    onResize: { workspaceManager.saveWorkspace() }
+                    isReversed: true,
+                    onResizeEnd: { workspaceManager.saveWorkspace() }
                 )
                 browserPanePortrait
             }
+            .animation(nil, value: workspaceManager.activeWorkspace.chromeState.browserWidth)
         } else {
             VStack(spacing: 0) {
                 viewerPane
@@ -221,10 +226,12 @@ public struct CullingView: View {
                     direction: .vertical,
                     size: $workspaceManager.activeWorkspace.chromeState.browserHeight,
                     range: 100...600,
-                    onResize: { workspaceManager.saveWorkspace() }
+                    isReversed: true,
+                    onResizeEnd: { workspaceManager.saveWorkspace() }
                 )
                 browserPaneLandscape
             }
+            .animation(nil, value: workspaceManager.activeWorkspace.chromeState.browserHeight)
         }
     }
 
