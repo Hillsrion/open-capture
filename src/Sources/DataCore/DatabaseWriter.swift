@@ -34,6 +34,28 @@ public class DatabaseWriter {
         sqlite3_finalize(statement)
     }
     
+    /// Updates the image name and filename in the database (WF-501).
+    public func updateImageName(uuid: String, displayName: String, fileName: String, path: String) throws {
+        let query = "UPDATE ZIMAGE SET ZDISPLAYNAME = ?, ZIMAGEFILENAME = ?, ZSIDECARPATH = ? WHERE ZIMAGEUUID = ?;"
+        var statement: OpaquePointer?
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (displayName as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (fileName as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 3, (path as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 4, (uuid as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(statement) != SQLITE_DONE {
+                let error = String(cString: sqlite3_errmsg(db))
+                sqlite3_finalize(statement)
+                throw NSError(domain: "DataCore", code: 11, userInfo: [NSLocalizedDescriptionKey: error])
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+    
     /// Reconstructed logic for creating a variant for an image.
     public func createVariant(uuid: String, imagePK: Int) throws {
         let query = "INSERT INTO ZVARIANT (ZVARIANTUUID, ZIMAGE, ZISMODIFIED) VALUES (?, ?, ?);"
@@ -98,14 +120,23 @@ public class DatabaseWriter {
         sqlite3_finalize(statement)
     }
     
-    /// Reconstructed logic for updating variant metadata (rating, color tag).
+    /// Reconstructed logic for updating variant metadata (rating, color tag) (CORE-009).
+    /// Updated to match Capture One 16.7.x schema using ZVARIANTMETADATA.
     public func updateVariantMetadata(uuid: String, rating: Int, colorTag: Int) throws {
-        let query = "UPDATE ZVARIANT SET ZRATING = ?, ZCOLOR_TAG = ?, ZISMODIFIED = 1 WHERE ZVARIANTUUID = ?;"
-        var statement: OpaquePointer?
-        
         guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+
+        // 1. Update ZVARIANTMETADATA through ZVARIANT -> ZVARIANTLAYER relationship
+        let metadataQuery = """
+            UPDATE ZVARIANTMETADATA 
+            SET ZBASIC_RATING = ?, ZCOLOR_TAG_INDEX = ? 
+            WHERE Z_PK = (
+                SELECT ZMETADATA FROM ZVARIANTLAYER 
+                WHERE Z_PK = (SELECT ZDEFAULTLAYER FROM ZVARIANT WHERE ZVARIANTUUID = ?)
+            );
+        """
         
-        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+        var statement: OpaquePointer?
+        if sqlite3_prepare_v2(db, metadataQuery, -1, &statement, nil) == SQLITE_OK {
             sqlite3_bind_int(statement, 1, Int32(rating))
             sqlite3_bind_int(statement, 2, Int32(colorTag))
             sqlite3_bind_text(statement, 3, (uuid as NSString).utf8String, -1, nil)
@@ -115,6 +146,14 @@ public class DatabaseWriter {
                 sqlite3_finalize(statement)
                 throw NSError(domain: "DataCore", code: 10, userInfo: [NSLocalizedDescriptionKey: error])
             }
+        }
+        sqlite3_finalize(statement)
+        
+        // 2. Mark variant as modified
+        let modifiedQuery = "UPDATE ZVARIANT SET ZISMODIFIED = 1 WHERE ZVARIANTUUID = ?;"
+        if sqlite3_prepare_v2(db, modifiedQuery, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (uuid as NSString).utf8String, -1, nil)
+            sqlite3_step(statement)
         }
         sqlite3_finalize(statement)
     }

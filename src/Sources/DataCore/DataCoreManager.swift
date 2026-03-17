@@ -14,6 +14,7 @@ public class DataCoreManager {
     }
     
     private func observeNotifications() {
+        // Variant Metadata (Rating, Color Tag)
         NotificationCenter.default.addObserver(forName: .DCVariantMetadataDidChange, object: nil, queue: .main) { notification in
             guard let userInfo = notification.userInfo,
                   let uuid = userInfo["uuid"] as? String,
@@ -31,15 +32,33 @@ public class DataCoreManager {
                 print("[DataCore] Error persisting metadata: \(error.localizedDescription)")
             }
         }
+        
+        // Image Naming (Renaming file)
+        NotificationCenter.default.addObserver(forName: .DCImageNameDidChange, object: nil, queue: .main) { notification in
+            guard let userInfo = notification.userInfo,
+                  let uuid = userInfo["uuid"] as? String,
+                  let displayName = userInfo["displayName"] as? String,
+                  let fileName = userInfo["fileName"] as? String,
+                  let path = userInfo["path"] as? String else { return }
+            
+            do {
+                try self.writer().updateImageName(
+                    uuid: uuid,
+                    displayName: displayName,
+                    fileName: fileName,
+                    path: path
+                )
+                print("[DataCore] Persisted name change for image \(uuid)")
+            } catch {
+                print("[DataCore] Error persisting image name: \(error.localizedDescription)")
+            }
+        }
     }
     
     // MARK: - Document Management
     
     public func createDatabase(at url: URL, for documentType: Int16) throws {
-        // Logic recovery:
-        // 1. Open SQLite connection at URL
-        // 2. Execute CREATE TABLE statements mapped in Phase 1
-        // 3. Initialize ZVERSIONINFO
+        // Logic recovery
     }
     
     public func openDatabase(at url: URL) throws {
@@ -85,4 +104,5 @@ public struct DCVersionInfo {
 // MARK: - Notifications
 extension Notification.Name {
     public static let DCVariantMetadataDidChange = Notification.Name("DCVariantMetadataDidChangeNotification")
+    public static let DCImageNameDidChange = Notification.Name("DCImageNameDidChangeNotification")
 }

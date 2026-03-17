@@ -36,6 +36,13 @@ public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
                 self.path = newURL.path
                 self.displayName = newName
                 self.imageFileName = newFileName
+                
+                NotificationCenter.default.post(name: .DCImageNameDidChange, object: nil, userInfo: [
+                    "uuid": self.imageUUID,
+                    "displayName": newName,
+                    "fileName": newFileName,
+                    "path": newURL.path
+                ])
             }
 
             print("[ImageBase] Successfully renamed \(oldURL.lastPathComponent) to \(newFileName)")
