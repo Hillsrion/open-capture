@@ -6,6 +6,10 @@ public struct FilterToolView: View {
     @Binding var predicate: COFilterPredicate
     @State private var isShowingFilterDialog = false
     
+    @ObservedObject var commands = AppCommandCenter.shared
+    @State private var ratingCounts: [Int: Int] = [:]
+    @State private var colorTagCounts: [VariantBase.ColorTag: Int] = [:]
+    
     public init(predicate: Binding<COFilterPredicate>) {
         self._predicate = predicate
     }
@@ -17,12 +21,9 @@ public struct FilterToolView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("RATING").font(.system(size: 9, weight: .bold)).foregroundColor(.gray)
-                    ratingRow(value: 5)
-                    ratingRow(value: 4)
-                    ratingRow(value: 3)
-                    ratingRow(value: 2)
-                    ratingRow(value: 1)
-                    ratingRow(value: 0)
+                    ForEach((0...5).reversed(), id: \.self) { value in
+                        ratingRow(value: value)
+                    }
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
@@ -41,7 +42,30 @@ public struct FilterToolView: View {
                 showHideButton
             }
             .padding(.vertical, 4)
+            .onAppear { calculateCounts() }
+            .onReceive(commands.browser.$dataSource) { _ in calculateCounts() }
+            .onReceive(NotificationCenter.default.publisher(for: .VariantMetadataDidChange)) { _ in calculateCounts() }
         }
+    }
+    
+    private func calculateCounts() {
+        var newRatingCounts: [Int: Int] = [:]
+        var newColorCounts: [VariantBase.ColorTag: Int] = [:]
+        
+        let variants = commands.browser.dataSource.compactMap { $0.primaryVariant }
+        
+        for variant in variants {
+            let r = variant.rating
+            newRatingCounts[r, default: 0] += 1
+            
+            let c = variant.colorTag
+            if c != .none {
+                newColorCounts[c, default: 0] += 1
+            }
+        }
+        
+        ratingCounts = newRatingCounts
+        colorTagCounts = newColorCounts
     }
     
     private var activeFiltersHeader: some View {
@@ -64,8 +88,8 @@ public struct FilterToolView: View {
     private func ratingRow(value: Int) -> some View {
         let isMatch = predicate.minRating == value
         return filterRow(
-            label: value == 0 ? "No Rating" : "\(value) Stars",
-            count: 0,
+            label: value == 0 ? "No Rating" : (value == 1 ? "1 Star" : "\(value) Stars"),
+            count: ratingCounts[value] ?? 0,
             isActive: isMatch,
             onTap: { toggleRating(value) }
         )
@@ -75,7 +99,7 @@ public struct FilterToolView: View {
         let isActive = predicate.colorTags?.contains(tag.rawValue) ?? false
         return filterRow(
             label: name,
-            count: 0,
+            count: colorTagCounts[tag] ?? 0,
             isActive: isActive,
             onTap: { toggleColorTag(tag.rawValue) },
             tagColor: colorForTag(tag)

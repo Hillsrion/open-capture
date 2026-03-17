@@ -61,6 +61,7 @@ public class VariantBase: BaseObject, Identifiable {
             objectWillChange.send()
             mcVariant?.setObject(newValue, forKey: "ZRATING")
             isModified = true
+            NotificationCenter.default.post(name: .VariantMetadataDidChange, object: self)
         }
     }
     
@@ -84,6 +85,7 @@ public class VariantBase: BaseObject, Identifiable {
             objectWillChange.send()
             mcVariant?.setObject(newValue.rawValue, forKey: "ZCOLOR_TAG")
             isModified = true
+            NotificationCenter.default.post(name: .VariantMetadataDidChange, object: self)
         }
     }
     
@@ -136,4 +138,9 @@ public class VariantBase: BaseObject, Identifiable {
         active.repairArrows.append(arrow)
         isModified = true
     }
+}
+
+// MARK: - Notifications
+extension Notification.Name {
+    public static let VariantMetadataDidChange = Notification.Name("VariantMetadataDidChangeNotification")
 }
