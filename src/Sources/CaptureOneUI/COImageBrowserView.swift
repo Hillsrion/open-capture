@@ -212,6 +212,34 @@ public struct COImageBrowserView: View {
 
 }
 
+// MARK: - Helpers
+@ViewBuilder
+func colorSquare(for tag: VariantBase.ColorTag, size: CGFloat = 8) -> some View {
+    let color = colorForTag(tag)
+    if tag == .none {
+        RoundedRectangle(cornerRadius: 1.5)
+            .stroke(Color.white.opacity(0.2), lineWidth: 0.5)
+            .frame(width: size, height: size)
+    } else {
+        RoundedRectangle(cornerRadius: 1.5)
+            .fill(color)
+            .frame(width: size, height: size)
+    }
+}
+
+func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
+    switch tag {
+    case .none: return .clear
+    case .red: return .red
+    case .orange: return .orange
+    case .yellow: return .yellow
+    case .green: return .green
+    case .blue: return .blue
+    case .purple: return .purple
+    case .pink: return .pink
+    }
+}
+
 // MARK: - Grid View
 struct COBrowserGridView: View {
     let images: [ImageBase]
@@ -326,19 +354,23 @@ struct COBrowserListView: View {
             set: { _ in } // Managed via interactor logic if needed
         )) {
             TableColumn("Name") { image in
-                if editingImageID == image.imageUUID {
-                    TextField("", text: $editedName, onCommit: {
-                        image.displayName = editedName
-                        editingImageID = nil
-                    })
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 11))
-                } else {
-                    Text(image.displayName)
-                        .onTapGesture(count: 2) {
-                            editedName = image.displayName
-                            editingImageID = image.imageUUID
-                        }
+                HStack(spacing: 6) {
+                    colorSquare(for: image.primaryVariant?.colorTag ?? .none, size: 10)
+                    
+                    if editingImageID == image.imageUUID {
+                        TextField("", text: $editedName, onCommit: {
+                            image.renameFile(to: editedName)
+                            editingImageID = nil
+                        })
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 11))
+                    } else {
+                        Text(image.displayName)
+                            .onTapGesture(count: 2) {
+                                editedName = image.displayName
+                                editingImageID = image.imageUUID
+                            }
+                    }
                 }
             }
             TableColumn("Rating") { image in
@@ -377,19 +409,6 @@ struct COBrowserListView: View {
         let ext = path.lowercased()
         let rawExts = ["arw", "cr2", "cr3", "nef", "nrw", "orf", "raf", "rw2", "pef", "dng", "iiq"]
         return rawExts.contains { ext.hasSuffix($0) }
-    }
-    
-    private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
-        switch tag {
-        case .none: return .clear
-        case .red: return .red
-        case .orange: return .orange
-        case .yellow: return .yellow
-        case .green: return .green
-        case .blue: return .blue
-        case .purple: return .purple
-        case .pink: return .pink
-        }
     }
 }
 
@@ -461,28 +480,33 @@ public struct COImageBrowserCell: View {
             .aspectRatio(1.0, contentMode: .fit)
             
             if showLabel {
-                if isEditingName {
-                    TextField("", text: $editedName, onCommit: {
-                        image.displayName = editedName
-                        isEditingName = false
-                    })
-                    .textFieldStyle(.plain)
-                    .font(.system(size: 10))
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .background(Color.blue.opacity(0.3))
-                    .frame(maxWidth: useFullWidth ? .infinity : size)
-                } else {
-                    Text(image.displayName)
-                        .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
-                        .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
-                        .lineLimit(1)
+                HStack(spacing: 4) {
+                    colorSquare(for: image.primaryVariant?.colorTag ?? .none)
+                    
+                    if isEditingName {
+                        TextField("", text: $editedName, onCommit: {
+                            image.renameFile(to: editedName)
+                            isEditingName = false
+                        })
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 10))
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.white)
+                        .background(Color.blue.opacity(0.3))
                         .frame(maxWidth: useFullWidth ? .infinity : size)
-                        .onTapGesture(count: 2) {
-                            editedName = image.displayName
-                            isEditingName = true
-                        }
+                    } else {
+                        Text(image.displayName)
+                            .font(.system(size: 10, weight: isPrimary ? .bold : .regular))
+                            .foregroundColor(isPrimary ? .white : CaptureOneTheme.Colors.textSecondary)
+                            .lineLimit(1)
+                            .frame(maxWidth: useFullWidth ? .infinity : size)
+                            .onTapGesture(count: 2) {
+                                editedName = image.displayName
+                                isEditingName = true
+                            }
+                    }
                 }
+                .frame(maxWidth: useFullWidth ? .infinity : size)
             }
         }
         .contentShape(Rectangle())

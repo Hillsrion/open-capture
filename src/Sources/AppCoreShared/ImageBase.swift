@@ -6,15 +6,44 @@ import ImageCore
 public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
     
     public var id: String { imageUUID }
-    
     // MARK: - Properties (Core Identity)
     public let imageUUID: String
-    public var path: String
+    @Published public var path: String
     @Published public var displayName: String
-    public var imageFileName: String
-    
+    @Published public var imageFileName: String
+
     // MARK: - Internal Row State (Placeholders)
     internal var row: Any?
+    
+    // MARK: - Methods
+
+    /// Physically rename the file on disk and update internal paths.
+    public func renameFile(to newName: String) {
+        guard !newName.isEmpty && newName != displayName else { return }
+
+        let oldURL = URL(fileURLWithPath: path)
+        let directory = oldURL.deletingLastPathComponent()
+        let extension_ = oldURL.pathExtension
+
+        let newFileName = extension_.isEmpty ? newName : "\(newName).\(extension_)"
+        let newURL = directory.appendingPathComponent(newFileName)
+
+        do {
+            try FileManager.default.moveItem(at: oldURL, to: newURL)
+
+            // Update properties
+            DispatchQueue.main.async {
+                self.path = newURL.path
+                self.displayName = newName
+                self.imageFileName = newFileName
+            }
+
+            print("[ImageBase] Successfully renamed \(oldURL.lastPathComponent) to \(newFileName)")
+
+        } catch {
+            print("[ImageBase] Error renaming file: \(error.localizedDescription)")
+        }
+    }
     
     // MARK: - State Flags
     @objc public var isTrashed: Bool {
