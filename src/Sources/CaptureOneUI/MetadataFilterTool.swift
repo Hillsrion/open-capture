@@ -93,6 +93,9 @@ public struct FilterToolView: View {
             isActive: isMatch,
             onTap: { toggleRating(value) }
         )
+        .onDrop(of: [.text], isTargeted: nil) { providers in
+            handleDrop(providers: providers, targetRating: value)
+        }
     }
     
     private func colorTagRow(tag: VariantBase.ColorTag, name: String) -> some View {
@@ -104,6 +107,9 @@ public struct FilterToolView: View {
             onTap: { toggleColorTag(tag.rawValue) },
             tagColor: colorForTag(tag)
         )
+        .onDrop(of: [.text], isTargeted: nil) { providers in
+            handleDrop(providers: providers, targetColorTag: tag)
+        }
     }
     
     private var hasActiveFilters: Bool {
@@ -158,6 +164,29 @@ public struct FilterToolView: View {
         .padding(.vertical, 2)
         .contentShape(Rectangle())
         .onTapGesture(perform: onTap)
+    }
+    
+    private func handleDrop(providers: [NSItemProvider], targetRating: Int? = nil, targetColorTag: VariantBase.ColorTag? = nil) -> Bool {
+        for provider in providers {
+            provider.loadObject(ofClass: NSString.self) { (uuid, error) in
+                guard let variantUUID = uuid as? String else { return }
+                
+                DispatchQueue.main.async {
+                    if let image = commands.browser.dataSource.first(where: { $0.primaryVariant?.variantUUID == variantUUID }),
+                       let variant = image.primaryVariant {
+                        withAnimation {
+                            if let rating = targetRating {
+                                variant.rating = rating
+                            }
+                            if let tag = targetColorTag {
+                                variant.colorTag = tag
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true
     }
     
     private func colorForTag(_ tag: VariantBase.ColorTag) -> Color {
