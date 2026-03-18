@@ -17,8 +17,12 @@ public class CollectionBase: BaseObject {
     public var isCloud: Bool
     public var isCloudOnly: Bool
     
+    // Type mapping: 0 = Folder, 1 = Album, 2 = Smart Album, 3 = Project, 4 = Group
+    public var collectionType: Int = 1 
+    
     // MARK: - Relationships
     public weak var parent: CollectionBase?
+    @Published public var children: [CollectionBase] = []
     
     // MARK: - Initialization
     public init(uuid: String, context: ObjectContext?) {

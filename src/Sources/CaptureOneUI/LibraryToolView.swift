@@ -16,6 +16,9 @@ public struct LibraryToolView: View {
     // For visual drop feedback
     @State private var dropActiveUUID: String? = nil
     
+    // File system roots
+    @StateObject private var macintoshHDRoot = FileSystemNode(path: "/")
+    
     public init(session: SessionBase) {
         self.session = session
     }
@@ -124,7 +127,16 @@ public struct LibraryToolView: View {
                     Text("No albums").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
                 } else {
                     ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { album in
-                        albumRow(album)
+                        CollectionNodeView(
+                            collection: album,
+                            session: session,
+                            selectedUUID: $selectedCollectionUUID,
+                            editingUUID: $editingUUID,
+                            editedName: $editedName,
+                            dropActiveUUID: $dropActiveUUID,
+                            onRename: { commitRename(for: album) },
+                            onDrop: handleDrop
+                        )
                     }
                 }
             }
@@ -141,6 +153,20 @@ public struct LibraryToolView: View {
                 session.addUserAlbum(name: "New Smart Album", isSmart: true) 
                 if let new = session.arrangedUserAlbumCollections.last { startEditing(new.uuid, currentName: "New Smart Album") }
             }
+            Button("New Group") {
+                let group = CollectionBase(uuid: UUID().uuidString, context: session.managedObjectContext)
+                group.name = "New Group"
+                group.collectionType = 4
+                session.arrangedUserAlbumCollections.append(group)
+                startEditing(group.uuid, currentName: "New Group")
+            }
+            Button("New Project") {
+                let project = CollectionBase(uuid: UUID().uuidString, context: session.managedObjectContext)
+                project.name = "New Project"
+                project.collectionType = 3
+                session.arrangedUserAlbumCollections.append(project)
+                startEditing(project.uuid, currentName: "New Project")
+            }
         } label: {
             Image(systemName: "plus")
                 .font(.system(size: 10, weight: .bold))
@@ -148,35 +174,6 @@ public struct LibraryToolView: View {
                 .frame(width: 22, height: 22)
         }
         .menuStyle(BorderlessButtonMenuStyle())
-    }
-    
-    @ViewBuilder
-    private func albumRow(_ album: CollectionBase) -> some View {
-        LibraryRow(
-            title: album.name ?? "Untitled",
-            icon: album.isSmartAlbum ? "gearshape" : "photo.on.rectangle",
-            count: album.itemCount,
-            isSelected: selectedCollectionUUID == album.uuid,
-            isEditing: editingUUID == album.uuid,
-            editedName: $editedName,
-            isTargeted: dropActiveUUID == album.uuid,
-            onCommitRename: { commitRename(for: album) }
-        )
-        .onTapGesture { selectedCollectionUUID = album.uuid }
-        .onTapGesture(count: 2) { startEditing(album.uuid, currentName: album.name ?? "") }
-        .onDrop(of: [.text], isTargeted: Binding(
-            get: { dropActiveUUID == album.uuid },
-            set: { targeted in dropActiveUUID = targeted ? album.uuid : nil }
-        )) { providers in
-            handleDrop(providers: providers, targetAlbum: album)
-        }
-        .contextMenu {
-            if album.isSmartAlbum { Button("Edit Smart Album...") { } }
-            Button("Rename...") { startEditing(album.uuid, currentName: album.name ?? "") }
-            Button("Duplicate...") { }
-            Divider()
-            Button("Delete", role: .destructive) { session.removeUserAlbum(uuid: album.uuid) }
-        }
     }
     
     private var sessionFavoritesSection: some View {
@@ -210,6 +207,7 @@ public struct LibraryToolView: View {
             isEditing: editingUUID == fav.uuid,
             editedName: $editedName,
             isTargeted: dropActiveUUID == fav.uuid,
+            indentLevel: 0,
             onCommitRename: { commitRename(for: fav) }
         )
         .onTapGesture { selectedCollectionUUID = fav.uuid }
@@ -239,42 +237,24 @@ public struct LibraryToolView: View {
     private var systemFoldersSection: some View {
         COToolSection("System Folders", toolID: "SystemFolders", showDefaultActions: false) {
             VStack(alignment: .leading, spacing: 0) {
-                LibraryRow(title: "Macintosh HD", icon: "internaldrive", count: 0, isSelected: selectedCollectionUUID == "hdd")
-                    .onTapGesture { selectedCollectionUUID = "hdd" }
-                    .padding(.leading, 12)
+                SystemFolderNodeView(
+                    node: macintoshHDRoot, 
+                    session: session, 
+                    selectedPath: $selectedCollectionUUID, 
+                    dropActiveUUID: $dropActiveUUID, 
+                    onDrop: handleDrop
+                )
                 
                 ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { path in
-                    systemFolderItemRow(path: path)
+                    SystemFolderNodeView(
+                        node: FileSystemNode(path: path), 
+                        session: session, 
+                        selectedPath: $selectedCollectionUUID, 
+                        dropActiveUUID: $dropActiveUUID, 
+                        onDrop: handleDrop
+                    )
                 }
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func systemFolderItemRow(path: String) -> some View {
-        LibraryRow(
-            title: (path as NSString).lastPathComponent, 
-            icon: iconForFolder(path: path), 
-            count: 0, 
-            isSelected: selectedCollectionUUID == path,
-            isTargeted: dropActiveUUID == path
-        )
-        .onTapGesture { selectedCollectionUUID = path }
-        .padding(.leading, 24)
-        .onDrop(of: [.text], isTargeted: Binding(
-            get: { dropActiveUUID == path },
-            set: { targeted in dropActiveUUID = targeted ? path : nil }
-        )) { providers in
-            handleDrop(providers: providers, targetPath: path)
-        }
-        .contextMenu {
-            let url = URL(fileURLWithPath: path)
-            Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
-            Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
-            Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
-            Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
-            Divider()
-            Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
         }
     }
     
@@ -293,29 +273,33 @@ public struct LibraryToolView: View {
             }
             
             COToolSection("User Collections", toolID: "UserCollections", showDefaultActions: false, actions: {
-                Menu {
-                    Button("New Album") { }
-                    Button("New Smart Album") { }
-                    Button("New Group") { }
-                    Button("New Project") { }
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        .frame(width: 22, height: 22)
-                }
-                .menuStyle(BorderlessButtonMenuStyle())
+                albumAddMenu
             }) {
                 VStack(alignment: .leading, spacing: 0) {
-                    LibraryRow(title: "Portfolio 2024", icon: "folder.fill.badge.plus", count: 45, isSelected: selectedCollectionUUID == "portfolio")
-                        .onTapGesture { selectedCollectionUUID = "portfolio" }
+                    ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { collection in
+                        CollectionNodeView(
+                            collection: collection,
+                            session: session,
+                            selectedUUID: $selectedCollectionUUID,
+                            editingUUID: $editingUUID,
+                            editedName: $editedName,
+                            dropActiveUUID: $dropActiveUUID,
+                            onRename: { commitRename(for: collection) },
+                            onDrop: handleDrop
+                        )
+                    }
                 }
             }
             
             COToolSection("Folders", toolID: "CatalogFolders", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
-                    LibraryRow(title: "Macintosh HD", icon: "desktopcomputer", count: 0, isSelected: selectedCollectionUUID == "hdd")
-                        .onTapGesture { selectedCollectionUUID = "hdd" }
+                    SystemFolderNodeView(
+                        node: macintoshHDRoot, 
+                        session: session, 
+                        selectedPath: $selectedCollectionUUID, 
+                        dropActiveUUID: $dropActiveUUID, 
+                        onDrop: handleDrop
+                    )
                 }
             }
         }
@@ -388,7 +372,11 @@ public struct LibraryToolView: View {
                 
                 do {
                     if let album = targetAlbum {
-                        try SessionFolderManager.shared.addToAlbum(variant: variant, album: album)
+                        if album.collectionType == 1 {
+                            try SessionFolderManager.shared.addToAlbum(variant: variant, album: album)
+                        } else {
+                            print("[Library] Cannot drop images directly into a Group/Project.")
+                        }
                     } else if let favorite = targetFavorite {
                         try SessionFolderManager.shared.moveToFavorite(variant: variant, favorite: favorite)
                     } else if let type = targetFolderType {
@@ -418,6 +406,198 @@ public struct LibraryToolView: View {
     }
 }
 
+// MARK: - Recursive Node Views
+
+struct CollectionNodeView: View {
+    @ObservedObject var collection: CollectionBase
+    var session: SessionBase
+    @Binding var selectedUUID: String?
+    @Binding var editingUUID: String?
+    @Binding var editedName: String
+    @Binding var dropActiveUUID: String?
+    var onRename: () -> Void
+    var onDrop: ([NSItemProvider], CollectionBase?, CollectionBase?, SessionFolderType?, String?) -> Bool
+    var indentLevel: Int = 0
+    
+    @State private var isExpanded: Bool = true
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(spacing: 4) {
+                if !collection.children.isEmpty || isGroupOrProject(collection.collectionType) {
+                    Image(systemName: "play.fill")
+                        .font(.system(size: 6))
+                        .rotationEffect(.degrees(isExpanded ? 90 : 0))
+                        .foregroundColor(collection.children.isEmpty ? .clear : .gray)
+                        .onTapGesture { withAnimation { isExpanded.toggle() } }
+                        .frame(width: 12)
+                } else {
+                    Spacer().frame(width: 16)
+                }
+                
+                LibraryRow(
+                    title: collection.name ?? "Untitled",
+                    icon: iconForType(collection.collectionType),
+                    count: collection.itemCount,
+                    isSelected: selectedUUID == collection.uuid,
+                    isEditing: editingUUID == collection.uuid,
+                    editedName: $editedName,
+                    isTargeted: dropActiveUUID == collection.uuid,
+                    indentLevel: indentLevel,
+                    onCommitRename: onRename
+                )
+                .onTapGesture { selectedUUID = collection.uuid }
+                .onTapGesture(count: 2) { 
+                    editedName = collection.name ?? ""
+                    editingUUID = collection.uuid
+                }
+                .onDrop(of: [.text], isTargeted: Binding(
+                    get: { dropActiveUUID == collection.uuid },
+                    set: { targeted in dropActiveUUID = targeted ? collection.uuid : nil }
+                )) { providers in
+                    onDrop(providers, collection, nil, nil, nil)
+                }
+                .contextMenu {
+                    if collection.isSmartAlbum { Button("Edit Smart Album...") { } }
+                    Button("Rename...") { 
+                        editedName = collection.name ?? ""
+                        editingUUID = collection.uuid
+                    }
+                    Button("Duplicate...") { }
+                    Divider()
+                    if isGroupOrProject(collection.collectionType) {
+                        Button("New Album inside") { addChild(type: 1, name: "New Album") }
+                        Button("New Smart Album inside") { addChild(type: 2, name: "New Smart Album") }
+                        Button("New Group inside") { addChild(type: 4, name: "New Group") }
+                        Button("New Project inside") { addChild(type: 3, name: "New Project") }
+                        Divider()
+                    }
+                    Button("Export as Catalog...") { }
+                    Divider()
+                    Button("Delete", role: .destructive) { session.removeUserAlbum(uuid: collection.uuid) }
+                }
+            }
+            .padding(.leading, CGFloat(indentLevel * 12))
+            
+            if isExpanded && !collection.children.isEmpty {
+                ForEach(collection.children, id: \.uuid) { child in
+                    CollectionNodeView(
+                        collection: child,
+                        session: session,
+                        selectedUUID: $selectedUUID,
+                        editingUUID: $editingUUID,
+                        editedName: $editedName,
+                        dropActiveUUID: $dropActiveUUID,
+                        onRename: { child.name = editedName; editingUUID = nil; session.isDirty = true },
+                        onDrop: onDrop,
+                        indentLevel: indentLevel + 1
+                    )
+                }
+            }
+        }
+    }
+    
+    private func isGroupOrProject(_ type: Int) -> Bool {
+        return type == 3 || type == 4
+    }
+    
+    private func iconForType(_ type: Int) -> String {
+        switch type {
+        case 0: return "folder"
+        case 1: return "photo.on.rectangle" // Album
+        case 2: return "gearshape" // Smart Album
+        case 3: return "tray.full" // Project
+        case 4: return "folder.fill.badge.plus" // Group
+        default: return "photo.on.rectangle"
+        }
+    }
+    
+    private func addChild(type: Int, name: String) {
+        let child = CollectionBase(uuid: UUID().uuidString, context: session.managedObjectContext)
+        child.name = name
+        child.collectionType = type
+        child.parent = collection
+        collection.children.append(child)
+        isExpanded = true
+        session.isDirty = true
+    }
+}
+
+struct SystemFolderNodeView: View {
+    @ObservedObject var node: FileSystemNode
+    var session: SessionBase
+    @Binding var selectedPath: String?
+    @Binding var dropActiveUUID: String?
+    var onDrop: ([NSItemProvider], CollectionBase?, CollectionBase?, SessionFolderType?, String?) -> Bool
+    var indentLevel: Int = 0
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(spacing: 4) {
+                Image(systemName: "play.fill")
+                    .font(.system(size: 6))
+                    .rotationEffect(.degrees(node.isExpanded ? 90 : 0))
+                    .foregroundColor(.gray)
+                    .onTapGesture { 
+                        if !node.isLoaded { node.loadChildren() }
+                        withAnimation { node.isExpanded.toggle() } 
+                    }
+                    .frame(width: 12)
+                
+                LibraryRow(
+                    title: node.name, 
+                    icon: node.path == "/" ? "internaldrive" : "folder", 
+                    count: 0, 
+                    isSelected: selectedPath == node.path,
+                    isTargeted: dropActiveUUID == node.path,
+                    indentLevel: indentLevel
+                )
+                .onTapGesture { selectedPath = node.path }
+                .onDrop(of: [.text], isTargeted: Binding(
+                    get: { dropActiveUUID == node.path },
+                    set: { targeted in dropActiveUUID = targeted ? node.path : nil }
+                )) { providers in
+                    onDrop(providers, nil, nil, nil, node.path)
+                }
+                .contextMenu {
+                    Button("New Folder") { }
+                    Button("Rename...") { }
+                    Divider()
+                    Button("Import") { }
+                    Button("Export") { }
+                    Divider()
+                    let url = URL(fileURLWithPath: node.path)
+                    Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
+                    Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
+                    Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
+                    Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
+                    Divider()
+                    Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: node.path) }
+                }
+            }
+            .padding(.leading, CGFloat(indentLevel * 12))
+            
+            if node.isExpanded, let children = node.children {
+                ForEach(children) { child in
+                    SystemFolderNodeView(
+                        node: child, 
+                        session: session, 
+                        selectedPath: $selectedPath, 
+                        dropActiveUUID: $dropActiveUUID,
+                        onDrop: onDrop,
+                        indentLevel: indentLevel + 1
+                    )
+                }
+            } else if node.isExpanded && !node.isLoaded {
+                ProgressView().scaleEffect(0.5)
+                    .padding(.leading, CGFloat((indentLevel + 1) * 12 + 16))
+                    .onAppear { node.loadChildren() }
+            }
+        }
+    }
+}
+
+// MARK: - Base Row UI
 struct LibraryRow: View {
     let title: String
     let icon: String
@@ -427,10 +607,11 @@ struct LibraryRow: View {
     // Renaming support
     var isEditing: Bool
     @Binding var editedName: String
-    var isTargeted: Bool = false
+    var isTargeted: Bool
+    var indentLevel: Int
     var onCommitRename: (() -> Void)?
     
-    init(title: String, icon: String, count: Int, isSelected: Bool, isEditing: Bool = false, editedName: Binding<String> = .constant(""), isTargeted: Bool = false, onCommitRename: (() -> Void)? = nil) {
+    init(title: String, icon: String, count: Int, isSelected: Bool, isEditing: Bool = false, editedName: Binding<String> = .constant(""), isTargeted: Bool = false, indentLevel: Int = 0, onCommitRename: (() -> Void)? = nil) {
         self.title = title
         self.icon = icon
         self.count = count
@@ -438,6 +619,7 @@ struct LibraryRow: View {
         self.isEditing = isEditing
         self._editedName = editedName
         self.isTargeted = isTargeted
+        self.indentLevel = indentLevel
         self.onCommitRename = onCommitRename
     }
     
