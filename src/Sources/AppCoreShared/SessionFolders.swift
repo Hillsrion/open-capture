@@ -107,4 +107,38 @@ public class SessionFolderManager {
         session.isDirty = true
         print("[SessionFolders] \(type) folder set to: \(url.path)")
     }
+
+    /// Adds a variant to a user album (GAP-402).
+    public func addToAlbum(variant: VariantBase, album: CollectionBase) throws {
+        let writer = DataCoreManager.shared.writer()
+        try writer.addVariantToCollection(variantUUID: variant.variantUUID, collectionUUID: album.uuid)
+        
+        // Update in-memory count
+        DispatchQueue.main.async {
+            album.itemCount += 1
+        }
+        print("[SessionFolders] Added variant \(variant.variantUUID) to album \(album.name ?? "")")
+    }
+
+    /// Physically move an image to a favorite folder.
+    public func moveToFavorite(variant: VariantBase, favorite: CollectionBase) throws {
+        guard let image = variant.image, let targetPath = favorite.folderPath else { return }
+        let targetFolder = URL(fileURLWithPath: targetPath)
+        
+        let sourceURL = URL(fileURLWithPath: image.path)
+        let destinationURL = targetFolder.appendingPathComponent(sourceURL.lastPathComponent)
+        
+        if sourceURL != destinationURL {
+            try FileManager.default.moveItem(at: sourceURL, to: destinationURL)
+            
+            // Update models
+            image.path = destinationURL.path
+            
+            // Update database
+            let writer = DataCoreManager.shared.writer()
+            try writer.updateImagePath(imageUUID: image.imageUUID, newPath: destinationURL.path)
+            
+            print("[SessionFolders] Moved \(sourceURL.lastPathComponent) to favorite folder \(favorite.name ?? "")")
+        }
+    }
 }

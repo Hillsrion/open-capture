@@ -157,4 +157,36 @@ public class DatabaseWriter {
         }
         sqlite3_finalize(statement)
     }
+
+    /// Links a variant to a collection (ZVARIANTINCOLLECTION).
+    public func addVariantToCollection(variantUUID: String, collectionUUID: String) throws {
+        let query = """
+            INSERT INTO ZVARIANTINCOLLECTION (Z_ENT, ZCOLLECTION, ZVARIANT)
+            SELECT 1, 
+                   (SELECT Z_PK FROM ZCOLLECTION WHERE ZUUID = ?),
+                   (SELECT Z_PK FROM ZVARIANT WHERE ZVARIANTUUID = ?)
+            WHERE NOT EXISTS (
+                SELECT 1 FROM ZVARIANTINCOLLECTION 
+                WHERE ZCOLLECTION = (SELECT Z_PK FROM ZCOLLECTION WHERE ZUUID = ?)
+                AND ZVARIANT = (SELECT Z_PK FROM ZVARIANT WHERE ZVARIANTUUID = ?)
+            );
+        """
+        var statement: OpaquePointer?
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (collectionUUID as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (variantUUID as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 3, (collectionUUID as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 4, (variantUUID as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(statement) != SQLITE_DONE {
+                let error = String(cString: sqlite3_errmsg(db))
+                sqlite3_finalize(statement)
+                throw NSError(domain: "DataCore", code: 12, userInfo: [NSLocalizedDescriptionKey: error])
+            }
+        }
+        sqlite3_finalize(statement)
+    }
 }

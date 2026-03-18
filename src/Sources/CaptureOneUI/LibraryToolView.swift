@@ -87,26 +87,10 @@ public struct LibraryToolView: View {
             // Session Folders Section
             COToolSection("Session Folders", toolID: "SessionFolders", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
-                    LibraryRow(title: "Capture Folder", icon: "camera", count: selectedCollectionUUID == "capture" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "capture")
-                        .onTapGesture { 
-                            selectedCollectionUUID = "capture"
-                            commands.selectSessionFolder(type: .capture)
-                        }
-                    LibraryRow(title: "Selects Folder", icon: "star", count: selectedCollectionUUID == "selects" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "selects")
-                        .onTapGesture { 
-                            selectedCollectionUUID = "selects"
-                            commands.selectSessionFolder(type: .selects)
-                        }
-                    LibraryRow(title: "Output Folder", icon: "gearshape", count: selectedCollectionUUID == "output" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "output")
-                        .onTapGesture { 
-                            selectedCollectionUUID = "output"
-                            commands.selectSessionFolder(type: .output)
-                        }
-                    LibraryRow(title: "Trash Folder", icon: "trash", count: selectedCollectionUUID == "trash" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "trash")
-                        .onTapGesture { 
-                            selectedCollectionUUID = "trash"
-                            commands.selectSessionFolder(type: .trash)
-                        }
+                    systemFolderRow(title: "Capture Folder", icon: "camera", type: .capture)
+                    systemFolderRow(title: "Selects Folder", icon: "star", type: .selects)
+                    systemFolderRow(title: "Output Folder", icon: "gearshape", type: .output)
+                    systemFolderRow(title: "Trash Folder", icon: "trash", type: .trash)
                 }
             }
             
@@ -157,6 +141,9 @@ public struct LibraryToolView: View {
                             )
                             .onTapGesture { selectedCollectionUUID = album.uuid }
                             .onTapGesture(count: 2) { startEditing(album.uuid, currentName: album.name ?? "") }
+                            .onDrop(of: [.text], isTargeted: nil) { providers in
+                                handleDrop(providers: providers, targetAlbum: album)
+                            }
                             .contextMenu {
                                 if album.isSmartAlbum {
                                     Button("Edit Smart Album...") { }
@@ -204,6 +191,9 @@ public struct LibraryToolView: View {
                             )
                             .onTapGesture { selectedCollectionUUID = fav.uuid }
                             .onTapGesture(count: 2) { startEditing(fav.uuid, currentName: fav.name ?? "") }
+                            .onDrop(of: [.text], isTargeted: nil) { providers in
+                                handleDrop(providers: providers, targetFavorite: fav)
+                            }
                             .contextMenu {
                                 if let path = fav.folderPath {
                                     let url = URL(fileURLWithPath: path)
@@ -235,6 +225,9 @@ public struct LibraryToolView: View {
                         LibraryRow(title: (path as NSString).lastPathComponent, icon: iconForFolder(path: path), count: 0, isSelected: selectedCollectionUUID == path)
                             .onTapGesture { selectedCollectionUUID = path }
                             .padding(.leading, 24)
+                            .onDrop(of: [.text], isTargeted: nil) { providers in
+                                handleDrop(providers: providers, targetPath: path)
+                            }
                             .contextMenu {
                                 Button("New") { }
                                 Button("Rename") { }
@@ -302,6 +295,20 @@ public struct LibraryToolView: View {
     }
     
     // MARK: - Helpers
+    
+    @ViewBuilder
+    private func systemFolderRow(title: String, icon: String, type: SessionFolderType) -> some View {
+        let uuid = type.defaultName.lowercased()
+        LibraryRow(title: title, icon: icon, count: selectedCollectionUUID == uuid ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == uuid)
+            .onTapGesture { 
+                selectedCollectionUUID = uuid
+                commands.selectSessionFolder(type: type)
+            }
+            .onDrop(of: [.text], isTargeted: nil) { providers in
+                handleDrop(providers: providers, targetFolderType: type)
+            }
+    }
+
     private func iconForFolder(path: String) -> String {
         if path == session.captureFolder { return "camera" }
         if path == session.selectsFolder { return "star" }
@@ -333,6 +340,39 @@ public struct LibraryToolView: View {
         session.isDirty = true
     }
     
+    private func handleDrop(providers: [NSItemProvider], targetAlbum: CollectionBase? = nil, targetFavorite: CollectionBase? = nil, targetFolderType: SessionFolderType? = nil, targetPath: String? = nil) -> Bool {
+        guard let provider = providers.first else { return false }
+        
+        provider.loadObject(ofClass: NSString.self) { (uuid, error) in
+            guard let variantUUID = uuid as? String else { return }
+            
+            // Find the variant
+            // This is a bit slow but safe for a prototype
+            let allImages = session.arrangedFixedCollections.flatMap { _ in [] as [ImageBase] } // Placeholder
+            // We'll use the browser's current data as a source
+            guard let image = commands.browser.dataSource.first(where: { $0.primaryVariant?.variantUUID == variantUUID }),
+                  let variant = image.primaryVariant else { return }
+            
+            do {
+                if let album = targetAlbum {
+                    try SessionFolderManager.shared.addToAlbum(variant: variant, album: album)
+                } else if let favorite = targetFavorite {
+                    try SessionFolderManager.shared.moveToFavorite(variant: variant, favorite: favorite)
+                } else if let type = targetFolderType {
+                    try SessionFolderManager.shared.move(variant: variant, to: type, in: session)
+                } else if let path = targetPath {
+                    // Logic for custom system folder drop
+                    let favorite = CollectionBase(uuid: "temp", context: nil)
+                    favorite.folderPath = path
+                    try SessionFolderManager.shared.moveToFavorite(variant: variant, favorite: favorite)
+                }
+            } catch {
+                print("[Library] Drop failed: \(error.localizedDescription)")
+            }
+        }
+        return true
+    }
+
     @ViewBuilder
     private func toolHeaderButton(systemName: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {

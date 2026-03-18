@@ -412,6 +412,12 @@ struct COBrowserListNameCell: View {
                 COBrowserColorSquareButton(variant: variant, pickingColorImageID: $pickingColorImageID, imageUUID: image.imageUUID)
             }
         }
+        .onDrag {
+            if let variant = image.primaryVariant {
+                return NSItemProvider(object: variant.variantUUID as NSString)
+            }
+            return NSItemProvider()
+        }
     }
 }
 
@@ -434,6 +440,13 @@ struct COBrowserListColorCell: View {
     let isPicking: Bool
     let onTogglePicking: () -> Void
     
+    init?(variant: VariantBase?) {
+        guard let variant = variant else { return nil }
+        self.variant = variant
+        self.isPicking = false
+        self.onTogglePicking = {}
+    }
+
     init?(variant: VariantBase?, isPicking: Bool, onTogglePicking: @escaping () -> Void) {
         guard let variant = variant else { return nil }
         self.variant = variant
@@ -560,6 +573,12 @@ public struct COImageBrowserCell: View {
             .frame(maxWidth: useFullWidth ? .infinity : size)
             .aspectRatio(1.0, contentMode: .fit)
             .onTapGesture { onTap?() } // Thumbnail area tap
+            .onDrag {
+                if let variant = image.primaryVariant {
+                    return NSItemProvider(object: variant.variantUUID as NSString)
+                }
+                return NSItemProvider()
+            }
             
             if showLabel {
                 if let variant = image.primaryVariant {
