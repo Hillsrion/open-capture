@@ -21,17 +21,17 @@ public struct COFilterPredicate: Codable {
         var conditions: [String] = []
         
         if let min = minRating {
-            conditions.append("ZRATING >= \(min)")
+            conditions.append("ZVARIANTMETADATA.ZBASIC_RATING >= \(min)")
         }
         if let max = maxRating {
-            conditions.append("ZRATING <= \(max)")
+            conditions.append("ZVARIANTMETADATA.ZBASIC_RATING <= \(max)")
         }
         if let tags = colorTags, !tags.isEmpty {
             let tagList = tags.map { String($0) }.joined(separator: ", ")
-            conditions.append("ZCOLOR_TAG IN (\(tagList))")
+            conditions.append("ZVARIANTMETADATA.ZCOLOR_TAG_INDEX IN (\(tagList))")
         }
         if let text = searchText, !text.isEmpty {
-            conditions.append("ZDISPLAYNAME LIKE '%\(text)%'")
+            conditions.append("ZIMAGE.ZDISPLAYNAME LIKE '%\(text)%'")
         }
         
         return conditions.isEmpty ? "1=1" : conditions.joined(separator: " AND ")

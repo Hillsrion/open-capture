@@ -13,6 +13,9 @@ public class DatabaseWriter {
     
     /// Reconstructed logic for registering a newly imported image.
     public func registerImportedImage(uuid: String, path: String, fileName: String) throws {
+        // Handle physical file storage differences between Catalogs and Sessions
+        let finalPath = try DataCoreManager.shared.handleImageStorage(sourcePath: path, fileName: fileName)
+        
         let query = "INSERT INTO ZIMAGE (ZIMAGEUUID, ZSIDECARPATH, ZDISPLAYNAME, ZIMAGEFILENAME, ZRAWMETADATAMODIFICATIONDATE) VALUES (?, ?, ?, ?, ?);"
         var statement: OpaquePointer?
         
@@ -20,7 +23,7 @@ public class DatabaseWriter {
         
         if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
             sqlite3_bind_text(statement, 1, (uuid as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(statement, 2, (path as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (finalPath as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 3, (fileName as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 4, (fileName as NSString).utf8String, -1, nil)
             sqlite3_bind_double(statement, 5, Date().timeIntervalSince1970)
@@ -185,6 +188,26 @@ public class DatabaseWriter {
                 let error = String(cString: sqlite3_errmsg(db))
                 sqlite3_finalize(statement)
                 throw NSError(domain: "DataCore", code: 12, userInfo: [NSLocalizedDescriptionKey: error])
+            }
+        }
+        sqlite3_finalize(statement)
+    }
+
+    /// Reconstructed logic for updating a smart album's predicate
+    public func updateSmartAlbumPredicate(uuid: String, predicateSQL: String) throws {
+        let query = "UPDATE ZCOLLECTION SET ZPREDICATE = ? WHERE ZUUID = ?;"
+        var statement: OpaquePointer?
+        
+        guard let db = db else { throw NSError(domain: "DataCore", code: 3, userInfo: nil) }
+        
+        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, (predicateSQL as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(statement, 2, (uuid as NSString).utf8String, -1, nil)
+            
+            if sqlite3_step(statement) != SQLITE_DONE {
+                let error = String(cString: sqlite3_errmsg(db))
+                sqlite3_finalize(statement)
+                throw NSError(domain: "DataCore", code: 13, userInfo: [NSLocalizedDescriptionKey: error])
             }
         }
         sqlite3_finalize(statement)

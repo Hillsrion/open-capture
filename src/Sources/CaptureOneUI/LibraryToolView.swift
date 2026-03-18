@@ -16,6 +16,9 @@ public struct LibraryToolView: View {
     // For visual drop feedback
     @State private var dropActiveUUID: String? = nil
     
+    // For smart album editing
+    @State private var editingSmartAlbum: CollectionBase? = nil
+    
     // File system roots
     @StateObject private var macintoshHDRoot = FileSystemNode(path: "/")
     
@@ -34,6 +37,16 @@ public struct LibraryToolView: View {
                         catalogHierarchy
                     } else {
                         sessionHierarchy
+                    }
+                }
+            }
+            .sheet(isPresented: Binding(
+                get: { editingSmartAlbum != nil },
+                set: { if !$0 { editingSmartAlbum = nil } }
+            )) {
+                if let album = editingSmartAlbum {
+                    SmartAlbumEditorView(collection: album, session: session) {
+                        editingSmartAlbum = nil
                     }
                 }
             }
@@ -134,6 +147,7 @@ public struct LibraryToolView: View {
                             editingUUID: $editingUUID,
                             editedName: $editedName,
                             dropActiveUUID: $dropActiveUUID,
+                            editingSmartAlbum: $editingSmartAlbum,
                             onRename: { commitRename(for: album) },
                             onDrop: handleDrop
                         )
@@ -284,6 +298,7 @@ public struct LibraryToolView: View {
                             editingUUID: $editingUUID,
                             editedName: $editedName,
                             dropActiveUUID: $dropActiveUUID,
+                            editingSmartAlbum: $editingSmartAlbum,
                             onRename: { commitRename(for: collection) },
                             onDrop: handleDrop
                         )
@@ -415,6 +430,7 @@ struct CollectionNodeView: View {
     @Binding var editingUUID: String?
     @Binding var editedName: String
     @Binding var dropActiveUUID: String?
+    @Binding var editingSmartAlbum: CollectionBase?
     var onRename: () -> Void
     var onDrop: ([NSItemProvider], CollectionBase?, CollectionBase?, SessionFolderType?, String?) -> Bool
     var indentLevel: Int = 0
@@ -458,7 +474,7 @@ struct CollectionNodeView: View {
                     onDrop(providers, collection, nil, nil, nil)
                 }
                 .contextMenu {
-                    if collection.isSmartAlbum { Button("Edit Smart Album...") { } }
+                    if collection.isSmartAlbum { Button("Edit Smart Album...") { editingSmartAlbum = collection } }
                     Button("Rename...") { 
                         editedName = collection.name ?? ""
                         editingUUID = collection.uuid
@@ -488,6 +504,7 @@ struct CollectionNodeView: View {
                         editingUUID: $editingUUID,
                         editedName: $editedName,
                         dropActiveUUID: $dropActiveUUID,
+                        editingSmartAlbum: $editingSmartAlbum,
                         onRename: { child.name = editedName; editingUUID = nil; session.isDirty = true },
                         onDrop: onDrop,
                         indentLevel: indentLevel + 1
