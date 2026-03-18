@@ -450,6 +450,21 @@ public final class AppCommandCenter: ObservableObject {
         CORecentDocumentManager.shared.recordOpenedDocument(name: name, path: url.path, isCatalog: isCatalog)
         
         Task { @MainActor in
+            // 1. Open SQLite Database (DataCore)
+            let dbURL: URL
+            if isCatalog {
+                dbURL = url.appendingPathComponent("\(name).cocatalogdb") // Standard C1 package structure
+            } else {
+                dbURL = url.deletingPathExtension().appendingPathExtension("cosessiondb")
+            }
+            
+            do {
+                try DataCoreManager.shared.openDatabase(at: dbURL)
+            } catch {
+                print("[CommandCenter] Warning: Could not open database at \(dbURL.path): \(error.localizedDescription)")
+                // We continue anyway as a fallback, but some features might fail with DataCore error 3
+            }
+
             let ctx = ObjectContext()
             self.documentContext = ctx
             let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 1 : 0, context: ctx)
@@ -493,6 +508,20 @@ public final class AppCommandCenter: ObservableObject {
                 
                 // Logic to load and open the document window
                 Task { @MainActor in
+                    // 1. Open SQLite Database (DataCore)
+                    let dbURL: URL
+                    if isCatalog {
+                        dbURL = url.appendingPathComponent("\(name).cocatalogdb")
+                    } else {
+                        dbURL = url.deletingPathExtension().appendingPathExtension("cosessiondb")
+                    }
+                    
+                    do {
+                        try DataCoreManager.shared.openDatabase(at: dbURL)
+                    } catch {
+                        print("[CommandCenter] Warning: Could not open database at \(dbURL.path): \(error.localizedDescription)")
+                    }
+
                     let ctx = ObjectContext()
                     self.documentContext = ctx
                     let session = SessionBase(documentUUID: UUID().uuidString, type: isCatalog ? 1 : 0, context: ctx)

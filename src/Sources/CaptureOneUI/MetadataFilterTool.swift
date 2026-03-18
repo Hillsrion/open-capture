@@ -10,6 +10,10 @@ public struct FilterToolView: View {
     @State private var ratingCounts: [Int: Int] = [:]
     @State private var colorTagCounts: [VariantBase.ColorTag: Int] = [:]
     
+    // For visual drop feedback
+    @State private var targetedRating: Int? = nil
+    @State private var targetedColorTag: VariantBase.ColorTag? = nil
+
     public init(predicate: Binding<COFilterPredicate>) {
         self._predicate = predicate
     }
@@ -91,9 +95,13 @@ public struct FilterToolView: View {
             label: value == 0 ? "No Rating" : (value == 1 ? "1 Star" : "\(value) Stars"),
             count: ratingCounts[value] ?? 0,
             isActive: isMatch,
+            isTargeted: targetedRating == value,
             onTap: { toggleRating(value) }
         )
-        .onDrop(of: [.text], isTargeted: nil) { providers in
+        .onDrop(of: [.text], isTargeted: Binding(
+            get: { targetedRating == value },
+            set: { targeted in targetedRating = targeted ? value : nil }
+        )) { providers in
             handleDrop(providers: providers, targetRating: value)
         }
     }
@@ -104,10 +112,14 @@ public struct FilterToolView: View {
             label: name,
             count: colorTagCounts[tag] ?? 0,
             isActive: isActive,
+            isTargeted: targetedColorTag == tag,
             onTap: { toggleColorTag(tag.rawValue) },
             tagColor: colorForTag(tag)
         )
-        .onDrop(of: [.text], isTargeted: nil) { providers in
+        .onDrop(of: [.text], isTargeted: Binding(
+            get: { targetedColorTag == tag },
+            set: { targeted in targetedColorTag = targeted ? tag : nil }
+        )) { providers in
             handleDrop(providers: providers, targetColorTag: tag)
         }
     }
@@ -148,20 +160,22 @@ public struct FilterToolView: View {
         .controlSize(.small)
     }
     
-    private func filterRow(label: String, count: Int, isActive: Bool, onTap: @escaping () -> Void, tagColor: Color? = nil) -> some View {
+    private func filterRow(label: String, count: Int, isActive: Bool, isTargeted: Bool = false, onTap: @escaping () -> Void, tagColor: Color? = nil) -> some View {
         HStack(spacing: 8) {
             if let color = tagColor {
                 RoundedRectangle(cornerRadius: 2).fill(color).frame(width: 12, height: 12)
             } else {
                 Image(systemName: isActive ? "checkmark.square.fill" : "square")
                     .font(.system(size: 10))
-                    .foregroundColor(isActive ? CaptureOneTheme.Colors.activeHighlight : .gray)
+                    .foregroundColor(isActive || isTargeted ? CaptureOneTheme.Colors.activeHighlight : .gray)
             }
-            Text(label).font(.system(size: 11)).foregroundColor(isActive ? .white : .white.opacity(0.7))
+            Text(label).font(.system(size: 11)).foregroundColor(isActive || isTargeted ? .white : .white.opacity(0.7))
             Spacer()
             Text("\(count)").font(.system(size: 10, design: .monospaced)).foregroundColor(.gray)
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 4)
+        .padding(.horizontal, 8)
+        .background(isTargeted ? CaptureOneTheme.Colors.activeHighlight.opacity(0.3) : Color.clear)
         .contentShape(Rectangle())
         .onTapGesture(perform: onTap)
     }
