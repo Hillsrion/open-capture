@@ -52,13 +52,9 @@ public class SessionBase: BaseObject {
     
     // MARK: - Relationships
     public var arrangedFixedCollections: [CollectionBase] = []
-    public var arrangedUserAlbumCollections: [CollectionBase] = []
-    public var arrangedUserFavouriteCollections: [CollectionBase] = []
-    public var arrangedUserCachedFolderCollections: [String] = [] // Assuming strings for now, or could be a system folder model
-    
-    // public var allCollections: FetchArray
-    // public var trashCollection: MOCollection?
-    // public var captureCollection: MOCollection?
+    @Published public var arrangedUserAlbumCollections: [CollectionBase] = []
+    @Published public var arrangedUserFavouriteCollections: [CollectionBase] = []
+    @Published public var arrangedUserCachedFolderCollections: [String] = []
     
     // MARK: - Initialization
     public init(documentUUID: String, type: Int16, context: ObjectContext?) {
@@ -82,6 +78,38 @@ public class SessionBase: BaseObject {
         super.init(managedObjectContext: context)
     }
     
+    // MARK: - Collection Management
+    
+    public func addUserAlbum(name: String, isSmart: Bool = false) {
+        let newAlbum = CollectionBase(uuid: UUID().uuidString, context: managedObjectContext)
+        newAlbum.name = name
+        newAlbum.isSmartAlbum = isSmart
+        newAlbum.isVariantBased = true
+        arrangedUserAlbumCollections.append(newAlbum)
+        isDirty = true
+    }
+    
+    public func removeUserAlbum(uuid: String) {
+        arrangedUserAlbumCollections.removeAll(where: { $0.uuid == uuid })
+        isDirty = true
+    }
+    
+    public func addUserFavourite(path: String) {
+        // Avoid duplicates
+        if arrangedUserFavouriteCollections.contains(where: { $0.folderPath == path }) { return }
+        
+        let newFav = CollectionBase(uuid: UUID().uuidString, context: managedObjectContext)
+        newFav.name = (path as NSString).lastPathComponent
+        newFav.folderPath = path
+        arrangedUserFavouriteCollections.append(newFav)
+        isDirty = true
+    }
+    
+    public func removeUserFavourite(uuid: String) {
+        arrangedUserFavouriteCollections.removeAll(where: { $0.uuid == uuid })
+        isDirty = true
+    }
+
     // MARK: - Methods (Stubs)
     
     public func backup(to location: URL) {

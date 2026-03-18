@@ -109,11 +109,21 @@ public struct LibraryToolView: View {
             // Session Albums Section
             COToolSection("Session Albums", toolID: "SessionAlbums", showDefaultActions: false, actions: {
                 HStack(spacing: 0) {
-                    toolHeaderButton(systemName: "plus") {
-                        // Action to add album
+                    Menu {
+                        Button("New Album") { session.addUserAlbum(name: "New Album") }
+                        Button("New Smart Album") { session.addUserAlbum(name: "New Smart Album", isSmart: true) }
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                            .frame(width: 22, height: 22)
                     }
+                    .menuStyle(BorderlessButtonMenuStyle())
+                    
                     toolHeaderButton(systemName: "minus") {
-                        // Action to remove selected album
+                        if let uuid = selectedCollectionUUID {
+                            session.removeUserAlbum(uuid: uuid)
+                        }
                     }
                 }
             }) {
@@ -137,7 +147,7 @@ public struct LibraryToolView: View {
                                 Button("Export as Catalog...") { }
                                 Divider()
                                 Button("Delete", role: .destructive) { 
-                                    session.arrangedUserAlbumCollections.removeAll(where: { $0.uuid == album.uuid })
+                                    session.removeUserAlbum(uuid: album.uuid)
                                 }
                             }
                         }
@@ -149,10 +159,12 @@ public struct LibraryToolView: View {
             COToolSection("Session Favorites", toolID: "SessionFavorites", showDefaultActions: false, actions: {
                 HStack(spacing: 0) {
                     toolHeaderButton(systemName: "plus") {
-                        // Action to add favorite
+                        addFavoriteFolder()
                     }
                     toolHeaderButton(systemName: "minus") {
-                        // Action to remove selected favorite
+                        if let uuid = selectedCollectionUUID {
+                            session.removeUserFavourite(uuid: uuid)
+                        }
                     }
                 }
             }) {
@@ -170,6 +182,8 @@ public struct LibraryToolView: View {
                                         Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
                                         Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
                                         Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
+                                        Divider()
+                                        Button("Remove from Favorites") { session.removeUserFavourite(uuid: fav.uuid) }
                                     }
                                 }
                         }
@@ -229,7 +243,18 @@ public struct LibraryToolView: View {
             }
             
             COToolSection("User Collections", toolID: "UserCollections", showDefaultActions: false, actions: {
-                toolHeaderButton(systemName: "plus") {}
+                Menu {
+                    Button("New Album") { /* catalog specific logic */ }
+                    Button("New Smart Album") { /* catalog specific logic */ }
+                    Button("New Group") { }
+                    Button("New Project") { }
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        .frame(width: 22, height: 22)
+                }
+                .menuStyle(BorderlessButtonMenuStyle())
             }) {
                 VStack(alignment: .leading, spacing: 0) {
                     // Hierarchical view logic would go here (Groups/Projects)
@@ -254,6 +279,18 @@ public struct LibraryToolView: View {
         if path == session.outputFolder { return "gearshape" }
         if path == session.trashFolder { return "trash" }
         return "folder"
+    }
+    
+    private func addFavoriteFolder() {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = false
+        panel.begin { response in
+            if response == .OK, let url = panel.url {
+                session.addUserFavourite(path: url.path)
+            }
+        }
     }
     
     @ViewBuilder
