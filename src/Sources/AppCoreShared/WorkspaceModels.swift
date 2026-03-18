@@ -476,6 +476,22 @@ public class WorkspaceManager: ObservableObject, Codable {
         setToolStateValue(sizeOption.map(String.init), toolID: toolID, key: "sizeOption", autosave: autosave)
     }
 
+    public func hasToolConfiguration(_ toolID: String) -> Bool {
+        // 1. Check override in toolState
+        if toolStateValue(toolID: toolID, key: "isCollapsed") != nil {
+            return true
+        }
+        
+        // 2. Check layout definition
+        for palette in activeWorkspace.palettes {
+            if palette.allTools.contains(where: { $0.id == toolID }) {
+                return true
+            }
+        }
+        
+        return false
+    }
+
     public func isToolCollapsed(_ toolID: String) -> Bool {
         // 1. Check override in toolState
         if let value = toolStateValue(toolID: toolID, key: "isCollapsed") {

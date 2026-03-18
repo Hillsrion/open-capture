@@ -51,7 +51,11 @@ public struct COToolSection<Content: View>: View {
     }
     
     private var isExpanded: Bool {
-        !workspaceManager.isToolCollapsed(toolID)
+        // If the tool is not explicitly in the workspace configuration, default to expanded
+        if !workspaceManager.hasToolConfiguration(toolID) {
+            return true
+        }
+        return !workspaceManager.isToolCollapsed(toolID)
     }
     
     public var body: some View {

@@ -453,7 +453,12 @@ struct COBrowserListColorCell: View {
         )) {
             POColorTagPicker(selectedTag: Binding(
                 get: { variant.colorTag },
-                set: { variant.colorTag = $0; onTogglePicking() }
+                set: { newValue in
+                    withAnimation {
+                        variant.colorTag = newValue
+                    }
+                    onTogglePicking() 
+                }
             ))
             .padding(8)
         }
@@ -478,7 +483,12 @@ struct COBrowserColorSquareButton: View {
         )) {
             POColorTagPicker(selectedTag: Binding(
                 get: { variant.colorTag },
-                set: { variant.colorTag = $0; pickingColorImageID = nil }
+                set: { newValue in
+                    withAnimation {
+                        variant.colorTag = newValue
+                    }
+                    pickingColorImageID = nil 
+                }
             ))
             .padding(8)
         }
@@ -639,7 +649,12 @@ struct COImageBrowserCellFooter: View {
             .popover(isPresented: $showingColorPicker) {
                 POColorTagPicker(selectedTag: Binding(
                     get: { variant.colorTag },
-                    set: { variant.colorTag = $0; showingColorPicker = false }
+                    set: { newValue in
+                        withAnimation {
+                            variant.colorTag = newValue
+                        }
+                        showingColorPicker = false 
+                    }
                 ))
                 .padding(8)
             }

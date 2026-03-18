@@ -107,28 +107,29 @@ public struct LibraryToolView: View {
             }
             
             // Session Albums Section
-            sectionHeaderWithAddRemove(title: "Session Albums")
-            VStack(alignment: .leading, spacing: 0) {
-                if session.arrangedUserAlbumCollections.isEmpty {
-                    // Empty space equivalent
-                } else {
-                    ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { album in
-                        LibraryRow(
-                            title: album.name ?? "Untitled",
-                            icon: album.isSmartAlbum ? "gearshape" : "photo.on.rectangle",
-                            count: album.itemCount,
-                            isSelected: selectedCollectionUUID == album.uuid
-                        )
-                        .onTapGesture { selectedCollectionUUID = album.uuid }
-                        .contextMenu {
-                            Button("Edit Smart Album...") { }
-                            Button("Rename...") { }
-                            Button("Duplicate...") { }
-                            Divider()
-                            Button("Export as Catalog...") { }
-                            Divider()
-                            Button("Delete", role: .destructive) { 
-                                session.arrangedUserAlbumCollections.removeAll(where: { $0.uuid == album.uuid })
+            COToolSection("Session Albums", toolID: "SessionAlbums") {
+                VStack(alignment: .leading, spacing: 0) {
+                    if session.arrangedUserAlbumCollections.isEmpty {
+                        Text("No albums").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
+                    } else {
+                        ForEach(session.arrangedUserAlbumCollections, id: \.uuid) { album in
+                            LibraryRow(
+                                title: album.name ?? "Untitled",
+                                icon: album.isSmartAlbum ? "gearshape" : "photo.on.rectangle",
+                                count: album.itemCount,
+                                isSelected: selectedCollectionUUID == album.uuid
+                            )
+                            .onTapGesture { selectedCollectionUUID = album.uuid }
+                            .contextMenu {
+                                Button("Edit Smart Album...") { }
+                                Button("Rename...") { }
+                                Button("Duplicate...") { }
+                                Divider()
+                                Button("Export as Catalog...") { }
+                                Divider()
+                                Button("Delete", role: .destructive) { 
+                                    session.arrangedUserAlbumCollections.removeAll(where: { $0.uuid == album.uuid })
+                                }
                             }
                         }
                     }
@@ -136,53 +137,59 @@ public struct LibraryToolView: View {
             }
             
             // Session Favorites
-            sectionHeaderWithAddRemove(title: "Session Favorites")
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(session.arrangedUserFavouriteCollections, id: \.uuid) { fav in
-                    LibraryRow(title: fav.name ?? "Favorite", icon: iconForFolder(path: fav.folderPath ?? ""), count: 0, isSelected: selectedCollectionUUID == fav.uuid)
-                        .onTapGesture { selectedCollectionUUID = fav.uuid }
-                        .contextMenu {
-                            if let path = fav.folderPath {
-                                let url = URL(fileURLWithPath: path)
-                                Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
-                                Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
-                                Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
-                                Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
-                            }
+            COToolSection("Session Favorites", toolID: "SessionFavorites") {
+                VStack(alignment: .leading, spacing: 0) {
+                    if session.arrangedUserFavouriteCollections.isEmpty {
+                        Text("No favorites").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
+                    } else {
+                        ForEach(session.arrangedUserFavouriteCollections, id: \.uuid) { fav in
+                            LibraryRow(title: fav.name ?? "Favorite", icon: iconForFolder(path: fav.folderPath ?? ""), count: 0, isSelected: selectedCollectionUUID == fav.uuid)
+                                .onTapGesture { selectedCollectionUUID = fav.uuid }
+                                .contextMenu {
+                                    if let path = fav.folderPath {
+                                        let url = URL(fileURLWithPath: path)
+                                        Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
+                                        Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
+                                        Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
+                                        Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
+                                    }
+                                }
                         }
+                    }
                 }
             }
             
             // System Folders
-            sectionHeaderWithAddRemove(title: "System Folders")
-            VStack(alignment: .leading, spacing: 0) {
-                // Placeholder for root Macintosh HD
-                LibraryRow(title: "Macintosh HD", icon: "internaldrive", count: 0, isSelected: selectedCollectionUUID == "hdd")
-                    .onTapGesture { selectedCollectionUUID = "hdd" }
-                    .padding(.leading, 12)
-                
-                ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { path in
-                    LibraryRow(title: (path as NSString).lastPathComponent, icon: iconForFolder(path: path), count: 0, isSelected: selectedCollectionUUID == path)
-                        .onTapGesture { selectedCollectionUUID = path }
-                        .padding(.leading, 24)
-                        .contextMenu {
-                            Button("New") { }
-                            Button("Rename") { }
-                            Divider()
-                            Button("Import") { }
-                            Button("Export") { }
-                            Divider()
-                            let url = URL(fileURLWithPath: path)
-                            Button("Set as Capture Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: s) } }
-                            Button("Set as Selects Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: s) } }
-                            Button("Set as Output Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: s) } }
-                            Button("Set as Session Trash Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: s) } }
-                            Divider()
-                            Button("Show in Library") { }
-                            Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
-                            Button("Show Info") { }
-                            Divider()
-                        }
+            COToolSection("System Folders", toolID: "SystemFolders") {
+                VStack(alignment: .leading, spacing: 0) {
+                    // Placeholder for root Macintosh HD
+                    LibraryRow(title: "Macintosh HD", icon: "internaldrive", count: 0, isSelected: selectedCollectionUUID == "hdd")
+                        .onTapGesture { selectedCollectionUUID = "hdd" }
+                        .padding(.leading, 12)
+                    
+                    ForEach(session.arrangedUserCachedFolderCollections, id: \.self) { path in
+                        LibraryRow(title: (path as NSString).lastPathComponent, icon: iconForFolder(path: path), count: 0, isSelected: selectedCollectionUUID == path)
+                            .onTapGesture { selectedCollectionUUID = path }
+                            .padding(.leading, 24)
+                            .contextMenu {
+                                Button("New") { }
+                                Button("Rename") { }
+                                Divider()
+                                Button("Import") { }
+                                Button("Export") { }
+                                Divider()
+                                let url = URL(fileURLWithPath: path)
+                                Button("Set as Capture Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: s) } }
+                                Button("Set as Selects Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: s) } }
+                                Button("Set as Output Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: s) } }
+                                Button("Set as Session Trash Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: s) } }
+                                Divider()
+                                Button("Show in Library") { }
+                                Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
+                                Button("Show Info") { }
+                                Divider()
+                            }
+                    }
                 }
             }
             .padding(.bottom, 8)
@@ -203,17 +210,19 @@ public struct LibraryToolView: View {
                 }
             }
             
-            sectionHeaderWithAddRemove(title: "User Collections")
-            VStack(alignment: .leading, spacing: 0) {
-                // Hierarchical view logic would go here (Groups/Projects)
-                LibraryRow(title: "Portfolio 2024", icon: "folder.fill.badge.plus", count: 45, isSelected: selectedCollectionUUID == "portfolio")
-                    .onTapGesture { selectedCollectionUUID = "portfolio" }
+            COToolSection("User Collections", toolID: "UserCollections") {
+                VStack(alignment: .leading, spacing: 0) {
+                    // Hierarchical view logic would go here (Groups/Projects)
+                    LibraryRow(title: "Portfolio 2024", icon: "folder.fill.badge.plus", count: 45, isSelected: selectedCollectionUUID == "portfolio")
+                        .onTapGesture { selectedCollectionUUID = "portfolio" }
+                }
             }
             
-            sectionHeaderWithAddRemove(title: "Folders")
-            VStack(alignment: .leading, spacing: 0) {
-                LibraryRow(title: "Macintosh HD", icon: "desktopcomputer", count: 0, isSelected: selectedCollectionUUID == "hdd")
-                    .onTapGesture { selectedCollectionUUID = "hdd" }
+            COToolSection("Folders", toolID: "CatalogFolders") {
+                VStack(alignment: .leading, spacing: 0) {
+                    LibraryRow(title: "Macintosh HD", icon: "desktopcomputer", count: 0, isSelected: selectedCollectionUUID == "hdd")
+                        .onTapGesture { selectedCollectionUUID = "hdd" }
+                }
             }
         }
     }
@@ -225,36 +234,6 @@ public struct LibraryToolView: View {
         if path == session.outputFolder { return "gearshape" }
         if path == session.trashFolder { return "trash" }
         return "folder"
-    }
-
-    private func sectionHeaderWithAddRemove(title: String) -> some View {
-        HStack {
-            Image(systemName: "chevron.right")
-                .font(.system(size: 8, weight: .bold))
-                .foregroundColor(.gray)
-            
-            Text(title)
-                .font(.system(size: 11, weight: .semibold))
-                .foregroundColor(.white.opacity(0.8))
-            Spacer()
-            
-            Button(action: {}) {
-                Image(systemName: "plus")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(.gray)
-            }
-            .buttonStyle(.plain)
-            
-            Button(action: {}) {
-                Image(systemName: "minus")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(.gray)
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 4)
-        .background(CaptureOneTheme.Colors.panelBackground)
     }
 }
 
