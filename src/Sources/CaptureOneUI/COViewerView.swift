@@ -14,9 +14,11 @@ public struct COViewerView: View {
         self.image = image
         self.adjustmentController = adjustmentController ?? AdjustmentToolController.shared
     }
+    
     @ObservedObject var liveView = LiveViewEngine.shared
     @ObservedObject var commands = AppCommandCenter.shared
     @StateObject private var renderCoalescer = RenderCoalescer()
+    
     @State private var renderedImage: NSImage?
     @State private var sourceImage: NSImage?
     @State private var maskImage: NSImage?
@@ -27,24 +29,39 @@ public struct COViewerView: View {
     @State private var cropStartRect: CGRect = .zero
     @State private var isLongPressingBefore: Bool = false
     
+    // Track focus to avoid color shifts
+    @FocusState private var isFocused: Bool
+    
+    // Shared context with explicit color management to prevent "click outside" shift
+    private static let sharedContext: CIContext = {
+        let options: [CIContextOption: Any] = [
+            .workingColorSpace: CGColorSpace(name: CGColorSpace.sRGB)!,
+            .workingFormat: CIFormat.RGBAh,
+            .cacheIntermediates: false
+        ]
+        return CIContext(options: options)
+    }()
+    
     public var body: some View {
         GeometryReader { geo in
             VStack(spacing: 0) {
                 // MARK: - Main Rendering Area
                 mainRenderingArea(size: geo.size)
+                    .focused($isFocused)
                 
-                // MARK: - COViewerBarView (Reconstructed from metadata)
+                // MARK: - COViewerBarView
                 COViewerBarView(zoomLevel: Binding(
                     get: { adjustmentController.zoomLevel },
                     set: { adjustmentController.zoomLevel = $0 }
                 ))
             }
         }
-        .onAppear { requestCoalescedRender(forceQuality: .render) }
+        .onAppear { 
+            isFocused = true
+            requestCoalescedRender(forceQuality: .render) 
+        }
         .onChange(of: image?.id) { _ in requestCoalescedRender(forceQuality: .render) }
         .onReceive(adjustmentController.objectWillChange) { _ in
-            // objectWillChange fires BEFORE the property is actually updated.
-            // Dispatch to next runloop cycle to ensure we capture the NEW settings.
             DispatchQueue.main.async {
                 requestCoalescedRender(forceQuality: nil)
             }
@@ -65,6 +82,7 @@ public struct COViewerView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .contentShape(Rectangle())
+        .onTapGesture { isFocused = true } // Ensure focus on click
         .simultaneousGesture(longPressGesture)
         .onHover(perform: handleHover)
         .contextMenu { viewerContextMenu }
@@ -285,9 +303,6 @@ public struct COViewerView: View {
         adjustmentController.overlayOffset = CGPoint(x: start.x + gesture.translation.width, y: start.y + gesture.translation.height)
     }
     
-    // ... remaining helper methods (handleCropDrag, handleLinearGradientDrag, handleRadialGradientDrag, render, performRotation, viewerImageView, viewerStatusBadges)
-    // I'll re-include them in the full file.
-    
     private func handleCropDrag(gesture: DragGesture.Value, size: CGSize) {
         let controller = adjustmentController
         if activeCropZone == .none {
@@ -396,7 +411,6 @@ public struct COViewerView: View {
         if let forced = forceQuality {
             renderBlock(forced)
         } else {
-            // We pass a dummy settings object to the coalescer because we now read it fresh inside performRender
             renderCoalescer.submit(settings: IC_ProcessSettings(),
                                    viewport: viewport,
                                    isInteracting: isInteracting,
@@ -427,7 +441,8 @@ public struct COViewerView: View {
                     if supportsMetal {
                         DispatchQueue.main.async { self.renderedCIImage = developedCIImage; self.renderedImage = nil }
                     } else {
-                        let fallback = developedCIImage.toNSImage()
+                        // Use static context for consistent rendering
+                        let fallback = COViewerView.sharedContext.createCGImage(developedCIImage, from: developedCIImage.extent).map { NSImage(cgImage: $0, size: developedCIImage.extent.size) }
                         DispatchQueue.main.async { self.renderedImage = fallback ?? thumb; self.renderedCIImage = nil }
                     }
                 } else {
@@ -435,7 +450,6 @@ public struct COViewerView: View {
                 }
             }
         } else {
-            // Fast path: thumbnail already loaded
             DispatchQueue.main.async {
                 let currentSettings = self.adjustmentController.toProcessSettings()
                 if let developedCIImage = RawImageEngine.shared.developImage(at: url,
@@ -446,7 +460,8 @@ public struct COViewerView: View {
                         self.renderedCIImage = developedCIImage
                         self.renderedImage = nil
                     } else {
-                        self.renderedImage = developedCIImage.toNSImage() ?? self.sourceImage
+                        let nsImg = COViewerView.sharedContext.createCGImage(developedCIImage, from: developedCIImage.extent).map { NSImage(cgImage: $0, size: developedCIImage.extent.size) }
+                        self.renderedImage = nsImg ?? self.sourceImage
                         self.renderedCIImage = nil
                     }
                 }
@@ -519,7 +534,6 @@ struct COViewerBarView: View {
             }
             .padding(.horizontal, 8)
             Spacer()
-            // Quick Ratings/Tags would go here...
         }
         .padding(.horizontal, 8).frame(height: 30).background(CaptureOneTheme.Colors.mainWindowTitleAndToolbar).foregroundColor(.white)
     }

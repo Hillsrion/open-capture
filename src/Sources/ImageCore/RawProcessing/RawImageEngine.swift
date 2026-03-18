@@ -394,7 +394,9 @@ internal class WhiteBalanceOperation: ImageOperation {
     private let filter = CIFilter(name: "CITemperatureAndTint")!
     func execute(input: CIImage, settings: IC_ProcessSettings, parameters: SImageOperationAllParameters) -> CIImage {
         filter.setValue(input, forKey: kCIInputImageKey)
+        // Neutral point for the filter (reference)
         let neutral = CIVector(x: 6500, y: 0)
+        // Target point from settings
         let target = CIVector(x: CGFloat(settings.kelvin), y: CGFloat(settings.tint))
         filter.setValue(neutral, forKey: "inputNeutral")
         filter.setValue(target, forKey: "inputTargetNeutral")

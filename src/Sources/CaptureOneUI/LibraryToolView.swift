@@ -81,7 +81,7 @@ public struct LibraryToolView: View {
     private var sessionHierarchy: some View {
         VStack(spacing: 0) {
             // Session Folders Section
-            COToolSection("Session Folders", toolID: "SessionFolders") {
+            COToolSection("Session Folders", toolID: "SessionFolders", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     LibraryRow(title: "Capture Folder", icon: "camera", count: selectedCollectionUUID == "capture" ? commands.browser.dataSource.count : 0, isSelected: selectedCollectionUUID == "capture")
                         .onTapGesture { 
@@ -107,7 +107,16 @@ public struct LibraryToolView: View {
             }
             
             // Session Albums Section
-            COToolSection("Session Albums", toolID: "SessionAlbums") {
+            COToolSection("Session Albums", toolID: "SessionAlbums", showDefaultActions: false, actions: {
+                HStack(spacing: 0) {
+                    toolHeaderButton(systemName: "plus") {
+                        // Action to add album
+                    }
+                    toolHeaderButton(systemName: "minus") {
+                        // Action to remove selected album
+                    }
+                }
+            }) {
                 VStack(alignment: .leading, spacing: 0) {
                     if session.arrangedUserAlbumCollections.isEmpty {
                         Text("No albums").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
@@ -137,7 +146,16 @@ public struct LibraryToolView: View {
             }
             
             // Session Favorites
-            COToolSection("Session Favorites", toolID: "SessionFavorites") {
+            COToolSection("Session Favorites", toolID: "SessionFavorites", showDefaultActions: false, actions: {
+                HStack(spacing: 0) {
+                    toolHeaderButton(systemName: "plus") {
+                        // Action to add favorite
+                    }
+                    toolHeaderButton(systemName: "minus") {
+                        // Action to remove selected favorite
+                    }
+                }
+            }) {
                 VStack(alignment: .leading, spacing: 0) {
                     if session.arrangedUserFavouriteCollections.isEmpty {
                         Text("No favorites").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
@@ -160,7 +178,7 @@ public struct LibraryToolView: View {
             }
             
             // System Folders
-            COToolSection("System Folders", toolID: "SystemFolders") {
+            COToolSection("System Folders", toolID: "SystemFolders", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     // Placeholder for root Macintosh HD
                     LibraryRow(title: "Macintosh HD", icon: "internaldrive", count: 0, isSelected: selectedCollectionUUID == "hdd")
@@ -199,7 +217,7 @@ public struct LibraryToolView: View {
     // MARK: - Catalog Hierarchy
     private var catalogHierarchy: some View {
         VStack(spacing: 0) {
-            COToolSection("Catalog Collections", toolID: "CatalogCollections") {
+            COToolSection("Catalog Collections", toolID: "CatalogCollections", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     LibraryRow(title: "All Images", icon: "rectangle.stack.fill", count: 12450, isSelected: selectedCollectionUUID == "all")
                         .onTapGesture { selectedCollectionUUID = "all" }
@@ -210,7 +228,9 @@ public struct LibraryToolView: View {
                 }
             }
             
-            COToolSection("User Collections", toolID: "UserCollections") {
+            COToolSection("User Collections", toolID: "UserCollections", showDefaultActions: false, actions: {
+                toolHeaderButton(systemName: "plus") {}
+            }) {
                 VStack(alignment: .leading, spacing: 0) {
                     // Hierarchical view logic would go here (Groups/Projects)
                     LibraryRow(title: "Portfolio 2024", icon: "folder.fill.badge.plus", count: 45, isSelected: selectedCollectionUUID == "portfolio")
@@ -218,7 +238,7 @@ public struct LibraryToolView: View {
                 }
             }
             
-            COToolSection("Folders", toolID: "CatalogFolders") {
+            COToolSection("Folders", toolID: "CatalogFolders", showDefaultActions: false) {
                 VStack(alignment: .leading, spacing: 0) {
                     LibraryRow(title: "Macintosh HD", icon: "desktopcomputer", count: 0, isSelected: selectedCollectionUUID == "hdd")
                         .onTapGesture { selectedCollectionUUID = "hdd" }
@@ -234,6 +254,17 @@ public struct LibraryToolView: View {
         if path == session.outputFolder { return "gearshape" }
         if path == session.trashFolder { return "trash" }
         return "folder"
+    }
+    
+    @ViewBuilder
+    private func toolHeaderButton(systemName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .font(.system(size: 10))
+                .frame(width: 22, height: 22)
+        }
+        .buttonStyle(.plain)
+        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
     }
 }
 

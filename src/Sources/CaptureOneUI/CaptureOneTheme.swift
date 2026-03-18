@@ -36,18 +36,27 @@ public struct CaptureOneTheme {
 // MARK: - Reconstructed Reusable Components
 
 /// A collapsible tool section like "White Balance" or "Exposure"
-public struct COToolSection<Content: View>: View {
+public struct COToolSection<Content: View, Actions: View>: View {
     let title: String
     let toolID: String
     @ObservedObject private var workspaceManager = WorkspaceManager.shared
     @ObservedObject private var commands = AppCommandCenter.shared
     @ObservedObject private var styleManager = COStyleManager.shared
     let content: Content
+    let actions: Actions
+    let showDefaultActions: Bool
     
-    public init(_ title: String, toolID: String, @ViewBuilder content: () -> Content) {
+    public init(_ title: String, toolID: String, showDefaultActions: Bool = true, @ViewBuilder actions: () -> Actions, @ViewBuilder content: () -> Content) {
         self.title = title
         self.toolID = toolID
+        self.showDefaultActions = showDefaultActions
+        self.actions = actions()
         self.content = content()
+    }
+    
+    // Convenience init for no custom actions
+    public init(_ title: String, toolID: String, showDefaultActions: Bool = true, @ViewBuilder content: () -> Content) where Actions == EmptyView {
+        self.init(title, toolID: toolID, showDefaultActions: showDefaultActions, actions: { EmptyView() }, content: content)
     }
     
     private var isExpanded: Bool {
@@ -86,33 +95,37 @@ public struct COToolSection<Content: View>: View {
 
                 // MARK: - Action Group (Aligned Right)
                 HStack(spacing: 0) {
-                    toolHeaderButton(systemName: "questionmark") {
-                        commands.showHelp(for: toolID)
-                    }
-
-                    toolHeaderButton(systemName: "wand.and.rays") {
-                        commands.autoAdjustTool(toolID)
-                    }
-
-                    toolHeaderButton(systemName: "arrow.up.left.and.arrow.down.right") {
-                        if let session = commands.session {
-                            COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                    actions // Custom actions injected here
+                    
+                    if showDefaultActions {
+                        toolHeaderButton(systemName: "questionmark") {
+                            commands.showHelp(for: toolID)
                         }
-                    }
 
-                    toolHeaderButton(systemName: "arrow.up.doc") {
-                        commands.copyAdjustmentsForTool(toolID)
-                    }
+                        toolHeaderButton(systemName: "wand.and.rays") {
+                            commands.autoAdjustTool(toolID)
+                        }
 
-                    toolHeaderButton(systemName: "arrow.down.doc") {
-                        commands.pasteAdjustmentsForTool(toolID)
-                    }
+                        toolHeaderButton(systemName: "arrow.up.left.and.arrow.down.right") {
+                            if let session = commands.session {
+                                COWindowManager.shared.openFloatingToolWindow(toolID: toolID, toolName: title, session: session)
+                            }
+                        }
 
-                    toolHeaderButton(systemName: "arrow.uturn.backward") {
-                        commands.resetTool(toolID)
-                    }
+                        toolHeaderButton(systemName: "arrow.up.doc") {
+                            commands.copyAdjustmentsForTool(toolID)
+                        }
 
-                    presetMenu
+                        toolHeaderButton(systemName: "arrow.down.doc") {
+                            commands.pasteAdjustmentsForTool(toolID)
+                        }
+
+                        toolHeaderButton(systemName: "arrow.uturn.backward") {
+                            commands.resetTool(toolID)
+                        }
+
+                        presetMenu
+                    }
 
                     ellipsisMenu
                 }
@@ -178,17 +191,18 @@ public struct COToolSection<Content: View>: View {
 
             Divider()
 
-            Button("Copy \(title) Adjustments") {
-                commands.copyAdjustmentsForTool(toolID)
+            if showDefaultActions {
+                Button("Copy \(title) Adjustments") {
+                    commands.copyAdjustmentsForTool(toolID)
+                }
+                Button("Apply \(title) Adjustments") {
+                    commands.pasteAdjustmentsForTool(toolID)
+                }
+                Button("Reset \(title)") {
+                    commands.resetTool(toolID)
+                }
+                Divider()
             }
-            Button("Apply \(title) Adjustments") {
-                commands.pasteAdjustmentsForTool(toolID)
-            }
-            Button("Reset \(title)") {
-                commands.resetTool(toolID)
-            }
-
-            Divider()
 
             Button("Auto Size") { workspaceManager.setToolSizeOption(nil, for: toolID) }
             Button("Small Size") { workspaceManager.setToolSizeOption(1, for: toolID) }
