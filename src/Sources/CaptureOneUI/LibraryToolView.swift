@@ -9,6 +9,10 @@ public struct LibraryToolView: View {
     @ObservedObject var commands = AppCommandCenter.shared
     @State private var selectedCollectionUUID: String? = "capture"
     
+    // For inline renaming
+    @State private var editingUUID: String? = nil
+    @State private var editedName: String = ""
+    
     public init(session: SessionBase) {
         self.session = session
     }
@@ -110,8 +114,18 @@ public struct LibraryToolView: View {
             COToolSection("Session Albums", toolID: "SessionAlbums", showDefaultActions: false, actions: {
                 HStack(spacing: 0) {
                     Menu {
-                        Button("New Album") { session.addUserAlbum(name: "New Album") }
-                        Button("New Smart Album") { session.addUserAlbum(name: "New Smart Album", isSmart: true) }
+                        Button("New Album") { 
+                            session.addUserAlbum(name: "New Album") 
+                            if let new = session.arrangedUserAlbumCollections.last {
+                                startEditing(new.uuid, currentName: "New Album")
+                            }
+                        }
+                        Button("New Smart Album") { 
+                            session.addUserAlbum(name: "New Smart Album", isSmart: true) 
+                            if let new = session.arrangedUserAlbumCollections.last {
+                                startEditing(new.uuid, currentName: "New Smart Album")
+                            }
+                        }
                     } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 10, weight: .bold))
@@ -136,12 +150,18 @@ public struct LibraryToolView: View {
                                 title: album.name ?? "Untitled",
                                 icon: album.isSmartAlbum ? "gearshape" : "photo.on.rectangle",
                                 count: album.itemCount,
-                                isSelected: selectedCollectionUUID == album.uuid
+                                isSelected: selectedCollectionUUID == album.uuid,
+                                isEditing: editingUUID == album.uuid,
+                                editedName: $editedName,
+                                onCommitRename: { commitRename(for: album) }
                             )
                             .onTapGesture { selectedCollectionUUID = album.uuid }
+                            .onTapGesture(count: 2) { startEditing(album.uuid, currentName: album.name ?? "") }
                             .contextMenu {
-                                Button("Edit Smart Album...") { }
-                                Button("Rename...") { }
+                                if album.isSmartAlbum {
+                                    Button("Edit Smart Album...") { }
+                                }
+                                Button("Rename...") { startEditing(album.uuid, currentName: album.name ?? "") }
                                 Button("Duplicate...") { }
                                 Divider()
                                 Button("Export as Catalog...") { }
@@ -173,19 +193,31 @@ public struct LibraryToolView: View {
                         Text("No favorites").font(.system(size: 10)).foregroundColor(.gray).padding(.leading, 12).padding(.vertical, 4)
                     } else {
                         ForEach(session.arrangedUserFavouriteCollections, id: \.uuid) { fav in
-                            LibraryRow(title: fav.name ?? "Favorite", icon: iconForFolder(path: fav.folderPath ?? ""), count: 0, isSelected: selectedCollectionUUID == fav.uuid)
-                                .onTapGesture { selectedCollectionUUID = fav.uuid }
-                                .contextMenu {
-                                    if let path = fav.folderPath {
-                                        let url = URL(fileURLWithPath: path)
-                                        Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
-                                        Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
-                                        Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
-                                        Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
-                                        Divider()
-                                        Button("Remove from Favorites") { session.removeUserFavourite(uuid: fav.uuid) }
-                                    }
+                            LibraryRow(
+                                title: fav.name ?? "Favorite", 
+                                icon: iconForFolder(path: fav.folderPath ?? ""), 
+                                count: 0, 
+                                isSelected: selectedCollectionUUID == fav.uuid,
+                                isEditing: editingUUID == fav.uuid,
+                                editedName: $editedName,
+                                onCommitRename: { commitRename(for: fav) }
+                            )
+                            .onTapGesture { selectedCollectionUUID = fav.uuid }
+                            .onTapGesture(count: 2) { startEditing(fav.uuid, currentName: fav.name ?? "") }
+                            .contextMenu {
+                                if let path = fav.folderPath {
+                                    let url = URL(fileURLWithPath: path)
+                                    Button("Set as Capture Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .capture, in: session) }
+                                    Button("Set as Selects Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .selects, in: session) }
+                                    Button("Set as Output Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: session) }
+                                    Button("Set as Session Trash Folder") { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: session) }
+                                    Divider()
+                                    Button("Rename...") { startEditing(fav.uuid, currentName: fav.name ?? "") }
+                                    Button("Remove from Favorites") { session.removeUserFavourite(uuid: fav.uuid) }
+                                    Divider()
+                                    Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
                                 }
+                            }
                         }
                     }
                 }
@@ -216,10 +248,7 @@ public struct LibraryToolView: View {
                                 Button("Set as Output Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .output, in: s) } }
                                 Button("Set as Session Trash Folder") { if let s = commands.session { SessionFolderManager.shared.setAsSystemFolder(url: url, type: .trash, in: s) } }
                                 Divider()
-                                Button("Show in Library") { }
                                 Button("Show in Finder") { NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: path) }
-                                Button("Show Info") { }
-                                Divider()
                             }
                     }
                 }
@@ -293,6 +322,17 @@ public struct LibraryToolView: View {
         }
     }
     
+    private func startEditing(_ uuid: String, currentName: String) {
+        editedName = currentName
+        editingUUID = uuid
+    }
+    
+    private func commitRename(for collection: CollectionBase) {
+        collection.name = editedName
+        editingUUID = nil
+        session.isDirty = true
+    }
+    
     @ViewBuilder
     private func toolHeaderButton(systemName: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
@@ -311,6 +351,21 @@ struct LibraryRow: View {
     let count: Int
     let isSelected: Bool
     
+    // Renaming support
+    var isEditing: Bool
+    @Binding var editedName: String
+    var onCommitRename: (() -> Void)?
+    
+    init(title: String, icon: String, count: Int, isSelected: Bool, isEditing: Bool = false, editedName: Binding<String> = .constant(""), onCommitRename: (() -> Void)? = nil) {
+        self.title = title
+        self.icon = icon
+        self.count = count
+        self.isSelected = isSelected
+        self.isEditing = isEditing
+        self._editedName = editedName
+        self.onCommitRename = onCommitRename
+    }
+    
     var body: some View {
         HStack(spacing: 8) {
             Image(systemName: icon)
@@ -318,9 +373,19 @@ struct LibraryRow: View {
                 .foregroundColor(isSelected ? CaptureOneTheme.Colors.activeHighlight : .white.opacity(0.6))
                 .frame(width: 16)
             
-            Text(title)
+            if isEditing {
+                TextField("", text: $editedName, onCommit: {
+                    onCommitRename?()
+                })
+                .textFieldStyle(.plain)
                 .font(.system(size: 11))
-                .foregroundColor(isSelected ? CaptureOneTheme.Colors.activeHighlight : .white.opacity(0.9))
+                .foregroundColor(.white)
+                .background(Color.blue.opacity(0.3))
+            } else {
+                Text(title)
+                    .font(.system(size: 11))
+                    .foregroundColor(isSelected ? CaptureOneTheme.Colors.activeHighlight : .white.opacity(0.9))
+            }
             
             Spacer()
             
