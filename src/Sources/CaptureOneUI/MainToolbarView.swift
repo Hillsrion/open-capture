@@ -244,6 +244,7 @@ private struct RotateToolbarGroup: View {
 
 private struct AutoAdjustToolbarGroup: View {
     @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var autoAdjustManager = COAutoAdjustManager.shared
 
     var body: some View {
         COToolbarButton(
@@ -253,10 +254,12 @@ private struct AutoAdjustToolbarGroup: View {
             commands.handleToolbarAction("AutoAdjust")
         }
         .contextMenu {
-            Toggle("White Balance", isOn: $commands.autoAdjustWhiteBalance)
-            Toggle("Exposure", isOn: $commands.autoAdjustExposure)
-            Toggle("High Dynamic Range", isOn: $commands.autoAdjustHDR)
-            Toggle("Levels", isOn: $commands.autoAdjustLevels)
+            Toggle("White Balance", isOn: $autoAdjustManager.includeWhiteBalance)
+            Toggle("Exposure", isOn: $autoAdjustManager.includeExposure)
+            Toggle("High Dynamic Range", isOn: $autoAdjustManager.includeHDR)
+            Toggle("Levels", isOn: $autoAdjustManager.includeLevels)
+            Toggle("Rotation", isOn: $autoAdjustManager.includeRotation)
+            Toggle("Keystone", isOn: $autoAdjustManager.includeKeystone)
         }
     }
 }

@@ -46,11 +46,8 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var showFocusMask: Bool = false
     @Published public var editSelectedOnly: Bool = true
     
-    // Auto Adjust Configuration (UI-204)
-    @Published public var autoAdjustExposure: Bool = true
-    @Published public var autoAdjustWhiteBalance: Bool = true
-    @Published public var autoAdjustHDR: Bool = true
-    @Published public var autoAdjustLevels: Bool = true
+    // Auto Adjust Configuration (UI-204) - Managed by COAutoAdjustManager
+    public var autoAdjustManager = COAutoAdjustManager.shared
     
     // Cull View State (WS-103)
     @Published public var isGroupingEnabled: Bool = false
@@ -639,29 +636,7 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        print("[AppCommandCenter] Global Auto-Adjust triggered.")
-        
-        if autoAdjustWhiteBalance {
-            adjustmentController.kelvin = 5600
-            adjustmentController.tint = 10
-        }
-        
-        if autoAdjustExposure {
-            // Slight nudge based on current values or reset to reasonable start
-            adjustmentController.exposure = 0.15
-            adjustmentController.contrast = 15.0
-        }
-        
-        if autoAdjustHDR {
-            adjustmentController.highlights = 10
-            adjustmentController.shadows = 5
-        }
-        
-        if autoAdjustLevels {
-            adjustmentController.autoLevels()
-        }
-        
-        adjustmentController.commitChanges(to: adjustmentController.currentVariant)
+        COAutoAdjustManager.shared.performAutoAdjust(controller: adjustmentController)
     }
 
     public func autoAdjustTool(_ toolID: String) {
@@ -673,20 +648,24 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
         
-        // Simple heuristic for Phase 2: just slightly nudge values toward center/neutral
-        // based on the tool's focus area.
         switch toolID {
         case "Exposure":
-            adjustmentController.exposure = min(max(adjustmentController.exposure * 1.1, -2.0), 2.0)
+            COAutoAdjustManager.shared.autoAdjustExposure(controller: adjustmentController)
         case "White Balance":
-            adjustmentController.kelvin = 5600
-            adjustmentController.tint = 0
-        case "High Dynamic Range":
-            adjustmentController.highlights = 20
-            adjustmentController.shadows = 20
+            COAutoAdjustManager.shared.autoAdjustWhiteBalance(controller: adjustmentController)
+        case "High Dynamic Range", "HDR":
+            COAutoAdjustManager.shared.autoAdjustHDR(controller: adjustmentController)
+        case "Levels":
+            adjustmentController.autoLevels()
+        case "Rotation":
+            COAutoAdjustManager.shared.autoAdjustRotation(controller: adjustmentController)
+        case "Keystone":
+            adjustmentController.autoKeystone()
         default:
             autoAdjust()
         }
+        
+        adjustmentController.commitChanges(to: adjustmentController.currentVariant)
     }
 
     public func copyAdjustments() {
