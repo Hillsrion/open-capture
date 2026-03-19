@@ -39,9 +39,6 @@ public final class AppCommandCenter: ObservableObject {
         }
     }
     @Published public var lastCursorToolID: String = "Select"
-    @Published public var beforeAfterEnabled: Bool = false
-    @Published public var beforeAfterMode: Int = 0 // 0: Full View, 1: Split Screen
-    @Published public var beforeAfterSplitPosition: Double = 0.5
     @Published public var showGridOverlay: Bool = false
     @Published public var showExposureWarning: Bool = false
     @Published public var showFocusMask: Bool = false
@@ -151,8 +148,8 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.applyAdjustments") { [weak self] in
             self?.pasteAdjustments()
         }
-        ShortcutManager.shared.registerAction(id: "com.captureone.beforeAfter") { [weak self] in
-            self?.beforeAfterEnabled.toggle()
+        ShortcutManager.shared.registerAction(id: "com.captureone.beforeAfter") {
+            COBeforeAfterToolController.shared.toggle()
         }
         
         // MARK: - Browser Mode Actions (WF-501)
@@ -213,7 +210,7 @@ public final class AppCommandCenter: ObservableObject {
         case "Print":
             presentPrint()
         case "BeforeAfter":
-            beforeAfterEnabled.toggle()
+            COBeforeAfterToolController.shared.toggle()
         case "Grid":
             showGridOverlay.toggle()
         case "ExposureWarning":

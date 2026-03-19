@@ -150,7 +150,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     @MainActor
     @objc func toggleBeforeAfter(_ sender: Any?) {
-        Task { @MainActor in AppCommandCenter.shared.beforeAfterEnabled.toggle() }
+        Task { @MainActor in COBeforeAfterToolController.shared.toggle() }
+    }
+
+    @MainActor
+    @objc func switchBeforeAfterMode(_ sender: Any?) {
+        Task { @MainActor in
+            let controller = COBeforeAfterToolController.shared
+            if controller.mode == .fullView {
+                controller.setMode(.splitScreen)
+            } else {
+                controller.setMode(.fullView)
+            }
+        }
     }
 
     @MainActor

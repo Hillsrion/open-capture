@@ -80,13 +80,14 @@ private enum PreferencesSection: CaseIterable {
 
 private struct GeneralPreferencesPane: View {
     @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var beforeAfterController = COBeforeAfterToolController.shared
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("General")
                 .font(.title3.weight(.semibold))
 
-            Toggle("Enable Before/After in Viewer", isOn: $commands.beforeAfterEnabled)
+            Toggle("Enable Before/After in Viewer", isOn: $beforeAfterController.isEnabled)
             Toggle("Show Grid Overlay", isOn: $commands.showGridOverlay)
             Toggle("Show Exposure Warning", isOn: $commands.showExposureWarning)
             Toggle("Show Focus Mask", isOn: $commands.showFocusMask)

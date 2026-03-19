@@ -17,6 +17,7 @@ public struct COViewerView: View {
     
     @ObservedObject var liveView = LiveViewEngine.shared
     @ObservedObject var commands = AppCommandCenter.shared
+    @ObservedObject var beforeAfter = COBeforeAfterToolController.shared
     @StateObject private var renderCoalescer = RenderCoalescer()
     
     @State private var renderedImage: NSImage?
@@ -27,7 +28,6 @@ public struct COViewerView: View {
     @State private var dragStartOrigin: CGPoint? = nil
     @State private var activeCropZone: CropRectHitboxCalculator.InteractionZone = .none
     @State private var cropStartRect: CGRect = .zero
-    @State private var isLongPressingBefore: Bool = false
     
     // Track focus to avoid color shifts
     @FocusState private var isFocused: Bool
@@ -66,6 +66,9 @@ public struct COViewerView: View {
                 requestCoalescedRender(forceQuality: nil)
             }
         }
+        .onReceive(beforeAfter.objectWillChange) { _ in
+             // Trigger re-render or UI update if needed, though SwiftUI should handle it
+        }
     }
     
     @ViewBuilder
@@ -100,23 +103,15 @@ public struct COViewerView: View {
     
     @ViewBuilder
     private func imageContent(sourceNS: NSImage, renderedNS: NSImage?, renderedCI: CIImage?, size: CGSize) -> some View {
-        if commands.beforeAfterEnabled && !isLongPressingBefore {
-            if commands.beforeAfterMode == 1 {
-                BeforeAfterSplitView(
-                    beforeImage: sourceNS,
-                    afterImage: renderedNS ?? sourceNS,
-                    afterCIImage: renderedCI,
-                    splitPosition: $commands.beforeAfterSplitPosition,
-                    viewerSize: size
-                )
-            } else {
-                HStack(spacing: 1) {
-                    viewerImageView(nsImage: sourceNS, ciImage: nil, size: CGSize(width: size.width / 2, height: size.height))
-                    viewerImageView(nsImage: renderedNS, ciImage: renderedCI, size: CGSize(width: size.width / 2, height: size.height))
-                }
-            }
+        if beforeAfter.isEnabled && !beforeAfter.isLongPressingBefore {
+            COViewerComparisonRenderer(
+                beforeImage: sourceNS,
+                afterImage: renderedNS ?? sourceNS,
+                afterCIImage: renderedCI,
+                viewerSize: size
+            )
         } else {
-            if isLongPressingBefore {
+            if beforeAfter.isLongPressingBefore {
                 viewerImageView(nsImage: sourceNS, ciImage: nil, size: size)
             } else {
                 viewerImageView(nsImage: renderedNS, ciImage: renderedCI, size: size)
@@ -127,8 +122,8 @@ public struct COViewerView: View {
     @ViewBuilder
     private func overlays(size: CGSize) -> some View {
         Group {
-            if commands.beforeAfterEnabled && !isLongPressingBefore {
-                ViewerModeBadge(text: commands.beforeAfterMode == 1 ? "Split Screen" : "Before / After")
+            if beforeAfter.isEnabled && !beforeAfter.isLongPressingBefore {
+                ViewerModeBadge(text: beforeAfter.mode == .splitScreen ? "Split Screen" : "Before / After")
                     .padding(12)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             }
@@ -198,8 +193,8 @@ public struct COViewerView: View {
     
     private var longPressGesture: some Gesture {
         LongPressGesture(minimumDuration: 0.1)
-            .onChanged { value in isLongPressingBefore = value }
-            .onEnded { _ in isLongPressingBefore = false }
+            .onChanged { value in beforeAfter.isLongPressingBefore = value }
+            .onEnded { _ in beforeAfter.isLongPressingBefore = false }
     }
     
     private func handleHover(inside: Bool) {
@@ -592,36 +587,6 @@ struct KeystoneOverlayView: View {
     }
     private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
         return CGPoint(x: point.x * size.width, y: point.y * size.height)
-    }
-}
-
-struct BeforeAfterSplitView: View {
-    let beforeImage: NSImage
-    let afterImage: NSImage
-    let afterCIImage: CIImage?
-    @Binding var splitPosition: Double
-    let viewerSize: CGSize
-    var body: some View {
-        ZStack {
-            if let afterCIImage = afterCIImage, COMTRView.supportsMetal {
-                COMTRView(image: afterCIImage)
-                    .frame(width: viewerSize.width, height: viewerSize.height)
-            } else {
-                Image(nsImage: afterImage).resizable().aspectRatio(contentMode: .fit)
-            }
-            Image(nsImage: beforeImage).resizable().aspectRatio(contentMode: .fit)
-                .mask(HStack(spacing: 0) {
-                    Rectangle().frame(width: viewerSize.width * CGFloat(splitPosition))
-                    Spacer(minLength: 0)
-                })
-            Rectangle().fill(Color.white).frame(width: 1)
-                .overlay(Circle().fill(Color.white).frame(width: 24, height: 24).shadow(radius: 2)
-                    .overlay(Image(systemName: "arrow.left.and.right").font(.system(size: 10)).foregroundColor(.black)))
-                .position(x: viewerSize.width * CGFloat(splitPosition), y: viewerSize.height / 2)
-                .gesture(DragGesture().onChanged { value in
-                    splitPosition = Double(max(0, min(1, value.location.x / viewerSize.width)))
-                })
-        }
     }
 }
 

@@ -72,7 +72,7 @@ public struct MainToolbarView: View {
     private func toolbarToggleSelection(_ itemID: String) -> Bool {
         switch itemID {
         case "BeforeAfter":
-            return commands.beforeAfterEnabled
+            return COBeforeAfterToolController.shared.isEnabled
         case "Grid":
             return commands.showGridOverlay
         case "ExposureWarning":
@@ -265,32 +265,30 @@ private struct AutoAdjustToolbarGroup: View {
 }
 
 private struct BeforeAfterToolbarGroup: View {
-    @ObservedObject private var commands = AppCommandCenter.shared
+    @ObservedObject private var controller = COBeforeAfterToolController.shared
 
     var body: some View {
         COToolbarButton(
             item: COToolbarItemRegistry.item(for: "BeforeAfter")!,
-            isSelected: commands.beforeAfterEnabled
+            isSelected: controller.isEnabled
         ) {
-            commands.handleToolbarAction("BeforeAfter")
+            controller.toggle()
         }
         .contextMenu {
             Button(action: {
-                commands.beforeAfterMode = 0
-                commands.beforeAfterEnabled = true
+                controller.setMode(.fullView)
             }) {
                 HStack {
                     Text("Full View")
-                    if commands.beforeAfterMode == 0 { Image(systemName: "checkmark") }
+                    if controller.mode == .fullView { Image(systemName: "checkmark") }
                 }
             }
             Button(action: {
-                commands.beforeAfterMode = 1
-                commands.beforeAfterEnabled = true
+                controller.setMode(.splitScreen)
             }) {
                 HStack {
                     Text("Split Screen")
-                    if commands.beforeAfterMode == 1 { Image(systemName: "checkmark") }
+                    if controller.mode == .splitScreen { Image(systemName: "checkmark") }
                 }
             }
         }
