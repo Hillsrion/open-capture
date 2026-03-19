@@ -1,10 +1,12 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed high-fidelity Annotations overlay (UI-007).
 public struct AnnotationsOverlayView: View {
     @ObservedObject var annotations: MCAnnotations
     @ObservedObject var commands = AppCommandCenter.shared
+    @ObservedObject var controller = COAnnotationController.shared
     @State private var currentLine: MCAnnotationsLine?
     
     private var activeTool: AnnotationTool {
@@ -49,15 +51,20 @@ public struct AnnotationsOverlayView: View {
                         let tool = commands.selectedCursorToolID
                         if tool == "Annotate" {
                             if currentLine == nil {
-                                currentLine = MCAnnotationsLine(points: [gesture.location])
+                                currentLine = MCAnnotationsLine(
+                                    points: [gesture.location],
+                                    colorHex: controller.currentColorHex,
+                                    width: controller.brushSize
+                                )
                             } else {
                                 currentLine?.points.append(gesture.location)
                             }
                         } else if tool == "EraseAnnotation" {
                             // Logic: Remove line if point is near any stroke
+                            let eraserSize = controller.eraserSize
                             annotations.lines.removeAll { line in
                                 line.points.contains { pt in
-                                    abs(pt.x - gesture.location.x) < 10 && abs(pt.y - gesture.location.y) < 10
+                                    abs(pt.x - gesture.location.x) < eraserSize / 2 && abs(pt.y - gesture.location.y) < eraserSize / 2
                                 }
                             }
                         }

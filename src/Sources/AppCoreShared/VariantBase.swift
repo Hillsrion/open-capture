@@ -1,5 +1,6 @@
 import Foundation
 import DataCore
+import ImageCore
 
 /// Reconstructed Base class for Variant entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.

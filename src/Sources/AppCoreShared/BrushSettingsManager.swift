@@ -4,6 +4,8 @@ import Combine
 public enum CursorToolType {
     case drawMask
     case eraseMask
+    case drawAnnotations
+    case eraseAnnotations
     case heal
     case clone
     case pan

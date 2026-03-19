@@ -1,8 +1,9 @@
 import Foundation
+import ImageCore
 
 /// High-level wrapper for an export recipe.
 /// Based on _TtC12AppCoreShared12OutputRecipe metadata.
-public class OutputRecipe: BaseObject, Identifiable {
+public class OutputRecipe: BaseObject, Identifiable, ExportRecipeInfo {
     public var id: String { name }
     public let mcRecipe: MCRecipe
     

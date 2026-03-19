@@ -30,7 +30,14 @@ public final class AppCommandCenter: ObservableObject {
 
     @Published public var presentedSheet: AppSheetRoute?
     @Published public var notice: AppNotice?
-    @Published public var selectedCursorToolID: String = "Select"
+    @Published public var selectedCursorToolID: String = "Select" {
+        didSet {
+            if oldValue != "Annotate" && oldValue != "EraseAnnotation" {
+                lastCursorToolID = oldValue
+            }
+        }
+    }
+    @Published public var lastCursorToolID: String = "Select"
     @Published public var beforeAfterEnabled: Bool = false
     @Published public var beforeAfterMode: Int = 0 // 0: Full View, 1: Split Screen
     @Published public var beforeAfterSplitPosition: Double = 0.5
@@ -119,7 +126,12 @@ public final class AppCommandCenter: ObservableObject {
             self?.selectedCursorToolID = "EraseMask"
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.annotate") { [weak self] in
-            self?.selectedCursorToolID = "Annotate"
+            guard let self = self else { return }
+            if self.selectedCursorToolID == "Annotate" || self.selectedCursorToolID == "EraseAnnotation" {
+                self.selectedCursorToolID = self.lastCursorToolID
+            } else {
+                self.selectedCursorToolID = "Annotate"
+            }
         }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.magicBrush") { [weak self] in
             self?.selectedCursorToolID = "DrawMagicBrush"
