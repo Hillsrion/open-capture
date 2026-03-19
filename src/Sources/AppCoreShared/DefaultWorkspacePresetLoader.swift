@@ -130,6 +130,7 @@ public final class DefaultWorkspacePresetLoader {
         case "MetadataToolTab": return ("Metadata", "info.circle.fill")
         case "OutputToolTab": return ("Output", "arrow.up.doc.fill")
         case "QuickToolTab": return ("Quick", "bolt.fill")
+        case "RetouchToolTab": return ("Retouch", "face.smiling.fill")
         default: return (id, "wrench.fill")
         }
     }

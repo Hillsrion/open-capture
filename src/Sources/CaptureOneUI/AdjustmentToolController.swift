@@ -318,6 +318,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var cbHighlight: ColorBalanceValue = .neutral
     @Published public var cbMaster: ColorBalanceValue = .neutral
 
+    // AI Retouching (AI-204)
+    @Published public var blemishAmount: Double = 0.0
+    @Published public var evenSkinAmount: Double = 0.0
+    @Published public var evenSkinTexture: Double = 0.0
+    @Published public var retouchFaceSmoothing: Double = 0.0
+    @Published public var retouchFaceRedness: Double = 0.0
+    @Published public var retouchFaceUniformity: Double = 0.0
+    @Published public var retouchTeethImpact: Double = 0.0
+    @Published public var retouchEyesLeftImpact: Double = 0.0
+    @Published public var retouchEyesRightImpact: Double = 0.0
+
     @Published public var isInteracting: Bool = false
     
     // Live Preview State (UI-010)
@@ -546,7 +557,16 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($cropMaskBrightness.map { _ in }.eraseToAnyPublisher()),
             observe($gridTypeIndex.map { _ in }.eraseToAnyPublisher()),
             observe($gridColorIndex.map { _ in }.eraseToAnyPublisher()),
-            observe($guides.map { _ in }.eraseToAnyPublisher())
+            observe($guides.map { _ in }.eraseToAnyPublisher()),
+            observe($blemishAmount.map { _ in }.eraseToAnyPublisher()),
+            observe($evenSkinAmount.map { _ in }.eraseToAnyPublisher()),
+            observe($evenSkinTexture.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchFaceSmoothing.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchFaceRedness.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchFaceUniformity.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchTeethImpact.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchEyesLeftImpact.map { _ in }.eraseToAnyPublisher()),
+            observe($retouchEyesRightImpact.map { _ in }.eraseToAnyPublisher())
         ]
         
         let mergedPublishers = Publishers.MergeMany(publishers).share()
@@ -877,6 +897,16 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         updateIfChanged(&bwSplitToneShadowHue, getDouble("ZBW_ST_SH_HUE", 0.0))
         updateIfChanged(&bwSplitToneShadowSaturation, getDouble("ZBW_ST_SH_SAT", 0.0))
         
+        updateIfChanged(&blemishAmount, getDouble("ZBLEMISH_AMOUNT", 0.0))
+        updateIfChanged(&evenSkinAmount, getDouble("ZEVEN_SKIN_AMOUNT", 0.0))
+        updateIfChanged(&evenSkinTexture, getDouble("ZEVEN_SKIN_TEXTURE", 0.0))
+        updateIfChanged(&retouchFaceSmoothing, getDouble("ZRETOUCH_FACE_SMOOTHING", 0.0))
+        updateIfChanged(&retouchFaceRedness, getDouble("ZRETOUCH_FACE_REDNESS", 0.0))
+        updateIfChanged(&retouchFaceUniformity, getDouble("ZRETOUCH_FACE_UNIFORMITY", 0.0))
+        updateIfChanged(&retouchTeethImpact, getDouble("ZRETOUCH_TEETH_IMPACT", 0.0))
+        updateIfChanged(&retouchEyesLeftImpact, getDouble("ZRETOUCH_EYES_L_IMPACT", 0.0))
+        updateIfChanged(&retouchEyesRightImpact, getDouble("ZRETOUCH_EYES_R_IMPACT", 0.0))
+        
         updateIfChanged(&dehazeAmount, getDouble("ZDEHAZE_AMOUNT", 0.0))
         updateIfChanged(&dehazeShadowToneHue, getDouble("ZDEHAZE_SHADOW_HUE", 0.0))
         updateIfChanged(&vignettingAmount, getDouble("ZVIGNETTING_AMOUNT", 0.0))
@@ -1069,6 +1099,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             activeLayer.mcLayer?.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
             activeLayer.mcLayer?.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
             activeLayer.mcLayer?.setObject(sharpHalo, forKey: "ZSHARP_HALO")
+            
+            activeLayer.mcLayer?.setObject(blemishAmount, forKey: "ZBLEMISH_AMOUNT")
+            activeLayer.mcLayer?.setObject(evenSkinAmount, forKey: "ZEVEN_SKIN_AMOUNT")
+            activeLayer.mcLayer?.setObject(evenSkinTexture, forKey: "ZEVEN_SKIN_TEXTURE")
+            activeLayer.mcLayer?.setObject(retouchFaceSmoothing, forKey: "ZRETOUCH_FACE_SMOOTHING")
+            activeLayer.mcLayer?.setObject(retouchFaceRedness, forKey: "ZRETOUCH_FACE_REDNESS")
+            activeLayer.mcLayer?.setObject(retouchFaceUniformity, forKey: "ZRETOUCH_FACE_UNIFORMITY")
+            activeLayer.mcLayer?.setObject(retouchTeethImpact, forKey: "ZRETOUCH_TEETH_IMPACT")
+            activeLayer.mcLayer?.setObject(retouchEyesLeftImpact, forKey: "ZRETOUCH_EYES_L_IMPACT")
+            activeLayer.mcLayer?.setObject(retouchEyesRightImpact, forKey: "ZRETOUCH_EYES_R_IMPACT")
+            
             ColorBalanceStorage.apply(colorBalanceSettings, to: activeLayer.mcLayer)
         } else {
             mc.setObject(exposure, forKey: "ZEXPOSURE")
@@ -1092,6 +1133,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             mc.setObject(sharpRadius, forKey: "ZSHARP_RADIUS")
             mc.setObject(sharpThreshold, forKey: "ZSHARP_THRESHOLD")
             mc.setObject(sharpHalo, forKey: "ZSHARP_HALO")
+            
+            mc.setObject(blemishAmount, forKey: "ZBLEMISH_AMOUNT")
+            mc.setObject(evenSkinAmount, forKey: "ZEVEN_SKIN_AMOUNT")
+            mc.setObject(evenSkinTexture, forKey: "ZEVEN_SKIN_TEXTURE")
+            mc.setObject(retouchFaceSmoothing, forKey: "ZRETOUCH_FACE_SMOOTHING")
+            mc.setObject(retouchFaceRedness, forKey: "ZRETOUCH_FACE_REDNESS")
+            mc.setObject(retouchFaceUniformity, forKey: "ZRETOUCH_FACE_UNIFORMITY")
+            mc.setObject(retouchTeethImpact, forKey: "ZRETOUCH_TEETH_IMPACT")
+            mc.setObject(retouchEyesLeftImpact, forKey: "ZRETOUCH_EYES_L_IMPACT")
+            mc.setObject(retouchEyesRightImpact, forKey: "ZRETOUCH_EYES_R_IMPACT")
+            
             ColorBalanceStorage.apply(colorBalanceSettings, to: mc)
         }
         

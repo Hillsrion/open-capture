@@ -114,8 +114,16 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
         case "CaptureOneLive":
             return .implemented { _ in AnyView(CaptureOneLiveToolView()) }
-        case "RetouchFaces":
+        case "RetouchFaceSkin", "RetouchFaces":
             return .implemented { context in AnyView(RetouchFaceSkinToolView(controller: context.adjustmentController)) }
+        case "BlemishRemoval":
+            return .implemented { context in AnyView(BlemishRemovalToolView(controller: context.adjustmentController)) }
+        case "EvenSkin":
+            return .implemented { context in AnyView(EvenSkinToolView(controller: context.adjustmentController)) }
+        case "RetouchTeeth":
+            return .implemented { context in AnyView(RetouchTeethToolView(controller: context.adjustmentController)) }
+        case "RetouchEyes":
+            return .implemented { context in AnyView(RetouchEyesToolView(controller: context.adjustmentController)) }
         case "SmartAdjustments":
             return .implemented { context in AnyView(SmartAdjustmentsToolView(controller: context.adjustmentController)) }
         case "ProcessSummary":

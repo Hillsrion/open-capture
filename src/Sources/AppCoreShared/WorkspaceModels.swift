@@ -617,10 +617,16 @@ public class WorkspaceManager: ObservableObject, Codable {
             scrolledTools: [ToolConfiguration(id: "ExportLocation"), ToolConfiguration(id: "ExportNaming"), ToolConfiguration(id: "FormatAndSize"), ToolConfiguration(id: "OutputAdjustments"), ToolConfiguration(id: "Watermark"), ToolConfiguration(id: "OutputMetadata"), ToolConfiguration(id: "ExportProcess"), ToolConfiguration(id: "OutputContentCredentials"), ToolConfiguration(id: "ExportQueue")]
         )
 
+        let retouchPalette = WorkspacePaletteDefinition(
+            id: "RetouchToolTab", name: "Retouch", iconName: "face.smiling.fill",
+            fixedTools: [ToolConfiguration(id: "RetouchFaceSkin")],
+            scrolledTools: [ToolConfiguration(id: "BlemishRemoval"), ToolConfiguration(id: "EvenSkin"), ToolConfiguration(id: "RetouchTeeth"), ToolConfiguration(id: "RetouchEyes")]
+        )
+
         var chrome = WorkspaceChromeState()
         chrome.selectedToolPaletteID = exposurePalette.id
         chrome.toolsWidth = 362.0
-        let ws = Workspace(name: name, windowKind: windowKind, palettes: [libraryPalette, capturePalette, colorPalette, exposurePalette, lensPalette, detailsPalette, exportPalette], chromeState: chrome)
+        let ws = Workspace(name: name, windowKind: windowKind, palettes: [libraryPalette, capturePalette, colorPalette, exposurePalette, lensPalette, detailsPalette, exportPalette, retouchPalette], chromeState: chrome)
         print("[WorkspaceManager] Created hardcoded precise workspace with \(ws.palettes.count) palettes")
         return ws
     }

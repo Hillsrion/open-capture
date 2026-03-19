@@ -5,16 +5,13 @@ import AppCoreShared
 /// Provides AI-driven skin smoothing and redness reduction.
 public struct RetouchFaceSkinToolView: View {
     @ObservedObject var controller: AdjustmentToolController
-    @State private var smoothing: Double = 0.0
-    @State private var redness: Double = 0.0
-    @State private var uniformity: Double = 0.0
     
     public init(controller: AdjustmentToolController) {
         self.controller = controller
     }
     
     public var body: some View {
-        COToolSection("Retouch Faces", toolID: "RetouchFaces") {
+        COToolSection("Retouch Face Skin", toolID: "RetouchFaceSkin") {
             VStack(alignment: .leading, spacing: 12) {
                 // Face Selection Stub
                 HStack {
@@ -31,9 +28,9 @@ public struct RetouchFaceSkinToolView: View {
                 Divider().background(Color.white.opacity(0.1))
                 
                 VStack(spacing: 8) {
-                    retouchSlider(label: "Smoothing", value: $smoothing, range: 0...100)
-                    retouchSlider(label: "Redness", value: $redness, range: -50...50)
-                    retouchSlider(label: "Uniformity", value: $uniformity, range: 0...100)
+                    retouchSlider(label: "Smoothing", value: $controller.retouchFaceSmoothing, range: 0...100)
+                    retouchSlider(label: "Redness", value: $controller.retouchFaceRedness, range: -50...50)
+                    retouchSlider(label: "Uniformity", value: $controller.retouchFaceUniformity, range: 0...100)
                 }
                 
                 HStack {
