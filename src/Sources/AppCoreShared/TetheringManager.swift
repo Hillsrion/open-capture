@@ -60,10 +60,16 @@ public class TetheringManager: ObservableObject {
     public static let shared = TetheringManager()
     
     @Published public var connectedCameras: [CameraDevice] = []
-    @Published public var selectedCamera: CameraDevice?
+    @Published public var selectedCamera: CameraDevice? {
+        didSet {
+            settingsController.camera = selectedCamera
+        }
+    }
     @Published public var isConnecting: Bool = false
     
     public let liveView = LiveViewStream()
+    public let settingsController = COCameraSettingsController(camera: nil)
+    public let wirelessConnection = COWirelessCameraConnection()
     
     private init() {
         // Simulation of camera discovery
@@ -82,6 +88,7 @@ public class TetheringManager: ObservableObject {
             self.isConnecting = false
             let mock = CameraDevice(id: "W-001", model: "Nikon Z9 (Wireless)", manufacturer: "Nikon")
             self.connectedCameras.append(mock)
+            self.wirelessConnection.connect(to: "Nikon_Z9_Direct")
         }
     }
     

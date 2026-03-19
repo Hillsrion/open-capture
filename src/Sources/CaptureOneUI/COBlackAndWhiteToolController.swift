@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 import Combine
 
 /// Specialized controller for Black & White conversion parameters.
