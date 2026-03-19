@@ -158,7 +158,7 @@ public enum ToolRegistry {
         case "ColorBalance":
             return .implemented { context in AnyView(ColorBalanceToolView(controller: context.adjustmentController)) }
         case "BlackAndWhite":
-            return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController)) }
+            return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController.blackAndWhiteController)) }
         case "Clarity":
             return .implemented { context in
                 AnyView(ClarityToolView(

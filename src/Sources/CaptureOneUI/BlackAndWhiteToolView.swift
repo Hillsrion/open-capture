@@ -4,9 +4,9 @@ import AppCoreShared
 /// Reconstructed high-fidelity Black & White tool (UI-202).
 /// Features color-to-luma sensitivity sliders and Split Toning.
 public struct BlackAndWhiteToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var controller: COBlackAndWhiteToolController
     
-    public init(controller: AdjustmentToolController) {
+    public init(controller: COBlackAndWhiteToolController) {
         self.controller = controller
     }
     
@@ -14,38 +14,44 @@ public struct BlackAndWhiteToolView: View {
         COToolSection("Black & White", toolID: "BlackAndWhite") {
             VStack(spacing: 10) {
                 HStack {
-                    Toggle("Enable Black & White", isOn: $controller.blackAndWhiteEnabled)
+                    Toggle("Enable Black & White", isOn: $controller.adjustmentController.blackAndWhiteEnabled)
                         .font(.system(size: 11, weight: .semibold))
                     Spacer()
                 }
                 
-                if controller.blackAndWhiteEnabled {
+                if controller.adjustmentController.blackAndWhiteEnabled {
                     VStack(spacing: 6) {
-                        bwSlider(label: "Red", value: $controller.bwRed, color: .red)
-                        bwSlider(label: "Yellow", value: $controller.bwYellow, color: .yellow)
-                        bwSlider(label: "Green", value: $controller.bwGreen, color: .green)
-                        bwSlider(label: "Cyan", value: $controller.bwCyan, color: .cyan)
-                        bwSlider(label: "Blue", value: $controller.bwBlue, color: .blue)
-                        bwSlider(label: "Magenta", value: $controller.bwMagenta, color: .purple)
+                        bwSlider(label: "Red", value: $controller.adjustmentController.bwRed, color: .red)
+                        bwSlider(label: "Orange", value: $controller.adjustmentController.bwOrange, color: .orange)
+                        bwSlider(label: "Yellow", value: $controller.adjustmentController.bwYellow, color: .yellow)
+                        bwSlider(label: "Green", value: $controller.adjustmentController.bwGreen, color: .green)
+                        bwSlider(label: "Blue", value: $controller.adjustmentController.bwBlue, color: .blue)
+                        bwSlider(label: "Magenta", value: $controller.adjustmentController.bwMagenta, color: .purple)
                     }
                     .padding(.top, 4)
                     
                     Divider().background(Color.white.opacity(0.05))
                     
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 14) {
                         Text("Split Toning").font(.system(size: 10, weight: .bold)).foregroundColor(.gray)
                         
-                        HStack(spacing: 12) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Highlights").font(.system(size: 9))
-                                ColorPicker("", selection: .constant(.orange)).labelsHidden().scaleEffect(0.8)
-                            }
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Shadows").font(.system(size: 9))
-                                ColorPicker("", selection: .constant(.blue)).labelsHidden().scaleEffect(0.8)
-                            }
+                        HStack(spacing: 30) {
+                            POColorBalanceControl(
+                                value: $controller.highlightValue,
+                                title: "Highlights",
+                                wheelDiameter: 92,
+                                lightnessControlDisabled: true
+                            )
+                            
+                            POColorBalanceControl(
+                                value: $controller.shadowValue,
+                                title: "Shadows",
+                                wheelDiameter: 92,
+                                lightnessControlDisabled: true
+                            )
                             Spacer()
                         }
+                        .frame(maxWidth: .infinity)
                     }
                 }
             }

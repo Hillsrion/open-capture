@@ -271,6 +271,23 @@ public struct SImageOperationAllParameters {
         self.fullSize = fullSize
     }
 }
+public struct IC_BlackAndWhiteSettings {
+    public var enabled: Bool = false
+    public var red: Float = 0.0
+    public var orange: Float = 0.0
+    public var yellow: Float = 0.0
+    public var green: Float = 0.0
+    public var blue: Float = 0.0
+    public var magenta: Float = 0.0
+    
+    public var splitToneHighlightHue: Float = 0.0
+    public var splitToneHighlightSaturation: Float = 0.0
+    public var splitToneShadowHue: Float = 0.0
+    public var splitToneShadowSaturation: Float = 0.0
+    
+    public init() {}
+}
+
 public struct IC_ProcessSettings {
     public var engineVersion: Int32 = 1600
     
@@ -320,6 +337,7 @@ public struct IC_ProcessSettings {
     public var negativeFilm = IC_NegativeFilmSettings()
     public var lensCorrection = IC_LensCorrectionSettings()
     public var filmGrain = IC_FilmGrainSettings()
+    public var blackAndWhite = IC_BlackAndWhiteSettings()
     public var gradationCurves = ICGradationCurves()
     public var levels = IC_LevelsSettings()
     public var clarity = IC_Clarity()

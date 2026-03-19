@@ -182,9 +182,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Black & White (UI-202)
     @Published public var blackAndWhiteEnabled: Bool = false
     @Published public var bwRed: Double = 0.0
+    @Published public var bwOrange: Double = 0.0
     @Published public var bwYellow: Double = 0.0
     @Published public var bwGreen: Double = 0.0
-    @Published public var bwCyan: Double = 0.0
     @Published public var bwBlue: Double = 0.0
     @Published public var bwMagenta: Double = 0.0
     @Published public var bwSplitToneHighlightHue: Double = 0.0
@@ -330,6 +330,10 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var retouchEyesRightImpact: Double = 0.0
 
     @Published public var isInteracting: Bool = false
+    
+    public lazy var blackAndWhiteController: COBlackAndWhiteToolController = {
+        COBlackAndWhiteToolController(adjustmentController: self)
+    }()
     
     // Live Preview State (UI-010)
     private var originalSettings: [String: Any]?
@@ -511,9 +515,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($stackCOStyles.map { _ in }.eraseToAnyPublisher()),
             observe($blackAndWhiteEnabled.map { _ in }.eraseToAnyPublisher()),
             observe($bwRed.map { _ in }.eraseToAnyPublisher()),
+            observe($bwOrange.map { _ in }.eraseToAnyPublisher()),
             observe($bwYellow.map { _ in }.eraseToAnyPublisher()),
             observe($bwGreen.map { _ in }.eraseToAnyPublisher()),
-            observe($bwCyan.map { _ in }.eraseToAnyPublisher()),
             observe($bwBlue.map { _ in }.eraseToAnyPublisher()),
             observe($bwMagenta.map { _ in }.eraseToAnyPublisher()),
             observe($bwSplitToneHighlightHue.map { _ in }.eraseToAnyPublisher()),
@@ -798,6 +802,19 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         settings.outputProfileID = self.iccProfile
         settings.toneCurveID = self.toneCurve
         
+        // Black & White (UI-202)
+        settings.blackAndWhite.enabled = self.blackAndWhiteEnabled
+        settings.blackAndWhite.red = Float(self.bwRed)
+        settings.blackAndWhite.orange = Float(self.bwOrange)
+        settings.blackAndWhite.yellow = Float(self.bwYellow)
+        settings.blackAndWhite.green = Float(self.bwGreen)
+        settings.blackAndWhite.blue = Float(self.bwBlue)
+        settings.blackAndWhite.magenta = Float(self.bwMagenta)
+        settings.blackAndWhite.splitToneHighlightHue = Float(self.bwSplitToneHighlightHue)
+        settings.blackAndWhite.splitToneHighlightSaturation = Float(self.bwSplitToneHighlightSaturation)
+        settings.blackAndWhite.splitToneShadowHue = Float(self.bwSplitToneShadowHue)
+        settings.blackAndWhite.splitToneShadowSaturation = Float(self.bwSplitToneShadowSaturation)
+        
         // Details
         settings.sharpeningAmount = 100.0 // Default
         settings.denoise.amount = 50.0 // Default
@@ -887,9 +904,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         updateIfChanged(&blackAndWhiteEnabled, (mc.objectForKey("ZBW_ENABLED") as? Bool) ?? false)
         updateIfChanged(&bwRed, getDouble("ZBW_RED", 0.0))
+        updateIfChanged(&bwOrange, getDouble("ZBW_ORANGE", 0.0))
         updateIfChanged(&bwYellow, getDouble("ZBW_YELLOW", 0.0))
         updateIfChanged(&bwGreen, getDouble("ZBW_GREEN", 0.0))
-        updateIfChanged(&bwCyan, getDouble("ZBW_CYAN", 0.0))
         updateIfChanged(&bwBlue, getDouble("ZBW_BLUE", 0.0))
         updateIfChanged(&bwMagenta, getDouble("ZBW_MAGENTA", 0.0))
         updateIfChanged(&bwSplitToneHighlightHue, getDouble("ZBW_ST_HL_HUE", 0.0))
@@ -1157,9 +1174,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         mc.setObject(blackAndWhiteEnabled, forKey: "ZBW_ENABLED")
         mc.setObject(bwRed, forKey: "ZBW_RED")
+        mc.setObject(bwOrange, forKey: "ZBW_ORANGE")
         mc.setObject(bwYellow, forKey: "ZBW_YELLOW")
         mc.setObject(bwGreen, forKey: "ZBW_GREEN")
-        mc.setObject(bwCyan, forKey: "ZBW_CYAN")
         mc.setObject(bwBlue, forKey: "ZBW_BLUE")
         mc.setObject(bwMagenta, forKey: "ZBW_MAGENTA")
         mc.setObject(bwSplitToneHighlightHue, forKey: "ZBW_ST_HL_HUE")
