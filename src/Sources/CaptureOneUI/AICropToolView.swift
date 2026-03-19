@@ -62,7 +62,7 @@ public struct AICropToolView: View {
                 
                 // Action Buttons
                 HStack(spacing: 8) {
-                    Button(action: { /* Set Reference Logic */ }) {
+                    Button(action: { controller.setAICropReference() }) {
                         VStack(spacing: 2) {
                             Image(systemName: "pin.fill")
                                 .font(.system(size: 14))
@@ -76,7 +76,7 @@ public struct AICropToolView: View {
                     }
                     .buttonStyle(.plain)
                     
-                    Button(action: { /* Apply AI Crop Logic */ }) {
+                    Button(action: { controller.applyAICrop() }) {
                         VStack(spacing: 2) {
                             Image(systemName: "magicmouse.fill")
                                 .font(.system(size: 14))

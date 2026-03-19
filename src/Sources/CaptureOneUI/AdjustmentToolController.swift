@@ -65,13 +65,27 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var multiViewPanning: Bool = false
     
     // AI Crop Studio State (UI-204)
-    @Published public var aiCropTopMargin: Double = 10.0
-    @Published public var aiCropBottomMargin: Double = 10.0
-    @Published public var aiCropLeftMargin: Double = 10.0
-    @Published public var aiCropRightMargin: Double = 10.0
-    @Published public var aiCropShowGuides: Bool = true
-    @Published public var aiCropReferencePoint: Int = 0 // 0: Center, 1: Top, 2: Eyes
-    @Published public var aiCropLockAspect: Bool = true
+    @Published public var aiCropTopMargin: Double = 10.0 {
+        didSet { AICropSettingsController.shared.margins.top = aiCropTopMargin }
+    }
+    @Published public var aiCropBottomMargin: Double = 10.0 {
+        didSet { AICropSettingsController.shared.margins.bottom = aiCropBottomMargin }
+    }
+    @Published public var aiCropLeftMargin: Double = 10.0 {
+        didSet { AICropSettingsController.shared.margins.left = aiCropLeftMargin }
+    }
+    @Published public var aiCropRightMargin: Double = 10.0 {
+        didSet { AICropSettingsController.shared.margins.right = aiCropRightMargin }
+    }
+    @Published public var aiCropShowGuides: Bool = true {
+        didSet { AICropSettingsController.shared.showGuides = aiCropShowGuides }
+    }
+    @Published public var aiCropReferencePoint: Int = 0 { // 0: Center, 1: Top, 2: Eyes
+        didSet { AICropSettingsController.shared.referencePoint = aiCropReferencePoint }
+    }
+    @Published public var aiCropLockAspect: Bool = true {
+        didSet { AICropSettingsController.shared.lockAspect = aiCropLockAspect }
+    }
     
     // COStyles State (UI-204)
     @Published public var stackCOStyles: Bool = false
@@ -1327,6 +1341,19 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         print("[Smart] Setting reference for \(variant.variantUUID)")
         self.smartReference = SmartAdjustmentsHelper.analyzeVariant(variant)
         self.smartReferenceVariantID = variant.variantUUID
+    }
+    
+    // MARK: - AI Crop (Consistency)
+    
+    public func setAICropReference() {
+        AICropSettingsController.shared.setReference(from: currentVariant)
+    }
+    
+    public func applyAICrop() {
+        // Apply to current variant (or selection in real app)
+        if let variant = currentVariant {
+            AICropSettingsController.shared.applyToVariants([variant])
+        }
     }
     
     public func applySmartAdjustments(to variants: [VariantBase]) {
