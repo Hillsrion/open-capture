@@ -287,6 +287,11 @@ public struct CullingView: View {
                     }
                 )
             }
+        case .batchRename:
+            BatchRenameView(
+                controller: commands.batchRenameController,
+                selectedVariants: commands.selectedVariantsForBatchRename
+            )
         }
     }
 }

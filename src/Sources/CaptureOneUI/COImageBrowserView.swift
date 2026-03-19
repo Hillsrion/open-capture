@@ -269,6 +269,7 @@ struct COBrowserGridView: View {
                         
                         COImageBrowserCell(
                             image: image,
+                            interactor: interactor,
                             isSelected: isSelected,
                             isPrimary: isPrimary,
                             size: CGFloat(zoomStore.thumbnailSize),
@@ -309,6 +310,7 @@ struct COBrowserFilmstripView: View {
                     
                     COImageBrowserCell(
                         image: image,
+                        interactor: interactor,
                         isSelected: isSelected,
                         isPrimary: isPrimary,
                         size: CGFloat(zoomStore.thumbnailSize),
@@ -511,6 +513,7 @@ struct COBrowserColorSquareButton: View {
 /// Reconstructed high-fidelity Browser Cell (UI-005).
 public struct COImageBrowserCell: View {
     @ObservedObject var image: ImageBase
+    @ObservedObject var interactor: ImageBrowserInteractor
     let isSelected: Bool
     let isPrimary: Bool
     let size: CGFloat
@@ -605,6 +608,22 @@ public struct COImageBrowserCell: View {
             Button("Rename") {
                 editedName = image.displayName
                 isEditingName = true
+            }
+            Button("Batch Rename...") {
+                let commands = AppCommandCenter.shared
+                let selectedUUIDs = interactor.selectedVariants
+                let allVariants = commands.browser.dataSource.flatMap { $0.variants }
+                let selected = allVariants.filter { selectedUUIDs.contains($0.variantUUID) }
+                
+                // If nothing is selected (unlikely in context menu, but still), 
+                // fallback to the current image's primary variant
+                if selected.isEmpty, let primary = image.primaryVariant {
+                    commands.updateSelectedVariantsForBatchRename([primary])
+                } else {
+                    commands.updateSelectedVariantsForBatchRename(selected)
+                }
+                
+                commands.presentBatchRename()
             }
             Divider()
             Button("Create LCC Profile") {

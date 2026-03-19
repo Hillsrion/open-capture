@@ -9,6 +9,7 @@ public enum AppSheetRoute: String, Identifiable {
     case sessionUpgrade
     case newCatalog
     case newSession
+    case batchRename
 
     public var id: String { rawValue }
 }
@@ -64,7 +65,9 @@ public final class AppCommandCenter: ObservableObject {
     @Published public private(set) var importer = POImporter()
     @Published public private(set) var copiedAdjustments: COStyle?
     @Published public var browser = CImageBrowser()
+    @Published public var selectedVariantsForBatchRename: [VariantBase] = []
 
+    public let batchRenameController = COBatchRenameController()
     public var recipeManager: OutputRecipeManager = OutputRecipeManager.shared
     public var batchQueue: BatchQueue = BatchQueue()
     public var session: SessionBase?
@@ -193,6 +196,8 @@ public final class AppCommandCenter: ObservableObject {
             presentImport()
         case "Export":
             presentExport()
+        case "BatchRename":
+            presentBatchRename()
         case "Capture":
             workspaceManager.setSelectedPaletteID("CaptureToolTab")
         case "Reset":
@@ -569,6 +574,14 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
         COWindowManager.shared.openViewerWindow(for: session)
+    }
+    
+    public func presentBatchRename() {
+        presentedSheet = .batchRename
+    }
+    
+    public func updateSelectedVariantsForBatchRename(_ variants: [VariantBase]) {
+        self.selectedVariantsForBatchRename = variants
     }
     
     public func openCullingWindow() {
