@@ -17,10 +17,41 @@ public class COLiveSelectionManager: ObservableObject {
     @Published public var isTriggerFollowEnabled: Bool = false
     @Published public var comments: [String: [CloudComment]] = [:] // ImageID to Comments
     
+    /// Remote ratings from different collaborators (ImageID -> UserID -> Rating)
+    @Published public var cloudRatings: [String: [UUID: Int]] = [:]
+    /// Remote color tags from different collaborators (ImageID -> UserID -> ColorTagValue)
+    @Published public var cloudColorTags: [String: [UUID: Int]] = [:]
+    
     private var cancellables = Set<AnyCancellable>()
     
     public init() {}
     
+    /// Aggregates all ratings for a given image (Local + Cloud).
+    public func getConsensusRatings(for imageId: String, localRating: Int) -> Set<Int> {
+        var ratings = Set<Int>()
+        if localRating > 0 { ratings.insert(localRating) }
+        
+        if let cloud = cloudRatings[imageId] {
+            for (_, rating) in cloud {
+                if rating > 0 { ratings.insert(rating) }
+            }
+        }
+        return ratings
+    }
+
+    /// Aggregates all color tags for a given image (Local + Cloud).
+    public func getConsensusColorTags(for imageId: String, localTag: Int) -> Set<Int> {
+        var tags = Set<Int>()
+        if localTag > 0 { tags.insert(localTag) }
+        
+        if let cloud = cloudColorTags[imageId] {
+            for (_, tag) in cloud {
+                if tag > 0 { tags.insert(tag) }
+            }
+        }
+        return tags
+    }
+
     /// Enable "Trigger Follow" mode. In real app, this ensures the remote client's selection follows the local session's selection.
     public func toggleTriggerFollow() {
         isTriggerFollowEnabled.toggle()
@@ -39,8 +70,11 @@ public class COLiveSelectionManager: ObservableObject {
             return
         }
         
-        // In a real implementation, this would update the DataCore variant
-        print("[LiveSelectionManager] Synced rating \(rating) for image \(imageId) from cloud.")
+        // Store cloud rating
+        if cloudRatings[imageId] == nil { cloudRatings[imageId] = [:] }
+        cloudRatings[imageId]?[userId] = rating
+        
+        print("[LiveSelectionManager] Synced rating \(rating) for image \(imageId) from user \(userId).")
         
         // Simulating activity log update
         CaptureOneLiveManager.shared.activityLog.insert(
@@ -61,8 +95,11 @@ public class COLiveSelectionManager: ObservableObject {
             return
         }
         
-        // In a real implementation, this would update the DataCore variant
-        print("[LiveSelectionManager] Synced color tag \(colorTag) for image \(imageId) from cloud.")
+        // Store cloud tag
+        if cloudColorTags[imageId] == nil { cloudColorTags[imageId] = [:] }
+        cloudColorTags[imageId]?[userId] = colorTag
+        
+        print("[LiveSelectionManager] Synced color tag \(colorTag) for image \(imageId) from user \(userId).")
     }
     
     /// Called when the cloud sends a comment

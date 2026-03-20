@@ -7,6 +7,7 @@ public struct SearchCriteria {
     public var allowedColorTags: Set<VariantBase.ColorTag> = Set(VariantBase.ColorTag.allCases)
     public var searchText: String = ""
     public var showOnlyModified: Bool = false
+    public var showLiveFavorites: Bool = false
     
     public init() {}
 }
@@ -34,13 +35,29 @@ public class SearchManager: ObservableObject {
     /// Filters a list of variants based on the current criteria.
     public func filter(_ variants: [VariantBase]) -> [VariantBase] {
         return variants.filter { variant in
-            // 1. Rating Filter
+            // 1. Live Favorites Filter
+            if criteria.showLiveFavorites {
+                let live = COLiveSelectionManager.shared
+                var allRatings: [Int] = []
+                if variant.rating > 0 { allRatings.append(variant.rating) }
+                if let cloud = live.cloudRatings[variant.variantUUID] {
+                    allRatings.append(contentsOf: cloud.values.filter { $0 > 0 })
+                }
+                
+                let hasFiveStar = allRatings.contains(5)
+                let average = allRatings.isEmpty ? 0 : Double(allRatings.reduce(0, +)) / Double(allRatings.count)
+                let hasConsensusFourPlus = average >= 4.0
+                
+                guard hasFiveStar || hasConsensusFourPlus else { return false }
+            }
+            
+            // 2. Rating Filter
             guard variant.rating >= criteria.minRating else { return false }
             
-            // 2. Color Tag Filter
+            // 3. Color Tag Filter
             guard criteria.allowedColorTags.contains(variant.colorTag) else { return false }
             
-            // 3. Text Search (Filename, Keywords)
+            // 4. Text Search (Filename, Keywords)
             if !criteria.searchText.isEmpty {
                 let lowerText = criteria.searchText.lowercased()
                 let filenameMatch = variant.image?.displayName.lowercased().contains(lowerText) ?? false
@@ -48,7 +65,7 @@ public class SearchManager: ObservableObject {
                 guard filenameMatch || keywordMatch else { return false }
             }
             
-            // 4. Modification Filter
+            // 5. Modification Filter
             if criteria.showOnlyModified {
                 guard variant.isModified else { return false }
             }
@@ -68,6 +85,7 @@ public class SearchManager: ObservableObject {
         if c.allowedColorTags.count < VariantBase.ColorTag.allCases.count { count += 1 }
         if !c.searchText.isEmpty { count += 1 }
         if c.showOnlyModified { count += 1 }
+        if c.showLiveFavorites { count += 1 }
         return count
     }
 }

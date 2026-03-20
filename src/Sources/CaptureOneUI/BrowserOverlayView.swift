@@ -23,6 +23,7 @@ public struct BrowserOverlayView: View {
 private struct BrowserOverlayContent: View {
     @ObservedObject var variant: VariantBase
     @ObservedObject var image: ImageBase
+    @ObservedObject var liveManager = COLiveSelectionManager.shared
     
     init?(variant: VariantBase?, image: ImageBase) {
         guard let variant = variant else { return nil }
@@ -66,6 +67,16 @@ private struct BrowserOverlayContent: View {
                     if variant.variantUUID != "dummy" && variant.isModified {
                         Image(systemName: "pencil.circle.fill")
                             .foregroundColor(.white)
+                            .font(.system(size: 10))
+                            .shadow(radius: 1)
+                    }
+                    
+                    // Live Multi-user activity icon
+                    if variant.variantUUID != "dummy" && 
+                        (liveManager.cloudRatings[variant.variantUUID]?.isEmpty == false || 
+                         liveManager.cloudColorTags[variant.variantUUID]?.isEmpty == false) {
+                        Image(systemName: "person.2.fill")
+                            .foregroundColor(.cyan)
                             .font(.system(size: 10))
                             .shadow(radius: 1)
                     }

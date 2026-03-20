@@ -5,6 +5,7 @@ import AppCoreShared
 /// Manages remote sharing sessions and reviewer permissions.
 public struct CaptureOneLiveToolView: View {
     @ObservedObject var liveManager = CaptureOneLiveManager.shared
+    @ObservedObject var syncAPI = COLiveSyncAPI.shared
     
     public init() {}
     
@@ -165,7 +166,7 @@ public struct CaptureOneLiveToolView: View {
                 HStack {
                     Image(systemName: "lock.fill")
                         .font(.system(size: 9))
-                    Picker("Follow Mode", selection: $liveManager.syncAPI.followMode) {
+                    Picker("Follow Mode", selection: $syncAPI.followMode) {
                         ForEach(COFollowMode.allCases) { mode in
                             Text(mode.rawValue).tag(mode)
                         }

@@ -151,6 +151,17 @@ public struct COImageBrowserView: View {
                 }
                 .buttonStyle(.plain)
                 
+                // Live Favorites Toggle
+                Button(action: { 
+                    searchManager.criteria.showLiveFavorites.toggle()
+                }) {
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 11))
+                        .foregroundColor(searchManager.criteria.showLiveFavorites ? .red : .gray)
+                }
+                .buttonStyle(.plain)
+                .help("Live Favorites (5-star or Consensus 4+)")
+                
                 // Sort Menu
                 Menu {
                     Button("Filename") { sortOrder = "filename" }
