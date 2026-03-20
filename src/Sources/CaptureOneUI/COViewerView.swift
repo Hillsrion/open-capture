@@ -195,6 +195,8 @@ public struct COViewerView: View {
                 CropOverlayView(controller: adjustmentController, viewerSize: size)
             }
             
+            MagicBrushSelectionOverlay(controller: COMagicBrushController.shared, viewerSize: size)
+            
             // MARK: - Speed Edit HUD
             COSpeedEditHUDView()
                 .padding(.bottom, 60)
@@ -251,6 +253,15 @@ public struct COViewerView: View {
                 
                 if adjustmentController.directColorEditorEnabled {
                     CODirectColorEditorController.shared.handleDrag(delta: gesture.translation, isAltPressed: isAltPressed)
+                } else if tool == "DrawMagicBrush" || tool == "EraseMagicBrush" {
+                    if let img = image {
+                        if dragStartOrigin == nil {
+                            dragStartOrigin = gesture.startLocation
+                            COMagicBrushController.shared.handleMouseDown(at: gesture.startLocation, in: img)
+                        } else {
+                            COMagicBrushController.shared.handleMouseDrag(at: gesture.location, in: img)
+                        }
+                    }
                 } else if tool == "Pan" {
                     handlePanDrag(gesture: gesture, size: size)
                 } else if tool == "MoveOverlay" {
@@ -274,6 +285,12 @@ public struct COViewerView: View {
                     // Finalize Direct Color Edit
                 } else {
                     let tool = commands.selectedCursorToolID
+                    if tool == "DrawMagicBrush" || tool == "EraseMagicBrush" {
+                        if let variant = adjustmentController.currentVariant {
+                            COMagicBrushController.shared.handleMouseUp(to: variant)
+                        }
+                        dragStartOrigin = nil
+                    }
                     if tool == "Pan" || tool == "MoveOverlay" {
                         dragStartOrigin = nil
                         if tool == "Pan" { NSCursor.pop() }
@@ -674,4 +691,26 @@ private extension CIImage {
         guard let cgImage = context.createCGImage(self, from: self.extent) else { return nil }
         return NSImage(cgImage: cgImage, size: NSSize(width: self.extent.width, height: self.extent.height))
     }
-}
+    }
+
+    /// Overlay for Magic Brush real-time selection preview.
+    struct MagicBrushSelectionOverlay: View {
+    @ObservedObject var controller: COMagicBrushController
+    let viewerSize: CGSize
+
+    var body: some View {
+        if let mask = controller.currentSelectionPreview {
+            // Render the [Float] mask as a red overlay
+            // This is a simplified representation
+            ZStack {
+                Color.red.opacity(0.3)
+                    .mask(
+                        // In a real implementation, we'd convert the [Float] to a CGImage/NSImage
+                        // and render it here.
+                        Rectangle()
+                    )
+            }
+            .allowsHitTesting(false)
+        }
+    }
+    }

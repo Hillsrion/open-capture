@@ -98,6 +98,17 @@ public final class AppCommandCenter: ObservableObject {
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.crop") { [weak self] in
             self?.selectedCursorToolID = "Crop"
         }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.drawMagicBrush") { [weak self] in
+            guard let self = self else { return }
+            if self.selectedCursorToolID == "DrawMagicBrush" {
+                self.selectedCursorToolID = "EraseMagicBrush"
+            } else {
+                self.selectedCursorToolID = "DrawMagicBrush"
+            }
+        }
+        ShortcutManager.shared.registerAction(id: "com.captureone.tool.eraseMagicBrush") { [weak self] in
+            self?.selectedCursorToolID = "EraseMagicBrush"
+        }
         ShortcutManager.shared.registerAction(id: "com.captureone.tool.rotate") { [weak self] in
             self?.selectedCursorToolID = "Rotate"
         }

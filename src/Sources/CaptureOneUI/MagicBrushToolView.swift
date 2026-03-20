@@ -1,5 +1,6 @@
 import SwiftUI
 import AppCoreShared
+import ImageCore
 
 /// Reconstructed high-fidelity Magic Brush & Eraser settings tool (UI-204).
 /// Matches Capture One 16.7.4 visual standards and logic.

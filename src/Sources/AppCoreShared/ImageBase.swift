@@ -4,7 +4,7 @@ import AppKit
 
 /// Reconstructed Base class for Image entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
-public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
+public class ImageBase: BaseObject, ICImageMetadataProvider, SmartSelectionImageProvider, Identifiable {
     
     public var id: String { imageUUID }
     // MARK: - Properties (Core Identity)
@@ -129,5 +129,18 @@ public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
         self.isCloud = false
         self.isCloudOnly = false
         super.init(managedObjectContext: context)
+    }
+    
+    // MARK: - SmartSelectionImageProvider
+    
+    public var size: CGSize {
+        return CGSize(width: Double(pixelWidth), height: Double(pixelHeight))
+    }
+    
+    public func getLumaBuffer() -> [Float] {
+        // Return mock luma buffer for reconstruction
+        let count = Int(size.width * size.height)
+        if count <= 0 { return [] }
+        return [Float](repeating: 0.5, count: count)
     }
 }
