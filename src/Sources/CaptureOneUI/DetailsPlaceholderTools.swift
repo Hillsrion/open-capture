@@ -65,8 +65,9 @@ public struct NavigatorToolView: View {
 
 // MARK: - Focus (UI-203)
 public struct FocusToolView: View {
-    @ObservedObject var controller = AdjustmentToolController.shared
+    @ObservedObject var controller = COFocusToolController.shared
     @ObservedObject var commands = AppCommandCenter.shared
+    @ObservedObject var adjustments = AdjustmentToolController.shared
     
     public init() {}
     
@@ -87,6 +88,9 @@ public struct FocusToolView: View {
                     
                     // Action Menu
                     Menu {
+                        Button("Center to eye") {
+                            controller.centerToEye()
+                        }
                         Button("Sync Focus Point") {
                             controller.syncFocusPoint()
                         }
@@ -98,25 +102,46 @@ public struct FocusToolView: View {
                     .frame(width: 20)
                 }
 
-                // Interactive Focus Preview Area
+                // Interactive Focus Preview Area (100% Zoom)
                 ZStack {
                     Rectangle()
                         .fill(Color.black.opacity(0.3))
                         .aspectRatio(1.0, contentMode: .fit)
                         .frame(maxWidth: .infinity)
                     
-                    if let variant = controller.currentVariant, let _ = variant.image {
+                    if let variant = adjustments.currentVariant, let image = variant.image {
                         // Simulated Zoomed Preview
-                        let zoomStr = controller.focusZoomIndex == 0 ? "100%" : (controller.focusZoomIndex == 1 ? "200%" : "400%")
-                        
-                        VStack(spacing: 4) {
-                            Image(systemName: "viewfinder")
-                                .font(.system(size: 48))
-                                .foregroundColor(CaptureOneTheme.Colors.activeHighlight.opacity(0.5))
+                        // In the real app, this renders a specific tile from the RAW engine
+                        ZStack {
+                            Image(nsImage: image.previewImage ?? NSImage())
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .scaleEffect(Double(1 << (controller.zoomIndex + 1))) // 1x, 2x, 4x from base
+                                .offset(
+                                    x: CGFloat(0.5 - controller.focusPoint.x) * 200.0 * CGFloat(1 << (controller.zoomIndex + 1)),
+                                    y: CGFloat(0.5 - controller.focusPoint.y) * 200.0 * CGFloat(1 << (controller.zoomIndex + 1))
+                                )
+                                .clipped()
                             
-                            Text("\(zoomStr) Preview at Focus Point")
-                                .font(.system(size: 9))
-                                .foregroundColor(.gray)
+                            if controller.isDetecting {
+                                ProgressView()
+                                    .scaleEffect(0.5)
+                                    .background(Color.black.opacity(0.3).cornerRadius(4))
+                            }
+                        }
+                        .frame(width: 200, height: 200)
+                        
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Text("\(controller.zoomIndex == 0 ? "100" : (controller.zoomIndex == 1 ? "200" : "400"))%")
+                                    .font(.system(size: 9, weight: .bold))
+                                    .padding(2)
+                                    .background(Color.black.opacity(0.5))
+                                    .cornerRadius(2)
+                                Spacer()
+                            }
+                            .padding(4)
                         }
                     } else {
                         VStack {
@@ -132,19 +157,24 @@ public struct FocusToolView: View {
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             // Logic: Move focus point (normalized)
-                            controller.focusPoint = CGPoint(x: value.location.x / 200, y: value.location.y / 200) // Simulated size
+                            let newX = max(0, min(1, value.location.x / 200))
+                            let newY = max(0, min(1, value.location.y / 200))
+                            controller.focusPoint = CGPoint(x: newX, y: newY)
                         }
                 )
                 
                 HStack {
-                    Picker("", selection: $controller.focusAIMode) {
+                    Picker("", selection: $controller.aiMode) {
+                        Text("Manual").tag(0)
                         Text("Center to Eye").tag(1)
                         Text("Center to Face").tag(2)
-                        Text("Manual").tag(0)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
                     .font(.system(size: 11))
+                    .onChange(of: controller.aiMode) { mode in
+                        if mode == 1 { controller.centerToEye() }
+                    }
                     
                     Spacer()
                     
@@ -167,7 +197,7 @@ public struct FocusToolView: View {
                     
                     Spacer()
                     
-                    Picker("", selection: $controller.focusZoomIndex) {
+                    Picker("", selection: $controller.zoomIndex) {
                         Text("100%").tag(0)
                         Text("200%").tag(1)
                         Text("400%").tag(2)
