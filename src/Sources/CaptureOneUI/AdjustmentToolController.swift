@@ -628,8 +628,23 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         mergedPublishers
             .debounce(for: .milliseconds(100), scheduler: RunLoop.main)
             .sink { [weak self] _ in
-                self?.isInteracting = false
+                guard let self = self else { return }
+                if self.isInteracting {
+                    self.isInteracting = false
+                    if let variant = self.currentVariant {
+                        COUndoRedoManager.shared.pushState(for: variant, actionName: "Adjustment")
+                    }
+                }
             }
+            .store(in: &cancellables)
+            
+        // Listen for Undo/Redo/Reset notifications to refresh the UI
+        NotificationCenter.default.publisher(for: .COUndoRedoDidUpdate)
+            .sink { [weak self] _ in self?.refreshToolValues() }
+            .store(in: &cancellables)
+            
+        NotificationCenter.default.publisher(for: .COVariantAdjustmentsDidReset)
+            .sink { [weak self] _ in self?.refreshToolValues() }
             .store(in: &cancellables)
             
         // Commit changes to the model (16ms throttle/debounce for 60fps)

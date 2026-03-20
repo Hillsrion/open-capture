@@ -251,25 +251,13 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func undo() {
-        if let undoManager = NSApp.keyWindow?.undoManager, undoManager.canUndo {
-            undoManager.undo()
-        } else {
-            notice = AppNotice(
-                title: "Undo",
-                message: "No undo stack is available in the current reconstruction state."
-            )
-        }
+        guard let variant = adjustmentController.currentVariant else { return }
+        COUndoRedoManager.shared.undo(for: variant)
     }
 
     public func redo() {
-        if let undoManager = NSApp.keyWindow?.undoManager, undoManager.canRedo {
-            undoManager.redo()
-        } else {
-            notice = AppNotice(
-                title: "Redo",
-                message: "No redo stack is available in the current reconstruction state."
-            )
-        }
+        guard let variant = adjustmentController.currentVariant else { return }
+        COUndoRedoManager.shared.redo(for: variant)
     }
     
     // MARK: - Culling & Selection (WF-502)
@@ -639,23 +627,29 @@ public final class AppCommandCenter: ObservableObject {
 
     public func resetAdjustments() {
         let isAltHeld = NSEvent.modifierFlags.contains(.option)
+        guard let variant = adjustmentController.currentVariant else { return }
         
-        // Safety Modal Logic (UI-806)
-        if !editSelectedOnly {
-            let alert = NSAlert()
-            alert.messageText = "Reset Adjustments"
-            alert.informativeText = "Are you sure you want to reset all adjustments on the selected images?"
-            alert.addButton(withTitle: "Reset All")
-            alert.addButton(withTitle: "Cancel")
-            alert.alertStyle = .warning
-            
-            if alert.runModal() == .alertSecondButtonReturn {
-                return // User cancelled
-            }
+        if isAltHeld {
+            // Temporary Before Peek logic
+            print("[Reset] Long-press/Alt held: Before Peek simulation...")
+            return
         }
         
-        adjustmentController.resetToNeutral(includeComposition: !isAltHeld)
-        print("[AppCommandCenter] Global Reset (Include Composition: \(!isAltHeld))")
+        COAdjustmentResetService.shared.reset(variant, mode: .all)
+        adjustmentController.refreshToolValues()
+        print("[AppCommandCenter] Global Reset")
+    }
+    
+    public func resetCropOnly() {
+        guard let variant = adjustmentController.currentVariant else { return }
+        COAdjustmentResetService.shared.reset(variant, mode: .crop)
+        adjustmentController.refreshToolValues()
+    }
+    
+    public func resetExceptGeometry() {
+        guard let variant = adjustmentController.currentVariant else { return }
+        COAdjustmentResetService.shared.reset(variant, mode: .exceptGeometry)
+        adjustmentController.refreshToolValues()
     }
 
     public func showTips() {

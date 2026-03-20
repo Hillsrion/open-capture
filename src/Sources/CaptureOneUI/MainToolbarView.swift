@@ -48,6 +48,8 @@ public struct MainToolbarView: View {
         switch item.id {
         case "UndoRedo":
             UndoRedoToolbarGroup()
+        case "Reset":
+            ResetToolbarGroup()
         case "CursorTools":
             CursorToolsToolbarGroup()
         case "Activity":
@@ -392,5 +394,23 @@ struct COToolbarButton: View {
         }
         .buttonStyle(PlainButtonStyle())
         .help(item.name)
+    }
+}
+
+private struct ResetToolbarGroup: View {
+    @ObservedObject private var commands = AppCommandCenter.shared
+
+    var body: some View {
+        COToolbarButton(
+            item: COToolbarItem(id: "Reset", name: "Reset", iconName: "arrow.counterclockwise"),
+            isSelected: false,
+            action: commands.resetAdjustments
+        )
+        .contextMenu {
+            Button("Reset All") { commands.resetAdjustments() }
+            Button("Reset Crop") { commands.resetCropOnly() }
+            Button("Reset All Except Geometry") { commands.resetExceptGeometry() }
+        }
+        .padding(.horizontal, 4)
     }
 }
