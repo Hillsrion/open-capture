@@ -52,7 +52,7 @@ public struct LayerInspectorView: View {
                     }
                     .buttonStyle(.plain)
                     .popover(isPresented: $isLumaRangePresented) {
-                        LumaRangeToolView(controller: controller)
+                        LumaRangeToolView(adjustmentController: controller)
                     }
                 }
                 .padding(.horizontal, 4)

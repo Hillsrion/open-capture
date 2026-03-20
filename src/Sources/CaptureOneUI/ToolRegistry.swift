@@ -109,7 +109,7 @@ public enum ToolRegistry {
         case "StyleBrushes":
             return .implemented { _ in AnyView(StyleBrushesToolView()) }
         case "LumaRange":
-            return .implemented { context in AnyView(LumaRangeToolView(controller: context.adjustmentController)) }
+            return .implemented { context in AnyView(LumaRangeToolView(adjustmentController: context.adjustmentController)) }
         case "MatchLook":
             return .implemented { context in AnyView(MatchLookToolView(controller: context.adjustmentController)) }
         case "CaptureOneLive":

@@ -39,6 +39,13 @@ public class VariantBase: BaseObject, Identifiable {
         didSet { didChangeValue(forKey: "isReadOnly") }
     }
 
+    /// Placeholder for luminance data used by Luma Range masking.
+    /// In a real implementation, this would be populated from the RAW engine's preview buffer.
+    public var luminanceData: [Float]? {
+        // Return a mock gradient if no data exists, for demonstration purposes
+        return (0..<10000).map { Float($0) / 10000.0 }
+    }
+
     public var isLoading: Bool
     public var isProxyReady: Bool
     public var isAlive: Bool
