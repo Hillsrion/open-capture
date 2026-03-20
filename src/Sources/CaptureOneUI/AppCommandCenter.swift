@@ -52,12 +52,12 @@ public final class AppCommandCenter: ObservableObject {
     @Published public var groupSimilarity: Double = 0.5
     @Published public var showCullingFaceFocus: Bool = true
     
-    // Adjustments Clipboard State
-    @Published public var clipboardAutoSelectAdjusted: Bool = true
-    @Published public var clipboardExposureSelected: Bool = true
-    @Published public var clipboardColorSelected: Bool = true
-    @Published public var clipboardDetailsSelected: Bool = true
-    @Published public var clipboardLayersSelected: Bool = true
+    // Adjustments Clipboard State (Migrated to COAdjustmentsClipboardController)
+    // @Published public var clipboardAutoSelectAdjusted: Bool = true
+    // @Published public var clipboardExposureSelected: Bool = true
+    // @Published public var clipboardColorSelected: Bool = true
+    // @Published public var clipboardDetailsSelected: Bool = true
+    // @Published public var clipboardLayersSelected: Bool = true
     
     @Published public private(set) var importer = POImporter()
     @Published public private(set) var copiedAdjustments: COStyle?
@@ -679,18 +679,21 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func copyAdjustments() {
-        copiedAdjustments = snapshotCurrentAdjustments(name: "Copied Adjustments")
-        guard copiedAdjustments != nil else {
+        guard let variant = adjustmentController.currentVariant else {
             notice = AppNotice(
                 title: "Nothing to Copy",
                 message: "Select an image before copying adjustments."
             )
             return
         }
+        
+        COAdjustmentsClipboardController.shared.copy(from: variant)
+        copiedAdjustments = snapshotCurrentAdjustments(name: "Copied Adjustments")
     }
 
     public func applyCopiedAdjustments() {
-        guard let copiedAdjustments else {
+        let clipboard = COAdjustmentsClipboardController.shared
+        guard let sourceVariant = clipboard.copiedVariant else {
             notice = AppNotice(
                 title: "Clipboard Empty",
                 message: "Copy adjustments before trying to apply them."
@@ -698,7 +701,12 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        guard adjustmentController.currentVariant != nil else {
+        var targets: [VariantBase] = []
+        if let current = adjustmentController.currentVariant {
+            targets.append(current)
+        }
+        
+        guard !targets.isEmpty else {
             notice = AppNotice(
                 title: "No Selection",
                 message: "Select an image before applying copied adjustments."
@@ -706,7 +714,10 @@ public final class AppCommandCenter: ObservableObject {
             return
         }
 
-        adjustmentController.applyCOStyle(copiedAdjustments)
+        COAdjustmentApplicationService.shared.apply(from: sourceVariant, to: targets, state: clipboard.state)
+        
+        // Update the UI for the currently selected variant
+        adjustmentController.refreshToolValues()
     }
 
     public func saveCurrentAdjustmentsAsCOStyle(toolID: String) {
@@ -857,15 +868,16 @@ public final class AppCommandCenter: ObservableObject {
         }
 
         var adjustments: [String: AnyCodable] = [:]
+        let clipboardState = COAdjustmentsClipboardController.shared.state
         
         // Simple mapping based on the Tool Categories
-        if clipboardExposureSelected {
+        if clipboardState.exposure {
             adjustments["ZEXPOSURE"] = AnyCodable(Double(adjustmentController.exposure))
             adjustments["ZCONTRAST"] = AnyCodable(Double(adjustmentController.contrast))
             adjustments["ZBRIGHTNESS"] = AnyCodable(Double(adjustmentController.brightness))
         }
         
-        if clipboardColorSelected {
+        if clipboardState.color {
             adjustments["ZSATURATION"] = AnyCodable(Double(adjustmentController.saturation))
             adjustments["ZKELVIN"] = AnyCodable(Double(adjustmentController.kelvin))
             adjustments["ZTINT"] = AnyCodable(Double(adjustmentController.tint))
