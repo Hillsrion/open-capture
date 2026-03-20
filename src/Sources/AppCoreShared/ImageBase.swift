@@ -1,5 +1,6 @@
 import Foundation
 import ImageCore
+import AppKit
 
 /// Reconstructed Base class for Image entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
@@ -11,6 +12,17 @@ public class ImageBase: BaseObject, ICImageMetadataProvider, Identifiable {
     @Published public var path: String
     @Published public var displayName: String
     @Published public var imageFileName: String
+
+    // MARK: - Images (UI-204)
+    public var previewImage: NSImage? {
+        // In a real app, this would load from the Cache/Previews folder
+        // For the reconstruction, we return a placeholder or the actual file if it's a small JPEG
+        return NSImage(contentsOfFile: path)
+    }
+
+    public var fullImage: NSImage? {
+        return NSImage(contentsOfFile: path)
+    }
 
     // MARK: - Internal Row State (Placeholders)
     internal var row: Any?
