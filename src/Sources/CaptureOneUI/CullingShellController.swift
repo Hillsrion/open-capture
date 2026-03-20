@@ -40,78 +40,108 @@ fileprivate struct CullViewRootView: View {
     let session: SessionBase
     @ObservedObject var commands = AppCommandCenter.shared
     @ObservedObject var controller = AdjustmentToolController.shared
+    @StateObject var cullController = COCullViewController()
     
     var body: some View {
         VStack(spacing: 0) {
             // Top Toolbar
             cullToolbar
             
+            // Top Panel (Face Focus Viewer - AI zoomed face)
+            if cullController.showFaceFocus {
+                HStack {
+                    Spacer()
+                    FaceFocusPanel()
+                        .frame(width: 200, height: 200)
+                    Spacer()
+                }
+                .padding()
+                .background(Color(white: 0.08))
+                Divider().background(Color.black)
+            }
+            
             HStack(spacing: 0) {
-                // 1. Grouping Sidebar (Left)
-                groupingSidebar
-                    .frame(width: 240)
+                // Center (Main Viewer)
+                ZStack {
+                    if let variant = controller.currentVariant, let image = variant.image {
+                        COViewerView(image: image, adjustmentController: controller)
+                    } else {
+                        Text("No Image Selected")
+                            .foregroundColor(.gray)
+                    }
+                    
+                    // Shortcuts Hint (Bottom Right)
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Text("1-5: Rate  •  0: Clear  •  Arrows: Nav")
+                                .font(.system(size: 10))
+                                .padding(6)
+                                .background(Color.black.opacity(0.6))
+                                .cornerRadius(4)
+                                .padding(16)
+                        }
+                    }
+                }
                 
                 Divider().background(Color.black)
                 
-                // 2. Main Center Area
-                VStack(spacing: 0) {
-                    ZStack {
-                        // Central Viewer
-                        if let variant = controller.currentVariant, let image = variant.image {
-                            COViewerView(image: image, adjustmentController: controller)
-                        } else {
-                            Text("No Image Selected")
-                                .foregroundColor(.gray)
-                        }
-                        
-                        // Face Focus Overlay (Top Right)
-                        if commands.showCullingFaceFocus {
-                            VStack {
-                                HStack {
-                                    Spacer()
-                                    FaceFocusPanel()
-                                        .frame(width: 200, height: 200)
-                                        .padding(16)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
-                        // Shortcuts Hint (Bottom Right)
-                        VStack {
-                            Spacer()
-                            HStack {
-                                Spacer()
-                                Text("1-5: Rate  •  0: Clear  •  Arrows: Nav")
-                                    .font(.system(size: 10))
-                                    .padding(6)
-                                    .background(Color.black.opacity(0.6))
-                                    .cornerRadius(4)
-                                    .padding(16)
-                            }
-                        }
-                    }
-                    
-                    Divider().background(Color.black)
-                    
-                    // 3. Group Filmstrip (Bottom)
-                    groupFilmstrip
-                        .frame(height: 120)
-                }
+                // Right Panel (Group Thumbnails)
+                groupingSidebar
+                    .frame(width: 240)
             }
+            
+            Divider().background(Color.black)
+            
+            // Bottom Panel (Image Thumbnails)
+            groupFilmstrip
+                .frame(height: 120)
         }
         .background(Color(white: 0.05))
         .preferredColorScheme(.dark)
+        .onAppear {
+            // Sync with AppCommandCenter initially if needed or use standalone
+            cullController.isGroupingEnabled = commands.isGroupingEnabled
+            cullController.similarityThreshold = commands.groupSimilarity
+            
+            // Mock loading variants
+            if let variant = controller.currentVariant {
+                cullController.loadVariants([variant])
+            }
+        }
+        .onChange(of: cullController.isGroupingEnabled) { newValue in
+            commands.isGroupingEnabled = newValue
+        }
+        .onChange(of: cullController.similarityThreshold) { newValue in
+            commands.groupSimilarity = newValue
+        }
     }
     
     private var cullToolbar: some View {
-        HStack {
+        HStack(spacing: 16) {
             Text("CULL VIEW")
                 .font(.system(size: 11, weight: .black))
                 .foregroundColor(.white.opacity(0.8))
                 .padding(.leading, 16)
             
             Spacer()
+            
+            // Toolbar controls
+            Toggle("Enable Groups", isOn: $cullController.isGroupingEnabled)
+                .font(.system(size: 12))
+            
+            if cullController.isGroupingEnabled {
+                HStack(spacing: 8) {
+                    Text("Similarity").font(.system(size: 11))
+                    Slider(value: $cullController.similarityThreshold, in: 0...1)
+                        .frame(width: 150)
+                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
+                }
+            }
+            
+            Toggle("Face Focus", isOn: $cullController.showFaceFocus)
+                .font(.system(size: 12))
             
             Button("Done") {
                 NSApp.keyWindow?.close()
@@ -127,30 +157,33 @@ fileprivate struct CullViewRootView: View {
     
     private var groupingSidebar: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("GROUPING")
+            Text("GROUP THUMBNAILS")
                 .font(.system(size: 11, weight: .bold))
                 .foregroundColor(.gray)
             
-            Toggle("Enable Groups", isOn: $commands.isGroupingEnabled)
-                .font(.system(size: 12))
-            
-            if commands.isGroupingEnabled {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Similarity").font(.system(size: 11))
-                    Slider(value: $commands.groupSimilarity, in: 0...1)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                }
-                
-                Divider().background(Color.white.opacity(0.1))
-                
-                // Group List (Mock)
+            if cullController.isGroupingEnabled {
                 ScrollView {
                     VStack(spacing: 2) {
-                        groupRow(name: "Group 1", count: 12, isSelected: true)
-                        groupRow(name: "Group 2", count: 5, isSelected: false)
-                        groupRow(name: "Group 3", count: 24, isSelected: false)
+                        if cullController.groups.isEmpty {
+                            Text("No Groups").font(.system(size: 12)).foregroundColor(.gray)
+                        } else {
+                            ForEach(cullController.groups) { group in
+                                groupRow(
+                                    name: group.name,
+                                    count: group.variants.count,
+                                    isSelected: cullController.selectedGroup?.id == group.id
+                                )
+                                .onTapGesture {
+                                    cullController.selectedGroup = group
+                                }
+                            }
+                        }
                     }
                 }
+            } else {
+                Text("Grouping is disabled.")
+                    .font(.system(size: 12))
+                    .foregroundColor(.gray)
             }
             
             Spacer()
@@ -160,20 +193,44 @@ fileprivate struct CullViewRootView: View {
     }
     
     private var groupFilmstrip: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(0..<10, id: \.self) { _ in
-                    Rectangle()
-                        .fill(Color.white.opacity(0.05))
-                        .frame(width: 80, height: 100)
-                        .cornerRadius(4)
-                        .overlay(
-                            Image(systemName: "photo")
-                                .foregroundColor(.gray.opacity(0.3))
-                        )
+        VStack(alignment: .leading, spacing: 0) {
+            Text("IMAGE THUMBNAILS")
+                .font(.system(size: 10, weight: .bold))
+                .foregroundColor(.gray)
+                .padding(.horizontal, 12)
+                .padding(.top, 8)
+                
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    let variantsToDisplay = cullController.isGroupingEnabled ? (cullController.selectedGroup?.variants ?? []) : cullController.allVariants
+                    
+                    if variantsToDisplay.isEmpty {
+                        ForEach(0..<10, id: \.self) { _ in
+                            Rectangle()
+                                .fill(Color.white.opacity(0.05))
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(4)
+                                .overlay(
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.gray.opacity(0.3))
+                                )
+                        }
+                    } else {
+                        ForEach(variantsToDisplay, id: \.variantUUID) { variant in
+                            Rectangle()
+                                .fill(Color.white.opacity(0.1))
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(4)
+                                .overlay(
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.white)
+                                )
+                        }
+                    }
                 }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
             }
-            .padding(.horizontal, 12)
         }
         .background(Color(white: 0.08))
     }
