@@ -218,6 +218,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Crop & Rotation (UI-204)
     @Published public var cropRect: CGRect = .zero
     @Published public var rotationAngle: Double = 0.0
+    @Published public var isCropOrientationSwapped: Bool = false
     @Published public var flipHorizontal: Bool = false
     @Published public var flipVertical: Bool = false
     @Published public var keystoneVertical: Double = 0.0
@@ -1568,6 +1569,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
 
     public func resetCrop() {
         self.cropRect = .zero
+        self.isCropOrientationSwapped = false
         // Also reset ratio index to Unconstrained if needed, or keep it. 
         // Capture One usually keeps the ratio but clears the box.
         self.commitChanges(to: currentVariant)
@@ -1576,6 +1578,8 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func invertCrop() {
         let current = self.cropRect
         guard current != .zero else { return }
+        
+        self.isCropOrientationSwapped.toggle()
         
         // Swap width and height
         self.cropRect = CGRect(x: current.minX, y: current.minY, width: current.height, height: current.width)

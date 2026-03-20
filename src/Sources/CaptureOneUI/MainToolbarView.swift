@@ -192,7 +192,9 @@ private struct CropToolbarGroup: View {
                 Button("16:9") { controller.cropRatioIndex = 5 }
             }
             Divider()
-            Button("Reset Crop") { controller.cropRect = .zero }
+            Button("Swap Orientation") { controller.invertCrop() }
+            Divider()
+            Button("Reset Crop") { controller.resetCrop() }
         }
     }
 }

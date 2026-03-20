@@ -89,7 +89,13 @@ public struct COViewerView: View {
         .simultaneousGesture(longPressGesture)
         .onHover(perform: handleHover)
         .contextMenu { viewerContextMenu }
-        .onTapGesture(count: 2, perform: toggleZoom)
+        .onTapGesture(count: 2) {
+            if commands.selectedCursorToolID == "Crop" {
+                adjustmentController.cropRect = .zero
+            } else {
+                toggleZoom()
+            }
+        }
         .gesture(dragGesture(size: size))
         .overlay(alignment: .topLeading) {
             viewerStatusBadges.padding(12)
@@ -299,42 +305,7 @@ public struct COViewerView: View {
     }
     
     private func handleCropDrag(gesture: DragGesture.Value, size: CGSize) {
-        let controller = adjustmentController
-        if activeCropZone == .none {
-            let denormalized = CGRect(x: controller.cropRect.minX * size.width,
-                                      y: controller.cropRect.minY * size.height,
-                                      width: controller.cropRect.width * size.width,
-                                      height: controller.cropRect.height * size.height)
-            activeCropZone = CropRectHitboxCalculator.sharedInstance.interactionZone(at: gesture.startLocation, for: denormalized)
-            cropStartRect = controller.cropRect
-            if controller.cropRect == .zero {
-                activeCropZone = .resizeBottomRight
-                cropStartRect = CGRect(x: gesture.startLocation.x / size.width, y: gesture.startLocation.y / size.height, width: 0, height: 0)
-            }
-        }
-        let dx = gesture.translation.width / size.width
-        let dy = gesture.translation.height / size.height
-        var newRect = cropStartRect
-        switch activeCropZone {
-        case .move:
-            newRect.origin.x += dx
-            newRect.origin.y += dy
-        case .resizeBottomRight:
-            newRect.size.width += dx
-            newRect.size.height += dy
-        case .resizeTopLeft:
-            newRect.origin.x += dx
-            newRect.origin.y += dy
-            newRect.size.width -= dx
-            newRect.size.height -= dy
-        default:
-            if controller.cropRect == .zero { newRect.size.width = dx; newRect.size.height = dy }
-        }
-        newRect.origin.x = max(0, min(1.0, newRect.origin.x))
-        newRect.origin.y = max(0, min(1.0, newRect.origin.y))
-        newRect.size.width = max(0, min(1.0 - newRect.origin.x, newRect.size.width))
-        newRect.size.height = max(0, min(1.0 - newRect.origin.y, newRect.size.height))
-        controller.cropRect = newRect
+        COCropController.shared.handleDrag(gesture, size: size, controller: adjustmentController, activeZone: &activeCropZone, startRect: &cropStartRect)
         if activeCropZone.isRotation { performRotation(gesture: gesture, in: size) }
     }
     
