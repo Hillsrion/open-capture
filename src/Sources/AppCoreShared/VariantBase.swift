@@ -4,7 +4,7 @@ import ImageCore
 
 /// Reconstructed Base class for Variant entities in AppCoreShared.
 /// Based on version 16.5.9.7 metadata.
-public class VariantBase: BaseObject, Identifiable {
+public class VariantBase: BaseObject, ColorGradingTarget, Identifiable {
     
     public var id: String { variantUUID }
     

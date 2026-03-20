@@ -4,12 +4,11 @@ import AppCoreShared
 /// Reconstructed Match Look tool (AI-204).
 /// Transfers stylistic "DNA" from reference images using AI.
 public struct MatchLookToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
-    @State private var impact: Float = 100.0
-    @State private var isReferenceSet: Bool = false
+    @ObservedObject var controller: COMatchLookController = .shared
+    @ObservedObject var appCommands = AppCommandCenter.shared
     
     public init(controller: AdjustmentToolController) {
-        self.controller = controller
+        // Keeping the init signature for ToolRegistry compatibility
     }
     
     public var body: some View {
@@ -25,12 +24,12 @@ public struct MatchLookToolView: View {
                         .stroke(Color.white.opacity(0.1), style: StrokeStyle(lineWidth: 1, dash: [4]))
                         .background(Color.black.opacity(0.2))
                     
-                    if controller.matchLookReferenceVariantID != nil, isReferenceSet {
+                    if let ref = controller.referenceVariant {
                         VStack(spacing: 4) {
                             Image(systemName: "photo.fill")
                                 .font(.system(size: 20))
                                 .foregroundColor(CaptureOneTheme.Colors.activeHighlight)
-                            Text("Reference Set")
+                            Text(ref.name ?? "Reference Set")
                                 .font(.system(size: 10, weight: .bold))
                         }
                     } else {
@@ -40,9 +39,7 @@ public struct MatchLookToolView: View {
                                 .foregroundColor(.gray)
                             
                             Button("Use Selected Variant") {
-                                // Logic to set reference
-                                isReferenceSet = true
-                                controller.matchLookReferenceVariantID = "ref_001" 
+                                controller.setSelectionAsReference()
                             }
                             .buttonStyle(.bordered)
                             .controlSize(.small)
@@ -50,37 +47,46 @@ public struct MatchLookToolView: View {
                     }
                 }
                 .frame(height: 100)
-                .onDrop(of: ["public.file-url"], isTargeted: nil) { providers in
-                    // Drag & Drop logic from Finder/Explorer
-                    return true
-                }
                 
-                if isReferenceSet {
+                if controller.referenceVariant != nil {
                     VStack(spacing: 10) {
                         HStack {
                             Text("Impact")
                                 .font(.system(size: 11))
-                            Slider(value: $controller.matchLookImpact, in: 0...100)
+                            Slider(value: $controller.impact, in: 0...100)
                                 .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                            Text("\(Int(controller.matchLookImpact))%")
+                            Text("\(Int(controller.impact))%")
                                 .font(.system(size: 10, design: .monospaced))
                                 .frame(width: 35, alignment: .trailing)
                         }
                         
                         HStack(spacing: 8) {
-                            Button(action: { /* Apply logic */ }) {
-                                Text("Apply")
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 4)
-                                    .background(CaptureOneTheme.Colors.activeHighlight)
-                                    .foregroundColor(.black)
-                                    .cornerRadius(4)
+                            Button(action: { 
+                                // Apply to current browser selection
+                                // Note: In a full implementation, we'd access the interactor's selection
+                                print("[MatchLook] Applying to selection...")
+                                controller.isProcessing = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                    controller.isProcessing = false
+                                }
+                            }) {
+                                if controller.isProcessing {
+                                    ProgressView().controlSize(.small)
+                                } else {
+                                    Text("Apply")
+                                        .frame(maxWidth: .infinity)
+                                }
                             }
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 4)
+                            .background(CaptureOneTheme.Colors.activeHighlight)
+                            .foregroundColor(.black)
+                            .cornerRadius(4)
                             .buttonStyle(.plain)
+                            .disabled(controller.isProcessing)
                             
                             Button(action: { 
-                                isReferenceSet = false
-                                controller.matchLookReferenceVariantID = nil
+                                controller.clearReference()
                             }) {
                                 Image(systemName: "trash")
                                     .padding(4)

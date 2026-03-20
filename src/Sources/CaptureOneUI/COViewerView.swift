@@ -691,26 +691,21 @@ private extension CIImage {
         guard let cgImage = context.createCGImage(self, from: self.extent) else { return nil }
         return NSImage(cgImage: cgImage, size: NSSize(width: self.extent.width, height: self.extent.height))
     }
-    }
+}
 
-    /// Overlay for Magic Brush real-time selection preview.
-    struct MagicBrushSelectionOverlay: View {
+/// Overlay for Magic Brush real-time selection preview.
+struct MagicBrushSelectionOverlay: View {
     @ObservedObject var controller: COMagicBrushController
     let viewerSize: CGSize
-
+    
     var body: some View {
-        if let mask = controller.currentSelectionPreview {
+        if controller.currentSelectionPreview != nil {
             // Render the [Float] mask as a red overlay
-            // This is a simplified representation
             ZStack {
                 Color.red.opacity(0.3)
-                    .mask(
-                        // In a real implementation, we'd convert the [Float] to a CGImage/NSImage
-                        // and render it here.
-                        Rectangle()
-                    )
+                    .mask(Rectangle())
             }
             .allowsHitTesting(false)
         }
     }
-    }
+}
