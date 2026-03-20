@@ -7,14 +7,12 @@ import AppCoreShared
 public struct LayerInspectorView: View {
     @ObservedObject var variant: VariantBase
     @ObservedObject var controller = AdjustmentToolController.shared
-    @State private var selectedLayerIndex: Int = 0
     @State private var isRefineExpanded: Bool = false
     @State private var isCombineMasksPresented: Bool = false
     @State private var isLumaRangePresented: Bool = false
     
     public init(variant: VariantBase) {
         self.variant = variant
-        self._selectedLayerIndex = State(initialValue: variant.activeLayerIndex)
     }
     
     public var body: some View {
@@ -66,10 +64,9 @@ public struct LayerInspectorView: View {
                         let layer = variant.layers[index]
                         LayerRow(
                             layer: layer,
-                            isSelected: selectedLayerIndex == index
+                            isSelected: variant.activeLayerIndex == index
                         )
                         .onTapGesture {
-                            selectedLayerIndex = index
                             variant.activeLayerIndex = index
                         }
                         .contextMenu {
@@ -128,7 +125,7 @@ public struct LayerInspectorView: View {
                         Image(systemName: "minus")
                             .font(.system(size: 12, weight: .bold))
                     }
-                    .disabled(variant.layers.count <= 1 || selectedLayerIndex == 0)
+                    .disabled(variant.layers.count <= 1 || variant.activeLayerIndex == 0)
                     
                     Button(action: {
                         isCombineMasksPresented = true
@@ -167,18 +164,13 @@ public struct LayerInspectorView: View {
     }
     
     private func addLayer() {
-        let newLayer = LayerBase(uuid: UUID().uuidString, name: "New Layer \(variant.layers.count)", type: .adjustment, context: nil)
-        variant.layers.insert(newLayer, at: 0)
-        selectedLayerIndex = 0
-        variant.activeLayerIndex = 0
-        variant.isModified = true
+        _ = COLayerManager.shared.createLayer(for: variant, name: "New Layer \(variant.layers.count)", type: .adjustment)
     }
     
     private func removeLayer() {
-        guard selectedLayerIndex < variant.layers.count else { return }
-        variant.layers.remove(at: selectedLayerIndex)
-        selectedLayerIndex = 0
-        variant.activeLayerIndex = 0
+        guard variant.activeLayerIndex < variant.layers.count else { return }
+        variant.layers.remove(at: variant.activeLayerIndex)
+        variant.activeLayerIndex = max(0, variant.activeLayerIndex - 1)
         variant.isModified = true
     }
 }
@@ -332,17 +324,26 @@ struct CombineMasksModal: View {
     private func performCombine() {
         print("[Masks] Combining \(selectedLayerIDs.count) masks with operation \(operationType)")
         
+        guard let operation = COBooleanMaskOperator(rawValue: operationType) else { return }
+        let layersToCombine = variant.layers.filter { selectedLayerIDs.contains($0.id) }
+        guard !layersToCombine.isEmpty else { return }
+        
+        var resultingMask = layersToCombine.first?.mask
+        for i in 1..<layersToCombine.count {
+            resultingMask = COMaskCompositionEngine.combine(mask1: resultingMask, mask2: layersToCombine[i].mask, operation: operation)
+        }
+        
         let targetLayerName = "Combined Mask"
         
         if createNewLayer {
-            let newLayer = LayerBase(uuid: UUID().uuidString, name: targetLayerName, type: .adjustment, context: nil)
-            variant.layers.insert(newLayer, at: 0)
-            variant.activeLayerIndex = 0
+            let newLayer = COLayerManager.shared.createLayer(for: variant, name: targetLayerName, type: .adjustment)
+            newLayer.mask = resultingMask
             print("[Masks] Created new layer: \(targetLayerName)")
         } else {
             if let firstID = selectedLayerIDs.first {
-                let layers = variant.layers
-                if let layer = layers.first(where: { $0.id == firstID }) {
+                if let layer = variant.layers.first(where: { $0.id == firstID }) {
+                    layer.mask = resultingMask
+                    variant.isModified = true
                     print("[Masks] Applied combination directly to layer: \(layer.name)")
                 }
             }
