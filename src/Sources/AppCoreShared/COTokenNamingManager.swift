@@ -7,12 +7,12 @@ public class COTokenNamingManager {
     
     private init() {}
     
-    public func resolve(format: String, variant: VariantBase, counter: Int, jobName: String = "") -> String {
+    public func resolve(format: String, variant: VariantBase, counter: Int, jobName: String = "", recipe: OutputRecipe? = nil) -> String {
         let tokens = CaptureNamingFormatter.parse(formatString: format)
-        return resolve(tokens: tokens, variant: variant, counter: counter, jobName: jobName)
+        return resolve(tokens: tokens, variant: variant, counter: counter, jobName: jobName, recipe: recipe)
     }
     
-    public func resolve(tokens: [CaptureNamingToken], variant: VariantBase, counter: Int, jobName: String = "") -> String {
+    public func resolve(tokens: [CaptureNamingToken], variant: VariantBase, counter: Int, jobName: String = "", recipe: OutputRecipe? = nil) -> String {
         var result = ""
         
         for token in tokens {
@@ -32,6 +32,8 @@ public class COTokenNamingManager {
                 result += variant.name ?? "Untitled"
             case .jobName:
                 result += jobName.isEmpty ? "Job" : jobName
+            case .recipeName:
+                result += recipe?.name ?? "Recipe"
             case .subfolder:
                 result += "Selects"
             case .delimiter:

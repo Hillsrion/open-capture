@@ -65,6 +65,11 @@ public struct ExportRecipesToolView: View {
         }
         .padding(.horizontal, 8)
         .frame(height: 24)
-        .background(Color.white.opacity(0.02))
+        .background(recipeManager.primaryRecipe === recipe ? CaptureOneTheme.Colors.activeHighlight : Color.white.opacity(0.02))
+        .onTapGesture {
+            recipeManager.primaryRecipe = recipe
+            // When selecting as primary, we often want to ensure it's checked too if we're focused on it
+            // but the checkboxes are independent for batch selection.
+        }
     }
 }

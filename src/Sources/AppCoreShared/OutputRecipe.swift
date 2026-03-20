@@ -131,16 +131,34 @@ public class OutputRecipeManager: ObservableObject {
     public static let shared = OutputRecipeManager() // Make it a singleton for easier access
     
     @Published public var recipes: [OutputRecipe] = []
-    @Published public var primaryRecipe: OutputRecipe? // ENG-011
+    
+    // The "primary" recipe is the one that settings are being edited for (orange highlight)
+    @Published public var primaryRecipe: OutputRecipe? {
+        didSet {
+            // Ensure the primary recipe is also enabled if it's selected for editing
+            // (Capture One behavior: clicking a recipe selects it as primary)
+            if let primary = primaryRecipe {
+                // Not necessarily enabled just by being primary, but often they are.
+                // However, we must ensure it's NOT nil if we have recipes.
+            }
+        }
+    }
     
     public init() {}
     
     public func addRecipe(_ recipe: OutputRecipe) {
         recipes.append(recipe)
+        if primaryRecipe == nil {
+            primaryRecipe = recipe
+        }
     }
     
     public func removeRecipe(_ recipe: OutputRecipe) {
+        let index = recipes.firstIndex { $0 === recipe }
         recipes.removeAll { $0 === recipe }
+        if primaryRecipe === recipe {
+            primaryRecipe = recipes.first
+        }
     }
     
     public var activeRecipes: [OutputRecipe] {
@@ -149,7 +167,15 @@ public class OutputRecipeManager: ObservableObject {
     
     public static func defaultManager() -> OutputRecipeManager {
         let manager = OutputRecipeManager()
-        // Add some default recipes if needed
+        // Add some default recipes
+        let context = ObjectContext()
+        manager.addRecipe(OutputRecipe(name: "JPEG Full Size", recipe: MCRecipe(dictionary: [:]), context: context))
+        manager.recipes.last?.format = .jpeg
+        
+        manager.addRecipe(OutputRecipe(name: "TIFF 16-bit", recipe: MCRecipe(dictionary: [:]), context: context))
+        manager.recipes.last?.format = .tiff
+        
+        manager.primaryRecipe = manager.recipes.first
         return manager
     }
 }

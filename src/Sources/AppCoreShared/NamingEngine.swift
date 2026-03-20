@@ -14,6 +14,7 @@ public struct CaptureNamingToken: Identifiable, Codable, Hashable {
         case sessionName = "Session Name"
         case imageName = "Image Name"
         case jobName = "Job Name"
+        case recipeName = "Recipe Name"
         case subfolder = "Subfolder"
         case customText = "Custom Text"
         case delimiter = "Delimiter" // Support for hierarchical folder creation
@@ -30,7 +31,7 @@ public struct CaptureNamingToken: Identifiable, Codable, Hashable {
 /// Resolves tokens based on context (Export, Capture, etc.).
 public class CaptureNamingFormatter {
     
-    public static func format(tokens: [CaptureNamingToken], cameraName: String = "Camera", counter: Int = 1) -> String {
+    public static func format(tokens: [CaptureNamingToken], cameraName: String = "Camera", counter: Int = 1, recipeName: String = "JPEG High Res") -> String {
         var result = ""
         
         for token in tokens {
@@ -49,6 +50,8 @@ public class CaptureNamingFormatter {
                 result += "Original_Filename" // Context-dependent
             case .jobName:
                 result += "Job_001" // Handled via CrossRecipeTokens
+            case .recipeName:
+                result += recipeName
             case .subfolder:
                 result += "Selects" // Handled via CrossRecipeTokens
             case .delimiter:
@@ -93,6 +96,7 @@ public class CaptureNamingFormatter {
                 case "Session Name": type = .sessionName
                 case "Image Name": type = .imageName
                 case "Job Name": type = .jobName
+                case "Recipe Name": type = .recipeName
                 case "Subfolder": type = .subfolder
                 default: type = .customText
                 }
