@@ -254,13 +254,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var keystoneFocalLength: Double = 35.0
     @Published public var keystonePoints: KeystonePoints? = nil // TETH-004
     
-    // Overlay Tool State (GAP-406)
-    @Published public var showOverlay: Bool = false
-    @Published public var overlayOpacity: Double = 50.0
-    @Published public var overlayScale: Double = 100.0
-    @Published public var overlayPath: String = ""
-    @Published public var overlayOffset: CGPoint = .zero
-    
     // Focus Tool State (UI-203)
     @Published public var focusPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
     @Published public var focusZoomIndex: Int = 0 // 0: 100%, 1: 200%, 2: 400%
@@ -581,9 +574,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($focusAIMode.map { _ in }.eraseToAnyPublisher()),
             observe($lumaRangeRadius.map { _ in }.eraseToAnyPublisher()),
             observe($lumaRangeSensitivity.map { _ in }.eraseToAnyPublisher()),
-            observe($showOverlay.map { _ in }.eraseToAnyPublisher()),
-            observe($overlayOpacity.map { _ in }.eraseToAnyPublisher()),
-            observe($overlayScale.map { _ in }.eraseToAnyPublisher()),
             observe($aiCropTopMargin.map { _ in }.eraseToAnyPublisher()),
             observe($aiCropBottomMargin.map { _ in }.eraseToAnyPublisher()),
             observe($aiCropLeftMargin.map { _ in }.eraseToAnyPublisher()),
@@ -1611,10 +1601,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         // Swap width and height
         self.cropRect = CGRect(x: current.minX, y: current.minY, width: current.height, height: current.width)
         self.commitChanges(to: currentVariant)
-    }
-
-    public func centerOverlay() {
-        self.overlayOffset = .zero
     }
 
     public func syncFocusPoint() {

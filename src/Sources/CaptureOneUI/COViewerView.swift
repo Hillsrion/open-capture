@@ -189,7 +189,7 @@ public struct COViewerView: View {
                 KeystoneOverlayView()
             }
             
-            CompositionOverlayView(controller: adjustmentController)
+            COOverlayRenderer()
             
             if commands.selectedCursorToolID == "Crop" {
                 CropOverlayView(controller: adjustmentController, viewerSize: size)
@@ -332,9 +332,9 @@ public struct COViewerView: View {
     }
     
     private func handleMoveOverlayDrag(gesture: DragGesture.Value) {
-        if dragStartOrigin == nil { dragStartOrigin = adjustmentController.overlayOffset }
+        if dragStartOrigin == nil { dragStartOrigin = COOverlayModel.shared.offset }
         guard let start = dragStartOrigin else { return }
-        adjustmentController.overlayOffset = CGPoint(x: start.x + gesture.translation.width, y: start.y + gesture.translation.height)
+        COOverlayViewController.shared.handleMoveOverlayDrag(delta: gesture.translation, startOffset: start)
     }
     
     private func handleCropDrag(gesture: DragGesture.Value, size: CGSize) {
