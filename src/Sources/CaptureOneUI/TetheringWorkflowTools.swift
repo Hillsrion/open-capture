@@ -89,10 +89,11 @@ public struct OverlayToolView: View {
     }
 }
 
-/// Reconstructed Live for Studio tool (GAP-406).
+/// Reconstructed Live for Studio tool (GAP-406, ENG-012).
+/// High-performance local peer-to-peer sharing for the iPad app.
 public struct LiveForStudioToolView: View {
-    @State private var compensationEnabled: Bool = false
-    @State private var intensity: Double = 0.0
+    @ObservedObject var hostController = COLiveForStudioHostController.shared
+    @State private var sessionName: String = "My Local Studio"
     
     public init(config: ToolConfiguration) {}
     public init() {}
@@ -100,15 +101,76 @@ public struct LiveForStudioToolView: View {
     public var body: some View {
         COToolSection("Live for Studio", toolID: "LiveForStudio") {
             VStack(alignment: .leading, spacing: 10) {
-                Toggle("Enable Compensation", isOn: $compensationEnabled).font(.system(size: 11))
-                if compensationEnabled {
-                    HStack {
-                        Text("Intensity").font(.system(size: 11)).foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        Slider(value: $intensity, in: -2...2).accentColor(CaptureOneTheme.Colors.activeHighlight)
+                if !hostController.isStudioSharingActive {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Share your session on the local network for zero-latency iPad viewing.")
+                            .font(.system(size: 10))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        
+                        TextField("Session Name", text: $hostController.currentSessionName)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .font(.system(size: 11))
+                        
+                        Button(action: { hostController.startSharing() }) {
+                            Text("Start Local Studio Sharing")
+                                .font(.system(size: 11, weight: .bold))
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                                .background(CaptureOneTheme.Colors.activeHighlight)
+                                .foregroundColor(.black)
+                                .cornerRadius(4)
+                        }
+                        .buttonStyle(.plain)
                     }
+                } else {
+                    activeStudioView
                 }
             }
             .padding(.vertical, 4)
+        }
+    }
+    
+    private var activeStudioView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Circle().fill(Color.blue).frame(width: 8, height: 8)
+                Text("Studio Sharing Active").font(.system(size: 11, weight: .bold))
+                Spacer()
+                Button("Stop") { hostController.stopSharing() }
+                    .font(.system(size: 10))
+                    .foregroundColor(.red)
+            }
+            
+            Text("Broadcasting as: \(hostController.currentSessionName)")
+                .font(.system(size: 10))
+                .foregroundColor(.gray)
+            
+            HStack {
+                Image(systemName: "ipad.landscape")
+                    .font(.system(size: 10))
+                Text("\(hostController.connectedPeerCount) Peers Connected")
+                    .font(.system(size: 11))
+            }
+            .padding(.top, 4)
+            
+            Divider().background(Color.white.opacity(0.1))
+            
+            Button(action: {
+                // In a real app, this would get the current selection
+                hostController.broadcastFollowSelection(imageId: "IMAGE-001")
+            }) {
+                HStack {
+                    Image(systemName: "arrow.right.to.line.alt")
+                    Text("Trigger Follow Selection")
+                }
+                .font(.system(size: 11, weight: .bold))
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 8)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(4)
+            }
+            .buttonStyle(.plain)
+            .help("Forces all connected iPad peers to switch to your current selection.")
         }
     }
 }

@@ -6,6 +6,7 @@ import AppCoreShared
 public struct CaptureOneLiveToolView: View {
     @ObservedObject var liveManager = CaptureOneLiveManager.shared
     @ObservedObject var syncAPI = COLiveSyncAPI.shared
+    @ObservedObject var studioHost = COLiveForStudioHostController.shared
     
     public init() {}
     
@@ -78,6 +79,46 @@ public struct CaptureOneLiveToolView: View {
                         }
                     }
                 }
+                
+                Divider().background(Color.white.opacity(0.05))
+                
+                // Live for Studio (Local Peer) Integration (ENG-012)
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        Text("Live for Studio")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                        Spacer()
+                        if studioHost.isStudioSharingActive {
+                            HStack(spacing: 4) {
+                                Circle().fill(Color.blue).frame(width: 6, height: 6)
+                                Text("LOCAL ACTIVE")
+                                    .font(.system(size: 8, weight: .bold))
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                    }
+                    
+                    Button(action: {
+                        studioHost.broadcastFollowSelection(imageId: "CURRENT-SELECTION")
+                    }) {
+                        HStack {
+                            Image(systemName: "arrow.right.to.line.alt")
+                            Text("Trigger Follow Selection")
+                        }
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                    .disabled(!studioHost.isStudioSharingActive)
+                    
+                    if !studioHost.isStudioSharingActive {
+                        Text("Enable local studio sharing in the 'Live for Studio' tool.")
+                            .font(.system(size: 9))
+                            .foregroundColor(.gray)
+                            .italic()
+                    }
+                }
+                .padding(.top, 4)
             }
             .padding(.vertical, 4)
         }
