@@ -129,7 +129,7 @@ public struct COStartWindowView: View {
         case .newCatalog:
             CONewCatalogView()
         case .newSession:
-            CONewSessionView()
+            NewSessionWindowView()
         default:
             EmptyView()
         }

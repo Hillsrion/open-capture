@@ -273,7 +273,7 @@ public struct CullingView: View {
         case .newCatalog:
             CONewCatalogView()
         case .newSession:
-            CONewSessionView()
+            NewSessionWindowView()
         case .sessionUpgrade:
             if let session = commands.session {
                 SessionUpgradeDialog(
