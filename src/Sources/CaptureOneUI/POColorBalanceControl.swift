@@ -25,14 +25,14 @@ public struct POColorBalanceControl: View {
         VStack(spacing: 8) {
             HStack(alignment: .center, spacing: 8) {
                 if !lightnessControlDisabled {
-                    CurvedLightnessSlider(value: $value.brightness, height: wheelDiameter, isLuminance: true)
+                    CurvedLightnessSlider(value: $value.saturation, height: wheelDiameter, isLuminance: false, isLeft: true)
                         .frame(width: 26, height: wheelDiameter)
                 }
 
                 ColorBalanceWheelSurface(value: $value, diameter: wheelDiameter)
 
                 if !lightnessControlDisabled {
-                    CurvedLightnessSlider(value: $value.saturation, height: wheelDiameter, isLuminance: false)
+                    CurvedLightnessSlider(value: $value.brightness, height: wheelDiameter, isLuminance: true, isLeft: false)
                         .frame(width: 26, height: wheelDiameter)
                 }
             }
@@ -152,6 +152,7 @@ private struct CurvedLightnessSlider: View {
     @Binding var value: Double
     let height: CGFloat
     let isLuminance: Bool
+    let isLeft: Bool
 
     private var range: ClosedRange<Double> {
         isLuminance ? -100.0...100.0 : 0.0...100.0
@@ -163,16 +164,16 @@ private struct CurvedLightnessSlider: View {
             let tickY = tickPosition(in: sliderRect)
 
             ZStack {
-                ArcTrackShape(isLeft: isLuminance)
+                ArcTrackShape(isLeft: isLeft)
                     .stroke(Color.white.opacity(0.45), style: StrokeStyle(lineWidth: 3, lineCap: .round))
 
-                ArcTrackShape(isLeft: isLuminance, inset: 0.8)
+                ArcTrackShape(isLeft: isLeft, inset: 0.8)
                     .stroke(Color.black.opacity(0.45), style: StrokeStyle(lineWidth: 1, lineCap: .round))
 
                 Rectangle()
                     .fill(CaptureOneTheme.Colors.activeHighlight)
                     .frame(width: 8, height: 2)
-                    .offset(x: isLuminance ? -3 : 3, y: tickY)
+                    .offset(x: isLeft ? -3 : 3, y: tickY)
             }
             .contentShape(Rectangle())
             .gesture(
