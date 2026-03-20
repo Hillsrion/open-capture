@@ -164,7 +164,9 @@ public enum ToolRegistry {
                 AnyView(ClarityToolView(controller: COClarityToolController(adjustmentController: context.adjustmentController)))
             }
         case "Dehaze":
-            return .implemented { context in AnyView(DehazeToolView(controller: context.adjustmentController)) }
+            return .implemented { context in
+                AnyView(DehazeToolView(controller: CODehazeToolController(adjustmentController: context.adjustmentController)))
+            }
         case "Vignetting":
             return .implemented { context in AnyView(VignettingToolView(controller: context.adjustmentController)) }
         case "Crop":

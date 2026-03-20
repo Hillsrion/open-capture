@@ -111,10 +111,10 @@ public struct LevelsToolView: View {
 
 // MARK: - Dehaze (UI-202)
 public struct DehazeToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var controller: CODehazeToolController
     @ObservedObject var commands = AppCommandCenter.shared
     
-    public init(controller: AdjustmentToolController) {
+    public init(controller: CODehazeToolController) {
         self.controller = controller
     }
     
@@ -126,9 +126,9 @@ public struct DehazeToolView: View {
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                         .frame(width: 60, alignment: .leading)
-                    Slider(value: $controller.dehazeAmount, in: -100...100)
+                    Slider(value: $controller.amount, in: -100...100)
                         .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                    Text("\(Int(controller.dehazeAmount))")
+                    Text("\(Int(controller.amount))")
                         .font(.system(size: 11, design: .monospaced))
                         .frame(width: 30, alignment: .trailing)
                 }
@@ -140,11 +140,10 @@ public struct DehazeToolView: View {
                     
                     Spacer()
                     
-                    // Shadow Tone Color Patch
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(controller.dehazeColor)
+                    // Shadow Tone Color Picker
+                    ColorPicker("", selection: $controller.shadowToneColor, supportsOpacity: false)
+                        .labelsHidden()
                         .frame(width: 24, height: 14)
-                        .overlay(RoundedRectangle(cornerRadius: 2).stroke(Color.white.opacity(0.2), lineWidth: 0.5))
                     
                     // Pick Shadow Tone (Eyedropper)
                     Button(action: {

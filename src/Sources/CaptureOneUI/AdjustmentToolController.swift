@@ -943,7 +943,11 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         updateIfChanged(&retouchEyesRightImpact, getDouble("ZRETOUCH_EYES_R_IMPACT", 0.0))
         
         updateIfChanged(&dehazeAmount, getDouble("ZDEHAZE_AMOUNT", 0.0))
-        updateIfChanged(&dehazeShadowToneHue, getDouble("ZDEHAZE_SHADOW_HUE", 0.0))
+        let loadedHue = getDouble("ZDEHAZE_SHADOW_HUE", 0.0)
+        updateIfChanged(&dehazeShadowToneHue, loadedHue)
+        if dehazeColor.hueComponent != loadedHue {
+            dehazeColor = Color(hue: loadedHue, saturation: 0.5, brightness: 0.5)
+        }
         updateIfChanged(&vignettingAmount, getDouble("ZVIGNETTING_AMOUNT", 0.0))
         updateIfChanged(&vignettingMethod, Int(getDouble("ZVIGNETTING_METHOD", 0.0)))
         
