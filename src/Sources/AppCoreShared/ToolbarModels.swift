@@ -47,6 +47,7 @@ public struct ToolbarConfiguration: Codable, Hashable {
             "Import", "Export", "Capture", "FIXED_SPACER",
             "Reset", "UndoRedo", "AutoAdjust", "ConvertNegative", "FIXED_SPACER",
             "CursorTools", "FLEXIBLE_SPACER",
+            "ShareOnline", "ManageAccess", "FIXED_SPACER",
             "BeforeAfter", "Grid", "ExposureWarning", "Proofing", "FocusMask", "FIXED_SPACER",
             "CopyAdjustments", "ApplyAdjustments", "EditSelected", "Print"
         ])
@@ -90,6 +91,8 @@ public struct COToolbarItemRegistry {
         COToolbarItem(id: "Tips", name: "Tips", iconName: "lightbulb"),
         
         // Workflow
+        COToolbarItem(id: "ShareOnline", name: "Share Online", iconName: "cloud"),
+        COToolbarItem(id: "ManageAccess", name: "Manage Access", iconName: "person.2.badge.gearshape"),
         COToolbarItem(id: "Import", name: "Import", iconName: "square.and.arrow.down"),
         COToolbarItem(id: "Capture", name: "Capture", iconName: "camera"),
         COToolbarItem(id: "Export", name: "Export", iconName: "square.and.arrow.up"),
