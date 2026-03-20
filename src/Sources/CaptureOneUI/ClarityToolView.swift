@@ -2,45 +2,74 @@ import SwiftUI
 import AppCoreShared
 
 /// Reconstructed Clarity & Structure Tool.
-/// Manages Clarity amount, method (Classic, Punch, Neutral, Natural) and Structure.
+/// Manages Clarity amount, method (Natural, Punch, Neutral, Classic) and Structure.
 public struct ClarityToolView: View {
-    @Binding var amount: Float
-    @Binding var structure: Float
-    @Binding var method: Int // 0: Classic, 1: Punch, 2: Neutral, 3: Natural
+    @ObservedObject var controller: COClarityToolController
     
-    public init(amount: Binding<Float>, structure: Binding<Float>, method: Binding<Int>) {
-        self._amount = amount
-        self._structure = structure
-        self._method = method
+    public init(controller: COClarityToolController) {
+        self.controller = controller
     }
     
     public var body: some View {
         COToolSection("Clarity", toolID: "Clarity") {
-            VStack(spacing: 8) {
+            VStack(spacing: 12) {
                 // Method Selector
                 HStack {
                     Text("Method")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                     Spacer()
-                    Picker("", selection: $method) {
-                        Text("Classic").tag(0)
+                    Picker("", selection: Binding(
+                        get: { controller.method },
+                        set: { controller.method = $0 }
+                    )) {
+                        Text("Natural").tag(3)
                         Text("Punch").tag(1)
                         Text("Neutral").tag(2)
-                        Text("Natural").tag(3)
+                        Text("Classic").tag(0)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
                     .frame(width: 100)
                 }
                 
-                Divider().background(Color.white.opacity(0.05))
+                Divider()
+                    .background(Color.white.opacity(0.1))
+                    .padding(.horizontal, -8)
                 
-                // Sliders
-                COToolValueSlider(label: "Clarity", value: $amount, range: -100...100, decimalPlaces: 0)
-                COToolValueSlider(label: "Structure", value: $structure, range: -100...100, decimalPlaces: 0)
+                // Clarity Slider
+                VStack(spacing: 4) {
+                    COToolValueSlider(
+                        label: "Clarity", 
+                        value: Binding(
+                            get: { controller.amount },
+                            set: { controller.amount = $0 }
+                        ), 
+                        range: -100...100, 
+                        decimalPlaces: 0
+                    )
+                }
+                
+                // Fine visual separation between Clarity and Structure
+                Rectangle()
+                    .fill(Color.white.opacity(0.05))
+                    .frame(height: 1)
+                    .padding(.horizontal, 4)
+                
+                // Structure Slider
+                VStack(spacing: 4) {
+                    COToolValueSlider(
+                        label: "Structure", 
+                        value: Binding(
+                            get: { controller.structure },
+                            set: { controller.structure = $0 }
+                        ), 
+                        range: -100...100, 
+                        decimalPlaces: 0
+                    )
+                }
             }
-            .padding(.vertical, 4)
+            .padding(.vertical, 6)
         }
     }
 }

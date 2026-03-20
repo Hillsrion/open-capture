@@ -161,20 +161,7 @@ public enum ToolRegistry {
             return .implemented { context in AnyView(BlackAndWhiteToolView(controller: context.adjustmentController.blackAndWhiteController)) }
         case "Clarity":
             return .implemented { context in
-                AnyView(ClarityToolView(
-                    amount: Binding(
-                        get: { context.adjustmentController.clarityAmount },
-                        set: { context.adjustmentController.clarityAmount = $0 }
-                    ),
-                    structure: Binding(
-                        get: { context.adjustmentController.structureAmount },
-                        set: { context.adjustmentController.structureAmount = $0 }
-                    ),
-                    method: Binding(
-                        get: { context.adjustmentController.clarityMethod },
-                        set: { context.adjustmentController.clarityMethod = $0 }
-                    )
-                ))
+                AnyView(ClarityToolView(controller: COClarityToolController(adjustmentController: context.adjustmentController)))
             }
         case "Dehaze":
             return .implemented { context in AnyView(DehazeToolView(controller: context.adjustmentController)) }
