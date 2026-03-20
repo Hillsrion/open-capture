@@ -153,6 +153,51 @@ public struct CaptureOneLiveToolView: View {
                 .background(Color.black.opacity(0.2))
                 .cornerRadius(4)
             }
+            
+            Divider().background(Color.white.opacity(0.1))
+            
+            // Real-time Collaboration & Follow Mode (ENG-012)
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Collaboration Lock")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                
+                HStack {
+                    Image(systemName: "lock.fill")
+                        .font(.system(size: 9))
+                    Picker("Follow Mode", selection: $liveManager.syncAPI.followMode) {
+                        ForEach(COFollowMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .labelsHidden()
+                    .font(.system(size: 11))
+                }
+            }
+            .padding(.top, 4)
+            
+            // Simulation Controls for Testing
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Simulate Activity")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundColor(.gray)
+                
+                HStack(spacing: 8) {
+                    Button("Guest Interaction") {
+                        COWebReviewerPortal.shared.selectImage(UUID())
+                        COWebReviewerPortal.shared.submitInteraction(rating: 5, colorTag: "Green")
+                        COWebReviewerPortal.shared.submitComment(text: "Looks great!")
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                    
+                    Button("New Capture") {
+                        liveManager.simulateNewCapture()
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                }
+            }
+            .padding(.top, 4)
         }
     }
     
@@ -160,5 +205,17 @@ public struct CaptureOneLiveToolView: View {
         Toggle(label, isOn: isOn)
             .toggleStyle(POCheckboxStyle())
             .font(.system(size: 11))
+    }
+}
+
+/// Simplified button style for secondary tool actions.
+public struct SecondaryButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 9, weight: .semibold))
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Color.white.opacity(configuration.isPressed ? 0.05 : 0.1))
+            .cornerRadius(4)
     }
 }

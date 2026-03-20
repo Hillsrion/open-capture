@@ -26,6 +26,10 @@ public class CaptureOneLiveManager: ObservableObject {
     @Published public var connectedUsersCount: Int = 0
     @Published public var activityLog: [ActivityLogEntry] = []
     
+    // Live Services (ENG-012)
+    public let syncAPI = COLiveSyncAPI.shared
+    public let commentService = COReviewerCommentService.shared
+    
     // Session Settings (GAP-406)
     @Published public var sessionDurationIndex: Int = 0 // 0: 24h, 1: 1 week, etc.
     @Published public var sessionPassword: String = ""
@@ -49,5 +53,11 @@ public class CaptureOneLiveManager: ObservableObject {
         sessionURL = nil
         connectedUsersCount = 0
         activityLog.removeAll()
+    }
+    
+    /// Simulation method for testing real-time sync (ENG-012).
+    public func simulateNewCapture(imageId: UUID = UUID()) {
+        print("[Live] New capture detected: \(imageId)")
+        syncAPI.notifyNewCapture(imageId: imageId)
     }
 }
