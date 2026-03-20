@@ -262,6 +262,11 @@ public struct COViewerView: View {
                             COMagicBrushController.shared.handleMouseDrag(at: gesture.location, in: img)
                         }
                     }
+                } else if tool == "Heal" || tool == "Clone" {
+                    if dragStartOrigin == nil {
+                        dragStartOrigin = gesture.startLocation
+                        CORetouchBrushController.shared.handleMouseDown(at: gesture.startLocation, mode: tool == "Heal" ? .heal : .clone)
+                    }
                 } else if tool == "Pan" {
                     handlePanDrag(gesture: gesture, size: size)
                 } else if tool == "MoveOverlay" {
