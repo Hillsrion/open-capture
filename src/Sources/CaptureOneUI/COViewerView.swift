@@ -241,7 +241,7 @@ public struct COViewerView: View {
     
     private func toggleZoom() {
         withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-            adjustmentController.zoomLevel = adjustmentController.zoomLevel > 1.0 ? 1.0 : 2.0
+            adjustmentController.zoomLevel = adjustmentController.zoomLevel > 0.1 ? 0.0 : 1.0
         }
     }
     

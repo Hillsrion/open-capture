@@ -377,7 +377,16 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         $zoomLevel
             .sink { [weak self] zoom in
                 guard let self = self else { return }
-                let size = 1.0 / max(0.1, zoom)
+                
+                // zoom 0.0 is "Fit" (size 1.0)
+                // zoom 1.0 is "100%" (size 0.25 for 4x magnification)
+                let size: CGFloat
+                if zoom <= 0 {
+                    size = 1.0
+                } else {
+                    size = 1.0 / (zoom * 4.0)
+                }
+                
                 let current = self.viewportRect
                 // Keep the center of the viewport same if possible
                 let centerX = current.origin.x + current.width / 2
