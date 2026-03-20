@@ -192,6 +192,11 @@ public struct COViewerView: View {
             if commands.selectedCursorToolID == "Crop" {
                 CropOverlayView(controller: adjustmentController, viewerSize: size)
             }
+            
+            // MARK: - Speed Edit HUD
+            COSpeedEditHUDView()
+                .padding(.bottom, 60)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         }
     }
     
@@ -240,7 +245,11 @@ public struct COViewerView: View {
         DragGesture(minimumDistance: 0)
             .onChanged { gesture in
                 let tool = commands.selectedCursorToolID
-                if tool == "Pan" {
+                let isAltPressed = NSEvent.modifierFlags.contains(.option)
+                
+                if adjustmentController.directColorEditorEnabled {
+                    CODirectColorEditorController.shared.handleDrag(delta: gesture.translation, isAltPressed: isAltPressed)
+                } else if tool == "Pan" {
                     handlePanDrag(gesture: gesture, size: size)
                 } else if tool == "MoveOverlay" {
                     handleMoveOverlayDrag(gesture: gesture)
@@ -259,21 +268,25 @@ public struct COViewerView: View {
                 }
             }
             .onEnded { gesture in
-                let tool = commands.selectedCursorToolID
-                if tool == "Pan" || tool == "MoveOverlay" {
-                    dragStartOrigin = nil
-                    if tool == "Pan" { NSCursor.pop() }
+                if adjustmentController.directColorEditorEnabled {
+                    // Finalize Direct Color Edit
+                } else {
+                    let tool = commands.selectedCursorToolID
+                    if tool == "Pan" || tool == "MoveOverlay" {
+                        dragStartOrigin = nil
+                        if tool == "Pan" { NSCursor.pop() }
+                    }
+                    if tool == "Crop" { activeCropZone = .none; cropStartRect = .zero }
+                    if tool == "DrawLinearGradient" {
+                        if let g = adjustmentController.currentLinearGradient { adjustmentController.commitLinearGradient(g) }
+                    }
+                    if tool == "DrawRadialGradient" {
+                        if let g = adjustmentController.currentRadialGradient { adjustmentController.commitRadialGradient(g) }
+                    }
+                    if ["FocusPicker", "DehazePicker"].contains(tool) { commands.selectedCursorToolID = "Select" }
+                    if tool == "Heal" { adjustmentController.addRepairArrow(at: gesture.location, type: .heal) }
+                    else if tool == "Clone" { adjustmentController.addRepairArrow(at: gesture.location, type: .clone) }
                 }
-                if tool == "Crop" { activeCropZone = .none; cropStartRect = .zero }
-                if tool == "DrawLinearGradient" {
-                    if let g = adjustmentController.currentLinearGradient { adjustmentController.commitLinearGradient(g) }
-                }
-                if tool == "DrawRadialGradient" {
-                    if let g = adjustmentController.currentRadialGradient { adjustmentController.commitRadialGradient(g) }
-                }
-                if ["FocusPicker", "DehazePicker"].contains(tool) { commands.selectedCursorToolID = "Select" }
-                if tool == "Heal" { adjustmentController.addRepairArrow(at: gesture.location, type: .heal) }
-                else if tool == "Clone" { adjustmentController.addRepairArrow(at: gesture.location, type: .clone) }
             }
     }
     

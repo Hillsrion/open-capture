@@ -14,7 +14,7 @@ public class ShortcutInputHandler {
     private var mouseMonitor: Any?
     
     // Speed Edit state
-    private var activeSpeedEditKey: String? = nil
+    private var speedEditController = COSpeedEditController.shared
     private var initialMousePos: CGPoint? = nil
     
     // Pan Tool state
@@ -52,7 +52,7 @@ public class ShortcutInputHandler {
     }
     
     private func handleMouseEvent(_ event: NSEvent) -> NSEvent? {
-        guard let speedEditKey = activeSpeedEditKey else { return event }
+        guard speedEditController.activeAction != nil else { return event }
         
         switch event.type {
         case .leftMouseDown:
@@ -65,7 +65,7 @@ public class ShortcutInputHandler {
             let delta = Float(currentPos.x - startPos.x)
             
             // Apply speed edit based on horizontal drag
-            applySpeedEdit(key: speedEditKey, delta: delta)
+            speedEditController.handleDrag(deltaX: delta)
             
             // Reset start position for incremental delta
             initialMousePos = currentPos
@@ -81,6 +81,7 @@ public class ShortcutInputHandler {
     }
     
     private func applySpeedEdit(key: String, delta: Float) {
+        // Legacy method maintained for scroll support
         let controller = AdjustmentToolController.shared
         let sensitivity: Float = 0.5 // Adjust as needed
         
@@ -95,6 +96,7 @@ public class ShortcutInputHandler {
         case "Blacks": controller.blacks = max(-100, min(100, controller.blacks + (delta * sensitivity)))
         default: break
         }
+        speedEditController.updateCurrentValue()
     }
     
     private func handleKeyDown(_ event: NSEvent) -> NSEvent? {
@@ -141,14 +143,14 @@ public class ShortcutInputHandler {
         // Speed Edit Keys (Default Capture One mapping)
         if !event.isARepeat {
             switch chars {
-            case "q": activeSpeedEditKey = "Exposure"
-            case "w": activeSpeedEditKey = "Contrast"
-            case "e": activeSpeedEditKey = "Brightness"
-            case "r": activeSpeedEditKey = "Saturation"
-            case "a": activeSpeedEditKey = "Highlights"
-            case "s": activeSpeedEditKey = "Shadows"
-            case "d": activeSpeedEditKey = "Whites"
-            case "f": activeSpeedEditKey = "Blacks"
+            case "q": speedEditController.handleKeyDown(action: .exposure)
+            case "w": speedEditController.handleKeyDown(action: .contrast)
+            case "e": speedEditController.handleKeyDown(action: .brightness)
+            case "r": speedEditController.handleKeyDown(action: .saturation)
+            case "a": speedEditController.handleKeyDown(action: .highlights)
+            case "s": speedEditController.handleKeyDown(action: .shadows)
+            case "d": speedEditController.handleKeyDown(action: .whites)
+            case "f": speedEditController.handleKeyDown(action: .blacks)
             default: break
             }
         }
@@ -182,21 +184,21 @@ public class ShortcutInputHandler {
             return nil
         }
         
-        let releasedKey: String?
+        let releasedAction: COSpeedEditController.SpeedEditAction?
         switch chars {
-        case "q": releasedKey = "Exposure"
-        case "w": releasedKey = "Contrast"
-        case "e": releasedKey = "Brightness"
-        case "r": releasedKey = "Saturation"
-        case "a": releasedKey = "Highlights"
-        case "s": releasedKey = "Shadows"
-        case "d": releasedKey = "Whites"
-        case "f": releasedKey = "Blacks"
-        default: releasedKey = nil
+        case "q": releasedAction = .exposure
+        case "w": releasedAction = .contrast
+        case "e": releasedAction = .brightness
+        case "r": releasedAction = .saturation
+        case "a": releasedAction = .highlights
+        case "s": releasedAction = .shadows
+        case "d": releasedAction = .whites
+        case "f": releasedAction = .blacks
+        default: releasedAction = nil
         }
         
-        if releasedKey != nil && releasedKey == activeSpeedEditKey {
-            activeSpeedEditKey = nil
+        if let releasedAction = releasedAction, releasedAction == speedEditController.activeAction {
+            speedEditController.handleKeyUp()
         }
         
         return event
@@ -209,13 +211,9 @@ public class ShortcutInputHandler {
         
         let controller = AdjustmentToolController.shared
         
-        if let speedEditKey = activeSpeedEditKey {
-            // Dispatch to shared speed edit logic
-            // Note: delta from scroll is larger than from drag typically, so we might need a multiplier
-            applySpeedEdit(key: speedEditKey, delta: delta * 10.0) 
-            
-            // Show temporary HUD overlay for Speed Edit (simulated)
-            print("Speed Edit (Scroll): \(speedEditKey) adjusted by \(delta)")
+        if let activeAction = speedEditController.activeAction {
+            // Dispatch to speed edit logic
+            speedEditController.handleDrag(deltaX: delta * 10.0) 
             return nil // Consume scroll event
         } else {
             // Scroll wheel Zoom logic

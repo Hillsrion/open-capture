@@ -121,7 +121,8 @@ public struct COToolSection<Content: View, Actions: View>: View {
                         }
 
                         toolHeaderButton(systemName: "arrow.uturn.backward") {
-                            commands.resetTool(toolID)
+                            let isAltHeld = NSEvent.modifierFlags.contains(.option)
+                            commands.resetTool(toolID, isAltHeld: isAltHeld)
                         }
 
                         presetMenu

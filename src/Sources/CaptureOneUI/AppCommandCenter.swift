@@ -816,7 +816,11 @@ public final class AppCommandCenter: ObservableObject {
         }
     }
 
-    public func resetTool(_ toolID: String) {
+    public func resetTool(_ toolID: String, isAltHeld: Bool = false) {
+        if isAltHeld {
+            print("[Reset] Resetting only \(toolID) with Alt held")
+        }
+        
         switch toolID {
         case "Exposure":
             adjustmentController.exposure = 0
