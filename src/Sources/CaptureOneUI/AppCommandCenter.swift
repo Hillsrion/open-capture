@@ -202,7 +202,7 @@ public final class AppCommandCenter: ObservableObject {
         case "AutoAdjust":
             autoAdjust()
         case "ConvertNegative":
-            adjustmentController.negativeFilmEnabled.toggle()
+            COFilmNegativeConversionManager.shared.toggleConversionMode(enabled: !adjustmentController.negativeFilmEnabled)
         case "CopyAdjustments":
             copyAdjustments()
         case "ApplyAdjustments":

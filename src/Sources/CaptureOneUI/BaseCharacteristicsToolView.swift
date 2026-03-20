@@ -13,6 +13,35 @@ public struct BaseCharacteristicsToolView: View {
     public var body: some View {
         COToolSection("Base Characteristics", toolID: "BaseCharacteristics") {
             VStack(alignment: .leading, spacing: 10) {
+                // Mode Row (UI-202)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Mode")
+                        .font(.system(size: 11))
+                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
+                    
+                    Menu {
+                        Button("Standard") { 
+                            COFilmNegativeConversionManager.shared.toggleConversionMode(enabled: false)
+                        }
+                        Button("Film Negative") { 
+                            COFilmNegativeConversionManager.shared.toggleConversionMode(enabled: true)
+                        }
+                    } label: {
+                        HStack {
+                            Text(controller.negativeFilmEnabled ? "Film Negative" : "Standard")
+                                .font(.system(size: 11))
+                            Spacer()
+                            Image(systemName: "chevron.up.vertical")
+                                .font(.system(size: 8))
+                        }
+                        .padding(.horizontal, 8)
+                        .frame(height: 22)
+                        .background(Color.white.opacity(0.05))
+                        .cornerRadius(4)
+                    }
+                    .menuStyle(BorderlessButtonMenuStyle())
+                }
+                
                 // ICC Profile Row
                 VStack(alignment: .leading, spacing: 4) {
                     Text("ICC Profile")
