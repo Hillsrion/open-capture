@@ -27,6 +27,8 @@ public struct COViewerView: View {
     
     @State private var dragStartOrigin: CGPoint? = nil
     @State private var activeCropZone: CropRectHitboxCalculator.InteractionZone = .none
+    private enum LinearGradientHandle { case none, start, middle, end }
+    @State private var activeGradientHandle: LinearGradientHandle = .none
     @State private var cropStartRect: CGRect = .zero
     
     // Track focus to avoid color shifts
@@ -279,6 +281,7 @@ public struct COViewerView: View {
                     if tool == "Crop" { activeCropZone = .none; cropStartRect = .zero }
                     if tool == "DrawLinearGradient" {
                         if let g = adjustmentController.currentLinearGradient { adjustmentController.commitLinearGradient(g) }
+                        activeGradientHandle = .none
                     }
                     if tool == "DrawRadialGradient" {
                         if let g = adjustmentController.currentRadialGradient { adjustmentController.commitRadialGradient(g) }
@@ -322,25 +325,91 @@ public struct COViewerView: View {
         if activeCropZone.isRotation { performRotation(gesture: gesture, in: size) }
     }
     
+    private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
+        return CGPoint(x: point.x * size.width, y: point.y * size.height)
+    }
+    
+    private func distance(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
+        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2))
+    }
+
     private func handleLinearGradientDrag(gesture: DragGesture.Value, size: CGSize) {
         let controller = adjustmentController
-        var start = CGPoint(x: gesture.startLocation.x / size.width, y: gesture.startLocation.y / size.height)
-        var end = CGPoint(x: gesture.location.x / size.width, y: gesture.location.y / size.height)
         let flags = NSEvent.modifierFlags
-        if flags.contains(.shift) {
-            let dx = end.x - start.x
-            let dy = end.y - start.y
-            let angle = atan2(dy, dx)
-            let snappedAngle = round(angle / (.pi / 4)) * (.pi / 4)
-            let dist = sqrt(dx*dx + dy*dy)
-            end = CGPoint(x: start.x + cos(snappedAngle) * dist, y: start.y + sin(snappedAngle) * dist)
+        let isAltPressed = flags.contains(.option)
+        let isShiftPressed = flags.contains(.shift)
+        
+        // 1. Check if we're hitting an existing handle (only on start of drag)
+        if activeGradientHandle == .none && gesture.translation == .zero {
+            let existing = controller.currentLinearGradient ?? controller.currentVariant?.activeLayer?.linearGradient
+            if let g = existing {
+                let p1 = denormalize(g.start, in: size)
+                let p2 = denormalize(g.end, in: size)
+                let mid = denormalize(g.middle, in: size)
+                let startLoc = gesture.startLocation
+                
+                if distance(startLoc, p1) < 20 { activeGradientHandle = .start }
+                else if distance(startLoc, p2) < 20 { activeGradientHandle = .end }
+                else if distance(startLoc, mid) < 20 { activeGradientHandle = .middle }
+            }
         }
-        if flags.contains(.option) {
-            let dx = end.x - start.x
-            let dy = end.y - start.y
-            start = CGPoint(x: start.x - dx, y: start.y - dy)
+        
+        // 2. Perform drag
+        if activeGradientHandle == .none {
+            // New gradient creation (existing logic)
+            var start = CGPoint(x: gesture.startLocation.x / size.width, y: gesture.startLocation.y / size.height)
+            var end = CGPoint(x: gesture.location.x / size.width, y: gesture.location.y / size.height)
+            if isShiftPressed {
+                let dx = end.x - start.x; let dy = end.y - start.y
+                let angle = round(atan2(dy, dx) / (.pi / 4)) * (.pi / 4)
+                let dist = sqrt(dx*dx + dy*dy)
+                end = CGPoint(x: start.x + cos(angle) * dist, y: start.y + sin(angle) * dist)
+            }
+            if isAltPressed {
+                // Symmetric around click point
+                let dx = end.x - start.x; let dy = end.y - start.y
+                start = CGPoint(x: start.x - dx, y: start.y - dy)
+            }
+            controller.currentLinearGradient = LinearGradientMask(start: start, end: end)
+        } else {
+            // Editing existing gradient
+            guard var g = controller.currentLinearGradient ?? controller.currentVariant?.activeLayer?.linearGradient else { return }
+            let currentLocation = CGPoint(x: gesture.location.x / size.width, y: gesture.location.y / size.height)
+            
+            switch activeGradientHandle {
+            case .start:
+                if isAltPressed {
+                    g.start = currentLocation
+                    g.isAsymmetrical = true
+                } else {
+                    let delta = CGPoint(x: currentLocation.x - g.start.x, y: currentLocation.y - g.start.y)
+                    g.start = currentLocation
+                    g.end = CGPoint(x: g.end.x - delta.x, y: g.end.y - delta.y)
+                }
+            case .end:
+                if isAltPressed {
+                    g.end = currentLocation
+                    g.isAsymmetrical = true
+                } else {
+                    let delta = CGPoint(x: currentLocation.x - g.end.x, y: currentLocation.y - g.end.y)
+                    g.end = currentLocation
+                    g.start = CGPoint(x: g.start.x - delta.x, y: g.start.y - delta.y)
+                }
+            case .middle:
+                let delta = CGPoint(x: currentLocation.x - g.middle.x, y: currentLocation.y - g.middle.y)
+                g.start = CGPoint(x: g.start.x + delta.x, y: g.start.y + delta.y)
+                g.end = CGPoint(x: g.end.x + delta.x, y: g.end.y + delta.y)
+                g.middle = currentLocation
+            default: break
+            }
+            
+            if !isAltPressed && activeGradientHandle != .middle {
+                // Keep middle in center if not asymmetric
+                g.middle = CGPoint(x: (g.start.x + g.end.x) / 2, y: (g.start.y + g.end.y) / 2)
+                g.isAsymmetrical = false
+            }
+            controller.currentLinearGradient = g
         }
-        controller.currentLinearGradient = LinearGradientMask(start: start, end: end)
     }
     
     private func handleRadialGradientDrag(gesture: DragGesture.Value, size: CGSize) {

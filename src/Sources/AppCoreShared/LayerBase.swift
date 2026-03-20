@@ -55,14 +55,14 @@ public struct LinearGradientMask: Codable {
     public var start: CGPoint // Normalized
     public var end: CGPoint   // Normalized
     public var middle: CGPoint // Normalized
-    
-    public init(start: CGPoint, end: CGPoint) {
+    public var isAsymmetrical: Bool = false
+
+    public init(start: CGPoint, end: CGPoint, middle: CGPoint? = nil) {
         self.start = start
         self.end = end
-        self.middle = CGPoint(x: (start.x + end.x) / 2, y: (start.y + end.y) / 2)
+        self.middle = middle ?? CGPoint(x: (start.x + end.x) / 2, y: (start.y + end.y) / 2)
     }
 }
-
 public struct RadialGradientMask: Codable {
     public var center: CGPoint // Normalized
     public var radius: CGSize  // Normalized

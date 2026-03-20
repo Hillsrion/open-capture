@@ -119,6 +119,15 @@ public class ImageCorePipeline {
                                                  blacks: Float(settings.hdr.blacks))
         }
 
+        // --- Dehaze (UI-202) ---
+        if settings.dehazeAmount > 0 {
+            CODehazeProcessor.shared.process(buffer: &floatBuffer, 
+                                             width: tileWidth, 
+                                             height: tileHeight, 
+                                             amount: Float(settings.dehazeAmount), 
+                                             colorBias: (r: 0.5, g: 0.5, b: 0.5)) // Bias could be derived from dehazeColor
+        }
+
         // --- Detail Refinement (ENG-007) ---
         
         // 1. Noise Reduction

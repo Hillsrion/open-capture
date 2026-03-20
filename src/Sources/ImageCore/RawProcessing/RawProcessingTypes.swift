@@ -339,6 +339,8 @@ public struct IC_ProcessSettings {
     public var filmGrain = IC_FilmGrainSettings()
     public var blackAndWhite = IC_BlackAndWhiteSettings()
     public var gradationCurves = ICGradationCurves()
+    public var dehazeAmount: Float = 0.0
+    public var dehazeShadowHue: Float = 0.0
     public var levels = IC_LevelsSettings()
     public var clarity = IC_Clarity()
     public var colorCorrectionList = IC_ColorCorrectionList()
