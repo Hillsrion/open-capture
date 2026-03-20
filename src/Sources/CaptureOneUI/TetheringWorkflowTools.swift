@@ -211,70 +211,76 @@ public struct NextCaptureNamingToolView: View {
 
 /// Reconstructed Next Capture Adjustments (GAP-406).
 public struct NextCaptureAdjustmentsToolView: View {
-    @ObservedObject var browser = PtpDeviceBrowser.shared
+    @ObservedObject var controller = CONextCaptureAdjustmentsController.shared
+    
     public init() {}
     public var body: some View {
         COToolSection("Next Capture Adjustments", toolID: "NextCaptureAdjustments") {
-            if let camera = browser.availableCameras.first {
-                VStack(alignment: .leading, spacing: 8) {
-                    // All Other Dropdown
-                    HStack {
-                        Text("All Other").font(.system(size: 11)).foregroundColor(.gray)
-                        Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOther }, set: { camera.nextCaptureAdjustmentsOther = $0 })) {
-                            Text("Copy from Last").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromLast)
-                            Text("Copy from Primary").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.copyFromPrimary)
-                            Text("Defaults").tag(P1CaptureCore_Camera.NextCaptureAdjustmentsOther.neutral)
+            VStack(alignment: .leading, spacing: 8) {
+                // All Other Dropdown
+                HStack {
+                    Text("All Other").font(.system(size: 11)).foregroundColor(.gray)
+                    Spacer()
+                    Picker("", selection: $controller.allOtherAdjustmentMode) {
+                        ForEach(NextCaptureAdjustmentMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
                         }
-                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
                     }
-                    
-                    // ICC Profile Dropdown
-                    HStack {
-                        Text("ICC Profile").font(.system(size: 11)).foregroundColor(.gray)
-                        Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsICCProfile }, set: { camera.nextCaptureAdjustmentsICCProfile = $0 })) {
-                            Text("Default").tag("Default")
-                            Text("sRGB").tag("sRGB")
-                            Text("Adobe RGB").tag("Adobe RGB")
-                        }
-                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
-                    }
-                    
-                    // Orientation Dropdown
-                    HStack {
-                        Text("Orientation").font(.system(size: 11)).foregroundColor(.gray)
-                        Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOrientation }, set: { camera.nextCaptureAdjustmentsOrientation = $0 })) {
-                            Text("0").tag("0")
-                            Text("90").tag("90")
-                            Text("180").tag("180")
-                            Text("270").tag("270")
-                        }
-                        .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
-                    }
-                    
-                    // Style Dropdown
+                    .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                }
+                
+                // Specific Style Dropdown (Conditional)
+                if controller.allOtherAdjustmentMode == .specificStyle {
                     HStack {
                         Text("Style").font(.system(size: 11)).foregroundColor(.gray)
                         Spacer()
-                        Picker("", selection: Binding(get: { camera.nextCaptureAdjustmentsOtherStyleUUIDs }, set: { camera.nextCaptureAdjustmentsOtherStyleUUIDs = $0 })) {
+                        Picker("", selection: $controller.specificStyleName) {
                             Text("None").tag("None")
                             Text("Cinematic").tag("Cinematic")
                             Text("B&W High Contrast").tag("B&W High Contrast")
+                            Text("Landscape Vivid").tag("Landscape Vivid")
                         }
                         .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
                     }
-
-                    // Metadata Checkbox
-                    Toggle("Metadata", isOn: Binding(get: { camera.nextCaptureAdjustmentsMetadata }, set: { camera.nextCaptureAdjustmentsMetadata = $0 }))
-                        .font(.system(size: 11))
-                        
-                    // Auto-Crop Checkbox
-                    Toggle("Auto-Crop", isOn: Binding(get: { camera.autoCropEnabled }, set: { camera.autoCropEnabled = $0 }))
-                        .font(.system(size: 11))
+                }
+                
+                // ICC Profile Dropdown
+                HStack {
+                    Text("ICC Profile").font(.system(size: 11)).foregroundColor(.gray)
+                    Spacer()
+                    Picker("", selection: $controller.iccProfileMode) {
+                        ForEach(NextCaptureSubAdjustmentMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                }
+                
+                // Orientation Dropdown
+                HStack {
+                    Text("Orientation").font(.system(size: 11)).foregroundColor(.gray)
+                    Spacer()
+                    Picker("", selection: $controller.orientationMode) {
+                        ForEach(NextCaptureSubAdjustmentMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
+                }
+                
+                // Metadata Dropdown
+                HStack {
+                    Text("Metadata").font(.system(size: 11)).foregroundColor(.gray)
+                    Spacer()
+                    Picker("", selection: $controller.metadataMode) {
+                        ForEach(NextCaptureSubAdjustmentMode.allCases) { mode in
+                            Text(mode.rawValue).tag(mode)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle()).font(.system(size: 11))
                 }
             }
+            .padding(.vertical, 4)
         }
     }
 }

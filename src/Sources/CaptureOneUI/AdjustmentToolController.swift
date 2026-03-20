@@ -356,6 +356,28 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         setupRecipeSync()
         setupNegativeFilmSync()
         setupZoomViewportSync()
+        setupTetheringSync()
+    }
+    
+    private func setupTetheringSync() {
+        COTetherCaptureService.shared.onVariantIngested = { [weak self] newVariant in
+            guard let self = self else { return }
+            
+            let primary = self.currentVariant
+            // Logic: In a real app, we might track the last captured variant specifically
+            // For now, we use currentVariant as reference if mode is 'Primary' or 'Last'.
+            
+            CONextCaptureAdjustmentsController.shared.applyAdjustmentsToNextCapture(
+                newVariant: newVariant, 
+                lastVariant: primary, // Simplified: use current as last for this simulation
+                primaryVariant: primary
+            )
+            
+            // Auto-select the new variant if needed
+            DispatchQueue.main.async {
+                self.currentVariant = newVariant
+            }
+        }
     }
     
     private func setupZoomViewportSync() {

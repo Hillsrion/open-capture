@@ -56,6 +56,8 @@ public class COTetherCaptureService: ObservableObject {
     
     @Published public var lastCapturedImage: CGImage?
     
+    public var onVariantIngested: ((VariantBase) -> Void)?
+    
     private init() {}
     
     public func triggerCapture(on camera: CameraDevice) {
@@ -65,8 +67,11 @@ public class COTetherCaptureService: ObservableObject {
         // Simulate image ingestion
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("[Capture] Ingesting new image from \(camera.id)")
-            // In a real app, this would be a raw file processed into a preview
-            // For simulation, we'll just log it.
+            // Simulate creation of a new variant
+            let newImage = ImageBase(imageUUID: UUID().uuidString, path: "/simulated/capture.arw", context: nil)
+            let newVariant = VariantBase(variantUUID: UUID().uuidString, image: newImage, context: nil)
+            
+            self.onVariantIngested?(newVariant)
         }
     }
 }
