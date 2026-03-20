@@ -5,22 +5,23 @@ import ImageCore
 final class SmartAdjustmentsTests: XCTestCase {
     
     func testSmartAdjustmentDeltaCalculation() {
-        let reference = SmartAdjustmentsReference(exposure: 1.0, kelvin: 5500.0, tint: 10.0)
-        let target = SmartAdjustmentsReference(exposure: 0.5, kelvin: 5000.0, tint: 5.0)
+        let reference = COFaceExposureNormalizer.FaceReference(luma: 0.8, kelvin: 5500.0, tint: 10.0)
+        let target = COFaceExposureNormalizer.FaceReference(luma: 0.5, kelvin: 5000.0, tint: 5.0)
         
-        let deltas = SmartAdjustmentsEngine.calculateDeltas(reference: reference, target: target)
+        let normalizer = COFaceExposureNormalizer()
+        let deltas = normalizer.calculateDeltas(reference: reference, target: target)
         
-        XCTAssertEqual(deltas.exposureDelta, 0.5, "Exposure delta should be 0.5")
-        XCTAssertEqual(deltas.kelvinDelta, 500.0, "Kelvin delta should be 500")
-        XCTAssertEqual(deltas.tintDelta, 5.0, "Tint delta should be 5")
+        XCTAssertEqual(deltas.exposure, 0.3, accuracy: 0.001, "Exposure delta should be 0.3")
+        XCTAssertEqual(deltas.kelvin, 500.0, "Kelvin delta should be 500")
+        XCTAssertEqual(deltas.tint, 5.0, "Tint delta should be 5")
     }
     
-    func testSmartAdjustmentHelperAnalysis() {
+    func testSmartAdjustmentManagerReference() {
         let variant = VariantBase(variantUUID: UUID().uuidString, image: nil, context: nil)
-        let reference = SmartAdjustmentsHelper.analyzeVariant(variant)
+        COSmartAdjustmentManager.shared.setAsReference(variant)
         
-        XCTAssertNotNil(reference)
-        XCTAssert(2000...50000 ~= reference.faceKelvin)
+        XCTAssertNotNil(COSmartAdjustmentManager.shared.reference)
+        XCTAssertEqual(COSmartAdjustmentManager.shared.referenceVariantID, variant.variantUUID)
     }
     
     func testSmartDescriptorPersistence() {

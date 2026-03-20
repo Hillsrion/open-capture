@@ -94,7 +94,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Smart Adjustments State (AI-204)
     @Published public var smartExposureEnabled: Bool = true
     @Published public var smartWhiteBalanceEnabled: Bool = true
-    @Published public var smartReference: SmartAdjustmentsReference? = nil
+    @Published public var smartReference: COFaceExposureNormalizer.FaceReference? = nil
     @Published public var smartReferenceVariantID: String? = nil
     
     // Spot Removal State (UI-203)
@@ -1489,8 +1489,18 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     public func setSmartReference() {
         guard let variant = currentVariant else { return }
         print("[Smart] Setting reference for \(variant.variantUUID)")
-        self.smartReference = SmartAdjustmentsHelper.analyzeVariant(variant)
-        self.smartReferenceVariantID = variant.variantUUID
+        COSmartAdjustmentManager.shared.setAsReference(variant)
+        self.smartReference = COSmartAdjustmentManager.shared.reference
+        self.smartReferenceVariantID = COSmartAdjustmentManager.shared.referenceVariantID
+    }
+    
+    public func applySmartAdjustments(to variants: [VariantBase]) {
+        let settings = COSmartAdjustmentManager.Settings(
+            exposureEnabled: smartExposureEnabled,
+            whiteBalanceEnabled: smartWhiteBalanceEnabled
+        )
+        COSmartAdjustmentManager.shared.applyToVariants(variants, settings: settings)
+        refreshToolValues()
     }
     
     // MARK: - AI Crop (Consistency)
@@ -1504,33 +1514,6 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         if let variant = currentVariant {
             AICropSettingsController.shared.applyToVariants([variant])
         }
-    }
-    
-    public func applySmartAdjustments(to variants: [VariantBase]) {
-        guard let reference = smartReference else { return }
-        
-        for variant in variants {
-            let targetRef = SmartAdjustmentsHelper.analyzeVariant(variant)
-            let deltas = SmartAdjustmentsEngine.calculateDeltas(reference: reference, target: targetRef)
-            
-            if let mc = variant.mcVariant {
-                if smartExposureEnabled {
-                    let currentExp = (mc.objectForKey("ZEXPOSURE") as? Double) ?? 0.0
-                    mc.setObject(currentExp + deltas.exposureDelta, forKey: "ZEXPOSURE")
-                }
-                
-                if smartWhiteBalanceEnabled {
-                    let currentKelvin = (mc.objectForKey("ZKELVIN") as? Double) ?? 5000.0
-                    let currentTint = (mc.objectForKey("ZTINT") as? Double) ?? 0.0
-                    mc.setObject(currentKelvin + deltas.kelvinDelta, forKey: "ZKELVIN")
-                    mc.setObject(currentTint + deltas.tintDelta, forKey: "ZTINT")
-                }
-                
-                variant.isModified = true
-            }
-        }
-        
-        refreshToolValues()
     }
     
     // MARK: - AI Masking (GAP-401)
