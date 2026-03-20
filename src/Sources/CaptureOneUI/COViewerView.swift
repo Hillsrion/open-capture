@@ -183,8 +183,8 @@ public struct COViewerView: View {
                 }
             }
             
-            if let points = adjustmentController.keystonePoints {
-                KeystoneOverlayView(points: points)
+            if commands.selectedCursorToolID.contains("Keystone") || COKeystoneController.shared.isVisible {
+                KeystoneOverlayView()
             }
             
             CompositionOverlayView(controller: adjustmentController)
@@ -553,22 +553,41 @@ private struct ViewerModeBadge: View {
 
 /// Reconstructed Interactive Keystone UI (UI-006).
 struct KeystoneOverlayView: View {
-    let points: KeystonePoints
+    @ObservedObject var controller = COKeystoneController.shared
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
+                // Connecting lines
                 Path { path in
-                    path.move(to: denormalize(points.p0, in: geo.size)); path.addLine(to: denormalize(points.p1, in: geo.size))
-                    path.move(to: denormalize(points.p2, in: geo.size)); path.addLine(to: denormalize(points.p3, in: geo.size))
-                }.stroke(CaptureOneTheme.Colors.activeHighlight, lineWidth: 2)
-                handle(at: points.p0, in: geo.size); handle(at: points.p1, in: geo.size)
-                handle(at: points.p2, in: geo.size); handle(at: points.p3, in: geo.size)
+                    // Vertical left line (p0 to p2)
+                    path.move(to: denormalize(controller.points.p0, in: geo.size))
+                    path.addLine(to: denormalize(controller.points.p2, in: geo.size))
+                    
+                    // Vertical right line (p1 to p3)
+                    path.move(to: denormalize(controller.points.p1, in: geo.size))
+                    path.addLine(to: denormalize(controller.points.p3, in: geo.size))
+                    
+                    // Horizontal top line (p0 to p1)
+                    path.move(to: denormalize(controller.points.p0, in: geo.size))
+                    path.addLine(to: denormalize(controller.points.p1, in: geo.size))
+                    
+                    // Horizontal bottom line (p2 to p3)
+                    path.move(to: denormalize(controller.points.p2, in: geo.size))
+                    path.addLine(to: denormalize(controller.points.p3, in: geo.size))
+                }
+                .stroke(CaptureOneTheme.Colors.activeHighlight.opacity(0.8), lineWidth: 1.5)
+                .allowsHitTesting(false)
+                
+                // Interactive handles
+                COKeystoneHandleView(index: 0, point: $controller.points.p0, containerSize: geo.size)
+                COKeystoneHandleView(index: 1, point: $controller.points.p1, containerSize: geo.size)
+                COKeystoneHandleView(index: 2, point: $controller.points.p2, containerSize: geo.size)
+                COKeystoneHandleView(index: 3, point: $controller.points.p3, containerSize: geo.size)
             }
         }
     }
-    private func handle(at point: CGPoint, in size: CGSize) -> some View {
-        Circle().fill(CaptureOneTheme.Colors.activeHighlight).frame(width: 8, height: 8).position(denormalize(point, in: size))
-    }
+    
     private func denormalize(_ point: CGPoint, in size: CGSize) -> CGPoint {
         return CGPoint(x: point.x * size.width, y: point.y * size.height)
     }

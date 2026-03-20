@@ -332,9 +332,23 @@ public final class AppCommandCenter: ObservableObject {
     // MARK: - Specialized Tool Modes (WF-503)
     
     public func setKeystoneMode(_ mode: Int) {
-        // 0: Vertical, 1: Horizontal, 2: 4-Point
-        print("[Command] Keystone Mode set to: \(mode)")
-        selectedCursorToolID = "Keystone"
+        // 0: Vertical, 1: Horizontal, 2: 4-Point (Vertical and Horizontal)
+        let controller = COKeystoneController.shared
+        switch mode {
+        case 0:
+            controller.mode = .vertical
+            selectedCursorToolID = "KeystoneVertical"
+        case 1:
+            controller.mode = .horizontal
+            selectedCursorToolID = "KeystoneHorizontal"
+        case 2:
+            controller.mode = .verticalAndHorizontal
+            selectedCursorToolID = "Keystone"
+        default:
+            break
+        }
+        controller.isVisible = true
+        print("[Command] Keystone Mode set to: \(selectedCursorToolID)")
     }
     
     public func setPickerTool(_ type: String) {
