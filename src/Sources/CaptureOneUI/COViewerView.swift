@@ -146,13 +146,8 @@ public struct COViewerView: View {
                     .allowsHitTesting(false)
             }
             
-            if let mask = maskImage {
-                Image(nsImage: mask)
-                    .resizable()
-                    .scaleEffect(adjustmentController.zoomLevel)
-                    .aspectRatio(contentMode: .fit)
-                    .opacity(0.5)
-                    .colorMultiply(.red)
+            if adjustmentController.showMaskOverlay {
+                COMaskOverlayRenderer(maskImage: maskImage, zoomLevel: adjustmentController.zoomLevel)
             }
             
             if let active = adjustmentController.currentVariant?.activeLayer {
@@ -217,7 +212,7 @@ public struct COViewerView: View {
             let tool = commands.selectedCursorToolID
             if tool == "Pan" { NSCursor.openHand.push() }
             else if tool == "MoveOverlay" { NSCursor.resizeUpDown.push() }
-            else if ["DrawLinearGradient", "DrawRadialGradient", "Annotate", "Crop", "Rotate"].contains(where: { tool.contains($0) }) || tool.contains("Picker") {
+            else if ["DrawLinearGradient", "DrawRadialGradient", "Annotate", "Crop", "Rotate", "DrawMask", "EraseMask"].contains(where: { tool.contains($0) }) || tool.contains("Picker") {
                 NSCursor.crosshair.push()
             }
         } else {
@@ -262,6 +257,15 @@ public struct COViewerView: View {
                             COMagicBrushController.shared.handleMouseDrag(at: gesture.location, in: img)
                         }
                     }
+                } else if tool == "DrawMask" || tool == "EraseMask" {
+                    if let img = image {
+                        if dragStartOrigin == nil {
+                            dragStartOrigin = gesture.startLocation
+                            COStandardBrushController.shared.handleMouseDown(at: gesture.startLocation, in: img, mode: tool == "DrawMask" ? .draw : .erase)
+                        } else {
+                            COStandardBrushController.shared.handleMouseDrag(at: gesture.location, in: img, mode: tool == "DrawMask" ? .draw : .erase)
+                        }
+                    }
                 } else if tool == "Heal" || tool == "Clone" {
                     if dragStartOrigin == nil {
                         dragStartOrigin = gesture.startLocation
@@ -293,6 +297,12 @@ public struct COViewerView: View {
                     if tool == "DrawMagicBrush" || tool == "EraseMagicBrush" {
                         if let variant = adjustmentController.currentVariant {
                             COMagicBrushController.shared.handleMouseUp(to: variant)
+                        }
+                        dragStartOrigin = nil
+                    }
+                    if tool == "DrawMask" || tool == "EraseMask" {
+                        if let variant = adjustmentController.currentVariant {
+                            COStandardBrushController.shared.handleMouseUp(to: variant)
                         }
                         dragStartOrigin = nil
                     }

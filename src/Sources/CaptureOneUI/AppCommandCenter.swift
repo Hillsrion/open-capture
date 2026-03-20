@@ -814,14 +814,15 @@ public final class AppCommandCenter: ObservableObject {
     }
 
     public func toggleMaskVisibility() {
-        // Cycle: Always (1) -> Never (0) -> Always (1)
-        // (Simplified cycle for the 'M' shortcut)
-        if adjustmentController.maskVisibilityMode == 1 {
-            adjustmentController.maskVisibilityMode = 0
-        } else {
-            adjustmentController.maskVisibilityMode = 1
-        }
-        print("[AppCommandCenter] Mask Visibility: \(adjustmentController.maskVisibilityMode == 1 ? "Always" : "Never")")
+        // Toggle the showMaskOverlay property in AdjustmentToolController
+        adjustmentController.showMaskOverlay.toggle()
+        
+        // Cycle maskVisibilityMode for legacy/preferences compatibility
+        // 0: Never, 1: Always
+        adjustmentController.maskVisibilityMode = adjustmentController.showMaskOverlay ? 1 : 0
+        
+        adjustmentController.commitChanges(to: adjustmentController.currentVariant)
+        print("[AppCommandCenter] Mask Overlay: \(adjustmentController.showMaskOverlay ? "ON" : "OFF")")
     }
 
     public func pasteAdjustments() {

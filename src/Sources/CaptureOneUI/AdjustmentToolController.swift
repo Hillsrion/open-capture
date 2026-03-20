@@ -267,6 +267,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     @Published public var exposureShadowColor: Color = .blue
     
     // Masking State (UI-204)
+    @Published public var showMaskOverlay: Bool = false
     @Published public var currentLinearGradient: LinearGradientMask? = nil
     @Published public var currentRadialGradient: RadialGradientMask? = nil
     
@@ -536,6 +537,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($isSoftProofingEnabled.map { _ in }.eraseToAnyPublisher()),
             observe($proofingProfileID.map { _ in }.eraseToAnyPublisher()),
             observe($showGamutWarning.map { _ in }.eraseToAnyPublisher()),
+            observe($showMaskOverlay.map { _ in }.eraseToAnyPublisher()),
             observe($maskVisibilityMode.map { _ in }.eraseToAnyPublisher()),
             observe($maskColorIndex.map { _ in }.eraseToAnyPublisher()),
             observe($maskRefineEdge.map { _ in }.eraseToAnyPublisher()),
@@ -611,6 +613,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($retouchEyesLeftImpact.map { _ in }.eraseToAnyPublisher()),
             observe($retouchEyesRightImpact.map { _ in }.eraseToAnyPublisher())
         ]
+
         
         let mergedPublishers = Publishers.MergeMany(publishers).share()
         
@@ -1137,6 +1140,7 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         self.colorTag = VariantBase.ColorTag(rawValue: (mc.objectForKey("ZCOLOR_TAG") as? Int) ?? 0) ?? .none
         
         // Masking Preferences (GAP-404)
+        self.showMaskOverlay = (mc.objectForKey("ZSHOW_MASK_OVERLAY") as? Bool) ?? false
         self.maskVisibilityMode = (mc.objectForKey("ZMASK_VISIBILITY_MODE") as? Int) ?? 2
         self.maskColorIndex = (mc.objectForKey("ZMASK_COLOR_INDEX") as? Int) ?? 0
         self.maskRefineEdge = getDouble("ZMASK_REFINE_EDGE", 0.0)
@@ -1356,10 +1360,12 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             mc.setObject(encodedGuides, forKey: "ZGUIDES")
         }
         
+        mc.setObject(showMaskOverlay, forKey: "ZSHOW_MASK_OVERLAY")
         mc.setObject(maskVisibilityMode, forKey: "ZMASK_VISIBILITY_MODE")
         mc.setObject(maskColorIndex, forKey: "ZMASK_COLOR_INDEX")
         mc.setObject(maskRefineEdge, forKey: "ZMASK_REFINE_EDGE")
         mc.setObject(maskFeather, forKey: "ZMASK_FEATHER")
+
         
         if let encoded = try? JSONEncoder().encode(colorCorrections) {
             mc.setObject(encoded, forKey: "ZCOLOR_CORRECTIONS")
