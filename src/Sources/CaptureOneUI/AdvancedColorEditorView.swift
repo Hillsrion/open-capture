@@ -160,9 +160,9 @@ public struct AdvancedColorEditorView: View {
                 Text("Adjust")
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                colorSlider(label: "Hue", value: .constant(0), range: -10...10)
-                colorSlider(label: "Saturation", value: .constant(0), range: -50...50)
-                colorSlider(label: "Lightness", value: .constant(0), range: -50...50)
+                colorSlider(label: "Hue", value: Binding(get: { Double(controller.skinHueAmount) }, set: { controller.skinHueAmount = Float($0) }), range: -30...30)
+                colorSlider(label: "Saturation", value: Binding(get: { Double(controller.skinSatAmount) }, set: { controller.skinSatAmount = Float($0) }), range: -100...100)
+                colorSlider(label: "Lightness", value: Binding(get: { Double(controller.skinLumaAmount) }, set: { controller.skinLumaAmount = Float($0) }), range: -100...100)
             }
             
             Divider().background(Color.white.opacity(0.05))
@@ -174,17 +174,6 @@ public struct AdvancedColorEditorView: View {
                 colorSlider(label: "Hue", value: Binding(get: { Double(controller.skinHueUniformity) }, set: { controller.skinHueUniformity = Float($0) }), range: 0...100)
                 colorSlider(label: "Saturation", value: Binding(get: { Double(controller.skinSatUniformity) }, set: { controller.skinSatUniformity = Float($0) }), range: 0...100)
                 colorSlider(label: "Lightness", value: Binding(get: { Double(controller.skinLumaUniformity) }, set: { controller.skinLumaUniformity = Float($0) }), range: 0...100)
-            }
-            
-            Divider().background(Color.white.opacity(0.05))
-            
-            VStack(spacing: 6) {
-                Text("Amount")
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                colorSlider(label: "Hue", value: Binding(get: { Double(controller.skinHueAmount) }, set: { controller.skinHueAmount = Float($0) }), range: -30...30)
-                colorSlider(label: "Saturation", value: Binding(get: { Double(controller.skinSatAmount) }, set: { controller.skinSatAmount = Float($0) }), range: -100...100)
-                colorSlider(label: "Lightness", value: Binding(get: { Double(controller.skinLumaAmount) }, set: { controller.skinLumaAmount = Float($0) }), range: -100...100)
             }
         }
     }
