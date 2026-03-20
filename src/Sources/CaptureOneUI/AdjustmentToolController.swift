@@ -944,8 +944,9 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         
         updateIfChanged(&dehazeAmount, getDouble("ZDEHAZE_AMOUNT", 0.0))
         let loadedHue = getDouble("ZDEHAZE_SHADOW_HUE", 0.0)
+        let oldHue = dehazeShadowToneHue
         updateIfChanged(&dehazeShadowToneHue, loadedHue)
-        if dehazeColor.hueComponent != loadedHue {
+        if oldHue != loadedHue {
             dehazeColor = Color(hue: loadedHue, saturation: 0.5, brightness: 0.5)
         }
         updateIfChanged(&vignettingAmount, getDouble("ZVIGNETTING_AMOUNT", 0.0))
