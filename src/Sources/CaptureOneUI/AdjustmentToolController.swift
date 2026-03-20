@@ -166,10 +166,18 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
     // Advanced Color Editor
     @Published public var colorCorrections: [IC_ColorCorrection] = []
     
-    // Skin Tone Uniformity
+    // Basic Color Editor (UI-204)
+    @Published public var basicColorHue: [Double] = Array(repeating: 0.0, count: 8)
+    @Published public var basicColorSat: [Double] = Array(repeating: 0.0, count: 8)
+    @Published public var basicColorLum: [Double] = Array(repeating: 0.0, count: 8)
+    
+    // Skin Tone Uniformity & Amount
     @Published public var skinHueUniformity: Float = 0.0
     @Published public var skinSatUniformity: Float = 0.0
     @Published public var skinLumaUniformity: Float = 0.0
+    @Published public var skinHueAmount: Float = 0.0
+    @Published public var skinSatAmount: Float = 0.0
+    @Published public var skinLumaAmount: Float = 0.0
     
     // Lens Correction (ENG-006)
     @Published public var lensDistortion: Double = 0.0
@@ -477,6 +485,15 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             observe($structureAmount.map { _ in }.eraseToAnyPublisher()),
             observe($clarityMethod.map { _ in }.eraseToAnyPublisher()),
             observe($colorCorrections.map { _ in }.eraseToAnyPublisher()),
+            observe($basicColorHue.map { _ in }.eraseToAnyPublisher()),
+            observe($basicColorSat.map { _ in }.eraseToAnyPublisher()),
+            observe($basicColorLum.map { _ in }.eraseToAnyPublisher()),
+            observe($skinHueUniformity.map { _ in }.eraseToAnyPublisher()),
+            observe($skinSatUniformity.map { _ in }.eraseToAnyPublisher()),
+            observe($skinLumaUniformity.map { _ in }.eraseToAnyPublisher()),
+            observe($skinHueAmount.map { _ in }.eraseToAnyPublisher()),
+            observe($skinSatAmount.map { _ in }.eraseToAnyPublisher()),
+            observe($skinLumaAmount.map { _ in }.eraseToAnyPublisher()),
             observe($lensDistortion.map { _ in }.eraseToAnyPublisher()),
             observe($lensSharpnessFalloff.map { _ in }.eraseToAnyPublisher()),
             observe($lensLightFalloff.map { _ in }.eraseToAnyPublisher()),
@@ -1063,6 +1080,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
             self.colorCorrections = []
         }
         
+        self.basicColorHue = (mc.objectForKey("ZBASIC_COLOR_HUE") as? [Double]) ?? Array(repeating: 0.0, count: 8)
+        self.basicColorSat = (mc.objectForKey("ZBASIC_COLOR_SAT") as? [Double]) ?? Array(repeating: 0.0, count: 8)
+        self.basicColorLum = (mc.objectForKey("ZBASIC_COLOR_LUM") as? [Double]) ?? Array(repeating: 0.0, count: 8)
+        
+        updateIfChanged(&skinHueUniformity, getFloat("ZSKIN_HUE_UNI", 0.0))
+        updateIfChanged(&skinSatUniformity, getFloat("ZSKIN_SAT_UNI", 0.0))
+        updateIfChanged(&skinLumaUniformity, getFloat("ZSKIN_LUMA_UNI", 0.0))
+        updateIfChanged(&skinHueAmount, getFloat("ZSKIN_HUE_AMT", 0.0))
+        updateIfChanged(&skinSatAmount, getFloat("ZSKIN_SAT_AMT", 0.0))
+        updateIfChanged(&skinLumaAmount, getFloat("ZSKIN_LUMA_AMT", 0.0))
+        
         self.rating = (mc.objectForKey("ZRATING") as? Int) ?? 0
         self.colorTag = VariantBase.ColorTag(rawValue: (mc.objectForKey("ZCOLOR_TAG") as? Int) ?? 0) ?? .none
         
@@ -1294,6 +1322,17 @@ public class AdjustmentToolController: ObservableObject, HardwareActionDelegate 
         if let encoded = try? JSONEncoder().encode(colorCorrections) {
             mc.setObject(encoded, forKey: "ZCOLOR_CORRECTIONS")
         }
+        
+        mc.setObject(basicColorHue, forKey: "ZBASIC_COLOR_HUE")
+        mc.setObject(basicColorSat, forKey: "ZBASIC_COLOR_SAT")
+        mc.setObject(basicColorLum, forKey: "ZBASIC_COLOR_LUM")
+        
+        mc.setObject(skinHueUniformity, forKey: "ZSKIN_HUE_UNI")
+        mc.setObject(skinSatUniformity, forKey: "ZSKIN_SAT_UNI")
+        mc.setObject(skinLumaUniformity, forKey: "ZSKIN_LUMA_UNI")
+        mc.setObject(skinHueAmount, forKey: "ZSKIN_HUE_AMT")
+        mc.setObject(skinSatAmount, forKey: "ZSKIN_SAT_AMT")
+        mc.setObject(skinLumaAmount, forKey: "ZSKIN_LUMA_AMT")
         
         mc.setObject(rating, forKey: "ZRATING")
         mc.setObject(colorTag.rawValue, forKey: "ZCOLOR_TAG")

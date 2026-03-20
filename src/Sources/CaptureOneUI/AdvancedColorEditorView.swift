@@ -89,9 +89,9 @@ public struct AdvancedColorEditorView: View {
             .padding(.vertical, 4)
             
             VStack(spacing: 6) {
-                colorSlider(label: "Hue", value: .constant(0), range: -30...30)
-                colorSlider(label: "Saturation", value: .constant(0), range: -100...100)
-                colorSlider(label: "Lightness", value: .constant(0), range: -100...100)
+                colorSlider(label: "Hue", value: Binding(get: { controller.basicColorHue[selectedColorIndex] }, set: { controller.basicColorHue[selectedColorIndex] = $0 }), range: -30...30)
+                colorSlider(label: "Saturation", value: Binding(get: { controller.basicColorSat[selectedColorIndex] }, set: { controller.basicColorSat[selectedColorIndex] = $0 }), range: -100...100)
+                colorSlider(label: "Lightness", value: Binding(get: { controller.basicColorLum[selectedColorIndex] }, set: { controller.basicColorLum[selectedColorIndex] = $0 }), range: -100...100)
             }
         }
     }
@@ -182,9 +182,9 @@ public struct AdvancedColorEditorView: View {
                 Text("Amount")
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                colorSlider(label: "Hue", value: .constant(0), range: -30...30)
-                colorSlider(label: "Saturation", value: .constant(0), range: -100...100)
-                colorSlider(label: "Lightness", value: .constant(0), range: -100...100)
+                colorSlider(label: "Hue", value: Binding(get: { Double(controller.skinHueAmount) }, set: { controller.skinHueAmount = Float($0) }), range: -30...30)
+                colorSlider(label: "Saturation", value: Binding(get: { Double(controller.skinSatAmount) }, set: { controller.skinSatAmount = Float($0) }), range: -100...100)
+                colorSlider(label: "Lightness", value: Binding(get: { Double(controller.skinLumaAmount) }, set: { controller.skinLumaAmount = Float($0) }), range: -100...100)
             }
         }
     }
