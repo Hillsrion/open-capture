@@ -36,7 +36,7 @@ public class CullingWindowController: NSWindowController {
     
     private func setupUI() {
         window?.backgroundColor = NSColor(calibratedWhite: 0.12, alpha: 1.0)
-        WorkspaceManager.shared.activeWorkspace = WorkspaceManager.createWorkspace(windowKind: .session, name: "Default")
+        COWorkspaceManager.shared.activeWorkspace = COWorkspaceManager.createWorkspace(windowKind: .session, name: "Default")
         
         let context = ObjectContext()
         cullingCollection = MOFolderCollection(uuid: UUID().uuidString, context: context)
@@ -75,7 +75,7 @@ public struct CullingView: View {
     @ObservedObject var recipeManager: OutputRecipeManager
     @ObservedObject var batchQueue: BatchQueue
     @ObservedObject var session: SessionBase
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     @ObservedObject var commands = AppCommandCenter.shared
     @StateObject private var keywordCache: DocumentKeywordCache
     

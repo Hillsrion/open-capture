@@ -17,7 +17,7 @@ public struct COImageBrowserView: View {
     @Binding var selectedVariant: VariantBase?
     
     @ObservedObject var searchManager = SearchManager.shared
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     @ObservedObject var zoomStore = ImageBrowserZoomLevelStore.shared
     @StateObject private var interactor = ImageBrowserInteractor()
     @State private var sortOrder: String = "filename"
@@ -257,7 +257,7 @@ struct COBrowserGridView: View {
     @Binding var selectedVariant: VariantBase?
     @ObservedObject var interactor: ImageBrowserInteractor
     @ObservedObject var zoomStore: ImageBrowserZoomLevelStore
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     
     private func columns(for width: CGFloat) -> [GridItem] {
         let spacing: CGFloat = 15
@@ -310,7 +310,7 @@ struct COBrowserFilmstripView: View {
     @Binding var selectedVariant: VariantBase?
     @ObservedObject var interactor: ImageBrowserInteractor
     @ObservedObject var zoomStore: ImageBrowserZoomLevelStore
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: true) {

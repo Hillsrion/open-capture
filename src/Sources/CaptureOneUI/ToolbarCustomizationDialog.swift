@@ -3,7 +3,7 @@ import AppCoreShared
 
 /// Reconstructed high-fidelity Toolbar Customization Dialog (INT-001).
 public struct ToolbarCustomizationDialog: View {
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     @Environment(\.dismiss) var dismiss
     
     public init() {}

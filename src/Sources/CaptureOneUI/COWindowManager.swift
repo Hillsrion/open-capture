@@ -71,7 +71,7 @@ public final class COWindowManager {
         startWindow?.close()
         startWindow = nil
         
-        let workspace = WorkspaceManager.shared.activeWorkspace
+        let workspace = COWorkspaceManager.shared.activeWorkspace
         let frame = workspace.chromeState.windowFrame ?? NSRect(x: 0, y: 0, width: 1200, height: 800)
         
         // Needs a real viewer creation here
@@ -108,7 +108,7 @@ public final class COWindowManager {
         window.contentView = NSHostingView(rootView: contentView)
         
         // Attach native NSToolbar (UI-207)
-        let config = WorkspaceManager.shared.activeWorkspace.toolbarConfiguration
+        let config = COWorkspaceManager.shared.activeWorkspace.toolbarConfiguration
         let nativeToolbar = CONativeToolbar(configuration: config, commands: AppCommandCenter.shared)
         window.toolbar = nativeToolbar
         window.titleVisibility = .visible
@@ -324,15 +324,15 @@ fileprivate class DocumentWindowDelegate: NSObject, NSWindowDelegate {
 
     func windowDidMove(_ notification: Notification) {
         if let window = notification.object as? NSWindow {
-            WorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
-            WorkspaceManager.shared.saveWorkspace()
+            COWorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
+            COWorkspaceManager.shared.saveWorkspace()
         }
     }
 
     func windowDidResize(_ notification: Notification) {
         if let window = notification.object as? NSWindow {
-            WorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
-            WorkspaceManager.shared.saveWorkspace()
+            COWorkspaceManager.shared.activeWorkspace.chromeState.windowFrame = window.frame
+            COWorkspaceManager.shared.saveWorkspace()
         }
     }
 }

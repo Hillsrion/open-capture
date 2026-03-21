@@ -25,7 +25,7 @@ public struct InspectorToolContext {
 
 /// Reconstructed high-fidelity Tool Tab bar (UI-013).
 public struct InspectorToolTabView: View {
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     @Binding var selectedTabID: String
     let context: InspectorToolContext
 
@@ -48,7 +48,7 @@ public struct InspectorToolTabView: View {
 private struct PaletteTabItem: View {
     let palette: WorkspacePaletteDefinition
     let context: InspectorToolContext
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     
     var body: some View {
         let isSelected = (workspaceManager.activeWorkspace.selectedPaletteID == palette.id)
@@ -109,7 +109,9 @@ public struct InspectorToolLayout: View {
             }
 
             if !palette.fixedTools.isEmpty && !palette.scrolledTools.isEmpty {
-                Divider().background(Color.black)
+                Divider()
+                    .frame(height: 2)
+                    .background(Color.black)
             }
 
             if !palette.scrolledTools.isEmpty {
@@ -149,22 +151,22 @@ struct ToolContainer: View {
         .frame(maxWidth: .infinity)
         .frame(height: resolvedHeight)
         .contextMenu {
-            let isPinned = WorkspaceManager.shared.activeWorkspace.activePalette()?.fixedTools.contains(where: { $0.id == config.id }) ?? false
+            let isPinned = COWorkspaceManager.shared.activeWorkspace.activePalette()?.fixedTools.contains(where: { $0.id == config.id }) ?? false
             
             Button(isPinned ? "Move Tool to Scrollable Area" : "Move Tool to Pinned Area") {
-                WorkspaceManager.shared.moveTool(config.id, toPinnedArea: !isPinned)
+                COWorkspaceManager.shared.moveTool(config.id, toPinnedArea: !isPinned)
             }
             
             Button("Remove Tool") {
-                WorkspaceManager.shared.removeTool(config.id)
+                COWorkspaceManager.shared.removeTool(config.id)
             }
             
             Divider()
             
-            Button("Auto Size") { WorkspaceManager.shared.setToolSizeOption(nil, for: config.id) }
-            Button("Small Size") { WorkspaceManager.shared.setToolSizeOption(1, for: config.id) }
-            Button("Medium Size") { WorkspaceManager.shared.setToolSizeOption(2, for: config.id) }
-            Button("Large Size") { WorkspaceManager.shared.setToolSizeOption(3, for: config.id) }
+            Button("Auto Size") { COWorkspaceManager.shared.setToolSizeOption(nil, for: config.id) }
+            Button("Small Size") { COWorkspaceManager.shared.setToolSizeOption(1, for: config.id) }
+            Button("Medium Size") { COWorkspaceManager.shared.setToolSizeOption(2, for: config.id) }
+            Button("Large Size") { COWorkspaceManager.shared.setToolSizeOption(3, for: config.id) }
         }
     }
 

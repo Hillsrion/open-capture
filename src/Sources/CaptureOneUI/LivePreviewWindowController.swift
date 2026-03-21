@@ -15,7 +15,7 @@ public class LivePreviewWindowController: NSWindowController {
     public init(session: SessionBase) {
         self.session = session
         // Request the specific live preview workspace preset
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .livePreview, name: "Live Preview")
+        self.workspace = COWorkspaceManager.createWorkspace(windowKind: .livePreview, name: "Live Preview")
         
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1000, height: 750),
@@ -201,7 +201,7 @@ fileprivate struct LivePreviewRootView: View {
                 HStack(spacing: 0) {
                     ForEach(workspace.palettes) { palette in
                         Button(action: {
-                            WorkspaceManager.shared.setSelectedPaletteID(palette.id, autosave: false)
+                            COWorkspaceManager.shared.setSelectedPaletteID(palette.id, autosave: false)
                             workspace.chromeState.selectedToolPaletteID = palette.id
                         }) {
                             Image(systemName: palette.iconName)

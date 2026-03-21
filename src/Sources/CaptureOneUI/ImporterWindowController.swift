@@ -12,7 +12,7 @@ public class ImporterWindowController: NSWindowController {
     public init(importer: POImporter) {
         self.importer = importer
         // Request the specific importer window workspace preset
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .importer, name: "Import")
+        self.workspace = COWorkspaceManager.createWorkspace(windowKind: .importer, name: "Import")
         
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1100, height: 750),

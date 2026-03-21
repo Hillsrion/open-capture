@@ -13,7 +13,7 @@ public class ViewerWindowController: NSWindowController {
     
     public init(session: SessionBase) {
         self.session = session
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .viewer, name: "Viewer")
+        self.workspace = COWorkspaceManager.createWorkspace(windowKind: .viewer, name: "Viewer")
         
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1200, height: 850),

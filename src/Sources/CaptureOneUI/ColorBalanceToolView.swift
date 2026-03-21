@@ -22,7 +22,7 @@ public enum ColorWheelLayoutMode: Int, CaseIterable {
 
 public struct ColorBalanceToolView: View {
     @ObservedObject var controller: AdjustmentToolController
-    @ObservedObject private var workspaceManager = WorkspaceManager.shared
+    @ObservedObject private var workspaceManager = COWorkspaceManager.shared
     @State private var layoutMode: ColorWheelLayoutMode = .threeWay
 
     private let toolID = "ColorBalance"

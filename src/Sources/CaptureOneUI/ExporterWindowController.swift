@@ -17,7 +17,7 @@ public class ExporterWindowController: NSWindowController {
         self.selectedVariant = selectedVariant
         
         // Request the specific exporter window workspace preset
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .exporter, name: "Export")
+        self.workspace = COWorkspaceManager.createWorkspace(windowKind: .exporter, name: "Export")
         
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 900, height: 650),

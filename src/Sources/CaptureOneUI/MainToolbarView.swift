@@ -5,7 +5,7 @@ import ImageCore
 /// Reconstructed high-fidelity Main Toolbar (UI-013/INT-001).
 /// Based on version 16.5 layout and disassembly.
 public struct MainToolbarView: View {
-    @ObservedObject var workspaceManager = WorkspaceManager.shared
+    @ObservedObject var workspaceManager = COWorkspaceManager.shared
     @ObservedObject var adjustmentController = AdjustmentToolController.shared
     @ObservedObject var commands = AppCommandCenter.shared
     @State private var showingCustomization: Bool = false

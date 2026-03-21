@@ -39,7 +39,7 @@ public struct CaptureOneTheme {
 public struct COToolSection<Content: View, Actions: View>: View {
     let title: String
     let toolID: String
-    @ObservedObject private var workspaceManager = WorkspaceManager.shared
+    @ObservedObject private var workspaceManager = COWorkspaceManager.shared
     @ObservedObject private var commands = AppCommandCenter.shared
     @ObservedObject private var styleManager = COStyleManager.shared
     let content: Content

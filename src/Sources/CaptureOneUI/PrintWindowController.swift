@@ -10,7 +10,7 @@ public class PrintWindowController: NSWindowController {
     
     public init() {
         // Request the specific print window workspace preset
-        self.workspace = WorkspaceManager.createWorkspace(windowKind: .print, name: "Print")
+        self.workspace = COWorkspaceManager.createWorkspace(windowKind: .print, name: "Print")
         
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1100, height: 800),

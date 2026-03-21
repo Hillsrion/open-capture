@@ -204,7 +204,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     @objc func selectWorkspace(_ sender: NSMenuItem) {
         let name = sender.title
         Task { @MainActor in
-            WorkspaceManager.shared.loadWorkspace(named: name)
+            COWorkspaceManager.shared.loadWorkspace(named: name)
         }
     }
 
@@ -212,11 +212,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
     @objc func saveWorkspace(_ sender: Any?) {
         let panel = NSSavePanel()
         panel.title = "Save Workspace"
-        panel.nameFieldStringValue = WorkspaceManager.shared.activeWorkspace.name
+        panel.nameFieldStringValue = COWorkspaceManager.shared.activeWorkspace.name
         if panel.runModal() == .OK, let name = panel.url?.lastPathComponent.replacingOccurrences(of: ".coworkspace", with: "") {
             Task { @MainActor in
-                WorkspaceManager.shared.activeWorkspace.name = name
-                WorkspaceManager.shared.saveWorkspace()
+                COWorkspaceManager.shared.activeWorkspace.name = name
+                COWorkspaceManager.shared.saveWorkspace()
             }
         }
     }
@@ -293,7 +293,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
         for ws in defaultWS {
             let item = workspaceMenu.addItem(withTitle: ws, action: #selector(selectWorkspace(_:)), keyEquivalent: "")
             item.target = self
-            if WorkspaceManager.shared.activeWorkspace.name == ws {
+            if COWorkspaceManager.shared.activeWorkspace.name == ws {
                 item.state = .on
             }
         }

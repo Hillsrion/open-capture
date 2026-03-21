@@ -72,7 +72,7 @@ public final class AppCommandCenter: ObservableObject {
     private var documentContext: ObjectContext?
 
     private let adjustmentController = AdjustmentToolController.shared
-    private let workspaceManager = WorkspaceManager.shared
+    private let workspaceManager = COWorkspaceManager.shared
 
     private init() {}
 

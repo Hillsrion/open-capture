@@ -428,7 +428,7 @@ public struct VignettingToolView: View {
                 }
                 
                 Divider()
-                    .background(CaptureOneTheme.Colors.divider)
+                    .background(Color.white.opacity(0.1))
                     .padding(.horizontal, -8)
                 
                 // Amount Slider

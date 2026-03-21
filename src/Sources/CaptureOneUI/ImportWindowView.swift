@@ -1,6 +1,5 @@
 import SwiftUI
 import AppCoreShared
-import CaptureOneApp
 
 /// Reconstructed SwiftUI view for the AI-powered Import Window (AI-005).
 /// Based on functional specs for the 4-pane layout.
@@ -267,12 +266,19 @@ struct GroupedImportGridView: View {
                                 
                                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 120, maximum: 120), spacing: 10)], spacing: 10) {
                                     ForEach(group.urls, id: \.self) { url in
-                                        ImportThumbnailCell(url: url, pickedState: controller.importer.pickedState)
-                                            .focusable()
-                                            .onKeyPress(.space) {
-                                                controller.togglePick(for: url)
-                                                return .handled
-                                            }
+                                        if #available(macOS 14.0, *) {
+                                            ImportThumbnailCell(url: url, pickedState: controller.importer.pickedState)
+                                                .focusable()
+                                                .onKeyPress(.space) {
+                                                    controller.togglePick(for: url)
+                                                    return .handled
+                                                }
+                                        } else {
+                                            ImportThumbnailCell(url: url, pickedState: controller.importer.pickedState)
+                                                .onTapGesture {
+                                                    controller.togglePick(for: url)
+                                                }
+                                        }
                                     }
                                 }
                             }
