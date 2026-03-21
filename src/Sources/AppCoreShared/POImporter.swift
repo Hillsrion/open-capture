@@ -1,5 +1,6 @@
 import Foundation
 import DataCore
+import ImageIO
 
 /// Reconstructed central coordinator for image ingestion (CORE-007).
 /// Based on disassembly of POImporter.
@@ -58,35 +59,45 @@ public class POImporter: ObservableObject {
                 // Reconstructed EIP Ingest (CORE-006)
                 let isEIP = url.pathExtension.lowercased() == "eip"
                 
-                // Task 3: Implement file copying logic with token-based renaming
-                let baseName = isEIP ? url.deletingPathExtension().lastPathComponent : url.deletingPathExtension().lastPathComponent
+                // Task 3: Implement file copying logic with token-based renaming and subfolders
+                let baseName = url.deletingPathExtension().lastPathComponent
+                let camera = self.extractCameraModel(from: url)
+                
                 let context = TokenEvaluator.Context(
                     imageName: baseName,
                     date: Date(),
                     sequence: sequence,
-                    jobName: self.settings.metadata.jobName
+                    jobName: self.settings.metadata.jobName,
+                    camera: camera
                 )
                 
+                let subfolderPath = evaluator.evaluate(format: self.settings.destinationSubfolderTokens, context: context)
                 let newFileName = evaluator.evaluate(format: self.settings.namingFormat, context: context)
                 let finalExtension = isEIP ? "eip" : url.pathExtension
                 let fullFileName = "\(newFileName).\(finalExtension)"
                 
-                let destinationURL: URL
+                var destinationURL: URL
                 if self.settings.destinationFolderType == .insideCatalog {
                     // In real app, this resolves to the Catalog's "Adjustments" or "Originals" package folder
                     let catalogDir = FileManager.default.temporaryDirectory.appendingPathComponent("CaptureOne_Internal_Catalog")
-                    destinationURL = catalogDir.appendingPathComponent(fullFileName)
+                    destinationURL = catalogDir
                 } else if self.settings.destinationFolderType == .currentLocation {
-                    destinationURL = url // No move/copy needed
+                    destinationURL = url.deletingLastPathComponent()
                 } else {
-                    let customPathURL = URL(fileURLWithPath: self.settings.destinationCustomPath)
-                    destinationURL = customPathURL.appendingPathComponent(fullFileName)
+                    destinationURL = URL(fileURLWithPath: self.settings.destinationCustomPath)
                 }
+                
+                // Integrate subfolder
+                if !subfolderPath.isEmpty {
+                    destinationURL = destinationURL.appendingPathComponent(subfolderPath)
+                }
+                destinationURL = destinationURL.appendingPathComponent(fullFileName)
                 
                 do {
                     if destinationURL != url {
-                        if !FileManager.default.fileExists(atPath: destinationURL.deletingLastPathComponent().path) {
-                            try FileManager.default.createDirectory(at: destinationURL.deletingLastPathComponent(), withIntermediateDirectories: true)
+                        let directory = destinationURL.deletingLastPathComponent()
+                        if !FileManager.default.fileExists(atPath: directory.path) {
+                            try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
                         }
                         try FileManager.default.copyItem(at: url, to: destinationURL)
                     }
@@ -126,5 +137,20 @@ public class POImporter: ObservableObject {
                 self.status = .completed(importedCount: importedCount)
             }
         }
+    }
+    
+    private func extractCameraModel(from url: URL) -> String {
+        guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+              let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [String: Any] else {
+            return "Unknown Camera"
+        }
+        
+        // Try TIFF model first
+        if let tiff = properties[kCGImagePropertyTIFFDictionary as String] as? [String: Any],
+           let model = tiff[kCGImagePropertyTIFFModel as String] as? String {
+            return model
+        }
+        
+        return "Unknown Camera"
     }
 }

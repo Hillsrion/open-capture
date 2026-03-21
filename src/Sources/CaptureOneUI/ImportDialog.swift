@@ -210,11 +210,16 @@ struct ImportGridView: View {
 }
 
 /// Individual thumbnail cell in the import grid.
-struct ImportThumbnailCell: View {
-    let url: URL
-    @ObservedObject var pickedState: ImporterPickedState
+public struct ImportThumbnailCell: View {
+    public let url: URL
+    @ObservedObject public var pickedState: ImporterPickedState
     
-    var body: some View {
+    public init(url: URL, pickedState: ImporterPickedState) {
+        self.url = url
+        self.pickedState = pickedState
+    }
+    
+    public var body: some View {
         VStack {
             ZStack(alignment: .topLeading) {
                 Rectangle()
@@ -240,11 +245,15 @@ struct ImportThumbnailCell: View {
 }
 
 /// Bottom bar actions.
-struct ImportBottomBar: View {
-    @ObservedObject var importer: POImporter
+public struct ImportBottomBar: View {
+    @ObservedObject public var importer: POImporter
     @Environment(\.dismiss) private var dismiss
     
-    var body: some View {
+    public init(importer: POImporter) {
+        self.importer = importer
+    }
+    
+    public var body: some View {
         HStack {
             if case .importing(let progress) = importer.status {
                 ProgressView(value: progress)
@@ -285,10 +294,10 @@ struct ImportBottomBar: View {
 
 /// Source folder browser tree for the import dialog.
 /// Matches the left-side source browser from the decompiled ImporterWindowController.
-struct ImportSourceBrowser: View {
-    @ObservedObject var importer: POImporter
+public struct ImportSourceBrowser: View {
+    @ObservedObject public var importer: POImporter
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             // Header
             HStack {
