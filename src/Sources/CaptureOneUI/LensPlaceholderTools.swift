@@ -403,42 +403,46 @@ public struct GuidesToolView: View {
 
 // MARK: - Vignetting (UI-202)
 public struct VignettingToolView: View {
-    @ObservedObject var controller: AdjustmentToolController
+    @ObservedObject var controller: COVignettingToolController
     
-    public init(controller: AdjustmentToolController) {
+    public init(controller: COVignettingToolController) {
         self.controller = controller
     }
     
     public var body: some View {
         COToolSection("Vignetting", toolID: "Vignetting") {
-            VStack(spacing: 8) {
+            VStack(spacing: 12) {
+                // Method Selection
                 HStack {
                     Text("Method")
                         .font(.system(size: 11))
                         .foregroundColor(CaptureOneTheme.Colors.textSecondary)
                     Spacer()
-                    Picker("", selection: $controller.vignettingMethod) {
+                    Picker("", selection: $controller.method) {
                         Text("Circular").tag(0)
-                        Text("Elliptic").tag(1)
+                        Text("Elliptical").tag(1)
                     }
                     .pickerStyle(.menu)
                     .labelsHidden()
-                    .frame(width: 100)
+                    .frame(width: 120)
                 }
                 
-                HStack {
-                    Text("Amount")
-                        .font(.system(size: 11))
-                        .foregroundColor(CaptureOneTheme.Colors.textSecondary)
-                        .frame(width: 60, alignment: .leading)
-                    Slider(value: $controller.vignettingAmount, in: -4...4)
-                        .accentColor(CaptureOneTheme.Colors.activeHighlight)
-                    Text(String(format: "%.1f", controller.vignettingAmount))
-                        .font(.system(size: 11, design: .monospaced))
-                        .frame(width: 30, alignment: .trailing)
-                }
+                Divider()
+                    .background(CaptureOneTheme.Colors.divider)
+                    .padding(.horizontal, -8)
+                
+                // Amount Slider
+                COToolValueSlider(
+                    label: "Amount", 
+                    value: Binding(
+                        get: { controller.amount },
+                        set: { controller.amount = $0 }
+                    ), 
+                    range: -4...4, 
+                    decimalPlaces: 1
+                )
             }
-            .padding(.vertical, 4)
+            .padding(.vertical, 6)
         }
     }
 }
