@@ -49,6 +49,7 @@ public class VariantBase: BaseObject, ColorGradingTarget, Identifiable {
     public var isLoading: Bool
     public var isProxyReady: Bool
     public var isAlive: Bool
+    @Published public var isPreviewing: Bool = false
     
     // MARK: - Relationships
     public var image: ImageBase?
